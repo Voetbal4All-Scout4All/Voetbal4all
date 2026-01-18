@@ -151,15 +151,15 @@
       fadeRight = null;
 
       // Dynamic fade widths (right accounts for socials block).
-      // Left side should fade much later (closer to the LIVE SCORE block),
-      // so keep it small instead of mirroring the (large) socials side.
+      // Left side should fade much later (closer to the LIVE SCORE block)
+      // so keep it small.
       const socialsEl = banner.querySelector(".live-socials");
       const socialsW = socialsEl ? (socialsEl.getBoundingClientRect().width || 0) : 0;
 
-      const rightW = Math.max(80, Math.min(180, Math.round(socialsW ? socialsW * 0.9 : 120)));
-      // Left side should fade much later (closer to the LIVE SCORE block),
-      // so keep it small instead of mirroring the (large) socials side.
-      const leftW = 44;
+      const rightW = Math.max(80, Math.min(220, Math.round(socialsW ? socialsW * 0.95 : 130)));
+      // Left side should fade much later (closer to the LIVE SCORE block)
+      // so keep it small.
+      const leftW = 28;
 
       // Mask: transparent edges -> opaque middle. Works in Safari via -webkit-mask.
       const mask = `linear-gradient(to right,
@@ -414,9 +414,13 @@
 
           // Use fade widths to guarantee clean disappearance behind both edges
           // Keep start just behind socials/fade (avoid long blank time before content enters)
-          const pad = 10;
-          const startX = containerW + (fades?.rightW || 120) + pad;
-          const endX = -textW - (fades?.leftW || 44) - pad;
+          const pad = 34; // extra start overshoot to avoid visible "pop-in" at cycle start
+          const startX = containerW + (fades?.rightW || 130) + pad;
+
+          // Ensure we don't reset too early on the left: overshoot a fixed amount,
+          // regardless of a small left fade width.
+          const endOvershoot = Math.max(140, (fades?.leftW || 28) + 120);
+          const endX = -textW - endOvershoot;
 
           // Snelheid (px/sec) -> bepaalt leesbaarheid
           // Faster to reduce perceived gaps between cycles
@@ -445,9 +449,14 @@
           });
 
           marqueeRestartTimer = setTimeout(() => {
+            // Force the first frame of the next cycle to be offscreen right
             track.style.animation = "none";
+            track.style.transform = `translateX(${startX}px)`;
             void track.offsetHeight;
-            track.style.animation = "";
+            requestAnimationFrame(() => {
+              track.style.animation = "";
+              track.style.transform = "";
+            });
 
             // If refresh fetched new data during the previous run, apply it only at cycle boundary
             if (pendingLines && Array.isArray(pendingLines) && pendingLines.length) {
