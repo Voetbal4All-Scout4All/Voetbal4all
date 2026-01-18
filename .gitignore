@@ -6,3 +6,6 @@ backend/
 node_modules/
 
 package-lock.json
+
+# local helper scripts
+*.sh
