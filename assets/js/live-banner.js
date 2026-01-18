@@ -172,13 +172,14 @@
 
       // Left fade must be minimal; otherwise the text disappears too early.
       // Keep it very small so the cut-off happens closer to the LIVE SCORE block.
-      const leftW = 10;
+      const leftW = 6;
 
       // Extend the ticker container underneath the LIVE SCORE label so the fade starts closer to it.
       // We do this with a negative margin + equal padding (so visual layout stays the same,
       // but the mask region starts further left).
       const labelW = labelEl ? (labelEl.getBoundingClientRect().width || 0) : 0;
-      const overlap = Math.max(0, Math.min(90, Math.round(labelW - 10)));
+      // Extend further under the label. Cap higher to ensure the fade reaches close to "LIVE SCORE".
+      const overlap = Math.max(0, Math.min(160, Math.round(labelW + 40)));
       tickerWrap.style.marginLeft = overlap ? `-${overlap}px` : "0px";
       tickerWrap.style.paddingLeft = overlap ? `${overlap}px` : "0px";
 
@@ -436,7 +437,7 @@
 
           // End further left before restart so the text can travel longer towards the LIVE SCORE label
           // before fading out.
-          const endPad = Math.max(280, (fades?.leftW || 10) + 260);
+          const endPad = Math.max(420, (fades?.leftW || 6) + 400);
           const endX = -textW - endPad;
 
           // Speed (px/sec)
