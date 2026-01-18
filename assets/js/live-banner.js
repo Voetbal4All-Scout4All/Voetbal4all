@@ -140,55 +140,38 @@
     let fadeRight = tickerWrap.querySelector(".v4a-ticker-fade-right");
 
     function ensureTickerFades() {
-      // Ticker must be a positioning context for inline fades
-      tickerWrap.style.position = "relative";
+      // We use a CSS mask on the ticker container (JS-only) so the text fades out
+      // without drawing visible overlay "tunnel" blocks.
       tickerWrap.style.overflow = "hidden";
 
-      // Create fades once
-      if (!fadeLeft) {
-        fadeLeft = document.createElement("div");
-        fadeLeft.className = "v4a-ticker-fade-left";
-        tickerWrap.appendChild(fadeLeft);
-      }
-      if (!fadeRight) {
-        fadeRight = document.createElement("div");
-        fadeRight.className = "v4a-ticker-fade-right";
-        tickerWrap.appendChild(fadeRight);
-      }
+      // Remove old overlay fades if they exist (legacy from previous iterations)
+      if (fadeLeft && fadeLeft.parentNode) fadeLeft.parentNode.removeChild(fadeLeft);
+      if (fadeRight && fadeRight.parentNode) fadeRight.parentNode.removeChild(fadeRight);
+      fadeLeft = null;
+      fadeRight = null;
 
-      // Compute dynamic fade widths (right accounts for socials visual zone)
+      // Dynamic fade widths (right accounts for socials block). We then mirror to the left
+      // so disappearance distance is symmetric, as requested.
       const socialsEl = banner.querySelector(".live-socials");
       const socialsW = socialsEl ? (socialsEl.getBoundingClientRect().width || 0) : 0;
 
-      // Defensive bounds: enough to hide under icon area, not too large
-      const leftW = 56; // hide cleanly near label side
-      const rightW = Math.max(90, Math.min(220, Math.round(socialsW ? socialsW * 0.9 : 120)));
+      const rightW = Math.max(80, Math.min(180, Math.round(socialsW ? socialsW * 0.9 : 120)));
+      const leftW = rightW;
 
-      const bg = "rgba(2, 12, 6, 0.92)";
+      // Mask: transparent edges -> opaque middle. Works in Safari via -webkit-mask.
+      const mask = `linear-gradient(to right,
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,1) ${leftW}px,
+        rgba(0,0,0,1) calc(100% - ${rightW}px),
+        rgba(0,0,0,0) 100%)`;
 
-      Object.assign(fadeLeft.style, {
-        position: "absolute",
-        left: "0",
-        top: "0",
-        bottom: "0",
-        width: `${leftW}px`,
-        pointerEvents: "none",
-        zIndex: "3",
-        background: `linear-gradient(to right, ${bg} 0%, rgba(2, 12, 6, 0) 100%)`
-      });
+      tickerWrap.style.webkitMaskImage = mask;
+      tickerWrap.style.maskImage = mask;
+      tickerWrap.style.webkitMaskRepeat = "no-repeat";
+      tickerWrap.style.maskRepeat = "no-repeat";
+      tickerWrap.style.webkitMaskSize = "100% 100%";
+      tickerWrap.style.maskSize = "100% 100%";
 
-      Object.assign(fadeRight.style, {
-        position: "absolute",
-        right: "0",
-        top: "0",
-        bottom: "0",
-        width: `${rightW}px`,
-        pointerEvents: "none",
-        zIndex: "3",
-        background: `linear-gradient(to left, ${bg} 0%, rgba(2, 12, 6, 0) 100%)`
-      });
-
-      // Return fade widths so marquee math can use them
       return { leftW, rightW };
     }
 
@@ -428,15 +411,15 @@
 
           // Use fade widths to guarantee clean disappearance behind both edges
           // Keep start just behind socials/fade (avoid long blank time before content enters)
-          const pad = 12;
+          const pad = 6;
           const startX = containerW + (fades?.rightW || 120) + pad;
-          const endX = -textW - (fades?.leftW || 56) - pad;
+          const endX = -textW - (fades?.leftW || 120) - pad;
 
           // Snelheid (px/sec) -> bepaalt leesbaarheid
-          // Slightly faster to reduce perceived gaps between cycles
-          const pxPerSec = 85;
+          // Faster to reduce perceived gaps between cycles
+          const pxPerSec = 95;
           const distance = startX - endX;
-          const durationSec = Math.max(14, distance / pxPerSec);
+          const durationSec = Math.max(10, distance / pxPerSec);
 
           marqueeCycleEndsAt = Date.now() + Math.ceil(durationSec * 1000);
 
