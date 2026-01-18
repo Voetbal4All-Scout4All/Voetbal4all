@@ -412,14 +412,18 @@
           const textW = track.scrollWidth || 0;
           if (!containerW || !textW) return;
 
-          // Use fade widths to guarantee clean disappearance behind both edges
-          // Keep start just behind socials/fade (avoid long blank time before content enters)
-          const pad = 34; // extra start overshoot to avoid visible "pop-in" at cycle start
+          // Start far enough behind the socials mask to avoid any visible first frame,
+          // but not so far that we get long "empty" time.
+          const pad = 18;
           const startX = containerW + (fades?.rightW || 130) + pad;
 
-          // Ensure we don't reset too early on the left: overshoot a fixed amount,
-          // regardless of a small left fade width.
-          const endOvershoot = Math.max(140, (fades?.leftW || 28) + 120);
+          // End later on the left: overshoot more aggressively so the text can travel
+          // closer to the LIVE SCORE block before the cycle restarts.
+          const endOvershoot = Math.max(
+            260,
+            Math.round(containerW * 0.22),
+            (fades?.leftW || 28) + 220
+          );
           const endX = -textW - endOvershoot;
 
           // Snelheid (px/sec) -> bepaalt leesbaarheid
@@ -437,25 +441,36 @@
           // Prevent first-cycle "pop in": make the FIRST visible frame already offscreen right.
           // 1) Place offscreen (behind right mask), with animation disabled.
           track.style.animation = "none";
-          track.style.transform = `translateX(${startX}px)`;
+          track.style.willChange = "transform";
+          // Force GPU path to reduce Safari intermediate-frame glitches
+          track.style.transform = `translate3d(${startX}px, 0, 0)`;
           track.style.visibility = "visible";
-          void track.offsetHeight; // force layout so transform is committed before animation starts
+          // Keep fully transparent until animation is armed
+          track.style.opacity = "0";
+          void track.offsetHeight; // force layout commit before animation starts
 
-          // 2) Start the CSS animation on the next frame.
-          //    This avoids Safari occasionally showing an in-between frame.
+          // Start animation on next frame, then reveal on the following frame
           requestAnimationFrame(() => {
             track.style.animation = "";
             track.style.transform = "";
+            requestAnimationFrame(() => {
+              track.style.opacity = "1";
+            });
           });
 
           marqueeRestartTimer = setTimeout(() => {
-            // Force the first frame of the next cycle to be offscreen right
+            // Force the first visible frame of the next cycle to be offscreen right
             track.style.animation = "none";
-            track.style.transform = `translateX(${startX}px)`;
+            track.style.willChange = "transform";
+            track.style.transform = `translate3d(${startX}px, 0, 0)`;
+            track.style.opacity = "0";
             void track.offsetHeight;
             requestAnimationFrame(() => {
               track.style.animation = "";
               track.style.transform = "";
+              requestAnimationFrame(() => {
+                track.style.opacity = "1";
+              });
             });
 
             // If refresh fetched new data during the previous run, apply it only at cycle boundary
