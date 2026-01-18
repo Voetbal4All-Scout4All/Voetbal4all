@@ -13,24 +13,27 @@
        - Avoid emoji flags (OS-dependent) and inline SVG variations
     ========================================================= */
     const FLAG_SRC = {
+      // Local (existing)
       BE: "/assets/img/sources/flag-be.svg",
       NL: "/assets/img/sources/flag-nl.svg",
-      DE: "/assets/img/sources/flag-de.svg",
-      UK: "/assets/img/sources/flag-uk.svg",
-      IT: "/assets/img/sources/flag-it.svg",
-      ES: "/assets/img/sources/flag-es.svg",
-      FR: "/assets/img/sources/flag-fr.svg",
-      INT: "/assets/img/sources/flag-int.svg"
+      INT: "/assets/img/sources/flag-int.svg",
+
+      // Inline SVG fallbacks (no extra files needed)
+      DE: "data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12'><rect width='18' height='4' y='0' fill='%23000'/><rect width='18' height='4' y='4' fill='%23dd0000'/><rect width='18' height='4' y='8' fill='%23ffce00'/></svg>",
+      ES: "data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12'><rect width='18' height='12' fill='%23c60b1e'/><rect x='0' y='3' width='18' height='6' fill='%23ffc400'/></svg>",
+      IT: "data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12'><rect width='6' height='12' x='0' fill='%23009246'/><rect width='6' height='12' x='6' fill='%23ffffff'/><rect width='6' height='12' x='12' fill='%23ce2b37'/></svg>",
+      FR: "data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12'><rect width='6' height='12' x='0' fill='%230054a5'/><rect width='6' height='12' x='6' fill='%23ffffff'/><rect width='6' height='12' x='12' fill='%23ef4135'/></svg>",
+      GB: "data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12'><rect width='18' height='12' fill='%23012169'/><rect x='0' y='5' width='18' height='2' fill='%23ffffff'/><rect x='8' y='0' width='2' height='12' fill='%23ffffff'/><rect x='0' y='5.5' width='18' height='1' fill='%23c8102e'/><rect x='8.5' y='0' width='1' height='12' fill='%23c8102e'/></svg>"
     };
 
     function flagImg(code, sizeClass = "") {
       const c = String(code || "INT").trim().toUpperCase();
-      const src = FLAG_SRC[c] || FLAG_SRC.INT;
+      const src = FLAG_SRC[c] || (c === "UK" ? FLAG_SRC.GB : FLAG_SRC.INT);
       const alt =
         (c === "BE") ? "België" :
         (c === "NL") ? "Nederland" :
         (c === "DE") ? "Duitsland" :
-        (c === "UK") ? "Verenigd Koninkrijk" :
+        (c === "GB" || c === "UK") ? "Verenigd Koninkrijk" :
         (c === "IT") ? "Italië" :
         (c === "ES") ? "Spanje" :
         (c === "FR") ? "Frankrijk" :
@@ -247,7 +250,7 @@
       { league: "JPL", cc: "BE", label: "JPL" },
       { league: "ERED", cc: "NL", label: "Eredivisie" },
       { league: "BUND", cc: "DE", label: "Bundesliga" },
-      { league: "EPL", cc: "UK", label: "Premier League" },
+      { league: "EPL", cc: "GB", label: "Premier League" },
       { league: "SA", cc: "IT", label: "Serie A" },
       { league: "LIGA", cc: "ES", label: "La Liga" },
       { league: "L1", cc: "FR", label: "Ligue 1" },
@@ -367,7 +370,7 @@
         .replace(/\[BE\]/gi, flagImg("BE"))
         .replace(/\[NL\]/gi, flagImg("NL"))
         .replace(/\[DE\]/gi, flagImg("DE"))
-        .replace(/\[UK\]/gi, flagImg("UK"))
+        .replace(/\[(GB|UK)\]/gi, flagImg("GB"))
         .replace(/\[IT\]/gi, flagImg("IT"))
         .replace(/\[ES\]/gi, flagImg("ES"))
         .replace(/\[FR\]/gi, flagImg("FR"))
@@ -380,33 +383,35 @@
       }
 
       requestAnimationFrame(() => {
-        const containerW = tickerWrap.clientWidth || 0;
-        const textW = track.scrollWidth || 0;
-        if (!containerW || !textW) return;
+        requestAnimationFrame(() => {
+          const containerW = tickerWrap.clientWidth || 0;
+          const textW = track.scrollWidth || 0;
+          if (!containerW || !textW) return;
 
-        // Start volledig rechts buiten beeld, eind volledig links buiten beeld
-        const startX = containerW;
-        const endX = -textW;
+          const buffer = 80; // extra ruimte zodat start/einde volledig buiten beeld ligt
+          const startX = containerW + buffer;
+          const endX = -textW - buffer;
 
-        // Snelheid (px/sec) -> bepaalt leesbaarheid
-        const pxPerSec = 70;
-        const distance = startX - endX;
-        const durationSec = Math.max(14, distance / pxPerSec);
+          // Snelheid (px/sec) -> bepaalt leesbaarheid
+          const pxPerSec = 70;
+          const distance = startX - endX;
+          const durationSec = Math.max(14, distance / pxPerSec);
 
-        track.style.setProperty("--live-marquee-start", `${startX}px`);
-        track.style.setProperty("--live-marquee-end", `${endX}px`);
-        track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
+          track.style.setProperty("--live-marquee-start", `${startX}px`);
+          track.style.setProperty("--live-marquee-end", `${endX}px`);
+          track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
 
-        // Force restart animatie (betrouwbaar)
-        track.style.animation = "none";
-        void track.offsetHeight;
-        track.style.animation = "";
-
-        marqueeRestartTimer = setTimeout(() => {
+          // Force restart animatie (betrouwbaar)
           track.style.animation = "none";
           void track.offsetHeight;
           track.style.animation = "";
-        }, Math.ceil(durationSec * 1000));
+
+          marqueeRestartTimer = setTimeout(() => {
+            track.style.animation = "none";
+            void track.offsetHeight;
+            track.style.animation = "";
+          }, Math.ceil(durationSec * 1000));
+        });
       });
 
       return true;
@@ -437,7 +442,7 @@
     refresh();
 
     // Let op: refresh elke minuut is ok, maar marquee restart timer voorkomt “mid-run reset”
-    setInterval(refresh, 60 * 1000);
+    setInterval(refresh, 3 * 60 * 1000);
   }
 
   if (document.readyState === "loading") {
