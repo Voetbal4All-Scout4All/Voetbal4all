@@ -54,16 +54,11 @@
 
     /* =========================================================
        0) Opruimen: verwijder ALLE oude/dubbele elementen
-          - live-updated mag enkel onder live-label bestaan
+          - live-updated badge wordt volledig verwijderd (geen rode knop/badge)
           - socials mogen enkel één keer bestaan
     ========================================================= */
-    const keepLabelUpdated = labelEl.querySelector(".live-updated");
-
-    banner.querySelectorAll(".live-updated").forEach((el) => {
-      // we houden enkel degene die al in labelEl zit
-      if (keepLabelUpdated && el === keepLabelUpdated) return;
-      if (!labelEl.contains(el)) el.remove();
-    });
+    // Verwijder ALLE live-updated badges (user request: geen rode knop/badge)
+    banner.querySelectorAll(".live-updated").forEach((el) => el.remove());
 
     // Verwijder dubbele socials containers (houd de eerste)
     const socialsAll = banner.querySelectorAll(".live-socials");
@@ -119,27 +114,7 @@
       labelEl.dataset.stacked = "1";
     }
 
-    /* =========================================================
-       2) Update-element: uitsluitend onder LIVE RESULTATEN (labelEl)
-          - Tekst: "Laatst Bijgewerkt: uu:mm"
-          - Geen duplicaten elders
-    ========================================================= */
-    let updatedEl = labelEl.querySelector(".live-updated");
-    if (!updatedEl) {
-      updatedEl = document.createElement("div");
-      updatedEl.className = "live-updated";
-      labelEl.appendChild(updatedEl);
-    }
-
-    function formatTime(d) {
-      const hh = String(d.getHours()).padStart(2, "0");
-      const mm = String(d.getMinutes()).padStart(2, "0");
-      return `${hh}:${mm}`;
-    }
-
-    function setUpdated(d) {
-      updatedEl.textContent = d ? `Laatst Bijgewerkt: ${formatTime(d)}` : "";
-    }
+    // (Blok 2 verwijderd: geen "Laatst Bijgewerkt" badge meer)
 
     /* =========================================================
        3) Ticker in .live-text (main text blijft leeg)
@@ -157,6 +132,64 @@
       tickerWrap = document.createElement("div");
       tickerWrap.className = "live-text-ticker";
       textEl.appendChild(tickerWrap);
+    }
+
+    // Edge fades to ensure the ticker disappears cleanly at both sides
+    // (JS-only solution; no CSS edits required)
+    let fadeLeft = tickerWrap.querySelector(".v4a-ticker-fade-left");
+    let fadeRight = tickerWrap.querySelector(".v4a-ticker-fade-right");
+
+    function ensureTickerFades() {
+      // Ticker must be a positioning context for inline fades
+      tickerWrap.style.position = "relative";
+      tickerWrap.style.overflow = "hidden";
+
+      // Create fades once
+      if (!fadeLeft) {
+        fadeLeft = document.createElement("div");
+        fadeLeft.className = "v4a-ticker-fade-left";
+        tickerWrap.appendChild(fadeLeft);
+      }
+      if (!fadeRight) {
+        fadeRight = document.createElement("div");
+        fadeRight.className = "v4a-ticker-fade-right";
+        tickerWrap.appendChild(fadeRight);
+      }
+
+      // Compute dynamic fade widths (right accounts for socials visual zone)
+      const socialsEl = banner.querySelector(".live-socials");
+      const socialsW = socialsEl ? (socialsEl.getBoundingClientRect().width || 0) : 0;
+
+      // Defensive bounds: enough to hide under icon area, not too large
+      const leftW = 56; // hide cleanly near label side
+      const rightW = Math.max(90, Math.min(220, Math.round(socialsW ? socialsW * 0.9 : 120)));
+
+      const bg = "rgba(2, 12, 6, 0.92)";
+
+      Object.assign(fadeLeft.style, {
+        position: "absolute",
+        left: "0",
+        top: "0",
+        bottom: "0",
+        width: `${leftW}px`,
+        pointerEvents: "none",
+        zIndex: "3",
+        background: `linear-gradient(to right, ${bg} 0%, rgba(2, 12, 6, 0) 100%)`
+      });
+
+      Object.assign(fadeRight.style, {
+        position: "absolute",
+        right: "0",
+        top: "0",
+        bottom: "0",
+        width: `${rightW}px`,
+        pointerEvents: "none",
+        zIndex: "3",
+        background: `linear-gradient(to left, ${bg} 0%, rgba(2, 12, 6, 0) 100%)`
+      });
+
+      // Return fade widths so marquee math can use them
+      return { leftW, rightW };
     }
 
     /* =========================================================
@@ -337,6 +370,8 @@
 
     // Houd één timer bij om dubbele init te vermijden
     let marqueeRestartTimer = null;
+    let marqueeCycleEndsAt = 0;
+    let pendingLines = null;
 
     function renderMarquee(lines) {
       if (!Array.isArray(lines) || !lines.length) return false;
@@ -382,35 +417,26 @@
         marqueeRestartTimer = null;
       }
 
+      // Ensure fades exist and get the widths for correct start/end math
+      const fades = ensureTickerFades();
+
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           const containerW = tickerWrap.clientWidth || 0;
           const textW = track.scrollWidth || 0;
           if (!containerW || !textW) return;
 
-          // Dynamische buffer zodat de tekst ook achter de fade-zone én socials verdwijnt
-          const tickerRect = tickerWrap.getBoundingClientRect();
-
-          // Socials blokkeren rechts een stuk van de zichtbare zone
-          let socialsBlockRight = 0;
-          const socialsEl = banner.querySelector(".live-socials");
-          if (socialsEl) {
-            const socialsRect = socialsEl.getBoundingClientRect();
-            // hoeveel px van de ticker-zone “onder” de socials valt
-            socialsBlockRight = Math.max(0, tickerRect.right - socialsRect.left);
-          }
-
-          // Basisbuffer + extra voor socials + extra “fade” marge
-          const base = Math.round((containerW || 0) * 0.35);
-          const buffer = Math.max(180, Math.min(420, base + socialsBlockRight + 60));
-
-          const startX = containerW + buffer;
-          const endX = -textW - buffer;
+          // Use fade widths to guarantee clean disappearance behind both edges
+          const pad = 36;
+          const startX = containerW + (fades?.rightW || 120) + pad;
+          const endX = -textW - (fades?.leftW || 56) - pad;
 
           // Snelheid (px/sec) -> bepaalt leesbaarheid
           const pxPerSec = 70;
           const distance = startX - endX;
           const durationSec = Math.max(14, distance / pxPerSec);
+
+          marqueeCycleEndsAt = Date.now() + Math.ceil(durationSec * 1000);
 
           track.style.setProperty("--live-marquee-start", `${startX}px`);
           track.style.setProperty("--live-marquee-end", `${endX}px`);
@@ -427,6 +453,13 @@
             track.style.animation = "none";
             void track.offsetHeight;
             track.style.animation = "";
+
+            // If refresh fetched new data during the previous run, apply it only at cycle boundary
+            if (pendingLines && Array.isArray(pendingLines) && pendingLines.length) {
+              const next = pendingLines;
+              pendingLines = null;
+              renderMarquee(next);
+            }
           }, Math.ceil(durationSec * 1000));
         });
       });
@@ -436,22 +469,37 @@
 
     async function refresh() {
       try {
-        setUpdated(null);
-
         const lines = await fetchFreeLiveLines();
         if (!lines || !lines.length) {
+          // Stop marquee state cleanly
+          if (marqueeRestartTimer) {
+            clearTimeout(marqueeRestartTimer);
+            marqueeRestartTimer = null;
+          }
+          pendingLines = null;
+          marqueeCycleEndsAt = 0;
+
           renderFallback();
-          setUpdated(new Date());
           return;
         }
 
-        // Render pas opnieuw wanneer de oude cyclus klaar is (zie timer in renderMarquee)
+        // If a marquee cycle is currently running, defer the update to the cycle boundary
+        const now = Date.now();
+        if (marqueeRestartTimer && now < marqueeCycleEndsAt - 250) {
+          pendingLines = lines;
+          return;
+        }
+
         renderMarquee(lines);
-        setUpdated(new Date());
       } catch (err) {
         console.warn("Live banner fout:", err);
+        if (marqueeRestartTimer) {
+          clearTimeout(marqueeRestartTimer);
+          marqueeRestartTimer = null;
+        }
+        pendingLines = null;
+        marqueeCycleEndsAt = 0;
         renderFallback();
-        setUpdated(new Date());
       }
     }
 
