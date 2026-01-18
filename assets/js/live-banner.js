@@ -112,6 +112,8 @@
       labelRow.appendChild(wrap);
 
       labelEl.dataset.stacked = "1";
+      // Slightly shift the LIVE SCORE pill to the right (JS-only; no CSS edits)
+      labelEl.style.paddingLeft = "10px";
     }
 
     // (Blok 2 verwijderd: geen "Laatst Bijgewerkt" badge meer)
@@ -483,16 +485,18 @@
           track.onanimationend = () => {
             marqueeRunning = false;
 
+            // After the text is fully out of view, wait 1s before starting the next cycle.
+            const restartDelayMs = 1000;
+
             // Apply deferred refresh update exactly at cycle boundary (no mid-run visual reset)
             if (pendingLines && Array.isArray(pendingLines) && pendingLines.length) {
               const next = pendingLines;
               pendingLines = null;
-              renderMarquee(next);
+              setTimeout(() => renderMarquee(next), restartDelayMs);
               return;
             }
 
-            // Restart immediately (minimal gap)
-            armStart();
+            setTimeout(() => armStart(), restartDelayMs);
           };
 
           armStart();
