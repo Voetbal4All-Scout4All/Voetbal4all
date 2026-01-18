@@ -427,12 +427,14 @@
           if (!containerW || !textW) return;
 
           // Use fade widths to guarantee clean disappearance behind both edges
-          const pad = 36;
+          // Keep start just behind socials/fade (avoid long blank time before content enters)
+          const pad = 12;
           const startX = containerW + (fades?.rightW || 120) + pad;
           const endX = -textW - (fades?.leftW || 56) - pad;
 
           // Snelheid (px/sec) -> bepaalt leesbaarheid
-          const pxPerSec = 70;
+          // Slightly faster to reduce perceived gaps between cycles
+          const pxPerSec = 85;
           const distance = startX - endX;
           const durationSec = Math.max(14, distance / pxPerSec);
 
@@ -442,12 +444,18 @@
           track.style.setProperty("--live-marquee-end", `${endX}px`);
           track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
 
-          // Forceer dat de track écht “rechts buiten beeld” staat vóór de animatie start
+          // Prevent first-cycle "pop in": hide until positioned offscreen and animation is armed
+          track.style.visibility = "hidden";
           track.style.animation = "none";
           track.style.transform = `translateX(${startX}px)`;
-          void track.offsetHeight;
-          track.style.animation = "";
-          track.style.transform = "";
+          void track.offsetHeight; // force layout so transform applies while hidden
+
+          // Start animation on next frame (still hidden), then reveal
+          requestAnimationFrame(() => {
+            track.style.animation = "";
+            track.style.transform = "";
+            track.style.visibility = "visible";
+          });
 
           marqueeRestartTimer = setTimeout(() => {
             track.style.animation = "none";
