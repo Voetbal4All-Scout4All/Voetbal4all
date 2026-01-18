@@ -388,7 +388,22 @@
           const textW = track.scrollWidth || 0;
           if (!containerW || !textW) return;
 
-          const buffer = 80; // extra ruimte zodat start/einde volledig buiten beeld ligt
+          // Dynamische buffer zodat de tekst ook achter de fade-zone én socials verdwijnt
+          const tickerRect = tickerWrap.getBoundingClientRect();
+
+          // Socials blokkeren rechts een stuk van de zichtbare zone
+          let socialsBlockRight = 0;
+          const socialsEl = banner.querySelector(".live-socials");
+          if (socialsEl) {
+            const socialsRect = socialsEl.getBoundingClientRect();
+            // hoeveel px van de ticker-zone “onder” de socials valt
+            socialsBlockRight = Math.max(0, tickerRect.right - socialsRect.left);
+          }
+
+          // Basisbuffer + extra voor socials + extra “fade” marge
+          const base = Math.round((containerW || 0) * 0.35);
+          const buffer = Math.max(180, Math.min(420, base + socialsBlockRight + 60));
+
           const startX = containerW + buffer;
           const endX = -textW - buffer;
 
@@ -401,10 +416,12 @@
           track.style.setProperty("--live-marquee-end", `${endX}px`);
           track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
 
-          // Force restart animatie (betrouwbaar)
+          // Forceer dat de track écht “rechts buiten beeld” staat vóór de animatie start
           track.style.animation = "none";
+          track.style.transform = `translateX(${startX}px)`;
           void track.offsetHeight;
           track.style.animation = "";
+          track.style.transform = "";
 
           marqueeRestartTimer = setTimeout(() => {
             track.style.animation = "none";
