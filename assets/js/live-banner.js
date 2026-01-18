@@ -134,6 +134,19 @@
       textEl.appendChild(tickerWrap);
     }
 
+    // Ensure ticker area spans the full available width (prevents mask/fade from ending too early)
+    // Some flex/layout combinations can make the ticker shrink to content width.
+    textEl.style.display = "flex";
+    textEl.style.alignItems = "center";
+    textEl.style.flex = "1 1 auto";
+    textEl.style.minWidth = "0";
+
+    tickerWrap.style.display = "block";
+    tickerWrap.style.flex = "1 1 auto";
+    tickerWrap.style.minWidth = "0";
+    tickerWrap.style.width = "100%";
+    tickerWrap.style.maxWidth = "100%";
+
     // Edge fades to ensure the ticker disappears cleanly at both sides
     // (JS-only solution; no CSS edits required)
     let fadeLeft = tickerWrap.querySelector(".v4a-ticker-fade-left");
@@ -409,13 +422,12 @@
           // Ensure fades exist and get widths for correct start/end math
           const fades = ensureTickerFades();
 
-          // Reduce perceived "empty time" between cycles:
-          // start only just behind the right fade (socials), not far beyond it.
-          const pad = 8;
-          const startX = containerW + Math.max(24, Math.round((fades?.rightW || 140) * 0.55)) + pad;
+          // Start fully behind the socials mask (prevents any first-frame visibility)
+          const startPad = 16;
+          const startX = containerW + (fades?.rightW || 140) + startPad;
 
-          // End fully outside left, but do not over-overshoot (overshoot creates long blank time).
-          const endPad = Math.max(60, (fades?.leftW || 10) + 50);
+          // End further left before restart so the text fades much closer to the LIVE SCORE label
+          const endPad = Math.max(140, (fades?.leftW || 10) + 130);
           const endX = -textW - endPad;
 
           // Speed (px/sec)
@@ -434,22 +446,22 @@
           track.style.animationIterationCount = "1";
           track.style.animationFillMode = "forwards";
 
-          // Prevent first-frame "pop-in": keep hidden until positioned offscreen right.
+          // Prevent first-frame "pop-in": keep visible at all times; use opacity-only to avoid Safari visibility pop-in
           const armStart = () => {
             // Put the element offscreen right with animation disabled
             track.style.animation = "none";
             track.style.willChange = "transform";
             track.style.transform = `translate3d(${startX}px, 0, 0)`;
             track.style.opacity = "0";
-            track.style.visibility = "hidden";
+            // Keep visible at all times; use opacity-only to avoid Safari visibility pop-in
+            track.style.visibility = "visible";
             void track.offsetHeight; // commit
 
-            // Start animation next frame; reveal only after the animation is running.
+            // Start animation next frame; reveal only after animation is armed
             requestAnimationFrame(() => {
               track.style.animation = ""; // use CSS animation
               track.style.transform = "";
               requestAnimationFrame(() => {
-                track.style.visibility = "visible";
                 track.style.opacity = "1";
                 marqueeRunning = true;
               });
