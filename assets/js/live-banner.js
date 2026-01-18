@@ -134,8 +134,8 @@
       textEl.appendChild(tickerWrap);
     }
 
-    // Ensure ticker area spans the full available width (prevents mask/fade from ending too early)
-    // Some flex/layout combinations can make the ticker shrink to content width.
+    // Force ticker width: ensure ticker spans the full available width
+    // (prevents the mask/fade from ending too early)
     textEl.style.display = "flex";
     textEl.style.alignItems = "center";
     textEl.style.flex = "1 1 auto";
@@ -173,6 +173,14 @@
       // Left fade must be minimal; otherwise the text disappears too early.
       // Keep it very small so the cut-off happens closer to the LIVE SCORE block.
       const leftW = 10;
+
+      // Extend the ticker container underneath the LIVE SCORE label so the fade starts closer to it.
+      // We do this with a negative margin + equal padding (so visual layout stays the same,
+      // but the mask region starts further left).
+      const labelW = labelEl ? (labelEl.getBoundingClientRect().width || 0) : 0;
+      const overlap = Math.max(0, Math.min(90, Math.round(labelW - 10)));
+      tickerWrap.style.marginLeft = overlap ? `-${overlap}px` : "0px";
+      tickerWrap.style.paddingLeft = overlap ? `${overlap}px` : "0px";
 
       // Mask: transparent edges -> opaque middle. Works in Safari via -webkit-mask.
       const mask = `linear-gradient(to right,
@@ -426,8 +434,9 @@
           const startPad = 16;
           const startX = containerW + (fades?.rightW || 140) + startPad;
 
-          // End further left before restart so the text fades much closer to the LIVE SCORE label
-          const endPad = Math.max(140, (fades?.leftW || 10) + 130);
+          // End further left before restart so the text can travel longer towards the LIVE SCORE label
+          // before fading out.
+          const endPad = Math.max(280, (fades?.leftW || 10) + 260);
           const endX = -textW - endPad;
 
           // Speed (px/sec)
