@@ -150,13 +150,16 @@
       fadeLeft = null;
       fadeRight = null;
 
-      // Dynamic fade widths (right accounts for socials block). We then mirror to the left
-      // so disappearance distance is symmetric, as requested.
+      // Dynamic fade widths (right accounts for socials block).
+      // Left side should fade much later (closer to the LIVE SCORE block),
+      // so keep it small instead of mirroring the (large) socials side.
       const socialsEl = banner.querySelector(".live-socials");
       const socialsW = socialsEl ? (socialsEl.getBoundingClientRect().width || 0) : 0;
 
       const rightW = Math.max(80, Math.min(180, Math.round(socialsW ? socialsW * 0.9 : 120)));
-      const leftW = rightW;
+      // Left side should fade much later (closer to the LIVE SCORE block),
+      // so keep it small instead of mirroring the (large) socials side.
+      const leftW = 44;
 
       // Mask: transparent edges -> opaque middle. Works in Safari via -webkit-mask.
       const mask = `linear-gradient(to right,
@@ -411,9 +414,9 @@
 
           // Use fade widths to guarantee clean disappearance behind both edges
           // Keep start just behind socials/fade (avoid long blank time before content enters)
-          const pad = 6;
+          const pad = 10;
           const startX = containerW + (fades?.rightW || 120) + pad;
-          const endX = -textW - (fades?.leftW || 120) - pad;
+          const endX = -textW - (fades?.leftW || 44) - pad;
 
           // Snelheid (px/sec) -> bepaalt leesbaarheid
           // Faster to reduce perceived gaps between cycles
@@ -427,17 +430,18 @@
           track.style.setProperty("--live-marquee-end", `${endX}px`);
           track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
 
-          // Prevent first-cycle "pop in": hide until positioned offscreen and animation is armed
-          track.style.visibility = "hidden";
+          // Prevent first-cycle "pop in": make the FIRST visible frame already offscreen right.
+          // 1) Place offscreen (behind right mask), with animation disabled.
           track.style.animation = "none";
           track.style.transform = `translateX(${startX}px)`;
-          void track.offsetHeight; // force layout so transform applies while hidden
+          track.style.visibility = "visible";
+          void track.offsetHeight; // force layout so transform is committed before animation starts
 
-          // Start animation on next frame (still hidden), then reveal
+          // 2) Start the CSS animation on the next frame.
+          //    This avoids Safari occasionally showing an in-between frame.
           requestAnimationFrame(() => {
             track.style.animation = "";
             track.style.transform = "";
-            track.style.visibility = "visible";
           });
 
           marqueeRestartTimer = setTimeout(() => {
