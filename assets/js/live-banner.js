@@ -151,15 +151,15 @@
       fadeRight = null;
 
       // Dynamic fade widths (right accounts for socials block).
-      // Left side should fade much later (closer to the LIVE SCORE block)
-      // so keep it small.
+      // Right fade must fully cover the socials block (plus some breathing room)
       const socialsEl = banner.querySelector(".live-socials");
       const socialsW = socialsEl ? (socialsEl.getBoundingClientRect().width || 0) : 0;
 
-      const rightW = Math.max(80, Math.min(220, Math.round(socialsW ? socialsW * 0.95 : 130)));
-      // Left side should fade much later (closer to the LIVE SCORE block)
-      // so keep it small.
-      const leftW = 28;
+      const rightW = Math.max(90, Math.min(200, Math.round(socialsW ? socialsW + 24 : 140)));
+
+      // Left fade must be minimal; otherwise the text disappears too early.
+      // Keep it very small so the cut-off happens closer to the LIVE SCORE block.
+      const leftW = 10;
 
       // Mask: transparent edges -> opaque middle. Works in Safari via -webkit-mask.
       const mask = `linear-gradient(to right,
@@ -354,8 +354,8 @@
       banner.classList.remove("is-marquee");
     }
 
-    // Houd één timer bij om dubbele init te vermijden
-    let marqueeRestartTimer = null;
+    // Marquee state (single source of truth)
+    let marqueeRunning = false;
     let marqueeCycleEndsAt = 0;
     let pendingLines = null;
 
@@ -397,14 +397,8 @@
         .replace(/\[FR\]/gi, flagImg("FR"))
         .replace(/\[[A-Z]{2}\]/g, flagImg("INT"));
 
-      // Clear eventuele vorige restart timer
-      if (marqueeRestartTimer) {
-        clearTimeout(marqueeRestartTimer);
-        marqueeRestartTimer = null;
-      }
-
-      // Ensure fades exist and get the widths for correct start/end math
-      const fades = ensureTickerFades();
+      // Stop any previous running marquee cleanly (we control cycles via animationend)
+      marqueeRunning = false;
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
@@ -412,22 +406,19 @@
           const textW = track.scrollWidth || 0;
           if (!containerW || !textW) return;
 
-          // Start far enough behind the socials mask to avoid any visible first frame,
-          // but not so far that we get long "empty" time.
-          const pad = 18;
-          const startX = containerW + (fades?.rightW || 130) + pad;
+          // Ensure fades exist and get widths for correct start/end math
+          const fades = ensureTickerFades();
 
-          // End later on the left: overshoot more aggressively so the text can travel
-          // closer to the LIVE SCORE block before the cycle restarts.
-          const endOvershoot = Math.max(
-            260,
-            Math.round(containerW * 0.22),
-            (fades?.leftW || 28) + 220
-          );
-          const endX = -textW - endOvershoot;
+          // Reduce perceived "empty time" between cycles:
+          // start only just behind the right fade (socials), not far beyond it.
+          const pad = 8;
+          const startX = containerW + Math.max(24, Math.round((fades?.rightW || 140) * 0.55)) + pad;
 
-          // Snelheid (px/sec) -> bepaalt leesbaarheid
-          // Faster to reduce perceived gaps between cycles
+          // End fully outside left, but do not over-overshoot (overshoot creates long blank time).
+          const endPad = Math.max(60, (fades?.leftW || 10) + 50);
+          const endX = -textW - endPad;
+
+          // Speed (px/sec)
           const pxPerSec = 95;
           const distance = startX - endX;
           const durationSec = Math.max(10, distance / pxPerSec);
@@ -438,48 +429,51 @@
           track.style.setProperty("--live-marquee-end", `${endX}px`);
           track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
 
-          // Prevent first-cycle "pop in": make the FIRST visible frame already offscreen right.
-          // 1) Place offscreen (behind right mask), with animation disabled.
-          track.style.animation = "none";
-          track.style.willChange = "transform";
-          // Force GPU path to reduce Safari intermediate-frame glitches
-          track.style.transform = `translate3d(${startX}px, 0, 0)`;
-          track.style.visibility = "visible";
-          // Keep fully transparent until animation is armed
-          track.style.opacity = "0";
-          void track.offsetHeight; // force layout commit before animation starts
+          // We control the cycle boundary ourselves (no CSS infinite loop)
+          // This removes the long gap and prevents mid-loop resets.
+          track.style.animationIterationCount = "1";
+          track.style.animationFillMode = "forwards";
 
-          // Start animation on next frame, then reveal on the following frame
-          requestAnimationFrame(() => {
-            track.style.animation = "";
-            track.style.transform = "";
-            requestAnimationFrame(() => {
-              track.style.opacity = "1";
-            });
-          });
-
-          marqueeRestartTimer = setTimeout(() => {
-            // Force the first visible frame of the next cycle to be offscreen right
+          // Prevent first-frame "pop-in": keep hidden until positioned offscreen right.
+          const armStart = () => {
+            // Put the element offscreen right with animation disabled
             track.style.animation = "none";
             track.style.willChange = "transform";
             track.style.transform = `translate3d(${startX}px, 0, 0)`;
             track.style.opacity = "0";
-            void track.offsetHeight;
+            track.style.visibility = "hidden";
+            void track.offsetHeight; // commit
+
+            // Start animation next frame; reveal only after the animation is running.
             requestAnimationFrame(() => {
-              track.style.animation = "";
+              track.style.animation = ""; // use CSS animation
               track.style.transform = "";
               requestAnimationFrame(() => {
+                track.style.visibility = "visible";
                 track.style.opacity = "1";
+                marqueeRunning = true;
               });
             });
+          };
 
-            // If refresh fetched new data during the previous run, apply it only at cycle boundary
+          // Ensure we don't stack multiple handlers
+          track.onanimationend = null;
+          track.onanimationend = () => {
+            marqueeRunning = false;
+
+            // Apply deferred refresh update exactly at cycle boundary (no mid-run visual reset)
             if (pendingLines && Array.isArray(pendingLines) && pendingLines.length) {
               const next = pendingLines;
               pendingLines = null;
               renderMarquee(next);
+              return;
             }
-          }, Math.ceil(durationSec * 1000));
+
+            // Restart immediately (minimal gap)
+            armStart();
+          };
+
+          armStart();
         });
       });
 
@@ -491,10 +485,7 @@
         const lines = await fetchFreeLiveLines();
         if (!lines || !lines.length) {
           // Stop marquee state cleanly
-          if (marqueeRestartTimer) {
-            clearTimeout(marqueeRestartTimer);
-            marqueeRestartTimer = null;
-          }
+          marqueeRunning = false;
           pendingLines = null;
           marqueeCycleEndsAt = 0;
 
@@ -504,7 +495,7 @@
 
         // If a marquee cycle is currently running, defer the update to the cycle boundary
         const now = Date.now();
-        if (marqueeRestartTimer && now < marqueeCycleEndsAt - 250) {
+        if (marqueeRunning && now < marqueeCycleEndsAt - 250) {
           pendingLines = lines;
           return;
         }
@@ -512,10 +503,7 @@
         renderMarquee(lines);
       } catch (err) {
         console.warn("Live banner fout:", err);
-        if (marqueeRestartTimer) {
-          clearTimeout(marqueeRestartTimer);
-          marqueeRestartTimer = null;
-        }
+        marqueeRunning = false;
         pendingLines = null;
         marqueeCycleEndsAt = 0;
         renderFallback();
@@ -525,7 +513,7 @@
     // Init
     refresh();
 
-    // Let op: refresh elke minuut is ok, maar marquee restart timer voorkomt “mid-run reset”
+    // Refresh elke 3 minuten; updates worden pas toegepast op cycle-boundary (geen mid-run reset)
     setInterval(refresh, 3 * 60 * 1000);
   }
 
