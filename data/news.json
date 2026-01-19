@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-01-19T13:51:25.251Z",
+  "generatedAt": "2026-01-19T14:32:03.018Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sources: Chelsea hold talks over Jacquet transfer",
-      "link": "https://www.espn.com/soccer/story/_/id/47658976/chelsea-hold-transfer-talks-rennes-jeremy-jacquet-sources",
-      "summary": "Chelsea have held talks with Rennes over a move for defender Jérémy Jacquet, sources have told ESPN.",
-      "publishedAt": "2026-01-19T13:39:00.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Mbappé adviseert kritisch Bernabéu: 'Fluit dan het hele team uit'",
+      "link": "https://www.vi.nl/nieuws/mbappe-adviseert-kritisch-bernabeu-fluit-dan-het-hele-team-uit",
+      "summary": "Kylian Mbappé heeft zich op een bijzondere manier uitgesproken over de aanhoudende fluitconcerten in Estadio Santiago Bernabéu. De superster van Real Madrid ziet dat spelers als Vinícius Junior en Jude Bellingham worden aangepakt door aanwezige fans, daar is de Fransman het niet mee eens.",
+      "publishedAt": "2026-01-19T14:28:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Galatasaray blijft trekken aan Lang, vertrek bij Napoli waarschijnlijk'",
+      "link": "https://www.vi.nl/nieuws/galatasaray-blijft-trekken-aan-lang-vertrek-bij-napoli-waarschijnlijk",
+      "summary": "De tijd van winterse versterkingen is aangebroken, in dit blog volgen we alle transferactiviteit in het buitenland. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-01-19T14:28:00.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +29,54 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Mourinho rejects 'soap opera' links to Madrid job",
-      "link": "https://www.espn.com/soccer/story/_/id/47658816/jose-mourinho-rejects-soap-opera-links-real-madrid-vacancy",
-      "summary": "Benfica coach Jose Mourinho has shut down 'soap opera' rumours of a potential return to Real Madrid this summer.",
-      "publishedAt": "2026-01-19T13:39:00.000Z"
+      "title": "Conte makes subtle dig at Amorim over Højlund",
+      "link": "https://www.espn.com/soccer/story/_/id/47658761/antonio-conte-makes-subtle-dig-ruben-amorim-rasmus-hojlund",
+      "summary": "Napoli head coach Antonio Conte has appeared to aim a dig at former Manchester United head coach Ruben Amorim.",
+      "publishedAt": "2026-01-19T14:12:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Morocco boss: Lengthy wait time 'disturbed' Díaz",
+      "link": "https://www.espn.com/soccer/story/_/id/47658037/brahim-diaz-penalty-miss-morocco-coach-says-lengthy-wait-disturbed-him",
+      "summary": "Walid Regragui has said the lengthy wait time before Morocco's injury-time penalty \"disturbed\" Brahim Díaz and led to him having his panenka effort saved.",
+      "publishedAt": "2026-01-19T14:12:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Mbappé: protect Vini, Jude from Bernabéu whistles",
+      "link": "https://www.espn.com/soccer/story/_/id/47659636/kylian-mbappe-real-madrid-fans-target-team-not-vinicius-jude-bellingham",
+      "summary": "Kylian Mbappé has urged Real Madrid fans to aim criticism at the team, rather than individuals, after Vinícius Júnior and Jude Bellingham were whistled by the Bernabéu crowd on Saturday.",
+      "publishedAt": "2026-01-19T14:12:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Feyenoord-vloek eindelijk verbroken voor Sparta: 'Dit was de mooiste'",
+      "link": "https://www.vi.nl/pro/feyenoord-vloek-eindelijk-verbroken-voor-sparta-dit-was-de-mooiste",
+      "summary": "Op 26 maart 2000 boekte Sparta Rotterdam de laatste zege op Feyenoord in De Kuip. Keer op keer lukte het daarna om uiteenlopende redenen niet, maar zondag werden de Spartanen bevrijd van het fatalisme dat al een eeuwigheid door de aderen stroomt. De vloek van Rotterdam-Zuid is na 26 jaar verbroken.",
+      "publishedAt": "2026-01-19T14:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Transfers PSV: succescoach Onder-19 vertrekt aan einde van het seizoen",
+      "link": "https://www.vi.nl/nieuws/transfers-psv-succescoach-onder-19-vertrekt-aan-einde-van-het-seizoen",
+      "summary": "VI volgt het transfernieuws bij PSV op de voet, zeker nu de winterse transferwindow in aantocht is. De doelwitten van de Eindhovenaren, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
+      "publishedAt": "2026-01-19T13:55:54.000Z"
     },
     {
       "type": "rss",
@@ -33,39 +88,6 @@
       "link": "https://www.vi.nl/nieuws/pec-zwolle-laat-mbayo-gaan-via-huurdeal",
       "summary": "De winterse transfermarkt is geopend. In dit blog vind je alle speculaties en bevestigde transfers in Nederland. Bekijk hier ons blog voor de transferperikelen in het buitenland.",
       "publishedAt": "2026-01-19T13:36:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Max Huiberts: 'Er staan een hoop gegadigden te trappelen'",
-      "link": "https://www.vi.nl/nieuws/max-huiberts-er-staan-een-hoop-gegadigden-te-trappelen",
-      "summary": "De telefoon van Max Huiberts rinkelt maandag onophoudelijk. Trainers en zaakwaarnemers weten de directeur voetbalzaken te vinden, nu hoofdtrainer Maartens Martens de wacht is aangezegd . 'In de voetballerij is het De koning is dood, lang leve de koning ', weet Huiberts uit ervaring. 'Er zijn een hoop gegadigden die staan te trappelen.'",
-      "publishedAt": "2026-01-19T13:29:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ajax heeft Baas terug in Spanje",
-      "link": "https://www.vi.nl/nieuws/ajax-heeft-baas-terug-in-spanje",
-      "summary": "Youri Baas heeft de race tegen de klok gewonnen: de verdediger is inzetbaar voor het Champions League-duel met Villarreal. Ook de net zeventienjarige Abdellah Ouazane zit, voor het eerst, in de wedstrijdselectie van Ajax 1. Dat geldt zoals verwacht nog niet voor Wout Weghorst en Steven Berghuis.",
-      "publishedAt": "2026-01-19T13:22:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Vader en zoon op één veld mogelijk: De Guzmán junior ook naar Sparta",
-      "link": "https://www.vi.nl/nieuws/vader-en-zoon-op-een-veld-mogelijk-de-guzman-junior-van-psv-naar-sparta",
-      "summary": "Sparta Rotterdam heeft de komst van Jaden de Guzmán aangekondigd. De negentienjarige middenvelder komt op huurbasis over van (Jong) PSV en gaat zodoende spelen bij de club waar ook zijn vader Jonathan actief is. Jaden de Guzmán zal in eerste instantie aansluiten bij de beloften.",
-      "publishedAt": "2026-01-19T13:21:00.000Z"
     },
     {
       "type": "rss",
@@ -88,17 +110,6 @@
       "link": "https://www.espn.com/espn/story/_/id/47655996/afcon-2025-final-been-more-embarrassing-african-football",
       "summary": "Fan clashes, VAR controversies, a missed penalty -- the AFCON final had it all. But not in a good way.",
       "publishedAt": "2026-01-19T13:19:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "PSV als vroegste kampioen ooit? Snelheidsrecord ligt eigenlijk in handen van twee clubs",
-      "link": "https://www.vi.nl/nieuws/psv-als-vroegste-kampioen-snelheidsrecord-ligt-eigenlijk-in-handen-van-twee-clubs",
-      "summary": "De plaatjes van een platte kar met winterbanden (soms met, soms zonder sneeuwkettingen) zijn niet aan te slepen nu PSV maar blijft winnen in de Eredivisie en 'concurrenten' op flinke afstand blijven door puntenverlies. Maar komt er echt een Nederlandse titel in recordtempo? VI zet de details op een rijtje.",
-      "publishedAt": "2026-01-19T13:05:00.000Z"
     },
     {
       "type": "rss",
@@ -146,17 +157,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Morocco boss: Lengthy wait time 'disturbed' Díaz",
-      "link": "https://www.espn.com/soccer/story/_/id/47658037/brahim-diaz-penalty-miss-morocco-coach-says-lengthy-wait-disturbed-him",
-      "summary": "Walid Regragui has said the lengthy wait time before Morocco's injury-time penalty \"disturbed\" Brahim Díaz and led to him having his panenka effort saved.",
-      "publishedAt": "2026-01-19T12:32:57.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -196,7 +196,7 @@
       "flag": "🌍",
       "title": "‘Never been more proud of myself’: Van de Donk delights in London City debut",
       "link": "https://www.theguardian.com/football/2026/jan/19/danielle-van-de-donk-london-city-lionesses-debut",
-      "summary": "Dutch player makes long-awaited debut in FA Cup Midfielder has not played since Euro 2025 group stage Daniëlle van de Donk said she had “never been more proud of myself” having recovering from a prolonged knee injury to make her long-awaited debut for London City Lionesses at the weekend, seven months after signing for the club. Van de Donk had not played since starting her country’s final group match against France at Euro 2025 in July, a month after agreeing to join London City, newly-promoted to the Women’s Super League, from OL Lyonnes. The 34-year-old former Arsenal player came on as a second-half substitute in London City’s 1-0 win at Sunderland in the Women’s FA Cup fourth round on Saturday, allowing her to finally put months of frustration behind her. Continue reading...",
+      "summary": "Dutch player makes long-awaited debut in FA Cup Midfielder has not played since Euro 2025 group stage Daniëlle van de Donk said she had “never been more proud of myself” having recovering from a prolonged knee injury to make her long-awaited debut for London City Lionesses at the weekend, seven months after signing for the club. Van de Donk had not played since starting her country’s final group match against France at Euro 2025 in July, a month after agreeing to join London City, newly promoted to the Women’s Super League, from OL Lyonnes. The 34-year-old former Arsenal player came on as a second-half substitute in London City’s 1-0 win at Sunderland in the Women’s FA Cup fourth round on Saturday, allowing her to finally put months of frustration behind her. Continue reading...",
       "publishedAt": "2026-01-19T11:57:42.000Z"
     },
     {
