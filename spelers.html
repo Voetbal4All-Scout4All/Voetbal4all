@@ -200,6 +200,20 @@
                 <p class="note">
                   Elke advertentie kan gedeeld worden via sociale netwerken. De link gaat automatisch naar het juiste profiel.
                 </p>
+                <div class="filter-bar" style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <input id="player-search" class="input" type="search" placeholder="Zoek (bv. keeper, U17, middenvelder…)" style="min-width:220px; flex:1 1 240px;" />
+
+                  <select id="player-country-filter" class="input" style="min-width:180px;">
+                    <option value="">Alle landen</option>
+                    <option value="BE">België</option>
+                    <option value="NL">Nederland</option>
+                  </select>
+
+                  <input id="player-region-filter" class="input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" style="min-width:200px;" />
+
+                  <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                </div>
+                <p class="form-helper" style="margin-top:6px;">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</p>
 
                 <div id="player-ads" class="ad-card-list ad-card-grid">
                   <!-- Voorbeeldadvertentie -->
@@ -349,6 +363,89 @@
     });
   }
   updateShareLinks();
+
+  // --- Zoeken & filteren (land + regio) ---
+  (function initPlayerFilters() {
+    const adsContainer = document.getElementById("player-ads");
+    if (!adsContainer) return;
+
+    const qEl = document.getElementById("player-search");
+    const countryEl = document.getElementById("player-country-filter");
+    const regionEl = document.getElementById("player-region-filter");
+    const clearEl = document.getElementById("player-filter-clear");
+
+    if (!qEl || !countryEl || !regionEl || !clearEl) return;
+
+    function normalize(s) {
+      return String(s || "").toLowerCase().trim();
+    }
+
+    function detectCountryFromCard(card) {
+      // Heuristic: look at the meta line which contains e.g. "🇧🇪 België · Regio Kempen"
+      const meta = card.querySelector(".ad-card-meta")?.textContent || "";
+      const m = meta.toLowerCase();
+      if (m.includes("belgië") || m.includes("belgie") || meta.includes("🇧🇪")) return "BE";
+      if (m.includes("nederland") || meta.includes("🇳🇱")) return "NL";
+      return "";
+    }
+
+    function detectRegionFromCard(card) {
+      // Prefer the country/regio meta if present
+      const meta = card.querySelector(".ad-card-meta")?.textContent || "";
+      // Common pattern: "België · Regio Kempen" or "Nederland · Regio ..."
+      const parts = meta.split("·").map(p => p.trim());
+      if (parts.length >= 2) return parts.slice(1).join(" · ");
+
+      // Fallback: try body line containing "Regio:"
+      const body = card.querySelector(".ad-card-body")?.textContent || "";
+      const idx = body.toLowerCase().indexOf("regio");
+      return idx >= 0 ? body.slice(idx, idx + 120) : "";
+    }
+
+    function cardText(card) {
+      return normalize(card.textContent);
+    }
+
+    function applyFilters() {
+      const q = normalize(qEl.value);
+      const country = (countryEl.value || "").toUpperCase();
+      const regionQ = normalize(regionEl.value);
+
+      const cards = Array.from(adsContainer.querySelectorAll(".ad-card"));
+      cards.forEach(card => {
+        const textOk = !q || cardText(card).includes(q);
+
+        const c = detectCountryFromCard(card);
+        const countryOk = !country || c === country;
+
+        const region = normalize(detectRegionFromCard(card));
+        const regionOk = !regionQ || region.includes(regionQ);
+
+        card.style.display = (textOk && countryOk && regionOk) ? "" : "none";
+      });
+    }
+
+    // Debounce typing
+    let t = null;
+    function schedule() {
+      if (t) clearTimeout(t);
+      t = setTimeout(applyFilters, 80);
+    }
+
+    qEl.addEventListener("input", schedule);
+    regionEl.addEventListener("input", schedule);
+    countryEl.addEventListener("change", applyFilters);
+
+    clearEl.addEventListener("click", () => {
+      qEl.value = "";
+      regionEl.value = "";
+      countryEl.value = "";
+      applyFilters();
+    });
+
+    // Apply once on load
+    applyFilters();
+  })();
 </script>
 
 <script src="assets/js/nav-active.js" defer></script>
