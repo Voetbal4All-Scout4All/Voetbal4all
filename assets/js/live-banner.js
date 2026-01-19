@@ -67,7 +67,7 @@
     });
 
     /* =========================================================
-       1) LIVE RESULTATEN terug op 2 regels (zonder HTML aan te passen)
+       1) Live score terug op 2 regels (zonder HTML aan te passen)
           + Zorg dat dot naast tekst staat (niet erboven)
     ========================================================= */
     if (!labelEl.dataset.stacked) {
@@ -112,7 +112,7 @@
       labelRow.appendChild(wrap);
 
       labelEl.dataset.stacked = "1";
-      // Slightly shift the LIVE SCORE pill to the right (JS-only; no CSS edits)
+      // Slightly shift the Live score pill to the right (JS-only; no CSS edits)
       labelEl.style.paddingLeft = "10px";
     }
 
@@ -173,14 +173,14 @@
       const rightW = Math.max(90, Math.min(200, Math.round(socialsW ? socialsW + 24 : 140)));
 
       // Left fade must be minimal; otherwise the text disappears too early.
-      // Keep it even smaller so the cut-off happens even closer to the LIVE SCORE block.
+      // Keep it even smaller so the cut-off happens even closer to the Live score block.
       const leftW = 2;
 
-      // Extend the ticker container underneath the LIVE SCORE label so the fade starts closer to it.
+      // Extend the ticker container underneath the Live score label so the fade starts closer to it.
       // We do this with a negative margin + equal padding (so visual layout stays the same,
       // but the mask region starts further left).
       const labelW = labelEl ? (labelEl.getBoundingClientRect().width || 0) : 0;
-      // Extend much further under the label. Higher cap + offset so the fade reaches very close to "LIVE SCORE".
+      // Extend much further under the label. Higher cap + offset so the fade reaches very close to "Live score".
       const overlap = Math.max(0, Math.min(340, Math.round(labelW + 160)));
       tickerWrap.style.marginLeft = overlap ? `-${overlap}px` : "0px";
       tickerWrap.style.paddingLeft = overlap ? `${overlap}px` : "0px";
@@ -437,7 +437,7 @@
           const startPad = 16;
           const startX = containerW + (fades?.rightW || 140) + startPad;
 
-          // End much further left before restart so the text can travel even closer to the LIVE SCORE label
+          // End much further left before restart so the text can travel even closer to the Live score label
           // before fading out.
           const endPad = Math.max(820, (fades?.leftW || 2) + 800);
           const endX = -textW - endPad;
