@@ -173,9 +173,11 @@
             Contactgegevens van clubs kunnen verborgen blijven in de advertentie; reacties verlopen via Voetbal4All.
           </p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
-            <a class="btn-ghost-sm" href="aanmelden.html">Profiel / vacature aanmelden</a>
-            <a class="btn-ghost-sm" href="#vacancy-form">Nieuwe clubvacature</a>
+            <a class="btn-ghost-sm" href="aanmelden.html">Vacature of profiel aanmelden</a>
           </div>
+          <p class="form-helper" style="margin-top:8px;">
+            Vacatures worden centraal ingediend via <a href="aanmelden.html">Vacature of profiel aanmelden</a>. Deze pagina toont het overzicht.
+          </p>
         </article>
 
         <!-- GRID: LINKS FORMULIER + OVERZICHT · RECHTS INFO / ADS -->
@@ -214,87 +216,7 @@
               </div>
             </div>
 
-            <!-- FORMULIER: NIEUWE CLUBVACATURE -->
-            <div class="form-card form-card--compact" id="vacancy-form">
-              <h2 class="form-title">Nieuwe clubvacature</h2>
-              <p class="form-sub">
-                Velden met <strong>*</strong> zijn verplicht. Het e-mailadres van de club wordt niet getoond in de advertentie.
-              </p>
-
-              <form id="vacancy-form">
-                <div class="form-grid form-grid--2cols">
-
-                  <div class="form-field">
-                    <label class="form-label" for="vacancy-club">Clubnaam <span class="required">*</span></label>
-                    <input id="vacancy-club" type="text" class="form-input" placeholder="Bv. K. ASV Geel" required />
-                    <div class="form-helper">Deze naam wordt getoond in de advertentie.</div>
-                  </div>
-
-                  <div class="form-field">
-                    <label class="form-label" for="vacancy-contact">Contactpersoon <span class="required">(optioneel)</span></label>
-                    <input id="vacancy-contact" type="text" class="form-input" placeholder="Naam contactpersoon" />
-                    <div class="form-helper">
-                      <label><input type="checkbox" id="vacancy-hide-contact" checked /> Naam niet tonen in de advertentie</label>
-                    </div>
-                  </div>
-
-                  <div class="form-field" style="grid-column:1/-1;">
-                    <label class="form-label" for="vacancy-email">E-mailadres club <span class="required">*</span></label>
-                    <input id="vacancy-email" type="email" class="form-input" placeholder="club@email.be" required />
-                    <div class="form-helper">Nodig om reacties door te sturen. Dit adres wordt <strong>niet</strong> publiek getoond.</div>
-                  </div>
-
-                  <div class="form-field">
-                    <span class="form-label">Land <span class="required">*</span></span>
-                    <div class="form-checkbox-row">
-                      <label class="flag-label"><input type="radio" name="vacancy-country" value="BE" id="vacancy-country-be" required /> <span>🇧🇪 België</span></label>
-                      <label class="flag-label"><input type="radio" name="vacancy-country" value="NL" id="vacancy-country-nl" /> <span>🇳🇱 Nederland</span></label>
-                    </div>
-                    <div class="form-helper">Regio’s en niveaus passen zich aan per land.</div>
-                  </div>
-
-                  <div class="form-field">
-                    <span class="form-label">Regio <span class="required">*</span></span>
-                    <div id="vacancy-region-wrapper" class="form-checkbox-row"></div>
-                    <div class="form-helper">Eén of meerdere regio’s waarin de vacature geldt.</div>
-                  </div>
-
-                  <div class="form-field" style="grid-column:1/-1;">
-                    <span class="form-label">Type vacature <span class="required">*</span></span>
-                    <div id="vacancy-type-wrapper" class="form-checkbox-row">
-                      <label class="pill-checkbox"><input type="checkbox" value="Trainer" /> Trainer</label>
-                      <label class="pill-checkbox"><input type="checkbox" value="Speler" /> Speler</label>
-                      <label class="pill-checkbox"><input type="checkbox" value="Coördinator" /> (Jeugd)coördinator / TVJO</label>
-                      <label class="pill-checkbox"><input type="checkbox" value="Vrijwilliger" /> Vrijwilliger</label>
-                      <label class="pill-checkbox"><input type="checkbox" value="Bestuur" /> Bestuurslid / ondersteuning</label>
-                    </div>
-                    <div class="form-helper">Meerdere types mogelijk, bv. trainer én coördinator.</div>
-                  </div>
-
-                  <div class="form-field" style="grid-column:1/-1;">
-                    <span class="form-label">Niveau <span class="required">*</span></span>
-                    <div id="vacancy-level-wrapper" class="form-checkbox-row"></div>
-                    <div class="form-helper">Bv. Gewestelijk, Provinciaal, Interprovinciaal, Elite of Nederlandse niveaus.</div>
-                  </div>
-
-                  <div class="form-field" style="grid-column:1/-1;">
-                    <label class="form-label" for="vacancy-team">Ploeg / doelgroep <span class="required">*</span></label>
-                    <input id="vacancy-team" type="text" class="form-input" placeholder="Bv. U13, 1e ploeg heren, dames A" required />
-                  </div>
-
-                  <div class="form-field" style="grid-column:1/-1;">
-                    <label class="form-label" for="vacancy-description">Korte beschrijving / profiel</label>
-                    <textarea id="vacancy-description" class="form-textarea" placeholder="Omschrijf kort de functie, verwachtingen, trainingsmomenten, vergoeding, ..."></textarea>
-                  </div>
-
-                </div>
-
-                <div class="form-actions">
-                  <button type="submit" class="btn-primary">Vacature plaatsen (demo)</button>
-                  <span class="form-helper">In deze demo wordt je vacature onderaan op deze pagina toegevoegd (nog geen permanente opslag).</span>
-                </div>
-              </form>
-            </div>
+            <!-- OVERZICHT -->
 
             <!-- OVERZICHT -->
             <section class="section-main" style="padding-top:10px;">
@@ -433,129 +355,6 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  const VACANCY_REGIONS = {
-    BE: ["Antwerpen", "Limburg", "Vlaams-Brabant", "Oost-Vlaanderen", "West-Vlaanderen", "Brussel"],
-    NL: ["Noord-Brabant", "Limburg (NL)", "Gelderland", "Noord-Holland", "Zuid-Holland", "Overijssel", "Utrecht"]
-  };
-
-  const VACANCY_LEVELS = {
-    BE: ["Gewestelijk", "Provinciaal", "Interprovinciaal", "Elite"],
-    NL: ["Recreatief", "4e klasse", "3e klasse", "2e klasse", "1e klasse", "Hoofdklasse", "Divisie"]
-  };
-
-  function renderPillCheckboxes(wrapperId, items, namePrefix) {
-    const wrapper = document.getElementById(wrapperId);
-    wrapper.innerHTML = "";
-    items.forEach((item, index) => {
-      const id = `${namePrefix}-${index}`;
-      const label = document.createElement("label");
-      label.className = "pill-checkbox";
-      label.innerHTML = `<input type="checkbox" id="${id}" value="${item}"> ${item}`;
-      wrapper.appendChild(label);
-    });
-  }
-
-  function updateVacancyFields(country) {
-    if (!country) return;
-    renderPillCheckboxes("vacancy-region-wrapper", VACANCY_REGIONS[country], "vacancy-region");
-    renderPillCheckboxes("vacancy-level-wrapper", VACANCY_LEVELS[country], "vacancy-level");
-  }
-
-  document.getElementById("vacancy-country-be").addEventListener("change", e => {
-    if (e.target.checked) updateVacancyFields("BE");
-  });
-  document.getElementById("vacancy-country-nl").addEventListener("change", e => {
-    if (e.target.checked) updateVacancyFields("NL");
-  });
-
-  const vacancyAdsContainer = document.getElementById("vacancy-ads");
-  let nextVacancyAdId = 2;
-
-  function addVacancyAd(ad) {
-    const idAttr = `vacancy-ad-${ad.id}`;
-    const card = document.createElement("article");
-    card.className = "ad-card";
-    card.id = idAttr;
-    card.dataset.adId = ad.id;
-    card.dataset.country = ad.country;
-    card.dataset.types = ad.types.join("|");
-    card.dataset.levels = ad.levels.join("|");
-    card.dataset.regions = ad.regions.join("|");
-
-    const flag = ad.country === "BE" ? "🇧🇪" : "🇳🇱";
-    const displayContact = ad.anonymousContact || !ad.contact ? "" : ad.contact;
-
-    card.innerHTML = `
-      <div class="ad-card-header">
-        <div>
-          <div class="ad-card-title">${ad.club}</div>
-          <div class="ad-card-meta">${flag} ${ad.countryLabel} · ${ad.regions.join(", ")}</div>
-        </div>
-        <div class="ad-card-meta">${ad.types.join(", ")} · ${ad.levels.join(", ")}</div>
-      </div>
-      <div class="ad-card-body">
-        <strong>Ploeg / doelgroep:</strong> ${ad.team}<br />
-        ${displayContact ? `<strong>Contactpersoon:</strong> ${displayContact}<br />` : ``}
-        <br />
-        ${ad.description ? ad.description : ""}
-      </div>
-      <div class="ad-card-actions">
-        <button type="button" class="btn-ghost-sm" data-reply-vacancy="${ad.id}">Reageer op vacature</button>
-        <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="${ad.id}">Delen</a>
-      </div>
-    `;
-
-    vacancyAdsContainer.prepend(card);
-    updateVacancyShareLinks();
-  }
-
-  document.getElementById("vacancy-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const club = document.getElementById("vacancy-club").value.trim();
-    const contact = document.getElementById("vacancy-contact").value.trim();
-    const email = document.getElementById("vacancy-email").value.trim();
-    const anonymousContact = document.getElementById("vacancy-hide-contact").checked;
-    const team = document.getElementById("vacancy-team").value.trim();
-    const description = document.getElementById("vacancy-description").value.trim();
-
-    if (!club) return alert("Clubnaam is verplicht.");
-    if (!email) return alert("E-mailadres van de club is verplicht.");
-    if (!team) return alert("Ploeg / doelgroep is verplicht.");
-
-    const countryInput = document.querySelector("input[name='vacancy-country']:checked");
-    if (!countryInput) return alert("Kies een land.");
-    const country = countryInput.value;
-    const countryLabel = country === "BE" ? "België" : "Nederland";
-
-    const regions = Array.from(document.querySelectorAll("#vacancy-region-wrapper input:checked")).map(i => i.value);
-    if (!regions.length) return alert("Kies minstens één regio.");
-
-    const types = Array.from(document.querySelectorAll("#vacancy-type-wrapper input:checked")).map(i => i.value);
-    if (!types.length) return alert("Kies minstens één type vacature.");
-
-    const levels = Array.from(document.querySelectorAll("#vacancy-level-wrapper input:checked")).map(i => i.value);
-    if (!levels.length) return alert("Kies minstens één niveau.");
-
-    addVacancyAd({
-      id: nextVacancyAdId++,
-      club,
-      contact,
-      anonymousContact,
-      email,
-      country,
-      countryLabel,
-      regions,
-      types,
-      levels,
-      team,
-      description
-    });
-
-    e.target.reset();
-    document.getElementById("vacancy-hide-contact").checked = true;
-    alert("Demo: je clubvacature is toegevoegd (nog geen permanente opslag).");
-  });
 
   document.addEventListener("click", function (e) {
     const btn = e.target.closest("[data-reply-vacancy]");
