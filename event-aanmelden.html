@@ -401,6 +401,8 @@
                 <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;">
                   <button type="submit" class="btn-ghost-sm" style="color:#fff;">Verstuur aanvraag</button>
                   <span id="eventSubmitHint" class="note" style="opacity:.85;"></span>
+                  <div id="formError" class="note" style="display:none;opacity:1;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,80,80,.35);background:rgba(120,20,20,.25);width:100%;"></div>
+                  <div id="formSuccess" class="note" style="display:none;opacity:1;padding:10px 12px;border-radius:12px;border:1px solid rgba(60,200,120,.25);background:rgba(20,80,40,.18);width:100%;"></div>
                 </div>
               </form>
             </div>
@@ -917,18 +919,52 @@
 
       if (hint) hint.textContent = 'Aanvraag wordt verstuurd…';
 
+      const errBox = document.getElementById('formError');
+      const okBox = document.getElementById('formSuccess');
+      if (errBox) { errBox.style.display = 'none'; errBox.textContent = ''; }
+      if (okBox) { okBox.style.display = 'none'; okBox.textContent = ''; }
+
       try {
         const res = await fetch(SUBMIT_ENDPOINT, { method: 'POST', body: fd });
+
+        // Read response safely (prefer JSON)
         let json = null;
-        try { json = await res.json(); } catch (_) {}
+        let rawText = '';
+        const ct = String(res.headers.get('content-type') || '').toLowerCase();
+        if (ct.includes('application/json')) {
+          try { json = await res.json(); } catch (_) {}
+        }
+        if (!json) {
+          try { rawText = await res.text(); } catch (_) {}
+          try { json = rawText ? JSON.parse(rawText) : null; } catch (_) {}
+        }
 
         if (!res.ok || (json && json.ok === false)) {
-          const msg = (json && (json.error || json.message)) ? (json.error || json.message) : `HTTP ${res.status}`;
-          throw new Error(msg);
+          const msg = (json && (json.error || json.message))
+            ? String(json.error || json.message)
+            : (rawText ? rawText : `Verzenden mislukt (HTTP ${res.status}).`);
+
+          if (errBox) {
+            errBox.textContent = msg;
+            errBox.style.display = 'block';
+          }
+          if (hint) hint.textContent = '';
+          return;
         }
 
         const sid = (json && (json.id || json.submissionId)) ? String(json.id || json.submissionId) : '';
-        if (!sid) throw new Error('Geen submission ID ontvangen');
+        if (!sid) {
+          const msg = 'Geen submission ID ontvangen.';
+          if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
+          if (hint) hint.textContent = '';
+          return;
+        }
+
+        // Optional: show immediate success feedback (before redirect)
+        if (okBox) {
+          okBox.textContent = 'Bedankt. Je aanvraag is goed ontvangen.';
+          okBox.style.display = 'block';
+        }
 
         // Premium: first send user to Stripe Checkout, then Stripe returns to bedankt.html (success_url)
         if (premiumEnabled) {
@@ -954,7 +990,10 @@
           };
 
           if (!Number.isFinite(checkoutPayload.price_eur) || checkoutPayload.price_eur <= 0) {
-            throw new Error('Ongeldige premiumprijs. Kies een periode.');
+            const msg = 'Ongeldige premiumprijs. Kies een periode.';
+            if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
+            if (hint) hint.textContent = '';
+            return;
           }
 
           const cr = await fetch(CHECKOUT_ENDPOINT, {
@@ -964,15 +1003,32 @@
           });
 
           let cj = null;
-          try { cj = await cr.json(); } catch (_) {}
+          let cText = '';
+          const cct = String(cr.headers.get('content-type') || '').toLowerCase();
+          if (cct.includes('application/json')) {
+            try { cj = await cr.json(); } catch (_) {}
+          }
+          if (!cj) {
+            try { cText = await cr.text(); } catch (_) {}
+            try { cj = cText ? JSON.parse(cText) : null; } catch (_) {}
+          }
 
           if (!cr.ok || (cj && cj.ok === false)) {
-            const msg = (cj && (cj.error || cj.message)) ? (cj.error || cj.message) : `HTTP ${cr.status}`;
-            throw new Error(msg);
+            const msg = (cj && (cj.error || cj.message))
+              ? String(cj.error || cj.message)
+              : (cText ? cText : `Betaling starten mislukt (HTTP ${cr.status}).`);
+            if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
+            if (hint) hint.textContent = '';
+            return;
           }
 
           const url = (cj && (cj.url || cj.checkoutUrl || cj.sessionUrl)) ? String(cj.url || cj.checkoutUrl || cj.sessionUrl) : '';
-          if (!url) throw new Error('Geen Stripe Checkout URL ontvangen');
+          if (!url) {
+            const msg = 'Geen Stripe Checkout URL ontvangen.';
+            if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
+            if (hint) hint.textContent = '';
+            return;
+          }
 
           window.location.href = url;
           return;
@@ -984,8 +1040,14 @@
         const whatText = `Event aanvraag: ${category} · ${type}`;
         window.location.href = `${THANKYOU_URL}?source=event&what=${encodeURIComponent(whatText)}&id=${encodeURIComponent(sid)}&name=${encodeURIComponent(whoName)}&email=${encodeURIComponent(whoEmail)}&status=${encodeURIComponent('Ontvangen')}`;
         return;
+
       } catch (err) {
-        if (hint) hint.textContent = 'Verzenden is momenteel niet beschikbaar. Probeer later opnieuw of neem contact op via de contactpagina.';
+        const msg = (err && err.message) ? String(err.message) : 'Verzenden is momenteel niet beschikbaar. Probeer later opnieuw.';
+        if (errBox) {
+          errBox.textContent = msg;
+          errBox.style.display = 'block';
+        }
+        if (hint) hint.textContent = '';
         return;
       }
     });
