@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-01-20T13:52:45.340Z",
+  "generatedAt": "2026-01-20T14:35:42.431Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Kassa rinkelt in Nijmegen: Shiogai vertrekt naar Wolfsburg",
+      "link": "https://www.vi.nl/nieuws/shiogai-verlaat-nec-definitief-voor-vfl-wolfsburg",
+      "summary": "NEC neemt per direct afscheid van Kento Shiogai. De Japanner verkast naar VfL Wolfsburg in de Bundesliga.",
+      "publishedAt": "2026-01-20T14:07:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "De miljoenen blijven binnenstromen bij NEC",
+      "link": "https://www.vi.nl/pro/de-miljoenen-blijven-binnenstromen-bij-nec",
+      "summary": "Voor de vierde keer dit seizoen doet NEC een miljoenentransfer. De Nijmeegse club casht met de verkoop van Kento Shiogai, die voor tien miljoen euro verhuist naar VfL Wolfsburg. Over hoe NEC met twee pijlers successen boekt.",
+      "publishedAt": "2026-01-20T14:04:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Monaco's Balogun: Playing Real Madrid 'a dream'",
+      "link": "https://www.espn.com/soccer/story/_/id/47662176/usa-monaco-striker-folarin-balogun-playing-real-madrid-dream",
+      "summary": "United States men's national team and Monaco striker Folarin Balogun told ESPN he will achieve one of his dreams on Tuesday when the Ligue 1 club face Real Madrid at the Bernabéu in the Champions League.",
+      "publishedAt": "2026-01-20T13:51:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: Arsenal's Nwaneri set for Marseille loan",
+      "link": "https://www.espn.com/soccer/story/_/id/47669468/arsenal-ethan-nwaneri-chased-marseille-crystal-palace-others-loan-move-sources",
+      "summary": "Marseille are one of several clubs exploring a loan move for Arsenal midfielder Ethan Nwaneri, sources have told ESPN.",
+      "publishedAt": "2026-01-20T13:51:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Source: Sporting KC majority stake sold at $700M",
+      "link": "https://www.espn.com/soccer/story/_/id/47663817/sporting-kc-majority-stake-sold-700m-valuation",
+      "summary": "A minority owner in MLS side Sporting Kansas City has completed a deal to purchase a majority stake in the club from its current owners, a source confirmed to ESPN.",
+      "publishedAt": "2026-01-20T13:51:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "PSG boss, Sergio Ramos defend Díaz AFCON pen",
+      "link": "https://www.espn.com/soccer/story/_/id/47670069/psg-boss-sergio-ramos-defend-brahim-diaz-afcon-penalty-not-bad-person",
+      "summary": "Luis Enrique has said Brahim Diaz is \"neither an assassin nor a bad person\" after his failure to convert a penalty in Morocco's AFCON final defeat.",
+      "publishedAt": "2026-01-20T13:51:21.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -36,50 +102,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Monaco's Balogun: Playing Real Madrid 'a dream'",
-      "link": "https://www.espn.com/soccer/story/_/id/47662176/usa-monaco-striker-folarin-balogun-playing-real-madrid-dream",
-      "summary": "United States men's national team and Monaco striker Folarin Balogun told ESPN he will achieve one of his dreams on Tuesday when the Ligue 1 club face Real Madrid at the Bernabéu in the Champions League.",
-      "publishedAt": "2026-01-20T13:22:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Source: Sporting KC majority stake sold at $700M",
-      "link": "https://www.espn.com/soccer/story/_/id/47663817/sporting-kc-majority-stake-sold-700m-valuation",
-      "summary": "A minority owner in MLS side Sporting Kansas City has completed a deal to purchase a majority stake in the club from its current owners, a source confirmed to ESPN.",
-      "publishedAt": "2026-01-20T13:22:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "PSG boss, Sergio Ramos defend Díaz AFCON pen",
-      "link": "https://www.espn.com/soccer/story/_/id/47670069/psg-boss-sergio-ramos-defend-brahim-diaz-afcon-penalty-not-bad-person",
-      "summary": "Luis Enrique has said Brahim Diaz is \"neither an assassin nor a bad person\" after his failure to convert a penalty in Morocco's AFCON final defeat.",
-      "publishedAt": "2026-01-20T13:22:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sources: Marseille chase Arsenal teen Nwaneri",
-      "link": "https://www.espn.com/soccer/story/_/id/47669468/arsenal-ethan-nwaneri-chased-marseille-crystal-palace-others-loan-move-sources",
-      "summary": "Marseille are one of several clubs exploring a loan move for Arsenal midfielder Ethan Nwaneri, sources have told ESPN.",
-      "publishedAt": "2026-01-20T13:21:59.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -88,17 +110,6 @@
       "link": "https://www.skysports.com/football/news/12040/13496597/patrick-bamford-interview-striker-on-extending-stay-at-sheffield-united-recent-form-and-being-out-of-the-game",
       "summary": "\"When you’re not playing football, life feels a bit out of sync.\"",
       "publishedAt": "2026-01-20T13:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Sparta breidt Noorse enclave uit met jonge middenvelder",
-      "link": "https://www.vi.nl/nieuws/sparta-breidt-noorse-enclave-uit",
-      "summary": "Sparta Rotterdam voegt na Tobias Lauritsen en Joshua Kitolano een derde Noor toe aan de selectie. Alwande Roaldsøy komt per direct over van Molde FK. Hij tekent tot medio 2030 op Het Kasteel.",
-      "publishedAt": "2026-01-20T13:18:09.000Z"
     },
     {
       "type": "rss",
@@ -121,17 +132,6 @@
       "link": "https://www.espn.com/soccer/story/_/id/47589924/usmnt-2026-world-cup-big-board-4-mauricio-pochettino-roster-coming-focus",
       "summary": "We're less than five months away from the USMNT's World Cup opener, and with the clock ticking down, Mauricio Pochettino's squad is coming into focus.",
       "publishedAt": "2026-01-20T13:13:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Wintertransfers Eredivisie seizoen 2025/26: alle clubs op een rij",
-      "link": "https://www.vi.nl/nieuws/wintertransfers-eredivisie-seizoen-2025-26-alle-clubs-op-een-rij",
-      "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde, door clubs bevestigde, wintertransfers van de achttien Eredivisie-clubs. Clubs in Nederland kunnen tot en met 2 februari spelers aantrekken .",
-      "publishedAt": "2026-01-20T13:08:02.000Z"
     },
     {
       "type": "rss",
@@ -194,7 +194,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Gray returns for Scotland as Townsend names Six Nations squad",
+      "title": "Gray, Cherry return for Scotland as Townsend names Six Nations squad",
       "link": "https://www.skysports.com/rugby-union/news/12040/13496591/scotland-six-nations-squad-jonny-gray-among-gregor-townsends-40-selections",
       "summary": "Scotland head coach Gregor Townsend has recalled second row Jonny Gray and hooker Dave Cherry into his 40-man squad for the 2026 Six Nations.",
       "publishedAt": "2026-01-20T12:05:00.000Z"
