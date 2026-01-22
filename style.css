@@ -2238,3 +2238,73 @@ img {
     transparent 100%
   );
 }
+
+/* =======================
+   BEDANKT PAGINA – UX POLISH
+   - success / warning / error notices
+   - rustige hiërarchie
+   - geen impact op andere pagina’s
+   ======================= */
+
+.thanks-card{
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtiele ‘status glow’ op de card (alleen bedankt pagina) */
+.thanks-card::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  border-radius: calc(var(--radius-lg) + 2px);
+  background: radial-gradient(circle at top left, rgba(0,255,157,0.12), transparent 55%);
+  opacity: 0.75;
+}
+
+/* Badge (als aanwezig) */
+.thanks-card .pill-small,
+.thanks-card #thanksBadge{
+  border-color: rgba(0, 255, 157, 0.28);
+  color: rgba(180, 255, 230, 0.9);
+  background: rgba(0, 255, 157, 0.06);
+}
+
+/* Notices – gedeelde basis */
+.thanks-card .notice{
+  margin-top: 12px;
+  border-radius: 14px;
+  padding: 14px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(2, 3, 8, 0.55);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+.thanks-card .notice strong{
+  letter-spacing: 0.01em;
+}
+
+/* Warning (non-premium pending) */
+.thanks-card .notice-warning{
+  border-color: rgba(255,183,77,.35);
+  background: rgba(255,183,77,.08);
+}
+
+/* Danger (rejected/failed) */
+.thanks-card .notice-danger{
+  border-color: rgba(255, 51, 102, 0.55);
+  background:
+    radial-gradient(circle at left, rgba(255, 51, 102, 0.14), transparent 55%),
+    rgba(12, 6, 10, 0.75);
+}
+
+/* CTA binnen error notice: net iets compacter */
+.thanks-card .notice-danger .nav-cta{
+  box-shadow: 0 12px 26px rgba(255, 51, 102, 0.18);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Success icon (als aanwezig via #thanksIcon) */
+.thanks-card #thanksIcon{
+  filter: drop-shadow(0 0 10px rgba(0,255,157,0.25));
+}
