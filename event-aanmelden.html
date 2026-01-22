@@ -940,23 +940,25 @@
         }
 
         if (!res.ok || (json && json.ok === false)) {
-          const msg = (json && (json.error || json.message))
-            ? String(json.error || json.message)
-            : (rawText ? rawText : `Verzenden mislukt (HTTP ${res.status}).`);
+          // Prefer a user-friendly message when provided by the backend
+          const backendMsg = (json && (json.userMessage || json.message || json.error))
+            ? String(json.userMessage || json.message || json.error)
+            : (rawText ? String(rawText) : 'Uw aanvraag kon niet verwerkt worden.');
 
-          if (errBox) {
-            errBox.textContent = msg;
-            errBox.style.display = 'block';
-          }
-          if (hint) hint.textContent = '';
+          const reason = backendMsg
+            .replace(/\s+/g, ' ')
+            .trim()
+            || 'Uw aanvraag kon niet verwerkt worden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
+
+          // Redirect to thank-you page that shows the reason + contact option (no technical jargon)
+          window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
           return;
         }
 
         const sid = (json && (json.id || json.submissionId)) ? String(json.id || json.submissionId) : '';
         if (!sid) {
-          const msg = 'Geen submission ID ontvangen.';
-          if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
-          if (hint) hint.textContent = '';
+          const reason = 'Uw aanvraag is ontvangen, maar kon niet correct verwerkt worden. Probeer opnieuw of contacteer ons via het contactformulier.';
+          window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
           return;
         }
 
@@ -1017,11 +1019,16 @@
           }
 
           if (!cr.ok || (cj && cj.ok === false)) {
-            const msg = (cj && (cj.error || cj.message))
-              ? String(cj.error || cj.message)
-              : (cText ? cText : `Betaling starten mislukt (HTTP ${cr.status}).`);
-            if (errBox) { errBox.textContent = msg; errBox.style.display = 'block'; }
-            if (hint) hint.textContent = '';
+            const backendMsg = (cj && (cj.userMessage || cj.message || cj.error))
+              ? String(cj.userMessage || cj.message || cj.error)
+              : (cText ? String(cText) : 'De betaling kon niet gestart worden.');
+
+            const reason = backendMsg
+              .replace(/\s+/g, ' ')
+              .trim()
+              || 'De betaling kon niet gestart worden. Probeer opnieuw of contacteer ons via het contactformulier.';
+
+            window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
             return;
           }
 
@@ -1042,12 +1049,9 @@
         return;
 
       } catch (err) {
-        const msg = (err && err.message) ? String(err.message) : 'Verzenden is momenteel niet beschikbaar. Probeer later opnieuw.';
-        if (errBox) {
-          errBox.textContent = msg;
-          errBox.style.display = 'block';
-        }
-        if (hint) hint.textContent = '';
+        const msg = (err && err.message) ? String(err.message) : 'Verzenden is momenteel niet beschikbaar.';
+        const reason = (msg || '').replace(/\s+/g, ' ').trim() || 'Verzenden is momenteel niet beschikbaar.';
+        window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
         return;
       }
     });
