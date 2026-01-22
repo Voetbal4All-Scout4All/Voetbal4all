@@ -235,6 +235,13 @@
             <img class="thanks-logo-img" src="assets/img/brand/logo-voetbal4all_Bedankt_transparent.png" alt="Voetbal4All" loading="eager" decoding="async">
           </div>
 
+          <!-- Success checkmark animation (shown on success, hidden on error) -->
+          <div id="thanksIcon" class="thanks-icon" aria-hidden="true" style="display:none;">
+            <svg class="checkmark" viewBox="0 0 52 52" role="img" aria-label="Succes">
+              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"></circle>
+              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+            </svg>
+          </div>
           <div class="card-title" id="thanksTitle">Bedankt</div>
           <p class="note thanks-subtitle" id="thanksSubtitle">
             We hebben je aanvraag goed ontvangen. Hieronder vind je een overzicht.
@@ -403,6 +410,20 @@
 
     const statusLower = String(status).toLowerCase();
     const isError = errorFlag === '1' || statusLower === 'error' || statusLower === 'failed' || statusLower === 'mislukt';
+
+    // Success checkmark animation: show only on success (hide on error)
+    const iconWrap = document.getElementById('thanksIcon');
+    if (iconWrap) {
+      if (isError) {
+        iconWrap.style.display = 'none';
+      } else {
+        iconWrap.style.display = '';
+        // restart animation when navigating to this page (works on repeat visits)
+        iconWrap.classList.remove('is-animate');
+        void iconWrap.offsetWidth; // reflow
+        iconWrap.classList.add('is-animate');
+      }
+    }
 
     // Non-premium confirmation timing (optional)
     const confirmBy = (qs.get('confirmBy') || '').trim();
