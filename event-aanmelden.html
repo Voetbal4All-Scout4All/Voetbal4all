@@ -1034,11 +1034,8 @@
           return;
         }
 
-        // Non-premium: go straight to thank you page with traceable ID and details
-        const whoName = org || '';
-        const whoEmail = email || '';
-        const whatText = `Event aanvraag: ${category} · ${type}`;
-        window.location.href = `${THANKYOU_URL}?source=event&what=${encodeURIComponent(whatText)}&id=${encodeURIComponent(sid)}&name=${encodeURIComponent(whoName)}&email=${encodeURIComponent(whoEmail)}&status=${encodeURIComponent('Ontvangen')}`;
+        // Non-premium: go straight to thank you page with the Event-ID
+        window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}`;
         return;
 
       } catch (err) {
