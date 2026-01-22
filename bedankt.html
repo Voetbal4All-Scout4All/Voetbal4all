@@ -260,6 +260,18 @@
           </div>
         </div>
 
+        <!-- Email keep notice (primary guidance after submit) -->
+        <div id="emailKeepNotice" class="notice" style="display:none;">
+          <strong>Belangrijk: bewaar de e-mail met uw Event-ID tot na het event</strong><br>
+          Verdere instructies en beheeropties worden uitsluitend via die e-mail gecommuniceerd.
+          <div style="height:10px"></div>
+          <ul style="margin:0;padding-left:18px;line-height:1.7;">
+            <li>U heeft de e-mail nodig om uw aanvraag te <strong>bevestigen</strong> (niet-premium).</li>
+            <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
+            <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>Event-ID</strong>.</li>
+          </ul>
+        </div>
+
         <div class="thanks-summary">
           <section class="thanks-panel" aria-label="Overzicht">
             <h3>Overzicht</h3>
@@ -283,12 +295,12 @@
 
           <aside class="thanks-panel" aria-label="Volgende stappen">
             <h3>Volgende stappen</h3>
-            <p class="note" style="margin:0;">
-              We behandelen je aanvraag zo snel mogelijk. Je ontvangt een bevestiging per e-mail zodra alles is nagekeken.
+            <p class="note" style="margin:0;" id="nextStepsIntro">
+              Uw aanvraag is goed ontvangen. U ontvangt een e-mail met verdere instructies.
             </p>
             <div style="height:10px"></div>
-            <p class="note" style="margin:0;opacity:.85;">
-              Tip: bewaar dit ID-nummer. Zo kunnen we je aanvraag sneller terugvinden.
+            <p class="note" style="margin:0;opacity:.85;" id="nextStepsTip">
+              Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer verloopt via die e-mail.
             </p>
           </aside>
         </div>
@@ -354,6 +366,10 @@
     // Source/type (e.g. contact, event, vacature, premium, betaling)
     const source = (qs.get('source') || '').trim();
 
+    // Primary params used by the event flow
+    const sid = (qs.get('sid') || '').trim();
+    const paid = (qs.get('paid') || '').trim() === '1';
+
     // Who
     const name = (qs.get('name') || '').trim();
     const email = (qs.get('email') || '').trim();
@@ -362,7 +378,7 @@
     const what = (qs.get('what') || qs.get('product') || qs.get('type') || '').trim();
 
     // IDs (support multiple conventions)
-    const id = (qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
+    const id = (sid || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
 
     // Status (optional)
     const status = (qs.get('status') || 'Ontvangen').trim();
@@ -397,6 +413,20 @@
       }
     }
 
+    // Show the primary guidance notice after a form submit
+    const emailKeepNotice = document.getElementById('emailKeepNotice');
+    if (emailKeepNotice) {
+      // Show for event submissions; for premium (paid=1) we still recommend keeping the email,
+      // but the “bevestigen” step applies to non-premium.
+      const isEventFlow = !!sid || source === 'event';
+      if (isEventFlow) {
+        emailKeepNotice.style.display = '';
+        if (paid) {
+          emailKeepNotice.querySelectorAll('li')[0].innerHTML = 'Bewaar de e-mail met uw <strong>Event-ID</strong> tot na het event.';
+        }
+      }
+    }
+
     // Message preview (for contact forms)
     const subject = (qs.get('subject') || '').trim();
     const message = (qs.get('message') || qs.get('msg') || '').trim();
@@ -419,14 +449,21 @@
     const titleEl = document.getElementById('thanksTitle');
     const subEl = document.getElementById('thanksSubtitle');
     if (titleEl && subEl){
+      const isEventFlow = !!sid || source === 'event';
+
       if (source === 'contact'){
         titleEl.textContent = 'Bedankt voor je bericht';
         subEl.textContent = 'We hebben je bericht goed ontvangen. Hieronder vind je een overzicht van je aanvraag.';
-      } else if (source === 'event'){
-        titleEl.textContent = 'Bedankt voor je event-aanvraag';
-        subEl.textContent = 'We hebben je event goed ontvangen. Hieronder vind je de samenvatting van je inzending.';
+      } else if (isEventFlow){
+        if (paid){
+          titleEl.textContent = 'Bedankt. Uw Premium event is succesvol aangemeld.';
+          subEl.textContent = 'Uw event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+        } else {
+          titleEl.textContent = 'Uw aanvraag is goed ontvangen';
+          subEl.textContent = 'U ontvangt een e-mail met verdere instructies om uw aanvraag te bevestigen. Bewaar die e-mail tot na het event.';
+        }
       } else if (source === 'vacature'){
-        titleEl.textContent = 'Bedankt voor je vacature-aanvraag';
+        titleEl.textContent = 'Bedankt voor je aanvraag';
         subEl.textContent = 'We hebben je aanvraag goed ontvangen. Hieronder vind je een overzicht.';
       } else if (source){
         titleEl.textContent = 'Bedankt';
@@ -438,7 +475,9 @@
     const badgeEl = document.getElementById('thanksBadge');
     if (badgeEl){
       const parts = [];
-      if (source) parts.push(source.toUpperCase());
+      const isEventFlow = !!sid || source === 'event';
+      if (isEventFlow) parts.push(paid ? 'EVENT · PREMIUM' : 'EVENT');
+      else if (source) parts.push(source.toUpperCase());
       if (id) parts.push('#' + id);
       if (parts.length){
         badgeEl.style.display = 'inline-flex';
@@ -447,11 +486,27 @@
     }
 
     // Summary values
-    setText('orderWhat', what || (source ? ('Aanvraag: ' + source) : ''), 'Aanvraag ontvangen');
+    const isEventFlow2 = !!sid || source === 'event';
+    const whatResolved = what || (isEventFlow2 ? 'Event-aanmelding' : (source ? ('Aanvraag: ' + source) : ''));
+    setText('orderWhat', whatResolved, 'Aanvraag ontvangen');
     setText('orderId', id, '—');
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
     setText('orderStatus', status, 'Ontvangen');
+
+    // Update the “Volgende stappen” panel dynamically for event flow
+    const nextIntro = document.getElementById('nextStepsIntro');
+    const nextTip = document.getElementById('nextStepsTip');
+    const isEventFlow3 = !!sid || source === 'event';
+    if (isEventFlow3 && nextIntro && nextTip){
+      if (paid){
+        nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All volgens de Premium-voorwaarden.';
+        nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
+      } else {
+        nextIntro.textContent = 'U ontvangt een e-mail met een bevestigingsstap. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
+        nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer (bevestigen, verwijderen, contact) verloopt via die e-mail.';
+      }
+    }
 
     // Optional: message preview
     const msgWrap = document.getElementById('msgWrap');
