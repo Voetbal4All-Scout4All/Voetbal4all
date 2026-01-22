@@ -74,6 +74,7 @@
     .notice{border-radius:16px;padding:14px 14px;margin-top:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);}
     .notice strong{font-weight:900;}
     .notice-warning{border-color:rgba(255,183,77,.35);background:rgba(255,183,77,.08);}
+    .notice-danger{border-color:rgba(255, 51, 102, 0.55);background:rgba(255, 51, 102, 0.10);}
     .notice-warning a{color:inherit;text-decoration:underline;}
     .notice-meta{margin-top:8px;display:grid;grid-template-columns:170px 1fr;gap:6px 12px;align-items:start;}
     .notice-meta dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.72;}
@@ -272,6 +273,19 @@
           </ul>
         </div>
 
+        <!-- Error notice (shown when an action failed or was rejected) -->
+        <div id="errorNotice" class="notice notice-danger" style="display:none;">
+          <strong>Uw aanvraag kon niet verwerkt worden</strong><br>
+          <span id="errorReasonText" style="opacity:.95;">Er ging iets mis bij het verwerken van uw aanvraag.</span>
+          <div style="height:10px"></div>
+          <span style="opacity:.9;">Voor meer info, contacteer ons via het contactformulier.</span>
+          <div style="height:10px"></div>
+          <a class="nav-cta" href="contact.html" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
+            <span>Contactformulier</span>
+            <span style="font-weight:800;opacity:.9;">Support</span>
+          </a>
+        </div>
+
         <div class="thanks-summary">
           <section class="thanks-panel" aria-label="Overzicht">
             <h3>Overzicht</h3>
@@ -370,6 +384,10 @@
     const sid = (qs.get('sid') || '').trim();
     const paid = (qs.get('paid') || '').trim() === '1';
 
+    // Error/failure params (for rejected submissions)
+    const errorFlag = (qs.get('error') || '').trim();
+    const reason = (qs.get('reason') || qs.get('message') || '').trim();
+
     // Who
     const name = (qs.get('name') || '').trim();
     const email = (qs.get('email') || '').trim();
@@ -383,13 +401,16 @@
     // Status (optional)
     const status = (qs.get('status') || 'Ontvangen').trim();
 
+    const statusLower = String(status).toLowerCase();
+    const isError = errorFlag === '1' || statusLower === 'error' || statusLower === 'failed' || statusLower === 'mislukt';
+
     // Non-premium confirmation timing (optional)
     const confirmBy = (qs.get('confirmBy') || '').trim();
     const deleteAfter = (qs.get('deleteAfter') || '').trim();
     const confirmUrl = (qs.get('confirmUrl') || '').trim();
 
     const pendingNotice = document.getElementById('pendingNotice');
-    if (pendingNotice && String(status).toLowerCase() === 'pending') {
+    if (pendingNotice && !isError && statusLower === 'pending') {
       pendingNotice.style.display = '';
 
       const fmt = (iso) => {
@@ -427,6 +448,23 @@
       }
     }
 
+    // Show error notice when the submission was rejected/failed
+    const errorNotice = document.getElementById('errorNotice');
+    if (errorNotice && isError) {
+      errorNotice.style.display = '';
+
+      const reasonEl = document.getElementById('errorReasonText');
+      if (reasonEl) {
+        // Keep it non-technical and user-friendly
+        reasonEl.textContent = reason || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
+      }
+
+      // In error state: hide other guidance blocks that could confuse
+      if (pendingNotice) pendingNotice.style.display = 'none';
+      const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+      if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+    }
+
     // Message preview (for contact forms)
     const subject = (qs.get('subject') || '').trim();
     const message = (qs.get('message') || qs.get('msg') || '').trim();
@@ -450,6 +488,12 @@
     const subEl = document.getElementById('thanksSubtitle');
     if (titleEl && subEl){
       const isEventFlow = !!sid || source === 'event';
+
+      if (isError) {
+        titleEl.textContent = 'Uw aanvraag kon niet verwerkt worden';
+        subEl.textContent = 'Controleer uw gegevens en probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
+        return;
+      }
 
       if (source === 'contact'){
         titleEl.textContent = 'Bedankt voor je bericht';
@@ -476,7 +520,7 @@
     if (badgeEl){
       const parts = [];
       const isEventFlow = !!sid || source === 'event';
-      if (isEventFlow) parts.push(paid ? 'EVENT · PREMIUM' : 'EVENT');
+      if (isEventFlow) parts.push(isError ? 'EVENT · NIET VERWERKT' : (paid ? 'EVENT · PREMIUM' : 'EVENT'));
       else if (source) parts.push(source.toUpperCase());
       if (id) parts.push('#' + id);
       if (parts.length){
@@ -492,13 +536,18 @@
     setText('orderId', id, '—');
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
-    setText('orderStatus', status, 'Ontvangen');
+    setText('orderStatus', isError ? 'Niet verwerkt' : status, 'Ontvangen');
 
     // Update the “Volgende stappen” panel dynamically for event flow
     const nextIntro = document.getElementById('nextStepsIntro');
     const nextTip = document.getElementById('nextStepsTip');
     const isEventFlow3 = !!sid || source === 'event';
     if (isEventFlow3 && nextIntro && nextTip){
+      if (isError) {
+        nextIntro.textContent = 'Uw aanvraag kon niet verwerkt worden.';
+        nextTip.textContent = 'Voor meer info, contacteer ons via het contactformulier.';
+        return;
+      }
       if (paid){
         nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All volgens de Premium-voorwaarden.';
         nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
