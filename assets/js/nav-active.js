@@ -70,6 +70,38 @@
     const isError = errorFlag === '1' || statusLower === 'error' || statusLower === 'failed' || statusLower === 'mislukt';
 
     const safeText = (v) => (v ? String(v).replace(/\s+/g, ' ').trim() : '');
+
+    // Translate backend/technical reasons to NL user-facing copy
+    const translateReasonNL = (raw) => {
+      const r = safeText(raw);
+      if (!r) return '';
+
+      const low = r.toLowerCase();
+
+      // Confirmation link expired
+      if (low.includes('expired') && low.includes('confirmation')) {
+        return 'Deze bevestigingslink is verlopen. Dien het event opnieuw in om een nieuwe bevestigingsmail te ontvangen.';
+      }
+
+      // Duplicate submission
+      if (low.startsWith('duplicate submission') || low.includes('duplicate submission')) {
+        return 'Dubbele aanvraag: dit e-mailadres heeft al een event aangemeld voor dezelfde datum.';
+      }
+
+      // Token / link invalid
+      if (low.includes('invalid token') || (low.includes('token') && (low.includes('invalid') || low.includes('missing') || low.includes('expired')))) {
+        return 'Ongeldige of beschadigde bevestigingslink. Vraag een nieuwe bevestigingsmail aan of dien het event opnieuw in.';
+      }
+
+      // Fallback: if backend sends an English sentence, show a neutral NL message
+      const looksEnglish = /\b(this|already|submitted|event|date|expired|confirmation|token|invalid|duplicate)\b/i.test(r);
+      if (looksEnglish) {
+        return 'Uw aanvraag kon niet verwerkt worden. Controleer uw gegevens en probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
+      }
+
+      // Otherwise keep the original (likely already NL)
+      return r;
+    };
     const setText = (elId, value, fallback = '—') => {
       const el = document.getElementById(elId);
       if (!el) return;
@@ -118,7 +150,8 @@
 
       const reasonEl = document.getElementById('errorReasonText');
       if (isError && reasonEl) {
-        reasonEl.textContent = reason || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
+        const reasonNL = translateReasonNL(reason);
+        reasonEl.textContent = reasonNL || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
       }
     }
 
