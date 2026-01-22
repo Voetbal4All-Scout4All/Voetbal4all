@@ -471,19 +471,28 @@
 
     // Show error notice when the submission was rejected/failed
     const errorNotice = document.getElementById('errorNotice');
-    if (errorNotice && isError) {
-      errorNotice.style.display = '';
+    if (errorNotice) {
+      if (isError) {
+        errorNotice.style.display = '';
+        // trigger a small entrance animation if CSS provides it
+        errorNotice.classList.remove('is-animate');
+        void errorNotice.offsetWidth; // reflow
+        errorNotice.classList.add('is-animate');
 
-      const reasonEl = document.getElementById('errorReasonText');
-      if (reasonEl) {
-        // Keep it non-technical and user-friendly
-        reasonEl.textContent = reason || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
+        const reasonEl = document.getElementById('errorReasonText');
+        if (reasonEl) {
+          // Keep it non-technical and user-friendly
+          reasonEl.textContent = reason || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
+        }
+
+        // In error state: hide other guidance blocks that could confuse
+        if (pendingNotice) pendingNotice.style.display = 'none';
+        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+      } else {
+        errorNotice.style.display = 'none';
+        errorNotice.classList.remove('is-animate');
       }
-
-      // In error state: hide other guidance blocks that could confuse
-      if (pendingNotice) pendingNotice.style.display = 'none';
-      const emailKeepNotice2 = document.getElementById('emailKeepNotice');
-      if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
     }
 
     // Message preview (for contact forms)

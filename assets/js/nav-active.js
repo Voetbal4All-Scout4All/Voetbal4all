@@ -106,7 +106,16 @@
 
     const errorNotice = document.getElementById('errorNotice');
     if (errorNotice) {
-      errorNotice.style.display = isError ? '' : 'none';
+      if (isError) {
+        errorNotice.style.display = '';
+        errorNotice.classList.remove('is-animate');
+        void errorNotice.offsetWidth; // reflow
+        errorNotice.classList.add('is-animate');
+      } else {
+        errorNotice.style.display = 'none';
+        errorNotice.classList.remove('is-animate');
+      }
+
       const reasonEl = document.getElementById('errorReasonText');
       if (isError && reasonEl) {
         reasonEl.textContent = reason || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
