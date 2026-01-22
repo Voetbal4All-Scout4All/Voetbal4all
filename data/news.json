@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-01-22T20:32:23.836Z",
+  "generatedAt": "2026-01-22T21:27:54.038Z",
   "items": [
     {
       "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Braga v Nottingham Forest, Rangers v Ludogorets, and more: Europa League – live",
+      "link": "https://www.theguardian.com/football/live/2026/jan/22/braga-v-nottingham-forest-rangers-v-ludogorets-and-more-europa-league-live",
+      "summary": "⚽ Europa League updates from the 8pm GMT kick-offs ⚽ Live scores | Table | Follow us on Bluesky | Mail John Fenerbahce have equalised against Aston Villa, with Kerem Aktürkoğlu getting it. It’s 1-1 in Turkey. It’s now 2-2 in Bologna, the Englishman Jonathan Rowe has got the goal, cutting across the Celtic defence to score. Continue reading...",
+      "publishedAt": "2026-01-22T21:19:44.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Van Persie luisterde naar feedback van Watanabe en Ahmedhodzic",
-      "link": "https://www.vi.nl/nieuws/van-persie-luisterde-naar-feedback-van-watanabe-en-ahmedhodzic",
-      "summary": "Robin van Persie trekt lessen uit de overwinning van Feyenoord op Sturm Graz. Hij gaf toe voorafgaand aan het duel naar zijn centrale verdedigers te hebben geluisterd.",
-      "publishedAt": "2026-01-22T20:30:50.000Z"
+      "title": "Opvallend: woedende Emery deelt duw uit aan Tielemans",
+      "link": "https://www.vi.nl/nieuws/opvallend-woedende-emery-deelt-duw-uit-aan-tielemans",
+      "summary": "Aston Villa plaatste zich donderdag voor de achtste finale van de Europa League. Niet het doelpunt van Jadon Sancho, maar een duw van Unai Emery aan Youri Tielemans was het meestbesproken moment van het uitduel met Fenerbahçe.",
+      "publishedAt": "2026-01-22T21:19:21.000Z"
     },
     {
       "type": "rss",
@@ -18,32 +29,54 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Ahmedhodzic over Shaqueel en positiewisseliing: 'Was natuurlijk'",
-      "link": "https://www.vi.nl/video/ahmedhodzic-over-shaqueel-en-positiewisseliing-was-natuurlijk",
-      "summary": "Anel Ahmedhodzic hield het doel schoon in de thuiswedstrijd tegen Sturm Graz en zag Feyenoord met 3-0 zegevieren. Na afloop sprak hij met verslaggever Kalum van Oudheusden over deze broodnodige overwinning en de positiewisseling met Tsuyoshi Watanabe in het centrum van de verdediging: 'Dat hadden we eerder moeten doen.'",
-      "publishedAt": "2026-01-22T20:24:24.000Z"
+      "title": "VI Live: Eagles beleeft teleurstellende avond in Nice",
+      "link": "https://www.vi.nl/nieuws/vi-live-feyenoord-go-ahead-eagles-en-fc-utrecht-vervolgen-europese-campagne",
+      "summary": "Welkom in VI Live van donderdag 22 januari. De Europa League gaat na een korte onderbreking weer verder. Feyenoord ontvangt in de eigen Kuip Sturm Graz, FC Utrecht neemt het op tegen RC Genk en Go Ahead reist af naar Frankrijk voor het treffen met OGC Nice.",
+      "publishedAt": "2026-01-22T21:18:00.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Casemiro to leave Man United at end of the season",
-      "link": "https://www.espn.com/soccer/story/_/id/47693725/casemiro-leave-man-united-end-season",
-      "summary": "Casemiro will leave Manchester United when his contract expires at the end of the season, the club have confirmed.",
-      "publishedAt": "2026-01-22T20:23:18.000Z"
+      "title": "Salah prime target for Saudi Pro League - Friday's gossip",
+      "link": "https://www.bbc.com/sport/football/articles/c3veeznv31do?at_medium=RSS&at_campaign=rss",
+      "summary": "Mohamed Salah and Vinicius Jr are prime targets for Saudi Pro League, Crystal Palace hold talks with Wolves over move for Jorgen Strand Larsen, Chelsea consider loan deal for Douglas Luiz, plus more.",
+      "publishedAt": "2026-01-22T21:08:31.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Dzeko, 39, returns to Germany with eye on WC",
-      "link": "https://www.espn.com/soccer/story/_/id/47694005/edin-dzeko-world-cup-transfer-germany-schalke-fiorentina-bosnia",
-      "summary": "Edin Dzeko has returned to Germany where he hopes to play more to help Bosnia and Herzegovina earn a World Cup ticket.",
-      "publishedAt": "2026-01-22T20:23:18.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van Persie kritisch op actie van Borges",
+      "link": "https://www.vi.nl/video/van-persie-kritisch-op-actie-van-borges",
+      "summary": "'Ik ben in principe niet zo tegen entertainment. Maar in dit specifieke moment vond ik de timing niet helemaal goed.' Feyenoord-trainer Robin van Persie was blij over enkele aspecten van het spel van Gonçalo Borges in het duel met Sturm Graz, maar de mislukte voorzet die hij achter het standbeen gaf, kon de coach niet bekoren.",
+      "publishedAt": "2026-01-22T21:05:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Kauwgom kauwen tegen Feyenoord: Oostenrijkse media zien kansloos Sturm Graz",
+      "link": "https://www.vi.nl/nieuws/kauwgom-kauwen-tegen-feyenoord-oostenrijkse-media-zien-kansloos-sturm-graz",
+      "summary": "De overwinning van Feyenoord op Sturm Graz was meer dan terecht, zo concluderen de media in Oostenrijk.",
+      "publishedAt": "2026-01-22T20:52:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Spierings verlaat Denemarken en is op weg naar MLS",
+      "link": "https://www.vi.nl/nieuws/spierings-verlaat-denemarken-en-is-op-weg-naar-mls",
+      "summary": "Stijn Spierings is vertrokken bij het Deense Brøndby. De middenvelder was overbodig en gaat zijn heil zoeken in de MLS. Dat bevestigen ingewijden.",
+      "publishedAt": "2026-01-22T20:32:00.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +87,29 @@
       "title": "Source: Barça U.S. youth int'l Gill set for Atlanta",
       "link": "https://www.espn.com/soccer/story/_/id/47694308/atlanta-set-sign-barcelona-us-youth-international-gill",
       "summary": "Atlanta United is finalizing a deal to acquire U.S. youth international and Barcelona midfielder Adrian Gill, a source confirmed to ESPN.",
-      "publishedAt": "2026-01-22T20:23:18.000Z"
+      "publishedAt": "2026-01-22T20:29:14.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Casemiro to leave Man United at end of the season",
+      "link": "https://www.espn.com/soccer/story/_/id/47693725/casemiro-leave-man-united-end-season",
+      "summary": "Casemiro will leave Manchester United when his contract expires at the end of the season, the club have confirmed.",
+      "publishedAt": "2026-01-22T20:29:13.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Dzeko, 39, returns to Germany with eye on WC",
+      "link": "https://www.espn.com/soccer/story/_/id/47694005/edin-dzeko-world-cup-transfer-germany-schalke-fiorentina-bosnia",
+      "summary": "Edin Dzeko has returned to Germany where he hopes to play more to help Bosnia and Herzegovina earn a World Cup ticket.",
+      "publishedAt": "2026-01-22T20:29:13.000Z"
     },
     {
       "type": "rss",
@@ -80,36 +135,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "De Dr Jekyll en Mr Hyde van Feyenoord: 'Soms vervloek je Hadj Moussa'",
-      "link": "https://www.vi.nl/nieuws/de-dr-jekyll-en-mr-hyde-van-feyenoord-soms-vervloek-je-hadj-moussa",
-      "summary": "Op het rapport van Feyenoord kreeg Anis Hadj Moussa het hoogste cijfer en ook analytici vonden hem sterk spelen tegen Sturm Graz, maar er waren ook momenten dat het niet goed ging bij de buitenspeler.",
-      "publishedAt": "2026-01-22T20:15:32.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Braga v Nottingham Forest, Rangers v Ludogorets, and more: Europa League – live",
-      "link": "https://www.theguardian.com/football/live/2026/jan/22/braga-v-nottingham-forest-rangers-v-ludogorets-and-more-europa-league-live",
-      "summary": "⚽ Europa League updates from the 8pm GMT kick-offs ⚽ Live scores | Table | Follow us on Bluesky | Mail John Fenerbahce have equalised against Aston Villa, with Kerem Aktürkoğlu getting it. It’s 1-1 in Turkey. It’s now 2-2 in Bologna, the Englishman Jonathan Rowe has got the goal, cutting across the Celtic defence to score. Continue reading...",
-      "publishedAt": "2026-01-22T20:14:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Valse start voor Go Ahead, aftrap in Utrecht uitgesteld",
-      "link": "https://www.vi.nl/nieuws/vi-live-feyenoord-go-ahead-eagles-en-fc-utrecht-vervolgen-europese-campagne",
-      "summary": "Welkom in VI Live van donderdag 22 januari. De Europa League gaat na een korte onderbreking weer verder. Feyenoord ontvangt in de eigen Kuip Sturm Graz, FC Utrecht neemt het op tegen RC Genk en Go Ahead reist af naar Frankrijk voor het treffen met OGC Nice.",
-      "publishedAt": "2026-01-22T20:13:22.000Z"
+      "title": "Europa League roundup: Jadon Sancho strikes to seal Aston Villa’s last-16 place",
+      "link": "https://www.theguardian.com/football/2026/jan/22/europa-league-roundup-aston-villa-fenerbahce-bologna-celtic-rangers-ludogorets",
+      "summary": "Emery’s side win 1-0 against Fenerbahce Ten-man Celtic hold on for point at Bologna Aston Villa secured a top-eight finish in the Europa League after Jadon Sancho’s first-half header gave them a 1-0 victory over Fenerbahce in Turkey. Villa’s win was their sixth from seven European matches this season and brought Fenerbahce’s unbeaten record at home to an end in the process. Sancho opened his account in Villa colours to put the visitors in the driving seat amid a loud Sukru Saracoglu Stadium atmosphere. Continue reading...",
+      "publishedAt": "2026-01-22T20:20:26.000Z"
     },
     {
       "type": "rss",
@@ -121,17 +154,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c4g44er748lo?at_medium=RSS&at_campaign=rss",
       "summary": "The Football Supporters' Association criticises Fifa president Gianni Infantino for making a \"cheap\" joke about British fans' behaviour at World Cups.",
       "publishedAt": "2026-01-22T20:06:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "De glimlach is terug bij Feyenoord: 'De afgelopen weken waren erg zwaar'",
-      "link": "https://www.vi.nl/nieuws/de-glimlach-is-terug-bij-feyenoord-de-afgelopen-weken-waren-erg-zwaar",
-      "summary": "Timon Wellenreuther is blij dat Feyenoord het duel met Sturm Graz heeft gewonnen. Dat was nodig na de onrust van de afgelopen weken.",
-      "publishedAt": "2026-01-22T20:00:47.000Z"
     },
     {
       "type": "rss",
@@ -161,7 +183,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sancho sends Villa into Europa League last 16 with game to spare",
+      "title": "Sancho's first Villa goal seals Europa League last 16 spot with game to spare",
       "link": "https://www.skysports.com/football/fenerbahce-vs-aston-villa/report/548169",
       "summary": "Aston Villa booked their place in the Europa League last 16 with an action-packed 1-0 win away to Fenerbahce.",
       "publishedAt": "2026-01-22T19:30:00.000Z"
@@ -198,28 +220,6 @@
       "link": "https://www.skysports.com/f1/news/12040/13497758/lewis-hamilton-ross-brawn-explains-his-hope-for-ferrari-driver-in-2026-f1-season-ahead-of-new-car-launch",
       "summary": "Legendary former F1 chief Ross Brawn believes a \"vintage\" Lewis Hamilton can still emerge at Ferrari in 2026 if the team's competitiveness improves.",
       "publishedAt": "2026-01-22T17:57:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Midfielder Casemiro to leave Man Utd this summer",
-      "link": "https://www.bbc.com/sport/football/articles/cgm44x9j3epo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United say midfielder Casemiro will leave the club when his contract expires at the end of this season.",
-      "publishedAt": "2026-01-22T17:42:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Forest close in on Napoli striker Lucca",
-      "link": "https://www.bbc.com/sport/football/articles/c1m7730nzlpo?at_medium=RSS&at_campaign=rss",
-      "summary": "Nottingham Forest are closing in on the signing of Napoli striker Lorenzo Lucca.",
-      "publishedAt": "2026-01-22T17:08:27.000Z"
     }
   ]
 }
