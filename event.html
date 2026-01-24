@@ -89,8 +89,19 @@
       border:1px solid rgba(255,255,255,0.10);
       overflow:hidden;
     }
+    #ev-map iframe{
+      width:100%;
+      height:320px;
+      border:0;
+      display:block;
+    }
+
+    /* Ensure dark ghost buttons have readable text on this page */
+    .btn-ghost-sm{ color:#fff; }
+    .btn-ghost-sm:hover{ color:#fff; }
     .ev-map-fallback { opacity:.85; font-size:14px; }
-    .ev-map-links { margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
+    /* External map links are kept as a hidden fallback (we embed the map on-page) */
+    .ev-map-links { margin-top:10px; display:none; gap:10px; flex-wrap:wrap; }
     .ev-map-links a { text-decoration:none; }
     /* Fix: contact button text should be readable (white) */
     #ev-contact { color: #fff !important; }
@@ -711,7 +722,7 @@
         if (ev.organizer_phone) extras.push(`<div><strong>Telefoon:</strong> ${ev.organizer_phone}</div>`);
         if (ev.organizer_url) extras.push(`<div><strong>Website:</strong> ${ev.organizer_url}</div>`);
         extraEl.innerHTML = extras.join("");
-        // ---- Map (Leaflet) ----
+        // ---- Map ----
         const mapWrap = document.getElementById("ev-map-wrap");
         const mapEl = document.getElementById("ev-map");
         const mapFallback = document.getElementById("ev-map-fallback");
@@ -722,74 +733,63 @@
         const lng = (ev.lng !== null && ev.lng !== undefined) ? Number(ev.lng) : NaN;
 
         const qParts = [
-          ev.location_name, ev.address, ev.postal_code, ev.city, ev.country
-        ].filter(Boolean).map(s => String(s).trim()).filter(Boolean);
+          ev.location_name,
+          ev.address,
+          ev.postal_code,
+          ev.city,
+          ev.country,
+        ]
+          .filter(Boolean)
+          .map((s) => String(s).trim())
+          .filter(Boolean);
+
         const mapsQuery = encodeURIComponent(qParts.join(", "));
+        const label = ev.title || "Event";
 
-        // Helper: initialize Leaflet map safely
-        function initLeafletMap({ lat, lng, label }) {
-          if (!mapEl || !window.L) return null;
+        // Show wrapper only when we have at least some location signal
+        const hasLocationSignal = Number.isFinite(lat) && Number.isFinite(lng) || Boolean(mapsQuery);
+        if (mapWrap) mapWrap.style.display = hasLocationSignal ? "block" : "none";
 
-          // Ensure the container is visible and empty (important for Leaflet sizing)
+        // We embed the map on-page; keep the external Google Maps link as a hidden fallback.
+        // (Users should not see a plain link instead of a map.)
+        if (mapLinks && mapGoogle && mapsQuery) {
+          mapLinks.style.display = "none";
+          mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+        }
+
+        if (!mapEl) {
+          // nothing
+        } else if (Number.isFinite(lat) && Number.isFinite(lng) && window.L) {
+          // Prefer Leaflet when we have exact coordinates
           mapEl.style.display = "block";
           mapEl.innerHTML = "";
+          if (mapFallback) mapFallback.style.display = "none";
 
           const m = L.map("ev-map", { scrollWheelZoom: false }).setView([lat, lng], 14);
           L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
             attribution: "&copy; OpenStreetMap",
           }).addTo(m);
-
-          L.marker([lat, lng]).addTo(m).bindPopup(label || "Event").openPopup();
-          return m;
-        }
-
-        // Always show the wrapper if we have any location signal
-        if (mapWrap) mapWrap.style.display = "block";
-
-        // Provide Google Maps link whenever we have a query
-        if (mapLinks && mapGoogle && mapsQuery) {
-          mapLinks.style.display = "flex";
-          mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-        }
-
-        const label = ev.title || "Event";
-
-        // 1) Prefer explicit lat/lng from DB
-        if (Number.isFinite(lat) && Number.isFinite(lng) && window.L) {
+          L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
+        } else if (mapsQuery) {
+          // No coordinates: embed a map directly (reliable, no geocoding required)
+          mapEl.style.display = "block";
           if (mapFallback) mapFallback.style.display = "none";
-          initLeafletMap({ lat, lng, label });
-        } else if (mapsQuery && window.L) {
-          // 2) If no coordinates, geocode address -> show map
-          try {
-            // Nominatim (OpenStreetMap) geocoding
-            const q = decodeURIComponent(mapsQuery);
-            const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`;
-            const geoRes = await fetch(url, {
-              headers: {
-                "Accept": "application/json",
-              },
-            });
 
-            const geoJson = await geoRes.json().catch(() => []);
-            const first = Array.isArray(geoJson) ? geoJson[0] : null;
-            const glat = first ? Number(first.lat) : NaN;
-            const glng = first ? Number(first.lon) : NaN;
-
-            if (Number.isFinite(glat) && Number.isFinite(glng)) {
-              if (mapFallback) mapFallback.style.display = "none";
-              initLeafletMap({ lat: glat, lng: glng, label });
-            } else {
-              if (mapEl) mapEl.style.display = "none";
-              if (mapFallback) mapFallback.style.display = "block";
-            }
-          } catch (e) {
-            if (mapEl) mapEl.style.display = "none";
-            if (mapFallback) mapFallback.style.display = "block";
-          }
+          // Use Google Maps embed with a query (no API key)
+          mapEl.innerHTML = `
+            <iframe
+              title="Locatie op kaart"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=${mapsQuery}&output=embed">
+            </iframe>
+          `;
+          if (mapLinks) mapLinks.style.display = "none";
         } else {
-          // 3) No coordinates and no usable query
-          if (mapEl) mapEl.style.display = "none";
+          // No usable location
+          mapEl.style.display = "none";
+          if (mapLinks) mapLinks.style.display = "none";
           if (mapFallback) mapFallback.style.display = "block";
         }
 
