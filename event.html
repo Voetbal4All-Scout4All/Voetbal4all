@@ -49,8 +49,11 @@
     .ev-media-hero{
       width:100%;
       height:auto;
-      max-height:560px;
+      /* Ensure the entire flyer is always visible (no cropping) */
       object-fit:contain;
+      object-position:center;
+      /* Allow tall flyers to use available viewport height without being clipped */
+      max-height: calc(100vh - 260px);
       background:rgba(255,255,255,0.04);
       border-radius:14px;
       border:1px solid rgba(255,255,255,0.10);
