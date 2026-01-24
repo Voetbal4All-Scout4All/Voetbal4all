@@ -237,7 +237,7 @@
         <div class="live-banner">
           <div class="live-label">
             <span class="live-dot"></span>
-            Live resultaten
+            Live score
           </div>
           <div class="live-text">
             <span class="live-text-main"></span>
@@ -765,6 +765,7 @@
 
                   <div class="ad-card-actions event-actions" style="margin-top:10px;">
                     <a class="btn-ghost-sm" href="adverteren.html">Event toevoegen</a>
+                    <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
                   </div>
                 </div>
               </div>
@@ -778,9 +779,23 @@
           const uiType = typeToUiLabel(ev.event_type);
           const dateOnly = isoDateOnly(ev.start_at);
 
+          // Build bodyParts and Google Maps link
           const bodyParts = [];
-          if (ev.location_name) bodyParts.push(`<strong>Locatie:</strong> ${ev.location_name}`);
-          if (ev.address) bodyParts.push(ev.address);
+          const locName = ev.location_name ? String(ev.location_name).trim() : "";
+          const addr = ev.address ? String(ev.address).trim() : "";
+          const city = ev.city ? String(ev.city).trim() : "";
+          const pc = ev.postal_code ? String(ev.postal_code).trim() : "";
+
+          if (locName) bodyParts.push(`<strong>Locatie:</strong> ${locName}`);
+          if (addr) bodyParts.push(addr);
+          if (pc || city) bodyParts.push([pc, city].filter(Boolean).join(" "));
+
+          // Build a best-effort maps query. Prefer address; else fall back to city.
+          const mapsQuery = (addr || locName || city)
+            ? encodeURIComponent([addr || locName, pc, city, country].filter(Boolean).join(", "))
+            : "";
+          const mapsUrl = mapsQuery ? `https://www.google.com/maps/search/?api=1&query=${mapsQuery}` : "";
+
           const bodyTop = bodyParts.length ? (bodyParts.join(" · ") + "<br/>") : "";
 
           const desc = ev.description ? String(ev.description) : "";
@@ -837,6 +852,7 @@
 
                   <div class="ad-card-actions event-actions" style="margin-top:10px;">
                     <a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>
+                    ${mapsUrl ? `<a class="btn-ghost-sm" href="${mapsUrl}" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>` : ``}
                     <button type="button" class="btn-ghost-sm" data-reply-event="${String(slug)}">Contact</button>
                   </div>
                 </div>
