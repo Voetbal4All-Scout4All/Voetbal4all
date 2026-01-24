@@ -411,7 +411,7 @@
   // ------------------------------
   // Professional thank-you content
   // ------------------------------
-  (function(){
+  (async function(){
     const qs = new URLSearchParams(window.location.search);
 
     // Source/type (e.g. contact, event, vacature, premium, betaling)
@@ -522,6 +522,51 @@
           premiumStartRaw = pStart.toISOString();
           premiumEndRaw = pEnd.toISOString();
         }
+      }
+    }
+
+    // If we still don't have the premium window, try to fetch it from the backend event record.
+    // This is needed for links that don't carry premiumStart/premiumEnd but do carry an eventId.
+    async function tryFetchPremiumWindowFromEvent() {
+      if (premiumStartRaw && premiumEndRaw) return;
+
+      const eventIdRaw = getParamAny(['eventId', 'event_id', 'event', 'eid']);
+      const eventId = String(eventIdRaw || '').trim();
+      if (!eventId || !/^\d+$/.test(eventId)) return;
+
+      // Backend base (prod). Keep it explicit to avoid relying on relative origins.
+      const BACKEND_BASE = 'https://voetbal4all-backend-database.onrender.com';
+
+      try {
+        const r = await fetch(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`, {
+          method: 'GET',
+          headers: { 'accept': 'application/json' },
+          cache: 'no-store'
+        });
+        if (!r.ok) return;
+        const data = await r.json();
+        const item = data && data.item;
+        if (!item) return;
+
+        // Prefer backend-calculated premium window
+        const pStart = item.premium_activated_at || item.premiumActivatedAt || '';
+        const pEnd = item.premium_expires_at || item.premiumExpiresAt || '';
+
+        if (pStart && pEnd) {
+          premiumStartRaw = String(pStart);
+          premiumEndRaw = String(pEnd);
+          return;
+        }
+
+        // Fallback: if backend only has expires_at and start_at, show at least something deterministic
+        const fallbackStart = item.premium_activated_at || item.start_at || '';
+        const fallbackEnd = item.premium_expires_at || item.end_at || item.start_at || '';
+        if (fallbackStart && fallbackEnd) {
+          premiumStartRaw = String(fallbackStart);
+          premiumEndRaw = String(fallbackEnd);
+        }
+      } catch(e) {
+        // silent
       }
     }
 
@@ -739,6 +784,10 @@
     const pwWrap = document.getElementById('premiumWindowWrap');
     const pwLabel = document.getElementById('premiumWindowLabel');
     const pwValue = document.getElementById('premiumWindowValue');
+
+    // If links don't carry premium params, fetch them from backend using eventId (if present)
+    // NOTE: this is safe to run even if eventId is missing.
+    await tryFetchPremiumWindowFromEvent();
 
     const premiumStartTxt = fmtDateTime(premiumStartRaw);
     const premiumEndTxt = fmtDateTime(premiumEndRaw);
