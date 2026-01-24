@@ -63,7 +63,7 @@
 
     /* Thumbnails for multiple media */
     .ev-media-thumb {
-      width:140px; height:98px; object-fit:cover; border-radius:10px;
+      width:140px; height:98px; object-fit: contain; border-radius:10px;
       cursor:pointer; border:1px solid rgba(255,255,255,0.08);
     }
 
@@ -289,8 +289,14 @@
             <div class="ev-two-col">
               <!-- LEFT: flyer/media -->
               <div class="ev-col-media">
-                <div class="ev-media" id="ev-media" style="display:none;">
+                
+<div class="event-layout">
+  <div class="event-media">
+<div class="ev-media" id="ev-media" style="display:none;">
                   <div class="note" style="margin:0 0 8px 0;">Flyer / foto's</div>
+  </div>
+  <div class="event-info">
+
                   <div class="ev-media-grid" id="ev-media-grid"></div>
                 </div>
               </div>
@@ -411,7 +417,10 @@
 
         </div>
       </section>
-    </main>
+    
+  </div>
+</div>
+</main>
 
     
     <!-- AD: Bottom placement (responsive) -->
