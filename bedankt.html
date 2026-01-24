@@ -103,7 +103,29 @@
       .thanks-cta-grid{grid-template-columns:1fr;}
       .thanks-kv{grid-template-columns:140px 1fr;}
     }
-  </style>
+  
+
+    /* Premium window highlight (shown only when provided) */
+    .premium-window-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(22,163,74,.45);
+      background:rgba(22,163,74,.10);
+      font-weight:800;
+      line-height:1.25;
+    }
+    .premium-window-chip small{
+      display:block;
+      font-size:12px;
+      font-weight:700;
+      opacity:.85;
+      letter-spacing:.02em;
+    }
+    .premium-window-chip span{ display:block; }
+</style>
 </head>
 
 <body class="v4-hide-live-mobile">
@@ -311,6 +333,11 @@
 
               <dt>Status</dt>
               <dd id="orderStatus">Ontvangen</dd>
+
+              <div id="premiumWindowWrap" style="display:none; grid-column: 1 / -1; margin-top: 8px;"></div>
+
+              <dt id="premiumWindowLabel" style="display:none;">Premium-periode</dt>
+              <dd id="premiumWindowValue" style="display:none;">—</dd>
             </dl>
           </section>
 
@@ -390,6 +417,11 @@
     // Primary params used by the event flow
     const sid = (qs.get('sid') || '').trim();
     const paid = (qs.get('paid') || '').trim() === '1';
+
+    // Premium window (optional): provided by backend after payment/confirmation
+    // Supported param names (robust): premiumStart/premiumEnd OR premium_from/premium_to
+    const premiumStartRaw = (qs.get('premiumStart') || qs.get('premium_from') || '').trim();
+    const premiumEndRaw = (qs.get('premiumEnd') || qs.get('premium_to') || '').trim();
 
     // Error/failure params (for rejected submissions)
     const errorFlag = (qs.get('error') || '').trim();
@@ -512,6 +544,13 @@
       return v.replace(/\s+/g,' ').trim();
     };
 
+    const fmtDateTime = (iso) => {
+      if (!iso) return '';
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return String(iso);
+      try { return d.toLocaleString('nl-BE'); } catch(e) { return d.toISOString(); }
+    };
+
     const setText = (id, value, fallback='—') => {
       const el = document.getElementById(id);
       if (!el) return;
@@ -588,6 +627,44 @@
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
     setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
+
+    // Premium window UI (only when both start+end are provided, and not error/deleted)
+    const pwWrap = document.getElementById('premiumWindowWrap');
+    const pwLabel = document.getElementById('premiumWindowLabel');
+    const pwValue = document.getElementById('premiumWindowValue');
+
+    const premiumStartTxt = fmtDateTime(premiumStartRaw);
+    const premiumEndTxt = fmtDateTime(premiumEndRaw);
+    const hasPremiumWindow = !!premiumStartRaw && !!premiumEndRaw;
+
+    if (!isError && !isDeleted && hasPremiumWindow && pwLabel && pwValue) {
+      pwLabel.style.display = '';
+      pwValue.style.display = '';
+
+      // Text-only value for accessibility
+      pwValue.textContent = premiumStartTxt + ' → ' + premiumEndTxt;
+
+      // Optional highlighted chip above the row (nice UX)
+      if (pwWrap) {
+        pwWrap.style.display = '';
+        pwWrap.innerHTML = '';
+        const chip = document.createElement('div');
+        chip.className = 'premium-window-chip';
+        chip.setAttribute('role','note');
+        chip.innerHTML = `<div><small>Premium actief van</small><span>${premiumStartTxt}</span></div><div style="opacity:.65;">→</div><div><small>tot en met</small><span>${premiumEndTxt}</span></div>`;
+        pwWrap.appendChild(chip);
+      }
+
+      // Also enhance next steps copy when paid=1
+      if (paid && nextIntro && nextTip) {
+        nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All tijdens uw Premium-periode.';
+        nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '. Bewaar de e-mail met uw Event-ID tot na het event.';
+      }
+    } else {
+      if (pwWrap) pwWrap.style.display = 'none';
+      if (pwLabel) pwLabel.style.display = 'none';
+      if (pwValue) pwValue.style.display = 'none';
+    }
 
     // Update the “Volgende stappen” panel dynamically for event flow
     const nextIntro = document.getElementById('nextStepsIntro');
