@@ -504,9 +504,11 @@
       try { return String.fromCodePoint(...codePoints); } catch(e) { return ""; }
     }
 
-    function getSlug(){
+    function getEventParams(){
       const params = new URLSearchParams(location.search);
-      return params.get("slug") || "";
+      const slug = (params.get("slug") || "").trim();
+      const id = (params.get("id") || "").trim();
+      return { slug, id };
     }
 
     function openLightbox(src){
@@ -631,30 +633,36 @@
     }
 
     async function loadEvent(){
-      const slug = getSlug();
-      if (!slug) {
+      const { slug, id } = getEventParams();
+
+      // We accept either ?id=... (preferred for DB ids) or ?slug=... (SEO slug)
+      const hasAny = Boolean(id || slug);
+      if (!hasAny) {
         statusEl.style.display = "block";
-        statusEl.textContent = "Geen event geselecteerd. Gebruik ?slug=...";
+        statusEl.textContent = "Geen event geselecteerd. Gebruik ?id=... of ?slug=...";
         return;
       }
 
       try {
-      // Try slug first, fallback to ID (events created via forms may not have a slug)
-      let data = null;
+        // Try slug first only when a slug is explicitly provided.
+        // Always allow fallback to ID (events created via forms may not have a slug).
+        let data = null;
 
-      // 1) Try slug endpoint
-      try {
-        const resSlug = await fetch(`${API_BASE}/api/events/slug/${encodeURIComponent(slug)}?nocache=1`);
-        data = await resSlug.json();
-      } catch (e) {
-        data = null;
-      }
+        if (slug) {
+          try {
+            const resSlug = await fetch(`${API_BASE}/api/events/slug/${encodeURIComponent(slug)}?nocache=1`);
+            data = await resSlug.json();
+          } catch (e) {
+            data = null;
+          }
+        }
 
-      // 2) Fallback to ID endpoint
-      if (!data || !data.ok || !data.item) {
-        const resId = await fetch(`${API_BASE}/api/events/${encodeURIComponent(slug)}?nocache=1`);
-        data = await resId.json();
-      }
+        // Fallback (or direct) to ID endpoint
+        if (!data || !data.ok || !data.item) {
+          const key = id || slug;
+          const resId = await fetch(`${API_BASE}/api/events/${encodeURIComponent(key)}?nocache=1`);
+          data = await resId.json();
+        }
 
       if (!data || !data.ok || !data.item) {
         throw new Error("Event not found");
@@ -793,7 +801,8 @@
         }
 
         // Share URL must always be our platform URL
-        const shareUrl = "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug);
+        const shareKey = id ? ("id=" + encodeURIComponent(id)) : ("slug=" + encodeURIComponent(slug));
+        const shareUrl = "https://www.voetbal4all.eu/event.html?" + shareKey;
         const shareTitle = (ev.title || "Event") + " – Voetbal4All";
         setShareLinks(shareUrl, shareTitle);
 
@@ -819,7 +828,7 @@
           const subject = encodeURIComponent("Reactie via Voetbal4All – " + (ev.title || "Event"));
           const body = encodeURIComponent(
             "Event: " + (ev.title || "") +
-            "\nSlug: " + slug +
+            "\nEvent: " + (id ? ("id=" + id) : ("slug=" + slug)) +
             "\n\nE-mailadres: " + email +
             "\n\nBericht:\n(Voeg je bericht toe.)"
           );
