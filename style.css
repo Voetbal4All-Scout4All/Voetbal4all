@@ -2373,3 +2373,59 @@ img {
     animation: none !important;
   }
 }
+/* ===== EVENTS UI FINAL ===== */
+
+/* Premium section title */
+.premium-events-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 1.5rem 0 1rem;
+  color: #ffffff;
+}
+
+/* Premium meta */
+.premium-event-meta {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+.premium-event-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.premium-event-location .flag {
+  width: 20px;
+  height: auto;
+}
+.premium-event-club {
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+.premium-event-date {
+  opacity: 0.9;
+}
+
+/* Event detail layout */
+.event-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.event-media img,
+.event-media embed,
+.event-media iframe {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .event-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== END EVENTS UI FINAL ===== */
