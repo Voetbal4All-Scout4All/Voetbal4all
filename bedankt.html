@@ -107,24 +107,27 @@
 
     /* Premium window highlight (shown only when provided) */
     .premium-window-chip{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(22,163,74,.45);
-      background:rgba(22,163,74,.10);
-      font-weight:800;
-      line-height:1.25;
-    }
-    .premium-window-chip small{
-      display:block;
-      font-size:12px;
-      font-weight:700;
-      opacity:.85;
-      letter-spacing:.02em;
-    }
-    .premium-window-chip span{ display:block; }
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:12px;
+    border:1px solid rgba(34,197,94,.35);
+    background: rgba(10,19,36,.65);
+    font-size:13px;
+    line-height:1.25;
+    font-weight:800;
+  }
+  .premium-window-chip small{
+    display:block;
+    font-size:11px;
+    opacity:.75;
+    margin-bottom:2px;
+    font-weight:700;
+    letter-spacing:.02em;
+  }
+  .premium-window-chip span{ display:block; font-weight:800; }
+  .premium-window-chip .arrow{ opacity:.6; font-weight:900; }
 </style>
 </head>
 
@@ -741,21 +744,22 @@
     const premiumEndTxt = fmtDateTime(premiumEndRaw);
     const hasPremiumWindow = !!premiumStartRaw && !!premiumEndRaw;
 
-    if (!isError && !isDeleted && hasPremiumWindow && pwLabel && pwValue) {
-      pwLabel.style.display = '';
-      pwValue.style.display = '';
+    if (!isError && !isDeleted && hasPremiumWindow) {
+      // Unhide label/value (they may be injected with inline display:none)
+      if (pwLabel) pwLabel.style.display = '';
+      if (pwValue) pwValue.style.display = '';
 
-      // Text-only value for accessibility
-      pwValue.textContent = premiumStartTxt + ' → ' + premiumEndTxt;
+      // Text-only value for accessibility/fallback
+      if (pwValue) pwValue.textContent = premiumStartTxt + ' → ' + premiumEndTxt;
 
-      // Optional highlighted chip above the row (nice UX)
+      // Highlighted chip above the row
       if (pwWrap) {
         pwWrap.style.display = '';
         pwWrap.innerHTML = '';
         const chip = document.createElement('div');
         chip.className = 'premium-window-chip';
         chip.setAttribute('role','note');
-        chip.innerHTML = `<div><small>Premium actief van</small><span>${premiumStartTxt}</span></div><div style="opacity:.65;">→</div><div><small>tot en met</small><span>${premiumEndTxt}</span></div>`;
+        chip.innerHTML = `<div><small>Premium actief van</small><span>${premiumStartTxt}</span></div><div class="arrow">→</div><div><small>tot en met</small><span>${premiumEndTxt}</span></div>`;
         pwWrap.appendChild(chip);
       }
 
