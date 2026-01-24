@@ -92,6 +92,8 @@
     .ev-map-fallback { opacity:.85; font-size:14px; }
     .ev-map-links { margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
     .ev-map-links a { text-decoration:none; }
+    /* Fix: contact button text should be readable (white) */
+    #ev-contact { color: #fff !important; }
     </style>
 </head>
 
@@ -724,12 +726,12 @@
         ].filter(Boolean).map(s => String(s).trim()).filter(Boolean);
         const mapsQuery = encodeURIComponent(qParts.join(", "));
 
-        if (mapWrap) mapWrap.style.display = "block";
+        // Helper: initialize Leaflet map safely
+        function initLeafletMap({ lat, lng, label }) {
+          if (!mapEl || !window.L) return null;
 
-        if (Number.isFinite(lat) && Number.isFinite(lng) && mapEl && window.L) {
-          if (mapFallback) mapFallback.style.display = "none";
-
-          // Defensive: clear any previous map HTML (in case of hot reload)
+          // Ensure the container is visible and empty (important for Leaflet sizing)
+          mapEl.style.display = "block";
           mapEl.innerHTML = "";
 
           const m = L.map("ev-map", { scrollWheelZoom: false }).setView([lat, lng], 14);
@@ -738,21 +740,57 @@
             attribution: "&copy; OpenStreetMap",
           }).addTo(m);
 
-          const label = ev.title || "Event";
-          L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
+          L.marker([lat, lng]).addTo(m).bindPopup(label || "Event").openPopup();
+          return m;
+        }
 
-          if (mapLinks && mapGoogle && mapsQuery) {
-            mapLinks.style.display = "flex";
-            mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+        // Always show the wrapper if we have any location signal
+        if (mapWrap) mapWrap.style.display = "block";
+
+        // Provide Google Maps link whenever we have a query
+        if (mapLinks && mapGoogle && mapsQuery) {
+          mapLinks.style.display = "flex";
+          mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+        }
+
+        const label = ev.title || "Event";
+
+        // 1) Prefer explicit lat/lng from DB
+        if (Number.isFinite(lat) && Number.isFinite(lng) && window.L) {
+          if (mapFallback) mapFallback.style.display = "none";
+          initLeafletMap({ lat, lng, label });
+        } else if (mapsQuery && window.L) {
+          // 2) If no coordinates, geocode address -> show map
+          try {
+            // Nominatim (OpenStreetMap) geocoding
+            const q = decodeURIComponent(mapsQuery);
+            const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(q)}`;
+            const geoRes = await fetch(url, {
+              headers: {
+                "Accept": "application/json",
+              },
+            });
+
+            const geoJson = await geoRes.json().catch(() => []);
+            const first = Array.isArray(geoJson) ? geoJson[0] : null;
+            const glat = first ? Number(first.lat) : NaN;
+            const glng = first ? Number(first.lon) : NaN;
+
+            if (Number.isFinite(glat) && Number.isFinite(glng)) {
+              if (mapFallback) mapFallback.style.display = "none";
+              initLeafletMap({ lat: glat, lng: glng, label });
+            } else {
+              if (mapEl) mapEl.style.display = "none";
+              if (mapFallback) mapFallback.style.display = "block";
+            }
+          } catch (e) {
+            if (mapEl) mapEl.style.display = "none";
+            if (mapFallback) mapFallback.style.display = "block";
           }
         } else {
+          // 3) No coordinates and no usable query
           if (mapEl) mapEl.style.display = "none";
           if (mapFallback) mapFallback.style.display = "block";
-
-          if (mapLinks && mapGoogle && mapsQuery) {
-            mapLinks.style.display = "flex";
-            mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-          }
         }
 
         // Share URL must always be our platform URL
