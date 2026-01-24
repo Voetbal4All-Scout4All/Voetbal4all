@@ -638,8 +638,15 @@
       // We accept either ?id=... (preferred for DB ids) or ?slug=... (SEO slug)
       const hasAny = Boolean(id || slug);
       if (!hasAny) {
+        // If someone opens event.html directly without parameters, send them back to the overview.
+        // This avoids a confusing empty state.
         statusEl.style.display = "block";
-        statusEl.textContent = "Geen event geselecteerd. Gebruik ?id=... of ?slug=...";
+        statusEl.textContent = "Geen event geselecteerd. U wordt doorgestuurd naar het overzicht van events.";
+
+        // Preserve existing nav / layout while redirecting.
+        setTimeout(() => {
+          try { window.location.href = "events.html"; } catch (e) {}
+        }, 900);
         return;
       }
 
