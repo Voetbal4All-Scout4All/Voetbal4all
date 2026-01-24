@@ -2478,3 +2478,24 @@ img {
 .premium-card .ad-card-title{ opacity: .98; }
 .premium-card .ad-card-meta{ opacity: .92; }
 /* ===== END EVENTS PREMIUM VISUAL (OVERVIEW) ===== */
+
+/* ===== EVENTS PREMIUM BADGE (OVERVIEW) ===== */
+.premium-card{ position: relative; }
+
+.premium-badge{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.92);
+  background: rgba(22,163,74,.28);
+  border: 1px solid rgba(22,163,74,.55);
+  text-transform: uppercase;
+  z-index: 2;
+}
+/* ===== END EVENTS PREMIUM BADGE (OVERVIEW) ===== */
+
