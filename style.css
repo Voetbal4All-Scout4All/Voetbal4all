@@ -2375,56 +2375,69 @@ img {
 }
 /* ===== EVENTS UI FINAL ===== */
 
-/* Premium section title */
-.premium-events-title {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin: 1.5rem 0 1rem;
-  color: #ffffff;
-}
-
-/* Premium meta */
-.premium-event-meta {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #cbd5e1;
-}
-.premium-event-location {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.premium-event-location .flag {
-  width: 20px;
-  height: auto;
-}
-.premium-event-club {
-  font-weight: 700;
-  margin-top: 0.25rem;
-}
-.premium-event-date {
-  opacity: 0.9;
-}
-
-/* Event detail layout */
-.event-layout {
+/* Event detail: two-column layout (support both class names to avoid regressions) */
+.event-layout,
+.ev-two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+  align-items: start;
 }
 
+/* Left column media container (support both class names) */
+.event-media,
+.ev-media {
+  width: 100%;
+}
+
+/* Ensure flyer/media is always fully visible (no cropping) */
 .event-media img,
 .event-media embed,
-.event-media iframe {
+.event-media iframe,
+.ev-media img,
+.ev-media embed,
+.ev-media iframe {
   width: 100%;
-  height: auto;
+  max-width: 100%;
+  display: block;
   object-fit: contain;
+}
+
+/* Images: never crop, always show full */
+.event-media img,
+.ev-media img {
+  height: auto;
+  max-height: none;
+}
+
+/* PDF flyer via <embed>: give it real height */
+.event-media embed,
+.ev-media embed {
+  height: 760px;
+}
+
+/* Maps iframe: fixed, readable height */
+.event-media iframe,
+.ev-media iframe {
+  height: 420px;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .event-layout {
+  .event-layout,
+  .ev-two-col {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .event-media embed,
+  .ev-media embed {
+    height: 540px;
+  }
+
+  .event-media iframe,
+  .ev-media iframe {
+    height: 320px;
   }
 }
 
