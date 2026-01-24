@@ -33,9 +33,32 @@
     crossorigin=""
   ></script>
   <style>
+    /* 2-column event layout */
+    .ev-two-col{ display:grid; grid-template-columns: 1.05fr 1.35fr; gap:16px; margin-top:12px; }
+    .ev-col-media{ min-width:0; }
+    .ev-col-info{ min-width:0; }
+    @media (max-width: 980px){
+      .ev-two-col{ grid-template-columns:1fr; }
+    }
+
     /* Media gallery */
-    .ev-media { margin-top:12px; }
+    .ev-media { margin:0; }
     .ev-media-grid { display:flex; gap:10px; flex-wrap:wrap; }
+
+    /* Single flyer/cover should be fully visible */
+    .ev-media-hero{
+      width:100%;
+      height:auto;
+      max-height:560px;
+      object-fit:contain;
+      background:rgba(255,255,255,0.04);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.10);
+      cursor:pointer;
+      display:block;
+    }
+
+    /* Thumbnails for multiple media */
     .ev-media-thumb {
       width:140px; height:98px; object-fit:cover; border-radius:10px;
       cursor:pointer; border:1px solid rgba(255,255,255,0.08);
@@ -260,116 +283,123 @@
               <span class="pill-small" id="ev-pill">Sportieve events</span>
             </div>
 
-            <!-- Flyer / foto's (klik om te vergroten) – bovenaan -->
-            <div class="ev-media" id="ev-media" style="display:none; margin-top:12px;">
-              <div class="note" style="margin:0 0 8px 0;">Flyer / foto's</div>
-              <div class="ev-media-grid" id="ev-media-grid"></div>
-            </div>
-
-            <!-- Titel onder flyer -->
-            <div class="card-title" id="ev-title" style="margin-top:10px;">Event</div>
-
-            <!-- Meta in vaste structuur (kalender, vlag, regio, stad, club) -->
-            <div class="note" id="ev-meta" style="margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-              <span style="display:inline-flex; align-items:center; gap:8px;">
-                <span aria-hidden="true" style="display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10);">📅</span>
-                <span id="ev-date"></span>
-              </span>
-              <span id="ev-flag" aria-label="Land" title="Land"></span>
-              <span id="ev-region" style="display:none;"></span>
-              <span id="ev-city" style="display:none;"></span>
-              <span id="ev-club" style="display:none;"></span>
-            </div>
-
-            <!-- AD: In-card placement (above content) -->
-            <div class="footer-ad" style="margin-top:10px;">
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-4062633211824348"
-                   data-ad-slot="4567705393"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script>
-                try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
-              </script>
-            </div>
-
-            <div id="ev-premium" style="display:none; margin-top:10px;">
-              <span class="pill-small">Premium</span>
-            </div>
-
-            <div class="ad-card-actions" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-              <a href="events.html" class="btn-ghost-sm">← Terug naar events</a>
-
-              <div class="share-socials" aria-label="Deel dit event" style="gap:10px; align-items:center;">
-                <div class="share-socials-label" style="margin-right:2px;">Delen</div>
-                <div class="share-socials-icons">
-                  <a class="live-social-link" id="share-fb" href="#" target="_blank" rel="noopener noreferrer" aria-label="Deel op Facebook">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" />
-                    </svg>
-                  </a>
-
-                  <a class="live-social-link" id="share-ig" href="#" aria-label="Deel op Instagram">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/>
-                      <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-                      <path d="M17.6 6.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/>
-                    </svg>
-                  </a>
-
-                  <a class="live-social-link" id="share-tt" href="#" aria-label="Deel op TikTok">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M14 3c.6 2.9 2.5 4.8 5 5v3c-2 0-3.8-.7-5-1.9V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3.1c-.3-.2-.6-.3-1-.3a2 2 0 1 0 2 2V3h3z"/>
-                    </svg>
-                  </a>
-
-                  <a class="live-social-link" id="share-x" href="#" target="_blank" rel="noopener noreferrer" aria-label="Deel op X">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M18.9 3H21l-7.6 8.7L22 21h-6.6l-5.2-6.2L4.6 21H2.5l8.2-9.4L2 3h6.7l4.7 5.6L18.9 3zm-2.3 16h1.8L7.4 4.9H5.5L16.6 19z"/>
-                    </svg>
-                  </a>
-
-                  <a class="live-social-link" id="share-copy" href="#" aria-label="Kopieer link">
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1z"/>
-                      <path d="M18 5H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h8v14z"/>
-                    </svg>
-                  </a>
+            <div class="ev-two-col">
+              <!-- LEFT: flyer/media -->
+              <div class="ev-col-media">
+                <div class="ev-media" id="ev-media" style="display:none;">
+                  <div class="note" style="margin:0 0 8px 0;">Flyer / foto's</div>
+                  <div class="ev-media-grid" id="ev-media-grid"></div>
                 </div>
               </div>
 
-              <button type="button" class="btn-ghost-sm" id="ev-contact">Inschrijven / contact</button>
-            </div>
+              <!-- RIGHT: full information + map -->
+              <div class="ev-col-info">
+                <div class="card-title" id="ev-title" style="margin-top:0;">Event</div>
 
-            <div class="ad-card-body" style="margin-top:12px;">
-              <!-- Details -->
-              <div id="ev-desc"></div>
-              <div id="ev-extra" style="margin-top:10px;"></div>
-              <div class="ev-map-wrap" id="ev-map-wrap" style="display:none;">
-                <div class="ev-map-title">Locatie op kaart</div>
-                <div id="ev-map"></div>
-
-                <div class="ev-map-links" id="ev-map-links" style="display:none;">
-                  <a class="btn-ghost-sm" id="ev-map-google" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                <!-- Meta in vaste structuur (kalender, vlag, regio, stad, club) -->
+                <div class="note" id="ev-meta" style="margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <span style="display:inline-flex; align-items:center; gap:8px;">
+                    <span aria-hidden="true" style="display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10);">📅</span>
+                    <span id="ev-date"></span>
+                  </span>
+                  <span id="ev-flag" aria-label="Land" title="Land"></span>
+                  <span id="ev-region" style="display:none;"></span>
+                  <span id="ev-city" style="display:none;"></span>
+                  <span id="ev-club" style="display:none;"></span>
                 </div>
 
-                <div class="ev-map-fallback" id="ev-map-fallback" style="display:none;">
-                  Locatiegegevens ontbreken om een kaart te tonen.
+                <!-- AD: In-card placement (above content) -->
+                <div class="footer-ad" style="margin-top:10px;">
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-4062633211824348"
+                       data-ad-slot="4567705393"
+                       data-ad-format="auto"
+                       data-full-width-responsive="true"></ins>
+                  <script>
+                    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                  </script>
                 </div>
-              </div>
 
-              <!-- AD: In-card placement (below content) -->
-              <div class="footer-ad" style="margin-top:12px;">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-4062633211824348"
-                     data-ad-slot="8259538394"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>
-                  try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
-                </script>
+                <div id="ev-premium" style="display:none; margin-top:10px;">
+                  <span class="pill-small">Premium</span>
+                </div>
+
+                <div class="ad-card-actions" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <a href="events.html" class="btn-ghost-sm">← Terug naar events</a>
+
+                  <div class="share-socials" aria-label="Deel dit event" style="gap:10px; align-items:center;">
+                    <div class="share-socials-label" style="margin-right:2px;">Delen</div>
+                    <div class="share-socials-icons">
+                      <a class="live-social-link" id="share-fb" href="#" target="_blank" rel="noopener noreferrer" aria-label="Deel op Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" />
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-ig" href="#" aria-label="Deel op Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/>
+                          <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                          <path d="M17.6 6.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/>
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-tt" href="#" aria-label="Deel op TikTok">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M14 3c.6 2.9 2.5 4.8 5 5v3c-2 0-3.8-.7-5-1.9V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3.1c-.3-.2-.6-.3-1-.3a2 2 0 1 0 2 2V3h3z"/>
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-x" href="#" target="_blank" rel="noopener noreferrer" aria-label="Deel op X">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M18.9 3H21l-7.6 8.7L22 21h-6.6l-5.2-6.2L4.6 21H2.5l8.2-9.4L2 3h6.7l4.7 5.6L18.9 3zm-2.3 16h1.8L7.4 4.9H5.5L16.6 19z"/>
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-copy" href="#" aria-label="Kopieer link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1z"/>
+                          <path d="M18 5H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h8v14z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn-ghost-sm" id="ev-contact">Inschrijven / contact</button>
+                </div>
+
+                <div class="ad-card-body" style="margin-top:12px;">
+                  <!-- Details -->
+                  <div id="ev-desc"></div>
+                  <div id="ev-extra" style="margin-top:10px;"></div>
+
+                  <div class="ev-map-wrap" id="ev-map-wrap" style="display:none;">
+                    <div class="ev-map-title">Locatie op kaart</div>
+                    <div id="ev-map"></div>
+
+                    <div class="ev-map-links" id="ev-map-links" style="display:none;">
+                      <a class="btn-ghost-sm" id="ev-map-google" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                    </div>
+
+                    <div class="ev-map-fallback" id="ev-map-fallback" style="display:none;">
+                      Locatiegegevens ontbreken om een kaart te tonen.
+                    </div>
+                  </div>
+
+                  <!-- AD: In-card placement (below content) -->
+                  <div class="footer-ad" style="margin-top:12px;">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-4062633211824348"
+                         data-ad-slot="8259538394"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                      try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                    </script>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -622,10 +652,27 @@
       if (mediaWrap) mediaWrap.style.display = "block";
       if (!mediaGrid) return;
 
-      mediaGrid.innerHTML = resolvedUrls.map((u, idx) => {
-        const safeResolved = String(u).replaceAll('"','&quot;');
-        return `<img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx+1}" data-media-src="${safeResolved}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');" />`;
-      }).join("");
+      // Single media: render as a full, readable flyer/cover
+      if (resolvedUrls.length === 1) {
+        const u = String(resolvedUrls[0]);
+        const safeResolved = u.replaceAll('"','&quot;');
+        mediaGrid.innerHTML = `
+          <img
+            class="ev-media-hero"
+            src="${safeResolved}"
+            alt="Flyer / foto"
+            data-media-src="${safeResolved}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');"
+          />
+        `;
+      } else {
+        // Multiple media: render thumbnails
+        mediaGrid.innerHTML = resolvedUrls.map((u, idx) => {
+          const safeResolved = String(u).replaceAll('"','&quot;');
+          return `<img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx+1}" data-media-src="${safeResolved}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');" />`;
+        }).join("");
+      }
 
       mediaGrid.querySelectorAll("[data-media-src]").forEach(img => {
         img.addEventListener("click", () => openLightbox(img.getAttribute("data-media-src")));
