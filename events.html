@@ -389,7 +389,7 @@
                   <div class="card-header">
                     <div>
                       <div class="card-caption">Premium</div>
-                      <div class="card-title">Premium events in de volgende 60 dagen</div>
+                      <div class="card-title premium-title-lg">Premium events in de volgende 60 dagen</div>
                     </div>
                     <span class="pill-small">Rotatie</span>
                   </div>
@@ -1036,7 +1036,7 @@
             : 'Jouw premium event hier?';
 
           grid.insertAdjacentHTML('beforeend', `
-            <article class="ad-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
+            <article class="ad-card premium-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
               <div class="event-row">
                 <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
                   <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">

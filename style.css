@@ -2442,3 +2442,39 @@ img {
 }
 
 /* ===== END EVENTS UI FINAL ===== */
+
+/* ===== EVENTS PREMIUM VISUAL (OVERVIEW) ===== */
+.premium-title-lg{
+  font-size: clamp(20px, 2.1vw, 28px);
+  line-height: 1.15;
+}
+
+/* Premium cards: stronger border + subtle glow, without changing existing grid/card layout */
+.premium-card{
+  position: relative;
+  border: 1px solid rgba(22,163,74,.55) !important;
+  background: rgba(22,163,74,.06);
+  box-shadow: 0 0 0 1px rgba(22,163,74,.18), 0 10px 28px rgba(0,0,0,.35);
+}
+
+/* Small ribbon label */
+.premium-card::before{
+  content: "PREMIUM";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.92);
+  background: rgba(22,163,74,.28);
+  border: 1px solid rgba(22,163,74,.55);
+  text-transform: uppercase;
+}
+
+/* Make premium title/meta a touch brighter for scanability */
+.premium-card .ad-card-title{ opacity: .98; }
+.premium-card .ad-card-meta{ opacity: .92; }
+/* ===== END EVENTS PREMIUM VISUAL (OVERVIEW) ===== */
