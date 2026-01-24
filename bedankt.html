@@ -628,6 +628,11 @@
     setText('orderEmail', email, '—');
     setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
 
+    // Update the “Volgende stappen” panel dynamically for event flow
+    // (declare before Premium window logic because it may override copy)
+    const nextIntro = document.getElementById('nextStepsIntro');
+    const nextTip = document.getElementById('nextStepsTip');
+
     // Premium window UI (only when both start+end are provided, and not error/deleted)
     const pwWrap = document.getElementById('premiumWindowWrap');
     const pwLabel = document.getElementById('premiumWindowLabel');
@@ -666,9 +671,7 @@
       if (pwValue) pwValue.style.display = 'none';
     }
 
-    // Update the “Volgende stappen” panel dynamically for event flow
-    const nextIntro = document.getElementById('nextStepsIntro');
-    const nextTip = document.getElementById('nextStepsTip');
+    // (nextIntro/nextTip already resolved above)
     const isEventFlow3 = !!sid || source === 'event';
     if (isEventFlow3 && nextIntro && nextTip){
       if (isError) {
