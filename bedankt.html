@@ -407,8 +407,12 @@
 
     // Status (optional)
     const status = (qs.get('status') || 'Ontvangen').trim();
+    const deletion = (qs.get('deletion') || '').trim();
 
     const statusLower = String(status).toLowerCase();
+    const deletionLower = String(deletion).toLowerCase();
+
+    const isDeleted = statusLower === 'deleted' || deletionLower === 'deleted' || deletionLower === 'already_deleted';
     const isError = errorFlag === '1' || statusLower === 'error' || statusLower === 'failed' || statusLower === 'mislukt';
 
     // Success checkmark animation: show only on success (hide on error)
@@ -461,11 +465,13 @@
       // Show for event submissions; for premium (paid=1) we still recommend keeping the email,
       // but the “bevestigen” step applies to non-premium.
       const isEventFlow = !!sid || source === 'event';
-      if (isEventFlow) {
+      if (isEventFlow && !isError && !isDeleted) {
         emailKeepNotice.style.display = '';
         if (paid) {
           emailKeepNotice.querySelectorAll('li')[0].innerHTML = 'Bewaar de e-mail met uw <strong>Event-ID</strong> tot na het event.';
         }
+      } else {
+        emailKeepNotice.style.display = 'none';
       }
     }
 
@@ -525,6 +531,16 @@
         return;
       }
 
+      if (isDeleted) {
+        titleEl.textContent = 'Uw event werd verwijderd';
+        subEl.textContent = 'Uw event is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
+        // In delete state: no pending/keep-email guidance
+        if (pendingNotice) pendingNotice.style.display = 'none';
+        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+        return;
+      }
+
       if (source === 'contact'){
         titleEl.textContent = 'Bedankt voor je bericht';
         subEl.textContent = 'We hebben je bericht goed ontvangen. Hieronder vind je een overzicht van je aanvraag.';
@@ -550,8 +566,13 @@
     if (badgeEl){
       const parts = [];
       const isEventFlow = !!sid || source === 'event';
-      if (isEventFlow) parts.push(isError ? 'EVENT · NIET VERWERKT' : (paid ? 'EVENT · PREMIUM' : 'EVENT'));
-      else if (source) parts.push(source.toUpperCase());
+      if (isEventFlow) {
+        if (isError) parts.push('EVENT · NIET VERWERKT');
+        else if (isDeleted) parts.push('EVENT · VERWIJDERD');
+        else parts.push(paid ? 'EVENT · PREMIUM' : 'EVENT');
+      } else if (source) {
+        parts.push(source.toUpperCase());
+      }
       if (id) parts.push('#' + id);
       if (parts.length){
         badgeEl.style.display = 'inline-flex';
@@ -566,7 +587,7 @@
     setText('orderId', id, '—');
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
-    setText('orderStatus', isError ? 'Niet verwerkt' : status, 'Ontvangen');
+    setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
 
     // Update the “Volgende stappen” panel dynamically for event flow
     const nextIntro = document.getElementById('nextStepsIntro');
@@ -576,6 +597,11 @@
       if (isError) {
         nextIntro.textContent = 'Uw aanvraag kon niet verwerkt worden.';
         nextTip.textContent = 'Voor meer info, contacteer ons via het contactformulier.';
+        return;
+      }
+      if (isDeleted) {
+        nextIntro.textContent = 'Uw event werd verwijderd en is niet langer zichtbaar op Voetbal4All.';
+        nextTip.textContent = 'In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
         return;
       }
       if (paid){
