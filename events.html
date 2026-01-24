@@ -21,6 +21,24 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* Fix contrast: ensure ghost buttons remain readable on dark backgrounds */
+    .btn-ghost-sm,
+    .btn-ghost-sm:visited,
+    button.btn-ghost-sm {
+      color: #ffffff;
+    }
+    .btn-ghost-sm svg,
+    button.btn-ghost-sm svg {
+      stroke: currentColor;
+      fill: none;
+    }
+    .btn-ghost-sm .fill,
+    button.btn-ghost-sm .fill {
+      fill: currentColor;
+      stroke: none;
+    }
+  </style>
+  <style>
     /* Share icons – identical sizing/feel as live-score banner socials */
     .v4-share{display:flex;gap:10px;flex-wrap:wrap;align-items:center;min-width:0}
     .v4-share .live-social-link{
