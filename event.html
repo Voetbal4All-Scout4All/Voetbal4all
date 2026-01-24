@@ -20,6 +20,18 @@
   <!-- Fonts + CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <!-- Leaflet (OpenStreetMap) for event map -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
   <style>
     /* Media gallery */
     .ev-media { margin-top:12px; }
@@ -67,6 +79,19 @@
     }
     .share-socials .live-social-link:active{transform:translateY(0)}
     .share-socials [data-share-channel="ig"] svg{transform:scale(1.28);transform-origin:50% 50%}
+    /* Event map */
+    .ev-map-wrap { margin-top:14px; }
+    .ev-map-title { font-weight:800; margin:0 0 8px 0; }
+    #ev-map {
+      width:100%;
+      height:320px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.10);
+      overflow:hidden;
+    }
+    .ev-map-fallback { opacity:.85; font-size:14px; }
+    .ev-map-links { margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; }
+    .ev-map-links a { text-decoration:none; }
     </style>
 </head>
 
@@ -307,6 +332,18 @@
               <!-- Details -->
               <div id="ev-desc"></div>
               <div id="ev-extra" style="margin-top:10px;"></div>
+              <div class="ev-map-wrap" id="ev-map-wrap" style="display:none;">
+                <div class="ev-map-title">Locatie op kaart</div>
+                <div id="ev-map"></div>
+
+                <div class="ev-map-links" id="ev-map-links" style="display:none;">
+                  <a class="btn-ghost-sm" id="ev-map-google" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                </div>
+
+                <div class="ev-map-fallback" id="ev-map-fallback" style="display:none;">
+                  Locatiegegevens ontbreken om een kaart te tonen.
+                </div>
+              </div>
 
               <!-- AD: In-card placement (below content) -->
               <div class="footer-ad" style="margin-top:12px;">
@@ -672,6 +709,51 @@
         if (ev.organizer_phone) extras.push(`<div><strong>Telefoon:</strong> ${ev.organizer_phone}</div>`);
         if (ev.organizer_url) extras.push(`<div><strong>Website:</strong> ${ev.organizer_url}</div>`);
         extraEl.innerHTML = extras.join("");
+        // ---- Map (Leaflet) ----
+        const mapWrap = document.getElementById("ev-map-wrap");
+        const mapEl = document.getElementById("ev-map");
+        const mapFallback = document.getElementById("ev-map-fallback");
+        const mapLinks = document.getElementById("ev-map-links");
+        const mapGoogle = document.getElementById("ev-map-google");
+
+        const lat = (ev.lat !== null && ev.lat !== undefined) ? Number(ev.lat) : NaN;
+        const lng = (ev.lng !== null && ev.lng !== undefined) ? Number(ev.lng) : NaN;
+
+        const qParts = [
+          ev.location_name, ev.address, ev.postal_code, ev.city, ev.country
+        ].filter(Boolean).map(s => String(s).trim()).filter(Boolean);
+        const mapsQuery = encodeURIComponent(qParts.join(", "));
+
+        if (mapWrap) mapWrap.style.display = "block";
+
+        if (Number.isFinite(lat) && Number.isFinite(lng) && mapEl && window.L) {
+          if (mapFallback) mapFallback.style.display = "none";
+
+          // Defensive: clear any previous map HTML (in case of hot reload)
+          mapEl.innerHTML = "";
+
+          const m = L.map("ev-map", { scrollWheelZoom: false }).setView([lat, lng], 14);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: "&copy; OpenStreetMap",
+          }).addTo(m);
+
+          const label = ev.title || "Event";
+          L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
+
+          if (mapLinks && mapGoogle && mapsQuery) {
+            mapLinks.style.display = "flex";
+            mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+          }
+        } else {
+          if (mapEl) mapEl.style.display = "none";
+          if (mapFallback) mapFallback.style.display = "block";
+
+          if (mapLinks && mapGoogle && mapsQuery) {
+            mapLinks.style.display = "flex";
+            mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+          }
+        }
 
         // Share URL must always be our platform URL
         const shareUrl = "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug);
