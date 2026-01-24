@@ -97,8 +97,9 @@
     }
 
     /* Ensure dark ghost buttons have readable text on this page */
-    .btn-ghost-sm{ color:#fff; }
-    .btn-ghost-sm:hover{ color:#fff; }
+    .btn-ghost-sm{ color:#fff !important; }
+    .btn-ghost-sm:hover{ color:#fff !important; }
+    .btn-ghost-sm:visited{ color:#fff !important; }
     .ev-map-fallback { opacity:.85; font-size:14px; }
     /* External map links are kept as a hidden fallback (we embed the map on-page) */
     .ev-map-links { margin-top:10px; display:none; gap:10px; flex-wrap:wrap; }
@@ -743,17 +744,17 @@
           .map((s) => String(s).trim())
           .filter(Boolean);
 
-        const mapsQuery = encodeURIComponent(qParts.join(", "));
+        const mapsQueryRaw = qParts.join(", ").trim();
+        const mapsQuery = encodeURIComponent(mapsQueryRaw);
         const label = ev.title || "Event";
 
         // Show wrapper only when we have at least some location signal
-        const hasLocationSignal = Number.isFinite(lat) && Number.isFinite(lng) || Boolean(mapsQuery);
+        const hasLocationSignal = (Number.isFinite(lat) && Number.isFinite(lng)) || Boolean(mapsQueryRaw);
         if (mapWrap) mapWrap.style.display = hasLocationSignal ? "block" : "none";
 
-        // We embed the map on-page; keep the external Google Maps link as a hidden fallback.
-        // (Users should not see a plain link instead of a map.)
-        if (mapLinks && mapGoogle && mapsQuery) {
-          mapLinks.style.display = "none";
+        // Keep external Google Maps link as a hidden fallback only
+        if (mapLinks) mapLinks.style.display = "none";
+        if (mapGoogle && mapsQueryRaw) {
           mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
         }
 
@@ -771,7 +772,7 @@
             attribution: "&copy; OpenStreetMap",
           }).addTo(m);
           L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
-        } else if (mapsQuery) {
+        } else if (mapsQueryRaw) {
           // No coordinates: embed a map directly (reliable, no geocoding required)
           mapEl.style.display = "block";
           if (mapFallback) mapFallback.style.display = "none";
@@ -785,11 +786,9 @@
               src="https://www.google.com/maps?q=${mapsQuery}&output=embed">
             </iframe>
           `;
-          if (mapLinks) mapLinks.style.display = "none";
         } else {
           // No usable location
           mapEl.style.display = "none";
-          if (mapLinks) mapLinks.style.display = "none";
           if (mapFallback) mapFallback.style.display = "block";
         }
 
