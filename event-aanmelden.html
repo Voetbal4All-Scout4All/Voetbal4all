@@ -681,6 +681,24 @@
       };
     }
 
+    // Map UI premium duration codes (w1/m1/...) to backend package codes
+    function mapPremiumPlanToPackageCode(sel) {
+      if (!sel) return null;
+
+      // Weeks: w1, w2, w3 -> week
+      if (sel.startsWith('w')) return 'week';
+
+      // Months: m1..m6 -> month / month_4_5 / month_6
+      const months = parseInt(sel.slice(1), 10);
+      if (Number.isNaN(months) || months <= 0) return null;
+
+      if (months >= 1 && months <= 3) return 'month';
+      if (months === 4 || months === 5) return 'month_4_5';
+      if (months === 6) return 'month_6';
+
+      return null;
+    }
+
     const premiumEnabled = !!document.getElementById('evPremium')?.checked;
     const premiumDuration = v('evPremiumDuration');
     const premiumCalc = calcPremium(premiumDuration);
@@ -972,6 +990,13 @@
         if (premiumEnabled) {
           if (hint) hint.textContent = 'Doorsturen naar veilige betaling…';
 
+          const packageCode = mapPremiumPlanToPackageCode(premiumPlan);
+          if (!packageCode) {
+            const reason = 'Ongeldige Premium-periode gekozen. Kies opnieuw.';
+            window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
+            return;
+          }
+
           const checkoutPayload = {
             event_id: sid,
             price_eur: Number(premiumPrice),
@@ -979,6 +1004,7 @@
             success_url: `${window.location.origin}/bedankt.html?sid=${encodeURIComponent(sid)}&paid=1`,
             cancel_url: `${window.location.origin}/event-aanmelden.html`,
             // optional metadata for later use
+            package_code: packageCode,
             premium_plan: premiumPlan,
             premium_plan_label: premiumPlanLabel,
             premium_effective_eur: premiumCalc && premiumCalc.effective ? Number(premiumCalc.effective.toFixed(2)) : null,
