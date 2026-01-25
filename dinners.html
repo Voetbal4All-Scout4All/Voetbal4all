@@ -412,10 +412,10 @@
   }
 
   function eventMatchesUIFilters(ev){
-    const q = norm($("event-search-text")?.value).toLowerCase();
-    const country = norm($("event-filter-country")?.value);
-    const type = norm($("event-filter-type")?.value);
-    const month = norm($("event-filter-month")?.value);
+    const q = norm($("dinner-search")?.value).toLowerCase();
+    const country = norm($("dinner-country")?.value);
+    const type = norm($("dinner-type")?.value);
+    const month = norm($("dinner-month")?.value);
 
     const title = norm(ev.title).toLowerCase();
     const desc = norm(ev.description).toLowerCase();
@@ -475,7 +475,7 @@
   let ALL = [];
 
   async function load(){
-    const list = $("event-list");
+    const list = $("dinner-list");
     if (!list) return;
 
     list.innerHTML = "<div style=\"padding:16px; opacity:.85;\">Events laden…</div>";
@@ -489,7 +489,7 @@
   }
 
   function apply(){
-    const list = $("event-list");
+    const list = $("dinner-list");
     if (!list) return;
 
     const filtered = ALL.filter(eventMatchesUIFilters);
@@ -500,9 +500,10 @@
     }
 
     filtered.sort((a,b) => {
-      const da = parseISO(a.start_at); const db = parseISO(b.start_at);
-      const ta = da and not isNaN(da.getTime()) and da.getTime() or 0
-      const tb = db and not isNaN(db.getTime()) and db.getTime() or 0
+      const da = parseISO(a.start_at);
+      const db = parseISO(b.start_at);
+      const ta = (da && !isNaN(da.getTime())) ? da.getTime() : 0;
+      const tb = (db && !isNaN(db.getTime())) ? db.getTime() : 0;
       return ta - tb;
     });
 
@@ -517,12 +518,12 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    hook("event-search-text");
-    hook("event-filter-country");
-    hook("event-filter-type");
-    hook("event-filter-month");
+    hook("dinner-search");
+    hook("dinner-country");
+    hook("dinner-type");
+    hook("dinner-month");
     load().catch(err => {
-      const list = $("event-list");
+      const list = $("dinner-list");
       if (list) list.innerHTML = "<div style=\"padding:16px; opacity:.85;\">Fout bij laden van events.</div>";
       console.error("[events non-sport] load failed:", err);
     });
