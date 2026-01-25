@@ -522,6 +522,7 @@
   // ------------------------------
   (async function(){
     const qs = new URLSearchParams(window.location.search);
+    let fetchedEventItem = null; // filled via backend lookup (for rendering form fields + premium window)
 
    // ------------------------------
     // Flow resolver (edge-case proof)
@@ -685,7 +686,8 @@
     // If we still don't have the premium window, try to fetch it from the backend event record.
     // Supports both numeric event IDs and external_id (UUID) used by forms:event-submission.
     async function tryFetchPremiumWindowFromEvent() {
-      if (premiumStartRaw && premiumEndRaw) return;
+      // We may still want to fetch the event even if the premium window exists,
+      // because we use the event payload to render the submitted fields.
 
       // Prefer the SID from the flow (forms external_id UUID). Fallback to eventId params.
       const extId = String((flow && flow.sid) || '').trim();
@@ -738,6 +740,7 @@
           const data = await r.json();
           const item = pickItem(data);
           if (!item) continue;
+          fetchedEventItem = item;
 
           // Prefer backend-calculated premium window
           const pStart = item.premium_activated_at || item.premiumActivatedAt || item.premium_start || item.premiumStart || '';
@@ -746,7 +749,7 @@
           if (pStart && pEnd) {
             premiumStartRaw = String(pStart);
             premiumEndRaw = String(pEnd);
-            return;
+            break;
           }
 
           // Fallback: if backend has start/end but not premium window, at least show deterministic window
@@ -756,7 +759,7 @@
           if (fallbackStart && fallbackEnd) {
             premiumStartRaw = String(fallbackStart);
             premiumEndRaw = String(fallbackEnd);
-            return;
+            break;
           }
         } catch (e) {
           // silent
@@ -904,6 +907,11 @@
       const list = document.getElementById('formFieldsList');
       if (!wrap || !list) return;
 
+      // Prefer URL params (works for forms that redirect with full querystring),
+      // but for Stripe/paid flow we usually only have `sid`.
+      // In that case we render from the event record fetched from the backend.
+      const data = fetchedEventItem || null;
+
       const fieldDefs = [
         ['title', 'Titel'],
         ['description', 'Beschrijving'],
@@ -934,6 +942,7 @@
       ];
 
       const aliases = {
+        // URL param aliases
         title: ['title', 'event_title'],
         description: ['description', 'desc', 'body'],
         start_at: ['start_at', 'startAt', 'start', 'eventStart'],
@@ -959,7 +968,7 @@
         tags: ['tags', 'tag']
       };
 
-      const getAny = (keys) => {
+      const getAnyFromQS = (keys) => {
         for (const k of keys) {
           const v = qs.get(k);
           if (v && String(v).trim()) return String(v).trim();
@@ -967,10 +976,48 @@
         return '';
       };
 
+      const getAnyFromData = (key) => {
+        if (!data) return '';
+        // normalize typical backend shapes
+        const direct = data[key];
+        if (direct !== undefined && direct !== null && String(direct).trim() !== '') return String(direct).trim();
+
+        // map a few common backend fields
+        const map = {
+          description: ['description', 'desc', 'body'],
+          start_at: ['start_at', 'startAt'],
+          end_at: ['end_at', 'endAt'],
+          organizer_name: ['organizer_name'],
+          organizer_email: ['organizer_email'],
+          organizer_phone: ['organizer_phone'],
+          organizer_url: ['organizer_url'],
+          location_name: ['location_name', 'location'],
+          postal_code: ['postal_code'],
+          package_code: ['package_code'],
+          quantity: ['quantity']
+        };
+
+        const keys = map[key] || [key];
+        for (const k of keys) {
+          const v = data[k];
+          if (v !== undefined && v !== null && String(v).trim() !== '') return String(v).trim();
+        }
+
+        // if tags is an array
+        if (key === 'tags' && Array.isArray(data.tags) && data.tags.length) return data.tags.join(', ');
+
+        return '';
+      };
+
       const rows = [];
       for (const [key, label] of fieldDefs) {
+        // First attempt: querystring (if present)
         const keys = aliases[key] || [key];
-        let val = getAny(keys);
+        let val = getAnyFromQS(keys);
+
+        // Second attempt: backend-fetched event item
+        if (!val) val = getAnyFromData(key);
+
         if (!val) continue;
 
         if (key === 'start_at' || key === 'end_at') val = fmtDateTime(val);
@@ -1079,6 +1126,7 @@
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
     setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
+    // Render fields now (URL params), then re-render after backend lookup (for paid flow where only SID exists)
     renderFormFields();
 
     // Update the “Volgende stappen” panel dynamically for event flow
@@ -1096,6 +1144,8 @@
     // If links don't carry premium params, fetch them from backend using eventId (if present)
     // NOTE: this is safe to run even if eventId is missing.
     await tryFetchPremiumWindowFromEvent();
+    // Re-render form fields once we have the backend event payload
+    renderFormFields();
 
     // If Premium window was fetched after initial derivation, recompute helpers.
     premiumStartRaw = String(premiumStartRaw || '').trim();
