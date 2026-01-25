@@ -191,6 +191,30 @@
       text-transform:uppercase;
     }
     .premium-window-chip span{ display:block; font-weight:900; }
+
+    .premium-upsell-chip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(24,160,251,.55);
+      background:rgba(24,160,251,.10);
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      font-size:14px;
+    }
+    .premium-upsell-chip strong{font-weight:900;}
+    .premium-upsell-chip span{opacity:.9;}
+    .premium-upsell-chip .upsell-cta{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(24,160,251,.65);
+      background:rgba(24,160,251,.20);
+      font-weight:800;
+    }
+
 </style>
 </head>
 
@@ -1040,7 +1064,7 @@
     const premiumEndTxt = fmtDateTime(premiumEndRaw);
     const hasPremiumWindow = !!premiumStartRaw && !!premiumEndRaw;
 
-    if (!isError && !isDeleted && hasPremiumWindow) {
+    if (!isError && !isDeleted && hasPremiumWindow && paid) {
       if (premiumBlock) premiumBlock.style.display = '';
       // Keep the plain row hidden by default to avoid duplicate rendering.
       // We still set the textContent for accessibility/fallback.
@@ -1083,6 +1107,21 @@
       if (pwRow) pwRow.style.display = 'none';
       if (pwLabel) pwLabel.style.display = 'none';
       if (pwValue) pwValue.style.display = 'none';
+      // Premium upsell for non-premium pending events
+      const statusIsPending = String(status).toLowerCase() === 'pending';
+      if (statusIsPending && !paid && premiumBlock) {
+        premiumBlock.style.display = '';
+        if (pwWrap) {
+          pwWrap.style.display = '';
+          pwWrap.innerHTML = `
+            <div class="premium-upsell-chip">
+              <strong>Wil je meer bereik?</strong>
+              <span>Kies Premium en vergroot de zichtbaarheid van je event.</span>
+              <a href="event-aanmelden.html" class="upsell-cta">Kies Premium</a>
+            </div>
+          `;
+        }
+      }
     }
 
     // (nextIntro/nextTip already resolved above)
