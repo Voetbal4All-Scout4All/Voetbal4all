@@ -1,60 +1,16 @@
 {
-  "generatedAt": "2026-01-25T17:21:19.965Z",
+  "generatedAt": "2026-01-25T18:35:12.989Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sources: Fulham bid $38m for USMNT's Pepi",
-      "link": "https://www.espn.com/soccer/story/_/id/47722797/fulham-make-38m-bid-injured-usmnt-forward-ricardo-pepi-sources",
-      "summary": "Fulham have made a bid of €32 million ($38m) for the services of PSV forward Ricardo Pepi, sources have told ESPN.",
-      "publishedAt": "2026-01-25T17:17:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Estêvão on scoresheet as Chelsea brush Palace aside",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740820",
-      "summary": "Estêvão opened the scoring and added an assist as Chelsea secured a 3-1 victory over 10-man Crystal Palace.",
-      "publishedAt": "2026-01-25T17:17:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Aston Villa dream alive after beating Newcastle",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740824",
-      "summary": "Emi Buendia's sweet strike set Aston Villa on their way to a hard-fought 2-0 Premier League win at Newcastle.",
-      "publishedAt": "2026-01-25T17:17:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Van Dijk: No problem with Liverpool 'togetherness'",
-      "link": "https://www.espn.com/soccer/story/_/id/47723210/no-problem-liverpool-togetherness",
-      "summary": "Virgil van Dijk believes Liverpool lack consistency but not togetherness after the club's hopes of Champions League qualification were dealt a blow.",
-      "publishedAt": "2026-01-25T17:17:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Almada strikes as Atlético cruise past Mallorca",
-      "link": "https://www.espn.com/soccer/report/_/gameId/748345",
-      "summary": "Atlético Madrid earned back-to-back LaLiga wins with a 3-0 victory over Mallorca.",
-      "publishedAt": "2026-01-25T17:17:55.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Deijl dolblij na debuut voor Feyenoord: 'Het is ongekend'",
+      "link": "https://www.vi.nl/nieuws/deijl-dolblij-na-debuut-voor-feyenoord-het-is-ongekend",
+      "summary": "Mats Deijl straalde zondag van oor tot oor, nadat hij zijn debuut had gemaakt voor Feyenoord. Voor de rechtsback kwam een droom uit. Feyenoord won bovendien met ruime cijfers van Heracles en daarbij kreeg de 28-jarige verdediger ook nog eens een assist op zijn naam.",
+      "publishedAt": "2026-01-25T18:26:49.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +18,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Utrecht-opponent Celtic geeft zege uit handen in beladen Schotse topper",
-      "link": "https://www.vi.nl/nieuws/utrecht-opponent-celtic-geeft-zege-uit-handen-in-beladen-schotse-topper",
-      "summary": "De Schotse topper tussen Hearts en Celtic is in balans gebleven. De wedstrijd eindigde in een 2-2 gelijkspel. Celtic neemt het donderdag op tegen FC Utrecht in de Europa League.",
-      "publishedAt": "2026-01-25T17:17:44.000Z"
+      "title": "Engelse titelstrijd volledig open na spectaculaire zege United bij Arsenal",
+      "link": "https://www.vi.nl/nieuws/engelse-titelstrijd-volledig-open-na-spectaculaire-zege-united-bij-arsenal",
+      "summary": "Manchester United heeft stadsgenoot Manchester City met een spectaculaire zege op Arsenal helemaal terug in de titelstrijd geholpen. De koploper uit Londen heeft na het derde puntenverlies op rij nog vier punten voorsprong op City.",
+      "publishedAt": "2026-01-25T18:26:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Another BEAUTY! Cunha puts Man Utd back in front with STUNNING strike!",
+      "link": "https://www.skysports.com/watch/video/13498971/goal-m-cunha-87-arsenal-2-3-manchester-utd",
+      "summary": "Matheus Cunha scores a brilliant goal for Manchester United to put them 3-2 up in their Premier League clash with Arsenal.",
+      "publishedAt": "2026-01-25T18:21:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: knotsgekke slotfase in Londen, Cunha ramt de 2-3 binnen",
+      "link": "https://www.vi.nl/nieuws/vi-live-az-naar-telstar-kraker-tussen-arsenal-en-manchester-united",
+      "summary": "Zondag wordt er weer volop gevoetbald in binnen- en buitenland. AZ gaat om 12.15 uur op bezoek bij Telstar, FC Groningen speelt tegen Fortuna Sittard, FC Utrecht ontvangt Sparta Rotterdam en ook in het buitenland staat ons veel moois te wachten. Volg het in de VI Live.",
+      "publishedAt": "2026-01-25T18:14:31.000Z"
     },
     {
       "type": "rss",
@@ -76,7 +54,18 @@
       "title": "Arsenal v Manchester United: Premier League – live",
       "link": "https://www.theguardian.com/football/live/2026/jan/25/arsenal-v-manchester-united-premier-league-live",
       "summary": "⚽ Updates from 4.30pm GMT fixture at Emirates Stadium ⚽ Jonathan Wilson: is Carrick more than the new Solskjær? ⚽ Scores | Tables | Premier League top scorers This, from my MBM colleague Tim de Lisle, is a terrific read on what Michael Carrick’s Manchester United did so well last weekend. United showed more intensity than usual, as you’d expect in a derby, but they also showed more composure. Carrick had called for it beforehand, and as possibly the calmest player ever seen in a United shirt, he speaks with some authority on the subject. When Amad broke away in the 33rd minute, he coolly rounded Donnarumma and rolled the ball into an empty net. When Fernandes broke away eight minutes later, he went one better, landing a defender on his backside after rounding the keeper. Both goals were disallowed, but they stood as statements of intent. It’s never the same again! Every game is different but we’ve had a good week and we’re in good shape. We understand this has been a tough place to come for many teams. But we’re going into the game in a good spirit and that’s the most important thing. Continue reading...",
-      "publishedAt": "2026-01-25T17:15:32.000Z"
+      "publishedAt": "2026-01-25T18:14:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'They're engaged' - Rosenior continues positive start at Chelsea",
+      "link": "https://www.bbc.com/sport/football/articles/cx2yw86ep6eo?at_medium=RSS&at_campaign=rss",
+      "summary": "Liam Rosenior has started well at Chelsea and it bodes well for the future amid ambitions to qualify for the Champions League.",
+      "publishedAt": "2026-01-25T18:09:15.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +73,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Barça blijft koploper na stiftje Raphinha en prachtgoal Lamine Yamal",
-      "link": "https://www.vi.nl/nieuws/bar-a-blijft-koploper-na-stiftje-raphinha-en-prachtgoal-lamine-yamal",
-      "summary": "Barcelona heeft in eigen huis tegen Real Oviedo geen fout gemaakt. Met aanvoerder Frenkie de Jong had de thuisploeg het slechts één helft lastig tegen de hekkensluiter van La Liga.",
-      "publishedAt": "2026-01-25T17:12:00.000Z"
+      "title": "Crisis FC Utrecht krijgt vervolg door uitblinkende Drommel",
+      "link": "https://www.vi.nl/nieuws/crisis-fc-utrecht-krijgt-vervolg-dankzij-uitblinkende-drommel",
+      "summary": "FC Utrecht blijft maar ploeteren. De ploeg van Ron Jans leed zondag tegen Sparta alweer de vijfde nederlaag op rij.",
+      "publishedAt": "2026-01-25T17:53:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Estêvão scores as Chelsea ease to win over Palace",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740820",
+      "summary": "Estêvão opened the scoring and added an assist as Chelsea secured a 3-1 victory over 10-man Crystal Palace.",
+      "publishedAt": "2026-01-25T17:47:39.000Z"
     },
     {
       "type": "rss",
@@ -95,32 +95,65 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: uitvallen Watanabe zure appel voor Feyenoord in moeizame tweede helft",
-      "link": "https://www.vi.nl/nieuws/vi-live-feyenoord-tegen-heracles-almelo-in-de-eredivisie",
-      "summary": "Feyenoord en Heracles Almelo staan zondagmiddag om 16.45 uur tegenover elkaar in de Eredivisie. De Rotterdammers verspeelden vier competitieduels op rij punten en azen dus op eerherstel. Dat kan tegen de hekkensluiter van Nederland. Volg het duel in de VI Live.",
-      "publishedAt": "2026-01-25T17:11:42.000Z"
+      "title": "Deijl helpt Van Persie bij middenveldspuzzel, maar lost grootste probleem niet op",
+      "link": "https://www.vi.nl/pro/deijl-helpt-van-persie-bij-middenveldspuzzel-maar-lost-grootste-probleem-niet-op",
+      "summary": "Feyenoord heeft een vermakelijke, maar rommelige zege geboekt op de hekkensluiter. Tegen Heracles Almelo (4-2) sleutelt Robin van Persie wat aan zijn middenveld, mede dankzij een flitsdebuut van Mats Deijl. Analyse van een duel dat de Rotterdammers zowel wat nieuwe zorgen als nieuwe hoop mag opleveren.",
+      "publishedAt": "2026-01-25T17:42:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: United op gelijke hoogte bij Arsenal na enorme fout Zubimendi",
-      "link": "https://www.vi.nl/nieuws/vi-live-az-naar-telstar-kraker-tussen-arsenal-en-manchester-united",
-      "summary": "Zondag wordt er weer volop gevoetbald in binnen- en buitenland. AZ gaat om 12.15 uur op bezoek bij Telstar, FC Groningen speelt tegen Fortuna Sittard, FC Utrecht ontvangt Sparta Rotterdam en ook in het buitenland staat ons veel moois te wachten. Volg het in de VI Live.",
-      "publishedAt": "2026-01-25T17:06:00.000Z"
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Yamal volley sends Barça top of LaLiga",
+      "link": "https://www.espn.com/soccer/report/_/gameId/748346",
+      "summary": "Barcelona brushed past Real Oviedo to reclaim top spot in La Liga.",
+      "publishedAt": "2026-01-25T17:28:20.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ünüvar verruilt Enschede voor Almelo",
-      "link": "https://www.vi.nl/nieuws/unuvar-verruilt-enschede-voor-almelo",
-      "summary": "Naci Ünüvar (22) verlaat FC Twente op huurbasis en maakt het seizoen af bij Heracles Almelo. De aanvaller bevond zich op een zijspoor in De Grolsch Veste, waar hij zaterdagavond de hele wedstrijd tegen Excelsior op de bank bleef.",
-      "publishedAt": "2026-01-25T16:59:00.000Z"
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: Fulham bid $38m for USMNT's Pepi",
+      "link": "https://www.espn.com/soccer/story/_/id/47722797/fulham-make-38m-bid-injured-usmnt-forward-ricardo-pepi-sources",
+      "summary": "Fulham have made a bid of €32 million ($38m) for the services of PSV forward Ricardo Pepi, sources have told ESPN.",
+      "publishedAt": "2026-01-25T17:26:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Aston Villa dream alive after beating Newcastle",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740824",
+      "summary": "Emi Buendia's sweet strike set Aston Villa on their way to a hard-fought 2-0 Premier League win at Newcastle.",
+      "publishedAt": "2026-01-25T17:26:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Premier League recap: Man United beat league-leading Arsenal",
+      "link": "https://www.espn.com/soccer/story/_/id/47696012/live-updates-crystal-palace-chelsea-arsenal-manchester-united-barcelona-premier-league-laliga",
+      "summary": "Relive all of Sunday's European football action, when resurgent Man United went to London and beat Arsenal, while Barcelona rebounded to beat Oviedo.",
+      "publishedAt": "2026-01-25T17:17:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Hearts rescue draw with 10-man Celtic in thrilling clash",
+      "link": "https://www.skysports.com/football/hearts-vs-celtic/report/531862",
+      "summary": "Leaders Hearts fought back twice to earn a 2-2 draw with 10-man Celtic in a thrilling Scottish Premiership encounter.",
+      "publishedAt": "2026-01-25T17:14:00.000Z"
     },
     {
       "type": "rss",
@@ -168,17 +201,6 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Chelsea beat 10-man Palace at Selhurst Park to move fourth",
-      "link": "https://www.skysports.com/watch/video/13498900/crystal-palace-1-3-chelsea-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from Crystal Palace’s match against Chelsea in the Premier League.",
-      "publishedAt": "2026-01-25T16:18:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -194,32 +216,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Forest claim crucial win to move FIVE clear of relegation zone",
-      "link": "https://www.skysports.com/watch/video/13498898/brentford-0-2-nottingham-forest-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from Brentford’s match against Nottingham Forest in the Premier League.",
-      "publishedAt": "2026-01-25T16:16:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Forest stave off West Ham resurgence with crucial win at Brentford",
       "link": "https://www.skysports.com/football/brentford-vs-nottingham-forest/report/531351",
       "summary": "Goals in either half from Igor Jesus and Taiwo Awoniyi saw Nottingham Forest restore their five-point gap above resurgent West Ham and the Premier League relegation zone with a potentially vital 2-0 win at Brentford.",
       "publishedAt": "2026-01-25T16:01:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Chelsea win convincingly at Palace to move up to fourth",
-      "link": "https://www.skysports.com/football/crystal-palace-vs-chelsea/report/531353",
-      "summary": "Chelsea moved into the Champions League places with a 3-1 win over out-of-form Crystal Palace at Selhurst Park.",
-      "publishedAt": "2026-01-25T16:00:00.000Z"
     }
   ]
 }
