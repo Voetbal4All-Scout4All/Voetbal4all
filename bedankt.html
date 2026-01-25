@@ -683,47 +683,84 @@
     }
 
     // If we still don't have the premium window, try to fetch it from the backend event record.
-    // This is needed for links that don't carry premiumStart/premiumEnd but do carry an eventId.
+    // Supports both numeric event IDs and external_id (UUID) used by forms:event-submission.
     async function tryFetchPremiumWindowFromEvent() {
       if (premiumStartRaw && premiumEndRaw) return;
 
+      // Prefer the SID from the flow (forms external_id UUID). Fallback to eventId params.
+      const extId = String((flow && flow.sid) || '').trim();
       const eventIdRaw = getParamAny(['eventId', 'event_id', 'event', 'eid']);
       const eventId = String(eventIdRaw || '').trim();
-      if (!eventId || !/^\d+$/.test(eventId)) return;
+
+      // Nothing to query with.
+      if (!extId && !eventId) return;
 
       // Backend base (prod). Keep it explicit to avoid relying on relative origins.
       const BACKEND_BASE = 'https://voetbal4all-backend-database.onrender.com';
 
-      try {
-        const r = await fetch(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`, {
-          method: 'GET',
-          headers: { 'accept': 'application/json' },
-          cache: 'no-store'
-        });
-        if (!r.ok) return;
-        const data = await r.json();
-        const item = data && data.item;
-        if (!item) return;
+      // Try a few endpoints in order. Some deployments expose an external-id lookup.
+      // We keep this resilient: any endpoint may or may not exist.
+      const candidates = [];
 
-        // Prefer backend-calculated premium window
-        const pStart = item.premium_activated_at || item.premiumActivatedAt || '';
-        const pEnd = item.premium_expires_at || item.premiumExpiresAt || '';
+      // 1) External-id lookup endpoints (UUID)
+      if (extId) {
+        candidates.push(`${BACKEND_BASE}/api/events/by-external-id/${encodeURIComponent(extId)}?nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events/by-external/${encodeURIComponent(extId)}?nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events/lookup?external_id=${encodeURIComponent(extId)}&nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events?external_id=${encodeURIComponent(extId)}&nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events?externalId=${encodeURIComponent(extId)}&nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events?sid=${encodeURIComponent(extId)}&nocache=1`);
+      }
 
-        if (pStart && pEnd) {
-          premiumStartRaw = String(pStart);
-          premiumEndRaw = String(pEnd);
-          return;
+      // 2) Numeric ID endpoint
+      if (eventId && /^\d+$/.test(eventId)) {
+        candidates.push(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`);
+      }
+
+      // Helper: normalize different API response shapes to an item
+      const pickItem = (data) => {
+        if (!data) return null;
+        if (data.item) return data.item;
+        if (Array.isArray(data.items) && data.items.length) return data.items[0];
+        if (Array.isArray(data) && data.length) return data[0];
+        return null;
+      };
+
+      for (const url of candidates) {
+        try {
+          const r = await fetch(url, {
+            method: 'GET',
+            headers: { 'accept': 'application/json' },
+            cache: 'no-store'
+          });
+          if (!r.ok) continue;
+
+          const data = await r.json();
+          const item = pickItem(data);
+          if (!item) continue;
+
+          // Prefer backend-calculated premium window
+          const pStart = item.premium_activated_at || item.premiumActivatedAt || item.premium_start || item.premiumStart || '';
+          const pEnd = item.premium_expires_at || item.premiumExpiresAt || item.premium_end || item.premiumEnd || '';
+
+          if (pStart && pEnd) {
+            premiumStartRaw = String(pStart);
+            premiumEndRaw = String(pEnd);
+            return;
+          }
+
+          // Fallback: if backend has start/end but not premium window, at least show deterministic window
+          // (start_at/end_at) so the UI can still render something.
+          const fallbackStart = item.premium_activated_at || item.start_at || item.startAt || '';
+          const fallbackEnd = item.premium_expires_at || item.end_at || item.endAt || item.start_at || item.startAt || '';
+          if (fallbackStart && fallbackEnd) {
+            premiumStartRaw = String(fallbackStart);
+            premiumEndRaw = String(fallbackEnd);
+            return;
+          }
+        } catch (e) {
+          // silent
         }
-
-        // Fallback: if backend only has expires_at and start_at, show at least something deterministic
-        const fallbackStart = item.premium_activated_at || item.start_at || '';
-        const fallbackEnd = item.premium_expires_at || item.end_at || item.start_at || '';
-        if (fallbackStart && fallbackEnd) {
-          premiumStartRaw = String(fallbackStart);
-          premiumEndRaw = String(fallbackEnd);
-        }
-      } catch(e) {
-        // silent
       }
     }
 
@@ -1059,6 +1096,10 @@
     // If links don't carry premium params, fetch them from backend using eventId (if present)
     // NOTE: this is safe to run even if eventId is missing.
     await tryFetchPremiumWindowFromEvent();
+
+    // If Premium window was fetched after initial derivation, recompute helpers.
+    premiumStartRaw = String(premiumStartRaw || '').trim();
+    premiumEndRaw = String(premiumEndRaw || '').trim();
 
     const premiumStartTxt = fmtDateTime(premiumStartRaw);
     const premiumEndTxt = fmtDateTime(premiumEndRaw);
