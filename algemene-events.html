@@ -56,6 +56,123 @@
     .premium-block{margin:12px 0 18px}
     .premium-block .premium-grid{margin-top:10px}
 
+    /* ===== PREMIUM (METAL) LOOK — ported from events.html ===== */
+
+    /* Metallic frame for the premium section container */
+    .premium-block .premium-shell{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        );
+      box-shadow:
+        0 12px 34px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+    }
+    .premium-block .premium-shell::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.45;
+    }
+
+    /* Premium tile cards: metallic frame */
+    .premium-grid .premium-card{
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.16);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        linear-gradient(135deg, rgba(180,190,210,.10), rgba(10,12,20,.10));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 8px 22px rgba(0,0,0,.35);
+    }
+    .premium-grid .premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(135deg,
+        rgba(255,255,255,.18),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.08) 70%,
+        rgba(255,255,255,0)
+      );
+      opacity:.55;
+    }
+
+    /* Premium: smaller typography, bold title */
+    .premium-grid .premium-card .ad-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
+    .premium-grid .premium-card .ad-card-meta{font-size:12px;opacity:.86;line-height:1.25}
+
+    /* Premium: hide any body text and socials for a clean tile */
+    .premium-grid .premium-card .ad-card-body{display:none !important;}
+    .premium-grid .event-thumb-socials{display:none !important;}
+
+    /* Premium: no 'Flyer' label */
+    .premium-grid .premium-card .event-thumbbox::after{display:none !important;}
+
+    /* Premium ribbon badge (metal, ~30deg) */
+    .premium-grid .premium-card .event-thumbbox{position:relative;}
+    .premium-grid .premium-card .premium-ribbon{
+      position:absolute;
+      top:10px;
+      right:-44px;
+      width:160px;
+      text-align:center;
+      padding:6px 0;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.95);
+      transform:rotate(30deg);
+      z-index:3;
+      background:linear-gradient(135deg,
+        rgba(240,240,240,.30),
+        rgba(180,180,180,.10) 35%,
+        rgba(255,255,255,.22) 65%,
+        rgba(120,120,120,.12)
+      );
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.18);
+    }
+
+    /* ===== Sidebar premium: also metallic (B) ===== */
+    .sidebar-premium-card{
+      border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(135deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.02) 40%,
+        rgba(255,255,255,.06) 70%,
+        rgba(255,255,255,.02)
+      );
+      box-shadow:
+        0 10px 26px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.10);
+    }
+    .sidebar-premium-thumbbox{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+    }
+
     /* Sidebar premium list */
     .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
     .sidebar-premium-card{padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
@@ -292,7 +409,7 @@
 
                 <!-- PREMIUM (komende 60 dagen): 3 rijen x 2 kolommen = 6 kaarten, roterend per kaart -->
                 <div id="premium-30-wrap" class="premium-block" style="display:none;">
-                  <div class="card" style="margin-bottom:12px;">
+                  <div class="card premium-shell" style="margin-bottom:12px;">
                     <div class="card-header">
                       <div>
                         <div class="card-caption">Premium</div>
@@ -689,11 +806,54 @@
     const offsets = [0, 2, 5, 7, 9, 11];
     let tick = 0;
 
+    function premiumTileHtml(ev){
+      const slug = ev ? (ev.slug || ev.id) : '';
+      const country = ev ? String(ev.country || '').toUpperCase() : '';
+      const uiType = ev ? typeToUiLabel(ev.event_type) : '';
+      const province = ev ? String(ev.province || ev.region || ev.state || ev.provincie || '').trim() : '';
+      const city = ev ? String(ev.city || '').trim() : '';
+      const thumb = ev ? getThumb(ev) : '';
+      const safeThumb = safeAttr(thumb);
+
+      const placeBits = [countryToFlag(country), province, city].filter(Boolean).join(' · ');
+
+      return `
+        <article class="ad-card premium-card" id="premium60-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
+          <div class="event-row">
+            <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
+              <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
+                <div class="premium-ribbon">Premium</div>
+                ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
+              </div>
+            </div>
+
+            <div class="event-main">
+              <div class="ad-card-header" style="margin:0;">
+                <div>
+                  <div class="ad-card-title">${ev?.title || ''}</div>
+                  <div class="ad-card-meta">${placeBits || 'Premium slot'}</div>
+                  <div class="ad-card-meta">${ev ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${ev && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
+                  <div class="ad-card-meta">${uiType ? uiType : ''}</div>
+                </div>
+              </div>
+
+              <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                ${ev
+                  ? `<a class=\"btn-ghost-sm\" href=\"event.html?slug=${encodeURIComponent(slug)}\">Bekijk event</a>`
+                  : `<a class=\"btn-ghost-sm\" href=\"adverteren.html\">Plaats premium event</a>`
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
     function render(){
       premiumGrid.innerHTML = '';
       for (let s=0; s<slots; s++){
         const ev = items[(tick + offsets[s]) % items.length];
-        premiumGrid.insertAdjacentHTML('beforeend', cardHtml(ev));
+        premiumGrid.insertAdjacentHTML('beforeend', premiumTileHtml(ev));
       }
       hidePastEvents();
       filterCards();
