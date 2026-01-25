@@ -281,7 +281,10 @@
   // ---- Non-sport events loader (Club & fun) ----
   // Mirrors sportieve events logic but scoped to this page.
 
-  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+  $1
+
+    // Club & fun: default type per page ("" = no default)
+    const DEFAULT_TYPE = "Stage";
 
   const PAGE_CATEGORY = "Club & fun";
   const PAGE_DEFAULT_TYPE = "Stage"; // string or null
@@ -316,7 +319,7 @@
     }
     // Note: page-level selects (type/country/month) are applied client-side,
     // to avoid coupling backend to UI variations.
-    return `${API_BASE}/api/events?${params.toString()}`;
+    return `${API_BASE}/api/events?category=Club%20%26%20fun&${params.toString()}`;
   }
 
   function eventMatchesUIFilters(ev){
