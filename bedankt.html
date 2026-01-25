@@ -1138,12 +1138,16 @@
         return;
       }
       if (paid){
-      nextIntro.textContent = 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt (publicatie wordt automatisch bevestigd).';
-      nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
-    } else if (isCancelledFlow) {
-      nextIntro.textContent = 'De betaling werd geannuleerd. Uw event werd niet gepubliceerd.';
-      nextTip.textContent = 'U kan opnieuw proberen via Event aanmelden.';
-    } else {
+        // If Premium window is already rendered above (green chip), do not overwrite the copy.
+        // Otherwise show a clean Premium message here.
+        if (!hasPremiumWindow) {
+          nextIntro.textContent = 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt (publicatie wordt automatisch bevestigd).';
+          nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
+        }
+      } else if (isCancelledFlow) {
+        nextIntro.textContent = 'De betaling werd geannuleerd. Uw event werd niet gepubliceerd.';
+        nextTip.textContent = 'U kan opnieuw proberen via Event aanmelden.';
+      } else {
         nextIntro.textContent = 'U ontvangt een e-mail met een bevestigingsstap. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
         nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer (bevestigen, verwijderen, contact) verloopt via die e-mail.';
       }
