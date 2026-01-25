@@ -276,5 +276,166 @@
 <script src="assets/js/nav-active.js" defer></script>
   <script src="assets/js/nav-mobile.js"></script>
 <script src="assets/js/live-banner.js"></script>
+<script>
+(() => {
+  // ---- Non-sport events loader (Club & fun) ----
+  // Mirrors sportieve events logic but scoped to this page.
+
+  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+  const PAGE_CATEGORY = "Club & fun";
+  const PAGE_DEFAULT_TYPE = "Stage"; // string or null
+
+  const $ = (id) => document.getElementById(id);
+
+  function norm(s){ return String(s || "").trim(); }
+
+  function parseISO(d){
+    try { return d ? new Date(d) : null; } catch(e){ return null; }
+  }
+
+  function formatDateBE(d){
+    if (!d || isNaN(d.getTime())) return "";
+    return d.toLocaleDateString("nl-BE", { year:"numeric", month:"2-digit", day:"2-digit" });
+  }
+
+  function monthKey(d){
+    if (!d || isNaN(d.getTime())) return "";
+    const y = d.getFullYear();
+    const m = String(d.getMonth()+1).padStart(2,"0");
+    return `${y}-${m}`;
+  }
+
+  function buildApiUrl(){
+    const params = new URLSearchParams();
+    params.set("limit", "200");
+    params.set("category", PAGE_CATEGORY);
+
+    if (PAGE_DEFAULT_TYPE) {
+      params.set("type", PAGE_DEFAULT_TYPE);
+    }
+    // Note: page-level selects (type/country/month) are applied client-side,
+    // to avoid coupling backend to UI variations.
+    return `${API_BASE}/api/events?${params.toString()}`;
+  }
+
+  function eventMatchesUIFilters(ev){
+    const q = norm($("event-search-text")?.value).toLowerCase();
+    const country = norm($("event-filter-country")?.value);
+    const type = norm($("event-filter-type")?.value);
+    const month = norm($("event-filter-month")?.value);
+
+    const title = norm(ev.title).toLowerCase();
+    const desc = norm(ev.description).toLowerCase();
+    const city = norm(ev.city).toLowerCase();
+    const evType = norm(ev.event_type);
+    const evCountry = norm(ev.country);
+    const start = parseISO(ev.start_at);
+
+    if (q && !(title.includes(q) || desc.includes(q) || city.includes(q))) return false;
+    if (country && evCountry && evCountry !== country) return false;
+    if (type && evType && !evType.toLowerCase().includes(type.toLowerCase())) return false;
+    if (month && start && monthKey(start) !== month) return false;
+
+    return true;
+  }
+
+  function renderEmpty(target){
+    target.innerHTML = `
+      <div class="event-empty" style="padding:16px; opacity:.85;">
+        Geen events gevonden voor de huidige filters.
+      </div>
+    `;
+  }
+
+  function renderCards(target, items){
+    target.innerHTML = items.map(ev => {
+      const start = parseISO(ev.start_at);
+      const end = parseISO(ev.end_at);
+      const dateTxt = start ? formatDateBE(start) : "";
+      const city = norm(ev.city);
+      const country = norm(ev.country);
+      const type = norm(ev.event_type);
+
+      const slug = norm(ev.slug);
+      const url = slug ? `event.html?slug=${encodeURIComponent(slug)}` : `event.html?id=${encodeURIComponent(ev.id)}`;
+
+      const premiumBadge = (ev.is_premium && ev.premium_status === "paid" && ev.payment_status === "paid") ? `
+        <span class="event-badge event-badge--premium">Premium</span>
+      ` : "";
+
+      return `
+        <a class="event-card" href="${url}">
+          <div class="event-card__top">
+            ${premiumBadge}
+            <div class="event-card__title">${norm(ev.title)}</div>
+          </div>
+          <div class="event-card__meta">
+            <div>${dateTxt}${end && start && end.getTime() !== start.getTime() ? " – " + formatDateBE(end) : ""}</div>
+            <div>${city}${city && country ? " · " : ""}${country}</div>
+            <div>${type}</div>
+          </div>
+        </a>
+      `;
+    }).join("");
+  }
+
+  let ALL = [];
+
+  async function load(){
+    const list = $("event-list");
+    if (!list) return;
+
+    list.innerHTML = "<div style=\"padding:16px; opacity:.85;\">Events laden…</div>";
+
+    const url = buildApiUrl();
+    const r = await fetch(url, { cache: "no-store" });
+    const data = await r.json();
+    ALL = Array.isArray(data.items) ? data.items : [];
+
+    apply();
+  }
+
+  function apply(){
+    const list = $("event-list");
+    if (!list) return;
+
+    const filtered = ALL.filter(eventMatchesUIFilters);
+
+    if (!filtered.length){
+      renderEmpty(list);
+      return;
+    }
+
+    filtered.sort((a,b) => {
+      const da = parseISO(a.start_at); const db = parseISO(b.start_at);
+      const ta = da and not isNaN(da.getTime()) and da.getTime() or 0
+      const tb = db and not isNaN(db.getTime()) and db.getTime() or 0
+      return ta - tb;
+    });
+
+    renderCards(list, filtered);
+  }
+
+  function hook(id){
+    const el = $(id);
+    if (!el) return;
+    el.addEventListener("input", apply);
+    el.addEventListener("change", apply);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    hook("event-search-text");
+    hook("event-filter-country");
+    hook("event-filter-type");
+    hook("event-filter-month");
+    load().catch(err => {
+      const list = $("event-list");
+      if (list) list.innerHTML = "<div style=\"padding:16px; opacity:.85;\">Fout bij laden van events.</div>";
+      console.error("[events non-sport] load failed:", err);
+    });
+  });
+})();
+</script>
 </body>
 </html>
