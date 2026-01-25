@@ -1008,22 +1008,27 @@
             premiumPlan: premiumPlan || '',
             premiumPlanLabel: premiumPlanLabel || '',
             premiumPriceEur: premiumPrice || '',
-            // These are filled for Premium before redirecting to Stripe (see below)
+            // Filled for Premium before redirecting to Stripe (see below)
             package_code: '',
             quantity: ''
           };
 
-          // Basic payload that bedankt.html already knows how to read
-          sessionStorage.setItem('v4_thanks_payload', JSON.stringify({
+          // Basic payload that bedankt.html can read
+          const basic = {
             id: sid,
             name: payload.name,
             email: payload.email,
             what: payload.what,
             status: 'Ontvangen'
-          }));
+          };
 
-          // Rich payload keyed by submission id
+          // Store in sessionStorage
+          sessionStorage.setItem('v4_thanks_payload', JSON.stringify(basic));
           sessionStorage.setItem(`v4_event_payload_${sid}`, JSON.stringify(payload));
+
+          // Store in localStorage as fallback (Stripe redirect is cross-site; some browsers clear sessionStorage)
+          localStorage.setItem('v4_thanks_payload', JSON.stringify(basic));
+          localStorage.setItem(`v4_event_payload_${sid}`, JSON.stringify(payload));
         } catch (_) {}
 
         // Optional: show immediate success feedback (before redirect)
@@ -1046,7 +1051,7 @@
           // Update stored payload with Premium package information (so bedankt.html can show the Premium periode)
           try {
             const key = `v4_event_payload_${sid}`;
-            const current = sessionStorage.getItem(key);
+            const current = sessionStorage.getItem(key) || localStorage.getItem(key);
             const p = current ? JSON.parse(current) : {};
             const qty = (premiumPlan && premiumPlan.startsWith('w'))
               ? (parseInt(premiumPlan.slice(1), 10) || 1)
@@ -1059,9 +1064,17 @@
             p.paid = '1';
 
             sessionStorage.setItem(key, JSON.stringify(p));
+            localStorage.setItem(key, JSON.stringify(p));
 
             // Keep basic payload in sync
             sessionStorage.setItem('v4_thanks_payload', JSON.stringify({
+              id: sid,
+              name: (p.name || org || ''),
+              email: (p.email || email || ''),
+              what: (p.what || type || ''),
+              status: 'Betaald'
+            }));
+            localStorage.setItem('v4_thanks_payload', JSON.stringify({
               id: sid,
               name: (p.name || org || ''),
               email: (p.email || email || ''),
