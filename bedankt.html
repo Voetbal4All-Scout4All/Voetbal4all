@@ -318,6 +318,19 @@
           </a>
         </div>
 
+        <!-- Cancel notice (shown when payment was cancelled) -->
+        <div id="cancelNotice" class="notice notice-warning" style="display:none;">
+          <strong>Betaling geannuleerd</strong><br>
+          Uw Premium betaling werd geannuleerd. Uw event werd <b>niet</b> gepubliceerd.
+          <div style="height:10px"></div>
+          <span style="opacity:.9;">U kan opnieuw proberen of een niet-premium aanvraag indienen.</span>
+          <div style="height:10px"></div>
+          <a class="nav-cta" href="event-aanmelden.html" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
+            <span>Event aanmelden</span>
+            <span style="font-weight:800;opacity:.9;">Opnieuw</span>
+          </a>
+        </div>
+
         <div class="thanks-summary">
           <section class="thanks-panel" aria-label="Overzicht">
             <h3>Overzicht</h3>
@@ -414,12 +427,60 @@
   (async function(){
     const qs = new URLSearchParams(window.location.search);
 
+   // ------------------------------
+    // Flow resolver (edge-case proof)
+    // ------------------------------
+    function pickFirst(params, keys) {
+      for (const k of keys) {
+        const v = params.get(k);
+        if (v !== null && String(v).trim() !== "") return String(v).trim();
+      }
+      return "";
+    }
+
+    function asBool(v) {
+      if (v === null || v === undefined) return false;
+      const s = String(v).toLowerCase().trim();
+      return s === "1" || s === "true" || s === "yes" || s === "ok";
+    }
+
+    function resolveFlow(params) {
+      const sid = pickFirst(params, ["sid", "session_id", "stripe_session_id"]);
+      const eventId = pickFirst(params, ["eventId", "event_id", "id", "eid"]);
+      const submissionId = pickFirst(params, ["submissionId", "submission_id"]);
+
+      const paid = asBool(pickFirst(params, ["paid", "success"]));
+      const cancelled = asBool(pickFirst(params, ["cancelled", "canceled", "cancel"]));
+      const error = pickFirst(params, ["error", "err", "reason", "message"]);
+
+      const confirmed = asBool(pickFirst(params, ["confirmed", "confirm", "published"]));
+      const deleted = asBool(pickFirst(params, ["deleted", "remove"]));
+
+      const premiumStart = pickFirst(params, ["premiumStart", "premium_from", "premium_activated_at", "premiumActivatedAt", "premium_start"]);
+      const premiumEnd = pickFirst(params, ["premiumEnd", "premium_to", "premium_expires_at", "premiumExpiresAt", "premium_end"]);
+      const packageCode = pickFirst(params, ["package_code", "packageCode", "package", "pkg"]);
+      const quantity = pickFirst(params, ["quantity", "qty", "q"]);
+
+      if (error && !asBool(error)) {
+        return { kind: "error", sid, eventId, submissionId, error, premiumStart, premiumEnd, packageCode, quantity };
+      }
+      if (deleted) return { kind: "nonpremium_deleted", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (confirmed) return { kind: "nonpremium_confirmed", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (cancelled) return { kind: "premium_cancel", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (paid && sid) return { kind: "premium_success", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (paid && !sid) return { kind: "error", sid: "", eventId, submissionId, error: "paid=1 maar geen sid/session_id", premiumStart, premiumEnd, packageCode, quantity };
+      return { kind: "unknown", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+    }
+
+    const flow = resolveFlow(qs); 
+
     // Source/type (e.g. contact, event, vacature, premium, betaling)
     const source = (qs.get('source') || '').trim();
 
     // Primary params used by the event flow
-    const sid = (qs.get('sid') || '').trim();
-    const paid = (qs.get('paid') || '').trim() === '1';
+    const sid = (flow.sid || '').trim();
+    const paid = flow.kind === 'premium_success';
+    const isCancelledFlow = flow.kind === 'premium_cancel';
 
     // Premium window (optional): provided by backend after payment/confirmation
     // Supported param names (robust): premiumStart/premiumEnd OR premium_from/premium_to
@@ -571,8 +632,8 @@
     }
 
     // Error/failure params (for rejected submissions)
-    const errorFlag = (qs.get('error') || '').trim();
-    const reason = (qs.get('reason') || qs.get('message') || '').trim();
+    const errorFlag = flow.kind === 'error' ? '1' : (qs.get('error') || '').trim();
+    const reason = (flow.kind === 'error' ? (flow.error || '') : (qs.get('reason') || qs.get('message') || '')).trim();
 
     // Who
     const name = (qs.get('name') || '').trim();
@@ -582,17 +643,28 @@
     const what = (qs.get('what') || qs.get('product') || qs.get('type') || '').trim();
 
     // IDs (support multiple conventions)
-    const id = (sid || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
+    const id = (sid || flow.eventId || flow.submissionId || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
 
     // Status (optional)
-    const status = (qs.get('status') || 'Ontvangen').trim();
+    let status = (qs.get('status') || 'Ontvangen').trim();
     const deletion = (qs.get('deletion') || '').trim();
 
-    const statusLower = String(status).toLowerCase();
-    const deletionLower = String(deletion).toLowerCase();
+    const isDeleted =
+      flow.kind === 'nonpremium_deleted' ||
+      ['deleted','already_deleted'].includes(String(deletion).toLowerCase()) ||
+      String(status).toLowerCase() === 'deleted';
 
-    const isDeleted = statusLower === 'deleted' || deletionLower === 'deleted' || deletionLower === 'already_deleted';
-    const isError = errorFlag === '1' || statusLower === 'error' || statusLower === 'failed' || statusLower === 'mislukt';
+    const isError =
+      flow.kind === 'error' ||
+      errorFlag === '1' ||
+      ['error','failed','mislukt'].includes(String(status).toLowerCase());
+
+    if (flow.kind === 'premium_success') status = 'Betaald';
+    if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
+    if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
+    if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
+
+    const statusLower = String(status).toLowerCase();
 
     // Success checkmark animation: show only on success (hide on error)
     const iconWrap = document.getElementById('thanksIcon');
@@ -655,28 +727,16 @@
     }
 
     // Show error notice when the submission was rejected/failed
-    const errorNotice = document.getElementById('errorNotice');
-    if (errorNotice) {
-      if (isError) {
-        errorNotice.style.display = '';
-        // trigger a small entrance animation if CSS provides it
-        errorNotice.classList.remove('is-animate');
-        void errorNotice.offsetWidth; // reflow
-        errorNotice.classList.add('is-animate');
-
-        const reasonEl = document.getElementById('errorReasonText');
-        if (reasonEl) {
-          // Keep it non-technical and user-friendly
-          reasonEl.textContent = reason || 'Uw aanvraag voldoet momenteel niet aan de voorwaarden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
-        }
-
-        // In error state: hide other guidance blocks that could confuse
+    // Show cancel notice when Stripe checkout was cancelled
+    const cancelNotice = document.getElementById('cancelNotice');
+    if (cancelNotice) {
+      if (!isError && !isDeleted && isCancelledFlow) {
+        cancelNotice.style.display = '';
         if (pendingNotice) pendingNotice.style.display = 'none';
         const emailKeepNotice2 = document.getElementById('emailKeepNotice');
         if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
       } else {
-        errorNotice.style.display = 'none';
-        errorNotice.classList.remove('is-animate');
+        cancelNotice.style.display = 'none';
       }
     }
 
@@ -721,6 +781,15 @@
         titleEl.textContent = 'Uw event werd verwijderd';
         subEl.textContent = 'Uw event is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
         // In delete state: no pending/keep-email guidance
+        if (pendingNotice) pendingNotice.style.display = 'none';
+        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+        return;
+      }
+
+      if (isCancelledFlow) {
+        titleEl.textContent = 'Betaling geannuleerd';
+        subEl.textContent = 'Uw Premium betaling werd geannuleerd. Uw event werd niet gepubliceerd. U kan opnieuw proberen of een niet-premium aanvraag indienen.';
         if (pendingNotice) pendingNotice.style.display = 'none';
         const emailKeepNotice2 = document.getElementById('emailKeepNotice');
         if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
@@ -837,9 +906,12 @@
         return;
       }
       if (paid){
-        nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All volgens de Premium-voorwaarden.';
-        nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
-      } else {
+      nextIntro.textContent = 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt (publicatie wordt automatisch bevestigd).';
+      nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
+    } else if (isCancelledFlow) {
+      nextIntro.textContent = 'De betaling werd geannuleerd. Uw event werd niet gepubliceerd.';
+      nextTip.textContent = 'U kan opnieuw proberen via Event aanmelden.';
+    } else {
         nextIntro.textContent = 'U ontvangt een e-mail met een bevestigingsstap. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
         nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer (bevestigen, verwijderen, contact) verloopt via die e-mail.';
       }
