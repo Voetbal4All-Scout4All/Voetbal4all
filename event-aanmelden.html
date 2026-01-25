@@ -685,16 +685,23 @@
     function mapPremiumPlanToPackageCode(sel) {
       if (!sel) return null;
 
-      // Weeks: w1, w2, w3 -> week
-      if (sel.startsWith('w')) return 'week';
+      // Weeks
+      if (sel === 'w1' || sel === 'w2' || sel === 'w3') {
+        return 'week';
+      }
 
-      // Months: m1..m6 -> month / month_4_5 / month_6
-      const months = parseInt(sel.slice(1), 10);
-      if (Number.isNaN(months) || months <= 0) return null;
+      // Months
+      if (sel === 'm1' || sel === 'm2' || sel === 'm3') {
+        return 'month';
+      }
 
-      if (months >= 1 && months <= 3) return 'month';
-      if (months === 4 || months === 5) return 'month_4_5';
-      if (months === 6) return 'month_6';
+      if (sel === 'm4' || sel === 'm5') {
+        return 'month_4_5';
+      }
+
+      if (sel === 'm6') {
+        return 'month_6';
+      }
 
       return null;
     }
@@ -1003,7 +1010,7 @@
             // Ensure Stripe returns to the correct thank-you page (Premium)
             success_url: `${window.location.origin}/bedankt.html?sid=${encodeURIComponent(sid)}&paid=1`,
             cancel_url: `${window.location.origin}/event-aanmelden.html`,
-            // optional metadata for later use
+            // Only send mapped package code to backend
             package_code: packageCode,
             premium_plan: premiumPlan,
             premium_plan_label: premiumPlanLabel,
