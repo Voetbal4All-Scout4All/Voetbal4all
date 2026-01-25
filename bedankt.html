@@ -403,7 +403,7 @@
               <div class="kv-block-title">Premium</div>
               <div class="kv-block-body">
                 <div id="premiumWindowWrap" style="display:none;"></div>
-                <dl class="kv-inline-row" style="margin:0;">
+                <dl id="premiumWindowRow" class="kv-inline-row" style="margin:0; display:none;">
                   <dt id="premiumWindowLabel" style="display:none;">Premium-periode</dt>
                   <dd id="premiumWindowValue" style="display:none;">—</dd>
                 </dl>
@@ -1019,6 +1019,7 @@
     const pwLabel = document.getElementById('premiumWindowLabel');
     const pwValue = document.getElementById('premiumWindowValue');
     const premiumBlock = document.getElementById('premiumBlock');
+    const pwRow = document.getElementById('premiumWindowRow');
 
     // If links don't carry premium params, fetch them from backend using eventId (if present)
     // NOTE: this is safe to run even if eventId is missing.
@@ -1030,9 +1031,11 @@
 
     if (!isError && !isDeleted && hasPremiumWindow) {
       if (premiumBlock) premiumBlock.style.display = '';
-      // Unhide label/value (they may be injected with inline display:none)
-      if (pwLabel) pwLabel.style.display = '';
-      if (pwValue) pwValue.style.display = '';
+      // Keep the plain row hidden by default to avoid duplicate rendering.
+      // We still set the textContent for accessibility/fallback.
+      if (pwRow) pwRow.style.display = 'none';
+      if (pwLabel) pwLabel.style.display = 'none';
+      if (pwValue) pwValue.style.display = 'none';
 
       // Text-only value for accessibility/fallback
       if (pwValue) pwValue.textContent = premiumStartTxt + ' → ' + premiumEndTxt;
@@ -1066,6 +1069,7 @@
     } else {
       if (premiumBlock) premiumBlock.style.display = 'none';
       if (pwWrap) pwWrap.style.display = 'none';
+      if (pwRow) pwRow.style.display = 'none';
       if (pwLabel) pwLabel.style.display = 'none';
       if (pwValue) pwValue.style.display = 'none';
     }
