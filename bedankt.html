@@ -854,7 +854,7 @@
       errorFlag === '1' ||
       ['error','failed','mislukt'].includes(String(status).toLowerCase());
 
-    if (flow.kind === 'premium_success') status = 'Betaald';
+      if (hasPremiumWindow) status = 'Betaald';
     if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
     if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
     if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
@@ -1088,7 +1088,7 @@
         rows.push({ label, val });
       }
 
-      if (!rows.length) {
+      if (!rows.length && !fetchedEventItem) {
         wrap.style.display = 'none';
         return;
       }
@@ -1217,7 +1217,7 @@
     const premiumEndTxt = fmtDateTime(premiumEndRaw);
     const hasPremiumWindow = !!premiumStartRaw && !!premiumEndRaw;
 
-    if (!isError && !isDeleted && hasPremiumWindow && paid) {
+    if (!isError && !isDeleted && hasPremiumWindow) {
       if (premiumBlock) premiumBlock.style.display = '';
       // Keep the plain row hidden by default to avoid duplicate rendering.
       // We still set the textContent for accessibility/fallback.
