@@ -719,6 +719,11 @@
         candidates.push(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`);
       }
 
+      // 3) Fallbacks: some deployments don't expose /api/events/:id publicly.
+      // Fetch lists and pick the matching item by id/external_id (safe: we never take items[0]).
+      candidates.push(`${BACKEND_BASE}/api/events/premium?days=365&limit=200&nocache=1`);
+      candidates.push(`${BACKEND_BASE}/api/events?limit=200&nocache=1`);
+
       // Helper: pick the *correct* event item (avoid grabbing the first item from /api/events when a filter is unsupported)
       const isMatch = (item) => {
         if (!item) return false;
