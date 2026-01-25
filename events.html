@@ -238,15 +238,84 @@
       -webkit-line-clamp:3;
     }
 
-    /* Sidebar premium list (10 cards) */
+    /* Sidebar premium list (later) */
     .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
-    .sidebar-premium-card{padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0}
-    .sidebar-premium-thumbbox{width:64px;height:48px;flex:0 0 64px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);overflow:hidden;position:relative}
-    .sidebar-premium-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat}
-    .sidebar-premium-title{font-weight:700;font-size:13px;line-height:1.25}
-    .sidebar-premium-meta{font-size:12px;opacity:.8;margin-top:2px}
-    .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+
+    /* Metallic card look to match the premium grid */
+    .sidebar-premium-card{
+      padding:10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(135deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.02) 40%,
+        rgba(255,255,255,.06) 70%,
+        rgba(255,255,255,.02)
+      );
+      box-shadow:
+        0 10px 26px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .sidebar-premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.45;
+    }
+
+    .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0;position:relative;z-index:1}
+
+    .sidebar-premium-thumbbox{
+      width:72px;
+      height:54px;
+      flex:0 0 72px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      overflow:hidden;
+      position:relative;
+    }
+    .sidebar-premium-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+
+    /* Small ribbon for sidebar thumbnails */
+    .sidebar-premium-thumbbox .premium-ribbon{
+      position:absolute;
+      top:8px;
+      right:-40px;
+      width:140px;
+      text-align:center;
+      padding:5px 0;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.95);
+      transform:rotate(30deg);
+      z-index:3;
+      background:linear-gradient(135deg,
+        rgba(240,240,240,.30),
+        rgba(180,180,180,.10) 35%,
+        rgba(255,255,255,.22) 65%,
+        rgba(120,120,120,.12)
+      );
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 6px 16px rgba(0,0,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
+    .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
+    .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
 
     /* Non-premium cards: keep them scannable (and prevent long text blocks) */
     #event-list .ad-card-body{
@@ -1217,13 +1286,13 @@
       const el = document.getElementById('sidebar-premium-later');
       if (!el) return;
 
-      // Always fill sidebar visually to bottom, using placeholders if needed
-      const MIN_SLOTS = 12; // fill sidebar visually to bottom
+      // Fill sidebar visually with a stable number of tiles
+      const MIN_SLOTS = 10;
 
       const placeholders = [
-        { title: "Jouw premium event hier?", city: "—", type: "Stage", date: "Binnenkort" },
-        { title: "Premium zichtbaarheid", city: "—", type: "Tornooi", date: "Binnenkort" },
-        { title: "Bereik clubs & teams", city: "—", type: "Event", date: "Binnenkort" }
+        { title: "Jouw premium event hier?", place: "—", type: "Premium", date: "Binnenkort" },
+        { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "Binnenkort" },
+        { title: "Bereik clubs & teams", place: "—", type: "Premium", date: "Binnenkort" }
       ];
 
       const source = (premiumLater && premiumLater.length)
@@ -1236,24 +1305,38 @@
         const ev = source.length ? source[i % source.length] : null;
         const ph = placeholders[i % placeholders.length];
 
-        const title = ev ? ev.title : ph.title;
-        const meta = ev
-          ? [typeToUiLabel(ev.event_type), fmtDayMonth(ev.start_at), ev.city].filter(Boolean).join(' · ')
-          : `${ph.type} · ${ph.date}`;
+        const title = ev ? (ev.title || '') : ph.title;
+        const slug = ev ? (ev.slug || ev.id) : '';
+
+        const country = ev ? String(ev.country || '').toUpperCase() : '';
+        const province = ev ? String(ev.province || ev.region || ev.state || ev.provincie || '').trim() : '';
+        const city = ev ? String(ev.city || '').trim() : '';
+        const placeBits = [countryToFlag(country), province, city].filter(Boolean).join(' · ');
+
+        const uiType = ev ? typeToUiLabel(ev.event_type) : '';
+        const dateLine = ev ? (fmtDayMonth(ev.start_at) + (ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : '')) : ph.date;
+
+        const thumb = ev ? getThumb(ev) : '';
+        const safeThumb = safeAttr(thumb);
 
         el.insertAdjacentHTML('beforeend', `
           <div class="sidebar-premium-card">
             <div class="sidebar-premium-top">
-              <div class="sidebar-premium-thumbbox"></div>
+              <div class="sidebar-premium-thumbbox" aria-label="Flyer thumbnail">
+                <div class="premium-ribbon">Premium</div>
+                ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
+              </div>
               <div style="min-width:0;">
                 <div class="sidebar-premium-title">${title}</div>
-                <div class="sidebar-premium-meta">${meta}</div>
+                <div class="sidebar-premium-meta">${ev ? (placeBits || '—') : ph.place}</div>
+                <div class="sidebar-premium-meta">${dateLine}</div>
+                <div class="sidebar-premium-meta">${uiType || ''}</div>
               </div>
             </div>
             <div class="sidebar-premium-actions">
               ${
                 ev
-                  ? `<a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(ev.slug || ev.id)}">Bekijk</a>`
+                  ? `<a class=\"btn-ghost-sm\" href=\"event.html?slug=${encodeURIComponent(slug)}\">Bekijk</a>`
                   : ``
               }
             </div>
@@ -1261,7 +1344,7 @@
         `);
       }
 
-      // Always end with a clear CTA in the sidebar
+      // End with a clear CTA in the sidebar
       el.insertAdjacentHTML('beforeend', `
         <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
           <div class="sidebar-premium-title">Plaats jouw premium event</div>
