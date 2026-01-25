@@ -719,12 +719,48 @@
         candidates.push(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`);
       }
 
-      // Helper: normalize different API response shapes to an item
-      const pickItem = (data) => {
+      // Helper: pick the *correct* event item (avoid grabbing the first item from /api/events when a filter is unsupported)
+      const isMatch = (item) => {
+        if (!item) return false;
+
+        // If we have a numeric ID, accept only that ID
+        if (eventId && /^\d+$/.test(eventId)) {
+          if (String(item.id || '').trim() === String(eventId).trim()) return true;
+        }
+
+        // If we have an external UUID (forms submission SID), accept only matching external_id
+        if (extId) {
+          const ext = String(item.external_id || item.externalId || item.sid || '').trim();
+          if (ext && ext === extId) return true;
+
+          // Some payloads may encode it in source (rare, but safe)
+          const src = String(item.source || '').trim();
+          if (src && src.includes(extId)) return true;
+        }
+
+        return false;
+      };
+
+      const pickMatchingItem = (data) => {
         if (!data) return null;
-        if (data.item) return data.item;
-        if (Array.isArray(data.items) && data.items.length) return data.items[0];
-        if (Array.isArray(data) && data.length) return data[0];
+
+        // 1) Single-item shape
+        if (data.item) {
+          return isMatch(data.item) ? data.item : null;
+        }
+
+        // 2) List shape with items
+        if (Array.isArray(data.items) && data.items.length) {
+          const hit = data.items.find(isMatch);
+          return hit || null;
+        }
+
+        // 3) Raw array
+        if (Array.isArray(data) && data.length) {
+          const hit = data.find(isMatch);
+          return hit || null;
+        }
+
         return null;
       };
 
@@ -738,7 +774,7 @@
           if (!r.ok) continue;
 
           const data = await r.json();
-          const item = pickItem(data);
+          const item = pickMatchingItem(data);
           if (!item) continue;
           fetchedEventItem = item;
 
@@ -923,6 +959,7 @@
         ['postal_code', 'Postcode'],
         ['city', 'Gemeente'],
         ['country', 'Land'],
+        ['category', 'Categorie'],
         ['event_type', 'Type'],
         ['audience', 'Doelgroep'],
         ['tags', 'Tags'],
@@ -949,6 +986,7 @@
         end_at: ['end_at', 'endAt', 'end', 'eventEnd'],
         city: ['city', 'gemeente'],
         country: ['country', 'land'],
+        category: ['category', 'cat'],
         event_type: ['event_type', 'type'],
         organizer_name: ['organizer_name', 'organizer', 'club'],
         organizer_email: ['organizer_email', 'club_email'],
@@ -987,6 +1025,7 @@
           description: ['description', 'desc', 'body'],
           start_at: ['start_at', 'startAt'],
           end_at: ['end_at', 'endAt'],
+          category: ['category'],
           organizer_name: ['organizer_name'],
           organizer_email: ['organizer_email'],
           organizer_phone: ['organizer_phone'],
