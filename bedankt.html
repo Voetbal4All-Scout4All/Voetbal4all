@@ -689,10 +689,23 @@
       // We may still want to fetch the event even if the premium window exists,
       // because we use the event payload to render the submitted fields.
 
-      // Prefer the SID from the flow (forms external_id UUID). Fallback to eventId params.
-      const extId = String((flow && flow.sid) || '').trim();
-      const eventIdRaw = getParamAny(['eventId', 'event_id', 'event', 'eid']);
-      const eventId = String(eventIdRaw || '').trim();
+      // Prefer the SID from the flow. This can be either:
+      // - forms external_id (UUID)
+      // - a numeric event id (some success redirects pass sid=<eventId>)
+      // - a Stripe session id (session_id)
+      const extIdRaw = String((flow && flow.sid) || '').trim();
+
+      const eventIdRaw = getParamAny(['eventId', 'event_id', 'event', 'eid', 'id']);
+      let eventId = String(eventIdRaw || '').trim();
+
+      // If sid is numeric and eventId is missing, treat sid as the event id.
+      if (!eventId && extIdRaw && /^\d+$/.test(extIdRaw)) {
+        eventId = extIdRaw;
+      }
+
+      // Only treat extId as an external UUID if it looks like a UUID.
+      const extIdIsUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(extIdRaw);
+      const extId = extIdIsUuid ? extIdRaw : '';
 
       // Nothing to query with.
       if (!extId && !eventId) return;
@@ -717,6 +730,11 @@
       // 2) Numeric ID endpoint
       if (eventId && /^\d+$/.test(eventId)) {
         candidates.push(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`);
+      }
+
+      // 2b) Some deployments expose event by id via query
+      if (eventId && /^\d+$/.test(eventId)) {
+        candidates.push(`${BACKEND_BASE}/api/events?id=${encodeURIComponent(eventId)}&limit=1&nocache=1`);
       }
 
       // 3) Fallbacks: some deployments don't expose /api/events/:id publicly.
