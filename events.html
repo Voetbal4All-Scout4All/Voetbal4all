@@ -107,6 +107,120 @@
     .premium-block{margin:12px 0 18px}
     .premium-block .premium-grid{margin-top:10px}
 
+    /* Metallic frame for the premium section container (the card that wraps the 6 premium tiles) */
+    .premium-block .premium-shell{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        );
+      box-shadow:
+        0 12px 34px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+    }
+    .premium-block .premium-shell::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.45;
+    }
+
+    /* Premium cards: do not show share/social row here (keeps premium tiles clean) */
+    .premium-grid .event-thumb-socials{display:none !important;}
+
+    /* ===== PREMIUM (METAL) LOOK ===== */
+    .premium-grid .premium-card{
+      position:relative;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.16);
+
+      /* metallic frame */
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        );
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .premium-grid .premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      /* subtle metal shine */
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.55;
+    }
+
+    /* Ribbon badge – metallic, rotated ~30deg, over flyer corner */
+    .premium-grid .event-thumbbox{ position:relative; }
+    .premium-grid .premium-ribbon{
+      position:absolute;
+      top:10px;
+      right:-44px;               /* pushes ribbon across corner */
+      width:160px;
+      text-align:center;
+      padding:6px 0;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.95);
+      transform:rotate(30deg);
+      z-index:3;
+
+      background:linear-gradient(135deg,
+        rgba(240,240,240,.30),
+        rgba(180,180,180,.10) 35%,
+        rgba(255,255,255,.22) 65%,
+        rgba(120,120,120,.12)
+      );
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.18);
+    }
+
+    /* Premium typography: smaller, clean */
+    .premium-grid .ad-card-title{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.25;
+    }
+
+    .premium-grid .ad-card-meta{
+      font-size:12px;
+      opacity:.86;
+      line-height:1.25;
+    }
+
+    /* Remove any body text block spacing if present */
+    .premium-grid .ad-card-body{ display:none !important; }
+
     /* Prevent text bleed/overflow between premium cards */
     .premium-grid .ad-card{
       overflow:hidden;
@@ -385,7 +499,7 @@
 
                   <!-- PREMIUM (komende 60 dagen): 3 rijen x 2 kolommen = 6 kaarten, roterend per kaart -->
                   <div id="premium-30-wrap" class="premium-block" style="display:none;">
-                    <div class="card" style="margin-bottom:12px;">
+                    <div class="card premium-shell" style="margin-bottom:12px;">
                   <div class="card-header">
                     <div>
                       <div class="card-caption">Premium</div>
@@ -1016,68 +1130,67 @@
           if (!ev && s >= 2) continue;
 
           const slug = ev ? (ev.slug || ev.id) : (`placeholder-${s+1}`);
-          const country = ev ? String(ev.country || '').toUpperCase() : '';
-          const uiType = ev ? typeToUiLabel(ev.event_type) : '';
           const thumb = ev ? getThumb(ev) : '';
           const safeThumb = safeAttr(thumb);
-
-          const bodyTop = [];
-          if (ev && ev.location_name) bodyTop.push(`<strong>Locatie:</strong> ${ev.location_name}`);
-          if (ev && ev.address) bodyTop.push(ev.address);
-          const top = bodyTop.length ? (bodyTop.join(' · ') + '<br/>') : '';
-          // Premium placeholder content
-          const desc = ev
-            ? (ev.description ? String(ev.description) : '')
-            : 'Bereik clubs en teams in jouw regio. Plaats jouw event als premium.';
 
           // Title for placeholder
           const cardTitle = ev
             ? (ev.title || '')
             : 'Jouw premium event hier?';
 
+          // Prepare placeBits: flag, province, city
+          const country = ev ? String(ev.country || '').toUpperCase() : '';
+          const provinceRaw = ev ? (ev.province || ev.region || ev.state || ev.provincie || "") : "";
+          const province = String(provinceRaw || "").trim();
+          const placeBits = [];
+          if (ev) {
+            const flag = countryToFlag(country);
+            if (flag) placeBits.push(flag);
+            if (province) placeBits.push(province);
+            if (ev.city) placeBits.push(String(ev.city));
+          }
+
+          // Premium placeholder content
+          const desc = ev
+            ? (ev.description ? String(ev.description) : '')
+            : 'Bereik clubs en teams in jouw regio. Plaats jouw event als premium.';
+
+          // Type label
+          const uiType = ev ? typeToUiLabel(ev.event_type) : '';
+
           grid.insertAdjacentHTML('beforeend', `
             <article class="ad-card premium-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
-               <div class="premium-badge">Premium</div>
               <div class="event-row">
                 <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
                   <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
-                    ${safeThumb ? `<div class="thumbbg" style="background-image:url('${safeThumb}')"></div>` : ``}
-                  </div>
-                  <div class="event-thumb-socials event-thumb-socials--row">
-                    <span class="share-label">Deel</span>
-                    ${shareButtonsHtml(slug, ev ? (ev.title || '') : 'Premium event', true)}
+                    <div class="premium-ribbon">Premium</div>
+                    ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
                   </div>
                 </div>
+
                 <div class="event-main">
                   <div class="ad-card-header" style="margin:0;">
                     <div>
-                      <!-- Regel 1: Titel -->
+                      <!-- Titel: kleiner, bold -->
                       <div class="ad-card-title">${cardTitle}</div>
 
-                      <!-- Regel 2: Vlag + stad -->
+                      <!-- Vlag + provincie + stad -->
                       <div class="ad-card-meta">
-                        ${ev ? (countryToFlag(country) + (ev.city ? " · " + ev.city : "")) : "Premium slot"}
+                        ${ev ? placeBits.join(' · ') : "Premium slot"}
                       </div>
 
-                      <!-- Regel 3: Club -->
-                      ${(() => {
-                        if (!ev) return ``;
-                        const club = ev.club_name || ev.club || ev.clubName || ev.clubname || ev.organizer_name || "";
-                        return club ? `<div class="ad-card-meta">${club}</div>` : ``;
-                      })()}
-
-                      <!-- Regel 4: Datum -->
+                      <!-- Datum -->
                       <div class="ad-card-meta">
                         ${ev ? fmtDayMonth(ev.start_at) : "Binnenkort"}${ev && ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
                       </div>
 
-                      <!-- Regel 5: Type -->
+                      <!-- Categorie (type) -->
                       <div class="ad-card-meta">
                         ${ev ? (uiType ? uiType : "") : ""}
                       </div>
                     </div>
                   </div>
-                  <div class="ad-card-body" style="margin-top:8px;">${top}${desc}</div>
+
                   <div class="ad-card-actions event-actions" style="margin-top:10px;">
                     ${
                       ev
