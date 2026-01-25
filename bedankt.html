@@ -66,6 +66,19 @@
     .thanks-kv{display:grid;grid-template-columns:170px 1fr;gap:8px 12px;align-items:start;}
     .thanks-kv dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.72;}
     .thanks-kv dd{margin:0;font-weight:600;}
+    /* Ingevulde gegevens (zelfde typografie als Overzicht) */
+    #formFieldsList .ff-label{
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      opacity:.72;
+      font-weight:600;
+    }
+    #formFieldsList .ff-value{
+      font-weight:600;
+      margin:0;
+      white-space:pre-wrap;
+    }
     .thanks-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;
       border:1px solid rgba(24,160,251,.35);background:rgba(24,160,251,.08);
       font-size:12px;font-weight:800;letter-spacing:.02em;}
@@ -869,16 +882,11 @@
       list.innerHTML = '';
       for (const r of rows) {
         const dt = document.createElement('div');
-        dt.style.fontSize = '12px';
-        dt.style.letterSpacing = '.06em';
-        dt.style.textTransform = 'uppercase';
-        dt.style.opacity = '.72';
-        dt.style.fontWeight = '800';
+        dt.className = 'ff-label';
         dt.textContent = r.label;
 
         const dd = document.createElement('div');
-        dd.style.fontWeight = '700';
-        dd.style.whiteSpace = 'pre-wrap';
+        dd.className = 'ff-value';
         dd.textContent = r.val;
 
         list.appendChild(dt);
