@@ -107,27 +107,36 @@
 
     /* Premium window highlight (shown only when provided) */
     .premium-window-chip{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 12px;
-    border-radius:12px;
-    border:1px solid rgba(34,197,94,.35);
-    background: rgba(10,19,36,.65);
-    font-size:13px;
-    line-height:1.25;
-    font-weight:800;
-  }
-  .premium-window-chip small{
-    display:block;
-    font-size:11px;
-    opacity:.75;
-    margin-bottom:2px;
-    font-weight:700;
-    letter-spacing:.02em;
-  }
-  .premium-window-chip span{ display:block; font-weight:800; }
-  .premium-window-chip .arrow{ opacity:.6; font-weight:900; }
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:12px;
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid rgba(34,197,94,.55);
+      background: rgba(10,19,36,.78);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      font-size:14px;
+      line-height:1.25;
+      font-weight:900;
+    }
+    .premium-window-chip small{
+      display:block;
+      font-size:11px;
+      opacity:.82;
+      margin-bottom:4px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .premium-window-chip span{ display:block; font-weight:900; }
+    .premium-window-chip .arrow{
+      opacity:.75;
+      font-weight:900;
+      font-size:18px;
+      line-height:1;
+      transform: translateY(1px);
+    }
 </style>
 </head>
 
@@ -354,6 +363,12 @@
 
               <dt id="premiumWindowLabel" style="display:none;">Premium-periode</dt>
               <dd id="premiumWindowValue" style="display:none;">—</dd>
+
+              <div id="formFieldsWrap" style="display:none; grid-column: 1 / -1; margin-top: 10px;">
+                <div style="font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.72;font-weight:900;">Ingevulde gegevens</div>
+                <div id="formFieldsList" style="margin-top:8px;display:grid;grid-template-columns:170px 1fr;gap:8px 12px;align-items:start;"></div>
+              </div>
+
             </dl>
           </section>
 
@@ -765,6 +780,114 @@
       el.textContent = v || fallback;
     };
 
+    // Render all submitted event fields (mirrors email intent): show only fields that are present AIMED at event form
+    function renderFormFields() {
+      const wrap = document.getElementById('formFieldsWrap');
+      const list = document.getElementById('formFieldsList');
+      if (!wrap || !list) return;
+
+      const fieldDefs = [
+        ['title', 'Titel'],
+        ['description', 'Beschrijving'],
+        ['start_at', 'Start'],
+        ['end_at', 'Einde'],
+        ['timezone', 'Tijdzone'],
+        ['location_name', 'Locatie'],
+        ['address', 'Adres'],
+        ['postal_code', 'Postcode'],
+        ['city', 'Gemeente'],
+        ['country', 'Land'],
+        ['event_type', 'Type'],
+        ['audience', 'Doelgroep'],
+        ['tags', 'Tags'],
+        ['organizer_name', 'Organisator'],
+        ['organizer_email', 'E-mail organisator'],
+        ['organizer_phone', 'Telefoon'],
+        ['organizer_url', 'Website'],
+        ['package_code', 'Premium pakket'],
+        ['quantity', 'Aantal'],
+        ['invoice_company', 'Factuur: Bedrijf'],
+        ['invoice_vat', 'Factuur: BTW-nummer'],
+        ['invoice_email', 'Factuur: E-mail'],
+        ['invoice_address', 'Factuur: Adres'],
+        ['invoice_city', 'Factuur: Gemeente'],
+        ['invoice_postal', 'Factuur: Postcode'],
+        ['invoice_country', 'Factuur: Land']
+      ];
+
+      const aliases = {
+        title: ['title', 'event_title'],
+        description: ['description', 'desc', 'body'],
+        start_at: ['start_at', 'startAt', 'start', 'eventStart'],
+        end_at: ['end_at', 'endAt', 'end', 'eventEnd'],
+        city: ['city', 'gemeente'],
+        country: ['country', 'land'],
+        event_type: ['event_type', 'type'],
+        organizer_name: ['organizer_name', 'organizer', 'club'],
+        organizer_email: ['organizer_email', 'club_email'],
+        organizer_phone: ['organizer_phone', 'phone'],
+        organizer_url: ['organizer_url', 'url', 'website'],
+        postal_code: ['postal_code', 'postcode'],
+        location_name: ['location_name', 'location'],
+        invoice_company: ['invoice_company', 'company'],
+        invoice_vat: ['invoice_vat', 'vat'],
+        invoice_email: ['invoice_email', 'invoiceEmail'],
+        invoice_address: ['invoice_address', 'invoiceAddress'],
+        invoice_city: ['invoice_city', 'invoiceCity'],
+        invoice_postal: ['invoice_postal', 'invoicePostal'],
+        invoice_country: ['invoice_country', 'invoiceCountry'],
+        package_code: ['package_code', 'packageCode', 'pkg'],
+        quantity: ['quantity', 'qty', 'q'],
+        tags: ['tags', 'tag']
+      };
+
+      const getAny = (keys) => {
+        for (const k of keys) {
+          const v = qs.get(k);
+          if (v && String(v).trim()) return String(v).trim();
+        }
+        return '';
+      };
+
+      const rows = [];
+      for (const [key, label] of fieldDefs) {
+        const keys = aliases[key] || [key];
+        let val = getAny(keys);
+        if (!val) continue;
+
+        if (key === 'start_at' || key === 'end_at') val = fmtDateTime(val);
+        if (key === 'description') val = String(val).replace(/\s+/g, ' ').trim();
+
+        rows.push({ label, val });
+      }
+
+      if (!rows.length) {
+        wrap.style.display = 'none';
+        return;
+      }
+
+      list.innerHTML = '';
+      for (const r of rows) {
+        const dt = document.createElement('div');
+        dt.style.fontSize = '12px';
+        dt.style.letterSpacing = '.06em';
+        dt.style.textTransform = 'uppercase';
+        dt.style.opacity = '.72';
+        dt.style.fontWeight = '800';
+        dt.textContent = r.label;
+
+        const dd = document.createElement('div');
+        dd.style.fontWeight = '700';
+        dd.style.whiteSpace = 'pre-wrap';
+        dd.textContent = r.val;
+
+        list.appendChild(dt);
+        list.appendChild(dd);
+      }
+
+      wrap.style.display = '';
+    }
+
     // Title/subtitle adapt based on source
     const titleEl = document.getElementById('thanksTitle');
     const subEl = document.getElementById('thanksSubtitle');
@@ -843,6 +966,7 @@
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
     setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
+    renderFormFields();
 
     // Update the “Volgende stappen” panel dynamically for event flow
     // (declare before Premium window logic because it may override copy)
@@ -877,7 +1001,17 @@
         const chip = document.createElement('div');
         chip.className = 'premium-window-chip';
         chip.setAttribute('role','note');
-        chip.innerHTML = `<div><small>Premium actief van</small><span>${premiumStartTxt}</span></div><div class="arrow">→</div><div><small>tot en met</small><span>${premiumEndTxt}</span></div>`;
+        chip.innerHTML = `
+          <div>
+            <small>Premium actief van</small>
+            <span>${premiumStartTxt}</span>
+          </div>
+          <div class="arrow">→</div>
+          <div>
+            <small>tot en met</small>
+            <span>${premiumEndTxt}</span>
+          </div>
+        `;
         pwWrap.appendChild(chip);
       }
 
