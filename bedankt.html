@@ -881,7 +881,10 @@
       errorFlag === '1' ||
       ['error','failed','mislukt'].includes(String(status).toLowerCase());
 
-      if (hasPremiumWindow) status = 'Betaald';
+    // NOTE: `hasPremiumWindow` is declared later (after backend lookup).
+    // Using it here caused a ReferenceError and stopped all JS on the page.
+    const hasPremiumWindowNow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
+    if (hasPremiumWindowNow) status = 'Betaald';
     if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
     if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
     if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
