@@ -522,7 +522,23 @@
   // ------------------------------
   (async function(){
     const qs = new URLSearchParams(window.location.search);
-    let fetchedEventItem = null; // filled via backend lookup (for rendering form fields + premium window)
+    let fetchedEventItem = null;
+    let storedEventPayload = null;
+
+    // Read stored payload (event-aanmelden.html stores it before redirecting to Stripe)
+    function loadStoredPayload(sid) {
+      if (!sid) return null;
+      const key = `v4_event_payload_${sid}`;
+      try {
+        const s1 = sessionStorage.getItem(key);
+        if (s1) return JSON.parse(s1);
+      } catch (_) {}
+      try {
+        const s2 = localStorage.getItem(key);
+        if (s2) return JSON.parse(s2);
+      } catch (_) {}
+      return null;
+    }
 
    // ------------------------------
     // Flow resolver (edge-case proof)
@@ -570,6 +586,7 @@
     }
 
     const flow = resolveFlow(qs); 
+    storedEventPayload = loadStoredPayload((flow && flow.sid) ? String(flow.sid).trim() : '');
 
     // Source/type (e.g. contact, event, vacature, premium, betaling)
     const source = (qs.get('source') || '').trim();
@@ -639,14 +656,26 @@
     // If premium window is not present in the URL, try to derive it from event date + package
     // This fixes the common case where confirm/delete links don't carry premiumStart/premiumEnd.
     if (!premiumStartRaw || !premiumEndRaw) {
-      const startAtRaw = getParamAny(['start_at', 'startAt', 'event_start', 'eventStart', 'start']);
-      const endAtRaw = getParamAny(['end_at', 'endAt', 'event_end', 'eventEnd', 'end']);
+      const startAtRaw = getParamAny(['start_at', 'startAt', 'event_start', 'eventStart', 'start'])
+        || (storedEventPayload && (storedEventPayload.eventStart || storedEventPayload.start_at || storedEventPayload.startAt)
+          ? String(storedEventPayload.eventStart || storedEventPayload.start_at || storedEventPayload.startAt).trim()
+          : '');
+
+      const endAtRaw = getParamAny(['end_at', 'endAt', 'event_end', 'eventEnd', 'end'])
+        || (storedEventPayload && (storedEventPayload.eventEnd || storedEventPayload.end_at || storedEventPayload.endAt)
+          ? String(storedEventPayload.eventEnd || storedEventPayload.end_at || storedEventPayload.endAt).trim()
+          : '');
+
       const eventStart = parseIsoDate(startAtRaw);
       const eventEnd = parseIsoDate(endAtRaw) || eventStart;
 
       // package_code + quantity are used by Stripe flow
-      const pkgRaw = getParamAny(['package_code', 'packageCode', 'pkg']);
-      const qtyRaw = getParamAny(['quantity', 'qty', 'q']);
+      const pkgRaw = getParamAny(['package_code', 'packageCode', 'pkg'])
+        || (storedEventPayload && storedEventPayload.package_code ? String(storedEventPayload.package_code).trim() : '');
+
+      const qtyRaw = getParamAny(['quantity', 'qty', 'q'])
+        || (storedEventPayload && storedEventPayload.quantity ? String(storedEventPayload.quantity).trim() : '');
+
       const pkg = normalizePkg(pkgRaw);
       const qty = Math.max(1, parseInt(qtyRaw || '1', 10) || 1);
 
@@ -831,11 +860,9 @@
     const reason = (flow.kind === 'error' ? (flow.error || '') : (qs.get('reason') || qs.get('message') || '')).trim();
 
     // Who
-    const name = (qs.get('name') || '').trim();
-    const email = (qs.get('email') || '').trim();
-
-    // What was ordered / requested
-    const what = (qs.get('what') || qs.get('product') || qs.get('type') || '').trim();
+    const name = ((qs.get('name') || '').trim()) || (storedEventPayload && storedEventPayload.name ? String(storedEventPayload.name).trim() : '');
+    const email = ((qs.get('email') || '').trim()) || (storedEventPayload && storedEventPayload.email ? String(storedEventPayload.email).trim() : '');
+    const what = ((qs.get('what') || qs.get('product') || qs.get('type') || '').trim()) || (storedEventPayload && storedEventPayload.what ? String(storedEventPayload.what).trim() : '');
 
     // IDs (support multiple conventions)
     const id = (sid || flow.eventId || flow.submissionId || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
@@ -969,7 +996,7 @@
       // Prefer URL params (works for forms that redirect with full querystring),
       // but for Stripe/paid flow we usually only have `sid`.
       // In that case we render from the event record fetched from the backend.
-      const data = fetchedEventItem || null;
+      const data = fetchedEventItem || storedEventPayload || null;
 
       const fieldDefs = [
         ['title', 'Titel'],

@@ -987,6 +987,45 @@
           return;
         }
 
+        // Persist submitted values locally so bedankt.html can render a full overview
+        // even when Stripe returns with only `sid`.
+        try {
+          const payload = {
+            sid,
+            name: org || '',
+            email: email || '',
+            what: type || '',
+            title: title || '',
+            description: desc || '',
+            category: category || '',
+            country: country || '',
+            province: (country === 'INT' ? '' : (province || '')),
+            city: city || '',
+            location: location || '',
+            eventStart: startDate || '',
+            eventEnd: (endDate || startDate) || '',
+            premiumEnabled: !!premiumEnabled,
+            premiumPlan: premiumPlan || '',
+            premiumPlanLabel: premiumPlanLabel || '',
+            premiumPriceEur: premiumPrice || '',
+            // These are filled for Premium before redirecting to Stripe (see below)
+            package_code: '',
+            quantity: ''
+          };
+
+          // Basic payload that bedankt.html already knows how to read
+          sessionStorage.setItem('v4_thanks_payload', JSON.stringify({
+            id: sid,
+            name: payload.name,
+            email: payload.email,
+            what: payload.what,
+            status: 'Ontvangen'
+          }));
+
+          // Rich payload keyed by submission id
+          sessionStorage.setItem(`v4_event_payload_${sid}`, JSON.stringify(payload));
+        } catch (_) {}
+
         // Optional: show immediate success feedback (before redirect)
         if (okBox) {
           okBox.textContent = 'Bedankt. Je aanvraag is goed ontvangen.';
@@ -1003,6 +1042,33 @@
             window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
             return;
           }
+
+          // Update stored payload with Premium package information (so bedankt.html can show the Premium periode)
+          try {
+            const key = `v4_event_payload_${sid}`;
+            const current = sessionStorage.getItem(key);
+            const p = current ? JSON.parse(current) : {};
+            const qty = (premiumPlan && premiumPlan.startsWith('w'))
+              ? (parseInt(premiumPlan.slice(1), 10) || 1)
+              : (premiumPlan && premiumPlan.startsWith('m'))
+                ? (parseInt(premiumPlan.slice(1), 10) || 1)
+                : 1;
+
+            p.package_code = packageCode || '';
+            p.quantity = String(qty);
+            p.paid = '1';
+
+            sessionStorage.setItem(key, JSON.stringify(p));
+
+            // Keep basic payload in sync
+            sessionStorage.setItem('v4_thanks_payload', JSON.stringify({
+              id: sid,
+              name: (p.name || org || ''),
+              email: (p.email || email || ''),
+              what: (p.what || type || ''),
+              status: 'Betaald'
+            }));
+          } catch (_) {}
 
           const checkoutPayload = {
             event_id: sid,
