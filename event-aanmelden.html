@@ -1008,7 +1008,39 @@
             event_id: sid,
             price_eur: Number(premiumPrice),
             // Ensure Stripe returns to the correct thank-you page (Premium)
-            success_url: `${window.location.origin}/bedankt.html?sid=${encodeURIComponent(sid)}&paid=1`,
+            success_url: (function () {
+            const u = new URL(`${window.location.origin}/bedankt.html`);
+            u.searchParams.set('sid', sid);
+            u.searchParams.set('paid', '1');
+            u.searchParams.set('status', 'Ontvangen');
+
+            // Velden voor overzicht op bedankt.html
+            u.searchParams.set('name', org || '');
+            u.searchParams.set('email', email || '');
+            u.searchParams.set('what', type || '');
+
+            // Datumvelden (voor premium-window fallback)
+            u.searchParams.set('eventStart', startDate || '');
+            u.searchParams.set('eventEnd', (endDate || startDate) || '');
+
+            // Cruciaal voor premium-periode berekening in bedankt.html
+            u.searchParams.set('package_code', packageCode || '');
+            if (premiumPlan && premiumPlan.startsWith('w')) {
+              u.searchParams.set('quantity', String(parseInt(premiumPlan.slice(1), 10) || 1));
+            } else if (premiumPlan && premiumPlan.startsWith('m')) {
+              u.searchParams.set('quantity', String(parseInt(premiumPlan.slice(1), 10) || 1));
+            }
+
+            // Extra context (mag, wordt genegeerd als niet gebruikt)
+            u.searchParams.set('plan', premiumPlan || '');
+            u.searchParams.set('planLabel', premiumPlanLabel || '');
+            u.searchParams.set('price_eur', premiumPrice || '');
+            u.searchParams.set('category', category || '');
+            u.searchParams.set('country', country || '');
+            u.searchParams.set('city', city || '');
+
+            return u.toString();
+          })(),
             cancel_url: `${window.location.origin}/event-aanmelden.html`,
             // Only send mapped package code to backend
             package_code: packageCode,
@@ -1078,8 +1110,22 @@
         }
 
         // Non-premium: go straight to thank you page with the Event-ID
-        window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}`;
+        (function () {
+          const u = new URL(`${window.location.origin}/bedankt.html`);
+          u.searchParams.set('sid', sid);
+          u.searchParams.set('status', 'Ontvangen');
+          u.searchParams.set('name', org || '');
+          u.searchParams.set('email', email || '');
+          u.searchParams.set('what', type || '');
+          u.searchParams.set('eventStart', startDate || '');
+          u.searchParams.set('eventEnd', (endDate || startDate) || '');
+          u.searchParams.set('category', category || '');
+          u.searchParams.set('country', country || '');
+          u.searchParams.set('city', city || '');
+          window.location.href = u.toString();
+        })();
         return;
+      
 
       } catch (err) {
         const msg = (err && err.message) ? String(err.message) : 'Verzenden is momenteel niet beschikbaar.';
