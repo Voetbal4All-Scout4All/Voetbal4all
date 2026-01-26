@@ -1,16 +1,93 @@
 {
-  "generatedAt": "2026-01-26T17:33:19.461Z",
+  "generatedAt": "2026-01-26T18:41:29.530Z",
   "items": [
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "One week until transfer deadline day - who could be on the move?",
-      "link": "https://www.bbc.com/sport/football/articles/c98pp7zd9d0o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport looks at some of the players that have been linked with moves before the Premier League transfer deadline on 2 February at 19:00 GMT.",
-      "publishedAt": "2026-01-26T17:30:11.000Z"
+      "title": "Everton vs Leeds team news LIVE!",
+      "link": "https://www.skysports.com/football/everton-vs-leeds-united/live/531354",
+      "summary": "",
+      "publishedAt": "2026-01-26T18:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Taylor krijgt concurrentie van Maldini bij Lazio",
+      "link": "https://www.vi.nl/nieuws/taylor-krijgt-concurrentie-van-maldini-bij-lazio",
+      "summary": "Daniel Maldini is maandag in Rome gearriveerd om zijn overstap naar Lazio af te ronden. Daar wordt hij een concurrent van onder meer Kenneth Taylor.",
+      "publishedAt": "2026-01-26T18:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Celtic to appeal Trusty red at Hearts",
+      "link": "https://www.skysports.com/football/news/12040/13499341/auston-trusty-red-card-celtic-to-appeal-dismissal-at-hearts-following-draw-in-scottish-premiership-clash",
+      "summary": "Celtic will appeal the red card shown to Auston Trusty during Sunday's 2-2 draw at Hearts.",
+      "publishedAt": "2026-01-26T18:25:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "F1's new era begins with Red Bull and Mercedes making positive starts",
+      "link": "https://www.skysports.com/f1/news/12040/13499108/f1-testing-new-2026-rules-era-begins-at-barcelona-shakedown-with-red-bull-and-mercedes-making-positive-starts",
+      "summary": "Formula 1's new rules era formally began in Barcelona on Monday with seven of the grid's 11 teams hitting the track on the opening day of 2026's closed shakedown week in Spain.",
+      "publishedAt": "2026-01-26T18:17:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Wiegman: I never expected it to be like this",
+      "link": "https://www.skysports.com/football/news/12040/13499321/sarina-wiegman-england-women-manager-admits-she-never-expected-it-to-be-like-this-after-receiving-football-writers-association-tribute-award",
+      "summary": "Sarina Wiegman admits to being taken aback by the love and recognition she has received since leading England to their second European Championship.",
+      "publishedAt": "2026-01-26T18:07:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Schalke 04 volgt naderende terugkeer van PEC-doelman Schendelaar",
+      "link": "https://www.vi.nl/nieuws/schalke-04-volgt-naderende-terugkeer-van-pec-doelman-schendelaar",
+      "summary": "Jasper Schendelaar (25) heeft een pechjaar. De doelman van PEC Zwolle kreeg een vervelende blessure en daarna een terugslag, maar is op de weg terug. Zijn comeback wordt in de gaten gehouden door Schalke 04.",
+      "publishedAt": "2026-01-26T18:01:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Het Nico Dijkshoorn-effect",
+      "link": "https://www.vi.nl/pro/het-nico-dijkshoorn-effect",
+      "summary": "Columnist Nico Dijkshoorn zou graag eens een effect zijn.",
+      "publishedAt": "2026-01-26T18:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Arteta kan niets met harde kritiek Vieira: 'We waren gewoon slecht'",
+      "link": "https://www.vi.nl/video/arteta-kan-niets-met-harde-kritiek-vieira-we-waren-gewoon-slecht",
+      "summary": "Mikel Arteta heeft gereageerd op kritiek van Patrick Vieira. Het clubicoon hekelde de mentale kracht van Arsenal, dat thuis verloor van Manchester United (2-3). De manager haalt er zijn schouders over op. 'We waren gewoon slecht.'",
+      "publishedAt": "2026-01-26T17:46:00.000Z"
     },
     {
       "type": "rss",
@@ -21,29 +98,7 @@
       "title": "Sources: Brazil asks FIFA to host Club World Cup",
       "link": "https://www.espn.com/soccer/story/_/id/47735050/brazil-asks-fifa-host-2029-club-world-cup-sources",
       "summary": "Brazil has asked FIFA to host the 2029 FIFA Club World Cup, sources told ESPN Brazil, saying that the request came during a meeting of top Brazil football officials during a visit to Rio de Janeiro by FIFA president Gianni Infantino on Monday.",
-      "publishedAt": "2026-01-26T17:16:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Gotham signs FSU, U.S. U20 star Jordynn Dudley",
-      "link": "https://www.espn.com/soccer/story/_/id/47733262/gotham-signs-florida-state-star-jordynn-dudley-source",
-      "summary": "American forward Jordynn Dudley, a two-time NCAA champion with Florida State University, has signed for Gotham FC.",
-      "publishedAt": "2026-01-26T17:16:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Oviedo coach: Yamal goal from 'another galaxy'",
-      "link": "https://www.espn.com/soccer/story/_/id/47725963/ovideo-coach-says-lamine-yamal-goal-another-galaxy",
-      "summary": "Real Oviedo coach Guillermo Almada branded Lamine Yamal a player from \"another galaxy\" after the Barcelona forward's wonder goal in Sunday's LaLiga meeting between the two sides.",
-      "publishedAt": "2026-01-26T17:16:12.000Z"
+      "publishedAt": "2026-01-26T17:38:25.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +109,40 @@
       "title": "Endrick after hat trick: This is just the beginning",
       "link": "https://www.espn.com/soccer/story/_/id/47732326/endrick-hits-first-hat-trick-just-beginning",
       "summary": "Endrick feels vindicated to have moved to Lyon after scoring the first hat-trick of his career in the club's 5-2 league win at Metz.",
-      "publishedAt": "2026-01-26T17:16:11.000Z"
+      "publishedAt": "2026-01-26T17:38:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Report: Harry Kane in talks for new Bayern deal",
+      "link": "https://www.espn.com/soccer/story/_/id/47735228/harry-kane-opens-talks-renew-bayern-munich-deal-report",
+      "summary": "Harry Kane has opened talks over a new Bayern Munich contract, according to a report in Germany.",
+      "publishedAt": "2026-01-26T17:38:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Gotham signs FSU, U.S. U20 star Jordynn Dudley",
+      "link": "https://www.espn.com/soccer/story/_/id/47733262/gotham-signs-florida-state-star-jordynn-dudley-source",
+      "summary": "American forward Jordynn Dudley, a two-time NCAA champion with Florida State University, has signed for Gotham FC.",
+      "publishedAt": "2026-01-26T17:38:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "One week until transfer deadline day - who could be on the move?",
+      "link": "https://www.bbc.com/sport/football/articles/c98pp7zd9d0o?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport looks at some of the players that have been linked with moves before the Premier League transfer deadline on 2 February at 19:00 GMT.",
+      "publishedAt": "2026-01-26T17:30:11.000Z"
     },
     {
       "type": "rss",
@@ -69,24 +157,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "PEC-verdediger gelinkt aan Cádiz, NAC toont interesse in spits Genk",
-      "link": "https://www.vi.nl/nieuws/japanse-verdediger-op-weg-naar-az-nac-houdt-ogen-open-voor-aanvaller",
-      "summary": "De winterse transfermarkt is geopend. In dit blog vind je alle speculaties en bevestigde transfers in Nederland. Bekijk hier ons blog voor de transferperikelen in het buitenland.",
-      "publishedAt": "2026-01-26T17:13:03.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
       "title": "Mature decision to deny Manchester City a penalty for handball sets example for referees | Chris Foy",
       "link": "https://www.theguardian.com/football/2026/jan/26/manchester-city-penalty-controversy-wolves-var-farai-hallam-handball-law-rules",
-      "summary": "Farai Hallam trusted his own judgment on Yerson Mosquera incident despite a VAR review and, in doing so, showed the way forward I refereed professional football for 25 years. We were talking about handball when I started, and it remains one of the most discussed topics in the game. One reason for this is that we’ve had a number of law changes by the International Football Association Board (Ifab) over recent years. All were made in an effort to achieve consistent outcomes for the benefit of the game, but we can sometimes end up with different interpretations of the laws. Continue reading...",
+      "summary": "Farai Hallam trusted his own judgment on Yerson Mosquera incident despite a VAR review and, in doing so, showed the way forward I refereed professional football for 25 years. We were talking about handball when I started and it remains one of the most discussed topics in the game. One reason for this is that we’ve had a number of law changes by the International Football Association Board (Ifab) over recent years. All were made in an effort to achieve consistent outcomes for the benefit of the game, but we can sometimes end up with different interpretations of the laws. Continue reading...",
       "publishedAt": "2026-01-26T17:11:49.000Z"
     },
     {
@@ -99,17 +176,6 @@
       "link": "https://www.theguardian.com/football/2026/jan/26/sepp-blatter-suggests-fans-should-not-travel-to-us-for-world-cup",
       "summary": "Ex-Fifa boss shows support for boycott calls Security concerns over tournament have risen Former Fifa president Sepp Blatter on Monday suggested he supports fans boycotting World Cup matches in the United States this year due to security concerns. Blatter gave his support to comments from Swiss anti-corruption lawyer Mark Pieth, who worked with Fifa on potential reforms when Blatter was president, saying fans should stay away from the US for the tournament. Continue reading...",
       "publishedAt": "2026-01-26T17:09:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Hoeveel Sevilla betekent voor Sergio Ramos",
-      "link": "https://www.vi.nl/pro/hoeveel-sevilla-betekent-voor-sergio-ramos",
-      "summary": "Het is wel een beetje in de mode: topvoetballers die een club kopen. Meestal is het vooral een verstandige financiële investering, of wil een speler de populaire computergame Football Manager naar de werkelijkheid brengen omdat hij toch ergens nog wat miljoenen heeft rondslingeren. De overname van Sevilla door Sergio Ramos gaat veel en véél verder dan dat. De wereldkampioen van 2010 grijpt zijn grote voetballiefde bij de hand en trekt haar uit de diepte.",
-      "publishedAt": "2026-01-26T17:00:00.000Z"
     },
     {
       "type": "rss",
@@ -135,17 +201,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'FC Utrecht moet Ron Jans laten zitten tot zijn voetbalpensioen'",
-      "link": "https://www.vi.nl/video/fc-utrecht-moet-ron-jans-laten-zitten-tot-zijn-voetbalpensioen",
-      "summary": "Ron Jans en FC Utrecht beleven een slechte periode. In Rondje Eredivisie hebben Martijn Krabbendam en Freek Jansen het over de oefenmeester die deze zomer met voetbalpensioen gaat.",
-      "publishedAt": "2026-01-26T16:45:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -157,17 +212,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Nieuw' Camp Nou is nog niet waterdicht, regenval toont enorme lekkages",
-      "link": "https://www.vi.nl/nieuws/nieuw-camp-nou-is-nog-niet-waterdicht-regenval-toont-enorme-lekkages",
-      "summary": "Camp Nou is de afgelopen jaren flink gerenoveerd. Toch is het stadion van Barcelona nog zo lek als een mandje. Dat was te zien tijdens de wedstrijd tegen Real Oviedo (3-0).",
-      "publishedAt": "2026-01-26T16:40:12.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -176,50 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/jan/26/la-liga-late-shows-set-up-a-bottom-half-battle-royale-for-survival",
       "summary": "If there’s one thing more beautiful than a goal in the 92nd minute it is a goal in the 96th, however ugly it actually is The most romantic line ever written was sprayed on a dirty old wall somewhere in Italy and repeated everywhere else. You’re as beautiful as a goal in the 90th minute, the graffiti goes, and this was as beautiful as it gets until it got better. The board had gone up at the Ciutat de Valencia stadium on Friday night when Elche embarked upon a move that could have come from a cartoon or a console, the final scene in a film. Escape to Victory only more so, it started the way Michael Caine planned it, all arrows and crosses and ping-ping-ping, and finished the way Pelé actually played it: a picture of perfection which earned them a 2-2 draw in the derby at Levante. Or so it goes. From one end to the other Elche had gone, the edge of their area to the heart of Levante’s. There had been a dribble out, a dozen passes, a touch for all of them. A superb assist, three defenders sent the wrong way. And then, two minutes into added time, the finish, Adam Boayar’s astonishing overhead kick sailing into the corner to complete a goal so good it was silly, so pristine as to be almost surreal. As the Ciutat fell silent, teammates piled on and fans in the away corner didn’t so much celebrate as put their hands over their mouths and try not to laugh, barely able to believe this. Continue reading...",
       "publishedAt": "2026-01-26T16:08:30.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FIRST LOOK! Day one of Barcelona test as teams look at 'debugging cars'",
-      "link": "https://www.skysports.com/watch/video/13499254/f1-first-look-day-one-of-barcelona-test-as-teams-look-at-debugging-cars",
-      "summary": "Watch day one of the morning session as teams shakedown their cars at the Barcelona test.",
-      "publishedAt": "2026-01-26T15:14:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Besiktas pay £11m for Abraham - to sell him to Villa",
-      "link": "https://www.bbc.com/sport/football/articles/c301ry162d4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Besiktas pay £11.2m to Roma for Tammy Abraham - as the Turkish club prepare to sell him to Aston Villa.",
-      "publishedAt": "2026-01-26T15:07:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Yorath remembered at funeral as 'funny, humble man'",
-      "link": "https://www.bbc.com/news/articles/c8x97w51r9ko?at_medium=RSS&at_campaign=rss",
-      "summary": "Around 100 mourners attended the funeral of the Wales and Leeds midfielder, who died aged 75.",
-      "publishedAt": "2026-01-26T14:57:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "What history tells us about Arsenal's title chances",
-      "link": "https://www.bbc.com/sport/football/articles/c9wxqeez8pjo?at_medium=RSS&at_campaign=rss",
-      "summary": "With Arsenal still four points clear despite a wobble, how confident can they be of winning the title based on Premier League precedent?",
-      "publishedAt": "2026-01-26T14:24:46.000Z"
     }
   ]
 }
