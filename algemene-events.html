@@ -18,50 +18,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
-</head>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Pagination */
-    .events-pagination{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
-    .events-pagination .page-btn{
-      appearance:none;border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);color:rgba(255,255,255,.92);
-      border-radius:999px;padding:8px 12px;font-family:inherit;font-weight:600;
-      cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease;
+    /* ===== LOOK & FEEL FROM EVENT.HTML ===== */
+    
+    /* Pagination - aangepast naar event.html stijl */
+    .events-pagination {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
     }
-    .events-pagination .page-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
-    .events-pagination .page-btn:active{transform:translateY(0)}
-    .events-pagination .page-btn.is-active{background:rgba(22,163,74,.22);border-color:rgba(22,163,74,.55)}
-    .events-pagination .page-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
-
-    /* Flyer thumbnail – fixed size, never stretches the card */
-    .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
-    .event-thumbbox{
-      width:140px;height:96px;flex:0 0 140px;border-radius:12px;
-      border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);
-      overflow:hidden;position:relative;
+    .events-pagination .page-btn {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(255,255,255,.92);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .12s ease, filter .12s ease, background .12s ease;
     }
-    .event-thumbbox::after{content:"Flyer";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
-    .event-thumbbox.has-img::after{display:none}
-    .event-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+    .events-pagination .page-btn:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+    .events-pagination .page-btn:active {
+      transform: translateY(0);
+    }
+    .events-pagination .page-btn.is-active {
+      background: rgba(22,163,74,.22);
+      border-color: rgba(22,163,74,.55);
+    }
+    .events-pagination .page-btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
 
-    .event-main{flex:1 1 auto;min-width:0}
-    .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    /* Event row layout - verbeterde styling */
+    .event-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      min-width: 0;
+    }
+    
+    /* Flyer thumbnail - aangepast naar event.html stijl */
+    .event-thumbbox {
+      width: 140px;
+      height: 98px;
+      flex: 0 0 140px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      overflow: hidden;
+      position: relative;
+    }
+    .event-thumbbox::after {
+      content: "Flyer";
+      position: absolute;
+      left: 10px;
+      top: 8px;
+      font-size: 12px;
+      opacity: .55;
+    }
+    .event-thumbbox.has-img::after {
+      display: none;
+    }
+    .event-thumbbox .thumbbg {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      filter: saturate(1.05);
+    }
+
+    .event-main {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    
+    .event-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
     /* 2-column grids */
-    .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    @media (max-width: 900px){.events-grid-2{grid-template-columns:1fr}}
+    .events-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .events-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
 
     /* Premium blocks */
-    .premium-block{margin:12px 0 18px}
-    .premium-block .premium-grid{margin-top:10px}
+    .premium-block {
+      margin: 14px 0 20px;
+    }
+    .premium-block .premium-grid {
+      margin-top: 12px;
+    }
 
-    /* ===== PREMIUM (METAL) LOOK — ported from events.html ===== */
+    /* ===== PREMIUM (METAL) LOOK — exact als event.html ===== */
 
-    /* Metallic frame for the premium section container */
-    .premium-block .premium-shell{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.18);
+    /* Metallic frame voor premium section container */
+    .premium-block .premium-shell {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.18);
       background:
         linear-gradient(135deg,
           rgba(255,255,255,.10),
@@ -72,29 +147,29 @@
       box-shadow:
         0 12px 34px rgba(0,0,0,.38),
         inset 0 1px 0 rgba(255,255,255,.12);
-      overflow:hidden;
-      position:relative;
+      overflow: hidden;
+      position: relative;
     }
-    .premium-block .premium-shell::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:linear-gradient(120deg,
+    .premium-block .premium-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(120deg,
         rgba(255,255,255,.14),
         rgba(255,255,255,0) 35%,
         rgba(255,255,255,.10) 60%,
         rgba(255,255,255,0)
       );
-      opacity:.45;
+      opacity: .45;
     }
 
     /* Premium tile cards: metallic frame */
-    .premium-grid .premium-card{
-      position:relative;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.16);
+    .premium-grid .premium-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.16);
       background:
         linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
         linear-gradient(135deg, rgba(180,190,210,.10), rgba(10,12,20,.10));
@@ -102,63 +177,80 @@
         inset 0 1px 0 rgba(255,255,255,.10),
         0 8px 22px rgba(0,0,0,.35);
     }
-    .premium-grid .premium-card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:linear-gradient(135deg,
+    .premium-grid .premium-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg,
         rgba(255,255,255,.18),
         rgba(255,255,255,0) 35%,
         rgba(255,255,255,.08) 70%,
         rgba(255,255,255,0)
       );
-      opacity:.55;
+      opacity: .55;
     }
 
-    /* Premium: smaller typography, bold title */
-    .premium-grid .premium-card .ad-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
-    .premium-grid .premium-card .ad-card-meta{font-size:12px;opacity:.86;line-height:1.25}
+    /* Premium: kleinere typografie, bold title */
+    .premium-grid .premium-card .ad-card-title {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .premium-grid .premium-card .ad-card-meta {
+      font-size: 12px;
+      opacity: .86;
+      line-height: 1.25;
+    }
 
-    /* Premium: hide any body text and socials for a clean tile */
-    .premium-grid .premium-card .ad-card-body{display:none !important;}
-    .premium-grid .event-thumb-socials{display:none !important;}
+    /* Premium: verberg body text en socials voor clean tile */
+    .premium-grid .premium-card .ad-card-body {
+      display: none !important;
+    }
+    .premium-grid .event-thumb-socials {
+      display: none !important;
+    }
 
-    /* Premium: no 'Flyer' label */
-    .premium-grid .premium-card .event-thumbbox::after{display:none !important;}
+    /* Premium: geen 'Flyer' label */
+    .premium-grid .premium-card .event-thumbbox::after {
+      display: none !important;
+    }
 
     /* Premium ribbon badge (metal, ~30deg) */
-    .premium-grid .premium-card .event-thumbbox{position:relative;}
-    .premium-grid .premium-card .premium-ribbon{
-      position:absolute;
-      top:10px;
-      right:-44px;
-      width:160px;
-      text-align:center;
-      padding:6px 0;
-      font-size:11px;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,.95);
-      transform:rotate(30deg);
-      z-index:3;
-      background:linear-gradient(135deg,
+    .premium-grid .premium-card .event-thumbbox {
+      position: relative;
+    }
+    .premium-grid .premium-card .premium-ribbon {
+      position: absolute;
+      top: 10px;
+      right: -44px;
+      width: 160px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.95);
+      transform: rotate(30deg);
+      z-index: 3;
+      background: linear-gradient(135deg,
         rgba(240,240,240,.30),
         rgba(180,180,180,.10) 35%,
         rgba(255,255,255,.22) 65%,
         rgba(120,120,120,.12)
       );
-      border:1px solid rgba(255,255,255,.22);
+      border: 1px solid rgba(255,255,255,.22);
       box-shadow:
         0 8px 20px rgba(0,0,0,.35),
         inset 0 1px 0 rgba(255,255,255,.18);
     }
 
-    /* ===== Sidebar premium: also metallic (B) ===== */
-    .sidebar-premium-card{
-      border:1px solid rgba(255,255,255,.16);
-      background:linear-gradient(135deg,
+    /* ===== Sidebar premium: ook metallic ===== */
+    .sidebar-premium-card {
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg,
         rgba(255,255,255,.08),
         rgba(255,255,255,.02) 40%,
         rgba(255,255,255,.06) 70%,
@@ -167,21 +259,71 @@
       box-shadow:
         0 10px 26px rgba(0,0,0,.30),
         inset 0 1px 0 rgba(255,255,255,.10);
+      padding: 10px;
+      border-radius: 14px;
     }
-    .sidebar-premium-thumbbox{
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.05);
+    
+    .sidebar-premium-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .sidebar-premium-top {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      min-width: 0;
+    }
+    
+    .sidebar-premium-thumbbox {
+      width: 64px;
+      height: 48px;
+      flex: 0 0 64px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      overflow: hidden;
+      position: relative;
+    }
+    .sidebar-premium-thumbbox .thumbbg {
+      position: absolute;
+      inset: 0;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+    .sidebar-premium-title {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+    
+    .sidebar-premium-meta {
+      font-size: 12px;
+      opacity: .8;
+      margin-top: 2px;
+    }
+    
+    .sidebar-premium-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 8px;
     }
 
-    /* Sidebar premium list */
-    .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
-    .sidebar-premium-card{padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0}
-    .sidebar-premium-thumbbox{width:64px;height:48px;flex:0 0 64px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);overflow:hidden;position:relative}
-    .sidebar-premium-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat}
-    .sidebar-premium-title{font-weight:700;font-size:13px;line-height:1.25}
-    .sidebar-premium-meta{font-size:12px;opacity:.8;margin-top:2px}
-    .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+    /* Zorg voor leesbare button text */
+    .btn-ghost-sm {
+      color: #fff !important;
+    }
+    .btn-ghost-sm:hover {
+      color: #fff !important;
+    }
+    .btn-ghost-sm:visited {
+      color: #fff !important;
+    }
   </style>
 </head>
 
@@ -223,7 +365,7 @@
 
             <!-- CLUB & FUN -->
             <div class="nav-item nav-item--dropdown">
-              <button class="nav-link nav-link--dropdown">
+              <button class="nav-link nav-link--dropdown active">
                 Club &amp; fun <span class="nav-link-caret">▾</span>
               </button>
               <div class="nav-dropdown">
@@ -242,604 +384,462 @@
                 Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
               </button>
               <div class="nav-dropdown">
-                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
-                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
-                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
-                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+                <a href="vacatures.html" class="nav-dropdown-link">Alle vacatures</a>
+                <a href="vacatures.html?type=trainer" class="nav-dropdown-link">Trainer</a>
+                <a href="vacatures.html?type=grondwerk" class="nav-dropdown-link">Grondwerk</a>
+                <a href="vacatures.html?type=materiaalmeesters" class="nav-dropdown-link">Materiaalmeesters</a>
+                <a href="vacatures.html?type=scheidsrechter" class="nav-dropdown-link">Scheidsrechter</a>
+                <a href="profielen.html" class="nav-dropdown-link">Profielen</a>
+                <a href="adverteren.html" class="nav-dropdown-link">Adverteren</a>
               </div>
             </div>
 
-            <!-- SPORTIEF -->
             <div class="nav-item nav-item--dropdown">
-              <button type="button" class="nav-link nav-link--dropdown">
-                Sportief <span class="nav-link-caret">▾</span>
+              <button class="nav-link nav-link--dropdown">
+                Info <span class="nav-link-caret">▾</span>
               </button>
               <div class="nav-dropdown">
-                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
-                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
-                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
-                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
-                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
-                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
-              </div>
-            </div>
-
-            <!-- VOETBAL4ALL -->
-            <div class="nav-item nav-item--dropdown">
-              <button type="button" class="nav-link nav-link--dropdown">
-                Voetbal4All <span class="nav-link-caret">▾</span>
-              </button>
-              <div class="nav-dropdown">
-                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
-                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="over-ons.html" class="nav-dropdown-link">Over ons</a>
+                <a href="adverteren.html" class="nav-dropdown-link">Adverteren</a>
                 <a href="contact.html" class="nav-dropdown-link">Contact</a>
               </div>
             </div>
           </nav>
 
-          <a href="adverteren.html" class="nav-cta">
-            <span>Adverteer nu</span>
-            <span>Sponsor &amp; Ads</span>
-          </a>
-
-          <button class="nav-burger" aria-label="Menu">☰</button>
+          <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+            <span class="nav-toggle-icon"></span>
+          </button>
         </div>
       </div>
     </header>
 
-  <!-- LIVE BANNER -->
-  <section class="live-banner-top">
+  <!-- Live banner (sticky; niet op mobiel) -->
+  <div id="liveBanner" class="live-banner live-banner--hidden">
     <div class="shell">
-      <div class="live-banner">
-        <div class="live-label"><span class="live-dot"></span>Live score</div>
-        <div class="live-text">
-          <span class="live-text-main"></span>
-          <div class="live-updated"></div>
+      <div class="live-banner-inner">
+        <div class="live-scores-wrapper" id="liveScoreWrapper">
+          <div id="liveScoreList" class="live-scores"></div>
         </div>
-        <div class="live-socials">
-          <div class="live-socials-label">Volg ons</div>
-          <div class="live-socials-icons"></div>
+        <div class="live-social-icons">
+          <a href="https://www.facebook.com/Voetbal4All.eu" target="_blank" rel="noopener" class="live-social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" class="fill" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/Voetbal4All.eu" target="_blank" rel="noopener" class="live-social-link" aria-label="Instagram" data-ig>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- HEADER AD -->
-  <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+  <!-- MAIN -->
+  <main class="main">
     <div class="shell">
-      <div class="ad-slot ad-slot-header sticky-ad-header">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-4062633211824348"
-          data-ad-slot="8527433021"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-    </div>
-  </section>
 
-  <main>
-    <section class="section-main">
-      <div class="shell">
+      <!-- Layout: 2 kolommen (breed + sidebar) -->
+      <div class="layout-2col">
+        <div class="layout-col-wide">
 
-        <!-- INTRO -->
-        <article class="card" style="margin-bottom:12px;">
-          <div class="card-header">
-            <div>
-              <div class="card-caption">Club &amp; fun</div>
-              <div class="card-title">Fundraising &amp; sociale clubactiviteiten</div>
-            </div>
-            <span class="pill-small">Niet-sportief</span>
-          </div>
-          <p class="note">
-            Eetdagen, spelavonden, sponsoractiviteiten en andere clubinitiatieven.
-            Voor tornooien, stages en kampen ga je naar <strong>Sportieve events</strong>.
-          </p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
-            <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
-            <a class="btn-ghost-sm" href="formulieren.html#club-fun">Formulieren</a>
-            <a class="btn-ghost-sm" href="events.html">Naar sportieve events</a>
-          </div>
-        </article>
-
-        <div class="v4-layout-sidebar">
-
-          <!-- CONTENT -->
-          <div class="v4-content">
-
-            <!-- FILTERS -->
-            <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
-              <input id="event-search-text" class="search-input" type="text"
-                     placeholder="Zoek op club, eventnaam, regio...">
-              <div class="search-filters-row">
-                <select id="event-filter-country" class="search-select">
-                  <option value="">Land (alles)</option>
-                  <option value="BE">🇧🇪 België</option>
-                  <option value="NL">🇳🇱 Nederland</option>
-                </select>
-
-                <select id="event-filter-type" class="search-select">
-  <option value="">Type (alles)</option>
-  <option value="Dinner">Dinner</option>
-  <option value="Spelavond">Spelavond</option>
-  <option value="Fuif">Fuif / afterparty</option>
-  <option value="Sponsor">Sponsor & netwerk</option>
-</select>
-
-                <select id="event-filter-month" class="search-select">
-                  <option value="">Maand (alles)</option>
-                  <option value="01">Januari</option><option value="02">Februari</option>
-                  <option value="03">Maart</option><option value="04">April</option>
-                  <option value="05">Mei</option><option value="06">Juni</option>
-                  <option value="07">Juli</option><option value="08">Augustus</option>
-                  <option value="09">September</option><option value="10">Oktober</option>
-                  <option value="11">November</option><option value="12">December</option>
-                </select>
+          <!-- PREMIUM (60 dagen) GRID (metallic cards) -->
+          <section class="premium-block">
+            <div class="premium-shell">
+              <div style="padding:14px 16px;">
+                <h2 class="card-title">Premium Club & Fun Events</h2>
+                <div class="events-grid-2 premium-grid" id="premiumGrid60">
+                  <!-- dynamisch gevuld -->
+                </div>
               </div>
             </div>
+          </section>
 
-            <!-- INFEED AD -->
-            <section class="section-main" style="padding-top:0;padding-bottom:10px;">
-              <div class="ad-infeed">
-                <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-4062633211824348"
-                  data-ad-slot="8416780054"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-              </div>
-            </section>
-
-            <!-- OVERZICHT -->
-            <section class="section-main" style="padding-top:0;">
-              <div class="card">
-                <div class="card-header">
-                  <div>
-                    <div class="card-caption">Overzicht</div>
-                    <div class="card-title">Club &amp; fun events</div>
-                  </div>
-                  <span class="pill-small">Onder elkaar</span>
-                </div>
-
-                <p class="note">
-                  Events met een datum in het verleden worden automatisch verborgen (dag na het event).
-                </p>
-
-                <!-- PREMIUM (komende 60 dagen): 3 rijen x 2 kolommen = 6 kaarten, roterend per kaart -->
-                <div id="premium-30-wrap" class="premium-block" style="display:block;">
-                  <div class="card premium-shell" style="margin-bottom:12px;">
-                    <div class="card-header">
-                      <div>
-                        <div class="card-caption">Premium</div>
-                        <div class="card-title premium-title-lg">Premium events in de volgende 60 dagen</div>
-                      </div>
-                      <span class="pill-small">Rotatie</span>
-                    </div>
-                    <div id="premium-grid-30" class="events-grid-2 premium-grid"></div>
-                  </div>
-                </div>
-
-                <!-- Overige events (2 kolommen) -->
-                <div id="event-list" class="events-grid-2">
-                  <!-- gevuld via backend -->
-                </div>
-
-                <div id="events-pagination" class="events-pagination" aria-label="Paginatie events"></div>
-
-                <p id="event-status" class="note" style="margin-top:10px; display:none;"></p>
-              </div>
-            </section>
-
-          </div>
-
-          <!-- SIDEBAR -->
-          <aside class="v4-sidebar">
-            <div class="v4-sidebar-sticky">
-
-              <article class="card" style="margin-bottom:12px;">
-                <div class="card-header">
-                  <div>
-                    <div class="card-caption">Organiseer je een clubactiviteit?</div>
-                    <div class="card-title">Bereik leden & supporters</div>
-                  </div>
-                </div>
-                <p class="note">
-                  Plaats je eetdag, fuif, spelavond of sponsoractie en bereik supporters in jouw regio.
-                </p>
-                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
-                  <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
-                  <a class="btn-ghost-sm" href="formulieren.html#club-fun">Formulieren</a>
-                </div>
-              </article>
-              <!-- Premium events > 60 dagen (10+ cards, roterend) -->
-              <article class="card" style="margin-top:12px;">
-                <div class="card-header">
-                  <div>
-                    <div class="card-caption">Premium</div>
-                    <div class="card-title">Uitgelicht (later)</div>
-                  </div>
-                  <span class="pill-small">Rotatie</span>
-                </div>
-                <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
-              </article>
-
-              <article class="card">
-                <div class="card-header">
-                  <div>
-                    <div class="card-caption">Advertentie</div>
-                    <div class="card-title">Lokale partner</div>
-                  </div>
-                  <span class="pill-small">Premium</span>
-                </div>
-                <div class="ad-placeholder">
-                  Ideaal voor traiteurs, drankleveranciers, drukwerk, …
-                  <br><span class="ad-size">300 × 250 / 300 × 600</span>
-                </div>
-              </article>
-
-              <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
-                <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-4062633211824348"
-                  data-ad-slot="5790616714"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-              </div>
-
+          <!-- Filters + search -->
+          <div class="card">
+            <div class="card-header">
+              <h1 class="card-title">Club & Fun Events</h1>
             </div>
-          </aside>
+
+            <div class="card-body">
+              <div class="filters-grid">
+                <div class="filters-row">
+                  <div class="filter-group">
+                    <label class="filter-label" for="searchEvents">Zoeken</label>
+                    <input type="text" id="searchEvents" class="filter-control" placeholder="Zoek op titel, club, stad, ...">
+                  </div>
+
+                  <div class="filter-group">
+                    <label class="filter-label" for="countryFilter">Land</label>
+                    <select id="countryFilter" class="filter-control">
+                      <option value="">Alle landen</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
+
+                  <div class="filter-group">
+                    <label class="filter-label" for="typeFilter">Type</label>
+                    <select id="typeFilter" class="filter-control">
+                      <option value="">Alle types</option>
+                      <option value="Fuif">Fuif / afterparty</option>
+                      <option value="Spelavond">Spelavonden & acties</option>
+                      <option value="Sponsor">Sponsor & netwerk</option>
+                      <option value="Dinner">Dinner / eetdag</option>
+                      <option value="Overige">Overige</option>
+                    </select>
+                  </div>
+
+                  <div class="filter-group">
+                    <label class="filter-label" for="monthFilter">Maand</label>
+                    <select id="monthFilter" class="filter-control">
+                      <option value="">Alle maanden</option>
+                      <option value="01">Januari</option>
+                      <option value="02">Februari</option>
+                      <option value="03">Maart</option>
+                      <option value="04">April</option>
+                      <option value="05">Mei</option>
+                      <option value="06">Juni</option>
+                      <option value="07">Juli</option>
+                      <option value="08">Augustus</option>
+                      <option value="09">September</option>
+                      <option value="10">Oktober</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-status" id="statusMsg" style="display:none;"></div>
+
+            <!-- Event list -->
+            <div class="card-list" id="eventList">
+              <!-- dynamisch gevuld -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="events-pagination" id="pagination">
+              <!-- dynamisch gevuld -->
+            </div>
+          </div>
 
         </div>
 
+        <!-- SIDEBAR -->
+        <aside class="layout-col-sidebar">
+          <!-- Premium 'Binnenkort' -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Premium Binnenkort</h3>
+            </div>
+            <div class="card-body" style="padding-top:8px;">
+              <div id="sidebarPremiumLater" class="sidebar-premium-stack">
+                <!-- dynamisch gevuld -->
+              </div>
+            </div>
+          </div>
+
+          <!-- AdSense -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Reclame</h3>
+            </div>
+            <div class="card-body" style="padding-top:4px;">
+              <ins class="adsbygoogle"
+                   style="display:block; text-align:center"
+                   data-ad-client="ca-pub-4062633211824348"
+                   data-ad-slot="3892665308"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+          </div>
+        </aside>
+
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (zelfde als events.html) -->
   <footer class="footer">
     <div class="shell">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
-          <div class="footer-legal">
-            &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
-          </div>
+      <div class="footer-inner">
+        <div class="footer-left">
+          <a href="index.html" class="footer-brand">
+            <img
+              src="assets/img/brand/logo-voetbal4all.svg"
+              alt="Voetbal4All"
+              class="footer-logo"
+              loading="lazy"
+            />
+          </a>
           <div class="footer-social">
-            <a href="https://www.facebook.com/voetbal4all" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
-            <a href="https://www.instagram.com/voetbal.4.all/" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
-            <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+            <a
+              href="https://www.facebook.com/Voetbal4All.eu"
+              target="_blank"
+              rel="noopener"
+              class="footer-social-link"
+              aria-label="Facebook"
+            >
+              <svg viewBox="0 0 24 24" class="fill" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/Voetbal4All.eu"
+              target="_blank"
+              rel="noopener"
+              class="footer-social-link"
+              aria-label="Instagram"
+            >
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
           </div>
         </div>
-        <div class="footer-ad">
-          FOOTER ADVERTENTIE / PARTNERLOGO
+        <nav class="footer-nav">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="events.html" class="footer-link">Sportieve events</a>
+          <a href="algemene-events.html" class="footer-link">Club & Fun</a>
+          <a href="vacatures.html" class="footer-link">Vacatures</a>
+          <a href="profielen.html" class="footer-link">Profielen</a>
+          <a href="over-ons.html" class="footer-link">Over ons</a>
+          <a href="adverteren.html" class="footer-link">Adverteren</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+          <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        </nav>
+        <div class="footer-bottom">
+          © 2025 Voetbal4All · Jouw voetbalcommunity voor België & Nederland
         </div>
       </div>
     </div>
   </footer>
-
 </div>
 
-<script src="assets/js/image-utils.js"></script>
-<script src="assets/js/nav-active.js" defer></script>
-  <script src="assets/js/nav-mobile.js"></script>
-<script src="assets/js/live-banner.js"></script>
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-<script>
-(() => {
-  // Club & fun overview – same setup as events.html:
-  // - 2-col grid + pagination
-  // - premium block (6 cards, rotation) + sidebar premium later
-  // - query param ?type=... auto-applies type filter
+(function(){
+  const API_BASE = 'https://voetbal4all-eu.onrender.com';
 
-  const API_BASE = (window.localStorage && localStorage.getItem('V4_API_BASE'))
-    || "https://voetbal4all-backend-database.onrender.com";
+  const searchEl = document.getElementById('searchEvents');
+  const countryEl = document.getElementById('countryFilter');
+  const typeEl = document.getElementById('typeFilter');
+  const monthEl = document.getElementById('monthFilter');
+  const listEl = document.getElementById('eventList');
+  const statusEl = document.getElementById('statusMsg');
+  const pagEl = document.getElementById('pagination');
+  const premiumGrid = document.getElementById('premiumGrid60');
+  const sidebarPremiumLater = document.getElementById('sidebarPremiumLater');
 
-  const PAGE_CATEGORY = "Club & fun";
-  const PAGE_SIZE = 8;
-
-  const listEl = document.getElementById("event-list");
-  const pagEl  = document.getElementById("events-pagination");
-  const statusEl = document.getElementById("event-status");
-
-  const searchEl = document.getElementById("event-search-text");
-  const countryEl = document.getElementById("event-filter-country");
-  const typeEl = document.getElementById("event-filter-type");
-  const monthEl = document.getElementById("event-filter-month");
-
-  const premiumWrap = document.getElementById('premium-30-wrap');
-  const premiumGrid = document.getElementById('premium-grid-30');
-  const sidebarPremiumLater = document.getElementById('sidebar-premium-later');
-
-  let CURRENT_PAGE = 1;
   let ALL_EVENTS_SORTED = [];
   let PINNED_PREMIUM_60 = [];
-  let OTHER_EVENTS = [];
   let PREMIUM_LATER = [];
-
-  function norm(s){ return String(s || "").trim(); }
-  function normLc(s){ return norm(s).toLowerCase(); }
-
-  function parseISO(d){
-    try { return d ? new Date(d) : null; } catch(e){ return null; }
-  }
-
-  function isoDateOnly(dateStrOrIso){
-    const d = new Date(dateStrOrIso);
-    if (isNaN(d.getTime())) return "";
-    const y = d.getFullYear();
-    const m = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    return `${y}-${m}-${day}`;
-  }
-
-  function fmtDayMonth(dateStrOrIso){
-    const d = new Date(dateStrOrIso);
-    if (isNaN(d.getTime())) return "";
-    return d.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
-  }
-
-  function countryToFlag(cc){
-    const c = String(cc || "").toUpperCase();
-    if (c === "BE") return "🇧🇪";
-    if (c === "NL") return "🇳🇱";
-    return c || "";
-  }
-
-  // Visible rule: not deleted; if status exists, it must be published.
-  function isVisibleEvent(ev){
-    if (!ev) return false;
-    if (ev.is_deleted === true) return false;
-    const st = String(ev.status || "").toLowerCase();
-    if (st && st !== "published") return false;
-    return true;
-  }
-
-  function isClubFun(ev){
-    return String(ev.category || "").toLowerCase() === PAGE_CATEGORY.toLowerCase();
-  }
-
-  function normalizeThumbUrl(u){
-    const url = String(u || "");
-    if (!url) return "";
-    if (url.includes("/assets/img/placeholder.svg") || url.includes("assets/img/placeholder.svg")) {
-      return API_BASE + "/images/placeholder.svg";
-    }
-    return url;
-  }
+  let OTHER_EVENTS = [];
+  let FILTERED = [];
+  const PAGE_SIZE = 20;
+  let CURRENT_PAGE = 1;
 
   function getThumb(ev){
-    const raw =
-      ev.cover_image_url ||
-      ev.flyer_image_url ||
-      (Array.isArray(ev.photo_urls) ? ev.photo_urls[0] : null) ||
-      (typeof ev.photo_urls === "string" ? ev.photo_urls.split(",")[0]?.trim() : null) ||
-      "";
+    return ev.cover_image_url || ev.flyer_image_url || '';
+  }
+  function safeAttr(s){return (s||'').replace(/[\"\'<>]/g, ' ');}
 
-    if (!raw) return "";
-
-    let out = raw;
-    if (window.V4AImage && typeof window.V4AImage.resolve === "function") {
-      out = window.V4AImage.resolve(raw);
-    }
-    out = normalizeThumbUrl(out);
-
-    // Hide placeholder thumbnails completely
-    if (out === (API_BASE + "/images/placeholder.svg")) return "";
-    return out;
+  function fmtDayMonth(s){
+    if (!s) return '';
+    try { const d=new Date(s); return d.toLocaleDateString('nl-NL',{day:'numeric',month:'long'}); }
+    catch(e){ return ''; }
+  }
+  function fmtDateTime(s){
+    if (!s) return '';
+    try { const d=new Date(s); return d.toLocaleDateString('nl-NL',{day:'numeric',month:'long',year:'numeric'}); }
+    catch(e){ return ''; }
+  }
+  function typeToUiLabel(t){
+    const m={
+      'Fuif':'Fuif/Afterparty','Spelavond':'Spelavond','Sponsor':'Sponsor/Netwerk',
+      'Dinner':'Dinner','Overige':'Overige'
+    };
+    return m[t] || t || 'Club & Fun';
   }
 
-  function safeAttr(s){
-    return String(s || '').replaceAll('"','&quot;');
-  }
-
-  function typeToUiLabel(eventType){
-    const t = String(eventType || "").toLowerCase();
-    if (t === "dinner" || t === "eetdag" || t === "eetdagen") return "Dinner";
-    if (t === "spelavond" || t === "actie" || t === "acties") return "Spelavond";
-    if (t === "fuif" || t === "afterparty" || t === "party") return "Fuif";
-    if (t === "sponsor" || t === "netwerk" || t === "sponsoring") return "Sponsor";
-    // fallback
-    return eventType || "";
+  function isVisibleEvent(e){ return String(e.status || '').toLowerCase() === 'approved'; }
+  function isClubFun(e){
+    const t = e.event_type || '';
+    return ['Fuif','Spelavond','Sponsor','Dinner','Overige'].includes(t);
   }
 
   function buildApiUrl(){
-    const params = new URLSearchParams();
-    params.set("limit", "200");
-    params.set("nocache", "1");
-    params.set("category", PAGE_CATEGORY);
-    return `${API_BASE}/api/events?${params.toString()}`;
-  }
-
-  function renderPagination(totalPages){
-    if (!pagEl) return;
-    if (totalPages <= 1){ pagEl.innerHTML = ""; return; }
-
-    const btn = (label, page, disabled=false, active=false) =>
-      `<button type="button" class="page-btn ${active ? 'is-active' : ''}" data-page="${page}" ${disabled ? 'disabled' : ''}>${label}</button>`;
-
-    const set = new Set([1, totalPages, CURRENT_PAGE-2, CURRENT_PAGE-1, CURRENT_PAGE, CURRENT_PAGE+1, CURRENT_PAGE+2]);
-    const nums = Array.from(set).filter(n => n>=1 && n<=totalPages).sort((a,b)=>a-b);
-
-    let html = "";
-    html += btn("Vorige", Math.max(1, CURRENT_PAGE-1), CURRENT_PAGE===1);
-    let last = 0;
-    for (const n of nums){
-      if (last && n > last + 1) html += `<span style="opacity:.55;padding:0 4px;">…</span>`;
-      html += btn(String(n), n, false, n===CURRENT_PAGE);
-      last = n;
-    }
-    html += btn("Volgende", Math.min(totalPages, CURRENT_PAGE+1), CURRENT_PAGE===totalPages);
-
-    pagEl.innerHTML = html;
+    const p = new URLSearchParams({
+      days: 180, limit: 999, nocache: 1,
+      filter_status: 'approved'
+    });
+    return `${API_BASE}/api/events?${p}`;
   }
 
   function hidePastEvents(){
-    if (!listEl) return;
-    const cards = listEl.querySelectorAll(".ad-card[data-date]");
-    const today = new Date();
-    today.setHours(0,0,0,0);
-
-    cards.forEach(card => {
-      const dateStr = card.getAttribute("data-date");
-      if (!dateStr) return;
-      const d = new Date(dateStr);
-      if (isNaN(d.getTime())) return;
-      d.setDate(d.getDate() + 1);
-      d.setHours(0,0,0,0);
-      if (d < today) card.style.display = "none";
+    const now = new Date();
+    const cards = listEl?.querySelectorAll('.ad-card') || [];
+    cards.forEach(c=>{
+      const iso = c.dataset.startAt || '';
+      if (!iso) return;
+      try {
+        const d = new Date(iso);
+        if (!isNaN(d.getTime()) && d < now) c.classList.add('events-past-hidden');
+      } catch(e){}
     });
   }
 
   function filterCards(){
-    if (!listEl) return;
-    const q = normLc(searchEl?.value);
-    const c = norm(countryEl?.value);
-    const t = norm(typeEl?.value);
-    const m = norm(monthEl?.value);
+    const q = searchEl?.value?.trim().toLowerCase() || '';
+    const selectedCountry = countryEl?.value || '';
+    const selectedType = typeEl?.value || '';
+    const selectedMonth = monthEl?.value || '';
 
-    const cards = listEl.querySelectorAll(".ad-card");
-    cards.forEach(card => {
-      const cc = card.dataset.country || "";
-      const tt = card.dataset.type || "";
-      const dd = card.dataset.date || ""; // YYYY-MM-DD
-      const hay = normLc(card.textContent);
-
-      let ok = true;
-      if (c && cc && cc !== c) ok = false;
-      if (t && tt && tt !== t) ok = false;
-      if (m && dd && dd.slice(5,7) !== m) ok = false;
-      if (ok && q && !hay.includes(q)) ok = false;
-
-      card.style.display = ok ? "" : "none";
+    const base = OTHER_EVENTS;
+    FILTERED = base.filter(ev=>{
+      if (q && !(ev.title||'').toLowerCase().includes(q) &&
+                !(ev.club||'').toLowerCase().includes(q) &&
+                !(ev.city||'').toLowerCase().includes(q) &&
+                !(ev.organizer_name||'').toLowerCase().includes(q)){
+        return false;
+      }
+      if (selectedCountry && (ev.country||'')!==selectedCountry) return false;
+      if (selectedType && (ev.event_type||'')!==selectedType) return false;
+      if (selectedMonth){
+        try {
+          const d=new Date(ev.start_at);
+          const m=('0'+(d.getMonth()+1)).slice(-2);
+          if (m!==selectedMonth) return false;
+        } catch(e){ return false; }
+      }
+      return true;
     });
+    renderPage(1);
   }
 
-  function cardHtml(ev){
-    const slug = ev.slug || ev.id;
-    const country = String(ev.country || "").toUpperCase();
-    const uiType = typeToUiLabel(ev.event_type);
-    const dateOnly = isoDateOnly(ev.start_at);
-    const thumb = getThumb(ev);
-    const safeThumb = safeAttr(thumb);
+  function renderPage(p){
+    CURRENT_PAGE = p;
+    const start = (p-1)*PAGE_SIZE;
+    const slice = FILTERED.slice(start, start + PAGE_SIZE);
+    const totalPages = Math.max(1, Math.ceil(FILTERED.length / PAGE_SIZE));
 
-    // club/organizer line (best-effort)
-    const club = ev.club_name || ev.club || ev.clubName || ev.clubname || ev.organizer_name || "";
+    listEl.innerHTML = '';
+    if (slice.length===0){
+      listEl.innerHTML = '<div style="padding:16px; opacity:.85;">Geen events gevonden.</div>';
+    } else {
+      slice.forEach(ev=>{
+        const slug = ev.slug || ev.id || '';
+        const title = ev.title || 'Event';
+        const uiType = typeToUiLabel(ev.event_type);
+        const city = ev.city || '';
+        const club = ev.club || ev.organizer_name || '';
 
-    return `
-      <article class="ad-card" id="event-ad-${encodeURIComponent(String(slug))}"
-        data-ad-id="${String(slug)}"
-        data-title="${String(ev.title || "").replaceAll('"','&quot;')}"
-        data-country="${country}"
-        data-type="${uiType}"
-        data-date="${dateOnly}"
-        data-slug="${String(slug)}">
+        const placeBits = [city, club].filter(Boolean).join(' · ');
+        const startFmt = fmtDayMonth(ev.start_at);
+        const endFmt = ev.end_at ? fmtDayMonth(ev.end_at) : '';
 
-        <div class="event-row">
-          <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
-            ${safeThumb ? `<div class="thumbbg" style="background-image:url('${safeThumb}')"></div>` : ``}
+        const thumb = getThumb(ev);
+        const safeThumb = safeAttr(thumb);
+
+        const html = `
+          <article class="ad-card" data-start-at="${ev.start_at||''}">
+            <div class="event-row">
+              <div class="event-thumbbox ${thumb?'has-img':''}">
+                ${safeThumb ? `<div class="thumbbg" style="background-image:url('${safeThumb}')"></div>` : ''}
+              </div>
+              <div class="event-main">
+                <div class="ad-card-header" style="margin:0;">
+                  <div>
+                    <div class="ad-card-title">${title}</div>
+                    <div class="ad-card-meta">${placeBits || ''}</div>
+                    <div class="ad-card-meta">${startFmt}${endFmt ? ' – ' + endFmt : ''}</div>
+                    <div class="ad-card-meta">${uiType}</div>
+                  </div>
+                </div>
+                <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                  <a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>
+                  <button class="btn-ghost-sm" data-reply-event="${slug}">Contacteer club</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+        listEl.insertAdjacentHTML('beforeend', html);
+      });
+    }
+
+    hidePastEvents();
+    renderPagination(p, totalPages);
+  }
+
+  function renderPagination(curr, total){
+    if (total <= 1){
+      pagEl.innerHTML = '';
+      return;
+    }
+    let h = '';
+    if (curr > 1) h += `<button class="page-btn" data-page="${curr-1}">Vorige</button>`;
+    for (let i=1; i<=total; i++){
+      if (Math.abs(i - curr) <= 2 || i===1 || i===total){
+        const cls = i===curr ? 'page-btn is-active' : 'page-btn';
+        h += `<button class="${cls}" data-page="${i}">${i}</button>`;
+      } else if (Math.abs(i - curr) === 3){
+        h += `<span style="opacity:.65;">...</span>`;
+      }
+    }
+    if (curr < total) h += `<button class="page-btn" data-page="${curr+1}">Volgende</button>`;
+    pagEl.innerHTML = h;
+  }
+
+  function startPremium60Grid(items){
+    if (!premiumGrid) return;
+    const slots = 6;
+    const offsets = [0,1,2,3,4,5];
+    let tick = 0;
+
+    function premiumTileHtml(ev, index){
+      const hasReal = ev && ev.id;
+      const slug = ev ? (ev.slug || ev.id) : '';
+      const title = hasReal ? (ev.title || 'Event') : 'Plaats jouw premium event';
+      const uiType = hasReal ? typeToUiLabel(ev.event_type) : '';
+      const city = hasReal ? (ev.city || '') : '';
+      const club = hasReal ? (ev.club || ev.organizer_name || '') : '';
+      const placeBits = [city, club].filter(Boolean).join(' · ');
+
+      const thumb = hasReal ? getThumb(ev) : '';
+      const safeThumb = safeAttr(thumb);
+
+      return `
+        <article class="ad-card premium-card" style="position:relative;">
+          <div class="event-thumbbox ${thumb?'has-img':''}">
+            ${hasReal ? '<div class="premium-ribbon">Premium</div>' : ''}
+            ${safeThumb ? `<div class="thumbbg" style="background-image:url('${safeThumb}')"></div>` : ''}
           </div>
 
           <div class="event-main">
             <div class="ad-card-header" style="margin:0;">
               <div>
-                <div class="ad-card-title">${ev.title || ""}</div>
-                <div class="ad-card-meta">${countryToFlag(country)}${ev.city ? " · " + ev.city : ""}</div>
-                ${club ? `<div class="ad-card-meta">${club}</div>` : ``}
-                <div class="ad-card-meta">${fmtDayMonth(ev.start_at)}${ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}</div>
-                <div class="ad-card-meta">${uiType ? uiType : ""}</div>
+                <div class="ad-card-title">${hasReal ? (ev?.title || '') : 'Plaats jouw premium event'}</div>
+                <div class="ad-card-meta">${hasReal ? (placeBits || 'Premium slot') : 'Meer zichtbaarheid in jouw regio'}</div>
+                <div class="ad-card-meta">${hasReal ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${hasReal && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
+                <div class="ad-card-meta">${hasReal ? (uiType || '') : ''}</div>
               </div>
-            </div>
-
-            <div class="ad-card-body" style="margin-top:8px;">
-              ${ev.description ? String(ev.description) : ""}
             </div>
 
             <div class="ad-card-actions event-actions" style="margin-top:10px;">
-              <a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>
-              <button type="button" class="btn-ghost-sm" data-reply-event="${String(slug)}">Contact</button>
-            </div>
-          </div>
-        </div>
-
-      </article>
-    `;
-  }
-
-  function renderPage(page){
-    if (!listEl) return;
-
-    const total = OTHER_EVENTS.length;
-    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-    CURRENT_PAGE = Math.min(Math.max(1, page), totalPages);
-
-    const start = (CURRENT_PAGE - 1) * PAGE_SIZE;
-    const slice = OTHER_EVENTS.slice(start, start + PAGE_SIZE);
-
-    listEl.innerHTML = slice.map(cardHtml).join("");
-
-    // Trigger AdSense for any inserted ins
-    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(_) {}
-
-    hidePastEvents();
-    filterCards();
-    renderPagination(totalPages);
-  }
-
-  function startPremium60Grid(items){
-    if (!premiumWrap || !premiumGrid) return;
-
-    // Match events.html behavior:
-    // - premium block is always visible (even if empty)
-    // - show max 2 placeholders when there are no premium items
-    premiumWrap.style.display = 'block';
-
-    const slots = 6;
-    const offsets = [0, 2, 5, 7, 9, 11];
-    let tick = 0;
-
-    function premiumTileHtml(ev, slotIndex){
-      const hasReal = !!ev;
-      const slug = hasReal ? (ev.slug || ev.id) : (`placeholder-${slotIndex+1}`);
-      const country = hasReal ? String(ev.country || '').toUpperCase() : '';
-      const uiType = hasReal ? typeToUiLabel(ev.event_type) : '';
-      const province = hasReal ? String(ev.province || ev.region || ev.state || ev.provincie || '').trim() : '';
-      const city = hasReal ? String(ev.city || '').trim() : '';
-      const thumb = hasReal ? getThumb(ev) : '';
-      const safeThumb = safeAttr(thumb);
-
-      const placeBits = [countryToFlag(country), province, city].filter(Boolean).join(' · ');
-
-      return `
-        <article class="ad-card premium-card" id="premium60-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
-          <div class="event-row">
-            <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
-              <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
-                <div class="premium-ribbon">Premium</div>
-                ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
-              </div>
-            </div>
-
-            <div class="event-main">
-              <div class="ad-card-header" style="margin:0;">
-                <div>
-                  <div class="ad-card-title">${hasReal ? (ev?.title || '') : 'Plaats jouw premium event'}</div>
-                  <div class="ad-card-meta">${hasReal ? (placeBits || 'Premium slot') : 'Meer zichtbaarheid in jouw regio'}</div>
-                  <div class="ad-card-meta">${hasReal ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${hasReal && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
-                  <div class="ad-card-meta">${hasReal ? (uiType || '') : ''}</div>
-                </div>
-              </div>
-
-              <div class="ad-card-actions event-actions" style="margin-top:10px;">
-                ${hasReal
-                  ? `<a class=\"btn-ghost-sm\" href=\"event.html?slug=${encodeURIComponent(slug)}\">Bekijk event</a>`
-                  : `<a class=\"btn-ghost-sm\" href=\"adverteren.html\">Plaats premium event</a>`
-                }
-              </div>
+              ${hasReal
+                ? `<a class=\"btn-ghost-sm\" href=\"event.html?slug=${encodeURIComponent(slug)}\">Bekijk event</a>`
+                : `<a class=\"btn-ghost-sm\" href=\"adverteren.html\">Plaats premium event</a>`
+              }
             </div>
           </div>
         </article>
@@ -853,7 +853,7 @@
         const hasReal = items && items.length > 0;
         const ev = hasReal ? items[(tick + offsets[s]) % items.length] : null;
 
-        // When empty: render only 2 placeholders for a clean look (same as events.html)
+        // When empty: render only 2 placeholders for a clean look
         if (!ev && s >= 2) continue;
 
         premiumGrid.insertAdjacentHTML('beforeend', premiumTileHtml(ev, s));
@@ -1029,5 +1029,9 @@
   });
 })();
 </script>
+
+<script src="assets/js/nav-active.js" defer></script>
+<script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
 </body>
 </html>
