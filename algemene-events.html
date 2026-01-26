@@ -658,13 +658,25 @@
   }
 
   function typeToUiLabel(eventType){
-    const t = String(eventType || "").toLowerCase();
-    if (t === "dinner" || t === "eetdag" || t === "eetdagen") return "Dinner";
-    if (t === "spelavond" || t === "actie" || t === "acties") return "Spelavond";
-    if (t === "fuif" || t === "afterparty" || t === "party") return "Fuif";
-    if (t === "sponsor" || t === "netwerk" || t === "sponsoring") return "Sponsor";
-    // fallback
-    return eventType || "";
+    // Supports values like:
+    // - "Club & fun · Dinner"
+    // - "Club & fun · Spelavond / actie"
+    // - "Tornooi" etc.
+    const raw = String(eventType || "").trim();
+    if (!raw) return "";
+
+    // Take the part after the last middle dot, if present.
+    const parts = raw.split("·").map(s => s.trim()).filter(Boolean);
+    const core = (parts.length ? parts[parts.length - 1] : raw).toLowerCase();
+
+    // Normalize common variants
+    if (core.includes("dinner") || core.includes("eetdag")) return "Dinner";
+    if (core.includes("spelavond") || core.includes("actie")) return "Spelavond";
+    if (core.includes("fuif") || core.includes("afterparty") || core.includes("after party") || core.includes("party")) return "Fuif";
+    if (core.includes("sponsor") || core.includes("netwerk")) return "Sponsor";
+
+    // Fallback: use the core label (capitalized) so filters still work reasonably
+    return core ? (core.charAt(0).toUpperCase() + core.slice(1)) : raw;
   }
 
   function buildApiUrl(){
@@ -747,9 +759,31 @@
     const thumb = getThumb(ev);
     const safeThumb = safeAttr(thumb);
 
-    // Compact/trimmed description (matches events.html)
+    // Compact/trimmed description (extract real "Omschrijving:" when form-dump is stored)
     const rawDesc = ev.description ? String(ev.description) : "";
-    const descOneLine = rawDesc.replace(/\s+/g, " ").trim();
+
+    function extractOmschrijving(text){
+      const t = String(text || "");
+      if (!t) return "";
+      // Normalize newlines
+      const norm = t.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+
+      // If form dump contains "Omschrijving:", take the following lines until the next section
+      const m = norm.match(/\nOmschrijving:\s*\n([\s\S]*?)(\n\n|\nOpmerking:|\nFACTUURGEGEVENS|\nPremium:|$)/i);
+      if (m && m[1]) return String(m[1]).trim();
+
+      // Otherwise, strip the leading template if it starts with EVENT AANMELDING
+      if (/^EVENT\s+AANMELDING/i.test(norm.trim())) {
+        // best-effort: remove lines up to first blank line after "Omschrijving:" (if present) or after header
+        const afterHeader = norm.replace(/^EVENT\s+AANMELDING[\s\S]*?\n\n/i, "");
+        return afterHeader.trim();
+      }
+
+      return norm.trim();
+    }
+
+    const omschrijving = extractOmschrijving(rawDesc);
+    const descOneLine = omschrijving.replace(/\s+/g, " ").trim();
     const desc = descOneLine.length > 260 ? (descOneLine.slice(0, 260) + "…") : descOneLine;
 
     // club/organizer line (best-effort)
