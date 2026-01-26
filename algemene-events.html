@@ -854,7 +854,7 @@
 
     // Match events.html behavior:
     // - premium block is always visible (even if empty)
-    // - show max 2 placeholders when there are no premium items
+    // - when there are no premium items, we still render 6 placeholders (3 rijen × 2 kolommen)
     premiumWrap.style.display = 'block';
 
     const slots = 6;
@@ -912,9 +912,7 @@
         const hasReal = items && items.length > 0;
         const ev = hasReal ? items[(tick + offsets[s]) % items.length] : null;
 
-        // When empty: render only 2 placeholders for a clean look (same as events.html)
-        if (!ev && s >= 2) continue;
-
+        // When empty: render placeholders in all 6 slots (so the layout stays 3 rijen × 2 kolommen)
         premiumGrid.insertAdjacentHTML('beforeend', premiumTileHtml(ev, s));
       }
 
