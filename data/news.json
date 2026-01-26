@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-01-25T23:24:01.610Z",
+  "generatedAt": "2026-01-26T02:11:14.792Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Beating Arsenal puts Man United into Premier League title race",
+      "link": "https://www.espn.com/soccer/story/_/id/47726339/beating-arsenal-puts-manchester-united-premier-league-title-race",
+      "summary": "Man United are 12 points behind league-leading Arsenal, but after beating the Gunners on Sunday, can the Red Devils pull off an unlikely title push?",
+      "publishedAt": "2026-01-26T01:19:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Scheffler wins 20th PGA Tour title at American Express",
+      "link": "https://www.skysports.com/golf/news/12040/13499037/scottie-scheffler-wins-20th-pga-tour-title-at-the-american-express-finishing-four-clear-after-final-round-66",
+      "summary": "Scottie Scheffler won The American Express, finishing on 27 under par, four shots ahead of his nearest challengers.",
+      "publishedAt": "2026-01-26T00:04:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Patriots beat Broncos in near blizzard to book Super Bowl spot",
+      "link": "https://www.skysports.com/nfl/news/12040/13499036/nfl-playoffs-new-england-patriots-reach-super-bowl-lx-as-they-edge-out-denver-broncos-in-afc-championship",
+      "summary": "The New England Patriots booked their place at Super Bowl LX as they edged out the Denver Broncos 10-7 in near blizzard conditions in the AFC Championship game.",
+      "publishedAt": "2026-01-25T23:38:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arteta challenges 'poor' Arsenal after Man Utd loss",
+      "link": "https://www.espn.com/soccer/story/_/id/47726787/mikel-arteta-challenges-poor-arsenal-man-united-loss",
+      "summary": "Mikel Arteta has challenged Arsenal to show the mental strength to win the Premier League after falling to a nervous 3-2 home defeat against Manchester United.",
+      "publishedAt": "2026-01-25T23:31:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Oviedo coach: Yamal goal from 'another galaxy'",
+      "link": "https://www.espn.com/soccer/story/_/id/47725963/ovideo-coach-says-lamine-yamal-goal-another-galaxy",
+      "summary": "Real Oviedo coach Guillermo Almada branded Lamine Yamal a player from \"another galaxy\" after the Barcelona forward's wonder goal in Sunday's LaLiga meeting between the two sides.",
+      "publishedAt": "2026-01-25T23:31:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Juve's Spalletti sees McKennie as 'perfect' striker",
+      "link": "https://www.espn.com/soccer/story/_/id/47728371/juventus-usmnt-weston-mckennie-perfect-striker",
+      "summary": "Juventus coach Luciano Spalletti advocated for United States midfielder Weston McKennie to play in a more offensive position after his team beat Napoli 3-0 on Sunday.",
+      "publishedAt": "2026-01-25T23:31:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Carrick cool after Arsenal win: Big games coming",
+      "link": "https://www.espn.com/soccer/story/_/id/47726934/michael-carrick-manchester-united-vs-arsenal-premier-league",
+      "summary": "Michael Carrick said Manchester United have \"bigger games to come\" after a 3-2 victory against Premier League leaders Arsenal.",
+      "publishedAt": "2026-01-25T23:31:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Another unbelievable result' - but what's different about Man Utd now?",
+      "link": "https://www.bbc.com/sport/football/articles/c62vk5l68x3o?at_medium=RSS&at_campaign=rss",
+      "summary": "MOTD pundit Danny Murphy explains how Manchester United earned their impressive win at Premier League leaders Arsenal, and how he feels the Gunners will react.",
+      "publishedAt": "2026-01-25T23:26:18.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -36,50 +124,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta challenges 'poor' Arsenal after Man Utd loss",
-      "link": "https://www.espn.com/soccer/story/_/id/47726787/mikel-arteta-challenges-poor-arsenal-man-united-loss",
-      "summary": "Mikel Arteta has challenged Arsenal to show the mental strength to win the Premier League after falling to a nervous 3-2 home defeat against Manchester United.",
-      "publishedAt": "2026-01-25T22:56:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Oviedo coach: Yamal goal from 'another galaxy'",
-      "link": "https://www.espn.com/soccer/story/_/id/47725963/ovideo-coach-says-lamine-yamal-goal-another-galaxy",
-      "summary": "Real Oviedo coach Guillermo Almada branded Lamine Yamal a player from \"another galaxy\" after the Barcelona forward's wonder goal in Sunday's LaLiga meeting between the two sides.",
-      "publishedAt": "2026-01-25T22:56:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Juve's Spalletti sees McKennie as 'perfect' striker",
-      "link": "https://www.espn.com/soccer/story/_/id/47728371/juventus-usmnt-weston-mckennie-perfect-striker",
-      "summary": "Juventus coach Luciano Spalletti advocated for United States midfielder Weston McKennie to play in a more offensive position after his team beat Napoli 3-0 on Sunday.",
-      "publishedAt": "2026-01-25T22:56:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Carrick cool after Arsenal win: Big games coming",
-      "link": "https://www.espn.com/soccer/story/_/id/47726934/michael-carrick-manchester-united-vs-arsenal-premier-league",
-      "summary": "Michael Carrick said Manchester United have \"bigger games to come\" after a 3-2 victory against Premier League leaders Arsenal.",
-      "publishedAt": "2026-01-25T22:56:04.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
@@ -91,6 +135,17 @@
     },
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Hardly anyone would have picked Carrick to be Man Utd boss - but now?",
+      "link": "https://www.bbc.com/sport/football/articles/cdxjdk4rk1xo?at_medium=RSS&at_campaign=rss",
+      "summary": "As Michael Carrick's perfect start at Manchester United continues, is he building a case for the job longer term?",
+      "publishedAt": "2026-01-25T22:41:57.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
@@ -99,6 +154,17 @@
       "link": "https://www.vi.nl/nieuws/go-ahead-eagles-opponent-braga-vernedert-alverca-in-eerste-helft",
       "summary": "Sporting Braga heeft een ideale generale repetitie gekend in aanloop naar het Europa League-duel met Go Ahead Eagles. De nummer vier van Portugal maakte vier goals in de eerste helft tegen middenmoter FC Alverca en daarna kon het vizier op de ontmoeting in Deventer.",
       "publishedAt": "2026-01-25T22:30:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Why Arsenal's wobble may not even matter - despite 'feeling pressure'",
+      "link": "https://www.bbc.com/sport/football/articles/cx2xvq5ng0xo?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal's winless run may normally be cause for concern - but the stats suggest they are still in control of the Premier League title race.",
+      "publishedAt": "2026-01-25T21:40:35.000Z"
     },
     {
       "type": "rss",
@@ -124,17 +190,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Totally unrealistic to win every game - Arteta",
-      "link": "https://www.bbc.com/sport/football/videos/cdxjd9qjk2xo?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal manager Mikel Arteta says his side were \"not at their best today\" but it is \"totally unrealistic\" to win every single game after his side lost 3-2 to Manchester United at the Emirates Stadium.",
-      "publishedAt": "2026-01-25T20:36:58.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -150,10 +205,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Cunha scores stunning late winner as Man Utd beat Arsenal",
-      "link": "https://www.bbc.com/sport/football/videos/c3wz3x78d29o?at_medium=RSS&at_campaign=rss",
-      "summary": "Two sensational second-half strikes give Manchester United a huge win that takes them above Chelsea and Liverpool into fourth.",
-      "publishedAt": "2026-01-25T20:00:18.000Z"
+      "title": "Villa 'extraordinary' in first win at Newcastle since infamous 2005 trip",
+      "link": "https://www.bbc.com/sport/football/articles/cvgp08we081o?at_medium=RSS&at_campaign=rss",
+      "summary": "Aston Villa produce 'extraordinary' performance as they claim their first win at Newcastle since the infamous 2005 encounter",
+      "publishedAt": "2026-01-25T20:00:57.000Z"
     },
     {
       "type": "rss",
@@ -161,65 +216,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Buendia scores screamer as Villa beat Newcastle",
-      "link": "https://www.bbc.com/sport/football/videos/ckgke865j00o?at_medium=RSS&at_campaign=rss",
-      "summary": "Emiliano Buendia and Ollie Watkins both score as high-flying Aston Villa end their long wait for a St James' Park victory against Newcastle United.",
-      "publishedAt": "2026-01-25T20:00:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Estevao-inspired Chelsea beat Crystal Palace",
-      "link": "https://www.bbc.com/sport/football/videos/c78vl6zx3wpo?at_medium=RSS&at_campaign=rss",
-      "summary": "Estevao Willian replaces the injured Cole Palmer to inspire Chelsea to a comfortable win over Crystal Palace at Selhurst Park.",
-      "publishedAt": "2026-01-25T19:59:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Forest boost survival hopes after win at Brentford",
-      "link": "https://www.bbc.com/sport/football/videos/cy4g177ew37o?at_medium=RSS&at_campaign=rss",
-      "summary": "Nottingham Forest gave their hopes of Premier League survival a major boost with a hard-fought win against Brentford at Gtech Community Stadium.",
-      "publishedAt": "2026-01-25T19:59:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Beating Arsenal puts Man United into Premier League title race",
-      "link": "https://www.espn.com/soccer/story/_/id/47726339/beating-arsenal-puts-manchester-united-premier-league-title-race",
-      "summary": "Man United are 12 points behind league-leading Arsenal, but after beating the Gunners on Sunday, can the Red Devils pull off an unlikely title push?",
-      "publishedAt": "2026-01-25T19:18:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arsenal's mental strength questioned by Vieira",
-      "link": "https://www.skysports.com/football/news/12040/13498985/arsenals-mental-strength-in-premier-league-title-race-questioned-by-patrick-vieira-after-man-utd-defeat",
-      "summary": "Arsenal's former captain Patrick Vieira has questioned the Gunners' \"mental strength\" in the Premier League title race after they lost at home to Manchester United.",
-      "publishedAt": "2026-01-25T18:52:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Two WONDER strikes fire Man Utd to huge win in five-goal thriller at Emirates!",
-      "link": "https://www.skysports.com/watch/video/13498986/arsenal-2-3-man-utd-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from Arsenal’s match against Manchester United in the Premier League.",
-      "publishedAt": "2026-01-25T18:46:00.000Z"
+      "title": "'Intoxicating title fight impossible to call as Hearts refuse to buckle'",
+      "link": "https://www.bbc.com/sport/football/articles/cdxjd2we7weo?at_medium=RSS&at_campaign=rss",
+      "summary": "Depleted Scottish Premiership leaders Hearts passed the latest test of their mettle in compelling draw with Celtic, writes Tom English.",
+      "publishedAt": "2026-01-25T19:09:28.000Z"
     }
   ]
 }
