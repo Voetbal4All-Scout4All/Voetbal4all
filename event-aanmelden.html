@@ -223,15 +223,15 @@
                     <div class="card-caption" style="margin-bottom:6px;">Eventtype *</div>
                     <select id="evType" required style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
                       <option value="" selected disabled>Kies type…</option>
-                      <option data-cat="Sportief">Sportief · Tornooi</option>
-                      <option data-cat="Sportief">Sportief · Vriendschappelijke wedstrijd</option>
-                      <option data-cat="Sportief">Sportief · Stage</option>
-                      <option data-cat="Sportief">Sportief · Voetbalkamp</option>
-                      <option data-cat="Club & fun">Club &amp; fun · Dinner / eetdag</option>
-                      <option data-cat="Club & fun">Club &amp; fun · Spelavond / actie</option>
-                      <option data-cat="Club & fun">Club &amp; fun · Fuif / afterparty</option>
-                      <option data-cat="Club & fun">Club &amp; fun · Sponsor &amp; netwerk</option>
-                      <option data-cat="*">Andere</option>
+                      <option value="Sportief · Tornooi" data-cat="Sportief">Sportief · Tornooi</option>
+                      <option value="Sportief · Vriendschappelijke wedstrijd" data-cat="Sportief">Sportief · Vriendschappelijke wedstrijd</option>
+                      <option value="Sportief · Stage" data-cat="Sportief">Sportief · Stage</option>
+                      <option value="Sportief · Voetbalkamp" data-cat="Sportief">Sportief · Voetbalkamp</option>
+                      <option value="Club & fun · Dinner / eetdag" data-cat="Club & fun">Club &amp; fun · Dinner / eetdag</option>
+                      <option value="Club & fun · Spelavond / actie" data-cat="Club & fun">Club &amp; fun · Spelavond / actie</option>
+                      <option value="Club & fun · Fuif / afterparty" data-cat="Club & fun">Club &amp; fun · Fuif / afterparty</option>
+                      <option value="Club & fun · Sponsor & netwerk" data-cat="Club & fun">Club &amp; fun · Sponsor &amp; netwerk</option>
+                      <option value="Andere" data-cat="*">Andere</option>
                     </select>
                   </label>
 
@@ -373,6 +373,7 @@
                       <label style="display:block;">
                         <div class="card-caption" style="margin-bottom:6px;">BTW-nummer</div>
                         <input id="invVat" type="text" placeholder="Bijv. BE0123.456.789" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                        <div id="invVatHint" class="note" style="margin-top:6px;opacity:.85;"></div>
                       </label>
 
                       <label style="display:block;">
@@ -503,32 +504,230 @@
       return el ? (el.value || '').trim() : '';
     }
 
+    function capitalizeFirstNonSpace(str) {
+      const s = String(str || '');
+      const i = s.search(/\S/);
+      if (i === -1) return s;
+      return s.slice(0, i) + s.charAt(i).toUpperCase() + s.slice(i + 1);
+    }
+
+    function sentenceCase(str) {
+      let s = String(str || '');
+      s = capitalizeFirstNonSpace(s);
+      // After . ! ? and a space/newline, capitalize next letter (best-effort, NL/EN friendly)
+      s = s.replace(/([\.!\?]\s+)([a-zà-öø-ÿ])/g, (m, p1, p2) => p1 + p2.toUpperCase());
+      return s;
+    }
+
+    function titleCaseWords(str) {
+      const s = String(str || '').trim();
+      if (!s) return s;
+      return s
+        .split(/\s+/)
+        .map((w) => {
+          // Keep acronyms and all-caps words as-is
+          if (w.length > 1 && w === w.toUpperCase()) return w;
+          return w.charAt(0).toUpperCase() + w.slice(1);
+        })
+        .join(' ');
+    }
+
+    function wireAutoCapitalize(id, mode) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const apply = () => {
+        const raw = el.value || '';
+        let next = raw;
+        if (mode === 'sentence') next = sentenceCase(raw);
+        if (mode === 'title') next = titleCaseWords(raw);
+        if (next !== raw) el.value = next;
+      };
+      el.addEventListener('blur', apply);
+    }
+
+    // Auto-capitalization on blur (keeps UX light; no aggressive real-time rewriting)
+    wireAutoCapitalize('evTitle', 'sentence');
+    wireAutoCapitalize('evOrg', 'title');
+    wireAutoCapitalize('evCity', 'title');
+    wireAutoCapitalize('evLocation', 'sentence');
+    wireAutoCapitalize('evDesc', 'sentence');
+    wireAutoCapitalize('invName', 'title');
+    wireAutoCapitalize('invAddress', 'sentence');
+    wireAutoCapitalize('invCity', 'sentence');
+
     // Category -> Type filtering
     const categoryEl = document.getElementById('evCategory');
     const typeEl = document.getElementById('evType');
 
     function syncTypeOptions() {
       if (!typeEl) return;
+
       const cat = (categoryEl?.value || '').trim();
       const current = (typeEl.value || '').trim();
       let keepCurrent = false;
 
-      Array.from(typeEl.options).forEach((opt) => {
+      Array.from(typeEl.options).forEach((opt, idx) => {
         const val = (opt.value || '').trim();
-        const optCat = opt.getAttribute('data-cat');
-        if (!optCat || val === '') {
+        const optCat = (opt.getAttribute('data-cat') || '').trim();
+
+        // Keep placeholder always visible/enabled
+        if (idx === 0 || val === '') {
           opt.hidden = false;
+          opt.disabled = false;
+          opt.style.display = '';
           return;
         }
-        if (optCat === '*' || optCat === cat) {
+
+        // No category selected yet: show everything
+        if (!cat) {
           opt.hidden = false;
+          opt.disabled = false;
+          opt.style.display = '';
           if (val === current) keepCurrent = true;
-        } else {
-          opt.hidden = true;
+          return;
         }
+
+        // Match category (or wildcard)
+        const allowed = (optCat === '*' || optCat === cat);
+        opt.hidden = !allowed;
+        opt.disabled = !allowed;
+        // `display:none` is more reliable than `hidden` in some browsers
+        opt.style.display = allowed ? '' : 'none';
+
+        if (allowed && val === current) keepCurrent = true;
       });
 
+      // If current selection is no longer allowed, reset to placeholder
       if (!keepCurrent && current) typeEl.value = '';
+    }
+    // VAT (BTW) validation (best-effort): format + optional backend validation
+    const invVatEl = document.getElementById('invVat');
+    const invVatHintEl = document.getElementById('invVatHint');
+    const VAT_VALIDATE_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/vat-validate';
+
+    let vatState = { last: '', checked: false, valid: true, name: '', address: '', country: '' };
+
+    function normalizeVat(vat) {
+      return String(vat || '')
+        .toUpperCase()
+        .replace(/\s+/g, '')
+        .replace(/\./g, '')
+        .replace(/-/g, '');
+    }
+
+    function isValidBEVat(vat) {
+      // BE + 10 digits; checksum: 97 - (first8digits % 97) == last2digits
+      if (!/^BE\d{10}$/.test(vat)) return false;
+      const digits = vat.slice(2);
+      const base = parseInt(digits.slice(0, 8), 10);
+      const check = parseInt(digits.slice(8, 10), 10);
+      const mod = base % 97;
+      const expected = (97 - mod) % 97;
+      const expected2 = expected === 0 ? 97 : expected;
+      return check === expected2;
+    }
+
+    function isValidNLVat(vat) {
+      // NL999999999B99 (basic pattern)
+      return /^NL\d{9}B\d{2}$/.test(vat);
+    }
+
+    function basicVatFormatOk(vat) {
+      if (!vat) return true;
+      if (vat.startsWith('BE')) return isValidBEVat(vat);
+      if (vat.startsWith('NL')) return isValidNLVat(vat);
+      // Generic EU VAT: 2-letter prefix + 6-14 alphanum
+      return /^[A-Z]{2}[A-Z0-9]{6,14}$/.test(vat);
+    }
+
+    function setVatHint(text, kind) {
+      if (!invVatHintEl) return;
+      invVatHintEl.textContent = text || '';
+      invVatHintEl.style.opacity = text ? '1' : '.85';
+      // kind: 'ok' | 'warn' | 'error'
+      if (kind === 'error') {
+        invVatHintEl.style.color = 'rgba(255,120,120,0.95)';
+      } else if (kind === 'ok') {
+        invVatHintEl.style.color = 'rgba(120,255,180,0.95)';
+      } else {
+        invVatHintEl.style.color = '';
+      }
+    }
+
+    async function validateVatWithBackend(vat) {
+      // Backend endpoint should respond with JSON like:
+      // { ok:true, valid:true, name:'...', address:'...', country:'BE' }
+      const url = `${VAT_VALIDATE_ENDPOINT}?vat=${encodeURIComponent(vat)}`;
+      const res = await fetch(url, { method: 'GET' });
+      const ct = String(res.headers.get('content-type') || '').toLowerCase();
+      let json = null;
+      if (ct.includes('application/json')) {
+        try { json = await res.json(); } catch (_) {}
+      } else {
+        const t = await res.text().catch(() => '');
+        try { json = t ? JSON.parse(t) : null; } catch (_) {}
+      }
+      if (!res.ok || !json) return { ok: false };
+      return json;
+    }
+
+    async function validateVatFlow() {
+      if (!invVatEl) return { checked: false, valid: true };
+
+      const raw = invVatEl.value || '';
+      const vat = normalizeVat(raw);
+      invVatEl.value = vat;
+
+      vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
+
+      if (!vat) {
+        setVatHint('', '');
+        return { checked: false, valid: true };
+      }
+
+      // 1) Format check first
+      if (!basicVatFormatOk(vat)) {
+        vatState = { last: vat, checked: true, valid: false, name: '', address: '', country: '' };
+        setVatHint('BTW-nummer lijkt ongeldig. Controleer het formaat (bv. BE0123456789).', 'error');
+        return { checked: true, valid: false };
+      }
+
+      // 2) Backend validation (best-effort)
+      setVatHint('BTW-nummer wordt gecontroleerd…', 'warn');
+      try {
+        const r = await validateVatWithBackend(vat);
+        if (r && r.ok && typeof r.valid === 'boolean') {
+          vatState = {
+            last: vat,
+            checked: true,
+            valid: !!r.valid,
+            name: String(r.name || ''),
+            address: String(r.address || ''),
+            country: String(r.country || r.countryCode || '')
+          };
+
+          if (vatState.valid) {
+            setVatHint('BTW-nummer is geldig.', 'ok');
+            return { checked: true, valid: true };
+          }
+
+          setVatHint('BTW-nummer bestaat niet of kon niet bevestigd worden. Controleer het nummer.', 'error');
+          return { checked: true, valid: false };
+        }
+
+        // If endpoint is not available yet, do not hard-block; keep format check
+        vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
+        setVatHint('BTW-nummer formaat is OK. Definitieve verificatie gebeurt door Voetbal4All.', 'warn');
+        return { checked: false, valid: true };
+      } catch (_) {
+        vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
+        setVatHint('BTW-nummer formaat is OK. Definitieve verificatie gebeurt door Voetbal4All.', 'warn');
+        return { checked: false, valid: true };
+      }
+    }
+
+    if (invVatEl) {
+      invVatEl.addEventListener('blur', () => { validateVatFlow(); });
     }
 
     if (categoryEl && typeEl) {
@@ -786,6 +985,17 @@
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
+      // Apply capitalization before reading values (best-effort)
+      try {
+        ['evTitle','evOrg','evCity','evLocation','evDesc','invName','invAddress','invCity'].forEach((id) => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          if (id === 'evDesc') el.value = sentenceCase(el.value || '');
+          else if (id === 'evTitle' || id === 'evLocation' || id === 'invAddress' || id === 'invCity') el.value = sentenceCase(el.value || '');
+          else el.value = titleCaseWords(el.value || '');
+        });
+      } catch (_) {}
+
       const required = ['evCategory','evCountry','evType','evTitle','evStartDate','evOrg','evEmail','evCity','evLocation','evDesc'];
       for (const id of required) {
         const el = document.getElementById(id);
@@ -813,6 +1023,17 @@
           if (!val) {
             if (hint) hint.textContent = 'Vul de factuurgegevens volledig in.';
             try { el && el.focus(); } catch (_) {}
+            return;
+          }
+        }
+
+        // Optional VAT: if provided, validate (format + backend if available)
+        const vatRaw = (document.getElementById('invVat')?.value || '').trim();
+        if (vatRaw) {
+          const r = await validateVatFlow();
+          if (r && r.checked && r.valid === false) {
+            if (hint) hint.textContent = 'Controleer het BTW-nummer.';
+            try { document.getElementById('invVat')?.focus(); } catch (_) {}
             return;
           }
         }
