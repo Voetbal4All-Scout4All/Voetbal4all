@@ -408,7 +408,7 @@
                 </p>
 
                 <!-- PREMIUM (komende 60 dagen): 3 rijen x 2 kolommen = 6 kaarten, roterend per kaart -->
-                <div id="premium-30-wrap" class="premium-block" style="display:none;">
+                <div id="premium-30-wrap" class="premium-block" style="display:block;">
                   <div class="card premium-shell" style="margin-bottom:12px;">
                     <div class="card-header">
                       <div>
@@ -793,26 +793,23 @@
   function startPremium60Grid(items){
     if (!premiumWrap || !premiumGrid) return;
 
-    // show only if we have at least 1 premium
-    if (!items || !items.length){
-      premiumWrap.style.display = 'none';
-      premiumGrid.innerHTML = '';
-      return;
-    }
-
+    // Match events.html behavior:
+    // - premium block is always visible (even if empty)
+    // - show max 2 placeholders when there are no premium items
     premiumWrap.style.display = 'block';
 
     const slots = 6;
     const offsets = [0, 2, 5, 7, 9, 11];
     let tick = 0;
 
-    function premiumTileHtml(ev){
-      const slug = ev ? (ev.slug || ev.id) : '';
-      const country = ev ? String(ev.country || '').toUpperCase() : '';
-      const uiType = ev ? typeToUiLabel(ev.event_type) : '';
-      const province = ev ? String(ev.province || ev.region || ev.state || ev.provincie || '').trim() : '';
-      const city = ev ? String(ev.city || '').trim() : '';
-      const thumb = ev ? getThumb(ev) : '';
+    function premiumTileHtml(ev, slotIndex){
+      const hasReal = !!ev;
+      const slug = hasReal ? (ev.slug || ev.id) : (`placeholder-${slotIndex+1}`);
+      const country = hasReal ? String(ev.country || '').toUpperCase() : '';
+      const uiType = hasReal ? typeToUiLabel(ev.event_type) : '';
+      const province = hasReal ? String(ev.province || ev.region || ev.state || ev.provincie || '').trim() : '';
+      const city = hasReal ? String(ev.city || '').trim() : '';
+      const thumb = hasReal ? getThumb(ev) : '';
       const safeThumb = safeAttr(thumb);
 
       const placeBits = [countryToFlag(country), province, city].filter(Boolean).join(' · ');
@@ -830,15 +827,15 @@
             <div class="event-main">
               <div class="ad-card-header" style="margin:0;">
                 <div>
-                  <div class="ad-card-title">${ev?.title || ''}</div>
-                  <div class="ad-card-meta">${placeBits || 'Premium slot'}</div>
-                  <div class="ad-card-meta">${ev ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${ev && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
-                  <div class="ad-card-meta">${uiType ? uiType : ''}</div>
+                  <div class="ad-card-title">${hasReal ? (ev?.title || '') : 'Plaats jouw premium event'}</div>
+                  <div class="ad-card-meta">${hasReal ? (placeBits || 'Premium slot') : 'Meer zichtbaarheid in jouw regio'}</div>
+                  <div class="ad-card-meta">${hasReal ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${hasReal && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
+                  <div class="ad-card-meta">${hasReal ? (uiType || '') : ''}</div>
                 </div>
               </div>
 
               <div class="ad-card-actions event-actions" style="margin-top:10px;">
-                ${ev
+                ${hasReal
                   ? `<a class=\"btn-ghost-sm\" href=\"event.html?slug=${encodeURIComponent(slug)}\">Bekijk event</a>`
                   : `<a class=\"btn-ghost-sm\" href=\"adverteren.html\">Plaats premium event</a>`
                 }
@@ -851,19 +848,30 @@
 
     function render(){
       premiumGrid.innerHTML = '';
+
       for (let s=0; s<slots; s++){
-        const ev = items[(tick + offsets[s]) % items.length];
-        premiumGrid.insertAdjacentHTML('beforeend', premiumTileHtml(ev));
+        const hasReal = items && items.length > 0;
+        const ev = hasReal ? items[(tick + offsets[s]) % items.length] : null;
+
+        // When empty: render only 2 placeholders for a clean look (same as events.html)
+        if (!ev && s >= 2) continue;
+
+        premiumGrid.insertAdjacentHTML('beforeend', premiumTileHtml(ev, s));
       }
+
       hidePastEvents();
       filterCards();
     }
 
     render();
-    setInterval(() => {
-      tick = (tick + 1) % items.length;
-      render();
-    }, 10000);
+
+    // Rotate only when we have real premium items
+    if (items && items.length > 0){
+      setInterval(() => {
+        tick = (tick + 1) % items.length;
+        render();
+      }, 10000);
+    }
   }
 
   function startSidebarPremiumLater(items){
