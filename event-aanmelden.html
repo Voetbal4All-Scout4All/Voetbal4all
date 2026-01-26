@@ -603,7 +603,7 @@
     // VAT (BTW) validation (best-effort): format + optional backend validation
     const invVatEl = document.getElementById('invVat');
     const invVatHintEl = document.getElementById('invVatHint');
-    const VAT_VALIDATE_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/vat-validate';
+    const VAT_VALIDATE_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/validate-vat';
 
     let vatState = { last: '', checked: false, valid: true, name: '', address: '', country: '' };
 
@@ -655,20 +655,27 @@
     }
 
     async function validateVatWithBackend(vat) {
-      // Backend endpoint should respond with JSON like:
-      // { ok:true, valid:true, name:'...', address:'...', country:'BE' }
+      // Backend endpoint responds with JSON like:
+      // { ok:true, result:{ ok:true, status:'verified'|'unverifiable_non_eu'|..., valid:true|false|null, name, address, countryCode } }
       const url = `${VAT_VALIDATE_ENDPOINT}?vat=${encodeURIComponent(vat)}`;
       const res = await fetch(url, { method: 'GET' });
       const ct = String(res.headers.get('content-type') || '').toLowerCase();
       let json = null;
+
       if (ct.includes('application/json')) {
         try { json = await res.json(); } catch (_) {}
       } else {
         const t = await res.text().catch(() => '');
         try { json = t ? JSON.parse(t) : null; } catch (_) {}
       }
-      if (!res.ok || !json) return { ok: false };
-      return json;
+
+      if (!res.ok || !json || json.ok !== true) return { ok: false };
+
+      // Prefer the nested result object
+      const r = (json && typeof json === 'object' && json.result && typeof json.result === 'object') ? json.result : null;
+      if (!r) return { ok: false };
+
+      return r;
     }
 
     async function validateVatFlow() {
@@ -696,14 +703,30 @@
       setVatHint('BTW-nummer wordt gecontroleerd…', 'warn');
       try {
         const r = await validateVatWithBackend(vat);
-        if (r && r.ok && typeof r.valid === 'boolean') {
+
+        // Non-EU BTW: geen gratis autoritatieve check mogelijk -> vraag bevestiging (NIET blokkeren)
+        if (r && r.ok === true && r.status === 'unverifiable_non_eu') {
+          vatState = {
+            last: vat,
+            checked: false,
+            valid: true,
+            name: '',
+            address: '',
+            country: String(r.countryCode || r.country || '')
+          };
+          setVatHint('Is dit BTW-nummer correct?', 'warn');
+          return { checked: false, valid: true };
+        }
+
+        // EU BTW (VIES) gevalideerd
+        if (r && r.ok === true && r.status === 'verified' && typeof r.valid === 'boolean') {
           vatState = {
             last: vat,
             checked: true,
             valid: !!r.valid,
             name: String(r.name || ''),
             address: String(r.address || ''),
-            country: String(r.country || r.countryCode || '')
+            country: String(r.countryCode || r.country || '')
           };
 
           if (vatState.valid) {
@@ -711,10 +734,17 @@
             return { checked: true, valid: true };
           }
 
-          setVatHint('BTW-nummer bestaat niet of kon niet bevestigd worden. Controleer het nummer.', 'error');
+          setVatHint('BTW-nummer bestaat niet (VIES). Controleer het nummer.', 'error');
           return { checked: true, valid: false };
         }
 
+        // Bad format vanuit backend (blokkeer)
+        if (r && r.ok === false && r.status === 'bad_format') {
+          vatState = { last: vat, checked: true, valid: false, name: '', address: '', country: '' };
+          setVatHint('Ongeldig BTW-nummerformaat. Gebruik bv. BE0123456789 (zonder punten/spaties).', 'error');
+          return { checked: true, valid: false };
+        }
+        
         // If endpoint is not available yet, do not hard-block; keep format check
         vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
         setVatHint('BTW-nummer formaat is OK. Definitieve verificatie gebeurt door Voetbal4All.', 'warn');
