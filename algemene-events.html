@@ -438,7 +438,35 @@
           <aside class="v4-sidebar">
             <div class="v4-sidebar-sticky">
 
-              <article class="card" style="margin-bottom:12px;">
+              <!-- Sponsor/Partner (zelfde positie als events.html) -->
+              <article class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Advertentie</div>
+                    <div class="card-title">Sponsor / Partner</div>
+                  </div>
+                  <span class="pill-small">Premium</span>
+                </div>
+                <div class="ad-placeholder">
+                  Ideaal voor traiteurs, drankleveranciers, drukwerk, DJ’s, tentenverhuur, …
+                  <br/>
+                  <span class="ad-size">Aanrader: 300 × 250 of 300 × 600</span>
+                </div>
+              </article>
+
+              <!-- Sticky AdSense (zelfde positie als events.html, behoud slot) -->
+              <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+                <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-4062633211824348"
+                  data-ad-slot="5790616714"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              </div>
+
+              <!-- CTA (zelfde plaats/feel als events.html) -->
+              <article class="card" style="margin-top:12px;">
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Organiseer je een clubactiviteit?</div>
@@ -453,7 +481,8 @@
                   <a class="btn-ghost-sm" href="formulieren.html#club-fun">Formulieren</a>
                 </div>
               </article>
-              <!-- Premium events > 60 dagen (10+ cards, roterend) -->
+
+              <!-- Premium events later (zelfde sectie als events.html) -->
               <article class="card" style="margin-top:12px;">
                 <div class="card-header">
                   <div>
@@ -465,7 +494,8 @@
                 <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
               </article>
 
-              <article class="card">
+              <!-- Partner placeholder (behoud jouw huidige blok, maar op dezelfde diepte als events.html) -->
+              <article class="card" style="margin-top:12px;">
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Advertentie</div>
@@ -478,16 +508,6 @@
                   <br><span class="ad-size">300 × 250 / 300 × 600</span>
                 </div>
               </article>
-
-              <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
-                <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-4062633211824348"
-                  data-ad-slot="5790616714"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-              </div>
 
             </div>
           </aside>
@@ -727,6 +747,11 @@
     const thumb = getThumb(ev);
     const safeThumb = safeAttr(thumb);
 
+    // Compact/trimmed description (matches events.html)
+    const rawDesc = ev.description ? String(ev.description) : "";
+    const descOneLine = rawDesc.replace(/\s+/g, " ").trim();
+    const desc = descOneLine.length > 260 ? (descOneLine.slice(0, 260) + "…") : descOneLine;
+
     // club/organizer line (best-effort)
     const club = ev.club_name || ev.club || ev.clubName || ev.clubname || ev.organizer_name || "";
 
@@ -756,7 +781,7 @@
             </div>
 
             <div class="ad-card-body" style="margin-top:8px;">
-              ${ev.description ? String(ev.description) : ""}
+              ${desc}
             </div>
 
             <div class="ad-card-actions event-actions" style="margin-top:10px;">
