@@ -1,6 +1,83 @@
 {
-  "generatedAt": "2026-01-27T20:28:23.338Z",
+  "generatedAt": "2026-01-27T21:22:37.751Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Maarten Paes en zijn American Dream: 'Ik word beter van deze stap'",
+      "link": "https://www.vi.nl/pro/maarten-paes-en-zijn-american-dream-ik-word-beter-van-deze-stap",
+      "summary": "Jarenlang gold hij als één van de grootste keeperstalenten van Nederland. Maarten Paes (23) stond onder de lat bij Jong Oranje en werd gelinkt aan het Nederlands elftal. Maar sinds deze winter woont hij in Texas. Een gesprek over gesponsorde barbecues, keepen in The Oven en één van de meest opvallende transfers van dit seizoen. 'Je leert heel andere dingen dan in de Eredivisie.'",
+      "publishedAt": "2026-01-27T21:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Spurs striker Kolo Muani 'fine' after car accident",
+      "link": "https://www.bbc.com/sport/football/articles/c620d9735lno?at_medium=RSS&at_campaign=rss",
+      "summary": "Randal Kolo Muani is \"fine\" after a \"minor\" car accident and should be available for Spurs' Champions League match at Eintracht Frankfurt, says Thomas Frank.",
+      "publishedAt": "2026-01-27T20:44:26.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Frank’s injury woes mount as Tottenham prepare for vital Champions League tie",
+      "link": "https://www.theguardian.com/football/2026/jan/27/thomas-frank-tottenham-spurs-injuries-eintracht-frankfurt-champions-league",
+      "summary": "Porro and Van de Ven join lengthy injury list Kolo Muani unharmed after M25 tyre blowout Thomas Frank’s preparations for the Champions League game at Eintracht Frankfurt on Wednesday night have been rocked by injuries to Pedro Porro and Micky van de Ven – and a car crash affecting Randal Kolo Muani and Wilson Odobert. The Tottenham manager reported that Kolo Muani and Odobert were OK after pictures emerged on social media of them standing by a black Ferrari with significant damage to its front end. Continue reading...",
+      "publishedAt": "2026-01-27T20:42:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Mourinho goedgemutst richting weerzien met 'een van mijn favoriete spelers'",
+      "link": "https://www.vi.nl/nieuws/mourinho-goedgemutst-richting-weerzien-met-een-van-mijn-favoriete-spelers",
+      "summary": "Woensdagavond staat er een echte Europese klassieker op het programma in Lissabon: Benfica – Real Madrid. José Mourinho staat tegenover zijn oude club, en in de Madrileense dug-out zit met Álvaro Arbeloa iemand voor wie de Special One veel respect heeft.",
+      "publishedAt": "2026-01-27T20:41:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Abraham joins Villa 1 day after Besiktas transfer",
+      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
+      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
+      "publishedAt": "2026-01-27T20:35:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "7 Greek fans die in crash en route to UEL game",
+      "link": "https://www.espn.com/soccer/story/_/id/47744955/paok-fans-killed-minibus-crash-romania-lyon-europa-league",
+      "summary": "Seven fans of Greek soccer club PAOK Salonika died in a minibus crash in Romania while traveling to a Europa League game at Lyon, Greece's government confirmed Tuesday.",
+      "publishedAt": "2026-01-27T20:35:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rosenior squashes Palmer to Man United reports",
+      "link": "https://www.espn.com/soccer/story/_/id/47746196/chelsea-rosenior-squashes-palmer-manchester-united-links",
+      "summary": "Chelsea head coach Liam Rosenior said there is no point in discussing \"unrealistic\" reports Cole Palmer wants to join Manchester United.",
+      "publishedAt": "2026-01-27T20:35:27.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -14,44 +91,11 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Abraham joins Villa 1 day after Besiktas transfer",
-      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
-      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
-      "publishedAt": "2026-01-27T20:21:18.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "7 Greek fans die in crash en route to UEL game",
-      "link": "https://www.espn.com/soccer/story/_/id/47744955/paok-fans-killed-minibus-crash-romania-lyon-europa-league",
-      "summary": "Seven fans of Greek soccer club PAOK Salonika died in a minibus crash in Romania while traveling to a Europa League game at Lyon, Greece's government confirmed Tuesday.",
-      "publishedAt": "2026-01-27T20:21:18.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arbeloa: 'Role model' Mou 'always' a Madridista",
-      "link": "https://www.espn.com/soccer/story/_/id/47745974/real-madrid-arbeloa-mourinho-always-one-us",
-      "summary": "Álvaro Arbeloa called José Mourinho \"one of us\" as Real Madrid prepare to face their former coach's current side Benfica in the Champions League on Wednesday.",
-      "publishedAt": "2026-01-27T20:21:17.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Geplaagde Frank zonder Van de Ven voor Champions League-clash in Duitsland",
+      "title": "Spurs mist Van de Ven, duo wel van de partij na auto-ongeluk",
       "link": "https://www.vi.nl/nieuws/geplaagde-frank-mist-van-de-ven-tijdens-champions-league-clash-in-duitsland",
       "summary": "Micky van de Ven kan Tottenham Hotspur woensdagavond niet van dienst zijn in het Champions League-treffen op bezoek bij Eintracht Frankfurt. Dat heeft Tottenham-manager Thomas Frank dinsdagavond verteld. Positief nieuws: Van de Ven mankeert niks ernstigs.",
       "publishedAt": "2026-01-27T20:20:11.000Z"
@@ -113,17 +157,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ajax verrast en maakt werk van komst Maarten Paes",
-      "link": "https://www.vi.nl/nieuws/ajax-verrast-en-maakt-werk-van-komst-maarten-paes",
-      "summary": "Ajax is bezig om Maarten Paes terug naar Nederland te halen. De 27-jarige doelman moet overkomen van FC Dallas en kan een contract tot de zomer van 2029 tekenen in Amsterdam.",
-      "publishedAt": "2026-01-27T19:47:31.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -135,22 +168,11 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "PEC houdt jongste Eredivisie-debutant ooit uit handen van geïnteresseerde clubs",
-      "link": "https://www.vi.nl/nieuws/pec-houdt-jongste-eredivisie-debutant-ooit-uit-handen-van-ge-nteresseerde-clubs",
-      "summary": "PEC Zwolle heeft het contract van Jadiel Pereira da Gama opengebroken en verlengd tot medio 2029. De zestienjarige middenvelder baarde dit seizoen opzien door als jongste speler ooit te debuteren in de Eredivisie.",
-      "publishedAt": "2026-01-27T19:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Cardiff & Lincoln lead | EFL on Sky LIVE!",
+      "title": "Cardiff, Lincoln lead & Huddersfield score from 50 YARDS | EFL on Sky LIVE!",
       "link": "https://www.skysports.com/football/live-blog/12040/13499718/league-one-live-scores-match-updates-and-free-highlights-plus-efl-latest-from-league-two",
       "summary": "",
       "publishedAt": "2026-01-27T19:15:00.000Z"
@@ -198,28 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/jan/27/wsl2-minimum-pay-national-living-wage-womens-football",
       "summary": "WSL says it is committed to increasing pay floors Clubs can be docked points for breaching salary cap Players aged under 23 in Women’s Super League 2 are not guaranteed to be paid the equivalent of the national living wage for a typical full-time worker annually, despite a large pay increase for the division’s lowest-paid players after the introduction of minimum salaries this season. WSL2 clubs must pay players aged 21 and 22 a minimum of £22,200 and those aged 18 to 20 at least £17,500. Regulations state they must receive a minimum “contact time” of 20 hours a week excluding matchdays and mealtimes. For players aged 23 and over, the minimum salary is £26,900. Continue reading...",
       "publishedAt": "2026-01-27T18:11:45.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Abraham rejoins Aston Villa in £18.2m deal",
-      "link": "https://www.skysports.com/football/news/12040/13492801/tammy-abraham-transfer-news-striker-joins-aston-villa-in-18-2m-deal",
-      "summary": "Aston Villa have signed striker Tammy Abraham from Besiktas in a deal worth £18.2m.",
-      "publishedAt": "2026-01-27T17:36:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta feeling bullish after Arsenal ‘take temperature down’ with team meeting",
-      "link": "https://www.theguardian.com/football/2026/jan/27/mikel-arteta-arsenal-team-meeting-manchester-uniited-defeat-title-race",
-      "summary": "Head coach and players spoke in wake of United defeat Side is ‘in great position in four competitions’, he says Mikel Arteta has revealed Arsenal held a team meeting after their defeat against Manchester United on Sunday “to take the temperature down”, insisting the league leaders must “play with enjoyment” in order to win a first Premier League title for 22 years. A late goal from Matheus Cunha inflicted on Arsenal their first home defeat of the season, with their lead at the top of the table remaining at four points after weekend victories for Manchester City and Aston Villa. Arteta’s side have finished as runners-up in the past three seasons and Arsenal have now spent 884 days at the summit since Arsène Wenger’s Invincibles were crowned champions in 2004. Continue reading...",
-      "publishedAt": "2026-01-27T17:11:08.000Z"
     }
   ]
 }
