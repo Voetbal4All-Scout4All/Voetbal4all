@@ -19,6 +19,36 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+<style>
+/* === Align Clubvacatures with Events.html (layout + premium) === */
+.events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.events-grid-2{grid-template-columns:1fr}}
+
+.premium-block{margin:12px 0 18px}
+.premium-block .premium-grid{margin-top:10px}
+
+/* Metallic premium shell (same as events.html) */
+.premium-block .premium-shell{
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03));
+  box-shadow:0 12px 34px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.12);
+  position:relative;overflow:hidden
+}
+.premium-block .premium-shell::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));
+  opacity:.45
+}
+
+/* Sidebar premium list */
+.sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
+.sidebar-premium-card{padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.16);
+  background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
+  box-shadow:0 10px 26px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.10)}
+.sidebar-premium-card .sp-title{font-weight:700;font-size:13px;margin:0 0 4px}
+.sidebar-premium-card .sp-meta{opacity:.78;font-size:12px}
+</style>
 </head>
 
 <!-- Live banner NIET op mobiel (zoals artikels/events/algemene-events) -->
@@ -181,146 +211,144 @@
         </article>
 
         <!-- GRID: LINKS FORMULIER + OVERZICHT · RECHTS INFO / ADS -->
-        <div class="lower-grid-layout" style="grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:18px; align-items:flex-start;">
+        <div class="v4-layout-sidebar">
 
-          <!-- LINKERKOLOM -->
+  <!-- LEFT CONTENT -->
+  <div class="v4-content">
+
+    <!-- SEARCH & FILTER (same flow as events.html) -->
+    <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
+      <input type="text" id="vacancy-search-text" class="search-input" placeholder="Zoek op club, functie, niveau, regio..." />
+      <div class="search-filters-row">
+        <select id="vacancy-filter-country" class="search-select">
+          <option value="">Land (alles)</option>
+          <option value="BE">🇧🇪 België</option>
+          <option value="NL">🇳🇱 Nederland</option>
+        </select>
+        <select id="vacancy-filter-type" class="search-select">
+          <option value="">Type vacature</option>
+          <option value="Trainer">Trainer</option>
+          <option value="Speler">Speler</option>
+          <option value="Coördinator">Coördinator / TVJO</option>
+          <option value="Vrijwilliger">Vrijwilliger</option>
+          <option value="Bestuur">Bestuurslid / ondersteuning</option>
+        </select>
+        <select id="vacancy-filter-level" class="search-select">
+          <option value="">Niveau (alles)</option>
+          <option value="Gewestelijk">Gewestelijk / recreatief</option>
+          <option value="Provinciaal">Provinciaal</option>
+          <option value="Interprovinciaal">Interprovinciaal</option>
+          <option value="Elite">Elite / hoogste jeugd</option>
+        </select>
+      </div>
+      <div class="form-helper">Tip: plaats je vacature via <a href="aanmelden.html">Vacature of profiel aanmelden</a>.</div>
+    </div>
+
+    <!-- OVERVIEW CARD -->
+    <section class="section-main" style="padding-top:0;">
+      <div class="card">
+        <div class="card-header">
           <div>
-
-            <!-- ZOEK- EN FILTERBALK -->
-            <div class="search-bar" style="margin-bottom:12px;">
-              <input type="text" id="vacancy-search-text" class="search-input" placeholder="Zoek op club, functie, niveau, regio..." />
-              <div class="search-filters-row">
-                <select id="vacancy-filter-country" class="search-select">
-                  <option value="">Land (alles)</option>
-                  <option value="BE">🇧🇪 België</option>
-                  <option value="NL">🇳🇱 Nederland</option>
-                </select>
-                <select id="vacancy-filter-type" class="search-select">
-                  <option value="">Type vacature</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Speler">Speler</option>
-                  <option value="Coördinator">Coördinator / TVJO</option>
-                  <option value="Vrijwilliger">Vrijwilliger</option>
-                  <option value="Bestuur">Bestuurslid / ondersteuning</option>
-                </select>
-                <select id="vacancy-filter-level" class="search-select">
-                  <option value="">Niveau (alles)</option>
-                  <option value="Gewestelijk">Gewestelijk / recreatief</option>
-                  <option value="Provinciaal">Provinciaal</option>
-                  <option value="Interprovinciaal">Interprovinciaal</option>
-                  <option value="Elite">Elite / hoogste jeugd</option>
-                </select>
-              </div>
-              <div class="form-helper">
-                Filter op land, type vacature en niveau. In de live versie wordt dit gekoppeld aan echte data.
-              </div>
-            </div>
-
-            <!-- OVERZICHT -->
-
-            <!-- OVERZICHT -->
-            <section class="section-main" style="padding-top:10px;">
-              <div class="card">
-                <div class="card-header">
-                  <div>
-                    <div class="card-caption">Overzicht</div>
-                    <div class="card-title">Clubvacatures</div>
-                  </div>
-                  <span class="pill-small">3 per rij · delen &amp; reageren</span>
-                </div>
-
-                <p class="note">
-                  Elke vacature kan gedeeld worden via sociale netwerken. De link gaat automatisch naar de juiste vacature.
-                </p>
-
-                <div id="vacancy-ads" class="ad-card-list ad-card-grid">
-                  <article class="ad-card" id="vacancy-ad-1" data-ad-id="1" data-country="BE">
-                    <div class="ad-card-header">
-                      <div>
-                        <div class="ad-card-title">K. ASV Geel</div>
-                        <div class="ad-card-meta">🇧🇪 België · Regio Kempen</div>
-                      </div>
-                      <div class="ad-card-meta">Trainer U17 · Provinciaal</div>
-                    </div>
-                    <div class="ad-card-body">
-                      <strong>Type:</strong> Trainer<br />
-                      <strong>Niveau:</strong> Provinciaal<br />
-                      <strong>Regio:</strong> Antwerpen, Limburg<br /><br />
-                      Ambitieuze jeugdploeg zoekt gedreven trainer met oog voor opleiding en teamspirit.
-                    </div>
-                    <div class="ad-card-actions">
-                      <button type="button" class="btn-ghost-sm" data-reply-vacancy="1">Reageer op vacature</button>
-                      <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="1">Delen</a>
-                    </div>
-                  </article>
-                </div>
-              </div>
-            </section>
-
+            <div class="card-caption">Overzicht</div>
+            <div class="card-title">Clubvacatures</div>
           </div>
-
-          <!-- RECHTERKOLOM -->
-          <aside>
-            <article class="card">
-              <div class="card-header">
-                <div>
-                  <div class="card-caption">Voor clubs</div>
-                  <div class="card-title">Hoe werkt het?</div>
-                </div>
-              </div>
-              <p class="note">In de live versie kan je als club:</p>
-              <ul class="events-list">
-                <li class="event-item">
-                  <div class="event-title">Gratis vacature plaatsen</div>
-                  <div class="event-meta">Bereik spelers, trainers en vrijwilligers in jouw regio.</div>
-                </li>
-                <li class="event-item">
-                  <div class="event-title">Contactgegevens beschermd</div>
-                  <div class="event-meta">Reacties verlopen via Voetbal4All. Jouw e-mailadres blijft verborgen.</div>
-                </li>
-                <li class="event-item">
-                  <div class="event-title">Eigen account</div>
-                  <div class="event-meta">Beheer en verwijder vacatures via je clubprofiel (live versie).</div>
-                </li>
-              </ul>
-            </article>
-
-            <article class="card" style="margin-top:12px;">
-              <div class="card-header">
-                <div>
-                  <div class="card-caption">Advertentiezone</div>
-                  <div class="card-title">Extra zichtbaarheid (boven)</div>
-                </div>
-                <span class="pill-small">Clubs / partners</span>
-              </div>
-              <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-4062633211824348"
-                data-ad-slot="7066193457"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </article>
-
-            <article class="card" style="margin-top:12px;">
-              <div class="card-header">
-                <div>
-                  <div class="card-caption">Advertentiezone</div>
-                  <div class="card-title">Extra zichtbaarheid (onder)</div>
-                </div>
-                <span class="pill-small">Sponsors</span>
-              </div>
-              <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-4062633211824348"
-                data-ad-slot="7214351356"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </article>
-          </aside>
-
+          <span class="pill-small">2 kolommen</span>
         </div>
+
+        <p class="note">Premium vacatures staan bovenaan. Onderstaande vacatures zijn het volledige overzicht.</p>
+
+        <!-- PREMIUM BLOCK (identical shell as events.html) -->
+        <div id="premium-30-wrap" class="premium-block">
+          <div class="card premium-shell" style="margin-bottom:12px;">
+            <div class="card-header">
+              <div>
+                <div class="card-caption">Premium</div>
+                <div class="card-title premium-title-lg">Premium clubvacatures</div>
+              </div>
+              <span class="pill-small">Rotatie</span>
+            </div>
+            <div id="premium-grid-30" class="events-grid-2 premium-grid">
+              <!-- Filled later via backend -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ALL VACANCIES (2 columns) -->
+        <div id="vacancy-ads" class="events-grid-2">
+          <article class="ad-card" id="vacancy-ad-1" data-ad-id="1" data-country="BE">
+            <div class="ad-card-header">
+              <div>
+                <div class="ad-card-title">K. ASV Geel</div>
+                <div class="ad-card-meta">🇧🇪 België · Regio Kempen</div>
+              </div>
+              <div class="ad-card-meta">Trainer U17 · Provinciaal</div>
+            </div>
+            <div class="ad-card-body">
+              <strong>Type:</strong> Trainer<br />
+              <strong>Niveau:</strong> Provinciaal<br />
+              <strong>Regio:</strong> Antwerpen, Limburg<br /><br />
+              Ambitieuze jeugdploeg zoekt gedreven trainer met oog voor opleiding en teamspirit.
+            </div>
+            <div class="ad-card-actions">
+              <button type="button" class="btn-ghost-sm" data-reply-vacancy="1">Reageer op vacature</button>
+              <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="1">Delen</a>
+            </div>
+          </article>
+        </div>
+
+        <div id="events-pagination" class="events-pagination"></div>
+        <p id="vacancy-status" class="note" style="display:none;margin-top:10px"></p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="v4-sidebar">
+    <div class="v4-sidebar-sticky">
+
+      <article class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Advertentie</div>
+            <div class="card-title">Sponsor / Partner</div>
+          </div>
+          <span class="pill-small">Premium</span>
+        </div>
+        <div class="ad-placeholder">Ideaal voor clubs, sportkleding, recruitment, …<br><span class="ad-size">300×250 of 300×600</span></div>
+      </article>
+
+      <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4062633211824348" data-ad-slot="7066193457" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <article class="card" style="margin-top:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Vacature plaatsen?</div>
+            <div class="card-title">Vacature of profiel aanmelden</div>
+          </div>
+        </div>
+        <p class="note">Gebruik het centrale formulier. Premium zichtbaarheid is mogelijk.</p>
+        <a class="btn-ghost-sm" href="aanmelden.html">Open formulier</a>
+      </article>
+
+      <article class="card" style="margin-top:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Premium</div>
+            <div class="card-title">Uitgelicht (later)</div>
+          </div>
+          <span class="pill-small">Rotatie</span>
+        </div>
+        <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
+      </article>
+
+    </div>
+  </aside>
+
+</div>
 
       </div>
     </section>
@@ -390,8 +418,8 @@
   updateVacancyShareLinks();
 </script>
 
-<script src="assets/js/nav-active.js" defer></script>
-  <script src="assets/js/nav-mobile.js"></script>
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js" defer></script>
 <script src="assets/js/live-banner.js"></script>
 </body>
 </html>
