@@ -143,23 +143,46 @@
 
     /* ===== PREMIUM (METAL) LOOK ===== */
     .premium-grid .premium-card{
-      position:relative;
-      border-radius:16px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.16);
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
 
-      /* metallic frame */
-      background:
-        linear-gradient(135deg,
-          rgba(255,255,255,.10),
-          rgba(255,255,255,.02) 35%,
-          rgba(255,255,255,.08) 65%,
-          rgba(255,255,255,.03)
-        );
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.35),
-        inset 0 1px 0 rgba(255,255,255,.12);
-    }
+  /* Force-remove any inherited green accent borders/shadows */
+  outline:none !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+
+  /* Metallic surface */
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.02) 35%,
+      rgba(255,255,255,.08) 65%,
+      rgba(255,255,255,.03)
+    ),
+    linear-gradient(180deg,
+      rgba(180,190,210,.12),
+      rgba(10,12,20,.08)
+    ) !important;
+
+  /* Metallic shadow (no green glow) */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 10px 26px rgba(0,0,0,.38) !important;
+}
+
+/* Override any green hover/focus glow coming from style.css */
+.premium-grid .premium-card:hover,
+.premium-grid .premium-card:focus,
+.premium-grid .premium-card:focus-within{
+  border-color:rgba(255,255,255,.26) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.14),
+    0 12px 30px rgba(0,0,0,.42) !important;
+  transform:none !important;
+}
+
+/* Some base cards add an ::after outline—kill it in premium grid */
+.premium-grid .premium-card::after{display:none !important;}
 
     .premium-grid .premium-card::before{
       content:"";
