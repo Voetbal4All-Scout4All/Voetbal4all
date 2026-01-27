@@ -1,6 +1,83 @@
 {
-  "generatedAt": "2026-01-27T13:54:05.423Z",
+  "generatedAt": "2026-01-27T14:34:56.986Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Spain to host 2030 World Cup final, federation says",
+      "link": "https://www.bbc.com/sport/football/articles/c24g2914g9vo?at_medium=RSS&at_campaign=rss",
+      "summary": "Spain \"will be the leader of the 2030 World Cup and the final of that World Cup will be held here\" says the president of the country's football federation.",
+      "publishedAt": "2026-01-27T14:23:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ex-FIFA prez backs call to 'stay away' from WC",
+      "link": "https://www.espn.com/soccer/story/_/id/47738104/ex-fifa-president-stay-away-usa-world-cup",
+      "summary": "Former FIFA president Sepp Blatter on Monday backed a proposed fan boycott of World Cup matches in the United States because of the conduct of President Donald Trump and his administration at home and abroad.",
+      "publishedAt": "2026-01-27T14:21:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Source: USMNT's Freeman set for Villarreal move",
+      "link": "https://www.espn.com/soccer/story/_/id/47738879/usmnt-defender-alex-freeman-villarreal-move",
+      "summary": "LaLiga side Villarreal is finalizing the acquisition of United States and Orlando City defender Alex Freeman, a source with knowledge of the deal told ESPN.",
+      "publishedAt": "2026-01-27T14:21:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "City's Doku still not happy about Dalot tackle",
+      "link": "https://www.espn.com/soccer/story/_/id/47743133/man-city-jeremy-doku-man-united-diogo-dalot-tackle-know-my-feelings",
+      "summary": "Jérémy Doku has said \"you know my feelings\" when asked for his opinion of the knee-high challenge from Diogo Dalot during Manchester United's derby victory.",
+      "publishedAt": "2026-01-27T14:21:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Fermín extends Barça deal, ending Chelsea bid",
+      "link": "https://www.espn.com/soccer/story/_/id/47743263/fermin-lopez-extends-barcelona-deal-2031-ending-chelsea-bid",
+      "summary": "Barcelona midfielder Fermín López has agreed a contract extension until 2031, sources have confirmed to ESPN, ending any Chelsea interest in signing the Spain international for now.",
+      "publishedAt": "2026-01-27T14:21:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Ajax ook scherp op standen andere velden: 'Daar is wel iemand mee bezig'",
+      "link": "https://www.vi.nl/nieuws/ajax-ook-scherp-op-standen-andere-velden-daar-is-wel-iemand-mee-bezig",
+      "summary": "Hoewel de focus vooral ligt op de eigen wedstrijd tegen Olympiakos Piraeus, zal Ajax eveneens de tussenstanden op de andere velden in de Champions League in de gaten houden. Dat vertelde trainer Fred Grim op de persconferentie.",
+      "publishedAt": "2026-01-27T14:07:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Bournemouth sign Brazilian teenager Rayan for £24.7m",
+      "link": "https://www.bbc.com/sport/football/articles/cvgpzeyq1pno?at_medium=RSS&at_campaign=rss",
+      "summary": "Bournemouth sign striker Rayan, a striker of \"enormous potential\" from Vasco da Gama after completing a loan move for Lazio goalkeeper Christos Mandas.",
+      "publishedAt": "2026-01-27T14:02:10.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -9,7 +86,7 @@
       "flag": "🇳🇱",
       "title": "Tweede NAC-periode Sydney van Hooijdonk voorbij na deal met Portugese club",
       "link": "https://www.vi.nl/nieuws/tweede-nac-periode-sydney-van-hooijdonk-voorbij-na-deal-met-portugese-club",
-      "summary": "Sydney van Hooijdonk gaat spoedig vertrekken bij NAC Breda. De aanvaller is hard op weg naar Estrela Amadora in Portugal.",
+      "summary": "Sydney van Hooijdonk gaat spoedig vertrekken bij NAC Breda. De aanvaller is hard op weg naar Estrela Amadora in Portugal. Binnen NAC was de chemie met Van Hooijdonk deze maand definitief verdwenen. De spits vertrekt dan ook transfervrij bij NAC. Hij heeft de ruimte gekregen om naar Portugal te vliegen, waar het papierwerk afgerond kan worden.",
       "publishedAt": "2026-01-27T13:52:00.000Z"
     },
     {
@@ -62,7 +139,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "West Ham latest: Interest in Spurs' Kinsky as Paqueta talks continue",
+      "title": "West Ham latest: Traore undergoing medical as Paqueta talks continue",
       "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
       "summary": "",
       "publishedAt": "2026-01-27T13:32:00.000Z"
@@ -102,17 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Voormalig assistent laat Schreuder zweten: 'We weten wat NEC doet'",
-      "link": "https://www.vi.nl/pro/voormalig-assistent-laat-schreuder-zweten-we-weten-wat-nec-doet",
-      "summary": "De wedstrijd tussen NEC en PEC Zwolle bood zaterdagavond veel stof tot nadenken. Waar de Nijmegenaren slecht speelden, maar wel wonnen, was het PEC dat balend in de bus terug naar Zwolle zat. Trainer Henry van der Vegt maakte het zijn voormalig 'baas' Dick Schreuder immers heel moeilijk aan de hand van zijn eigen principes. Tijd voor een analyse met videobeelden en tactische uitleg van beide coaches.",
-      "publishedAt": "2026-01-27T13:00:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -121,50 +187,6 @@
       "link": "https://www.skysports.com/tennis/news/12040/13499527/australian-open-coco-gauff-calls-for-more-privacy-after-smashing-her-racket-following-shock-exit",
       "summary": "Coco Gauff has called for more privacy for players after she was caught on camera smashing her racket following a shock Australian Open quarter-final loss to Elina Svitolina.",
       "publishedAt": "2026-01-27T12:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ex-FIFA prez backs call to 'stay away' from WC",
-      "link": "https://www.espn.com/soccer/story/_/id/47738104/ex-fifa-president-stay-away-usa-world-cup",
-      "summary": "Former FIFA president Sepp Blatter on Monday backed a proposed fan boycott of World Cup matches in the United States because of the conduct of President Donald Trump and his administration at home and abroad.",
-      "publishedAt": "2026-01-27T12:16:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Source: USMNT's Freeman set for Villarreal move",
-      "link": "https://www.espn.com/soccer/story/_/id/47738879/usmnt-defender-alex-freeman-villarreal-move",
-      "summary": "LaLiga side Villarreal is finalizing the acquisition of United States and Orlando City defender Alex Freeman, a source with knowledge of the deal told ESPN.",
-      "publishedAt": "2026-01-27T12:16:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "PSG complete signing of Barça teen Fernández",
-      "link": "https://www.espn.com/soccer/story/_/id/47659940/psg-complete-signing-starlet-dro-fernandez-barcelona",
-      "summary": "Paris Saint-Germain have completed the signing of Barcelona's talented teenager Dro Fernández after exercising his €8 million ($9.5 million) release clause for the LaLiga side.",
-      "publishedAt": "2026-01-27T12:16:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sources: Man United fear Dorgu injury absence",
-      "link": "https://www.espn.com/soccer/story/_/id/47742177/man-united-concern-patrick-dorgu-injury-absence-sources",
-      "summary": "Manchester United fear Patrick Dorgu could be ruled out for a number of weeks, sources have told ESPN.",
-      "publishedAt": "2026-01-27T12:16:59.000Z"
     },
     {
       "type": "rss",
@@ -198,28 +220,6 @@
       "link": "https://www.espn.com/soccer/story/_/id/47730797/how-premier-league-clubs-turned-corporations-replaced-managers-head-coaches",
       "summary": "Premier League clubs are corporations that have outgrown the \"manager\" role that legendary Arsenal and Man United clubs once had. Why?",
       "publishedAt": "2026-01-27T10:22:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Removing US as World Cup host would be eminently sad – and entirely justified | Alexander Abnos",
-      "link": "https://www.theguardian.com/football/2026/jan/27/us-world-cup-hosting-duties-taken-away",
-      "summary": "A country where safety is under threat from federal violence on the streets is not fit to stage soccer’s showpiece event Removing the United States as co-host of the 2026 World Cup would hurt for pretty much everyone. Fans would miss out on seeing the sport’s pinnacle in their home towns (or somewhere nearby). Cities and businesses small and large would lose the financial benefits they had banked on. It would be a logistical and political nightmare on an international scale, the likes of which have never been seen before in sports. It would be eminently sad. And it would be entirely justified. It brings me no pleasure to say this. The United States has been eager to host a men’s World Cup for more than a decade and a half. The desire survived and even grew after 2010’s failure to out-bid Russia and Qatar (in public and behind closed doors) for the 2018 and 2022 World Cups. With hosting rights for 2026 later secured alongside Canada and Mexico, the US soccer scene prepared to show off that the sport is now part of the nation’s fabric, 32 years after hosting the tournament for the first time in 1994. Soccer’s growing popularity in America has helped inspire other US sports to try new formats, encouraged us to engage more fully with the world in a sporting context, and has been at the center of conversations about our society and culture. The 2026 World Cup was seen as the best chance for the world to fully experience not just how much the US has improved at soccer, but how much soccer has improved the US. Continue reading...",
-      "publishedAt": "2026-01-27T10:00:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "‘No reason to rush’: Harry Kane in talks with Bayern over contract extension",
-      "link": "https://www.theguardian.com/football/2026/jan/27/harry-kane-bayern-munich-talks-contract-extension",
-      "summary": "England captain’s deal runs to end of next season Kane and his family are settled in Munich, CEO says Bayern Munich have confirmed they are in talks to extend Harry Kane’s contract. The England captain joined from Tottenham in 2023 on a deal to the end of next season and secured a long-awaited first major trophy when Bayern won the Bundesliga last May. He has been the Bundesliga’s top scorer twice and, with 21 goals in 19 Bundesliga games this season, could chase down Robert Lewandowski’s single-season record of 41 goals. Continue reading...",
-      "publishedAt": "2026-01-27T09:20:23.000Z"
     }
   ]
 }
