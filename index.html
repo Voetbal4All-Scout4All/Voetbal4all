@@ -82,6 +82,41 @@
     .home-news__link{ display: flex; gap: 12px; align-items: center; width: 100%; }
     .home-news__thumbWrap{ display: block !important; visibility: visible !important; opacity: 1 !important; }
     .home-news__thumb{ display: block !important; visibility: visible !important; opacity: 1 !important; }
+
+    /* PREMIUM RIJ (Home): metallic grey frame, keep existing layout */
+    .premium-row .lower-grid-layout.grid-4 > .card{
+      /* keep spacing/layout as-is; only adjust surface + border */
+      outline: none !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        ),
+        linear-gradient(180deg,
+          rgba(180,190,210,.12),
+          rgba(10,12,20,.08)
+        ) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 10px 26px rgba(0,0,0,.38) !important;
+    }
+
+    /* Remove any green hover/focus glow from global styles */
+    .premium-row .lower-grid-layout.grid-4 > .card:hover,
+    .premium-row .lower-grid-layout.grid-4 > .card:focus,
+    .premium-row .lower-grid-layout.grid-4 > .card:focus-within{
+      border-color: rgba(255,255,255,.26) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 12px 30px rgba(0,0,0,.42) !important;
+      transform: none !important;
+    }
+
+    /* Kill any extra outline pseudo elements that may add a green border */
+    .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
   </style>
 
   <!-- Redirect: /index.html -> / -->
