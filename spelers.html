@@ -19,6 +19,53 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+<style>
+  /* === Events.html shared UI (layout parity) === */
+  .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  @media (max-width:900px){.events-grid-2{grid-template-columns:1fr}}
+
+  .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
+  .event-thumbbox{width:140px;height:96px;flex:0 0 140px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);overflow:hidden;position:relative;}
+  .event-thumbbox::after{content:"Pro";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+  .event-thumbbox.has-img::after{display:none}
+  .event-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+  .event-main{flex:1 1 auto;min-width:0}
+  .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+  .premium-block{margin:12px 0 18px}
+  .premium-block .premium-grid{margin-top:10px}
+
+  .premium-block .premium-shell{border-radius:18px;border:1px solid rgba(255,255,255,.18);background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03));box-shadow:0 12px 34px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.12);overflow:hidden;position:relative;}
+  .premium-block .premium-shell::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.45;}
+
+  .premium-grid .premium-card{position:relative;border-radius:16px;overflow:hidden;outline:none !important;border:1px solid rgba(255,255,255,.18) !important;background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03)),linear-gradient(180deg,rgba(180,190,210,.12),rgba(10,12,20,.08)) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 26px rgba(0,0,0,.38) !important;}
+  .premium-grid .premium-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.55;}
+  .premium-grid .premium-card::after{display:none !important;}
+  .premium-grid .premium-card .ad-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
+  .premium-grid .premium-card .ad-card-meta{font-size:12px;opacity:.86;line-height:1.25}
+  .premium-grid .premium-card .ad-card-body{display:none !important;}
+
+  .premium-grid .premium-card .event-thumbbox{position:relative;}
+  .premium-grid .premium-card .premium-ribbon{position:absolute;top:10px;right:-44px;width:160px;text-align:center;padding:6px 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.95);transform:rotate(30deg);z-index:3;background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));border:1px solid rgba(255,255,255,.22);box-shadow:0 8px 20px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.18);}
+
+  .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
+  .sidebar-premium-card{padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02) 40%,rgba(255,255,255,.06) 70%,rgba(255,255,255,.02));box-shadow:0 10px 26px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.10);position:relative;overflow:hidden;}
+  .sidebar-premium-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.45;}
+  .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0;position:relative;z-index:1}
+  .sidebar-premium-thumbbox{width:72px;height:54px;flex:0 0 72px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);overflow:hidden;position:relative;}
+  .sidebar-premium-thumbbox .premium-ribbon{position:absolute;top:8px;right:-40px;width:140px;text-align:center;padding:5px 0;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.95);transform:rotate(30deg);z-index:3;background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));border:1px solid rgba(255,255,255,.22);box-shadow:0 6px 16px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.16);}
+  .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
+  .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
+  .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
+
+  /* Pagination (optional parity) */
+  .events-pagination{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
+  .events-pagination .page-btn{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:rgba(255,255,255,.92);border-radius:999px;padding:8px 12px;font-family:inherit;font-weight:600;cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease;}
+  .events-pagination .page-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .events-pagination .page-btn:active{transform:translateY(0)}
+  .events-pagination .page-btn.is-active{background:rgba(22,163,74,.22);border-color:rgba(22,163,74,.55)}
+  .events-pagination .page-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+</style>
 </head>
 
 <!-- Live banner NIET op mobiel (zoals afgesproken voor niet-home pagina’s) -->
@@ -180,68 +227,120 @@
           </p>
         </article>
 
-        <!-- GRID: LINKS FORMULIER + OVERZICHT · RECHTS INFO / ADS -->
-        <div class="lower-grid-layout" style="grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:18px; align-items:flex-start;">
+        <!-- CONTENT LINKS + STICKY ADS RECHTS (zelfde indeling als events.html) -->
+        <div class="v4-layout-sidebar">
 
-          <!-- LINKERKOLOM -->
-          <div>
+          <!-- LINKS -->
+          <div class="v4-content">
 
+            <!-- ZOEK- EN FILTERBALK (events.html stijl) -->
+            <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
+              <input id="player-search-text" type="search" class="search-input" placeholder="Zoek (bv. keeper, U17, middenvelder…)" />
+              <div class="search-filters-row">
+                <select id="player-filter-country" class="search-select">
+                  <option value="">Land (alles)</option>
+                  <option value="BE">🇧🇪 België</option>
+                  <option value="NL">🇳🇱 Nederland</option>
+                </select>
 
-            <!-- OVERZICHT SPELERS -->
-            <section class="section-main" style="padding-top:10px;">
+                <input id="player-filter-region" class="search-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+
+                <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+              </div>
+              <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
+            </div>
+
+            <!-- OVERZICHT -->
+            <section class="section-main" style="padding-top:0;">
               <div class="card">
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Overzicht</div>
                     <div class="card-title">Spelers die een club zoeken</div>
                   </div>
-                  <span class="pill-small">3 per rij · delen &amp; reageren</span>
+                  <span class="pill-small">2 kolommen</span>
                 </div>
+
                 <p class="note">
-                  Elke advertentie kan gedeeld worden via sociale netwerken. De link gaat automatisch naar het juiste profiel.
+                  Premium profielen staan bovenaan. Je kan een advertentie delen en clubs reageren via Voetbal4All.
                 </p>
-                <div class="filter-bar" style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-                  <input id="player-search" class="input" type="search" placeholder="Zoek (bv. keeper, U17, middenvelder…)" style="min-width:220px; flex:1 1 240px;" />
 
-                  <select id="player-country-filter" class="input" style="min-width:180px;">
-                    <option value="">Alle landen</option>
-                    <option value="BE">België</option>
-                    <option value="NL">Nederland</option>
-                  </select>
-
-                  <input id="player-region-filter" class="input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" style="min-width:200px;" />
-
-                  <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
-                </div>
-                <p class="form-helper" style="margin-top:6px;">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</p>
-
-                <div id="player-ads" class="ad-card-list ad-card-grid">
-                  <!-- Voorbeeldadvertentie -->
-                  <article class="ad-card" id="player-ad-1" data-ad-id="1">
-                    <div class="ad-card-header">
+                <!-- PREMIUM: 6 kaarten -->
+                <div id="premium-30-wrap" class="premium-block" style="display:block;">
+                  <div class="card premium-shell" style="margin-bottom:12px;">
+                    <div class="card-header">
                       <div>
-                        <div class="ad-card-title">Anonieme speler</div>
-                        <div class="ad-card-meta">🇧🇪 België · Regio Kempen</div>
+                        <div class="card-caption">Premium</div>
+                        <div class="card-title premium-title-lg">Premium spelersprofielen</div>
                       </div>
-                      <div class="ad-card-meta">17 jaar · Middenvelder, Aanvaller</div>
+                      <span class="pill-small">Rotatie</span>
                     </div>
-                    <div class="ad-card-body">
-                      <strong>Niveau:</strong> Provinciaal<br />
-                      <strong>Regio:</strong> Antwerpen, Limburg<br /><br />
-                      Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.
+
+                    <div id="premium-grid-30" class="events-grid-2 premium-grid">
+                      <article class="ad-card premium-card" id="premium-player-1">
+                        <div class="event-row">
+                          <div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div>
+                          <div class="event-main">
+                            <div class="ad-card-header" style="margin:0;"><div>
+                              <div class="ad-card-title">Anonieme speler</div>
+                              <div class="ad-card-meta">🇧🇪 België · Regio Kempen</div>
+                              <div class="ad-card-meta">17 jaar · Middenvelder</div>
+                            </div></div>
+                            <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                              <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+                              <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="ad-card premium-card" id="premium-player-2">
+                        <div class="event-row">
+                          <div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div>
+                          <div class="event-main">
+                            <div class="ad-card-header" style="margin:0;"><div>
+                              <div class="ad-card-title">Anonieme speler</div>
+                              <div class="ad-card-meta">🇳🇱 Nederland · Eindhoven</div>
+                              <div class="ad-card-meta">20 jaar · Keeper</div>
+                            </div></div>
+                            <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                              <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+                              <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="ad-card premium-card" id="premium-player-3"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="ad-card-header" style="margin:0;"><div><div class="ad-card-title">Anonieme speler</div><div class="ad-card-meta">🇧🇪 België · Antwerpen</div><div class="ad-card-meta">16 jaar · Aanvaller</div></div></div><div class="ad-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                      <article class="ad-card premium-card" id="premium-player-4"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="ad-card-header" style="margin:0;"><div><div class="ad-card-title">Anonieme speler</div><div class="ad-card-meta">🇳🇱 Nederland · Limburg</div><div class="ad-card-meta">19 jaar · Verdediger</div></div></div><div class="ad-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                      <article class="ad-card premium-card" id="premium-player-5"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="ad-card-header" style="margin:0;"><div><div class="ad-card-title">Anonieme speler</div><div class="ad-card-meta">🇧🇪 België · Oost-Vlaanderen</div><div class="ad-card-meta">18 jaar · Middenvelder</div></div></div><div class="ad-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                      <article class="ad-card premium-card" id="premium-player-6"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="ad-card-header" style="margin:0;"><div><div class="ad-card-title">Anonieme speler</div><div class="ad-card-meta">🇳🇱 Nederland · Utrecht</div><div class="ad-card-meta">15 jaar · Flankspeler</div></div></div><div class="ad-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
                     </div>
-                    <div class="ad-card-actions">
-                      <button type="button" class="btn-ghost-sm" data-reply-ad="1">Reageer op speler</button>
-                      <a href="#" class="btn-ghost-sm btn-share" data-share-ad="1">Delen</a>
-                    </div>
-                  </article>
+                  </div>
                 </div>
+
+                <!-- INFEED ADSENSE: dezelfde zone als events.html -->
+                <section class="section-main" style="padding-top:0;padding-bottom:10px;">
+                  <div class="ad-infeed">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4062633211824348" data-ad-slot="5386990710" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                  </div>
+                </section>
+
+                <!-- Spelers (2 kolommen) -->
+                <div id="player-list" class="events-grid-2">
+                  <!-- gevuld via backend / placeholders -->
+                </div>
+
+                <div id="players-pagination" class="events-pagination" aria-label="Paginatie spelers"></div>
+                <p id="player-status" class="note" style="margin-top:10px; display:none;"></p>
+
               </div>
             </section>
 
           </div>
 
-          <!-- RECHTERKOLOM: INFO + STICKY ADS -->
+          <!-- RECHTS -->
           <aside class="v4-sidebar">
             <div class="v4-sidebar-sticky">
 
@@ -279,7 +378,7 @@
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Ook adverteren?</div>
-                    <div class="card-title">Bereik spelers & ouders</div>
+                    <div class="card-title">Bereik spelers &amp; ouders</div>
                   </div>
                 </div>
                 <p class="note">
@@ -288,6 +387,18 @@
                 <div class="ad-card-actions">
                   <a href="adverteren.html" class="btn-ghost-sm">Bekijk mogelijkheden</a>
                 </div>
+              </article>
+
+              <!-- Premium spelers > later (zelfde als events.html) -->
+              <article class="card" style="margin-top:12px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Uitgelicht (later)</div>
+                  </div>
+                  <span class="pill-small">Rotatie</span>
+                </div>
+                <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
               </article>
 
             </div>
@@ -353,7 +464,7 @@
 
   // Social sharing: link naar specifieke advertentie
   function updateShareLinks() {
-    const baseUrl = window.location.origin + window.location.pathname;
+    const baseUrl = "https://www.voetbal4all.eu/spelers.html";
     document.querySelectorAll("[data-share-ad]").forEach(link => {
       const adId = link.getAttribute("data-share-ad");
       const urlWithAnchor = baseUrl + "#player-ad-" + adId;
@@ -366,12 +477,12 @@
 
   // --- Zoeken & filteren (land + regio) ---
   (function initPlayerFilters() {
-    const adsContainer = document.getElementById("player-ads");
+    const adsContainer = document.getElementById("player-list");
     if (!adsContainer) return;
 
-    const qEl = document.getElementById("player-search");
-    const countryEl = document.getElementById("player-country-filter");
-    const regionEl = document.getElementById("player-region-filter");
+    const qEl = document.getElementById("player-search-text");
+    const countryEl = document.getElementById("player-filter-country");
+    const regionEl = document.getElementById("player-filter-region");
     const clearEl = document.getElementById("player-filter-clear");
 
     if (!qEl || !countryEl || !regionEl || !clearEl) return;
@@ -446,10 +557,85 @@
     // Apply once on load
     applyFilters();
   })();
+
+  // Fill main list with placeholders if backend is not wired yet (layout parity)
+  (function fillPlayerPlaceholders(){
+    const el = document.getElementById('player-list');
+    if (!el) return;
+    // If already contains cards, do nothing
+    if (el.querySelector('.ad-card')) return;
+
+    const items = [
+      {flag:'🇧🇪', place:'België · Regio Kempen', meta:'17 jaar · Middenvelder, Aanvaller', body:'Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.'},
+      {flag:'🇳🇱', place:'Nederland · Eindhoven', meta:'20 jaar · Keeper', body:'Keeper met wedstrijdritme, zoekt club met duidelijke structuur en doelstellingen.'},
+      {flag:'🇧🇪', place:'België · Antwerpen', meta:'16 jaar · Aanvaller', body:'Snelle flankaanvaller, sterk in 1v1 en diepgang. Zoekt stap hoger in jeugdopleiding.'},
+      {flag:'🇳🇱', place:'Nederland · Limburg', meta:'19 jaar · Verdediger', body:'Centrale verdediger met leiderschap. Open voor eerste elftal of belofteploeg.'},
+      {flag:'🇧🇪', place:'België · Oost-Vlaanderen', meta:'18 jaar · Middenvelder', body:'Box-to-box middenvelder, veel loopvermogen en passing. Ambitieus traject.'},
+      {flag:'🇳🇱', place:'Nederland · Utrecht', meta:'15 jaar · Flankspeler', body:'Flankspeler met techniek en dribbel. Wil groeien in een opleidingsomgeving.'}
+    ];
+
+    el.innerHTML = items.map((s, idx) => `
+      <article class="ad-card" id="player-ad-${idx+1}" data-ad-id="${idx+1}">
+        <div class="event-row">
+          <div class="event-thumbbox" aria-label="Thumbnail"></div>
+          <div class="event-main">
+            <div class="ad-card-header" style="margin:0;">
+              <div>
+                <div class="ad-card-title">Anonieme speler</div>
+                <div class="ad-card-meta">${s.flag} · ${s.place}</div>
+                <div class="ad-card-meta">${s.meta}</div>
+              </div>
+            </div>
+            <div class="ad-card-body" style="margin-top:8px;">${s.body}</div>
+            <div class="ad-card-actions event-actions" style="margin-top:10px;">
+              <button type="button" class="btn-ghost-sm" data-reply-ad="${idx+1}">Reageer op speler</button>
+              <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${idx+1}">Delen</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    `).join('');
+
+    // re-bind share links after injecting
+    try { updateShareLinks(); } catch(_) {}
+  })();
+
+  // Fill sidebar premium block with placeholders (layout parity with events.html)
+  (function fillSidebarPremiumLater(){
+    const el = document.getElementById('sidebar-premium-later');
+    if (!el) return;
+    const MIN_SLOTS = 10;
+    el.innerHTML = '';
+    for (let i=0;i<MIN_SLOTS;i++){
+      el.insertAdjacentHTML('beforeend', `
+        <div class="sidebar-premium-card">
+          <div class="sidebar-premium-top">
+            <div class="sidebar-premium-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
+            <div style="min-width:0;">
+              <div class="sidebar-premium-title">Jouw premium profiel hier?</div>
+              <div class="sidebar-premium-meta">—</div>
+              <div class="sidebar-premium-meta">Binnenkort</div>
+              <div class="sidebar-premium-meta">Premium</div>
+            </div>
+          </div>
+          <div class="sidebar-premium-actions"></div>
+        </div>
+      `);
+    }
+    el.insertAdjacentHTML('beforeend', `
+      <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+        <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
+        <div class="sidebar-premium-meta">Bovenaan en in de sidebar.</div>
+        <div class="sidebar-premium-actions" style="justify-content:center;">
+          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
+        </div>
+      </div>
+    `);
+  })();
 </script>
 
 <script src="assets/js/nav-active.js" defer></script>
-  <script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/nav-mobile.js" defer></script>
 <script src="assets/js/live-banner.js"></script>
 </body>
 </html>
