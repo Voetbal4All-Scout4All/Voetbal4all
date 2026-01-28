@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-01-27T23:26:46.302Z",
+  "generatedAt": "2026-01-28T02:03:54.108Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Six English clubs, one huge night - all to play for in Champions League",
+      "link": "https://www.bbc.com/sport/football/articles/c3ve1gnk26eo?at_medium=RSS&at_campaign=rss",
+      "summary": "With the league phase of the Champions League almost over, which teams can join Arsenal and Bayern Munich in the top eight?",
+      "publishedAt": "2026-01-28T01:24:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Abraham joins Villa 1 day after Besiktas transfer",
+      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
+      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
+      "publishedAt": "2026-01-28T01:15:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arteta: Arsenal had 'beautiful' meeting after loss",
+      "link": "https://www.espn.com/soccer/story/_/id/47747069/mikel-arteta-arsenal-meeting-man-united-loss",
+      "summary": "Mikel Arteta has revealed he called his players for a meeting to \"bring down the temperature\" in the wake of their defeat to Manchester United.",
+      "publishedAt": "2026-01-28T01:15:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Chelsea urge 'extreme caution' to fans in Naples",
+      "link": "https://www.espn.com/soccer/story/_/id/47748121/chelsea-extreme-caution-ucl-fans-naples",
+      "summary": "Chelsea have told fans to take \"extreme caution\" in Naples after two supporters were treated in hospital ahead of their Champions League tie in the Italian city.",
+      "publishedAt": "2026-01-28T01:15:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Iconic Monumental to seat 101K after River refresh",
+      "link": "https://www.espn.com/soccer/story/_/id/47748338/river-plate-expanding-iconic-monumental-101000-fans",
+      "summary": "River Plate has announced a massive expansion of the Monumental Stadium, increasing its capacity to 101,000 spectators in a move that will make it one of the largest soccer venues in the world.",
+      "publishedAt": "2026-01-28T01:15:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Two fans in hospital as Chelsea urge caution after Naples 'incident'",
+      "link": "https://www.bbc.com/sport/football/articles/c74wdw5n4e5o?at_medium=RSS&at_campaign=rss",
+      "summary": "Travelling Chelsea fans in Naples for Wednesday's Champions League game are told to \"exercise extreme caution\" after two supporters suffer injuries.",
+      "publishedAt": "2026-01-27T23:58:39.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -62,50 +128,6 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Arteta: Arsenal had 'beautiful' meeting after loss",
-      "link": "https://www.espn.com/soccer/story/_/id/47747069/mikel-arteta-arsenal-meeting-man-united-loss",
-      "summary": "Mikel Arteta has revealed he called his players for a meeting to \"bring down the temperature\" in the wake of their defeat to Manchester United.",
-      "publishedAt": "2026-01-27T22:04:54.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "7 Greek fans die in crash en route to UEL game",
-      "link": "https://www.espn.com/soccer/story/_/id/47744955/paok-fans-killed-minibus-crash-romania-lyon-europa-league",
-      "summary": "Seven fans of Greek soccer club PAOK Salonika died in a minibus crash in Romania while traveling to a Europa League game at Lyon, Greece's government confirmed Tuesday.",
-      "publishedAt": "2026-01-27T22:04:54.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Abraham joins Villa 1 day after Besiktas transfer",
-      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
-      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
-      "publishedAt": "2026-01-27T22:04:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rosenior squashes Palmer to Man United reports",
-      "link": "https://www.espn.com/soccer/story/_/id/47746196/chelsea-rosenior-squashes-palmer-manchester-united-links",
-      "summary": "Chelsea head coach Liam Rosenior said there is no point in discussing \"unrealistic\" reports Cole Palmer wants to join Manchester United.",
-      "publishedAt": "2026-01-27T22:04:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
       "title": "What it's really like for a player switching clubs in the January transfer window",
       "link": "https://www.espn.com/soccer/story/_/id/47743232/what-move-january-transfer-window-really-player",
       "summary": "ESPN FC analyst and former Man City defender Nedum Onuoha reveals how the days before the deadline can be full of uncertainty, selfishness and betrayal.",
@@ -135,17 +157,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Spurs striker Kolo Muani 'fine' after car accident",
-      "link": "https://www.bbc.com/sport/football/articles/c620d9735lno?at_medium=RSS&at_campaign=rss",
-      "summary": "Randal Kolo Muani is \"fine\" after a \"minor\" car accident and should be available for Spurs' Champions League match at Eintracht Frankfurt, says Thomas Frank.",
-      "publishedAt": "2026-01-27T20:44:26.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -154,17 +165,6 @@
       "link": "https://www.theguardian.com/football/2026/jan/27/premier-league-has-power-faces-reckoning-with-european-giants",
       "summary": "English clubs stroll through Champions League group phase but fatigue tends to take its toll by the spring Has there been a great game in the Champions League group stage this season? Probably not. Even if there had been, it almost certainly didn’t mean all that much. But that’s the way of the modern game: an extremely protracted clearing of the throat before the real business begins. Uefa will proudly tell the world that only six teams have nothing to play for in the final round of games on Wednesday, but whether it was worth 126 games to get to the mild peril of Napoli or Club Brugge possibly going out, or the questionable thrill of finding out whether Tottenham or Atalanta will have to endure the playoff round, is debatable. Continue reading...",
       "publishedAt": "2026-01-27T20:00:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Conte reunion a sharp reminder of Chelsea's fall",
-      "link": "https://www.bbc.com/sport/football/articles/c0lx2z9e363o?at_medium=RSS&at_campaign=rss",
-      "summary": "Chelsea have not won the Premier League since Antonio Conte led them to the title in 2017 - and now they face the Italian's Napoli side in the Champions League.",
-      "publishedAt": "2026-01-27T19:58:23.000Z"
     },
     {
       "type": "rss",
