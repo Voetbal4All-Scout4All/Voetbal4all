@@ -747,9 +747,10 @@ let lastRenderKey = "";
     
 
       function applyFilters(){
-        const q = norm(articleSearchText.value);
+        const q = norm(articleSearchText?.value || "");
         const cRaw = articleFilterCountry?.value || "";
         const catRaw = articleFilterCategory?.value || "";
+
 
       // normalize "all" variants to empty string (= no filter)
       const c = (cRaw === "all" || cRaw === "alles") ? "" : cRaw;
@@ -995,9 +996,16 @@ let lastRenderKey = "";
       }
     }
 
-    articleSearchText.addEventListener("input", () => { currentPage = 1; applyFilters(); });
-    articleFilterCountry.addEventListener("change", () => { currentPage = 1; applyFilters(); });
-    articleFilterCategory.addEventListener("change", () => { currentPage = 1; applyFilters(); });
+if (articleSearchText) {
+  articleSearchText.addEventListener("input", () => { currentPage = 1; applyFilters(); });
+}
+if (articleFilterCountry) {
+  articleFilterCountry.addEventListener("change", () => { currentPage = 1; applyFilters(); });
+}
+if (articleFilterCategory) {
+  articleFilterCategory.addEventListener("change", () => { currentPage = 1; applyFilters(); });
+}
+
 
     window.addEventListener('load', () => v4aInitAdsense(document));
 
