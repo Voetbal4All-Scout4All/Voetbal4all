@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-01-28T02:03:54.108Z",
+  "generatedAt": "2026-01-28T04:07:50.019Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Follow live: USWNT takes on Chilie in friendly",
+      "link": "https://www.espn.com/soccer/match/_/gameId/762548/chile-united-states",
+      "summary": "null",
+      "publishedAt": "2026-01-28T03:49:06.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -121,17 +132,6 @@
       "link": "https://www.vi.nl/nieuws/psg-opent-gesprekken-met-luis-enrique-verrassende-trainerskeuze-frankfurt",
       "summary": "De tijd van winterse versterkingen is aangebroken, in dit blog volgen we alle transferactiviteit in het buitenland. Bekijk hier ons blog voor de transferperikelen in Nederland.",
       "publishedAt": "2026-01-27T22:08:01.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "What it's really like for a player switching clubs in the January transfer window",
-      "link": "https://www.espn.com/soccer/story/_/id/47743232/what-move-january-transfer-window-really-player",
-      "summary": "ESPN FC analyst and former Man City defender Nedum Onuoha reveals how the days before the deadline can be full of uncertainty, selfishness and betrayal.",
-      "publishedAt": "2026-01-27T21:55:47.000Z"
     },
     {
       "type": "rss",
