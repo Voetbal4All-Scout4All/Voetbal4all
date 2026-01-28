@@ -1,6 +1,61 @@
 {
-  "generatedAt": "2026-01-28T09:38:09.069Z",
+  "generatedAt": "2026-01-28T10:33:42.798Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "West Ham's Ward-Prowse set for Burnley medical",
+      "link": "https://www.bbc.com/sport/football/articles/cy592d27n1go?at_medium=RSS&at_campaign=rss",
+      "summary": "West Ham midfielder James Ward-Prowse is expected to undergo a medical with Burnley on Wednesday as he closes in on a loan move.",
+      "publishedAt": "2026-01-28T10:23:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Abraham joins Villa 1 day after Besiktas transfer",
+      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
+      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
+      "publishedAt": "2026-01-28T10:22:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rodman, Hayes viral celebration caps off U.S. rout",
+      "link": "https://www.espn.com/soccer/story/_/id/47750660/trinity-rodman-goal-sideline-dance-emma-hayes-cap-uswnt-rout",
+      "summary": "Trinity Rodman capped off the USWNT's 5-0 rout of Chile by coaxing coach Emma Hayes into a sideline dance, as a young American squad secured its fifth consecutive shutout Tuesday night.",
+      "publishedAt": "2026-01-28T10:22:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arbeloa: Bellingham the 'cornerstone' of Madrid's future",
+      "link": "https://www.espn.com/soccer/story/_/id/47752700/leader-jude-bellingham-cornerstone-real-madrid-future-alvaro-arbeloa",
+      "summary": "Real Madrid coach Alvaro Arbeloa praised Jude Bellingham on Tuesday, calling the midfielder \"a leader\" who will be a \"cornerstone of this team for many years.\"",
+      "publishedAt": "2026-01-28T10:22:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Marvin Peersman: opgeleefde senior tussen de talenten bij FC Groningen",
+      "link": "https://www.vi.nl/pro/marvin-peersman-opgeleefde-senior-tussen-de-talenten-bij-fc-groningen",
+      "summary": "Jan Boskamp liet hem ooit debuteren in het betaalde voetbal, nu is Marvin Peersman (34) de nestor in het elftal vol jonge honden bij FC Groningen. In gesprek met de routinier over zijn tweede jeugd, de wonderlijke rit van zijn werkgever, het overwinnen van de scepsis en een loopbaan die hij zo lang mogelijk wil verlengen.",
+      "publishedAt": "2026-01-28T10:00:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -11,6 +66,17 @@
       "link": "https://www.vi.nl/nieuws/benfica-verkoopt-uitzendrechten-en-sluit-recorddeal-in-portugal",
       "summary": "Benfica heeft een historisch akkoord bereikt met het Portugese NOS over de verkoop van de televisierechten voor de seizoenen 2026/27 en 2027/28. De tv-deal is met een totale waarde van 114,2 miljoen euro de grootste ooit in Portugal.",
       "publishedAt": "2026-01-28T09:32:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Football transfer rumours: Jérémy Jacquet to Liverpool or Chelsea?",
+      "link": "https://www.theguardian.com/football/2026/jan/28/football-transfer-rumours-jeremy-jacquet-to-liverpool-or-chelsea",
+      "summary": "Today’s fluff is matching its ambitions Only five days remain of what has felt like a mercifully underheated winter window, but Manchester United could be about to fire it up a bit with an audacious bid for Cole Palmer. Teamtalk claims that a move for the Chelsea and England star is “building up a serious head of steam”. The departure from Stamford Bridge of Enzo Maresca, with whom Palmer was close, has apparently made Palmer susceptible to the idea of returning to his home city. He’s under contract until 2033 though, such is the Chelsea way, and would cost a British record £150m. Meanwhile, the interim United manager, Michael Carrick, could face an internal battle with club bosses over Harry Maguire, whom Carrick wants to keep despite the desire of others in the Old Trafford hierarchy to give younger players such as Leny Yoro and Ayden Heaven more of a chance. Continue reading...",
+      "publishedAt": "2026-01-28T09:30:04.000Z"
     },
     {
       "type": "rss",
@@ -47,24 +113,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Middenveld PSV puzzelwerk voor Peter Bosz'",
-      "link": "https://www.vi.nl/video/middenveld-psv-puzzelwerk-voor-peter-bosz",
-      "summary": "Peter Bosz gaf eerder aan dat hij het liefst met elf middenvelders speelt, maar welke drie namen vervullen tegen Bayern München het centrum? Keert Ismael Saibari terug op tien? Behoudt Paul Wanner zijn plek? En is Salah-Eddine fit genoeg dat Mauro Junior weer terug het middenveld op kan? En hoe zit het met de spitspositie? Genoeg vragen om over te speculeren in de nieuwe VI ZSM met Rob Aarts en Inta Janssen.",
-      "publishedAt": "2026-01-28T08:50:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
       "title": "Chelsea urge fans to take ‘extreme caution’ in Naples after two taken to hospital",
       "link": "https://www.theguardian.com/football/2026/jan/28/chelsea-fans-naples-hospital",
-      "summary": "Treatment needed for ‘non-life-threatening injuries’ Chelsea fans report having knives pulled on them Chelsea have told fans to take “extreme caution” in Naples after two supporters were treated in hospital there before their Champions League tie in the Italian city. Napoli and Chelsea meet at the Diego Armando Maradona Stadium on Wednesday night in the competition’s final round of group games. Continue reading...",
+      "summary": "Treatment needed for ‘non-life-threatening injuries’ Chelsea fans report having knives pulled on them Chelsea have told fans to take “extreme caution” in Naples after two supporters were treated in hospital there before their Champions League tie in the Italian city. Napoli and Chelsea meet at the Stadio Diego Armando Maradona on Wednesday night in the competition’s final round of group games. Continue reading...",
       "publishedAt": "2026-01-28T08:35:23.000Z"
     },
     {
@@ -106,54 +161,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Australian Open LIVE! Sinner clinches first set against Shelton in last quarter-final",
-      "link": "https://www.skysports.com/tennis/live-blog/12040/13495212/australian-open-live-scores-results-commentary-with-carlos-alcaraz-jannik-sinner-aryna-sabalenka-coco-gauff-in-action",
-      "summary": "",
-      "publishedAt": "2026-01-28T07:46:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "O'Connor signs contract extension with Leeds",
       "link": "https://www.skysports.com/rugby-league/news/12040/13499925/jarrod-oconnor-signs-contract-extension-with-leeds-rhinos",
       "summary": "Leeds Rhinos hooker Jarrod O'Connor has agreed a new two-year contract extension that will keep him with the club until at least the end of the 2028 Betfred Super League season.",
       "publishedAt": "2026-01-28T07:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rodman, Hayes viral celebration caps off U.S. rout",
-      "link": "https://www.espn.com/soccer/story/_/id/47750660/trinity-rodman-goal-sideline-dance-emma-hayes-cap-uswnt-rout",
-      "summary": "Trinity Rodman capped off the USWNT's 5-0 rout of Chile by coaxing coach Emma Hayes into a sideline dance, as a young American squad secured its fifth consecutive shutout Tuesday night.",
-      "publishedAt": "2026-01-28T07:05:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Abraham joins Villa 1 day after Besiktas transfer",
-      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
-      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
-      "publishedAt": "2026-01-28T07:05:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta: Arsenal had 'beautiful' meeting after loss",
-      "link": "https://www.espn.com/soccer/story/_/id/47747069/mikel-arteta-arsenal-meeting-man-united-loss",
-      "summary": "Mikel Arteta has revealed he called his players for a meeting to \"bring down the temperature\" in the wake of their defeat to Manchester United.",
-      "publishedAt": "2026-01-28T07:05:09.000Z"
     },
     {
       "type": "rss",
@@ -209,17 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c74wdw5n4e5o?at_medium=RSS&at_campaign=rss",
       "summary": "Travelling Chelsea fans in Naples for Wednesday's Champions League game are told to \"exercise extreme caution\" after two supporters suffer injuries.",
       "publishedAt": "2026-01-27T23:58:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Tottenham’s Champions League preparations rocked by injuries and car crash",
-      "link": "https://www.theguardian.com/football/2026/jan/27/thomas-frank-tottenham-spurs-injuries-eintracht-frankfurt-champions-league",
-      "summary": "Porro and Van de Ven join injury list for Frankfurt game Kolo Muani and Odobert unharmed after tyre blowout Thomas Frank’s preparations for the Champions League game at Eintracht Frankfurt on Wednesday night have been rocked by injuries to Pedro Porro and Micky van de Ven – and a car crash affecting Randal Kolo Muani and Wilson Odobert. The Tottenham manager reported that Kolo Muani and Odobert were OK after pictures emerged on social media of them standing by a black Ferrari with significant damage to its front end. Continue reading...",
-      "publishedAt": "2026-01-27T20:42:08.000Z"
     }
   ]
 }
