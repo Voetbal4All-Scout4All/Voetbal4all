@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-01-28T15:37:18.261Z",
+  "generatedAt": "2026-01-28T16:42:22.778Z",
   "items": [
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Record verpulverd: wereldwijde transferuitgaven met ruim 50 procent gestegen",
-      "link": "https://www.vi.nl/nieuws/record-verpulverd-wereldwijde-transferuitgaven-met-ruim-50-procent-gestegen",
-      "summary": "De FIFA heeft een rapport over internationale transfers gepubliceerd. Daaruit blijkt dat clubs in 2025 een recordbedrag uitgaven aan spelers. Sterker nog, er was een stijging van meer dan de helft van het bedrag in 2024.",
-      "publishedAt": "2026-01-28T15:36:09.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sterling leaves Chelsea by mutual consent",
+      "link": "https://www.bbc.com/sport/football/articles/cm2yp21zjzqo?at_medium=RSS&at_campaign=rss",
+      "summary": "Raheem Sterling leaves Chelsea by mutual consent after reaching an agreement on his departure.",
+      "publishedAt": "2026-01-28T16:30:24.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Chelsea announce Sterling departure",
+      "link": "https://www.skysports.com/football/news/12040/13500231/raheem-sterling-leaves-chelsea-after-three-and-a-half-years-ahead-of-january-transfer-deadline",
+      "summary": "Raheem Sterling has left Chelsea after three-and-a-half years at the club.",
+      "publishedAt": "2026-01-28T16:30:00.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +29,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: 'expert' Pantelic beschrijft verschil tussen Ajax en Olympiakos",
-      "link": "https://www.vi.nl/nieuws/vi-live-expert-pantelic-beschrijft-verschil-tussen-ajax-en-olympiakos",
-      "summary": "Ajax neemt het woensdagavond om 21.00 uur op tegen Olympiakos Piraeus in de Champions League. De Amsterdammers moeten zelf winnen om nog kans te maken op een plek in de tussenronde. Daarnaast zijn zij afhankelijk van de concurrentie . Volg de wedstrijd op de voet in deze VI Live.",
-      "publishedAt": "2026-01-28T15:28:24.000Z"
+      "title": "FC Utrecht bereikt akkoord met Lyon en UEFA over zaak-Ghezzal",
+      "link": "https://www.vi.nl/nieuws/fc-utrecht-bereikt-akkoord-met-lyon-en-uefa-over-zaak-ghezzal",
+      "summary": "FC Utrecht heeft een akkoord bereikt met Olympique Lyon en de UEFA over de afhandeling van de zaak-Ghezzal. De 33-jarige Algerijn zou in het Europa League-duel tussen de Utrechters en Lyon niet speelgerechtigd zijn geweest. Het onderzoek is stopgezet en Utrecht ontvangt een vergoeding.",
+      "publishedAt": "2026-01-28T16:29:36.000Z"
     },
     {
       "type": "rss",
@@ -29,21 +40,43 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Arbeloa: Bellingham 'cornerstone' of Madrid future",
-      "link": "https://www.espn.com/soccer/story/_/id/47752700/leader-jude-bellingham-cornerstone-real-madrid-future-alvaro-arbeloa",
-      "summary": "Real Madrid coach Alvaro Arbeloa praised Jude Bellingham on Tuesday, calling the midfielder \"a leader\" who will be a \"cornerstone of this team for many years.\"",
-      "publishedAt": "2026-01-28T15:24:46.000Z"
+      "title": "Rodman, Hayes viral celebration caps off U.S. rout",
+      "link": "https://www.espn.com/soccer/story/_/id/47750660/trinity-rodman-goal-sideline-dance-emma-hayes-cap-uswnt-rout",
+      "summary": "Trinity Rodman capped off the USWNT's 5-0 rout of Chile by coaxing coach Emma Hayes into a sideline dance, as a young American squad secured its fifth consecutive shutout Tuesday night.",
+      "publishedAt": "2026-01-28T16:27:46.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Braziliaans transferrecord eraan: West Ham willigt wens Paquetá in",
-      "link": "https://www.vi.nl/nieuws/braziliaans-transferrecord-eraan-west-ham-willigt-wens-paqueta-in",
-      "summary": "Lucas Paquetá staat volgens verschillende Engelse media op het punt West Ham United te verruilen voor Flamengo, dat een Braziliaans transferrecord gaat verbeteren.",
-      "publishedAt": "2026-01-28T15:18:09.000Z"
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: Fulham, Man City agree Oscar Bobb deal",
+      "link": "https://www.espn.com/soccer/story/_/id/47754893/oscar-bobb-fulham-manchester-city-transfer-deal-sources",
+      "summary": "Manchester City have agreed a fee with Fulham for winger Oscar Bobb, sources have told ESPN.",
+      "publishedAt": "2026-01-28T16:27:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Abraham joins Villa 1 day after Besiktas transfer",
+      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
+      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
+      "publishedAt": "2026-01-28T16:27:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Browns hiring Monken as head coach",
+      "link": "https://www.skysports.com/nfl/news/12040/13500239/todd-monken-cleveland-browns-hire-former-baltimore-ravens-offensive-coordinator-as-head-coach",
+      "summary": "The Cleveland Browns are naming Todd Monken as their next head coach, NFL Network reported on Wednesday.",
+      "publishedAt": "2026-01-28T16:20:00.000Z"
     },
     {
       "type": "rss",
@@ -51,10 +84,76 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Will Bowie be next Scot to light up Serie A?",
-      "link": "https://www.bbc.com/sport/football/articles/c17z2x0k5rlo?at_medium=RSS&at_campaign=rss",
-      "summary": "Hellas Verona are keen on Kieron Bowie - so will the Hibernian striker be the next Scot to shine in Serie A?",
-      "publishedAt": "2026-01-28T15:17:12.000Z"
+      "title": "Fulham agree to sign Man City winger Bobb for £27m",
+      "link": "https://www.bbc.com/sport/football/articles/cly5ep60ypro?at_medium=RSS&at_campaign=rss",
+      "summary": "Fulham agree a £27million deal with Manchester City to sign Oscar Bobb.",
+      "publishedAt": "2026-01-28T16:17:02.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Real Madrid bindt talentvolle Marcelo-telg",
+      "link": "https://www.vi.nl/nieuws/real-madrid-bindt-talentvolle-marcelo-telg",
+      "summary": "Enzo Alves heeft zijn eerste professionele contract bij Real Madrid getekend. De zestienjarige aanvaller wordt gezien als een groot talent, maar geniet (vooralsnog) vooral bekendheid als de zoon van clublegende Marcelo.",
+      "publishedAt": "2026-01-28T16:10:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Waarom Sutalo een logische keuze is tegen Olympiakos",
+      "link": "https://www.vi.nl/video/waarom-sutalo-een-logische-keuze-is-tegen-olympiakos",
+      "summary": "In VI Rondje Europa bespreken Bart Frouws, Bas van den Hoven en Pieter Zwart de keuzes van Fred Grim tegen Olympiakos Piraeus. Gezien de speelstijl van de Griekse opponent krijgt de Ajax-trainer het advies om te starten met Josip Sutalo in plaats van Aaron Bouwman.",
+      "publishedAt": "2026-01-28T16:02:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Dit kan Ajax verwachten van Olympiakos Piraeus",
+      "link": "https://www.vi.nl/pro/tactische-analyse-dit-kan-ajax-verwachten-van-olympiakos-piraeus",
+      "summary": "Met het verslaan van Villarreal is de Champions League-droom van Ajax nog enigszins in leven. Om van die droom realiteit te kunnen maken, is een winstpartij tegen Olympiakos cruciaal. Analyse over wat Ajax tactisch kan verwachten van zijn aankomende tegenstander én uitleg over waar het de Grieken pijn kan doen.",
+      "publishedAt": "2026-01-28T16:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Fulham agree £27m deal to sign Bobb",
+      "link": "https://www.skysports.com/football/news/12040/13499252/oscar-bobb-transfer-news-fulham-agree-27m-deal-with-man-city-to-sign-norway-forward-following-adama-traore-departure",
+      "summary": "Fulham have agreed a £27m deal with Manchester City to sign forward Oscar Bobb.",
+      "publishedAt": "2026-01-28T15:50:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Real Madrid gelinkt aan Neves, Fulham heeft dure Bobb bijna binnen",
+      "link": "https://www.vi.nl/nieuws/real-madrid-gelinkt-aan-neves-fulham-heeft-dure-bobb-bijna-binnen",
+      "summary": "De tijd van winterse versterkingen is aangebroken, in dit blog volgen we alle transferactiviteit in het buitenland. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-01-28T15:47:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Leon Goretzka says Donald Trump ‘makes us feel not only German but European’",
+      "link": "https://www.theguardian.com/football/2026/jan/28/leon-goretzka-donald-trump-makes-us-feel-german-european-world-cup",
+      "summary": "Midfielder speaks out on politics before World Cup Goretzka open to summer move to England from Bayern The Germany international Leon Goretzka has said Donald Trump’s actions have left him feeling “not only German but also European”. The US president has recently threatened to take Greenland by force and called Europe “weak” and “decaying”. Goretzka, who hopes to make the Germany squad for the World Cup in the US, Canada and Mexico this summer, told Die Zeit: “Of course, I’m aware of the political debates. I still expect it to be a great tournament – it will promote football there, and show many people want an incredibly exciting game. Donald Trump makes us feel not only German but also European.” Continue reading...",
+      "publishedAt": "2026-01-28T15:44:31.000Z"
     },
     {
       "type": "rss",
@@ -80,44 +179,11 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Dit kan PSV verwachten van Bayern München",
-      "link": "https://www.vi.nl/pro/dit-kan-psv-verwachten-van-bayern-m-nchen",
-      "summary": "Wil PSV zich verzekeren van de tussenronde in de Champions League, dan dient het af te rekenen met de best aanvallende ploeg ter wereld. Want momenteel is er geen club zo explosief als Bayern München. Analyse van de angstloze speelwijze van Vincent Kompany.",
-      "publishedAt": "2026-01-28T15:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Voormalig Feyenoorder Guidetti (33) aan de slag als analyticus",
-      "link": "https://www.vi.nl/nieuws/voormalig-feyenoorder-guidetti-33-aan-de-slag-als-analyticus",
-      "summary": "Voormalig Feyenoorder John Guidetti heeft zich als analyticus verbonden aan het Zweedse TV4 en Sportbladet. De Zweed zit sinds zijn vertrek bij AIK zonder club, maar houdt volgens zijn entourage de deur open voor een nieuwe sportieve uitdaging.",
-      "publishedAt": "2026-01-28T14:55:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'HE IS BACK!' | Fury announces return to the ring on Instagram!",
-      "link": "https://www.skysports.com/watch/video/13500194/tyson-fury-announces-return-to-the-ring-on-instagram",
-      "summary": "Tyson Fury took to Instagram to announce he is returning to the ring, with a fight against Arslanbek Makhmudov in April now confirmed.",
-      "publishedAt": "2026-01-28T14:41:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Tielemans out until April as Villa injury woes mount",
+      "title": "Tielemans out until April as Villa injuries mount",
       "link": "https://www.bbc.com/sport/articles/c78vq29w4x1o?at_medium=RSS&at_campaign=rss",
       "summary": "Aston Villa midfielder Youri Tielemans is been ruled out for up to 10 weeks, Unai Emery has confirmed.",
       "publishedAt": "2026-01-28T14:39:59.000Z"
@@ -152,74 +218,8 @@
       "flag": "🌍",
       "title": "Fury's comeback fight confirmed",
       "link": "https://www.skysports.com/boxing/news/12040/13500152/tyson-fury-confirms-comeback-fight-against-arslanbek-makhmudov-for-april-11",
-      "summary": "Tyson Fury has confirmed his comeback fight against Aslanbek Makhmudov as the former heavyweight champion returns to boxing.",
+      "summary": "Tyson Fury has confirmed his comeback fight against Arslanbek Makhmudov as the former heavyweight champion returns to boxing.",
       "publishedAt": "2026-01-28T13:07:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Abraham joins Villa 1 day after Besiktas transfer",
-      "link": "https://www.espn.com/soccer/story/_/id/47741934/tammy-abraham-aston-villa-besiktas-transfer-roma",
-      "summary": "Tammy Abraham has signed for Aston Villa from Besiktas just one day after he joined the Turkish club a permanent transfer from Roma.",
-      "publishedAt": "2026-01-28T12:27:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rodman, Hayes viral celebration caps off U.S. rout",
-      "link": "https://www.espn.com/soccer/story/_/id/47750660/trinity-rodman-goal-sideline-dance-emma-hayes-cap-uswnt-rout",
-      "summary": "Trinity Rodman capped off the USWNT's 5-0 rout of Chile by coaxing coach Emma Hayes into a sideline dance, as a young American squad secured its fifth consecutive shutout Tuesday night.",
-      "publishedAt": "2026-01-28T12:27:34.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Match of the Day scores viewing figures success with BBC’s new digital strategy",
-      "link": "https://www.theguardian.com/football/2026/jan/28/match-of-the-day-viewing-figures-success-bbc-new-digital-strategy",
-      "summary": "Highlight clips available at 8pm on Saturday for first time Traditional viewing of weekend shows has declined Match of the Day’s viewing figures have increased considerably this season in a vindication of the BBC’s new digital strategy. Traditional linear viewing of the Saturday and Sunday evening highlights programmes had declined by 770,000 to 6.88 million average weekly views last month compared with December 2024, but MOTD has gained 1.52 million viewers by making highlight clips available on its website and app at 8pm on Saturdays for the first time. The combined viewing figures for MOTD on iPlayer covering the evening programmes and highlights clips had risen to 61.9 million by the end of December, a big increase on the 45.4 million views by the same period last season. The digital consumption of MOTD has almost doubled since the 2022-23 season, when the total figure by December was 33.1 million. Continue reading...",
-      "publishedAt": "2026-01-28T12:03:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "West Ham sign winger Traore from Fulham",
-      "link": "https://www.bbc.com/sport/football/articles/c5y5rdl1739o?at_medium=RSS&at_campaign=rss",
-      "summary": "West Ham sign winger Adama Traore from Fulham on a permanent basis for an undisclosed fee.",
-      "publishedAt": "2026-01-28T11:18:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Aki facing disciplinary committee and omitted from Ireland squad",
-      "link": "https://www.skysports.com/rugby-union/news/12040/13500016/bundee-aki-facing-disciplinary-committee-and-omitted-from-ireland-squad-ahead-of-six-nations-opener",
-      "summary": "Bundee Aki looks set to miss Ireland's opening Six Nations match against France as he was replaced in the squad due to a disciplinary issue.",
-      "publishedAt": "2026-01-28T11:06:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Henderson hopeful of Sir Gino returning home next week",
-      "link": "https://www.skysports.com/racing/news/12040/13500012/sir-gino-nicky-henderson-hopeful-of-stars-return-to-seven-barrows-next-week-after-fractured-pelvis",
-      "summary": "Sir Gino could return home to Seven Barrows next week following his injury at Cheltenham Trials Day, Nicky Henderson has told Sky Sports Racing.",
-      "publishedAt": "2026-01-28T10:58:00.000Z"
     }
   ]
 }
