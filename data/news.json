@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-01-29T14:40:16.694Z",
+  "generatedAt": "2026-01-29T15:39:18.859Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Champions League recap: Grading all 36 teams, plus...",
+      "link": "https://www.espn.com/soccer/story/_/id/47764130/uefa-champions-league-rankings-grading-36-teams-league-phase-best-xi-connelly",
+      "summary": "The league phase of the Champions League is over, culminating with a dramatic Matchday 8. Who was the best and worst in this stage of the competition?",
+      "publishedAt": "2026-01-29T15:34:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Talking points: Mourinho's master class, biggest d...",
+      "link": "https://www.espn.com/soccer/story/_/id/47757434/champions-league-talking-points-mourinho-disappointments-drama-analysis-reaction",
+      "summary": "ESPN FC's writers pick out their highs and lows of the tournament to this point.",
+      "publishedAt": "2026-01-29T15:34:55.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,29 +32,18 @@
       "title": "Mourinho: I apologized to Arbeloa over celebration...",
       "link": "https://www.espn.com/soccer/story/_/id/47764092/jose-mourinho-alvaro-arbeloa-trubin-goal-celebration-champions-league",
       "summary": "José Mourinho said he apologised to Real Madrid coach Álvaro Arbeloa for his celebrations in Benfica's 4-2 Champions League win on Wednesday",
-      "publishedAt": "2026-01-29T14:35:44.000Z"
+      "publishedAt": "2026-01-29T15:27:46.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Bliksemvertrek Benzema in de maak na beledigend contractvoorstel Al-Ittihad'",
-      "link": "https://www.vi.nl/nieuws/bliksemvertrek-benzema-in-de-maak-na-beledigend-contractvoorstel-al-ittihad",
-      "summary": "Karim Benzema en Al-Ittihad liggen op ramkoers. Volgens alle toonaangevende Franse media weigert de 38-jarige spits voorlopig niet alleen om nog in actie te komen voor de club uit Saoedi-Arabië, maar wil hij vertrekken. Dat alles vanwege een contractvoorstel dat door Benzema en zijn entourage als beledigend wordt beschouwd.",
-      "publishedAt": "2026-01-29T14:35:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Champions League talking points: Mourinho's master...",
-      "link": "https://www.espn.com/soccer/story/_/id/47757434/champions-league-talking-points-mourinho-disappointments-drama-analysis-reaction",
-      "summary": "With all 36 Champions League teams in action simultaneously, Matchday 8 of the league phase delivered plenty of drama to cap a fun competition so far. ESPN FC's writers pick out their highs and lows of the tournament to this point.",
-      "publishedAt": "2026-01-29T14:34:10.000Z"
+      "title": "Brighton latest: No desire to sell Ayari as Forest bid rejected",
+      "link": "https://www.skysports.com/football/live-blog/12040/13279295/brighton-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+      "summary": "",
+      "publishedAt": "2026-01-29T15:23:00.000Z"
     },
     {
       "type": "rss",
@@ -40,10 +51,54 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Op deze vijf fronten kwam Ajax tekort in de Champions League",
-      "link": "https://www.vi.nl/pro/op-deze-vijf-fronten-kwam-ajax-tekort-in-de-champions-league",
-      "summary": "Ajax heeft woensdagavond een teleurstellende Champions League-campagne in stijl afgesloten. De nederlaag tegen Olympiakos legde nog maar eens de tekortkomingen van de Amsterdammers bloot. ‘Wij kunnen ons op dit moment ook niet meten met de subtop van Europa.’",
-      "publishedAt": "2026-01-29T14:30:00.000Z"
+      "title": "Voormalig Ajax-talent Banel op zoek naar speelminuten op lager Engels niveau",
+      "link": "https://www.vi.nl/nieuws/voormalig-ajax-talent-banel-op-zoek-naar-speelminuten-op-lager-engels-niveau",
+      "summary": "Jaydon Banel gaat het komende halfjaar in actie komen bij Derby County. De buitenspeler, die vorig jaar overkwam van Ajax, paste niet in de plannen van Burnley en gaat zijn minuten een niveau lager maken.",
+      "publishedAt": "2026-01-29T15:22:58.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Aston Villa latest: Palace agree deal with Villa for Guessand",
+      "link": "https://www.skysports.com/football/live-blog/12040/13025491/aston-villa-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+      "summary": "",
+      "publishedAt": "2026-01-29T15:22:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Forest latest: Bid for Ayari rejected by Brighton",
+      "link": "https://www.skysports.com/football/live-blog/12040/13279316/nottingham-forest-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+      "summary": "",
+      "publishedAt": "2026-01-29T15:21:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Jong PSV stroomt verder leeg: Leipzig slaat toe bij Thomas",
+      "link": "https://www.vi.nl/nieuws/jong-psv-stroomt-verder-leeg-leipzig-slaat-toe-bij-thomas",
+      "summary": "Dele Thomas maakt spoedig de overstap van (Jong) PSV naar RB Leipzig. De achttienjarige aanvaller beschikte over een aflopend contract in Eindhoven, door een verkoop in de winter houdt PSV in ieder geval nog enkele tonnen over aan de linksbuiten.",
+      "publishedAt": "2026-01-29T15:21:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Lachende Hoefkens: 'Kompany en ik hebben samen ook de opleiding gedaan'",
+      "link": "https://www.vi.nl/nieuws/lachende-hoefkens-kompany-en-ik-hebben-samen-ook-de-opleiding-gedaan",
+      "summary": "Carl Hoefkens moest donderdagmiddag lachen om de vergelijking tussen NAC Breda en Bayern München. In aanloop naar het Champions League-duel tussen PSV en de Duitse grootmacht werd zijn elftal plots naast Bayern gelegd. Dat maakte de Belg trots.",
+      "publishedAt": "2026-01-29T15:15:40.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +109,7 @@
       "title": "Napoli: Sterling 'financial demands' block move",
       "link": "https://www.espn.com/soccer/story/_/id/47763910/raheem-sterling-transfer-difficult-due-significant-financial-demands-napoli-chief",
       "summary": "Napoli sporting director Giovanni Manna has said Raheem Sterling's \"significant financial demands\" could be an obstacle in doing a deal for the forward.",
-      "publishedAt": "2026-01-29T14:18:08.000Z"
+      "publishedAt": "2026-01-29T15:02:02.000Z"
     },
     {
       "type": "rss",
@@ -65,18 +120,7 @@
       "title": "Pep: City panicked over Mourinho's UCL strategy",
       "link": "https://www.espn.com/soccer/story/_/id/47759392/pep-guardiola-admits-man-city-panic-mourinho-benfica-strategy",
       "summary": "Pep Guardiola revealed Manchester City were panicking over their Champions League hopes as Benfica pushed for a late goal against Real Madrid.",
-      "publishedAt": "2026-01-29T14:18:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Madrid, PSG drop to UCL playoffs in chaotic finale...",
-      "link": "https://www.espn.com/soccer/story/_/id/47758656/real-madrid-psg-champions-league-playoffs-premier-league",
-      "summary": "Real Madrid were stunningly dumped into the qualifying playoffs of the Champions League by former coach Jose Mourinho on Wednesday and will be joined there by Paris Saint-Germain.",
-      "publishedAt": "2026-01-29T14:18:08.000Z"
+      "publishedAt": "2026-01-29T15:02:01.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +128,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Slot reageert op kritiek Gerrard: 'Jullie luisteren niet goed genoeg'",
-      "link": "https://www.vi.nl/nieuws/slot-reageert-op-kritiek-gerrard-jullie-luisteren-niet-goed-genoeg",
-      "summary": "Arne Slot heeft na het gewonnen Champions League-duel met Qarabag gereageerd op kritiek van Steven Gerrard. De Liverpool-legende hekelde een uitspraak van de Nederlandse manager dat zijn ploeg vorig seizoen geholpen werd door de vroege uitschakeling in Europa.",
-      "publishedAt": "2026-01-29T14:15:00.000Z"
+      "title": "Dit kan Go Ahead Eagles verwachten van Braga",
+      "link": "https://www.vi.nl/pro/dit-kan-go-ahead-eagles-verwachten-van-braga",
+      "summary": "Go Ahead Eagles treft met Braga een tegenstander die de weg omhoog gevonden heeft. De Portugezen hebben na een lastige start een uitstekende positie in de Europa League en pakken steeds meer punten in de competitie. Analyse van een balbezitsploeg met Pep Guardiola-invloeden.",
+      "publishedAt": "2026-01-29T15:00:00.000Z"
     },
     {
       "type": "rss",
@@ -95,76 +139,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Dit kan Feyenoord verwachten van Real Betis",
-      "link": "https://www.vi.nl/pro/dit-kan-feyenoord-verwachten-van-real-betis",
-      "summary": "Om de laatste kans op de Europa League-tussenronde te grijpen moet Feyenoord donderdagavond winnen bij Real Betis. Tactische analyse van de Spaanse ploeg die met veel blessures kampt, maar nog altijd herkenbaar voetbal speelt onder Manuel Pellegrini.",
-      "publishedAt": "2026-01-29T14:14:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Palace agree £50m deal in principle for Strand Larsen",
-      "link": "https://www.bbc.com/sport/football/articles/cr7jx97j8jjo?at_medium=RSS&at_campaign=rss",
-      "summary": "Crystal Palace agree a deal in principle worth in the region of £50m to sign Wolves striker Jorgen Strand Larsen.",
-      "publishedAt": "2026-01-29T14:04:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Australian Open: Friday's Order of Play as Alcaraz, Djokovic, Sinner contest semis",
-      "link": "https://www.skysports.com/tennis/news/12040/13493944/australian-open-order-of-play-with-emma-raducanu-carlos-alcaraz-jannik-sinner-aryna-sabalenka-iga-swiatek-and-coco-gauff-all-in-action",
-      "summary": "Order of Play for Day 13 at the Australian Open as the men's singles semi-finals take place.",
-      "publishedAt": "2026-01-29T13:58:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "PSV houdt poot stijf: 'Veel geld voor een blessuregevoelige speler'",
-      "link": "https://www.vi.nl/video/psv-houdt-poot-stijf-veel-geld-voor-een-blessure-gevoelige-speler",
-      "summary": "In Rondje Europa legt clubwatcher Tim Reedijk uit waarom PSV de poot stijf houdt wat betreft Ricardo Pepi, die voor een monsterbedrag de overstap kan maken naar Fulham.",
-      "publishedAt": "2026-01-29T13:57:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Aston Villa latest: 'Palace agree deal to sign Guessand on loan'",
-      "link": "https://www.skysports.com/football/live-blog/12040/13025491/aston-villa-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-      "summary": "",
-      "publishedAt": "2026-01-29T13:53:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Another Alcaraz vs Sinner repeat or can Djokovic, Zverev spoil the party?",
-      "link": "https://www.skysports.com/tennis/news/12040/13500461/australian-open-are-we-heading-for-another-carlos-alcaraz-vs-jannik-sinner-final-or-can-novak-djokovic-alexander-zverev-spoil-the-party",
-      "summary": "Are we heading for another Carlos Alcaraz vs Jannik Sinner Grand Slam final or can Novak Djokovic and Alexander Zverev become the disrupters and spoil the party?",
-      "publishedAt": "2026-01-29T13:48:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Reed returns to DP World Tour action after quitting LIV Golf",
-      "link": "https://www.skysports.com/golf/news/12040/13500632/patrick-reed-returns-to-dp-world-tour-action-after-liv-golf-exit-as-pga-tour-comeback-begins",
-      "summary": "Patrick Reed has taken his first step toward a PGA Tour comeback, returning to DP World Tour action just a day after announcing his departure from LIV Golf.",
-      "publishedAt": "2026-01-29T13:30:00.000Z"
+      "title": "Na weken van uitersten moet Burger toekijken tegen Bayern München",
+      "link": "https://www.vi.nl/nieuws/na-weken-van-uitersten-moet-burger-toekijken-tegen-bayern-m-nchen",
+      "summary": "Wouter Burger is niet van de partij tijdens het uitduel van 1899 Hoffenheim bij Bayern München. De Nederlander moet twee wedstrijden brommen naar aanleiding van de rode kaart die hij ontving tegen Werder Bremen.",
+      "publishedAt": "2026-01-29T14:55:00.000Z"
     },
     {
       "type": "rss",
@@ -172,10 +150,43 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Crystal Palace agree £50m deal to buy Jørgen Strand Larsen from Wolves",
+      "title": "Crystal Palace agree £50m Strand Larsen deal and close on Guessand loan",
       "link": "https://www.theguardian.com/football/2026/jan/29/transfer-latest-wolves-jorgen-strand-larsen-crystal-palace",
-      "summary": "Leeds had £40m bid for striker rejected this month James Ward-Prowse seals loan move to Burnley Wolves have agreed to sell Jørgen Strand Larsen to Crystal Palace after receiving a bid totalling £50m for the Norway striker. The agent Jorge Mendes has been leading negotiations on behalf of Wolves, who have accepted an initial £45m, plus £5m in add-ons. Strand Larsen would represent Palace’s record buy, eclipsing the £35m they paid to take Brennan Johnson from Tottenham this month. Continue reading...",
-      "publishedAt": "2026-01-29T12:40:51.000Z"
+      "summary": "Forwards in line to sign from Wolves and Aston Villa James Ward-Prowse seals loan move to Burnley Wolves have agreed to sell Jørgen Strand Larsen to Crystal Palace after receiving a bid totalling £50m for the Norway striker. The agent Jorge Mendes has been leading negotiations on behalf of Wolves, who have accepted an initial £45m, plus £5m in add-ons. Strand Larsen would represent Palace’s record buy, eclipsing the £35m they paid to take Brennan Johnson from Tottenham this month. Continue reading...",
+      "publishedAt": "2026-01-29T14:40:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Champions League review: discontent for Real Madrid in a chaotic conclusion to group play",
+      "link": "https://www.theguardian.com/football/2026/jan/29/champions-league-review-discontent-for-real-madrid-in-a-chaotic-conclusion-to-group-play",
+      "summary": "Álvaro Arbeloa’s team have concerns as they look ahead to the knockout stages, while Jamie Carragher has concerns about the draw It was billed by broadcasters as “Matchday Mayhem”. Finally, after 17 of the 18 final day matches had finished, came a chaotic denouement. Not even José Mourinho’s long Champions League heritage had included a moment like this, though his wild celebration was familiar. Benfica were beating Real Madrid 3-2, and Mourinho’s former club were already dropping out of the top eight. “I was told [the scoreline] is enough, so let’s close the door,” said Mourinho. Continue reading...",
+      "publishedAt": "2026-01-29T14:38:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Palhinha ready for the real Spurs to stand up after Champions League stroll",
+      "link": "https://www.theguardian.com/football/2026/jan/29/joao-palhinha-tottenham-champions-league-premier-thomas-frank",
+      "summary": "Tottenham eased into the last 16 and the midfielder trusts their uplift will provide ‘a big jump’ in the Premier League It was a question most assuredly in keeping with the overall craziness of the situation. Tottenham: 14th in the Premier League, with two wins out of 14 some of their fans beginning to fret about relegation. Also out of both domestic cups. Tottenham: the fourth best team in Europe after the conclusion of the league phase of the Champions League. On a fast-track to the last 16. So, of course, it was put to João Palhinha as he left the stadium after Spurs’s convincing 2-0 win at Eintracht Frankfurt on Wednesday night. Can Spurs win the Champions League? The midfielder’s response was to chuckle. And then laugh a little more. “I know what you want to hear from me,” he said. Continue reading...",
+      "publishedAt": "2026-01-29T14:36:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Brighton to reject £20m Forest bid for Ayari",
+      "link": "https://www.bbc.com/sport/football/articles/c20gyeeexgro?at_medium=RSS&at_campaign=rss",
+      "summary": "Brighton are set to reject a £20m offer from Nottingham Forest for midfielder Yasin Ayari.",
+      "publishedAt": "2026-01-29T14:32:04.000Z"
     },
     {
       "type": "rss",
@@ -183,10 +194,21 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sabalenka through to fourth consecutive Australian Open final against Rybakina",
-      "link": "https://www.skysports.com/tennis/news/12040/13500462/australian-open-aryna-sabalenka-through-to-fourth-consecutive-melbourne-final-against-elena-rybakina",
-      "summary": "Aryna Sabalenka reached her fourth consecutive Australian Open final where she will play Elena Rybakina in a battle of the big-hitters.",
-      "publishedAt": "2026-01-29T12:40:00.000Z"
+      "title": "West Ham latest: Hammers must 'move forward' without Paqueta, says Nuno",
+      "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
+      "summary": "",
+      "publishedAt": "2026-01-29T14:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Palace agree £50m Strand Larsen deal as Forest chase Mateta",
+      "link": "https://www.bbc.com/sport/football/articles/cr7jx97j8jjo?at_medium=RSS&at_campaign=rss",
+      "summary": "Crystal Palace agree a deal in principle worth in the region of £50m to sign Wolves striker Jorgen Strand Larsen.",
+      "publishedAt": "2026-01-29T14:04:50.000Z"
     },
     {
       "type": "rss",
@@ -198,28 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c75x9234gy3o?at_medium=RSS&at_campaign=rss",
       "summary": "Why former England and Chelsea coach Steve Holland could be the key appointment in new boss Michael Carrick's coaching team at Manchester United.",
       "publishedAt": "2026-01-29T12:16:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Football as a content machine: 18 Champions League games was fun but overstuffed | Max Rushden",
-      "link": "https://www.theguardian.com/football/2026/jan/29/football-content-machine-18-champions-league-games-fun-but-overstuffed",
-      "summary": "The joy of the game is that big moments are rare – the climax of the UCL group phase felt like too much of a good thing It’s half an hour after attempting to watch 18 football matches at the same time on the final match day of the Champions League group stage, so it’s still a little early to tell whether I think it was a brilliant night of football or not. The information overload from a TV, laptop and phone means I may need a couple of weeks to really process it – by which time of course this will all be forgotten and we’ll be wondering whether one point from three Premier League games is enough for Thomas Frank to keep his job. Continue reading...",
-      "publishedAt": "2026-01-29T12:06:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Do Villa have the legs to end their 30-year trophy drought?",
-      "link": "https://www.bbc.com/sport/football/articles/cly3p24nnp2o?at_medium=RSS&at_campaign=rss",
-      "summary": "An injury crisis and a returning hero. Aston Villa's season continues to take sharp turns.",
-      "publishedAt": "2026-01-29T11:52:47.000Z"
     }
   ]
 }
