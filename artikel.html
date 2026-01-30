@@ -499,74 +499,43 @@
   (function(){
     const params = new URLSearchParams(window.location.search);
 
-    // Accept multiple param names (for safety across older/newer links)
-    const rawSlug = (
-      params.get("slug") ||
-      params.get("s") ||
-      params.get("article") ||
-      params.get("news") ||
-      params.get("file")
-    );
-
-    const rawId = (
-      params.get("id") ||
-      params.get("newsId") ||
-      params.get("articleId")
-    );
-
-    const slugFromUrl = rawSlug ? String(rawSlug).trim() : "";
+    // ✅ ID-only detail page (backend supports /api/news/:id)
+    const rawId = params.get("id") || params.get("newsId") || params.get("articleId");
     const idFromUrl = rawId ? String(rawId).trim() : "";
 
     const isSha1 = (v) => /^[a-f0-9]{40}$/i.test(String(v || "").trim());
+    const articleId = isSha1(idFromUrl) ? idFromUrl : "";
 
-    // Decide lookup strategy:
-    // - If we have a real SHA1 id => fetch by id
-    // - Else if we have a slug-like string => fetch by slug
-    // - Else if we only have an id param but it's not a sha1 (older bug: id was filled with slug) => treat as slug
-    let lookup = null;
-    if (idFromUrl && isSha1(idFromUrl)) {
-      lookup = { type: "id", value: idFromUrl };
-    } else if (slugFromUrl) {
-      lookup = { type: "slug", value: slugFromUrl };
-    } else if (idFromUrl) {
-      lookup = { type: "slug", value: idFromUrl };
-    }
+    console.log("[ARTIKEL] URL params:", { id: articleId || null });
 
-    console.log("[ARTIKEL] URL params:", { slug: slugFromUrl || null, id: idFromUrl || null, lookup });
+    // NOTE: we keep the UI states below; if ID is missing/invalid we show the error state.
+    const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
 
-    if (!lookup) {
-      console.error("[ARTIKEL] Missing slug/id parameter in URL");
-      setState("error");
-      return;
-    }
-  
-  const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    async function fetchJsonWithRetry(url, { timeoutMs = 9000, tries = 5, baseDelayMs = 650 } = {}) {
+      let lastErr = null;
 
-  async function fetchJsonWithRetry(url, { timeoutMs = 9000, tries = 5, baseDelayMs = 650 } = {}) {
-    let lastErr = null;
+      for (let i = 0; i < tries; i++) {
+        const controller = new AbortController();
+        const t = setTimeout(() => controller.abort(), timeoutMs);
 
-    for (let i = 0; i < tries; i++) {
-      const controller = new AbortController();
-      const t = setTimeout(() => controller.abort(), timeoutMs);
-
-      try {
-        const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        return await res.json();
-      } catch (e) {
-        lastErr = e;
-        const wait = baseDelayMs * (i + 1);
-        console.warn('[ARTIKEL] retry', i + 1, 'in', wait, 'ms:', e?.message || e);
-        await sleep(wait);
-      } finally {
-        clearTimeout(t);
+        try {
+          const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return await res.json();
+        } catch (e) {
+          lastErr = e;
+          const wait = baseDelayMs * (i + 1);
+          console.warn('[ARTIKEL] retry', i + 1, 'in', wait, 'ms:', e?.message || e);
+          await sleep(wait);
+        } finally {
+          clearTimeout(t);
+        }
       }
-    }
 
-    throw lastErr || new Error('fetchJsonWithRetry failed');
-  }
+      throw lastErr || new Error('fetchJsonWithRetry failed');
+    }
 
   function resolveImageUrl(raw) {
     if (!raw) return null;
@@ -771,152 +740,37 @@
   scheduleAdSense();
   window.addEventListener('load', () => scheduleAdSense());
   
-  console.log('[ARTIKEL] Fetching article from API...', lookup);
+  // console.log('[ARTIKEL] Fetching article from API...', lookup);
    
   // 4.3: laad 1 artikel op basis van id/slug
   setState("loading");
 
 
-  async function fetchJson(url) {
-    const controller = new AbortController();
-    const t = setTimeout(() => controller.abort(), 9000);
-    try {
-      const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
-      const text = await res.text();
-      let json = null;
-      try { json = text ? JSON.parse(text) : null; } catch (_) { json = null; }
-      return { ok: res.ok, status: res.status, json, text };
-    } finally {
-      clearTimeout(t);
-    }
-  }
-
-  async function resolveArticleBySlug(slug) {
-    const safe = encodeURIComponent(slug);
-
-    // 0) Try query-style slug lookup (backend MAY ignore the slug param).
-    // Only accept the response if it actually matches the requested slug.
-    let r = await fetchJson(`${API_BASE}/api/news?slug=${safe}&nocache=${Date.now()}`);
-    if (r.ok && r.json) {
-      const want = String(slug || '').trim();
-
-      const candidate = r.json.item
-        ? r.json.item
-        : (Array.isArray(r.json.items) && r.json.items[0] ? r.json.items[0] : null);
-
-      const got = String(candidate?.slug || '').trim();
-
-      // If backend ignored the slug param, it will return the first list item (wrong).
-      if (candidate && got && got === want) {
-        return candidate;
-      }
-
-      // Otherwise: continue to other strategies.
-      console.warn('[ARTIKEL] /api/news?slug=... did not match requested slug; continuing', { want, got });
-    }
-
-    // 1) Try legacy slug endpoint (may be removed server-side)
-    r = await fetchJson(`${API_BASE}/api/news/slug/${safe}?nocache=${Date.now()}`);
-    if (r.ok && r.json && r.json.item) return r.json.item;
-
-    // 2) Try direct path by slug (some APIs use /api/news/:slug)
-    r = await fetchJson(`${API_BASE}/api/news/${safe}?nocache=${Date.now()}`);
-    if (r.ok && r.json) {
-      if (r.json.item) return r.json.item;
-      return r.json;
-    }
-
-    // 3) Try list endpoint and match slug client-side (DB-cache shape: {items:[...]})
-    r = await fetchJson(`${API_BASE}/api/news?limit=200&nocache=${Date.now()}`);
-    const items = r?.json?.items || [];
-    const want = String(slug || '').trim();
-    const hit = items.find(x => String(x?.slug || '').trim() === want);
-
-    if (hit && hit.id) {
-      const id = encodeURIComponent(String(hit.id));
-
-      // 4) Fetch full article by id (support multiple backend route shapes)
-      const candidates = [
-        `${API_BASE}/api/news/${id}?nocache=${Date.now()}`,
-        `${API_BASE}/api/news/id/${id}?nocache=${Date.now()}`,
-        `${API_BASE}/api/news/item/${id}?nocache=${Date.now()}`,
-        `${API_BASE}/api/news/by-id/${id}?nocache=${Date.now()}`
-      ];
-
-      for (const url of candidates) {
-        const byId = await fetchJson(url);
-        if (byId.ok && byId.json) {
-          if (byId.json.item) return byId.json.item;
-          return byId.json;
-        }
-      }
-    }
-
-    // Final fallback: if the list item already contains body (rare), return it
-    if (hit) return hit;
-
-    throw new Error('Article not found for slug');
-  }
-
-  async function resolveArticleById(id) {
-    const safe = encodeURIComponent(id);
-
-    const candidates = [
-      `${API_BASE}/api/news/${safe}?nocache=${Date.now()}`,
-      `${API_BASE}/api/news/id/${safe}?nocache=${Date.now()}`,
-      `${API_BASE}/api/news/item/${safe}?nocache=${Date.now()}`,
-      `${API_BASE}/api/news/by-id/${safe}?nocache=${Date.now()}`
-    ];
-
-    for (const url of candidates) {
-      const r = await fetchJson(url);
-      if (r.ok && r.json) {
-        if (r.json.item) return r.json.item;
-        return r.json;
-      }
-    }
-
-    throw new Error('Article not found for id');
-  }
 
     (async () => {
       try {
-        // Small start delay to avoid racing backend during pipeline/cache refresh
-        await sleep(700);
+        setState("loading");
 
-        let article = null;
-        const value = lookup?.value;
-        const isSha1 = (v) => /^[a-f0-9]{40}$/i.test(String(v || "").trim());
-
-        if (lookup.type === "id") {
-          // Normal case: fetch by id
-          try {
-            article = await resolveArticleById(value);
-          } catch (e) {
-            // Safety: if id param accidentally contains a slug, try slug resolution
-            console.warn("[ARTIKEL] id lookup failed; trying slug fallback", e?.message || e);
-            article = await resolveArticleBySlug(value);
-          }
-        } else {
-          // Normal case: fetch by slug
-          try {
-            article = await resolveArticleBySlug(value);
-          } catch (e) {
-            // Safety: if slug looks like a sha1 id, try id resolution
-            if (isSha1(value)) {
-              console.warn("[ARTIKEL] slug lookup failed but value looks like id; trying id fallback", e?.message || e);
-              article = await resolveArticleById(value);
-            } else {
-              throw e;
-            }
-          }
+        if (!articleId) {
+          console.error('[ARTIKEL] Missing/invalid id param (expected 40-char sha1)');
+          setState('error');
+          return;
         }
 
-        if (!article) throw new Error('Invalid payload: missing article');
+        // Small start delay to avoid racing backend during pipeline/cache refresh
+        await sleep(250);
+
+        const url = `${API_BASE}/api/news/${encodeURIComponent(articleId)}?nocache=${Date.now()}`;
+        console.log('[ARTIKEL] Fetching article by id:', articleId);
+
+        const json = await fetchJsonWithRetry(url, { tries: 5, timeoutMs: 9000 });
+        const article = json && (json.item ? json.item : json);
+
+        if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
         console.log('[ARTIKEL] ✅ Article found via API:', article.title);
         const ok = displayArticle(article);
-        setState(ok ? "content" : "error");
+        setState(ok ? 'content' : 'error');
 
         if (ok) {
           // Ensure ad slots are visible before pushing
@@ -924,7 +778,7 @@
         }
       } catch (err) {
         console.error('[ARTIKEL] ❌ Failed to load article:', err);
-        setState("error");
+        setState('error');
       }
     })();
   
