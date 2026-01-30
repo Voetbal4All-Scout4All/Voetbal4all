@@ -2616,3 +2616,17 @@ img {
     background-color: rgba(11, 16, 34, 0.18) !important;
     background-image: none !important;
   }
+
+  /* =======================
+   ARTIKELS.html – MATCH BACKGROUND TRANSPARENCY
+   Zorg dat het VELD achter de artikels even transparant is
+   ======================= */
+
+@supports selector(.card:has(#article-list)) {
+  .card:has(#article-list) {
+    background: rgba(11, 16, 34, 0.06) !important; /* zelfde als rows */
+    backdrop-filter: blur(4px);
+    box-shadow: none !important;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+}
