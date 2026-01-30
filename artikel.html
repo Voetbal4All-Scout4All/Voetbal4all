@@ -766,11 +766,25 @@
   async function resolveArticleBySlug(slug) {
     const safe = encodeURIComponent(slug);
 
-    // 0) Try query-style slug lookup (some backends expose this)
+    // 0) Try query-style slug lookup (backend MAY ignore the slug param).
+    // Only accept the response if it actually matches the requested slug.
     let r = await fetchJson(`${API_BASE}/api/news?slug=${safe}&nocache=${Date.now()}`);
     if (r.ok && r.json) {
-      if (r.json.item) return r.json.item;
-      if (Array.isArray(r.json.items) && r.json.items[0]) return r.json.items[0];
+      const want = String(slug || '').trim();
+
+      const candidate = r.json.item
+        ? r.json.item
+        : (Array.isArray(r.json.items) && r.json.items[0] ? r.json.items[0] : null);
+
+      const got = String(candidate?.slug || '').trim();
+
+      // If backend ignored the slug param, it will return the first list item (wrong).
+      if (candidate && got && got === want) {
+        return candidate;
+      }
+
+      // Otherwise: continue to other strategies.
+      console.warn('[ARTIKEL] /api/news?slug=... did not match requested slug; continuing', { want, got });
     }
 
     // 1) Try legacy slug endpoint (may be removed server-side)
@@ -787,7 +801,8 @@
     // 3) Try list endpoint and match slug client-side (DB-cache shape: {items:[...]})
     r = await fetchJson(`${API_BASE}/api/news?limit=200&nocache=${Date.now()}`);
     const items = r?.json?.items || [];
-    const hit = items.find(x => String(x?.slug || '').trim() === String(slug).trim());
+    const want = String(slug || '').trim();
+    const hit = items.find(x => String(x?.slug || '').trim() === want);
 
     if (hit && hit.id) {
       const id = encodeURIComponent(String(hit.id));
