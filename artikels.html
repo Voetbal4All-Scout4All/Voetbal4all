@@ -725,8 +725,8 @@ let lastRenderKey = "";
             <div class="ad-card-header" style="display:flex; gap:12px; align-items:flex-start;">
             ${thumbHtml}
               <div style="min-width:0;flex:1;">
-                <a class="ad-card-title" href="${url}" style="text-decoration:none; color:inherit;">${title}</a>
-                <div class="ad-card-meta">
+                <a class="ad-card-title" href="${url}" style="display:block; text-decoration:none; color:inherit; line-height:1.25;">${title}</a>
+                <div class="ad-card-meta" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
                   ${flagHtml(cc)}
                   <span class="ad-card-meta__country">${countryLabel(cc)}</span>
                   ${category ? `<span class="ad-card-meta__sep">·</span><span class="ad-card-meta__cat">${category}</span>` : ""}
