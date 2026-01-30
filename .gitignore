@@ -9,7 +9,3 @@ package-lock.json
 
 # local helper scripts
 *.sh
-
-# --- Brand rollout backups (NOOIT committen) ---
-_backup_brand_*/
-_backup_brand_assets_*/
