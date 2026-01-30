@@ -148,16 +148,23 @@ footer { margin-top: auto; }
 .brand--logo-only { gap: 0; }
 
 /* Logo (houdt ratio correct + vult navbar bijna volledig) */
-.brand-logo {
-  height: 88px; /* EXTRA groter navbar logo, visueel dominant maar layout-safe */
+/* NAVBAR LOGO — visueel groter ZONDER layout impact */
+.brand-logo{
+  height: 88px;              /* layout-anker: NIET verhogen */
   width: auto;
   display: block;
   object-fit: contain;
 
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
+  /* visueel vergroten zonder andere elementen te duwen */
+  transform: scale(1.28);
+  transform-origin: left center;
+}
+
+@media (max-width: 600px){
+  .brand-logo{
+    height: 64px;
+    transform: scale(1.18);
+  }
 }
 
 /* Forceer logo look op alle pagina's (defensief) */
