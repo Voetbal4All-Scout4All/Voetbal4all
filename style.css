@@ -1410,7 +1410,7 @@ ins.adsbygoogle iframe{
 .ad-card-list--stack .card,
 .ad-card-list--stack .ad-card {
   /* iets transparanter zodat de achtergrond (watermark) subtiel zichtbaar wordt */
-  background: rgba(11, 16, 34, 0.72) !important; /* var(--bg-soft) maar “glass” */
+  background: rgba(11, 16, 34, 0.55) !important; /* var(--bg-soft) maar “glass” */
   backdrop-filter: blur(10px);
 }
 
@@ -1427,7 +1427,7 @@ ins.adsbygoogle iframe{
   .card:has(#article-list) .ad-card--row,
   .card:has(#article-list) .article-item,
   .card:has(#article-list) .article-list > * {
-    background: rgba(11, 16, 34, 0.58) !important;
+    background: rgba(11, 16, 34, 0.48) !important;
   }
 
   /* Pagination container card (if present) */
