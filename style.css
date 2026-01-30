@@ -2635,3 +2635,18 @@ img {
 #article-list * {
   border: none !important;
 }
+
+/* =======================
+   GLOBAL (EXCEPT INDEX) – MAIN CONTENT BLOCKS: subtle glass background
+   - Applies on all pages except index.html
+   - Only adjusts the background transparency of the main .card blocks
+   ======================= */
+
+@supports selector(body:has(.home-top-grid)) {
+  /* Exclude index.html by detecting the home grid that exists on the homepage */
+  body:not(:has(.home-top-grid)) main .card {
+    background: rgba(11, 16, 34, 0.18) !important;
+  }
+}
+
+/* Fallback (browsers without :has): keep current behavior (no global change) */
