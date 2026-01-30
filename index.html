@@ -962,12 +962,12 @@
                       </div>
                     `;
 
-                // --- SLUG-FIRST URL LOGIC ---
+                // --- ID-FIRST URL LOGIC (artikel.html expects id; slug is fallback) ---
                 const slug = String(a?.slug || "").trim();
                 const id = String(a?.id || "").trim();
-                const articleUrl = slug
-                  ? ("artikel.html?slug=" + encodeURIComponent(slug))
-                  : (id ? ("artikel.html?id=" + encodeURIComponent(id)) : "artikels.html");
+                const articleUrl = id
+                  ? ("artikel.html?id=" + encodeURIComponent(id))
+                  : (slug ? ("artikel.html?slug=" + encodeURIComponent(slug)) : "artikels.html");
 
                 const articleHtml = `
                   <article class="home-news__item">
