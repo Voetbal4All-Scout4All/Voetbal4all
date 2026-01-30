@@ -149,21 +149,22 @@ footer { margin-top: auto; }
 
 /* Logo (houdt ratio correct + vult navbar bijna volledig) */
 /* NAVBAR LOGO — visueel groter ZONDER layout impact */
-.brand-logo{
-  height: 88px;              /* layout-anker: NIET verhogen */
-  width: auto;
-  display: block;
-  object-fit: contain;
+  .brand-logo{
+    height: 88px;              /* layout-anker: NIET verhogen */
+    width: auto;
+    display: block;
+    object-fit: contain;
 
-  /* visueel vergroten zonder andere elementen te duwen */
-  transform: translateX(-18px) scale(1.55);
-  transform-origin: left center;
-}
+    /* visueel groter + verder naar links, zonder layout te duwen */
+    transform: translateX(-32px) scale(1.72);
+    transform-origin: left center;
+  }
 
 @media (max-width: 600px){
   .brand-logo{
     height: 64px;
-    transform: scale(1.18);
+    transform: translateX(-14px) scale(1.28);
+    transform-origin: left center;
   }
 }
 
