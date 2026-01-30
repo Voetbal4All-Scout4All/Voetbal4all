@@ -2583,9 +2583,19 @@ img {
    Scope: ONLY inside #article-list.
    ======================= */
 
+/* === ARTIKELS.html – TRUE GLASS MODE === */
 #article-list.ad-card-list--stack .ad-card {
-  background: rgba(11, 16, 34, 0.14) !important;
-  background-image: none !important;
+  background: rgba(11, 16, 34, 0.06) !important;
+  backdrop-filter: blur(4px);
+  box-shadow: none !important;        /* <-- SHADOW WAS MASKING TRANSPARENCY */
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Kill any remaining painted wrapper layers */
+#article-list.ad-card-list--stack *,
+#article-list.ad-card-list--stack *::before,
+#article-list.ad-card-list--stack *::after {
+  background-color: transparent !important;
 }
   
   /* Prevent inner wrappers from staying opaque */
