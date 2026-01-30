@@ -668,8 +668,6 @@ let lastRenderKey = "";
         const title = cleanTitle(a.title);
 
         const id = (a && a.id) ? String(a.id).trim() : "";
-
-        // ✅ We always link by id. Backend supports `/api/news/:id` (200) while slug routes can be 404.
         if (!id) {
           console.warn("[ARTIKELS] Missing id for article, skipping card:", a);
           return "";
@@ -700,18 +698,20 @@ let lastRenderKey = "";
 
         const thumbHtml = imgSrc
           ? `
-            <img
-              src="${imgSrc}"
-              alt="${safeTitleAttr}"
-              loading="${idx < 6 ? "eager" : "lazy"}"
-              decoding="async"
-              fetchpriority="${idx < 2 ? "high" : "low"}"
-              referrerpolicy="no-referrer"
-              width="96"
-              height="64"
-              style="width:96px;height:64px;object-fit:cover;border-radius:10px;"
-              onerror="this.onerror=null;this.style.display='none';"
-            />
+            <a href="${url}" aria-label="Lees artikel" style="display:inline-block;">
+              <img
+                src="${imgSrc}"
+                alt="${safeTitleAttr}"
+                loading="${idx < 6 ? "eager" : "lazy"}"
+                decoding="async"
+                fetchpriority="${idx < 2 ? "high" : "low"}"
+                referrerpolicy="no-referrer"
+                width="96"
+                height="64"
+                style="width:96px;height:64px;object-fit:cover;border-radius:10px;"
+                onerror="this.onerror=null;this.style.display='none';"
+              />
+            </a>
           `.trim()
           : `
             <div
@@ -721,11 +721,11 @@ let lastRenderKey = "";
           `.trim();
 
         return `
-          <article class="ad-card" data-article-id="${id}">
+          <article class="ad-card" data-article-id="${id}" data-article-url="${url}">
             <div class="ad-card-header" style="display:flex; gap:12px; align-items:flex-start;">
             ${thumbHtml}
               <div style="min-width:0;flex:1;">
-                <div class="ad-card-title">${title}</div>
+                <a class="ad-card-title" href="${url}" style="text-decoration:none; color:inherit;">${title}</a>
                 <div class="ad-card-meta">
                   ${flagHtml(cc)}
                   <span class="ad-card-meta__country">${countryLabel(cc)}</span>
