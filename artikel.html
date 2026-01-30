@@ -496,21 +496,49 @@
 <script src="assets/js/image-utils.js"></script>
 
 <script>
-(function(){
-  const params = new URLSearchParams(window.location.search);
-  const slugFromUrl = params.get("slug");
-  const idFromUrl = params.get("id");
+  (function(){
+    const params = new URLSearchParams(window.location.search);
 
-  console.log("[ARTIKEL] URL params:", { slug: slugFromUrl, id: idFromUrl });
+    // Accept multiple param names (for safety across older/newer links)
+    const rawSlug = (
+      params.get("slug") ||
+      params.get("s") ||
+      params.get("article") ||
+      params.get("news") ||
+      params.get("file")
+    );
 
-  // Prefer slug (stable), fallback to id (legacy)
-  const lookup = slugFromUrl ? { type: "slug", value: slugFromUrl } : (idFromUrl ? { type: "id", value: idFromUrl } : null);
+    const rawId = (
+      params.get("id") ||
+      params.get("newsId") ||
+      params.get("articleId")
+    );
 
-  if (!lookup) {
-    console.error("[ARTIKEL] Missing slug/id parameter in URL");
-    setState("error");
-    return;
-  }
+    const slugFromUrl = rawSlug ? String(rawSlug).trim() : "";
+    const idFromUrl = rawId ? String(rawId).trim() : "";
+
+    const isSha1 = (v) => /^[a-f0-9]{40}$/i.test(String(v || "").trim());
+
+    // Decide lookup strategy:
+    // - If we have a real SHA1 id => fetch by id
+    // - Else if we have a slug-like string => fetch by slug
+    // - Else if we only have an id param but it's not a sha1 (older bug: id was filled with slug) => treat as slug
+    let lookup = null;
+    if (idFromUrl && isSha1(idFromUrl)) {
+      lookup = { type: "id", value: idFromUrl };
+    } else if (slugFromUrl) {
+      lookup = { type: "slug", value: slugFromUrl };
+    } else if (idFromUrl) {
+      lookup = { type: "slug", value: idFromUrl };
+    }
+
+    console.log("[ARTIKEL] URL params:", { slug: slugFromUrl || null, id: idFromUrl || null, lookup });
+
+    if (!lookup) {
+      console.error("[ARTIKEL] Missing slug/id parameter in URL");
+      setState("error");
+      return;
+    }
   
   const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
 
@@ -851,34 +879,54 @@
     throw new Error('Article not found for id');
   }
 
-  (async () => {
-    try {
-      // Small start delay to avoid racing backend during pipeline/cache refresh
-      await sleep(700);
+    (async () => {
+      try {
+        // Small start delay to avoid racing backend during pipeline/cache refresh
+        await sleep(700);
 
-      let article = null;
+        let article = null;
+        const value = lookup?.value;
+        const isSha1 = (v) => /^[a-f0-9]{40}$/i.test(String(v || "").trim());
 
-      if (lookup.type === "slug") {
-        article = await resolveArticleBySlug(lookup.value);
-      } else {
-        article = await resolveArticleById(lookup.value);
+        if (lookup.type === "id") {
+          // Normal case: fetch by id
+          try {
+            article = await resolveArticleById(value);
+          } catch (e) {
+            // Safety: if id param accidentally contains a slug, try slug resolution
+            console.warn("[ARTIKEL] id lookup failed; trying slug fallback", e?.message || e);
+            article = await resolveArticleBySlug(value);
+          }
+        } else {
+          // Normal case: fetch by slug
+          try {
+            article = await resolveArticleBySlug(value);
+          } catch (e) {
+            // Safety: if slug looks like a sha1 id, try id resolution
+            if (isSha1(value)) {
+              console.warn("[ARTIKEL] slug lookup failed but value looks like id; trying id fallback", e?.message || e);
+              article = await resolveArticleById(value);
+            } else {
+              throw e;
+            }
+          }
+        }
+
+        if (!article) throw new Error('Invalid payload: missing article');
+
+        console.log('[ARTIKEL] ✅ Article found via API:', article.title);
+        const ok = displayArticle(article);
+        setState(ok ? "content" : "error");
+
+        if (ok) {
+          // Ensure ad slots are visible before pushing
+          scheduleAdSense();
+        }
+      } catch (err) {
+        console.error('[ARTIKEL] ❌ Failed to load article:', err);
+        setState("error");
       }
-
-      if (!article) throw new Error('Invalid payload: missing article');
-
-      console.log('[ARTIKEL] ✅ Article found via API:', article.title);
-      const ok = displayArticle(article);
-      setState(ok ? "content" : "error");
-
-      if (ok) {
-        // Ensure ad slots are visible before pushing
-        scheduleAdSense();
-      }
-    } catch (err) {
-      console.error('[ARTIKEL] ❌ Failed to load article:', err);
-      setState("error");
-    }
-  })();
+    })();
   
   function displayArticle(article) {
     console.log('[ARTIKEL] Displaying article:', article.title);
