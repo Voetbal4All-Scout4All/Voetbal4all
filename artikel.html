@@ -748,18 +748,68 @@
   // 4.3: laad 1 artikel op basis van id/slug
   setState("loading");
 
-  const endpoint = (lookup.type === "slug")
-    ? `${API_BASE}/api/news/slug/${encodeURIComponent(lookup.value)}`
-    : `${API_BASE}/api/news/${encodeURIComponent(lookup.value)}`;
+
+  async function fetchJson(url) {
+    const controller = new AbortController();
+    const t = setTimeout(() => controller.abort(), 9000);
+    try {
+      const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
+      const text = await res.text();
+      let json = null;
+      try { json = text ? JSON.parse(text) : null; } catch (_) { json = null; }
+      return { ok: res.ok, status: res.status, json, text };
+    } finally {
+      clearTimeout(t);
+    }
+  }
+
+  async function resolveArticleBySlug(slug) {
+    const safe = encodeURIComponent(slug);
+
+    // 1) Try legacy slug endpoint (may be removed server-side)
+    let r = await fetchJson(`${API_BASE}/api/news/slug/${safe}`);
+    if (r.ok && r.json && r.json.item) return r.json.item;
+
+    // 2) Try list endpoint and match slug client-side (DB-cache shape: {items:[...]})
+    r = await fetchJson(`${API_BASE}/api/news?limit=200&nocache=${Date.now()}`);
+    const items = r?.json?.items || [];
+    const hit = items.find(x => String(x?.slug || '').trim() === String(slug).trim());
+    if (hit && hit.id) {
+      // 3) Fetch full article by id (stable)
+      const byId = await fetchJson(`${API_BASE}/api/news/${encodeURIComponent(hit.id)}`);
+      if (byId.ok && byId.json && byId.json.item) return byId.json.item;
+      // If backend returns item directly instead of {item}
+      if (byId.ok && byId.json && !byId.json.item) return byId.json;
+    }
+
+    // Final fallback: if the list item already contains body (rare), return it
+    if (hit) return hit;
+
+    throw new Error('Article not found for slug');
+  }
+
+  async function resolveArticleById(id) {
+    const safe = encodeURIComponent(id);
+    const r = await fetchJson(`${API_BASE}/api/news/${safe}`);
+    if (r.ok && r.json && r.json.item) return r.json.item;
+    if (r.ok && r.json && !r.json.item) return r.json;
+    throw new Error('Article not found for id');
+  }
 
   (async () => {
     try {
       // Small start delay to avoid racing backend during pipeline/cache refresh
       await sleep(700);
 
-      const data = await fetchJsonWithRetry(endpoint, { timeoutMs: 9000, tries: 5, baseDelayMs: 650 });
-      const article = data?.item;
-      if (!article) throw new Error('Invalid payload: missing item');
+      let article = null;
+
+      if (lookup.type === "slug") {
+        article = await resolveArticleBySlug(lookup.value);
+      } else {
+        article = await resolveArticleById(lookup.value);
+      }
+
+      if (!article) throw new Error('Invalid payload: missing article');
 
       console.log('[ARTIKEL] ✅ Article found via API:', article.title);
       const ok = displayArticle(article);
