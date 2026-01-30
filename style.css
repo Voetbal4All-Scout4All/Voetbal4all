@@ -149,7 +149,7 @@ footer { margin-top: auto; }
 
 /* Logo (houdt ratio correct + vult navbar bijna volledig) */
 .brand-logo {
-  height: 62px;
+  height: 88px; /* EXTRA groter navbar logo, visueel dominant maar layout-safe */
   width: auto;
   display: block;
   object-fit: contain;
@@ -173,7 +173,7 @@ footer { margin-top: auto; }
 
 @media (max-width: 600px) {
   .navbar-inner { height: 58px; }
-  .brand-logo { height: 50px; }
+  .brand-logo { height: 64px; }
 }
 
 .brand-mark {
