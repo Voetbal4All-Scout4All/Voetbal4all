@@ -156,14 +156,14 @@ footer { margin-top: auto; }
     object-fit: contain;
 
     /* visueel groter + verder naar links, zonder layout te duwen */
-    transform: translateX(-32px) scale(1.72);
+    transform: translateX(-56px) scale(1.72);
     transform-origin: left center;
   }
 
 @media (max-width: 600px){
   .brand-logo{
     height: 64px;
-    transform: translateX(-14px) scale(1.28);
+    transform: translateX(-24px) scale(1.28);
     transform-origin: left center;
   }
 }
