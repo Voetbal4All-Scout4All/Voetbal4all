@@ -667,17 +667,18 @@ let lastRenderKey = "";
       function renderCard(a, idx = 0){
         const title = cleanTitle(a.title);
 
-        const slug = safe(a.slug).trim();
-        const id = safe(a.id).trim();
+        const slug = (a && a.slug) ? String(a.slug).trim() : "";
+        const id = (a && a.id) ? String(a.id).trim() : "";
 
-        if (!slug && !id) {
-          console.warn("[ARTIKELS] Missing slug/id for article, skipping link:", a);
-          return;
+        if (!id && !slug) {
+          console.warn("[ARTIKELS] Missing id/slug for article, skipping card:", a);
+          return "";
         }
 
-        const url = slug
-          ? ("artikel.html?slug=" + encodeURIComponent(slug))
-          : ("artikel.html?id=" + encodeURIComponent(id));
+        // Prefer id (stable detail route: /api/news/:id). Slug is a fallback only.
+        const url = id
+          ? ("artikel.html?id=" + encodeURIComponent(id))
+          : ("artikel.html?slug=" + encodeURIComponent(slug));
 
         const cc = inferCountry(a);
         const categoryRaw = safe(a.category || "");
