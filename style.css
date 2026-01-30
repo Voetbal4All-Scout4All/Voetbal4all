@@ -2587,8 +2587,8 @@ img {
 #article-list.ad-card-list--stack .ad-card {
   background: rgba(11, 16, 34, 0.06) !important;
   backdrop-filter: blur(4px);
-  box-shadow: none !important;        /* <-- SHADOW WAS MASKING TRANSPARENCY */
-  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: none !important;
+  border: none !important;          /* VERWIJDER KADER ROND ARTIKELS */
 }
 
 /* Kill any remaining painted wrapper layers */
@@ -2624,9 +2624,14 @@ img {
 
 @supports selector(.card:has(#article-list)) {
   .card:has(#article-list) {
-    background: rgba(11, 16, 34, 0.06) !important; /* zelfde als rows */
+    background: rgba(11, 16, 34, 0.06) !important;
     backdrop-filter: blur(4px);
     box-shadow: none !important;
-    border: 1px solid rgba(255,255,255,0.06);
+    border: none !important;        /* VERWIJDER KADER ACHTER ARTIKELS */
   }
+}
+
+#article-list,
+#article-list * {
+  border: none !important;
 }
