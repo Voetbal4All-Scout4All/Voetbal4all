@@ -1422,12 +1422,20 @@ ins.adsbygoogle iframe{
     backdrop-filter: blur(12px);
   }
 
-  /* Make the actual article items inside the overview card slightly transparent too */
+  /* Force transparency on the *actual* rendered list rows inside #article-list */
+  .card:has(#article-list) #article-list > *,
+  .card:has(#article-list) #article-list > * > *,
   .card:has(#article-list) .ad-card,
   .card:has(#article-list) .ad-card--row,
   .card:has(#article-list) .article-item,
   .card:has(#article-list) .article-list > * {
-    background: rgba(11, 16, 34, 0.36) !important;
+    background-color: rgba(11, 16, 34, 0.28) !important;
+    background-image: none !important;
+  }
+
+  /* If the row is an <a> link wrapper, ensure it doesn't stay opaque */
+  .card:has(#article-list) #article-list a {
+    background-color: transparent !important;
   }
 
   /* Pagination container card (if present) */
