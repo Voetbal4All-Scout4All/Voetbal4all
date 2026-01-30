@@ -1422,6 +1422,14 @@ ins.adsbygoogle iframe{
     backdrop-filter: blur(12px);
   }
 
+  /* Make the actual article items inside the overview card slightly transparent too */
+  .card:has(#article-list) .ad-card,
+  .card:has(#article-list) .ad-card--row,
+  .card:has(#article-list) .article-item,
+  .card:has(#article-list) .article-list > * {
+    background: rgba(11, 16, 34, 0.58) !important;
+  }
+
   /* Pagination container card (if present) */
   .card:has(#pagination) {
     background: rgba(11, 16, 34, 0.62) !important;
