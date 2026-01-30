@@ -156,7 +156,7 @@ footer { margin-top: auto; }
   object-fit: contain;
 
   /* visueel vergroten zonder andere elementen te duwen */
-  transform: scale(1.42);
+  transform: translateX(-18px) scale(1.55);
   transform-origin: left center;
 }
 
