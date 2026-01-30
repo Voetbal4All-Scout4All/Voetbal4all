@@ -766,20 +766,47 @@
   async function resolveArticleBySlug(slug) {
     const safe = encodeURIComponent(slug);
 
+    // 0) Try query-style slug lookup (some backends expose this)
+    let r = await fetchJson(`${API_BASE}/api/news?slug=${safe}&nocache=${Date.now()}`);
+    if (r.ok && r.json) {
+      if (r.json.item) return r.json.item;
+      if (Array.isArray(r.json.items) && r.json.items[0]) return r.json.items[0];
+    }
+
     // 1) Try legacy slug endpoint (may be removed server-side)
-    let r = await fetchJson(`${API_BASE}/api/news/slug/${safe}`);
+    r = await fetchJson(`${API_BASE}/api/news/slug/${safe}?nocache=${Date.now()}`);
     if (r.ok && r.json && r.json.item) return r.json.item;
 
-    // 2) Try list endpoint and match slug client-side (DB-cache shape: {items:[...]})
+    // 2) Try direct path by slug (some APIs use /api/news/:slug)
+    r = await fetchJson(`${API_BASE}/api/news/${safe}?nocache=${Date.now()}`);
+    if (r.ok && r.json) {
+      if (r.json.item) return r.json.item;
+      return r.json;
+    }
+
+    // 3) Try list endpoint and match slug client-side (DB-cache shape: {items:[...]})
     r = await fetchJson(`${API_BASE}/api/news?limit=200&nocache=${Date.now()}`);
     const items = r?.json?.items || [];
     const hit = items.find(x => String(x?.slug || '').trim() === String(slug).trim());
+
     if (hit && hit.id) {
-      // 3) Fetch full article by id (stable)
-      const byId = await fetchJson(`${API_BASE}/api/news/${encodeURIComponent(hit.id)}`);
-      if (byId.ok && byId.json && byId.json.item) return byId.json.item;
-      // If backend returns item directly instead of {item}
-      if (byId.ok && byId.json && !byId.json.item) return byId.json;
+      const id = encodeURIComponent(String(hit.id));
+
+      // 4) Fetch full article by id (support multiple backend route shapes)
+      const candidates = [
+        `${API_BASE}/api/news/${id}?nocache=${Date.now()}`,
+        `${API_BASE}/api/news/id/${id}?nocache=${Date.now()}`,
+        `${API_BASE}/api/news/item/${id}?nocache=${Date.now()}`,
+        `${API_BASE}/api/news/by-id/${id}?nocache=${Date.now()}`
+      ];
+
+      for (const url of candidates) {
+        const byId = await fetchJson(url);
+        if (byId.ok && byId.json) {
+          if (byId.json.item) return byId.json.item;
+          return byId.json;
+        }
+      }
     }
 
     // Final fallback: if the list item already contains body (rare), return it
@@ -790,9 +817,22 @@
 
   async function resolveArticleById(id) {
     const safe = encodeURIComponent(id);
-    const r = await fetchJson(`${API_BASE}/api/news/${safe}`);
-    if (r.ok && r.json && r.json.item) return r.json.item;
-    if (r.ok && r.json && !r.json.item) return r.json;
+
+    const candidates = [
+      `${API_BASE}/api/news/${safe}?nocache=${Date.now()}`,
+      `${API_BASE}/api/news/id/${safe}?nocache=${Date.now()}`,
+      `${API_BASE}/api/news/item/${safe}?nocache=${Date.now()}`,
+      `${API_BASE}/api/news/by-id/${safe}?nocache=${Date.now()}`
+    ];
+
+    for (const url of candidates) {
+      const r = await fetchJson(url);
+      if (r.ok && r.json) {
+        if (r.json.item) return r.json.item;
+        return r.json;
+      }
+    }
+
     throw new Error('Article not found for id');
   }
 
