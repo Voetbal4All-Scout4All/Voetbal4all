@@ -2597,3 +2597,12 @@ img {
   #article-list.ad-card-list--stack .ad-card .ad-card-header {
     background-color: transparent !important;
   }
+
+  /* Some builds wrap each item in an <a> or use .ad-card--row as the painted surface */
+  #article-list.ad-card-list--stack > a,
+  #article-list.ad-card-list--stack > a > *,
+  #article-list.ad-card-list--stack .ad-card--row,
+  #article-list.ad-card-list--stack .ad-card--row > * {
+    background-color: rgba(11, 16, 34, 0.18) !important;
+    background-image: none !important;
+  }
