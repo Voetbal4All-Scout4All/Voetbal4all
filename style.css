@@ -2578,3 +2578,22 @@ img {
 }
 /* ===== END EVENTS PREMIUM BADGE (OVERVIEW) ===== */
 
+/* =======================
+   ARTIKELS.html – FINAL GLASS OVERRIDE (highest specificity)
+   Scope: ONLY inside #article-list.
+   ======================= */
+
+   #article-list.ad-card-list--stack .ad-card {
+    background: rgba(11, 16, 34, 0.22) !important;
+    background-image: none !important;
+  }
+  
+  /* Prevent inner wrappers from staying opaque */
+  #article-list.ad-card-list--stack .ad-card > * {
+    background-color: transparent !important;
+  }
+  
+  /* Avoid an opaque strip in the header row */
+  #article-list.ad-card-list--stack .ad-card .ad-card-header {
+    background-color: transparent !important;
+  }
