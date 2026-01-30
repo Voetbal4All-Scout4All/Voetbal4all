@@ -62,13 +62,13 @@ body::before {
   background-attachment: fixed;
 
   /* Keep it visible but never hurt readability */
-  opacity: 0.12; /* iets minder transparant */
+  opacity: 0.16;
   filter: saturate(1.05) contrast(1.05);
 }
 
 @media (max-width: 600px) {
   body::before {
-    opacity: 0.10; /* mobiel iets zichtbaarder, maar veilig */
+    opacity: 0.13;
     background-size: cover;
   }
 }
