@@ -1406,11 +1406,27 @@ ins.adsbygoogle iframe{
    Scoped: enkel binnen de artikellijst-stack
    ======================= */
 
+
 .ad-card-list--stack .card,
 .ad-card-list--stack .ad-card {
   /* iets transparanter zodat de achtergrond (watermark) subtiel zichtbaar wordt */
   background: rgba(11, 16, 34, 0.72) !important; /* var(--bg-soft) maar “glass” */
   backdrop-filter: blur(10px);
+}
+
+/* Outer overview card on artikels.html wraps #article-list.
+   We use :has() so we do NOT touch global .card styling. */
+@supports selector(.card:has(#article-list)) {
+  .card:has(#article-list) {
+    background: rgba(11, 16, 34, 0.62) !important;
+    backdrop-filter: blur(12px);
+  }
+
+  /* Pagination container card (if present) */
+  .card:has(#pagination) {
+    background: rgba(11, 16, 34, 0.62) !important;
+    backdrop-filter: blur(12px);
+  }
 }
 
 /* Artikelkaart als horizontale rij (bronlogo links, tekst rechts) */
