@@ -1401,6 +1401,18 @@ ins.adsbygoogle iframe{
   gap: 10px;
 }
 
+/* =======================
+   ARTIKELS (artikels.html) – laat watermark licht doorkomen
+   Scoped: enkel binnen de artikellijst-stack
+   ======================= */
+
+.ad-card-list--stack .card,
+.ad-card-list--stack .ad-card {
+  /* iets transparanter zodat de achtergrond (watermark) subtiel zichtbaar wordt */
+  background: rgba(11, 16, 34, 0.72) !important; /* var(--bg-soft) maar “glass” */
+  backdrop-filter: blur(10px);
+}
+
 /* Artikelkaart als horizontale rij (bronlogo links, tekst rechts) */
 .ad-card--row{
   display: flex;
