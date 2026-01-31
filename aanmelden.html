@@ -319,6 +319,38 @@
                       <span class="note">Ik wil <strong>Premium</strong> zichtbaarheid voor deze vacature.</span>
                     </label>
                   </div>
+
+                  <div id="jobPremiumOptions" style="display:none;margin-top:10px;">
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Premium-periode *</div>
+                      <select id="jobPremiumDuration" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
+                        <option value="" selected disabled>Kies…</option>
+                        <option value="m1">1 maand</option>
+                        <option value="m2">2 maanden</option>
+                        <option value="m3">3 maanden</option>
+                        <option value="m4">4 maanden</option>
+                        <option value="m5">5 maanden</option>
+                        <option value="m6">6 maanden</option>
+                      </select>
+                    </label>
+
+                    <div style="margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
+                      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+                        <span class="note" style="opacity:.9;">Totaalprijs premium</span>
+                        <strong id="jobPremiumTotalText">€ 0,00</strong>
+                      </div>
+                      <div id="jobPremiumBreakdownText" class="note" style="margin-top:6px;opacity:.85;"></div>
+                    </div>
+
+                    <div id="jobPremiumNudge" style="display:none;margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.25);">
+                      <div id="jobPremiumNudgeText" class="note" style="opacity:.9;margin-bottom:10px;"></div>
+                      <button type="button" id="jobPremiumNudgeBtn" class="btn-ghost-sm" style="color:#fff;">Kies 6 maanden</button>
+                    </div>
+
+                    <div class="note" style="margin-top:8px;opacity:.85;">
+                      De Premium-periode start vanaf vandaag en loopt door gedurende de gekozen duur.
+                    </div>
+                  </div>
                 </div>
 
                 <!-- PROFIEL (TRAINER/SPELER) SPECIFIEK -->
@@ -390,11 +422,44 @@
                       style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;resize:vertical;"></textarea>
                   </label>
 
+
                   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
                     <label style="display:flex;gap:8px;align-items:flex-start;">
                       <input id="profilePremium" type="checkbox" />
                       <span class="note">Ik wil <strong>Premium</strong> zichtbaarheid voor dit profiel.</span>
                     </label>
+                  </div>
+
+                  <div id="profilePremiumOptions" style="display:none;margin-top:10px;">
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Premium-periode *</div>
+                      <select id="profilePremiumDuration" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
+                        <option value="" selected disabled>Kies…</option>
+                        <option value="m1">1 maand</option>
+                        <option value="m2">2 maanden</option>
+                        <option value="m3">3 maanden</option>
+                        <option value="m4">4 maanden</option>
+                        <option value="m5">5 maanden</option>
+                        <option value="m6">6 maanden</option>
+                      </select>
+                    </label>
+
+                    <div style="margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
+                      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+                        <span class="note" style="opacity:.9;">Totaalprijs premium</span>
+                        <strong id="profilePremiumTotalText">€ 0,00</strong>
+                      </div>
+                      <div id="profilePremiumBreakdownText" class="note" style="margin-top:6px;opacity:.85;"></div>
+                    </div>
+
+                    <div id="profilePremiumNudge" style="display:none;margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.25);">
+                      <div id="profilePremiumNudgeText" class="note" style="opacity:.9;margin-bottom:10px;"></div>
+                      <button type="button" id="profilePremiumNudgeBtn" class="btn-ghost-sm" style="color:#fff;">Kies 6 maanden</button>
+                    </div>
+
+                    <div class="note" style="margin-top:8px;opacity:.85;">
+                      De Premium-periode start vanaf vandaag en loopt door gedurende de gekozen duur.
+                    </div>
                   </div>
 
                   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px;">
@@ -548,6 +613,138 @@
       const el = document.getElementById(id);
       return el ? (el.value || '').trim() : '';
     }
+
+    // Premium duration pricing (same launch pricing as events)
+    const PREMIUM_PRICING = {
+      month_1_3: 49.99,
+      month_4_5: 44.99,
+      month_6_total: 249.99,
+    };
+
+    function eur(n) {
+      const x = Number(n) || 0;
+      return '€ ' + x.toFixed(2).replace('.', ',');
+    }
+
+    function calcPremiumMonths(sel) {
+      if (!sel) return { total: 0, effective: 0, unit: '', units: 0, label: '' };
+      const months = parseInt(String(sel).slice(1), 10) || 0;
+      if (!months) return { total: 0, effective: 0, unit: '', units: 0, label: '' };
+
+      if (months === 6) {
+        const total = PREMIUM_PRICING.month_6_total;
+        return {
+          total,
+          effective: total / 6,
+          unit: 'maand',
+          units: 6,
+          label: `6 maanden (vaste prijs ${eur(total)}; ≈ ${eur(total / 6)}/maand)`,
+        };
+      }
+
+      const rate = months <= 3 ? PREMIUM_PRICING.month_1_3 : PREMIUM_PRICING.month_4_5;
+      const total = months * rate;
+      return {
+        total,
+        effective: rate,
+        unit: 'maand',
+        units: months,
+        label: `${months} maanden (${eur(rate)}/maand)`,
+      };
+    }
+
+    function mapPremiumPlanToPackageCode(sel) {
+      if (!sel) return null;
+      if (sel === 'm1' || sel === 'm2' || sel === 'm3') return 'month';
+      if (sel === 'm4' || sel === 'm5') return 'month_4_5';
+      if (sel === 'm6') return 'month_6';
+      return null;
+    }
+
+    function wirePremiumUI(opts) {
+      const {
+        checkboxId,
+        optionsWrapId,
+        durationId,
+        totalTextId,
+        breakdownTextId,
+        nudgeWrapId,
+        nudgeTextId,
+        nudgeBtnId,
+      } = opts;
+
+      const cb = document.getElementById(checkboxId);
+      const wrap = document.getElementById(optionsWrapId);
+      const durationEl = document.getElementById(durationId);
+      const totalEl = document.getElementById(totalTextId);
+      const breakdownEl = document.getElementById(breakdownTextId);
+      const nudgeWrap = document.getElementById(nudgeWrapId);
+      const nudgeText = document.getElementById(nudgeTextId);
+      const nudgeBtn = document.getElementById(nudgeBtnId);
+
+      function render() {
+        const on = !!cb?.checked;
+        if (wrap) wrap.style.display = on ? '' : 'none';
+
+        const sel = (durationEl?.value || '').trim();
+        const r = calcPremiumMonths(sel);
+        if (totalEl) totalEl.textContent = eur(r.total);
+        if (breakdownEl) {
+          if (!sel) breakdownEl.textContent = 'Kies een Premium-periode om de prijs te zien.';
+          else if (r.units === 6) breakdownEl.textContent = `Vaste prijs ${eur(r.total)} (≈ ${eur(r.effective)} / maand)`;
+          else breakdownEl.textContent = `${r.units} maanden × ${eur(r.effective)} / maand`;
+        }
+
+        // Nudge 4/5 -> 6
+        if (nudgeWrap && nudgeText) {
+          const show = on && (sel === 'm4' || sel === 'm5');
+          if (show) {
+            const sixEffective = PREMIUM_PRICING.month_6_total / 6;
+            const diff = PREMIUM_PRICING.month_4_5 - sixEffective;
+            nudgeWrap.style.display = 'block';
+            nudgeText.textContent = `Voor ${sel === 'm4' ? '4' : '5'} maanden betaal je 44,99€/maand. Met 6 maanden betaal je ≈ 41,67€/maand (≈ ${eur(diff)} goedkoper per maand). Let op: de totaalprijs is wel hoger.`;
+          } else {
+            nudgeWrap.style.display = 'none';
+          }
+        }
+      }
+
+      cb && cb.addEventListener('change', render);
+      durationEl && durationEl.addEventListener('change', render);
+      nudgeBtn && durationEl && nudgeBtn.addEventListener('click', function () {
+        durationEl.value = 'm6';
+        render();
+      });
+
+      render();
+
+      return {
+        getSelectedPlan: () => (durationEl?.value || '').trim(),
+        isEnabled: () => !!cb?.checked,
+      };
+    }
+
+    const jobPremiumUI = wirePremiumUI({
+      checkboxId: 'jobPremium',
+      optionsWrapId: 'jobPremiumOptions',
+      durationId: 'jobPremiumDuration',
+      totalTextId: 'jobPremiumTotalText',
+      breakdownTextId: 'jobPremiumBreakdownText',
+      nudgeWrapId: 'jobPremiumNudge',
+      nudgeTextId: 'jobPremiumNudgeText',
+      nudgeBtnId: 'jobPremiumNudgeBtn',
+    });
+
+    const profilePremiumUI = wirePremiumUI({
+      checkboxId: 'profilePremium',
+      optionsWrapId: 'profilePremiumOptions',
+      durationId: 'profilePremiumDuration',
+      totalTextId: 'profilePremiumTotalText',
+      breakdownTextId: 'profilePremiumBreakdownText',
+      nudgeWrapId: 'profilePremiumNudge',
+      nudgeTextId: 'profilePremiumNudgeText',
+      nudgeBtnId: 'profilePremiumNudgeBtn',
+    });
 
     // Country -> Province (BE/NL), hide for INT
     const countryEl = document.getElementById('country');
@@ -746,7 +943,10 @@
         ];
       }
 
-      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
+      // IMPORTANT: this page is NOT for events; it submits "vacature/profiel" requests.
+      // Backend must expose this endpoint (see backend patch notes).
+      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/profile-submission';
+      const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = 'bedankt.html';
 
       const fd = new FormData();
@@ -763,10 +963,17 @@
       fd.append('city', city);
       fd.append('mode', mode);
 
-      const premiumChecked = (mode === 'vacature')
-        ? !!document.getElementById('jobPremium')?.checked
-        : !!document.getElementById('profilePremium')?.checked;
+      const premiumChecked = (mode === 'vacature') ? jobPremiumUI.isEnabled() : profilePremiumUI.isEnabled();
+      const premiumPlan = (mode === 'vacature') ? jobPremiumUI.getSelectedPlan() : profilePremiumUI.getSelectedPlan();
+      const premiumCalc = calcPremiumMonths(premiumPlan);
+      const premiumPlanLabel = premiumCalc.label;
+      const premiumPrice = premiumCalc.total ? String(premiumCalc.total.toFixed(2)) : '';
+
       fd.append('is_premium', premiumChecked ? '1' : '0');
+      fd.append('premiumPlan', premiumChecked ? (premiumPlan || '') : '');
+      fd.append('premiumPlanLabel', premiumChecked ? (premiumPlanLabel || '') : '');
+      fd.append('premiumTotalEur', premiumChecked ? (premiumPrice || '') : '');
+      fd.append('premiumEffectiveEur', premiumChecked && premiumCalc.effective ? String(Number(premiumCalc.effective).toFixed(2)) : '');
 
       // Common raw fields (stored server-side in payload.fields)
       fd.append('name', name);
@@ -793,6 +1000,22 @@
         fd.append('profilePremium', document.getElementById('profilePremium')?.checked ? '1' : '0');
       }
 
+      // Premium validation
+      if (premiumChecked) {
+        if (!premiumPlan) {
+          if (hint) hint.textContent = 'Kies een Premium-periode.';
+          try {
+            const focusId = (mode === 'vacature') ? 'jobPremiumDuration' : 'profilePremiumDuration';
+            document.getElementById(focusId)?.focus();
+          } catch (_) {}
+          return;
+        }
+        if (!premiumPrice || !Number.isFinite(Number(premiumPrice)) || Number(premiumPrice) <= 0) {
+          if (hint) hint.textContent = 'Ongeldige premiumprijs. Kies opnieuw.';
+          return;
+        }
+      }
+
       if (hint) hint.textContent = 'Aanvraag wordt verstuurd…';
 
       try {
@@ -807,7 +1030,51 @@
 
         const sid = (json && (json.id || json.submissionId)) ? String(json.id || json.submissionId) : '';
         if (sid) {
-          window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}`;
+          // Premium: redirect to Stripe Checkout
+          if (premiumChecked) {
+            const packageCode = mapPremiumPlanToPackageCode(premiumPlan);
+            if (!packageCode) {
+              if (hint) hint.textContent = 'Ongeldige Premium-periode gekozen. Kies opnieuw.';
+              return;
+            }
+
+            const qty = (premiumPlan && premiumPlan.startsWith('m'))
+              ? (parseInt(premiumPlan.slice(1), 10) || 1)
+              : 1;
+
+            const checkoutPayload = {
+              // NOTE: backend must treat source!='event' differently and must NOT attempt to activate an Event.
+              source: 'profile',
+              submission_id: sid,
+              package_code: packageCode,
+              quantity: qty,
+              price_eur: Number(premiumPrice),
+            };
+
+            if (hint) hint.textContent = 'Je wordt doorgestuurd naar betaling…';
+
+            const cr = await fetch(CHECKOUT_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(checkoutPayload),
+            });
+
+            let cj = null;
+            try { cj = await cr.json(); } catch (_) {}
+            if (!cr.ok || (cj && cj.ok === false)) {
+              const msg = (cj && (cj.error || cj.message)) ? (cj.error || cj.message) : `HTTP ${cr.status}`;
+              throw new Error(msg);
+            }
+
+            const url = (cj && (cj.url || cj.checkoutUrl || cj.sessionUrl)) ? String(cj.url || cj.checkoutUrl || cj.sessionUrl) : '';
+            if (!url) throw new Error('Geen Stripe Checkout URL ontvangen.');
+
+            window.location.href = url;
+            return;
+          }
+
+          // Non-premium
+          window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}&kind=profile`;
           return;
         }
 
