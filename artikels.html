@@ -664,6 +664,25 @@ let lastRenderKey = "";
       return false;
     }
 
+    // Inline SVG fallback (zelfde idee als home) – voorkomt "lege" thumbs bij tijdelijke 404/502
+    const FALLBACK_THUMB = "data:image/svg+xml;utf8," + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="192" height="128" viewBox="0 0 192 128">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1b2a4a" stop-opacity="0.55"/>
+            <stop offset="1" stop-color="#0b1222" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+        <rect width="192" height="128" rx="12" fill="url(#g)"/>
+        <g fill="none" stroke="#8fb6ff" stroke-opacity="0.65" stroke-width="2">
+          <path d="M54 86l22-24 18 18 18-22 22 28"/>
+          <rect x="48" y="38" width="96" height="58" rx="10"/>
+          <circle cx="82" cy="58" r="6"/>
+        </g>
+        <text x="96" y="118" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="11" fill="#cfe0ff" fill-opacity="0.8">Voetbal4All</text>
+      </svg>`
+    );
+
       function renderCard(a, idx = 0){
         const title = cleanTitle(a.title);
 
@@ -709,7 +728,7 @@ let lastRenderKey = "";
                 width="96"
                 height="64"
                 style="width:96px;height:64px;object-fit:cover;border-radius:10px;"
-                onerror="this.onerror=null;this.style.display='none';"
+                onerror="try{this.onerror=null;this.src='${FALLBACK_THUMB}';}catch(e){}"
               />
             </a>
           `.trim()
