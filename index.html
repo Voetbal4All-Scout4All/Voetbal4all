@@ -118,36 +118,73 @@
     /* Kill any extra outline pseudo elements that may add a green border */
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
 
-    /* HOME: button under latest articles */
+    /* HOME: button under latest articles — fire / ember glow */
     .btn-more-articles{
       display:block;
       width:100%;
-      margin-top:12px;
-      padding:14px 16px;
-      border-radius:14px;
+      margin-top:14px;
+      padding:16px 18px;
+      border-radius:16px;
       text-align:center;
       text-decoration:none;
-      font-weight:700;
-      letter-spacing:.2px;
-      color:#EAFBF6;
-      border:1px solid rgba(120,255,210,.35);
-      background: linear-gradient(180deg, rgba(18,26,46,.85), rgba(10,16,34,.65));
+      font-weight:800;
+      letter-spacing:.3px;
+      color:#FFF3E8;
+
+      border:1px solid rgba(255,140,60,.55);
+      background:
+        radial-gradient(120% 140% at 10% 120%, rgba(255,80,0,.45), transparent 45%),
+        radial-gradient(120% 140% at 90% -20%, rgba(255,200,120,.35), transparent 40%),
+        linear-gradient(180deg, #1a0d08, #0e0704);
+
       box-shadow:
-        0 0 0 1px rgba(120,255,210,.10) inset,
-        0 10px 26px rgba(0,0,0,.35),
-        0 0 18px rgba(88,255,190,.22);
+        0 0 0 1px rgba(255,120,40,.18) inset,
+        0 10px 26px rgba(0,0,0,.45),
+        0 0 22px rgba(255,90,0,.45),
+        0 0 38px rgba(255,40,0,.35);
+
+      position:relative;
+      overflow:hidden;
       transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
     }
+
+    /* animated ember layer */
+    .btn-more-articles::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255,180,80,.35), transparent 30%),
+        radial-gradient(circle at 70% 30%, rgba(255,90,0,.35), transparent 32%),
+        radial-gradient(circle at 40% 50%, rgba(255,220,140,.25), transparent 28%);
+      opacity:.65;
+      filter: blur(6px);
+      animation: emberFloat 6s linear infinite;
+      pointer-events:none;
+    }
+
+    @keyframes emberFloat{
+      0%   { transform: translateY(8%) rotate(0deg); }
+      50%  { transform: translateY(-6%) rotate(180deg); }
+      100% { transform: translateY(8%) rotate(360deg); }
+    }
+
     .btn-more-articles:hover{
       transform: translateY(-1px);
-      border-color: rgba(120,255,210,.55);
+      border-color: rgba(255,160,80,.85);
       box-shadow:
-        0 0 0 1px rgba(120,255,210,.14) inset,
-        0 14px 34px rgba(0,0,0,.42),
-        0 0 26px rgba(88,255,190,.32);
+        0 0 0 1px rgba(255,140,60,.28) inset,
+        0 14px 34px rgba(0,0,0,.55),
+        0 0 32px rgba(255,120,40,.65),
+        0 0 54px rgba(255,60,0,.55);
     }
+
     .btn-more-articles:active{
-      transform: translateY(0px);
+      transform: translateY(0);
+      box-shadow:
+        0 0 0 1px rgba(255,140,60,.22) inset,
+        0 8px 20px rgba(0,0,0,.55),
+        0 0 22px rgba(255,90,0,.45);
     }
   </style>
 
