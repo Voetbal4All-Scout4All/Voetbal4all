@@ -1,6 +1,116 @@
 {
-  "generatedAt": "2026-01-31T22:27:21.337Z",
+  "generatedAt": "2026-01-31T23:26:53.960Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Watch: Match of the Day",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Highlights of the day's five Premier League matches, including Leeds United v Arsenal.",
+      "publishedAt": "2026-02-01T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Steijn rekent op Lauritsen en Kitolano, Sparta wil nog buitenspeler",
+      "link": "https://www.vi.nl/nieuws/steijn-rekent-op-lauritsen-en-kitolano-sparta-wil-nog-buitenspeler",
+      "summary": "De winterse transfermarkt is geopend. In dit blog vind je alle speculaties en bevestigde transfers in Nederland. Bekijk hier ons blog voor de transferperikelen in het buitenland.",
+      "publishedAt": "2026-01-31T22:53:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Konaté scoort voor zijn overleden vader: 'Van Slot hoefde ik me niet te haasten'",
+      "link": "https://www.vi.nl/nieuws/konate-scoort-voor-zijn-overleden-vader-van-slot-hoefde-ik-me-niet-te-haasten",
+      "summary": "De wedstrijd Liverpool - Newcastle United kreeg een prachtig sluitstuk in de vorm van een goal van Ibrahima Konaté, die deze maand zijn vader verloor. De centrumverdediger kwam aan het woord na een kippenvelmoment.",
+      "publishedAt": "2026-01-31T22:52:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Geprezen De Jong zelfkritisch: 'Ik had nog meer assists kunnen geven'",
+      "link": "https://www.vi.nl/nieuws/geprezen-de-jong-zelfkritisch-ik-had-nog-meer-assists-kunnen-geven",
+      "summary": "Frenkie de Jong maakte zaterdagavond indruk bij Barcelona met een prachtige assist in het uitduel met Elche , maar de Oranje-international was na afloop niet helemaal tevreden over zijn inbreng. Spaanse media waren wel lovend over de middenvelder.",
+      "publishedAt": "2026-01-31T22:48:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rashford and Yamal on target in Barcelona win over Elche",
+      "link": "https://www.skysports.com/football/live-blog/12040/12507208/football-latest-news-gossip",
+      "summary": "",
+      "publishedAt": "2026-01-31T22:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ekitike double helps Liverpool cruise past Newcastle",
+      "link": "https://www.bbc.com/sport/football/videos/c0mk7nknk7xo?at_medium=RSS&at_campaign=rss",
+      "summary": "Summer signing Huge Ekitike scores twice as Liverpool record their first league win of 2026, putting four goals past Newcastle United.",
+      "publishedAt": "2026-01-31T22:33:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Chelsea fight back to beat West Ham in dramatic derby",
+      "link": "https://www.bbc.com/sport/football/videos/cje1j2z0439o?at_medium=RSS&at_campaign=rss",
+      "summary": "Chelsea come back from being two goals down at half-time to beat West Ham in stoppage time.",
+      "publishedAt": "2026-01-31T22:31:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Kroupi scores stunner as Bournemouth beat Wolves",
+      "link": "https://www.bbc.com/sport/football/videos/cr4k90q9zz9o?at_medium=RSS&at_campaign=rss",
+      "summary": "19-year-old Eli Juniour Kroupi scores his eight Premier League goal of the season to help Bournemouth beat Wolves 2-0.",
+      "publishedAt": "2026-01-31T22:31:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arsenal score four in superb win against Leeds",
+      "link": "https://www.bbc.com/sport/football/videos/c041k9rp55xo?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal get their title charge back on track with a dominant display against Leeds, their first win in four Premier League games.",
+      "publishedAt": "2026-01-31T22:31:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Papers: Carrick keen to bring Rashford back to Man Utd",
+      "link": "https://www.skysports.com/football/news/12040/13501729/man-utd-michael-carrick-keen-to-bring-marcus-rashford-back-should-he-land-permanent-job-at-old-trafford-paper-talk",
+      "summary": "The top stories and transfer rumours from Sunday's newspapers...",
+      "publishedAt": "2026-01-31T22:30:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -14,14 +124,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Genius or obvious? Rosenior's subs inspire Chelsea comeback win",
-      "link": "https://www.bbc.com/sport/football/articles/cwy1jj0qz0lo?at_medium=RSS&at_campaign=rss",
-      "summary": "After Chelsea's first comeback win from two goals down in a Premier League match, were Liam Rosenior's substitutions against West Ham genius or obvious?",
-      "publishedAt": "2026-01-31T22:14:11.000Z"
+      "title": "Korda leads in Florida after superb round in wind as England's Woad falters",
+      "link": "https://www.skysports.com/golf/news/12040/13501662/lpga-tour-nelly-korda-leads-tournament-of-champions-as-englands-lottie-woad-falls-back-after-four-bogeys-in-five-holes",
+      "summary": "Nelly Korda stormed into a three-shot lead at the Hilton Grand Vacations Tournament of Champions in her push for a first title in over a year as England's halfway leader Lottie Woad saw her hopes of victory fade after a day of bogeys in blustery Florida.",
+      "publishedAt": "2026-01-31T22:20:00.000Z"
     },
     {
       "type": "rss",
@@ -47,14 +157,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Frenkie de Jong na 'Cruijffiaanse' assist bejubeld bij winnend Barça",
-      "link": "https://www.vi.nl/nieuws/frenkie-de-jong-na-cruijffiaanse-assist-bejubeld-bij-winnend-bar-a",
-      "summary": "Barcelona heeft zaterdagavond mede door een bijzonder fraaie assist van aanvoerder Frenkie de Jong afgerekend met Elche. De social media-afdeling van Barça schreef dat de middenvelder zich, in aanloop naar een doelpunt van Ferran Torres, voor even voordeed als Johan Cruijff. Barcelona komt door de winst weer op vier punten van achtervolger Real Madrid, dat zondagmiddag nog in actie komt tegen Rayo Vallecano.",
-      "publishedAt": "2026-01-31T22:01:46.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Hearts surge seven points clear after brushing aside nine-man Dundee United",
+      "link": "https://www.skysports.com/football/dundee-united-vs-hearts/report/531866",
+      "summary": "Pierre Landry Kabore scored a double as William Hill Premiership leaders Hearts cranked up the pressure on title rivals Rangers and Celtic by easing to a 3-0 away win over nine-man Dundee United.",
+      "publishedAt": "2026-01-31T22:00:00.000Z"
     },
     {
       "type": "rss",
@@ -66,50 +176,6 @@
       "link": "https://www.skysports.com/football/liverpool-vs-newcastle-united/report/531363",
       "summary": "Hugo Ekitike scored twice as Liverpool produced one of their most convincing performances of the season to come from behind to beat Newcastle 4-1, rising above Manchester United into fifth in the Premier League table.",
       "publishedAt": "2026-01-31T22:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Liverpool beëindigt zegeloze Premier League-reeks via Ekitiké",
-      "link": "https://www.vi.nl/nieuws/liverpool-be-indigt-zegeloze-premier-league-reeks-via-ekitike",
-      "summary": "Liverpool heeft zaterdagavond zijn thuisduel met Newcastle United omgezet in een winstpartij. Voor het beëindigen van een zegeloze reeks van vijf duels in de Premier League moest de ploeg van manager Arne Slot met name in de eerste helft diep gaan.",
-      "publishedAt": "2026-01-31T21:56:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Conte loopt leeg na zware blessure aanvoerder: 'Dit is zelfmoord'",
-      "link": "https://www.vi.nl/nieuws/conte-loopt-leeg-na-zware-blessure-aanvoerder-dit-is-zelfmoord",
-      "summary": "Napoli heeft een moeilijke week zaterdagavond afgesloten met een overwinning op Fiorentina. De zorgen van Antonio Conte zijn echter nog niet voorbij, want aanvoerder Giovanni Di Lorenzo verliet het veld per brancard en heeft waarschijnlijk zijn voorste kruisband afgescheurd. Conte was na afloop dan ook woedend.",
-      "publishedAt": "2026-01-31T21:25:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rosenior hails 'world class' Fernandez in Chelsea comeback",
-      "link": "https://www.bbc.com/sport/football/videos/cd0yx5k7359o?at_medium=RSS&at_campaign=rss",
-      "summary": "Liam Rosenior is full of praise for Chelsea's second-half comeback win against West Ham, singling out matchwinner Enzo Fernandez's performance.",
-      "publishedAt": "2026-01-31T20:42:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rosenior: I hope hiring me is Chelsea's greatest decision",
-      "link": "https://www.skysports.com/football/news/12040/13501679/chelsea-3-2-west-ham-liam-rosenior-understands-fan-boos-but-hopes-to-become-the-best-decision-in-clubs-history",
-      "summary": "Chelsea boss Liam Rosenior says fans were right to boo at the end of the first half against West Ham, but hopes that hiring him becomes \"the best decision\" the club has ever made.",
-      "publishedAt": "2026-01-31T20:36:00.000Z"
     },
     {
       "type": "rss",
@@ -154,72 +220,6 @@
       "link": "https://www.espn.com/soccer/story/_/id/47783247/items-john-terry-personal-collection-net-695k-auction",
       "summary": "Former England and Chelsea captain John Terry netted $695,000 from a 50-item auction of his personal collection, headlined by match-worn Lionel Messi and Cristiano Ronaldo jerseys.",
       "publishedAt": "2026-01-31T20:30:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Wrexham boost PL promotion hopes with 1-0 win",
-      "link": "https://www.espn.com/soccer/report/_/gameId/744957",
-      "summary": "Wrexham moved back into the Championship play-off places after their hard- fought 1-0 win over Sheffield Wednesday at Hillsborough.",
-      "publishedAt": "2026-01-31T20:30:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Last-gasp Fernandez strike completes Chelsea comeback over West Ham",
-      "link": "https://www.skysports.com/watch/video/13501666/chelsea-3-2-west-ham-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from Chelsea’s match against West Ham in the Premier League.",
-      "publishedAt": "2026-01-31T20:07:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Likened to Mbappe - teenager Kroupi flourishing at Bournemouth",
-      "link": "https://www.bbc.com/sport/football/articles/c8rmnnyjyj5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Eli Junior Kroupi's stunning goal for Bournemouth against Wolves will help soften the blow of losing Antoine Semenyo to Manchester City.",
-      "publishedAt": "2026-01-31T19:55:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Enzo Fernández seals thrilling Chelsea fightback to shatter 10-man West Ham",
-      "link": "https://www.theguardian.com/football/2026/jan/31/chelsea-west-ham-premier-league-match-report",
-      "summary": "There are times when trying to make sense of Chelsea is a futile task. Lurching between extremes is their speciality. They were shambolic against struggling West Ham for 45 minutes, had Stamford Bridge ready to turn on Liam Rosenior at half-time and still found a way to mount a comeback so wild it left their opponents in a state of utter, uncontrollable rage at the end of an incomprehensible London derby. Where to begin? With the end, perhaps, and Enzo Fernández running on to a cutback from João Pedro to make it 3-2 to Chelsea in the 92nd minute. It was some turnaround. João Pedro had made the difference after coming on at the start of the second half. The forward scored Chelsea’s first, heading home just before the hour, and was cool when he broke into the West Ham area when the game ran into added time. João Pedro had options. He could have shot and he could have crossed. Instead he threw West Ham by pulling the ball back to Fernández, who is beginning to resemble Frank Lampard with his knack of deciding games with late unnoticed runs from midfield. Continue reading...",
-      "publishedAt": "2026-01-31T19:48:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'A great headache' - can Madueke stake claim for Arsenal and England?",
-      "link": "https://www.bbc.com/sport/football/articles/ckgjd8ej3ggo?at_medium=RSS&at_campaign=rss",
-      "summary": "The sight of Noni Madueke flying past defenders and putting dangerous crosses into the penalty will have been a welcome sight for Mikel Arteta.",
-      "publishedAt": "2026-01-31T19:19:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Beto snatches last-gasp equaliser for Everton to spark Moyes sprint and frustrate Brighton",
-      "link": "https://www.theguardian.com/football/2026/jan/31/brighton-everton-premier-league-match-report",
-      "summary": "David Moyes could not contain himself. As the ball hit the back of the net after the substitute Beto had bundled in the equaliser in the seventh minute of injury time, the Everton manager set off. Moyes is 63 in April, but he sprinted on to the pitch in a moment of sheer delight as Brighton’s players dropped to their knees in despair. Somehow, Everton’s unbeaten record here that stretches back to 2019 is still intact. It had seemed a goal from Pascal Gross would be enough for Brighton to claim victory at the sixth attempt after they had spurned a number of chances in the first half. But while it is one thing to plan how you are going to overcome a team managed by Moyes, it is not quite so easy in practice. Continue reading...",
-      "publishedAt": "2026-01-31T17:20:48.000Z"
     }
   ]
 }
