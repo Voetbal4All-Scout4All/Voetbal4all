@@ -374,7 +374,7 @@
                         style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
                     </label>
 
-                    <label style="display:block;">
+                    <label id="profilePosWrap" style="display:block;">
                       <div class="card-caption" style="margin-bottom:6px;"><span id="profilePosLabel">Functie / positie</span></div>
                       <input id="profilePos" type="text" required
                         placeholder="Bijv. T1, assistent, keepertrainer, video-analist, spits, linksback …"
@@ -425,14 +425,6 @@
                       <select id="profileLevel" required
                         style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
                         <option value="" selected disabled>Kies…</option>
-                        <option value="Recreatief">Recreatief</option>
-                        <option value="Provinciaal">Provinciaal</option>
-                        <option value="3e Amateur">3e Amateur</option>
-                        <option value="2e Amateur">2e Amateur</option>
-                        <option value="1e Amateur">1e Amateur</option>
-                        <option value="Nationaal">Nationaal</option>
-                        <option value="Elite/Professioneel">Elite/Professioneel</option>
-                        <option value="Onbekend">Onbekend</option>
                       </select>
                     </label>
                   </div>
@@ -626,6 +618,7 @@
     const profilePosLabelEl = document.getElementById('profilePosLabel');
     const profilePosEl = document.getElementById('profilePos');
     const profileBadgeWrapEl = document.getElementById('profileBadgeWrap');
+    const profilePosWrapEl = document.getElementById('profilePosWrap');
 
     function syncRolePositionUI() {
       const role = (profileRoleEl?.value || '').trim();
@@ -633,16 +626,21 @@
       const playerSel = document.getElementById('playerPosSelect');
 
       if (role === 'Speler') {
+        // Players: use dropdown only
         if (profilePosLabelEl) profilePosLabelEl.textContent = 'Positie (speler)';
-        if (profilePosEl) profilePosEl.placeholder = 'Bijv. Middenvelder / Keeper / Spits';
+        if (profilePosWrapEl) profilePosWrapEl.style.display = 'none';
+        if (profilePosEl) { profilePosEl.required = false; profilePosEl.value = ''; }
         if (playerWrap) playerWrap.style.display = '';
+        if (playerSel) { playerSel.required = true; }
         // Diploma only for trainers
         if (profileBadgeWrapEl) profileBadgeWrapEl.style.display = 'none';
       } else {
+        // Trainers/staf: use free text only
         if (profilePosLabelEl) profilePosLabelEl.textContent = 'Functie (trainer / staf)';
-        if (profilePosEl) profilePosEl.placeholder = 'Bijv. T1, assistent, keepertrainer, video-analist, ...';
+        if (profilePosWrapEl) profilePosWrapEl.style.display = '';
+        if (profilePosEl) { profilePosEl.required = true; }
         if (playerWrap) playerWrap.style.display = 'none';
-        if (playerSel) playerSel.value = '';
+        if (playerSel) { playerSel.required = false; playerSel.value = ''; }
         if (profileBadgeWrapEl) profileBadgeWrapEl.style.display = '';
       }
     }
@@ -653,9 +651,12 @@
     const playerSelEl = document.getElementById('playerPosSelect');
     playerSelEl && playerSelEl.addEventListener('change', function () {
       const sel = (playerSelEl.value || '').trim();
-      if (!sel) return;
-      const cur = (profilePosEl?.value || '').trim();
-      if (!cur) profilePosEl.value = sel;
+      // Store selection into hidden input so submission always uses `profilePos`
+      if (profilePosEl) {
+        if (!sel) { profilePosEl.value = ''; return; }
+        if (sel === 'Overig') { profilePosEl.value = 'Overig'; return; }
+        profilePosEl.value = sel;
+      }
     });
 
     // default
@@ -832,6 +833,63 @@
       'Zuid-Holland'
     ];
 
+    const LEVELS_BE = [
+      'Recreatief',
+      'Provinciaal',
+      '3e Amateur',
+      '2e Amateur',
+      '1e Amateur',
+      'Nationaal',
+      'Elite/Professioneel',
+      'Onbekend'
+    ];
+
+    const LEVELS_NL = [
+      'Recreatief',
+      'Jeugd',
+      'Senioren',
+      '5e klasse',
+      '4e klasse',
+      '3e klasse',
+      '2e klasse',
+      '1e klasse',
+      '4e divisie',
+      '3e divisie',
+      '2e divisie',
+      'Eredivisie',
+      'Onbekend'
+    ];
+
+    const LEVELS_INT = [
+      'Recreatief',
+      'Jeugd',
+      'Senioren',
+      'Semi-professioneel',
+      'Professioneel',
+      'Onbekend'
+    ];
+
+    function fillLevelOptions(list) {
+      const levelEl = document.getElementById('profileLevel');
+      if (!levelEl) return;
+      const current = (levelEl.value || '').trim();
+      levelEl.innerHTML = '<option value="" selected disabled>Kies…</option>';
+      list.forEach((p) => {
+        const opt = document.createElement('option');
+        opt.value = p;
+        opt.textContent = p;
+        levelEl.appendChild(opt);
+      });
+      if (current && list.includes(current)) levelEl.value = current;
+    }
+
+    function syncLevelUI() {
+      const c = (countryEl?.value || '').trim();
+      if (c === 'BE') fillLevelOptions(LEVELS_BE);
+      else if (c === 'NL') fillLevelOptions(LEVELS_NL);
+      else fillLevelOptions(LEVELS_INT);
+    }
+
     function fillProvinceOptions(list) {
       if (!provinceEl) return;
       const current = (provinceEl.value || '').trim();
@@ -863,11 +921,13 @@
         provinceEl.value = '';
         provinceEl.innerHTML = '<option value="" selected disabled>Kies provincie…</option>';
       }
+      syncLevelUI();
     }
 
     if (countryEl) {
       countryEl.addEventListener('change', syncProvinceUI);
       syncProvinceUI();
+      syncLevelUI();
     }
 
     function need(ids) {
@@ -997,7 +1057,7 @@
 
       // IMPORTANT: this page is NOT for events; it submits "vacature/profiel" requests.
       // Backend must expose this endpoint (see backend patch notes).
-      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
+      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/aanmelden-submission';
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = 'bedankt.html';
 
@@ -1125,7 +1185,7 @@
           }
 
           // Non-premium
-          window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}&kind=profile`;
+          window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}&source=aanmelden&kind=${encodeURIComponent(mode)}`;
           return;
         }
 
