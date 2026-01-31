@@ -374,7 +374,15 @@
             <span style="color:rgba(255,255,255,0.6); font-size:14px;" id="article-date"></span>
           </div>
           
-          <img id="article-image" src="" alt="" class="article-hero-image" />
+          <img
+            id="article-image"
+            src="assets/img/placeholder.svg"
+            alt=""
+            class="article-hero-image is-empty"
+            loading="eager"
+            decoding="async"
+            referrerpolicy="no-referrer"
+          />
           
           <div class="note" id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;"></div>
           
@@ -905,6 +913,8 @@
     imageEl.loading = "eager";
     imageEl.decoding = "async";
     imageEl.referrerPolicy = "no-referrer";
+    // Ensure CSS fallback state matches actual src
+    imageEl.classList.add('is-empty');
 
     if (imgUrl) {
       imageEl.classList.remove('is-empty');
@@ -921,6 +931,7 @@
     imageEl.onerror = function(){
       // If the real image fails (502/cold start/404), fall back to inline SVG
       this.onerror = null;
+      this.alt = title;
       this.classList.add('is-empty');
       this.src = fallbackUrl;
       this.removeAttribute("fetchpriority");
