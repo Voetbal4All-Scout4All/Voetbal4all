@@ -160,10 +160,10 @@
 
       /* football pitch lines + subtle grass texture in the same warm/orange palette */
       background:
-        /* center circle */
-        radial-gradient(circle at 50% 50%, transparent 0 22.6%, rgba(255,200,120,.55) 22.6% 23.6%, transparent 23.6% 100%),
-        /* midfield line */
-        linear-gradient(90deg, transparent 0 49.7%, rgba(255,200,120,.55) 49.7% 50.3%, transparent 50.3% 100%),
+      /* center circle (kleiner + dunner) */
+      radial-gradient(circle at 50% 50%, transparent 0 17.8%, rgba(255,200,120,.55) 17.8% 18.4%, transparent 18.4% 100%),
+      /* midfield line (dunner) */
+      linear-gradient(90deg, transparent 0 49.85%, rgba(255,200,120,.55) 49.85% 50.15%, transparent 50.15% 100%),
         /* penalty boxes (left/right) */
         linear-gradient(90deg,
           rgba(255,200,120,.55) 0 0,
@@ -187,9 +187,9 @@
         ),
         /* pitch border */
         linear-gradient(0deg,
-          rgba(255,200,120,.55) 0 .6px, transparent .6px calc(100% - .6px), rgba(255,200,120,.55) calc(100% - .6px) 100%),
+          rgba(255,200,120,.55) 0 .4px, transparent .4px calc(100% - .4px), rgba(255,200,120,.55) calc(100% - .4px) 100%),
         linear-gradient(90deg,
-          rgba(255,200,120,.55) 0 .6px, transparent .6px calc(100% - .6px), rgba(255,200,120,.55) calc(100% - .6px) 100%),
+          rgba(255,200,120,.55) 0 .4px, transparent .4px calc(100% - .4px), rgba(255,200,120,.55) calc(100% - .4px) 100%),
         /* warm grass texture */
         repeating-linear-gradient(90deg,
           rgba(255,120,40,.10) 0 10px,
@@ -222,6 +222,8 @@
         radial-gradient(circle at 20% 80%, rgba(255,180,80,.35), transparent 30%),
         radial-gradient(circle at 70% 30%, rgba(255,90,0,.35), transparent 32%),
         radial-gradient(circle at 40% 50%, rgba(255,220,140,.25), transparent 28%);
+      background-size: 88% 88%;
+      background-position: center;
       opacity:.65;
       filter: blur(6px);
       animation: emberFloat 6s linear infinite;
