@@ -402,7 +402,7 @@
                       </select>
                     </label>
 
-                    <label style="display:block;">
+                    <label id="profileBadgeWrap" style="display:block;">
                       <div class="card-caption" style="margin-bottom:6px;">Diploma/UEFA (trainer)</div>
                       <input id="profileBadge" type="text" placeholder="Bijv. UEFA B / UEFA A"
                         style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
@@ -598,21 +598,21 @@
         if (modeHint) modeHint.textContent = 'Clubvacature: premium-info mogelijk.';
         // profile required reset
         const pr = document.getElementById('profileRole'); if (pr) pr.value = '';
-        if (profilePosEl) { profilePosEl.required = false; profilePosEl.value = ''; }
+        if (posEl) { posEl.required = false; posEl.value = ''; }
         if (posLabel) posLabel.textContent = 'Positie (speler)';
       } else if (next === 'trainer') {
         vacatureBlock.style.display = 'none';
         profileBlock.style.display = '';
         const pr = document.getElementById('profileRole'); if (pr) pr.value = 'Trainer';
         if (modeHint) modeHint.textContent = 'Trainerprofiel: premium mogelijk + optie anoniem.';
-        if (profilePosEl) { profilePosEl.required = true; }
+        if (posEl) { posEl.required = true; }
         syncRolePositionUI();
       } else if (next === 'speler') {
         vacatureBlock.style.display = 'none';
         profileBlock.style.display = '';
         const pr = document.getElementById('profileRole'); if (pr) pr.value = 'Speler';
         if (modeHint) modeHint.textContent = 'Spelerprofiel: premium mogelijk + optie anoniem.';
-        if (profilePosEl) { profilePosEl.required = true; }
+        if (posEl) { posEl.required = true; }
         syncRolePositionUI();
       }
     }
@@ -624,24 +624,39 @@
     // ========== Profile Role/Position Dropdown Wiring ==========
     const profileRoleEl = document.getElementById('profileRole');
     const profilePosLabelEl = document.getElementById('profilePosLabel');
+    const profilePosEl = document.getElementById('profilePos');
+    const profileBadgeWrapEl = document.getElementById('profileBadgeWrap');
 
     function syncRolePositionUI() {
       const role = (profileRoleEl?.value || '').trim();
       const playerWrap = document.getElementById('playerPosWrap');
+      const playerSel = document.getElementById('playerPosSelect');
 
       if (role === 'Speler') {
-        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Functie / positie';
+        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Positie (speler)';
+        if (profilePosEl) profilePosEl.placeholder = 'Bijv. Middenvelder / Keeper / Spits';
         if (playerWrap) playerWrap.style.display = '';
+        // Diploma only for trainers
+        if (profileBadgeWrapEl) profileBadgeWrapEl.style.display = 'none';
       } else {
         if (profilePosLabelEl) profilePosLabelEl.textContent = 'Functie (trainer / staf)';
+        if (profilePosEl) profilePosEl.placeholder = 'Bijv. T1, assistent, keepertrainer, video-analist, ...';
         if (playerWrap) playerWrap.style.display = 'none';
-        const sel = document.getElementById('playerPosSelect');
-        if (sel) sel.value = '';
+        if (playerSel) playerSel.value = '';
+        if (profileBadgeWrapEl) profileBadgeWrapEl.style.display = '';
       }
     }
 
     profileRoleEl && profileRoleEl.addEventListener('change', syncRolePositionUI);
     syncRolePositionUI();
+
+    const playerSelEl = document.getElementById('playerPosSelect');
+    playerSelEl && playerSelEl.addEventListener('change', function () {
+      const sel = (playerSelEl.value || '').trim();
+      if (!sel) return;
+      const cur = (profilePosEl?.value || '').trim();
+      if (!cur) profilePosEl.value = sel;
+    });
 
     // default
     setMode('vacature');
