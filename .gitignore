@@ -9,3 +9,7 @@ package-lock.json
 
 # local helper scripts
 *.sh
+
+_backup_brand_fix_*/
+assets/img/brand/*.png
+assets/img/brand/*oud*.png
