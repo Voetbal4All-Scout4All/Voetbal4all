@@ -376,8 +376,10 @@
 
                     <label style="display:block;">
                       <div class="card-caption" style="margin-bottom:6px;"><span id="profilePosLabel">Positie (speler)</span></div>
-                      <input id="profilePos" type="text" placeholder="Bijv. Middenvelder / Keeper"
-                        style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                      <select id="profilePos" required
+                        style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
+                        <option value="" selected disabled>Kies…</option>
+                      </select>
                     </label>
 
                     <label style="display:block;">
@@ -568,43 +570,105 @@
       // reset hint
       if (hint) hint.textContent = '';
 
+      const posLabel = document.getElementById('profilePosLabel');
+      const posEl = document.getElementById('profilePos');
       if (next === 'vacature') {
         vacatureBlock.style.display = '';
         profileBlock.style.display = 'none';
         if (modeHint) modeHint.textContent = 'Clubvacature: premium-info mogelijk.';
         // profile required reset
         const pr = document.getElementById('profileRole'); if (pr) pr.value = '';
-        // Update position label/placeholder
-        const posLabel = document.getElementById('profilePosLabel');
-        const posEl = document.getElementById('profilePos');
+        if (profilePosEl) { profilePosEl.required = false; profilePosEl.value = ''; }
         if (posLabel) posLabel.textContent = 'Positie (speler)';
-        if (posEl) posEl.placeholder = 'Bijv. Middenvelder / Keeper';
       } else if (next === 'trainer') {
         vacatureBlock.style.display = 'none';
         profileBlock.style.display = '';
         const pr = document.getElementById('profileRole'); if (pr) pr.value = 'Trainer';
         if (modeHint) modeHint.textContent = 'Trainerprofiel: premium mogelijk + optie anoniem.';
-        // Update position label/placeholder
-        const posLabel = document.getElementById('profilePosLabel');
-        const posEl = document.getElementById('profilePos');
-        if (posLabel) posLabel.textContent = 'Welk trainersprofiel (T1, T2, keeper, …)';
-        if (posEl) posEl.placeholder = 'Bijv. T1 / T2 / Keepertrainer / Video-analist';
+        if (profilePosEl) { profilePosEl.required = true; }
+        syncRolePositionUI();
       } else if (next === 'speler') {
         vacatureBlock.style.display = 'none';
         profileBlock.style.display = '';
         const pr = document.getElementById('profileRole'); if (pr) pr.value = 'Speler';
         if (modeHint) modeHint.textContent = 'Spelerprofiel: premium mogelijk + optie anoniem.';
-        // Update position label/placeholder
-        const posLabel = document.getElementById('profilePosLabel');
-        const posEl = document.getElementById('profilePos');
-        if (posLabel) posLabel.textContent = 'Positie (speler)';
-        if (posEl) posEl.placeholder = 'Bijv. Middenvelder / Keeper';
+        if (profilePosEl) { profilePosEl.required = true; }
+        syncRolePositionUI();
       }
     }
 
     btnVacature && btnVacature.addEventListener('click', () => setMode('vacature'));
     btnTrainer && btnTrainer.addEventListener('click', () => setMode('trainer'));
     btnSpeler && btnSpeler.addEventListener('click', () => setMode('speler'));
+
+    // ========== Profile Role/Position Dropdown Wiring ==========
+    const profileRoleEl = document.getElementById('profileRole');
+    const profilePosLabelEl = document.getElementById('profilePosLabel');
+    const profilePosEl = document.getElementById('profilePos');
+
+    const PLAYER_POSITIONS = [
+      'Keeper',
+      'Verdediger',
+      'Middenvelder',
+      'Aanvaller',
+      'Linksback',
+      'Centrale verdediger',
+      'Rechtsback',
+      'Defensieve middenvelder',
+      'Centrale middenvelder',
+      'Aanvallende middenvelder',
+      'Linksbuiten',
+      'Rechtsbuiten',
+      'Spits',
+      'Overig'
+    ];
+
+    const STAFF_PROFILES = [
+      'T1 (hoofdtrainer)',
+      'T2 / assistent',
+      'Keepertrainer',
+      'Condition trainer',
+      'Video-analist',
+      'Team manager',
+      'Scout',
+      'Overig (staf)'
+    ];
+
+    function fillSelectOptions(selectEl, placeholder, list) {
+      if (!selectEl) return;
+      const current = (selectEl.value || '').trim();
+      selectEl.innerHTML = '';
+      const opt0 = document.createElement('option');
+      opt0.value = '';
+      opt0.disabled = true;
+      opt0.selected = true;
+      opt0.textContent = placeholder;
+      selectEl.appendChild(opt0);
+      list.forEach((v) => {
+        const o = document.createElement('option');
+        o.value = v;
+        o.textContent = v;
+        selectEl.appendChild(o);
+      });
+      if (current && list.includes(current)) {
+        selectEl.value = current;
+      }
+    }
+
+    function syncRolePositionUI() {
+      const role = (profileRoleEl?.value || '').trim();
+      if (!profilePosEl) return;
+      if (role === 'Trainer') {
+        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Welk trainersprofiel (T1, T2, keeper, …)';
+        fillSelectOptions(profilePosEl, 'Kies trainersprofiel…', STAFF_PROFILES);
+      } else {
+        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Positie (speler)';
+        fillSelectOptions(profilePosEl, 'Kies positie…', PLAYER_POSITIONS);
+      }
+    }
+
+    profileRoleEl && profileRoleEl.addEventListener('change', syncRolePositionUI);
+    syncRolePositionUI();
 
     // default
     setMode('vacature');
@@ -945,7 +1009,7 @@
 
       // IMPORTANT: this page is NOT for events; it submits "vacature/profiel" requests.
       // Backend must expose this endpoint (see backend patch notes).
-      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/profile-submission';
+      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = 'bedankt.html';
 
@@ -1038,17 +1102,16 @@
               return;
             }
 
-            const qty = (premiumPlan && premiumPlan.startsWith('m'))
+            const qty = premiumPlan
               ? (parseInt(premiumPlan.slice(1), 10) || 1)
               : 1;
 
             const checkoutPayload = {
-              // NOTE: backend must treat source!='event' differently and must NOT attempt to activate an Event.
-              source: 'profile',
-              submission_id: sid,
+              event_id: sid,
               package_code: packageCode,
               quantity: qty,
               price_eur: Number(premiumPrice),
+              kind: mode === 'vacature' ? 'vacature' : 'profile'
             };
 
             if (hint) hint.textContent = 'Je wordt doorgestuurd naar betaling…';
@@ -1083,7 +1146,8 @@
         try { setMode && setMode('vacature'); } catch (_) {}
         return;
       } catch (err) {
-        if (hint) hint.textContent = 'Verzenden is momenteel niet beschikbaar. Probeer later opnieuw of neem contact op via de contactpagina.';
+        const msg = (err && err.message) ? String(err.message) : 'Verzenden is momenteel niet beschikbaar.';
+        if (hint) hint.textContent = msg;
         return;
       }
     });
