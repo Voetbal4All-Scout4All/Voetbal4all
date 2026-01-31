@@ -375,10 +375,30 @@
                     </label>
 
                     <label style="display:block;">
-                      <div class="card-caption" style="margin-bottom:6px;"><span id="profilePosLabel">Positie (speler)</span></div>
-                      <select id="profilePos" required
+                      <div class="card-caption" style="margin-bottom:6px;"><span id="profilePosLabel">Functie / positie</span></div>
+                      <input id="profilePos" type="text" required
+                        placeholder="Bijv. T1, assistent, keepertrainer, video-analist, spits, linksback …"
+                        style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    </label>
+
+                    <label id="playerPosWrap" style="display:none;">
+                      <div class="card-caption" style="margin-bottom:6px;">Positie (speler – optioneel)</div>
+                      <select id="playerPosSelect"
                         style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
-                        <option value="" selected disabled>Kies…</option>
+                        <option value="" selected>Kies positie…</option>
+                        <option value="Keeper">Keeper</option>
+                        <option value="Verdediger">Verdediger</option>
+                        <option value="Middenvelder">Middenvelder</option>
+                        <option value="Aanvaller">Aanvaller</option>
+                        <option value="Linksback">Linksback</option>
+                        <option value="Rechtsback">Rechtsback</option>
+                        <option value="Centrale verdediger">Centrale verdediger</option>
+                        <option value="Defensieve middenvelder">Defensieve middenvelder</option>
+                        <option value="Aanvallende middenvelder">Aanvallende middenvelder</option>
+                        <option value="Linksbuiten">Linksbuiten</option>
+                        <option value="Rechtsbuiten">Rechtsbuiten</option>
+                        <option value="Spits">Spits</option>
+                        <option value="Overig">Overig</option>
                       </select>
                     </label>
 
@@ -604,66 +624,19 @@
     // ========== Profile Role/Position Dropdown Wiring ==========
     const profileRoleEl = document.getElementById('profileRole');
     const profilePosLabelEl = document.getElementById('profilePosLabel');
-    const profilePosEl = document.getElementById('profilePos');
-
-    const PLAYER_POSITIONS = [
-      'Keeper',
-      'Verdediger',
-      'Middenvelder',
-      'Aanvaller',
-      'Linksback',
-      'Centrale verdediger',
-      'Rechtsback',
-      'Defensieve middenvelder',
-      'Centrale middenvelder',
-      'Aanvallende middenvelder',
-      'Linksbuiten',
-      'Rechtsbuiten',
-      'Spits',
-      'Overig'
-    ];
-
-    const STAFF_PROFILES = [
-      'T1 (hoofdtrainer)',
-      'T2 / assistent',
-      'Keepertrainer',
-      'Condition trainer',
-      'Video-analist',
-      'Team manager',
-      'Scout',
-      'Overig (staf)'
-    ];
-
-    function fillSelectOptions(selectEl, placeholder, list) {
-      if (!selectEl) return;
-      const current = (selectEl.value || '').trim();
-      selectEl.innerHTML = '';
-      const opt0 = document.createElement('option');
-      opt0.value = '';
-      opt0.disabled = true;
-      opt0.selected = true;
-      opt0.textContent = placeholder;
-      selectEl.appendChild(opt0);
-      list.forEach((v) => {
-        const o = document.createElement('option');
-        o.value = v;
-        o.textContent = v;
-        selectEl.appendChild(o);
-      });
-      if (current && list.includes(current)) {
-        selectEl.value = current;
-      }
-    }
 
     function syncRolePositionUI() {
       const role = (profileRoleEl?.value || '').trim();
-      if (!profilePosEl) return;
-      if (role === 'Trainer') {
-        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Welk trainersprofiel (T1, T2, keeper, …)';
-        fillSelectOptions(profilePosEl, 'Kies trainersprofiel…', STAFF_PROFILES);
+      const playerWrap = document.getElementById('playerPosWrap');
+
+      if (role === 'Speler') {
+        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Functie / positie';
+        if (playerWrap) playerWrap.style.display = '';
       } else {
-        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Positie (speler)';
-        fillSelectOptions(profilePosEl, 'Kies positie…', PLAYER_POSITIONS);
+        if (profilePosLabelEl) profilePosLabelEl.textContent = 'Functie (trainer / staf)';
+        if (playerWrap) playerWrap.style.display = 'none';
+        const sel = document.getElementById('playerPosSelect');
+        if (sel) sel.value = '';
       }
     }
 
@@ -967,7 +940,7 @@
 
         const role = v('profileRole');
         const age = v('profileAge');
-        const pos = v('profilePos');
+        const pos = v('profilePos') || v('playerPosSelect');
         const badge = v('profileBadge');
         const club = v('profileClub');
         const url = v('profileUrl');
@@ -1054,7 +1027,7 @@
       } else {
         fd.append('profileRole', v('profileRole'));
         fd.append('profileAge', v('profileAge'));
-        fd.append('profilePos', v('profilePos'));
+        fd.append('profilePos', v('profilePos') || v('playerPosSelect'));
         fd.append('profileBadge', v('profileBadge'));
         fd.append('profileClub', v('profileClub'));
         fd.append('profileUrl', v('profileUrl'));
