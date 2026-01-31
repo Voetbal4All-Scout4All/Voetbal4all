@@ -343,7 +343,7 @@
                     </label>
 
                     <label style="display:block;">
-                      <div class="card-caption" style="margin-bottom:6px;">Positie (speler)</div>
+                      <div class="card-caption" style="margin-bottom:6px;"><span id="profilePosLabel">Positie (speler)</span></div>
                       <input id="profilePos" type="text" placeholder="Bijv. Middenvelder / Keeper"
                         style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
                     </label>
@@ -365,6 +365,22 @@
                       <input id="profileUrl" type="url" placeholder="https://…"
                         style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
                     </label>
+
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Gewenst niveau *</div>
+                      <select id="profileLevel" required
+                        style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
+                        <option value="" selected disabled>Kies…</option>
+                        <option value="Recreatief">Recreatief</option>
+                        <option value="Provinciaal">Provinciaal</option>
+                        <option value="3e Amateur">3e Amateur</option>
+                        <option value="2e Amateur">2e Amateur</option>
+                        <option value="1e Amateur">1e Amateur</option>
+                        <option value="Nationaal">Nationaal</option>
+                        <option value="Elite/Professioneel">Elite/Professioneel</option>
+                        <option value="Onbekend">Onbekend</option>
+                      </select>
+                    </label>
                   </div>
 
                   <label style="display:block;margin-top:10px;">
@@ -374,9 +390,23 @@
                       style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;resize:vertical;"></textarea>
                   </label>
 
-                  <p class="note" style="margin-top:10px;">
-                    Opmerking: voor trainer/speler-profielen is <strong>geen Premium</strong> mogelijk.
-                  </p>
+                  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
+                    <label style="display:flex;gap:8px;align-items:flex-start;">
+                      <input id="profilePremium" type="checkbox" />
+                      <span class="note">Ik wil <strong>Premium</strong> zichtbaarheid voor dit profiel.</span>
+                    </label>
+                  </div>
+
+                  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px;">
+                    <label style="display:flex;gap:8px;align-items:flex-start;">
+                      <input id="profileAnonymous" type="checkbox" />
+                      <span class="note">
+                        Ik wil mij <strong>anoniem</strong> kandidaat stellen.
+                        <br>
+                        <span style="opacity:.9;">Indien geselecteerd, ga ik akkoord dat ik eventueel e-mails ontvang door geïnteresseerden via Voetbal4All.</span>
+                      </span>
+                    </label>
+                  </div>
                 </div>
 
                 <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;">
@@ -479,16 +509,31 @@
         if (modeHint) modeHint.textContent = 'Clubvacature: premium-info mogelijk.';
         // profile required reset
         const pr = document.getElementById('profileRole'); if (pr) pr.value = '';
+        // Update position label/placeholder
+        const posLabel = document.getElementById('profilePosLabel');
+        const posEl = document.getElementById('profilePos');
+        if (posLabel) posLabel.textContent = 'Positie (speler)';
+        if (posEl) posEl.placeholder = 'Bijv. Middenvelder / Keeper';
       } else if (next === 'trainer') {
         vacatureBlock.style.display = 'none';
         profileBlock.style.display = '';
         const pr = document.getElementById('profileRole'); if (pr) pr.value = 'Trainer';
-        if (modeHint) modeHint.textContent = 'Trainerprofiel: geen premium mogelijk.';
+        if (modeHint) modeHint.textContent = 'Trainerprofiel: premium mogelijk + optie anoniem.';
+        // Update position label/placeholder
+        const posLabel = document.getElementById('profilePosLabel');
+        const posEl = document.getElementById('profilePos');
+        if (posLabel) posLabel.textContent = 'Welk trainersprofiel (T1, T2, keeper, …)';
+        if (posEl) posEl.placeholder = 'Bijv. T1 / T2 / Keepertrainer / Video-analist';
       } else if (next === 'speler') {
         vacatureBlock.style.display = 'none';
         profileBlock.style.display = '';
         const pr = document.getElementById('profileRole'); if (pr) pr.value = 'Speler';
-        if (modeHint) modeHint.textContent = 'Spelerprofiel: geen premium mogelijk.';
+        if (modeHint) modeHint.textContent = 'Spelerprofiel: premium mogelijk + optie anoniem.';
+        // Update position label/placeholder
+        const posLabel = document.getElementById('profilePosLabel');
+        const posEl = document.getElementById('profilePos');
+        if (posLabel) posLabel.textContent = 'Positie (speler)';
+        if (posEl) posEl.placeholder = 'Bijv. Middenvelder / Keeper';
       }
     }
 
@@ -656,7 +701,7 @@
 
       } else {
         // trainer/speler profile
-        if (!need(['profileRole','profileDesc'])) return;
+        if (!need(['profileRole','profileLevel','profileDesc'])) return;
 
         const role = v('profileRole');
         const age = v('profileAge');
@@ -664,9 +709,12 @@
         const badge = v('profileBadge');
         const club = v('profileClub');
         const url = v('profileUrl');
+        const level = v('profileLevel');
         const desc = v('profileDesc');
+        const premium = document.getElementById('profilePremium')?.checked ? 'Ja' : 'Nee';
+        const anonymous = document.getElementById('profileAnonymous')?.checked ? 'Ja (anoniem kandidaat)' : 'Nee';
 
-        subject = `[Profiel aanmelden] ${role} — ${name}`;
+        subject = `[Profiel aanmelden${premium === 'Ja' ? ' — PREMIUM' : ''}] ${role} — ${name}`;
         lines = [
           'PROFIEL AANMELDING — VOETBAL4ALL',
           '',
@@ -676,13 +724,16 @@
           `Provincie: ${country === 'INT' ? '—' : (province || '—')}`,
           `Stad: ${city}`,
           `Leeftijd/geboortejaar: ${age || '—'}`,
-          `Positie (speler): ${pos || '—'}`,
+          `${role === 'Trainer' ? 'Trainersprofiel' : 'Positie (speler)'}: ${pos || '—'}`,
+          `Gewenst niveau: ${level || '—'}`,
           `Diploma/UEFA (trainer): ${badge || '—'}`,
           `Huidige club: ${club || '—'}`,
           `Link (CV/portfolio): ${url || '—'}`,
           `Foto: ${photoName}`,
           `CV/document: ${cvName}`,
           `YouTube link: ${youtube || '—'}`,
+          `Premium: ${premium}`,
+          `Anoniem kandidaat: ${anonymous}`,
           '',
           'Omschrijving profiel:',
           desc,
@@ -690,8 +741,7 @@
           `Contact e-mail: ${email}`,
           `Telefoon: ${phone || '—'}`,
           '',
-          'Opmerking: je media (foto, CV/document, YouTube link) is permanent gekoppeld aan je unieke aanvraag-ID.',
-          'NB: voor trainer/speler-profielen is geen Premium mogelijk.'
+          'Opmerking: je media (foto, CV/document, YouTube link) is permanent gekoppeld aan je unieke aanvraag-ID.'
         ];
       }
 
@@ -711,6 +761,13 @@
       fd.append('province', country === 'INT' ? '' : (province || ''));
       fd.append('city', city);
       fd.append('mode', mode);
+      if (mode !== 'vacature') {
+        fd.append('profilePremium', document.getElementById('profilePremium')?.checked ? '1' : '0');
+        fd.append('profileAnonymous', document.getElementById('profileAnonymous')?.checked ? '1' : '0');
+        fd.append('profileLevel', v('profileLevel'));
+        fd.append('profilePos', v('profilePos'));
+        fd.append('profileRole', v('profileRole'));
+      }
 
       if (hint) hint.textContent = 'Aanvraag wordt verstuurd…';
 
