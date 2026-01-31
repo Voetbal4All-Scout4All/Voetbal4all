@@ -696,24 +696,9 @@
 
       const API_BASE = "https://voetbal4all-backend-database.onrender.com";
       const IMG_BASE = "https://voetbal4all-backend-database.onrender.com";
-      // IMPORTANT: avoid backend-generated placeholder (can 502 on cold start). Use inline SVG data URI.
-      const FALLBACK_THUMB = "data:image/svg+xml;utf8," + encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" width="184" height="128" viewBox="0 0 184 128">
-          <defs>
-            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#1b2a4a" stop-opacity="0.55"/>
-              <stop offset="1" stop-color="#0b1222" stop-opacity="0.55"/>
-            </linearGradient>
-          </defs>
-          <rect width="184" height="128" rx="12" fill="url(#g)"/>
-          <g fill="none" stroke="#8fb6ff" stroke-opacity="0.65" stroke-width="2">
-            <path d="M52 86l22-24 18 18 18-22 22 28"/>
-            <rect x="46" y="38" width="92" height="58" rx="10"/>
-            <circle cx="78" cy="58" r="6"/>
-          </g>
-          <text x="92" y="118" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="11" fill="#cfe0ff" fill-opacity="0.8">Voetbal4All</text>
-        </svg>`
-      );
+      // Fallback thumbnail for missing/broken images.
+      // Use a real file (small request, cacheable) instead of an inline data URI.
+      const FALLBACK_THUMB = "assets/img/placeholder.svg";
 
       function resolveImageUrl(u) {
         if (u == null) return null;
