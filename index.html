@@ -148,6 +148,53 @@
       transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
     }
 
+    /* moving football around the CTA button (subtle orbit) */
+    .btn-more-articles{
+      --orb-ball: 18px;
+    }
+
+    .btn-more-articles::before{
+      content:"";
+      position:absolute;
+      width: var(--orb-ball);
+      height: var(--orb-ball);
+      border-radius: 999px;
+      left: 0;
+      top: 0;
+      pointer-events:none;
+      z-index: 2;
+
+      /* simple football look (no extra assets) */
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.95) 0 40%, rgba(235,235,235,.95) 41% 62%, rgba(180,180,180,.9) 63% 100%),
+        radial-gradient(circle at 52% 55%, rgba(40,40,40,.95) 0 18%, transparent 19% 100%),
+        radial-gradient(circle at 28% 70%, rgba(40,40,40,.9) 0 12%, transparent 13% 100%),
+        radial-gradient(circle at 74% 36%, rgba(40,40,40,.9) 0 10%, transparent 11% 100%);
+
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.18) inset,
+        0 2px 10px rgba(0,0,0,.45),
+        0 0 10px rgba(255,160,80,.25);
+
+      opacity: .9;
+      animation: v4aBallOrbit 4.8s linear infinite;
+    }
+
+    @keyframes v4aBallOrbit{
+      /* perimeter orbit around the button */
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(calc(100% - var(--orb-ball)), 0); }
+      50%  { transform: translate(calc(100% - var(--orb-ball)), calc(100% - var(--orb-ball))); }
+      75%  { transform: translate(0, calc(100% - var(--orb-ball))); }
+      100% { transform: translate(0, 0); }
+    }
+
+    /* pause the ball when user prefers reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .btn-more-articles::before{ animation: none; }
+      .btn-more-articles::after{ animation: none; }
+    }
+
     /* animated ember layer */
     .btn-more-articles::after{
       content:"";
