@@ -316,7 +316,7 @@
                   <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
                     <label style="display:flex;gap:8px;align-items:center;">
                       <input id="jobPremium" type="checkbox" />
-                      <span class="note">Ik wil info over <strong>Premium</strong> zichtbaarheid (vacatures)</span>
+                      <span class="note">Ik wil <strong>Premium</strong> zichtbaarheid voor deze vacature.</span>
                     </label>
                   </div>
                 </div>
@@ -670,9 +670,10 @@
         const jobUrl = v('jobUrl');
         const jobAudience = v('jobAudience');
         const jobDesc = v('jobDesc');
-        const premium = document.getElementById('jobPremium')?.checked ? 'Ja, graag premium-info' : 'Nee';
+        const isPremiumWanted = !!document.getElementById('jobPremium')?.checked;
+        const premium = isPremiumWanted ? 'Ja' : 'Nee';
 
-        subject = `[Vacature aanmelden] ${jobTitle} — ${name}`;
+        subject = `[Vacature aanmelden${isPremiumWanted ? ' — PREMIUM' : ''}] ${jobTitle} — ${name}`;
         lines = [
           'CLUBVACATURE AANMELDING — VOETBAL4ALL',
           '',
@@ -685,7 +686,7 @@
           `Startdatum: ${jobStart || '—'}`,
           `Doelgroep: ${jobAudience || '—'}`,
           `Link: ${jobUrl || '—'}`,
-          `Premium interesse: ${premium}`,
+          `Premium: ${premium}`,
           `Foto/logo: ${photoName}`,
           `CV/document: ${cvName}`,
           `YouTube link: ${youtube || '—'}`,
@@ -761,12 +762,35 @@
       fd.append('province', country === 'INT' ? '' : (province || ''));
       fd.append('city', city);
       fd.append('mode', mode);
-      if (mode !== 'vacature') {
-        fd.append('profilePremium', document.getElementById('profilePremium')?.checked ? '1' : '0');
-        fd.append('profileAnonymous', document.getElementById('profileAnonymous')?.checked ? '1' : '0');
-        fd.append('profileLevel', v('profileLevel'));
-        fd.append('profilePos', v('profilePos'));
+
+      const premiumChecked = (mode === 'vacature')
+        ? !!document.getElementById('jobPremium')?.checked
+        : !!document.getElementById('profilePremium')?.checked;
+      fd.append('is_premium', premiumChecked ? '1' : '0');
+
+      // Common raw fields (stored server-side in payload.fields)
+      fd.append('name', name);
+      fd.append('email', email);
+      fd.append('phone', phone);
+
+      if (mode === 'vacature') {
+        fd.append('jobTitle', v('jobTitle'));
+        fd.append('jobStart', v('jobStart'));
+        fd.append('jobUrl', v('jobUrl'));
+        fd.append('jobAudience', v('jobAudience'));
+        fd.append('jobDesc', v('jobDesc'));
+        fd.append('jobPremium', document.getElementById('jobPremium')?.checked ? '1' : '0');
+      } else {
         fd.append('profileRole', v('profileRole'));
+        fd.append('profileAge', v('profileAge'));
+        fd.append('profilePos', v('profilePos'));
+        fd.append('profileBadge', v('profileBadge'));
+        fd.append('profileClub', v('profileClub'));
+        fd.append('profileUrl', v('profileUrl'));
+        fd.append('profileLevel', v('profileLevel'));
+        fd.append('profileDesc', v('profileDesc'));
+        fd.append('profileAnonymous', document.getElementById('profileAnonymous')?.checked ? '1' : '0');
+        fd.append('profilePremium', document.getElementById('profilePremium')?.checked ? '1' : '0');
       }
 
       if (hint) hint.textContent = 'Aanvraag wordt verstuurd…';
