@@ -117,6 +117,38 @@
 
     /* Kill any extra outline pseudo elements that may add a green border */
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
+
+    /* HOME: button under latest articles */
+    .btn-more-articles{
+      display:block;
+      width:100%;
+      margin-top:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      text-align:center;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.2px;
+      color:#EAFBF6;
+      border:1px solid rgba(120,255,210,.35);
+      background: linear-gradient(180deg, rgba(18,26,46,.85), rgba(10,16,34,.65));
+      box-shadow:
+        0 0 0 1px rgba(120,255,210,.10) inset,
+        0 10px 26px rgba(0,0,0,.35),
+        0 0 18px rgba(88,255,190,.22);
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    }
+    .btn-more-articles:hover{
+      transform: translateY(-1px);
+      border-color: rgba(120,255,210,.55);
+      box-shadow:
+        0 0 0 1px rgba(120,255,210,.14) inset,
+        0 14px 34px rgba(0,0,0,.42),
+        0 0 26px rgba(88,255,190,.32);
+    }
+    .btn-more-articles:active{
+      transform: translateY(0px);
+    }
   </style>
 
   <!-- Redirect: /index.html -> / -->
@@ -536,6 +568,7 @@
 
               <div id="latest-news-grid" class="article-list"></div>
               <p id="latest-news-status" class="note" style="display:none;"></p>
+              <a href="artikels.html" class="btn-more-articles" aria-label="Meer artikels laden">Meer artikels laden</a>
             </section>
 
             <!-- RECHTS -->
@@ -818,7 +851,7 @@
 
           // Cache-first: do NOT use nocache=1 on the homepage.
           // DB-cache on backend ensures consistent results, while retries handle short transient gaps.
-          const url = `${API_BASE}/api/news?limit=50`;
+          const url = `${API_BASE}/api/news?limit=30`;
 
           const tries = 5;
           let lastErr = null;
@@ -887,7 +920,7 @@
 
               // ✅ Do NOT hard-require an image.
               // Backend can temporarily return null/placeholder during refresh; UI will always show FALLBACK_THUMB.
-              const displayItems = filteredItems.slice(0, 50);
+              const displayItems = filteredItems.slice(0, 30);
               console.log(`[HOME] no image gate: ${filteredItems.length} → ${displayItems.length}`);
 
               if (displayItems.length < 1) {
