@@ -19,6 +19,73 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Supportersclubs: make form look identical to the Voetbal4All dark UI */
+    .v4-two-col{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .v4-two-col{ grid-template-columns: 1fr; }
+    }
+
+    /* Make the sidebar card consistent */
+    .v4-form-card .card-title{ line-height:1.15; }
+    .v4-form-card .pill-small{ white-space:nowrap; }
+
+    /* Uniform field styling (no white inputs) */
+    #supportersclubForm label{ display:grid; gap:6px; }
+    #supportersclubForm input[type="text"],
+    #supportersclubForm input[type="email"],
+    #supportersclubForm input[type="url"],
+    #supportersclubForm select,
+    #supportersclubForm textarea{
+      width:100%;
+      box-sizing:border-box;
+      border-radius: 12px;
+      padding: 12px 12px;
+      border: 1px solid rgba(120, 200, 180, 0.22);
+      background: rgba(11, 18, 32, 0.72);
+      color: rgba(255,255,255,0.92);
+      outline: none;
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    #supportersclubForm textarea{
+      resize: vertical;
+      min-height: 140px;
+      /* Keep the textarea clean/rectangular feel without looking "childish" */
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    #supportersclubForm input::placeholder,
+    #supportersclubForm textarea::placeholder{
+      color: rgba(255,255,255,0.45);
+    }
+
+    #supportersclubForm input[type="file"]{
+      width:100%;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Button full-width and consistent */
+    #supportersclubForm button.nav-cta{
+      justify-content:center;
+      width:100%;
+    }
+
+    /* Status message visual */
+    #scStatus{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(120, 200, 180, 0.18);
+      background: rgba(11, 18, 32, 0.55);
+    }
+  </style>
 </head>
 
 <body class="v4-hide-live-mobile">
@@ -159,110 +226,110 @@
 <section class="section-main">
 <div class="shell">
 
-  <aside class="sidebar">
+  <div class="v4-two-col">
 
-    <div class="card" style="margin-bottom:12px;">
-      <div class="card-header" style="align-items:flex-start;">
+    <article class="card" style="margin-bottom:12px;">
+      <div class="card-header">
         <div>
-          <div class="card-caption">Gratis aanmelden</div>
-          <div class="card-title" style="font-size:18px;">Supportersclub aanmelden</div>
+          <div class="card-caption">Sportief</div>
+          <div class="card-title">Supportersclubs</div>
         </div>
-        <span class="pill-small">Niet‑premium</span>
+        <span class="pill-small">Gratis promotie</span>
       </div>
+      <p class="note">
+        Supportersclubs zorgen voor sfeer, beleving en verbondenheid.
+        Meld je supportersclub gratis aan en bereik nieuwe leden via Voetbal4All.
+      </p>
+    </article>
 
-      <div class="note" style="margin-top:6px;opacity:.95;">
-        Na verzending ontvang je een e‑mail om te <strong>bevestigen</strong>. Zonder bevestiging wordt de aanvraag automatisch verwijderd.
-        Na publicatie blijft je supportersclub <strong>6 maanden</strong> zichtbaar.
-      </div>
+    <aside class="sidebar">
 
-      <form id="supportersclubForm" style="margin-top:12px;display:grid;gap:10px;">
-        <label>
-          <span class="note">Naam supportersclub *</span>
-          <input id="scName" name="name" required type="text" placeholder="Bijv. Blue Army" style="width:100%;" />
-        </label>
-
-        <label>
-          <span class="note">Club/team dat jullie steunen *</span>
-          <input id="scTeam" name="supported_team" required type="text" placeholder="Bijv. KRC Genk" style="width:100%;" />
-        </label>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          <label>
-            <span class="note">Gemeente/Stad *</span>
-            <input id="scCity" name="city" required type="text" placeholder="Bijv. Genk" style="width:100%;" />
-          </label>
-          <label>
-            <span class="note">Land *</span>
-            <select id="scCountry" name="country" required style="width:100%;">
-              <option value="" selected>Kies…</option>
-              <option value="BE">België</option>
-              <option value="NL">Nederland</option>
-              <option value="INT">Internationaal</option>
-            </select>
-          </label>
+      <div class="card v4-form-card">
+        <div class="card-header" style="align-items:flex-start;">
+          <div>
+            <div class="card-caption">Gratis aanmelden</div>
+            <div class="card-title" style="font-size:18px;">Supportersclub aanmelden</div>
+          </div>
+          <span class="pill-small">Niet‑premium</span>
         </div>
 
-        <label>
-          <span class="note">Contact e‑mail *</span>
-          <input id="scEmail" name="email" required type="email" placeholder="contact@..." style="width:100%;" />
-        </label>
+        <div class="note" style="margin-top:6px;opacity:.95;">
+          Na verzending ontvang je een e‑mail om te <strong>bevestigen</strong>. Zonder bevestiging wordt de aanvraag automatisch verwijderd.
+          Na publicatie blijft je supportersclub <strong>6 maanden</strong> zichtbaar.
+        </div>
 
-        <label>
-          <span class="note">Website of inschrijvingslink (optioneel)</span>
-          <input id="scWebsite" name="website" type="url" placeholder="https://..." style="width:100%;" />
-        </label>
+        <form id="supportersclubForm" style="margin-top:12px;display:grid;gap:10px;">
+          <label>
+            <span class="note">Naam supportersclub *</span>
+            <input id="scName" name="name" required type="text" placeholder="Bijv. Blue Army" />
+          </label>
 
-        <label>
-          <span class="note">Social link (optioneel)</span>
-          <input id="scSocial" name="social" type="url" placeholder="https://instagram.com/..." style="width:100%;" />
-        </label>
+          <label>
+            <span class="note">Club/team dat jullie steunen *</span>
+            <input id="scTeam" name="supported_team" required type="text" placeholder="Bijv. KRC Genk" />
+          </label>
 
-        <label>
-          <span class="note">Korte omschrijving *</span>
-          <textarea id="scDesc" name="description" required rows="5" placeholder="Wie zijn jullie, wanneer komen jullie samen, hoe kan iemand lid worden…" style="width:100%;border-radius:0;"></textarea>
-        </label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <label>
+              <span class="note">Gemeente/Stad *</span>
+              <input id="scCity" name="city" required type="text" placeholder="Bijv. Genk" />
+            </label>
+            <label>
+              <span class="note">Land *</span>
+              <select id="scCountry" name="country" required>
+                <option value="" selected>Kies…</option>
+                <option value="BE">België</option>
+                <option value="NL">Nederland</option>
+                <option value="INT">Internationaal</option>
+              </select>
+            </label>
+          </div>
 
-        <label>
-          <span class="note">Logo / foto (optioneel)</span>
-          <input id="scLogo" name="photo" type="file" accept="image/*" />
-          <div class="note" style="opacity:.8;margin-top:4px;">We tonen geen persoonlijke gegevens. Upload geen ID’s of privé-informatie.</div>
-        </label>
+          <label>
+            <span class="note">Contact e‑mail *</span>
+            <input id="scEmail" name="email" required type="email" placeholder="contact@..." />
+          </label>
 
-        <button type="submit" class="nav-cta" style="justify-content:center;width:100%;">Verstuur aanvraag</button>
+          <label>
+            <span class="note">Website of inschrijvingslink (optioneel)</span>
+            <input id="scWebsite" name="website" type="url" placeholder="https://..." />
+          </label>
 
-        <div id="scStatus" class="note" style="display:none;opacity:.95;"></div>
-      </form>
-    </div>
+          <label>
+            <span class="note">Social link (optioneel)</span>
+            <input id="scSocial" name="social" type="url" placeholder="https://instagram.com/..." />
+          </label>
 
-    <div class="ad-slot ad-slot-sidebar">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-4062633211824348"
-        data-ad-slot="7533097310"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+          <label>
+            <span class="note">Korte omschrijving *</span>
+            <textarea id="scDesc" name="description" required rows="5" placeholder="Wie zijn jullie, wanneer komen jullie samen, hoe kan iemand lid worden…"></textarea>
+          </label>
 
-  </aside>
+          <label>
+            <span class="note">Logo / foto (optioneel)</span>
+            <input id="scLogo" name="photo" type="file" accept="image/*" />
+            <div class="note" style="opacity:.8;margin-top:4px;">We tonen geen persoonlijke gegevens. Upload geen ID’s of privé-informatie.</div>
+          </label>
 
-  <article class="card" style="margin-bottom:12px;">
-    <div class="card-header">
-      <div>
-        <div class="card-caption">Sportief</div>
-        <div class="card-title">Supportersclubs</div>
+          <button type="submit" class="nav-cta" style="justify-content:center;width:100%;">Verstuur aanvraag</button>
+
+          <div id="scStatus" class="note" style="display:none;opacity:.95;"></div>
+        </form>
       </div>
-      <span class="pill-small">Gratis promotie</span>
-    </div>
-    <p class="note">
-      Supportersclubs zorgen voor sfeer, beleving en verbondenheid.
-      Meld je supportersclub gratis aan en bereik nieuwe leden via Voetbal4All.
-    </p>
-  </article>
 
-  <!-- JE BESTAANDE FORMULIER + FILTERS + DEMO LIJST KAN HIER ONGEWIJZIGD BLIJVEN -->
-  <!-- (inhoudelijk identiek aan je vorige versie, enkel layout errond aangepast) -->
+      <div class="ad-slot ad-slot-sidebar">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4062633211824348"
+          data-ad-slot="7533097310"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
 
+    </aside>
+
+  </div>
 </div>
 </section>
 </main>
