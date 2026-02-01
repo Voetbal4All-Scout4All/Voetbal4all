@@ -41,6 +41,7 @@
       overflow:visible;
       isolation:isolate;
       -webkit-backdrop-filter: blur(0px);
+      backdrop-filter: blur(0px);
     }
     .thanks-logo-img{
       width:100%;
@@ -663,9 +664,51 @@
       return new Date(d.getTime() + (weeks * 7 * 24 * 60 * 60 * 1000));
     }
 
+    function computeEventPremiumWindowFromSignupDeadline(sdRaw, pkg, qty) {
+      const sd = parseYMD(sdRaw) || parseIsoDate(sdRaw);
+      if (!sd) return null;
+
+      const p = normalizePkg(pkg);
+      const q = Math.max(1, parseInt(String(qty || '1'), 10) || 1);
+
+      let months = 0;
+      let weeks = 0;
+
+      if (p === 'week') weeks = Math.min(3, Math.max(1, q));
+      else if (p === 'month') months = Math.min(6, Math.max(1, q));
+      else if (p === 'month_4_5') months = Math.min(5, Math.max(4, q));
+      else if (p === 'month_6') months = 6;
+      else if (/^week_\d+$/.test(p)) weeks = Math.min(3, Math.max(1, parseInt(p.split('_')[1], 10) || 1));
+      else if (/^month_\d+$/.test(p)) months = Math.min(6, Math.max(1, parseInt(p.split('_')[1], 10) || 1));
+
+      // premium end = day AFTER last signup day, at 00:00
+      const premiumEnd = new Date(sd.getFullYear(), sd.getMonth(), sd.getDate() + 1, 0, 0, 0, 0);
+
+      // premium start = premiumEnd - chosen period
+      let premiumStart = new Date(premiumEnd.getTime());
+      if (months > 0) premiumStart = addMonths(premiumStart, -months);
+      if (weeks > 0) premiumStart = addWeeks(premiumStart, -weeks);
+
+      return {
+        startIso: premiumStart.toISOString(),
+        endIso: premiumEnd.toISOString()
+      };
+    }
+
     // Raw values (if backend already provides them)
     let premiumStartRaw = getParamAny(['premiumStart', 'premium_from', 'premium_activated_at', 'premiumActivatedAt']);
     let premiumEndRaw = getParamAny(['premiumEnd', 'premium_to', 'premium_expires_at', 'premiumExpiresAt']);
+
+    // Used in multiple branches; declare ONCE to avoid redeclare errors.
+    // Track whether we have a signupDeadline rule (event premium end = signupDeadline + 1 day)
+    // Must not be declared twice in the same scope.
+    let signupDeadlinePresent = false;
+    const signupDeadlineRaw2 =
+      getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+      || (storedEventPayload && storedEventPayload.signupDeadline
+          ? String(storedEventPayload.signupDeadline).trim()
+          : '');
+    signupDeadlinePresent = !!String(signupDeadlineRaw2 || '').trim();
 
     // If premium window is not present in the URL, try to derive it from event date + package
     // This fixes the common case where confirm/delete links don't carry premiumStart/premiumEnd.
@@ -853,7 +896,41 @@
           if (!item) continue;
           fetchedEventItem = item;
 
-          // Prefer backend-calculated premium window
+          // Prefer SIGNUP-DEADLINE logic for events (authoritative), even if backend sends a different window.
+          // If signupDeadline is present (from URL, stored payload, or fetched item), we compute:
+          // end = signupDeadline + 1 day @ 00:00, start = end - package duration.
+          const hasSignupDeadline = !!String(
+            getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+            || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '')
+            || (item && (item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay) ? String(item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay).trim() : '')
+            || ''
+          ).trim();
+
+          if (hasSignupDeadline) {
+            const sdRaw =
+              getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+              || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '')
+              || (item && (item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay)
+                ? String(item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay).trim()
+                : '');
+
+            const pkgRaw3 = (item && (item.package_code || item.packageCode || item.pkg) ? String(item.package_code || item.packageCode || item.pkg).trim() : '')
+              || getParamAny(['package_code','packageCode','pkg'])
+              || (storedEventPayload && storedEventPayload.package_code ? String(storedEventPayload.package_code).trim() : '');
+
+            const qtyRaw3 = (item && (item.quantity || item.qty || item.q) ? String(item.quantity || item.qty || item.q).trim() : '')
+              || getParamAny(['quantity','qty','q'])
+              || (storedEventPayload && storedEventPayload.quantity ? String(storedEventPayload.quantity).trim() : '1');
+
+            const win = computeEventPremiumWindowFromSignupDeadline(sdRaw, pkgRaw3, qtyRaw3);
+            if (win) {
+              premiumStartRaw = win.startIso;
+              premiumEndRaw = win.endIso;
+              break;
+            }
+          }
+
+          // Otherwise: use backend-calculated premium window if available
           const pStart = item.premium_activated_at || item.premiumActivatedAt || item.premium_start || item.premiumStart || '';
           const pEnd = item.premium_expires_at || item.premiumExpiresAt || item.premium_end || item.premiumEnd || '';
 
@@ -865,11 +942,7 @@
 
           // Fallback: only use start/end if we STILL don't have a premium window
           // AND there is no signupDeadline rule to apply.
-          const signupDeadlinePresent = !!String(getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
-            || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '')
-            || '').trim();
-
-          if (!signupDeadlinePresent && !(premiumStartRaw && premiumEndRaw)) {
+          if (!hasSignupDeadline && !(premiumStartRaw && premiumEndRaw)) {
             const fallbackStart = item.premium_activated_at || item.start_at || item.startAt || '';
             const fallbackEnd = item.premium_expires_at || item.end_at || item.endAt || item.start_at || item.startAt || '';
             if (fallbackStart && fallbackEnd) {
