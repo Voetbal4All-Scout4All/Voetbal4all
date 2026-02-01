@@ -1055,9 +1055,17 @@
         ];
       }
 
-      // IMPORTANT: this page is NOT for events; it submits "vacature/profiel" requests.
-      // Backend must expose this endpoint (see backend patch notes).
-      const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/aanmelden-submission';
+      // IMPORTANT: this page submits "vacature" and "profiel" requests.
+      // Backend exposes separate endpoints:
+      //  - /api/forms/vacature-submission
+      //  - /api/forms/profile-submission
+      function getSubmitEndpoint(currentMode) {
+        const base = 'https://voetbal4all-backend-database.onrender.com/api/forms';
+        if (currentMode === 'vacature') return `${base}/vacature-submission`;
+        // trainer + speler -> profile endpoint
+        return `${base}/profile-submission`;
+      }
+
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = 'bedankt.html';
 
@@ -1131,7 +1139,8 @@
       if (hint) hint.textContent = 'Aanvraag wordt verstuurd…';
 
       try {
-        const res = await fetch(SUBMIT_ENDPOINT, { method: 'POST', body: fd });
+        const submitEndpoint = getSubmitEndpoint(mode);
+        const res = await fetch(submitEndpoint, { method: 'POST', body: fd });
         let json = null;
         try { json = await res.json(); } catch (_) {}
 
