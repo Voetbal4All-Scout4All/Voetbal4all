@@ -219,7 +219,7 @@
 
         <label>
           <span class="note">Korte omschrijving *</span>
-          <textarea id="scDesc" name="description" required rows="5" placeholder="Wie zijn jullie, wanneer komen jullie samen, hoe kan iemand lid worden…" style="width:100%;"></textarea>
+          <textarea id="scDesc" name="description" required rows="5" placeholder="Wie zijn jullie, wanneer komen jullie samen, hoe kan iemand lid worden…" style="width:100%;border-radius:0;"></textarea>
         </label>
 
         <label>
@@ -291,7 +291,12 @@
 <script>
   (function () {
     const BACKEND_BASE = "https://voetbal4all-backend-database.onrender.com";
-    const ENDPOINT = `${BACKEND_BASE}/api/forms/supportersclub-submission`;
+    const ENDPOINTS = [
+      `${BACKEND_BASE}/api/forms/supportersclub-submission`,
+      // fallback(s) in case the backend route name differs
+      `${BACKEND_BASE}/api/forms/supportersclubs-submission`,
+      `${BACKEND_BASE}/api/forms/supportersclub-submission/pre`,
+    ];
     const THANKYOU = "bedankt.html";
 
     const form = document.getElementById("supportersclubForm");
@@ -356,16 +361,65 @@
 
       try {
         setStatus("Verzenden…", false);
-        const r = await fetch(ENDPOINT, { method: "POST", body: fd });
-        const j = await r.json().catch(() => ({}));
-        if (!r.ok || !j || !j.id) {
-          const msg = (j && (j.userMessage || j.error)) ? String(j.userMessage || j.error) : "Verzenden mislukt. Probeer opnieuw.";
-          setStatus(msg, true);
+        let lastErrMsg = "";
+        let okJson = null;
+
+        for (const url of ENDPOINTS) {
+          try {
+            const r = await fetch(url, { method: "POST", body: fd });
+
+            // Some backends return an HTML error page like "Cannot POST /...".
+            const ct = String(r.headers.get("content-type") || "").toLowerCase();
+            const raw = ct.includes("application/json")
+              ? null
+              : await r.text().catch(() => "");
+
+            // If it's not ok and looks like a route-missing case, try next endpoint.
+            if (!r.ok) {
+              const looksLikeCannotPost = raw && raw.toLowerCase().includes("cannot post");
+              if (r.status === 404 || looksLikeCannotPost) {
+                lastErrMsg = "Backend endpoint niet gevonden (404).";
+                continue;
+              }
+            }
+
+            // Try JSON parse (either from body or by re-fetching text as needed)
+            let j = null;
+            if (ct.includes("application/json")) {
+              j = await r.json().catch(() => null);
+            } else {
+              // if we already read text into raw, try to parse if it looks like json
+              try {
+                j = raw ? JSON.parse(raw) : null;
+              } catch (_) {
+                j = null;
+              }
+            }
+
+            if (!r.ok || !j || !j.id) {
+              const msg = (j && (j.userMessage || j.error))
+                ? String(j.userMessage || j.error)
+                : "Verzenden mislukt. Probeer opnieuw.";
+              lastErrMsg = msg;
+              // For non-404 errors, stop trying because the endpoint exists but rejected.
+              if (r.status && r.status !== 404) break;
+              continue;
+            }
+
+            okJson = j;
+            break;
+          } catch (e) {
+            lastErrMsg = "Netwerkfout. Probeer opnieuw.";
+            // try next endpoint
+          }
+        }
+
+        if (!okJson) {
+          setStatus(lastErrMsg || "Verzenden mislukt. Probeer opnieuw.", true);
           return;
         }
 
-        // Redirect to bedankt page (same UX pattern)
-        const sid = String(j.id);
+        const sid = String(okJson.id);
         window.location.href = `${THANKYOU}?source=supportersclub&sid=${encodeURIComponent(sid)}`;
       } catch (err) {
         setStatus("Er is een fout opgetreden. Probeer opnieuw.", true);
