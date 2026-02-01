@@ -31,6 +31,22 @@
       padding-top: 12px;
       padding-bottom: 12px;
     }
+
+    /* Spotlight cards: 2 per row + stretch (responsive) */
+    #spotlight-list{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      #spotlight-list{ grid-template-columns: 1fr; }
+    }
+    #spotlight-list .card{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
   </style>
 </head>
 
@@ -227,6 +243,22 @@
     <aside class="v4-sidebar">
       <div class="v4-sidebar-sticky">
 
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Advertentie</div>
+              <div class="card-title">Partners & projecten</div>
+            </div>
+          </div>
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="5032068814"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </article>
+
         <!-- AANMELDEN (GRATIS) -->
         <article class="card" id="spotlightFormCard">
           <div class="card-header">
@@ -322,22 +354,6 @@
               <div id="spotlightFormStatus" class="note" style="display:none;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.35);"></div>
             </div>
           </form>
-        </article>
-
-        <article class="card">
-          <div class="card-header">
-            <div>
-              <div class="card-caption">Advertentie</div>
-              <div class="card-title">Partners & projecten</div>
-            </div>
-          </div>
-          <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-4062633211824348"
-            data-ad-slot="5032068814"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </article>
 
       </div>
@@ -437,6 +453,99 @@
         setStatus('Er ging iets mis bij het verzenden. Probeer opnieuw.', true);
       }
     });
+  })();
+
+  (function initSpotlightSearch(){
+    const listEl = document.getElementById('spotlight-list');
+    if (!listEl) return;
+
+    const qEl = document.getElementById('spotlight-search-text');
+    const countryEl = document.getElementById('spotlight-filter-country');
+    const typeEl = document.getElementById('spotlight-filter-type');
+    const monthEl = document.getElementById('spotlight-filter-month');
+
+    // If the controls are missing, do nothing.
+    if (!qEl || !countryEl || !typeEl || !monthEl) return;
+
+    function norm(s){ return String(s || '').trim().toLowerCase(); }
+
+    function getCardData(card){
+      // Prefer data-* attributes if present (future-proof), else fallback to text
+      const dc = norm(card.getAttribute('data-country') || card.dataset.country);
+      const dt = norm(card.getAttribute('data-type') || card.dataset.type);
+      const dclub = norm(card.getAttribute('data-club') || card.dataset.club);
+      const dcity = norm(card.getAttribute('data-city') || card.dataset.city);
+      const ddate = norm(card.getAttribute('data-date') || card.dataset.date);
+      const text = norm(card.textContent);
+
+      return { country: dc, type: dt, club: dclub, city: dcity, date: ddate, text };
+    }
+
+    function matchesMonth(d, mm){
+      if (!mm) return true;
+      // Try to match month against data-date like YYYY-MM-DD or DD/MM/YYYY or text fallback.
+      const m = String(mm).padStart(2, '0');
+      if (d.date) {
+        if (/\d{4}-\d{2}-\d{2}/.test(d.date)) return d.date.slice(5,7) === m;
+        if (/\d{2}\/\d{2}\/\d{4}/.test(d.date)) return d.date.slice(3,5) === m;
+      }
+      // Fallback: look for common month names in text (nl)
+      const t = d.text;
+      if (m === '09') return t.includes('september');
+      if (m === '10') return t.includes('oktober');
+      if (m === '11') return t.includes('november');
+      return true;
+    }
+
+    function apply(){
+      const q = norm(qEl.value);
+      const fc = norm(countryEl.value);
+      const ft = norm(typeEl.value);
+      const fm = norm(monthEl.value);
+
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      let shown = 0;
+
+      cards.forEach(card => {
+        const d = getCardData(card);
+
+        const okCountry = !fc || d.country === fc || d.text.includes(fc);
+        const okType = !ft || d.type === ft || d.text.includes(ft);
+        const okMonth = matchesMonth(d, fm);
+
+        // Query searches in club/city/text, so users can find on club + stad too.
+        const okQuery = !q || d.club.includes(q) || d.city.includes(q) || d.text.includes(q);
+
+        const ok = okCountry && okType && okMonth && okQuery;
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+
+      // Optional: keep the UX clean if no cards
+      if (cards.length > 0 && shown === 0) {
+        listEl.setAttribute('data-empty', '1');
+      } else {
+        listEl.removeAttribute('data-empty');
+      }
+    }
+
+    // Debounced typing
+    let t = null;
+    function schedule(){
+      clearTimeout(t);
+      t = setTimeout(apply, 120);
+    }
+
+    qEl.addEventListener('input', schedule);
+    countryEl.addEventListener('change', apply);
+    typeEl.addEventListener('change', apply);
+    monthEl.addEventListener('change', apply);
+
+    apply();
+
+    // Re-apply if cards are injected later
+    const mo = new MutationObserver(() => apply());
+    mo.observe(listEl, { childList: true, subtree: true });
   })();
 </script>
 <script src="assets/js/nav-active.js" defer></script>
