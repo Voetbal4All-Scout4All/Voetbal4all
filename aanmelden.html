@@ -534,6 +534,46 @@
                   </div>
                 </div>
 
+                <!-- FACTUURGEGEVENS (alleen bij Premium) -->
+                <div id="invoiceFields" style="display:none;margin-top:12px;">
+                  <div class="card-caption" style="margin-bottom:6px;">Factuurgegevens (Premium) *</div>
+                  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;">
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Factuur op naam van *</div>
+                      <input id="invName" type="text" placeholder="Club / organisatie / naam" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    </label>
+
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">BTW-nummer</div>
+                      <input id="invVat" type="text" placeholder="Bijv. BE0123.456.789" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                      <div id="invVatHint" class="note" style="margin-top:6px;opacity:.85;"></div>
+                    </label>
+
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Factuuradres *</div>
+                      <input id="invAddress" type="text" placeholder="Straat + nummer" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    </label>
+
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Postcode + gemeente *</div>
+                      <input id="invCity" type="text" placeholder="Bijv. 2440 Geel" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    </label>
+
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Facturatie e-mail *</div>
+                      <input id="invEmail" type="email" placeholder="facturatie@…" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    </label>
+
+                    <label style="display:block;">
+                      <div class="card-caption" style="margin-bottom:6px;">Referentie / PO (optioneel)</div>
+                      <input id="invRef" type="text" placeholder="Bijv. interne referentie" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    </label>
+                  </div>
+                  <div class="note" style="margin-top:8px;opacity:.85;">
+                    Factuurgegevens zijn verplicht wanneer je Premium kiest (club, trainer of speler).
+                  </div>
+                </div>
+
                 <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;">
                   <button type="submit" class="btn-ghost-sm" style="color:#fff;">Verstuur aanvraag</button>
                   <span id="submitHint" class="note" style="opacity:.85;"></span>
@@ -713,6 +753,156 @@
       return el ? (el.value || '').trim() : '';
     }
 
+    // ========== Factuurgegevens (Premium) ==========
+    const invoiceWrapEl = document.getElementById('invoiceFields');
+    const invVatEl = document.getElementById('invVat');
+    const invVatHintEl = document.getElementById('invVatHint');
+    const VAT_VALIDATE_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/validate-vat';
+
+    let vatState = { last: '', checked: false, valid: true, name: '', address: '', country: '' };
+
+    function normalizeVat(vat) {
+      return String(vat || '')
+        .toUpperCase()
+        .replace(/\s+/g, '')
+        .replace(/\./g, '')
+        .replace(/-/g, '');
+    }
+
+    function isValidBEVat(vat) {
+      if (!/^BE\d{10}$/.test(vat)) return false;
+      const digits = vat.slice(2);
+      const base = parseInt(digits.slice(0, 8), 10);
+      const check = parseInt(digits.slice(8, 10), 10);
+      const mod = base % 97;
+      const expected = (97 - mod) % 97;
+      const expected2 = expected === 0 ? 97 : expected;
+      return check === expected2;
+    }
+
+    function isValidNLVat(vat) {
+      return /^NL\d{9}B\d{2}$/.test(vat);
+    }
+
+    function basicVatFormatOk(vat) {
+      if (!vat) return true;
+      if (vat.startsWith('BE')) return isValidBEVat(vat);
+      if (vat.startsWith('NL')) return isValidNLVat(vat);
+      return /^[A-Z]{2}[A-Z0-9]{6,14}$/.test(vat);
+    }
+
+    function setVatHint(text, kind) {
+      if (!invVatHintEl) return;
+      invVatHintEl.textContent = text || '';
+      invVatHintEl.style.opacity = text ? '1' : '.85';
+      if (kind === 'error') invVatHintEl.style.color = 'rgba(255,120,120,0.95)';
+      else if (kind === 'ok') invVatHintEl.style.color = 'rgba(120,255,180,0.95)';
+      else invVatHintEl.style.color = '';
+    }
+
+    async function validateVatWithBackend(vat) {
+      const url = `${VAT_VALIDATE_ENDPOINT}?vat=${encodeURIComponent(vat)}`;
+      const res = await fetch(url, { method: 'GET' });
+      const ct = String(res.headers.get('content-type') || '').toLowerCase();
+      let json = null;
+      if (ct.includes('application/json')) {
+        try { json = await res.json(); } catch (_) {}
+      } else {
+        const t = await res.text().catch(() => '');
+        try { json = t ? JSON.parse(t) : null; } catch (_) {}
+      }
+      if (!res.ok || !json || json.ok !== true) return { ok: false };
+      const r = (json && typeof json === 'object' && json.result && typeof json.result === 'object') ? json.result : null;
+      if (!r) return { ok: false };
+      return r;
+    }
+
+    async function validateVatFlow() {
+      if (!invVatEl) return { checked: false, valid: true };
+
+      const raw = invVatEl.value || '';
+      const vat = normalizeVat(raw);
+      invVatEl.value = vat;
+
+      vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
+
+      if (!vat) {
+        setVatHint('', '');
+        return { checked: false, valid: true };
+      }
+
+      if (!basicVatFormatOk(vat)) {
+        vatState = { last: vat, checked: true, valid: false, name: '', address: '', country: '' };
+        setVatHint('BTW-nummer lijkt ongeldig. Controleer het formaat (bv. BE0123456789).', 'error');
+        return { checked: true, valid: false };
+      }
+
+      setVatHint('BTW-nummer wordt gecontroleerd…', 'warn');
+      try {
+        const r = await validateVatWithBackend(vat);
+
+        if (r && r.ok === true && r.status === 'unverifiable_non_eu') {
+          vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: String(r.countryCode || r.country || '') };
+          setVatHint('Is dit BTW-nummer correct?', 'warn');
+          return { checked: false, valid: true };
+        }
+
+        if (r && r.ok === true && r.status === 'verified' && typeof r.valid === 'boolean') {
+          vatState = {
+            last: vat,
+            checked: true,
+            valid: !!r.valid,
+            name: String(r.name || ''),
+            address: String(r.address || ''),
+            country: String(r.countryCode || r.country || '')
+          };
+
+          if (vatState.valid) {
+            setVatHint('BTW-nummer is geldig.', 'ok');
+            return { checked: true, valid: true };
+          }
+
+          setVatHint('BTW-nummer bestaat niet (VIES). Controleer het nummer.', 'error');
+          return { checked: true, valid: false };
+        }
+
+        if (r && r.ok === false && r.status === 'bad_format') {
+          vatState = { last: vat, checked: true, valid: false, name: '', address: '', country: '' };
+          setVatHint('Ongeldig BTW-nummerformaat. Gebruik bv. BE0123456789 (zonder punten/spaties).', 'error');
+          return { checked: true, valid: false };
+        }
+
+        vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
+        setVatHint('BTW-nummer formaat is OK. Definitieve verificatie gebeurt door Voetbal4All.', 'warn');
+        return { checked: false, valid: true };
+      } catch (_) {
+        vatState = { last: vat, checked: false, valid: true, name: '', address: '', country: '' };
+        setVatHint('BTW-nummer formaat is OK. Definitieve verificatie gebeurt door Voetbal4All.', 'warn');
+        return { checked: false, valid: true };
+      }
+    }
+
+    if (invVatEl) {
+      invVatEl.addEventListener('blur', () => { validateVatFlow(); });
+    }
+
+    function syncInvoiceUI() {
+      const jobOn = !!document.getElementById('jobPremium')?.checked;
+      const profOn = !!document.getElementById('profilePremium')?.checked;
+      const on = jobOn || profOn;
+      if (invoiceWrapEl) invoiceWrapEl.style.display = on ? '' : 'none';
+
+      // Required only when premium is enabled
+      const invNameEl = document.getElementById('invName');
+      const invAddressEl = document.getElementById('invAddress');
+      const invCityEl = document.getElementById('invCity');
+      const invEmailEl = document.getElementById('invEmail');
+      if (invNameEl) invNameEl.required = on;
+      if (invAddressEl) invAddressEl.required = on;
+      if (invCityEl) invCityEl.required = on;
+      if (invEmailEl) invEmailEl.required = on;
+    }
+
     // Premium duration pricing (aligned with event-aanmelden)
     const PREMIUM_PRICING = {
       week: 14.99,
@@ -833,6 +1023,8 @@
             nudgeWrap.style.display = 'none';
           }
         }
+        // Keep invoice block in sync when any premium toggles change
+        try { syncInvoiceUI(); } catch (_) {}
       }
 
       cb && cb.addEventListener('change', render);
@@ -862,6 +1054,8 @@
     });
 
     const profilePremiumUI = wirePremiumUI({
+    // Initial invoice visibility
+    try { syncInvoiceUI(); } catch (_) {}
       checkboxId: 'profilePremium',
       optionsWrapId: 'profilePremiumOptions',
       durationId: 'profilePremiumDuration',
@@ -1041,6 +1235,14 @@
       const cvName = document.getElementById('attachCv')?.files?.[0]?.name || '—';
       const youtube = v('youtubeUrl');
 
+      // Invoice fields (only required/used when Premium is chosen)
+      const invName = v('invName');
+      const invVat = v('invVat');
+      const invAddress = v('invAddress');
+      const invCity = v('invCity');
+      const invEmail = v('invEmail');
+      const invRef = v('invRef');
+
       let subject = '';
       let lines = [];
 
@@ -1069,6 +1271,18 @@
           `Doelgroep: ${jobAudience || '—'}`,
           `Link: ${jobUrl || '—'}`,
           `Premium: ${premium}`,
+          ...(isPremiumWanted ? [
+            `Premium-periode: ${premiumPlanLabel || '—'}`,
+            `Premium-totaal: ${eur(Number(premiumPrice || 0))}`,
+            '',
+            'FACTUURGEGEVENS',
+            `Factuur op naam van: ${invName || '—'}`,
+            `BTW-nummer: ${invVat || '—'}`,
+            `Adres: ${invAddress || '—'}`,
+            `Postcode/gemeente: ${invCity || '—'}`,
+            `Facturatie e-mail: ${invEmail || '—'}`,
+            `Referentie/PO: ${invRef || '—'}`,
+          ] : []),
           `Foto/logo: ${photoName}`,
           `CV/document: ${cvName}`,
           `YouTube link: ${youtube || '—'}`,
@@ -1116,6 +1330,18 @@
           `CV/document: ${cvName}`,
           `YouTube link: ${youtube || '—'}`,
           `Premium: ${premium}`,
+          ...(premium === 'Ja' ? [
+            `Premium-periode: ${premiumPlanLabel || '—'}`,
+            `Premium-totaal: ${eur(Number(premiumPrice || 0))}`,
+            '',
+            'FACTUURGEGEVENS',
+            `Factuur op naam van: ${invName || '—'}`,
+            `BTW-nummer: ${invVat || '—'}`,
+            `Adres: ${invAddress || '—'}`,
+            `Postcode/gemeente: ${invCity || '—'}`,
+            `Facturatie e-mail: ${invEmail || '—'}`,
+            `Referentie/PO: ${invRef || '—'}`,
+          ] : []),
           `Anoniem kandidaat: ${anonymous}`,
           '',
           'Omschrijving profiel:',
@@ -1167,6 +1393,13 @@
       fd.append('premiumPlanLabel', premiumChecked ? (premiumPlanLabel || '') : '');
       fd.append('premiumTotalEur', premiumChecked ? (premiumPrice || '') : '');
       fd.append('premiumEffectiveEur', premiumChecked && premiumCalc.effective ? String(Number(premiumCalc.effective).toFixed(2)) : '');
+      // Invoice fields (required when premiumChecked)
+      fd.append('invName', premiumChecked ? (invName || '') : '');
+      fd.append('invVat', premiumChecked ? (invVat || '') : '');
+      fd.append('invAddress', premiumChecked ? (invAddress || '') : '');
+      fd.append('invCity', premiumChecked ? (invCity || '') : '');
+      fd.append('invEmail', premiumChecked ? (invEmail || '') : '');
+      fd.append('invRef', premiumChecked ? (invRef || '') : '');
 
       // Common raw fields (stored server-side in payload.fields)
       fd.append('name', name);
@@ -1193,7 +1426,7 @@
         fd.append('profilePremium', document.getElementById('profilePremium')?.checked ? '1' : '0');
       }
 
-      // Premium validation
+      // Premium validation + factuurgegevens
       if (premiumChecked) {
         if (!premiumPlan) {
           if (hint) hint.textContent = 'Kies een Premium-periode.';
@@ -1206,6 +1439,28 @@
         if (!premiumPrice || !Number.isFinite(Number(premiumPrice)) || Number(premiumPrice) <= 0) {
           if (hint) hint.textContent = 'Ongeldige premiumprijs. Kies opnieuw.';
           return;
+        }
+
+        const invReq = ['invName','invAddress','invCity','invEmail'];
+        for (const id of invReq) {
+          const el = document.getElementById(id);
+          const val = el ? (el.value || '').trim() : '';
+          if (!val) {
+            if (hint) hint.textContent = 'Vul de factuurgegevens volledig in.';
+            try { el && el.focus(); } catch (_) {}
+            return;
+          }
+        }
+
+        // Optional VAT check (format + backend if available)
+        const vatRaw = (document.getElementById('invVat')?.value || '').trim();
+        if (vatRaw) {
+          const r = await validateVatFlow();
+          if (r && r.checked && r.valid === false) {
+            if (hint) hint.textContent = 'Controleer het BTW-nummer.';
+            try { document.getElementById('invVat')?.focus(); } catch (_) {}
+            return;
+          }
         }
       }
 
@@ -1242,6 +1497,15 @@
               quantity: qty,
               price_eur: Number(premiumPrice),
               kind: mode === 'vacature' ? 'vacature' : 'profile',
+              invoice: {
+                name: invName || '',
+                vat: invVat || '',
+                address: invAddress || '',
+                city: invCity || '',
+                email: invEmail || '',
+                ref: invRef || '',
+                submission_id: sid,
+              },
               // Ensure bedankt.html can always render the Premium-periode (even after Stripe redirect)
               success_url: (function () {
                 const u = new URL(`${window.location.origin}/bedankt.html`);
