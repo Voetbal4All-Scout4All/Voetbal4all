@@ -18,7 +18,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+</head>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Team/Medewerker in de kijker: make description textarea rectangular */
+    .v4-textarea{
+      border-radius: 0px !important; /* rectangular */
+      min-height: 140px;
+      height: auto;
+      resize: vertical;
+      line-height: 1.5;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  </style>
 </head>
 
 <body class="v4-hide-live-mobile">
@@ -271,8 +284,8 @@
 
               <label>
                 <span class="note">Omschrijving *</span>
-                <textarea id="spotlightBody" name="body" class="search-input" required rows="6"
-                  placeholder="Korte, duidelijke omschrijving. Wat wil je in de kijker zetten? Waarom is dit bijzonder?" style="resize:vertical;"></textarea>
+                <textarea id="spotlightBody" name="body" class="search-input v4-textarea" required rows="6"
+                  placeholder="Korte, duidelijke omschrijving. Wat wil je in de kijker zetten? Waarom is dit bijzonder?"></textarea>
               </label>
 
               <label>
@@ -362,7 +375,10 @@
 
     const statusEl = document.getElementById('spotlightFormStatus');
     const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
-    const ENDPOINT = API_BASE + '/api/forms/spotlight-submission';
+    // Backend route for Team/Medewerker in de kijker
+    // Some environments may still point to an older route name; we try primary first and fall back.
+    const ENDPOINT_PRIMARY = API_BASE + '/api/forms/team-in-de-kijker-submission';
+    const ENDPOINT_FALLBACK = API_BASE + '/api/forms/spotlight-submission';
 
     function setStatus(msg, isError){
       if (!statusEl) return;
@@ -390,11 +406,21 @@
         const photo = document.getElementById('spotlightPhoto')?.files?.[0];
         if (photo) fd.append('photo', photo, photo.name);
 
-        // backend expects a predictable kind
-        fd.append('kind', 'spotlight');
+        // backend uses route-specific kind; keep a stable marker in payload fields
+        fd.append('form_kind', 'team-in-de-kijker');
 
-        const r = await fetch(ENDPOINT, { method: 'POST', body: fd });
-        const j = await r.json().catch(() => ({}));
+        // Try primary endpoint first, then fallback if the backend returns a classic Express “Cannot POST …” (404).
+        let r = await fetch(ENDPOINT_PRIMARY, { method: 'POST', body: fd });
+        let j = await r.json().catch(() => null);
+
+        if (!r.ok) {
+          // Fallback if the primary endpoint is not available yet.
+          const isCannotPost = (j == null) && (r.status === 404);
+          if (isCannotPost) {
+            r = await fetch(ENDPOINT_FALLBACK, { method: 'POST', body: fd });
+            j = await r.json().catch(() => ({}));
+          }
+        }
         if (!r.ok || !j || j.ok === false) {
           const msg = (j && (j.userMessage || j.error)) ? String(j.userMessage || j.error) : 'Verzenden mislukt.';
           setStatus(msg, true);
@@ -405,7 +431,7 @@
         setStatus('Aanvraag ontvangen. Controleer je e-mail om te bevestigen.', false);
 
         // Redirect to bedankt page (consistent UX)
-        const url = `bedankt.html?source=spotlight&sid=${encodeURIComponent(sid)}`;
+        const url = `bedankt.html?source=team-in-de-kijker&sid=${encodeURIComponent(sid)}`;
         window.location.href = url;
       } catch (err) {
         setStatus('Er ging iets mis bij het verzenden. Probeer opnieuw.', true);
