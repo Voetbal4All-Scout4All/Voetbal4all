@@ -1,27 +1,16 @@
 {
-  "generatedAt": "2026-02-01T19:27:46.970Z",
+  "generatedAt": "2026-02-01T20:31:56.549Z",
   "items": [
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Is Carrick proving Amorim's Man Utd tenure was a wasted year?",
-      "link": "https://www.bbc.com/sport/football/articles/cn9zwy2x4q4o?at_medium=RSS&at_campaign=rss",
-      "summary": "A third win in a row for Michael Carrick highlights the failures of Ruben Amorim's time at Manchester United",
-      "publishedAt": "2026-02-01T19:21:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Immobile naar Ligue 1, nieuwe buitenspeler voor Juventus",
-      "link": "https://www.vi.nl/nieuws/carrick-wil-rashford-terughalen-naar-man-utd",
-      "summary": "De tijd van winterse versterkingen is aangebroken, in dit blog volgen we alle transferactiviteit in het buitenland. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-02-01T19:19:32.000Z"
+      "title": "Saint-Maximin leaves América after kids 'abused'",
+      "link": "https://www.espn.com/soccer/story/_/id/47799659/allan-saint-maximin-newcastle-star-leaves-club-america-mexican-children-racially-abused",
+      "summary": "Former Newcastle winger Allan Saint-Maximin has left Mexican side Club America by mutual consent after claiming that his children were the victims of racist abuse.",
+      "publishedAt": "2026-02-01T20:27:38.000Z"
     },
     {
       "type": "rss",
@@ -29,76 +18,10 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Carrick's calm amid the chaos is exactly what Man ...",
-      "link": "https://www.espn.com/soccer/story/_/id/47795541/michael-carrick-calm-amid-chaos-exactly-manchester-united-need-amorim",
-      "summary": "Michael Carrick has three wins from three games in charge at Man United and has only made one change to the team. He is keeping things simple.",
-      "publishedAt": "2026-02-01T19:17:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "European live updates: Tottenham comeback spoils M...",
-      "link": "https://www.espn.com/soccer/story/_/id/47769572/european-premier-league-live-updates-man-united-fulham-tottenham-manchester-city",
-      "summary": "Here is a look back at Sunday's Premier League action as it happened via our live blog.",
-      "publishedAt": "2026-02-01T19:17:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: foutje Van Oevelen leidt de openingstreffer van Go Ahead in",
-      "link": "https://www.vi.nl/nieuws/vi-live-foutje-van-oevelen-leidt-de-openingstreffer-van-go-ahead-in",
-      "summary": "Welkom in de VI Live van zondag 1 februari. Hier nemen we je mee in drie Eredivisie-duels, een topper in Engeland en alle andere hoogtepunten op de (inter)nationale velden.",
-      "publishedAt": "2026-02-01T19:12:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ajax toont al zijn beperkingen aan Jordi Cruijff",
-      "link": "https://www.vi.nl/pro/ajax-toont-al-zijn-beperkingen-aan-jordi-cruijff",
-      "summary": "Ajax heeft zichzelf zondagmiddag lelijk in de vingers gesneden. Ook op bezoek bij promovendus Excelsior ging het maar weer eens mis in de tweede helft: 2-2. Voor technisch directeur Jordi Cruijff, die op de tribune zat, was het nog maar eens de bevestiging dat hem een zware klus staat te wachten. 'Het is gewoon heel erg fragiel.'",
-      "publishedAt": "2026-02-01T19:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Fulham keert met 35 miljoen euro voor Pepi terug bij PSV",
-      "link": "https://www.vi.nl/nieuws/fulham-keert-met-35-miljoen-euro-voor-pepi-terug-bij-psv",
-      "summary": "De transfer van Ricardo Pepi naar Fulham komt er mogelijk alsnog. De Engelse club is teruggekeerd bij PSV en zou bereid zijn om 35 miljoen euro te betalen. PSV wil de spits echter niet meer laten gaan deze winter. Een deal voor de zomer is ook een optie.",
-      "publishedAt": "2026-02-01T18:59:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Solanke dents Manchester City’s title hopes with stirring comeback for Spurs",
-      "link": "https://www.theguardian.com/football/2026/feb/01/tottenham-manchester-city-premier-league-match-report",
-      "summary": "At the end of a truly wild occasion, this the definition of the game of two halves, it was difficult to state the case for Manchester City’s Premier League title-winning aspirations. The manner of their second-half capitulation saw to that. If they were impressive before the interval, they were so brittle thereafter, blown off course after Tottenham stirred. Pep Guardiola was beside himself with frustration on the touchline. Continue reading...",
-      "publishedAt": "2026-02-01T18:58:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Bellingham injured for Madrid, 'an important loss'...",
-      "link": "https://www.espn.com/soccer/story/_/id/47796369/jude-bellingham-injured-real-madrid-clash-rayo-vallecano",
-      "summary": "Jude Bellingham was substituted early in Real Madrid's LaLiga game with Rayo Vallecano on Sunday, forced off with what appeared to be a hamstring injury.",
-      "publishedAt": "2026-02-01T18:54:58.000Z"
+      "title": "Sources: Chelsea recall Sarr, send out Anselmino",
+      "link": "https://www.espn.com/soccer/story/_/id/47799784/chelsea-recall-sarr-send-anselmino-strasbourg",
+      "summary": "Chelsea will recall Mamadou Sarr from his loan at sister club Strasbourg and sent Aaron Anselmino to France in a swap deal before the end of the transfer window on Monday, sources have told ESPN.",
+      "publishedAt": "2026-02-01T20:27:38.000Z"
     },
     {
       "type": "rss",
@@ -109,18 +32,7 @@
       "title": "Carrick hails 'big talent' Sesko after United winn...",
       "link": "https://www.espn.com/soccer/story/_/id/47798798/carrick-sesko-manchester-united-winner",
       "summary": "Michael Carrick called Benjamin Sesko a \"big talent\" after the Manchester United forward climbed off the substitutes' bench to score a stoppage-time winner in the 3-2 Old Trafford victory against Fulham.",
-      "publishedAt": "2026-02-01T18:54:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Spurs fight back vs City, Arsenal 6 clear at top",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740828",
-      "summary": "A rip-roaring second-half from Tottenham saw them fight back from two goals down to claim a 2-2 draw at home to Manchester City and boost fierce rivals Arsenal's title bid.",
-      "publishedAt": "2026-02-01T18:54:57.000Z"
+      "publishedAt": "2026-02-01T20:27:38.000Z"
     },
     {
       "type": "rss",
@@ -128,21 +40,54 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "PSV bouwt verder op het Peter Bosz-fundament",
-      "link": "https://www.vi.nl/pro/psv-bouwt-verder-op-het-peter-bosz-fundament",
-      "summary": "Peter Bosz is de komende jaren trainer van PSV, maakte de club bekend op de dag dat het Philips Stadion – op 1 februari nota bene – vrolijk over een aanstaand kampioenschap zong nadat Feyenoord doodeenvoudig opzijgezet werd.",
-      "publishedAt": "2026-02-01T18:45:00.000Z"
+      "title": "Lang debuteert met basisplaats en grote zege bij Galatasaray",
+      "link": "https://www.vi.nl/nieuws/lang-debuteert-met-basisplaats-en-grote-zege-bij-galatasaray",
+      "summary": "Noa Lang heeft zondagavond zijn debuut gemaakt in het shirt van Galatasaray. Met de winteraanwinst in de basis boekte de koploper van de Süper Lig een ruime overwinning op Kayserispor.",
+      "publishedAt": "2026-02-01T20:26:19.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Masters darts LIVE! Littler plays Price in semi-final showdown",
-      "link": "https://www.skysports.com/darts/live-blog/12040/13500752/winmau-world-masters-darts-live-latest-updates-scores-highlights-as-luke-littler-luke-humphries-michael-van-gerwen-feature",
-      "summary": "",
-      "publishedAt": "2026-02-01T18:42:00.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: Volendam op jacht naar gelijkmaker tegen tiental Go Ahead",
+      "link": "https://www.vi.nl/nieuws/vi-live-volendam-op-jacht-naar-gelijkmaker-tegen-tiental-go-ahead",
+      "summary": "Welkom in de VI Live van zondag 1 februari. Hier nemen we je mee in drie Eredivisie-duels, een topper in Engeland en alle andere hoogtepunten op de (inter)nationale velden.",
+      "publishedAt": "2026-02-01T20:24:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Wintertransfers Eredivisie seizoen 2025/26: alle clubs op een rij",
+      "link": "https://www.vi.nl/nieuws/wintertransfers-eredivisie-seizoen-2025-26-alle-clubs-op-een-rij",
+      "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde, door clubs bevestigde, wintertransfers van de achttien Eredivisie-clubs. Clubs in Nederland kunnen tot en met 3 februari spelers aantrekken .",
+      "publishedAt": "2026-02-01T20:20:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "NEC presenteert volgende versterking in jacht op topklassering",
+      "link": "https://www.vi.nl/nieuws/nec-presenteert-volgende-versterking-in-jacht-op-topklassering",
+      "summary": "NEC haalt Willum Willumsson per direct terug naar de Eredivisie. De middenvelder komt over van Birmingham City en tekent een verbintenis tot medio 2028 in Nijmegen. NEC heeft een eenzijdige optie om het contract met een jaar te verlengen.",
+      "publishedAt": "2026-02-01T20:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Casemiro blinkt uit onder Carrick: 'Fraai afscheidstournee bij United'",
+      "link": "https://www.vi.nl/nieuws/casemiro-blinkt-uit-onder-carrick-fraai-afscheidstournee-bij-united",
+      "summary": "Casemiro is een van de spelers die onder Michael Carrick is opgebloeid bij Manchester United. De Braziliaanse middenvelder is een belangrijke schakel bij de ingezette zegereeks en kreeg na het duel met Fulham complimenten van zijn manager én de media.",
+      "publishedAt": "2026-02-01T20:06:10.000Z"
     },
     {
       "type": "rss",
@@ -150,10 +95,98 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Why Man City have toppled Chelsea as England's best",
-      "link": "https://www.bbc.com/sport/football/articles/cj4lkdpwjzno?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City's victory over Chelsea was confirmation they are the best team in the country this season and they are the WSL champions in waiting.",
-      "publishedAt": "2026-02-01T18:41:57.000Z"
+      "title": "Solanke scorpion kick helps Spurs fight back against Man City",
+      "link": "https://www.bbc.com/sport/football/videos/cvgp9d1xj29o?at_medium=RSS&at_campaign=rss",
+      "summary": "Dominic Solanke scores twice, including a spectacular scorpion kick, as Tottenham come from behind to draw against Manchester City with a rousing second-half performance.",
+      "publishedAt": "2026-02-01T19:59:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sesko scores dramatic late winner as Man Utd beat Fulham",
+      "link": "https://www.bbc.com/sport/football/videos/c2k97dxk9j1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United avoided Fulham's late comeback due to a Benjamin Sesko goal in stoppage time to give United three points and continue head coach Michael Carrick's perfect start.",
+      "publishedAt": "2026-02-01T19:59:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sarr earns Palace draw at Forest as Williams sees red for handball",
+      "link": "https://www.bbc.com/sport/football/videos/czx3ed19k96o?at_medium=RSS&at_campaign=rss",
+      "summary": "Neco Williams is sent off for deliberate handball in Nottingham Forest's draw with Crystal Palace, as he punched Jefferson Lerma's goalbound header off the line.",
+      "publishedAt": "2026-02-01T19:59:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "10-man Brentford hold on for hard-fought win at Villa",
+      "link": "https://www.bbc.com/sport/football/videos/c5y2rpy3378o?at_medium=RSS&at_campaign=rss",
+      "summary": "Brentford hold on to an important win against Aston Villa, despite Kevin Schade's sending off during the first half.",
+      "publishedAt": "2026-02-01T19:59:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Carrick's calm amid the chaos is exactly what Man ...",
+      "link": "https://www.espn.com/soccer/story/_/id/47795541/michael-carrick-calm-amid-chaos-exactly-manchester-united-need-amorim",
+      "summary": "Michael Carrick has three wins from three games in charge at Man United.",
+      "publishedAt": "2026-02-01T19:44:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Premier League title-race twist: Questions for Man...",
+      "link": "https://www.espn.com/soccer/story/_/id/47799175/man-city-blow-lead-tottenham-premier-league-title-worries-city-less-pressure-frank",
+      "summary": "The momentum has shifted in the Premier League title race again as Man City wasted a two-goal lead at Tottenham. How did that happen?",
+      "publishedAt": "2026-02-01T19:44:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Is Carrick proving Amorim's Man Utd tenure was a wasted year?",
+      "link": "https://www.bbc.com/sport/football/articles/cn9zwy2x4q4o?at_medium=RSS&at_campaign=rss",
+      "summary": "A third win in a row for Michael Carrick highlights the failures of Ruben Amorim's time at Manchester United.",
+      "publishedAt": "2026-02-01T19:21:26.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Solanke dents Manchester City’s title hopes with stirring comeback for Spurs",
+      "link": "https://www.theguardian.com/football/2026/feb/01/tottenham-manchester-city-premier-league-match-report",
+      "summary": "At the end of a wild occasion, this the definition of the game of two halves, it was difficult to state the case for Manchester City’s Premier League title-winning aspirations with any confidence. The manner of their second-half capitulation saw to that. If they were impressive before the interval, they were so brittle thereafter, blown off course after Tottenham stirred. Pep Guardiola was beside himself with frustration on the touchline. The City manager has now seen his team drop seven points since the turn of the year with goals they have conceded in the second half of matches. After a fourth draw in six league matches, a run that has included the defeat by Manchester United, City find themselves six points behind the leaders, Arsenal. Continue reading...",
+      "publishedAt": "2026-02-01T18:58:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "World Masters darts LIVE! Humphries leads Van Veen after Littler wins EPIC",
+      "link": "https://www.skysports.com/darts/live-blog/12040/13500752/winmau-world-masters-darts-live-latest-updates-scores-highlights-as-luke-littler-luke-humphries-michael-van-gerwen-feature",
+      "summary": "",
+      "publishedAt": "2026-02-01T18:42:00.000Z"
     },
     {
       "type": "rss",
@@ -183,43 +216,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "'Extraordinary!' | Solanke scores sensational SCORPION KICK equaliser",
-      "link": "https://www.skysports.com/watch/video/13502037/goal-d-solanke-70-spurs-2-2-manchester-city",
-      "summary": "Solanke scores SCORPION KICK equaliser for Spurs against Manchester City in the Premier League.",
-      "publishedAt": "2026-02-01T18:08:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Banton clubs England to T20 series win on record day for Buttler",
       "link": "https://www.skysports.com/cricket/news/12040/13501848/sri-lanka-vs-england-jos-buttler-breaks-appearance-record-as-harry-brook-and-tom-banton-seal-t20-series-win",
       "summary": "Jos Buttler's record-setting 402nd England appearance came in a series-sealing victory as captain Harry Brook's cameo and Tom Banton's half-century smoked the tourists to a six-wicket win in a rain-trimmed second T20 against Sri Lanka in Pallekele.",
       "publishedAt": "2026-02-01T18:05:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Wolves accept reduced £48m offer for Strand Larsen",
-      "link": "https://www.bbc.com/sport/football/articles/cy59zngnxd1o?at_medium=RSS&at_campaign=rss",
-      "summary": "Wolves have accepted a reduced offer worth £48m for striker Jorgen Strand Larsen from Crystal Palace.",
-      "publishedAt": "2026-02-01T16:55:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sesko seals dramatic win over Fulham to continue Manchester United revival",
-      "link": "https://www.theguardian.com/football/2026/feb/01/manchester-united-fulham-premier-league-match-report",
-      "summary": "Benjamin Sesko will never forget the stoppage-time pirouette and finish in front of the Stretford End that burst Bernd Leno’s net and earned Manchester United a memorable victory over Fulham. Just 180 seconds earlier Kevin had curled a peach of an equaliser past Senne Lammens that hushed the Old Trafford faithful and seemed to have grabbed a point for the visitors. Continue reading...",
-      "publishedAt": "2026-02-01T16:48:59.000Z"
     }
   ]
 }
