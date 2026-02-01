@@ -321,18 +321,35 @@
                   </div>
 
                   <div id="jobPremiumOptions" style="display:none;margin-top:10px;">
-                    <label style="display:block;">
-                      <div class="card-caption" style="margin-bottom:6px;">Premium-periode *</div>
-                      <select id="jobPremiumDuration" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
-                        <option value="" selected disabled>Kies…</option>
-                        <option value="m1">1 maand</option>
-                        <option value="m2">2 maanden</option>
-                        <option value="m3">3 maanden</option>
-                        <option value="m4">4 maanden</option>
-                        <option value="m5">5 maanden</option>
-                        <option value="m6">6 maanden</option>
-                      </select>
-                    </label>
+                    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;">
+                      <label style="display:block;">
+                        <div class="card-caption" style="margin-bottom:6px;">Premium-periode *</div>
+                        <select id="jobPremiumDuration" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
+                          <option value="" selected disabled>Kies…</option>
+                          <optgroup label="Maanden (1–3: 49,99 €/maand)">
+                            <option value="m1">1 maand — 49,99€</option>
+                            <option value="m2">2 maanden — 99,98€</option>
+                            <option value="m3">3 maanden — 149,97€</option>
+                          </optgroup>
+                          <optgroup label="Maanden (4–5: 44,99 €/maand)">
+                            <option value="m4">4 maanden — 179,96€</option>
+                            <option value="m5">5 maanden — 224,95€</option>
+                          </optgroup>
+                          <optgroup label="6 maanden (vaste prijs)">
+                            <option value="m6">6 maanden — 249,99€ (≈ 41,67€/maand)</option>
+                          </optgroup>
+                        </select>
+                      </label>
+
+                      <article class="card" style="padding:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
+                        <div class="card-caption" style="margin-bottom:6px;">Prijzen (transparant)</div>
+                        <ul class="note" style="margin:0;padding-left:18px;line-height:1.6;">
+                          <li>1–3 maanden: <strong>49,99€ / maand</strong></li>
+                          <li>4–5 maanden: <strong>44,99€ / maand</strong></li>
+                          <li>6 maanden: <strong>249,99€</strong> (≈ 41,67€ / maand)</li>
+                        </ul>
+                      </article>
+                    </div>
 
                     <div style="margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
                       <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
@@ -445,18 +462,35 @@
                   </div>
 
                   <div id="profilePremiumOptions" style="display:none;margin-top:10px;">
-                    <label style="display:block;">
-                      <div class="card-caption" style="margin-bottom:6px;">Premium-periode *</div>
-                      <select id="profilePremiumDuration" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
-                        <option value="" selected disabled>Kies…</option>
-                        <option value="m1">1 maand</option>
-                        <option value="m2">2 maanden</option>
-                        <option value="m3">3 maanden</option>
-                        <option value="m4">4 maanden</option>
-                        <option value="m5">5 maanden</option>
-                        <option value="m6">6 maanden</option>
-                      </select>
-                    </label>
+                    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;">
+                      <label style="display:block;">
+                        <div class="card-caption" style="margin-bottom:6px;">Premium-periode *</div>
+                        <select id="profilePremiumDuration" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;">
+                          <option value="" selected disabled>Kies…</option>
+                          <optgroup label="Maanden (1–3: 49,99 €/maand)">
+                            <option value="m1">1 maand — 49,99€</option>
+                            <option value="m2">2 maanden — 99,98€</option>
+                            <option value="m3">3 maanden — 149,97€</option>
+                          </optgroup>
+                          <optgroup label="Maanden (4–5: 44,99 €/maand)">
+                            <option value="m4">4 maanden — 179,96€</option>
+                            <option value="m5">5 maanden — 224,95€</option>
+                          </optgroup>
+                          <optgroup label="6 maanden (vaste prijs)">
+                            <option value="m6">6 maanden — 249,99€ (≈ 41,67€/maand)</option>
+                          </optgroup>
+                        </select>
+                      </label>
+
+                      <article class="card" style="padding:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
+                        <div class="card-caption" style="margin-bottom:6px;">Prijzen (transparant)</div>
+                        <ul class="note" style="margin:0;padding-left:18px;line-height:1.6;">
+                          <li>1–3 maanden: <strong>49,99€ / maand</strong></li>
+                          <li>4–5 maanden: <strong>44,99€ / maand</strong></li>
+                          <li>6 maanden: <strong>249,99€</strong> (≈ 41,67€ / maand)</li>
+                        </ul>
+                      </article>
+                    </div>
 
                     <div style="margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
                       <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
@@ -743,7 +777,7 @@
         const r = calcPremiumMonths(sel);
         if (totalEl) totalEl.textContent = eur(r.total);
         if (breakdownEl) {
-          if (!sel) breakdownEl.textContent = 'Kies een Premium-periode om de prijs te zien.';
+          if (!sel) breakdownEl.textContent = 'Kies een Premium-periode.';
           else if (r.units === 6) breakdownEl.textContent = `Vaste prijs ${eur(r.total)} (≈ ${eur(r.effective)} / maand)`;
           else breakdownEl.textContent = `${r.units} maanden × ${eur(r.effective)} / maand`;
         }
