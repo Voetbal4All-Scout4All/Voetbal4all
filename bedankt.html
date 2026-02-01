@@ -1001,9 +1001,10 @@
       ['error','failed','mislukt'].includes(String(status).toLowerCase());
 
     // NOTE: `hasPremiumWindow` is declared later (after backend lookup).
-    // Using it here caused a ReferenceError and stopped all JS on the page.
+    // Do NOT mark as paid just because dates exist: non-premium events may still have
+    // computed windows (e.g. signupDeadline logic). Only Stripe success = paid.
     const hasPremiumWindowNow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
-    if (hasPremiumWindowNow || isNonEventPremium) status = 'Betaald';
+    if (paid) status = 'Betaald';
     if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
     if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
     if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
@@ -1372,7 +1373,7 @@
       hasPremiumWindow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
     };
 
-    if (!isError && !isDeleted && (hasPremiumWindow || isNonEventPremium)) {
+    if (!isError && !isDeleted && paid && (hasPremiumWindow || isNonEventPremium)) {
       if (premiumBlock) premiumBlock.style.display = '';
       // Fallback label for non-event premium (profiles/vacatures)
       // Non-event premium (profiles/vacatures): if premium window is still missing, derive from package + quantity.
