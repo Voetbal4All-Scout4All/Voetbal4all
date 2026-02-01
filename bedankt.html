@@ -639,6 +639,17 @@
       return d;
     }
 
+    function parseYMD(s) {
+      const v = String(s || '').trim();
+      const m = v.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!m) return null;
+      const y = Number(m[1]);
+      const mo = Number(m[2]);
+      const d = Number(m[3]);
+      const dt = new Date(y, mo - 1, d, 0, 0, 0, 0);
+      return Number.isNaN(dt.getTime()) ? null : dt;
+    }
+
     function addMonths(d, months) {
       const dt = new Date(d.getTime());
       const day = dt.getDate();
@@ -707,7 +718,7 @@
             const signupDeadlineRaw = getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
               || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '');
 
-            const sd = parseIsoDate(signupDeadlineRaw);
+            const sd = parseYMD(signupDeadlineRaw) || parseIsoDate(signupDeadlineRaw);
             const premiumEndAnchor = sd
               ? new Date(sd.getTime() + 24 * 60 * 60 * 1000)
               : new Date(eventEnd.getTime());
@@ -866,14 +877,20 @@
             break;
           }
 
-          // Fallback: if backend has start/end but not premium window, at least show deterministic window
-          // (start_at/end_at) so the UI can still render something.
-          const fallbackStart = item.premium_activated_at || item.start_at || item.startAt || '';
-          const fallbackEnd = item.premium_expires_at || item.end_at || item.endAt || item.start_at || item.startAt || '';
-          if (fallbackStart && fallbackEnd) {
-            premiumStartRaw = String(fallbackStart);
-            premiumEndRaw = String(fallbackEnd);
-            break;
+          // Fallback: only use start/end if we STILL don't have a premium window
+          // AND there is no signupDeadline rule to apply.
+          const signupDeadlinePresent = !!String(getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+            || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '')
+            || '').trim();
+
+          if (!signupDeadlinePresent && !(premiumStartRaw && premiumEndRaw)) {
+            const fallbackStart = item.premium_activated_at || item.start_at || item.startAt || '';
+            const fallbackEnd = item.premium_expires_at || item.end_at || item.endAt || item.start_at || item.startAt || '';
+            if (fallbackStart && fallbackEnd) {
+              premiumStartRaw = String(fallbackStart);
+              premiumEndRaw = String(fallbackEnd);
+              break;
+            }
           }
         } catch (e) {
           // silent
