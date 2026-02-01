@@ -160,6 +160,80 @@
 <div class="shell">
 
   <aside class="sidebar">
+
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-header" style="align-items:flex-start;">
+        <div>
+          <div class="card-caption">Gratis aanmelden</div>
+          <div class="card-title" style="font-size:18px;">Supportersclub aanmelden</div>
+        </div>
+        <span class="pill-small">Niet‑premium</span>
+      </div>
+
+      <div class="note" style="margin-top:6px;opacity:.95;">
+        Na verzending ontvang je een e‑mail om te <strong>bevestigen</strong>. Zonder bevestiging wordt de aanvraag automatisch verwijderd.
+        Na publicatie blijft je supportersclub <strong>6 maanden</strong> zichtbaar.
+      </div>
+
+      <form id="supportersclubForm" style="margin-top:12px;display:grid;gap:10px;">
+        <label>
+          <span class="note">Naam supportersclub *</span>
+          <input id="scName" name="name" required type="text" placeholder="Bijv. Blue Army" style="width:100%;" />
+        </label>
+
+        <label>
+          <span class="note">Club/team dat jullie steunen *</span>
+          <input id="scTeam" name="supported_team" required type="text" placeholder="Bijv. KRC Genk" style="width:100%;" />
+        </label>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <label>
+            <span class="note">Gemeente/Stad *</span>
+            <input id="scCity" name="city" required type="text" placeholder="Bijv. Genk" style="width:100%;" />
+          </label>
+          <label>
+            <span class="note">Land *</span>
+            <select id="scCountry" name="country" required style="width:100%;">
+              <option value="" selected>Kies…</option>
+              <option value="BE">België</option>
+              <option value="NL">Nederland</option>
+              <option value="INT">Internationaal</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span class="note">Contact e‑mail *</span>
+          <input id="scEmail" name="email" required type="email" placeholder="contact@..." style="width:100%;" />
+        </label>
+
+        <label>
+          <span class="note">Website of inschrijvingslink (optioneel)</span>
+          <input id="scWebsite" name="website" type="url" placeholder="https://..." style="width:100%;" />
+        </label>
+
+        <label>
+          <span class="note">Social link (optioneel)</span>
+          <input id="scSocial" name="social" type="url" placeholder="https://instagram.com/..." style="width:100%;" />
+        </label>
+
+        <label>
+          <span class="note">Korte omschrijving *</span>
+          <textarea id="scDesc" name="description" required rows="5" placeholder="Wie zijn jullie, wanneer komen jullie samen, hoe kan iemand lid worden…" style="width:100%;"></textarea>
+        </label>
+
+        <label>
+          <span class="note">Logo / foto (optioneel)</span>
+          <input id="scLogo" name="photo" type="file" accept="image/*" />
+          <div class="note" style="opacity:.8;margin-top:4px;">We tonen geen persoonlijke gegevens. Upload geen ID’s of privé-informatie.</div>
+        </label>
+
+        <button type="submit" class="nav-cta" style="justify-content:center;width:100%;">Verstuur aanvraag</button>
+
+        <div id="scStatus" class="note" style="display:none;opacity:.95;"></div>
+      </form>
+    </div>
+
     <div class="ad-slot ad-slot-sidebar">
       <ins class="adsbygoogle"
         style="display:block"
@@ -169,6 +243,7 @@
         data-full-width-responsive="true"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
+
   </aside>
 
   <article class="card" style="margin-bottom:12px;">
@@ -212,6 +287,93 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<script>
+  (function () {
+    const BACKEND_BASE = "https://voetbal4all-backend-database.onrender.com";
+    const ENDPOINT = `${BACKEND_BASE}/api/forms/supportersclub-submission`;
+    const THANKYOU = "bedankt.html";
+
+    const form = document.getElementById("supportersclubForm");
+    const statusEl = document.getElementById("scStatus");
+    if (!form) return;
+
+    function setStatus(msg, isError) {
+      if (!statusEl) return;
+      statusEl.style.display = "block";
+      statusEl.style.color = isError ? "#ffb4b4" : "#b7ffdf";
+      statusEl.textContent = msg;
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = (document.getElementById("scName")?.value || "").trim();
+      const team = (document.getElementById("scTeam")?.value || "").trim();
+      const city = (document.getElementById("scCity")?.value || "").trim();
+      const country = (document.getElementById("scCountry")?.value || "").trim();
+      const email = (document.getElementById("scEmail")?.value || "").trim();
+      const website = (document.getElementById("scWebsite")?.value || "").trim();
+      const social = (document.getElementById("scSocial")?.value || "").trim();
+      const desc = (document.getElementById("scDesc")?.value || "").trim();
+      const logo = document.getElementById("scLogo")?.files?.[0] || null;
+
+      if (!name || !team || !city || !country || !email || !desc) {
+        setStatus("Vul alle verplichte velden (*) in.", true);
+        return;
+      }
+
+      // Build a clean subject/body (backend expects this pattern on other forms)
+      const subject = `Supportersclub: ${name} (steunt ${team})`;
+      const bodyLines = [
+        `Naam supportersclub: ${name}`,
+        `Steunt: ${team}`,
+        `Gemeente/Stad: ${city}`,
+        `Land: ${country}`,
+        `Contact e-mail: ${email}`,
+        website ? `Website: ${website}` : null,
+        social ? `Social: ${social}` : null,
+        "",
+        "Omschrijving:",
+        desc,
+      ].filter(Boolean);
+      const body = bodyLines.join("\n");
+
+      const fd = new FormData();
+      fd.append("subject", subject);
+      fd.append("body", body);
+      fd.append("name", name);
+      fd.append("supported_team", team);
+      fd.append("city", city);
+      fd.append("country", country);
+      fd.append("email", email);
+      if (website) fd.append("website", website);
+      if (social) fd.append("social", social);
+      fd.append("description", desc);
+      fd.append("is_premium", "false");
+      fd.append("form_kind", "supportersclub");
+      if (logo) fd.append("photo", logo);
+
+      try {
+        setStatus("Verzenden…", false);
+        const r = await fetch(ENDPOINT, { method: "POST", body: fd });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || !j || !j.id) {
+          const msg = (j && (j.userMessage || j.error)) ? String(j.userMessage || j.error) : "Verzenden mislukt. Probeer opnieuw.";
+          setStatus(msg, true);
+          return;
+        }
+
+        // Redirect to bedankt page (same UX pattern)
+        const sid = String(j.id);
+        window.location.href = `${THANKYOU}?source=supportersclub&sid=${encodeURIComponent(sid)}`;
+      } catch (err) {
+        setStatus("Er is een fout opgetreden. Probeer opnieuw.", true);
+      }
+    });
+  })();
+</script>
+
 <script src="assets/js/nav-active.js" defer></script>
   <script src="assets/js/nav-mobile.js"></script>
 <script src="assets/js/live-banner.js"></script>

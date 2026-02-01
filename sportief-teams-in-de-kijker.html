@@ -165,11 +165,11 @@
         <div class="card-caption">Sportief</div>
         <div class="card-title">Team/Medewerker in de kijker</div>
       </div>
-      <span class="pill-small">1 maand zichtbaar</span>
+      <span class="pill-small">6 maanden zichtbaar</span>
     </div>
     <p class="note">
       In deze rubriek zetten we teams, jeugdploegen, trainers, coördinatoren of clubmedewerkers
-      extra in de kijker. Elk verhaal blijft standaard 30 dagen online.
+      extra in de kijker. Elk verhaal blijft standaard 6 maanden online.
     </p>
   </article>
 
@@ -213,6 +213,103 @@
     <!-- RECHTS -->
     <aside class="v4-sidebar">
       <div class="v4-sidebar-sticky">
+
+        <!-- AANMELDEN (GRATIS) -->
+        <article class="card" id="spotlightFormCard">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Gratis aanmelden</div>
+              <div class="card-title">Team/Medewerker in de kijker</div>
+            </div>
+            <span class="pill-small">Bevestiging via e-mail</span>
+          </div>
+
+          <p class="note" style="margin-top:2px;">
+            Vul het formulier in. Je ontvangt een e-mail om de aanvraag te bevestigen.
+            Na bevestiging blijft je item 6 maanden zichtbaar op Voetbal4All.
+          </p>
+
+          <form id="spotlightForm" style="margin-top:12px;">
+            <div class="form-grid" style="display:grid;gap:10px;">
+
+              <label>
+                <span class="note">Type *</span>
+                <select id="spotlightType" name="type" class="search-select" required>
+                  <option value="" selected>Kies…</option>
+                  <option value="Team">Team</option>
+                  <option value="Medewerker">Medewerker</option>
+                  <option value="Project">Project</option>
+                </select>
+              </label>
+
+              <label>
+                <span class="note">Titel / naam *</span>
+                <input id="spotlightTitle" name="subject" class="search-input" type="text" required
+                  placeholder="Bijv. U15 in de kijker / Coördinator jeugd / Project…" />
+              </label>
+
+              <label>
+                <span class="note">Club / organisatie</span>
+                <input id="spotlightClub" name="club" class="search-input" type="text"
+                  placeholder="Bijv. KFC …" />
+              </label>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                <label>
+                  <span class="note">Land *</span>
+                  <select id="spotlightCountry" name="country" class="search-select" required>
+                    <option value="" selected>Kies…</option>
+                    <option value="BE">🇧🇪 België</option>
+                    <option value="NL">🇳🇱 Nederland</option>
+                  </select>
+                </label>
+                <label>
+                  <span class="note">Stad</span>
+                  <input id="spotlightCity" name="city" class="search-input" type="text" placeholder="Bijv. Geel" />
+                </label>
+              </div>
+
+              <label>
+                <span class="note">Omschrijving *</span>
+                <textarea id="spotlightBody" name="body" class="search-input" required rows="6"
+                  placeholder="Korte, duidelijke omschrijving. Wat wil je in de kijker zetten? Waarom is dit bijzonder?" style="resize:vertical;"></textarea>
+              </label>
+
+              <label>
+                <span class="note">Contact e-mail *</span>
+                <input id="spotlightEmail" name="email" class="search-input" type="email" required
+                  placeholder="Bijv. info@club.be" />
+              </label>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                <label>
+                  <span class="note">Telefoon (optioneel)</span>
+                  <input id="spotlightPhone" name="phone" class="search-input" type="text" placeholder="+32 …" />
+                </label>
+                <label>
+                  <span class="note">Website / link (optioneel)</span>
+                  <input id="spotlightLink" name="link" class="search-input" type="url" placeholder="https://…" />
+                </label>
+              </div>
+
+              <label>
+                <span class="note">Foto / logo (optioneel)</span>
+                <input id="spotlightPhoto" name="photo" type="file" accept="image/*" style="width:100%;" />
+              </label>
+
+              <label style="display:flex;gap:10px;align-items:flex-start;">
+                <input id="spotlightConsent" type="checkbox" required style="margin-top:3px;" />
+                <span class="note" style="opacity:.95;">Ik bevestig dat ik de rechten heb om deze inhoud en eventuele foto te delen via Voetbal4All.</span>
+              </label>
+
+              <button type="submit" class="nav-cta" style="width:100%;justify-content:center;">
+                Verzenden
+              </button>
+
+              <div id="spotlightFormStatus" class="note" style="display:none;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.35);"></div>
+            </div>
+          </form>
+        </article>
 
         <article class="card">
           <div class="card-header">
@@ -258,6 +355,63 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  (function initSpotlightForm(){
+    const form = document.getElementById('spotlightForm');
+    if (!form) return;
+
+    const statusEl = document.getElementById('spotlightFormStatus');
+    const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
+    const ENDPOINT = API_BASE + '/api/forms/spotlight-submission';
+
+    function setStatus(msg, isError){
+      if (!statusEl) return;
+      statusEl.style.display = '';
+      statusEl.textContent = msg;
+      statusEl.style.borderColor = isError ? 'rgba(255,90,90,.35)' : 'rgba(120,255,140,.25)';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        setStatus('Bezig met verzenden…', false);
+
+        const fd = new FormData();
+        fd.append('subject', (document.getElementById('spotlightTitle')?.value || '').trim());
+        fd.append('body', (document.getElementById('spotlightBody')?.value || '').trim());
+        fd.append('type', (document.getElementById('spotlightType')?.value || '').trim());
+        fd.append('club', (document.getElementById('spotlightClub')?.value || '').trim());
+        fd.append('country', (document.getElementById('spotlightCountry')?.value || '').trim());
+        fd.append('city', (document.getElementById('spotlightCity')?.value || '').trim());
+        fd.append('email', (document.getElementById('spotlightEmail')?.value || '').trim());
+        fd.append('phone', (document.getElementById('spotlightPhone')?.value || '').trim());
+        fd.append('link', (document.getElementById('spotlightLink')?.value || '').trim());
+
+        const photo = document.getElementById('spotlightPhoto')?.files?.[0];
+        if (photo) fd.append('photo', photo, photo.name);
+
+        // backend expects a predictable kind
+        fd.append('kind', 'spotlight');
+
+        const r = await fetch(ENDPOINT, { method: 'POST', body: fd });
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok || !j || j.ok === false) {
+          const msg = (j && (j.userMessage || j.error)) ? String(j.userMessage || j.error) : 'Verzenden mislukt.';
+          setStatus(msg, true);
+          return;
+        }
+
+        const sid = j.id || j.sid || '';
+        setStatus('Aanvraag ontvangen. Controleer je e-mail om te bevestigen.', false);
+
+        // Redirect to bedankt page (consistent UX)
+        const url = `bedankt.html?source=spotlight&sid=${encodeURIComponent(sid)}`;
+        window.location.href = url;
+      } catch (err) {
+        setStatus('Er ging iets mis bij het verzenden. Probeer opnieuw.', true);
+      }
+    });
+  })();
 </script>
 <script src="assets/js/nav-active.js" defer></script>
   <script src="assets/js/nav-mobile.js"></script>
