@@ -31,6 +31,86 @@
       .v4-two-col{ grid-template-columns: 1fr; }
     }
 
+    /* Published items grid: 2 per row, stretch, responsive */
+    #supportersclubsList,
+    #supportersclubList,
+    #supporters-list,
+    #supportersclubs-list,
+    #supportersclubsGrid,
+    #supporters-grid,
+    .supporters-list,
+    .supporters-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      #supportersclubsList,
+      #supportersclubList,
+      #supporters-list,
+      #supportersclubs-list,
+      #supportersclubsGrid,
+      #supporters-grid,
+      .supporters-list,
+      .supporters-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+    #supportersclubsList .card,
+    #supportersclubList .card,
+    #supporters-list .card,
+    #supportersclubs-list .card,
+    #supportersclubsGrid .card,
+    #supporters-grid .card,
+    .supporters-list .card,
+    .supporters-grid .card{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Search controls (filters) */
+    #supportersSearch{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 980px){
+      #supportersSearch{ grid-template-columns: 1fr; }
+    }
+    #supportersSearch input,
+    #supportersSearch select{
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 12px;
+      padding: 12px 12px;
+      border: 1px solid rgba(120, 200, 180, 0.22);
+      background: rgba(11, 18, 32, 0.72);
+      color: rgba(255,255,255,0.92);
+      outline: none;
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+    }
+    #supportersSearch input::placeholder{ color: rgba(255,255,255,0.45); }
+    #supportersSearchActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    #supportersSearchActions .btn-ghost-sm{
+      border-radius: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(11,16,32,.35);
+      color: rgba(255,255,255,.92);
+      cursor: pointer;
+      font-weight: 800;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
     /* Make the sidebar card consistent */
     .v4-form-card .card-title{ line-height:1.15; }
     .v4-form-card .pill-small{ white-space:nowrap; }
@@ -242,7 +322,60 @@
       </p>
     </article>
 
+    <article class="card" style="margin-bottom:12px;">
+      <div class="card-header" style="align-items:flex-start;">
+        <div>
+          <div class="card-caption">Zoeken</div>
+          <div class="card-title" style="font-size:18px;">Zoek supportersclubs</div>
+        </div>
+        <span class="pill-small">Filter</span>
+      </div>
+
+      <div class="note" style="margin-top:6px;opacity:.95;">
+        Filter op <strong>land</strong>, <strong>club/team</strong> en <strong>stad</strong>.
+      </div>
+
+      <div id="supportersSearch">
+        <label>
+          <span class="note">Land</span>
+          <select id="filterCountry">
+            <option value="" selected>Alle landen</option>
+            <option value="BE">België</option>
+            <option value="NL">Nederland</option>
+            <option value="INT">Internationaal</option>
+          </select>
+        </label>
+
+        <label>
+          <span class="note">Club/team</span>
+          <input id="filterTeam" type="text" placeholder="Bijv. Anderlecht, Genk…" />
+        </label>
+
+        <label>
+          <span class="note">Stad</span>
+          <input id="filterCity" type="text" placeholder="Bijv. Genk, Brugge…" />
+        </label>
+      </div>
+
+      <div id="supportersSearchActions">
+        <button type="button" id="filterClear" class="btn-ghost-sm">Wis filters</button>
+        <span id="filterCount" class="note" style="opacity:.85;"></span>
+      </div>
+    </article>
+
+    <div id="supportersclubsList" aria-live="polite"></div>
+
     <aside class="sidebar">
+
+      <div class="ad-slot ad-slot-sidebar">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4062633211824348"
+          data-ad-slot="7533097310"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
 
       <div class="card v4-form-card">
         <div class="card-header" style="align-items:flex-start;">
@@ -315,16 +448,6 @@
 
           <div id="scStatus" class="note" style="display:none;opacity:.95;"></div>
         </form>
-      </div>
-
-      <div class="ad-slot ad-slot-sidebar">
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-4062633211824348"
-          data-ad-slot="7533097310"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
     </aside>
@@ -495,6 +618,101 @@
   })();
 </script>
 
+<script>
+  (function () {
+    // Find the list container (we created #supportersclubsList, but keep it resilient)
+    const listEl = document.getElementById('supportersclubsList')
+      || document.getElementById('supportersclubList')
+      || document.getElementById('supporters-list')
+      || document.getElementById('supportersclubs-list')
+      || document.querySelector('.supporters-list')
+      || document.querySelector('.supporters-grid');
+
+    const countryEl = document.getElementById('filterCountry');
+    const teamEl = document.getElementById('filterTeam');
+    const cityEl = document.getElementById('filterCity');
+    const clearEl = document.getElementById('filterClear');
+    const countEl = document.getElementById('filterCount');
+
+    if (!listEl || !countryEl || !teamEl || !cityEl) return;
+
+    function norm(s){
+      return String(s || '').trim().toLowerCase();
+    }
+
+    function pickFromCard(card){
+      // Prefer data attributes if present, else fall back to text content.
+      const dc = norm(card.getAttribute('data-country') || card.dataset.country);
+      const dt = norm(card.getAttribute('data-team') || card.dataset.team || card.getAttribute('data-supported-team') || card.dataset.supportedTeam);
+      const dcity = norm(card.getAttribute('data-city') || card.dataset.city);
+
+      if (dc || dt || dcity) {
+        return { country: dc, team: dt, city: dcity, text: norm(card.textContent) };
+      }
+
+      const text = norm(card.textContent);
+      // Weak parsing fallback based on common labels
+      let country = '';
+      if (text.includes('belgië')) country = 'be';
+      else if (text.includes('nederland')) country = 'nl';
+      else if (text.includes('internationaal')) country = 'int';
+
+      return { country, team: '', city: '', text };
+    }
+
+    function applyFilters(){
+      const fc = norm(countryEl.value);
+      const ft = norm(teamEl.value);
+      const fcity = norm(cityEl.value);
+
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      let shown = 0;
+
+      cards.forEach(card => {
+        const d = pickFromCard(card);
+
+        const matchCountry = !fc || d.country === fc || d.text.includes(fc);
+        const matchTeam = !ft || d.team.includes(ft) || d.text.includes(ft);
+        const matchCity = !fcity || d.city.includes(fcity) || d.text.includes(fcity);
+
+        const ok = matchCountry && matchTeam && matchCity;
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+
+      if (countEl) {
+        if (cards.length === 0) countEl.textContent = '';
+        else countEl.textContent = `${shown} / ${cards.length} zichtbaar`;
+      }
+    }
+
+    // Debounced typing
+    let t = null;
+    function schedule(){
+      clearTimeout(t);
+      t = setTimeout(applyFilters, 120);
+    }
+
+    countryEl.addEventListener('change', applyFilters);
+    teamEl.addEventListener('input', schedule);
+    cityEl.addEventListener('input', schedule);
+
+    if (clearEl) {
+      clearEl.addEventListener('click', function(){
+        countryEl.value = '';
+        teamEl.value = '';
+        cityEl.value = '';
+        applyFilters();
+      });
+    }
+
+    // Run once now and also when content is dynamically injected later.
+    applyFilters();
+
+    const mo = new MutationObserver(() => applyFilters());
+    mo.observe(listEl, { childList: true, subtree: true });
+  })();
+</script>
 <script src="assets/js/nav-active.js" defer></script>
   <script src="assets/js/nav-mobile.js"></script>
 <script src="assets/js/live-banner.js"></script>
