@@ -1373,6 +1373,14 @@
       hasPremiumWindow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
     };
 
+    // HARD GUARD: non-premium flows must NEVER show a premium window.
+    // We may still compute dates internally (e.g. signupDeadline logic), but we must not render them.
+    if (!paid) {
+      premiumStartRaw = '';
+      premiumEndRaw = '';
+      recomputePremiumTexts();
+    }
+
     if (!isError && !isDeleted && paid && (hasPremiumWindow || isNonEventPremium)) {
       if (premiumBlock) premiumBlock.style.display = '';
       // Fallback label for non-event premium (profiles/vacatures)
