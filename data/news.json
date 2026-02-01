@@ -1,16 +1,82 @@
 {
-  "generatedAt": "2026-01-31T23:26:53.960Z",
+  "generatedAt": "2026-02-01T02:45:24.520Z",
   "items": [
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Watch: Match of the Day",
-      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
-      "summary": "Highlights of the day's five Premier League matches, including Leeds United v Arsenal.",
-      "publishedAt": "2026-02-01T09:00:00.000Z"
+      "title": "Liverpool 'all there for' Konaté after father's de...",
+      "link": "https://www.espn.com/soccer/story/_/id/47791966/liverpool-players-rally-konate-fathers-death",
+      "summary": "Arne Slot has hailed the professionalism of defender Ibrahima Konaté after he scored for Liverpool on his return to the team following the death of his father.",
+      "publishedAt": "2026-02-01T01:09:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "0-2 at HT, 3-2 at FT! Chelsea in epic comeback win...",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740835",
+      "summary": "Chelsea came from two goals down to seal a remarkable 3-2 victory over relegation-threatened West Ham United on Saturday.",
+      "publishedAt": "2026-02-01T01:09:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arsenal thrash Leeds to reinstate 7-point PL lead",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740829",
+      "summary": "Arsenal have reinstated their seven-point lead at the top of the Premier League after a 4-0 win against Leeds United.",
+      "publishedAt": "2026-02-01T01:09:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Once laughed at, Liam Rosenior is earning Chelsea ...",
+      "link": "https://www.espn.com/soccer/story/_/id/47790329/liam-rosenior-earning-chelsea-fans-respect-one-win",
+      "summary": "Despite the critics who came following his appointment, Chelsea coach Liam Rosenior continues to prove them wrong.",
+      "publishedAt": "2026-02-01T00:47:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Hugo Ekitike's brilliance gets Liverpool's season ...",
+      "link": "https://www.espn.com/soccer/story/_/id/47791537/hugo-ekitikes-brilliance-gets-liverpools-season-back-track",
+      "summary": "Liverpool's title defence might be over but, in Hugo Ekitike, the Reds have a striker that is the envy of all their rivals -- particularly Newcastle.",
+      "publishedAt": "2026-02-01T00:47:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rose leads by SIX at Farmers Insurance Open with record score in sight",
+      "link": "https://www.skysports.com/golf/news/12040/13501680/justin-rose-leads-by-six-shots-at-farmers-insurance-open-ahead-of-final-round-with-record-score-in-sight",
+      "summary": "Justin Rose is six shots clear after the third round of the Farmers Insurance Open at Torrey Pines with a record tournament score and 13th PGA Tour title in his sights.",
+      "publishedAt": "2026-01-31T23:50:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Kelly recovers from knockdown to become latest British world champion",
+      "link": "https://www.skysports.com/boxing/news/12040/13501747/josh-kelly-becomes-ibf-light-middleweight-champion-after-recovering-from-knockdown-to-beat-bakhram-murtazaliev-in-newcastle",
+      "summary": "Britain's Josh Kelly outpointed Bakhram Murtazaliev to win the IBF light-middleweight title in Newcastle.",
+      "publishedAt": "2026-01-31T23:02:00.000Z"
     },
     {
       "type": "rss",
@@ -95,6 +161,17 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
+      "title": "Everton's Beto nets stoppage-time leveller at Brighton",
+      "link": "https://www.bbc.com/sport/football/videos/cr4k90wrwgwo?at_medium=RSS&at_campaign=rss",
+      "summary": "Beto celebrates his birthday by scoring in stoppage time for Everton to salvage a point in a hard-fought draw against Brighton.",
+      "publishedAt": "2026-01-31T22:31:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
       "title": "Arsenal score four in superb win against Leeds",
       "link": "https://www.bbc.com/sport/football/videos/c041k9rp55xo?at_medium=RSS&at_campaign=rss",
       "summary": "Arsenal get their title charge back on track with a dominant display against Leeds, their first win in four Premier League games.",
@@ -102,14 +179,14 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Papers: Carrick keen to bring Rashford back to Man Utd",
-      "link": "https://www.skysports.com/football/news/12040/13501729/man-utd-michael-carrick-keen-to-bring-marcus-rashford-back-should-he-land-permanent-job-at-old-trafford-paper-talk",
-      "summary": "The top stories and transfer rumours from Sunday's newspapers...",
-      "publishedAt": "2026-01-31T22:30:00.000Z"
+      "title": "Pep Lijnders reveals Klopp persuaded him to take Manchester City assistant role",
+      "link": "https://www.theguardian.com/football/2026/jan/31/manchester-city-pep-lijnders-guardiola-klopp",
+      "summary": "Pep Guardiola’s No 2 sought Klopp’s blessing for role Lijnders: ‘Jurgen said he would take the job if I didn’t’ Pep Lijnders has revealed Jürgen Klopp convinced him to take the job as Pep Guardiola’s assistant at Manchester City, despite the German spending almost a decade at their fierce rivals Liverpool. He said Klopp had joked about taking the role if Lijnders didn’t. Lijnders joined Guardiola’s coaching staff in the summer and will be alongside the Spaniard, who missed Friday’s press conference for “personal reasons”, at Tottenham on Sunday. Lijnders spent almost 10 years at Liverpool, mostly alongside Klopp, and the pair had three title battles with City, twice finishing as runners-up. That sparked some internal debate for Lijnders when the opportunity arose to move to Manchester. Continue reading...",
+      "publishedAt": "2026-01-31T22:30:09.000Z"
     },
     {
       "type": "rss",
@@ -124,24 +201,13 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Korda leads in Florida after superb round in wind as England's Woad falters",
-      "link": "https://www.skysports.com/golf/news/12040/13501662/lpga-tour-nelly-korda-leads-tournament-of-champions-as-englands-lottie-woad-falls-back-after-four-bogeys-in-five-holes",
-      "summary": "Nelly Korda stormed into a three-shot lead at the Hilton Grand Vacations Tournament of Champions in her push for a first title in over a year as England's halfway leader Lottie Woad saw her hopes of victory fade after a day of bogeys in blustery Florida.",
-      "publishedAt": "2026-01-31T22:20:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
       "title": "Ekitiké and Wirtz sink Newcastle before Konaté seals welcome Liverpool win",
       "link": "https://www.theguardian.com/football/2026/jan/31/liverpool-newcastle-premier-league-match-report",
-      "summary": "You could say Hugo Ekitiké was the one who got away from Newcastle last summer, except there were so many. The Liverpool striker gave Eddie Howe further cause for regret with a gamechanging, match-winning performance at Anfield, however, as Arne Slot’s side found the consistency that has eluded them too often this season to record a second impressive win in succession. Ekitiké struck twice against the club that had agreed a deal to sign him from Eintracht Frankfurt before Liverpool swept in. Their initial outlay of £69m, rising to £79m, is proving money very well spent. Newcastle were the dominant force before Ekitiké’s swift brace transformed the contest. Florian Wirtz added a third in the second half before Ibrahima Konaté, playing for the first time since the death of his father, capitalised on a Nick Pope error to complete an important victory. Konaté was understandably in tears as the moment sunk in. Continue reading...",
+      "summary": "You could say Hugo Ekitiké was the one who got away from Newcastle last summer, except there were so many. But with a certain inevitability and a devastating, gamechanging performance, the Liverpool striker haunted Eddie Howe and the club who coveted him all the same. Pain came in various forms for Newcastle. Superior for 40 minutes and deservedly ahead through Anthony Gordon, the visitors trailed at the interval thanks to a quick-fire brace from the player they tried to sign from Eintracht Frankfurt. Liverpool swept in for Ekitiké instead and their initial £69m outlay, rising to £79m, is proving money very well spent. Continue reading...",
       "publishedAt": "2026-01-31T22:11:48.000Z"
     },
     {
@@ -154,72 +220,6 @@
       "link": "https://www.vi.nl/nieuws/veelbesproken-vaessen-de-schlemiel-bij-groningen-sparta-klimt-naar-plek-vijf",
       "summary": "Sparta Rotterdam is zaterdag naar plek vijf in de Eredivisie geklommen. Tegen directe concurrent FC Groningen boekte de ploeg van trainer Maurice Steijn de vijfde competitiezege op rij.",
       "publishedAt": "2026-01-31T22:10:54.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Hearts surge seven points clear after brushing aside nine-man Dundee United",
-      "link": "https://www.skysports.com/football/dundee-united-vs-hearts/report/531866",
-      "summary": "Pierre Landry Kabore scored a double as William Hill Premiership leaders Hearts cranked up the pressure on title rivals Rangers and Celtic by easing to a 3-0 away win over nine-man Dundee United.",
-      "publishedAt": "2026-01-31T22:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ekitike and Wirtz shine as vintage Liverpool return to beat Newcastle",
-      "link": "https://www.skysports.com/football/liverpool-vs-newcastle-united/report/531363",
-      "summary": "Hugo Ekitike scored twice as Liverpool produced one of their most convincing performances of the season to come from behind to beat Newcastle 4-1, rising above Manchester United into fifth in the Premier League table.",
-      "publishedAt": "2026-01-31T22:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "0-2 at HT, 3-2 at FT! Chelsea in epic comeback win...",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740835",
-      "summary": "Chelsea came from two goals down to seal a remarkable 3-2 victory over relegation-threatened West Ham United on Saturday.",
-      "publishedAt": "2026-01-31T20:30:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arsenal thrash Leeds to reinstate 7-point PL lead",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740829",
-      "summary": "Arsenal have reinstated their seven-point lead at the top of the Premier League after a 4-0 win against Leeds United.",
-      "publishedAt": "2026-01-31T20:30:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Snoop Dogg wants to make Swansea 'global name'",
-      "link": "https://www.espn.com/soccer/story/_/id/47787550/snoop-dogg-swansea-global-name-premier-league-interview",
-      "summary": "Swansea City investor Snoop Dogg has said he wants to take the side back to the Premier League, and establish them as a 'global name'.",
-      "publishedAt": "2026-01-31T20:30:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Messi, CR7 jerseys headline Terry's $695K auction",
-      "link": "https://www.espn.com/soccer/story/_/id/47783247/items-john-terry-personal-collection-net-695k-auction",
-      "summary": "Former England and Chelsea captain John Terry netted $695,000 from a 50-item auction of his personal collection, headlined by match-worn Lionel Messi and Cristiano Ronaldo jerseys.",
-      "publishedAt": "2026-01-31T20:30:56.000Z"
     }
   ]
 }
