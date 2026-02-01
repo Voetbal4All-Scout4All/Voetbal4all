@@ -1053,9 +1053,10 @@
       nudgeBtnId: 'jobPremiumNudgeBtn',
     });
 
-    const profilePremiumUI = wirePremiumUI({
     // Initial invoice visibility
     try { syncInvoiceUI(); } catch (_) {}
+
+    const profilePremiumUI = wirePremiumUI({
       checkboxId: 'profilePremium',
       optionsWrapId: 'profilePremiumOptions',
       durationId: 'profilePremiumDuration',
@@ -1246,6 +1247,13 @@
       let subject = '';
       let lines = [];
 
+      // Premium selection (compute early so it can be used in email body + Stripe payload)
+      const premiumChecked = (mode === 'vacature') ? jobPremiumUI.isEnabled() : profilePremiumUI.isEnabled();
+      const premiumPlan = (mode === 'vacature') ? jobPremiumUI.getSelectedPlan() : profilePremiumUI.getSelectedPlan();
+      const premiumCalc = calcPremiumPlan(premiumPlan);
+      const premiumPlanLabel = premiumCalc.label;
+      const premiumPrice = premiumCalc.total ? String(premiumCalc.total.toFixed(2)) : '';
+
       if (mode === 'vacature') {
         if (!need(['jobTitle','jobDesc'])) return;
 
@@ -1254,10 +1262,9 @@
         const jobUrl = v('jobUrl');
         const jobAudience = v('jobAudience');
         const jobDesc = v('jobDesc');
-        const isPremiumWanted = !!document.getElementById('jobPremium')?.checked;
-        const premium = isPremiumWanted ? 'Ja' : 'Nee';
+        const premium = premiumChecked ? 'Ja' : 'Nee';
 
-        subject = `[Vacature aanmelden${isPremiumWanted ? ' — PREMIUM' : ''}] ${jobTitle} — ${name}`;
+        subject = `[Vacature aanmelden${premiumChecked ? ' — PREMIUM' : ''}] ${jobTitle} — ${name}`;
         lines = [
           'CLUBVACATURE AANMELDING — VOETBAL4ALL',
           '',
@@ -1271,7 +1278,7 @@
           `Doelgroep: ${jobAudience || '—'}`,
           `Link: ${jobUrl || '—'}`,
           `Premium: ${premium}`,
-          ...(isPremiumWanted ? [
+          ...(premiumChecked ? [
             `Premium-periode: ${premiumPlanLabel || '—'}`,
             `Premium-totaal: ${eur(Number(premiumPrice || 0))}`,
             '',
@@ -1308,10 +1315,10 @@
         const url = v('profileUrl');
         const level = v('profileLevel');
         const desc = v('profileDesc');
-        const premium = document.getElementById('profilePremium')?.checked ? 'Ja' : 'Nee';
+        const premium = premiumChecked ? 'Ja' : 'Nee';
         const anonymous = document.getElementById('profileAnonymous')?.checked ? 'Ja (anoniem kandidaat)' : 'Nee';
 
-        subject = `[Profiel aanmelden${premium === 'Ja' ? ' — PREMIUM' : ''}] ${role} — ${name}`;
+        subject = `[Profiel aanmelden${premiumChecked ? ' — PREMIUM' : ''}] ${role} — ${name}`;
         lines = [
           'PROFIEL AANMELDING — VOETBAL4ALL',
           '',
@@ -1330,7 +1337,7 @@
           `CV/document: ${cvName}`,
           `YouTube link: ${youtube || '—'}`,
           `Premium: ${premium}`,
-          ...(premium === 'Ja' ? [
+          ...(premiumChecked ? [
             `Premium-periode: ${premiumPlanLabel || '—'}`,
             `Premium-totaal: ${eur(Number(premiumPrice || 0))}`,
             '',
@@ -1382,11 +1389,6 @@
       fd.append('city', city);
       fd.append('mode', mode);
 
-      const premiumChecked = (mode === 'vacature') ? jobPremiumUI.isEnabled() : profilePremiumUI.isEnabled();
-      const premiumPlan = (mode === 'vacature') ? jobPremiumUI.getSelectedPlan() : profilePremiumUI.getSelectedPlan();
-      const premiumCalc = calcPremiumPlan(premiumPlan);
-      const premiumPlanLabel = premiumCalc.label;
-      const premiumPrice = premiumCalc.total ? String(premiumCalc.total.toFixed(2)) : '';
 
       fd.append('is_premium', premiumChecked ? '1' : '0');
       fd.append('premiumPlan', premiumChecked ? (premiumPlan || '') : '');
