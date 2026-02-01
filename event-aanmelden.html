@@ -1196,6 +1196,7 @@
       const flyerFile = document.getElementById('evFlyer')?.files?.[0] || null;
 
       // Always submit via HTTP (with or without flyer). This prevents opening a mail client.
+      const FRONTEND_BASE_URL = 'https://www.voetbal4all.eu';
       const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = 'bedankt.html';
@@ -1386,7 +1387,7 @@
             price_eur: Number(premiumPrice),
             // Ensure Stripe returns to the correct thank-you page (Premium)
             success_url: (function () {
-            const u = new URL(`${window.location.origin}/bedankt.html`);
+            const u = new URL(`${FRONTEND_BASE_URL}/bedankt.html`);
             u.searchParams.set('sid', sid);
             u.searchParams.set('paid', '1');
             u.searchParams.set('status', 'Ontvangen');
@@ -1417,9 +1418,12 @@
             u.searchParams.set('country', country || '');
             u.searchParams.set('city', city || '');
 
+            // Helpful for debugging and for backend flows that depend on the Checkout session id
+            u.searchParams.set('session_id', '{CHECKOUT_SESSION_ID}');
+
             return u.toString();
           })(),
-            cancel_url: `${window.location.origin}/event-aanmelden.html`,
+            cancel_url: `${FRONTEND_BASE_URL}/event-aanmelden.html`,
             // Only send mapped package code to backend
             package_code: packageCode,
             quantity,
@@ -1490,7 +1494,7 @@
 
         // Non-premium: go straight to thank you page with the Event-ID
         (function () {
-          const u = new URL(`${window.location.origin}/bedankt.html`);
+          const u = new URL(`${FRONTEND_BASE_URL}/bedankt.html`);
           u.searchParams.set('sid', sid);
           u.searchParams.set('status', 'Ontvangen');
           u.searchParams.set('name', org || '');
