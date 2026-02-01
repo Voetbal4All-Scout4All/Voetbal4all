@@ -1168,7 +1168,33 @@
               package_code: packageCode,
               quantity: qty,
               price_eur: Number(premiumPrice),
-              kind: mode === 'vacature' ? 'vacature' : 'profile'
+              kind: mode === 'vacature' ? 'vacature' : 'profile',
+              // Ensure bedankt.html can always render the Premium-periode (even after Stripe redirect)
+              success_url: (function () {
+                const u = new URL(`${window.location.origin}/bedankt.html`);
+                u.searchParams.set('sid', sid);
+                u.searchParams.set('paid', '1');
+                u.searchParams.set('status', 'Ontvangen');
+                u.searchParams.set('source', 'aanmelden');
+                u.searchParams.set('kind', mode);
+
+                // Overzicht
+                u.searchParams.set('name', name || '');
+                u.searchParams.set('email', email || '');
+                u.searchParams.set('what', mode === 'vacature' ? (v('jobTitle') || 'Vacature') : (v('profileRole') || 'Profiel'));
+
+                // Cruciaal voor premium-periode berekening in bedankt.html
+                u.searchParams.set('package_code', packageCode || '');
+                u.searchParams.set('quantity', String(qty || 1));
+
+                // Extra context (wordt genegeerd als niet gebruikt)
+                u.searchParams.set('plan', premiumPlan || '');
+                u.searchParams.set('planLabel', premiumPlanLabel || '');
+                u.searchParams.set('price_eur', premiumPrice || '');
+
+                return u.toString();
+              })(),
+              cancel_url: `${window.location.origin}/aanmelden.html`
             };
 
             if (hint) hint.textContent = 'Je wordt doorgestuurd naar betaling…';
