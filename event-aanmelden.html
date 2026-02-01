@@ -337,17 +337,26 @@
                         De gekozen Premium-periode start teruggeteld vanaf de startdatum van het event.
                       </div>
                     </label>
-
-                    <article class="card" style="padding:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
-                      <div class="card-caption" style="margin-bottom:6px;">Prijzen (transparant)</div>
-                      <ul class="note" style="margin:0;padding-left:18px;line-height:1.6;">
-                        <li>1–3 weken: <strong>14,99€ / week</strong></li>
-                        <li>1–3 maanden: <strong>49,99€ / maand</strong></li>
-                        <li>4–5 maanden: <strong>44,99€ / maand</strong></li>
-                        <li>6 maanden: <strong>249,99€</strong> (≈ 41,67€ / maand)</li>
-                      </ul>
-                    </article>
+                    <!-- Signup deadline date selector inserted here -->
                   </div>
+
+                  <label style="display:block;">
+                    <div class="card-caption" style="margin-bottom:6px;">Laatste dag voor inschrijven *</div>
+                    <input id="evSignupDeadline" type="date" style="width:100%;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.55);color:inherit;" />
+                    <div class="note" style="margin-top:6px;opacity:.85;">
+                      Kies zorgvuldig. Deze datum wordt gebruikt om de laatste premium-dag te selecteren. (Vanaf deze dag + 1 dag stopt de premiumperiode op voetbal4all.eu)
+                    </div>
+                  </label>
+
+                  <article class="card" style="padding:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
+                    <div class="card-caption" style="margin-bottom:6px;">Prijzen (transparant)</div>
+                    <ul class="note" style="margin:0;padding-left:18px;line-height:1.6;">
+                      <li>1–3 weken: <strong>14,99€ / week</strong></li>
+                      <li>1–3 maanden: <strong>49,99€ / maand</strong></li>
+                      <li>4–5 maanden: <strong>44,99€ / maand</strong></li>
+                      <li>6 maanden: <strong>249,99€</strong> (≈ 41,67€ / maand)</li>
+                    </ul>
+                  </article>
 
                   <div id="premiumSummary" style="margin-top:10px;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(11,16,32,.35);">
                     <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;">
@@ -492,6 +501,12 @@
     function syncPremiumUI() {
       const on = !!premiumToggle?.checked;
       if (premiumOptions) premiumOptions.style.display = on ? '' : 'none';
+
+      // Make premium-only fields required only when Premium is enabled
+      const dur = document.getElementById('evPremiumDuration');
+      const sd = document.getElementById('evSignupDeadline');
+      if (dur) dur.required = on;
+      if (sd) sd.required = on;
     }
 
     if (premiumToggle) {
@@ -774,11 +789,24 @@
       const s = (startDateEl.value || '').trim();
       if (!s) {
         endDateEl.min = '';
+        // Signup deadline field constraint
+        const signupEl = document.getElementById('evSignupDeadline');
+        if (signupEl) {
+          signupEl.max = '';
+        }
         return;
       }
       endDateEl.min = s;
       if (!endDateEl.value) endDateEl.value = s;
       if (endDateEl.value && endDateEl.value < s) endDateEl.value = '';
+
+      // Signup deadline (premium): default to startDate and cannot be after startDate
+      const signupEl = document.getElementById('evSignupDeadline');
+      if (signupEl) {
+        signupEl.max = s;
+        if (!signupEl.value) signupEl.value = s;
+        if (signupEl.value && signupEl.value > s) signupEl.value = s;
+      }
     }
 
     if (startDateEl && endDateEl) {
@@ -1046,6 +1074,12 @@
           try { document.getElementById('evPremiumDuration')?.focus(); } catch (_) {}
           return;
         }
+        const signupDeadlineVal = v('evSignupDeadline');
+        if (!signupDeadlineVal) {
+          if (hint) hint.textContent = 'Kies de laatste dag voor inschrijven.';
+          try { document.getElementById('evSignupDeadline')?.focus(); } catch (_) {}
+          return;
+        }
         const invReq = ['invName','invAddress','invCity','invEmail'];
         for (const id of invReq) {
           const el = document.getElementById(id);
@@ -1084,6 +1118,7 @@
       const city = v('evCity');
       const location = v('evLocation');
       const desc = v('evDesc');
+      const signupDeadline = v('evSignupDeadline');
 
       if ((country === 'BE' || country === 'NL') && !province) {
         if (hint) hint.textContent = 'Kies een provincie.';
@@ -1139,6 +1174,8 @@
         ...(premiumEnabled ? [
           `Premium-duur: ${premiumPlanLabel}`,
           `Premium-totaal: ${eur(Number(premiumPrice))}`,
+          `Laatste dag voor inschrijven: ${signupDeadline}`,
+          'Premium loopt t/m (laatste inschrijfdag + 1 dag).',
           'De gekozen Premium-periode start teruggeteld vanaf de startdatum van het event.',
           '',
           'FACTUURGEGEVENS',
@@ -1181,6 +1218,7 @@
       fd.append('city', city);
       fd.append('location', location);
       fd.append('desc', desc);
+      fd.append('signupDeadline', signupDeadline || '');
       fd.append('premiumEnabled', premiumEnabled ? 'true' : 'false');
       fd.append('premiumPlan', premiumPlan || '');
       fd.append('premiumPlanLabel', premiumPlanLabel || '');
@@ -1255,6 +1293,7 @@
             location: location || '',
             eventStart: startDate || '',
             eventEnd: (endDate || startDate) || '',
+            signupDeadline: signupDeadline || '',
             premiumEnabled: !!premiumEnabled,
             premiumPlan: premiumPlan || '',
             premiumPlanLabel: premiumPlanLabel || '',
@@ -1360,6 +1399,7 @@
             // Datumvelden (voor premium-window fallback)
             u.searchParams.set('eventStart', startDate || '');
             u.searchParams.set('eventEnd', (endDate || startDate) || '');
+            u.searchParams.set('signupDeadline', signupDeadline || '');
 
             // Cruciaal voor premium-periode berekening in bedankt.html
             u.searchParams.set('package_code', packageCode || '');
@@ -1458,6 +1498,7 @@
           u.searchParams.set('what', type || '');
           u.searchParams.set('eventStart', startDate || '');
           u.searchParams.set('eventEnd', (endDate || startDate) || '');
+          u.searchParams.set('signupDeadline', signupDeadline || '');
           u.searchParams.set('category', category || '');
           u.searchParams.set('country', country || '');
           u.searchParams.set('city', city || '');
