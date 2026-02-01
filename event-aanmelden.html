@@ -334,7 +334,8 @@
                         </optgroup>
                       </select>
                       <div class="note" style="margin-top:6px;opacity:.85;">
-                        De gekozen Premium-periode start teruggeteld vanaf de startdatum van het event.
+                        De Premium-periode loopt teruggeteld vanaf de <strong>laatste dag voor inschrijven</strong>.
+                        Premium blijft actief t.e.m. de dag <strong>na</strong> de laatste inschrijfdag.
                       </div>
                     </label>
                     <!-- Signup deadline date selector inserted here -->
@@ -1136,7 +1137,7 @@
       const location = v('evLocation');
       const desc = v('evDesc');
       const signupDeadline = v('evSignupDeadline');
-      const premiumEndDate = premiumEnabled ? addDaysISO(signupDeadline, 1) : '';
+      const premiumEndDate = premiumEnabledNow ? addDaysISO(signupDeadline, 1) : '';
 
       if ((country === 'BE' || country === 'NL') && !province) {
         if (hint) hint.textContent = 'Kies een provincie.';
@@ -1144,7 +1145,7 @@
         return;
       }
 
-      const premiumEnabled = !!document.getElementById('evPremium')?.checked;
+      const premiumEnabled = premiumEnabledNow;
       // Premium duration pricing (already computed above)
       const premiumDuration = v('evPremiumDuration');
       const premiumCalc = calcPremium(premiumDuration);
@@ -1194,7 +1195,7 @@
           `Premium-totaal: ${eur(Number(premiumPrice))}`,
           `Laatste dag voor inschrijven: ${signupDeadline}`,
           'Premium loopt t/m (laatste inschrijfdag + 1 dag).',
-          'De gekozen Premium-periode start teruggeteld vanaf de startdatum van het event.',
+          'De Premium-periode loopt teruggeteld vanaf de laatste dag voor inschrijven (Premium blijft actief t.e.m. de dag na de laatste inschrijfdag).',
           '',
           'FACTUURGEGEVENS',
           `Factuur op naam van: ${invName}`,
@@ -1214,7 +1215,12 @@
       const flyerFile = document.getElementById('evFlyer')?.files?.[0] || null;
 
       // Always submit via HTTP (with or without flyer). This prevents opening a mail client.
-      const FRONTEND_BASE_URL = window.location.origin;
+      const FRONTEND_BASE_URL = (function () {
+        const host = String(window.location.hostname || '').toLowerCase();
+        // Force canonical domain for Stripe return URLs in production (prevents www/non-www mismatches)
+        if (host.endsWith('voetbal4all.eu')) return 'https://www.voetbal4all.eu';
+        return window.location.origin;
+      })();
       const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = 'bedankt.html';
