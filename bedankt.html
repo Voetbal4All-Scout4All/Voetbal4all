@@ -590,6 +590,9 @@
 
     // Source/type (e.g. contact, event, vacature, premium, betaling)
     const source = (qs.get('source') || '').trim();
+    // Normalize source/kind so premium profiles & vacatures render premium window
+    const kind = (qs.get('kind') || source || '').trim();
+    const isNonEventPremium = (kind === 'vacature' || kind === 'profile' || kind === 'trainer' || kind === 'speler');
 
     // Primary params used by the event flow
     const sid = (flow.sid || '').trim();
@@ -884,7 +887,7 @@
     // NOTE: `hasPremiumWindow` is declared later (after backend lookup).
     // Using it here caused a ReferenceError and stopped all JS on the page.
     const hasPremiumWindowNow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
-    if (hasPremiumWindowNow) status = 'Betaald';
+    if (hasPremiumWindowNow || isNonEventPremium) status = 'Betaald';
     if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
     if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
     if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
@@ -940,7 +943,7 @@
     if (emailKeepNotice) {
       // Show for event submissions; for premium (paid=1) we still recommend keeping the email,
       // but the “bevestigen” step applies to non-premium.
-      const isEventFlow = !!sid || source === 'event';
+      const isEventFlow = !!sid || source === 'event' || isNonEventPremium;
       if (isEventFlow && !isError && !isDeleted) {
         emailKeepNotice.style.display = '';
         if (paid) {
@@ -1195,7 +1198,7 @@
     const badgeEl = document.getElementById('thanksBadge');
     if (badgeEl){
       const parts = [];
-      const isEventFlow = !!sid || source === 'event';
+      const isEventFlow = !!sid || source === 'event' || isNonEventPremium;
       if (isEventFlow) {
         if (isError) parts.push('EVENT · NIET VERWERKT');
         else if (isDeleted) parts.push('EVENT · VERWIJDERD');
@@ -1211,7 +1214,7 @@
     }
 
     // Summary values
-    const isEventFlow2 = !!sid || source === 'event';
+    const isEventFlow2 = !!sid || source === 'event' || isNonEventPremium;
     const whatResolved = what || (isEventFlow2 ? 'Event-aanmelding' : (source ? ('Aanvraag: ' + source) : ''));
     setText('orderWhat', whatResolved, 'Aanvraag ontvangen');
     setText('orderId', id, '—');
@@ -1247,8 +1250,16 @@
     const premiumEndTxt = fmtDateTime(premiumEndRaw);
     const hasPremiumWindow = !!premiumStartRaw && !!premiumEndRaw;
 
-    if (!isError && !isDeleted && hasPremiumWindow) {
+    if (!isError && !isDeleted && (hasPremiumWindow || isNonEventPremium)) {
       if (premiumBlock) premiumBlock.style.display = '';
+      // Fallback label for non-event premium (profiles/vacatures)
+      if (!hasPremiumWindow && isNonEventPremium) {
+        const pkg = getParamAny(['package_code','packageCode','pkg']);
+        const qty = getParamAny(['quantity','qty','q']) || '1';
+        const label = pkg ? `${qty} × ${pkg}` : 'Premium actief';
+        premiumStartRaw = premiumStartRaw || 'vandaag';
+        premiumEndRaw = premiumEndRaw || 'volgens gekozen pakket';
+      }
       // Keep the plain row hidden by default to avoid duplicate rendering.
       // We still set the textContent for accessibility/fallback.
       if (pwRow) pwRow.style.display = 'none';
@@ -1308,7 +1319,7 @@
     }
 
     // (nextIntro/nextTip already resolved above)
-    const isEventFlow3 = !!sid || source === 'event';
+    const isEventFlow3 = !!sid || source === 'event' || isNonEventPremium;
     if (isEventFlow3 && nextIntro && nextTip){
       if (isError) {
         nextIntro.textContent = 'Uw aanvraag kon niet verwerkt worden.';
