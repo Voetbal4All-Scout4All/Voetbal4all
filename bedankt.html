@@ -702,13 +702,22 @@
 
         if (months > 0 || weeks > 0) {
           if (eventStart) {
-            // EVENTS: Premium should start EXACTLY X months/weeks before event start
-            let pStart = new Date(eventStart.getTime());
+            // EVENTS: Premium should end at (signupDeadline + 1 day) when provided,
+            // otherwise it falls back to the event end (or event start if end is missing).
+            const signupDeadlineRaw = getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+              || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '');
+
+            const sd = parseIsoDate(signupDeadlineRaw);
+            const premiumEndAnchor = sd
+              ? new Date(sd.getTime() + 24 * 60 * 60 * 1000)
+              : new Date(eventEnd.getTime());
+
+            // Premium should start EXACTLY X months/weeks before the end anchor
+            let pStart = new Date(premiumEndAnchor.getTime());
             if (months > 0) pStart = addMonths(pStart, -months);
             if (weeks > 0) pStart = addWeeks(pStart, -weeks);
 
-            // Premium ends at event end (or event start if end is missing)
-            const pEnd = new Date(eventEnd.getTime());
+            const pEnd = premiumEndAnchor;
 
             premiumStartRaw = pStart.toISOString();
             premiumEndRaw = pEnd.toISOString();
