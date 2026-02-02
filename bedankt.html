@@ -526,6 +526,19 @@
     let fetchedEventItem = null;
     let storedEventPayload = null;
 
+    // EARLY FILL: always render name/email from the querystring ASAP.
+    // This guarantees the UI is filled even if later logic returns early or a fetch fails.
+    const __earlyName = (qs.get('name') || '').trim();
+    const __earlyEmail = (qs.get('email') || '').trim();
+    const __earlySet = (id, v) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const s = String(v || '').trim();
+      if (s) el.textContent = s;
+    };
+    __earlySet('orderName', __earlyName);
+    __earlySet('orderEmail', __earlyEmail);
+
     // Read stored payload (event-aanmelden.html stores it before redirecting to Stripe)
     function loadStoredPayload(sid) {
       if (!sid) return null;
