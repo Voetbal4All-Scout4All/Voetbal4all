@@ -1,6 +1,83 @@
 {
-  "generatedAt": "2026-02-02T23:32:45.558Z",
+  "generatedAt": "2026-02-03T02:31:59.064Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rangers buy striker Naderi from Hansa Rostock",
+      "link": "https://www.bbc.com/sport/football/articles/ce9yeevr4z2o?at_medium=RSS&at_campaign=rss",
+      "summary": "German striker Ryan Naderi joins Rangers from Hansa Rostock, becoming the Ibrox club's fourth winter signing.",
+      "publishedAt": "2026-02-03T00:15:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Just seven signings - the Premier League's quiet deadline day",
+      "link": "https://www.bbc.com/sport/football/articles/c30154v3r0zo?at_medium=RSS&at_campaign=rss",
+      "summary": "A low-key transfer deadline day ended with the fewest Premier League deals completed in a winter window. BBC Sport looks at the spending that was done, and examines why there was so little activity.",
+      "publishedAt": "2026-02-03T00:14:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Naderi joins Rangers on Deadline Day",
+      "link": "https://www.skysports.com/football/news/12040/13502536/ryan-naderi-rangers-sign-striker-from-hansa-rostock-on-deadline-day-as-club-seal-fourth-january-arrival",
+      "summary": "Rangers have signed Ryan Naderi in a £4.7m deal on Deadline Day.",
+      "publishedAt": "2026-02-03T00:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Talbi’s stunning strike in Sunderland caps woeful night for ‘childish’ Burnley",
+      "link": "https://www.theguardian.com/football/2026/feb/02/sunderland-burnley-premier-league-match-report",
+      "summary": "Habib Diarra and Chemsdine Talbi sat behind opposing dugouts during the acrimonious Africa Cup of Nations final last month, as Senegal defeated Morocco in Rabat. While suspension deprived Diarra of his starting place for the victors, Morocco’s Talbi was an unused substitute. But, on a freezing Wearside night, they were reunited as Sunderland teammates and duly revelled in taking their frustrations out on Burnley. Continue reading...",
+      "publishedAt": "2026-02-02T23:48:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Benzema joins Al Hilal as Kante heads to Fener",
+      "link": "https://www.espn.com/soccer/story/_/id/47807157/karim-benzema-joins-al-hilal-delay-ngolo-kante-fenerbahce-deadline-day-football-transfers",
+      "summary": "Karim Benzema has left Al Ittihad and signed a contract with Saudi Pro League rivals Al Hilal, the club announced Monday.",
+      "publishedAt": "2026-02-02T23:42:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Liverpool seal $74M deal for Jacquet from Rennes",
+      "link": "https://www.espn.com/soccer/story/_/id/47804710/liverpool-sign-defender-jeremy-jacquet-rennes-transfers",
+      "summary": "Liverpool have confirmed the signing of defender Jérémy Jacquet from Rennes who is set to join the club in the summer.",
+      "publishedAt": "2026-02-02T23:42:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: Ronaldo dispute with PIF behind absence",
+      "link": "https://www.espn.com/soccer/story/_/id/47805301/cristiano-ronaldo-pif-al-nassr-frustrations-unhappy-saudi-pro-league-al-riyadh",
+      "summary": "Cristiano Ronaldo will miss Al Nassr's Saudi Pro League match with Al Riyadh as he is unhappy with PIF's (Saudi Arabian Public Investment Fund) lack of transfer activity at the club compared to other clubs owned by the fund.",
+      "publishedAt": "2026-02-02T23:42:22.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -25,24 +102,13 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Pure genius' - who has made Troy's Premier League team of the week?",
-      "link": "https://www.bbc.com/sport/football/articles/c5y4n8wnr6xo?at_medium=RSS&at_campaign=rss",
-      "summary": "After every round of Premier League matches this season, Troy Deeney gives us his team of the week. Do you agree with his choices?",
-      "publishedAt": "2026-02-02T23:23:46.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Your Premier League club's January window assessed",
-      "link": "https://www.skysports.com/football/news/12040/13502284/january-transfer-window-your-clubs-business-assessed-including-man-utd-liverpool-and-arsenal",
-      "summary": "",
+      "title": "England to face Wales in Sydney in possible pool decider at 2027 RWC",
+      "link": "https://www.skysports.com/rugby-union/news/12040/13502543/rugby-world-cup-2027-fixtures-confirmed-england-to-face-wales-in-sydney-in-possible-pool-stage-decider",
+      "summary": "England will face Wales in Sydney in a possible pool-stage decider at the 2027 Rugby World Cup, it was confirmed as the tournament's fixtures were released.",
       "publishedAt": "2026-02-02T23:20:00.000Z"
     },
     {
@@ -66,17 +132,6 @@
       "link": "https://www.vi.nl/nieuws/wintertransfers-eredivisie-seizoen-2025-26-alle-clubs-op-een-rij",
       "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde, door clubs bevestigde, wintertransfers van de achttien Eredivisie-clubs. Clubs in Nederland kunnen tot en met 3 februari spelers aantrekken .",
       "publishedAt": "2026-02-02T23:05:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Transfer deadline day: Crystal Palace sign Strand Larsen and Liverpool confirm Jacquet deal – live",
-      "link": "https://www.theguardian.com/football/live/2026/feb/02/transfer-deadline-day-mateta-strand-larsen-jacquet-latest-and-more-live",
-      "summary": "⚽ Transfer interactive: deals from Europe’s top five leagues ⚽ 7pm GMT deadline | Follow us on Bluesky | Email Alex The centre-forward to whose leaving I refer is Jean-Philippe Mateta. You can’t argue with numbers, I don’t suppose, and he’s done a fairly good job in patches, I just can’t get on board with a striker so bad at finishing one-on-ones. If Milan are seriously prepared to give £30m for a 28-year-old, I’d say thank you very much. In an effort to save themselves – an effort that ought, perhaps, to have been made in the summer, strengthening a team doing brilliantly to give it a chance of performing both domestically and in Europe – they’ve taken Evann Guessand on loan from Villa. I can’t say I like what I’ve seen so far, but perhaps Oliver Glasner’s system suits him more than Unai Emery’s. Continue reading...",
-      "publishedAt": "2026-02-02T23:04:15.000Z"
     },
     {
       "type": "rss",
@@ -113,36 +168,14 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Benzema joins Al Hilal as Kante heads to Fener",
-      "link": "https://www.espn.com/soccer/story/_/id/47807157/karim-benzema-joins-al-hilal-delay-ngolo-kante-fenerbahce-deadline-day-football-transfers",
-      "summary": "Karim Benzema has left Al Ittihad and signed a contract with Saudi Pro League rivals Al Hilal, the club announced Monday.",
-      "publishedAt": "2026-02-02T22:40:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Liverpool seal $74M deal for Jacquet from Rennes",
-      "link": "https://www.espn.com/soccer/story/_/id/47804710/liverpool-sign-defender-jeremy-jacquet-rennes-transfers",
-      "summary": "Liverpool have confirmed the signing of defender Jérémy Jacquet from Rennes who is set to join the club in the summer.",
-      "publishedAt": "2026-02-02T22:40:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sources: Ronaldo dispute with PIF behind absence",
-      "link": "https://www.espn.com/soccer/story/_/id/47805301/cristiano-ronaldo-pif-al-nassr-frustrations-unhappy-saudi-pro-league-al-riyadh",
-      "summary": "Cristiano Ronaldo will miss Al Nassr's Saudi Pro League match with Al Riyadh as he is unhappy with PIF's (Saudi Arabian Public Investment Fund) lack of transfer activity at the club compared to other clubs owned by the fund.",
-      "publishedAt": "2026-02-02T22:40:14.000Z"
+      "title": "West Ham convince Chelsea defender Axel Disasi to join on loan for season",
+      "link": "https://www.theguardian.com/football/2026/feb/02/west-ham-chelsea-axel-disasi-loan-transfer-window",
+      "summary": "Disasi moving out as Sarr returns to Blues from loan Liverpool seal £60m Jacquet signing for next season West Ham are bolstering their defensive options by signing Axel Disasi on loan from Chelsea. The deal for the centre-back, who has not played since last April, will run until the end of the season and does not contain an option or obligation to buy. Nuno Espírito Santo has been looking to boost his side’s hopes of avoiding relegation from the Premier League by signing a defender. Disasi was a key target, although he took some convincing to agree to move to the London Stadium. Talks over personal terms dragged on, forcing West Ham to submit a deal sheet to give themselves extra time to ensure the loan went through. They have paid a £1.7m loan fee. Continue reading...",
+      "publishedAt": "2026-02-02T22:51:09.000Z"
     },
     {
       "type": "rss",
@@ -187,39 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/02/christian-romero-tottenham-manchester-city-disgraceful-squad-shortage-social-media-post",
       "summary": "Captain made jibe after Manchester City comeback ‘We had 11 players available – unbelievable but true’ Cristian Romero has said it is “disgraceful” that Tottenham are operating with such a threadbare squad in an apparent dig at the club’s January recruitment strategy. The club captain is no stranger to outspoken social media posts and he dropped another one on Monday evening shortly after the closure of the mid-season transfer window. Continue reading...",
       "publishedAt": "2026-02-02T22:17:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Two club-record signings - but are Palace papering over the cracks?",
-      "link": "https://www.bbc.com/sport/football/articles/cly94y766r3o?at_medium=RSS&at_campaign=rss",
-      "summary": "Crystal Palace end a horrendous January with a rollercoaster day - but are they just papering over the cracks?",
-      "publishedAt": "2026-02-02T22:02:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Talbi’s stunning strike seals emphatic Sunderland win over struggling Burnley",
-      "link": "https://www.theguardian.com/football/2026/feb/02/sunderland-burnley-premier-league-match-report",
-      "summary": "Habib Diarra and Chemsdine Talbi sat behind opposing dugouts during last month’s acrimonious Africa Cup of Nations final as Senegal beat Morocco in Rabat. While suspension deprived Diarra of his starting place for the victors, Morocco’s Talbi was an unused substitute but, on a freezing Wearside night, they were reunited as Sunderland teammates and duly revelled in taking their frustrations out on Burnley. Continue reading...",
-      "publishedAt": "2026-02-02T22:01:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Disgraceful Spurs had 11 fit players' - captain Romero",
-      "link": "https://www.bbc.com/sport/football/articles/c5y4n80x821o?at_medium=RSS&at_campaign=rss",
-      "summary": "Captain Cristian Romero says it is \"disgraceful\" Tottenham had just 11 senior players available for Sunday's 2-2 Premier League draw at home to Manchester City.",
-      "publishedAt": "2026-02-02T21:52:14.000Z"
     }
   ]
 }
