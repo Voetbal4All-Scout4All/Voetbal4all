@@ -519,6 +519,7 @@
       bottom: auto !important;
       margin-top: auto !important;
       padding-top: 10px !important;
+      padding-bottom: 2px !important;
       display: inline-block !important;
       z-index: 3 !important;
       opacity: 1 !important;
@@ -549,8 +550,12 @@
       left: auto !important;
       right: auto !important;
       bottom: auto !important;
-      margin-top: 10px !important;
+      margin-top: auto !important;
+      padding-top: 10px !important;
+      padding-bottom: 2px !important;
       display: inline-block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
     /* HOME: button under latest articles — fire / ember glow */
     .btn-more-articles{
@@ -1263,7 +1268,7 @@
       setInterval(render, intervalMs);
     }
 
-    makeRotatingList("#weekend-events-list", 2, 5000);
+    makeRotatingList("#weekend-events-list", 2, 6500);
     makeRotatingList("#latest-trainers-list", 1, 4500);
     makeRotatingList("#latest-players-list", 1, 4500);
 
@@ -1845,6 +1850,17 @@
       // Eerste live load + periodieke refresh (no overlap; initial load is slightly delayed inside loadHomeNews)
       loadHomeNews();
       setInterval(() => { loadHomeNews(); }, REFRESH_MS);
+
+      // HOME: vul de 2 event-blokken (weekend + kalender). 
+      // Deze calls mogen NOOIT de UI breken: bij fout blijft fallback tekst zichtbaar.
+      fillUpcomingWeekendEvents();
+      fillMonthlyCalendarFromBackend();
+
+      // Refresh mee (zelfde cadence als home news)
+      setInterval(() => {
+        fillUpcomingWeekendEvents();
+        fillMonthlyCalendarFromBackend();
+      }, REFRESH_MS);
       
 // Monthly events list (lopende maand) – placeholder data (kan later vervangen worden door echte events API)
 function renderMonthlyEvents() {
