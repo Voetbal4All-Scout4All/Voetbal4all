@@ -118,6 +118,71 @@
     /* Kill any extra outline pseudo elements that may add a green border */
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
 
+    /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
+    .newsletter-card{ cursor: default; }
+    .newsletter-card .quick-title{ margin-bottom: 6px; }
+    .newsletter-form{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:10px;
+    }
+    .newsletter-form .row{
+      display:flex;
+      gap:10px;
+      align-items:stretch;
+    }
+    .newsletter-form input[type="email"]{
+      flex:1;
+      min-width: 0;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      color: #fff;
+      outline: none;
+    }
+    .newsletter-form input[type="email"]::placeholder{ color: rgba(255,255,255,.55); }
+    .newsletter-form .btn-submit{
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      font-weight: 700;
+      cursor:pointer;
+      white-space: nowrap;
+    }
+    .newsletter-form .btn-submit:hover{ background: rgba(255,255,255,.12); }
+    .newsletter-form .fineprint{
+      font-size: 12px;
+      line-height: 1.35;
+      opacity: .85;
+    }
+    .newsletter-form label{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      font-size: 12px;
+      line-height: 1.35;
+      opacity: .9;
+    }
+    .newsletter-form input[type="checkbox"]{ margin-top: 2px; }
+    .newsletter-status{
+      display:none;
+      font-size: 12px;
+      line-height: 1.35;
+      opacity: .95;
+      padding-top: 2px;
+    }
+    .newsletter-status.is-ok{ display:block; }
+    .newsletter-status.is-err{ display:block; }
+    .newsletter-hp{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+    @media (max-width: 560px){
+      .newsletter-form .row{ flex-direction: column; }
+      .newsletter-form .btn-submit{ width: 100%; }
+    }
     /* HOME: button under latest articles — fire / ember glow */
     .btn-more-articles{
       display:block;
@@ -492,11 +557,41 @@
           <div class="note">Tornooien, stages, kampen en meer.</div>
         </a>
 
-        <a class="card quick-card quick-card--highlight" href="adverteren.html">
-          <div class="quick-kicker">Sponsor &amp; Ads</div>
-          <div class="quick-title">Jouw advertentie hier</div>
-          <div class="note">Premium zichtbaarheid op Voetbal4All.</div>
-        </a>
+        <div class="card quick-card quick-card--highlight newsletter-card" aria-label="Nieuwsbrief inschrijving">
+          <div class="quick-kicker">Nieuwsbrief</div>
+          <div class="quick-title">Wil je onze wekelijkse nieuwsbrief ontvangen?</div>
+          <div class="note">Geef je e-mailadres op. Je ontvangt maximum 1 bericht per week.</div>
+
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <!-- honeypot (anti-spam) -->
+            <div class="newsletter-hp" aria-hidden="true">
+              <label>Website
+                <input type="text" id="newsletterWebsite" name="website" autocomplete="off" tabindex="-1" />
+              </label>
+            </div>
+
+            <div class="row">
+              <input
+                type="email"
+                id="newsletterEmail"
+                name="email"
+                placeholder="jouw@email.be"
+                inputmode="email"
+                autocomplete="email"
+                required
+              />
+              <button class="btn-submit" type="submit">Inschrijven</button>
+            </div>
+
+            <label>
+              <input type="checkbox" id="newsletterConsent" required />
+              <span>Ik ga akkoord met de <a href="privacyverklaring.html" style="color:inherit; text-decoration:underline;">privacyverklaring</a>.</span>
+            </label>
+
+            <div class="fineprint">Je kan je op elk moment uitschrijven via een link in elke nieuwsbrief.</div>
+            <div class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
       </div>
 
     </div>
@@ -837,6 +932,92 @@
       // Fallback thumbnail for missing/broken images.
       // Use a real file (small request, cacheable) instead of an inline data URI.
       const FALLBACK_THUMB = "assets/img/placeholder.svg";
+
+      // Nieuwsbrief inschrijving (POST -> backend -> DB)
+      (function initNewsletterSignup(){
+        const form = document.getElementById("newsletterForm");
+        if (!form) return;
+
+        const emailEl = document.getElementById("newsletterEmail");
+        const consentEl = document.getElementById("newsletterConsent");
+        const hpEl = document.getElementById("newsletterWebsite");
+        const statusEl = document.getElementById("newsletterStatus");
+
+        function setStatus(msg, kind){
+          if (!statusEl) return;
+          statusEl.classList.remove("is-ok", "is-err");
+          if (kind === "ok") statusEl.classList.add("is-ok");
+          if (kind === "err") statusEl.classList.add("is-err");
+          statusEl.style.display = "block";
+          statusEl.textContent = msg;
+        }
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = String(emailEl?.value || "").trim();
+          const consent = !!consentEl?.checked;
+          const hp = String(hpEl?.value || "").trim();
+
+          // simple validation
+          if (hp) {
+            // bot detected: pretend success (no signal)
+            setStatus("Bedankt! Je inschrijving is ontvangen.", "ok");
+            form.reset();
+            return;
+          }
+          if (!email) {
+            setStatus("Vul je e-mailadres in.", "err");
+            return;
+          }
+          if (!consent) {
+            setStatus("Bevestig eerst de privacyverklaring.", "err");
+            return;
+          }
+
+          // browser-level email validation
+          if (emailEl && typeof emailEl.checkValidity === "function" && !emailEl.checkValidity()) {
+            setStatus("Vul een geldig e-mailadres in.", "err");
+            return;
+          }
+
+          try {
+            setStatus("Bezig met inschrijven…", "ok");
+
+            // Backend contract: POST /api/newsletter/subscribe
+            // Body: { email, source, consent: true }
+            // Response: { ok: true, status: "subscribed"|"already" }
+            const res = await fetch(`${API_BASE}/api/newsletter/subscribe`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email,
+                source: "index_home_card",
+                consent: true
+              })
+            });
+
+            const ct = res.headers.get("content-type") || "";
+            const data = ct.includes("application/json") ? await res.json() : null;
+
+            if (!res.ok) {
+              const msg = (data && (data.error || data.message)) ? (data.error || data.message) : `Inschrijving mislukt (HTTP ${res.status}).`;
+              throw new Error(msg);
+            }
+
+            const st = String(data?.status || "subscribed").toLowerCase();
+            if (st === "already") {
+              setStatus("Je stond al ingeschreven. Bedankt!", "ok");
+            } else {
+              setStatus("Bedankt! Je bent ingeschreven op de nieuwsbrief.", "ok");
+            }
+            form.reset();
+          } catch (err) {
+            console.error("[NEWSLETTER] subscribe failed", err);
+            setStatus("Er ging iets mis. Probeer later opnieuw.", "err");
+          }
+        });
+      })();
 
       function resolveImageUrl(u) {
         if (u == null) return null;
