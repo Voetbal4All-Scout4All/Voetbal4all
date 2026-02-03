@@ -462,6 +462,40 @@
       transform:none !important;
     }
     .premium-profile-card::after{ display:none !important; }
+
+    /* FIX: Trainers/Spelers placeholder should look like the earlier (nicer) centered placeholder */
+    .premium-profile-card .premium-card-media{
+      height: 78px;
+      background: rgba(255,255,255,.05);
+    }
+
+    .premium-profile-card .premium-card-media img.premium-media-img{
+      object-fit: cover;
+    }
+
+    /* When the card still uses the placeholder, center it and soften it */
+    .premium-profile-card .premium-card-media img.premium-media-img.is-fallback,
+    .premium-profile-card .premium-card-media img.premium-media-img[src*="placeholder.svg"]{
+      object-fit: contain;
+      padding: 14px;
+      opacity: .88;
+      filter: drop-shadow(0 0 12px rgba(255,120,40,.20));
+    }
+
+    /* FIX: Keep the "Alle premium ..." links INSIDE the card (not outside the border) */
+    .premium-profile-card{
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .premium-profile-card .event-link{
+      position: static !important;
+      margin-top: auto;
+      padding-top: 10px;
+      padding-bottom: 4px;
+      display: inline-block;
+    }
     /* HOME: button under latest articles — fire / ember glow */
     .btn-more-articles{
       display:block;
