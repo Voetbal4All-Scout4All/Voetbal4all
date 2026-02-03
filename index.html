@@ -155,7 +155,15 @@
 
     /* Standings card height: allow room for Top 8 list */
     .home-standings-card{
-      min-height: 400px;
+      min-height: 360px;
+    }
+
+    .home-standings-card .events-list{
+      margin-bottom: 0;
+    }
+
+    .home-standings-card .event-item{
+      padding: 6px 0;
     }
 
     /* Compact titles on quick cards (except hero) */
@@ -567,7 +575,10 @@
       <article class="card home-standings-card home-standings--nl">
         <div class="card-header">
           <div>
-            <div class="card-caption">Nederland</div>
+            <div class="card-caption">
+              <img src="assets/img/sources/flag-nl.svg" alt="Nederland" width="18" height="12" style="vertical-align:middle; margin-right:6px;">
+              Nederland
+            </div>
             <div class="card-title">Rangschikking Eredivisie</div>
           </div>
           <span class="pill-small">Top 8</span>
@@ -597,7 +608,10 @@
       <article class="card home-standings-card home-standings--be">
         <div class="card-header">
           <div>
-            <div class="card-caption">België</div>
+            <div class="card-caption">
+              <img src="assets/img/sources/flag-be.svg" alt="België" width="18" height="12" style="vertical-align:middle; margin-right:6px;">
+              België
+            </div>
             <div class="card-title">Rangschikking Jupiler Pro League</div>
           </div>
           <span class="pill-small">Top 8</span>
