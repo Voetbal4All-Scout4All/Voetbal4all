@@ -118,21 +118,44 @@
     /* Kill any extra outline pseudo elements that may add a green border */
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
 
+    /* HOME: consistent quick-card sizing + alignment between left/right stacks */
+    .home-col-stack{
+      --quick-card-h: 128px;
+      --quick-gap: 14px;
+    }
+
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
     .newsletter-card{
       cursor: default;
-      min-height: 256px;
+      /* Align bottom with the bottom of the 2nd button on the left stack:
+         (2 quick cards + 1 gap) */
+      min-height: calc((var(--quick-card-h) * 2) + var(--quick-gap));
     }
 
-    /* Uniform home quick-card heights (hero is excluded) */
+    /* Uniform home quick-card heights (hero excluded; newsletter has its own height) */
     .home-col-stack .quick-card{
-      min-height: 128px;
+      height: var(--quick-card-h);
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
+    .home-col-stack .quick-card.newsletter-card{
+      height: auto; /* allow newsletter to use min-height calc above */
+    }
+
+    /* Prevent the supportersclub card (and all quick cards) from growing taller due to wrapping */
+    .home-col-stack .quick-card .quick-title,
+    .home-col-stack .quick-card .note{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .home-col-stack .quick-card .quick-title{ -webkit-line-clamp: 3; }
+    .home-col-stack .quick-card .note{ -webkit-line-clamp: 2; }
+
+    /* Standings card height: allow room for Top 8 list */
     .home-standings-card{
-      min-height: 384px;
+      min-height: 420px;
     }
 
     /* Compact titles on quick cards (except hero) */
@@ -166,6 +189,11 @@
       background-clip: text;
       color: transparent;
       animation: flowOrange 3.6s linear infinite;
+      text-shadow:
+        0 0 10px rgba(255,120,40,.35),
+        0 0 18px rgba(255,80,0,.28),
+        0 0 28px rgba(255,200,120,.20);
+      filter: drop-shadow(0 0 10px rgba(255,120,40,.18));
     }
 
     @keyframes flowOrange{
@@ -1474,7 +1502,9 @@ renderMonthlyEvents();
             .replace(/\"/g, "&quot;")
             .replace(/'/g, "&#39;");
 
-          table.slice(0, 8).forEach((r) => {
+          const rows = table.slice(0, 8);
+
+          rows.forEach((r) => {
             const li = document.createElement("li");
             li.className = "event-item";
 
@@ -1497,6 +1527,27 @@ renderMonthlyEvents();
 
             listEl.appendChild(li);
           });
+
+          // Pad to Top 8 if the provider returns fewer rows (keeps UI consistent)
+          if (rows.length < 8) {
+            for (let i = rows.length + 1; i <= 8; i++) {
+              const li = document.createElement("li");
+              li.className = "event-item";
+              li.style.opacity = "0.55";
+              li.innerHTML = `
+                <div class=\"standings-row\">
+                  <div class=\"standings-left\">
+                    <div class=\"standings-ranklogo\">
+                      <span class=\"standings-rank\">${i}.</span>
+                    </div>
+                    <div class=\"standings-name\">—</div>
+                  </div>
+                  <div class=\"standings-pts\"> </div>
+                </div>
+              `;
+              listEl.appendChild(li);
+            }
+          }
 
           if (emptyEl) emptyEl.style.display = "none";
         } catch (e) {
