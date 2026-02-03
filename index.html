@@ -118,9 +118,45 @@
     /* Kill any extra outline pseudo elements that may add a green border */
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
 
-    /* HOME: premium cards — reserve space for the provided image (media) */
+    /* HOME: premium cards — FIXED SIZE to avoid layout jump when rotating content */
     .premium-row .lower-grid-layout.grid-4 > .card{
-      min-height: 190px; /* prevents cards from collapsing too small */
+      /* fixed height on desktop prevents the homepage from shifting when text rotates */
+      height: 250px;
+      min-height: 250px;
+    }
+
+    /* Keep the content layout stable inside the premium card */
+    .premium-row .lower-grid-layout.grid-4 > .card .card-header{ margin-bottom: 6px; }
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media{ flex: 0 0 auto; }
+
+    /* Reserve a stable window for the rotating list item (no reflow) */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list{
+      min-height: 88px;
+    }
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list .event-item{
+      min-height: 88px;
+    }
+
+    /* Clamp text so different items don't change the card height */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list .event-title{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list .event-meta{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+
+    /* On smaller screens, allow natural height */
+    @media (max-width: 900px){
+      .premium-row .lower-grid-layout.grid-4 > .card{
+        height: auto;
+        min-height: 0;
+      }
     }
 
     .premium-card-media{
@@ -137,6 +173,13 @@
       height: 100%;
       display: block;
       object-fit: cover;
+    }
+
+    /* Make sure media always keeps its space even if the image fails */
+    .premium-card-media img.is-fallback{
+      object-fit: contain;
+      padding: 10px;
+      opacity: .9;
     }
 
     /* HOME: premium list items can also show an optional thumbnail (backend-provided) */
@@ -774,11 +817,11 @@
         </a>
 
         <a class="card quick-card" href="event-aanmelden.html">
-          <div class="quick-title">Ik wil ook een <span class="flow-orange">Event</span> promoten</div>
+          <div class="quick-title">Ik wil een <span class="flow-orange">Event</span> promoten</div>
         </a>
 
         <a class="card quick-card" href="sportief-teams-in-de-kijker.html">
-          <div class="quick-title">Ik wil <span class="flow-orange">iemand</span> in de bloemen zetten</div>
+          <div class="quick-title">Ik wil <span class="flow-orange">iemand of team</span> in de kijker zetten</div>
         </a>
       </div>
 
@@ -821,7 +864,7 @@
         </div>
         <a class="card quick-card" href="sportief-supportersclubs.html">
           <div class="quick-title">
-            Ik wil een <span class="flow-orange">Supportersclub</span> kenbaar maken
+            Ik wil een <span class="flow-orange">Supportersclub</span> aanmelden
           </div>
         </a>
       </div>
@@ -843,14 +886,14 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list">
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Jeugdcoördinator U6–U13 · Regio Kempen</div>
                   <div class="event-meta">Provinciaal niveau · focus op opleiding &amp; structuur.</div>
                 </li>
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Trainer U17 · Interprovinciaal</div>
                   <div class="event-meta">Diploma min. UEFA C · avondtrainingen.</div>
                 </li>
@@ -866,14 +909,14 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-events-list">
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Zomertornooi U8–U11</div>
                   <div class="event-meta">15–16 augustus · Regio Kempen · tornooi met 2 speeldagen.</div>
                 </li>
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Zomerstage U7–U13</div>
                   <div class="event-meta">Dagkamp eerste week juli · techniek &amp; fun.</div>
                 </li>
@@ -889,14 +932,14 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list-2">
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Technisch coördinator · bovenbouw</div>
                   <div class="event-meta">Regio Antwerpen · uitbouw visie &amp; trainingslijn.</div>
                 </li>
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Trainer Dames 1</div>
                   <div class="event-meta">Ambitieus project · 2 trainingen/week + match.</div>
                 </li>
@@ -912,14 +955,14 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-events-list-2">
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Indoor wintertornooi U10–U12</div>
                   <div class="event-meta">Komende maand · sporthal · snelle rotatieformule.</div>
                 </li>
-                <li class="event-item">
+                <li class="event-item" data-image="">
                   <div class="event-title">Keepersclinic (1 dag)</div>
                   <div class="event-meta">Zaterdag · gasttrainer · beperkte plaatsen.</div>
                 </li>
@@ -1020,7 +1063,7 @@
                   <span class="pill-small">Trainers</span>
                 </div>
                 <div class="premium-card-media" aria-hidden="true">
-                  <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                  <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
                 </div>
                 <ul class="events-list" id="latest-trainers-list">
                   <li class="event-item">
@@ -1044,7 +1087,7 @@
                   <span class="pill-small">Spelers</span>
                 </div>
                 <div class="premium-card-media" aria-hidden="true">
-                  <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                  <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
                 </div>
                 <ul class="events-list" id="latest-players-list">
                   <li class="event-item">
@@ -1223,30 +1266,76 @@
 
     fillPremiumProfiles();
 
-    // Premiumlijsten roteren indien meer dan 2 items
-    document.querySelectorAll(".premium-list").forEach(list => {
-      const items = Array.from(list.children);
+    // Premiumlijsten roteren (1 item zichtbaar) — image rotates WITH the item + no layout jump
+    (function initPremiumRotation(){
+      const FALLBACK_IMG = "assets/img/placeholder.svg";
 
-      if (!items.length) {
-        const msg = document.createElement("p");
-        msg.className = "note premium-empty";
-        msg.textContent = "Uw profiel / event / vacature hier? Druk op de knop voor extra zichtbaarheid.";
-        list.parentElement.appendChild(msg);
-        return;
+      function setMedia(cardEl, src){
+        const img = cardEl ? cardEl.querySelector(".premium-card-media img.premium-media-img") : null;
+        if (!img) return;
+
+        const next = String(src || "").trim() || FALLBACK_IMG;
+        img.classList.toggle("is-fallback", next === FALLBACK_IMG);
+        if (img.getAttribute("src") !== next) img.setAttribute("src", next);
+
+        // Defensive: if the provided image fails, fall back to the placeholder
+        img.onerror = function(){
+          try{
+            img.onerror = null;
+            img.setAttribute("src", FALLBACK_IMG);
+            img.classList.add("is-fallback");
+          }catch(e){}
+        };
       }
 
-      if (items.length > 1) {
+      function getItemImage(li){
+        if (!li) return "";
+
+        // Preferred: explicit data-image on the <li>
+        const d = (li.getAttribute("data-image") || "").trim();
+        if (d) return d;
+
+        // Secondary: any thumbnail inside the li (if later added)
+        const innerImg = li.querySelector("img");
+        if (innerImg && innerImg.getAttribute("src")) return innerImg.getAttribute("src");
+
+        return "";
+      }
+
+      document.querySelectorAll(".premium-list").forEach(list => {
+        const items = Array.from(list.children).filter(n => n && n.nodeType === 1);
+        const card = list.closest(".card");
+
+        if (!items.length) {
+          const msg = document.createElement("p");
+          msg.className = "note premium-empty";
+          msg.textContent = "Uw profiel / event / vacature hier? Druk op de knop voor extra zichtbaarheid.";
+          list.parentElement.appendChild(msg);
+          return;
+        }
+
+        // Ensure stable initial media
+        setMedia(card, getItemImage(items[0]));
+
+        // If only 1 item: still set image and keep as-is
+        if (items.length === 1) {
+          items[0].style.display = "";
+          return;
+        }
+
         let index = 0;
-        function renderPremium() {
+        function renderPremium(){
           items.forEach((item, i) => {
             item.style.display = (i === index) ? "" : "none";
           });
+          setMedia(card, getItemImage(items[index]));
           index = (index + 1) % items.length;
         }
+
         renderPremium();
         setInterval(renderPremium, 4500);
-      }
-    });
+      });
+    })();
   </script>
 
   <script>
