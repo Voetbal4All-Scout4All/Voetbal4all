@@ -127,12 +127,12 @@
 
     /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
     .home-top-grid{
-      /* Wider side columns for standings, noticeably narrower middle columns for the quick-cards/newsletter */
-      grid-template-columns: 2.75fr 0.40fr 0.60fr 2.75fr !important;
-      column-gap: 12px !important;
+      /* Slightly narrower side columns (standings), wider middle area (hero + quick cards) */
+      grid-template-columns: 2.25fr 0.85fr 0.85fr 2.25fr !important;
+      column-gap: 14px !important;
     }
 
-    /* HOME: standings row — FORCE name next to logo (override any global standings styles) */
+    /* HOME: standings row — FORCE logo + clubnaam op dezelfde regel */
     .home-standings-card .event-item{ padding: 6px 0; }
 
     .home-standings-card .standings-row{
@@ -142,19 +142,13 @@
       gap: 10px !important;
     }
 
-    .home-standings-card .standings-left{
-      display:flex !important;
-      align-items:center !important;
-      gap:10px !important;
-      flex: 1 1 auto !important;
-      min-width: 0 !important;
-    }
-
+    /* Left side (rank + logo + name) is one flex row */
     .home-standings-card .standings-ranklogo{
       display:flex !important;
       align-items:center !important;
       gap:8px !important;
-      flex: 0 0 auto !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
       white-space: nowrap !important;
     }
 
@@ -179,6 +173,7 @@
     .home-standings-card .standings-pts{
       flex: 0 0 auto !important;
       white-space: nowrap !important;
+      margin-left: 10px !important;
     }
 
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
@@ -1812,11 +1807,9 @@ async function fillMonthlyCalendarFromBackend(){
 
             li.innerHTML = `
               <div class=\"standings-row\">
-                <div class=\"standings-left\">
-                  <div class=\"standings-ranklogo\">
-                    <span class=\"standings-rank\">${Number(r.rank) || ""}.</span>
-                    ${logoHtml}
-                  </div>
+                <div class=\"standings-ranklogo\">
+                  <span class=\"standings-rank\">${Number(r.rank) || ""}.</span>
+                  ${logoHtml}
                   <div class=\"standings-name\">${esc(r.team)}</div>
                 </div>
                 <div class=\"standings-pts\">${Number(r.points) || 0} pts</div>
@@ -1834,10 +1827,8 @@ async function fillMonthlyCalendarFromBackend(){
               li.style.opacity = "0.55";
               li.innerHTML = `
                 <div class=\"standings-row\">
-                  <div class=\"standings-left\">
-                    <div class=\"standings-ranklogo\">
-                      <span class=\"standings-rank\">${i}.</span>
-                    </div>
+                  <div class=\"standings-ranklogo\">
+                    <span class=\"standings-rank\">${i}.</span>
                     <div class=\"standings-name\">—</div>
                   </div>
                   <div class=\"standings-pts\"> </div>
