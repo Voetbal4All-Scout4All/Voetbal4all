@@ -124,6 +124,34 @@
       --quick-gap: 14px;
     }
 
+    /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
+    .home-top-grid{
+      /* widen side columns for standings, slightly narrow middle columns */
+      grid-template-columns: 1.25fr 0.85fr 0.95fr 1.25fr;
+      column-gap: 16px;
+    }
+
+    /* HOME: standings row — name next to logo (room for longer lists) */
+    .home-standings-card .standings-row{ align-items: center; }
+    .home-standings-card .standings-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width: 0;
+    }
+    .home-standings-card .standings-ranklogo{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex: 0 0 auto;
+    }
+    .home-standings-card .standings-name{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
     .newsletter-card{
       cursor: default;
@@ -655,17 +683,14 @@
       <div class="home-col-stack home-stack--left">
         <a class="card quick-card" href="aanmelden.html">
           <div class="quick-title">Ik wil een <span class="flow-orange">Clubvacature</span> promoten of ik ben <span class="flow-orange">speler/trainer</span> en zoek een club</div>
-          <div class="note">Eén formulier voor clubvacatures én spelers/trainers.</div>
         </a>
 
         <a class="card quick-card" href="event-aanmelden.html">
           <div class="quick-title">Ik wil ook een <span class="flow-orange">Event</span> promoten</div>
-          <div class="note">Tornooi, stage, kamp of club &amp; fun — met extra zichtbaarheid.</div>
         </a>
 
         <a class="card quick-card" href="sportief-teams-in-de-kijker.html">
           <div class="quick-title">Ik wil <span class="flow-orange">iemand</span> in de bloemen zetten</div>
-          <div class="note">Zet een team of medewerker in de kijker met een mooie card.</div>
         </a>
       </div>
 
@@ -709,9 +734,6 @@
         <a class="card quick-card" href="sportief-supportersclubs.html">
           <div class="quick-title">
             Ik wil een <span class="flow-orange">Supportersclub</span> kenbaar maken
-          </div>
-          <div class="note">
-            Laat je supportersgroep zichtbaar worden voor clubs en fans.
           </div>
         </a>
       </div>
