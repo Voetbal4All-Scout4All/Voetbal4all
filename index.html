@@ -184,6 +184,27 @@
     .newsletter-status.is-err{ display:block; }
     .newsletter-hp{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
 
+    /* HOME: quick cards in the middle column — make them slimmer and equal height */
+    .home-top-grid .home-col-stack .quick-card{
+      padding: 12px 14px;
+      min-height: 88px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+    .home-top-grid .home-col-stack .quick-card .quick-title{
+      font-size: 16px;
+      line-height: 1.15;
+      margin: 0;
+    }
+    .home-top-grid .home-col-stack .quick-card .note{
+      font-size: 12px;
+      line-height: 1.25;
+      margin: 0;
+      opacity: .85;
+    }
+
     @media (max-width: 560px){
       .newsletter-form .row{ flex-direction: column; }
       .newsletter-form .btn-submit{ width: 100%; }
@@ -510,20 +531,19 @@
       <article class="card hero-card hero-card--span2">
         <div class="card-header">
           <div>
-            <div class="card-caption">Platform voor clubs, trainers &amp; spelers</div>
-            <div class="card-title">Alles voor voetbal op één plek.</div>
+            <div class="card-caption">Voetbal4All.eu</div>
+            <div class="card-title">Voor iedereen ❤️ met een hart voor voetbal</div>
           </div>
           <span class="pill-small">België · Nederland · internationaal</span>
         </div>
 
         <p class="note" style="margin-top:6px;">
-          Vind snel een clubvacature, trainer, speler of event. Kies hieronder wat je zoekt.
+          <strong>Alles over voetbal op één plek.</strong>
         </p>
 
-        <div class="hero-cta-row">
-          <a href="clubvacatures.html" class="btn-primary">Bekijk clubvacatures</a>
-          <a href="adverteren.html" class="btn-secondary"><span>Adverteer / sponsor</span></a>
-        </div>
+        <p class="note" style="margin-top:6px;">
+          Vind clubvacatures, trainers, spelers of events en stel jezelf voor. Wil je extra zichtbaar zijn? Met Voetbal4All.eu word je sneller gezien door clubs, trainers en spelers.
+        </p>
       </article>
 
       <!-- COL 4 (spans 2 rows): Rangschikking Jupiler Pro League (BE) -->
@@ -539,24 +559,26 @@
         <p class="note" id="jpl-standings-empty" style="display:none;">Rangschikking niet beschikbaar.</p>
       </article>
 
-      <!-- ROW 2, COL 2: Trainers + Spelers -->
+      <!-- ROW 2, COL 2: Quick action buttons -->
       <div class="home-col-stack home-stack--left">
-        <a class="card quick-card" href="trainers.html">
-          <div class="quick-kicker">Trainers</div>
-          <div class="quick-title">Trainer zoekt club</div>
-          <div class="note">Zoek trainers of bied jezelf aan.</div>
+        <a class="card quick-card" href="aanmelden.html">
+          <div class="quick-title">Ik wil een clubvacature promoten of ik ben speler/trainer en zoek een club</div>
+          <div class="note">1 formulier voor clubvacatures en spelers-/trainersprofielen.</div>
         </a>
 
-        <a class="card quick-card" href="spelers.html">
-          <div class="quick-kicker">Spelers</div>
-          <div class="quick-title">Speler zoekt club</div>
-          <div class="note">Bekijk profielen of plaats jouw profiel.</div>
+        <a class="card quick-card" href="event-aanmelden.html">
+          <div class="quick-title">Ik wil ook een event promoten</div>
+          <div class="note">Meld je tornooi, stage, kamp of clubactiviteit aan.</div>
         </a>
 
-        <a class="card quick-card" href="events.html">
-          <div class="quick-kicker">Events</div>
-          <div class="quick-title">Zoek of plaats events</div>
-          <div class="note">Tornooien, stages, kampen en meer.</div>
+        <a class="card quick-card" href="sportief-teams-in-de-kijker.html">
+          <div class="quick-title">Ik wil iemand in de bloemen zetten</div>
+          <div class="note">Zet een team of medewerker in de kijker.</div>
+        </a>
+
+        <a class="card quick-card" href="sportief-supportersclubs.html">
+          <div class="quick-title">Ik wil een supportersclub kenbaar maken</div>
+          <div class="note">Laat jouw supportersgroep zichtbaar worden op Voetbal4All.</div>
         </a>
       </div>
 
