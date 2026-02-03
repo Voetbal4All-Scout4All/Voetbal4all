@@ -234,6 +234,24 @@
       font-size: 16px;
       line-height: 1.15;
     }
+
+    /* HOME: center text inside the quick-button cards (NOT the newsletter card) */
+    .home-col-stack a.quick-card{
+      text-align: center;
+      align-items: center;
+    }
+    .home-col-stack a.quick-card .quick-title{
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Ensure newsletter UI keeps its original (left) alignment */
+    .newsletter-card,
+    .newsletter-card .quick-kicker,
+    .newsletter-card .quick-title,
+    .newsletter-card .note{
+      text-align: left;
+    }
     .home-col-stack .quick-card .note{ margin-top: 4px; }
 
     .newsletter-card .quick-kicker{ margin-bottom: 2px; }
@@ -1152,16 +1170,16 @@
         return;
       }
 
-      if (items.length > 2) {
+      if (items.length > 1) {
         let index = 0;
         function renderPremium() {
           items.forEach((item, i) => {
-            item.style.display = (i === index || i === (index + 1) % items.length) ? "" : "none";
+            item.style.display = (i === index) ? "" : "none";
           });
-          index = (index + 2) % items.length;
+          index = (index + 1) % items.length;
         }
         renderPremium();
-        setInterval(renderPremium, 5000);
+        setInterval(renderPremium, 4500);
       }
     });
   </script>
