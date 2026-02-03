@@ -121,14 +121,15 @@
     /* HOME: consistent quick-card sizing + alignment between left/right stacks */
     .home-col-stack{
       --quick-card-h: 110px;
+      --quick-card-w: 100%;
       --quick-gap: 14px;
     }
 
     /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
     .home-top-grid{
       /* Wider side columns for standings, noticeably narrower middle columns for the quick-cards/newsletter */
-      grid-template-columns: 2.35fr 0.45fr 0.55fr 2.35fr;
-      column-gap: 12px;
+      grid-template-columns: 2.75fr 0.40fr 0.60fr 2.75fr !important;
+      column-gap: 12px !important;
     }
 
     /* HOME: standings row — FORCE name next to logo (override any global standings styles) */
@@ -158,20 +159,21 @@
     }
 
     .home-standings-card .standings-logo{
-      width: 22px !important;
-      height: 22px !important;
+      width: 20px !important;
+      height: 20px !important;
       object-fit: contain !important;
       flex: 0 0 auto !important;
     }
 
     .home-standings-card .standings-name{
-      display:block !important;
+      display:inline-block !important;
       flex: 1 1 auto !important;
       min-width: 0 !important;
       white-space: nowrap !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
       line-height: 1.15 !important;
+      max-width: 100% !important;
     }
 
     .home-standings-card .standings-pts{
@@ -193,6 +195,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      width: var(--quick-card-w);
     }
     .home-col-stack .quick-card.newsletter-card{
       height: auto; /* allow newsletter to use min-height calc above */
