@@ -119,14 +119,20 @@
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
 
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
-    .newsletter-card{ cursor: default; min-height: 232px; }
+    .newsletter-card{
+      cursor: default;
+      min-height: 256px;
+    }
 
     /* Uniform home quick-card heights (hero is excluded) */
     .home-col-stack .quick-card{
-      min-height: 96px;
+      min-height: 128px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    .home-standings-card{
+      min-height: 384px;
     }
 
     /* Compact titles on quick cards (except hero) */
@@ -628,8 +634,12 @@
           </form>
         </div>
         <a class="card quick-card" href="sportief-supportersclubs.html">
-          <div class="quick-title">Ik wil een <span class="flow-orange">Supportersclub</span> kenbaar maken</div>
-          <div class="note">Laat je supportersgroep zichtbaar worden voor clubs en fans.</div>
+          <div class="quick-title">
+            Ik wil een <span class="flow-orange">Supportersclub</span> kenbaar maken
+          </div>
+          <div class="note">
+            Laat je supportersgroep zichtbaar worden voor clubs en fans.
+          </div>
         </a>
       </div>
 
