@@ -130,6 +130,7 @@
       /* Slightly narrower side columns (standings), wider middle area (hero + quick cards) */
       grid-template-columns: 1.25fr 1.75fr 1.75fr 1.25fr !important;
       column-gap: 14px !important;
+      align-items: stretch !important;
     }
 
     /* HOME: standings row — FORCE logo + clubnaam op dezelfde regel */
@@ -166,6 +167,7 @@
       white-space: nowrap !important;
       overflow: hidden !important;
       text-overflow: ellipsis !important;
+      font-size: 12.5px !important;
       line-height: 1.15 !important;
       max-width: 100% !important;
     }
@@ -208,7 +210,9 @@
 
     /* Standings card height: allow room for Top 8 list */
     .home-standings-card{
-      min-height: 360px;
+      min-height: 430px;
+      align-self: stretch;
+      height: 100%;
     }
 
     .home-standings-card .events-list{
