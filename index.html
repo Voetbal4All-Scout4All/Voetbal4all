@@ -118,6 +118,41 @@
     /* Kill any extra outline pseudo elements that may add a green border */
     .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
 
+    /* HOME: premium cards — reserve space for the provided image (media) */
+    .premium-row .lower-grid-layout.grid-4 > .card{
+      min-height: 190px; /* prevents cards from collapsing too small */
+    }
+
+    .premium-card-media{
+      width: 100%;
+      height: 78px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 8px 0 10px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .premium-card-media img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* HOME: premium list items can also show an optional thumbnail (backend-provided) */
+    .premium-list .event-item{ display:flex; gap:10px; align-items:flex-start; }
+    .premium-list .event-thumb{
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex: 0 0 56px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .premium-list .event-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .premium-list .event-body{ min-width:0; flex: 1 1 auto; }
+
     /* HOME: consistent quick-card sizing + alignment between left/right stacks */
     .home-col-stack{
       --quick-card-h: 110px;
@@ -807,6 +842,9 @@
                   <div class="card-title">Premium clubvacatures</div>
                 </div>
               </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list">
                 <li class="event-item">
                   <div class="event-title">Jeugdcoördinator U6–U13 · Regio Kempen</div>
@@ -826,6 +864,9 @@
                   <div class="card-caption">Premium</div>
                   <div class="card-title">Premium events</div>
                 </div>
+              </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-events-list">
                 <li class="event-item">
@@ -847,6 +888,9 @@
                   <div class="card-title">Premium clubvacatures</div>
                 </div>
               </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list-2">
                 <li class="event-item">
                   <div class="event-title">Technisch coördinator · bovenbouw</div>
@@ -866,6 +910,9 @@
                   <div class="card-caption">Premium</div>
                   <div class="card-title">Premium events</div>
                 </div>
+              </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-events-list-2">
                 <li class="event-item">
@@ -972,7 +1019,9 @@
                   </div>
                   <span class="pill-small">Trainers</span>
                 </div>
-
+                <div class="premium-card-media" aria-hidden="true">
+                  <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                </div>
                 <ul class="events-list" id="latest-trainers-list">
                   <li class="event-item">
                     <div class="event-title">Trainer U13 · Provinciaal</div>
@@ -983,7 +1032,6 @@
                     <div class="event-meta">Regio Kempen · inzetbaar 2 avonden per week.</div>
                   </li>
                 </ul>
-
                 <a href="trainers.html" class="event-link">Alle premium trainers →</a>
               </article>
 
@@ -995,7 +1043,9 @@
                   </div>
                   <span class="pill-small">Spelers</span>
                 </div>
-
+                <div class="premium-card-media" aria-hidden="true">
+                  <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                </div>
                 <ul class="events-list" id="latest-players-list">
                   <li class="event-item">
                     <div class="event-title">Aanvallende middenvelder U14</div>
@@ -1006,7 +1056,6 @@
                     <div class="event-meta">Regio Limburg · zoekt meer speeltijd op provinciaal niveau.</div>
                   </li>
                 </ul>
-
                 <a href="spelers.html" class="event-link">Alle premium spelers →</a>
               </article>
 
@@ -1082,8 +1131,8 @@
     }
 
     makeRotatingList("#weekend-events-list", 2, 5000);
-    makeRotatingList("#latest-trainers-list", 2, 4000);
-    makeRotatingList("#latest-players-list", 2, 4000);
+    makeRotatingList("#latest-trainers-list", 1, 4500);
+    makeRotatingList("#latest-players-list", 1, 4500);
 
     // HOME: premium trainers/spelers vullen (fallback = huidige hardcoded items blijven staan)
     async function fillPremiumProfiles() {
@@ -1130,9 +1179,17 @@
           prem.forEach(it => {
             const li = document.createElement("li");
             li.className = "event-item";
+            const img = (it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || "");
+            const thumb = img ? `
+              <div class="event-thumb" aria-hidden="true"><img src="${esc(img)}" alt="" loading="lazy" decoding="async"></div>
+            ` : "";
+
             li.innerHTML = `
-              <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
-              <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+              ${thumb}
+              <div class="event-body">
+                <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
+                <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+              </div>
             `;
             trainersList.appendChild(li);
           });
@@ -1146,9 +1203,17 @@
           prem.forEach(it => {
             const li = document.createElement("li");
             li.className = "event-item";
+            const img = (it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || "");
+            const thumb = img ? `
+              <div class="event-thumb" aria-hidden="true"><img src="${esc(img)}" alt="" loading="lazy" decoding="async"></div>
+            ` : "";
+
             li.innerHTML = `
-              <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
-              <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+              ${thumb}
+              <div class="event-body">
+                <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
+                <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+              </div>
             `;
             playersList.appendChild(li);
           });
