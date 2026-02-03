@@ -266,6 +266,43 @@
       .newsletter-form .row{ flex-direction: column; }
       .newsletter-form .btn-submit{ width: 100%; }
     }
+    /* HOME: hero card centered text */
+    .hero-card--center .card-header,
+    .hero-card--center .note{
+      text-align:center;
+    }
+    .hero-card--center .card-header > div{
+      width:100%;
+    }
+
+    /* HOME: premium surface for profile cards */
+    .premium-profile-card{
+      border: 1px solid rgba(255,255,255,.18) !important;
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        ),
+        linear-gradient(180deg,
+          rgba(180,190,210,.12),
+          rgba(10,12,20,.08)
+        ) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 10px 26px rgba(0,0,0,.38) !important;
+    }
+    .premium-profile-card:hover,
+    .premium-profile-card:focus,
+    .premium-profile-card:focus-within{
+      border-color: rgba(255,255,255,.26) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 12px 30px rgba(0,0,0,.42) !important;
+      transform:none !important;
+    }
+    .premium-profile-card::after{ display:none !important; }
     /* HOME: button under latest articles — fire / ember glow */
     .btn-more-articles{
       display:block;
@@ -588,7 +625,7 @@
       <article class="card hero-card hero-card--span2">
         <div class="card-header">
           <div>
-            <div class="card-caption">Voetbal4All.eu</div>
+            <div class="card-caption">www.voetbal4all.eu</div>
             <div class="card-title" style="font-size:22px; line-height:1.25; font-weight:800;">
               Voor iedereen met een <span style="color:#ff3b30">❤</span> voor voetbal
             </div>
@@ -858,13 +895,13 @@
 
             <!-- RECHTS -->
             <aside class="column-right" style="display:flex; flex-direction:column; gap:14px; height:100%; align-items:stretch; overflow:visible;">
-              <article class="card">
+              <article class="card premium-profile-card" id="premium-trainers-card">
                 <div class="card-header">
                   <div>
-                    <div class="card-caption">Nieuw</div>
-                    <div class="card-title">Laatst aangemelde trainers</div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Premium trainers</div>
                   </div>
-                  <span class="pill-small">TRAINERS</span>
+                  <span class="pill-small">Trainers</span>
                 </div>
 
                 <ul class="events-list" id="latest-trainers-list">
@@ -878,16 +915,16 @@
                   </li>
                 </ul>
 
-                <a href="trainers.html" class="event-link">Bekijk alle trainers →</a>
+                <a href="trainers.html" class="event-link">Alle premium trainers →</a>
               </article>
 
-              <article class="card">
+              <article class="card premium-profile-card" id="premium-players-card">
                 <div class="card-header">
                   <div>
-                    <div class="card-caption">Nieuw</div>
-                    <div class="card-title">Laatst aangemelde spelers</div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Premium spelers</div>
                   </div>
-                  <span class="pill-small">SPELERS</span>
+                  <span class="pill-small">Spelers</span>
                 </div>
 
                 <ul class="events-list" id="latest-players-list">
@@ -901,7 +938,7 @@
                   </li>
                 </ul>
 
-                <a href="spelers.html" class="event-link">Bekijk alle spelers →</a>
+                <a href="spelers.html" class="event-link">Alle premium spelers →</a>
               </article>
 
               <!-- Sticky ad: blijft mee scrollen maar blijft onder spelers -->
@@ -975,6 +1012,79 @@
     makeRotatingList("#weekend-events-list", 2, 5000);
     makeRotatingList("#latest-trainers-list", 2, 4000);
     makeRotatingList("#latest-players-list", 2, 4000);
+
+    // HOME: premium trainers/spelers vullen (fallback = huidige hardcoded items blijven staan)
+    async function fillPremiumProfiles() {
+      async function fetchJson(url) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const ct = res.headers.get("content-type") || "";
+          return ct.includes("application/json") ? await res.json() : null;
+        } catch (e) {
+          console.warn("[HOME] premium profiles fetch failed:", url, e);
+          return null;
+        }
+      }
+
+      function isPremium(it) {
+        const v = it?.premium ?? it?.is_premium ?? it?.isPremium ?? it?.paid ?? it?.status ?? it?.tier;
+        if (typeof v === "boolean") return v;
+        const s = String(v || "").toLowerCase();
+        return ["premium","paid","betalend","true","1"].includes(s);
+      }
+
+      function esc(s){
+        return String(s || "")
+          .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+          .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+      }
+
+      const trainersList = document.getElementById("latest-trainers-list");
+      const playersList  = document.getElementById("latest-players-list");
+      if (!trainersList || !playersList) return;
+
+      // Probeer gangbare endpoints. Als ze nog niet bestaan: niets stukmaken.
+      const tData = await fetchJson(`${API_BASE}/api/trainers?limit=50`);
+      const pData = await fetchJson(`${API_BASE}/api/players?limit=50`);
+
+      const tItems = Array.isArray(tData?.items) ? tData.items : (Array.isArray(tData) ? tData : null);
+      const pItems = Array.isArray(pData?.items) ? pData.items : (Array.isArray(pData) ? pData : null);
+
+      if (Array.isArray(tItems)) {
+        const prem = tItems.filter(isPremium).slice(0, 6);
+        if (prem.length) {
+          trainersList.innerHTML = "";
+          prem.forEach(it => {
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
+              <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+            `;
+            trainersList.appendChild(li);
+          });
+        }
+      }
+
+      if (Array.isArray(pItems)) {
+        const prem = pItems.filter(isPremium).slice(0, 6);
+        if (prem.length) {
+          playersList.innerHTML = "";
+          prem.forEach(it => {
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
+              <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+            `;
+            playersList.appendChild(li);
+          });
+        }
+      }
+    }
+
+    fillPremiumProfiles();
 
     // Premiumlijsten roteren indien meer dan 2 items
     document.querySelectorAll(".premium-list").forEach(list => {
@@ -1472,7 +1582,132 @@ function renderMonthlyEvents() {
   });
 }
 
-renderMonthlyEvents();
+async function fetchEventsSafe() {
+  try {
+    const url = `${API_BASE}/api/events?limit=200`;
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const ct = res.headers.get("content-type") || "";
+    const data = ct.includes("application/json") ? await res.json() : null;
+    const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+    return items;
+  } catch (e) {
+    console.warn("[HOME] fetchEventsSafe failed", e);
+    return null;
+  }
+}
+
+function parseEventDate(ev) {
+  const raw = ev?.start_date || ev?.startDate || ev?.starts_at || ev?.startsAt || ev?.date || ev?.datetime || null;
+  if (!raw) return null;
+  const d = new Date(raw);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+function escHtml(s){
+  return String(s || "")
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+}
+
+function fmtDateNL(d){
+  return new Intl.DateTimeFormat("nl-BE",{ day:"2-digit", month:"long" }).format(d);
+}
+
+async function fillUpcomingWeekendEvents(){
+  const listEl = document.getElementById("weekend-events-list");
+  if (!listEl) return;
+  listEl.innerHTML = "";
+
+  const all = await fetchEventsSafe();
+  if (!all) {
+    // fallback: laat je huidige placeholder boodschap staan
+    const li = document.createElement("li");
+    li.className = "event-item";
+    li.innerHTML = `<div class="event-title">Komend weekend</div><div class="event-meta">Events worden binnenkort automatisch geladen.</div>`;
+    listEl.appendChild(li);
+    return;
+  }
+
+  const now = new Date();
+  const day = now.getDay(); // 0=zon
+  const daysUntilSat = (6 - day + 7) % 7;
+  const saturday = new Date(now);
+  saturday.setHours(0,0,0,0);
+  saturday.setDate(now.getDate() + daysUntilSat);
+
+  const sundayEnd = new Date(saturday);
+  sundayEnd.setDate(saturday.getDate() + 2);
+
+  const upcoming = all
+    .map(ev => ({ ev, d: parseEventDate(ev) }))
+    .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
+    .sort((a,b) => a.d - b.d)
+    .slice(0, 4);
+
+  if (!upcoming.length) {
+    const li = document.createElement("li");
+    li.className = "event-item";
+    li.innerHTML = `<div class="event-title">Geen events gevonden</div><div class="event-meta">Voor dit weekend staat er nog niets gepland.</div>`;
+    listEl.appendChild(li);
+    return;
+  }
+
+  upcoming.forEach(({ev,d}) => {
+    const title = escHtml(ev?.title || ev?.name || "Event");
+    const location = escHtml(ev?.location || ev?.city || ev?.address || "");
+    const li = document.createElement("li");
+    li.className = "event-item";
+    li.innerHTML = `
+      <div class="event-title">${title}</div>
+      <div class="event-meta">${fmtDateNL(d)}${location ? " · " + location : ""}</div>
+    `;
+    listEl.appendChild(li);
+  });
+}
+
+async function fillMonthlyCalendarFromBackend(){
+  const listEl = document.getElementById("monthly-events-list");
+  const emptyEl = document.getElementById("monthly-events-empty");
+  if (!listEl) return;
+
+  const all = await fetchEventsSafe();
+  if (!all) {
+    // fallback naar jouw bestaande sample renderer
+    renderMonthlyEvents();
+    return;
+  }
+
+  const now = new Date();
+  const start = new Date(now.getFullYear(), now.getMonth(), 1);
+  const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
+
+  const items = all
+    .map(ev => ({ ev, d: parseEventDate(ev) }))
+    .filter(x => x.d && x.d >= start && x.d < end)
+    .sort((a,b) => a.d - b.d)
+    .slice(0, 8);
+
+  listEl.innerHTML = "";
+
+  if (!items.length) {
+    if (emptyEl) emptyEl.style.display = "block";
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = "none";
+
+  items.forEach(({ev,d}) => {
+    const title = escHtml(ev?.title || ev?.name || "Event");
+    const location = escHtml(ev?.location || ev?.city || ev?.address || "Regio");
+    const li = document.createElement("li");
+    li.className = "event-item";
+    li.innerHTML = `
+      <div class="event-title">${title}</div>
+      <div class="event-meta">${fmtDateNL(d)} · ${location}</div>
+    `;
+    listEl.appendChild(li);
+  });
+}
 
       // Standings (LIVE) – via backend /api/standings (TheSportsDB)
       async function loadStandings(listId, emptyId, leagueCode) {
