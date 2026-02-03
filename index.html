@@ -120,22 +120,25 @@
 
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
     .newsletter-card{ cursor: default; }
-    .newsletter-card .quick-title{ margin-bottom: 6px; }
+    .newsletter-card .quick-kicker{ margin-bottom: 2px; }
+    .newsletter-card .quick-title{ margin-bottom: 4px; font-size: 18px; line-height: 1.15; }
+    .newsletter-card .note{ font-size: 12px; line-height: 1.25; opacity: .85; }
+
     .newsletter-form{
       display:flex;
       flex-direction:column;
-      gap:10px;
-      margin-top:10px;
+      gap:8px;
+      margin-top:8px;
     }
     .newsletter-form .row{
       display:flex;
-      gap:10px;
+      gap:8px;
       align-items:stretch;
     }
     .newsletter-form input[type="email"]{
       flex:1;
       min-width: 0;
-      padding: 12px 12px;
+      padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,.16);
       background: rgba(0,0,0,.22);
@@ -144,7 +147,7 @@
     }
     .newsletter-form input[type="email"]::placeholder{ color: rgba(255,255,255,.55); }
     .newsletter-form .btn-submit{
-      padding: 12px 14px;
+      padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,.16);
       background: rgba(255,255,255,.08);
@@ -154,26 +157,28 @@
       white-space: nowrap;
     }
     .newsletter-form .btn-submit:hover{ background: rgba(255,255,255,.12); }
-    .newsletter-form .fineprint{
-      font-size: 12px;
-      line-height: 1.35;
-      opacity: .85;
-    }
+
+    /* compact consent row */
     .newsletter-form label{
       display:flex;
       gap:8px;
       align-items:flex-start;
-      font-size: 12px;
-      line-height: 1.35;
+      font-size: 11px;
+      line-height: 1.25;
       opacity: .9;
+      margin-top: 2px;
     }
     .newsletter-form input[type="checkbox"]{ margin-top: 2px; }
+
+    /* hide fineprint in the card to keep height aligned; details live in privacy page */
+    .newsletter-form .fineprint{ display:none; }
+
     .newsletter-status{
       display:none;
       font-size: 12px;
-      line-height: 1.35;
+      line-height: 1.25;
       opacity: .95;
-      padding-top: 2px;
+      padding-top: 0;
     }
     .newsletter-status.is-ok{ display:block; }
     .newsletter-status.is-err{ display:block; }
@@ -560,7 +565,7 @@
         <div class="card quick-card quick-card--highlight newsletter-card" aria-label="Nieuwsbrief inschrijving">
           <div class="quick-kicker">Nieuwsbrief</div>
           <div class="quick-title">Wil je onze wekelijkse nieuwsbrief ontvangen?</div>
-          <div class="note">Geef je e-mailadres op. Je ontvangt maximum 1 bericht per week.</div>
+          <div class="note">Maximaal 1 bericht per week.</div>
 
           <form class="newsletter-form" id="newsletterForm" novalidate>
             <!-- honeypot (anti-spam) -->
