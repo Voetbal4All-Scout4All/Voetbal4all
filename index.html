@@ -126,57 +126,57 @@
 
     /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
     .home-top-grid{
-      /* Wider side columns for standings, narrower middle columns for the quick-cards/newsletter */
-      grid-template-columns: 1.9fr 0.55fr 0.65fr 1.9fr;
-      column-gap: 14px;
+      /* Wider side columns for standings, noticeably narrower middle columns for the quick-cards/newsletter */
+      grid-template-columns: 2.35fr 0.45fr 0.55fr 2.35fr;
+      column-gap: 12px;
     }
 
-    /* HOME: standings row — name next to logo (room for longer lists) */
-    .home-standings-card .standings-row{ align-items: center; }
-    .home-standings-card .standings-left{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width: 0;
-    }
-    .home-standings-card .standings-ranklogo{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      flex: 0 0 auto;
-    }
-    .home-standings-card .standings-name{
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 0;
-    }
+    /* HOME: standings row — FORCE name next to logo (override any global standings styles) */
+    .home-standings-card .event-item{ padding: 6px 0; }
+
     .home-standings-card .standings-row{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap: 10px !important;
     }
+
     .home-standings-card .standings-left{
-      flex: 1 1 auto;
-      min-width: 0;
+      display:flex !important;
+      align-items:center !important;
+      gap:10px !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
     }
+
     .home-standings-card .standings-ranklogo{
-      white-space: nowrap;
+      display:flex !important;
+      align-items:center !important;
+      gap:8px !important;
+      flex: 0 0 auto !important;
+      white-space: nowrap !important;
     }
+
     .home-standings-card .standings-logo{
-      width: 20px;
-      height: 20px;
-      object-fit: contain;
-      flex: 0 0 auto;
+      width: 22px !important;
+      height: 22px !important;
+      object-fit: contain !important;
+      flex: 0 0 auto !important;
     }
+
     .home-standings-card .standings-name{
-      flex: 1 1 auto;
-      min-width: 0;
+      display:block !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      line-height: 1.15 !important;
     }
+
     .home-standings-card .standings-pts{
-      flex: 0 0 auto;
-      white-space: nowrap;
+      flex: 0 0 auto !important;
+      white-space: nowrap !important;
     }
 
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
