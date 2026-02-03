@@ -177,9 +177,11 @@
 
     /* Make sure media always keeps its space even if the image fails */
     .premium-card-media img.is-fallback{
-      object-fit: contain;
-      padding: 10px;
-      opacity: .9;
+      object-fit: cover;
+      padding: 0;
+      opacity: .95;
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 16px rgba(255,120,40,.22));
     }
 
     /* HOME: premium list items can also show an optional thumbnail (backend-provided) */
@@ -484,6 +486,38 @@
       opacity: .95;
       transform: scale(1.06);
       filter: drop-shadow(0 0 16px rgba(255,120,40,.22));
+    }
+
+    /* HOME: premium TOP cards (clubvacatures/events) — placeholder should look like trainers/spelers (full banner) */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media img.premium-media-img[src*="placeholder.svg"]{
+      object-fit: cover;
+      padding: 0;
+      opacity: .95;
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 16px rgba(255,120,40,.22));
+    }
+
+    /* HOME: keep the "Alle ..." links INSIDE the top premium cards (same behavior as trainers/spelers) */
+    .premium-row .lower-grid-layout.grid-4 > .card{
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list{
+      flex: 1 1 auto;
+      margin-bottom: 0;
+    }
+
+    .premium-row .lower-grid-layout.grid-4 > .card .event-link{
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      margin-top: 10px !important;
+      display: inline-block !important;
     }
 
     /* FIX: Keep the "Alle premium ..." links INSIDE the card (not outside the border) */
