@@ -140,14 +140,14 @@
       display:flex !important;
       align-items:center !important;
       justify-content:space-between !important;
-      gap: 10px !important;
+      gap: 6px !important;
     }
 
     /* Left side (rank + logo + name) is one flex row */
     .home-standings-card .standings-ranklogo{
       display:flex !important;
       align-items:center !important;
-      gap:8px !important;
+      gap:6px !important;
       flex: 1 1 auto !important;
       min-width: 0 !important;
       white-space: nowrap !important;
@@ -175,7 +175,7 @@
     .home-standings-card .standings-pts{
       flex: 0 0 auto !important;
       white-space: nowrap !important;
-      margin-left: 10px !important;
+      margin-left: 6px !important;
     }
 
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
@@ -672,7 +672,7 @@
             <div class="card-caption">Nederland</div>
             <div class="card-title">Rangschikking Eredivisie</div>
           </div>
-          <span class="pill-small">Top 8</span>
+          <span class="pill-small">Top 10</span>
         </div>
         <ul class="events-list" id="eredivisie-standings"></ul>
         <p class="note" id="eredivisie-standings-empty" style="display:none;">Rangschikking niet beschikbaar.</p>
@@ -702,7 +702,7 @@
             <div class="card-caption">België</div>
             <div class="card-title">Rangschikking Jupiler Pro League</div>
           </div>
-          <span class="pill-small">Top 8</span>
+          <span class="pill-small">Top 10</span>
         </div>
         <ul class="events-list" id="jpl-standings"></ul>
         <p class="note" id="jpl-standings-empty" style="display:none;">Rangschikking niet beschikbaar.</p>
@@ -782,7 +782,6 @@
                   <div class="card-caption">Premium</div>
                   <div class="card-title">Premium clubvacatures</div>
                 </div>
-                <span class="pill-small">Betalend</span>
               </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list">
                 <li class="event-item">
@@ -803,7 +802,6 @@
                   <div class="card-caption">Premium</div>
                   <div class="card-title">Premium events</div>
                 </div>
-                <span class="pill-small">Betalend</span>
               </div>
               <ul class="events-list premium-list" id="premium-events-list">
                 <li class="event-item">
@@ -824,7 +822,6 @@
                   <div class="card-caption">Premium</div>
                   <div class="card-title">Premium clubvacatures</div>
                 </div>
-                <span class="pill-small">Betalend</span>
               </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list-2">
                 <li class="event-item">
@@ -845,7 +842,6 @@
                   <div class="card-caption">Premium</div>
                   <div class="card-title">Premium events</div>
                 </div>
-                <span class="pill-small">Betalend</span>
               </div>
               <ul class="events-list premium-list" id="premium-events-list-2">
                 <li class="event-item">
@@ -891,7 +887,6 @@
               <div class="card-caption">Aankomend weekend</div>
               <div class="card-title">Aankomende events</div>
             </div>
-            <span class="pill-small">Vanuit eventspagina’s</span>
           </div>
 
           <ul class="weekend-list" id="weekend-events-list">
@@ -932,7 +927,6 @@
                     <div class="card-caption">In de kijker</div>
                     <div class="card-title">Laatste artikels &amp; verhalen</div>
                   </div>
-                  <span class="pill-small">Met kleine foto links</span>
                 </div>
                 <p class="note">
                   Compacte artikels met kleine afbeeldingen links van de tekst. Grotere beelden komen op de artikelpagina zelf.
@@ -1799,7 +1793,7 @@ async function fillMonthlyCalendarFromBackend(){
             .replace(/\"/g, "&quot;")
             .replace(/'/g, "&#39;");
 
-          const rows = table.slice(0, 8);
+          const rows = table.slice(0, 10);
 
           rows.forEach((r) => {
             const li = document.createElement("li");
@@ -1823,9 +1817,9 @@ async function fillMonthlyCalendarFromBackend(){
             listEl.appendChild(li);
           });
 
-          // Pad to Top 8 if the provider returns fewer rows (keeps UI consistent)
-          if (rows.length < 8) {
-            for (let i = rows.length + 1; i <= 8; i++) {
+          // Pad to Top 10 if the provider returns fewer rows (keeps UI consistent)
+          if (rows.length < 10) {
+            for (let i = rows.length + 1; i <= 10; i++) {
               const li = document.createElement("li");
               li.className = "event-item";
               li.style.opacity = "0.55";
