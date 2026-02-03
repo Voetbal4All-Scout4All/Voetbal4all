@@ -120,15 +120,15 @@
 
     /* HOME: consistent quick-card sizing + alignment between left/right stacks */
     .home-col-stack{
-      --quick-card-h: 118px;
+      --quick-card-h: 110px;
       --quick-gap: 14px;
     }
 
     /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
     .home-top-grid{
-      /* widen side columns for standings, slightly narrow middle columns */
-      grid-template-columns: 1.25fr 0.85fr 0.95fr 1.25fr;
-      column-gap: 16px;
+      /* Wider side columns for standings, narrower middle columns for the quick-cards/newsletter */
+      grid-template-columns: 1.55fr 0.72fr 0.78fr 1.55fr;
+      column-gap: 14px;
     }
 
     /* HOME: standings row — name next to logo (room for longer lists) */
@@ -150,6 +150,33 @@
       overflow: hidden;
       text-overflow: ellipsis;
       min-width: 0;
+    }
+    .home-standings-card .standings-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .home-standings-card .standings-left{
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .home-standings-card .standings-ranklogo{
+      white-space: nowrap;
+    }
+    .home-standings-card .standings-logo{
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+    .home-standings-card .standings-name{
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .home-standings-card .standings-pts{
+      flex: 0 0 auto;
+      white-space: nowrap;
     }
 
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
