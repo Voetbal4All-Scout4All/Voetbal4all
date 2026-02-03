@@ -512,12 +512,22 @@
     }
 
     .premium-row .lower-grid-layout.grid-4 > .card .event-link{
+      /* Always visible INSIDE the card (bottom-aligned) */
       position: relative !important;
       left: auto !important;
       right: auto !important;
       bottom: auto !important;
-      margin-top: 10px !important;
+      margin-top: auto !important;
+      padding-top: 10px !important;
       display: inline-block !important;
+      z-index: 3 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      text-decoration: none;
+    }
+
+    .premium-row .lower-grid-layout.grid-4 > .card .event-link:hover{
+      text-decoration: underline;
     }
 
     /* FIX: Keep the "Alle premium ..." links INSIDE the card (not outside the border) */
