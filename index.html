@@ -699,7 +699,7 @@
    Geldt ENKEL voor mobiel
    Raakt geen andere secties
    ========================= */
-@media (max-width: 900px){
+   @media (max-width: 900px){
 
 /* Grid: alles netjes onder elkaar */
 .home-top .home-top-grid{
@@ -707,24 +707,37 @@
   row-gap: 12px !important;
 }
 
-/* Volgorde op mobiel */
+/* Maak van de rechter stack (nieuwsbrief + supportersclub) "losse" grid items op mobiel */
+.home-top .home-stack--right{
+  display: contents !important;
+}
+
+/* Volgorde op mobiel (1 kolom) */
 .home-top .hero-card{ order: 1; }
-.home-top .home-stack--left{ order: 2; }
-.home-top .home-stack--right{ order: 3; }
-.home-top .home-standings--be{ order: 4; }
-.home-top .home-standings--nl{ order: 5; }
+
+/* Nieuwsbrief DIRECT onder de hero */
+.home-top .newsletter-card{ order: 2; }
+
+/* Daarna de link-cards (aanmelden/event/team in de kijker) */
+.home-top .home-stack--left{ order: 3; }
+
+/* Daarna supportersclub (het <a> dat in de voormalige right stack zit) */
+.home-top .home-stack--right > a.quick-card{ order: 4; }
+
+/* Standings onderaan */
+.home-top .home-standings--be{ order: 5; }
+.home-top .home-standings--nl{ order: 6; }
 
 /* Hero: meer ademruimte */
 .home-top .hero-card{
   padding: 16px !important;
 }
-
 .home-top .hero-card .card-title{
   font-size: 20px !important;
   line-height: 1.25 !important;
 }
 
-/* Premium / quick cards: niet samendrukken */
+/* Quick cards: niet samendrukken */
 .home-top .home-col-stack{
   --quick-card-h: auto;
 }
@@ -744,11 +757,11 @@
 .home-top .newsletter-form .row{
   flex-direction: column !important;
 }
-
 .home-top .newsletter-form button{
   width: 100% !important;
 }
 }
+
 
   </style>
 
