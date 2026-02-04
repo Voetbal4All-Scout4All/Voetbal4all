@@ -693,6 +693,63 @@
         0 8px 20px rgba(0,0,0,.55),
         0 0 22px rgba(255,90,0,.45);
     }
+
+    /* =========================
+   HOME TOP – MOBILE ONLY FIX
+   Geldt ENKEL voor mobiel
+   Raakt geen andere secties
+   ========================= */
+@media (max-width: 900px){
+
+/* Grid: alles netjes onder elkaar */
+.home-top .home-top-grid{
+  grid-template-columns: 1fr !important;
+  row-gap: 12px !important;
+}
+
+/* Volgorde op mobiel */
+.home-top .hero-card{ order: 1; }
+.home-top .home-stack--left{ order: 2; }
+.home-top .home-stack--right{ order: 3; }
+.home-top .home-standings--be{ order: 4; }
+.home-top .home-standings--nl{ order: 5; }
+
+/* Hero: meer ademruimte */
+.home-top .hero-card{
+  padding: 16px !important;
+}
+
+.home-top .hero-card .card-title{
+  font-size: 20px !important;
+  line-height: 1.25 !important;
+}
+
+/* Premium / quick cards: niet samendrukken */
+.home-top .home-col-stack{
+  --quick-card-h: auto;
+}
+
+.home-top .home-col-stack .quick-card{
+  height: auto !important;
+  min-height: 92px;
+  padding: 14px !important;
+}
+
+.home-top .home-col-stack .quick-title{
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+}
+
+/* Nieuwsbrief: inputs onder elkaar */
+.home-top .newsletter-form .row{
+  flex-direction: column !important;
+}
+
+.home-top .newsletter-form button{
+  width: 100% !important;
+}
+}
+
   </style>
 
   <!-- Redirect: /index.html -> / -->
