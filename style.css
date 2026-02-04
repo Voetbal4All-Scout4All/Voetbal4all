@@ -66,17 +66,20 @@ body::before {
   filter: saturate(1.05) contrast(1.05);
 }
 
-body::before {
-  opacity: 0.13;
+@media (max-width: 600px) {
+  body::before {
+    opacity: 0.13;
 
-  /* Mobile fix: voorkom "uitgetrokken/te groot" effect */
-  background-attachment: scroll;
-  background-position: center center;
-  background-repeat: no-repeat;
+    /* Mobiel: schermvullend */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-  /* i.p.v. cover (te agressief op mobiel) → contain (schermvullend zonder rare scaling) */
-  background-size: contain;
+    /* Mobiel: voorkom buggy "fixed" gedrag */
+    background-attachment: scroll;
+  }
 }
+
 
 
 a { color: inherit; text-decoration: none; }
