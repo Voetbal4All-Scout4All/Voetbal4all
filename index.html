@@ -783,7 +783,9 @@
   .v4a-home-video--desktop{ display: none; }
   .v4a-home-video--mobile{ display: block; }
 }
-
+.v4a-video{
+  pointer-events: none;   /* gedraagt zich als gif */
+}
 
   </style>
 
@@ -1228,7 +1230,7 @@
                   </div>
         
                   <div class="v4a-video-wrap">
-                    <video class="v4a-video" controls playsinline preload="metadata">
+                    <video class="v4a-video" autoplay muted loop playsinline preload="metadata">
                       <source src="assets/video/hero.mp4" type="video/mp4">
                       Je browser ondersteunt deze video niet.
                     </video>
@@ -1333,7 +1335,7 @@
                   </div>
       
                   <div class="v4a-video-wrap">
-                    <video class="v4a-video" controls playsinline preload="metadata">
+                    <video class="v4a-video" autoplay muted loop playsinline preload="metadata">
                       <source src="assets/video/hero.mp4" type="video/mp4">
                       Je browser ondersteunt deze video niet.
                     </video>
