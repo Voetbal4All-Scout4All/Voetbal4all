@@ -761,6 +761,28 @@
   width: 100% !important;
 }
 }
+/* HOME: video block styling */
+.v4a-video-wrap{
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+}
+.v4a-video{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Visibility rules */
+.v4a-home-video--mobile{ display: none; }
+.v4a-home-video--desktop{ display: block; }
+
+@media (max-width: 900px){
+  .v4a-home-video--desktop{ display: none; }
+  .v4a-home-video--mobile{ display: block; }
+}
 
 
   </style>
@@ -1196,6 +1218,24 @@
           <a href="events.html" class="event-link" style="margin-top:10px; display:inline-block;">Alle events →</a>
         </article>
 
+                <!-- VIDEO (desktop): onder Events kalender -->
+                <article class="card v4a-home-video v4a-home-video--desktop">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Video</div>
+                      <div class="card-title">Voetbal4All in het kort</div>
+                    </div>
+                  </div>
+        
+                  <div class="v4a-video-wrap">
+                    <video class="v4a-video" controls playsinline preload="metadata">
+                      <source src="assets/video/hero.mp4" type="video/mp4">
+                      Je browser ondersteunt deze video niet.
+                    </video>
+                  </div>
+                </article>
+        
+
       </section>
 
             <!-- MIDDEN: ARTIKELS -->
@@ -1281,6 +1321,27 @@
           </div>
         </div>
       </section>
+            <!-- VIDEO (mobile): helemaal onderaan -->
+            <section class="section-main v4a-home-video v4a-home-video--mobile">
+              <div class="shell">
+                <article class="card">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Video</div>
+                      <div class="card-title">Voetbal4All in het kort</div>
+                    </div>
+                  </div>
+      
+                  <div class="v4a-video-wrap">
+                    <video class="v4a-video" controls playsinline preload="metadata">
+                      <source src="assets/video/hero.mp4" type="video/mp4">
+                      Je browser ondersteunt deze video niet.
+                    </video>
+                  </div>
+                </article>
+              </div>
+            </section>
+      
     </main>
 
     <!-- FOOTER -->
