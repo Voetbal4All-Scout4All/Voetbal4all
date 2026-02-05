@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-04T23:32:21.498Z",
+  "generatedAt": "2026-02-05T02:28:06.486Z",
   "items": [
     {
       "type": "rss",
@@ -7,21 +7,10 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sources: Unhappy Ronaldo to boycott 2nd game",
-      "link": "https://www.espn.com/soccer/story/_/id/47826210/cristiano-ronaldo-boycott-second-al-nassr-game-protest-pif-sources",
-      "summary": "Al Nassr star Cristiano Ronaldo will maintain his stance and boycott a second-straight league game after not receiving a concrete guarantee that the Saudi Arabia PIF will make changes regarding the Saudi Pro League club's management, sources told ESPN.",
-      "publishedAt": "2026-02-04T23:18:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Endrick scores stunner to maintain Lyon hot streak",
-      "link": "https://www.espn.com/soccer/story/_/id/47831276/endrick-goal-lyon-french-cup-laval-real-madrid-brazil",
-      "summary": "Endrick made it five goals in five games with a stunning strike as Lyon beat Laval 2-0 to reach the Coupe de France quarterfinals on Wednesday.",
-      "publishedAt": "2026-02-04T23:18:28.000Z"
+      "title": "Man City to appeal rule barring Guéhi from final",
+      "link": "https://www.espn.com/soccer/story/_/id/47831516/man-city-marc-guehi-carabao-cup-final-rule-pep-guardiola",
+      "summary": "Manchester City are set to ask the English Football League for special permission to play Marc Guéhi in the Carabao Cup final, according to Pep Guardiola.",
+      "publishedAt": "2026-02-05T00:20:09.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +21,84 @@
       "title": "City fly past Newcastle into cup final with Arsenal",
       "link": "https://www.espn.com/soccer/report/_/gameId/401842434",
       "summary": "Manchester City struck three times in the first half as they eased into the Carabao Cup final by completing a comfortable 5-1 aggregate win over Newcastle United.",
-      "publishedAt": "2026-02-04T23:18:27.000Z"
+      "publishedAt": "2026-02-05T00:20:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: Unhappy Ronaldo to boycott 2nd game",
+      "link": "https://www.espn.com/soccer/story/_/id/47826210/cristiano-ronaldo-boycott-second-al-nassr-game-protest-pif-sources",
+      "summary": "Al Nassr star Cristiano Ronaldo will maintain his stance and boycott a second-straight league game after not receiving a concrete guarantee that the Saudi Arabia PIF will make changes regarding the Saudi Pro League club's management, sources told ESPN.",
+      "publishedAt": "2026-02-05T00:20:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "More questions than answers as Newcastle yet to catch fire",
+      "link": "https://www.bbc.com/sport/football/articles/c17zkkjnqpno?at_medium=RSS&at_campaign=rss",
+      "summary": "Holders Newcastle United were knocked out of the Carabao Cup by Manchester City on Wednesday night and a challenging season shows no sign of relenting.",
+      "publishedAt": "2026-02-05T00:13:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Grab your popcorn -- it's Man City vs. Arsenal for the Carabao Cup, and maybe more",
+      "link": "https://www.espn.com/soccer/story/_/id/47831362/man-city-face-arsenal-carabao-cup-final-maybe-more",
+      "summary": "Man City's win in the Carabao Cup semis sets the stage for a final vs. Arsenal, and a potentially thrilling end to the season.",
+      "publishedAt": "2026-02-04T23:56:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "What wobble? Arsenal break streak to reach first final in six years",
+      "link": "https://www.espn.com/soccer/story/_/id/47820084/what-wobble-arsenal-break-hoodoo-reach-first-final-six-years",
+      "summary": "Arsenal will play in their first cup final in six years, aiming to put their recent lack of silverware behind them.",
+      "publishedAt": "2026-02-04T23:56:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Is Spurs' Moore the answer to Rangers' open-play issues?",
+      "link": "https://www.bbc.com/sport/football/articles/c150e9eqy98o?at_medium=RSS&at_campaign=rss",
+      "summary": "Consistency is the next step for Rangers winger Mikey Moore after a standout performance against Kilmarnock, says head coach Danny Rohl.",
+      "publishedAt": "2026-02-04T23:54:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Pure logic' Guehi should play in final - Guardiola seeks rule change",
+      "link": "https://www.bbc.com/sport/football/articles/cy8y677z23go?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City boss Pep Guardiola wants the English Football League to change their rules to allow Marc Guehi to play in the Carabao Cup final against Arsenal.",
+      "publishedAt": "2026-02-04T23:50:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Hibernian 3-2 Dundee United",
+      "link": "https://www.skysports.com/watch/video/13503444/hibernian-3-2-dundee-united-scottish-premiership-highlights",
+      "summary": "Highlights from the Scottish Premiership match between Hibernian and Dundee United",
+      "publishedAt": "2026-02-04T23:40:00.000Z"
     },
     {
       "type": "rss",
@@ -108,19 +174,8 @@
       "flag": "🌍",
       "title": "Manchester City set up Arsenal final after Marmoush double sinks Newcastle",
       "link": "https://www.theguardian.com/football/2026/feb/04/manchester-city-newcastle-carabao-cup-semi-final-second-leg-match-report",
-      "summary": "Strap yourself in for a Wembley showdown between Manchester City and Arsenal that should be as fascinating on the grass as the sideline where Pep Guardiola and Mikel Arteta bid to outsmart each other. City’s manager was the Arsenal No 1’s tutor from 2016-19 when Arteta was his coach. This forged a friendship but there may be fireworks between them after Guardiola was incensed by the Spaniard’s claim he had “all the information” on City after they complained about Arsenal’s “dark arts” tactics in the 2–2 draw at the Etihad Stadium last season. Continue reading...",
+      "summary": "Strap yourself in for a Wembley showdown between Manchester City and Arsenal that should be as fascinating on the grass as the sideline where Pep Guardiola and Mikel Arteta bid to outsmart each other. City’s manager was the Arsenal No 1’s tutor from 2016 to 2019 when Arteta was his coach. This forged a friendship, but there may be fireworks between them after Guardiola was incensed by the Spaniard’s claim that he had “all the information” on City after they complained about Arsenal’s “dark arts” tactics in the 2–2 draw at the Etihad Stadium last season. Continue reading...",
       "publishedAt": "2026-02-04T22:03:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ronaldo might ask to leave Al-Nassr - Thursday's gossip",
-      "link": "https://www.bbc.com/sport/football/articles/cpwn48xdxldo?at_medium=RSS&at_campaign=rss",
-      "summary": "Cristiano Ronaldo might ask to leave Al-Nassr, Nottingham Forest's Elliot Anderson tops Manchester United's list of midfield targets, Atletico Madrid want Tottenham's Cristian Romero, plus more.",
-      "publishedAt": "2026-02-04T22:03:14.000Z"
     },
     {
       "type": "rss",
@@ -132,17 +187,6 @@
       "link": "https://www.skysports.com/football/livingston-vs-falkirk/report/531874",
       "summary": "Marvin Bartley's debut in the Livingston dugout ended in a 2-1 defeat at home to Falkirk in a William Hill Premiership clash at the Home of the Set Fare Arena.",
       "publishedAt": "2026-02-04T22:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "The F1, football and NFL figures with Epstein links after conviction",
-      "link": "https://www.bbc.com/sport/articles/c99kz4zj0m9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Senior figures in sport maintained personal contact with Jeffrey Epstein, while others were discussed regarding potential deals.",
-      "publishedAt": "2026-02-04T21:54:46.000Z"
     },
     {
       "type": "rss",
@@ -168,39 +212,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Real Madrid's big transfer questions: What to do about Vini Jr., Bellingham, Paz this summer?",
-      "link": "https://www.espn.com/soccer/story/_/id/47815213/real-madrid-big-transfer-questions-vini-jr-bellingham-paz-arbeloa",
-      "summary": "As usual, Real Madrid's January transfer window was quiet, but there are plenty of issues with the playing squad for the club to address in the summer.",
-      "publishedAt": "2026-02-04T21:03:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Real Madrid's fitness guru loves 'pushing players to the limit.' Can he save their season?",
-      "link": "https://www.espn.com/soccer/story/_/id/47808254/real-madrid-counting-fitness-guru-antonio-pintus-turn-season-around",
-      "summary": "Madrid hope Antonio Pintus can put the players through a 'mini-preseason' that revives their campaign.",
-      "publishedAt": "2026-02-04T21:03:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'It doesn’t seem fair' - Rahm questions rules of LIV Golf's ranking boost",
-      "link": "https://www.skysports.com/golf/news/12040/13503066/liv-golf-league-jon-rahm-questions-limited-world-ranking-points-on-offer-and-explains-why-owgr-ruling-doesnt-seem-fair",
-      "summary": "Jon Rahm has welcomed LIV Golf League events finally being awarded world ranking points but believes \"there's work to be done\" to address a ruling that \"doesn't seem fair\".",
-      "publishedAt": "2026-02-04T21:00:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -209,17 +220,6 @@
       "link": "https://www.skysports.com/football/news/12040/13503379/martin-oneill-exclusive-on-nerves-of-celtic-return-unconvincing-recruitment-under-paul-tisdale-and-chasing-down-hearts",
       "summary": "Returning Celtic manager Martin O'Neill was worried about being considered \"too old\" to lead the club before returning for a second and then third spell earlier this season, and suggested he was unconvinced about their recruitment under former transfer chief Paul Tisdale.",
       "publishedAt": "2026-02-04T20:37:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Inside Man City's rebuild and plan for life without Guardiola",
-      "link": "https://www.bbc.com/sport/football/articles/c5y21lkdl78o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport looks at Manchester City's evolution and why the January window has offered renewed belief.",
-      "publishedAt": "2026-02-04T16:22:10.000Z"
     }
   ]
 }
