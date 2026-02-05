@@ -769,10 +769,13 @@
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
 }
-.v4a-video{
+.v.v4a-video{
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  transform: scale(1.1);           /* +10% zoom */
+  transform-origin: center center; /* zoom vanuit het midden */
+  pointer-events: none;
 }
 
 /* Visibility rules */
@@ -785,6 +788,11 @@
 }
 .v4a-video{
   pointer-events: none;   /* gedraagt zich als gif */
+}
+
+.v4a-video-wrap{
+  width: 100%;
+  overflow: hidden;   /* essentieel om randen af te snijden */
 }
 
   </style>
