@@ -762,21 +762,43 @@
 }
 }
 /* HOME: video block styling */
+/* HOME: video block styling (CENTER CROP + 10% ZOOM, box blijft exact even groot) */
 .v4a-video-wrap{
   width: 100%;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
+
+  position: relative;      /* belangrijk */
+  aspect-ratio: 9 / 16;    /* pas aan indien je liever 16/9 wil */
 }
-.v.v4a-video{
+
+.v4a-video{
+  position: absolute;      /* belangrijk: uit de normale flow */
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
+
+  object-fit: cover;       /* crop zoals een “gif” */
+  object-position: center; /* altijd vanuit midden */
+
   transform: scale(1.1);           /* +10% zoom */
-  transform-origin: center center; /* zoom vanuit het midden */
+  transform-origin: center center; /* vanuit het midden */
+
   pointer-events: none;
 }
+
+/* Visibility rules */
+.v4a-home-video--mobile{ display: none; }
+.v4a-home-video--desktop{ display: block; }
+
+@media (max-width: 900px){
+  .v4a-home-video--desktop{ display: none; }
+  .v4a-home-video--mobile{ display: block; }
+}
+
 
 /* Visibility rules */
 .v4a-home-video--mobile{ display: none; }
@@ -1233,9 +1255,9 @@
                   <div class="v4a-video-wrap">
                     <video class="v4a-video" autoplay muted loop playsinline preload="metadata">
                       <source src="assets/video/hero.mp4" type="video/mp4">
-                      Je browser ondersteunt deze video niet.
                     </video>
                   </div>
+                  
                 </article>
         
 
@@ -1326,16 +1348,16 @@
       </section>
             <!-- VIDEO (mobile): helemaal onderaan -->
             <section class="section-main v4a-home-video v4a-home-video--mobile">
-              <div class="shell">      
-                  <div class="v4a-video-wrap">
-                    <video class="v4a-video" autoplay muted loop playsinline preload="metadata">
-                      <source src="assets/video/hero.mp4" type="video/mp4">
-                      Je browser ondersteunt deze video niet.
-                    </video>
-                  </div>
-                </article>
+              <div class="shell">
+                <div class="v4a-video-wrap">
+                  <video class="v4a-video" autoplay muted loop playsinline preload="metadata">
+                    <source src="assets/video/hero.mp4" type="video/mp4">
+                  </video>
+                </div>
+                
               </div>
             </section>
+            
       
     </main>
 
