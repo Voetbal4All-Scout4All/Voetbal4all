@@ -2665,28 +2665,5 @@ img {
     background: rgba(11, 16, 34, 0.18) !important;
   }
 }
-/* === HOME: Video block (acts like GIF) === */
-
-.v4a-video-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;        /* behoud verhouding */
-  overflow: hidden;            /* essentieel om te snijden */
-  border-radius: 14px;
-  background: #000;
-}
-
-/* De video zelf */
-.v4a-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 110%;                 /* +10% zoom */
-  height: 110%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;           /* vult en snijdt correct */
-  pointer-events: none;
-}
-
 
 /* Fallback (browsers without :has): keep current behavior (no global change) */
