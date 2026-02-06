@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-02-06T10:44:07.371Z",
+  "generatedAt": "2026-02-06T11:36:45.643Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Santos: Neymar not rushing back after knee injury",
+      "link": "https://www.espn.com/soccer/story/_/id/47847468/neymar-knee-injury-not-rushing-back-santos-coach",
+      "summary": "Santos coach Juan Pablo Vojvoda is encouraged by Neymar's progress following his December knee operation but will not rush him back into action.",
+      "publishedAt": "2026-02-06T11:28:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Japanse aanwinst kan tegen Ajax debuteren voor AZ",
+      "link": "https://www.vi.nl/nieuws/japanse-aanwinst-kan-tegen-ajax-debuteren-voor-az",
+      "summary": "AZ kan in het thuisduel met Ajax een beroep doen op winteraanwinst Rion Ichihara. Trainer Leeroy Echteld verwacht geen kopie van het bekerduel van eerder dit jaar, dat de Alkmaarders met 6-0 wonnen.",
+      "publishedAt": "2026-02-06T11:22:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Gekke aanvangstijden in Championship? Dit is de reden",
+      "link": "https://www.vi.nl/nieuws/waarom-alle-championship-duels-dit-weekend-een-minuut-later-beginnen",
+      "summary": "Wie een blik werpt op het programma van het Championship, de League One of de League Two voor dit weekend, is ongetwijfeld op de aanvangstijden gestuit. Die zijn namelijk een minuut over het hele uur. Dat heeft te maken met een speciale campagne.",
+      "publishedAt": "2026-02-06T11:20:28.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Slot praises Wirtz’s gym work, Ronaldo warned, Milner eyes record – football live",
+      "link": "https://www.theguardian.com/football/live/2026/feb/06/premier-league-news-ronaldo-warned-milner-eyes-record-and-more-football-live",
+      "summary": "⚽ All the latest news heading into the weekend’s action ⚽ Premier League: 10 things to look out for | Mail John Quiz of the week: I guessed my way to a rather decent 12/16. Virgil van Dijk has hit out at ex-pro pundits in an interview with, er, Gary Neville, ahead of Sky’s broadcast of Liverpool v Manchester City. For me personally, I can deal with it, but I’m a bit worried for the next generation. I feel like the ex-top players have a responsibility to the new generation. Criticism is absolutely normal and part of the game, and I think it should stay that way. But sometimes criticism also goes into being clickbait, saying things to provoke things, and without thinking about the repercussions for a mental side of players, and especially the younger generation, who are constantly on social media. Continue reading...",
+      "publishedAt": "2026-02-06T11:09:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Ultee: 'We doen het bij Oss op onze manier'",
+      "link": "https://www.vi.nl/pro/ultee-we-doen-het-bij-oss-op-onze-manier",
+      "summary": "Sjors Ultee (38) was trainer bij Fortuna Sittard en Cambuur, maar begon vorig seizoen aan een periode bij TOP Oss. Afgelopen week zette hij zijn handtekening onder een contract voor een derde seizoen bij de Brabanders. Want club en trainer zijn nog niet op elkaar uitgekeken.",
+      "publishedAt": "2026-02-06T11:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Wanneer is de loting van AZ in de Youth League?",
+      "link": "https://www.vi.nl/nieuws/wanneer-is-de-loting-van-az-in-de-youth-league",
+      "summary": "De Nederlandse inbreng in de UEFA Youth League is teruggebracht tot één club. AZ is na de play-offs de enige overgebleven vertegenwoordiger, nadat PSV en Ajax werden uitgeschakeld. Vrijdag 6 februari wordt in het Zwitserse Nyon geloot voor het vervolg van het toernooi.",
+      "publishedAt": "2026-02-06T10:52:57.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -40,17 +106,6 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Santos: Neymar not rushing back after knee injury",
-      "link": "https://www.espn.com/soccer/story/_/id/47847468/neymar-knee-injury-not-rushing-back-santos-coach",
-      "summary": "Santos coach Juan Pablo Vojvoda is encouraged by Neymar's progress following his December knee operation but will not rush him back into action.",
-      "publishedAt": "2026-02-06T10:29:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Source: Minnesota finalizing James Rodríguez deal",
       "link": "https://www.espn.com/soccer/story/_/id/47839657/james-rodriguez-minnesota-united-transfer-world-cup-colombia",
       "summary": "Minnesota United is finalizing a deal to sign Colombia international star forward James Rodríguez, a source confirmed to ESPN.",
@@ -62,10 +117,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Slot praises Wirtz’s gym work, Ronaldo warned, Milner eyes record – football live",
-      "link": "https://www.theguardian.com/football/live/2026/feb/06/premier-league-news-ronaldo-warned-milner-eyes-record-and-more-football-live",
-      "summary": "⚽ All the latest news heading into the weekend’s action ⚽ Premier League: 10 things to look out for | Mail John Quiz of the week: I guessed my way to a rather decent 12/16. Virgil van Dijk has hit out at ex-pro pundits in an interview with, er, Gary Neville, ahead of Sky’s broadcast of Liverpool v Manchester City. For me personally, I can deal with it, but I’m a bit worried for the next generation. I feel like the ex-top players have a responsibility to the new generation. Criticism is absolutely normal and part of the game, and I think it should stay that way. But sometimes criticism also goes into being clickbait, saying things to provoke things, and without thinking about the repercussions for a mental side of players, and especially the younger generation, who are constantly on social media. Continue reading...",
-      "publishedAt": "2026-02-06T10:23:50.000Z"
+      "title": "Three years on: what is the latest with Premier League charges against Manchester City? | Paul MacInnes",
+      "link": "https://www.theguardian.com/football/2026/feb/06/premier-league-charges-manchester-city-three-years-latest",
+      "summary": "In February 2023 more than 100 charges were laid against the serial champions but we are still waiting for the verdict Exactly three years ago, 10 paragraphs on the Premier League website set the cat among the pigeons. Under the nondescript heading “Premier League statement”, football’s richest and most popular domestic competition announced unprecedented disciplinary charges against Manchester City, champions of the two previous seasons (and the two to come). We are still waiting for the outcome. The estimated 134 charges covered years of alleged wrongdoing but broke down into a couple of key chunks: accusations that City had failed to provide “accurate financial information” to the league and to properly “cooperate … and assist” with the subsequent investigation. Precious little new information has followed. Continue reading...",
+      "publishedAt": "2026-02-06T10:28:25.000Z"
     },
     {
       "type": "rss",
@@ -80,24 +135,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Schreuders klaar voor PSV: 'We willen met FC Groningen sowieso de play-offs halen'",
-      "link": "https://www.vi.nl/nieuws/schreuders-klaar-voor-psv-we-willen-met-fc-groningen-sowieso-de-play-offs-halen",
-      "summary": "FC Groningen verloor zijn laatste twee wedstrijden en neemt het zondag in eigen huis op tegen koploper PSV. Een zware dobber, weet ook Jorg Schreuders, die evenwel vastberaden is om voor een verrassing te gaan zorgen.",
-      "publishedAt": "2026-02-06T10:06:41.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Waarom Mauro Júnior en het huidige PSV zo bij elkaar passen",
-      "link": "https://www.vi.nl/pro/waarom-mauro-junior-en-het-huidige-psv-zo-bij-elkaar-passen",
-      "summary": "PSV oogt hongerig in de jacht op volledige nationale dominantie. Mauro Júnior is misschien wel dé speler die de waarden van het huidige PSV het beste uitdraagt. Drie thema's waaruit blijkt dat de Braziliaan en zijn werkgever zo'n goede match zijn.",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Suryavanshi, 14, smashes epic 175 against England in U19 World Cup final",
+      "link": "https://www.skysports.com/cricket/news/12040/13503986/vaibhav-suryavanshi-14-year-old-smashes-record-score-of-175-in-u19-cricket-world-cup-final-against-england",
+      "summary": "India's 14-year-old batting sensation Vaibhav Suryavanshi set a new record for the highest score made in an Under-19 Cricket World Cup final as he struck a stunning 175 from 80 balls against England.",
       "publishedAt": "2026-02-06T10:00:00.000Z"
     },
     {
@@ -121,28 +165,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c3wzw6we5l4o?at_medium=RSS&at_campaign=rss",
       "summary": "Former players turned pundits have a \"duty of responsibility\" to the new generation of footballers when commenting on their performances, Liverpool captain Virgil van Dijk says.",
       "publishedAt": "2026-02-06T09:50:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Platte kar in maart: kampioensspecial PSV nu al in de maak",
-      "link": "https://www.vi.nl/video/platte-kar-in-maart-kampioensspecial-psv-nu-al-in-de-maak",
-      "summary": "De eerste hand aan de kampioensspecial van PSV is al gelegd. PSV-watcher Tim Reedijk heeft het erover met Sjoerd Keizer in de nieuwste aflevering van VI ZSM.",
-      "publishedAt": "2026-02-06T09:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Rooney: 'Dit is de beste Premier League-goal ooit'",
-      "link": "https://www.vi.nl/nieuws/rooney-dit-is-de-beste-premier-league-goal-ooit",
-      "summary": "Wayne Rooney vindt dat Robin van Persie de maker is van de beste goal uit de Premier League-geschiedenis. In zijn podcast The Wayne Rooney Show blikte hij terug op een van de meest memorabele momenten uit zijn tijd bij Manchester United: de kampioenswedstrijd tegen Aston Villa op 22 april 2013, waarin Van Persie een hattrick maakte en United met 3-0 won.",
-      "publishedAt": "2026-02-06T09:40:00.000Z"
     },
     {
       "type": "rss",
@@ -198,28 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cvgvq6xqnl4o?at_medium=RSS&at_campaign=rss",
       "summary": "James Milner will equal the Premier League appearance record if he features for Brighton on Sunday, 24 years after making his debut as a 16-year-old.",
       "publishedAt": "2026-02-06T06:43:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Premier League: 10 things to look out for this weekend",
-      "link": "https://www.theguardian.com/football/2026/feb/06/ten-things-to-look-out-for-premier-league",
-      "summary": "Arsenal need energy from home crowd, Florian Wirtz has found his groove and Liam Rosenior deserves respect Daniel Farke is understood to have wanted a new goalkeeper during the January transfer window but the Leeds board failed to oblige. Might that decision ultimately cost the club their Premier League status? It will be interesting to see whether Farke recalls the recently dropped former Lyon goalkeeper, Lucas Perri, or keeps faith with Karl Darlow against Nottingham Forest at Elland Road on Friday night. Darlow, formerly second choice at Newcastle, struggled with crosses when Arsenal won 4-0 in West Yorkshire last Saturday and may approach a quintessential relegation six-pointer against Forest with dented confidence. What about Illan Meslier? Previously a star under Marcelo Bielsa, a keeper once hyped as France’s future No 1 has been demoted to third choice and has been discussing a potential move to Besiktas before Friday’s transfer deadline in Turkey. Talks only began after Leeds rejected a bid for Perri from Besiktas last week. Time will tell if that was that the right decision. Louise Taylor Continue reading...",
-      "publishedAt": "2026-02-06T00:01:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Spurs latest: Trio added to Champions League squad",
-      "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-      "summary": "",
-      "publishedAt": "2026-02-05T22:30:00.000Z"
     }
   ]
 }
