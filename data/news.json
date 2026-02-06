@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-02-06T21:35:09.083Z",
+  "generatedAt": "2026-02-06T22:29:03.293Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Lucca luistert Premier League-debuut op met eretreffer",
+      "link": "https://www.vi.nl/nieuws/lucca-luistert-premier-league-debuut-op-met-eretreffer",
+      "summary": "Voor Lorenzo Lucca persoonlijk werd zijn Premier League-debuut vrijdagavond een succes. De Italiaan, sinds kort in dienst bij Nottingham Forest, scoorde als invaller op bezoek bij Leeds United. Het was een eretreffer in een 3-1 nederlaag.",
+      "publishedAt": "2026-02-06T22:17:38.000Z"
+    },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Leeds v Nottingham Forest: Premier League – live",
-      "link": "https://www.theguardian.com/football/live/2026/feb/06/leeds-v-nottingham-forest-premier-league-live",
-      "summary": "⚽ Premier League updates from the 8pm GMT kick-off ⚽ Table | Follow us on Bluesky | Email Dominic I’m not sure Peter Oh has high hopes for this evening’s footballing fare judging from this email. He says: “Given the various endearing nicknames that have garlanded these two clubs, could tonight be the Nasty/Dirty/Tricky derby?” Continue reading...",
-      "publishedAt": "2026-02-06T21:20:33.000Z"
+      "title": "Calvert-Lewin caps fine win for Leeds to leave Nottingham Forest rocking",
+      "link": "https://www.theguardian.com/football/2026/feb/06/leeds-nottingham-forest-premier-league-match-report",
+      "summary": "The job is not done yet, far from it. But on a rainswept evening in West Yorkshire, the collective response from everyone associated with Leeds United for each of their goals left you in no doubt that this had the whiff of a season-defining night. With Leeds and Nottingham Forest sitting an advantageous but not decisive six points above the relegation zone before kick-off, and 18th-placed West Ham United away to Burnley on Saturday, it felt like both these famous old clubs knew victory here could dramatically shape the remaining three months of the campaign. Continue reading...",
+      "publishedAt": "2026-02-06T22:05:59.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +29,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Vroege rode kaart en wereldgoal helpen Excelsior op weg naar cruciale uitzege",
-      "link": "https://www.vi.nl/nieuws/vroege-rode-kaart-en-wereldgoal-helpen-excelsior-op-weg-naar-cruciale-uitzege",
-      "summary": "Excelsior heeft vrijdagavond een gouden zaak gedaan op weg naar een verlengd verblijf in de Eredivisie. Op bezoek bij NAC Breda kwamen de Rotterdammers snel met een man meer te staan, en Excelsior deed zijn voordeel met dat voordeel: kort na de rode kaart stond de 0-2 eindstand al op het bord.",
-      "publishedAt": "2026-02-06T21:14:39.000Z"
+      "title": "Excelsior viert langste ongeslagen Eredivisie-reeks in ruim tien jaar",
+      "link": "https://www.vi.nl/nieuws/excelsior-viert-langste-ongeslagen-eredivisie-reeks-in-ruim-tien-jaar",
+      "summary": "Op vrijdagavond stonden NAC Breda en Excelsior tegenover elkaar in de Eredivisie. De Bredanaars wachtten al tien duels op een zege, de Rotterdammers vijf. De punten gingen naar Kralingen, dus NAC staat nu op elf duels zonder winst. Lees het verloop van de avond rustig terug!",
+      "publishedAt": "2026-02-06T21:58:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Hillen door het stof na rode kaart: 'Was totaal niet mijn intentie'",
+      "link": "https://www.vi.nl/nieuws/hillen-door-het-stof-na-rode-kaart-was-totaal-niet-mijn-intentie",
+      "summary": "NAC Breda hoopte vrijdag eindelijk weer eens drie punten te halen. Het liep anders. Rio Hillen mocht na iets meer dan tien minuten al met een rode kaart inrukken na een akelige trap op de knie van Noah Naujoks. Na afloop ging de verdediger door het stof.",
+      "publishedAt": "2026-02-06T21:49:49.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +54,7 @@
       "title": "Koploper ADO laat malaise achter met eerste zege in bijna twee maanden",
       "link": "https://www.vi.nl/nieuws/koploper-ado-laat-malaise-achter-met-eerste-zege-in-bijna-twee-maanden",
       "summary": "ADO Den Haag heeft de smaak van een overwinning weer eens geproefd. Op bezoek bij Roda JC Kerkrade deed de koploper van de Keuken Kampioen Divisie al snel zaken.",
-      "publishedAt": "2026-02-06T21:12:05.000Z"
+      "publishedAt": "2026-02-06T21:46:51.000Z"
     },
     {
       "type": "rss",
@@ -40,10 +62,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "De Graafschap profiteert van slippertje Jong PSV en neemt plek drie over",
-      "link": "https://www.vi.nl/nieuws/de-graafschap-profiteert-van-slippertje-jong-psv-en-neemt-plek-drie-over",
-      "summary": "De derde plaats in de Keuken Kampioen Divisie is voor De Graafschap. De Superboeren wonnen vrijdagavond gemakkelijk van Jong Ajax en profiteert van een slippertje van Jong PSV, dat onderuit ging in Maastricht. Vitesse kroop ondertussen wat dichter naar TOP Oss toe, terwijl Helmond Sport aan het langste eind trok in het Brabants onderonsje met FC Den Bosch.",
-      "publishedAt": "2026-02-06T20:56:21.000Z"
+      "title": "Yegoian verschijnt na wereldgoal op televisie met traditioneel hoofddeksel",
+      "link": "https://www.vi.nl/nieuws/yegoian-verschijnt-na-wereldgoal-op-televisie-met-traditioneel-hoofddeksel",
+      "summary": "NAC Breda – Excelsior werd de wedstrijd van Irakli Yegoian. De aanvaller van Excelsior produceerde een geweldige goal en zette zijn ploeg met die treffer op koers voor een cruciale uitzege. Hij wilde dat doelpunt op opmerkelijke wijze vieren, maar Serdar Gözübüyük stak daar een stokje voor.",
+      "publishedAt": "2026-02-06T21:42:30.000Z"
     },
     {
       "type": "rss",
@@ -66,17 +88,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cg7y711k7j0o?at_medium=RSS&at_campaign=rss",
       "summary": "Chelsea head coach Sonia Bompastor signs a contract extension with the Women's Super League club until 2030.",
       "publishedAt": "2026-02-06T20:48:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: tiental NAC kan Excelsior niet écht bedreigen",
-      "link": "https://www.vi.nl/nieuws/vi-live-tiental-nac-kan-excelsior-niet-cht-bedreigen",
-      "summary": "Op vrijdagavond staan NAC Breda en Excelsior tegenover elkaar in de Eredivisie. De Bredanaars wachten al tien duels op een zege, de Rotterdammers vijf. Lukt het een van beide clubs deze negatieve reeks te beëindigen? Volg het in de VI Live.",
-      "publishedAt": "2026-02-06T20:44:31.000Z"
     },
     {
       "type": "rss",
@@ -124,17 +135,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Van Dijk denkt langzaam na over pensioenplannen: 'Zie mezelf geen trainer worden'",
-      "link": "https://www.vi.nl/nieuws/van-dijk-denkt-langzaam-na-over-pensioenplannen-zie-mezelf-geen-trainer-worden",
-      "summary": "Virgil van Dijk wordt dit jaar 35 en als voetballer word je dan langzaamaan oud. De verdediger heeft nog een contract voor anderhalf jaar bij Liverpool en dus beginnen pensioenplannen langzaam door het hoofd van de aanvoerder te spoken.",
-      "publishedAt": "2026-02-06T20:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -172,21 +172,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Calvert-Lewin adds another with Leeds on course for HUGE win LIVE!",
+      "title": "Reaction as Leeds go NINE points clear of drop zone LIVE!",
       "link": "https://www.skysports.com/football/leeds-united-vs-nottingham-forest/live/531374",
       "summary": "",
       "publishedAt": "2026-02-06T18:24:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Raducanu beats Oliynykova to reach first final since the US Open",
-      "link": "https://www.skysports.com/watch/video/13504202/emma-raducanu-vs-oleksandra-oliynykova-transylvania-open-highlights",
-      "summary": "Highlights of the Transylvania Open match between Emma Raducanu and Oleksandra Oliynykova.",
-      "publishedAt": "2026-02-06T18:16:00.000Z"
     },
     {
       "type": "rss",
@@ -220,6 +209,17 @@
       "link": "https://www.theguardian.com/football/2026/feb/06/premier-league-news-guardiola-manchester-city-newcastle-united",
       "summary": "News from Friday’s pre-match press conferences, including Arsenal, Newcastle, Aston Villa and Bournemouth Continue reading...",
       "publishedAt": "2026-02-06T15:39:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Why should I not express how I feel? - Guardiola",
+      "link": "https://www.bbc.com/sport/football/articles/crlel3dyzdzo?at_medium=RSS&at_campaign=rss",
+      "summary": "Pep Guardiola defended his stance of speaking up about global conflicts by asking, \"why should I not express what I feel, just because I am a manager?\"",
+      "publishedAt": "2026-02-06T13:45:23.000Z"
     }
   ]
 }
