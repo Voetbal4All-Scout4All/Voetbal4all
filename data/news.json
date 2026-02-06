@@ -1,6 +1,39 @@
 {
-  "generatedAt": "2026-02-05T23:27:30.561Z",
+  "generatedAt": "2026-02-06T02:28:44.414Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Each Premier League team reranked: Man United are good now, and Arsenal get even better",
+      "link": "https://www.espn.com/soccer/story/_/id/47831394/every-premier-league-team-reranked-man-united-good-now-arsenal-even-better",
+      "summary": "Let's rank all 20 Premier League teams again: Man United are finally good, somehow Arsenal get even better, and what happened to Crystal Palace?",
+      "publishedAt": "2026-02-06T00:51:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Desperation rankings: Judging all 20 teams by transfer panic",
+      "link": "https://www.espn.com/soccer/story/_/id/47811021/premier-league-desperation-rankings-all-20-teams-transfer-window-panic",
+      "summary": "Which Premier League teams were most desperate during the winter transfer window?",
+      "publishedAt": "2026-02-06T00:51:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Premier League: 10 things to look out for this weekend",
+      "link": "https://www.theguardian.com/football/2026/feb/06/ten-things-to-look-out-for-premier-league",
+      "summary": "Arsenal need energy from home crowd, Florian Wirtz has found his groove and Liam Rosenior deserves respect Daniel Farke is understood to have wanted a new goalkeeper during the January transfer window but the Leeds board failed to oblige. Might that decision ultimately cost the club their Premier League status? It will be interesting to see whether Farke recalls the recently dropped former Lyon goalkeeper, Lucas Perri, or keeps faith with Karl Darlow against Nottingham Forest at Elland Road on Friday night. Darlow, formerly second choice at Newcastle, struggled with crosses when Arsenal won 4-0 in West Yorkshire last Saturday and may approach a quintessential relegation six-pointer against Forest with dented confidence. What about Illan Meslier? Previously a star under Marcelo Bielsa, a keeper once hyped as France’s future No 1 has been demoted to third choice and has been discussing a potential move to Besiktas before Friday’s transfer deadline in Turkey. Talks only began after Leeds rejected a bid for Perri from Besiktas last week. Time will tell if that was that the right decision. Louise Taylor Continue reading...",
+      "publishedAt": "2026-02-06T00:01:51.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -18,7 +51,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Van Gerwen reigns supreme with victory on Premier League opening night",
+      "title": "Van Gerwen wins Premier League opener in all-Dutch final after Littler's early exit",
       "link": "https://www.skysports.com/darts/news/12040/13503548/premier-league-darts-2026-michael-van-gerwen-reigns-supreme-with-night-one-victory-as-luke-littler-loses-in-quarter-finals",
       "summary": "Michael van Gerwen made a major statement as he won Night One of Premier League Darts 2026 with a 6-4 victory over Gian van Veen in the final in Newcastle.",
       "publishedAt": "2026-02-05T22:45:00.000Z"
@@ -64,7 +97,7 @@
       "flag": "🌍",
       "title": "Saudi league warns Ronaldo over transfer protest",
       "link": "https://www.espn.com/soccer/story/_/id/47841360/cristiano-ronaldo-saudi-pro-league-transfer-protest-al-nassr",
-      "summary": "Cristiano Ronaldo has been told by the Saudi Pro League that \"no individual -- however significant -- determines decisions beyond their own club\" amid a dispute over transfer spending.",
+      "summary": "Cristiano Ronaldo was told by the Saudi Pro League that \"no individual -- however significant -- determines decisions beyond their own club\" amid a dispute over transfer spending.",
       "publishedAt": "2026-02-05T22:24:31.000Z"
     },
     {
@@ -76,28 +109,6 @@
       "title": "Leicester deducted 6 points for P&S rule breach",
       "link": "https://www.espn.com/soccer/story/_/id/47838792/leicester-city-six-points-ps-rule-breach-championship-premier-league",
       "summary": "Championship side Leicester City have been deducted six points after being found to have breached the EFL's profit and sustainability rules for the 2023/24 season.",
-      "publishedAt": "2026-02-05T22:24:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Lookman stars in debut as Atleti make Copa semi",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401856365",
-      "summary": "Ademola Lookman scored on his Atlético Madrid debut in a 5-0 rout of Real Betis on Thursday that sent Diego Simeone's team to the semifinals of the Copa del Rey.",
-      "publishedAt": "2026-02-05T22:24:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Benzema scores debut hat trick in Al Hilal rout",
-      "link": "https://www.espn.com/soccer/story/_/id/47840888/karim-benzema-scores-debut-hat-trick-al-hilal-transfer-al-okhdood",
-      "summary": "Karim Benzema made an instant impact following his contentious move to Al Hilal, scoring a hat trick on his debut for the Saudi Pro League club.",
       "publishedAt": "2026-02-05T22:24:31.000Z"
     },
     {
@@ -209,17 +220,6 @@
       "link": "https://www.skysports.com/nfl/news/12040/13503827/super-bowl-2026-tom-brady-creates-storm-after-not-backing-new-england-patriots-against-seattle-seahawks",
       "summary": "Tom Brady may not be playing in the Super Bowl, but he remains a topic of discussion as the New England Patriots prepare to face the Seattle Seahawks this Sunday.",
       "publishedAt": "2026-02-05T19:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Leicester docked six points for financial breaches",
-      "link": "https://www.bbc.com/sport/football/articles/c5y31xk1zx0o?at_medium=RSS&at_campaign=rss",
-      "summary": "Leicester City are docked six points by the English Football League for breaking profit and sustainability rules.",
-      "publishedAt": "2026-02-05T16:47:06.000Z"
     }
   ]
 }
