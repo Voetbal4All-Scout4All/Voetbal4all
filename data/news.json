@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-02-06T23:29:54.322Z",
+  "generatedAt": "2026-02-07T02:24:08.261Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "USMNT to compete for 1 of 6 spots at 2030 WC",
+      "link": "https://www.espn.com/soccer/story/_/id/47851345/concacaf-2030-world-cup-qualifying-usa-mexico-canada-fifa",
+      "summary": "Concacaf says it will have six automatic qualifying spots in the 2030 World Cup and a seventh will be available as part of an intercontinental playoff.",
+      "publishedAt": "2026-02-07T00:10:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arteta apologises to Rosenior after 'disrespect'",
+      "link": "https://www.espn.com/soccer/story/_/id/47849219/arsenal-chelsea-mikel-arteta-apologises-liam-rosenior-disrespect-not-intentional",
+      "summary": "Mikel Arteta has apologised to Chelsea after Liam Rosenior accused the north London side of a \"lack of respect\" during the warm-ups before Tuesday's Carabao Cup semifinal, second leg.",
+      "publishedAt": "2026-02-07T00:10:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Colombia star Rodríguez joins Loons through WC",
+      "link": "https://www.espn.com/soccer/story/_/id/47849164/colombia-james-rodriguez-joins-minnesota-united-world-cup",
+      "summary": "Minnesota United on Friday officially signed Colombia international star forward James Rodríguez through this summer's World Cup.",
+      "publishedAt": "2026-02-07T00:10:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Chelsea boss Rosenior shrugs off online mockery",
+      "link": "https://www.espn.com/soccer/story/_/id/47852685/chelsea-coach-liam-rosenior-social-media-arsenal",
+      "summary": "Chelsea head coach Liam Rosenior shrugged off the mockery he receives online and admitted even members of his own squad are in on the joke.",
+      "publishedAt": "2026-02-07T00:10:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "A result that puts Leeds safe, Forest in trouble - and Dyche in doubt?",
+      "link": "https://www.bbc.com/sport/football/articles/cp9j92l7rd3o?at_medium=RSS&at_campaign=rss",
+      "summary": "After Leeds' win over Nottingham Forest on Friday, BBC Sport looks at what it all means for the Premier League relegation battle.",
+      "publishedAt": "2026-02-06T23:57:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Papers: Saudi Pro League ready to sell Ronaldo",
+      "link": "https://www.skysports.com/football/news/12040/13504319/cristiano-ronaldo-saudi-pro-league-ready-to-let-portugal-captain-leave-for-43m-paper-talk",
+      "summary": "The top stories and transfer rumours from Saturday's newspapers...",
+      "publishedAt": "2026-02-06T23:15:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Sky Sports - Football",
@@ -22,50 +88,6 @@
       "link": "https://www.vi.nl/nieuws/sergio-ramos-biedt-zich-aan-bij-marseille",
       "summary": "In de buitenlandse topcompetities is Deadline Day voorbij, maar in enkele landen kunnen nog deals gesloten worden. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
       "publishedAt": "2026-02-06T22:43:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "USMNT to compete for 1 of 6 spots at 2030 WC",
-      "link": "https://www.espn.com/soccer/story/_/id/47851345/concacaf-2030-world-cup-qualifying-usa-mexico-canada-fifa",
-      "summary": "Concacaf says it will have six automatic qualifying spots in the 2030 World Cup and a seventh will be available as part of an intercontinental playoff.",
-      "publishedAt": "2026-02-06T22:36:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta apologises to Rosenior after 'disrespect'",
-      "link": "https://www.espn.com/soccer/story/_/id/47849219/arsenal-chelsea-mikel-arteta-apologises-liam-rosenior-disrespect-not-intentional",
-      "summary": "Mikel Arteta has apologised to Chelsea after Liam Rosenior accused the north London side of a \"lack of respect\" during the warm-ups before Tuesday's Carabao Cup semifinal, second leg.",
-      "publishedAt": "2026-02-06T22:36:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Colombia star Rodríguez joins Loons through WC",
-      "link": "https://www.espn.com/soccer/story/_/id/47849164/colombia-james-rodriguez-joins-minnesota-united-world-cup",
-      "summary": "Minnesota United on Friday officially signed Colombia international star forward James Rodríguez through this summer's World Cup.",
-      "publishedAt": "2026-02-06T22:36:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ronaldo misses 2nd Al Nassr game amid dispute",
-      "link": "https://www.espn.com/soccer/story/_/id/47848885/cristiano-ronaldo-al-nassr-absent-game-transfer-dispute-saudi-pro-league",
-      "summary": "Cristiano Ronaldo missed a second straight game for Al Nassr amid his ongoing dispute with the Saudi Pro League.",
-      "publishedAt": "2026-02-06T22:36:17.000Z"
     },
     {
       "type": "rss",
@@ -99,17 +121,6 @@
       "link": "https://www.bbc.com/sport/football/articles/ckgyg2n10q0o?at_medium=RSS&at_campaign=rss",
       "summary": "Michael Carrick drops the first hint he wants to remain as Manchester United head coach beyond the end of this season",
       "publishedAt": "2026-02-06T22:30:36.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Leeds beat Forest to move clear of relegation zone",
-      "link": "https://www.bbc.com/sport/football/videos/cn8j817y8jjo?at_medium=RSS&at_campaign=rss",
-      "summary": "Leeds United move nine points clear of the Premier League's relegation zone, with a dominant 3-1 win over fellow strugglers Nottingham Forest.",
-      "publishedAt": "2026-02-06T22:30:04.000Z"
     },
     {
       "type": "rss",
@@ -152,7 +163,7 @@
       "flag": "🌍",
       "title": "Calvert-Lewin caps fine win for Leeds to leave Nottingham Forest reeling",
       "link": "https://www.theguardian.com/football/2026/feb/06/leeds-nottingham-forest-premier-league-match-report",
-      "summary": "The job is not done yet, far from it. But on a rainswept evening in West Yorkshire, the collective response from everyone associated with Leeds United for each of their goals left you in no doubt that this had the whiff of a season-defining night. With Leeds and Nottingham Forest sitting an advantageous but not decisive six points above the relegation zone before kick-off, and 18th-placed West Ham United away to Burnley on Saturday, it felt like both these famous old clubs knew victory here could dramatically shape the remaining three months of the campaign. Continue reading...",
+      "summary": "The job is not done yet, far from it. But on a rainswept evening in West Yorkshire, the collective response from everyone associated with Leeds United for each of their goals left you in no doubt that this had the whiff of a season-defining night. With Leeds and Nottingham Forest sitting an advantageous but not decisive six points above the relegation zone before kick-off, and 18th-placed West Ham away at Burnley on Saturday, it felt like both these famous old clubs knew victory could dramatically shape the remaining three months of the campaign. Continue reading...",
       "publishedAt": "2026-02-06T22:05:59.000Z"
     },
     {
@@ -201,25 +212,14 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Reynolds: Patriots rebuild has been historic",
-      "link": "https://www.skysports.com/nfl/news/12040/13504223/super-bowl-2026-new-england-patriots-rebuild-by-mike-vrabel-has-been-historic-says-neil-reynolds",
-      "summary": "There is a familiarity to the New England Patriots being back in the Super Bowl, mostly because of their complete dominance of the NFL for two decades.",
-      "publishedAt": "2026-02-06T19:45:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Is Pep Guardiola getting ready to leave Man City? Only he knows",
-      "link": "https://www.espn.com/soccer/story/_/id/47849276/pep-guardiola-manchester-city-exit-speculation-analysis-rob-dawson",
-      "summary": "Guardiola's mood of late has invited fresh speculation as to whether he's going to step down as Man City manager at the end of the season. Only time will tell.",
-      "publishedAt": "2026-02-06T19:27:41.000Z"
+      "title": "Laurens' weekend preview: Will Liverpool beat Man City? Can Carrick keep Man Utd run going?",
+      "link": "https://www.espn.com/soccer/story/_/id/47841705/laurens-weekend-preview-michael-carrick-man-united-take-spurs-liverpool-face-man-city",
+      "summary": "Can Man United nab their fourth straight win under Michael Carrick? Will Liverpool or Man City emerge on top in a clash of superclubs? Julien Laurens is here with his weekly recommendations.",
+      "publishedAt": "2026-02-06T14:57:34.000Z"
     }
   ]
 }
