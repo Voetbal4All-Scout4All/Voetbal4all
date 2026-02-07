@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-02-07T05:46:10.557Z",
+  "generatedAt": "2026-02-07T06:49:26.345Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Some 'dark days and nights' at Arsenal, happiness at Sunderland",
+      "link": "https://www.bbc.com/sport/football/articles/c801z394lr1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Granit Xhaka sits down with Kelly Somers to talk about his motivation for joining Sunderland, and falling out with the Arsenal fans.",
+      "publishedAt": "2026-02-07T06:19:19.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -190,6 +201,17 @@
     },
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Saudi to offload Ronaldo for £43m - Saturday's gossip",
+      "link": "https://www.bbc.com/sport/football/articles/cx2p2kr7npno?at_medium=RSS&at_campaign=rss",
+      "summary": "Saudi Pro League is ready to offload Cristiano Ronaldo for £43m, Chelsea set to rival Tottenham for Dusan Vlahovic, while Sergio Ramos offers his services to Marseille, plus more.",
+      "publishedAt": "2026-02-06T21:38:52.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -198,28 +220,6 @@
       "link": "https://www.skysports.com/tennis/news/12040/13504243/jack-draper-british-no-1-tennis-player-says-pressure-of-trying-to-take-on-carlos-alcaraz-jannik-sinner-factor-in-injury-lay-off",
       "summary": "Jack Draper believes the pressure he put himself under trying to catch Carlos Alcaraz and Jannik Sinner contributed to the arm injury that ruined his 2025 season.",
       "publishedAt": "2026-02-06T20:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sonia Bompastor agrees Chelsea contract extension with club off WSL title pace",
-      "link": "https://www.theguardian.com/football/2026/feb/06/sonia-bompastor-new-chelsea-contract-extension-wsl",
-      "summary": "The head coach’s new deal will run until 2030 Bompastor says she is ‘delighted to extend my stay’ Sonia Bompastor has agreed a contract extension as Chelsea’s head coach until 2030 as the club issue a strong signal of trust and confidence in the Frenchwoman. Bompastor has been in charge at Chelsea since the summer of 2024, when she succeeded Emma Hayes on a deal to 2028. The 45-year-old completed a domestic season unbeaten during her first year and won a treble, as well as reaching the Women’s Champions League semi-finals. Continue reading...",
-      "publishedAt": "2026-02-06T19:47:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Laurens' weekend preview: Will Liverpool beat Man City? Can Carrick keep Man Utd run going?",
-      "link": "https://www.espn.com/soccer/story/_/id/47841705/laurens-weekend-preview-michael-carrick-man-united-take-spurs-liverpool-face-man-city",
-      "summary": "Can Man United nab their fourth straight win under Michael Carrick? Will Liverpool or Man City emerge on top in a clash of superclubs? Julien Laurens is here with his weekly recommendations.",
-      "publishedAt": "2026-02-06T14:57:34.000Z"
     }
   ]
 }
