@@ -1,16 +1,38 @@
 {
-  "generatedAt": "2026-02-07T11:25:20.466Z",
+  "generatedAt": "2026-02-07T12:57:22.156Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Barcelona withdraw from European Super League project",
+      "link": "https://www.bbc.com/sport/football/articles/c0jvj21wgv4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Barcelona withdraw from the European Super League project, leaving rivals Real Madrid as the only one of the original 12 clubs still signed up to the plans.",
+      "publishedAt": "2026-02-07T12:53:51.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: twee Nederlanders in de basis bij Man United - Tottenham",
+      "title": "VI Live: levendige openingsfase bij United - Tottenham",
       "link": "https://www.vi.nl/nieuws/vi-live-manchester-united-ontvangt-tottenham-arsenal-tegen-sunderland",
-      "summary": "Zaterdag staan er vier Eredivisie-wedstrijden op het programma, maar ook in het buitenland wordt gevoetbald. Onder meer Manchester Unitedm Arsenal, Barcelona, Borussia Dortmund en Napoli komen in actie. Volg al het voetbal in de VI Live.",
-      "publishedAt": "2026-02-07T11:19:12.000Z"
+      "summary": "Zaterdag staan er vier Eredivisie-wedstrijden op het programma, maar ook in het buitenland wordt gevoetbald. Onder meer Manchester United Arsenal, Barcelona, Borussia Dortmund en Napoli komen in actie. Volg al het voetbal in de VI Live.",
+      "publishedAt": "2026-02-07T12:48:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "European soccer live updates: Resurgent Man United host Spurs",
+      "link": "https://www.espn.com/soccer/story/_/id/47841913/european-soccer-live-updates-manchester-united-tottenham-arsenal-sunderland-wolves-chelsea",
+      "summary": "null",
+      "publishedAt": "2026-02-07T12:44:05.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +40,109 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Premier League news, Manchester United v Spurs buildup, and more – matchday live",
-      "link": "https://www.theguardian.com/football/live/2026/feb/07/premier-league-news-manchester-united-v-spurs-buildup-and-more-matchday-live",
-      "summary": "News, buildup and discussion before the day’s action Premier League: 10 things to look out for | Email us It’s a Manchester 1-2 in the Women’s Super League although City are absolutely running away with it. United travel to Leicester in the only WSL fixture today. It kicks off at 12pm which is a bit daft given that the men’s team are in action at 12.30pm. What if you’re a big fan of both? Anyway, here’s the table. United will hope to cut the gap to eight points. Premier League team news. Okay, the fantasy deadline has already gone due to Leeds playing Nottingham Forest last night but for those who love to ponder starting XIs, see who’s crocked and check current form along with each club’s top scorer, this is the article just for you. Continue reading...",
-      "publishedAt": "2026-02-07T11:00:10.000Z"
+      "title": "Manchester United v Tottenham Hotspur: Premier League – live",
+      "link": "https://www.theguardian.com/football/live/2026/feb/07/manchester-united-v-tottenham-hotspur-premier-league-live",
+      "summary": "⚽ Premier League updates from the 12.30pm GMT kick-off ⚽ Live scores | Tables | Follow us on Bluesky | Email Scott Tottenham Hotspur, wearing second-choice yellow, get the ball rolling. They’re kicking towards the Stretford End in this first half. The teams congregate in the Old Trafford tunnel. Manchester United captain Bruno Fernandes helps his manager Michael Carrick to adjust his black armband, a small but touching moment of togetherness. Carrick and Thomas Frank lead their players out, each carrying a wreath which they place on the turf once trodden so elegantly by the Babes. A poignant beat … then a crackle of expectancy and excitement ahead of the big match. We’ll be off in a couple of minutes. Continue reading...",
+      "publishedAt": "2026-02-07T12:43:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "USMNT to compete for 1 of 6 spots at 2030 WC",
+      "link": "https://www.espn.com/soccer/story/_/id/47851345/concacaf-2030-world-cup-qualifying-usa-mexico-canada-fifa",
+      "summary": "Concacaf says it will have six automatic qualifying spots in the 2030 World Cup and a seventh will be available as part of an intercontinental playoff.",
+      "publishedAt": "2026-02-07T12:40:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Barcelona confirm withdrawal from Super League",
+      "link": "https://www.espn.com/soccer/story/_/id/47855886/barcelona-confirm-withdrawal-european-super-league-project",
+      "summary": "Barcelona have announced their official withdrawal from the European Super League in the latest blow to a project which has struggled to get off the ground.",
+      "publishedAt": "2026-02-07T12:40:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Colombia star Rodríguez joins Loons through WC",
+      "link": "https://www.espn.com/soccer/story/_/id/47849164/colombia-james-rodriguez-joins-minnesota-united-world-cup",
+      "summary": "Minnesota United on Friday officially signed Colombia international star forward James Rodríguez through this summer's World Cup.",
+      "publishedAt": "2026-02-07T12:40:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arteta apologises to Rosenior after 'disrespect'",
+      "link": "https://www.espn.com/soccer/story/_/id/47849219/arsenal-chelsea-mikel-arteta-apologises-liam-rosenior-disrespect-not-intentional",
+      "summary": "Mikel Arteta has apologised to Chelsea after Liam Rosenior accused the north London side of a \"lack of respect\" during the warm-ups before Tuesday's Carabao Cup semifinal, second leg.",
+      "publishedAt": "2026-02-07T12:40:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Klaverboer lacht: 'Excuses naar de fans die hier soms wat paniekerig van worden'",
+      "link": "https://www.vi.nl/nieuws/klaverboer-lacht-excuses-naar-de-fans-die-hier-soms-wat-paniekerig-van-worden",
+      "summary": "Bernt Klaverboer (20) test dit seizoen de zenuwen van de supporters van SC Heerenveen, door met de bal aan zijn voet een pass naar een medespeler zo lang mogelijk uit te stellen. De keeper heeft daar duidelijke instructies voor gekregen.",
+      "publishedAt": "2026-02-07T12:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Real Madrid blijft alleen over na Super League-statement Barcelona",
+      "link": "https://www.vi.nl/nieuws/real-madrid-blijft-alleen-over-na-super-league-statement-barcelona",
+      "summary": "Barcelona trekt zich definitief terug uit de Super League. Dat heeft de kampioen van Spanje zaterdag middels een statement laten weten. Real Madrid is daardoor de enige overgebleven aanhanger van het omstreden project.",
+      "publishedAt": "2026-02-07T12:25:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ipswich lead Derby after crazy own goal - EFL on Sky LIVE!",
+      "link": "https://www.skysports.com/football/live-blog/12040/13504367/championship-live-scores-match-updates-and-free-highlights-plus-efl-latest-from-league-one-and-league-two",
+      "summary": "",
+      "publishedAt": "2026-02-07T12:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "PSV-spits Pléa moet opnieuw onder het mes vanwege knieblessure",
+      "link": "https://www.vi.nl/nieuws/psv-spits-plea-moet-opnieuw-onder-het-mes-vanwege-knieblessure",
+      "summary": "Alassane Pléa moet een aanvullende operatie ondergaan om het herstel van zijn knieblessure te bevorderen. De rentree van de Franse aanvaller voor PSV laat daardoor voorlopig nog op zich wachten.",
+      "publishedAt": "2026-02-07T11:47:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "NAC houdt na crisismeeting vertrouwen in Hoefkens",
+      "link": "https://www.vi.nl/nieuws/nac-houdt-na-crisismeeting-vertrouwen-in-hoefkens",
+      "summary": "Blijf via dit blog op de hoogte van alle transfers en transfergeruchten bij en rond clubs in de Eredivisie en de Keuken Kampioen Divisie. Bekijk hier ons blog voor de transferperikelen in het buitenland .",
+      "publishedAt": "2026-02-07T11:42:00.000Z"
     },
     {
       "type": "rss",
@@ -33,50 +154,6 @@
       "link": "https://www.skysports.com/nfl/news/12040/13504362/darron-lee-former-nfl-linebacker-charged-with-murdering-his-girlfriend",
       "summary": "Former NFL linebacker Darron Lee has been charged with murdering his girlfriend.",
       "publishedAt": "2026-02-07T10:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Boskamp twijfelt over Martens en schuift Van Bommel naar voren bij Anderlecht",
-      "link": "https://www.vi.nl/nieuws/boskamp-twijfelt-over-martens-en-schuift-van-bommel-naar-voren-bij-anderlecht",
-      "summary": "Maarten Martens wordt in Belgische media genoemd als kandidaat-trainer voor Anderlecht. Jan Boskamp vraagt zich af of de oud-trainer van AZ wel geschikt is voor die club. Mark van Bommel zou in zijn ogen wél passen.",
-      "publishedAt": "2026-02-07T10:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Labyad kan ploeggenoot Memphis worden, Real informeert bij Konaté'",
-      "link": "https://www.vi.nl/nieuws/labyad-kan-ploeggenoot-memphis-worden-juventus-slaat-grote-slag",
-      "summary": "In de buitenlandse topcompetities is Deadline Day voorbij, maar in enkele landen kunnen nog deals gesloten worden. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-02-07T10:50:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Sangaré (ex-PSV) viel kilo's af door malaria, maar maakt nu zijn dromen waar",
-      "link": "https://www.vi.nl/nieuws/sangare-ex-psv-viel-kilo-s-af-door-malaria-maar-maakt-nu-zijn-dromen-waar",
-      "summary": "Ibrahim Sangaré is tweeënhalf jaar na zijn komst van PSV eindelijk uitgegroeid tot vaste waarde bij Nottingham Forest. Door blessures en een malaria-infectie was het verblijf van de 28-jarige middenvelder in Engeland er tot nu toe een vol ups en downs.",
-      "publishedAt": "2026-02-07T10:30:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Emery doet beroep op Liverpool: 'Haal clausule in contract Elliott weg'",
-      "link": "https://www.vi.nl/nieuws/emery-wil-dat-liverpool-clausule-in-huurcontract-elliott-weghaalt",
-      "summary": "Aston Villa-manager Unai Emery heeft openlijk een beroep gedaan op Liverpool om de verplichte koopclausule in de huurovereenkomst van Harvey Elliott te schrappen. Volgens de Spanjaard dreigt de middenvelder 'beschadigd' te raken door de huidige situatie, waarin sportieve en zakelijke belangen botsen.",
-      "publishedAt": "2026-02-07T10:10:00.000Z"
     },
     {
       "type": "rss",
@@ -143,83 +220,6 @@
       "link": "https://www.skysports.com/cricket/news/12040/13504338/harry-brook-england-captain-vows-to-learn-after-horrendous-period-as-he-prepares-for-t20-world-cup-with-team-named-to-face-nepal",
       "summary": "Harry Brook wants to move on from a \"pretty horrendous\" few weeks as he prepares to captain England at the T20 World Cup.",
       "publishedAt": "2026-02-07T07:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Lulamba tackles open company for first time on Super Saturday at Newbury",
-      "link": "https://www.skysports.com/racing/news/12040/13503717/today-on-sky-sports-racing-arkle-favourite-lulamba-tackles-open-company-for-first-time-on-super-saturday-at-newbury",
-      "summary": "Lulamba will aim to underline his Cheltenham Festival credentials when he faces open company for the first time in the Game Spirit Chase at Newbury on Super Saturday, live on Sky Sports Racing.",
-      "publishedAt": "2026-02-07T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Some 'dark days and nights' at Arsenal, happiness at Sunderland",
-      "link": "https://www.bbc.com/sport/football/articles/c801z394lr1o?at_medium=RSS&at_campaign=rss",
-      "summary": "Granit Xhaka sits down with Kelly Somers to talk about his motivation for joining Sunderland, and falling out with the Arsenal fans.",
-      "publishedAt": "2026-02-07T06:19:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "USMNT to compete for 1 of 6 spots at 2030 WC",
-      "link": "https://www.espn.com/soccer/story/_/id/47851345/concacaf-2030-world-cup-qualifying-usa-mexico-canada-fifa",
-      "summary": "Concacaf says it will have six automatic qualifying spots in the 2030 World Cup and a seventh will be available as part of an intercontinental playoff.",
-      "publishedAt": "2026-02-07T00:10:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta apologises to Rosenior after 'disrespect'",
-      "link": "https://www.espn.com/soccer/story/_/id/47849219/arsenal-chelsea-mikel-arteta-apologises-liam-rosenior-disrespect-not-intentional",
-      "summary": "Mikel Arteta has apologised to Chelsea after Liam Rosenior accused the north London side of a \"lack of respect\" during the warm-ups before Tuesday's Carabao Cup semifinal, second leg.",
-      "publishedAt": "2026-02-07T00:10:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Colombia star Rodríguez joins Loons through WC",
-      "link": "https://www.espn.com/soccer/story/_/id/47849164/colombia-james-rodriguez-joins-minnesota-united-world-cup",
-      "summary": "Minnesota United on Friday officially signed Colombia international star forward James Rodríguez through this summer's World Cup.",
-      "publishedAt": "2026-02-07T00:10:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Chelsea boss Rosenior shrugs off online mockery",
-      "link": "https://www.espn.com/soccer/story/_/id/47852685/chelsea-coach-liam-rosenior-social-media-arsenal",
-      "summary": "Chelsea head coach Liam Rosenior shrugged off the mockery he receives online and admitted even members of his own squad are in on the joke.",
-      "publishedAt": "2026-02-07T00:10:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "A result that puts Leeds safe, Forest in trouble - and Dyche in doubt?",
-      "link": "https://www.bbc.com/sport/football/articles/cp9j92l7rd3o?at_medium=RSS&at_campaign=rss",
-      "summary": "After Leeds' win over Nottingham Forest on Friday, BBC Sport looks at what it all means for the Premier League relegation battle.",
-      "publishedAt": "2026-02-06T23:57:15.000Z"
     }
   ]
 }
