@@ -436,6 +436,33 @@
       width:100%;
     }
 
+    /* HERO VIDEO — stabiel, full width, gecentreerd, geen verschuiving */
+    .v4a-video-wrap{
+      width: 100%;
+      height: 220px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+
+    .v4a-video{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;        /* vult volledige breedte zonder stretch */
+      object-position: center;  /* altijd vanuit het midden */
+      display: block;
+      pointer-events: none;     /* gedraagt zich als GIF */
+    }
+
+    @media (max-width: 900px){
+      .v4a-video-wrap{
+        height: 180px;
+      }
+    }
+
     /* HOME: premium surface for profile cards */
     .premium-profile-card{
       border: 1px solid rgba(255,255,255,.18) !important;
@@ -992,6 +1019,16 @@
           <strong>Eén platform waar clubs, trainers, spelers en initiatieven elkaar écht vinden.</strong><br>
           Ontdek kansen, promoot jezelf of je club en maak zichtbaar deel uit van de voetbalcommunity.
         </p>
+        <div class="v4a-video-wrap">
+          <video
+            class="v4a-video"
+            src="assets/video/hero.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
+        </div>
       </article>
 
       <!-- COL 4 (spans 2 rows): Rangschikking Jupiler Pro League (BE) -->
