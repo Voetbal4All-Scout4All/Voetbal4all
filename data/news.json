@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-08T21:31:21.183Z",
+  "generatedAt": "2026-02-08T22:31:48.053Z",
   "items": [
     {
       "type": "rss",
@@ -7,43 +7,142 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "The six minutes that salvaged Man City's title hopes",
+      "title": "Celtic to face Rangers in Scottish Cup quarter-finals",
+      "link": "https://www.bbc.com/sport/football/articles/cvgk58plxgko?at_medium=RSS&at_campaign=rss",
+      "summary": "Rangers host Old Firm rivals Celtic and holders Aberdeen face a potential trip to Dunfermline in the Scottish Cup quarter-finals.",
+      "publishedAt": "2026-02-08T22:12:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Haaland earns City dramatic late win at Liverpool",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740845",
+      "summary": "Erling Haaland kept Manchester City in the title race with an added-time penalty as Pep Guardiola's side came from behind to win 2-1 in a chaotic finish.",
+      "publishedAt": "2026-02-08T22:11:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Pep warns Arsenal: 'A lot can happen' in title race",
+      "link": "https://www.espn.com/soccer/story/_/id/47869085/man-city-pep-guardiola-arsenal-lot-happen-premier-league-title-race",
+      "summary": "Pep Guardiola has warned Arsenal that 'a lot can happen in 13 games' as the Premier League title race heats up.",
+      "publishedAt": "2026-02-08T22:11:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arne Slot: Marc Guéhi should have been sent off",
+      "link": "https://www.espn.com/soccer/story/_/id/47869019/arne-slot-marc-guehi-red-card-mohamed-salah-shirt-pull-premier-league",
+      "summary": "Arne Slot has said Marc Guéhi should have been shown a red card for his challenge on Mohamed Salah in Liverpool's 2-1 defeat to Manchester City.",
+      "publishedAt": "2026-02-08T22:11:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "5-star PSG thrash Marseille in Le Classique",
+      "link": "https://www.espn.com/soccer/report/_/gameId/746595",
+      "summary": "Ousmane Dembélé's double helped Paris Saint-Germain claim a thumping 5-0 victory in their Le Classique meeting with Marseille at the Parc des Princes.",
+      "publishedAt": "2026-02-08T22:11:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Scorende Goes in zak en as: 'Deze hakt er wel in'",
+      "link": "https://www.vi.nl/video/scorende-goes-in-zak-en-as-deze-hakt-er-wel-in",
+      "summary": "Het doelpunt van Wouter Goes bleek niet genoeg voor een nieuwe zege van AZ op Ajax, want in de blessuretijd kwamen de bezoekers nog op gelijke hoogte . Verslaggever Kalum van Oudheusden sprak met de scorende verdediger van AZ, die zijn teleurstelling niet kon verbergen.",
+      "publishedAt": "2026-02-08T22:10:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: nieuw puntenverlies dreigt voor Benfica in strijd om Portugese titel",
+      "link": "https://www.vi.nl/nieuws/vi-live-nieuw-puntenverlies-dreigt-voor-benfica-in-strijd-om-portugese-titel",
+      "summary": "Zondag staat ons een fraaie voetbaldag te wachten. De duels van Feyenoord, Ajax en PSV volgen we in aparte liveblogs, maar in deze VI Live blijf je op de hoogte van alle andere duels. Bijvoorbeeld van de Engelse topper tussen Liverpool en Manchester City.",
+      "publishedAt": "2026-02-08T22:08:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Who has made Troy's Premier League team of the week?",
+      "link": "https://www.bbc.com/sport/football/articles/c0j5pd3x0glo?at_medium=RSS&at_campaign=rss",
+      "summary": "After every round of Premier League matches this season Troy Deeney gives us his team of the week. Do you agree with his choices?",
+      "publishedAt": "2026-02-08T22:04:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Real Madrid worstelt zich zonder Vinicius en Bellingham langs Valencia",
+      "link": "https://www.vi.nl/nieuws/real-madrid-worstelt-zich-zonder-vinicius-en-bellingham-langs-valencia",
+      "summary": "Real Madrid heeft zondagavond een moeizame zege geboekt bij Valencia. In afwezigheid van Vinicius Júnior, Rodrygo en Jude Bellingham moest de eerste treffer komen van een verdediger.",
+      "publishedAt": "2026-02-08T21:56:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Taylor en Koopmeiners houden elkaar in evenwicht na extreem late kopgoal",
+      "link": "https://www.vi.nl/nieuws/taylor-en-koopmeiners-houden-elkaar-in-evenwicht-na-extreem-late-kopgoal",
+      "summary": "Juventus blijft in eigen huis dit seizoen voorlopig ongeslagen in de Serie A. De Oude Dame leek in het Allianz Stadium verslagen te worden door Lazio, maar door een treffer in de diepe blessuretijd werd het alsnog gelijk.",
+      "publishedAt": "2026-02-08T21:51:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "PSG vernedert De Lange en Timber met recordzege in Le Classique",
+      "link": "https://www.vi.nl/nieuws/psg-vernedert-de-lange-en-timber-met-recordzege-in-le-classique",
+      "summary": "Paris Saint-Germain heeft Olympique Marseille met de grond gelijk gemaakt. De Franse landskampioen boekte de grootste overwinning ooit in Le Classique , waaraan Jeffrey de Lange en Quinten Timber deelnamen.",
+      "publishedAt": "2026-02-08T21:49:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Man City's comeback thriller keeps Premier League title hopes alive; Liverpool slip further",
+      "link": "https://www.espn.com/soccer/story/_/id/47868085/man-city-comeback-thriller-vs-liverpool-keeps-premier-league-title-race-alive",
+      "summary": "Liverpool looked set to win, but Man City's two unanswered goals means the Premier League title race stays alive and Liverpool's Champions League hopes are in doubt.",
+      "publishedAt": "2026-02-08T21:43:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'The hope is there' - how Man City 'just' kept themselves in title race",
       "link": "https://www.bbc.com/sport/football/articles/cdjmwzzw0rdo?at_medium=RSS&at_campaign=rss",
       "summary": "A generation of Manchester City supporters has not experienced a winning feeling at Anfield, but all that changed on a highly dramatic Sunday evening as they fought back for a thrilling 2-1 Premier League victory.",
       "publishedAt": "2026-02-08T21:24:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: pijnlijke avond voor Timber en De Lange in Parijs, Real op voorsprong",
-      "link": "https://www.vi.nl/nieuws/vi-live-late-strafschop-van-haaland-dompelt-anfield-in-rouw",
-      "summary": "Zondag staat ons een fraaie voetbaldag te wachten. De duels van Feyenoord, Ajax en PSV volgen we in aparte liveblogs, maar in deze VI Live blijf je op de hoogte van alle andere duels. Bijvoorbeeld van de Engelse topper tussen Liverpool en Manchester City.",
-      "publishedAt": "2026-02-08T21:23:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Slot: 'Dat is de grootste verbetering van ons in de laatste maanden'",
-      "link": "https://www.vi.nl/video/slot-dat-is-de-grootste-verbetering-van-ons-in-de-laatste-maanden",
-      "summary": "Arne Slot was ontzettend tevreden met wat Liverpool zondag in de tweede elftal op de mat legde tegen Manchester City. Na een doldwaze slotfase stonden The Reds uiteindelijk wel met lege handen . Toch vond de Nederlandse coach dat zijn elftal grote stappen heeft gezet in de afgelopen maanden, als hij het duel van zondag vergeleek met de kansloze nederlaag eerder dit seizoen (3-0) .",
-      "publishedAt": "2026-02-08T21:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Paul Simonis voert gesprekken met Anderlecht",
-      "link": "https://www.vi.nl/nieuws/paul-simonis-voert-gesprekken-met-anderlecht",
-      "summary": "Paul Simonis wordt mogelijk de nieuwe trainer van Anderlecht. De voormalig trainer van Go Ahead Eagles en VfL Wolfsburg heeft al een gesprek gehad, en daar blijft het niet bij.",
-      "publishedAt": "2026-02-08T21:07:56.000Z"
     },
     {
       "type": "rss",
@@ -69,91 +168,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Boel bijt van zich af: 'Denk je dat we hier niet van balen?'",
-      "link": "https://www.vi.nl/pro/boel-bijt-van-zich-af-denk-je-dat-we-hier-niet-van-balen",
-      "summary": "Go Ahead Eagles krijgt het maar niet voor elkaar om wedstrijden te winnen. De late gelijkmaker van Telstar was zondag de volgende domper voor de Deventenaren. Trainer Melvin Boel moet het ontgelden bij de supporters en doet zijn verhaal. ‘Spelers vechten voor de club en voor mij, dat zie ik iedere dag.’",
-      "publishedAt": "2026-02-08T21:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Het klopte bij PSV achterin totaal niet, ze kwamen goed weg'",
-      "link": "https://www.vi.nl/nieuws/het-klopte-bij-psv-achterin-totaal-niet-ze-kwamen-goed-weg",
-      "summary": "PSV ontsnapte zondagmiddag aan puntenverlies op bezoek bij FC Groningen . Vooral verdedigend zag het er slordig uit aan de kant van de Eindhovenaren, zo vonden de analytici.",
-      "publishedAt": "2026-02-08T20:55:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Watch: The Women's Football Show",
-      "link": "https://www.bbc.co.uk/iplayer/episode/l0057wfc?at_medium=RSS&at_campaign=rss",
-      "summary": "Highlights and analysis of all the action from the Women’s Super League.",
-      "publishedAt": "2026-02-08T20:47:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Haaland earns City dramatic late win at Liverpool",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740845",
-      "summary": "Erling Haaland kept Manchester City in the title race with an added-time penalty as Pep Guardiola's side came from behind to win 2-1 in a chaotic finish.",
-      "publishedAt": "2026-02-08T20:43:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Pep warns Arsenal: 'A lot can happen' in title race",
-      "link": "https://www.espn.com/soccer/story/_/id/47869085/man-city-pep-guardiola-arsenal-lot-happen-premier-league-title-race",
-      "summary": "Pep Guardiola has warned Arsenal that 'a lot can happen in 13 games' as the Premier League title race heats up.",
-      "publishedAt": "2026-02-08T20:43:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arne Slot: Marc Guéhi should have been sent off",
-      "link": "https://www.espn.com/soccer/story/_/id/47869019/arne-slot-marc-guehi-red-card-mohamed-salah-shirt-pull-premier-league",
-      "summary": "Arne Slot has said Marc Guéhi should have been shown a red card for his challenge on Mohamed Salah in Liverpool's 2-1 defeat to Manchester City.",
-      "publishedAt": "2026-02-08T20:43:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Bucks' Antetokounmpo invests in Chelsea Women",
-      "link": "https://www.espn.com/soccer/story/_/id/47866338/nba-star-giannis-antetokounmpo-joins-chelsea-women-ownership-group",
-      "summary": "NBA star Giannis Antetokounmpo has announced he has joined the ownership group of Chelsea Women which includes his \"friend\" Reddit co-founder Alexis Ohanian.",
-      "publishedAt": "2026-02-08T20:43:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Foxborough demands clarity on $8M WC funding",
-      "link": "https://www.espn.com/soccer/story/_/id/47861632/world-cup-2026-foxborough-funding-security-gillette-stadium",
-      "summary": "Town officials in Foxborough, Massachusetts, are seeking clarity on the source of around $8 million they say is needed to fund public safety for this summer's World Cup games at Gillette Stadium, the home of the New England Patriots.",
-      "publishedAt": "2026-02-08T20:43:21.000Z"
+      "title": "Manchester City must improve to catch Arsenal, says Pep Guardiola",
+      "link": "https://www.theguardian.com/football/2026/feb/08/manchester-city-must-improve-to-catch-arsenal-says-pep-guardiola",
+      "summary": "City earn dramatic comeback win at Liverpool ‘The title race is over if we lost this game’ Pep Guardiola claimed Manchester City are “breathing down the necks” of Arsenal after their ­remarkable victory at Liverpool but must improve to reel in the Premier League leaders. City were staring at another Anfield defeat that would have left them nine points adrift of Arsenal following Dominik Szoboszlai’s outstanding 74th‑minute free-kick. But late goals from Bernardo Silva and Erling Haaland reduced the gap to six points and delivered City’s first win at Anfield in front of a crowd since 2003. Continue reading...",
+      "publishedAt": "2026-02-08T21:02:14.000Z"
     },
     {
       "type": "rss",
@@ -165,28 +187,6 @@
       "link": "https://www.skysports.com/football/news/12040/13505094/michael-carrick-manchester-united-wont-be-forced-into-making-managerial-appointment-now-by-wins-says-gary-neville",
       "summary": "Gary Neville says Manchester United will not be \"bounced\" into making a decision to give Michael Carrick the manager's job after a run of great results.",
       "publishedAt": "2026-02-08T20:42:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "The big three Man City characters Neville says Arsenal should fear in PL title race",
-      "link": "https://www.skysports.com/football/news/12040/13505088/man-citys-pep-guardiola-erling-haaland-and-gianluigi-donnarumma-can-inspire-something-special-in-premier-league-title-race-says-gary-neville",
-      "summary": "Man City \"need something really special\" to topple Arsenal in the Premier League title race - but Pep Guardiola, Erling Haaland and Gianluigi Donnarumma could inspire them to do just that, says Gary Neville.",
-      "publishedAt": "2026-02-08T20:33:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Man City produce late comeback to beat Liverpool in chaotic finale",
-      "link": "https://www.bbc.com/sport/football/videos/cgrdel2dvqeo?at_medium=RSS&at_campaign=rss",
-      "summary": "Erling Haaland's 93rd-minute penalty gives Manchester City a crucial comeback win over Liverpool, who end the game with 10 men as Dominik Szoboszlai is sent off in stoppage time at Anfield.",
-      "publishedAt": "2026-02-08T20:00:10.000Z"
     },
     {
       "type": "rss",
