@@ -1,16 +1,38 @@
 {
-  "generatedAt": "2026-02-08T16:36:17.205Z",
+  "generatedAt": "2026-02-08T17:30:19.662Z",
   "items": [
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Chelsea see off Tottenham to move third in WSL",
+      "link": "https://www.bbc.com/sport/football/videos/cp3257d1ne3o?at_medium=RSS&at_campaign=rss",
+      "summary": "Goals from Keira Walsh and Alyssa Thompson ease Chelsea to a 2-0 victory over Tottenham to move the Blues third in the WSL.",
+      "publishedAt": "2026-02-08T17:21:59.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: FC Groningen gaat met voorsprong rusten tegen PSV",
-      "link": "https://www.vi.nl/nieuws/vi-live-fc-groningen-gaat-met-voorsprong-rusten-tegen-psv",
+      "title": "VI Live: PSV draait het om in de Euroborg",
+      "link": "https://www.vi.nl/nieuws/vi-live-psv-draait-het-om-in-de-euroborg",
       "summary": "De Eredivisie-afsluiter is dit weekend voor FC Groningen en koploper PSV. Zij staan om 16.45 uur tegenover elkaar. Volg de wedstrijd op de voet in deze VI Live.",
-      "publishedAt": "2026-02-08T16:32:00.000Z"
+      "publishedAt": "2026-02-08T17:21:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Smith's versatility and 'contagious' positivity driving Arsenal",
+      "link": "https://www.bbc.com/sport/football/articles/c9dn1g978llo?at_medium=RSS&at_campaign=rss",
+      "summary": "Olivia Smith's talent and versatility is helping to kick-start a drifting Arsenal side back into life as they chase silverware on three fronts.",
+      "publishedAt": "2026-02-08T17:19:34.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +40,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Echteld prijst scorende Goes: 'Leider die laat zien waar hij van gemaakt is'",
-      "link": "https://www.vi.nl/video/echteld-prijst-scorende-goes-leider-die-laat-zien-waar-hij-van-gemaakt-is",
-      "summary": "Hoewel Lee-Roy Echteld baalde van de late remise tegen Ajax had de interim-trainer van AZ lovende woorden over voor Wouter Goes. Na afloop sprak hij met verslaggever Kalum van Oudheusden.",
-      "publishedAt": "2026-02-08T16:30:24.000Z"
+      "title": "Ajax zakt verder weg: 'Ook het wisselbeleid mist logica'",
+      "link": "https://www.vi.nl/pro/ajax-zakt-verder-weg-ook-het-wisselbeleid-mist-logica",
+      "summary": "Ajax behaalde in de absolute slotfase een punt tegen AZ, maar liet tegen de Alkmaarders weinig goed voetbal zien. Clubwatcher Lentin Goodijk was aanwezig bij deze wedstrijd en legt in deze video uit waarom er maar weinig aanknopingspunten zijn voor de ploeg van Fred Grim.",
+      "publishedAt": "2026-02-08T17:15:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Liverpool v Manchester City: Premier League – live",
+      "link": "https://www.theguardian.com/football/live/2026/feb/08/liverpool-v-manchester-city-premier-league-live",
+      "summary": "Minute-by-minute coverage of Sunday’s clash at Anfield Jonathan Wilson: no longer the big show | Email Michael This is a good read. Arne Slot, Liverpool manager, is next to speak to Sky Sports. He reiterates that the biggest recent improvement that his side have made is their work rate out of possession. We have made a lot of steps forward mainly off the ball, mainly with players better able to play this schedule we are playing. The biggest improvement I see is players are more ready for the combination of the Premier League and Champions League at the intensity we need. We have both shown we are good in ball possession and can create chances. Both teams want the ball as much as possible and both have shown from a high press they are a threat as well. A good and proper counter attack can be dangerous at both ends as well. Continue reading...",
+      "publishedAt": "2026-02-08T17:14:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "England's Feyi-Waboso in danger of missing entire Six Nations",
+      "link": "https://www.skysports.com/rugby-union/news/12040/13504989/six-nations-englands-immanuel-feyi-waboso-in-danger-of-missing-entire-tournament-after-suffering-hamstring-injury-in-training",
+      "summary": "Immanuel Feyi-Waboso has been ruled out of England's pivotal clash with Scotland and is in danger of missing the entire Six Nations.",
+      "publishedAt": "2026-02-08T17:00:00.000Z"
     },
     {
       "type": "rss",
@@ -29,10 +73,43 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: kraker tussen Liverpool en Man City van start",
-      "link": "https://www.vi.nl/nieuws/vi-live-kraker-tussen-liverpool-en-man-city-van-start",
+      "title": "Grim legt uit waarom hij Weghorst maar kort liet invallen",
+      "link": "https://www.vi.nl/video/grim-legt-uit-waarom-hij-weghorst-maar-kort-liet-invallen",
+      "summary": "Fred Grim gaf zondag tijdens de persconferentie tekst en uitleg over waarom Wout Weghorst tegen AZ maar een aantal speelminuten kreeg . De oefenmeester van Ajax had de spits eerder willen inbrengen, maar het spel lag een tijdje niet stil. Ook had hij op meer extra tijd gerekend, dan dat er uiteindelijk bijgetrokken werd. Eerder in de wedstrijd koos Grim ervoor om met andere wissels het verschil te maken in Alkmaar.",
+      "publishedAt": "2026-02-08T16:53:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: Liverpool heeft het zwaar in kraker tegen Man City",
+      "link": "https://www.vi.nl/nieuws/vi-live-liverpool-heeft-het-zwaar-in-kraker-tegen-man-city",
       "summary": "Zondag staat ons een fraaie voetbaldag te wachten. De duels van Feyenoord, Ajax en PSV volgen we in aparte liveblogs, maar in deze VI Live blijf je op de hoogte van alle andere duels. Bijvoorbeeld van de Engelse topper tussen Liverpool en Manchester City.",
-      "publishedAt": "2026-02-08T16:30:00.000Z"
+      "publishedAt": "2026-02-08T16:50:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Is Pep Guardiola getting ready to leave Man City? Only he knows",
+      "link": "https://www.espn.com/soccer/story/_/id/47849276/pep-guardiola-manchester-city-exit-speculation-analysis-rob-dawson",
+      "summary": "It wouldn't surprise anybody if Guardiola steps down as Man City manager at the end of the season.",
+      "publishedAt": "2026-02-08T16:49:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Premier League live updates: Liverpool host title-chasing Man City",
+      "link": "https://www.espn.com/soccer/story/_/id/47842641/premier-league-live-updates-liverpool-vs-manchester-city",
+      "summary": "null",
+      "publishedAt": "2026-02-08T16:45:40.000Z"
     },
     {
       "type": "rss",
@@ -40,10 +117,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Duel tussen Cambuur en Emmen voor de derde keer afgelast",
-      "link": "https://www.vi.nl/nieuws/duel-tussen-cambuur-en-emmen-voor-de-derde-keer-afgelast",
-      "summary": "Voor de derde keer gaat er een streep door het duel tussen FC Emmen en SC Cambuur. Omdat een deel van het veld van De Oude Meerdijk nog is bevroren, kan de ontmoeting ook maandag niet doorgaan.",
-      "publishedAt": "2026-02-08T16:25:08.000Z"
+      "title": "Debutant Zinchenko over keuze voor Ajax, spelen als 6 en zijn fitheid",
+      "link": "https://www.vi.nl/nieuws/debutant-zinchenko-over-keuze-voor-ajax-spelen-als-6-en-zijn-fitheid",
+      "summary": "Oleksandr Zinchenko is blij dat hij zijn debuut voor Ajax heeft mogen maken. De 29-jarige Oekraïener viel zondag in tegen AZ en pakte een punt. Zinchenko denkt zelf volgende week klaar te zijn voor een basisplek.",
+      "publishedAt": "2026-02-08T16:44:02.000Z"
     },
     {
       "type": "rss",
@@ -55,50 +132,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/08/brighton-crystal-palace-premier-league-match-report",
       "summary": "Fabian Hürzeler must be wondering if he will ever have another chance to get one over Oliver Glasner. The Brighton head coach’s record against his Crystal Palace counterpart and someone he counts as a mentor now reads three defeats and a solitary draw after Ismaïla Sarr’s second-half goal ended Palace’s 12-match winless run in satisfying style against their arch-rivals. But while Glasner can breathe slightly more easily after new signings Evann Guessand and Jørgen Strand Larsen both made an impact on their debuts, Hürzeler left the field to widespread boos from his own fans and chants of “You’re getting sacked in the morning”. It is now only one win in their past 12 league games and the German, who became the youngest manager in Premier League, is facing the real possibility of being dragged into a relegation battle. Continue reading...",
       "publishedAt": "2026-02-08T16:22:32.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Is Pep Guardiola getting ready to leave Man City? Only he knows",
-      "link": "https://www.espn.com/soccer/story/_/id/47849276/pep-guardiola-manchester-city-exit-speculation-analysis-rob-dawson",
-      "summary": "It wouldn't surprise anybody if Guardiola steps down as Man City manager at the end of the season.",
-      "publishedAt": "2026-02-08T16:22:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Premier League live updates: Liverpool host title-chasing Man City",
-      "link": "https://www.espn.com/soccer/story/_/id/47842641/premier-league-live-updates-liverpool-vs-manchester-city",
-      "summary": "null",
-      "publishedAt": "2026-02-08T16:22:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Makkelie legt uit waarom hij tweede AZ-goal afkeurde",
-      "link": "https://www.vi.nl/nieuws/makkelie-legt-uit-waarom-hij-tweede-az-goal-afkeurde",
-      "summary": "Danny Makkelie heeft verteld waarom hij zondagmiddag een streep zette door de tweede goal van AZ. Troy Parrott dacht de 2-0 te maken, maar na advies van de VAR werd de goal geannuleerd.",
-      "publishedAt": "2026-02-08T16:20:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Liverpool v Manchester City: Premier League – live",
-      "link": "https://www.theguardian.com/football/live/2026/feb/08/liverpool-v-manchester-city-premier-league-live",
-      "summary": "Minute-by-minute coverage of Sunday’s clash at Anfield Jonathan Wilson: no longer the big show | Email Michael This is a good read. Arne Slot, Liverpool manager, is next to speak to Sky Sports. He reiterates that the biggest recent improvement that his side have made is their work rate out of possession. We have made a lot of steps forward mainly off the ball, mainly with players better able to play this schedule we are playing. The biggest improvement I see is players are more ready for the combination of the Premier League and Champions League at the intensity we need. We have both shown we are good in ball possession and can create chances. Both teams want the ball as much as possible and both have shown from a high press they are a threat as well. A good and proper counter attack can be dangerous at both ends as well. Continue reading...",
-      "publishedAt": "2026-02-08T16:15:52.000Z"
     },
     {
       "type": "rss",
@@ -168,17 +201,6 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Reed wins second title in three weeks at Qatar Masters",
-      "link": "https://www.skysports.com/golf/news/12040/13504888/dp-world-tour-patrick-reed-wins-qatar-masters-for-second-title-in-three-weeks-with-scotlands-calum-hill-in-second-place-in-doha",
-      "summary": "Patrick Reed continued his great start to the 2026 season with a two-stroke victory at the Qatar Masters.",
-      "publishedAt": "2026-02-08T15:10:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -194,32 +216,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Smith scores winner as Arsenal halt Man City WSL title charge",
-      "link": "https://www.skysports.com/football/arsenal-women-vs-manchester-city-women/report/545688",
-      "summary": "Olivia Smith scored the winning goal as Arsenal delayed Manchester City's pursuit to the Women's Super League title by beating the leaders 1-0 at the Emirates Stadium.",
-      "publishedAt": "2026-02-08T14:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "‘We lived a miraculous thing’: Castel di Sangro, 30 years on from their epic rise",
-      "link": "https://www.theguardian.com/football/2026/feb/08/we-lived-a-miraculous-thing-castel-di-sangro-30-years-on-from-their-epic-rise",
-      "summary": "Small town club’s Serie B adventure captivated football and inspired a famous book. That spirit remains and is being passed to their successors The WhatsApp group flickers into life at about 6am every day. It is the manager who goes first because, when you are 79, old habits die hard. “Good morning,” Osvaldo Jaconi hails his former players and staff before, little by little, the salutations roll in from across Italy. Maybe it is someone’s birthday or another special occasion; the conversation may be accelerated by an in-joke that recalls why, three decades ago, they were brought together in the first place. Just in case anyone could forget, the group’s title says: “Serie B.” This is how miracles stay alive. Perhaps it is the point of what Castel di Sangro achieved in 1995-96. A rag-tag bunch from this backwater in mountainous Abruzzo had risen from local amateur leagues and then, in a crowning triumph with little precedent, made it to the second tier. “It’s like 30 years haven’t passed,” says Angelo Petrarca, who was nominally the masseur but often resembled a one-man backroom. “It shows how much love everybody has for each other, and did back then. As if everybody is still right here.” Continue reading...",
-      "publishedAt": "2026-02-08T07:00:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "How Ekitike has already become a Liverpool cult hero",
-      "link": "https://www.bbc.com/sport/football/articles/c3r1gwpjn8vo?at_medium=RSS&at_campaign=rss",
-      "summary": "Inside the rise of Hugo Ekitike, adapting to life in England, connecting with Florian Wirtz and why he's already a fan favourite.",
-      "publishedAt": "2026-02-08T06:14:18.000Z"
+      "title": "Highlights: England survive major scare to open World Cup campaign with win",
+      "link": "https://www.skysports.com/watch/video/13504897/t20-world-cup-highlights-england-survive-major-scare-to-open-world-cup-with-a-win",
+      "summary": "Highlights of England's opening T20 World Cup game against Nepal.",
+      "publishedAt": "2026-02-08T13:45:00.000Z"
     }
   ]
 }
