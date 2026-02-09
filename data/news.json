@@ -1,49 +1,16 @@
 {
-  "generatedAt": "2026-02-09T13:17:42.821Z",
+  "generatedAt": "2026-02-09T14:56:19.733Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Ik geniet zo ontzettend van NEC'",
-      "link": "https://www.vi.nl/video/nec-verdient-het-om-tweede-te-worden",
-      "summary": "NEC beleeft een fantastisch seizoen. In Rondje Eredivisie zijn Marco Timmer en Freek Jansen het eens: de Nijmegenaren verdienen het om tweede te worden.",
-      "publishedAt": "2026-02-09T13:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "De strijd om plek twee: is Feyenoord de grootste kanshebber?",
-      "link": "https://www.vi.nl/nieuws/de-strijd-om-plek-twee-de-programma-s-van-ajax-feyenoord-en-nec",
-      "summary": "De titelstrijd is drie maanden voor het einde van het seizoen al van alle spanning ontdaan, maar de tweede plek is bijna net zo belangrijk. Die geeft - voorlopig voor het laatst - immers ook recht op een rechtstreeks ticket voor de Champions League. Dit is het programma van de belangrijkste kanshebbers.",
-      "publishedAt": "2026-02-09T13:10:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "De aandoenlijke trots van de filmende broers Da Silva en De Regt",
-      "link": "https://www.vi.nl/pro/de-aandoenlijke-trots-van-de-filmende-broers-da-silva-en-de-regt",
-      "summary": "Columnist Frank Heinen verdwaalde op YouTube en ontdekte nieuwe werelden.",
-      "publishedAt": "2026-02-09T13:00:00.000Z"
-    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Barça on Super League exit: No benefit to stay",
-      "link": "https://www.espn.com/soccer/story/_/id/47874930/barcelona-relationship-real-madrid-reasons-super-league-withdrawal",
-      "summary": "Barcelona president Joan Laporta said the club quit the European Super League to \"rejoin the football family.\"",
-      "publishedAt": "2026-02-09T12:36:11.000Z"
+      "title": "Laporta resigns as Barça president, will re-stand",
+      "link": "https://www.espn.com/soccer/story/_/id/47875297/joan-laporta-resigns-barcelona-president-restand-election",
+      "summary": "Joan Laporta has resigned as Barcelona president ahead of re-standing for the role when club members go to the polls on March 15.",
+      "publishedAt": "2026-02-09T14:50:07.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +21,40 @@
       "title": "Cazorla: 'LaLiga light years away from the PL'",
       "link": "https://www.espn.com/soccer/story/_/id/47875161/santi-cazorla-laliga-light-years-away-premier-league",
       "summary": "Santi Cazorla has taken a swipe at LaLiga after his team's league game at Rayo Vallecano on Saturday afternoon was postponed just hours before kickoff.",
-      "publishedAt": "2026-02-09T12:33:44.000Z"
+      "publishedAt": "2026-02-09T14:50:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Late goals are destroying Liverpool's season and the answers aren't obvious",
+      "link": "https://www.bbc.com/sport/football/articles/c5y4de19xlwo?at_medium=RSS&at_campaign=rss",
+      "summary": "Why have Liverpool gone from mentality monsters to a side there for the taking?",
+      "publishedAt": "2026-02-09T14:48:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Argentijnse bond grijpt in en wil nieuwe Messi-scenario's voorkomen",
+      "link": "https://www.vi.nl/nieuws/argentijnse-bond-grijpt-in-en-wil-nieuwe-messi-scenario-s-voorkomen",
+      "summary": "De Argentijnse voetbalbond heeft een opvallende maatregel ingevoerd die jonge talenten moet ontmoedigen om vroeg naar het buitenland te vertrekken. Wie niet eerst een profcontract tekent bij een Argentijnse club, komt voortaan niet meer in aanmerking voor een uitnodiging voor een nationale ploeg.",
+      "publishedAt": "2026-02-09T14:44:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Man Utd ziet in Newcastle-middenvelder opvolger voor Casemiro'",
+      "link": "https://www.vi.nl/nieuws/man-utd-ziet-in-newcastle-middenvelder-opvolger-voor-casemiro",
+      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-02-09T14:20:29.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +62,10 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Laporta resigns as Barça president, will re-stand",
-      "link": "https://www.espn.com/soccer/story/_/id/47875297/joan-laporta-resigns-barcelona-president-restand-election",
-      "summary": "Joan Laporta has resigned as Barcelona president ahead of re-standing for the role when club members go to the polls on March 15.",
-      "publishedAt": "2026-02-09T12:32:57.000Z"
+      "title": "Barça on Super League exit: No benefit to stay",
+      "link": "https://www.espn.com/soccer/story/_/id/47874930/barcelona-relationship-real-madrid-reasons-super-league-withdrawal",
+      "summary": "Barcelona president Joan Laporta said the club quit the European Super League to \"rejoin the football family.\"",
+      "publishedAt": "2026-02-09T14:15:41.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +73,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Wanneer is de Nations League-loting en hoe werkt die?",
-      "link": "https://www.vi.nl/nieuws/wanneer-is-de-nations-league-loting-en-hoe-werkt-die",
-      "summary": "Iets meer dan vier maanden voor de start van het WK in de Verenigde Staten, Canada en Mexico gaat donderdag in Brussel het vizier voor even op de komende Nations League. In de Belgische hoofdstad vindt namelijk de loting plaats voor de Nations League-editie 2026/27.",
-      "publishedAt": "2026-02-09T12:30:20.000Z"
+      "title": "KNVB maakt speeldata voor halve finales bekertoernooi bekend",
+      "link": "https://www.vi.nl/nieuws/knvb-maakt-speeldata-voor-halve-finales-bekertoernooi-bekend",
+      "summary": "De KNVB heeft maandagmiddag bekendgemaakt wanneer de halve finales in de KNVB Beker worden afgewerkt. NEC krijgt PSV volgende maand op bezoek en AZ ontvangt Telstar voor een ticket naar de bekerfinale.",
+      "publishedAt": "2026-02-09T14:14:51.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +84,65 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Laporta treedt af bij Barcelona en maakt zich klaar voor nieuwe verkiezingen",
-      "link": "https://www.vi.nl/nieuws/nieuwe-verkiezingen-barcelona-komen-eraan-laporta-treedt-af",
-      "summary": "Joan Laporta is afgetreden als president van Barcelona. Hij heeft zijn functie neergelegd om zich verkiesbaar te kunnen stellen voor de nieuwe verkiezingen van de club, die op 15 maart worden gehouden. Volgens de statuten van Barcelona moet een zittende voorzitter eerst terugtreden voordat hij opnieuw kandidaat mag zijn.",
-      "publishedAt": "2026-02-09T12:29:08.000Z"
+      "title": "Rooney slaat alarm bij Tottenham: 'Dit is degradatievoetbal'",
+      "link": "https://www.vi.nl/nieuws/rooney-slaat-alarm-bij-tottenham-dit-is-degradatievoetbal",
+      "summary": "Wayne Rooney vreest dat Tottenham Hotspur zich moet opmaken voor een degradatiestrijd in de Premier League. Na de 2-0 nederlaag tegen Manchester United is de ploeg van Thomas Frank al zeven competitiewedstrijden op rij zonder overwinning en staat het vijftiende, met slechts zes punten voorsprong op de degradatiezone.",
+      "publishedAt": "2026-02-09T14:10:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Degradatiedans gestart: drie clubs raken achterop in Eredivisie-kelder",
+      "link": "https://www.vi.nl/nieuws/degradatiedans-gestart-drie-clubs-raken-achterop-in-eredivisie-kelder",
+      "summary": "Met nog twaalf speelrondes te gaan is er onderin de Eredivisie een gaatje ontstaan tussen de clubs in de degradatiezone en de veilige vijftiende plaats. Wie weet de dans te ontspringen? Volgens databureau Opta ziet het er vooral niet goed uit voor de huidige nummer laatst: NAC Breda.",
+      "publishedAt": "2026-02-09T13:52:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Haaland earns City dramatic late win at Liverpool",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740845",
+      "summary": "Erling Haaland kept Manchester City in the title race with an added-time penalty as Pep Guardiola's side came from behind to win 2-1 in a chaotic finish.",
+      "publishedAt": "2026-02-09T13:50:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'You have to feel the waves of emotion' - Carrick on 'buzz' of winning",
+      "link": "https://www.bbc.com/sport/football/articles/clyxl8y1y4vo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United head coach Michael Carrick says it would be \"boring and pointless\" if his players did not celebrate victories.",
+      "publishedAt": "2026-02-09T13:29:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "St Pauli plotting their next miracle in tantalising Bundesliga survival battle | Andy Brassell",
+      "link": "https://www.theguardian.com/football/2026/feb/09/st-pauli-stuttgart-plotting-miracle-bundesliga-survival-battle",
+      "summary": "Win against Stuttgart was a reminder that unity remains St Pauli’s greatest strength in defying the odds again It had begun to look like a lost cause. In a season where the Bundesliga’s relegation battle increasingly promises a richness that the title race may lack (with all due respect to Borussia Dortmund’s efforts to stalk Bayern Munich at closer quarters in recent weeks), it has felt like St Pauli were, like fellow minnows Heidenheim, ready to be cut away. The Hamburg club’s best-ever start to a top-flight season, two wins and a draw from their first three games, felt like an age ago. Nine successive defeats will do that to you. Yet these masters of the unusual and the unexpected had another surprise up their sleeve this weekend; not least, one suspects, to themselves. Stuttgart travelled north on a fine run of form, sitting pretty in a Champions League spot and fresh from a week of qualifying for the DFB Pokal semi-finals, a trophy which they have every hope of retaining. With one league win against largely hopeless Heidenheim since that golden start for their hosts, who are also harbouring an injury list as long as one of Scottie Pippen’s arms (to paraphrase Jay-Z), it looked straightforward for Sebastian Hoeness and his men. Continue reading...",
+      "publishedAt": "2026-02-09T13:26:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "UNSEEN FOOTAGE! Should Liverpool have had a pen for Rodri tackle?",
+      "link": "https://www.skysports.com/watch/video/13505273/should-liverpool-have-had-a-pen-before-szoboszlais-red-unseen-angle",
+      "summary": "Seconds before Dominik Szoboszlai's red card, there was a potential penalty at the other end of the pitch where Manchester City's Rodri attempted to tackle Liverpool's Federico Chiesa.",
+      "publishedAt": "2026-02-09T13:04:00.000Z"
     },
     {
       "type": "rss",
@@ -106,17 +161,6 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Haaland earns City dramatic late win at Liverpool",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740845",
-      "summary": "Erling Haaland kept Manchester City in the title race with an added-time penalty as Pep Guardiola's side came from behind to win 2-1 in a chaotic finish.",
-      "publishedAt": "2026-02-09T12:13:30.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Klopp, Alonso, Guardiola: Predicting what happens to Europe's top managers this summer",
       "link": "https://www.espn.com/soccer/story/_/id/47872375/coaching-chaos-get-ready-2026-manager-merry-go-round",
       "summary": "With the Real Madrid and Manchester United jobs up for grabs, one thing is for certain this summer: The world's best managers will be in high demand.",
@@ -128,20 +172,9 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Erling Haaland admits ‘statement’ Manchester City win means more than three points",
-      "link": "https://www.theguardian.com/football/2026/feb/09/erling-haaland-manchester-city-statement-win-more-than-three-points-liverpool",
-      "summary": "He says his form must improve and there are no excuses Van Dijk reveals Liverpool failed to execute gameplan Erling Haaland says Manchester City’s dramatic 2-1 win at Liverpool on Sunday meant more than just the points and represented a statement from the club in terms of the Premier League title race. City had won only once at Anfield under Pep Guardiola – during the 2020-21 fan-free Covid season – and went there on a run of one victory in six in the league which had allowed Arsenal to pull clear at the top. Continue reading...",
-      "publishedAt": "2026-02-09T12:00:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Eddie Howe insists he would quit if he did not believe he was right man for Newcastle",
       "link": "https://www.theguardian.com/football/2026/feb/09/eddie-howe-newcastle-insists-right-man-for-job",
-      "summary": "Manager has ‘no doubt’ he remains best person for job Newcastle travel to Spurs on Tuesday in 12th place Eddie Howe has said he would offer Newcastle his resignation if he believed he was no longer the right man to lead the presently struggling club. Howe’s team visit Tottenham on Tuesday night aiming to end the run of three straight Premier League defeats that has prompted their slide to 12th place. Victory would be their first in an away match since December but the 48-year-old manager remains confident he can navigate his fatigued side out of their Continue reading...",
+      "summary": "Manager has ‘no doubt’ he remains best person for job Newcastle travel to Spurs on Tuesday in 12th place Eddie Howe has said he would offer Newcastle his resignation if he believed he was no longer the right man to lead the presently struggling club. Howe’s team visit Tottenham on Tuesday night aiming to end the run of three straight Premier League defeats that has prompted their slide to 12th place. Victory would be their first in an away match since December but the 48-year-old manager remains confident he can navigate his fatigued side out of their slump. Continue reading...",
       "publishedAt": "2026-02-09T11:37:58.000Z"
     },
     {
@@ -172,17 +205,6 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Lewis Hamilton spotted with Kim Kardashian at Super Bowl 60!",
-      "link": "https://www.skysports.com/watch/video/13505222/lewis-hamilton-spotted-with-kim-kardashian-at-super-bowl-60",
-      "summary": "Keeping up with the Kardashians! Hamilton amongst the celebrities spotted at the Super Bowl!",
-      "publishedAt": "2026-02-09T10:38:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "'Just let it go!' | Should Man City's third goal have stood vs Liverpool?",
       "link": "https://www.skysports.com/watch/video/13505199/ref-watchshould-man-citys-3rd-goal-have-stood-vs-liverpool",
       "summary": "Ref Watch takes a closer look at the chaotic, last-gasp VAR drama at Anfield and asks whether or not referee Craig Pawson should have allowed Manchester City's third goal to stand and NOT send off Dominik Szoboszlai.",
@@ -194,32 +216,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Eubank Jr could return to a super-middleweight world title fight",
-      "link": "https://www.skysports.com/boxing/news/12040/13505194/chris-eubank-jr-could-return-to-a-super-middleweight-world-title-fight-after-middleweight-defeat-in-conor-benn-rematch",
-      "summary": "Chris Eubank Jr could return to boxing at super-middleweight with routes to a world title challenge available to him.",
-      "publishedAt": "2026-02-09T09:13:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Ref Watch: Szoboszlai red, Guehi challenge and Newcastle handball analysed",
       "link": "https://www.skysports.com/football/live-blog/12040/13505157/ref-watch-live-man-city-newcastle-incidents-and-more-analysed-by-former-premier-league-referee-dermot-gallagher",
       "summary": "",
       "publishedAt": "2026-02-09T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Premier League: 10 talking points from the weekend’s action",
-      "link": "https://www.theguardian.com/football/2026/feb/09/premier-league-10-talking-points-from-the-weekends-action",
-      "summary": "Liverpool rue costly mistakes, Viktor Gyökeres builds up a head of steam and Rayan gets the hype train chugging Premier League top scorers: the latest standings Arne Slot was close to landing a coup against Pep Guardiola, the coach he admires most. Then came more of the individual errors that have ruined Liverpool’s title defence. Aching weaknesses within Slot’s squad were exposed again. Dominik Szoboszlai playing Bernardo Silva onside for Manchester City’s equaliser was an error midfielders playing full-back will make. Szoboszlai’s late red card was, though, foolish. Alisson’s foul on Matheus Nunes for Erling Haaland’s decisive penalty was another rush of blood. Liverpool’s huge summer spend was motivated by their executives’ belief in buying the best individuals to unlock the Premier League’s tactical cages. City’s key individuals showed such a policy can pay off, with Silva inspirational, Gianluigi Donnarumma making the save that sparked the game’s chaotic final scenes, Marc Guéhi looking an astute defensive signing and Haaland supplying Silva’s goal. City had been unconvincing but their mentality held, allowing them to eventually profit from Hugo Ekitiké’s misses and the waning of Mohamed Salah. John Brewin Match report: Liverpool 1-2 Manchester City Match report: Brighton 0-1 Crystal Palace Match report: Arsenal 3-0 Sunderland Match report: Newcastle 2-3 Brentford Continue reading...",
-      "publishedAt": "2026-02-09T08:00:56.000Z"
     }
   ]
 }
