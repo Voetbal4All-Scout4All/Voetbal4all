@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-02-09T02:35:31.503Z",
+  "generatedAt": "2026-02-09T05:03:47.778Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Seahawks beat Patriots in masterclass to win Super Bowl 60",
+      "link": "https://www.skysports.com/nfl/news/12040/13505115/super-bowl-2026-seattle-seahawks-beat-new-england-patriots-in-masterclass-to-win-super-bowl-60-as-drake-maye-endures-gruelling-day",
+      "summary": "Sam Darnold crowned his staggering comeback story with once-unthinkable glory, Aden Durde made British NFL history and the Seattle Seahawks became Super Bowl champions for the second time as they beat the New England Patriots 29-13 at Levi's Stadium, Santa Clara on Sunday.",
+      "publishedAt": "2026-02-09T03:35:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Sky Sports - Football",
@@ -209,17 +220,6 @@
       "link": "https://www.skysports.com/football/news/12040/13505064/liverpool-jamie-carragher-expects-reds-to-miss-out-on-champions-league-spots-following-defeat-to-man-city",
       "summary": "Jamie Carragher expects Liverpool to miss out on Champions League qualification through the Premier League.",
       "publishedAt": "2026-02-08T20:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Greaves prepares for PDC ProTour with perfect Women's Series weekend",
-      "link": "https://www.skysports.com/darts/news/12040/13505038/beau-greaves-kicks-off-2026-womens-series-with-perfect-weekend-as-she-makes-it-17-consecutive-titles",
-      "summary": "Beau Greaves kicked off the 2026 Women's Series with a perfect weekend in Germany as she made it 113 wins on the spin and 17 consecutive titles.",
-      "publishedAt": "2026-02-08T19:29:00.000Z"
     }
   ]
 }
