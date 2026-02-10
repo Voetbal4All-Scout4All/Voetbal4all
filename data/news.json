@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-02-10T13:22:37.852Z",
+  "generatedAt": "2026-02-10T15:02:18.685Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Koopje van 75 miljoen pond: toen Virgil van Dijk de beste winterdeal ooit werd",
+      "link": "https://www.vi.nl/pro/koopje-van-75-miljoen-pond-toen-virgil-van-dijk-de-beste-winterdeal-ooit-werd",
+      "summary": "‘Hij is een goede speler, maar 75 miljoen pond? Nee, dat is hij zeker niet waard.’ Alan Shearer trok er het zuinige gezicht bij dat hij zo vaak trekt wanneer iemand naar zijn mening vraagt, in dit geval door de BBC. ‘ A hell of a deal voor Southampton ’, voegde de voormalige spits van Southampton er ook nog aan toe. Acht jaar later bekeken is de overstap van Virgil van Dijk naar Liverpool misschien wel de beste winterdeal aller tijden.",
+      "publishedAt": "2026-02-10T15:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Boel reageert op kritiek: 'In augustus hadden we hiervoor getekend'",
+      "link": "https://www.vi.nl/nieuws/boel-reageert-op-kritiek-in-augustus-hadden-we-hiervoor-getekend",
+      "summary": "De kritiek op Go Ahead Eagles-trainer Melvin Boel neemt toe, maar de vraag is of dat fair is. Ja, Go Ahead wint te weinig wedstrijden en speelt niet meer zo flitsend als vorig seizoen. Feit is ook dat vorig seizoen een droomjaar was en dat de club al jaren in de lift zit.",
+      "publishedAt": "2026-02-10T14:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ranked: The top 25 manager jobs in soccer, from best to worst",
+      "link": "https://www.espn.com/soccer/story/_/id/47871534/ranked-best-worst-soccer-manager-jobs-clubs-national-teams-world-cup",
+      "summary": "Most of soccer's top coaching jobs will be vacant in the next year or so. Let's rank which jobs are the most -- and least -- attractive, from clubs to national teams.",
+      "publishedAt": "2026-02-10T14:22:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Predicting what happens to Europe's top managers this summer",
+      "link": "https://www.espn.com/soccer/story/_/id/47872375/coaching-chaos-get-ready-2026-manager-merry-go-round",
+      "summary": "One thing is for certain this summer: The world's best managers will be in high demand.",
+      "publishedAt": "2026-02-10T14:22:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Slot: 'Liverpool unlucky?' after Jacquet injury",
+      "link": "https://www.espn.com/soccer/story/_/id/47885802/arne-slot-asks-liverpool-unlucky-jeremy-jacquet-injury",
+      "summary": "Arne Slot has said Liverpool's luck this season has been so bad it has even extended to new signing Jérémy Jacquet, who has suffered a shoulder injury.",
+      "publishedAt": "2026-02-10T14:13:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Berbatov: 'Wait and see' on Carrick as manager",
+      "link": "https://www.espn.com/soccer/story/_/id/47883387/berbatov-urges-patience-carrick-manchester-united-appointment-perfect-start",
+      "summary": "Former Manchester United striker Dimitar Berbatov has hailed the turnaround at Old Trafford under Michael Carrick but urged the club not to rush a decision on a permanent managerial role.",
+      "publishedAt": "2026-02-10T14:13:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Bayern: Kane in 'intensive talks' over future",
+      "link": "https://www.espn.com/soccer/story/_/id/47886292/harry-kane-intensive-talks-future-bayern-munich",
+      "summary": "Bayern Munich remain in \"intensive talks\" with Harry Kane over his future, according to the club's sporting director Max Eberl.",
+      "publishedAt": "2026-02-10T14:13:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Cruijff ontslaat beloftentrainer Weijs: 'Er is vernieuwing nodig bij Jong Ajax'",
+      "link": "https://www.vi.nl/nieuws/ajax-breekt-per-direct-met-beloftentrainer-weijs",
+      "summary": "Willem Weijs dient zijn contract als trainer van Jong Ajax niet uit. De Amsterdammers nemen per direct afscheid van de oefenmeester.",
+      "publishedAt": "2026-02-10T14:09:04.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -10,7 +98,18 @@
       "title": "Kroos haalt weer uit naar Saudi Pro League: 'Zonder Ronaldo zou niemand kijken'",
       "link": "https://www.vi.nl/nieuws/kroos-haalt-weer-uit-naar-saudi-pro-league-zonder-ronaldo-zou-niemand-kijken",
       "summary": "Toni Kroos heeft andermaal laten blijken geen fan te zijn van de Saudi Pro League. De ontwikkelingen rondom Cristiano Ronaldo geven de voormalige middenvelder daartoe aanleiding in zijn podcast Einfach mal Luppen .",
-      "publishedAt": "2026-02-10T13:18:34.000Z"
+      "publishedAt": "2026-02-10T13:40:11.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Has Gyokeres finally found form or are stats misleading?",
+      "link": "https://www.bbc.com/sport/football/articles/c8d5jezj7y9o?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal are top of the league, fighting for trophies in four competitions and at the same time £64m striker Viktor Gyokeres looks to be finding his feet in north London.",
+      "publishedAt": "2026-02-10T13:33:45.000Z"
     },
     {
       "type": "rss",
@@ -36,91 +135,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Eredivisie doelpuntrijkst van topvijftien Europese competities",
-      "link": "https://www.vi.nl/nieuws/eredivisie-is-meest-doelpuntrijke-competitie-van-europa",
-      "summary": "De Eredivisie zorgt geregeld voor spektakel. Dat blijkt ook uit de statistieken, want de Nederlandse competitie staat garant voor doelpunten. In Europa wordt nergens zo vaak gescoord.",
-      "publishedAt": "2026-02-10T12:48:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sources: Cristiano Ronaldo ends Al Nassr dispute",
-      "link": "https://www.espn.com/soccer/story/_/id/47876886/cristiano-ronaldo-ends-dispute-al-nassr-sources",
-      "summary": "Cristiano Ronaldo has decided to end his boycott of Al Nassr games, sources have told ESPN Brasil.",
-      "publishedAt": "2026-02-10T12:22:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Slot: 'Liverpool unlucky?' after Jacquet injury",
-      "link": "https://www.espn.com/soccer/story/_/id/47885802/arne-slot-asks-liverpool-unlucky-jeremy-jacquet-injury",
-      "summary": "Arne Slot has said Liverpool's luck this season has been so bad it has even extended to new signing Jérémy Jacquet, who has suffered a shoulder injury.",
-      "publishedAt": "2026-02-10T12:22:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Laporta resigns as Barça president, will re-stand",
-      "link": "https://www.espn.com/soccer/story/_/id/47875297/joan-laporta-resigns-barcelona-president-restand-election",
-      "summary": "Joan Laporta has resigned as Barcelona president ahead of re-standing for the role when club members go to the polls on March 15.",
-      "publishedAt": "2026-02-10T12:22:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Agent: Endrick will return to Madrid after Lyon",
-      "link": "https://www.espn.com/soccer/story/_/id/47885424/endrick-decision-taken-return-real-madrid-agent",
-      "summary": "Endrick's agent has said \"the decision has already been taken\" for the Brazilian forward to return to Real Madrid this summer.",
-      "publishedAt": "2026-02-10T12:22:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Portugese topper: gestolen handdoeken en gesaboteerde kleedkamer",
-      "link": "https://www.vi.nl/nieuws/portugese-topper-gestolen-handdoeken-en-gesaboteerde-kleedkamer",
-      "summary": "Dat er veel op het spel stond bij de topper tussen FC Porto en Sporting CP was niet alleen te zien op het veld. Ook daaromheen werd er aan allerlei knoppen gedraaid om elkaar het leven zuur te maken.",
-      "publishedAt": "2026-02-10T12:20:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Liverpool at a crossroads: Where has it gone wrong for Slot since Premier League title win?",
-      "link": "https://www.espn.com/soccer/story/_/id/47881375/liverpool-crossroads-where-gone-wrong-slot-premier-league-title-win",
-      "summary": "It's been a rough season for Arne Slot and Liverpool after becoming Premier League champions -- but is it already too late for them to turn the tide?",
-      "publishedAt": "2026-02-10T12:18:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Dilrosun verruilt Mexico voor Midden-Oosten",
-      "link": "https://www.vi.nl/nieuws/dilrosun-verruilt-mexico-voor-midden-oosten",
-      "summary": "Javairô Dilrosun heeft een nieuwe werkgever. De 27-jarige aanvaller gaat aan de slag bij Al-Sadd, de koploper van de Qatari League.",
-      "publishedAt": "2026-02-10T11:50:50.000Z"
+      "title": "Chelsea VAR penalty at Crystal Palace a mistake, panel says",
+      "link": "https://www.skysports.com/football/news/12040/13505688/chelsea-should-not-have-been-awarded-var-penalty-at-crystal-palace-panel-says",
+      "summary": "Chelsea should not have been awarded a penalty in their 3-1 win over Crystal Palace last month, when Joao Pedro's goal-bound shot was blocked by Jaydee Canvot’s arm.",
+      "publishedAt": "2026-02-10T12:25:00.000Z"
     },
     {
       "type": "rss",
@@ -198,28 +220,6 @@
       "link": "https://www.skysports.com/racing/news/12040/13505020/today-on-sky-sports-racing-lingfield-and-newcastle",
       "summary": "We have a busy day’s racing on Tuesday with All-Weather action from Lingfield and Newcastle, live on Sky Sports Racing...",
       "publishedAt": "2026-02-10T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Great attitude but goals have dried up - what's happened to Woltemade?",
-      "link": "https://www.bbc.com/sport/football/articles/cdxg63vn67vo?at_medium=RSS&at_campaign=rss",
-      "summary": "After an impressive start to life at Newcastle, what has happened to Nick Woltemade?",
-      "publishedAt": "2026-02-10T06:39:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'You love Kobbie' - Mainoo showing Amorim why so many do",
-      "link": "https://www.bbc.com/sport/football/articles/cvg83g4zyllo?at_medium=RSS&at_campaign=rss",
-      "summary": "Why Manchester United midfielder Kobbie Mainoo is proving Ruben Amorim was wrong to keep ignoring him.",
-      "publishedAt": "2026-02-10T06:22:03.000Z"
     }
   ]
 }
