@@ -1,6 +1,105 @@
 {
-  "generatedAt": "2026-02-10T22:44:16.342Z",
+  "generatedAt": "2026-02-10T23:41:32.134Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Frank 'convinced' of Spurs stay amid Poch chants",
+      "link": "https://www.espn.com/soccer/story/_/id/47891008/thomas-frank-convinced-tottenham-manager-arsenal-derby",
+      "summary": "Tottenham head coach Thomas Frank said he is \"convinced\" he will remain in charge for the north London derby against Arsenal despite Spurs fans calling for him to be sacked.",
+      "publishedAt": "2026-02-10T23:28:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Late Sesko goal rescues United point at West Ham",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740855",
+      "summary": "Benjamin Sesko scored in the sixth minute of stoppage time to rescue a point for Manchester United, whose winning run under Michael Carrick came to an end with a 1-1 draw at West Ham.",
+      "publishedAt": "2026-02-10T23:28:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: De Zerbi to exit Marseille after PSG rout",
+      "link": "https://www.espn.com/soccer/story/_/id/47891286/roberto-de-zerbi-marseille-leave-coach-psg",
+      "summary": "Roberto De Zerbi and Marseille have agreed to the departure of the Italian head coach by mutual consent after a series of damaging defeats, sources told ESPN.",
+      "publishedAt": "2026-02-10T23:28:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Como stun Napoli, make 1st Copa semi in 40 yrs",
+      "link": "https://www.espn.com/soccer/report/_/gameId/762426",
+      "summary": "Keeper Jean Butez was Como's hero as they beat six-times winners Napoli in a penalty shootout to reach their first Coppa Italia semifinal in 40 years.",
+      "publishedAt": "2026-02-10T23:28:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Hearts blaast hoop door Tynecastle met late zege in Edinburgh Derby",
+      "link": "https://www.vi.nl/nieuws/hearts-blaast-hoop-door-tynecastle-met-late-zege-in-edinburgh-derby",
+      "summary": "Het Tynecastle Stadium van Heart of Midlothian schudde dinsdag op zijn grondvesten. Door een laat doelpunt van Tomas Magnusson trok Hearts niet alleen de Edinburgh Derby naar zich toe, maar nam de Schotse koploper ook afstand van Rangers FC en Celtic.",
+      "publishedAt": "2026-02-10T23:09:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Scottish Premiership: Late winner for Hearts in tense Edinburgh derby",
+      "link": "https://www.theguardian.com/football/2026/feb/10/scottish-premiership-hearts-hibernian-celtic-livingston-motherwell-rangers",
+      "summary": "Tomas Magnusson scores in 88th minute to seal win Jambos now have a six-point lead at the top of the table Tomas Magnusson scored a late winner as the Scottish Premiership leaders Hearts defeated Hibernian 1-0 in a tense Edinburgh derby to tighten their grip on top spot. Magnusson, on as a substitute, popped up with the game’s decisive moment in the 88th minute to spark jubilant scenes inside Tynecastle. Continue reading...",
+      "publishedAt": "2026-02-10T23:06:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'De Zerbi op weg naar de uitgang bij Marseille'",
+      "link": "https://www.vi.nl/nieuws/updates-over-upamecano-en-neuer-bij-bayern-m-nchen",
+      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-02-10T22:56:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Man Utd's winning run ends with draw at West Ham",
+      "link": "https://www.bbc.com/sport/football/videos/cvg8d1r8wd4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Benjamin Sesko rescues a point for Manchester United as thier winning run under interim head coach Michael Carrick ends in a 1-1 draw at West Ham.",
+      "publishedAt": "2026-02-10T22:51:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Leeds come back from two down to earn draw at Chelsea",
+      "link": "https://www.bbc.com/sport/football/videos/c8750rrywx9o?at_medium=RSS&at_campaign=rss",
+      "summary": "Chelsea miss the chance to move into the top four of the Premier League after throwing away a two-goal lead against Leeds United at Stamford Bridge.",
+      "publishedAt": "2026-02-10T22:44:08.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -14,14 +113,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Como verrast Napoli en bereikt na veertig jaar weer halve finale Coppa Italia",
-      "link": "https://www.vi.nl/nieuws/como-verrast-napoli-en-bereikt-na-veertig-jaar-weer-halve-finale-coppa-italia",
-      "summary": "Como heeft zich na veertig jaar weer geplaatst voor de halve finale van de Coppa Italia. De ploeg van Cesc Fàbregas zorgde dinsdag voor een verrassing door Napoli na penalty's uit het Italiaanse bekertoernooi te kegelen.",
-      "publishedAt": "2026-02-10T22:37:23.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Bournemouth fight back to beat 10-man Everton",
+      "link": "https://www.bbc.com/sport/football/videos/cj4zdlzern2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Brazilian teenager Rayan continues his blistering start to life in the Premier League as Bournemouth come from behind to defeat 10-man Everton at Hill Dickinson Stadium.",
+      "publishedAt": "2026-02-10T22:39:59.000Z"
     },
     {
       "type": "rss",
@@ -33,17 +132,6 @@
       "link": "https://www.vi.nl/nieuws/hertha-sneuvelt-na-penalty-s-bundesliga-feestje-in-halve-finale-dfb-pokal",
       "summary": "Hertha BSC heeft dinsdagavond op het nippertje naast de eerste halvefinaleplaats in de DFB-Pokal sinds 2016 gegrepen. SC Freiburg won na penalty's van de Tweede Bundesliga-club, waardoor er louter clubs uit de Bundesliga bij de laatste vier staan.",
       "publishedAt": "2026-02-10T22:37:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Haaland puts 'pressure on himself' to help team",
-      "link": "https://www.bbc.com/sport/football/articles/c4g2lwnppjyo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City manager Pep Guardiola says Erling Haaland puts \"pressure on himself\" to consistently score because he \"desperately wants to help the team\".",
-      "publishedAt": "2026-02-10T22:32:23.000Z"
     },
     {
       "type": "rss",
@@ -62,6 +150,17 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
+      "title": "'No win, no trim' - has a haircut become a problem for Man Utd?",
+      "link": "https://www.bbc.com/sport/football/articles/cvgv39g46mlo?at_medium=RSS&at_campaign=rss",
+      "summary": "A story about a haircut that has gone viral - meet Frank Ilett, the Manchester United fan with the infamous bouffant.",
+      "publishedAt": "2026-02-10T22:30:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
       "title": "Boos after Newcastle hand Tottenham another home defeat",
       "link": "https://www.bbc.com/sport/football/videos/cg4gqengqzyo?at_medium=RSS&at_campaign=rss",
       "summary": "Tottenham fans are left frustrated as Newcastle inflict a seventh home defeat of the season on Thomas Frank's side.",
@@ -73,54 +172,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sesko scores SUPERB 96th-min equaliser as Man Utd's winning run ended",
-      "link": "https://www.skysports.com/watch/video/13505996/west-ham-1-1-man-united-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from West Ham’s match against Manchester United in the Premier League.",
-      "publishedAt": "2026-02-10T22:29:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Newcastle win at Spurs to pile pressure on Frank",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740854",
-      "summary": "Jacob Ramsey fired Newcastle United to a precious 2-1 Premier League win to pile the pressure on Thomas Frank and increase Tottenham Hotspur 's relegation fears.",
-      "publishedAt": "2026-02-10T22:24:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Late Sesko goal rescues United point at West Ham",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740855",
-      "summary": "Benjamin Sesko scored in the sixth minute of stoppage time to rescue a point for Manchester United, whose winning run under Michael Carrick came to an end with a 1-1 draw at West Ham.",
-      "publishedAt": "2026-02-10T22:24:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Report: Miami MLS' most valuable team at $1.45B",
-      "link": "https://www.espn.com/soccer/story/_/id/47888874/inter-miami-mls-most-valuable-teams-2026-5-teams-valuations",
-      "summary": "Five clubs from MLS now have a valuation of over $1 billion, with Miami leading the way for the first time at $1.45 billion, according to a report published by Sportico on Tuesday.",
-      "publishedAt": "2026-02-10T22:24:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Leeds mount comeback to take point at Chelsea",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740848",
-      "summary": "Chelsea's promising start to life under Liam Rosenior was derailed as Leeds fought from two down to earn a 2-2 draw at Stamford Bridge and deny the hosts a fifth straight Premier League win.",
-      "publishedAt": "2026-02-10T22:24:35.000Z"
+      "title": "Same old Chelsea or 'clear change' in Rosenior's first month?",
+      "link": "https://www.skysports.com/football/news/12040/13505992/chelsea-has-liam-rosenior-really-made-clear-change-since-replacing-enzo-maresca-or-are-blues-still-stuck-in-old-ways",
+      "summary": "Paul Merson believes Chelsea are still the same side as they were under Enzo Maresca, but head coach Liam Rosenior insists there has been a \"clear change\".",
+      "publishedAt": "2026-02-10T22:27:00.000Z"
     },
     {
       "type": "rss",
@@ -139,54 +194,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Sesko voorkomt diep in blessuretijd eerste nederlaag van Carrick",
-      "link": "https://www.vi.nl/nieuws/sesko-voorkomt-diep-in-blessuretijd-eerste-nederlaag-van-carrick",
-      "summary": "Manchester United heeft na vier gewonnen duels op rij weer eens punten laten liggen. De ploeg van Michael Carrick gleed dinsdagavond uit bij West Ham United, al zal het voor hem als een gewonnen punt aanvoelen, omdat de gelijkmaker diep in blessuretijd viel.",
-      "publishedAt": "2026-02-10T22:20:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
       "title": "Man Utd-fan Frank Ilett kan na 493 dagen nog steeds niet naar de kapper",
       "link": "https://www.vi.nl/nieuws/man-utd-fan-frank-ilett-kan-na-493-dagen-nog-steeds-niet-naar-de-kapper",
       "summary": "Frank Ilett hoopte na 493 dagen eindelijk weer een afspraak te kunnen maken bij de kapper, maar de supporter van Manchester United kwam bedrogen uit. Door het puntenverlies van The Red Devils bij West Ham United is de veelbesproken social media-actie van Ilett voorlopig nog niet voorbij.",
       "publishedAt": "2026-02-10T22:20:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sesko scores 96th-minute equaliser to deny West Ham vital victory",
-      "link": "https://www.skysports.com/football/west-ham-united-vs-manchester-united/report/531388",
-      "summary": "Benjamin Sesko came off the bench to deny West Ham a vital win in their hunt for Premier League survival as his 96th-minute goal earned a 1-1 draw for Manchester United at the London Stadium.",
-      "publishedAt": "2026-02-10T22:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Villa plotting Gibbs-White move - Wednesday's gossip",
-      "link": "https://www.bbc.com/sport/football/articles/c62dg0enz90o?at_medium=RSS&at_campaign=rss",
-      "summary": "Aston Villa are plotting a move for Morgan Gibbs-White, Liverpool's Mohamed Salah is a target for one of the Saudi Pro League's top clubs, Sandro Tonali's wages could be an obstacle for Serie A clubs, plus more.",
-      "publishedAt": "2026-02-10T22:01:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Magnusson scores late winner as Hearts move six points clear at the summit",
-      "link": "https://www.skysports.com/football/hearts-vs-hibernian/report/531880",
-      "summary": "Substitute Tomas Magnusson scored a late winner as Scottish Premiership leaders Hearts defeated Hibernian 1-0 in a tense Edinburgh derby to tighten their grip on top spot.",
-      "publishedAt": "2026-02-10T21:58:00.000Z"
     },
     {
       "type": "rss",
@@ -196,7 +207,7 @@
       "flag": "🌍",
       "title": "Okafor grabs comeback draw for Leeds as wasteful Chelsea’s bad habits return",
       "link": "https://www.theguardian.com/football/2026/feb/10/chelsea-leeds-premier-league-match-report",
-      "summary": "It turns out Chelsea’s unfortunate habit of squandering winning positions did not leave with Enzo Maresca. They remain infuriatingly inconsistent and were at their careless worst against a defiant Leeds United, who took another step towards staying up by fighting back from 2-0 down to leave Stamford Bridge with a gritty point. Liam Rosenior was left wondering why the focus was not on Cole Palmer collecting his first assist in the Premier League this season. Chelsea’s new head coach was on his way to an eighth win in his first 10 games in charge. Instead he watched in disbelief as his team fell apart, gifting Lukas Nmecha a penalty before more dreadful defending allowed Noah Okafor to haul Daniel Farke’s Leeds level. Continue reading...",
+      "summary": "Chelsea’s habit of squandering leads did not leave with Enzo Maresca. The lapses in concentration have piled up and there was another to add to the list after Stamford Bridge witnessed an inexplicable collapse against Leeds, who took another step towards staying up fighting back from 2-0 down to keep themselves six points above the bottom three. The turnaround was not on the cards when Cole Palmer, who had earlier collected his first assist in the Premier League this season, extended Chelsea’s advantage by scoring from the spot for the third time in two games. By the end, though, Liam Rosenior was ­watching the prospect of an eighth win in 10 games slip away. The implosion was staggering. Lukas Nmecha and Noah Okafor had capitalised on dreadful defending to make it 2-2 and, while Chelsea rallied, their hopes of a late winner ended when Palmer produced a contender for miss of the season. Continue reading...",
       "publishedAt": "2026-02-10T21:53:58.000Z"
     },
     {
@@ -207,19 +218,8 @@
       "flag": "🌍",
       "title": "Rayan and Adli stage Bournemouth fightback against 10-man Everton",
       "link": "https://www.theguardian.com/football/2026/feb/10/everton-bournemouth-premier-league-match-report",
-      "summary": "So much for the comforts of home. Everton had a tantalising opportunity at Hill Dickinson Stadium with sixth place and momentum in the push for European qualification the prize for beating Bournemouth. David Moyes’s team let it slip through their grasp once again. Andoni Iraola’s side extended their unbeaten Premier League run to six games courtesy of second-half headers from Rayan, who could just be their latest gem, and Amine Adli. Bournemouth’s brace, plus a straight red card for the Everton defender Jake O’Brien, arrived in an eight-minute spell in which the hosts imploded to leave themselves without a home win since 6 December. Everton have collected 17 points from their last eight away games but only eight from the last nine at home. Their quest for Europe is floundering on home soil. Continue reading...",
+      "summary": "Hill Dickinson Stadium is no place like home for Everton. Not yet, anyway. Sixth place and momentum in the push for European qualification was the tantalising prize for beating Bournemouth but, not for the first time at their plush new stadium, David Moyes’s team let it slip through their grasp. Andoni Iraola’s visitors extended their unbeaten Premier League run to six games courtesy of second-half headers from Rayan, the 19-year-old Brazilian who could well be their latest gem, and Amine Adli. Bournemouth’s goals and a red card for the Everton defender Jake O’Brien arrived in an eight-minute spell in which the hosts imploded to leave themselves without a home win since 6 December. Moyes’s side have collected 17 points from their last eight away games but only eight from the last nine at home. Their quest for Europe is floundering on home soil. Continue reading...",
       "publishedAt": "2026-02-10T21:48:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ramsey winner for Newcastle adds to Frank woes to leave Spurs fearing the drop",
-      "link": "https://www.theguardian.com/football/2026/feb/10/tottenham-newcastle-premier-league-match-report",
-      "summary": "To his extensive list of problems at Tottenham, Thomas Frank can add another. The manager is dealing with a ghost from the club’s more successful recent past. There were 49 minutes on the clock when the South Stand choir took up the song. “He’s magic, you know. Mauricio Poch-e-ttino.” The message was clear. They want their former idol back. They cannot persist any longer with Frank. The only wonder here was that Newcastle, who had arrived on the back of three straight Premier League defeats, with numerous issues of their own, were not out of sight at the interval. If they were bright in the first half, Spurs were impossibly awful. Frank’s injury list was in double figures and he would lose another player – Wilson Odobert – in the 34th minute. No one wants to hear the mitigation. Continue reading...",
-      "publishedAt": "2026-02-10T21:47:50.000Z"
     }
   ]
 }
