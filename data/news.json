@@ -1,16 +1,49 @@
 {
-  "generatedAt": "2026-02-11T11:52:56.122Z",
+  "generatedAt": "2026-02-11T13:19:12.794Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Leicester tien jaar na stunt in drijfzand: 'Ik wil mijn excuses aanbieden'",
+      "link": "https://www.vi.nl/nieuws/leicester-tien-jaar-na-stunt-in-drijfzand-ik-wil-mijn-excuses-aanbieden",
+      "summary": "Leicester City schreef tien jaar geleden geschiedenis door tegen alle verwachtingen in de Premier League te winnen, maar tien jaar later gaat het volledig mis bij The Foxes . Interim-manager Andy King bood dinsdagavond zijn excuses aan bij de fans na een nieuw dieptepunt in een vooralsnog dramatisch seizoen.",
+      "publishedAt": "2026-02-11T13:05:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Engelsen stemmen voor meer promotievoetbal richting Premier League",
+      "link": "https://www.vi.nl/nieuws/engelsen-stemmen-voor-meer-promotievoetbal-richting-premier-league",
+      "summary": "Clubs in het Championship, de League One en League Two hebben toestemming van de Engelse bond gekregen om te stemmen over een uitbreiding van de play-offs om promotie naar het hoogste niveau. Vergeleken met de huidige situatie zouden bij een succesvolle stemming twee extra clubs kans maken op een Premier League-ticket via de play-offs.",
+      "publishedAt": "2026-02-11T12:50:45.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Viní Jr 'not yet' within Flamengo's means",
+      "title": "Sesko: Man United will fight for top-four finish",
+      "link": "https://www.espn.com/soccer/story/_/id/47895509/benjamin-sesko-vows-man-united-fight-top-four-finish",
+      "summary": "Benjamin Sesko believes his rescue act at West Ham proves Manchester United have the stomach for the fight for a Champions League place.",
+      "publishedAt": "2026-02-11T12:44:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Flamengo prez: Vinícius not yet in our budget",
       "link": "https://www.espn.com/soccer/story/_/id/47894727/vinicius-junior-not-yet-flamengo-financial-means",
       "summary": "Flamengo do not \"yet\" have the financial means to lure Vinícius Júnior back to the club, according to its president Luiz Eduardo Baptista.",
-      "publishedAt": "2026-02-11T11:46:38.000Z"
+      "publishedAt": "2026-02-11T12:44:49.000Z"
     },
     {
       "type": "rss",
@@ -21,18 +54,7 @@
       "title": "De Zerbi leaves Marseille after 5-0 loss to PSG",
       "link": "https://www.espn.com/soccer/story/_/id/47894174/roberto-de-zerbi-leaves-marseille-5-0-loss-paris-saint-germain",
       "summary": "Marseille head coach Roberto De Zerbi has left the club following their 5-0 defeat to Paris Saint Germain on Sunday.",
-      "publishedAt": "2026-02-11T11:46:38.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Carrick hails 'unbelievable' Sesko goal to earn draw",
-      "link": "https://www.espn.com/soccer/story/_/id/47891539/michael-carrick-benjamin-sesko-goal-man-united-west-ham",
-      "summary": "Michael Carrick hailed super-sub Benjamin Sesko's \"unbelievable finish\" after the striker's amazing last-gasp volley snatched Manchester United a 1-1 draw at West Ham United.",
-      "publishedAt": "2026-02-11T11:46:29.000Z"
+      "publishedAt": "2026-02-11T12:44:49.000Z"
     },
     {
       "type": "rss",
@@ -42,8 +64,8 @@
       "flag": "🌍",
       "title": "Tottenham sack Frank after 8 months in charge",
       "link": "https://www.espn.com/soccer/story/_/id/47303959/thomas-frank-sacked-tottenham-hotspur-defeat-premier-league",
-      "summary": "Thomas Frank has been sacked as Tottenham head coach, the club confirmed on Wednesday.",
-      "publishedAt": "2026-02-11T11:38:39.000Z"
+      "summary": "Thomas Frank has been sacked as Tottenham head coach, the club confirmed Wednesday.",
+      "publishedAt": "2026-02-11T12:40:57.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +76,7 @@
       "title": "How Thomas Frank's Tottenham reign unravelled",
       "link": "https://www.espn.com/soccer/story/_/id/47650858/how-thomas-frank-tottenham-hotspur-reign-unravelled-premier-league",
       "summary": "Thomas Frank's time at Spurs has come to an end -- where did it all gone wrong for the Dane in north London?",
-      "publishedAt": "2026-02-11T11:38:39.000Z"
+      "publishedAt": "2026-02-11T12:40:57.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +84,54 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "FC Bankzaken: 'Goed dat Sparta samenwerking Ajax heeft gestopt'",
-      "link": "https://www.vi.nl/pro/fc-bankzaken-goed-dat-sparta-samenwerking-ajax-heeft-gestopt",
-      "summary": "In de serie FC Bankzaken bespreekt Tom Knipping samen met presentator Bart Frouws de financiën in het binnen- en buitenlandse voetbal. In deze aflevering gaan de heren dieper in op de financiële situatie van Sparta Rotterdam.",
-      "publishedAt": "2026-02-11T11:30:00.000Z"
+      "title": "'Fabregas is als trainer nog beter dan als speler'",
+      "link": "https://www.vi.nl/nieuws/fabregas-is-als-trainer-nog-beter-dan-als-speler",
+      "summary": "Como heeft dinsdagavond geschiedenis geschreven door Napoli uit te schakelen in de kwartfinale van de Coppa Italia. De ploeg van trainer Cesc Fabregas hield stand in het Stadio Diego Armando Maradona en trok uiteindelijk aan het langste eind na strafschoppen. Daarmee plaatst Como zich voor het eerst sinds 1986 weer voor de halve finale van het Italiaanse bekertoernooi.",
+      "publishedAt": "2026-02-11T12:39:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "De Zerbi, Glasner or back to Poch? Where will Spurs turn after Frank sacking?",
+      "link": "https://www.skysports.com/football/news/12040/13506188/roberto-de-zerbi-oliver-glasner-or-back-to-mauricio-pochettino-where-will-spurs-turn-after-thomas-franks-sacking",
+      "summary": "Tottenham are looking for a sixth permanent manager in seven years after sacking Thomas Frank - who will they turn to next?",
+      "publishedAt": "2026-02-11T12:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Connell backing Marine Nationale to bridge Majborough gap",
+      "link": "https://www.skysports.com/racing/news/12040/13506207/champion-chase-barry-connell-backing-marine-nationale-to-bridge-majborough-gap-at-cheltenham-festival",
+      "summary": "Barry Connell remains confident Marine Nationale will put up a staunch defence his crown in the BetMGM Queen Mother Champion Chase at Cheltenham next month.",
+      "publishedAt": "2026-02-11T12:12:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Hearts blijft dromen: 'Als ze op Ibrox winnen, worden ze ook kampioen'",
+      "link": "https://www.vi.nl/nieuws/hearts-blijft-dromen-als-ze-op-ibrox-winnen-worden-ze-ook-kampioen",
+      "summary": "Heart of Midlothian en Jordi Altena houden dankzij een late thuiszege op stadgenoot Hibernian uitzicht op een glorieus seizoen in het Schotse Premiership. Hearts-manager Derek McInnes genoot dinsdag met volle teugen van de sfeer op Tynecastle Park en kan zich gaan opmaken voor een clash met Rangers op Ibrox.",
+      "publishedAt": "2026-02-11T12:04:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Heitinga favoriet om Frank in ieder geval tijdelijk op te volgen bij Tottenham'",
+      "link": "https://www.vi.nl/nieuws/heitinga-favoriet-om-frank-in-ieder-geval-tijdelijk-op-te-volgen-bij-tottenham",
+      "summary": "Nog geen half jaar na zijn ontslag bij Ajax kan John Heitinga de leiding krijgen over een selectie met een marktwaarde van bijna een miljard euro. De Nederlandse assistent-coach van Tottenham Hotspur wordt door Engelse media naar voren geschoven als (tijdelijke) opvolger van de woensdag ontslagen Thomas Frank .",
+      "publishedAt": "2026-02-11T11:56:00.000Z"
     },
     {
       "type": "rss",
@@ -77,39 +143,6 @@
       "link": "https://www.skysports.com/football/news/12040/13505760/thomas-frank-sacked-by-spurs-after-eight-months-in-charge-what-went-wrong-for-the-former-brentford-boss",
       "summary": "Thomas Frank's Tottenham spell is over after just eight months.",
       "publishedAt": "2026-02-11T11:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Scherpen en Ajax vallen op in lijstje van minste tegengoals in thuisduels",
-      "link": "https://www.vi.nl/nieuws/scherpen-en-ajax-vallen-op-in-lijstje-van-minste-tegengoals-in-thuisduels",
-      "summary": "Union Sint-Gillis ligt op koers om de Belgische titel te prolongeren en heeft dat mede te danken aan de weinige tegengoals in thuisduels: drie in twaalf wedstrijden. Kijkend naar de toptien beste competities in Europa volgens de UEFA-coëfficiëntenranking doet één club het dit seizoen beter dan keeper Kjell Scherpen en zijn teamgenoten. Ook Ajax is terug te vinden in het klassement.",
-      "publishedAt": "2026-02-11T10:54:34.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Tirade De Rossi blijkt gegrond: scheidsrechtersbond erkent fout",
-      "link": "https://www.vi.nl/nieuws/tirade-de-rossi-blijkt-gegrond-scheidsrechtersbond-erkent-fout",
-      "summary": "Daniele De Rossi wordt na afloop van Genoa-Napoli in het gelijk gesteld in zijn frustratie over de beslissende strafschop in blessuretijd. Namens de Italiaanse scheidsrechtersbond AIA heeft Dino Tommasi namelijk toegegeven dat de penalty nooit gegeven had mogen worden.",
-      "publishedAt": "2026-02-11T10:45:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Toekomst van Tomasson junior ligt in Rotterdam",
-      "link": "https://www.vi.nl/nieuws/toekomst-van-tomasson-junior-ligt-bij-feyenoord",
-      "summary": "Luca Dahl Tomasson blijft verbonden aan Feyenoord. De zeventienjarige middenvelder en uiteraard zoon van heeft zijn aflopende contract opengebroken en verlengd tot medio 2028.",
-      "publishedAt": "2026-02-11T10:45:16.000Z"
     },
     {
       "type": "rss",
@@ -146,17 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Tottenham latest: Frank sacked! What next for Spurs? Have your say...",
-      "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-      "summary": "",
-      "publishedAt": "2026-02-11T10:10:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -175,17 +197,6 @@
       "title": "Tottenham sack head coach Frank",
       "link": "https://www.skysports.com/football/news/12040/13477299/thomas-frank-sacked-tottenham-head-coach-departs-after-less-than-eight-months-in-charge",
       "summary": "Tottenham have sacked head coach Thomas Frank after less than eight months in charge.",
-      "publishedAt": "2026-02-11T10:06:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Tottenham Hotspur neemt afscheid van manager Frank",
-      "link": "https://www.vi.nl/nieuws/tottenham-hotspur-neemt-afscheid-van-manager-frank",
-      "summary": "Tottenham Hotspur heeft woensdagochtend afscheid genomen van Thomas Frank. Door de aanhoudende tegenvallende prestaties was de Deense manager flink onder druk komen te staan. Inmiddels heeft de clubleiding ingegrepen.",
       "publishedAt": "2026-02-11T10:06:00.000Z"
     },
     {
@@ -209,17 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/11/roberto-de-zerbi-leaves-marseille-head-coach-psg-champions-league-exit",
       "summary": "Marseille beaten 5-0 by PSG and 3-0 by Club Brugge De Zerbi joined as head coach in 2024 after Brighton exit Roberto De Zerbi has left Marseille in the wake of a 5-0 thrashing at the hands of Paris Saint-Germain. The nine-time French champions said on Wednesday that they had ended “their collaboration by mutual agreement.” The heavy loss Sunday at the Parc des Princes restored PSG’s two-point lead over Lens after 21 rounds, with Marseille fourth. De Zerbi’s team also endured an embarrassing 3-0 loss at Club Brugge two weeks ago that resulted in Marseille exiting the Champions League. Continue reading...",
       "publishedAt": "2026-02-11T08:31:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Has Milner's record become a problem for Brighton?",
-      "link": "https://www.bbc.com/sport/football/articles/ce3g8xlw47po?at_medium=RSS&at_campaign=rss",
-      "summary": "James Milner is one game away from drawing level with Gareth Barry for most Premier League appearances, but has the record become a problem for Brighton?",
-      "publishedAt": "2026-02-11T08:01:08.000Z"
     }
   ]
 }
