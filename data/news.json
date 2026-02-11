@@ -1,6 +1,83 @@
 {
-  "generatedAt": "2026-02-11T05:05:57.002Z",
+  "generatedAt": "2026-02-11T07:06:27.630Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Si Grass looks to enhance her profile at Southwell",
+      "link": "https://www.skysports.com/racing/news/12040/13505407/today-on-sky-sports-racing-hereford-and-southwell",
+      "summary": "We have a busy day’s racing on Wednesday with action from Hereford and Southwell, live on Sky Sports Racing...",
+      "publishedAt": "2026-02-11T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Frank onder vuur: 'Dramatische tijden vragen om dramatische ingrepen'",
+      "link": "https://www.vi.nl/nieuws/frank-onder-vuur-dramatische-tijden-vragen-om-dramatische-ingrepen",
+      "summary": "De positie van Thomas Frank als manager van Tottenham Hotspur staat na de thuisnederlaag tegen Newcastle United nog meer onder druk. De Deen werd dinsdagavond uitgejouwd door het thuispubliek en analytici verwachten dat de clubleiding op korte termijn gaat ingrijpen.",
+      "publishedAt": "2026-02-11T06:57:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "De Zerbi leaves Marseille by mutual consent",
+      "link": "https://www.bbc.com/sport/football/articles/cgqejpj4d80o?at_medium=RSS&at_campaign=rss",
+      "summary": "Roberto de Zerbi, who led Marseille to second in Ligue 1 last season, leaves following their Champions League exit and a 5-0 defeat by Paris St-Germain.",
+      "publishedAt": "2026-02-11T06:49:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Transfers Ajax: te weinig spelers hebben Ajax naar een hoger niveau getild",
+      "link": "https://www.vi.nl/nieuws/transfers-ajax-weghorst-met-twee-jaar-vertraging-alsnog-naar-twente",
+      "summary": "VI volgt het transfernieuws bij Ajax op de voet, ook nu de winterse transferwindow gesloten is. De doelwitten van de Amsterdammers, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
+      "publishedAt": "2026-02-11T06:36:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Ook technisch directeur moet het veld ruimen bij Marseille'",
+      "link": "https://www.vi.nl/nieuws/updates-over-upamecano-en-neuer-bij-bayern-m-nchen",
+      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-02-11T06:25:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "De Zerbi ontslagen bij Marseille: De Lange en Timber krijgen nieuwe trainer",
+      "link": "https://www.vi.nl/nieuws/de-zerbi-ontslagen-bij-marseille-de-lange-en-timber-krijgen-nieuwe-trainer",
+      "summary": "Olympique Marseille heeft dinsdagnacht bekendgemaakt dat Roberto De Zerbi vertrekt bij de Franse topclub. De huidige nummer vier in de Ligue 1 houdt de Italiaan verantwoordelijk voor de wisselvallige resultaten.",
+      "publishedAt": "2026-02-11T06:15:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Tijdperk Kroes is voorbij: alle Ajax-aankopen langs de meetlat",
+      "link": "https://www.vi.nl/pro/tijdperk-kroes-is-voorbij-alle-ajax-aankopen-langs-de-meetlat",
+      "summary": "Het veelbewogen tijdperk van Alex Kroes bij Ajax zit erop. Door allerlei omstandigheden is zijn termijn officieel beperkt gebleven tot een kleine twee jaar, Jordi Cruijff heeft zijn functie nu overgenomen. Als technisch directeur had Kroes een omvangrijk takenpakket, met het transferbeleid voor Ajax 1 als meest in het oog springende onderdeel. Tijd om de balans op te maken.",
+      "publishedAt": "2026-02-11T06:00:00.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -69,17 +146,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Howe savours 'special connection' with Newcastle fans after win at Spurs",
-      "link": "https://www.bbc.com/sport/football/articles/c0q3z2gk48xo?at_medium=RSS&at_campaign=rss",
-      "summary": "Eddie Howe savours a \"special connection\" with fans after Newcastle win on the road at Spurs - in direct contrast to Tottenham's relationship with their manager.",
-      "publishedAt": "2026-02-10T23:54:32.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -113,17 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Hearts blaast hoop door Tynecastle met late zege in Edinburgh Derby",
-      "link": "https://www.vi.nl/nieuws/hearts-blaast-hoop-door-tynecastle-met-late-zege-in-edinburgh-derby",
-      "summary": "Het Tynecastle Stadium van Heart of Midlothian schudde dinsdag op zijn grondvesten. Door een laat doelpunt van Tomas Magnusson trok Hearts niet alleen de Edinburgh Derby naar zich toe, maar nam de Schotse koploper ook afstand van Rangers FC en Celtic.",
-      "publishedAt": "2026-02-10T23:09:30.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -132,50 +187,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/10/scottish-premiership-hearts-hibernian-celtic-livingston-motherwell-rangers",
       "summary": "Tomas Magnusson scores in 88th minute to seal win Jambos now have a six-point lead at the top of the table Tomas Magnusson scored a late winner as the Scottish Premiership leaders Hearts defeated Hibernian 1-0 in a tense Edinburgh derby to tighten their grip on top spot. Magnusson, on as a substitute, popped up with the game’s decisive moment in the 88th minute to spark jubilant scenes inside Tynecastle. Continue reading...",
       "publishedAt": "2026-02-10T23:06:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'De Zerbi op weg naar de uitgang bij Marseille'",
-      "link": "https://www.vi.nl/nieuws/updates-over-upamecano-en-neuer-bij-bayern-m-nchen",
-      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-02-10T22:56:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Man Utd's winning run ends with draw at West Ham",
-      "link": "https://www.bbc.com/sport/football/videos/cvg8d1r8wd4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Benjamin Sesko rescues a point for Manchester United as thier winning run under interim head coach Michael Carrick ends in a 1-1 draw at West Ham.",
-      "publishedAt": "2026-02-10T22:51:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Waanzinnige comeback in Championship, nieuwe stap Altena richting titel",
-      "link": "https://www.vi.nl/nieuws/waanzinnige-comeback-in-championship-nieuwe-stap-altena-richting-titel",
-      "summary": "Met vier wedstrijden in de Premier League en een kraker in Coppa Italia beloofde het een volle voetbalavond te worden. Lees de volledige avond terug in onderstaande VI Live.",
-      "publishedAt": "2026-02-10T22:41:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Hertha sneuvelt na penalty's: Bundesliga-feestje in halve finale DFB-Pokal",
-      "link": "https://www.vi.nl/nieuws/hertha-sneuvelt-na-penalty-s-bundesliga-feestje-in-halve-finale-dfb-pokal",
-      "summary": "Hertha BSC heeft dinsdagavond op het nippertje naast de eerste halvefinaleplaats in de DFB-Pokal sinds 2016 gegrepen. SC Freiburg won na penalty's van de Tweede Bundesliga-club, waardoor er louter clubs uit de Bundesliga bij de laatste vier staan.",
-      "publishedAt": "2026-02-10T22:37:00.000Z"
     },
     {
       "type": "rss",
@@ -190,17 +201,6 @@
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Same old Chelsea or 'clear change' in Rosenior's first month?",
-      "link": "https://www.skysports.com/football/news/12040/13505992/chelsea-has-liam-rosenior-really-made-clear-change-since-replacing-enzo-maresca-or-are-blues-still-stuck-in-old-ways",
-      "summary": "Paul Merson believes Chelsea are still the same side as they were under Enzo Maresca, but head coach Liam Rosenior insists there has been a \"clear change\".",
-      "publishedAt": "2026-02-10T22:27:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -212,14 +212,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Man Utd-fan Frank Ilett kan na 493 dagen nog steeds niet naar de kapper",
-      "link": "https://www.vi.nl/nieuws/man-utd-fan-frank-ilett-kan-na-493-dagen-nog-steeds-niet-naar-de-kapper",
-      "summary": "Frank Ilett hoopte na 493 dagen eindelijk weer een afspraak te kunnen maken bij de kapper, maar de supporter van Manchester United kwam bedrogen uit. Door het puntenverlies van The Red Devils bij West Ham United is de veelbesproken social media-actie van Ilett voorlopig nog niet voorbij.",
-      "publishedAt": "2026-02-10T22:20:20.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Villa plotting Gibbs-White move - Wednesday's gossip",
+      "link": "https://www.bbc.com/sport/football/articles/c62dg0enz90o?at_medium=RSS&at_campaign=rss",
+      "summary": "Aston Villa are plotting a move for Morgan Gibbs-White, Liverpool's Mohamed Salah is a target for one of the Saudi Pro League's top clubs, Sandro Tonali's wages could be an obstacle for Serie A clubs, plus more.",
+      "publishedAt": "2026-02-10T22:01:08.000Z"
     }
   ]
 }
