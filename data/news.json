@@ -1,6 +1,39 @@
 {
-  "generatedAt": "2026-02-10T23:41:32.134Z",
+  "generatedAt": "2026-02-11T02:41:50.159Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "West Ham expose the limitations of Carrick's Man United squad",
+      "link": "https://www.espn.com/soccer/story/_/id/47891757/west-ham-expose-limitations-carricks-man-united-squad",
+      "summary": "A point on the road isn't a bad result, especially after four wins in a row, but Tuesday's draw with West Ham has shown that Manchester United still has issues breaking down a packed defence.",
+      "publishedAt": "2026-02-11T02:28:59.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Has time run out for Frank? Spurs' latest loss puts him in unprecedented danger",
+      "link": "https://www.espn.com/soccer/story/_/id/47890674/has-run-frank-spurs-loss-puts-relegation-fight",
+      "summary": "After Tottenham's 2-1 loss to Newcastle, it's fair to wonder how long they can continue with Thomas Frank.",
+      "publishedAt": "2026-02-11T02:28:59.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Carrick hails 'unbelievable' Sesko goal to earn draw",
+      "link": "https://www.espn.com/soccer/story/_/id/47891539/michael-carrick-benjamin-sesko-goal-man-united-west-ham",
+      "summary": "Michael Carrick hailed super-sub Benjamin Sesko's \"unbelievable finish\" after the striker's amazing last-gasp volley snatched Manchester United a 1-1 draw at West Ham United.",
+      "publishedAt": "2026-02-11T00:30:48.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,18 +43,7 @@
       "title": "Frank 'convinced' of Spurs stay amid Poch chants",
       "link": "https://www.espn.com/soccer/story/_/id/47891008/thomas-frank-convinced-tottenham-manager-arsenal-derby",
       "summary": "Tottenham head coach Thomas Frank said he is \"convinced\" he will remain in charge for the north London derby against Arsenal despite Spurs fans calling for him to be sacked.",
-      "publishedAt": "2026-02-10T23:28:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Late Sesko goal rescues United point at West Ham",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740855",
-      "summary": "Benjamin Sesko scored in the sixth minute of stoppage time to rescue a point for Manchester United, whose winning run under Michael Carrick came to an end with a 1-1 draw at West Ham.",
-      "publishedAt": "2026-02-10T23:28:47.000Z"
+      "publishedAt": "2026-02-11T00:30:48.000Z"
     },
     {
       "type": "rss",
@@ -32,18 +54,62 @@
       "title": "Sources: De Zerbi to exit Marseille after PSG rout",
       "link": "https://www.espn.com/soccer/story/_/id/47891286/roberto-de-zerbi-marseille-leave-coach-psg",
       "summary": "Roberto De Zerbi and Marseille have agreed to the departure of the Italian head coach by mutual consent after a series of damaging defeats, sources told ESPN.",
-      "publishedAt": "2026-02-10T23:28:47.000Z"
+      "publishedAt": "2026-02-11T00:30:48.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Como stun Napoli, make 1st Copa semi in 40 yrs",
-      "link": "https://www.espn.com/soccer/report/_/gameId/762426",
-      "summary": "Keeper Jean Butez was Como's hero as they beat six-times winners Napoli in a penalty shootout to reach their first Coppa Italia semifinal in 40 years.",
-      "publishedAt": "2026-02-10T23:28:47.000Z"
+      "title": "Carrick's 'Sir Alex' playbook and a happy start at Man Utd",
+      "link": "https://www.bbc.com/sport/football/articles/cpv82340kxno?at_medium=RSS&at_campaign=rss",
+      "summary": "Michael Carrick is happy with his start as Manchester United head coach despite dropping his first points in 1-1 draw at West Ham.",
+      "publishedAt": "2026-02-11T00:30:13.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Howe savours 'special connection' with Newcastle fans after win at Spurs",
+      "link": "https://www.bbc.com/sport/football/articles/c0q3z2gk48xo?at_medium=RSS&at_campaign=rss",
+      "summary": "Eddie Howe savours a \"special connection\" with fans after Newcastle win on the road at Spurs - in direct contrast to Tottenham's relationship with their manager.",
+      "publishedAt": "2026-02-10T23:54:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "McIlroy calls on Europe to cut down crowd abuse at 2027 Ryder Cup",
+      "link": "https://www.skysports.com/golf/news/12040/13506031/rory-mcilroy-calls-on-team-europe-to-cut-down-crowd-abuse-at-2027-ryder-cup-at-adare-manor-in-ireland",
+      "summary": "Rory McIlroy does not want a repeat of the abuse which surrounded him during Europe's Ryder Cup victory over the United States at Bethpage Black when the 2027 tournament arrives in Ireland.",
+      "publishedAt": "2026-02-10T23:49:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Frank insists he is safe - but will he avoid Spurs sack?",
+      "link": "https://www.bbc.com/sport/football/articles/cm28yrl3vrxo?at_medium=RSS&at_campaign=rss",
+      "summary": "Tottenham manager Thomas Frank insists his job is not under threat despite dropping to five points from the Premier League relegation zone - but will the Dane avoid the sack?",
+      "publishedAt": "2026-02-10T23:41:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Man Utd latest: Should Sesko start matches now? He's ready, says Carrick",
+      "link": "https://www.skysports.com/football/live-blog/12040/13025492/man-utd-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+      "summary": "",
+      "publishedAt": "2026-02-10T23:30:00.000Z"
     },
     {
       "type": "rss",
@@ -91,17 +157,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Leeds come back from two down to earn draw at Chelsea",
-      "link": "https://www.bbc.com/sport/football/videos/c8750rrywx9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Chelsea miss the chance to move into the top four of the Premier League after throwing away a two-goal lead against Leeds United at Stamford Bridge.",
-      "publishedAt": "2026-02-10T22:44:08.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
@@ -110,17 +165,6 @@
       "link": "https://www.vi.nl/nieuws/waanzinnige-comeback-in-championship-nieuwe-stap-altena-richting-titel",
       "summary": "Met vier wedstrijden in de Premier League en een kraker in Coppa Italia beloofde het een volle voetbalavond te worden. Lees de volledige avond terug in onderstaande VI Live.",
       "publishedAt": "2026-02-10T22:41:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Bournemouth fight back to beat 10-man Everton",
-      "link": "https://www.bbc.com/sport/football/videos/cj4zdlzern2o?at_medium=RSS&at_campaign=rss",
-      "summary": "Brazilian teenager Rayan continues his blistering start to life in the Premier League as Bournemouth come from behind to defeat 10-man Everton at Hill Dickinson Stadium.",
-      "publishedAt": "2026-02-10T22:39:59.000Z"
     },
     {
       "type": "rss",
@@ -135,17 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Premier League recap: West Ham deny Man United fifth straight win",
-      "link": "https://www.espn.com/soccer/story/_/id/47879435/premier-league-live-updates-chelsea-leeds-united-west-ham-united-manchester-united",
-      "summary": "West Ham United ended Manchester United's winning streak, while Chelsea blew a 2-0 lead to draw against Leeds United in another eventful day of Premier League action.",
-      "publishedAt": "2026-02-10T22:30:54.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -154,17 +187,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cvgv39g46mlo?at_medium=RSS&at_campaign=rss",
       "summary": "A story about a haircut that has gone viral - meet Frank Ilett, the Manchester United fan with the infamous bouffant.",
       "publishedAt": "2026-02-10T22:30:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Boos after Newcastle hand Tottenham another home defeat",
-      "link": "https://www.bbc.com/sport/football/videos/cg4gqengqzyo?at_medium=RSS&at_campaign=rss",
-      "summary": "Tottenham fans are left frustrated as Newcastle inflict a seventh home defeat of the season on Thomas Frank's side.",
-      "publishedAt": "2026-02-10T22:30:08.000Z"
     },
     {
       "type": "rss",
@@ -185,7 +207,7 @@
       "flag": "🌍",
       "title": "Sesko rescues late point for Manchester United to deny West Ham precious win",
       "link": "https://www.theguardian.com/football/2026/feb/10/west-ham-manchester-united-premier-league-match-report",
-      "summary": "Stop all the clippers, don’t cut off the barnet: Manchester United’s winning run is over. Frank Ilett, the man who pledged never to visit a barber again until United won five matches in a row, has been denied a viral haircut, but their resilience came to the fore after the West Ham were denied what would have been a deserved victory deep into added time. A studded finish from fan favourite Tomas Soucek was cancelled out by a strike from Benjamin Sesko to leave this match honours even. United lacked energy and snap, West Ham thought they had the game in the bag as the clock ticked past 90 minutes. The Hammers remain in 18th place, five points behind Spurs in 16th. Continue reading...",
+      "summary": "Stop all the clippers, don’t cut off the barnet: United’s winning run is over. Frank Ilett, the man who pledged never to visit a barber again until Manchester United won five matches in a row, may have been denied a viral haircut, but United’s resilience came to the fore here to deny the Hammers what would have been a deserved victory deep into added time. A studded finish from the fan favourite Tomas Soucek was cancelled out by an impressive, instinctive strike from Benjamin Sesko to leave this match honours even. United lacked energy and snap, West Ham saw two precious points fall away at the last; both sides will leave frustrated but not disconsolate. The Hammers remain in 18th place, United stay in fourth, their contrasting objectives remain in play. Continue reading...",
       "publishedAt": "2026-02-10T22:20:55.000Z"
     },
     {
@@ -198,28 +220,6 @@
       "link": "https://www.vi.nl/nieuws/man-utd-fan-frank-ilett-kan-na-493-dagen-nog-steeds-niet-naar-de-kapper",
       "summary": "Frank Ilett hoopte na 493 dagen eindelijk weer een afspraak te kunnen maken bij de kapper, maar de supporter van Manchester United kwam bedrogen uit. Door het puntenverlies van The Red Devils bij West Ham United is de veelbesproken social media-actie van Ilett voorlopig nog niet voorbij.",
       "publishedAt": "2026-02-10T22:20:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Okafor grabs comeback draw for Leeds as wasteful Chelsea’s bad habits return",
-      "link": "https://www.theguardian.com/football/2026/feb/10/chelsea-leeds-premier-league-match-report",
-      "summary": "Chelsea’s habit of squandering leads did not leave with Enzo Maresca. The lapses in concentration have piled up and there was another to add to the list after Stamford Bridge witnessed an inexplicable collapse against Leeds, who took another step towards staying up fighting back from 2-0 down to keep themselves six points above the bottom three. The turnaround was not on the cards when Cole Palmer, who had earlier collected his first assist in the Premier League this season, extended Chelsea’s advantage by scoring from the spot for the third time in two games. By the end, though, Liam Rosenior was ­watching the prospect of an eighth win in 10 games slip away. The implosion was staggering. Lukas Nmecha and Noah Okafor had capitalised on dreadful defending to make it 2-2 and, while Chelsea rallied, their hopes of a late winner ended when Palmer produced a contender for miss of the season. Continue reading...",
-      "publishedAt": "2026-02-10T21:53:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rayan and Adli stage Bournemouth fightback against 10-man Everton",
-      "link": "https://www.theguardian.com/football/2026/feb/10/everton-bournemouth-premier-league-match-report",
-      "summary": "Hill Dickinson Stadium is no place like home for Everton. Not yet, anyway. Sixth place and momentum in the push for European qualification was the tantalising prize for beating Bournemouth but, not for the first time at their plush new stadium, David Moyes’s team let it slip through their grasp. Andoni Iraola’s visitors extended their unbeaten Premier League run to six games courtesy of second-half headers from Rayan, the 19-year-old Brazilian who could well be their latest gem, and Amine Adli. Bournemouth’s goals and a red card for the Everton defender Jake O’Brien arrived in an eight-minute spell in which the hosts imploded to leave themselves without a home win since 6 December. Moyes’s side have collected 17 points from their last eight away games but only eight from the last nine at home. Their quest for Europe is floundering on home soil. Continue reading...",
-      "publishedAt": "2026-02-10T21:48:06.000Z"
     }
   ]
 }
