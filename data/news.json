@@ -1,16 +1,60 @@
 {
-  "generatedAt": "2026-02-12T11:42:30.278Z",
+  "generatedAt": "2026-02-12T13:17:22.748Z",
   "items": [
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Postecoglou vernietigend over Spurs: 'Het is geen grote club'",
-      "link": "https://www.vi.nl/nieuws/postecoglou-vernietigend-over-spurs-het-is-geen-grote-club",
-      "summary": "Tottenham Hotspur nam na de thuisnederlaag tegen Newcastle United afscheid van Thomas Frank. Ange Postecoglou, de voorganger van Frank, schoof aan bij de podcast The Overlap en kraakte het beleid van zijn voormalige werkgever. ' Het is moeilijk om te begrijpen wat ze eigenlijk proberen te bouwen.'",
-      "publishedAt": "2026-02-12T11:19:42.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Did Dyche deserve the sack at Nottingham Forest?",
+      "link": "https://www.bbc.com/sport/articles/c77e4elpgpro?at_medium=RSS&at_campaign=rss",
+      "summary": "After Sean Dyche's reign lasts just 114 days, Nottingham Forest are on the hunt for a fourth head coach of the season - but as he hard done by?",
+      "publishedAt": "2026-02-12T12:58:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ratcliffe 'sorry' for language in immigration claims",
+      "link": "https://www.espn.com/soccer/story/_/id/47907377/man-united-sir-jim-ratcliffe-immigrants-colonised-uk-claims-apologises",
+      "summary": "Manchester United co-owner Sir Jim Ratcliffe has said he is sorry if he has \"offended some people\" by saying the United Kingdom has been \"colonised by immigrants.\"",
+      "publishedAt": "2026-02-12T12:54:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Dyche out as Forest sack 3rd coach this season",
+      "link": "https://www.espn.com/soccer/story/_/id/47903103/sean-dyche-nottingham-forest-sack-3rd-coach",
+      "summary": "Nottingham Forest sacked coach Sean Dyche on Wednesday, following his team's 0-0 draw with Premier League bottom-club Wolves, the team announced.",
+      "publishedAt": "2026-02-12T12:54:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Haaland gives Man City injury scare after HT sub",
+      "link": "https://www.espn.com/soccer/story/_/id/47901746/man-city-erling-haaland-face-injury-scare-half-substitution",
+      "summary": "Erling Haaland has given Manchester City an injury scare after Pep Guardiola revealed the striker asked to be substituted during the 3-0 win over Fulham.",
+      "publishedAt": "2026-02-12T12:54:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "After 2-year delay, UEFA ExCo to include FIFPRO",
+      "link": "https://www.espn.com/soccer/story/_/id/47907179/fifpro-players-union-get-uefa-exco-voting-rights-2-year-delay",
+      "summary": "The Europe's players' union is set to be included with voting right on UEFA's all-powerful executive committee on Feb. 12 during the European governing body's annual congress on Feb. 12.",
+      "publishedAt": "2026-02-12T12:54:51.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +62,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Geelen over harde beslissing Cruijff: 'Daar is hij voor gehaald'",
-      "link": "https://www.vi.nl/nieuws/geelen-over-harde-beslissing-cruijff-daar-is-hij-voor-gehaald",
-      "summary": "Hij is pas net begonnen, maar Jordi Cruijff laat zich nu al behoorlijk gelden bij Ajax. Algemeen directeur Menno Geelen steunt de nieuwe technisch directeur in dat proces.",
-      "publishedAt": "2026-02-12T11:15:00.000Z"
+      "title": "Witte zakdoekjes bij Eagles: 'Maar Boel is ook totaal niet geholpen'",
+      "link": "https://www.vi.nl/video/witte-zakdoekjes-bij-eagles-maar-boel-is-ook-totaal-niet-geholpen",
+      "summary": "Melvin Boel staat er bij de fans van Go Ahead Eagles niet goed op en na de nederlaag in de Adelaarshorst tegen Heerenveen werd er om zijn ontslag geroepen. Clubwatcher Sander Janssen en hoofdredacteur Pieter Zwart vinden dat niet helemaal terecht, zo wordt uitgelegd in deze video.",
+      "publishedAt": "2026-02-12T12:45:44.000Z"
     },
     {
       "type": "rss",
@@ -29,10 +73,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Oranje Leeuwinnen strijken neer in Breda en Almelo",
-      "link": "https://www.vi.nl/nieuws/oranje-leeuwinnen-strijken-neer-in-breda-en-almelo",
-      "summary": "In dit blog volgen we alle ontwikkelingen in het vrouwenvoetbal. We besteden onder meer aandacht aan de Eurojackpot Vrouwen Eredivisie, de Europese toernooien en het Nederlands elftal.",
-      "publishedAt": "2026-02-12T11:14:46.000Z"
+      "title": "Pepi op de weg terug bij PSV: 'Hij mag weer in de duels'",
+      "link": "https://www.vi.nl/nieuws/pepi-op-de-weg-terug-bij-psv-hij-mag-weer-in-de-duels",
+      "summary": "PSV opent het Eredivisie-weekend vrijdag met een uitwedstrijd tegen FC Volendam. Ricardo Pepi is er in het vissersdorp nog niet bij, maar de aanvaller nadert zijn rentree. 'Op de trainingen hoeft hij niet alleen meer met afwerken bezig te zijn.'",
+      "publishedAt": "2026-02-12T12:34:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Bring on the old guard to beat the drop: can Ange’s recall be right twist for Spurs? | Max Rushden",
+      "link": "https://www.theguardian.com/football/2026/feb/12/bring-on-the-old-guard-to-beat-the-drop-can-anges-recall-be-right-twist-for-spurs",
+      "summary": "If Tottenham are waiting for Pochettino part two, then season three of Postecoglou might bring the right survival vibes It’s panic time at the bottom of the Premier League, and if the past couple of days are anything to go by, probably don’t go following Ange Postecoglou into a job any time soon. Others who’ve followed it more closely can do Nottingham Forest and their 4 (four) managers. This is a piece about Tottenham Hotspur, or as I like to call them, my big team who win things. November 2023 feels like a lifetime ago. Spurs were top of the league. Angeball was at its peak. Dynamic free-flowing football – they were 1-0 up against Chelsea thanks to Dejan Kulusevski (injured). It’s the 14th minute, Spurs neatly play themselves out from back down the right, it breaks to Pape Sarr who rolls the ball to Destiny Udogie (injured), and Brennan Johnson (Crystal Palace) steams down the left. He plays a perfect first-time ball with his left foot into the path of Son Heung-min (LAFC), who rolls it home. Tottenham are 2-0 up against a team they lose to at least twice a season. Continue reading...",
+      "publishedAt": "2026-02-12T12:30:13.000Z"
     },
     {
       "type": "rss",
@@ -40,10 +95,76 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Sandler weer in de fout bij NEC: 'Ik blijf mijn eigen spel spelen'",
-      "link": "https://www.vi.nl/nieuws/sandler-weer-in-de-fout-bij-nec-ik-blijf-mijn-eigen-spel-spelen",
-      "summary": "Philippe Sandler kan weinig met de kritiek op zijn spel. De verdediger van NEC ging woensdag tegen FC Utrecht twee keer in de fout door zich af te laten troeven door Artem Stepanov. Eén keer redde scheidsrechter Danny Makkelie hem, de tweede keer leverde het de 0-2 op.",
-      "publishedAt": "2026-02-12T11:05:59.000Z"
+      "title": "Opluchting groot bij FC Utrecht: 'Het moest niet lang meer duren'",
+      "link": "https://www.vi.nl/pro/opluchting-groot-bij-fc-utrecht-het-moest-niet-lang-meer-duren",
+      "summary": "FC Utrecht weet weer wat winnen is. De ploeg van trainer Ron Jans zakte de afgelopen weken steeds verder weg in de Eredivisie, maar was woensdag verrassend te sterk voor NEC. Het plan van Utrecht pakte perfect uit en leverde de eerste Eredivisie-zege sinds 9 november 2025 op. Na afloop was de opluchting dan ook groot.",
+      "publishedAt": "2026-02-12T12:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Saibari krijgt vrije dagen van Bosz: 'De frisheid neemt af'",
+      "link": "https://www.vi.nl/video/saibari-krijgt-vrije-dagen-van-bosz-de-frisheid-neemt-af",
+      "summary": "Peter Bosz heeft Ismael Saibari een paar dagen vrij gegeven. De trainer van PSV merkte dat de frisheid afnam bij de Marokkaanse middenvelder, die geen winterstop had door zijn Afrika Cup-deelname. Saibari mag de uitwedstrijd van vrijdag tegen FC Volendam daarom overslaan.",
+      "publishedAt": "2026-02-12T12:25:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Tottenham are 'not a big club' - Postecoglou",
+      "link": "https://www.bbc.com/sport/football/articles/cwyx18287k9o?at_medium=RSS&at_campaign=rss",
+      "summary": "Former head coach Ange Postecoglou criticises Tottenham's transfer strategy in the wake of Thomas Frank's sacking.",
+      "publishedAt": "2026-02-12T12:24:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Maloney expects more late drama in title race | Martinez to Celtic?",
+      "link": "https://www.skysports.com/football/news/12040/13506666/celtic-shaun-maloney-expects-more-late-drama-in-scottish-premiership-title-race-after-alex-oxlade-chamberlains-livingston-winner",
+      "summary": "It is the Scottish Premiership title race that refuses to follow the same old script - and Celtic assistant Shaun Maloney expects there to be plenty more twists in the tale before May.",
+      "publishedAt": "2026-02-12T12:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van 16-jarig jochie tot modelprof: recordhouder Milner komt uit een andere tijd",
+      "link": "https://www.vi.nl/nieuws/van-16-jarig-jochie-tot-modelprof-recordhouder-milner-komt-uit-een-andere-tijd",
+      "summary": "Feyenoord had een half jaar eerder de UEFA Cup gewonnen, Ronaldo en Zinedine Zidane waren nog de sterspelers van Real Madrid en Arne Slot was net een paar maanden speler van NAC Breda. Zolang is het geleden dat James Milner zijn Premier League-debuut maakte. Ruim 23 jaar later vestigde de Engelse middenvelder een record.",
+      "publishedAt": "2026-02-12T12:13:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "FA to look at whether Jim Ratcliffe broke football rules by saying UK ‘colonised’ by immigrants",
+      "link": "https://www.theguardian.com/football/2026/feb/12/fa-jim-ratcliffe-football-rules-immigrants-manchester-united",
+      "summary": "FA assessing whether he brought game into disrepute Manchester United co-owner told by Starmer to apologise The Football Association will look at whether Jim Ratcliffe brought the game into disrepute through his claims that the UK has been “colonised” by immigrants. The Manchester United co-owner, a billionaire based in Monaco, caused widespread anger with his comments and has been called on by Keir Starmer to apologise. His remarks have not gone unnoticed within the FA, which will examine further before deciding whether he has broken any rules. It is too early to say whether any formal investigation will follow. Continue reading...",
+      "publishedAt": "2026-02-12T12:00:12.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Two children, no sleep, 'carnage' - Andrew boxes on same bill as husband",
+      "link": "https://www.skysports.com/boxing/news/12040/13506629/amy-andrew-continues-extraordinary-comeback-two-children-no-sleep-and-carnage-as-she-boxes-on-same-bill-as-husband",
+      "summary": "“I get no sleep.” Two small children will do that to any parent. But factor into that as well training for a boxing match, promoting your first show and making a bit of boxing history by competing alongside your husband in the same event.",
+      "publishedAt": "2026-02-12T12:00:00.000Z"
     },
     {
       "type": "rss",
@@ -73,42 +194,9 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Jim Ratcliffe accused of hypocrisy after saying UK ‘colonised’ by immigrants",
-      "link": "https://www.theguardian.com/business/2026/feb/12/jim-ratcliffe-accused-hypocrisy-uk-colonised-immigrants",
-      "summary": "Manchester United co-owner, who lives in Monaco, faces growing backlash for using ‘far-right narratives’ UK politics live – latest updates The Monaco-based billionaire Jim Ratcliffe has been accused of hypocrisy and using “far-right narratives”, as a backlash grew over his claims that the UK was being “colonised” by immigrants. Fans called the Manchester United co-owner’s comments “disgraceful and deeply divisive”, while Keir Starmer said his claim was “offensive and wrong”, and called on the Ineos chief executive to “apologise immediately”. Continue reading...",
-      "publishedAt": "2026-02-12T10:24:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Engeland wacht uitkomst WK niet af en verlengt met Tuchel",
-      "link": "https://www.vi.nl/nieuws/tuchel-verlengt-contract-bij-engeland-tot-en-met-ek-2028",
-      "summary": "Thomas Tuchel gaat minimaal twee jaar langer door als bondscoach van Engeland. Vier maanden voor de start van het WK heeft de 52-jarige Duitser zijn contract verlengd tot en met het EK van 2028, dat deels in Engeland wordt gehouden.",
-      "publishedAt": "2026-02-12T10:22:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ange Postecoglou claims Tottenham are ‘not a big club’ in damning assessment",
-      "link": "https://www.theguardian.com/football/2026/feb/12/ange-postecoglou-tottenham-are-not-a-big-club",
-      "summary": "Club’s former manager says Spurs reluctant to take risks Spending and wage structure holding them back, he feels Ange Postecoglou has described “curious” Tottenham as “not a big club” after their sacking of Thomas Frank. Frank succeeded Postecoglou last summer but was unable to reverse their fortunes in the Premier League and was shown the door on Wednesday with Spurs 16th. “Having been in that position now twice in the last six months, it’s tough,” Postecoglou told the Overlap’s Stick to Football podcast. “You know that he can’t be the only issue at the club. It’s a curious club, Tottenham. It’s made a major pivot at the end of last year, not just with me but with [the executive chair] Daniel [Levy] leaving as well, and you’ve created this whole sort of environment of uncertainty. Continue reading...",
-      "publishedAt": "2026-02-12T10:00:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Thomas Tuchel signs England contract extension to stay as head coach until 2028",
       "link": "https://www.theguardian.com/football/2026/feb/12/thomas-tuchel-england-contract-extension-2028-head-coach-nations-league",
-      "summary": "Head coach’s deal was due to finish after World Cup Tuchel keen to lead team at Euros co-hosted by England Thomas Tuchel has signed an extension to his England contract that will keep him in charge of the national team until after Euro 2028. The fresh deal means Tuchel, who took over in January 2025, will remain manager regardless of England’s fate at the World Cup this summer. He originally signed an 18-month deal but will now be at the helm for a home European Championship in two and a half years’ time. Continue reading...",
+      "summary": "Head coach’s deal was due to finish after World Cup Tuchel keen to lead team at Euros co-hosted by England Thomas Tuchel has signed an extension to his England contract that will keep him in charge of the national team until after Euro 2028. The fresh deal means Tuchel, who took over in January 2025, will remain manager regardless of England’s fate at the World Cup this summer. He originally signed an 18-month deal but will now be at the helm for a home European Championship in two-and-a-half years’ time. Continue reading...",
       "publishedAt": "2026-02-12T09:10:51.000Z"
     },
     {
@@ -132,94 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c0q3dwkq01go?at_medium=RSS&at_campaign=rss",
       "summary": "Trent Alexander-Arnold endured a difficult start at Real Madrid but his prospects are looking up - and it might earn him a ticket to the World Cup.",
       "publishedAt": "2026-02-12T09:00:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Do the Strand: the Manchester United haircut guy exposes our lust for content | Jonathan Liew",
-      "link": "https://www.theguardian.com/football/2026/feb/12/manchester-united-strand-haircut-guy-exposes-our-lust-for-content",
-      "summary": "As ‘the pressure of the haircut’ enters the game’s lexicon, the extent to which football revolves around winning and losing games appears to be fading “I don’t care about his haircut at all,” Matheus Cunha said this week. “I don’t really look at other people if they need to go to the hairdresser or not,” Bruno Fernandes said at the weekend. Michael Carrick, for his part, said he was aware of the haircut issue. But the Manchester United coach insisted it would not factor into his team’s preparations for their game against West Ham on Tuesday night. And so, here we are. Many games of football end up being remembered for reasons far outstripping their original significance: the 1914 Christmas Truce, the 1962 Battle of Santiago, the 2020 pandemic curtain‑raiser between Liverpool and Atlético Madrid. To these we can add the Haircut Game: a mildly arresting 1-1 Premier League draw at the London Stadium that posterity will nevertheless recall as the game when a man did not get his hair cut at the end. Do you have an opinion on the issues raised in this article? If you would like to submit a response of up to 300 words by email to be considered for publication in our letters section, please click here. Continue reading...",
-      "publishedAt": "2026-02-12T08:00:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Saints’ young star Robertson on silverware hopes and World Cup ambitions",
-      "link": "https://www.skysports.com/rugby-league/news/12040/13499261/harry-robertson-on-st-helens-silverware-expectations-new-coach-paul-rowley-and-world-cup-ambitions",
-      "summary": "In his short career so far, reigning Young Player of the Year Harry Robertson has set Super League alight and those around him are expecting that to go up a notch in 2026 for St Helens.",
-      "publishedAt": "2026-02-12T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Nottingham Forest target Vítor Pereira after late-night sacking of Sean Dyche",
-      "link": "https://www.theguardian.com/football/2026/feb/12/nottingham-forest-vitor-pereira-late-night-sacking-sean-dyche-manager",
-      "summary": "Strugglers seek fourth manager of the season Home stalemate with Wolves prompts latest firing Nottingham Forest are keen to appoint Vítor Pereira as their fourth head coach of the season after sacking Sean Dyche in the early hours of Thursday. The former Wolves manager worked under Forest’s owner, Evangelos Marinakis, at Olympiakos and would be open to taking the role. Forest have acted fast to find a replacement for Dyche, who lasted 114 days after the disastrous spell of Ange Postecoglou, who lasted 40. Dyche lost only one of his final six Premier League games but had a strained relationship with the squad and bore the brunt of the fans’ displeasure during the goalless draw with Wolves on Wednesday. Continue reading...",
-      "publishedAt": "2026-02-12T07:50:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Forest open Pereira talks after sacking Dyche",
-      "link": "https://www.bbc.com/sport/football/articles/c98p80g568do?at_medium=RSS&at_campaign=rss",
-      "summary": "Nottingham Forest sack Sean Dyche as head coach after just 114 days in charge, with former Wolves boss Vitor Pereira in talks to replace him.",
-      "publishedAt": "2026-02-12T07:26:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "F1 Testing LIVE! Leclerc tops session as Mercedes, Red Bull suffer issues",
-      "link": "https://www.skysports.com/f1/live-blog/12040/13505755/f1-testing-live-bahrain-test-1-2026-updates-latest-highlights-video-schedule-as-teams-test-all-new-cars-and-engines",
-      "summary": "",
-      "publishedAt": "2026-02-12T06:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Lexington Jet chases hat-trick at Lingfield",
-      "link": "https://www.skysports.com/racing/news/12040/13506116/today-on-sky-sports-racing-lexington-jet-eyes-hat-trick-on-lingfields-seven-race-card",
-      "summary": "Lingfield opens its gates for All-Weather Championships action today, with all seven races live on Sky Sports Racing.",
-      "publishedAt": "2026-02-12T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "UK PM demands apology from 'offensive' Ratcliffe",
-      "link": "https://www.espn.com/soccer/story/_/id/47900632/man-united-fan-group-ratcliffe-immigration-stance",
-      "summary": "Several Manchester United supporters groups condemned comments made by co-owner Sir Jim Ratcliffe after the British billionaire said the U.K. has been \"colonized\" by immigrants.",
-      "publishedAt": "2026-02-12T05:30:18.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Dyche out as Forest sack 3rd coach this season",
-      "link": "https://www.espn.com/soccer/story/_/id/47903103/sean-dyche-nottingham-forest-sack-3rd-coach",
-      "summary": "Nottingham Forest sacked coach Sean Dyche on Wednesday, following his team's 0-0 draw with Premier League bottom-club Wolves, the team announced.",
-      "publishedAt": "2026-02-12T05:30:18.000Z"
     }
   ]
 }
