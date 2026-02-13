@@ -326,10 +326,31 @@
     .home-col-stack .quick-card .quick-title{ -webkit-line-clamp: 3; }
     .home-col-stack .quick-card .note{ -webkit-line-clamp: 2; }
 
+
     /* Standings card height: allow room for Top 8 list */
     .home-standings-card{
       min-height: 430px;
       align-self: stretch;
+      height: 100%;
+    }
+
+    /* HOME: hero height — force bottom to align with standings cards */
+    .home-top-grid .hero-card{
+      min-height: 430px;      /* match .home-standings-card min-height */
+      align-self: stretch;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Let the split (video + newsletter) take remaining height so the card reaches the same bottom line */
+    .home-top-grid .hero-card .hero-split{
+      flex: 1 1 auto;
+    }
+
+    /* Keep inner columns stretching nicely when the hero grows */
+    .home-top-grid .hero-card .hero-video-col,
+    .home-top-grid .hero-card .hero-newsletter-col{
       height: 100%;
     }
 
