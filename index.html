@@ -343,6 +343,11 @@
       flex-direction: column;
     }
 
+    /* CRITICAL: make the HERO span the same 2 grid rows as the standings cards */
+    .home-top-grid .hero-card.hero-card--span2{
+      grid-row: span 2;
+    }
+
     /* Let the split (video + newsletter) take remaining height so the card reaches the same bottom line */
     .home-top-grid .hero-card .hero-split{
       flex: 1 1 auto;
