@@ -1122,13 +1122,16 @@
           <div class="quick-title">Wil je onze <span class="flow-orange">wekelijkse nieuwsbrief</span> ontvangen?</div>
           <div class="note">Maximaal 1 bericht per week.</div>
 
-          <form class="newsletter-form" id="newsletterForm" novalidate>
+          <form class="newsletter-form" id="newsletterForm" novalidate method="post" action="https://voetbal4all-backend-database.onrender.com/api/newsletter/subscribe">
             <!-- honeypot (anti-spam) -->
             <div class="newsletter-hp" aria-hidden="true">
               <label>Website
                 <input type="text" id="newsletterWebsite" name="website" autocomplete="off" tabindex="-1" />
               </label>
             </div>
+
+            <input type="hidden" name="source" value="index_home_card" />
+            <input type="hidden" name="consent" value="true" />
 
             <div class="row">
               <input
@@ -1143,31 +1146,30 @@
               <button class="btn-submit" type="submit">Inschrijven</button>
             </div>
             
-            <div class="newsletter-regions" aria-label="Kies je nieuwsbrief edities">
-              <div class="regions-title">Welke editie(s) wil je ontvangen?</div>
-              <div class="regions-note">Niets aangeklikt = automatisch <strong>ALL</strong> (zodat je zeker iets ontvangt).</div>
-            
-              <div class="regions-grid">
-                <label class="region-opt">
-                  <label class="region-opt">
-                    <input type="radio" name="region" value="BE" id="newsletterRegionBE" />
-                    <span><strong>BE</strong> · België</span>
-                  </label>
-                  
-                  <label class="region-opt">
-                    <input type="radio" name="region" value="NL" id="newsletterRegionNL" />
-                    <span><strong>NL</strong> · Nederland</span>
-                  </label>
-                  
-                  <label class="region-opt">
-                    <input type="radio" name="region" value="ALL" id="newsletterRegionALL" />
-                    <span><strong>ALL</strong> · Alles / internationaal</span>
-                  </label>
+            <div class="newsletter-regions" aria-label="Kies je nieuwsbrief editie">
+              <div class="regions-title">Welke editie wil je ontvangen?</div>
+              <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je zeker iets ontvangt).</div>
+
+              <div class="regions-grid" role="radiogroup" aria-label="Nieuwsbrief editie">
+                <label class="region-opt" for="newsletterRegionBE">
+                  <input type="radio" name="region" value="BE" id="newsletterRegionBE" />
+                  <span><strong>BE</strong> · België</span>
+                </label>
+
+                <label class="region-opt" for="newsletterRegionNL">
+                  <input type="radio" name="region" value="NL" id="newsletterRegionNL" />
+                  <span><strong>NL</strong> · Nederland</span>
+                </label>
+
+                <label class="region-opt" for="newsletterRegionALL">
+                  <input type="radio" name="region" value="ALL" id="newsletterRegionALL" checked />
+                  <span><strong>ALL</strong> · Alles / internationaal</span>
+                </label>
               </div>
             </div>
             
             <label>
-              <input type="checkbox" id="newsletterConsent" required />
+              <input type="checkbox" id="newsletterConsent" name="consent_checkbox" required />
               <span>Ik ga akkoord met de <a href="privacyverklaring.html" style="color:inherit; text-decoration:underline;">privacyverklaring</a>.</span>
             </label>
 
