@@ -243,6 +243,14 @@
       grid-template-columns: 1.25fr 1.75fr 1.75fr 1.25fr !important;
       column-gap: 14px !important;
       align-items: stretch !important;
+
+      /* Ensure the grid has 2 equal-height rows so hero + standings can align bottoms */
+      grid-auto-rows: 1fr;
+    }
+
+    /* Standings cards must also span the same 2 grid rows (defensive) */
+    .home-top-grid .home-standings-card{
+      grid-row: span 2 !important;
     }
 
     /* HOME: standings row — FORCE logo + clubnaam op dezelfde regel */
@@ -345,7 +353,7 @@
 
     /* CRITICAL: make the HERO span the same 2 grid rows as the standings cards */
     .home-top-grid .hero-card.hero-card--span2{
-      grid-row: span 2;
+      grid-row: span 2 !important;
     }
 
     /* Let the split (video + newsletter) take remaining height so the card reaches the same bottom line */
