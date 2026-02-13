@@ -484,6 +484,33 @@
       position: relative;
     }
 
+    /* HERO: split layout (video half width + newsletter form in hero) */
+    .hero-split{
+      display:flex;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 10px;
+    }
+    .hero-video-col{
+      flex: 1 1 50%;
+      min-width: 0;
+    }
+    .hero-newsletter-col{
+      flex: 1 1 50%;
+      min-width: 0;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.16);
+      padding: 12px 12px 10px;
+    }
+    .hero-newsletter-col .quick-kicker{ margin-bottom: 2px; }
+    .hero-newsletter-col .quick-title{ margin-bottom: 4px; font-size: 18px; line-height: 1.15; }
+    .hero-newsletter-col .note{ font-size: 12px; line-height: 1.25; opacity: .85; }
+
+    @media (max-width: 900px){
+      .hero-split{ flex-direction: column; }
+    }
+
     .v4a-video{
       position: absolute;
       inset: 0;
@@ -1075,15 +1102,80 @@
           <strong>Eén platform waar clubs, trainers, spelers en initiatieven elkaar écht vinden.</strong><br>
           Ontdek kansen, promoot jezelf of je club en maak zichtbaar deel uit van de voetbalcommunity.
         </p>
-        <div class="v4a-video-wrap">
-          <video
-            class="v4a-video"
-            src="assets/video/hero.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-          ></video>
+        <div class="hero-split">
+          <div class="hero-video-col">
+            <div class="v4a-video-wrap">
+              <video
+                class="v4a-video"
+                src="assets/video/hero.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+            </div>
+          </div>
+
+          <div class="hero-newsletter-col" id="newsletter">
+            <div class="quick-kicker">Nieuwsbrief</div>
+            <div class="quick-title">Wil je onze <span class="flow-orange">wekelijkse nieuwsbrief</span> ontvangen?</div>
+            <div class="note">Maximaal 1 bericht per week.</div>
+
+            <form class="newsletter-form" id="newsletterForm" novalidate method="post" action="https://voetbal4all-backend-database.onrender.com/api/newsletter/subscribe">
+              <!-- honeypot (anti-spam) -->
+              <div class="newsletter-hp" aria-hidden="true">
+                <label>Website
+                  <input type="text" id="newsletterWebsite" name="website" autocomplete="off" tabindex="-1" />
+                </label>
+              </div>
+
+              <input type="hidden" name="source" value="index_home_card" />
+              <input type="hidden" name="consent" value="true" />
+
+              <div class="row">
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  name="email"
+                  placeholder="jouw@email.be"
+                  inputmode="email"
+                  autocomplete="email"
+                  required
+                />
+                <button class="btn-submit" type="submit">Inschrijven</button>
+              </div>
+
+              <div class="newsletter-regions" aria-label="Kies je nieuwsbrief editie">
+                <div class="regions-title">Welke editie wil je ontvangen?</div>
+                <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je zeker iets ontvangt).</div>
+
+                <div class="regions-grid" role="radiogroup" aria-label="Nieuwsbrief editie">
+                  <label class="region-opt" for="newsletterRegionBE">
+                    <input type="radio" name="region" value="BE" id="newsletterRegionBE" />
+                    <span><strong>BE</strong> · België</span>
+                  </label>
+
+                  <label class="region-opt" for="newsletterRegionNL">
+                    <input type="radio" name="region" value="NL" id="newsletterRegionNL" />
+                    <span><strong>NL</strong> · Nederland</span>
+                  </label>
+
+                  <label class="region-opt" for="newsletterRegionALL">
+                    <input type="radio" name="region" value="ALL" id="newsletterRegionALL" checked />
+                    <span><strong>ALL</strong> · Alles / internationaal</span>
+                  </label>
+                </div>
+              </div>
+
+              <label>
+                <input type="checkbox" id="newsletterConsent" name="consent_checkbox" required />
+                <span>Ik ga akkoord met de <a href="privacyverklaring.html" style="color:inherit; text-decoration:underline;">privacyverklaring</a>.</span>
+              </label>
+
+              <div class="fineprint">Je kan je op elk moment uitschrijven via een link in elke nieuwsbrief.</div>
+              <div class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
       </article>
 
@@ -1117,66 +1209,9 @@
 
       <!-- ROW 2, COL 3: Nieuwsbrief -->
       <div class="home-col-stack home-stack--right">
-        <div class="card quick-card quick-card--highlight newsletter-card" aria-label="Nieuwsbrief inschrijving">
-          <div class="quick-kicker">Nieuwsbrief</div>
-          <div class="quick-title">Wil je onze <span class="flow-orange">wekelijkse nieuwsbrief</span> ontvangen?</div>
-          <div class="note">Maximaal 1 bericht per week.</div>
-
-          <form class="newsletter-form" id="newsletterForm" novalidate method="post" action="https://voetbal4all-backend-database.onrender.com/api/newsletter/subscribe">
-            <!-- honeypot (anti-spam) -->
-            <div class="newsletter-hp" aria-hidden="true">
-              <label>Website
-                <input type="text" id="newsletterWebsite" name="website" autocomplete="off" tabindex="-1" />
-              </label>
-            </div>
-
-            <input type="hidden" name="source" value="index_home_card" />
-            <input type="hidden" name="consent" value="true" />
-
-            <div class="row">
-              <input
-                type="email"
-                id="newsletterEmail"
-                name="email"
-                placeholder="jouw@email.be"
-                inputmode="email"
-                autocomplete="email"
-                required
-              />
-              <button class="btn-submit" type="submit">Inschrijven</button>
-            </div>
-            
-            <div class="newsletter-regions" aria-label="Kies je nieuwsbrief editie">
-              <div class="regions-title">Welke editie wil je ontvangen?</div>
-              <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je zeker iets ontvangt).</div>
-
-              <div class="regions-grid" role="radiogroup" aria-label="Nieuwsbrief editie">
-                <label class="region-opt" for="newsletterRegionBE">
-                  <input type="radio" name="region" value="BE" id="newsletterRegionBE" />
-                  <span><strong>BE</strong> · België</span>
-                </label>
-
-                <label class="region-opt" for="newsletterRegionNL">
-                  <input type="radio" name="region" value="NL" id="newsletterRegionNL" />
-                  <span><strong>NL</strong> · Nederland</span>
-                </label>
-
-                <label class="region-opt" for="newsletterRegionALL">
-                  <input type="radio" name="region" value="ALL" id="newsletterRegionALL" checked />
-                  <span><strong>ALL</strong> · Alles / internationaal</span>
-                </label>
-              </div>
-            </div>
-            
-            <label>
-              <input type="checkbox" id="newsletterConsent" name="consent_checkbox" required />
-              <span>Ik ga akkoord met de <a href="privacyverklaring.html" style="color:inherit; text-decoration:underline;">privacyverklaring</a>.</span>
-            </label>
-
-            <div class="fineprint">Je kan je op elk moment uitschrijven via een link in elke nieuwsbrief.</div>
-            <div class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></div>
-          </form>
-        </div>
+        <a class="card quick-card" href="#newsletter" aria-label="Nieuwsbrief">
+          <div class="quick-title">Nieuwsbrief: kies je editie in de <span class="flow-orange">hero</span> →</div>
+        </a>
         <a class="card quick-card" href="sportief-supportersclubs.html">
           <div class="quick-title">
             Ik wil een <span class="flow-orange">Supportersclub</span> aanmelden
