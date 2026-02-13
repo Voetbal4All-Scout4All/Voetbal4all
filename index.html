@@ -205,6 +205,38 @@
       --quick-gap: 14px;
     }
 
+    /* HOME: full-width quick buttons row (4 equal buttons) */
+    .home-quick-row{
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .home-quick-row a.quick-card{
+      width: 100%;
+      height: var(--quick-card-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .home-quick-row a.quick-card .quick-title{
+      width: 100%;
+      text-align: center;
+    }
+
+    @media (max-width: 900px){
+      .home-quick-row{
+        grid-template-columns: 1fr;
+      }
+      .home-quick-row a.quick-card{
+        height: auto;
+        min-height: 92px;
+        padding: 14px !important;
+      }
+    }
+
     /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
     .home-top-grid{
       /* Slightly narrower side columns (standings), wider middle area (hero + quick cards) */
@@ -817,22 +849,8 @@
   row-gap: 12px !important;
 }
 
-/* Maak van de rechter stack (nieuwsbrief + supportersclub) "losse" grid items op mobiel */
-.home-top .home-stack--right{
-  display: contents !important;
-}
-
 /* Volgorde op mobiel (1 kolom) */
 .home-top .hero-card{ order: 1; }
-
-/* Nieuwsbrief DIRECT onder de hero */
-.home-top .newsletter-card{ order: 2; }
-
-/* Daarna de link-cards (aanmelden/event/team in de kijker) */
-.home-top .home-stack--left{ order: 3; }
-
-/* Daarna supportersclub (het <a> dat in de voormalige right stack zit) */
-.home-top .home-stack--right > a.quick-card{ order: 4; }
 
 /* Standings onderaan */
 .home-top .home-standings--be{ order: 5; }
@@ -1069,7 +1087,7 @@
     </section>
 
     <main>
-<!-- TOP GRID: HERO (2 cols) + STANDINGS (side cols) + QUICK CARDS (middle cols) -->
+<!-- TOP GRID: HERO (2 cols) + STANDINGS (side cols) -->
 <section class="section-main home-top">
   <div class="shell">
     <div class="home-top-grid">
@@ -1192,29 +1210,25 @@
         <p class="note" id="jpl-standings-empty" style="display:none;">Rangschikking niet beschikbaar.</p>
       </article>
 
-      <!-- ROW 2, COL 2: Trainers + Spelers -->
-      <div class="home-col-stack home-stack--left">
-        <a class="card quick-card" href="aanmelden.html">
-          <div class="quick-title">Ik wil een <span class="flow-orange">Clubvacature</span> promoten of ik ben <span class="flow-orange">speler/trainer</span> en zoek een club</div>
-        </a>
+    </div>
 
-        <a class="card quick-card" href="event-aanmelden.html">
-          <div class="quick-title">Ik wil een <span class="flow-orange">Event</span> promoten</div>
-        </a>
-      </div>
+    <!-- FULL-WIDTH QUICK BUTTONS (4 equal buttons) -->
+    <div class="home-quick-row" aria-label="Snelle acties">
+      <a class="card quick-card" href="aanmelden.html">
+        <div class="quick-title">Ik wil een <span class="flow-orange">Clubvacature</span> promoten of ik ben <span class="flow-orange">speler/trainer</span> en zoek een club</div>
+      </a>
 
-      <!-- ROW 2, COL 3: Nieuwsbrief -->
-      <div class="home-col-stack home-stack--right">
-        <a class="card quick-card" href="sportief-teams-in-de-kijker.html">
-          <div class="quick-title">Ik wil <span class="flow-orange">iemand of team</span> in de kijker zetten</div>
-        </a>
-        <a class="card quick-card" href="sportief-supportersclubs.html">
-          <div class="quick-title">
-            Ik wil een <span class="flow-orange">Supportersclub</span> aanmelden
-          </div>
-        </a>
-      </div>
+      <a class="card quick-card" href="event-aanmelden.html">
+        <div class="quick-title">Ik wil een <span class="flow-orange">Event</span> promoten</div>
+      </a>
 
+      <a class="card quick-card" href="sportief-teams-in-de-kijker.html">
+        <div class="quick-title">Ik wil <span class="flow-orange">iemand of team</span> in de kijker zetten</div>
+      </a>
+
+      <a class="card quick-card" href="sportief-supportersclubs.html">
+        <div class="quick-title">Ik wil een <span class="flow-orange">Supportersclub</span> aanmelden</div>
+      </a>
     </div>
   </div>
 </section>
