@@ -1149,19 +1149,20 @@
             
               <div class="regions-grid">
                 <label class="region-opt">
-                  <input type="checkbox" name="regions[]" value="BE" id="newsletterRegionBE" />
-                  <span><strong>BE</strong> · België</span>
-                </label>
-            
-                <label class="region-opt">
-                  <input type="checkbox" name="regions[]" value="NL" id="newsletterRegionNL" />
-                  <span><strong>NL</strong> · Nederland</span>
-                </label>
-            
-                <label class="region-opt">
-                  <input type="checkbox" name="regions[]" value="ALL" id="newsletterRegionALL" />
-                  <span><strong>ALL</strong> · Alles / internationaal</span>
-                </label>
+                  <label class="region-opt">
+                    <input type="radio" name="region" value="BE" id="newsletterRegionBE" />
+                    <span><strong>BE</strong> · België</span>
+                  </label>
+                  
+                  <label class="region-opt">
+                    <input type="radio" name="region" value="NL" id="newsletterRegionNL" />
+                    <span><strong>NL</strong> · Nederland</span>
+                  </label>
+                  
+                  <label class="region-opt">
+                    <input type="radio" name="region" value="ALL" id="newsletterRegionALL" />
+                    <span><strong>ALL</strong> · Alles / internationaal</span>
+                  </label>
               </div>
             </div>
             
@@ -1448,7 +1449,6 @@
                       Je browser ondersteunt deze video niet.
                     </video>
                   </div>
-                </article>
               </div>
             </section>
       
@@ -1744,20 +1744,19 @@
             // Backend contract: POST /api/newsletter/subscribe
             // Body: { email, source, consent: true }
             // Response: { ok: true, status: "subscribed"|"already" }
+            // 1 keuze (radio). Niets gekozen = ALL
+            const regionEl = form.querySelector('input[name="region"]:checked');
+            const region = String(regionEl?.value || "ALL").trim().toUpperCase();
             const res = await fetch(`${API_BASE}/api/newsletter/subscribe`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              const regions = Array.from(form.querySelectorAll('input[name="regions[]"]:checked'))
-                .map(el => String(el.value || "").trim().toUpperCase())
-                .filter(Boolean);
-
-              const safeRegions = regions.length ? Array.from(new Set(regions)) : ["ALL"]; // dedupe + default
-
               body: JSON.stringify({
                 email,
                 source: "index_home_card",
                 consent: true,
-                regions: safeRegions
+                // backward/forward compatible: single field + array
+                region,
+                regions: [region]
               })
             });
 
