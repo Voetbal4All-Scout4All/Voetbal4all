@@ -407,6 +407,44 @@
       opacity: .9;
       margin-top: 2px;
     }
+    .newsletter-regions{
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.16);
+    }
+    .newsletter-regions .regions-title{
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin-bottom: 4px;
+    }
+    .newsletter-regions .regions-note{
+      font-size: 11px;
+      line-height: 1.25;
+      opacity: .85;
+      margin-bottom: 8px;
+    }
+    .newsletter-regions .regions-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .newsletter-regions .region-opt{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      font-size: 12px;
+      line-height: 1.25;
+      opacity: .95;
+      margin: 0;
+    }
+    .newsletter-regions .region-opt input{
+      margin-top: 2px;
+      flex: 0 0 auto;
+    }
+
     .newsletter-form input[type="checkbox"]{ margin-top: 2px; }
 
     /* hide fineprint in the card to keep height aligned; details live in privacy page */
@@ -1104,7 +1142,29 @@
               />
               <button class="btn-submit" type="submit">Inschrijven</button>
             </div>
-
+            
+            <div class="newsletter-regions" aria-label="Kies je nieuwsbrief edities">
+              <div class="regions-title">Welke editie(s) wil je ontvangen?</div>
+              <div class="regions-note">Niets aangeklikt = automatisch <strong>ALL</strong> (zodat je zeker iets ontvangt).</div>
+            
+              <div class="regions-grid">
+                <label class="region-opt">
+                  <input type="checkbox" name="regions[]" value="BE" id="newsletterRegionBE" />
+                  <span><strong>BE</strong> · België</span>
+                </label>
+            
+                <label class="region-opt">
+                  <input type="checkbox" name="regions[]" value="NL" id="newsletterRegionNL" />
+                  <span><strong>NL</strong> · Nederland</span>
+                </label>
+            
+                <label class="region-opt">
+                  <input type="checkbox" name="regions[]" value="ALL" id="newsletterRegionALL" />
+                  <span><strong>ALL</strong> · Alles / internationaal</span>
+                </label>
+              </div>
+            </div>
+            
             <label>
               <input type="checkbox" id="newsletterConsent" required />
               <span>Ik ga akkoord met de <a href="privacyverklaring.html" style="color:inherit; text-decoration:underline;">privacyverklaring</a>.</span>
@@ -1687,10 +1747,17 @@
             const res = await fetch(`${API_BASE}/api/newsletter/subscribe`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
+              const regions = Array.from(form.querySelectorAll('input[name="regions[]"]:checked'))
+                .map(el => String(el.value || "").trim().toUpperCase())
+                .filter(Boolean);
+
+              const safeRegions = regions.length ? Array.from(new Set(regions)) : ["ALL"]; // dedupe + default
+
               body: JSON.stringify({
                 email,
                 source: "index_home_card",
-                consent: true
+                consent: true,
+                regions: safeRegions
               })
             });
 
