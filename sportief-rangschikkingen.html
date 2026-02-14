@@ -17,7 +17,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+</head>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Rangschikkingen: subtiele accenten, in lijn met bestaande dark UI */
+    .v4-standings-table td, .v4-standings-table th { white-space: nowrap; }
+    .v4-standings-table td.team { white-space: normal; }
+    .v4-standings-table tr.is-top td { background: rgba(0, 255, 180, 0.06); }
+    .v4-standings-table tr.is-bottom td { background: rgba(255, 60, 60, 0.06); }
+    .v4-standings-table tr td:first-child { width: 44px; }
+    .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+    .v4-results-list .v4-result-score { font-weight:700; }
+  </style>
 </head>
 
 <body class="v4-hide-live-mobile">
@@ -175,15 +186,104 @@
 
     <!-- LINKS -->
     <div class="v4-content">
-      <!-- JE BESTAANDE FILTERS & TABELLEN KUN JE HIER ONGEWIJZIGD IN PLAKKEN -->
-      <div class="card">
+      <!-- FILTERS + CONTENT -->
+      <div class="card" style="margin-bottom:12px;">
         <div class="card-header">
           <div>
-            <div class="card-caption">Overzicht</div>
-            <div class="card-title">Klassement (demo)</div>
+            <div class="card-caption">Filters</div>
+            <div class="card-title">Selecteer competitie</div>
           </div>
         </div>
-        <!-- jouw tabel -->
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;">
+          <div>
+            <label class="note">Land</label><br />
+            <select id="filter-country" class="input">
+              <option value="ALL">Alle</option>
+              <option value="BE">België</option>
+              <option value="NL">Nederland</option>
+              <option value="DE">Duitsland</option>
+              <option value="ENG">Engeland</option>
+              <option value="IT">Italië</option>
+              <option value="ES">Spanje</option>
+              <option value="FR">Frankrijk</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="note">Sexe</label><br />
+            <select id="filter-gender" class="input">
+              <option value="ALL">Heren & Dames</option>
+              <option value="M">Heren</option>
+              <option value="W">Dames</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="note">Competitie</label><br />
+            <select id="filter-league" class="input"></select>
+          </div>
+
+          <div>
+            <button id="btn-load" class="btn-primary">Toon rangschikking</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD / PREMIUM SLOT BOVEN TABEL -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+
+      <!-- RANGSCHIKKING -->
+      <div class="card" id="standings-card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Rangschikking</div>
+            <div class="card-title" id="standings-title">Selecteer een competitie</div>
+          </div>
+        </div>
+        <div class="card-body" id="standings-body">
+          <p class="note">Nog geen competitie geselecteerd.</p>
+        </div>
+      </div>
+
+      <!-- LAATSTE RESULTATEN -->
+      <div class="card" id="results-card">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Laatste resultaten</div>
+            <div class="card-title" id="results-title">—</div>
+          </div>
+        </div>
+        <div class="card-body" id="results-body">
+          <p class="note">Resultaten worden automatisch opgehaald indien beschikbaar.</p>
+        </div>
+      </div>
+
+      <!-- AD / PREMIUM SLOT ONDER RESULTATEN -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -229,7 +329,137 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 <script src="assets/js/nav-active.js" defer></script>
-  <script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/nav-mobile.js"></script>
 <script src="assets/js/live-banner.js"></script>
+<script>
+const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+// Uitbreidbare league-config
+// Later uitbreiden kan door window.V4_LEAGUES vooraf te definiëren (bv. via extra JS file)
+const LEAGUES = Array.isArray(window.V4_LEAGUES) && window.V4_LEAGUES.length ? window.V4_LEAGUES : [
+  { code:"JPL",  name:"Jupiler Pro League", country:"BE", gender:"M" },
+  { code:"BEL_W",name:"Super League Women", country:"BE", gender:"W" },
+  { code:"ERED", name:"Eredivisie", country:"NL", gender:"M" },
+  { code:"NED_W",name:"Eredivisie Women", country:"NL", gender:"W" },
+  { code:"BUND", name:"Bundesliga", country:"DE", gender:"M" },
+  { code:"GER_W",name:"Frauen Bundesliga", country:"DE", gender:"W" },
+  { code:"EPL",  name:"Premier League", country:"ENG", gender:"M" },
+  { code:"SA",   name:"Serie A", country:"IT", gender:"M" },
+  { code:"LIGA", name:"La Liga", country:"ES", gender:"M" },
+  { code:"L1",   name:"Ligue 1", country:"FR", gender:"M" }
+];
+
+const countrySelect = document.getElementById("filter-country");
+const genderSelect  = document.getElementById("filter-gender");
+const leagueSelect  = document.getElementById("filter-league");
+const loadBtn       = document.getElementById("btn-load");
+
+function populateLeagues(){
+  leagueSelect.innerHTML = "";
+  const filtered = LEAGUES.filter(l =>
+    (countrySelect.value === "ALL" || l.country === countrySelect.value) &&
+    (genderSelect.value === "ALL" || l.gender === genderSelect.value)
+  );
+  filtered.forEach(l => {
+    const opt = document.createElement("option");
+    opt.value = l.code;
+    opt.textContent = l.name;
+    leagueSelect.appendChild(opt);
+  });
+}
+
+countrySelect.addEventListener("change", populateLeagues);
+genderSelect.addEventListener("change", populateLeagues);
+populateLeagues();
+
+async function loadLeague(league) {
+  if (!league) return;
+
+  // Titles use human label if available
+  const cfg = LEAGUES.find((l) => l.code === league);
+  const title = cfg ? cfg.name : league;
+
+  document.getElementById("standings-title").textContent = title;
+  document.getElementById("results-title").textContent = title;
+
+  const sBody = document.getElementById("standings-body");
+  const rBody = document.getElementById("results-body");
+
+  sBody.innerHTML = `<p class="note">Laden…</p>`;
+  rBody.innerHTML = `<p class="note">Laden…</p>`;
+
+  // Standings
+  try {
+    const sRes = await fetch(`${API_BASE}/api/standings?league=${encodeURIComponent(league)}&nocache=1`);
+    const sJson = await sRes.json().catch(() => ({}));
+
+    if (sJson.ok && Array.isArray(sJson.table) && sJson.table.length) {
+      const n = sJson.table.length;
+      let html = `<table class="table v4-standings-table"><thead><tr>
+        <th>#</th><th>Team</th><th>P</th><th>W</th><th>G</th><th>V</th><th>Pts</th>
+      </tr></thead><tbody>`;
+
+      sJson.table.forEach((r, idx) => {
+        const isTop = idx < 3;
+        const isBottom = idx >= Math.max(0, n - 3);
+        const cls = `${isTop ? "is-top" : ""} ${isBottom ? "is-bottom" : ""}`.trim();
+
+        html += `<tr class="${cls}">
+          <td>${r.rank ?? (idx + 1)}</td>
+          <td class="team">${r.team?.name || ""}</td>
+          <td>${r.played ?? ""}</td>
+          <td>${r.win ?? ""}</td>
+          <td>${r.draw ?? ""}</td>
+          <td>${r.lose ?? ""}</td>
+          <td><strong>${r.points ?? ""}</strong></td>
+        </tr>`;
+      });
+
+      html += `</tbody></table>`;
+      sBody.innerHTML = html;
+    } else {
+      sBody.innerHTML = `<p class="note">Geen rangschikking beschikbaar.</p>`;
+    }
+  } catch (e) {
+    sBody.innerHTML = `<p class="note">Geen rangschikking beschikbaar.</p>`;
+  }
+
+  // Resultaten (indien provider dit ondersteunt)
+  try {
+    const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&nocache=1`);
+    const rJson = await rRes.json().catch(() => ({}));
+
+    if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
+      rBody.innerHTML = `<div class="v4-results-list">` + rJson.items.map((m) => {
+        const left = `${m.homeTeam ?? ""}`.trim();
+        const right = `${m.awayTeam ?? ""}`.trim();
+        const score = `${m.homeGoals ?? ""} - ${m.awayGoals ?? ""}`.trim();
+        return `
+          <div class="v4-result-row">
+            <div>${left}</div>
+            <div class="v4-result-score">${score}</div>
+            <div style="text-align:right;">${right}</div>
+          </div>`;
+      }).join("") + `</div>`;
+    } else {
+      rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar voor deze competitie).</p>`;
+    }
+  } catch (e) {
+    rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar voor deze competitie).</p>`;
+  }
+}
+
+loadBtn.addEventListener("click", async () => {
+  await loadLeague(leagueSelect.value);
+});
+
+// Auto-load: eerste beschikbare league na filters
+setTimeout(() => {
+  if (leagueSelect.options.length) {
+    leagueSelect.selectedIndex = 0;
+    loadLeague(leagueSelect.value);
+  }
+}, 0);
+</script>
 </body>
 </html>
