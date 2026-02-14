@@ -188,23 +188,11 @@
         </div>
       </div>
 
+<script src="assets/js/v4-leagues.js"></script>
 <script>
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
-const LEAGUES = Array.isArray(window.V4_LEAGUES) && window.V4_LEAGUES.length
-  ? window.V4_LEAGUES
-  : [
-    { code:"JPL",  name:"Jupiler Pro League", country:"BE", gender:"M" },
-    { code:"BEL_W",name:"Super League Women", country:"BE", gender:"W" },
-    { code:"ERED", name:"Eredivisie", country:"NL", gender:"M" },
-    { code:"NED_W",name:"Eredivisie Women", country:"NL", gender:"W" },
-    { code:"BUND", name:"Bundesliga", country:"DE", gender:"M" },
-    { code:"GER_W",name:"Frauen Bundesliga", country:"DE", gender:"W" },
-    { code:"EPL",  name:"Premier League", country:"ENG", gender:"M" },
-    { code:"SA",   name:"Serie A", country:"IT", gender:"M" },
-    { code:"LIGA", name:"La Liga", country:"ES", gender:"M" },
-    { code:"L1",   name:"Ligue 1", country:"FR", gender:"M" }
-  ];
+const LEAGUES = Array.isArray(window.V4_LEAGUES) ? window.V4_LEAGUES : [];
 
 const countrySelect = document.getElementById("filter-country");
 const genderSelect  = document.getElementById("filter-gender");
