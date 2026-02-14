@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-02-14T22:28:32.484Z",
+  "generatedAt": "2026-02-14T23:29:06.683Z",
   "items": [
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Grim maakt zich zorgen over Zinchenko: 'Een heel hard gelag'",
-      "link": "https://www.vi.nl/nieuws/grim-maakt-zich-zorgen-over-zinchenko-een-heel-hard-gelag",
-      "summary": "Voor Fred Grim is het uitvallen van Oleksandr Zinchenko een smet op de zege die Ajax zaterdagavond boekte. De trainer gaf op het persmoment na de 4-1 overwinning op Fortuna Sittard aan zich zorgen te maken over de blessure van de 29-jarige aanwinst.",
-      "publishedAt": "2026-02-14T22:18:09.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "The FA Cup",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Alex Scott presents highlights from the day’s FA Cup fourth-round ties.",
+      "publishedAt": "2026-02-15T00:16:11.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +21,7 @@
       "title": "Ronaldo ends protest, scores 18 minutes later",
       "link": "https://www.espn.com/soccer/story/_/id/47924095/cristiano-ronaldo-returns-al-nassr-lineup-protest-saudi-pro-league",
       "summary": "Cristiano Ronaldo returned to Al Nassr's lineup for Saturday's match at Al Fateh -- and swiftly scored.",
-      "publishedAt": "2026-02-14T22:12:53.000Z"
+      "publishedAt": "2026-02-14T23:21:39.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +32,7 @@
       "title": "Pep not happy with Man City's 'boring' FA Cup win",
       "link": "https://www.espn.com/soccer/story/_/id/47929824/pep-guardiola-man-city-salford-fa-cup-win-boring",
       "summary": "Pep Guardiola branded Manchester City's routine FA Cup victory over Salford City on Saturday as \"boring\".",
-      "publishedAt": "2026-02-14T22:12:53.000Z"
+      "publishedAt": "2026-02-14T23:21:39.000Z"
     },
     {
       "type": "rss",
@@ -43,7 +43,18 @@
       "title": "Inter beat 10-man Juve in dramatic Derby d'Italia",
       "link": "https://www.espn.com/soccer/report/_/gameId/737032",
       "summary": "Piotr Zielinski's last-minute winner sent Inter Milan eight points clear at the top of the Serie A table as they finally got the better of 10-man Juventus.",
-      "publishedAt": "2026-02-14T22:12:53.000Z"
+      "publishedAt": "2026-02-14T23:21:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Real Madrid 'lucky to have' Trent, says coach Arbeloa",
+      "link": "https://www.espn.com/soccer/story/_/id/47932266/real-madrid-trent-alexander-arnold-alvaro-arbeloa-real-sociedad",
+      "summary": "Alvaro Arbeloa praised Trent Alexander-Arnold, saying Real Madrid are \"lucky to have\" him after the full-back starred, providing an assist, in Real Madrid's 4-1 win over Real Sociedad.",
+      "publishedAt": "2026-02-14T23:21:39.000Z"
     },
     {
       "type": "rss",
@@ -54,18 +65,7 @@
       "title": "King set for NWSL return after open-heart surgery",
       "link": "https://www.espn.com/soccer/story/_/id/47930191/savy-king-angel-city-return-heart-attack-nwsl",
       "summary": "Angel City FC defender Savy King has been removed from the National Women's Soccer League's season-ending injury list (SEI), the club announced on Saturday.",
-      "publishedAt": "2026-02-14T22:12:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Third-tier Mansfield oust Burnley in FA Cup shock",
-      "link": "https://www.espn.com/soccer/story/_/id/47928438/burnley-suffer-fa-cup-upset-mansfield-cause-shock",
-      "summary": "Burnley were on the wrong end of an FA Cup upset as they were beaten 2-1 by Mansfield on Saturday.",
-      "publishedAt": "2026-02-14T22:12:53.000Z"
+      "publishedAt": "2026-02-14T23:21:39.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +73,54 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Invaller Karlsson bezorgt Groningen kater: tweede zege op rij voor Utrecht",
-      "link": "https://www.vi.nl/nieuws/invaller-karlsson-bezorgt-groningen-kater-tweede-zege-op-rij-voor-utrecht",
-      "summary": "FC Utrecht heeft zaterdagavond uit bij FC Groningen de tweede overwinning op rij geboekt. De ploeg van Ron Jans pakte in blessuretijd de volle buit door een laat doelpunt van Jesper Karlsson.",
-      "publishedAt": "2026-02-14T22:11:48.000Z"
+      "title": "Vaessen mist 'over mijn lijk-mentaliteit' bij FC Groningen: 'Jongens, kom op!'",
+      "link": "https://www.vi.nl/nieuws/vaessen-mist-over-mijn-lijk-mentaliteit-bij-fc-groningen-jongens-kom-op",
+      "summary": "Etienne Vaessen baalt ervan hoe FC Groningen voor de dag kwam tegen FC Utrecht. De doelman zag dat er dingen in het elftal ontbraken die er normaal wel zijn. 'We hebben een jonge groep, maar dan denk ik: jongens, kom op .'",
+      "publishedAt": "2026-02-14T22:59:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Grim heeft begrip voor afkeuren goal Dolberg: 'Maar als je het omdraait…'",
+      "link": "https://www.vi.nl/video/grim-heeft-begrip-voor-afkeuren-goal-dolberg-maar-als-je-het-omdraait",
+      "summary": "Kasper Dolberg hoeft niet te scoren om belangrijk te zijn voor Ajax. Dat heeft Fred Grim nog maar eens onderstreept na de 4-1 zege van de Amsterdammers op Fortuna Sittard. De trainer had wel begrip voor de beslissing van de arbitrage om de kopgoal van de spits af te keuren.",
+      "publishedAt": "2026-02-14T22:59:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Ajax is de derde club met drie verschillende scorende Belgen",
+      "link": "https://www.vi.nl/nieuws/ajax-is-de-derde-club-met-drie-verschillende-scorende-belgen",
+      "summary": "Ajax nam het zaterdagavond om 20.00 uur op tegen Fortuna Sittard. De Amsterdammers hoopten de draad weer op te pakken na het puntenverlies tegen Excelsior en AZ en dat is gelukt. Lees de volledige avond terug in de VI Live.",
+      "publishedAt": "2026-02-14T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Slot verklaart opleving Liverpool: 'Nu zie je waar deze ploeg toe in staat is'",
+      "link": "https://www.vi.nl/nieuws/slot-ziet-ontwikkeling-liverpool-szoboszlai-is-daarvan-een-perfect-voorbeeld",
+      "summary": "Arne Slot ziet de laatste weken progressie bij Liverpool, al vindt de trainer ook dat de overwinning op Brighton & Hove Albion niet zo makkelijk was als het leek. De Nederlandse trainer benadrukte na het bereiken van de volgende ronde in het FA Cup-toernooi dat het voor nieuwe spelers tijd kost om zich aan te passen aan de intensiteit van de Premier League.",
+      "publishedAt": "2026-02-14T22:54:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Duel met Ajax deed pijn aan ogen Buijs: 'Bus eerder naar huis...'",
+      "link": "https://www.vi.nl/nieuws/buijs-pakte-fortuna-spelers-aan-in-de-rust-verschrikkelijk",
+      "summary": "Danny Buijs wil het duel met Ajax liefst zo snel mogelijk vergeten . De trainer van Fortuna Sittard moest het plan al na veertien minuten in de prullenbak gooien, want toen stonden de Amsterdammers al met 2-0 voor.",
+      "publishedAt": "2026-02-14T22:42:00.000Z"
     },
     {
       "type": "rss",
@@ -88,39 +132,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/14/liverpool-brighton-fa-cup-fourth-round-match-report",
       "summary": "When Mohamed Salah last faced Brighton at Anfield in December, there was uncertainty over whether he would be seen in a Liverpool shirt again. Two months on and with the Egyptian a starter once more, Salah and Arne Slot reaped the rewards of their appeasement as Liverpool eased into the fifth round with a comfortable victory over Brighton. Salah produced a sublime assist, his fourth since returning from the Africa Cup of Nations, and scored from the penalty spot as Liverpool condemned Brighton to a fourth defeat in five games. There was no evidence of Brighton not performing for the under-pressure Fabian Hürzeler but after a promising start the visitors faded rapidly. Curtis Jones, Dominik Szoboszlai, with a superb goal, and Salah capitalised in a commanding victory. Continue reading...",
       "publishedAt": "2026-02-14T22:09:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Lens houdt huis in Frankrijk, passeert PSG én is koploper van de Ligue 1",
-      "link": "https://www.vi.nl/nieuws/lens-houdt-huis-in-frankrijk-passeert-psg-n-is-koploper-van-de-ligue-1",
-      "summary": "Zaterdag stonden er vier Eredivisie-duels op het programma, waarin er onder meer een hoop gebeurde in de blessuretijd van die wedstrijden. Ook kwamen onder meer Real Madrid en Liverpool in actie én was er een wervelende Derby d'Italia. Voor alles kon je terecht in de VI Live.",
-      "publishedAt": "2026-02-14T22:07:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Real Madrid heeft Mbappé even niet nodig dankzij dartelende Vinícius",
-      "link": "https://www.vi.nl/nieuws/real-madrid-heeft-mbappe-even-niet-nodig-dankzij-dartelende-vinicius",
-      "summary": "Met Vinícius Júnior in de hoofdrol heeft Real Madrid de druk op Barcelona zaterdagavond opgevoerd in de titelstrijd. De defensie van Real Sociedad was niet opgewassen tegen De Koninklijke , waar Vinícius twee strafschoppen versierde én benutte.",
-      "publishedAt": "2026-02-14T22:03:45.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Streep Szoboszlai hoogtepunt van overtuigende FA Cup-zege Liverpool",
-      "link": "https://www.vi.nl/nieuws/streep-szoboszlai-hoogtepunt-van-overtuigende-fa-cup-zege-liverpool",
-      "summary": "Liverpool heeft zaterdagavond de vijfde ronde van het FA Cup-toernooi bereikt. De ploeg van Arne Slot swingde bij vlagen op Anfield en rekende vrij overtuigend af met Brighton & Hove Albion.",
-      "publishedAt": "2026-02-14T21:58:25.000Z"
     },
     {
       "type": "rss",
@@ -143,17 +154,6 @@
       "link": "https://www.skysports.com/football/live-blog/12040/13025491/aston-villa-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
       "summary": "",
       "publishedAt": "2026-02-14T21:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Tonali inspires Newcastle to win over Villa in controversial tie",
-      "link": "https://www.bbc.com/sport/football/videos/cvg5wzj0j9yo?at_medium=RSS&at_campaign=rss",
-      "summary": "Sandro Tonali scores twice as Newcastle United overcome multiple controversial refereeing decisions to knock 10-man Aston Villa out of the FA Cup.",
-      "publishedAt": "2026-02-14T20:25:42.000Z"
     },
     {
       "type": "rss",
@@ -183,9 +183,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "HORROR HOLE! | McIlroy hits triple bogey at Pebble Beach",
-      "link": "https://www.skysports.com/watch/video/13507712/att-pebble-beach-pro-am-rory-mcilroy-hits-triple-bogey-at-pebble-beach",
-      "summary": "Rory McIlroy drops three shots as he hits triple bogey at the AT&T Pebble Beach Pro-Am.",
+      "title": "HORROR HOLE! | McIlroy makes triple bogey at Pebble Beach",
+      "link": "https://www.skysports.com/watch/video/13507712/att-pebble-beach-pro-am-rory-mcilroy-makes-triple-bogey-at-pebble-beach",
+      "summary": "Rory McIlroy drops three shots as he makes triple bogey at the AT&T Pebble Beach Pro-Am.",
       "publishedAt": "2026-02-14T19:49:00.000Z"
     },
     {
