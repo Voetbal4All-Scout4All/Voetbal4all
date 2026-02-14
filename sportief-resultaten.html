@@ -94,3 +94,183 @@
         </div>
       </div>
     </header>
+<style>
+    .v4-results-table td, .v4-results-table th { white-space: nowrap; }
+    .v4-results-table td.team { white-space: normal; }
+    .v4-results-table tr.is-highlight td { background: rgba(0,255,180,0.06); }
+    .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+    .v4-results-list .v4-result-score { font-weight:700; }
+  </style>
+
+      <!-- FILTERS -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Filters</div>
+            <div class="card-title">Selecteer competitie</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;">
+          <div>
+            <label class="note">Land</label><br />
+            <select id="filter-country" class="input">
+              <option value="ALL">Alle</option>
+              <option value="BE">België</option>
+              <option value="NL">Nederland</option>
+              <option value="DE">Duitsland</option>
+              <option value="ENG">Engeland</option>
+              <option value="IT">Italië</option>
+              <option value="ES">Spanje</option>
+              <option value="FR">Frankrijk</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="note">Sexe</label><br />
+            <select id="filter-gender" class="input">
+              <option value="ALL">Heren & Dames</option>
+              <option value="M">Heren</option>
+              <option value="W">Dames</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="note">Competitie</label><br />
+            <select id="filter-league" class="input"></select>
+          </div>
+
+          <div>
+            <button id="btn-load" class="btn-primary">Toon resultaten</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- AD SLOT BOVEN RESULTATEN -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTATEN -->
+      <div class="card" id="results-card">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Laatste resultaten</div>
+            <div class="card-title" id="results-title">Selecteer een competitie</div>
+          </div>
+        </div>
+        <div class="card-body" id="results-body">
+          <p class="note">Nog geen competitie geselecteerd.</p>
+        </div>
+      </div>
+
+      <!-- AD SLOT ONDER RESULTATEN -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+
+<script>
+const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+const LEAGUES = Array.isArray(window.V4_LEAGUES) && window.V4_LEAGUES.length
+  ? window.V4_LEAGUES
+  : [
+    { code:"JPL",  name:"Jupiler Pro League", country:"BE", gender:"M" },
+    { code:"BEL_W",name:"Super League Women", country:"BE", gender:"W" },
+    { code:"ERED", name:"Eredivisie", country:"NL", gender:"M" },
+    { code:"NED_W",name:"Eredivisie Women", country:"NL", gender:"W" },
+    { code:"BUND", name:"Bundesliga", country:"DE", gender:"M" },
+    { code:"GER_W",name:"Frauen Bundesliga", country:"DE", gender:"W" },
+    { code:"EPL",  name:"Premier League", country:"ENG", gender:"M" },
+    { code:"SA",   name:"Serie A", country:"IT", gender:"M" },
+    { code:"LIGA", name:"La Liga", country:"ES", gender:"M" },
+    { code:"L1",   name:"Ligue 1", country:"FR", gender:"M" }
+  ];
+
+const countrySelect = document.getElementById("filter-country");
+const genderSelect  = document.getElementById("filter-gender");
+const leagueSelect  = document.getElementById("filter-league");
+const loadBtn       = document.getElementById("btn-load");
+
+function populateLeagues(){
+  leagueSelect.innerHTML = "";
+  const filtered = LEAGUES.filter(l =>
+    (countrySelect.value === "ALL" || l.country === countrySelect.value) &&
+    (genderSelect.value === "ALL" || l.gender === genderSelect.value)
+  );
+  filtered.forEach(l => {
+    const opt = document.createElement("option");
+    opt.value = l.code;
+    opt.textContent = l.name;
+    leagueSelect.appendChild(opt);
+  });
+}
+
+countrySelect.addEventListener("change", populateLeagues);
+genderSelect.addEventListener("change", populateLeagues);
+populateLeagues();
+
+async function loadLeague(league) {
+  if (!league) return;
+
+  const cfg = LEAGUES.find(l => l.code === league);
+  const title = cfg ? cfg.name : league;
+  document.getElementById("results-title").textContent = title;
+
+  const rBody = document.getElementById("results-body");
+  rBody.innerHTML = `<p class="note">Laden…</p>`;
+
+  try {
+    const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&nocache=1`);
+    const rJson = await rRes.json().catch(()=>({}));
+
+    if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
+      rBody.innerHTML = `<div class="v4-results-list">` + rJson.items.map(m => {
+        const left = `${m.homeTeam ?? ""}`;
+        const right = `${m.awayTeam ?? ""}`;
+        const score = `${m.homeGoals ?? ""} - ${m.awayGoals ?? ""}`;
+        return `<div class="v4-result-row">
+                  <div>${left}</div>
+                  <div class="v4-result-score">${score}</div>
+                  <div style="text-align:right;">${right}</div>
+                </div>`;
+      }).join("") + `</div>`;
+    } else {
+      rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
+    }
+  } catch (e) {
+    rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
+  }
+}
+
+loadBtn.addEventListener("click", async () => {
+  await loadLeague(leagueSelect.value);
+});
+
+// Auto-load first available league
+setTimeout(()=>{
+  if(leagueSelect.options.length){
+    leagueSelect.selectedIndex = 0;
+    loadLeague(leagueSelect.value);
+  }
+},0);
+</script>
