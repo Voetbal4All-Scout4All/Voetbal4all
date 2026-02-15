@@ -26,6 +26,9 @@
     .v4-results-table tr.is-highlight td { background: rgba(0,255,180,0.06); }
     .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
     .v4-results-list .v4-result-score { font-weight:700; }
+    @media (max-width: 860px){
+      .v4-topleagues-grid{ grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 
@@ -166,6 +169,67 @@
 <main>
 <section class="section-main">
 <div class="shell">
+
+  <!-- ================= TOPCOMPETITIES (ALTijd zichtbaar) ================= -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-header">
+      <div>
+        <div class="card-caption">Topcompetities</div>
+        <div class="card-title">Nederland &amp; België</div>
+      </div>
+      <span class="pill-small">Rangschikking · Laatste resultaten · Aankomende</span>
+    </div>
+
+    <div class="card-body" style="padding-top:0;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-grid">
+
+        <!-- EREDIVISIE -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Nederland</div>
+              <div class="card-title" id="top-ered-title">Eredivisie</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Rangschikking</div>
+            <div id="top-ered-standings" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-ered-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-ered-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
+        <!-- JUPILER PRO LEAGUE -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">België</div>
+              <div class="card-title" id="top-jpl-title">Jupiler Pro League</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Rangschikking</div>
+            <div id="top-jpl-standings" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-jpl-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-jpl-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="note" style="margin-top:10px;opacity:.8;">
+        Tip: als rangschikking/aankomende nog niet beschikbaar is via de backend, tonen we tijdelijk een placeholder.
+      </div>
+    </div>
+  </div>
 
   <article class="card" style="margin-bottom:12px;">
     <div class="card-header">
@@ -311,6 +375,134 @@
 <script>
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
+// Optional endpoints (page must not break if these don't exist)
+const STANDINGS_ENDPOINT = `${API_BASE}/api/standings`;          // expected: ?league=CODE
+const UPCOMING_ENDPOINT  = `${API_BASE}/api/upcoming`;           // expected: ?league=CODE
+
+function setHtml(id, html){
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+
+function toDateLabel(iso){
+  const s = String(iso || "");
+  return s ? escapeHtml(s.slice(0,10)) : "";
+}
+
+function renderStandingsTable(rows){
+  const arr = Array.isArray(rows) ? rows : [];
+  if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
+
+  // Try to be flexible with backend shapes
+  const first = arr[0] || {};
+  const hasRank = ("rank" in first) || ("position" in first);
+
+  const body = arr.map((r) => {
+    const rank = escapeHtml(r.rank ?? r.position ?? "");
+    const team = escapeHtml(r.teamName ?? r.team ?? r.name ?? r.team?.name ?? "");
+    const pts  = escapeHtml(r.points ?? r.pts ?? "");
+    const pld  = escapeHtml(r.played ?? r.pld ?? r.games ?? "");
+    return `<tr>
+      <td style="opacity:.85;">${rank}</td>
+      <td style="white-space:normal;">${team}</td>
+      <td style="text-align:right;opacity:.85;">${pld}</td>
+      <td style="text-align:right;font-weight:700;">${pts}</td>
+    </tr>`;
+  }).join("");
+
+  const head = `<thead><tr>
+    <th style="text-align:left;opacity:.75;">#</th>
+    <th style="text-align:left;opacity:.75;">Team</th>
+    <th style="text-align:right;opacity:.75;">P</th>
+    <th style="text-align:right;opacity:.75;">Pts</th>
+  </tr></thead>`;
+
+  return `<div style="overflow:auto;">
+    <table class="v4-results-table" style="width:100%;border-collapse:collapse;">
+      ${head}
+      <tbody>${body}</tbody>
+    </table>
+  </div>`;
+}
+
+function renderMatchesList(items){
+  const arr = Array.isArray(items) ? items : [];
+  if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
+
+  return `<div class="v4-results-list">` + arr.slice(0,8).map(m => {
+    const left = escapeHtml(m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
+    const right = escapeHtml(m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+    const score = (m.homeGoals != null || m.awayGoals != null)
+      ? `${escapeHtml(m.homeGoals ?? m.goals?.home ?? "")} - ${escapeHtml(m.awayGoals ?? m.goals?.away ?? "")}`
+      : `<span style="opacity:.75;">${toDateLabel(m.date ?? m.fixture?.date ?? "")}</span>`;
+
+    return `<div class="v4-result-row">
+      <div>${left}</div>
+      <div class="v4-result-score">${score}</div>
+      <div style="text-align:right;">${right}</div>
+    </div>`;
+  }).join("") + `</div>`;
+}
+
+async function safeFetchJson(url){
+  try {
+    const r = await fetch(url);
+    const j = await r.json().catch(()=>null);
+    return j;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upcomingId }){
+  // set titles from /api/leagues if possible
+  const cfg = (LEAGUES || []).find(l => l.code === league);
+  if (cfg && document.getElementById(titleId)) {
+    const isWomen = cfg.isWomen === true || cfg.genderLabel === "women" || cfg.gender === "W";
+    document.getElementById(titleId).innerHTML = escapeHtml(cfg.label || cfg.code) + (isWomen ? womenBadgeHtml() : "");
+  }
+
+  // Standings (optional)
+  setHtml(standingsId, `<p class="note">Laden…</p>`);
+  const st = await safeFetchJson(`${STANDINGS_ENDPOINT}?league=${encodeURIComponent(league)}&nocache=1`);
+  const stRows = st?.items || st?.standings || st?.table || st?.data || [];
+  setHtml(standingsId, renderStandingsTable(stRows));
+
+  // Results (already exists)
+  setHtml(resultsId, `<p class="note">Laden…</p>`);
+  const rr = await safeFetchJson(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&nocache=1`);
+  setHtml(resultsId, renderMatchesList(rr?.items || []));
+
+  // Upcoming (optional)
+  setHtml(upcomingId, `<p class="note">Laden…</p>`);
+  const up = await safeFetchJson(`${UPCOMING_ENDPOINT}?league=${encodeURIComponent(league)}&nocache=1`);
+  setHtml(upcomingId, renderMatchesList(up?.items || up?.fixtures || up?.data || []));
+}
+
+async function loadTopCompetitions(){
+  // Ensure LEAGUES is loaded (so we can label properly)
+  if (!Array.isArray(LEAGUES) || !LEAGUES.length) {
+    await loadLeagues();
+    // loadLeagues auto-loads one league into the main results section; that's fine.
+  }
+
+  await loadTopLeagueBlock({
+    league: "ERED",
+    titleId: "top-ered-title",
+    standingsId: "top-ered-standings",
+    resultsId: "top-ered-results",
+    upcomingId: "top-ered-upcoming",
+  });
+
+  await loadTopLeagueBlock({
+    league: "JPL",
+    titleId: "top-jpl-title",
+    standingsId: "top-jpl-standings",
+    resultsId: "top-jpl-results",
+    upcomingId: "top-jpl-upcoming",
+  });
+}
+
 // Leagues are discovered from backend (extendable, no hardcoding)
 let LEAGUES = [];
 
@@ -448,6 +640,8 @@ loadBtn.addEventListener("click", async () => {
 
 // init
 loadLeagues();
+// Load fixed top competitions (ERED + JPL)
+loadTopCompetitions();
 </script>
 
 <script src="assets/js/nav-mobile.js"></script>
