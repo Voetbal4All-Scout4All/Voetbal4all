@@ -1594,7 +1594,18 @@
         .replace(/'/g,"&#39;");
 
       const pickDate = (it) => {
-        const raw = it?.start_date || it?.startDate || it?.start || it?.date || it?.starts_at || it?.startsAt || it?.datetime || it?.start_time;
+        const raw = (
+          it?.start_at ||
+          it?.startAt ||
+          it?.starts_at ||
+          it?.startsAt ||
+          it?.start_date ||
+          it?.startDate ||
+          it?.start ||
+          it?.date ||
+          it?.datetime ||
+          it?.start_time
+        );
         if (!raw) return null;
         const d = new Date(raw);
         return isNaN(d.getTime()) ? null : d;
