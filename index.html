@@ -2171,8 +2171,6 @@
 
       // HOME: vul de 2 event-blokken (weekend + kalender). 
       // Deze calls mogen NOOIT de UI breken: bij fout blijft fallback tekst zichtbaar.
-      fillUpcomingWeekendEvents();
-      fillMonthlyCalendarFromBackend();
 
       // Refresh mee (zelfde cadence als home news)
       setInterval(() => {
@@ -2265,99 +2263,136 @@ function fmtDateNL(d){
   return new Intl.DateTimeFormat("nl-BE",{ day:"2-digit", month:"long" }).format(d);
 }
 
+let weekendEventsInFlight = false;
+
 async function fillUpcomingWeekendEvents(){
+  if (weekendEventsInFlight) return;
+  weekendEventsInFlight = true;
+
   const listEl = document.getElementById("weekend-events-list");
-  if (!listEl) return;
-  listEl.innerHTML = "";
-
-  const all = await fetchEventsSafe();
-  if (!all) {
-    // fallback: laat je huidige placeholder boodschap staan
-    const li = document.createElement("li");
-    li.className = "event-item";
-    li.innerHTML = `<div class="event-title">Komend weekend</div><div class="event-meta">Events worden binnenkort automatisch geladen.</div>`;
-    listEl.appendChild(li);
+  if (!listEl) {
+    weekendEventsInFlight = false;
     return;
   }
 
-  const now = new Date();
-  const day = now.getDay(); // 0=zon
-  const daysUntilSat = (6 - day + 7) % 7;
-  const saturday = new Date(now);
-  saturday.setHours(0,0,0,0);
-  saturday.setDate(now.getDate() + daysUntilSat);
+  try {
+    const all = await fetchEventsSafe();
+    if (!Array.isArray(all)) return;
 
-  const sundayEnd = new Date(saturday);
-  sundayEnd.setDate(saturday.getDate() + 2);
+    const now = new Date();
+    const day = now.getDay();
+    const daysUntilSat = (6 - day + 7) % 7;
 
-  const upcoming = all
-    .map(ev => ({ ev, d: parseEventDate(ev) }))
-    .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
-    .sort((a,b) => a.d - b.d)
-    .slice(0, 4);
+    const saturday = new Date(now);
+    saturday.setHours(0,0,0,0);
+    saturday.setDate(now.getDate() + daysUntilSat);
 
-  if (!upcoming.length) {
-    const li = document.createElement("li");
-    li.className = "event-item";
-    li.innerHTML = `<div class="event-title">Geen events gevonden</div><div class="event-meta">Voor dit weekend staat er nog niets gepland.</div>`;
-    listEl.appendChild(li);
-    return;
+    const sundayEnd = new Date(saturday);
+    sundayEnd.setDate(saturday.getDate() + 2);
+
+    const upcoming = all
+      .map(ev => ({ ev, d: parseEventDate(ev) }))
+      .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
+      .sort((a,b) => a.d - b.d)
+      .slice(0, 2); // max 2
+
+    listEl.innerHTML = "";
+
+    if (!upcoming.length) {
+      const li = document.createElement("li");
+      li.className = "event-item";
+      li.innerHTML = `
+        <div class="event-title">Geen events gepland</div>
+        <div class="event-meta">Voor dit weekend zijn er nog geen events.</div>
+      `;
+      listEl.appendChild(li);
+      return;
+    }
+
+    upcoming.forEach(({ev,d}) => {
+      const id = String(ev?.id || "").trim();
+      const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+      const li = document.createElement("li");
+      li.className = "event-item";
+      li.innerHTML = `
+        <div class="event-title">${escHtml(ev?.title || ev?.name || "Event")}</div>
+        <div class="event-meta">
+          ${fmtDateNL(d)}${ev?.location ? " · " + escHtml(ev.location) : ""}
+        </div>
+      `;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => window.location.href = url);
+
+      listEl.appendChild(li);
+    });
+
+  } catch (e) {
+    console.warn("[HOME] weekend events failed", e);
+  } finally {
+    weekendEventsInFlight = false;
   }
-
-  upcoming.forEach(({ev,d}) => {
-    const title = escHtml(ev?.title || ev?.name || "Event");
-    const location = escHtml(ev?.location || ev?.city || ev?.address || "");
-    const li = document.createElement("li");
-    li.className = "event-item";
-    li.innerHTML = `
-      <div class="event-title">${title}</div>
-      <div class="event-meta">${fmtDateNL(d)}${location ? " · " + location : ""}</div>
-    `;
-    listEl.appendChild(li);
-  });
 }
 
+let monthlyEventsInFlight = false;
+
 async function fillMonthlyCalendarFromBackend(){
+  if (monthlyEventsInFlight) return;
+  monthlyEventsInFlight = true;
+
   const listEl = document.getElementById("monthly-events-list");
   const emptyEl = document.getElementById("monthly-events-empty");
-  if (!listEl) return;
-
-  const all = await fetchEventsSafe();
-  if (!all) {
-    // fallback naar jouw bestaande sample renderer
-    renderMonthlyEvents();
+  if (!listEl) {
+    monthlyEventsInFlight = false;
     return;
   }
 
-  const now = new Date();
-  const start = new Date(now.getFullYear(), now.getMonth(), 1);
-  const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
+  try {
+    const all = await fetchEventsSafe();
+    if (!Array.isArray(all)) return;
 
-  const items = all
-    .map(ev => ({ ev, d: parseEventDate(ev) }))
-    .filter(x => x.d && x.d >= start && x.d < end)
-    .sort((a,b) => a.d - b.d)
-    .slice(0, 8);
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), 1);
+    const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
 
-  listEl.innerHTML = "";
+    const items = all
+      .map(ev => ({ ev, d: parseEventDate(ev) }))
+      .filter(x => x.d && x.d >= start && x.d < end)
+      .sort((a,b) => a.d - b.d)
+      .slice(0, 6); // max 6
 
-  if (!items.length) {
-    if (emptyEl) emptyEl.style.display = "block";
-    return;
+    listEl.innerHTML = "";
+
+    if (!items.length) {
+      if (emptyEl) emptyEl.style.display = "block";
+      return;
+    }
+
+    if (emptyEl) emptyEl.style.display = "none";
+
+    items.forEach(({ev,d}) => {
+      const id = String(ev?.id || "").trim();
+      const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+      const li = document.createElement("li");
+      li.className = "event-item";
+      li.innerHTML = `
+        <div class="event-title">${escHtml(ev?.title || ev?.name || "Event")}</div>
+        <div class="event-meta">
+          ${fmtDateNL(d)} · ${escHtml(ev?.location || ev?.city || "Regio")}
+        </div>
+      `;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => window.location.href = url);
+
+      listEl.appendChild(li);
+    });
+
+  } catch (e) {
+    console.warn("[HOME] monthly events failed", e);
+  } finally {
+    monthlyEventsInFlight = false;
   }
-  if (emptyEl) emptyEl.style.display = "none";
-
-  items.forEach(({ev,d}) => {
-    const title = escHtml(ev?.title || ev?.name || "Event");
-    const location = escHtml(ev?.location || ev?.city || ev?.address || "Regio");
-    const li = document.createElement("li");
-    li.className = "event-item";
-    li.innerHTML = `
-      <div class="event-title">${title}</div>
-      <div class="event-meta">${fmtDateNL(d)} · ${location}</div>
-    `;
-    listEl.appendChild(li);
-  });
 }
 
       // Standings (LIVE) – via backend /api/standings (TheSportsDB)
@@ -2447,9 +2482,6 @@ async function fillMonthlyCalendarFromBackend(){
         }
       }
 
-      // Fill events blocks from backend (fallbacks are handled inside the functions)
-      fillUpcomingWeekendEvents();
-      fillMonthlyCalendarFromBackend();
       // Load BE + NL standings
       loadStandings("jpl-standings", "jpl-standings-empty", "JPL");
       loadStandings("eredivisie-standings", "eredivisie-standings-empty", "ERED");
