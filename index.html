@@ -1632,9 +1632,9 @@
       const flagHtmlEvent = (countryCode) => {
       const c = String(countryCode || "INT").trim().toUpperCase();
       const FLAG_SRC = {
-        BE: "assets/img/sources/flag-be.svg",
-        NL: "assets/img/sources/flag-nl.svg",
-        INT: "assets/img/sources/flag-int.svg",
+        BE: "/assets/img/sources/flag-be.svg",
+        NL: "/assets/img/sources/flag-nl.svg",
+        INT: "/assets/img/sources/flag-int.svg",
       };
       const src = FLAG_SRC[c] || FLAG_SRC.INT;
       const alt = c === "BE" ? "België" : (c === "NL" ? "Nederland" : "Internationaal");
@@ -1761,10 +1761,6 @@
           `
         );
 
-        // (Re)start rotation once, AFTER filling
-        try{
-          if (typeof makeRotatingList === "function") makeRotatingList("#weekend-events-list", 3, 6500);
-        }catch(e){}
 
         // Monthly (next 30 days)
         const mr = monthRange();
@@ -2156,9 +2152,9 @@
       function flagHtml(cc){
         const c = String(cc || "INT").trim().toUpperCase();
         const FLAG_SRC = {
-          BE: "assets/img/sources/flag-be.svg",
-          NL: "assets/img/sources/flag-nl.svg",
-          INT: "assets/img/sources/flag-int.svg",
+          BE: "/assets/img/sources/flag-be.svg",
+          NL: "/assets/img/sources/flag-nl.svg",
+          INT: "/assets/img/sources/flag-int.svg",
         };
         const src = FLAG_SRC[c] || FLAG_SRC.INT;
         const alt = c === "BE" ? "België" : (c === "NL" ? "Nederland" : "Internationaal");
