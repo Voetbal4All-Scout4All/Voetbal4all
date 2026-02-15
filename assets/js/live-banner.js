@@ -175,7 +175,7 @@
       // Give the left edge a real fade-out zone.
       // If this is too small, the text can still be fully visible when the animation ends,
       // causing it to "snap" away on restart.
-      const leftW = 40;
+      const leftW = 70;
 
       // Extend the ticker container underneath the Live score label so the fade starts closer to it.
       // We do this with a negative margin + equal padding (so visual layout stays the same,
