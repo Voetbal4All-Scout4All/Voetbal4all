@@ -29,9 +29,11 @@
     @media (max-width: 860px){
       .v4-topleagues-grid{ grid-template-columns: 1fr !important; }
     }
-    @media (min-width: 861px){
-      .v4-topleagues-grid{ grid-template-columns: 1fr 340px 1fr !important; }
-    }
+    .v4-mini-fixtures{ width:100%; border-collapse:collapse; }
+    .v4-mini-fixtures th, .v4-mini-fixtures td{ padding:6px 6px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:13px; }
+    .v4-mini-fixtures th{ opacity:.75; font-weight:600; text-align:left; }
+    .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ white-space:nowrap; }
+    .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ width:1%; }
   </style>
 </head>
 
@@ -184,7 +186,7 @@
     </div>
 
     <div class="card-body" style="padding-top:0;">
-      <div style="display:grid;grid-template-columns:1fr 340px 1fr;gap:12px;" class="v4-topleagues-grid">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-grid">
 
         <!-- EREDIVISIE -->
         <div class="card" style="margin:0;">
@@ -197,19 +199,9 @@
           <div class="card-body">
             <div class="note" style="margin-bottom:6px;">Rangschikking</div>
             <div id="top-ered-standings" class="note">Laden…</div>
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
-            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
-            <div id="top-ered-results" class="note">Laden…</div>
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
-            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
-            <div id="top-ered-upcoming" class="note">Laden…</div>
-          </div>
-        </div>
 
-        <!-- SLIM AD SLOT TUSSEN EREDIVISIE EN JPL -->
-        <div class="card" style="margin:0;">
-          <div class="card-body" style="padding:10px;">
-            <div class="ad-slot">
+            <!-- SLIM AD SLOT (HORIZONTAAL) -->
+            <div class="ad-slot" style="margin:10px 0;">
               <ins class="adsbygoogle"
                 style="display:block"
                 data-ad-client="ca-pub-4062633211824348"
@@ -218,6 +210,13 @@
                 data-full-width-responsive="true"></ins>
               <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
+
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-ered-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-ered-upcoming" class="note">Laden…</div>
           </div>
         </div>
 
@@ -232,6 +231,18 @@
           <div class="card-body">
             <div class="note" style="margin-bottom:6px;">Rangschikking</div>
             <div id="top-jpl-standings" class="note">Laden…</div>
+
+            <!-- SLIM AD SLOT (HORIZONTAAL) -->
+            <div class="ad-slot" style="margin:10px 0;">
+              <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-4062633211824348"
+                data-ad-slot="7209663682"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
             <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
             <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
             <div id="top-jpl-results" class="note">Laden…</div>
@@ -557,28 +568,55 @@ function renderMatchesList(items){
   const arr = Array.isArray(items) ? items : [];
   if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
 
-  return `<div class="v4-results-list">` + arr.slice(0,8).map(m => {
+  const rows = arr.slice(0,8).map((m) => {
     const homeName = (m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
     const awayName = (m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+
+    const dtRaw = (m.dateEvent ?? m.date ?? m.fixture?.date ?? "");
+    const dt = dtRaw ? new Date(dtRaw) : null;
+    const dateCell = dt ? dt.toLocaleDateString('nl-BE', { day:'2-digit', month:'2-digit' }) : toDateLabel(dtRaw);
+    const timeCell = dt ? dt.toLocaleTimeString('nl-BE', { hour:'2-digit', minute:'2-digit' }) : "";
+
+    const homeScore = (m.homeGoals ?? m.homeScore ?? m.goals?.home);
+    const awayScore = (m.awayGoals ?? m.awayScore ?? m.goals?.away);
+    const hasScore = (homeScore != null || awayScore != null);
+
     const homeLogo = (m.homeLogo ?? m.homeTeamLogo ?? m.home_logo ?? m.homeBadge ?? m.teams?.home?.logo ?? m.home?.logo ?? pickLogo(m.teams?.home) ?? "");
     const awayLogo = (m.awayLogo ?? m.awayTeamLogo ?? m.away_logo ?? m.awayBadge ?? m.teams?.away?.logo ?? m.away?.logo ?? pickLogo(m.teams?.away) ?? "");
 
-    const left = teamCellHtml(homeName, homeLogo);
-    const right = teamCellHtml(awayName, awayLogo);
-    const dtRaw = (m.dateEvent ?? m.date ?? m.fixture?.date ?? "");
-    const dt = dtRaw ? new Date(dtRaw) : null;
-    const dtLabel = dt ? `${dt.toLocaleDateString('nl-BE', { day:'2-digit', month:'2-digit' })} ${dt.toLocaleTimeString('nl-BE', { hour:'2-digit', minute:'2-digit' })}` : toDateLabel(dtRaw);
+    const homeCell = teamCellHtml(homeName, homeLogo);
+    const awayCell = teamCellHtml(awayName, awayLogo);
 
-    const score = (m.homeGoals != null || m.awayGoals != null)
-      ? `${escapeHtml(m.homeGoals ?? m.goals?.home ?? "")} - ${escapeHtml(m.awayGoals ?? m.goals?.away ?? "")}`
-      : `<span style="opacity:.75;font-size:12px;">${escapeHtml(dtLabel)}</span>`;
+    const scoreText = hasScore
+      ? `${escapeHtml(homeScore ?? "")} - ${escapeHtml(awayScore ?? "")}`
+      : "";
 
-    return `<div class="v4-result-row">
-      <div>${left}</div>
-      <div class="v4-result-score">${score}</div>
-      <div style="text-align:right;">${right}</div>
-    </div>`;
-  }).join("") + `</div>`;
+    // We keep score as small suffix to home team on the left to preserve requested columns.
+    const homeWithScore = scoreText
+      ? `${homeCell} <span style="opacity:.85;font-weight:700;">(${escapeHtml(scoreText)})</span>`
+      : homeCell;
+
+    return `<tr>
+      <td>${escapeHtml(dateCell)}</td>
+      <td>${escapeHtml(timeCell)}</td>
+      <td style="white-space:normal;">${homeWithScore}</td>
+      <td style="white-space:normal;">${awayCell}</td>
+    </tr>`;
+  }).join("");
+
+  return `<div style="overflow:auto;">
+    <table class="v4-mini-fixtures">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Tijd</th>
+          <th>Thuis</th>
+          <th>Uit</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
 }
 
 async function safeFetchJson(url){
