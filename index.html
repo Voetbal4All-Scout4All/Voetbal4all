@@ -1395,7 +1395,7 @@
         <article class="card">
           <div class="card-header">
             <div>
-              <div class="card-caption">Aankomend weekend</div>
+              <div class="card-caption">Komende 7 dagen</div>
               <div class="card-title">Aankomende events</div>
             </div>
           </div>
@@ -1629,6 +1629,23 @@
         return tail;
       };
 
+      const flagHtmlEvent = (countryCode) => {
+      const c = String(countryCode || "INT").trim().toUpperCase();
+      const FLAG_SRC = {
+        BE: "assets/img/sources/flag-be.svg",
+        NL: "assets/img/sources/flag-nl.svg",
+        INT: "assets/img/sources/flag-int.svg",
+      };
+      const src = FLAG_SRC[c] || FLAG_SRC.INT;
+      const alt = c === "BE" ? "België" : (c === "NL" ? "Nederland" : "Internationaal");
+
+      return `
+        <span class="v4a-flag" title="${alt}" aria-hidden="true">
+          <img class="v4a-flag__img" src="${src}" alt="" loading="lazy" decoding="async" width="18" height="12" />
+        </span>
+      `.trim();
+    };
+
       const renderList = (ul, items, emptyHtml) => {
         if (!ul) return;
         if (!items || !items.length) {
@@ -1638,10 +1655,14 @@
         ul.innerHTML = items.map(it => {
           const d = pickDate(it);
           const title = esc(it?.title || it?.name || "Event");
-          const meta = d ? esc(buildMeta(it, d)) : esc(it?.type || "");
+          const meta  = d ? esc(buildMeta(it, d)) : esc(it?.type || "");
+          const ccRaw = (it?.country || it?.land || it?.meta?.country || "").toString().toUpperCase();
+          const cc    = (ccRaw === "BE" || ccRaw === "NL") ? ccRaw : "INT";
+          const flag  = flagHtmlEvent(cc);
+
           return `
             <li class="event-item">
-              <div class="event-title">${title}</div>
+              <div class="event-title">${flag} ${title}</div>
               <div class="event-meta">${meta}</div>
             </li>
           `;
@@ -1688,20 +1709,21 @@
         const all = await fetchEvents(200);
 
         // Weekend
-        const wk = nextWeekendRange();
-        const weekendItems = all
+        // Komende 7 dagen
+        const wk = nextWeekRange();
+        const weekItems = all
           .map(it => ({ it, d: pickDate(it) }))
           .filter(x => inRange(x.d, wk.start, wk.end))
           .sort((a,b) => a.d - b.d)
           .map(x => x.it)
-          .slice(0, 4);
+          .slice(0, 6);
 
         renderList(
           weekendList,
-          weekendItems,
+          weekItems,
           `
             <li class="event-item">
-              <div class="event-title">Geen aankomende events dit weekend.</div>
+              <div class="event-title">${flagHtmlEvent("INT")} Geen events gevonden in de komende 7 dagen.</div>
               <div class="event-meta">Later kan dit blok automatisch gevoed worden op basis van alle events.</div>
             </li>
           `
@@ -1709,7 +1731,7 @@
 
         // (Re)start rotation once, AFTER filling
         try{
-          if (typeof makeRotatingList === "function") makeRotatingList("#weekend-events-list", 2, 6500);
+          if (typeof makeRotatingList === "function") makeRotatingList("#weekend-events-list", 3, 6500);
         }catch(e){}
 
         // Monthly (next 30 days)
