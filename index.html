@@ -1386,7 +1386,7 @@
       </section>
 
       <!-- ONDERSTE GRID -->
-      <section class="section-main">
+      <section class="section-main" id="home-lower-grid">
         <div class="shell">
           <div class="lower-grid-layout grid-3" style="align-items: stretch;">
 
@@ -2448,7 +2448,7 @@
             (Array.isArray(data?.result?.events) && data.result.events) ||
             (Array.isArray(data) && data) ||
             [];
-            
+
           return Array.isArray(items) ? items : [];
         }catch(e){
           console.warn("[HOME] fetchEventsSafe failed", e);

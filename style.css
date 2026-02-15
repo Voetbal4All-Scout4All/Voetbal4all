@@ -2692,3 +2692,38 @@ img {
 }
 
 /* Fallback (browsers without :has): keep current behavior (no global change) */
+
+/* ==========================================
+   HOME (index.html) – Left column events cards
+   Scoped via #home-lower-grid so no other pages change.
+   ========================================== */
+
+   #home-lower-grid .column-left{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+    min-height: 0;
+  }
+  
+  #home-lower-grid .home-events-card{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    min-height: 0;
+  }
+  
+  /* Let the list area take remaining space inside the card */
+  #home-lower-grid .home-events-card .weekend-list,
+  #home-lower-grid .home-events-card .events-list{
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding-right: 6px; /* space for scrollbar */
+  }
+  
+  /* Keep footer text + link anchored at the bottom */
+  #home-lower-grid .home-events-card .note,
+  #home-lower-grid .home-events-card .event-link{
+    flex: 0 0 auto;
+  }
