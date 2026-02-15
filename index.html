@@ -960,21 +960,6 @@
   overflow: hidden;   /* essentieel om randen af te snijden */
 }
 
-/* HOME (left column): upcoming events + calendar cards must grow with content */
-.column-left > .card{
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  overflow: visible !important;
-}
-.column-left > .card .weekend-list,
-.column-left > .card .events-list{
-  max-height: none !important;
-  overflow: visible !important;
-}
-.column-left > .card .event-item{
-  height: auto !important;
-}
 
   </style>
 
@@ -1408,7 +1393,7 @@
       <!-- LINKS -->
       <section class="column-left">
         <!-- 1) Aankomende events -->
-        <article class="card">
+        <article class="card home-events-card home-events-card--week">
           <div class="card-header">
             <div>
               <div class="card-caption">Komende 7 dagen</div>
@@ -1419,14 +1404,14 @@
           <ul class="weekend-list" id="weekend-events-list"></ul>
 
           <p class="note">
-            Later kan dit blok automatisch gevoed worden op basis van alle events in de verschillende eventspagina’s.
+            Jouw event ook in deze lijsten? Meld het aan via de knoppen!
           </p>
 
           <a href="events.html" class="event-link">Volledig eventsoverzicht →</a>
         </article>
 
         <!-- 2) Kalender / komende maand -->
-        <article class="card">
+        <article class="card home-events-card home-events-card--month">
           <div class="card-header">
             <div>
               <div class="card-caption">Komende maand</div>

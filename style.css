@@ -706,6 +706,25 @@ footer { margin-top: auto; }
   margin-top: 4px;
 }
 
+/* HOME: left column event cards must grow with content (10 events / 30 days)
+   Targeted via extra class so premium cards are NOT affected. */
+   .home-events-card{
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .home-events-card .weekend-list,
+  .home-events-card .events-list{
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .home-events-card .event-item{
+    height: auto;
+  }
+
 /* =======================
    BUTTONS
    ======================= */
