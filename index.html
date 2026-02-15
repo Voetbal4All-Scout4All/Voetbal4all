@@ -1400,9 +1400,7 @@
             </div>
           </div>
 
-          <ul class="weekend-list" id="weekend-events-list">
-            ...
-          </ul>
+          <ul class="weekend-list" id="weekend-events-list"></ul>
 
           <p class="note">
             Later kan dit blok automatisch gevoed worden op basis van alle events in de verschillende eventspagina’s.
@@ -1575,9 +1573,155 @@
       setInterval(render, intervalMs);
     }
 
-    makeRotatingList("#weekend-events-list", 2, 6500);
     makeRotatingList("#latest-trainers-list", 1, 4500);
     makeRotatingList("#latest-players-list", 1, 4500);
+
+    // HOME: Aankomende events (weekend) + Events kalender (komende 30 dagen)
+    // Let op: geen globals, geen herdefinities van API_BASE, en geen impact op banner/standings/news/ads.
+    (function initHomeUpcomingEvents(){
+      const weekendList = document.getElementById("weekend-events-list");
+      const monthlyList = document.getElementById("monthly-events-list");
+      const monthlyEmpty = document.getElementById("monthly-events-empty");
+      if (!weekendList && !monthlyList) return;
+
+      const API = (typeof API_BASE === "string" && API_BASE) ? API_BASE : "https://voetbal4all-backend-database.onrender.com";
+
+      const esc = (s) => String(s || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/\"/g,"&quot;")
+        .replace(/'/g,"&#39;");
+
+      const pickDate = (it) => {
+        const raw = it?.start_date || it?.startDate || it?.start || it?.date || it?.starts_at || it?.startsAt || it?.datetime || it?.start_time;
+        if (!raw) return null;
+        const d = new Date(raw);
+        return isNaN(d.getTime()) ? null : d;
+      };
+
+      const fmtShort = (d) => {
+        try{
+          return d.toLocaleDateString("nl-BE", { weekday: "short", day: "2-digit", month: "short" });
+        }catch(e){
+          return d.toISOString().slice(0,10);
+        }
+      };
+
+      const buildMeta = (it, d) => {
+        const city = it?.city || it?.location_city || it?.municipality || it?.plaats || it?.town || "";
+        const region = it?.region || it?.province || it?.provincie || "";
+        const country = (it?.country || it?.land || "").toString().toUpperCase();
+        const place = [city, region].filter(Boolean).join(" · ");
+        const cc = (country === "BE" || country === "NL") ? country : (country ? country : "");
+        const tail = [fmtShort(d), place, cc].filter(Boolean).join(" · ");
+        return tail;
+      };
+
+      const renderList = (ul, items, emptyHtml) => {
+        if (!ul) return;
+        if (!items || !items.length) {
+          ul.innerHTML = emptyHtml;
+          return;
+        }
+        ul.innerHTML = items.map(it => {
+          const d = pickDate(it);
+          const title = esc(it?.title || it?.name || "Event");
+          const meta = d ? esc(buildMeta(it, d)) : esc(it?.type || "");
+          return `
+            <li class="event-item">
+              <div class="event-title">${title}</div>
+              <div class="event-meta">${meta}</div>
+            </li>
+          `;
+        }).join("");
+      };
+
+      const nextWeekendRange = () => {
+        const now = new Date();
+        const day = now.getDay(); // 0=Sun ... 6=Sat
+        // Next Saturday (including today if Saturday)
+        const add = (6 - day + 7) % 7;
+        const sat = new Date(now);
+        sat.setHours(0,0,0,0);
+        sat.setDate(now.getDate() + add);
+        const mon = new Date(sat);
+        mon.setDate(sat.getDate() + 2);
+        return { start: sat, end: mon };
+      };
+
+      const monthRange = () => {
+        const now = new Date();
+        const end = new Date(now);
+        end.setDate(now.getDate() + 30);
+        return { start: now, end };
+      };
+
+      const inRange = (d, start, end) => d && d >= start && d < end;
+
+      async function fetchEvents(limit){
+        try{
+          const url = `${API}/api/events?limit=${limit || 200}`;
+          const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
+          if (!res.ok) return [];
+          const ct = res.headers.get("content-type") || "";
+          const data = ct.includes("application/json") ? await res.json() : null;
+          const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+          return Array.isArray(items) ? items : [];
+        }catch(e){
+          return [];
+        }
+      }
+
+      async function run(){
+        const all = await fetchEvents(200);
+
+        // Weekend
+        const wk = nextWeekendRange();
+        const weekendItems = all
+          .map(it => ({ it, d: pickDate(it) }))
+          .filter(x => inRange(x.d, wk.start, wk.end))
+          .sort((a,b) => a.d - b.d)
+          .map(x => x.it)
+          .slice(0, 4);
+
+        renderList(
+          weekendList,
+          weekendItems,
+          `
+            <li class="event-item">
+              <div class="event-title">Geen aankomende events dit weekend.</div>
+              <div class="event-meta">Later kan dit blok automatisch gevoed worden op basis van alle events.</div>
+            </li>
+          `
+        );
+
+        // (Re)start rotation once, AFTER filling
+        try{
+          if (typeof makeRotatingList === "function") makeRotatingList("#weekend-events-list", 2, 6500);
+        }catch(e){}
+
+        // Monthly (next 30 days)
+        const mr = monthRange();
+        const monthlyItems = all
+          .map(it => ({ it, d: pickDate(it) }))
+          .filter(x => inRange(x.d, mr.start, mr.end))
+          .sort((a,b) => a.d - b.d)
+          .map(x => x.it)
+          .slice(0, 8);
+
+        renderList(monthlyList, monthlyItems, "");
+        if (monthlyEmpty) {
+          monthlyEmpty.style.display = monthlyItems.length ? "none" : "block";
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", run, { once: true });
+      } else {
+        run();
+      }
+    })();
 
     // HOME: premium trainers/spelers vullen (fallback = huidige hardcoded items blijven staan)
     async function fillPremiumProfiles() {
