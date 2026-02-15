@@ -205,18 +205,6 @@
             <div class="note" style="margin-bottom:6px;">Rangschikking</div>
             <div id="top-ered-standings" class="note">Laden…</div>
 
-            <!-- SLIM AD SLOT (HORIZONTAAL) -->
-            <div class="v4-ad-slim" style="margin:10px 0;">
-              <div class="v4-ad-slim__ph">Advertentie</div>
-              <ins class="adsbygoogle"
-                style="display:block"
-                data-ad-client="ca-pub-4062633211824348"
-                data-ad-slot="7209663682"
-                data-ad-format="auto"
-                data-full-width-responsive="true"></ins>
-              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-
             <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
             <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
             <div id="top-ered-results" class="note">Laden…</div>
@@ -588,11 +576,9 @@ function renderMatchesList(items){
     const awayScore = (m.awayGoals ?? m.awayScore ?? m.goals?.away);
     const hasScore = (homeScore != null || awayScore != null);
 
-    const homeLogo = (m.homeLogo ?? m.homeTeamLogo ?? m.home_logo ?? m.homeBadge ?? m.teams?.home?.logo ?? m.home?.logo ?? pickLogo(m.teams?.home) ?? "");
-    const awayLogo = (m.awayLogo ?? m.awayTeamLogo ?? m.away_logo ?? m.awayBadge ?? m.teams?.away?.logo ?? m.away?.logo ?? pickLogo(m.teams?.away) ?? "");
-
-    const homeCell = teamCellHtml(homeName, homeLogo);
-    const awayCell = teamCellHtml(awayName, awayLogo);
+    // No logos in results/upcoming (keeps layout cleaner). Standings still show logos.
+    const homeCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(homeName)}</span>`;
+    const awayCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(awayName)}</span>`;
 
     const scoreText = hasScore
       ? `${escapeHtml(homeScore ?? "")} - ${escapeHtml(awayScore ?? "")}`
