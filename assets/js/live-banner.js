@@ -487,7 +487,7 @@
 
             // After the text is fully out of view, wait a short moment before starting the next cycle.
             // Keep this small to avoid a “long pause”, while still ensuring the cycle is fully finished.
-            const restartDelayMs = 250;
+            const restartDelayMs = 50;
 
             // Apply deferred refresh update exactly at cycle boundary (no mid-run visual reset)
             if (pendingLines && Array.isArray(pendingLines) && pendingLines.length) {
