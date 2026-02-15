@@ -188,41 +188,107 @@
         </div>
       </div>
 
-<script src="assets/js/v4-leagues.js"></script>
 <script>
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
-const LEAGUES = Array.isArray(window.V4_LEAGUES) ? window.V4_LEAGUES : [];
+// Leagues are discovered from backend (extendable, no hardcoding)
+let LEAGUES = [];
 
 const countrySelect = document.getElementById("filter-country");
 const genderSelect  = document.getElementById("filter-gender");
 const leagueSelect  = document.getElementById("filter-league");
 const loadBtn       = document.getElementById("btn-load");
 
+function escapeHtml(s){
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+function renderLeagueOptionName(l){
+  const base = l.label || l.code;
+  const isWomen = l.isWomen === true || l.genderLabel === "women" || l.gender === "W";
+  return isWomen ? `${base} (Dames)` : base;
+}
+
 function populateLeagues(){
   leagueSelect.innerHTML = "";
-  const filtered = LEAGUES.filter(l =>
-    (countrySelect.value === "ALL" || l.country === countrySelect.value) &&
-    (genderSelect.value === "ALL" || l.gender === genderSelect.value)
+
+  const country = countrySelect.value;
+  const gender  = genderSelect.value;
+
+  const filtered = (LEAGUES || []).filter(l =>
+    (country === "ALL" || (String(l.country || l.countryCode || "").toUpperCase() === country)) &&
+    (gender === "ALL" || (String(l.gender || "").toUpperCase() === gender) || (gender === "W" && l.isWomen === true) || (gender === "M" && l.isWomen === false))
   );
+
+  if (!filtered.length) {
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "Geen competities";
+    leagueSelect.appendChild(opt);
+    leagueSelect.disabled = true;
+    loadBtn.disabled = true;
+    return;
+  }
+
+  leagueSelect.disabled = false;
+  loadBtn.disabled = false;
+
   filtered.forEach(l => {
     const opt = document.createElement("option");
     opt.value = l.code;
-    opt.textContent = l.name;
+    opt.textContent = renderLeagueOptionName(l);
     leagueSelect.appendChild(opt);
   });
 }
 
+async function loadLeagues(){
+  // keep UI responsive
+  leagueSelect.innerHTML = "";
+  const opt = document.createElement("option");
+  opt.value = "";
+  opt.textContent = "Laden…";
+  leagueSelect.appendChild(opt);
+  leagueSelect.disabled = true;
+  loadBtn.disabled = true;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/leagues?nocache=1`);
+    const json = await res.json().catch(()=>({}));
+    LEAGUES = Array.isArray(json.items) ? json.items : [];
+  } catch (e) {
+    LEAGUES = [];
+  }
+
+  populateLeagues();
+
+  // auto-load first available league
+  setTimeout(() => {
+    if (leagueSelect.options.length && leagueSelect.value) {
+      loadLeague(leagueSelect.value);
+    } else if (leagueSelect.options.length && leagueSelect.options[0].value) {
+      leagueSelect.selectedIndex = 0;
+      loadLeague(leagueSelect.value);
+    }
+  }, 0);
+}
+
 countrySelect.addEventListener("change", populateLeagues);
 genderSelect.addEventListener("change", populateLeagues);
-populateLeagues();
+
+function womenBadgeHtml(){
+  // re-use existing design language (small pill)
+  return `<span style="display:inline-flex;align-items:center;gap:6px;margin-left:10px;padding:3px 9px;border-radius:999px;background:rgba(255,120,200,0.12);border:1px solid rgba(255,120,200,0.35);font-size:12px;line-height:1;">♀ dames</span>`;
+}
 
 async function loadLeague(league) {
   if (!league) return;
 
-  const cfg = LEAGUES.find(l => l.code === league);
-  const title = cfg ? cfg.name : league;
-  document.getElementById("results-title").textContent = title;
+  const cfg = (LEAGUES || []).find(l => l.code === league);
+  const baseTitle = cfg ? (cfg.label || cfg.code) : league;
+
+  const rTitleEl = document.getElementById("results-title");
+  const isWomen = cfg ? (cfg.isWomen === true || cfg.genderLabel === "women" || cfg.gender === "W") : false;
+  rTitleEl.innerHTML = escapeHtml(baseTitle) + (isWomen ? womenBadgeHtml() : "");
 
   const rBody = document.getElementById("results-body");
   rBody.innerHTML = `<p class="note">Laden…</p>`;
@@ -231,11 +297,17 @@ async function loadLeague(league) {
     const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&nocache=1`);
     const rJson = await rRes.json().catch(()=>({}));
 
+    // prefer backend meta (authoritative)
+    const metaIsWomen = rJson?.meta?.isWomen === true;
+    if (metaIsWomen && !isWomen) {
+      rTitleEl.innerHTML = escapeHtml(baseTitle) + womenBadgeHtml();
+    }
+
     if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
       rBody.innerHTML = `<div class="v4-results-list">` + rJson.items.map(m => {
-        const left = `${m.homeTeam ?? ""}`;
-        const right = `${m.awayTeam ?? ""}`;
-        const score = `${m.homeGoals ?? ""} - ${m.awayGoals ?? ""}`;
+        const left = escapeHtml(m.homeTeam ?? "");
+        const right = escapeHtml(m.awayTeam ?? "");
+        const score = `${escapeHtml(m.homeGoals ?? "")} - ${escapeHtml(m.awayGoals ?? "")}`;
         return `<div class="v4-result-row">
                   <div>${left}</div>
                   <div class="v4-result-score">${score}</div>
@@ -254,11 +326,6 @@ loadBtn.addEventListener("click", async () => {
   await loadLeague(leagueSelect.value);
 });
 
-// Auto-load first available league
-setTimeout(()=>{
-  if(leagueSelect.options.length){
-    leagueSelect.selectedIndex = 0;
-    loadLeague(leagueSelect.value);
-  }
-},0);
+// init
+loadLeagues();
 </script>
