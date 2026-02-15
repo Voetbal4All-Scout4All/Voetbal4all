@@ -83,6 +83,30 @@
     .home-news__thumbWrap{ display: block !important; visibility: visible !important; opacity: 1 !important; }
     .home-news__thumb{ display: block !important; visibility: visible !important; opacity: 1 !important; }
 
+    /* ==========================================
+       HOME (index) – Left column event cards
+       Fix: cards must size to content (no stretching)
+       Scope: only affects the lower grid on the homepage
+       ========================================== */
+    #home-lower-grid .lower-grid-layout{
+      align-items: flex-start !important;
+    }
+    #home-lower-grid .column-left{
+      align-self: flex-start !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+    #home-lower-grid .home-events-card{
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+    }
+    #home-lower-grid .home-events-card .weekend-list,
+    #home-lower-grid .home-events-card .events-list{
+      max-height: none !important;
+      overflow: visible !important;
+    }
+
     /* PREMIUM RIJ (Home): metallic grey frame, keep existing layout */
     .premium-row .lower-grid-layout.grid-4 > .card{
       /* keep spacing/layout as-is; only adjust surface + border */
@@ -1388,7 +1412,7 @@
       <!-- ONDERSTE GRID -->
       <section class="section-main" id="home-lower-grid">
         <div class="shell">
-          <div class="lower-grid-layout grid-3" style="align-items: stretch;">
+          <div class="lower-grid-layout grid-3">
 
       <!-- LINKS -->
       <section class="column-left">
@@ -1653,18 +1677,25 @@
           ul.innerHTML = emptyHtml;
           return;
         }
+
         ul.innerHTML = items.map(it => {
           const d = pickDate(it);
           const title = esc(it?.title || it?.name || "Event");
           const meta  = d ? esc(buildMeta(it, d)) : esc(it?.type || "");
+
           const ccRaw = (it?.country || it?.land || it?.meta?.country || "").toString().toUpperCase();
           const cc    = (ccRaw === "BE" || ccRaw === "NL") ? ccRaw : "INT";
           const flag  = flagHtmlEvent(cc);
 
+          const id = String(it?.id || "").trim();
+          const href = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
           return `
             <li class="event-item">
-              <div class="event-title">${flag} ${title}</div>
-              <div class="event-meta">${meta}</div>
+              <a href="${href}" class="home-event-row" style="display:block; color:inherit; text-decoration:none;">
+                <div class="event-title">${flag} ${title}</div>
+                <div class="event-meta">${meta}</div>
+              </a>
             </li>
           `;
         }).join("");
@@ -1769,8 +1800,7 @@
           .map(it => ({ it, d: pickDate(it) }))
           .filter(x => inRange(x.d, mr.start, mr.end))
           .sort((a,b) => a.d - b.d)
-          .map(x => x.it)
-          .slice(0, 30);
+          .map(x => x.it);
 
         renderList(monthlyList, monthlyItems, "");
         if (monthlyEmpty) {
