@@ -2162,6 +2162,223 @@
 
       // Eerste live load + periodieke refresh (no overlap; initial load is slightly delayed inside loadHomeNews)
       loadHomeNews();
+
+      // =========================
+      // HOME: Events (Weekend + Kalender) — defensive rendering
+      // =========================
+      var __v4aEventsState = window.__V4A_EVENTS_STATE || (window.__V4A_EVENTS_STATE = { weekendInFlight:false, monthInFlight:false });
+
+      function escHtml(s){
+        return String(s || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/\"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function fmtDateNL(d){
+        try{
+          return new Intl.DateTimeFormat("nl-BE", { weekday: "short", day: "2-digit", month: "short" }).format(d);
+        }catch(e){
+          return d ? d.toISOString().slice(0,10) : "";
+        }
+      }
+
+      function parseEventDate(ev){
+        // Support many common field names (backend + legacy + forms)
+        const raw =
+          ev?.start_date ??
+          ev?.startDate ??
+          ev?.starts_at ??
+          ev?.startsAt ??
+          ev?.start_at ??
+          ev?.startAt ??
+          ev?.start ??
+          ev?.date_start ??
+          ev?.dateStart ??
+          ev?.datetime ??
+          ev?.date ??
+          ev?.event_date ??
+          ev?.eventDate ??
+          ev?.start_time ??
+          ev?.startTime ??
+          null;
+
+        if (!raw) return null;
+
+        const d = new Date(raw);
+        if (!isNaN(d.getTime())) return d;
+
+        const n = Number(raw);
+        if (Number.isFinite(n)) {
+          const d2 = new Date(n);
+          return isNaN(d2.getTime()) ? null : d2;
+        }
+
+        return null;
+      }
+
+      async function fetchEventsSafe(){
+        try{
+          const url = `${API_BASE}/api/events?limit=200`;
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const ct = res.headers.get("content-type") || "";
+          const data = ct.includes("application/json") ? await res.json() : null;
+
+          // Defensive: accept multiple backend shapes
+          const items =
+            (Array.isArray(data?.items) && data.items) ||
+            (Array.isArray(data?.events) && data.events) ||
+            (Array.isArray(data?.data) && data.data) ||
+            (Array.isArray(data?.result?.items) && data.result.items) ||
+            (Array.isArray(data?.result?.events) && data.result.events) ||
+            (Array.isArray(data) && data) ||
+            [];
+
+          return Array.isArray(items) ? items : [];
+        }catch(e){
+          console.warn("[HOME] fetchEventsSafe failed", e);
+          return null; // null = keep placeholders intact
+        }
+      }
+
+      async function fillUpcomingWeekendEvents(){
+        if (__v4aEventsState.weekendInFlight) return;
+        __v4aEventsState.weekendInFlight = true;
+
+        const listEl = document.getElementById("weekend-events-list");
+        if (!listEl) { __v4aEventsState.weekendInFlight = false; return; }
+
+        try{
+          const all = await fetchEventsSafe();
+          if (all === null) return; // keep existing UI
+
+          const now = new Date();
+          const day = now.getDay();
+          const daysUntilSat = (6 - day + 7) % 7;
+
+          const saturday = new Date(now);
+          saturday.setHours(0,0,0,0);
+          saturday.setDate(now.getDate() + daysUntilSat);
+
+          const sundayEnd = new Date(saturday);
+          sundayEnd.setDate(saturday.getDate() + 2);
+
+          const upcoming = all
+            .map(ev => ({ ev, d: parseEventDate(ev) }))
+            .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
+            .sort((a,b) => a.d - b.d)
+            .slice(0, 2);
+
+          // Only now mutate DOM (safe)
+          listEl.innerHTML = "";
+
+          if (!upcoming.length){
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">Geen events gepland</div>
+              <div class="event-meta">Voor dit weekend zijn er nog geen events.</div>
+            `;
+            listEl.appendChild(li);
+            return;
+          }
+
+          upcoming.forEach(({ev,d}) => {
+            const id = String(ev?.id || "").trim();
+            const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+            const title = ev?.title || ev?.name || "Event";
+            const loc = ev?.location || ev?.city || ev?.club || ev?.organizer || "";
+
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">${escHtml(title)}</div>
+              <div class="event-meta">${escHtml(fmtDateNL(d))}${loc ? " · " + escHtml(loc) : ""}</div>
+            `;
+            li.style.cursor = "pointer";
+            li.addEventListener("click", () => window.location.href = url);
+            listEl.appendChild(li);
+          });
+
+        }catch(e){
+          console.warn("[HOME] fillUpcomingWeekendEvents failed", e);
+          // Do not break UI; keep existing content
+        }finally{
+          __v4aEventsState.weekendInFlight = false;
+        }
+      }
+
+      async function fillMonthlyCalendarFromBackend(){
+        if (__v4aEventsState.monthInFlight) return;
+        __v4aEventsState.monthInFlight = true;
+
+        const listEl = document.getElementById("monthly-events-list");
+        const emptyEl = document.getElementById("monthly-events-empty");
+        if (!listEl) { __v4aEventsState.monthInFlight = false; return; }
+
+        try{
+          const all = await fetchEventsSafe();
+          if (all === null) return; // keep existing UI
+
+          const now = new Date();
+          const start = new Date(now.getFullYear(), now.getMonth(), 1);
+          const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
+
+          const items = all
+            .map(ev => ({ ev, d: parseEventDate(ev) }))
+            .filter(x => x.d && x.d >= start && x.d < end)
+            .sort((a,b) => a.d - b.d)
+            .slice(0, 6);
+
+          // Only now mutate DOM
+          listEl.innerHTML = "";
+
+          if (!items.length){
+            if (emptyEl) emptyEl.style.display = "block";
+            return;
+          }
+
+          if (emptyEl) emptyEl.style.display = "none";
+
+          items.forEach(({ev,d}) => {
+            const id = String(ev?.id || "").trim();
+            const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+            const title = ev?.title || ev?.name || "Event";
+            const loc = ev?.location || ev?.city || ev?.club || ev?.organizer || "Regio";
+
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">${escHtml(title)}</div>
+              <div class="event-meta">${escHtml(fmtDateNL(d))} · ${escHtml(loc)}</div>
+            `;
+            li.style.cursor = "pointer";
+            li.addEventListener("click", () => window.location.href = url);
+            listEl.appendChild(li);
+          });
+
+        }catch(e){
+          console.warn("[HOME] fillMonthlyCalendarFromBackend failed", e);
+        }finally{
+          __v4aEventsState.monthInFlight = false;
+        }
+      }
+
+      // Expose for debugging (safe)
+      window.V4A_EVENTS = window.V4A_EVENTS || {};
+      window.V4A_EVENTS.fillUpcomingWeekendEvents = fillUpcomingWeekendEvents;
+      window.V4A_EVENTS.fillMonthlyCalendarFromBackend = fillMonthlyCalendarFromBackend;
+
+      // Initial fill + light refresh (no overlap)
+      fillUpcomingWeekendEvents();
+      fillMonthlyCalendarFromBackend();
+      setInterval(fillUpcomingWeekendEvents, 5 * 60 * 1000);
+      setInterval(fillMonthlyCalendarFromBackend, 10 * 60 * 1000);
       setInterval(() => { loadHomeNews(); }, REFRESH_MS);
 
             // Expose (zodat andere scripts/DOMContentLoaded handlers ze ook kunnen gebruiken)
