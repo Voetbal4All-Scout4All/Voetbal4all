@@ -2448,12 +2448,7 @@
             (Array.isArray(data?.result?.events) && data.result.events) ||
             (Array.isArray(data) && data) ||
             [];
-
-            console.log("[HOME][events] items count", Array.isArray(items) ? items.length : "(not array)");
-            if (Array.isArray(items) && items.length) {
-              console.log("[HOME][events] sample item[0]", items[0]);
-            }
-
+            
           return Array.isArray(items) ? items : [];
         }catch(e){
           console.warn("[HOME] fetchEventsSafe failed", e);
@@ -2473,21 +2468,17 @@
           if (all === null) return; // keep existing UI
 
           const now = new Date();
-          const day = now.getDay();
-          const daysUntilSat = (6 - day + 7) % 7;
+          const start = new Date(now);
+          start.setHours(0, 0, 0, 0);
 
-          const saturday = new Date(now);
-          saturday.setHours(0,0,0,0);
-          saturday.setDate(now.getDate() + daysUntilSat);
-
-          const sundayEnd = new Date(saturday);
-          sundayEnd.setDate(saturday.getDate() + 2);
+          const end = new Date(start);
+          end.setDate(end.getDate() + 7);
 
           const upcoming = all
             .map(ev => ({ ev, d: parseEventDate(ev) }))
-            .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
+            .filter(x => x.d && x.d >= start && x.d < end)
             .sort((a,b) => a.d - b.d)
-            .slice(0, 2);
+            .slice(0, 10);
 
           // Only now mutate DOM (safe)
           listEl.innerHTML = "";
@@ -2542,14 +2533,17 @@
           if (all === null) return; // keep existing UI
 
           const now = new Date();
-          const start = new Date(now.getFullYear(), now.getMonth(), 1);
-          const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
+          const start = new Date(now);
+          start.setHours(0, 0, 0, 0);
+
+          const end = new Date(start);
+          end.setDate(end.getDate() + 30);
 
           const items = all
             .map(ev => ({ ev, d: parseEventDate(ev) }))
             .filter(x => x.d && x.d >= start && x.d < end)
             .sort((a,b) => a.d - b.d)
-            .slice(0, 10);
+            .slice(0, 30);
 
           // Only now mutate DOM
           listEl.innerHTML = "";
