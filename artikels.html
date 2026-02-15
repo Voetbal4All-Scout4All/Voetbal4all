@@ -699,8 +699,11 @@ let lastRenderKey = "";
         const url = "artikel.html?id=" + encodeURIComponent(id);
 
         const cc = inferCountry(a);
-        const categoryRaw = safe(a.category || "");
-        const category = categoryRaw && categoryRaw.toLowerCase() !== "algemeen" ? categoryRaw : "";
+
+        // Category: hide noisy / redundant labels (these show up as "news" in the UI)
+        const categoryRaw = safe(a.category || "").trim();
+        const categoryNorm = categoryRaw.toLowerCase();
+        const category = (categoryRaw && !["algemeen", "news", "nieuws"].includes(categoryNorm)) ? categoryRaw : "";
         const date = safe(a.publishedAt || a.date || a.createdAt || "");
         const snippet = safe(a.snippet || "");
         let snippetClean = snippet
