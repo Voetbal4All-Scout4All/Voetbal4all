@@ -1742,9 +1742,9 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // In-flight guards (var avoids redeclare errors if declared elsewhere in this file)
-      var weekendEventsInFlight = false;
-      var monthlyEventsInFlight = false;
+      // In-flight guards (window-scoped, avoids redeclare errors if declared elsewhere in this file)
+      window.weekendEventsInFlight = window.weekendEventsInFlight || false;
+      window.monthlyEventsInFlight = window.monthlyEventsInFlight || false;
       // Defensive fetchEventsSafe for HOME events fillers
       async function fetchEventsSafe(url) {
         try {
