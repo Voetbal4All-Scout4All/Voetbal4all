@@ -262,6 +262,19 @@
     .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
     .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
     .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
+
+    /* Fix: "Contact" button text was inheriting a too-dark color */
+    .ad-card-actions .btn-ghost-sm,
+    .ad-card-actions button.btn-ghost-sm,
+    .event-actions .btn-ghost-sm,
+    .event-actions button.btn-ghost-sm{
+      color: rgba(255,255,255,.92) !important;
+    }
+
+    .ad-card-actions button.btn-ghost-sm:hover,
+    .event-actions button.btn-ghost-sm:hover{
+      color: rgba(255,255,255,.98) !important;
+    }
   </style>
 </head>
 
