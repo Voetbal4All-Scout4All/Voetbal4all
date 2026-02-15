@@ -1669,18 +1669,17 @@
         }).join("");
       };
 
-      const nextWeekendRange = () => {
-        const now = new Date();
-        const day = now.getDay(); // 0=Sun ... 6=Sat
-        // Next Saturday (including today if Saturday)
-        const add = (6 - day + 7) % 7;
-        const sat = new Date(now);
-        sat.setHours(0,0,0,0);
-        sat.setDate(now.getDate() + add);
-        const mon = new Date(sat);
-        mon.setDate(sat.getDate() + 2);
-        return { start: sat, end: mon };
-      };
+      const next7DaysRange = () => {
+      const now = new Date();
+
+      const start = new Date(now);
+      start.setHours(0,0,0,0);
+
+      const end = new Date(start);
+      end.setDate(start.getDate() + 7); // vandaag + 6 dagen inbegrepen
+
+      return { start, end };
+    };
 
       const monthRange = () => {
         const now = new Date();
@@ -1710,7 +1709,7 @@
 
         // Weekend
         // Komende 7 dagen
-        const wk = nextWeekRange();
+        const wk = next7DaysRange();
         const weekItems = all
           .map(it => ({ it, d: pickDate(it) }))
           .filter(x => inRange(x.d, wk.start, wk.end))
