@@ -384,9 +384,42 @@ function setHtml(id, html){
   if (el) el.innerHTML = html;
 }
 
+
 function toDateLabel(iso){
   const s = String(iso || "");
   return s ? escapeHtml(s.slice(0,10)) : "";
+}
+
+function pickLogo(obj){
+  if (!obj) return "";
+  // common shapes we might receive
+  return (
+    obj.logo ||
+    obj.teamLogo ||
+    obj.badge ||
+    obj.strTeamBadge ||
+    obj.strBadge ||
+    obj.team?.logo ||
+    obj.team?.badge ||
+    obj.teams?.home?.logo ||
+    obj.teams?.away?.logo ||
+    ""
+  );
+}
+
+function logoHtml(url, alt){
+  const u = String(url || "").trim();
+  if (!u) {
+    // subtle placeholder dot (doesn't break layout)
+    return `<span style="display:inline-block;width:18px;height:18px;border-radius:999px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.12);"></span>`;
+  }
+  return `<img src="${escapeHtml(u)}" alt="${escapeHtml(alt || "")}" loading="lazy" referrerpolicy="no-referrer" style="width:18px;height:18px;object-fit:contain;border-radius:4px;" />`;
+}
+
+function teamCellHtml(name, logoUrl){
+  const n = escapeHtml(name || "");
+  const l = logoHtml(logoUrl, name || "");
+  return `<span style="display:inline-flex;align-items:center;gap:8px;min-width:0;">${l}<span style="min-width:0;overflow:hidden;text-overflow:ellipsis;">${n}</span></span>`;
 }
 
 function renderStandingsTable(rows){
@@ -455,7 +488,9 @@ function renderStandingsTable(rows){
 
   const body = arr.map((r) => {
     const rank = escapeHtml(pick(r, ["rank","position"]) ?? "");
-    const team = escapeHtml(pick(r, ["teamName","team","name","team.name"]) ?? "");
+    const teamName = pick(r, ["teamName","team","name","team.name"]) ?? "";
+    const teamLogo = pick(r, ["teamLogo","logo","badge","team.logo","team.badge","strTeamBadge","strBadge"]) ?? "";
+    const team = teamCellHtml(teamName, teamLogo);
 
     const played = getNum(pick(r, ["played","pld","games","matches","all.played","stats.played"]) ?? "");
     const points = getNum(pick(r, ["points","pts","point","stats.points"]) ?? "");
@@ -508,8 +543,13 @@ function renderMatchesList(items){
   if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
 
   return `<div class="v4-results-list">` + arr.slice(0,8).map(m => {
-    const left = escapeHtml(m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
-    const right = escapeHtml(m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+    const homeName = (m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
+    const awayName = (m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+    const homeLogo = (m.homeLogo ?? m.teams?.home?.logo ?? m.home?.logo ?? m.homeTeamLogo ?? pickLogo(m.teams?.home) ?? "");
+    const awayLogo = (m.awayLogo ?? m.teams?.away?.logo ?? m.away?.logo ?? m.awayTeamLogo ?? pickLogo(m.teams?.away) ?? "");
+
+    const left = teamCellHtml(homeName, homeLogo);
+    const right = teamCellHtml(awayName, awayLogo);
     const score = (m.homeGoals != null || m.awayGoals != null)
       ? `${escapeHtml(m.homeGoals ?? m.goals?.home ?? "")} - ${escapeHtml(m.awayGoals ?? m.goals?.away ?? "")}`
       : `<span style="opacity:.75;">${toDateLabel(m.date ?? m.fixture?.date ?? "")}</span>`;
@@ -694,16 +734,7 @@ async function loadLeague(league) {
     }
 
     if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
-      rBody.innerHTML = `<div class="v4-results-list">` + rJson.items.map(m => {
-        const left = escapeHtml(m.homeTeam ?? "");
-        const right = escapeHtml(m.awayTeam ?? "");
-        const score = `${escapeHtml(m.homeGoals ?? "")} - ${escapeHtml(m.awayGoals ?? "")}`;
-        return `<div class="v4-result-row">
-                  <div>${left}</div>
-                  <div class="v4-result-score">${score}</div>
-                  <div style="text-align:right;">${right}</div>
-                </div>`;
-      }).join("") + `</div>`;
+      rBody.innerHTML = renderMatchesList(rJson.items);
     } else {
       rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
     }
