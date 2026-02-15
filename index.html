@@ -1666,10 +1666,7 @@
       }
     }
 
-    // TEMP: backend routes /api/trainers en /api/players bestaan (nog) niet in productie.
-    // Om 404-spam te vermijden: pas activeren wanneer backend klaar is.
-    const ENABLE_PREMIUM_PROFILES = false;
-    if (ENABLE_PREMIUM_PROFILES) fillPremiumProfiles();
+    fillPremiumProfiles();
 
     // Premiumlijsten roteren (1 item zichtbaar) — image rotates WITH the item + no layout jump
     (function initPremiumRotation(){
@@ -1744,16 +1741,460 @@
   </script>
 
   <script>
-    // HOME (index): Aankomende events + Events kalender
-    // Defensive: avoid duplicate init if this file ever ends up with duplicated blocks
-    (function initHomeEventsOnce(){
-      if (window.__V4A_HOME_EVENTS_INIT__) return;
-      window.__V4A_HOME_EVENTS_INIT__ = true;
+    document.addEventListener("DOMContentLoaded", () => {
+      // In-flight guards (window-scoped, avoids redeclare errors if declared elsewhere in this file)
+      window.weekendEventsInFlight = window.weekendEventsInFlight || false;
+      window.monthlyEventsInFlight = window.monthlyEventsInFlight || false;
+      // Defensive fetchEventsSafe for HOME events fillers
+      async function fetchEventsSafe(url) {
+        try {
+          console.log("[HOME][events] fetch", url);
+          const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
+          console.log("[HOME][events] status", res.status);
+          if (!res.ok) return null;
+          const ct = res.headers.get("content-type") || "";
+          const data = ct.includes("application/json") ? await res.json() : null;
+          console.log("[HOME][events] content-type", ct);
+          if (data && typeof data === "object") {
+            console.log("[HOME][events] json keys", Object.keys(data));
+          }
+          const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+          console.log("[HOME][events] items count", Array.isArray(items) ? items.length : "(not array)");
+          if (Array.isArray(items) && items.length) console.log("[HOME][events] sample[0]", items[0]);
+          return Array.isArray(items) ? items : [];
+        } catch (e) {
+          console.warn("[HOME][events] fetchEventsSafe failed", e?.message || e);
+          return null;
+        }
+      }
+      const homeListEl = document.getElementById("latest-news-grid");
+      const homeStatusEl = document.getElementById("latest-news-status");
+
+      if (!homeListEl) {
+        console.error("Container #latest-news-grid niet gevonden");
+        return;
+      }
 
       const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+      const IMG_BASE = "https://voetbal4all-backend-database.onrender.com";
+      // Fallback thumbnail for missing/broken images.
+      // Use a real file (small request, cacheable) instead of an inline data URI.
+      const FALLBACK_THUMB = "assets/img/placeholder.svg";
+
+      // Nieuwsbrief inschrijving (POST -> backend -> DB)
+      (function initNewsletterSignup(){
+        const form = document.getElementById("newsletterForm");
+        if (!form) return;
+
+        const emailEl = document.getElementById("newsletterEmail");
+        const consentEl = document.getElementById("newsletterConsent");
+        const hpEl = document.getElementById("newsletterWebsite");
+        const statusEl = document.getElementById("newsletterStatus");
+
+        function setStatus(msg, kind){
+          if (!statusEl) return;
+          statusEl.classList.remove("is-ok", "is-err");
+          if (kind === "ok") statusEl.classList.add("is-ok");
+          if (kind === "err") statusEl.classList.add("is-err");
+          statusEl.style.display = "block";
+          statusEl.textContent = msg;
+        }
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = String(emailEl?.value || "").trim();
+          const consent = !!consentEl?.checked;
+          const hp = String(hpEl?.value || "").trim();
+
+          // simple validation
+          if (hp) {
+            // bot detected: pretend success (no signal)
+            setStatus("Bedankt! Je inschrijving is ontvangen.", "ok");
+            form.reset();
+            return;
+          }
+          if (!email) {
+            setStatus("Vul je e-mailadres in.", "err");
+            return;
+          }
+          if (!consent) {
+            setStatus("Bevestig eerst de privacyverklaring.", "err");
+            return;
+          }
+
+          // browser-level email validation
+          if (emailEl && typeof emailEl.checkValidity === "function" && !emailEl.checkValidity()) {
+            setStatus("Vul een geldig e-mailadres in.", "err");
+            return;
+          }
+
+          try {
+            setStatus("Bezig met inschrijven…", "ok");
+
+            // Backend contract: POST /api/newsletter/subscribe
+            // Body: { email, source, consent: true }
+            // Response: { ok: true, status: "subscribed"|"already" }
+            // 1 keuze (radio). Niets gekozen = ALL
+            const regionEl = form.querySelector('input[name="region"]:checked');
+            const region = String(regionEl?.value || "ALL").trim().toUpperCase();
+            const res = await fetch(`${API_BASE}/api/newsletter/subscribe`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email,
+                source: "index_home_card",
+                consent: true,
+                // backward/forward compatible: single field + array
+                region,
+                regions: [region]
+              })
+            });
+
+            const ct = res.headers.get("content-type") || "";
+            const data = ct.includes("application/json") ? await res.json() : null;
+
+            if (!res.ok) {
+              const msg = (data && (data.error || data.message)) ? (data.error || data.message) : `Inschrijving mislukt (HTTP ${res.status}).`;
+              throw new Error(msg);
+            }
+
+            const st = String(data?.status || "subscribed").toLowerCase();
+            if (st === "already") {
+              setStatus("Je stond al ingeschreven. Bedankt!", "ok");
+            } else {
+              setStatus("Bedankt! Je bent ingeschreven op de nieuwsbrief.", "ok");
+            }
+            form.reset();
+          } catch (err) {
+            console.error("[NEWSLETTER] subscribe failed", err);
+            setStatus("Er ging iets mis. Probeer later opnieuw.", "err");
+          }
+        });
+      })();
+
+      function resolveImageUrl(u) {
+        if (u == null) return null;
+
+        let s = "";
+        if (typeof u === "string") {
+          s = u.trim();
+        } else if (typeof u === "object") {
+          // Support multiple shapes coming from backend / DB / legacy pipeline
+          s = String(
+            u.publicPath ||
+            u.image_path ||
+            u.imagePath ||
+            u.path ||
+            u.url ||
+            u.href ||
+            u.src ||
+            ""
+          ).trim();
+        }
+
+        if (!s) return null;
+
+        const low = s.toLowerCase();
+
+        // block known junk
+        if (low === "broken-link" || low === "[object object]") return null;
+        // NOTE: do not hard-block placeholders here; rendering falls back to FALLBACK_THUMB if needed.
+
+        // allow absolute
+        if (/^https?:\/\//i.test(s)) return s;
+
+        // normalize common relative forms
+        // - "images/articles/..." -> "/images/articles/..."
+        // - "./images/articles/..." -> "/images/articles/..."
+        // - "../images/articles/..." -> "/images/articles/..." (best-effort)
+        s = s.replace(/^\.(\/)+/, "/");
+        s = s.replace(/^(\.\.\/)+/, "/");
+        if (!s.startsWith("/") && (low.startsWith("images/") || low.startsWith("assets/"))) {
+          s = "/" + s;
+        }
+
+        // allow backend-served root-relative only
+        if (s.startsWith("/")) return IMG_BASE + s;
+
+        return null;
+      }
+      // NOTE: Homepage gebruikt backend DB-cache (geen nocache=1) + retry/backoff voor consistent laden
+      const CACHE_KEY = "home_news_html_v9";
+      try {
+        Object.keys(localStorage)
+          .filter(k => k && k.startsWith("home_news_html_v"))
+          .forEach(k => localStorage.removeItem(k));
+      } catch (e) {}
+      
+      const REFRESH_MS = 5 * 60 * 1000; // 5 min (pas aan indien gewenst)
+
+      let hasRenderedHomeNews = false;
+
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      let homeNewsInFlight = false;
+
+      function showStatusOnceIfEmpty(msg) {
+        if (!hasRenderedHomeNews && homeStatusEl) {
+          homeStatusEl.style.display = "block";
+          homeStatusEl.textContent = msg;
+        }
+      }
+
+      function hideStatus() {
+        if (homeStatusEl) homeStatusEl.style.display = "none";
+      }
+
+      function cleanTitle(t){
+        let s = String(t || "").trim();
+
+        // Verwijder bron-tags / afkortingen
+        s = s.replace(/\bVP\b/g, "");   // VoetbalPrimeur
+        s = s.replace(/\bVI\b/g, "");
+        s = s.replace(/\bNOS\b/g, "");
+        s = s.replace(/\bHLN\b/g, "");
+        s = s.replace(/\bAD\b/g, "");
+
+        // Verwijder trailing bronstukjes
+        s = s.replace(/\s*[\-|–|—|·|\|]\s*(Voetbalprimeur|Voetbal International|VI\.nl|NOS|HLN|AD|De Telegraaf)\s*$/i, "");
+        s = s.replace(/\(\s*(VP|VI|NOS|HLN|AD)\s*\)\s*$/i, "");
+
+        // Opruimen
+        s = s.replace(/\s{2,}/g, " ").trim();
+        return s;
+      }
+
+      function flagHtml(cc){
+        const c = String(cc || "INT").trim().toUpperCase();
+        const FLAG_SRC = {
+          BE: "assets/img/sources/flag-be.svg",
+          NL: "assets/img/sources/flag-nl.svg",
+          INT: "assets/img/sources/flag-int.svg",
+        };
+        const src = FLAG_SRC[c] || FLAG_SRC.INT;
+        const alt = c === "BE" ? "België" : (c === "NL" ? "Nederland" : "Internationaal");
+
+        return `
+          <span class="v4a-flag" title="${alt}" aria-hidden="true">
+            <img class="v4a-flag__img" src="${src}" alt="" loading="lazy" decoding="async" width="18" height="12" />
+          </span>
+        `.trim();
+      }
+
+      async function loadHomeNews() {
+        if (homeNewsInFlight) return; // prevent concurrent refreshes
+        homeNewsInFlight = true;
+
+        try {
+          // Small start delay to avoid racing the backend during a pipeline/cache refresh
+          await sleep(900);
+
+          // Cache-first: do NOT use nocache=1 on the homepage.
+          // DB-cache on backend ensures consistent results, while retries handle short transient gaps.
+          const url = `${API_BASE}/api/news?limit=30`;
+
+          const tries = 5;
+          let lastErr = null;
+
+          for (let i = 0; i < tries; i++) {
+            try {
+              const res = await fetch(url, { cache: "no-store" });
+              console.log("[HOME] fetch", url, "->", res.status);
+
+              if (!res.ok) throw new Error("[HOME] API error: " + res.status);
+
+              const ct = res.headers.get("content-type") || "";
+              if (!ct.includes("application/json")) {
+                const txt = await res.text();
+                throw new Error("[HOME] Expected JSON, got: " + ct + " / " + txt.slice(0, 200));
+              }
+
+              const data = await res.json();
+              const rawItems = Array.isArray(data.items) ? data.items : [];
+
+              // ✅ Alleen artikels tonen die "ready" zijn
+              const readyItems = rawItems.filter(a => {
+                const st = String(a?.status || "").toLowerCase();
+                return st === "ready" || st === "ok";
+              });
+
+              function dedupeById(items) {
+                const seen = new Set();
+                const out = [];
+                for (const it of (items || [])) {
+                  const key = String(it?.id || "").trim();
+                  if (!key) continue;
+                  if (seen.has(key)) continue;
+                  seen.add(key);
+                  out.push(it);
+                }
+                return out;
+              }
+
+              let items = dedupeById(readyItems);
+              console.log(`[DEDUPE] ${rawItems.length} → ${items.length} articles (removed ${rawItems.length - items.length} duplicates)`);
+
+              // 🔥 FOOTBALL FILTER - SOFT VERSION: Only exclude explicit non-football sports
+              const nonFootballKeywords = [
+                "darts", "dart", "dartsnieuws", "dartswedstrijd",
+                "snooker", "snookertafel",
+                "tennis", "tennisbal", "tennisbaan",
+                "basketbal", "basketball", "nba",
+                "hockey", "hockeystick",
+                "handbal", "volleybal",
+                "formule 1", "formule1", "f1-coureur", "grand prix", "verstappen",
+                "wielrennen", "cycling",
+                "schaatsen", "zwemmen", "atletiek",
+                "golf", "rugby", "boksen", "motorsport"
+              ];
+
+              const filteredItems = items.filter(article => {
+                const text = `${article.title || ""} ${article.snippet || ""}`.toLowerCase();
+                const hasNonFootball = nonFootballKeywords.some(k => text.includes(k));
+                if (hasNonFootball) {
+                  console.log(`[FILTER] ❌ Excluded (non-football): ${article.title}`);
+                  return false;
+                }
+                return true;
+              });
+
+              // ✅ Do NOT hard-require an image.
+              // Backend can temporarily return null/placeholder during refresh; UI will always show FALLBACK_THUMB.
+              const displayItems = filteredItems.slice(0, 30);
+              console.log(`[HOME] no image gate: ${filteredItems.length} → ${displayItems.length}`);
+
+              if (displayItems.length < 1) {
+                throw new Error(`[HOME] No usable items (${displayItems.length}); retrying`);
+              }
+
+              const html = displayItems.map((a, index) => {
+                const rawTitle = a?.title || "";
+                const looksLikeSlug = rawTitle.endsWith(".json") || (rawTitle.length > 40 && rawTitle.split("-").length >= 6);
+
+                const displayTitle = (!rawTitle || looksLikeSlug) ? "Nieuwsartikel" : cleanTitle(rawTitle);
+                const safeTitle = String(displayTitle).replace(/"/g, "&quot;");
+
+                // vlag op basis van country
+                const country = (a?.country || "").toUpperCase();
+                const cc = (country === "BE" || country === "NL") ? country : "INT";
+                const flag = flagHtml(cc);
+
+                const imgSrc =
+                  resolveImageUrl(a?.image_path) ||
+                  resolveImageUrl(a?.imagePath) ||
+                  resolveImageUrl(a?.publicPath) ||
+                  resolveImageUrl(a?.image) ||
+                  resolveImageUrl(a?.imageUrl) ||
+                  resolveImageUrl(a?.image_url);
+
+                const safeImg = imgSrc ? String(imgSrc).replace(/"/g, "&quot;") : "";
+
+                const thumbHtml = imgSrc
+                  ? `
+                      <div class="home-news__thumbWrap">
+                        <img
+                          class="home-news__thumb"
+                          src="${safeImg}"
+                          alt="${safeTitle}"
+                          loading="${index < 6 ? 'eager' : 'lazy'}"
+                          fetchpriority="${index < 2 ? 'high' : 'auto'}"
+                          decoding="async"
+                          width="92"
+                          height="64"
+                          referrerpolicy="no-referrer"
+                          onerror="try{this.onerror=null;this.src='${FALLBACK_THUMB}';this.closest('.home-news__thumbWrap')&&this.closest('.home-news__thumbWrap').classList.add('is-empty');}catch(e){}"
+                        />
+                      </div>
+                    `
+                  : `
+                      <div class="home-news__thumbWrap is-empty">
+                        <img
+                          class="home-news__thumb"
+                          src="${FALLBACK_THUMB}"
+                          alt="${safeTitle}"
+                          loading="lazy"
+                          decoding="async"
+                          width="92"
+                          height="64"
+                        />
+                      </div>
+                    `;
+
+                // --- ID-FIRST URL LOGIC (artikel.html expects id; slug is fallback) ---
+                const slug = String(a?.slug || "").trim();
+                const id = String(a?.id || "").trim();
+                const articleUrl = id
+                  ? ("artikel.html?id=" + encodeURIComponent(id))
+                  : (slug ? ("artikel.html?slug=" + encodeURIComponent(slug)) : "artikels.html");
+
+                const articleHtml = `
+                  <article class="home-news__item">
+                    <a class="home-news__link" href="${articleUrl}">
+                      ${thumbHtml}
+
+                      <div class="home-news__meta">
+                        <div class="home-news__titleRow">
+                          ${flag}
+                          <h4 class="home-news__title">${safeTitle}</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                `;
+
+                if (index === 9) {
+                  return articleHtml + `
+                    <div class="card ad-infeed ad-slot-infeed">
+                      <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-4062633211824348"
+                        data-ad-slot="6252515674"
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"></ins>
+                    </div>
+                  `;
+                }
+
+                return articleHtml;
+              }).join("");
+
+              homeListEl.innerHTML = html;
+              hasRenderedHomeNews = true;
+              hideStatus();
+
+              // success: exit retry loop
+              lastErr = null;
+              break;
+            } catch (e) {
+              lastErr = e;
+              const wait = 650 * (i + 1);
+              console.warn("[HOME] retry", i + 1, "in", wait, "ms:", e?.message || e);
+              await sleep(wait);
+            }
+          }
+
+          if (lastErr) {
+            throw lastErr;
+          }
+
+        } catch (err) {
+          console.error("[HOME] loadHomeNews failed:", err);
+          showStatusOnceIfEmpty("Artikels worden geladen…");
+        } finally {
+          homeNewsInFlight = false;
+        }
+      }
+
+      // Eerste live load + periodieke refresh (no overlap; initial load is slightly delayed inside loadHomeNews)
+      loadHomeNews();
+
+      // =========================
+      // HOME: Events (Weekend + Kalender) — defensive rendering
+      // =========================
+      var __v4aEventsState = window.__V4A_EVENTS_STATE || (window.__V4A_EVENTS_STATE = { weekendInFlight:false, monthInFlight:false });
 
       function escHtml(s){
-        return String(s ?? "")
+        return String(s || "")
           .replace(/&/g, "&amp;")
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
@@ -1761,159 +2202,169 @@
           .replace(/'/g, "&#39;");
       }
 
-      function safeText(s, fallback=""){
-        const v = String(s ?? "").trim();
-        return v || fallback;
+      function fmtDateNL(d){
+        try{
+          return new Intl.DateTimeFormat("nl-BE", { weekday: "short", day: "2-digit", month: "short" }).format(d);
+        }catch(e){
+          return d ? d.toISOString().slice(0,10) : "";
+        }
       }
 
       function parseEventDate(ev){
-        // Accept start_at (ISO), date (YYYY-MM-DD), or other common fields.
-        const raw = ev?.start_at || ev?.startAt || ev?.date || ev?.start_date || ev?.startDate;
+        // Support many common field names (backend + legacy + forms)
+        const raw =
+          ev?.start_date ??
+          ev?.startDate ??
+          ev?.starts_at ??
+          ev?.startsAt ??
+          ev?.start_at ??
+          ev?.startAt ??
+          ev?.start ??
+          ev?.date_start ??
+          ev?.dateStart ??
+          ev?.datetime ??
+          ev?.date ??
+          ev?.event_date ??
+          ev?.eventDate ??
+          ev?.start_time ??
+          ev?.startTime ??
+          null;
+
         if (!raw) return null;
+
         const d = new Date(raw);
-        return isNaN(d.getTime()) ? null : d;
-      }
+        if (!isNaN(d.getTime())) return d;
 
-      function startOfDay(d){
-        return new Date(d.getFullYear(), d.getMonth(), d.getDate());
-      }
-
-      function fmtDateNL(d){
-        try{
-          return d.toLocaleDateString("nl-BE", { weekday: "short", day: "2-digit", month: "short" });
-        }catch(e){
-          // fallback
-          const dd = String(d.getDate()).padStart(2, "0");
-          const mm = String(d.getMonth()+1).padStart(2, "0");
-          return `${dd}/${mm}`;
+        const n = Number(raw);
+        if (Number.isFinite(n)) {
+          const d2 = new Date(n);
+          return isNaN(d2.getTime()) ? null : d2;
         }
+
+        return null;
       }
 
-      async function fetchEventsSafe(url){
+      async function fetchEventsSafe(){
         try{
-          const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
-          if (!res.ok) return [];
+          const url = `${API_BASE}/api/events?limit=200`;
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
           const ct = res.headers.get("content-type") || "";
           const data = ct.includes("application/json") ? await res.json() : null;
-          const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+
+          // Defensive: accept multiple backend shapes
+          const items =
+            (Array.isArray(data?.items) && data.items) ||
+            (Array.isArray(data?.events) && data.events) ||
+            (Array.isArray(data?.data) && data.data) ||
+            (Array.isArray(data?.result?.items) && data.result.items) ||
+            (Array.isArray(data?.result?.events) && data.result.events) ||
+            (Array.isArray(data) && data) ||
+            [];
+
+            console.log("[HOME][events] items count", Array.isArray(items) ? items.length : "(not array)");
+            if (Array.isArray(items) && items.length) {
+              console.log("[HOME][events] sample item[0]", items[0]);
+            }
+
           return Array.isArray(items) ? items : [];
         }catch(e){
-          console.warn("[HOME][events] fetch failed", e?.message || e);
-          return [];
+          console.warn("[HOME] fetchEventsSafe failed", e);
+          return null; // null = keep placeholders intact
         }
-      }
-
-      function buildEventLi(ev){
-        const id = safeText(ev?.id);
-        const title = safeText(ev?.title || ev?.name, "Event");
-        const city = safeText(ev?.city || ev?.location || ev?.place || ev?.municipality);
-        const country = safeText(ev?.country);
-        const when = parseEventDate(ev);
-
-        const metaParts = [];
-        if (when) metaParts.push(fmtDateNL(when));
-        if (city) metaParts.push(city);
-        if (country) metaParts.push(country);
-
-        const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
-
-        const li = document.createElement("li");
-        li.className = "event-item";
-        li.style.cursor = "pointer";
-        li.innerHTML = `
-          <div class="event-title">${escHtml(title)}</div>
-          <div class="event-meta">${escHtml(metaParts.join(" · ") || "")}</div>
-        `;
-        li.addEventListener("click", () => { window.location.href = url; });
-        return li;
-      }
-
-      function filterUpcomingWeekend(items){
-        const now = new Date();
-        const today = startOfDay(now);
-
-        // Weekend window: from upcoming Friday 00:00 through Sunday 23:59
-        // If today is already weekend, use current Friday.
-        const day = today.getDay(); // 0=Sun..6=Sat
-
-        // compute days until Friday (5)
-        let daysToFri = (5 - day + 7) % 7;
-        const fri = new Date(today);
-        fri.setDate(today.getDate() + daysToFri);
-
-        // If today is Sat or Sun, shift back to current weekend's Friday
-        if (day === 6) { // Sat
-          fri.setDate(today.getDate() - 1);
-        } else if (day === 0) { // Sun
-          fri.setDate(today.getDate() - 2);
-        }
-
-        const endSun = new Date(fri);
-        endSun.setDate(fri.getDate() + 2);
-        // inclusive end of day
-        const end = new Date(endSun.getFullYear(), endSun.getMonth(), endSun.getDate(), 23, 59, 59, 999);
-
-        return (items || [])
-          .map(ev => ({ ev, d: parseEventDate(ev) }))
-          .filter(x => x.d && x.d >= fri && x.d <= end)
-          .sort((a,b) => a.d - b.d)
-          .map(x => x.ev);
-      }
-
-      function filterThisMonth(items){
-        const now = new Date();
-        const y = now.getFullYear();
-        const m = now.getMonth();
-        const start = new Date(y, m, 1, 0, 0, 0, 0);
-        const end = new Date(y, m + 1, 0, 23, 59, 59, 999);
-        return (items || [])
-          .map(ev => ({ ev, d: parseEventDate(ev) }))
-          .filter(x => x.d && x.d >= start && x.d <= end)
-          .sort((a,b) => a.d - b.d)
-          .map(x => x.ev);
       }
 
       async function fillUpcomingWeekendEvents(){
-        if (window.weekendEventsInFlight) return;
-        window.weekendEventsInFlight = true;
+        if (__v4aEventsState.weekendInFlight) return;
+        __v4aEventsState.weekendInFlight = true;
+
+        const listEl = document.getElementById("weekend-events-list");
+        if (!listEl) { __v4aEventsState.weekendInFlight = false; return; }
 
         try{
-          const listEl = document.getElementById("weekend-events-list");
-          if (!listEl) return;
+          const all = await fetchEventsSafe();
+          if (all === null) return; // keep existing UI
 
-          const all = await fetchEventsSafe(`${API_BASE}/api/events?limit=200`);
-          const items = filterUpcomingWeekend(all).slice(0, 6);
+          const now = new Date();
+          const day = now.getDay();
+          const daysUntilSat = (6 - day + 7) % 7;
 
+          const saturday = new Date(now);
+          saturday.setHours(0,0,0,0);
+          saturday.setDate(now.getDate() + daysUntilSat);
+
+          const sundayEnd = new Date(saturday);
+          sundayEnd.setDate(saturday.getDate() + 2);
+
+          const upcoming = all
+            .map(ev => ({ ev, d: parseEventDate(ev) }))
+            .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
+            .sort((a,b) => a.d - b.d)
+            .slice(0, 2);
+
+          // Only now mutate DOM (safe)
           listEl.innerHTML = "";
 
-          if (!items.length){
+          if (!upcoming.length){
             const li = document.createElement("li");
             li.className = "event-item";
-            li.innerHTML = `<div class="event-title">Geen aankomende events dit weekend.</div>`;
+            li.innerHTML = `
+              <div class="event-title">Geen events gepland</div>
+              <div class="event-meta">Voor dit weekend zijn er nog geen events.</div>
+            `;
             listEl.appendChild(li);
             return;
           }
 
-          items.forEach(ev => listEl.appendChild(buildEventLi(ev)));
+          upcoming.forEach(({ev,d}) => {
+            const id = String(ev?.id || "").trim();
+            const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+            const title = ev?.title || ev?.name || "Event";
+            const loc = ev?.location || ev?.city || ev?.club || ev?.organizer || "";
+
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">${escHtml(title)}</div>
+              <div class="event-meta">${escHtml(fmtDateNL(d))}${loc ? " · " + escHtml(loc) : ""}</div>
+            `;
+            li.style.cursor = "pointer";
+            li.addEventListener("click", () => window.location.href = url);
+            listEl.appendChild(li);
+          });
+
         }catch(e){
-          console.warn("[HOME] fillUpcomingWeekendEvents failed", e?.message || e);
+          console.warn("[HOME] fillUpcomingWeekendEvents failed", e);
+          // Do not break UI; keep existing content
         }finally{
-          window.weekendEventsInFlight = false;
+          __v4aEventsState.weekendInFlight = false;
         }
       }
 
       async function fillMonthlyCalendarFromBackend(){
-        if (window.monthlyEventsInFlight) return;
-        window.monthlyEventsInFlight = true;
+        if (__v4aEventsState.monthInFlight) return;
+        __v4aEventsState.monthInFlight = true;
+
+        const listEl = document.getElementById("monthly-events-list");
+        const emptyEl = document.getElementById("monthly-events-empty");
+        if (!listEl) { __v4aEventsState.monthInFlight = false; return; }
 
         try{
-          const listEl = document.getElementById("monthly-events-list");
-          const emptyEl = document.getElementById("monthly-events-empty");
-          if (!listEl) return;
+          const all = await fetchEventsSafe();
+          if (all === null) return; // keep existing UI
 
-          const all = await fetchEventsSafe(`${API_BASE}/api/events?limit=200`);
-          const items = filterThisMonth(all).slice(0, 6);
+          const now = new Date();
+          const start = new Date(now.getFullYear(), now.getMonth(), 1);
+          const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
 
+          const items = all
+            .map(ev => ({ ev, d: parseEventDate(ev) }))
+            .filter(x => x.d && x.d >= start && x.d < end)
+            .sort((a,b) => a.d - b.d)
+            .slice(0, 6);
+
+          // Only now mutate DOM
           listEl.innerHTML = "";
 
           if (!items.length){
@@ -1922,26 +2373,676 @@
           }
 
           if (emptyEl) emptyEl.style.display = "none";
-          items.forEach(ev => listEl.appendChild(buildEventLi(ev)));
+
+          items.forEach(({ev,d}) => {
+            const id = String(ev?.id || "").trim();
+            const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+            const title = ev?.title || ev?.name || "Event";
+            const loc = ev?.location || ev?.city || ev?.club || ev?.organizer || "Regio";
+
+            const li = document.createElement("li");
+            li.className = "event-item";
+            li.innerHTML = `
+              <div class="event-title">${escHtml(title)}</div>
+              <div class="event-meta">${escHtml(fmtDateNL(d))} · ${escHtml(loc)}</div>
+            `;
+            li.style.cursor = "pointer";
+            li.addEventListener("click", () => window.location.href = url);
+            listEl.appendChild(li);
+          });
+
         }catch(e){
-          console.warn("[HOME] fillMonthlyCalendarFromBackend failed", e?.message || e);
+          console.warn("[HOME] fillMonthlyCalendarFromBackend failed", e);
         }finally{
-          window.monthlyEventsInFlight = false;
+          __v4aEventsState.monthInFlight = false;
         }
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        // Ensure global guards exist (prevents redeclare + TDZ issues)
-        window.weekendEventsInFlight = window.weekendEventsInFlight || false;
-        window.monthlyEventsInFlight = window.monthlyEventsInFlight || false;
+      // Expose for debugging (safe)
+      window.V4A_EVENTS = window.V4A_EVENTS || {};
+      window.V4A_EVENTS.fillUpcomingWeekendEvents = fillUpcomingWeekendEvents;
+      window.V4A_EVENTS.fillMonthlyCalendarFromBackend = fillMonthlyCalendarFromBackend;
 
-        fillUpcomingWeekendEvents();
-        fillMonthlyCalendarFromBackend();
+      // Initial fill + light refresh (no overlap)
+      fillUpcomingWeekendEvents();
+      fillMonthlyCalendarFromBackend();
+      setInterval(fillUpcomingWeekendEvents, 5 * 60 * 1000);
+      setInterval(fillMonthlyCalendarFromBackend, 10 * 60 * 1000);
+      setInterval(() => { loadHomeNews(); }, REFRESH_MS);
 
-        // Expose for safe debugging
-        window.V4A_EVENTS = window.V4A_EVENTS || {};
-        window.V4A_EVENTS.fillUpcomingWeekendEvents = fillUpcomingWeekendEvents;
-        window.V4A_EVENTS.fillMonthlyCalendarFromBackend = fillMonthlyCalendarFromBackend;
+            // Expose (zodat andere scripts/DOMContentLoaded handlers ze ook kunnen gebruiken)
+            window.V4A_EVENTS = window.V4A_EVENTS || {};
+      window.V4A_EVENTS.fillUpcomingWeekendEvents = fillUpcomingWeekendEvents;
+      window.V4A_EVENTS.fillMonthlyCalendarFromBackend = fillMonthlyCalendarFromBackend;
+
+      // HOME: vul de 2 event-blokken (weekend + kalender). 
+      // Deze calls mogen NOOIT de UI breken: bij fout blijft fallback tekst zichtbaar.
+
+      // Refresh mee (zelfde cadence als home news)
+      setInterval(() => {
+        const evt = window.V4A_EVENTS || {};
+        if (typeof evt.fillUpcomingWeekendEvents === "function") evt.fillUpcomingWeekendEvents();
+        if (typeof evt.fillMonthlyCalendarFromBackend === "function") evt.fillMonthlyCalendarFromBackend();
+        }, REFRESH_MS);
+      
+// Monthly events list (lopende maand) – placeholder data (kan later vervangen worden door echte events API)
+function renderMonthlyEvents() {
+  const listEl = document.getElementById("monthly-events-list");
+  const emptyEl = document.getElementById("monthly-events-empty");
+  if (!listEl) return;
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth(); // 0-based
+
+  // Voorbeeld-events binnen de huidige maand (dynamisch), zodat het concept direct werkt zonder backend
+  // Later: vervang dit door fetch naar jouw events bron.
+  const sample = [];
+  for (let i = 0; i < 4; i++) {
+    const d = new Date(year, month, 1);
+    d.setDate(1 + i * 7);
+    // zorg dat het in deze maand blijft
+    if (d.getMonth() !== month) break;
+
+    sample.push({
+      date: d,
+      title: i % 2 === 0 ? "Tornooi / jeugdevent" : "Training / stage / kamp",
+      location: "Regio (vul later automatisch)",
+      href: "events.html"
+    });
+  }
+
+  // Sorteer oplopend
+  sample.sort((a, b) => a.date - b.date);
+
+  // Render
+  listEl.innerHTML = "";
+  if (!sample.length) {
+    if (emptyEl) emptyEl.style.display = "block";
+    return;
+  }
+  if (emptyEl) emptyEl.style.display = "none";
+
+  const fmt = new Intl.DateTimeFormat("nl-BE", { day: "2-digit", month: "long" });
+
+  sample.forEach(ev => {
+    const li = document.createElement("li");
+    li.className = "event-item";
+    li.innerHTML = `
+      <div class="event-title">${ev.title}</div>
+      <div class="event-meta">${fmt.format(ev.date)} · ${ev.location}</div>
+    `;
+    li.addEventListener("click", () => (window.location.href = ev.href));
+    listEl.appendChild(li);
+  });
+}
+
+async function fetchEventsSafe() {
+  try {
+    const url = `${API_BASE}/api/events?limit=200`;
+    console.log("[HOME][events] fetch", url);
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    console.log("[HOME][events] status", res.status, "content-type=", res.headers.get("content-type"));
+    const ct = res.headers.get("content-type") || "";
+    const data = ct.includes("application/json") ? await res.json() : null;
+    if (!data) {
+      console.warn("[HOME][events] no JSON body", { ct });
+    } else {
+      console.log("[HOME][events] json keys", Object.keys(data));
+    }
+    const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+    return items;
+  } catch (e) {
+    console.warn("[HOME] fetchEventsSafe failed", e);
+    return null;
+  }
+}
+
+function parseEventDate(ev) {
+  const raw = ev?.start_date || ev?.startDate || ev?.starts_at || ev?.startsAt || ev?.date || ev?.datetime || null;
+  if (!raw) return null;
+  const d = new Date(raw);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+function escHtml(s){
+  return String(s || "")
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+}
+
+function fmtDateNL(d){
+  return new Intl.DateTimeFormat("nl-BE",{ day:"2-digit", month:"long" }).format(d);
+}
+
+var weekendEventsInFlight = false;
+
+async function fillUpcomingWeekendEvents(){
+  if (weekendEventsInFlight) return;
+  weekendEventsInFlight = true;
+
+  const listEl = document.getElementById("weekend-events-list");
+  if (!listEl) {
+    weekendEventsInFlight = false;
+    return;
+  }
+
+  try {
+    const all = await fetchEventsSafe();
+    if (!Array.isArray(all)) return;
+
+    const now = new Date();
+    const day = now.getDay();
+    const daysUntilSat = (6 - day + 7) % 7;
+
+    const saturday = new Date(now);
+    saturday.setHours(0,0,0,0);
+    saturday.setDate(now.getDate() + daysUntilSat);
+
+    const sundayEnd = new Date(saturday);
+    sundayEnd.setDate(saturday.getDate() + 2);
+
+    const upcoming = all
+      .map(ev => ({ ev, d: parseEventDate(ev) }))
+      .filter(x => x.d && x.d >= saturday && x.d < sundayEnd)
+      .sort((a,b) => a.d - b.d)
+      .slice(0, 2); // max 2
+
+    listEl.innerHTML = "";
+
+    if (!upcoming.length) {
+      const li = document.createElement("li");
+      li.className = "event-item";
+      li.innerHTML = `
+        <div class="event-title">Geen events gepland</div>
+        <div class="event-meta">Voor dit weekend zijn er nog geen events.</div>
+      `;
+      listEl.appendChild(li);
+      return;
+    }
+
+    upcoming.forEach(({ev,d}) => {
+      const id = String(ev?.id || "").trim();
+      const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+      const li = document.createElement("li");
+      li.className = "event-item";
+      li.innerHTML = `
+        <div class="event-title">${escHtml(ev?.title || ev?.name || "Event")}</div>
+        <div class="event-meta">
+          ${fmtDateNL(d)}${ev?.location ? " · " + escHtml(ev.location) : ""}
+        </div>
+      `;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => window.location.href = url);
+
+      listEl.appendChild(li);
+    });
+
+  } catch (e) {
+    console.warn("[HOME] weekend events failed", e);
+  } finally {
+    weekendEventsInFlight = false;
+  }
+}
+
+var monthlyEventsInFlight = false;
+
+async function fillMonthlyCalendarFromBackend(){
+  if (monthlyEventsInFlight) return;
+  monthlyEventsInFlight = true;
+
+  const listEl = document.getElementById("monthly-events-list");
+  const emptyEl = document.getElementById("monthly-events-empty");
+  if (!listEl) {
+    monthlyEventsInFlight = false;
+    return;
+  }
+
+  try {
+    const all = await fetchEventsSafe();
+    if (!Array.isArray(all)) return;
+
+    const now = new Date();
+    const start = new Date(now.getFullYear(), now.getMonth(), 1);
+    const end   = new Date(now.getFullYear(), now.getMonth()+1, 1);
+
+    const items = all
+      .map(ev => ({ ev, d: parseEventDate(ev) }))
+      .filter(x => x.d && x.d >= start && x.d < end)
+      .sort((a,b) => a.d - b.d)
+      .slice(0, 6); // max 6
+
+    listEl.innerHTML = "";
+
+    if (!items.length) {
+      if (emptyEl) emptyEl.style.display = "block";
+      return;
+    }
+
+    if (emptyEl) emptyEl.style.display = "none";
+
+    items.forEach(({ev,d}) => {
+      const id = String(ev?.id || "").trim();
+      const url = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+      const li = document.createElement("li");
+      li.className = "event-item";
+      li.innerHTML = `
+        <div class="event-title">${escHtml(ev?.title || ev?.name || "Event")}</div>
+        <div class="event-meta">
+          ${fmtDateNL(d)} · ${escHtml(ev?.location || ev?.city || "Regio")}
+        </div>
+      `;
+      li.style.cursor = "pointer";
+      li.addEventListener("click", () => window.location.href = url);
+
+      listEl.appendChild(li);
+    });
+
+  } catch (e) {
+    console.warn("[HOME] monthly events failed", e);
+  } finally {
+    monthlyEventsInFlight = false;
+  }
+}
+
+      // Standings (LIVE) – via backend /api/standings (TheSportsDB)
+      async function loadStandings(listId, emptyId, leagueCode) {
+        const listEl = document.getElementById(listId);
+        const emptyEl = document.getElementById(emptyId);
+        if (!listEl) return;
+
+        // loading state
+        listEl.innerHTML = "";
+        const loadingLi = document.createElement("li");
+        loadingLi.className = "event-item";
+        loadingLi.innerHTML = `<div class=\"event-meta\">Stand wordt geladen…</div>`;
+        listEl.appendChild(loadingLi);
+        if (emptyEl) emptyEl.style.display = "none";
+
+        try {
+          const url = `${API_BASE}/api/standings?league=${encodeURIComponent(leagueCode)}`;
+          const res = await fetch(url);
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const data = await res.json();
+          const table = Array.isArray(data?.table) ? data.table : [];
+
+          if (!table.length) {
+            listEl.innerHTML = "";
+            if (emptyEl) emptyEl.style.display = "block";
+            return;
+          }
+
+          listEl.innerHTML = "";
+
+          const esc = (s) => String(s || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+
+          const rows = table.slice(0, 10);
+
+          rows.forEach((r) => {
+            const li = document.createElement("li");
+            li.className = "event-item";
+
+            const logoHtml = r.logo
+              ? `<img class=\"standings-logo\" src=\"${r.logo}\" alt=\"\" loading=\"lazy\" decoding=\"async\">`
+              : "";
+
+            li.innerHTML = `
+              <div class=\"standings-row\">
+                <div class=\"standings-ranklogo\">
+                  <span class=\"standings-rank\">${Number(r.rank) || ""}.</span>
+                  ${logoHtml}
+                  <div class=\"standings-name\">${esc(r.team)}</div>
+                </div>
+                <div class=\"standings-pts\">${Number(r.points) || 0} pts</div>
+              </div>
+            `;
+
+            listEl.appendChild(li);
+          });
+
+          // Pad to Top 10 if the provider returns fewer rows (keeps UI consistent)
+          if (rows.length < 10) {
+            for (let i = rows.length + 1; i <= 10; i++) {
+              const li = document.createElement("li");
+              li.className = "event-item";
+              li.style.opacity = "0.55";
+              li.innerHTML = `
+                <div class=\"standings-row\">
+                  <div class=\"standings-ranklogo\">
+                    <span class=\"standings-rank\">${i}.</span>
+                    <div class=\"standings-name\">—</div>
+                  </div>
+                  <div class=\"standings-pts\"> </div>
+                </div>
+              `;
+              listEl.appendChild(li);
+            }
+          }
+
+          if (emptyEl) emptyEl.style.display = "none";
+        } catch (e) {
+          console.warn("[STANDINGS] load failed", leagueCode, e);
+          listEl.innerHTML = "";
+          if (emptyEl) emptyEl.style.display = "block";
+        }
+      }
+
+      // Load BE + NL standings
+      loadStandings("jpl-standings", "jpl-standings-empty", "JPL");
+      loadStandings("eredivisie-standings", "eredivisie-standings-empty", "ERED");
+
+});
+</script>
+
+  <!-- V4A: AdSense robust init (keeps positions; ensures all <ins.adsbygoogle> request an ad, incl. dynamically injected infeed) -->
+  <script>
+  (function () {
+    "use strict";
+
+    // NOTE:
+    // - Do NOT move or remove any ad <ins> blocks.
+    // - This code only ensures that every <ins.adsbygoogle> triggers a request when it is measurable & visible.
+    // - It also handles dynamically injected <ins> (e.g. the infeed unit inserted in #latest-news-grid).
+
+    var MAX_ATTEMPTS = 8;
+    // Width must be >0 and reasonably sized; do NOT require a non-zero height (AdSense will set height when filled).
+    var MIN_WIDTH = 120;
+
+    function now() { return Date.now ? Date.now() : (+new Date()); }
+
+    function isConnected(el) {
+      return !!(el && (el.isConnected || document.documentElement.contains(el)));
+    }
+
+    function isVisible(el) {
+      if (!el) return false;
+      var cs = window.getComputedStyle ? getComputedStyle(el) : null;
+      if (!cs) return true;
+      if (cs.display === "none" || cs.visibility === "hidden" || cs.opacity === "0") return false;
+      return true;
+    }
+
+    function getRect(el) {
+      try { return el.getBoundingClientRect(); } catch (e) { return null; }
+    }
+
+    function hasSize(el) {
+      var r = getRect(el);
+      if (!r) return false;
+      var w = Math.floor(r.width || 0);
+      // IMPORTANT: Height may be 0 before the ad is filled; do not block loading on height.
+      return w >= MIN_WIDTH;
+    }
+
+    function isInViewport(el) {
+      var r = getRect(el);
+      if (!r) return false;
+      var vw = window.innerWidth || document.documentElement.clientWidth || 0;
+      var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+      // Consider near-viewport as eligible to prevent late paints
+      var margin = 250;
+      return (
+        r.bottom >= -margin &&
+        r.right >= 0 &&
+        r.top <= (vh + margin) &&
+        r.left <= vw
+      );
+    }
+
+    function isDone(el) {
+      // Google notes: data-adsbygoogle-status is internal processing.
+      // data-ad-status is filled/unfilled/unfill-optimized (official).
+      // We'll treat ANY of these as "done" to avoid duplicate push() errors.
+      if (!el) return true;
+      var adsStatus = el.getAttribute("data-adsbygoogle-status");
+      if (adsStatus) return true;
+      var adStatus = el.getAttribute("data-ad-status");
+      if (adStatus) return true;
+      // If AdSense already injected an iframe, consider it done.
+      if (el.querySelector && el.querySelector("iframe")) return true;
+      return false;
+    }
+
+    function ensureAdsbygoogleArray() {
+      // If the AdSense script hasn't loaded yet, we can still queue pushes.
+      // When it loads, it overrides push() to do the real work.
+      if (!window.adsbygoogle) window.adsbygoogle = [];
+      return window.adsbygoogle;
+    }
+
+    function isInflight(el) {
+      if (!el) return false;
+      if (el.getAttribute("data-v4a-ads-requested") !== "1") return false;
+      var st = el._v4aAdsState;
+      if (!st || !st.requestedAt) return true;
+      // If AdSense hasn't marked the slot after a grace period, allow a controlled retry.
+      return (now() - st.requestedAt) < 2500;
+    }
+
+    function safePush(el) {
+      var arr = ensureAdsbygoogleArray();
+      try {
+        // Mark requested to prevent duplicate TagError on reflows.
+        el.setAttribute("data-v4a-ads-requested", "1");
+        var st;
+        try {
+          st = el._v4aAdsState || (el._v4aAdsState = { attempts: 0, lastTry: 0, timer: null, done: false });
+          st.requestedAt = now();
+        } catch (e0) {}
+
+        arr.push({});
+
+        // Verification retry: if AdSense doesn't mark the slot within a grace period,
+        // clear the requested flag and schedule a controlled retry (no layout changes).
+        try {
+          if (st) {
+            if (st.verifyTimer) clearTimeout(st.verifyTimer);
+            st.verifyTimer = setTimeout(function () {
+              try {
+                if (!isConnected(el)) return;
+                if (st.done) return;
+                if (isDone(el)) { st.done = true; return; }
+                if (st.attempts >= MAX_ATTEMPTS) return;
+                // Allow another attempt
+                el.removeAttribute("data-v4a-ads-requested");
+                schedule(el, "verify-retry");
+              } catch (eV) {}
+            }, 6500);
+          }
+        } catch (e1) {}
+
+        return true;
+      } catch (e) {
+        // If push fails (common TagError), allow a limited retry.
+        try { el.removeAttribute("data-v4a-ads-requested"); } catch (e2) {}
+        return false;
+      }
+    }
+
+    function schedule(el, reason) {
+      if (!el || el.nodeType !== 1) return;
+      if (el._v4aAdsState && el._v4aAdsState.done) return;
+
+      var st = el._v4aAdsState || (el._v4aAdsState = { attempts: 0, lastTry: 0, timer: null, done: false });
+      if (st.timer) return;
+
+      var delay = 150;
+      st.timer = setTimeout(function () {
+        st.timer = null;
+        tryEnsure(el, reason);
+      }, delay);
+    }
+
+    function tryEnsure(el, reason) {
+      if (!isConnected(el)) return;
+
+      var st = el._v4aAdsState || (el._v4aAdsState = { attempts: 0, lastTry: 0, timer: null, done: false });
+      if (st.done) return;
+
+      // If we already requested an ad recently, wait a short grace period before retrying.
+      if (isInflight(el)) {
+        return;
+      }
+
+      // Don't push twice.
+      if (isDone(el)) {
+        st.done = true;
+        return;
+      }
+
+      // Respect AdSense guidance: don't request while hidden.
+      if (!isVisible(el)) {
+        if (st.attempts < MAX_ATTEMPTS) schedule(el, "hidden");
+        return;
+      }
+
+      // Ensure measurable size to avoid availableWidth=0 / too small.
+      if (!hasSize(el)) {
+        st.attempts++;
+        if (st.attempts < MAX_ATTEMPTS) {
+          // Backoff: give layout time (images/fonts/grid/async content)
+          var backoff = Math.min(2000, 200 + st.attempts * 200);
+          setTimeout(function () { schedule(el, "nosize" ); }, backoff);
+        }
+        return;
+      }
+
+      // Prefer in/near viewport (prevents requesting many offscreen ads at once).
+      if (!isInViewport(el)) {
+        // Prefer viewport, but don't block init/load/manual/verify-retry permanently
+        if (reason !== "init" && reason !== "load" && reason !== "manual" && reason !== "verify-retry") {
+          return;
+        }
+      }
+
+      st.attempts++;
+      st.lastTry = now();
+      st.requestedAt = now();
+
+      var ok = safePush(el);
+      if (ok) {
+        // We mark done only after AdSense touches the element (data-* or iframe).
+        // But we also guard against double-push by keeping data-v4a-ads-requested.
+        // If AdSense doesn't react yet, observers/next ticks will not re-push because of isDone() checks.
+        // We still keep a delayed verification pass.
+        setTimeout(function () {
+          if (isConnected(el) && !st.done) {
+            if (isDone(el)) st.done = true;
+          }
+        }, 1200);
+      } else {
+        // Retry with backoff (prevents tight loop on TagError)
+        if (st.attempts < MAX_ATTEMPTS) {
+          var wait = Math.min(3000, 300 + st.attempts * 350);
+          setTimeout(function () { schedule(el, "pushfail" ); }, wait);
+        }
+      }
+    }
+
+    function collectAllSlots(root) {
+      var scope = root && root.querySelectorAll ? root : document;
+      try {
+        return Array.prototype.slice.call(scope.querySelectorAll("ins.adsbygoogle"));
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function initOnce() {
+      // Initial scan
+      collectAllSlots(document).forEach(function (el) { schedule(el, "init" ); });
+
+      // Observe dynamically injected ads (e.g. infeed inserted in latest news)
+      if (window.MutationObserver) {
+        var mo = new MutationObserver(function (mutations) {
+          for (var i = 0; i < mutations.length; i++) {
+            var m = mutations[i];
+            if (!m.addedNodes || !m.addedNodes.length) continue;
+            for (var j = 0; j < m.addedNodes.length; j++) {
+              var n = m.addedNodes[j];
+              if (!n || n.nodeType !== 1) continue;
+              if (n.matches && n.matches("ins.adsbygoogle")) {
+                schedule(n, "mo-direct" );
+              } else if (n.querySelectorAll) {
+                var slots = n.querySelectorAll("ins.adsbygoogle");
+                for (var k = 0; k < slots.length; k++) schedule(slots[k], "mo-nested" );
+              }
+            }
+          }
+        });
+        try { mo.observe(document.body, { childList: true, subtree: true }); } catch (e) {}
+      }
+
+      // Prefer viewport-based triggers
+      if (window.IntersectionObserver) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry && entry.isIntersecting && entry.target) {
+              schedule(entry.target, "io" );
+            }
+          });
+        }, { root: null, rootMargin: "250px 0px 250px 0px", threshold: 0.01 });
+
+        collectAllSlots(document).forEach(function (el) {
+          try { io.observe(el); } catch (e) {}
+        });
+
+        // Also observe any future slots registered by MutationObserver
+        document.addEventListener("v4a:adsense-slot", function (ev) {
+          try {
+            var el = ev && ev.detail && ev.detail.el;
+            if (el && el.nodeType === 1) io.observe(el);
+          } catch (e) {}
+        });
+      }
+
+      // Re-check on common lifecycle events
+      window.addEventListener("load", function () {
+        collectAllSlots(document).forEach(function (el) { schedule(el, "load" ); });
+      }, { once: true });
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          collectAllSlots(document).forEach(function (el) { schedule(el, "vis" ); });
+        }
       });
-    })();
+
+      window.addEventListener("resize", function () {
+        // Layout changes can fix width=0 scenarios
+        collectAllSlots(document).forEach(function (el) {
+          if (!isDone(el)) schedule(el, "resize" );
+        });
+      });
+
+      window.addEventListener("orientationchange", function () {
+        collectAllSlots(document).forEach(function (el) {
+          if (!isDone(el)) schedule(el, "orient" );
+        });
+      });
+    }
+
+    // Kickstart ASAP (after this script is parsed)
+    initOnce();
+
+    // Expose a tiny manual hook (optional)
+    window.V4A_adsInit = function () {
+      collectAllSlots(document).forEach(function (el) { schedule(el, "manual" ); });
+    };
+  })();
   </script>
+  
+  <!-- Belangrijk: scripts maar 1x, en pas NA de HTML -->
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js" defer></script>
+  <script src="assets/js/live-banner.js"></script>
+</body>
+</html>
