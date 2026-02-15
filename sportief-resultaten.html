@@ -31,7 +31,8 @@
       .v4-topleagues-results{ grid-template-columns: 1fr !important; }
     }
     .v4-mini-fixtures{ width:100%; border-collapse:collapse; }
-    .v4-mini-fixtures th, .v4-mini-fixtures td{ padding:6px 6px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:13px; }
+    .v4-mini-fixtures th, .v4-mini-fixtures td{ padding:6px 6px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:12px; }
+    .v4-mini-fixtures td:nth-child(3), .v4-mini-fixtures td:nth-child(4){ width:49%; }
     .v4-mini-fixtures th{ opacity:.75; font-weight:600; text-align:left; }
     .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ white-space:nowrap; }
     .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ width:1%; }
@@ -664,10 +665,11 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
   const stRows = st?.items || st?.standings || st?.table || st?.data || [];
   setHtml(standingsId, renderStandingsTable(stRows));
 
-  // Results (already exists)
+  // Results (last finished matches)
   setHtml(resultsId, `<p class="note">Laden…</p>`);
-  const today = new Date().toISOString().slice(0,10);
-  const rr = await safeFetchJson(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&date=${encodeURIComponent(today)}&nocache=1`);
+  const rr = await safeFetchJson(
+    `${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=10&nocache=1&bust=${Date.now()}`
+  );
   setHtml(resultsId, renderMatchesList(rr?.items || []));
 
   // Upcoming (optional)
@@ -806,7 +808,7 @@ async function loadLeague(league) {
   rBody.innerHTML = `<p class="note">Laden…</p>`;
 
   try {
-    const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&nocache=1`);
+    const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=25&nocache=1&bust=${Date.now()}`);
     const rJson = await rRes.json().catch(()=>({}));
 
     // prefer backend meta (authoritative)
