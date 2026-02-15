@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0B1020">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Resultaten</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Resultaten: in lijn met bestaande dark UI */
+    .v4-results-table td, .v4-results-table th { white-space: nowrap; }
+    .v4-results-table td.team { white-space: normal; }
+    .v4-results-table tr.is-highlight td { background: rgba(0,255,180,0.06); }
+    .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+    .v4-results-list .v4-result-score { font-weight:700; }
+  </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
       <div class="shell">
         <div class="navbar-inner">
@@ -94,13 +129,61 @@
         </div>
       </div>
     </header>
-<style>
-    .v4-results-table td, .v4-results-table th { white-space: nowrap; }
-    .v4-results-table td.team { white-space: normal; }
-    .v4-results-table tr.is-highlight td { background: rgba(0,255,180,0.06); }
-    .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
-    .v4-results-list .v4-result-score { font-weight:700; }
-  </style>
+
+<!-- ================= LIVE BANNER ================= -->
+<section class="live-banner-top">
+  <div class="shell">
+    <div class="live-banner">
+      <div class="live-label"><span class="live-dot"></span>Live score</div>
+      <div class="live-text">
+        <span class="live-text-main"></span>
+        <div class="live-updated"></div>
+      </div>
+      <div class="live-socials">
+        <div class="live-socials-label">Volg ons</div>
+        <div class="live-socials-icons"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HEADER AD ================= -->
+<section class="section-main" style="padding:10px 0;">
+  <div class="shell">
+    <div class="ad-slot ad-slot-header">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4062633211824348"
+        data-ad-slot="7209663682"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main>
+<section class="section-main">
+<div class="shell">
+
+  <article class="card" style="margin-bottom:12px;">
+    <div class="card-header">
+      <div>
+        <div class="card-caption">Sportief</div>
+        <div class="card-title">Resultaten</div>
+      </div>
+      <span class="pill-small">Alle competities · M/V</span>
+    </div>
+    <p class="note">
+      Filter op land, geslacht en competitie. Dames-competities krijgen een duidelijke badge.
+    </p>
+  </article>
+
+  <div class="v4-layout-sidebar">
+
+    <!-- CONTENT -->
+    <div class="v4-content">
 
       <!-- FILTERS -->
       <div class="card" style="margin-bottom:12px;">
@@ -118,7 +201,7 @@
               <option value="BE">België</option>
               <option value="NL">Nederland</option>
               <option value="DE">Duitsland</option>
-              <option value="ENG">Engeland</option>
+              <option value="EN">Engeland</option>
               <option value="IT">Italië</option>
               <option value="ES">Spanje</option>
               <option value="FR">Frankrijk</option>
@@ -128,7 +211,7 @@
           <div>
             <label class="note">Sexe</label><br />
             <select id="filter-gender" class="input">
-              <option value="ALL">Heren & Dames</option>
+              <option value="ALL">Heren &amp; Dames</option>
               <option value="M">Heren</option>
               <option value="W">Dames</option>
             </select>
@@ -187,6 +270,43 @@
           </div>
         </div>
       </div>
+
+    </div>
+
+    <!-- SIDEBAR (ruimte voor paid placements) -->
+    <aside class="v4-sidebar">
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Uitgelicht</div>
+            <div class="card-title">Paid placements</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="note">(Later) ruimte voor premium plaatsingen rond resultaten.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+</div>
+</section>
+</main>
 
 <script>
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
@@ -276,7 +396,7 @@ countrySelect.addEventListener("change", populateLeagues);
 genderSelect.addEventListener("change", populateLeagues);
 
 function womenBadgeHtml(){
-  // re-use existing design language (small pill)
+  // small pill in Voetbal4All style
   return `<span style="display:inline-flex;align-items:center;gap:6px;margin-left:10px;padding:3px 9px;border-radius:999px;background:rgba(255,120,200,0.12);border:1px solid rgba(255,120,200,0.35);font-size:12px;line-height:1;">♀ dames</span>`;
 }
 
@@ -329,3 +449,10 @@ loadBtn.addEventListener("click", async () => {
 // init
 loadLeagues();
 </script>
+
+<script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+
+</div>
+</body>
+</html>
