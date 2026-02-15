@@ -29,6 +29,9 @@
     @media (max-width: 860px){
       .v4-topleagues-grid{ grid-template-columns: 1fr !important; }
     }
+    @media (min-width: 861px){
+      .v4-topleagues-grid{ grid-template-columns: 1fr 340px 1fr !important; }
+    }
   </style>
 </head>
 
@@ -181,7 +184,7 @@
     </div>
 
     <div class="card-body" style="padding-top:0;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-grid">
+      <div style="display:grid;grid-template-columns:1fr 340px 1fr;gap:12px;" class="v4-topleagues-grid">
 
         <!-- EREDIVISIE -->
         <div class="card" style="margin:0;">
@@ -200,6 +203,21 @@
             <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
             <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
             <div id="top-ered-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
+        <!-- SLIM AD SLOT TUSSEN EREDIVISIE EN JPL -->
+        <div class="card" style="margin:0;">
+          <div class="card-body" style="padding:10px;">
+            <div class="ad-slot">
+              <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-4062633211824348"
+                data-ad-slot="7209663682"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
           </div>
         </div>
 
@@ -223,10 +241,6 @@
           </div>
         </div>
 
-      </div>
-
-      <div class="note" style="margin-top:10px;opacity:.8;">
-        Tip: als rangschikking/aankomende nog niet beschikbaar is via de backend, tonen we tijdelijk een placeholder.
       </div>
     </div>
   </div>
@@ -546,14 +560,18 @@ function renderMatchesList(items){
   return `<div class="v4-results-list">` + arr.slice(0,8).map(m => {
     const homeName = (m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
     const awayName = (m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
-    const homeLogo = (m.homeLogo ?? m.teams?.home?.logo ?? m.home?.logo ?? m.homeTeamLogo ?? pickLogo(m.teams?.home) ?? "");
-    const awayLogo = (m.awayLogo ?? m.teams?.away?.logo ?? m.away?.logo ?? m.awayTeamLogo ?? pickLogo(m.teams?.away) ?? "");
+    const homeLogo = (m.homeLogo ?? m.homeTeamLogo ?? m.home_logo ?? m.homeBadge ?? m.teams?.home?.logo ?? m.home?.logo ?? pickLogo(m.teams?.home) ?? "");
+    const awayLogo = (m.awayLogo ?? m.awayTeamLogo ?? m.away_logo ?? m.awayBadge ?? m.teams?.away?.logo ?? m.away?.logo ?? pickLogo(m.teams?.away) ?? "");
 
     const left = teamCellHtml(homeName, homeLogo);
     const right = teamCellHtml(awayName, awayLogo);
+    const dtRaw = (m.dateEvent ?? m.date ?? m.fixture?.date ?? "");
+    const dt = dtRaw ? new Date(dtRaw) : null;
+    const dtLabel = dt ? `${dt.toLocaleDateString('nl-BE', { day:'2-digit', month:'2-digit' })} ${dt.toLocaleTimeString('nl-BE', { hour:'2-digit', minute:'2-digit' })}` : toDateLabel(dtRaw);
+
     const score = (m.homeGoals != null || m.awayGoals != null)
       ? `${escapeHtml(m.homeGoals ?? m.goals?.home ?? "")} - ${escapeHtml(m.awayGoals ?? m.goals?.away ?? "")}`
-      : `<span style="opacity:.75;">${toDateLabel(m.date ?? m.fixture?.date ?? "")}</span>`;
+      : `<span style="opacity:.75;font-size:12px;">${escapeHtml(dtLabel)}</span>`;
 
     return `<div class="v4-result-row">
       <div>${left}</div>
@@ -589,7 +607,8 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
 
   // Results (already exists)
   setHtml(resultsId, `<p class="note">Laden…</p>`);
-  const rr = await safeFetchJson(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&nocache=1`);
+  const today = new Date().toISOString().slice(0,10);
+  const rr = await safeFetchJson(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&date=${encodeURIComponent(today)}&nocache=1`);
   setHtml(resultsId, renderMatchesList(rr?.items || []));
 
   // Upcoming (optional)
