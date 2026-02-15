@@ -27,7 +27,8 @@
     .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
     .v4-results-list .v4-result-score { font-weight:700; }
     @media (max-width: 860px){
-      .v4-topleagues-grid{ grid-template-columns: 1fr !important; }
+      .v4-topleagues-standings{ grid-template-columns: 1fr !important; }
+      .v4-topleagues-results{ grid-template-columns: 1fr !important; }
     }
     .v4-mini-fixtures{ width:100%; border-collapse:collapse; }
     .v4-mini-fixtures th, .v4-mini-fixtures td{ padding:6px 6px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:13px; }
@@ -191,9 +192,10 @@
     </div>
 
     <div class="card-body" style="padding-top:0;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-grid">
+      <!-- RIJ 1: RANGSCHIKKING (2 kolommen) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-standings">
 
-        <!-- EREDIVISIE -->
+        <!-- EREDIVISIE (STANDINGS) -->
         <div class="card" style="margin:0;">
           <div class="card-header">
             <div>
@@ -204,17 +206,10 @@
           <div class="card-body">
             <div class="note" style="margin-bottom:6px;">Rangschikking</div>
             <div id="top-ered-standings" class="note">Laden…</div>
-
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
-            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
-            <div id="top-ered-results" class="note">Laden…</div>
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
-            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
-            <div id="top-ered-upcoming" class="note">Laden…</div>
           </div>
         </div>
 
-        <!-- JUPILER PRO LEAGUE -->
+        <!-- JUPILER PRO LEAGUE (STANDINGS) -->
         <div class="card" style="margin:0;">
           <div class="card-header">
             <div>
@@ -225,20 +220,13 @@
           <div class="card-body">
             <div class="note" style="margin-bottom:6px;">Rangschikking</div>
             <div id="top-jpl-standings" class="note">Laden…</div>
-
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
-            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
-            <div id="top-jpl-results" class="note">Laden…</div>
-            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
-            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
-            <div id="top-jpl-upcoming" class="note">Laden…</div>
           </div>
         </div>
 
       </div>
 
-      <!-- SLIM AD SLOT (FULL-WIDTH ONDER NL + BE) -->
-      <div class="v4-ad-slim" style="margin:12px 0 0 0;">
+      <!-- 1x AD (FULL-WIDTH) TUSSEN STANDINGS EN RESULTATEN -->
+      <div class="v4-ad-slim" style="margin:12px 0;">
         <div class="v4-ad-slim__ph">Advertentie</div>
         <ins class="adsbygoogle"
           style="display:block"
@@ -247,6 +235,45 @@
           data-ad-format="auto"
           data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- RIJ 2: RESULTATEN + AANKOMENDE (2 kolommen) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-results">
+
+        <!-- EREDIVISIE (RESULTS + UPCOMING) -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Nederland</div>
+              <div class="card-title">Eredivisie</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-ered-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-ered-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
+        <!-- JUPILER PRO LEAGUE (RESULTS + UPCOMING) -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">België</div>
+              <div class="card-title">Jupiler Pro League</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-jpl-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-jpl-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
       </div>
 
     </div>
