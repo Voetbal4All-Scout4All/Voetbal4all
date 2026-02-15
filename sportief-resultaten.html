@@ -393,29 +393,107 @@ function renderStandingsTable(rows){
   const arr = Array.isArray(rows) ? rows : [];
   if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
 
-  // Try to be flexible with backend shapes
-  const first = arr[0] || {};
-  const hasRank = ("rank" in first) || ("position" in first);
+  const getNum = (v) => {
+    if (v == null) return "";
+    const n = Number(v);
+    return Number.isFinite(n) ? String(n) : "";
+  };
+
+  const pick = (r, paths) => {
+    for (const p of paths) {
+      const parts = p.split(".");
+      let cur = r;
+      let ok = true;
+      for (const k of parts) {
+        if (cur && Object.prototype.hasOwnProperty.call(cur, k)) cur = cur[k];
+        else { ok = false; break; }
+      }
+      if (ok && cur != null) return cur;
+    }
+    return null;
+  };
+
+  const hasAny = (predicate) => arr.some((r) => {
+    try { return predicate(r); } catch { return false; }
+  });
+
+  // Detect available fields across rows (flexible across backend providers)
+  const showWDL = hasAny((r) => pick(r, ["wins","win","w","all.win","all.wins","stats.wins","stats.win"]) != null) ||
+                  hasAny((r) => pick(r, ["draws","draw","d","all.draw","all.draws","stats.draws"]) != null) ||
+                  hasAny((r) => pick(r, ["losses","loss","l","all.lose","all.lost","all.loss","stats.losses"]) != null);
+
+  const showGoals = hasAny((r) => pick(r, ["goalsFor","gf","for","all.goals.for","goals.for","stats.goalsFor"]) != null) ||
+                    hasAny((r) => pick(r, ["goalsAgainst","ga","against","all.goals.against","goals.against","stats.goalsAgainst"]) != null) ||
+                    hasAny((r) => pick(r, ["goalDifference","gd","diff","goalsDiff","all.goalsDiff","goals.diff","stats.goalDifference"]) != null);
+
+  // Columns: rank, team, P, (W D L), (GF GA GD), Pts
+  const headCells = [
+    `<th style="text-align:left;opacity:.75;">#</th>`,
+    `<th style="text-align:left;opacity:.75;">Team</th>`,
+    `<th style="text-align:right;opacity:.75;">P</th>`,
+  ];
+
+  if (showWDL) {
+    headCells.push(
+      `<th style="text-align:right;opacity:.75;">W</th>`,
+      `<th style="text-align:right;opacity:.75;">G</th>`,
+      `<th style="text-align:right;opacity:.75;">V</th>`,
+    );
+  }
+
+  if (showGoals) {
+    headCells.push(
+      `<th style="text-align:right;opacity:.75;">DV</th>`,
+      `<th style="text-align:right;opacity:.75;">DT</th>`,
+      `<th style="text-align:right;opacity:.75;">DS</th>`,
+    );
+  }
+
+  headCells.push(`<th style="text-align:right;opacity:.75;">Pts</th>`);
+
+  const head = `<thead><tr>${headCells.join("")}</tr></thead>`;
 
   const body = arr.map((r) => {
-    const rank = escapeHtml(r.rank ?? r.position ?? "");
-    const team = escapeHtml(r.teamName ?? r.team ?? r.name ?? r.team?.name ?? "");
-    const pts  = escapeHtml(r.points ?? r.pts ?? "");
-    const pld  = escapeHtml(r.played ?? r.pld ?? r.games ?? "");
-    return `<tr>
-      <td style="opacity:.85;">${rank}</td>
-      <td style="white-space:normal;">${team}</td>
-      <td style="text-align:right;opacity:.85;">${pld}</td>
-      <td style="text-align:right;font-weight:700;">${pts}</td>
-    </tr>`;
-  }).join("");
+    const rank = escapeHtml(pick(r, ["rank","position"]) ?? "");
+    const team = escapeHtml(pick(r, ["teamName","team","name","team.name"]) ?? "");
 
-  const head = `<thead><tr>
-    <th style="text-align:left;opacity:.75;">#</th>
-    <th style="text-align:left;opacity:.75;">Team</th>
-    <th style="text-align:right;opacity:.75;">P</th>
-    <th style="text-align:right;opacity:.75;">Pts</th>
-  </tr></thead>`;
+    const played = getNum(pick(r, ["played","pld","games","matches","all.played","stats.played"]) ?? "");
+    const points = getNum(pick(r, ["points","pts","point","stats.points"]) ?? "");
+
+    const w = getNum(pick(r, ["wins","win","w","all.win","all.wins","stats.wins","stats.win"]) ?? "");
+    const d = getNum(pick(r, ["draws","draw","d","all.draw","all.draws","stats.draws"]) ?? "");
+    const l = getNum(pick(r, ["losses","loss","l","all.lose","all.lost","all.loss","stats.losses"]) ?? "");
+
+    const gf = getNum(pick(r, ["goalsFor","gf","for","all.goals.for","goals.for","stats.goalsFor"]) ?? "");
+    const ga = getNum(pick(r, ["goalsAgainst","ga","against","all.goals.against","goals.against","stats.goalsAgainst"]) ?? "");
+    const gd = getNum(pick(r, ["goalDifference","gd","diff","goalsDiff","all.goalsDiff","goals.diff","stats.goalDifference"]) ?? "");
+
+    const cells = [
+      `<td style="opacity:.85;">${rank}</td>`,
+      `<td style="white-space:normal;">${team}</td>`,
+      `<td style="text-align:right;opacity:.85;">${escapeHtml(played)}</td>`,
+    ];
+
+    if (showWDL) {
+      cells.push(
+        `<td style="text-align:right;opacity:.85;">${escapeHtml(w)}</td>`,
+        `<td style="text-align:right;opacity:.85;">${escapeHtml(d)}</td>`,
+        `<td style="text-align:right;opacity:.85;">${escapeHtml(l)}</td>`,
+      );
+    }
+
+    if (showGoals) {
+      cells.push(
+        `<td style="text-align:right;opacity:.85;">${escapeHtml(gf)}</td>`,
+        `<td style="text-align:right;opacity:.85;">${escapeHtml(ga)}</td>`,
+        `<td style="text-align:right;opacity:.85;">${escapeHtml(gd)}</td>`,
+      );
+    }
+
+    cells.push(`<td style="text-align:right;font-weight:700;">${escapeHtml(points)}</td>`);
+
+    return `<tr>${cells.join("")}</tr>`;
+  }).join("");
 
   return `<div style="overflow:auto;">
     <table class="v4-results-table" style="width:100%;border-collapse:collapse;">
