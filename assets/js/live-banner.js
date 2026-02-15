@@ -437,9 +437,10 @@
           const startPad = 16;
           const startX = containerW + (fades?.rightW || 140) + startPad;
 
-          // End much further left before restart so the text can travel even closer to the Live score label
-          // before fading out.
-          const endPad = Math.max(820, (fades?.leftW || 2) + 800);
+          // End only slightly past the left edge.
+          // If this value is too large, the text becomes fully invisible (due to the left fade)
+          // while the animation is still running, which looks like a long “pause”.
+          const endPad = Math.max(140, (fades?.leftW || 2) + 120);
           const endX = -textW - endPad;
 
           // Speed (px/sec)
