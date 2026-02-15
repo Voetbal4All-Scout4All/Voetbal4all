@@ -1742,6 +1742,9 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // In-flight guards (var avoids redeclare errors if declared elsewhere in this file)
+      var weekendEventsInFlight = false;
+      var monthlyEventsInFlight = false;
       // Defensive fetchEventsSafe for HOME events fillers
       async function fetchEventsSafe(url) {
         try {
@@ -2514,7 +2517,7 @@ function fmtDateNL(d){
   return new Intl.DateTimeFormat("nl-BE",{ day:"2-digit", month:"long" }).format(d);
 }
 
-let weekendEventsInFlight = false;
+var weekendEventsInFlight = false;
 
 async function fillUpcomingWeekendEvents(){
   if (weekendEventsInFlight) return;
@@ -2585,7 +2588,7 @@ async function fillUpcomingWeekendEvents(){
   }
 }
 
-let monthlyEventsInFlight = false;
+var monthlyEventsInFlight = false;
 
 async function fillMonthlyCalendarFromBackend(){
   if (monthlyEventsInFlight) return;
