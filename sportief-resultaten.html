@@ -36,6 +36,13 @@
     .v4-mini-fixtures th{ opacity:.75; font-weight:600; text-align:left; }
     .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ white-space:nowrap; }
     .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ width:1%; }
+    /* Results table: pull Score + Uit left by constraining column widths */
+    .v4-mini-results{ table-layout:fixed; }
+    .v4-mini-results th:nth-child(1), .v4-mini-results td:nth-child(1){ width:52px; }
+    .v4-mini-results th:nth-child(2), .v4-mini-results td:nth-child(2){ width:56px; }
+    .v4-mini-results th:nth-child(4), .v4-mini-results td:nth-child(4){ width:74px; }
+    .v4-mini-results th:nth-child(3), .v4-mini-results td:nth-child(3){ width:40%; }
+    .v4-mini-results th:nth-child(5), .v4-mini-results td:nth-child(5){ width:40%; }
     /* Slim horizontal AdSense placeholder (visible even on no-fill/adblock) */
     .v4-ad-slim{ position:relative; min-height:72px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03); }
     .v4-ad-slim__ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; font-size:12px; opacity:.55; letter-spacing:.06em; text-transform:uppercase; }
@@ -673,7 +680,7 @@ function renderResultsTable(items){
   }).join("");
 
   return `<div style="overflow:auto;">
-    <table class="v4-mini-fixtures">
+    <table class="v4-mini-fixtures v4-mini-results">
       <thead>
         <tr>
           <th>Datum</th>
