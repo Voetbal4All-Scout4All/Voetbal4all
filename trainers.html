@@ -59,10 +59,12 @@
   .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
   .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
   /* Fix: filter buttons (Zoek/Wissen) text should be white */
+  #trainer-filter-apply,
   #trainer-filter-clear,
   .search-bar--advanced .btn-ghost-sm{
     color:#fff !important;
   }
+  #trainer-filter-apply:hover,
   #trainer-filter-clear:hover,
   .search-bar--advanced .btn-ghost-sm:hover{
     color:#fff !important;
@@ -247,6 +249,7 @@
 
                 <input id="trainer-region-filter" class="search-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
 
+                <button id="trainer-filter-apply" type="button" class="btn-ghost-sm">Zoek</button>
                 <button id="trainer-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
               </div>
               <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
@@ -573,8 +576,9 @@
     const qEl = document.getElementById("trainer-search");
     const countryEl = document.getElementById("trainer-country-filter");
     const regionEl = document.getElementById("trainer-region-filter");
+    const applyEl = document.getElementById("trainer-filter-apply");
     const clearEl = document.getElementById("trainer-filter-clear");
-    if (!qEl || !countryEl || !regionEl || !clearEl) return;
+    if (!qEl || !countryEl || !regionEl || !applyEl || !clearEl) return;
 
     function normalize(s) {
       return String(s || "").toLowerCase().trim();
@@ -627,6 +631,10 @@
     qEl.addEventListener("input", schedule);
     regionEl.addEventListener("input", schedule);
     countryEl.addEventListener("change", applyFilters);
+
+    applyEl.addEventListener("click", () => {
+      applyFilters();
+    });
 
     clearEl.addEventListener("click", () => {
       qEl.value = "";
