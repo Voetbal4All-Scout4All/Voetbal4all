@@ -377,7 +377,8 @@ const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
 // Optional endpoints (page must not break if these don't exist)
 const STANDINGS_ENDPOINT = `${API_BASE}/api/standings`;          // expected: ?league=CODE
-const UPCOMING_ENDPOINT  = `${API_BASE}/api/upcoming`;           // expected: ?league=CODE
+const UPCOMING_ENDPOINT  = `${API_BASE}/api/fixtures`;           // expected: ?league=CODE&next=N
+const UPCOMING_NEXT      = 10;
 
 function setHtml(id, html){
   const el = document.getElementById(id);
@@ -592,8 +593,11 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
   setHtml(resultsId, renderMatchesList(rr?.items || []));
 
   // Upcoming (optional)
+  // Backend: /api/fixtures?league=CODE&next=N
   setHtml(upcomingId, `<p class="note">Laden…</p>`);
-  const up = await safeFetchJson(`${UPCOMING_ENDPOINT}?league=${encodeURIComponent(league)}&nocache=1`);
+  const up = await safeFetchJson(
+    `${UPCOMING_ENDPOINT}?league=${encodeURIComponent(league)}&next=${encodeURIComponent(String(UPCOMING_NEXT))}&nocache=1`
+  );
   setHtml(upcomingId, renderMatchesList(up?.items || up?.fixtures || up?.data || []));
 }
 
