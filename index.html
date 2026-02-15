@@ -1764,7 +1764,7 @@
           `
             <li class="event-item">
               <div class="event-title">${flagHtmlEvent("INT")} Geen events gevonden in de komende 7 dagen.</div>
-              <div class="event-meta">Later kan dit blok automatisch gevoed worden op basis van alle events.</div>
+              <div class="event-meta">Wil jij jouw event ook in deze lijst? Zorg dat je het publiceert!.</div>
             </li>
           `
         );
@@ -2381,6 +2381,7 @@
       // Eerste live load + periodieke refresh (no overlap; initial load is slightly delayed inside loadHomeNews)
       loadHomeNews();
 
+      if (false) {
       // =========================
       // HOME: Events (Weekend + Kalender) — defensive rendering
       // =========================
@@ -2602,6 +2603,7 @@
       fillMonthlyCalendarFromBackend();
       setInterval(fillUpcomingWeekendEvents, 5 * 60 * 1000);
       setInterval(fillMonthlyCalendarFromBackend, 10 * 60 * 1000);
+    }
       setInterval(() => { loadHomeNews(); }, REFRESH_MS);
       
       // Standings (LIVE) – via backend /api/standings (TheSportsDB)
