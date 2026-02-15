@@ -2237,6 +2237,11 @@
             (Array.isArray(data) && data) ||
             [];
 
+            console.log("[HOME][events] items count", Array.isArray(items) ? items.length : "(not array)");
+            if (Array.isArray(items) && items.length) {
+              console.log("[HOME][events] sample item[0]", items[0]);
+            }
+
           return Array.isArray(items) ? items : [];
         }catch(e){
           console.warn("[HOME] fetchEventsSafe failed", e);
@@ -2451,10 +2456,17 @@ function renderMonthlyEvents() {
 async function fetchEventsSafe() {
   try {
     const url = `${API_BASE}/api/events?limit=200`;
+    console.log("[HOME][events] fetch", url);
     const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error("HTTP " + res.status);
+    console.log("[HOME][events] status", res.status, "content-type=", res.headers.get("content-type"));
     const ct = res.headers.get("content-type") || "";
     const data = ct.includes("application/json") ? await res.json() : null;
+    if (!data) {
+      console.warn("[HOME][events] no JSON body", { ct });
+    } else {
+      console.log("[HOME][events] json keys", Object.keys(data));
+    }
     const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
     return items;
   } catch (e) {
