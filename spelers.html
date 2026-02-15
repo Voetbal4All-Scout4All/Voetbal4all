@@ -65,6 +65,18 @@
   .events-pagination .page-btn:active{transform:translateY(0)}
   .events-pagination .page-btn.is-active{background:rgba(22,163,74,.22);border-color:rgba(22,163,74,.55)}
   .events-pagination .page-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+  /* --- Fix: buttons readable (white text) on dark UI --- */
+  .btn-ghost-sm,
+  .btn-ghost-sm:visited,
+  .btn-share,
+  .btn-share:visited{
+    color: rgba(255,255,255,.92) !important;
+  }
+  .btn-ghost-sm:hover,
+  .btn-share:hover{
+    color: rgba(255,255,255,1) !important;
+  }
 </style>
 </head>
 
