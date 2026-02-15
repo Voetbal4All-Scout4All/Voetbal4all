@@ -641,6 +641,53 @@ function renderMatchesList(items){
   </div>`;
 }
 
+function renderResultsTable(items){
+  const arr = Array.isArray(items) ? items : [];
+  if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
+
+  const rows = arr.slice(0,8).map((m) => {
+    const homeName = (m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
+    const awayName = (m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+
+    const dtRaw = (m.dateEvent ?? m.date ?? m.fixture?.date ?? "");
+    const dt = dtRaw ? new Date(dtRaw) : null;
+    const dateCell = dt ? dt.toLocaleDateString('nl-BE', { day:'2-digit', month:'2-digit' }) : toDateLabel(dtRaw);
+    const timeCell = dt ? dt.toLocaleTimeString('nl-BE', { hour:'2-digit', minute:'2-digit' }) : "";
+
+    const homeScore = (m.homeGoals ?? m.homeScore ?? m.goals?.home);
+    const awayScore = (m.awayGoals ?? m.awayScore ?? m.goals?.away);
+    const scoreText = (homeScore != null || awayScore != null)
+      ? `${escapeHtml(homeScore ?? "")} - ${escapeHtml(awayScore ?? "")}`
+      : "";
+
+    const homeCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(homeName)}</span>`;
+    const awayCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(awayName)}</span>`;
+
+    return `<tr>
+      <td>${escapeHtml(dateCell)}</td>
+      <td>${escapeHtml(timeCell)}</td>
+      <td style="white-space:normal;">${homeCell}</td>
+      <td style="text-align:center;font-weight:800;white-space:nowrap;">${scoreText || "-"}</td>
+      <td style="white-space:normal;">${awayCell}</td>
+    </tr>`;
+  }).join("");
+
+  return `<div style="overflow:auto;">
+    <table class="v4-mini-fixtures">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Tijd</th>
+          <th>Thuis</th>
+          <th style="text-align:center;">Score</th>
+          <th>Uit</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
 async function safeFetchJson(url){
   try {
     const r = await fetch(url);
@@ -670,7 +717,7 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
   const rr = await safeFetchJson(
     `${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=10&nocache=1&bust=${Date.now()}`
   );
-  setHtml(resultsId, renderMatchesList(rr?.items || []));
+  setHtml(resultsId, renderResultsTable(rr?.items || []));
 
   // Upcoming (optional)
   // Backend: /api/fixtures?league=CODE&next=N
@@ -818,7 +865,7 @@ async function loadLeague(league) {
     }
 
     if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
-      rBody.innerHTML = renderMatchesList(rJson.items);
+      rBody.innerHTML = renderResultsTable(rJson.items);
     } else {
       rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
     }
