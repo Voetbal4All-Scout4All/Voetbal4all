@@ -1619,21 +1619,40 @@
         .replace(/'/g,"&#39;");
 
       const pickDate = (it) => {
+        // Support many common field names (backend + legacy + forms)
         const raw = (
-          it?.start_at ||
-          it?.startAt ||
-          it?.starts_at ||
-          it?.startsAt ||
-          it?.start_date ||
-          it?.startDate ||
-          it?.start ||
-          it?.date ||
-          it?.datetime ||
-          it?.start_time
+          it?.start_date ??
+          it?.startDate ??
+          it?.starts_at ??
+          it?.startsAt ??
+          it?.start_at ??
+          it?.startAt ??
+          it?.start ??
+          it?.date_start ??
+          it?.dateStart ??
+          it?.datetime ??
+          it?.date ??
+          it?.event_date ??
+          it?.eventDate ??
+          it?.start_time ??
+          it?.startTime ??
+          null
         );
+
         if (!raw) return null;
-        const d = new Date(raw);
-        return isNaN(d.getTime()) ? null : d;
+
+        // 1) ISO / date-like strings
+        const d1 = new Date(raw);
+        if (!isNaN(d1.getTime())) return d1;
+
+        // 2) unix timestamp (ms) or numeric-ish string
+        const n = Number(raw);
+        if (Number.isFinite(n)) {
+          const d2 = new Date(n);
+          return isNaN(d2.getTime()) ? null : d2;
+        }
+
+        return null;
       };
 
       const fmtShort = (d) => {
@@ -1715,9 +1734,14 @@
 
       const monthRange = () => {
         const now = new Date();
-        const end = new Date(now);
-        end.setDate(now.getDate() + 30);
-        return { start: now, end };
+        const start = new Date(now);
+        start.setHours(0,0,0,0);
+
+        const end = new Date(start);
+        end.setDate(start.getDate() + 30);
+        end.setHours(23,59,59,999);
+
+        return { start, end };
       };
 
       const inRange = (d, start, end) => d && d >= start && d < end;
@@ -1741,7 +1765,14 @@
 
             const ct = res.headers.get("content-type") || "";
             const data = ct.includes("application/json") ? await res.json() : null;
-            const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+            const items =
+              (Array.isArray(data?.items) && data.items) ||
+              (Array.isArray(data?.events) && data.events) ||
+              (Array.isArray(data?.data) && data.data) ||
+              (Array.isArray(data?.result?.items) && data.result.items) ||
+              (Array.isArray(data?.result?.events) && data.result.events) ||
+              (Array.isArray(data) && data) ||
+              [];
             const out = Array.isArray(items) ? items : [];
 
             // store last known good
@@ -1777,7 +1808,7 @@
         const wk = next7DaysRange();
         const weekItems = all
           .map(it => ({ it, d: pickDate(it) }))
-          .filter(x => inRange(x.d, wk.start, wk.end))
+          .filter(x => x.d && inRange(x.d, wk.start, wk.end))
           .sort((a,b) => a.d - b.d)
           .map(x => x.it)
           .slice(0, 10);
@@ -1798,7 +1829,7 @@
         const mr = monthRange();
         const monthlyItems = all
           .map(it => ({ it, d: pickDate(it) }))
-          .filter(x => inRange(x.d, mr.start, mr.end))
+          .filter(x => x.d && inRange(x.d, mr.start, mr.end))
           .sort((a,b) => a.d - b.d)
           .map(x => x.it);
 
