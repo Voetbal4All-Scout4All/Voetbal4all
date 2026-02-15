@@ -960,6 +960,14 @@
   overflow: hidden;   /* essentieel om randen af te snijden */
 }
 
+/* HOME: events cards should grow with content (up to the JS limits) */
+.column-left .card{ height: auto !important; }
+#weekend-events-list,
+#monthly-events-list{
+  max-height: none !important;
+  overflow: visible !important;
+}
+
   </style>
 
   <!-- Redirect: /index.html -> / -->
@@ -1769,7 +1777,7 @@
           .filter(x => inRange(x.d, mr.start, mr.end))
           .sort((a,b) => a.d - b.d)
           .map(x => x.it)
-          .slice(0, 8);
+          .slice(0, 30);
 
         renderList(monthlyList, monthlyItems, "");
         if (monthlyEmpty) {
@@ -2547,7 +2555,7 @@
             .map(ev => ({ ev, d: parseEventDate(ev) }))
             .filter(x => x.d && x.d >= start && x.d < end)
             .sort((a,b) => a.d - b.d)
-            .slice(0, 6);
+            .slice(0, 10);
 
           // Only now mutate DOM
           listEl.innerHTML = "";
