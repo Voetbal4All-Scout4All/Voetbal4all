@@ -1742,6 +1742,28 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Defensive fetchEventsSafe for HOME events fillers
+      async function fetchEventsSafe(url) {
+        try {
+          console.log("[HOME][events] fetch", url);
+          const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
+          console.log("[HOME][events] status", res.status);
+          if (!res.ok) return null;
+          const ct = res.headers.get("content-type") || "";
+          const data = ct.includes("application/json") ? await res.json() : null;
+          console.log("[HOME][events] content-type", ct);
+          if (data && typeof data === "object") {
+            console.log("[HOME][events] json keys", Object.keys(data));
+          }
+          const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+          console.log("[HOME][events] items count", Array.isArray(items) ? items.length : "(not array)");
+          if (Array.isArray(items) && items.length) console.log("[HOME][events] sample[0]", items[0]);
+          return Array.isArray(items) ? items : [];
+        } catch (e) {
+          console.warn("[HOME][events] fetchEventsSafe failed", e?.message || e);
+          return null;
+        }
+      }
       const homeListEl = document.getElementById("latest-news-grid");
       const homeStatusEl = document.getElementById("latest-news-status");
 
