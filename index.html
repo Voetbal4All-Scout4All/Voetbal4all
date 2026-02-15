@@ -1690,22 +1690,55 @@
 
       const inRange = (d, start, end) => d && d >= start && d < end;
 
+      // Keep last good payload to avoid empty UI on transient fetch failures (e.g. hard refresh + cold backend)
+      let lastAllEvents = null;
+      let retryAttempt = 0;
+
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
       async function fetchEvents(limit){
-        try{
-          const url = `${API}/api/events?limit=${limit || 200}`;
-          const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
-          if (!res.ok) return [];
-          const ct = res.headers.get("content-type") || "";
-          const data = ct.includes("application/json") ? await res.json() : null;
-          const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
-          return Array.isArray(items) ? items : [];
-        }catch(e){
-          return [];
+        const url = `${API}/api/events?limit=${limit || 200}`;
+
+        // A few fast retries smooth out cold-start / transient network issues.
+        // IMPORTANT: no globals; state stays inside this IIFE.
+        const maxTries = 3;
+        for (let i = 0; i < maxTries; i++) {
+          try{
+            const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
+            if (!res.ok) throw new Error("HTTP " + res.status);
+
+            const ct = res.headers.get("content-type") || "";
+            const data = ct.includes("application/json") ? await res.json() : null;
+            const items = Array.isArray(data?.items) ? data.items : (Array.isArray(data) ? data : []);
+            const out = Array.isArray(items) ? items : [];
+
+            // store last known good
+            lastAllEvents = out;
+            retryAttempt = 0;
+            return out;
+          }catch(e){
+            // small backoff
+            if (i < maxTries - 1) {
+              await sleep(350 + (i * 650));
+              continue;
+            }
+          }
         }
+
+        // total failure
+        return null;
       }
 
       async function run(){
-        const all = await fetchEvents(200);
+        const fetched = await fetchEvents(200);
+        const all = Array.isArray(fetched) ? fetched : (Array.isArray(lastAllEvents) ? lastAllEvents : []);
+
+        // If we have nothing due to a transient failure, retry shortly without permanently wiping the UI.
+        if (!all.length && fetched === null) {
+          retryAttempt = Math.min((retryAttempt || 0) + 1, 4);
+          const delay = 900 + (retryAttempt * 1400);
+          setTimeout(run, delay);
+        }
 
         // Weekend
         // Komende 7 dagen
