@@ -2164,6 +2164,11 @@
       loadHomeNews();
       setInterval(() => { loadHomeNews(); }, REFRESH_MS);
 
+            // Expose (zodat andere scripts/DOMContentLoaded handlers ze ook kunnen gebruiken)
+            window.V4A_EVENTS = window.V4A_EVENTS || {};
+      window.V4A_EVENTS.fillUpcomingWeekendEvents = fillUpcomingWeekendEvents;
+      window.V4A_EVENTS.fillMonthlyCalendarFromBackend = fillMonthlyCalendarFromBackend;
+
       // HOME: vul de 2 event-blokken (weekend + kalender). 
       // Deze calls mogen NOOIT de UI breken: bij fout blijft fallback tekst zichtbaar.
       fillUpcomingWeekendEvents();
@@ -2171,9 +2176,10 @@
 
       // Refresh mee (zelfde cadence als home news)
       setInterval(() => {
-        fillUpcomingWeekendEvents();
-        fillMonthlyCalendarFromBackend();
-      }, REFRESH_MS);
+        const evt = window.V4A_EVENTS || {};
+        if (typeof evt.fillUpcomingWeekendEvents === "function") evt.fillUpcomingWeekendEvents();
+        if (typeof evt.fillMonthlyCalendarFromBackend === "function") evt.fillMonthlyCalendarFromBackend();
+        }, REFRESH_MS);
       
 // Monthly events list (lopende maand) – placeholder data (kan later vervangen worden door echte events API)
 function renderMonthlyEvents() {
