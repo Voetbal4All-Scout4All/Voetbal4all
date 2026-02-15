@@ -84,6 +84,12 @@
     color: rgba(255,255,255,.92) !important;
   }
 
+  #player-filter-apply,
+  #player-filter-apply:visited,
+  #player-filter-apply:hover{
+    color: rgba(255,255,255,.95) !important;
+  }
+
   .btn-ghost-sm:hover,
   .btn-share:hover,
   #player-filter-clear:hover,
@@ -271,6 +277,7 @@
 
                 <input id="player-filter-region" class="search-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
 
+                <button id="player-filter-apply" type="button" class="btn-ghost-sm search-button">Zoeken</button>
                 <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
               </div>
               <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
@@ -509,6 +516,7 @@
     const qEl = document.getElementById("player-search-text");
     const countryEl = document.getElementById("player-filter-country");
     const regionEl = document.getElementById("player-filter-region");
+    const applyEl = document.getElementById("player-filter-apply");
     const clearEl = document.getElementById("player-filter-clear");
 
     if (!qEl || !countryEl || !regionEl || !clearEl) return;
@@ -572,6 +580,9 @@
     qEl.addEventListener("input", schedule);
     regionEl.addEventListener("input", schedule);
     countryEl.addEventListener("change", applyFilters);
+    if (applyEl) {
+      applyEl.addEventListener("click", applyFilters);
+    }
 
     clearEl.addEventListener("click", () => {
       qEl.value = "";
