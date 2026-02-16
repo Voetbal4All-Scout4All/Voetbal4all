@@ -574,6 +574,133 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  // Backend API base
+  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+  // --- Backend wiring: fetch trainer profiles ---
+  function escHtml(s) {
+    return String(s ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function flagForCountry(c) {
+    const cc = String(c || "").toUpperCase();
+    if (cc === "BE") return "🇧🇪";
+    if (cc === "NL") return "🇳🇱";
+    return "🌍";
+  }
+
+  function formatLocation(p) {
+    const country = String(p.country || "").toUpperCase();
+    const parts = [];
+    if (country) parts.push(country === "BE" ? "België" : country === "NL" ? "Nederland" : country);
+    const region = (p.region || p.city || "").trim();
+    if (region) parts.push(region);
+    return parts.join(" · ") || "—";
+  }
+
+  function toGender(p) {
+    const g = String(p.gender || "BOTH").trim().toUpperCase();
+    return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+  }
+
+  function isPremiumActive(p) {
+    const pu = p.premium_until ? Date.parse(p.premium_until) : NaN;
+    return Number.isFinite(pu) && pu > Date.now();
+  }
+
+  function trainerCardHtml(p, idx, isPremium) {
+    const name = escHtml(p.name || "Anonieme trainer");
+    const role = escHtml(p.role || "Trainer");
+    const bio = escHtml(p.bio || "");
+    const url = String(p.url || "").trim();
+    const country = String(p.country || "").toUpperCase();
+    const locText = escHtml(formatLocation(p));
+    const flag = flagForCountry(country);
+    const gender = toGender(p);
+
+    const actions = isPremium
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+         <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
+      : `<a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
+         <a class="btn-ghost-sm" href="#" data-share-trainer="${escHtml(String(idx + 1))}">Delen</a>`;
+
+    return `
+      <article class="ad-card${isPremium ? " premium-card" : ""}" id="trainer-ad-${escHtml(String(idx + 1))}"
+        data-placeholder="${isPremium ? "0" : "1"}"
+        data-country="${escHtml(country)}"
+        data-gender="${escHtml(gender)}">
+        <div class="event-row">
+          <div class="event-thumbbox" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}</div>
+          <div class="event-main">
+            <div class="ad-card-header" style="margin:0;"><div>
+              <div class="ad-card-title">${name}</div>
+              <div class="ad-card-meta">${flag} · ${locText}</div>
+              <div class="ad-card-meta">${role}</div>
+            </div></div>
+            ${bio ? `<div class="ad-card-body" style="margin-top:8px;">${bio}</div>` : ""}
+            ${url ? `<div class="ad-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
+            <div class="ad-card-actions event-actions" style="margin-top:10px;">${actions}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadTrainersFromBackend() {
+    const listEl = document.getElementById("trainer-list");
+    const premiumGrid = document.getElementById("premium-grid-30");
+    const statusEl = document.getElementById("trainer-status");
+    if (!listEl) return false;
+
+    const genderSel = document.getElementById("trainer-gender-filter");
+    const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
+    const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+
+    const url = `${API_BASE}/api/staff-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=1`;
+
+    try {
+      const r = await fetch(url, { credentials: "omit" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+
+      const items = j.items;
+      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const rest = items.filter((x) => !isPremiumActive(x));
+
+      if (premiumGrid && premium.length) {
+        premiumGrid.innerHTML = premium.map((p, i) => trainerCardHtml(p, i, true)).join("");
+      }
+
+      listEl.innerHTML = rest.map((p, i) => trainerCardHtml(p, i, false)).join("");
+
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = items.length ? `${items.length} trainer(s) geladen.` : "Nog geen trainersprofielen.";
+      }
+
+      return true;
+    } catch (e) {
+      console.warn("[trainers] backend load failed:", e?.message || e);
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = "Kon trainers niet laden. We tonen tijdelijk placeholders.";
+      }
+      return false;
+    }
+  }
+  // --- end backend wiring ---
+
+  // Try backend once on initial load; keep existing placeholders if it fails.
+  loadTrainersFromBackend().then((ok) => {
+    // No-op; placeholders remain if !ok.
+  });
+
   // --- Trainer filters (land + regio + gender) ---
   (function initTrainerFilters() {
     const adsContainer = document.getElementById("trainer-list");
@@ -677,7 +804,10 @@
         else params.set("gender", g);
         const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
         history.replaceState(null, "", next);
-        applyFilters();
+        // Reload from backend so premium + list remain consistent
+        loadTrainersFromBackend().then((ok) => {
+          if (!ok) applyFilters();
+        });
       });
     }
 
