@@ -926,6 +926,9 @@
     let PINNED_PREMIUM_30 = [];
     let CURRENT_PAGE = 1;
 
+    // Prevent stacking intervals when loadEvents() is called multiple times (e.g., gender changes)
+    let __premium30IntervalId = null;
+
     // Only show events that are not deleted; if status exists, it must be published.
     function isVisibleEvent(ev){
       if (!ev) return false;
@@ -941,10 +944,11 @@
         const gender = String(genderEl?.value || "BOTH").toUpperCase();
         const genderQs = `&gender=${encodeURIComponent(gender)}`;
 
-        const premiumUrl = `${API_BASE}/api/events/premium?days=60&limit=50&nocache=1${genderQs}`;
+        const premiumUrl = `${API_BASE}/api/events/premium?days=60&limit=50&nocache=${Date.now()}${genderQs}`;
 
+        const nocache = Date.now();
         const [res, premiumRes] = await Promise.all([
-          fetch(`${API_BASE}/api/events?limit=200&nocache=1${genderQs}`),
+          fetch(`${API_BASE}/api/events?limit=200&nocache=${nocache}${genderQs}`),
           fetch(premiumUrl)
         ]);
 
@@ -1325,7 +1329,14 @@
       }
 
       render();
-      setInterval(() => {
+
+      // Clear any previous rotator interval (important when loadEvents() re-runs)
+      if (__premium30IntervalId) {
+        clearInterval(__premium30IntervalId);
+        __premium30IntervalId = null;
+      }
+
+      __premium30IntervalId = setInterval(() => {
         tick = (tick + 1) % (premium30.length > 0 ? premium30.length : 1);
         render();
       }, 10000);
