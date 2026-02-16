@@ -578,6 +578,11 @@
   const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
   // --- Backend wiring: fetch trainer profiles ---
+  // Keep a copy of the original premium placeholders so we can restore them
+  const PREMIUM_PLACEHOLDER_HTML = (function(){
+    const el = document.getElementById('premium-grid-30');
+    return el ? el.innerHTML : '';
+  })();
   function escHtml(s) {
     return String(s ?? "")
       .replaceAll("&", "&amp;")
@@ -657,11 +662,19 @@
     const statusEl = document.getElementById("trainer-status");
     if (!listEl) return false;
 
+    // Reset UI immediately to avoid showing stale results between gender switches
+    listEl.innerHTML = "";
+    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (statusEl) {
+      statusEl.style.display = "";
+      statusEl.textContent = "Trainers laden…";
+    }
+
     const genderSel = document.getElementById("trainer-gender-filter");
     const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
-    const url = `${API_BASE}/api/staff-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=1`;
+    const url = `${API_BASE}/api/staff-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
 
     try {
       const r = await fetch(url, { credentials: "omit" });
@@ -673,15 +686,24 @@
       const premium = items.filter(isPremiumActive).slice(0, 6);
       const rest = items.filter((x) => !isPremiumActive(x));
 
-      if (premiumGrid && premium.length) {
-        premiumGrid.innerHTML = premium.map((p, i) => trainerCardHtml(p, i, true)).join("");
+      if (premiumGrid) {
+        premiumGrid.innerHTML = premium.length
+          ? premium.map((p, i) => trainerCardHtml(p, i, true)).join("")
+          : PREMIUM_PLACEHOLDER_HTML;
       }
 
       listEl.innerHTML = rest.map((p, i) => trainerCardHtml(p, i, false)).join("");
 
       if (statusEl) {
         statusEl.style.display = "";
-        statusEl.textContent = items.length ? `${items.length} trainer(s) geladen.` : "Nog geen trainersprofielen.";
+        statusEl.textContent = items.length
+          ? `${items.length} trainer(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          : "Nog geen trainersprofielen.";
+      }
+
+      // Re-apply the active UI filters (country/region/search) on the newly rendered cards
+      if (typeof window.__applyTrainerFilters === 'function') {
+        window.__applyTrainerFilters();
       }
 
       return true;
@@ -697,8 +719,10 @@
   // --- end backend wiring ---
 
   // Try backend once on initial load; keep existing placeholders if it fails.
-  loadTrainersFromBackend().then((ok) => {
-    // No-op; placeholders remain if !ok.
+  loadTrainersFromBackend().then(() => {
+    if (typeof window.__applyTrainerFilters === 'function') {
+      window.__applyTrainerFilters();
+    }
   });
 
   // --- Trainer filters (land + regio + gender) ---
@@ -769,6 +793,8 @@
     }
 
     function applyFilters() {
+    // Expose for backend reloads
+    window.__applyTrainerFilters = applyFilters;
       const q = normalize(qEl.value);
       const country = (countryEl.value || "").toUpperCase();
       const regionQ = normalize(regionEl.value);
@@ -805,8 +831,8 @@
         const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
         history.replaceState(null, "", next);
         // Reload from backend so premium + list remain consistent
-        loadTrainersFromBackend().then((ok) => {
-          if (!ok) applyFilters();
+        loadTrainersFromBackend().then(() => {
+          applyFilters();
         });
       });
     }
@@ -823,7 +849,7 @@
       applyFilters();
     });
 
-    applyFilters();
+    // Initial run is handled after the first backend load (or fallback)
   })();
 
   // Fill sidebar premium block with placeholders (layout parity with events.html)
