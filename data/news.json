@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-02-16T22:33:28.089Z",
+  "generatedAt": "2026-02-16T23:33:37.652Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "FA Cup heroes Macclesfield make memories to last a lifetime",
+      "link": "https://www.bbc.com/sport/football/articles/cgjz52exvy3o?at_medium=RSS&at_campaign=rss",
+      "summary": "Macclesfield's FA Cup odyssey may have ended against Brentford but they have made memories to last a lifetime, says chief football writer Phil McNulty.",
+      "publishedAt": "2026-02-16T22:59:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Flick stuurt Barça-spelers op mini-vakantie: 'Het team is moe'",
+      "link": "https://www.vi.nl/nieuws/flick-stuurt-bar-a-spelers-op-mini-vakantie-het-team-is-moe",
+      "summary": "De spelers van Barcelona hebben twee dagen vrij gekregen na de nederlaag tegen Girona. Volgens trainer Hansi Flick hebben ze rust nodig om beter voor de dag te komen in de wedstrijden die nog komen gaan.",
+      "publishedAt": "2026-02-16T22:56:33.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,7 +32,7 @@
       "title": "FA Cup: Wrexham to host Chelsea in fifth round",
       "link": "https://www.espn.com/soccer/story/_/id/47948609/fa-cup-fifth-round-draw-wrexham-host-premier-league-giants-chelsea",
       "summary": "Wrexham will host Chelsea in the fifth round of the FA Cup.",
-      "publishedAt": "2026-02-16T22:27:44.000Z"
+      "publishedAt": "2026-02-16T22:36:51.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +43,18 @@
       "title": "Luis Enrique slams 'worthless' Dembélé PSG take",
       "link": "https://www.espn.com/soccer/story/_/id/47948778/psg-coach-luis-enrique-slams-ousmane-dembele",
       "summary": "Paris Saint-Germain coach Luis Enrique said he will not allow any player to be bigger than the club ahead of Tuesday's Champions League knockout phase playoff first leg against AS Monaco.",
-      "publishedAt": "2026-02-16T22:27:44.000Z"
+      "publishedAt": "2026-02-16T22:36:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Yamal misses pen as Barça fail to catch Madrid",
+      "link": "https://www.espn.com/soccer/report/_/gameId/748381",
+      "summary": "Barcelona were unable to return to the top of the LaLiga table after Fran Beltran's late winner sealed a 2-1 victory for Girona.",
+      "publishedAt": "2026-02-16T22:36:50.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +65,7 @@
       "title": "Haji Wright hat trick puts Coventry top of table",
       "link": "https://www.espn.com/soccer/report/_/gameId/744980",
       "summary": "Haji Wright hit a hat trick as Coventry returned to the top of the Sky Bet Championship with a 3-1 home victory over in-form promotion rivals Middlesbrough.",
-      "publishedAt": "2026-02-16T22:27:44.000Z"
+      "publishedAt": "2026-02-16T22:36:50.000Z"
     },
     {
       "type": "rss",
@@ -43,18 +76,7 @@
       "title": "Fàbregas hits out at his own striker Morata for red",
       "link": "https://www.espn.com/soccer/story/_/id/47945838/como-coach-cesc-fabregas-hits-alvaro-morata-red-card",
       "summary": "Como coach Cesc Fàbregas did not hold back when criticising Álvaro Morata after the veteran forward was sent off.",
-      "publishedAt": "2026-02-16T22:27:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Own-goal ends dream FA Cup run for Macclesfield",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401850907",
-      "summary": "Macclesfield were unable to recreate the magic of last month's FA Cup win over Crystal Palace, with a Sam Heathcote own goal sending Brentford through to the fifth round after a spirited contest at Moss Rose.",
-      "publishedAt": "2026-02-16T22:27:43.000Z"
+      "publishedAt": "2026-02-16T22:36:50.000Z"
     },
     {
       "type": "rss",
@@ -84,7 +106,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Wright fires Coventry back to top of Championship with win over Middlesbrough!",
+      "title": "Wright hat-trick FIRES Coventry back to top of Championship!",
       "link": "https://www.skysports.com/watch/video/13508386/coventry-city-3-1-middlesbrough-championship-highlights",
       "summary": "Highlights of the Sky Bet Championship clash between Coventry City and Middlesbrough.",
       "publishedAt": "2026-02-16T22:18:00.000Z"
@@ -95,7 +117,7 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Haji Wright hat-trick sinks Middlesbrough and sends Coventry back to top of Championship",
+      "title": "Haji Wright hat-trick sinks Middlesbrough and returns Coventry to Championship summit",
       "link": "https://www.theguardian.com/football/2026/feb/16/coventry-middlesbrough-championship-match-report",
       "summary": "“We are top of the league,” sang the Coventry City supporters of returning to the summit of the Championship. Ironically, it was a result that quelled the nagging noise surrounding Frank Lampard and his team. Coventry, pace-setters for the majority of the season, had won just four league games since the end of November. But Haji Wright hit a timely hat-trick as Coventry again traded places with Middlesbrough, whose six-game winning run came to an abrupt halt. Riley McGree pulled a goal back midway through the second half but from the restart Boro conceded a penalty that allowed Wright to claim the match ball. Coventry’s lead may be a single point but this felt a significant victory – psychologically as much as anything – their having taken just 16 points from the previous available 39. Continue reading...",
       "publishedAt": "2026-02-16T22:01:17.000Z"
@@ -109,6 +131,17 @@
       "title": "Sky Sports Golf Podcast: Morikawa edges Pebble Beach thriller",
       "link": "https://www.skysports.com/golf/news/36578/11933264/sky-sports-golf-podcast",
       "summary": "Listen to the latest episode of the Sky Sports Golf Podcast as Nick Dougherty joins the show to reflect on Collin Morikawa's win at the Pebble Beach Pro-Am.",
+      "publishedAt": "2026-02-16T22:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Lampard hails massive win as Coventry find form of old to sink Boro",
+      "link": "https://www.skysports.com/football/news/12040/13508232/frank-lampard-hails-massive-win-as-coventry-find-form-of-old-to-sink-championship-promotion-rivals-middlesbrough",
+      "summary": "​​​​​​​It may only have been three points like any other, but in the context of this season it was a massive win for Coventry City and Frank Lampard.",
       "publishedAt": "2026-02-16T22:00:00.000Z"
     },
     {
@@ -141,7 +174,7 @@
       "flag": "🌍",
       "title": "Macclesfield’s fairytale FA Cup run ended by Heathcote’s own goal against Brentford",
       "link": "https://www.theguardian.com/football/2026/feb/16/macclesfield-brentford-fa-cup-fourth-round-match-report",
-      "summary": "For 160 minutes this season, Macclesfield had been more than a match for illustrious Premier League opponents in the FA Cup. Ultimately it took an unfortunate own goal from Sam Heathcote, a PE teacher when not playing as a part-timer in the sixth tier, to put Brentford into the fifth round. As cruel as it felt on Heathcote and Macclesfield, they can once again be proud of their performance. Crystal Palace could not break down the Cheshire team in the previous round and for 70 minutes Brentford had also struggled for a route to goal. The non-league side were even able to rouse themselves to push for a late equaliser, rather than cave in to Keith Andrews’s men. Continue reading...",
+      "summary": "The standing ovation from the Macclesfield fans at full time was deserved. Their side may have lost 1-0 on the night, their dream FA Cup run coming to an end just when a lucrative trip to West Ham’s ­London Stadium in the fifth round had veered into sight, but pride was the ­overriding emotion. Ultimately it had taken an ­unfortunate own goal from Sam Heathcote, a PE teacher plying his trade as a part-time footballer in the National League North, to nudge ­Premier League Brentford into the fifth round. Continue reading...",
       "publishedAt": "2026-02-16T21:33:22.000Z"
     },
     {
@@ -179,17 +212,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Transfers Ajax: Jordi Cruijff zocht contact met Sneijder",
-      "link": "https://www.vi.nl/nieuws/transfers-ajax-bounida-bevestigt-gesprekken-over-contract",
-      "summary": "VI volgt het transfernieuws bij Ajax op de voet, ook nu de winterse transferwindow gesloten is. De doelwitten van de Amsterdammers, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
-      "publishedAt": "2026-02-16T20:23:50.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -198,28 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cwyxwyzy9wxo?at_medium=RSS&at_campaign=rss",
       "summary": "The Lionesses return to competitive action next month as their campaign to qualify for the 2027 Women's World Cup begins. So what changes could we see?",
       "publishedAt": "2026-02-16T20:01:34.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FA Cup fifth-round draw: Mansfield v Arsenal, Wrexham v Chelsea – as it happened",
-      "link": "https://www.theguardian.com/football/live/2026/feb/16/fa-cup-fifth-round-draw-live",
-      "summary": "Wrexham and Mansfield host big guns in round five while Newcastle face Manchester City and Liverpool go to Wolves TNT have kicked off with a walk-and-talk around a packed Macclesfield dressing room, the only problem being that the camera lens keeps steaming up. Let’s get on with it, shall we? Three minutes until the draw, according to an on-screen countdown that will inevitably prove to be inaccurate. I think the fifth round is my personal favourite round of the Cup; close enough to Wembley but still with plenty of room for surprises. Continue reading...",
-      "publishedAt": "2026-02-16T19:11:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "League One Mansfield to host Arsenal in fifth round - full FA Cup draw",
-      "link": "https://www.bbc.com/sport/football/articles/cwy9ewq4yp9o?at_medium=RSS&at_campaign=rss",
-      "summary": "League One club Mansfield will host record 14-time winners Arsenal at Field Mill in the FA Cup fifth round, as Manchester City head to Newcastle in a repeat of the League Cup semi-final.",
-      "publishedAt": "2026-02-16T19:08:33.000Z"
     }
   ]
 }
