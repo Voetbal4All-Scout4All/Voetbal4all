@@ -478,6 +478,9 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  // Backend API base (same as other pages)
+  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
 
   // Reageren via mailto (zelfde patroon)
   document.addEventListener("click", function (e) {
@@ -513,6 +516,144 @@
     });
   }
   updateShareLinks();
+
+  // --- Backend wiring: fetch player profiles ---
+  function escHtml(s) {
+    return String(s ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function flagForCountry(c) {
+    const cc = String(c || "").toUpperCase();
+    if (cc === "BE") return "🇧🇪";
+    if (cc === "NL") return "🇳🇱";
+    return "🌍";
+  }
+
+  function formatLocation(p) {
+    const country = String(p.country || "").toUpperCase();
+    const parts = [];
+    if (country) parts.push(country === "BE" ? "België" : country === "NL" ? "Nederland" : country);
+    const region = (p.region || p.city || "").trim();
+    if (region) parts.push(region);
+    return parts.join(" · ") || "—";
+  }
+
+  function toGender(p) {
+    const g = String(p.gender || "BOTH").trim().toUpperCase();
+    return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+  }
+
+  function isPremiumActive(p) {
+    // premium_until may be null. If present and in the future => premium.
+    const pu = p.premium_until ? Date.parse(p.premium_until) : NaN;
+    return Number.isFinite(pu) && pu > Date.now();
+  }
+
+  function playerCardHtml(p, idx, isPremium) {
+    const id = escHtml(String(p.id || idx + 1));
+    const name = escHtml(p.name || "Anonieme speler");
+    const pos = escHtml(p.position || "Speler");
+    const bio = escHtml(p.bio || "");
+    const url = String(p.url || "").trim();
+    const country = String(p.country || "").toUpperCase();
+    const region = escHtml(p.region || p.city || "");
+    const locText = escHtml(formatLocation(p));
+    const flag = flagForCountry(country);
+    const gender = toGender(p);
+
+    const metaLine = `${flag} · ${locText}`;
+
+    const actions = isPremium
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+         <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
+      : `<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
+         <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}">Delen</a>`;
+
+    // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
+    return `
+      <article class="ad-card${isPremium ? " premium-card" : ""}" id="player-ad-${escHtml(String(idx + 1))}"
+        data-ad-id="${escHtml(String(idx + 1))}"
+        data-country="${escHtml(country)}"
+        data-gender="${escHtml(gender)}">
+        <div class="event-row">
+          <div class="event-thumbbox" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}</div>
+          <div class="event-main">
+            <div class="ad-card-header" style="margin:0;">
+              <div>
+                <div class="ad-card-title">${name}</div>
+                <div class="ad-card-meta">${metaLine}${region ? "" : ""}</div>
+                <div class="ad-card-meta">${pos}</div>
+              </div>
+            </div>
+            ${bio ? `<div class="ad-card-body" style="margin-top:8px;">${bio}</div>` : ""}
+            ${url ? `<div class="ad-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
+            <div class="ad-card-actions event-actions" style="margin-top:10px;">${actions}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadPlayersFromBackend() {
+    const listEl = document.getElementById("player-list");
+    const premiumGrid = document.getElementById("premium-grid-30");
+    const statusEl = document.getElementById("player-status");
+    if (!listEl) return false;
+
+    // read current gender filter
+    const genderSel = document.getElementById("player-filter-gender");
+    const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
+    const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+
+    const url = `${API_BASE}/api/player-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=1`;
+
+    try {
+      const r = await fetch(url, { credentials: "omit" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+
+      const items = j.items;
+      // split premium active vs rest
+      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const rest = items.filter((x) => !isPremiumActive(x));
+
+      // Render premium (only if we have premium items)
+      if (premiumGrid) {
+        if (premium.length) {
+          premiumGrid.innerHTML = premium.map((p, i) => playerCardHtml(p, i, true)).join("");
+        }
+      }
+
+      // Render main list
+      listEl.innerHTML = rest.map((p, i) => playerCardHtml(p, i, false)).join("");
+
+      // Status
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = items.length ? `${items.length} speler(s) geladen.` : "Nog geen spelersprofielen.";
+      }
+
+      // Ensure share links point to correct anchors
+      try { updateShareLinks(); } catch (_) {}
+
+      return true;
+    } catch (e) {
+      // keep fallback behavior; do not throw
+      console.warn("[spelers] backend load failed:", e?.message || e);
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = "Kon spelers niet laden. We tonen tijdelijk placeholders.";
+      }
+      return false;
+    }
+  }
+  // --- end backend wiring ---
 
   // --- Zoeken & filteren (land + regio) ---
   (function initPlayerFilters() {
@@ -628,7 +769,10 @@
         else params.set("gender", g);
         const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
         history.replaceState(null, "", next);
-        applyFilters();
+        // Reload from backend so premium + list remain consistent
+        loadPlayersFromBackend().then((ok) => {
+          if (!ok) applyFilters();
+        });
       });
     }
     if (applyEl) {
@@ -651,8 +795,13 @@
   (function fillPlayerPlaceholders(){
     const el = document.getElementById('player-list');
     if (!el) return;
-    // If already contains cards, do nothing
-    if (el.querySelector('.ad-card')) return;
+
+    // Try backend first; if it succeeds, do not render placeholders.
+    loadPlayersFromBackend().then((ok) => {
+      if (ok) return;
+
+      // If already contains cards, do nothing
+      if (el.querySelector('.ad-card')) return;
 
     const items = [
       {flag:'🇧🇪', place:'België · Regio Kempen', meta:'17 jaar · Middenvelder, Aanvaller', body:'Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.'},
@@ -687,6 +836,7 @@
 
     // re-bind share links after injecting
     try { updateShareLinks(); } catch(_) {}
+    });
   })();
 
   // Fill sidebar premium block with placeholders (layout parity with events.html)
