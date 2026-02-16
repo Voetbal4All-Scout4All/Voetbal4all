@@ -911,7 +911,11 @@
 </div>
 
 <script>
+
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Backend API base
+  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
 
   document.addEventListener("click", function (e) {
@@ -947,7 +951,144 @@
   }
   updateVacancyShareLinks();
 
+  // --- Backend wiring: fetch club vacancies ---
+  function escHtml(s) {
+    return String(s ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function flagForCountry(c) {
+    const cc = String(c || "").toUpperCase();
+    if (cc === "BE") return "🇧🇪";
+    if (cc === "NL") return "🇳🇱";
+    return "🌍";
+  }
+
+  function toGender(x) {
+    const g = String(x?.gender || "BOTH").trim().toUpperCase();
+    return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+  }
+
+  function isPremiumActive(x) {
+    const pu = x?.premium_until ? Date.parse(x.premium_until) : NaN;
+    return Number.isFinite(pu) && pu > Date.now();
+  }
+
+  function vacancyCardHtml(v, idx, isPremium) {
+    const title = escHtml(v.title || "Vacature");
+    const club = escHtml(v.club || "Club");
+    const desc = escHtml(v.description || "");
+    const url = String(v.url || "").trim();
+
+    const country = String(v.country || "").toUpperCase();
+    const region = escHtml(v.region || v.city || "");
+    const flag = flagForCountry(country);
+    const meta = `${flag} ${country === "BE" ? "België" : country === "NL" ? "Nederland" : (country || "")}${region ? " · " + region : ""}`.trim();
+
+    const gender = toGender(v);
+
+    // meta can contain type/level (optional) but we keep placeholders compatible
+    const cType = String(v?.meta?.type || "");
+    const cLevel = String(v?.meta?.level || "");
+
+    const thumbUrl = String(v.image_url || "").trim();
+    const thumb = thumbUrl
+      ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
+      : "";
+
+    const actions = isPremium
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+         <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
+      : `<button type="button" class="btn-ghost-sm" data-reply-vacancy="${escHtml(String(idx + 1))}">Reageer</button>
+         <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="${escHtml(String(idx + 1))}">Delen</a>`;
+
+    return `
+      <article class="ad-card${isPremium ? " premium-card" : ""}" id="vacancy-ad-${escHtml(String(idx + 1))}"
+        data-placeholder="${isPremium ? "0" : "1"}"
+        data-gender="${escHtml(gender)}"
+        data-country="${escHtml(country)}"
+        data-type="${escHtml(cType)}"
+        data-level="${escHtml(cLevel)}">
+        <div class="event-row">
+          <div class="event-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}${thumb}</div>
+          <div class="event-main">
+            <div class="ad-card-header" style="margin:0;">
+              <div>
+                <div class="ad-card-title">${club}</div>
+                <div class="ad-card-meta">${escHtml(meta || "—")}</div>
+                <div class="ad-card-meta">${title}${cLevel ? " · " + escHtml(cLevel) : ""}</div>
+              </div>
+            </div>
+            ${desc ? `<div class="ad-card-body" style="margin-top:8px;">${desc}</div>` : ""}
+            ${url ? `<div class="ad-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
+            <div class="ad-card-actions event-actions" style="margin-top:10px;">${actions}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadVacanciesFromBackend() {
+    const listEl = document.getElementById("vacancy-list");
+    const premiumGrid = document.getElementById("premium-grid-30");
+    const statusEl = document.getElementById("vacancy-status");
+    if (!listEl) return false;
+
+    const genderSel = document.getElementById("vacancy-filter-gender");
+    const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
+    const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+
+    const url = `${API_BASE}/api/club-vacancies?limit=200&gender=${encodeURIComponent(gender)}&nocache=1`;
+
+    try {
+      const r = await fetch(url, { credentials: "omit" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+
+      const items = j.items;
+      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const rest = items.filter((x) => !isPremiumActive(x));
+
+      // Only replace premium grid if we actually have premium vacancies.
+      if (premiumGrid && premium.length) {
+        premiumGrid.innerHTML = premium.map((v, i) => vacancyCardHtml(v, i, true)).join("");
+      }
+
+      // Replace main list with non-premium vacancies.
+      listEl.innerHTML = rest.map((v, i) => vacancyCardHtml(v, i, false)).join("");
+
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = items.length ? `${items.length} vacature(s) geladen.` : "Nog geen clubvacatures.";
+      }
+
+      // Update share links after (re)render
+      updateVacancyShareLinks();
+
+      return true;
+    } catch (e) {
+      console.warn("[clubvacatures] backend load failed:", e?.message || e);
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = "Kon vacatures niet laden. We tonen tijdelijk placeholders.";
+      }
+      return false;
+    }
+  }
+  // --- end backend wiring ---
+
   // --- Gender filter + client-side filtering (HEREN/DAMES/BOTH) ---
+
+  // Try backend once on initial load; keep placeholders if it fails.
+  loadVacanciesFromBackend().then(() => {
+    // After loading (or falling back), run client-side filters for country/type/level/search.
+    applyVacancyFilters();
+  });
   function normalizeGenderParam(v) {
     if (v == null) return null;
     const s = String(v).trim().toUpperCase();
@@ -1030,7 +1171,11 @@
         else params.set("gender", g);
         const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
         history.replaceState(null, "", next);
-        applyVacancyFilters();
+        // Reload from backend so premium + list remain consistent
+        loadVacanciesFromBackend().then((ok) => {
+          // Always run local filters afterward (country/type/level/search)
+          applyVacancyFilters();
+        });
       });
     }
 
@@ -1044,8 +1189,7 @@
     levelEl && levelEl.addEventListener("change", applyVacancyFilters);
     searchEl && searchEl.addEventListener("input", applyVacancyFilters);
 
-    // Initial run
-    applyVacancyFilters();
+    // Initial run is handled after backend load.
   })();
   // --- end gender filter ---
 
