@@ -953,6 +953,12 @@
   updateVacancyShareLinks();
 
   // --- Backend wiring: fetch club vacancies ---
+
+  // Keep a copy of the original premium placeholders so we can restore them
+  const PREMIUM_PLACEHOLDER_HTML = (function(){
+    const el = document.getElementById('premium-grid-30');
+    return el ? el.innerHTML : '';
+  })();
   function escHtml(s) {
     return String(s ?? "")
       .replaceAll("&", "&amp;")
@@ -1045,11 +1051,19 @@
     const statusEl = document.getElementById("vacancy-status");
     if (!listEl) return false;
 
+    // Reset UI immediately to avoid showing stale results between gender switches
+    listEl.innerHTML = "";
+    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (statusEl) {
+      statusEl.style.display = "";
+      statusEl.textContent = "Vacatures laden…";
+    }
+
     const genderSel = document.getElementById("vacancy-filter-gender");
     const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
-    const url = `${API_BASE}/api/club-vacancies?limit=200&gender=${encodeURIComponent(gender)}&nocache=1`;
+    const url = `${API_BASE}/api/club-vacancies?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
 
     try {
       const r = await fetch(url, { credentials: "omit" });
@@ -1061,9 +1075,11 @@
       const premium = items.filter(isPremiumActive).slice(0, 6);
       const rest = items.filter((x) => !isPremiumActive(x));
 
-      // Only replace premium grid if we actually have premium vacancies.
-      if (premiumGrid && premium.length) {
-        premiumGrid.innerHTML = premium.map((v, i) => vacancyCardHtml(v, i, true)).join("");
+      // Premium grid: render up to 6 premium items, otherwise restore placeholders
+      if (premiumGrid) {
+        premiumGrid.innerHTML = premium.length
+          ? premium.map((v, i) => vacancyCardHtml(v, i, true)).join("")
+          : PREMIUM_PLACEHOLDER_HTML;
       }
 
       // Replace main list with non-premium vacancies.
@@ -1071,11 +1087,16 @@
 
       if (statusEl) {
         statusEl.style.display = "";
-        statusEl.textContent = items.length ? `${items.length} vacature(s) geladen.` : "Nog geen clubvacatures.";
+        statusEl.textContent = items.length
+          ? `${items.length} vacature(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          : "Nog geen clubvacatures.";
       }
 
       // Update share links after (re)render
       updateVacancyShareLinks();
+
+      // Re-apply active UI filters (country/type/level/search) on the newly rendered cards
+      try { applyVacancyFilters(); } catch (_) {}
 
       return true;
     } catch (e) {
