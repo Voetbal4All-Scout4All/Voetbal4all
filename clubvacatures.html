@@ -366,6 +366,7 @@
                 class="search-input"
                 placeholder="Zoek op club, functie, niveau, regio..."
               />
+              <button type="button" id="vacancy-search-btn" class="btn-ghost-sm" style="white-space:nowrap;">Zoeken</button>
               <div class="search-filters-row">
                 <select id="vacancy-filter-country" class="search-select">
                   <option value="">Land (alles)</option>
@@ -1000,6 +1001,12 @@
       ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
       : "";
 
+    // Match existing premium placeholders:
+    // Premium tiles show vacancy title as main title, then location meta, then club name.
+    // Non-premium list keeps existing layout (club as title).
+    const displayTitle = isPremium ? title : club;
+    const displayMeta2 = isPremium ? club : title;
+
     const actions = isPremium
       ? `<a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
@@ -1018,13 +1025,13 @@
           <div class="event-main">
             <div class="ad-card-header" style="margin:0;">
               <div>
-                <div class="ad-card-title">${club}</div>
+                <div class="ad-card-title">${displayTitle}</div>
                 <div class="ad-card-meta">${escHtml(meta || "—")}</div>
-                <div class="ad-card-meta">${title}${cLevel ? " · " + escHtml(cLevel) : ""}</div>
+                <div class="ad-card-meta">${displayMeta2}${cLevel ? " · " + escHtml(cLevel) : ""}</div>
               </div>
             </div>
             ${desc ? `<div class="ad-card-body" style="margin-top:8px;">${desc}</div>` : ""}
-            ${url ? `<div class="ad-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
+            ${(!isPremium && url) ? `<div class="ad-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
             <div class="ad-card-actions event-actions" style="margin-top:10px;">${actions}</div>
           </div>
         </div>
@@ -1183,11 +1190,17 @@
     const typeEl = document.getElementById("vacancy-filter-type");
     const levelEl = document.getElementById("vacancy-filter-level");
     const searchEl = document.getElementById("vacancy-search-text");
+    const searchBtn = document.getElementById("vacancy-search-btn");
 
     countryEl && countryEl.addEventListener("change", applyVacancyFilters);
     typeEl && typeEl.addEventListener("change", applyVacancyFilters);
     levelEl && levelEl.addEventListener("change", applyVacancyFilters);
     searchEl && searchEl.addEventListener("input", applyVacancyFilters);
+    searchBtn && searchBtn.addEventListener("click", applyVacancyFilters);
+    // Enter key in the search box triggers filtering as well.
+    searchEl && searchEl.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter") applyVacancyFilters();
+    });
 
     // Initial run is handled after backend load.
   })();
