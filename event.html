@@ -622,6 +622,11 @@
       let url = String(u || "").trim();
       if (!url) return "";
 
+      // If backend returns a PDF flyer, try a PNG sibling (when conversion exists)
+      if (/\.pdf(\?.*)?$/i.test(url)) {
+        url = url.replace(/\.pdf(\?.*)?$/i, ".png$1");
+      }
+
       // Normalize wrong placeholder paths (/assets/img/placeholder.svg) -> real placeholder
       if (url.includes("/assets/img/placeholder.svg") || url.includes("assets/img/placeholder.svg")) {
         return (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "/images/placeholder.svg");
@@ -873,14 +878,35 @@
         setShareLinks(shareUrl, shareTitle);
 
         // Flyer / photos support (now + future-proof)
-        // Supported fields (if present): cover_image_url, flyer_image_url, photo_urls (array or comma-separated)
+        // Supported fields (backend variants): cover_image_url, flyer_image_url, thumbnail_url,
+        // flyer_url, image_url, flyer, image, media_url, photos/photo_urls
         const media = [];
-        if (ev.cover_image_url) media.push(ev.cover_image_url);
-        if (ev.flyer_image_url) media.push(ev.flyer_image_url);
+
+        [
+          ev.cover_image_url,
+          ev.flyer_image_url,
+          ev.thumbnail_url,
+          ev.thumb_url,
+
+          // common backend variants
+          ev.flyer_url,
+          ev.image_url,
+          ev.flyer,
+          ev.image,
+          ev.media_url,
+        ].filter(Boolean).forEach((u) => media.push(u));
+
         if (Array.isArray(ev.photo_urls)) media.push(...ev.photo_urls);
-        if (typeof ev.photo_urls === 'string' && ev.photo_urls.trim()) {
-          media.push(...ev.photo_urls.split(',').map(s => s.trim()).filter(Boolean));
+        if (typeof ev.photo_urls === "string" && ev.photo_urls.trim()) {
+          media.push(...ev.photo_urls.split(",").map(s => s.trim()).filter(Boolean));
         }
+
+        // also support "photos"
+        if (Array.isArray(ev.photos)) media.push(...ev.photos);
+        if (typeof ev.photos === "string" && ev.photos.trim()) {
+          media.push(...ev.photos.split(",").map(s => s.trim()).filter(Boolean));
+        }
+
         renderMedia(media);
 
         // Contact (mailto)

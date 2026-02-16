@@ -94,7 +94,14 @@
     }
     .event-thumbbox::after{content:"Flyer";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
     .event-thumbbox.has-img::after{display:none}
-    .event-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+    .event-thumbbox .thumbbg{
+      position:absolute; inset:0;
+      background-size:contain;          /* <= geen crop */
+      background-position:center;
+      background-repeat:no-repeat;
+      background-color:rgba(255,255,255,0.04);
+      filter:none;
+    }
 
     .event-main{flex:1 1 auto;min-width:0}
     .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
@@ -307,7 +314,14 @@
       overflow:hidden;
       position:relative;
     }
-    .sidebar-premium-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+    .sidebar-premium-thumbbox .thumbbg{
+      position:absolute; inset:0;
+      background-size:contain;          /* <= geen crop */
+      background-position:center;
+      background-repeat:no-repeat;
+      background-color:rgba(255,255,255,0.04);
+      filter:none;
+    }
 
     /* Small ribbon for sidebar thumbnails */
     .sidebar-premium-thumbbox .premium-ribbon{
@@ -890,17 +904,17 @@
     }
 
     function getThumb(ev){
-      const raw =
-        ev.cover_image_url ||
-        ev.flyer_image_url ||
-        (Array.isArray(ev.photo_urls) ? ev.photo_urls[0] : null) ||
-        (typeof ev.photo_urls === "string" ? ev.photo_urls.split(",")[0]?.trim() : null) ||
-        "";
+      const raw = ev.cover_image_url || ev.flyer_image_url || ev.thumbnail_url || ev.thumb_url || ev.image || (Array.isArray(ev.photo_urls) ? ev.photo_urls[0] : null) || (typeof ev.photo_urls === "string" ? ev.photo_urls.split(",")[0]?.trim() : null) || "";
 
       // ❗ GEEN placeholder forceren
       if (!raw) return "";
 
       let out = raw;
+
+      // If PDF slips through, try PNG sibling (when backend conversion exists)
+      if (/\.pdf(\?.*)?$/i.test(out)) {
+        out = out.replace(/\.pdf(\?.*)?$/i, ".png$1");
+      }
 
       // First resolve to absolute (backend) URLs when possible
       if (window.V4AImage && typeof window.V4AImage.resolve === "function") {
