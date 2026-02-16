@@ -247,6 +247,12 @@
                   <option value="NL">🇳🇱 Nederland</option>
                 </select>
 
+                <select id="trainer-gender-filter" class="search-select">
+                  <option value="BOTH">Dames &amp; Heren</option>
+                  <option value="HEREN">Heren</option>
+                  <option value="DAMES">Dames</option>
+                </select>
+
                 <input id="trainer-region-filter" class="search-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
 
                 <button id="trainer-filter-apply" type="button" class="btn-ghost-sm">Zoek</button>
@@ -279,7 +285,7 @@
                       <span class="pill-small">Rotatie</span>
                     </div>
                     <div id="premium-grid-30" class="events-grid-2 premium-grid">
-                      <article class="ad-card premium-card" id="premium-trainer-1">
+                      <article class="ad-card premium-card" id="premium-trainer-1" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
@@ -296,7 +302,7 @@
                         </div>
                       </article>
 
-                      <article class="ad-card premium-card" id="premium-trainer-2">
+                      <article class="ad-card premium-card" id="premium-trainer-2" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
@@ -313,7 +319,7 @@
                         </div>
                       </article>
 
-                      <article class="ad-card premium-card" id="premium-trainer-3">
+                      <article class="ad-card premium-card" id="premium-trainer-3" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
@@ -330,7 +336,7 @@
                         </div>
                       </article>
 
-                      <article class="ad-card premium-card" id="premium-trainer-4">
+                      <article class="ad-card premium-card" id="premium-trainer-4" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
@@ -347,7 +353,7 @@
                         </div>
                       </article>
 
-                      <article class="ad-card premium-card" id="premium-trainer-5">
+                      <article class="ad-card premium-card" id="premium-trainer-5" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
@@ -364,7 +370,7 @@
                         </div>
                       </article>
 
-                      <article class="ad-card premium-card" id="premium-trainer-6">
+                      <article class="ad-card premium-card" id="premium-trainer-6" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
@@ -394,7 +400,7 @@
 
                 <!-- TRAINERS GRID: 6 placeholders -->
                 <div id="trainer-list" class="events-grid-2">
-                  <article class="ad-card" id="trainer-ad-1" data-placeholder="1">
+                  <article class="ad-card" id="trainer-ad-1" data-placeholder="1" data-gender="BOTH">
                     <div class="event-row">
                       <div class="event-thumbbox" aria-label="Thumbnail"></div>
                       <div class="event-main">
@@ -412,7 +418,7 @@
                     </div>
                   </article>
 
-                  <article class="ad-card" id="trainer-ad-2" data-placeholder="1">
+                  <article class="ad-card" id="trainer-ad-2" data-placeholder="1" data-gender="BOTH">
                     <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
                       <div class="ad-card-header" style="margin:0;"><div>
                         <div class="ad-card-title">UEFA A · Senior</div>
@@ -427,7 +433,7 @@
                     </div></div>
                   </article>
 
-                  <article class="ad-card" id="trainer-ad-3" data-placeholder="1">
+                  <article class="ad-card" id="trainer-ad-3" data-placeholder="1" data-gender="BOTH">
                     <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
                       <div class="ad-card-header" style="margin:0;"><div>
                         <div class="ad-card-title">T2 / Assistent · U19</div>
@@ -442,7 +448,7 @@
                     </div></div>
                   </article>
 
-                  <article class="ad-card" id="trainer-ad-4" data-placeholder="1">
+                  <article class="ad-card" id="trainer-ad-4" data-placeholder="1" data-gender="BOTH">
                     <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
                       <div class="ad-card-header" style="margin:0;"><div>
                         <div class="ad-card-title">Keepertrainer</div>
@@ -457,7 +463,7 @@
                     </div></div>
                   </article>
 
-                  <article class="ad-card" id="trainer-ad-5" data-placeholder="1">
+                  <article class="ad-card" id="trainer-ad-5" data-placeholder="1" data-gender="BOTH">
                     <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
                       <div class="ad-card-header" style="margin:0;"><div>
                         <div class="ad-card-title">Jeugdcoördinator</div>
@@ -472,7 +478,7 @@
                     </div></div>
                   </article>
 
-                  <article class="ad-card" id="trainer-ad-6" data-placeholder="1">
+                  <article class="ad-card" id="trainer-ad-6" data-placeholder="1" data-gender="BOTH">
                     <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
                       <div class="ad-card-header" style="margin:0;"><div>
                         <div class="ad-card-title">Jeugd · 8v8 / 11v11</div>
@@ -568,13 +574,14 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // --- Trainer filters (land + regio) ---
+  // --- Trainer filters (land + regio + gender) ---
   (function initTrainerFilters() {
     const adsContainer = document.getElementById("trainer-list");
     if (!adsContainer) return;
 
     const qEl = document.getElementById("trainer-search");
     const countryEl = document.getElementById("trainer-country-filter");
+    const genderEl = document.getElementById("trainer-gender-filter");
     const regionEl = document.getElementById("trainer-region-filter");
     const applyEl = document.getElementById("trainer-filter-apply");
     const clearEl = document.getElementById("trainer-filter-clear");
@@ -584,12 +591,40 @@
       return String(s || "").toLowerCase().trim();
     }
 
+    function normalizeGenderParam(v) {
+      if (v == null) return null;
+      const s = String(v).trim().toUpperCase();
+      if (!s) return null;
+      if (s === "HEREN" || s === "DAMES" || s === "BOTH") return s;
+      return "__INVALID__";
+    }
+
+    (function initGenderFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const g = params.get("gender");
+      if (!g) return;
+      if (!genderEl) return;
+
+      const gv = String(g).trim().toUpperCase();
+      for (const opt of genderEl.options) {
+        if (opt.value === gv) { genderEl.value = gv; break; }
+      }
+    })();
+
     function detectCountryFromCard(card) {
+      const ds = String(card?.dataset?.country || "").toUpperCase();
+      if (ds) return ds;
       const meta = card.querySelector(".ad-card-meta")?.textContent || "";
       const m = meta.toLowerCase();
       if (m.includes("belgië") || m.includes("belgie") || meta.includes("🇧🇪")) return "BE";
       if (m.includes("nederland") || meta.includes("🇳🇱")) return "NL";
       return "";
+    }
+
+    function detectGenderFromCard(card) {
+      const ds = normalizeGenderParam(card?.dataset?.gender);
+      if (ds) return ds;
+      return "BOTH";
     }
 
     function detectRegionFromCard(card) {
@@ -610,6 +645,7 @@
       const q = normalize(qEl.value);
       const country = (countryEl.value || "").toUpperCase();
       const regionQ = normalize(regionEl.value);
+      const gender = normalizeGenderParam(genderEl?.value) || "BOTH";
 
       const cards = Array.from(adsContainer.querySelectorAll(".ad-card"));
       cards.forEach(card => {
@@ -618,7 +654,9 @@
         const countryOk = !country || c === country;
         const region = normalize(detectRegionFromCard(card));
         const regionOk = !regionQ || region.includes(regionQ);
-        card.style.display = (textOk && countryOk && regionOk) ? "" : "none";
+        const g = detectGenderFromCard(card);
+        const genderOk = (gender === "BOTH") || (g === gender) || (g === "BOTH");
+        card.style.display = (textOk && countryOk && regionOk && genderOk) ? "" : "none";
       });
     }
 
@@ -631,6 +669,17 @@
     qEl.addEventListener("input", schedule);
     regionEl.addEventListener("input", schedule);
     countryEl.addEventListener("change", applyFilters);
+    if (genderEl) {
+      genderEl.addEventListener("change", () => {
+        const params = new URLSearchParams(window.location.search);
+        const g = normalizeGenderParam(genderEl.value) || "BOTH";
+        if (!g || g === "BOTH") params.delete("gender");
+        else params.set("gender", g);
+        const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+        history.replaceState(null, "", next);
+        applyFilters();
+      });
+    }
 
     applyEl.addEventListener("click", () => {
       applyFilters();
@@ -640,6 +689,7 @@
       qEl.value = "";
       regionEl.value = "";
       countryEl.value = "";
+      if (genderEl) genderEl.value = "BOTH";
       applyFilters();
     });
 
