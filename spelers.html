@@ -518,6 +518,11 @@
   updateShareLinks();
 
   // --- Backend wiring: fetch player profiles ---
+  // Keep a copy of the original premium placeholders so we can restore them
+  const PREMIUM_PLACEHOLDER_HTML = (function(){
+    const el = document.getElementById('premium-grid-30');
+    return el ? el.innerHTML : '';
+  })();
   function escHtml(s) {
     return String(s ?? "")
       .replaceAll("&", "&amp;")
@@ -605,12 +610,20 @@
     const statusEl = document.getElementById("player-status");
     if (!listEl) return false;
 
+    // Reset UI immediately to avoid showing stale results between gender switches
+    listEl.innerHTML = "";
+    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (statusEl) {
+      statusEl.style.display = "";
+      statusEl.textContent = "Spelers laden…";
+    }
+
     // read current gender filter
     const genderSel = document.getElementById("player-filter-gender");
     const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
-    const url = `${API_BASE}/api/player-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=1`;
+    const url = `${API_BASE}/api/player-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
 
     try {
       const r = await fetch(url, { credentials: "omit" });
@@ -623,24 +636,31 @@
       const premium = items.filter(isPremiumActive).slice(0, 6);
       const rest = items.filter((x) => !isPremiumActive(x));
 
-      // Render premium (only if we have premium items)
+      // Premium grid: render up to 6 premium items, otherwise restore placeholders
       if (premiumGrid) {
-        if (premium.length) {
-          premiumGrid.innerHTML = premium.map((p, i) => playerCardHtml(p, i, true)).join("");
-        }
+        premiumGrid.innerHTML = premium.length
+          ? premium.map((p, i) => playerCardHtml(p, i, true)).join("")
+          : PREMIUM_PLACEHOLDER_HTML;
       }
 
-      // Render main list
+      // Render main list (non-premium)
       listEl.innerHTML = rest.map((p, i) => playerCardHtml(p, i, false)).join("");
 
       // Status
       if (statusEl) {
         statusEl.style.display = "";
-        statusEl.textContent = items.length ? `${items.length} speler(s) geladen.` : "Nog geen spelersprofielen.";
+        statusEl.textContent = items.length
+          ? `${items.length} speler(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          : "Nog geen spelersprofielen.";
       }
 
       // Ensure share links point to correct anchors
       try { updateShareLinks(); } catch (_) {}
+
+      // Re-apply the active UI filters (country/region/search) on the newly rendered cards
+      if (typeof window.__applyPlayerFilters === 'function') {
+        window.__applyPlayerFilters();
+      }
 
       return true;
     } catch (e) {
@@ -751,6 +771,9 @@
       });
     }
 
+    // Expose for backend reloads
+    window.__applyPlayerFilters = applyFilters;
+
     // Debounce typing
     let t = null;
     function schedule() {
@@ -770,8 +793,8 @@
         const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
         history.replaceState(null, "", next);
         // Reload from backend so premium + list remain consistent
-        loadPlayersFromBackend().then((ok) => {
-          if (!ok) applyFilters();
+        loadPlayersFromBackend().then(() => {
+          applyFilters();
         });
       });
     }
@@ -787,8 +810,7 @@
       applyFilters();
     });
 
-    // Apply once on load
-    applyFilters();
+    // Initial run is handled after the first backend load (or fallback)
   })();
 
   // Fill main list with placeholders if backend is not wired yet (layout parity)
@@ -800,44 +822,61 @@
     loadPlayersFromBackend().then((ok) => {
       if (ok) return;
 
+      // Backend failed: apply filters to placeholders after we inject them
+      if (typeof window.__applyPlayerFilters === 'function') {
+        // Will run after placeholders are inserted below
+      }
+
       // If already contains cards, do nothing
       if (el.querySelector('.ad-card')) return;
 
-    const items = [
-      {flag:'🇧🇪', place:'België · Regio Kempen', meta:'17 jaar · Middenvelder, Aanvaller', body:'Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.'},
-      {flag:'🇳🇱', place:'Nederland · Eindhoven', meta:'20 jaar · Keeper', body:'Keeper met wedstrijdritme, zoekt club met duidelijke structuur en doelstellingen.'},
-      {flag:'🇧🇪', place:'België · Antwerpen', meta:'16 jaar · Aanvaller', body:'Snelle flankaanvaller, sterk in 1v1 en diepgang. Zoekt stap hoger in jeugdopleiding.'},
-      {flag:'🇳🇱', place:'Nederland · Limburg', meta:'19 jaar · Verdediger', body:'Centrale verdediger met leiderschap. Open voor eerste elftal of belofteploeg.'},
-      {flag:'🇧🇪', place:'België · Oost-Vlaanderen', meta:'18 jaar · Middenvelder', body:'Box-to-box middenvelder, veel loopvermogen en passing. Ambitieus traject.'},
-      {flag:'🇳🇱', place:'Nederland · Utrecht', meta:'15 jaar · Flankspeler', body:'Flankspeler met techniek en dribbel. Wil groeien in een opleidingsomgeving.'}
-    ];
+      const items = [
+        {flag:'🇧🇪', place:'België · Regio Kempen', meta:'17 jaar · Middenvelder, Aanvaller', body:'Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.'},
+        {flag:'🇳🇱', place:'Nederland · Eindhoven', meta:'20 jaar · Keeper', body:'Keeper met wedstrijdritme, zoekt club met duidelijke structuur en doelstellingen.'},
+        {flag:'🇧🇪', place:'België · Antwerpen', meta:'16 jaar · Aanvaller', body:'Snelle flankaanvaller, sterk in 1v1 en diepgang. Zoekt stap hoger in jeugdopleiding.'},
+        {flag:'🇳🇱', place:'Nederland · Limburg', meta:'19 jaar · Verdediger', body:'Centrale verdediger met leiderschap. Open voor eerste elftal of belofteploeg.'},
+        {flag:'🇧🇪', place:'België · Oost-Vlaanderen', meta:'18 jaar · Middenvelder', body:'Box-to-box middenvelder, veel loopvermogen en passing. Ambitieus traject.'},
+        {flag:'🇳🇱', place:'Nederland · Utrecht', meta:'15 jaar · Flankspeler', body:'Flankspeler met techniek en dribbel. Wil groeien in een opleidingsomgeving.'}
+      ];
 
-    el.innerHTML = items.map((s, idx) => `
-      <article class="ad-card" id="player-ad-${idx+1}" data-ad-id="${idx+1}" data-gender="BOTH">
-        <div class="event-row">
-          <div class="event-thumbbox" aria-label="Thumbnail"></div>
-          <div class="event-main">
-            <div class="ad-card-header" style="margin:0;">
-              <div>
-                <div class="ad-card-title">Anonieme speler</div>
-                <div class="ad-card-meta">${s.flag} · ${s.place}</div>
-                <div class="ad-card-meta">${s.meta}</div>
+      el.innerHTML = items.map((s, idx) => `
+        <article class="ad-card" id="player-ad-${idx+1}" data-ad-id="${idx+1}" data-gender="BOTH">
+          <div class="event-row">
+            <div class="event-thumbbox" aria-label="Thumbnail"></div>
+            <div class="event-main">
+              <div class="ad-card-header" style="margin:0;">
+                <div>
+                  <div class="ad-card-title">Anonieme speler</div>
+                  <div class="ad-card-meta">${s.flag} · ${s.place}</div>
+                  <div class="ad-card-meta">${s.meta}</div>
+                </div>
+              </div>
+              <div class="ad-card-body" style="margin-top:8px;">${s.body}</div>
+              <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                <button type="button" class="btn-ghost-sm" data-reply-ad="${idx+1}">Reageer op speler</button>
+                <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${idx+1}">Delen</a>
               </div>
             </div>
-            <div class="ad-card-body" style="margin-top:8px;">${s.body}</div>
-            <div class="ad-card-actions event-actions" style="margin-top:10px;">
-              <button type="button" class="btn-ghost-sm" data-reply-ad="${idx+1}">Reageer op speler</button>
-              <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${idx+1}">Delen</a>
-            </div>
           </div>
-        </div>
-      </article>
-    `).join('');
+        </article>
+      `).join('');
 
-    // re-bind share links after injecting
-    try { updateShareLinks(); } catch(_) {}
+      // re-bind share links after injecting
+      try { updateShareLinks(); } catch(_) {}
+
+      // Apply filters on the injected placeholders
+      if (typeof window.__applyPlayerFilters === 'function') {
+        window.__applyPlayerFilters();
+      }
     });
   })();
+
+  // Initial backend load: after rendering, apply current UI filters
+  loadPlayersFromBackend().then(() => {
+    if (typeof window.__applyPlayerFilters === 'function') {
+      window.__applyPlayerFilters();
+    }
+  });
 
   // Fill sidebar premium block with placeholders (layout parity with events.html)
   (function fillSidebarPremiumLater(){
