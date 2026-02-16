@@ -552,6 +552,12 @@
                     <option value="Voetbalkamp">Voetbalkamp</option>
                   </select>
 
+                  <select id="event-filter-gender" class="search-select">
+                    <option value="BOTH">Dames &amp; Heren</option>
+                    <option value="HEREN">Heren</option>
+                    <option value="DAMES">Dames</option>
+                  </select>
+
                   <select id="event-filter-month" class="search-select">
                     <option value="">Maand (alles)</option>
                     <option value="01">Januari</option>
@@ -744,10 +750,26 @@
       }
     })();
 
+    // Auto gender filter via ?gender=
+    (function initGenderFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const g = params.get("gender");
+      if (!g) return;
+
+      const sel = document.getElementById("event-filter-gender");
+      if (!sel) return;
+
+      const gv = String(g).trim().toUpperCase();
+      for (const opt of sel.options) {
+        if (opt.value === gv) { sel.value = gv; break; }
+      }
+    })();
+
     const listEl = document.getElementById("event-list");
     const searchEl = document.getElementById("event-search-text");
     const countryEl = document.getElementById("event-filter-country");
     const typeEl = document.getElementById("event-filter-type");
+    const genderEl = document.getElementById("event-filter-gender");
     const monthEl = document.getElementById("event-filter-month");
 
     const API_BASE = "https://voetbal4all-backend-database.onrender.com";
@@ -916,10 +938,13 @@
     async function loadEvents(){
       try {
         // Fetch premium (paid) for next N days from dedicated endpoint (stable contract)
-        const premiumUrl = `${API_BASE}/api/events/premium?days=60&limit=50&nocache=1`;
+        const gender = String(genderEl?.value || "BOTH").toUpperCase();
+        const genderQs = `&gender=${encodeURIComponent(gender)}`;
+
+        const premiumUrl = `${API_BASE}/api/events/premium?days=60&limit=50&nocache=1${genderQs}`;
 
         const [res, premiumRes] = await Promise.all([
-          fetch(`${API_BASE}/api/events?limit=200&nocache=1`),
+          fetch(`${API_BASE}/api/events?limit=200&nocache=1${genderQs}`),
           fetch(premiumUrl)
         ]);
 
@@ -988,7 +1013,7 @@
           const dateLabel = start.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
 
           return `
-            <article class="ad-card" data-placeholder="1" aria-label="Niet-premium event placeholder">
+            <article class="ad-card" data-placeholder="1" data-gender="BOTH" aria-label="Niet-premium event placeholder">
               <div class="event-row">
                 <div class="event-thumbbox" aria-label="Flyer thumbnail"></div>
 
@@ -1052,6 +1077,7 @@
               data-title="${String(ev.title || "").replaceAll('"','&quot;')}"
               data-country="${country}"
               data-type="${uiType}"
+              data-gender="${String(ev.gender || 'BOTH').toUpperCase()}"
               data-date="${dateOnly}"
               data-slug="${String(slug)}">
 
@@ -1405,6 +1431,7 @@
       const c = countryEl.value;
       const t = typeEl.value;
       const m = monthEl.value;
+      const g = String(genderEl?.value || "BOTH").toUpperCase();
 
       const cards = listEl.querySelectorAll(".ad-card");
       cards.forEach(card => {
@@ -1412,10 +1439,14 @@
         const tt = card.dataset.type || "";
         const dd = card.dataset.date || ""; // YYYY-MM-DD
         const hay = norm(card.textContent);
+        const gg = String(card.dataset.gender || "BOTH").toUpperCase();
 
         let ok = true;
         if (c && cc && cc !== c) ok = false;
         if (t && tt && tt !== t) ok = false;
+        if (g && g !== "BOTH") {
+          if (!(gg === g || gg === "BOTH")) ok = false;
+        }
         if (m && dd && dd.slice(5,7) !== m) ok = false;
         if (ok && q && !hay.includes(q)) ok = false;
 
@@ -1427,6 +1458,18 @@
     countryEl.addEventListener("change", filterCards);
     typeEl.addEventListener("change", filterCards);
     monthEl.addEventListener("change", filterCards);
+    genderEl.addEventListener("change", () => {
+      // Persist in URL for shareable filtering
+      const params = new URLSearchParams(window.location.search);
+      const g = String(genderEl.value || "BOTH").toUpperCase();
+      if (!g || g === "BOTH") params.delete("gender");
+      else params.set("gender", g);
+      const next = window.location.pathname + "?" + params.toString();
+      history.replaceState(null, "", next);
+
+      // Reload from backend so premium + list stay consistent
+      loadEvents();
+    });
 
     function updateShareLinks(){
       document.querySelectorAll('[data-share-channel][data-share-slug]').forEach(a => {
