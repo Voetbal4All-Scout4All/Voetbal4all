@@ -900,7 +900,11 @@
           <div class="event-main">
             <div class="ad-card-header" style="margin:0;">
               <div>
-                <div class="ad-card-title">${ev.title || ""}</div>
+                <div class="ad-card-title">
+                  <a href="event.html?slug=${encodeURIComponent(slug)}" style="color:inherit;text-decoration:none;">
+                    ${ev.title || ""}
+                  </a>
+                </div>
                 <div class="ad-card-meta">${countryToFlag(country)}${ev.city ? " · " + ev.city : ""}</div>
                 ${club ? `<div class="ad-card-meta">${club}</div>` : ``}
                 <div class="ad-card-meta">${fmtDayMonth(ev.start_at)}${ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}</div>
@@ -980,7 +984,12 @@
             <div class="event-main">
               <div class="ad-card-header" style="margin:0;">
                 <div>
-                  <div class="ad-card-title">${hasReal ? (ev?.title || '') : 'Plaats jouw premium event'}</div>
+                  <div class="ad-card-title">
+                    ${hasReal
+                      ? `<a href="event.html?slug=${encodeURIComponent(slug)}" style="color:inherit;text-decoration:none;">${ev?.title || ''}</a>`
+                      : 'Plaats jouw premium event'
+                    }
+                  </div>
                   <div class="ad-card-meta">${hasReal ? (placeBits || 'Premium slot') : 'Meer zichtbaarheid in jouw regio'}</div>
                   <div class="ad-card-meta">${hasReal ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${hasReal && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
                   <div class="ad-card-meta">${hasReal ? (uiType || '') : ''}</div>
@@ -1069,7 +1078,7 @@
               ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
             </div>
             <div style="min-width:0;">
-              <div class="sidebar-premium-title">${title}</div>
+              <div class="sidebar-premium-title">${ev ? `<a href="event.html?slug=${encodeURIComponent(slug)}" style="color:inherit;text-decoration:none;">${title}</a>` : title}</div>
               <div class="sidebar-premium-meta">${ev ? (placeBits || '—') : ph.place}</div>
               <div class="sidebar-premium-meta">${dateLine}</div>
               <div class="sidebar-premium-meta">${uiType || ''}</div>
