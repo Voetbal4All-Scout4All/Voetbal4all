@@ -623,16 +623,19 @@
     const role = escHtml(p.role || "Trainer");
     const bio = escHtml(p.bio || "");
     const url = String(p.url || "").trim();
+    const detailHref = `event.html?type=trainer&id=${encodeURIComponent(String(p.id || "").trim())}`;
     const country = String(p.country || "").toUpperCase();
     const locText = escHtml(formatLocation(p));
     const flag = flagForCountry(country);
     const gender = toGender(p);
 
     const actions = isPremium
-      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+      ? `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>
+         <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `<a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-         <a class="btn-ghost-sm" href="#" data-share-trainer="${escHtml(String(idx + 1))}">Delen</a>`;
+      : `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>
+         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
+         <a class="btn-ghost-sm" href="#" data-share-trainer="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
 
     return `
       <article class="ad-card${isPremium ? " premium-card" : ""}" id="trainer-ad-${escHtml(String(idx + 1))}"
@@ -643,7 +646,7 @@
           <div class="event-thumbbox" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}</div>
           <div class="event-main">
             <div class="ad-card-header" style="margin:0;"><div>
-              <div class="ad-card-title">${name}</div>
+              <div class="ad-card-title"><a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${name}</a></div>
               <div class="ad-card-meta">${flag} · ${locText}</div>
               <div class="ad-card-meta">${role}</div>
             </div></div>
@@ -706,6 +709,24 @@
         window.__applyTrainerFilters();
       }
 
+      // Wire up share buttons to the correct detail URL
+      listEl.querySelectorAll('[data-share-trainer]').forEach((btn) => {
+        btn.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          const href = btn.getAttribute('data-detail-href') || '';
+          const abs = href ? (new URL(href, window.location.href)).toString() : window.location.href;
+          const title = document.title || 'Voetbal4All';
+          if (navigator.share) {
+            navigator.share({ title, url: abs }).catch(() => {});
+          } else {
+            navigator.clipboard?.writeText(abs).then(() => {
+              alert('Link gekopieerd!');
+            }).catch(() => {
+              prompt('Kopieer deze link:', abs);
+            });
+          }
+        });
+      });
       return true;
     } catch (e) {
       console.warn("[trainers] backend load failed:", e?.message || e);
