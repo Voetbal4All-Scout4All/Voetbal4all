@@ -586,14 +586,10 @@
 
     const metaLine = `${flag} · ${locText}`;
 
-    const viewBtn = detailHref ? `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>` : "";
-
     const actions = isPremium
-      ? `${viewBtn}
-         <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `${viewBtn}
-         <button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
+      : `<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
          <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
 
     // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
