@@ -257,6 +257,16 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Legacy page kept for backward compatibility. Canonical listing is events.html.
+  (function redirectFriendlies(){
+    const target = 'events.html?type=Vriendschappelijk';
+    try {
+      window.location.replace(target);
+    } catch (e) {
+      window.location.href = target;
+    }
+  })();
 </script>
 
 <script src="assets/js/nav-active.js" defer></script>
