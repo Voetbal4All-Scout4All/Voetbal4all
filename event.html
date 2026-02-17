@@ -44,6 +44,9 @@
     /* Media gallery */
     .ev-media { margin:0; }
     .ev-media-grid { display:flex; gap:10px; flex-wrap:wrap; }
+    /* Ensure flyer/media is never clipped by parent containers */
+    .ev-col-media, .event-media, .ev-media, #ev-media-grid { overflow: visible; }
+    .ev-media-grid { width:100%; }
 
     /* Single flyer/cover should be fully visible */
     .ev-media-hero{
@@ -289,17 +292,10 @@
             <div class="ev-two-col">
               <!-- LEFT: flyer/media -->
               <div class="ev-col-media">
-                
-<div class="event-layout">
-  <div class="event-media">
-<div class="ev-media" id="ev-media" style="display:none;">
+                <div class="ev-media" id="ev-media" style="display:none;">
                   <div class="note" style="margin:0 0 8px 0;">Flyer / foto's</div>
-  </div>
-  <div class="event-info">
-
                   <div class="ev-media-grid" id="ev-media-grid"></div>
                 </div>
-              </div>
 
               <!-- RIGHT: full information + map -->
               <div class="ev-col-info">
@@ -544,6 +540,64 @@
       const A = 0x1F1E6;
       const codePoints = [cc.charCodeAt(0) - 65 + A, cc.charCodeAt(1) - 65 + A];
       try { return String.fromCodePoint(...codePoints); } catch(e) { return ""; }
+    }
+
+    function escapeHtml(s){
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function sanitizeEventText(raw){
+      const txt = String(raw || "");
+      if (!txt.trim()) return "";
+
+      // Drop everything from invoice/billing sections onward (these must never be public)
+      const invoiceMarkers = [
+        "FACTUURGEGEVENS",
+        "FACTUUR",
+        "FACTURATIE",
+        "FACTURATIEGEGEVENS",
+        "INVOICE",
+        "BILLING",
+      ];
+
+      let cutTxt = txt;
+      for (const m of invoiceMarkers) {
+        const idx = cutTxt.toUpperCase().indexOf(m);
+        if (idx >= 0) {
+          cutTxt = cutTxt.slice(0, idx).trim();
+        }
+      }
+
+      // Remove common sensitive lines that sometimes get dumped into description text
+      const dropLine = (line) => {
+        const l = line.trim();
+        if (!l) return false;
+        // explicit invoice-like fields
+        if (/\b(btw|vat)\b/i.test(l)) return true;
+        if (/\biban\b/i.test(l)) return true;
+        if (/\b(bic|swift)\b/i.test(l)) return true;
+        if (/\b(kvk|ondernemingsnummer|ondernemings\s*nr)\b/i.test(l)) return true;
+        if (/\b(factuur|facturatie|invoice|billing)\b/i.test(l)) return true;
+        if (/\b(rekening|bank)\b/i.test(l)) return true;
+        // hide raw contact details if they were injected into the long description block
+        if (/\b(contact\s*e-?mail|e-?mail\s*:\s*\S+@)\b/i.test(l)) return true;
+        if (/\b(telefoon|gsm|mobiel)\b\s*:/i.test(l)) return true;
+        // hide flyer filename lines when backend only stores a filename
+        if (/\bflyer\b|\baffiche\b/i.test(l) && /\.(png|jpe?g|webp|pdf)\b/i.test(l)) return true;
+        return false;
+      };
+
+      const cleanedLines = cutTxt
+        .split(/\r?\n/)
+        .map((l) => l.replace(/\s+/g, " ").trim())
+        .filter((l) => !dropLine(l));
+
+      return cleanedLines.join("\n").trim();
     }
 
     function getEventParams(){
@@ -792,14 +846,15 @@
         if (ev.is_premium) premiumEl.style.display = "block";
 
         // description + extra
-        descEl.textContent = ev.description || "";
+        const safeDesc = sanitizeEventText(ev.description || "");
+        // Preserve line breaks without allowing HTML injection
+        descEl.innerHTML = safeDesc ? escapeHtml(safeDesc).replace(/\n/g, "<br>") : "";
 
         const extras = [];
         if (ev.location_name) extras.push(`<div><strong>Locatie:</strong> ${ev.location_name}</div>`);
         if (ev.address) extras.push(`<div><strong>Adres:</strong> ${ev.address}</div>`);
         if (ev.organizer_name) extras.push(`<div><strong>Organisator:</strong> ${ev.organizer_name}</div>`);
-        if (ev.organizer_email) extras.push(`<div><strong>E-mail:</strong> ${ev.organizer_email}</div>`);
-        if (ev.organizer_phone) extras.push(`<div><strong>Telefoon:</strong> ${ev.organizer_phone}</div>`);
+        // Organizer contact details are handled via the "Inschrijven / contact" flow (avoid publishing personal data)
         if (ev.organizer_url) extras.push(`<div><strong>Website:</strong> ${ev.organizer_url}</div>`);
         extraEl.innerHTML = extras.join("");
         // ---- Map ----
@@ -882,6 +937,19 @@
         // flyer_url, image_url, flyer, image, media_url, photos/photo_urls
         const media = [];
 
+        function pushMedia(val){
+          if (!val) return;
+          if (typeof val === "string") {
+            const s = val.trim();
+            if (s) media.push(s);
+            return;
+          }
+          if (typeof val === "object") {
+            const u = val.url || val.publicUrl || val.public_url || val.publicPath || val.public_path || val.path;
+            if (typeof u === "string" && u.trim()) media.push(u.trim());
+          }
+        }
+
         [
           ev.cover_image_url,
           ev.flyer_image_url,
@@ -894,7 +962,11 @@
           ev.flyer,
           ev.image,
           ev.media_url,
-        ].filter(Boolean).forEach((u) => media.push(u));
+
+          // some backends store explicit pdf fields
+          ev.flyer_pdf_url,
+          ev.pdf_url,
+        ].forEach(pushMedia);
 
         if (Array.isArray(ev.photo_urls)) media.push(...ev.photo_urls);
         if (typeof ev.photo_urls === "string" && ev.photo_urls.trim()) {
