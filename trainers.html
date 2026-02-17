@@ -630,11 +630,9 @@
     const gender = toGender(p);
 
     const actions = isPremium
-      ? `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>
-         <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>
-         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
+      : `<a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
          <a class="btn-ghost-sm" href="#" data-share-trainer="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
 
     return `
