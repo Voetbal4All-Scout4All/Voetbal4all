@@ -32,7 +32,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""
   ></script>
-  <style>
+    <style>
     /* 2-column event layout */
     .ev-two-col{ display:grid; grid-template-columns: 1.05fr 1.35fr; gap:16px; margin-top:12px; }
     .ev-col-media{ min-width:0; }
@@ -40,6 +40,32 @@
     @media (max-width: 980px){
       .ev-two-col{ grid-template-columns:1fr; }
     }
+
+    /* Title + meta visual hierarchy */
+    #ev-title{
+      font-size:34px;
+      line-height:1.12;
+      font-weight:800;
+      letter-spacing:-0.02em;
+    }
+    @media (max-width: 980px){
+      #ev-title{ font-size:28px; }
+    }
+    #ev-meta{
+      opacity:0.95;
+      gap:12px;
+    }
+    #ev-meta .ev-meta-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.10);
+      white-space:nowrap;
+    }
+    #ev-meta .ev-meta-chip .ev-ico{ opacity:.95; }
 
     /* Media gallery */
     .ev-media { margin:0; }
@@ -303,8 +329,8 @@
 
                 <!-- Meta in vaste structuur (kalender, vlag, regio, stad, club) -->
                 <div class="note" id="ev-meta" style="margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-                  <span style="display:inline-flex; align-items:center; gap:8px;">
-                    <span aria-hidden="true" style="display:inline-flex; width:28px; height:28px; align-items:center; justify-content:center; border-radius:999px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.10);">📅</span>
+                  <span class="ev-meta-chip">
+                    <span class="ev-ico" aria-hidden="true">📅</span>
                     <span id="ev-date"></span>
                   </span>
                   <span id="ev-flag" aria-label="Land" title="Land"></span>
@@ -563,6 +589,12 @@
         "FACTURATIEGEGEVENS",
         "INVOICE",
         "BILLING",
+        "PREMIUM-DUUR",
+        "PREMIUM-TOTAAL",
+        "PREMIUM-PERIODE",
+        "PREMIUM LOOPT",
+        "PREMIUM:",
+        "PREMIUM -",
       ];
 
       let cutTxt = txt;
@@ -587,6 +619,14 @@
         // hide raw contact details if they were injected into the long description block
         if (/\b(contact\s*e-?mail|e-?mail\s*:\s*\S+@)\b/i.test(l)) return true;
         if (/\b(telefoon|gsm|mobiel)\b\s*:/i.test(l)) return true;
+        // premium / pricing details from submission form must never be public
+        if (/^\s*premium\b/i.test(l)) return true;
+        if (/\bpremium\s*[-:]\s*/i.test(l)) return true;
+        if (/\bpremium\s*(duur|totaal|periode|loopt|start|actief)\b/i.test(l)) return true;
+        if (/\b(€|eur)\b/i.test(l) && /premium/i.test(l)) return true;
+        if (/\b\d+\s*(,\d+)?\s*€\b/i.test(l) && /premium/i.test(l)) return true;
+        if (/\b\d+\s*(,\d+)?\s*€\s*\/\s*(week|maand|dag)\b/i.test(l)) return true;
+        if (/\b\d+\s*(,\d+)?\s*€\s*(per|\/)?\s*(week|maand|dag)\b/i.test(l)) return true;
         // hide flyer filename lines when backend only stores a filename
         if (/\bflyer\b|\baffiche\b/i.test(l) && /\.(png|jpe?g|webp|pdf)\b/i.test(l)) return true;
         return false;
@@ -806,7 +846,11 @@
         const cc = ev.country || "";
         const fe = flagEmoji(cc);
         if (flagEl) {
-          flagEl.textContent = fe ? (fe + " " + cc.toUpperCase()) : (cc ? cc.toUpperCase() : "");
+          flagEl.style.display = (fe || cc) ? "inline" : "none";
+          flagEl.className = "ev-meta-chip";
+          const ccTxt = (cc ? String(cc).toUpperCase() : "");
+          const label = fe ? (fe + (ccTxt ? " " + ccTxt : "")) : ccTxt;
+          flagEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${escapeHtml(label)}</span>`;
         }
 
         // Region (optional: use `region` if present; else fall back to `postal_code`)
@@ -825,7 +869,8 @@
         if (cityEl) {
           if (city) {
             cityEl.style.display = "inline";
-            cityEl.textContent = "Stad: " + city;
+            cityEl.className = "ev-meta-chip";
+            cityEl.innerHTML = `<span class="ev-ico" aria-hidden="true">📍</span><span>${escapeHtml(city)}</span>`;
           } else {
             cityEl.style.display = "none";
           }
@@ -836,7 +881,8 @@
         if (clubEl) {
           if (club) {
             clubEl.style.display = "inline";
-            clubEl.textContent = "Club: " + club;
+            clubEl.className = "ev-meta-chip";
+            clubEl.innerHTML = `<span class="ev-ico" aria-hidden="true">🏟️</span><span>${escapeHtml(club)}</span>`;
           } else {
             clubEl.style.display = "none";
           }
@@ -847,8 +893,16 @@
 
         // description + extra
         const safeDesc = sanitizeEventText(ev.description || "");
-        // Preserve line breaks without allowing HTML injection
-        descEl.innerHTML = safeDesc ? escapeHtml(safeDesc).replace(/\n/g, "<br>") : "";
+        const safeDescHtml = safeDesc ? escapeHtml(safeDesc).replace(/\n/g, "<br>") : "";
+        descEl.innerHTML = safeDescHtml;
+
+        // If a legacy form dumped premium/payment text into description, we already strip it.
+        // As an extra guard, hide an empty description container.
+        if (!safeDescHtml) {
+          descEl.style.display = "none";
+        } else {
+          descEl.style.display = "block";
+        }
 
         const extras = [];
         if (ev.location_name) extras.push(`<div><strong>Locatie:</strong> ${ev.location_name}</div>`);
