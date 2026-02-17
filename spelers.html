@@ -509,8 +509,13 @@
     const baseUrl = "https://www.voetbal4all.eu/spelers.html";
     document.querySelectorAll("[data-share-ad]").forEach(link => {
       const adId = link.getAttribute("data-share-ad");
-      const urlWithAnchor = baseUrl + "#player-ad-" + adId;
-      link.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(urlWithAnchor);
+      const detailHref = (link.getAttribute("data-detail-href") || "").trim();
+
+      const shareUrl = detailHref
+        ? (new URL(detailHref, baseUrl)).toString()
+        : (baseUrl + "#player-ad-" + adId);
+
+      link.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
       link.target = "_blank";
       link.rel = "noopener noreferrer";
     });
@@ -530,6 +535,12 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#39;");
+  }
+
+  function isUuid(v) {
+    const s = String(v || "").trim();
+    if (!s) return false;
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s);
   }
 
   function flagForCountry(c) {
@@ -565,6 +576,8 @@
     const pos = escHtml(p.position || "Speler");
     const bio = escHtml(p.bio || "");
     const url = String(p.url || "").trim();
+    const rawId = String(p.id || "").trim();
+    const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
     const country = String(p.country || "").toUpperCase();
     const region = escHtml(p.region || p.city || "");
     const locText = escHtml(formatLocation(p));
@@ -573,11 +586,15 @@
 
     const metaLine = `${flag} · ${locText}`;
 
+    const viewBtn = detailHref ? `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>` : "";
+
     const actions = isPremium
-      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+      ? `${viewBtn}
+         <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
-         <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}">Delen</a>`;
+      : `${viewBtn}
+         <button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
+         <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
 
     // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
     return `
@@ -590,7 +607,7 @@
           <div class="event-main">
             <div class="ad-card-header" style="margin:0;">
               <div>
-                <div class="ad-card-title">${name}</div>
+                <div class="ad-card-title">${detailHref ? `<a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${name}</a>` : name}</div>
                 <div class="ad-card-meta">${metaLine}${region ? "" : ""}</div>
                 <div class="ad-card-meta">${pos}</div>
               </div>
