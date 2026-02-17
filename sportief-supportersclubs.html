@@ -636,6 +636,133 @@
 
     if (!listEl || !countryEl || !teamEl || !cityEl) return;
 
+    // --- BEGIN: Fetch and render supportersclubs ---
+    // We'll fetch published supportersclubs from the backend and render them.
+    const API_URLS = [
+      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclubs",
+      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclub",
+      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclub-submission"
+    ];
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/[&<>"']/g, function (c) {
+        return ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        })[c];
+      });
+    }
+
+    function supportersclubCardHtml(sc, idx) {
+      // Compose anchor id for this card
+      const anchorId = `sc-${idx + 1}`;
+      // Compose share URL (absolute, with anchor)
+      const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
+      // Card fields
+      const name = escapeHtml(sc.name || '');
+      const team = escapeHtml(sc.supported_team || '');
+      const city = escapeHtml(sc.city || '');
+      const country = escapeHtml(sc.country || '');
+      const desc = escapeHtml(sc.description || '');
+      const website = sc.website ? String(sc.website) : '';
+      const social = sc.social ? String(sc.social) : '';
+      const photo = sc.photo ? String(sc.photo) : '';
+      // Share link if present
+      // We only render a share button if the original card had one (simulate presence for patch)
+      // For this patch, let's assume a share button is present if sc.share is true or always render if needed.
+
+      let shareHtml = '';
+      if (sc.share !== false) {
+        shareHtml = `<a href="#" class="card-share" data-share-url="${shareUrl}" onclick="if(window.navigator.share){window.navigator.share({url:this.getAttribute('data-share-url'),title:'${name}'});return false;}else{window.prompt('Kopieer deze link:',this.getAttribute('data-share-url'));return false;}" title="Deel deze supportersclub">Delen</a>`;
+      }
+
+      // Compose logo/photo if present
+      let photoHtml = '';
+      if (photo) {
+        photoHtml = `<div class="card-photo"><img src="${escapeHtml(photo)}" alt="Logo van ${name}" loading="lazy" /></div>`;
+      }
+
+      // Compose website/social links
+      let linksHtml = '';
+      if (website || social) {
+        linksHtml = '<div class="card-links">';
+        if (website) linksHtml += `<a href="${escapeHtml(website)}" target="_blank" rel="noopener">Website</a>`;
+        if (social) linksHtml += `<a href="${escapeHtml(social)}" target="_blank" rel="noopener">Social</a>`;
+        linksHtml += '</div>';
+      }
+
+      // Compose card
+      return `<article class="card" id="${anchorId}" data-country="${country}" data-team="${team}" data-city="${city}">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">${team ? 'Steunt: ' + team : ''}</div>
+            <div class="card-title"><a href="#${anchorId}" style="color:inherit;text-decoration:none;">${name}</a></div>
+          </div>
+          <span class="pill-small">${country}</span>
+        </div>
+        ${photoHtml}
+        <div class="card-body">
+          <div class="card-desc">${desc}</div>
+          <div class="card-meta">
+            <span>${city}</span>
+          </div>
+          ${linksHtml}
+          ${shareHtml}
+        </div>
+      </article>`;
+    }
+
+    async function fetchAndRenderSupportersclubs() {
+      let data = [];
+      for (const url of API_URLS) {
+        try {
+          const r = await fetch(url);
+          if (!r.ok) continue;
+          const arr = await r.json();
+          if (Array.isArray(arr) && arr.length > 0) {
+            data = arr;
+            break;
+          }
+        } catch (e) { /* try next */ }
+      }
+      // Render
+      listEl.innerHTML = data.map((sc, idx) => supportersclubCardHtml(sc, idx)).join('');
+      // After rendering, update share links if needed (see below)
+      updateShareLinks();
+    }
+
+    // --- Share link updater: ensures share links use correct anchor ---
+    function updateShareLinks() {
+      // For each card, update its share link to use the correct anchor
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      cards.forEach((card, idx) => {
+        const anchorId = `sc-${idx + 1}`;
+        const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
+        // Update any share links in this card
+        const shareEl = card.querySelector('.card-share');
+        if (shareEl) {
+          shareEl.setAttribute('data-share-url', shareUrl);
+          shareEl.onclick = function() {
+            if (window.navigator.share) {
+              window.navigator.share({ url: shareUrl, title: card.querySelector('.card-title').innerText.trim() });
+              return false;
+            } else {
+              window.prompt('Kopieer deze link:', shareUrl);
+              return false;
+            }
+          };
+        }
+      });
+    }
+
+    // --- END: Fetch and render supportersclubs ---
+    // Fetch and render supportersclubs on page load
+    fetchAndRenderSupportersclubs();
+
+    // The rest is filtering logic (unchanged)
     function norm(s){
       return String(s || '').trim().toLowerCase();
     }
