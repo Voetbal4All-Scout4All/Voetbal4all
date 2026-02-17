@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-02-17T08:52:19.691Z",
+  "generatedAt": "2026-02-17T09:54:10.424Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Luis Enrique slams 'worthless' Dembélé PSG take",
+      "link": "https://www.espn.com/soccer/story/_/id/47948778/psg-coach-luis-enrique-slams-ousmane-dembele",
+      "summary": "Paris Saint-Germain coach Luis Enrique said he will not allow any player to be bigger than the club ahead of Tuesday's Champions League knockout phase playoff first leg against AS Monaco.",
+      "publishedAt": "2026-02-17T09:45:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Klopp's agent: Man Utd, Chelsea made approach",
+      "link": "https://www.espn.com/soccer/story/_/id/47951029/united-states-england-wanted-jurgen-klopp-coach",
+      "summary": "Jurgen Klopp's agent Marc Kosicke said his client had his pick of teams to manage after leaving Liverpool, including approaches from both the United States and England to take over as coach of their respective national teams.",
+      "publishedAt": "2026-02-17T09:45:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "FA Cup: Wrexham to host Chelsea in fifth round",
+      "link": "https://www.espn.com/soccer/story/_/id/47948609/fa-cup-fifth-round-draw-wrexham-host-premier-league-giants-chelsea",
+      "summary": "Wrexham will host Chelsea in the fifth round of the FA Cup.",
+      "publishedAt": "2026-02-17T09:45:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "How can we improve the Champions League format?",
+      "link": "https://www.espn.com/soccer/story/_/id/47910340/three-ways-champions-league-format-fixed-ogden-marcotti-connelly",
+      "summary": "Mark Ogden, Gab Marcotti and Bill Connelly offer their ideas for how to solve the Champions League's woes.",
+      "publishedAt": "2026-02-17T09:32:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "5 reasons why Champions League is so easy for Premier League teams now",
+      "link": "https://www.espn.com/soccer/story/_/id/47948420/why-champions-league-seems-easy-premier-league-teams-5-reasons-list",
+      "summary": "The Champions League has been a walk in the park for Premier League teams. Why is that? Let's explain it with five reasons.",
+      "publishedAt": "2026-02-17T09:32:28.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Hoeness verklaart oorlog aan zaakwaarnemers: 'Waanzin'",
+      "link": "https://www.vi.nl/nieuws/hoeness-verklaart-oorlog-aan-zaakwaarnemers",
+      "summary": "Uli Hoeness wil korte metten maken met hijgerige zaakwaarnemers. Als het aan de erevoorzitter van Bayern München ligt, klinkt het woord 'nee' vaker in de Zuid-Duitse stad.",
+      "publishedAt": "2026-02-17T09:15:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Champions League Quiz: alle teams in de knock-outfase",
+      "link": "https://www.vi.nl/nieuws/champions-league-quiz-alle-teams-in-de-knock-outfase",
+      "summary": "Het Europese voetbal is terug! Met minder Nederlandse deelnemers dan gehoopt, maar we kunnen in ieder geval weer genieten van de Champions League, Europa League en Conference League. In deze quiz zoomen we in op het elitetoernooi, waarin we op zoek zijn naar alle deelnemers aan de knock-outfase sinds het begin van deze eeuw.",
+      "publishedAt": "2026-02-17T09:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "HSV-fans die 'Bundesligaspiele' op vierde tenue laten drukken, krijgen bonus",
+      "link": "https://www.vi.nl/nieuws/hsv-fans-die-bundesligaspiele-op-vierde-tenue-laten-drukken-krijgen-verrassing",
+      "summary": "HSV heeft een bijzonder tenue op de markt gebracht. Het vierde tenue staat speciaal in het teken van de 1887 ste Bundesliga-wedstrijd in de clubgeschiedenis (1887 is het oprichtingsjaar), afgelopen zaterdag al gespeeld. Fans krijgen met de bedrukking 'Bundesligaspiele' en rugnummer 1887 een bijzondere bonus.",
+      "publishedAt": "2026-02-17T09:01:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -36,28 +124,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Henk de Jong prijst 'apart mannetje' Balk: 'Voor ons goud waard'",
-      "link": "https://www.vi.nl/nieuws/henk-de-jong-prijst-apart-mannetje-balk-voor-ons-goud-waard",
-      "summary": "SC Cambuur sleepte maandagavond drie punten uit het vuur bij Jong Ajax en dat was volgens trainer Henk de Jong voor een belangrijk deel te danken aan Remco Balk. De 24-jarige aanvaller was in de eerste helft verantwoordelijk voor het verdienen van een strafschop voor de Friezen.",
-      "publishedAt": "2026-02-17T08:15:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Macclesfield FC's cup magic ends with an own goal, but with their legacy secure",
-      "link": "https://www.espn.com/soccer/story/_/id/47949887/english-fa-cup-macclesfield-brentford-mark-ogden-analysis-review",
-      "summary": "A second FA Cup shock always seemed unrealistic for tiny Macclesfield, but Monday's home defeat to Brentford does little to shake their legacy in this storied competition.",
-      "publishedAt": "2026-02-17T08:06:32.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -88,28 +154,6 @@
       "link": "https://www.skysports.com/football/news/12040/13508266/ryan-porteous-los-angeles-fc-scotland-defender-on-facing-lionel-messi-playing-with-heung-min-son-in-mls-and-his-world-cup-dream",
       "summary": "Ryan Porteous is determined to return to the Scotland squad for this summer's World Cup in the USA.",
       "publishedAt": "2026-02-17T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Griekenland als rivaal? AZ moet 'coëfficiëntenschade' beperken",
-      "link": "https://www.vi.nl/pro/griekenland-als-rivaal-az-moet-coefficientenschade-beperken",
-      "summary": "Na de bijltjesdagen van eind januari is AZ de enige Nederlandse club onder de 72 overgebleven Europese deelnemers. De Alkmaarders moeten de wond die is ontstaan op de coëfficiëntenlijst proberen te stelpen. De stand van zaken bij de start van de tussenronde.",
-      "publishedAt": "2026-02-17T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Oekraïne baalt van 'verwoestend nieuws' Zinchenko en 'angstaanjagende hersteltijd'",
-      "link": "https://www.vi.nl/nieuws/oekra-ne-baalt-van-verwoestend-nieuws-zinchenko-en-angstaanjagende-hersteltijd",
-      "summary": "Niet alleen in Amsterdam, maar ook in Oekraïne is de blessure van Oleksandr Zinchenko hard aangekomen. Maandag werd bekend dat de multifunctionele verdediger er de rest van het seizoen uit ligt . Daardoor mist hij ook de voor Oekraïne cruciale WK-play-offs en – indien geplaatst – misschien het toernooi zelf ook wel.",
-      "publishedAt": "2026-02-17T07:49:19.000Z"
     },
     {
       "type": "rss",
@@ -165,50 +209,6 @@
       "link": "https://www.skysports.com/racing/news/12040/13508114/today-on-sky-sports-racing-quebecois-looks-to-get-off-the-mark-over-fences-at-newbury",
       "summary": "Quebecois faces Personal Ambition and Old Cowboy in Tuesday's feature from Newbury - live on Sky Sports Racing.",
       "publishedAt": "2026-02-17T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FA Cup: Wrexham to host Chelsea in fifth round",
-      "link": "https://www.espn.com/soccer/story/_/id/47948609/fa-cup-fifth-round-draw-wrexham-host-premier-league-giants-chelsea",
-      "summary": "Wrexham will host Chelsea in the fifth round of the FA Cup.",
-      "publishedAt": "2026-02-17T01:18:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Luis Enrique slams 'worthless' Dembélé PSG take",
-      "link": "https://www.espn.com/soccer/story/_/id/47948778/psg-coach-luis-enrique-slams-ousmane-dembele",
-      "summary": "Paris Saint-Germain coach Luis Enrique said he will not allow any player to be bigger than the club ahead of Tuesday's Champions League knockout phase playoff first leg against AS Monaco.",
-      "publishedAt": "2026-02-17T01:18:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Own goal ends dream FA Cup run for Macclesfield",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401850907",
-      "summary": "Macclesfield were unable to recreate the magic of last month's FA Cup win over Crystal Palace, with a Sam Heathcote own goal sending Brentford through to the fifth round after a spirited contest at Moss Rose.",
-      "publishedAt": "2026-02-17T01:18:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Klopp's agent: Man Utd, Chelsea made approach",
-      "link": "https://www.espn.com/soccer/story/_/id/47951029/united-states-england-wanted-jurgen-klopp-coach",
-      "summary": "Jurgen Klopp's agent Marc Kosicke said his client had his pick of teams to manage after leaving Liverpool, including approaches from both the United States and England to take over as coach of their respective national teams.",
-      "publishedAt": "2026-02-17T01:18:43.000Z"
     },
     {
       "type": "rss",
