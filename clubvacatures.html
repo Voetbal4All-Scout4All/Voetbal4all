@@ -1026,14 +1026,10 @@
     const displayTitle = isPremium ? title : club;
     const displayMeta2 = isPremium ? club : title;
 
-    const viewBtn = detailHref ? `<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk vacature</a>` : "";
-
     const actions = isPremium
-      ? `${viewBtn}
-         <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `${viewBtn}
-         <button type="button" class="btn-ghost-sm" data-reply-vacancy="${escHtml(String(idx + 1))}">Reageer</button>
+      : `<button type="button" class="btn-ghost-sm" data-reply-vacancy="${escHtml(String(idx + 1))}">Reageer</button>
          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
 
     return `
