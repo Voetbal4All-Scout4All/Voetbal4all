@@ -547,6 +547,42 @@
     const mo = new MutationObserver(() => apply());
     mo.observe(listEl, { childList: true, subtree: true });
   })();
+
+  (function initSpotlightAnchors(){
+    const listEl = document.getElementById('spotlight-list');
+    if (!listEl) return;
+
+    function applyAnchors(){
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      cards.forEach((card, idx) => {
+        const anchorId = `spotlight-${idx + 1}`;
+        if (!card.id) card.id = anchorId;
+
+        // Make the title clickable to the anchor (no extra buttons)
+        const titleEl = card.querySelector('.card-title');
+        if (!titleEl) return;
+
+        // If already linked, leave as-is
+        if (titleEl.querySelector('a')) return;
+
+        const text = titleEl.textContent || '';
+        titleEl.textContent = '';
+
+        const a = document.createElement('a');
+        a.href = `#${card.id}`;
+        a.style.color = 'inherit';
+        a.style.textDecoration = 'none';
+        a.textContent = text.trim();
+        titleEl.appendChild(a);
+      });
+    }
+
+    applyAnchors();
+
+    // Re-apply if cards are injected later
+    const mo = new MutationObserver(() => applyAnchors());
+    mo.observe(listEl, { childList: true, subtree: true });
+  })();
 </script>
 <script src="assets/js/nav-active.js" defer></script>
   <script src="assets/js/nav-mobile.js"></script>
