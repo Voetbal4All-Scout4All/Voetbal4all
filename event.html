@@ -350,7 +350,7 @@
                 </div>
 
                 <div class="ad-card-actions" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
-                  <a href="events.html" class="btn-ghost-sm">← Terug naar events</a>
+                  <a href="events.html" class="btn-ghost-sm" id="back-link">← Terug naar events</a>
 
                   <div class="share-socials" aria-label="Deel dit event" style="gap:10px; align-items:center;">
                     <div class="share-socials-label" style="margin-right:2px;">Delen</div>
@@ -429,7 +429,7 @@
               <!-- RIGHT: flyer/media -->
               <div class="ev-col-media">
                 <div class="ev-media" id="ev-media" style="display:none;">
-                  <div class="note" style="margin:0 0 8px 0;">Flyer / foto's</div>
+                  <div class="note" id="ev-media-label" style="margin:0 0 8px 0;">Flyer / foto's</div>
                   <div class="ev-media-grid" id="ev-media-grid"></div>
                 </div>
               </div>
@@ -538,6 +538,8 @@
 
     const mediaWrap = document.getElementById("ev-media");
     const mediaGrid = document.getElementById("ev-media-grid");
+    const backLink = document.getElementById("back-link");
+    const mediaLabel = document.getElementById("ev-media-label");
 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -643,9 +645,65 @@
 
     function getEventParams(){
       const params = new URLSearchParams(location.search);
+      const type = (params.get("type") || "").trim().toLowerCase();
       const slug = (params.get("slug") || "").trim();
       const id = (params.get("id") || "").trim();
-      return { slug, id };
+      // Backward compat: if no explicit type but slug/id present, treat as event
+      const normalizedType = type || ((id || slug) ? "event" : "");
+      return { type: normalizedType, slug, id };
+    }
+    function isYouTubeUrl(u){
+      const s = String(u || "").trim();
+      if (!s) return false;
+      return /(^|\/\/)(www\.)?(youtube\.com|youtu\.be)\//i.test(s);
+    }
+
+    function extractYouTubeId(u){
+      const s = String(u || "").trim();
+      if (!s) return "";
+      try {
+        // youtu.be/<id>
+        let m = s.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+
+        // youtube.com/watch?v=<id>
+        m = s.match(/[?&]v=([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+
+        // youtube.com/shorts/<id>
+        m = s.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+
+        // youtube.com/embed/<id>
+        m = s.match(/youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+      } catch (e) {}
+      return "";
+    }
+
+    function renderYouTubeEmbed(url){
+      if (!mediaWrap || !mediaGrid) return false;
+      if (!isYouTubeUrl(url)) return false;
+      const vid = extractYouTubeId(url);
+      if (!vid) return false;
+
+      if (mediaLabel) mediaLabel.textContent = "Video";
+      mediaWrap.style.display = "block";
+      mediaGrid.innerHTML = `
+        <div style="width:100%; aspect-ratio:16/9; background:rgba(255,255,255,0.04); border-radius:14px; border:1px solid rgba(255,255,255,0.10); overflow:hidden;">
+          <iframe
+            title="YouTube video"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            src="https://www.youtube-nocookie.com/embed/${vid}">
+          </iframe>
+        </div>
+      `;
+      return true;
     }
 
     function openLightbox(src){
@@ -740,6 +798,7 @@
 
     function renderMedia(mediaUrls){
       const placeholder = (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "/images/placeholder.svg");
+      if (mediaLabel) mediaLabel.textContent = "Flyer / foto's";
       const placeholderNormalized = normalizeThumbUrl(placeholder);
 
       // Resolve + filter: toon enkel échte media (geen placeholder)
@@ -792,59 +851,124 @@
     }
 
     async function loadEvent(){
-      const { slug, id } = getEventParams();
+      const { type, slug, id } = getEventParams();
 
-      // We accept either ?id=... (preferred for DB ids) or ?slug=... (SEO slug)
+      // Shared detail requires at least an id (except legacy event slug mode)
       const hasAny = Boolean(id || slug);
       if (!hasAny) {
-        // If someone opens event.html directly without parameters, send them back to the overview.
-        // This avoids a confusing empty state.
         statusEl.style.display = "block";
-        statusEl.textContent = "Geen event geselecteerd. U wordt doorgestuurd naar het overzicht van events.";
-
-        // Preserve existing nav / layout while redirecting.
+        statusEl.textContent = "Geen item geselecteerd. U wordt doorgestuurd naar het overzicht.";
         setTimeout(() => {
           try { window.location.href = "events.html"; } catch (e) {}
         }, 900);
         return;
       }
 
+      // Resolve API endpoint + UI labels per type
+      const t = String(type || "event").toLowerCase();
+      const isEvent = (t === "event");
+
+      let apiPath = "/api/events/";
+      let pill = "Sportieve events";
+      let caption = "Event detail";
+      let backHref = "events.html";
+      let backText = "← Terug naar events";
+      let shareType = "event";
+
+      if (t === "clubvacature") {
+        apiPath = "/api/club-vacancies/";
+        pill = "Clubvacatures";
+        caption = "Clubvacature detail";
+        backHref = "clubvacatures.html";
+        backText = "← Terug naar clubvacatures";
+        shareType = "clubvacature";
+      } else if (t === "speler") {
+        apiPath = "/api/player-profiles/";
+        pill = "Spelers";
+        caption = "Spelerprofiel detail";
+        backHref = "spelers.html";
+        backText = "← Terug naar spelers";
+        shareType = "speler";
+      } else if (t === "trainer") {
+        apiPath = "/api/staff-profiles/";
+        pill = "Trainers";
+        caption = "Trainerprofiel detail";
+        backHref = "trainers.html";
+        backText = "← Terug naar trainers";
+        shareType = "trainer";
+      }
+
+      // Apply header labels
+      const captionEl = document.querySelector(".card-caption");
+      if (captionEl) captionEl.textContent = caption;
+      const pillEl = document.getElementById("ev-pill");
+      if (pillEl) pillEl.textContent = pill;
+      if (backLink) {
+        backLink.href = backHref;
+        backLink.textContent = backText;
+      }
+
+      // Map is only relevant for events
+      const mapWrap = document.getElementById("ev-map-wrap");
+      if (mapWrap) mapWrap.style.display = isEvent ? "none" : "none"; // will be enabled later for events when data loads
+
       try {
-        // Try slug first only when a slug is explicitly provided.
-        // Always allow fallback to ID (events created via forms may not have a slug).
         let data = null;
 
-        if (slug) {
-          try {
-            const resSlug = await fetch(`${API_BASE}/api/events/slug/${encodeURIComponent(slug)}?nocache=1`);
-            data = await resSlug.json();
-          } catch (e) {
-            data = null;
+        if (isEvent) {
+          // Legacy: slug first when explicitly provided
+          if (slug) {
+            try {
+              const resSlug = await fetch(`${API_BASE}/api/events/slug/${encodeURIComponent(slug)}?nocache=1`);
+              data = await resSlug.json();
+            } catch (e) {
+              data = null;
+            }
+          }
+
+          // Fallback (or direct) to ID endpoint
+          if (!data || !data.ok || !data.item) {
+            const key = id || slug;
+            const resId = await fetch(`${API_BASE}/api/events/${encodeURIComponent(key)}?nocache=1`);
+            data = await resId.json();
+          }
+        } else {
+          // Shared detail types require id
+          if (!id) throw new Error("Missing id");
+          const res = await fetch(`${API_BASE}${apiPath}${encodeURIComponent(id)}?nocache=1`);
+          data = await res.json();
+        }
+
+        if (!data || !data.ok || !data.item) {
+          throw new Error("Item not found");
+        }
+
+        const item = data.item;
+
+        // Title
+        const pageTitle = (item.title || item.name || "Detail") + " – Voetbal4All";
+        document.title = pageTitle;
+        titleEl.textContent = (item.title || item.name || "Detail");
+
+        // Meta chips
+        // Date chip: only for events
+        if (dateEl) {
+          if (isEvent && item.start_at) {
+            const when = fmtDateTime(item.start_at);
+            const evType = typeLabel(item.event_type);
+            dateEl.textContent = [evType, when].filter(Boolean).join(" · ");
+            dateEl.closest(".ev-meta-chip")?.setAttribute("style", "");
+            dateEl.closest(".ev-meta-chip")?.setAttribute("aria-hidden", "false");
+            dateEl.parentElement.style.display = "inline-flex";
+          } else {
+            // Hide date chip container for non-events
+            const chip = dateEl.closest(".ev-meta-chip");
+            if (chip) chip.style.display = "none";
           }
         }
 
-        // Fallback (or direct) to ID endpoint
-        if (!data || !data.ok || !data.item) {
-          const key = id || slug;
-          const resId = await fetch(`${API_BASE}/api/events/${encodeURIComponent(key)}?nocache=1`);
-          data = await resId.json();
-        }
-
-      if (!data || !data.ok || !data.item) {
-        throw new Error("Event not found");
-      }
-
-      const ev = data.item;
-
-        document.title = (ev.title ? ev.title + " – Voetbal4All" : "Event – Voetbal4All");
-        titleEl.textContent = ev.title || "Event";
-
-        // Structured meta
-        const t = typeLabel(ev.event_type);
-        const when = ev.start_at ? fmtDateTime(ev.start_at) : "";
-        if (dateEl) dateEl.textContent = [t, when].filter(Boolean).join(" · ");
-
-        const cc = ev.country || "";
+        // Flag chip (country)
+        const cc = item.country || "";
         const fe = flagEmoji(cc);
         if (flagEl) {
           flagEl.style.display = (fe || cc) ? "inline" : "none";
@@ -854,19 +978,8 @@
           flagEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${escapeHtml(label)}</span>`;
         }
 
-        // Region (optional: use `region` if present; else fall back to `postal_code`)
-        const region = ev.region || ev.postal_code || "";
-        if (regionEl) {
-          if (region) {
-            regionEl.style.display = "inline";
-            regionEl.textContent = "Regio: " + region;
-          } else {
-            regionEl.style.display = "none";
-          }
-        }
-
         // City
-        const city = ev.city || "";
+        const city = item.city || "";
         if (cityEl) {
           if (city) {
             cityEl.style.display = "inline";
@@ -877,177 +990,193 @@
           }
         }
 
-        // Club (optional: use `club` if present; else fall back to `organizer_name`)
-        const club = ev.club || ev.organizer_name || "";
+        // Club / role
         if (clubEl) {
-          if (club) {
+          let clubText = "";
+          if (t === "clubvacature") clubText = item.club || "";
+          if (t === "speler") clubText = item.position || "";
+          if (t === "trainer") clubText = item.role || "";
+          if (isEvent) clubText = item.club || item.organizer_name || "";
+
+          if (clubText) {
             clubEl.style.display = "inline";
             clubEl.className = "ev-meta-chip";
-            clubEl.innerHTML = `<span class="ev-ico" aria-hidden="true">🏟️</span><span>${escapeHtml(club)}</span>`;
+            const ico = (t === "speler") ? "⚽" : (t === "trainer") ? "🧑‍🏫" : "🏟️";
+            clubEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${ico}</span><span>${escapeHtml(clubText)}</span>`;
           } else {
             clubEl.style.display = "none";
           }
         }
 
-        // premium marker (UI behouden; later koppelen we status/Stripe)
-        if (ev.is_premium) premiumEl.style.display = "block";
+        // Premium marker
+        if (premiumEl) premiumEl.style.display = (item.premium_until || item.is_premium) ? "block" : "none";
 
-        // description + extra
-        const safeDesc = sanitizeEventText(ev.description || "");
-        const safeDescHtml = safeDesc ? escapeHtml(safeDesc).replace(/\n/g, "<br>") : "";
-        descEl.innerHTML = safeDescHtml;
-
-        // If a legacy form dumped premium/payment text into description, we already strip it.
-        // As an extra guard, hide an empty description container.
-        if (!safeDescHtml) {
-          descEl.style.display = "none";
-        } else {
+        // Description/Bio
+        const rawText = (isEvent ? (item.description || "") : (item.description || item.bio || ""));
+        const safeText = isEvent ? sanitizeEventText(rawText) : String(rawText || "").trim();
+        const safeHtml = safeText ? escapeHtml(safeText).replace(/\n/g, "<br>") : "";
+        if (safeHtml) {
           descEl.style.display = "block";
-        }
-
-        const extras = [];
-        if (ev.location_name) extras.push(`<div><strong>Locatie:</strong> ${ev.location_name}</div>`);
-        if (ev.address) extras.push(`<div><strong>Adres:</strong> ${ev.address}</div>`);
-        if (ev.organizer_name) extras.push(`<div><strong>Organisator:</strong> ${ev.organizer_name}</div>`);
-        // Organizer contact details are handled via the "Inschrijven / contact" flow (avoid publishing personal data)
-        if (ev.organizer_url) extras.push(`<div><strong>Website:</strong> ${ev.organizer_url}</div>`);
-        extraEl.innerHTML = extras.join("");
-        // ---- Map ----
-        const mapWrap = document.getElementById("ev-map-wrap");
-        const mapEl = document.getElementById("ev-map");
-        const mapFallback = document.getElementById("ev-map-fallback");
-        const mapLinks = document.getElementById("ev-map-links");
-        const mapGoogle = document.getElementById("ev-map-google");
-
-        const lat = (ev.lat !== null && ev.lat !== undefined) ? Number(ev.lat) : NaN;
-        const lng = (ev.lng !== null && ev.lng !== undefined) ? Number(ev.lng) : NaN;
-
-        const qParts = [
-          ev.location_name,
-          ev.address,
-          ev.postal_code,
-          ev.city,
-          ev.country,
-        ]
-          .filter(Boolean)
-          .map((s) => String(s).trim())
-          .filter(Boolean);
-
-        const mapsQueryRaw = qParts.join(", ").trim();
-        const mapsQuery = encodeURIComponent(mapsQueryRaw);
-        const label = ev.title || "Event";
-
-        // Show wrapper only when we have at least some location signal
-        const hasLocationSignal = (Number.isFinite(lat) && Number.isFinite(lng)) || Boolean(mapsQueryRaw);
-        if (mapWrap) mapWrap.style.display = hasLocationSignal ? "block" : "none";
-
-        // Keep external Google Maps link as a hidden fallback only
-        if (mapLinks) mapLinks.style.display = "none";
-        if (mapGoogle && mapsQueryRaw) {
-          mapGoogle.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-        }
-
-        if (!mapEl) {
-          // nothing
-        } else if (Number.isFinite(lat) && Number.isFinite(lng) && window.L) {
-          // Prefer Leaflet when we have exact coordinates
-          mapEl.style.display = "block";
-          mapEl.innerHTML = "";
-          if (mapFallback) mapFallback.style.display = "none";
-
-          const m = L.map("ev-map", { scrollWheelZoom: false }).setView([lat, lng], 14);
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            maxZoom: 19,
-            attribution: "&copy; OpenStreetMap",
-          }).addTo(m);
-          L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
-        } else if (mapsQueryRaw) {
-          // No coordinates: embed a map directly (reliable, no geocoding required)
-          mapEl.style.display = "block";
-          if (mapFallback) mapFallback.style.display = "none";
-
-          // Use Google Maps embed with a query (no API key)
-          mapEl.innerHTML = `
-            <iframe
-              title="Locatie op kaart"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=${mapsQuery}&output=embed">
-            </iframe>
-          `;
+          descEl.innerHTML = safeHtml;
         } else {
-          // No usable location
-          mapEl.style.display = "none";
-          if (mapFallback) mapFallback.style.display = "block";
+          descEl.style.display = "none";
+          descEl.innerHTML = "";
         }
 
-        // Share URL must always be our platform URL
-        const shareKey = id ? ("id=" + encodeURIComponent(id)) : ("slug=" + encodeURIComponent(slug));
-        const shareUrl = "https://www.voetbal4all.eu/event.html?" + shareKey;
-        const shareTitle = (ev.title || "Event") + " – Voetbal4All";
-        setShareLinks(shareUrl, shareTitle);
+        // Extras
+        const extras = [];
+        if (isEvent) {
+          if (item.location_name) extras.push(`<div><strong>Locatie:</strong> ${escapeHtml(item.location_name)}</div>`);
+          if (item.address) extras.push(`<div><strong>Adres:</strong> ${escapeHtml(item.address)}</div>`);
+          if (item.organizer_name) extras.push(`<div><strong>Organisator:</strong> ${escapeHtml(item.organizer_name)}</div>`);
+          if (item.organizer_url) extras.push(`<div><strong>Website:</strong> ${escapeHtml(item.organizer_url)}</div>`);
+        } else {
+          if (item.region) extras.push(`<div><strong>Regio:</strong> ${escapeHtml(item.region)}</div>`);
+          if (item.city) extras.push(`<div><strong>Plaats:</strong> ${escapeHtml(item.city)}</div>`);
+          if (item.url && !isYouTubeUrl(item.url)) extras.push(`<div><strong>Website:</strong> <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.url)}</a></div>`);
+        }
+        extraEl.innerHTML = extras.join("");
 
-        // Flyer / photos support (now + future-proof)
-        // Supported fields (backend variants): cover_image_url, flyer_image_url, thumbnail_url,
-        // flyer_url, image_url, flyer, image, media_url, photos/photo_urls
-        const media = [];
+        // Map (events only)
+        if (isEvent) {
+          const mapWrap2 = document.getElementById("ev-map-wrap");
+          const mapEl2 = document.getElementById("ev-map");
+          const mapFallback2 = document.getElementById("ev-map-fallback");
+          const mapLinks2 = document.getElementById("ev-map-links");
+          const mapGoogle2 = document.getElementById("ev-map-google");
 
-        function pushMedia(val){
-          if (!val) return;
-          if (typeof val === "string") {
-            const s = val.trim();
-            if (s) media.push(s);
-            return;
+          const lat = (item.lat !== null && item.lat !== undefined) ? Number(item.lat) : NaN;
+          const lng = (item.lng !== null && item.lng !== undefined) ? Number(item.lng) : NaN;
+
+          const qParts = [item.location_name, item.address, item.postal_code, item.city, item.country]
+            .filter(Boolean)
+            .map((s) => String(s).trim())
+            .filter(Boolean);
+
+          const mapsQueryRaw = qParts.join(", ").trim();
+          const mapsQuery = encodeURIComponent(mapsQueryRaw);
+          const label = item.title || "Event";
+
+          const hasLocationSignal = (Number.isFinite(lat) && Number.isFinite(lng)) || Boolean(mapsQueryRaw);
+          if (mapWrap2) mapWrap2.style.display = hasLocationSignal ? "block" : "none";
+          if (mapLinks2) mapLinks2.style.display = "none";
+          if (mapGoogle2 && mapsQueryRaw) {
+            mapGoogle2.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
           }
-          if (typeof val === "object") {
-            const u = val.url || val.publicUrl || val.public_url || val.publicPath || val.public_path || val.path;
-            if (typeof u === "string" && u.trim()) media.push(u.trim());
+
+          if (!mapEl2) {
+            // nothing
+          } else if (Number.isFinite(lat) && Number.isFinite(lng) && window.L) {
+            mapEl2.style.display = "block";
+            mapEl2.innerHTML = "";
+            if (mapFallback2) mapFallback2.style.display = "none";
+
+            const m = L.map("ev-map", { scrollWheelZoom: false }).setView([lat, lng], 14);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              maxZoom: 19,
+              attribution: "&copy; OpenStreetMap",
+            }).addTo(m);
+            L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
+          } else if (mapsQueryRaw) {
+            mapEl2.style.display = "block";
+            if (mapFallback2) mapFallback2.style.display = "none";
+            mapEl2.innerHTML = `
+              <iframe
+                title="Locatie op kaart"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=${mapsQuery}&output=embed">
+              </iframe>
+            `;
+          } else {
+            mapEl2.style.display = "none";
+            if (mapFallback2) mapFallback2.style.display = "block";
           }
+        } else {
+          const mapWrap3 = document.getElementById("ev-map-wrap");
+          if (mapWrap3) mapWrap3.style.display = "none";
         }
 
-        [
-          ev.cover_image_url,
-          ev.flyer_image_url,
-          ev.thumbnail_url,
-          ev.thumb_url,
+        // Share URL
+        let shareUrl = "https://www.voetbal4all.eu/event.html";
+        if (isEvent) {
+          const shareKey = id ? ("id=" + encodeURIComponent(id)) : ("slug=" + encodeURIComponent(slug));
+          shareUrl = shareUrl + "?" + shareKey;
+        } else {
+          shareUrl = shareUrl + `?type=${encodeURIComponent(shareType)}&id=${encodeURIComponent(id)}`;
+        }
+        setShareLinks(shareUrl, pageTitle);
 
-          // common backend variants
-          ev.flyer_url,
-          ev.image_url,
-          ev.flyer,
-          ev.image,
-          ev.media_url,
+        // Media (YouTube has priority for shared types)
+        // For non-events: if url is YouTube -> embed, else use images fields
+        if (!isEvent && item.url && isYouTubeUrl(item.url)) {
+          const rendered = renderYouTubeEmbed(item.url);
+          if (rendered) {
+            // done
+          } else {
+            renderMedia([]);
+          }
+        } else {
+          // Event: keep existing multi-field media extraction
+          const media = [];
+          function pushMedia(val){
+            if (!val) return;
+            if (typeof val === "string") {
+              const s = val.trim();
+              if (s) media.push(s);
+              return;
+            }
+            if (typeof val === "object") {
+              const u = val.url || val.publicUrl || val.public_url || val.publicPath || val.public_path || val.path;
+              if (typeof u === "string" && u.trim()) media.push(u.trim());
+            }
+          }
 
-          // some backends store explicit pdf fields
-          ev.flyer_pdf_url,
-          ev.pdf_url,
-        ].forEach(pushMedia);
+          if (isEvent) {
+            [
+              item.cover_image_url,
+              item.flyer_image_url,
+              item.thumbnail_url,
+              item.thumb_url,
+              item.flyer_url,
+              item.image_url,
+              item.flyer,
+              item.image,
+              item.media_url,
+              item.flyer_pdf_url,
+              item.pdf_url,
+            ].forEach(pushMedia);
 
-        if (Array.isArray(ev.photo_urls)) media.push(...ev.photo_urls);
-        if (typeof ev.photo_urls === "string" && ev.photo_urls.trim()) {
-          media.push(...ev.photo_urls.split(",").map(s => s.trim()).filter(Boolean));
+            if (Array.isArray(item.photo_urls)) media.push(...item.photo_urls);
+            if (typeof item.photo_urls === "string" && item.photo_urls.trim()) {
+              media.push(...item.photo_urls.split(",").map(s => s.trim()).filter(Boolean));
+            }
+            if (Array.isArray(item.photos)) media.push(...item.photos);
+            if (typeof item.photos === "string" && item.photos.trim()) {
+              media.push(...item.photos.split(",").map(s => s.trim()).filter(Boolean));
+            }
+          } else {
+            // Shared types: common image fields
+            [item.image_url, item.photo_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
+          }
+
+          renderMedia(media);
         }
 
-        // also support "photos"
-        if (Array.isArray(ev.photos)) media.push(...ev.photos);
-        if (typeof ev.photos === "string" && ev.photos.trim()) {
-          media.push(...ev.photos.split(",").map(s => s.trim()).filter(Boolean));
-        }
-
-        renderMedia(media);
-
-        // Contact (mailto)
+        // Contact
+        // Keep current mailto flow, but make subject reflect type
         contactBtn.onclick = () => {
           const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
           if (!ok) return;
 
-          const email = prompt("Vul je e-mailadres in zodat de organisator je kan contacteren:");
+          const email = prompt("Vul je e-mailadres in zodat Voetbal4All je aanvraag kan verwerken:");
           if (!email) return alert("E-mailadres is nodig om te kunnen reageren.");
 
-          const subject = encodeURIComponent("Reactie via Voetbal4All – " + (ev.title || "Event"));
+          const subject = encodeURIComponent("Reactie via Voetbal4All – " + (item.title || item.name || "Detail"));
           const body = encodeURIComponent(
-            "Event: " + (ev.title || "") +
-            "\nEvent: " + (id ? ("id=" + id) : ("slug=" + slug)) +
+            "Item: " + (item.title || item.name || "") +
+            "\nType: " + (type || "event") +
+            "\nId: " + (id || slug || "") +
             "\n\nE-mailadres: " + email +
             "\n\nBericht:\n(Voeg je bericht toe.)"
           );
@@ -1056,9 +1185,9 @@
         };
 
       } catch (e) {
-        console.error("[EVENT] load failed", e);
+        console.error("[DETAIL] load failed", e);
         statusEl.style.display = "block";
-        statusEl.textContent = "Event kon niet geladen worden.";
+        statusEl.textContent = "Detail kon niet geladen worden.";
       }
     }
 
