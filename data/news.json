@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-02-18T10:51:30.409Z",
+  "generatedAt": "2026-02-18T11:40:49.286Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Als Alonso niet goed genoeg is voor Real, wie dan wel?'",
+      "link": "https://www.vi.nl/nieuws/als-alonso-niet-goed-genoeg-is-voor-real-wie-dan-wel",
+      "summary": "Philipp Lahm heeft het opgenomen voor oud-ploeggenoot Xabi Alonso. De Bask werd begin dit jaar ontslagen bij Real Madrid en Lahm beschouwt de trainersfunctie bij De Koninklijke dan ook als de ultieme uitdaging in het wereldvoetbal. 'Wie deze club coacht, heeft een carrière nodig, een aura, simpelweg iets bijzonders. Nu heeft Real Madrid een probleem: als Xabi Alonso niet de juiste man is – wie dan wel?'",
+      "publishedAt": "2026-02-18T11:35:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Rooney kraakt Slot: 'Hij heeft niet de juiste uitstraling voor Liverpool'",
+      "link": "https://www.vi.nl/nieuws/rooney-kraakt-slot-hij-heeft-niet-de-juiste-uitstraling-voor-liverpool",
+      "summary": "Voormalig Engels international Wayne Rooney verwacht niet dat Liverpool er goed aan doet om nog lang door te gaan met Arne Slot. The Reds verkeren in zwaar weer in de Premier League en de oud-spits van onder andere Everton en Manchester United denkt niet dat de Nederlander Liverpool naar nieuwe successen gaat leiden.",
+      "publishedAt": "2026-02-18T11:05:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Olympic skiing legend Ryding: 'I won't be racing in anger again'",
+      "link": "https://www.skysports.com/opinion/story/0,,12040_13509014,00.html",
+      "summary": "Winter Olympian Dave Ryding reached the end of piste in Bormio on Monday as he placed 17th in the men's slalom in his fifth and final Games.",
+      "publishedAt": "2026-02-18T11:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "AZ Quiz: een magische Conference League-campagne",
+      "link": "https://www.vi.nl/nieuws/az-quiz-een-magische-conference-league-campagne",
+      "summary": "AZ hervat donderdagavond zijn Europese campagne in de tussenronde van de Conference League, de club zal hopen op zo'n mooi seizoen als in 2022/23. Toen werd er via drie voorrondes het hoofdtoernooi bereikt en schopte AZ het uiteindelijk tot de halve finale. Voor deze quiz richten we onze blik op de AZ-selectie van toen.",
+      "publishedAt": "2026-02-18T10:45:00.000Z"
+    },
     {
       "type": "rss",
       "source": "The Guardian Football",
@@ -36,17 +80,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Woltemade weer gelinkt aan Bayern, Rüdiger kan naar Engeland'",
-      "link": "https://www.vi.nl/nieuws/woltemade-weer-gelinkt-aan-bayern-r-diger-kan-naar-engeland",
-      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-02-18T09:44:47.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -55,28 +88,6 @@
       "link": "https://www.bbc.com/sport/football/articles/ce8wn2p17jxo?at_medium=RSS&at_campaign=rss",
       "summary": "We want you to name every team who has finished top or bottom in the Premier League era. Good luck!",
       "publishedAt": "2026-02-18T09:27:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Feyenoord biedt kijkje achter de schermen bij 'first day' Sterling",
-      "link": "https://www.vi.nl/nieuws/feyenoord-biedt-kijkje-achter-de-schermen-bij-first-day-sterling",
-      "summary": "Feyenoord heeft via de officiële kanalen een filmpje gedeeld van de eerste trainingsdag van Raheem Sterling. De Rotterdammers zijn naar België afgereisd, zodat de Engelsman, die nog geen werkvergunning heeft in Nederland, daar wel vast aan de slag mag gaan met zijn nieuwe teamgenoten.",
-      "publishedAt": "2026-02-18T09:25:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Lof voor Lang en Makkelie in Turkse media na 'gigantisch pak slaag' voor Juve",
-      "link": "https://www.vi.nl/nieuws/lof-voor-lang-en-makkelie-in-turkse-media-na-gigantisch-pak-slaag-voor-juve",
-      "summary": "Turkse media zijn lyrisch na de eclatante overwinning van Galatasaray op Juventus. Na het heenduel in de tussenronde van de Champions League worden de Turkse club, Noa Lang én Danny Makkelie bedolven onder de complimenten.",
-      "publishedAt": "2026-02-18T09:14:21.000Z"
     },
     {
       "type": "rss",
@@ -209,17 +220,6 @@
       "link": "https://www.skysports.com/racing/news/12040/13508525/today-on-sky-sports-racing-jumps-action-from-southwell",
       "summary": "We have jumps action from Southwell on Wednesday, live on Sky Sports Racing...",
       "publishedAt": "2026-02-18T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "F1 Testing: Ferrari impressing again as Red Bull suffer issue LIVE!",
-      "link": "https://www.skysports.com/f1/live-blog/12040/13508497/f1-testing-live-bahrain-test-two-2026-updates-latest-highlights-video-schedule-from-sakhir-in-final-pre-season-action",
-      "summary": "",
-      "publishedAt": "2026-02-18T06:45:00.000Z"
     }
   ]
 }
