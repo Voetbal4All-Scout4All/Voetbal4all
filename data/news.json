@@ -1,6 +1,61 @@
 {
-  "generatedAt": "2026-02-18T22:37:03.895Z",
+  "generatedAt": "2026-02-18T23:33:58.141Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "UEFA Champions League",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Newcastle head to Azerbaijan to take on Qarabag in the Champions League play-offs.",
+      "publishedAt": "2026-02-19T00:01:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Gordon channels Shearer after breaking his record",
+      "link": "https://www.bbc.com/sport/football/articles/c20z9xqdz2lo?at_medium=RSS&at_campaign=rss",
+      "summary": "Newcastle's Anthony Gordon only had one thought in his mind as his side faced Qarabag in the Champions League...",
+      "publishedAt": "2026-02-18T22:48:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Woede en ongeloof bij Arsenal: 'Ze geven de titelrace uit handen'",
+      "link": "https://www.vi.nl/nieuws/woede-en-ongeloof-bij-arsenal-ze-geven-de-titelrace-uit-handen",
+      "summary": "Arsenal had een geweldige voorsprong opgebouwd in de Premier League, maar heeft woensdagavond wederom punten laten liggen. In de 94ste minuut kwam Wolverhampton Wanderers langszij: 2-2. Daardoor was de verslagenheid groot.",
+      "publishedAt": "2026-02-18T22:45:28.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Inter worstelt in Noorse vrieskou: 'Italiaanse nachtmerrie staat voor de deur'",
+      "link": "https://www.vi.nl/nieuws/inter-worstelt-in-noorse-vrieskou-italiaanse-nachtmerrie-staat-voor-de-deur",
+      "summary": "Internazionale ging woensdagavond flink onderuit bij FK Bodø/Glimt . De Italiaanse media zagen de ploeg van Cristian Chivu worstelen in de Noorse vrieskou.",
+      "publishedAt": "2026-02-18T22:43:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arsenal squander two-goal lead as Wolves score late to earn draw",
+      "link": "https://www.bbc.com/sport/football/videos/cn4gjldn03yo?at_medium=RSS&at_campaign=rss",
+      "summary": "A Ricardo Calafiori own goal in the 94th minute gives Wolves a point. as the Premier League's bottom side come back from two goals down against leaders Arsenal at Molineux.",
+      "publishedAt": "2026-02-18T22:41:59.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -62,9 +117,9 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Arsenal suffer new blow in title race after late equaliser boosts Wolves",
+      "title": "Arsenal suffer new blow in title race after Edozie’s equaliser boosts Wolves",
       "link": "https://www.theguardian.com/football/2026/feb/18/wolverhampton-arsenal-premier-league-match-report",
-      "summary": "If you want to have an impact on your Premier League debut, then denting the title hopes of currently the best team in the land is not a bad way of doing it. Tom Edozie came off the bench to hammer in an injury-time shot which Riccardo Calafiori forced into his own net for the Wolves equaliser to punish Arsenal on a regrettable night. Bukayo Saka and Piero Hincapié thought they had earned the victory for Arsenal against the league’s worst team, only for Hugo Bueno to reduce the deficit with a stunning strike, before Edozie made a name for himself with the help of the Arsenal defender. Continue reading...",
+      "summary": "Whichever way you look at it, Arsenal did not produce a performance worthy of champions. No one in red and white will want to remember this freezing cold night at Molineux but it will live long in the memory of Wolves’ Tom Edozie, whose debut goal was a just punishment for the Premier League leaders’ ineptitude. Arsenal are five points clear of Manchester City, having played a game more, and will feel their icy breath on their shoulders after winning twice in their past seven matches. Continue reading...",
       "publishedAt": "2026-02-18T22:15:03.000Z"
     },
     {
@@ -75,7 +130,7 @@
       "flag": "🌍",
       "title": "European soccer recap: Bodø/Glimt stun Inter, Wolves steal point from Arsenal",
       "link": "https://www.espn.com/soccer/story/_/id/47943498/champions-league-live-updates-internazionale-atletico-madrid-arsenal-premier-league",
-      "summary": "Enjoy all that happene from today's knockout phase playoff first legs, with Inter and Atléti in action. Also, Wolves took on Arsenal in the Premier League.",
+      "summary": "Enjoy all that happened from today's knockout phase playoff first legs, with Inter and Atléti in action. Also, Wolves took on Arsenal in the Premier League.",
       "publishedAt": "2026-02-18T22:14:04.000Z"
     },
     {
@@ -113,17 +168,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Spektakel in Brugge: Club toont veerkracht en vecht zich terug tegen Atlético",
-      "link": "https://www.vi.nl/nieuws/spektakel-in-brugge-club-toont-veerkracht-en-vecht-zich-terug-tegen-atl-tico",
-      "summary": "Club Brugge en Atlético Madrid hebben voor een spektakelstuk gezorgd in de tussenronde van de Champions League. In België werd het in de heenwedstrijd 3-3, waardoor er een heerlijke return in Spanje wacht. Vooral de ploeg van Diego Simeone mag zich dat aanrekenen.",
-      "publishedAt": "2026-02-18T22:00:46.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -132,17 +176,6 @@
       "link": "https://www.bbc.com/sport/football/videos/c4g43rrk41ro?at_medium=RSS&at_campaign=rss",
       "summary": "Watch Anthony Gordon's four goals against Qarabag, making him Newcastle's top scorer in the Champions League (10), overtaking Alan Shearer (6).",
       "publishedAt": "2026-02-18T22:00:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Watch: Vini Jr reports alleged racism from Benfica's Prestianni",
-      "link": "https://www.bbc.com/sport/football/videos/cx24vrzy7r5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Real Madrid's Vinicius Junior reacts to alleged racist abuse from Benfica's Gianluca Prestianni in the Champions League",
-      "publishedAt": "2026-02-18T22:00:36.000Z"
     },
     {
       "type": "rss",
@@ -168,17 +201,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Titelstrijd weer spannend? Manchester City op twee verliespunten van Arsenal",
-      "link": "https://www.vi.nl/nieuws/titelstrijd-weer-spannend-manchester-city-op-twee-verliespunten-van-arsenal",
-      "summary": "Woensdagavond stonden er weer vier wedstrijden in de tussenronde van de Champions League op het programma. Onder meer Newcastle United, Internazionale en Atlético Madrid kwamen in actie. Daarnaast speelden Arsenal en AC Milan competitieduels. Lees alles rustig terug in de VI Live.",
-      "publishedAt": "2026-02-18T21:59:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -198,28 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/18/qarabag-newcastle-champions-league-first-leg-match-report",
       "summary": "When the Qarabag manager, Gurban Gurbanov, declared before kick-off that Newcastle possess “a style of play that does not suit us”, there were suggestions that he was playing mind games. Long before half-time it was fully apparent that he had rather understated things. Had this been a boxing match it would surely have been stopped by the 20th minute. Qarabag were utterly overwhelmed by the pace of their guests, and that of Anthony Gordon in particular. Gordon scored four times, boosting his tally in the Champions League this season to 10 goals. Continue reading...",
       "publishedAt": "2026-02-18T20:06:30.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Mourinho accused of gaslighting for response to Vinícius’ allegation of racism",
-      "link": "https://www.theguardian.com/football/2026/feb/18/jose-mourinho-accused-gaslighting-vinicius-junior-allegations-racism-uefa-real-madrid-benfica",
-      "summary": "Benfica manager criticised strongly by Kick It Out Uefa investigating Real Madrid player’s claims José Mourinho has been accused of gaslighting for his response to Vinícius Júnior’s allegations of racist abuse. The Benfica manager was criticised strongly by the anti-discrimination charity Kick It Out for referencing the Real Madrid forward’s goal celebration when talking about the incident. Vinícius’s allegation that he was racially abused on Tuesday by Benfica’s Gianluca Prestianni during Madrid’s Champions League playoff win in Lisbon prompted Uefa to appoint an ethics and disciplinary inspector to investigate. Benfica said they would collaborate with the investigation but reiterated their support for Prestianni, who they said was “victim” of a “smear campaign”. Continue reading...",
-      "publishedAt": "2026-02-18T19:37:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Leicester appoint Rowett until end of season",
-      "link": "https://www.bbc.com/sport/football/articles/c98q1d35g1ro?at_medium=RSS&at_campaign=rss",
-      "summary": "Championship strugglers Leicester City confirm former player Gary Rowett as their new manager on a deal until the end of the season.",
-      "publishedAt": "2026-02-18T19:16:40.000Z"
     }
   ]
 }
