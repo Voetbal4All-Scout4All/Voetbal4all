@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-02-18T04:56:44.866Z",
+  "generatedAt": "2026-02-18T06:05:47.185Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Fury to train himself for comeback: 'I might retire again after this!'",
+      "link": "https://www.skysports.com/boxing/news/12040/13508652/tyson-fury-to-train-himself-for-arslanbek-makhmudov-comeback-fight-that-might-be-the-end-i-might-retire-again",
+      "summary": "Tyson Fury is returning to boxing for what could be the final run of his celebrated career.",
+      "publishedAt": "2026-02-18T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "De 43 spelers van Feyenoord: nieuwe 'td' wacht hels karwei",
+      "link": "https://www.vi.nl/pro/de-43-spelers-van-feyenoord-nieuwe-td-wacht-hels-karwei",
+      "summary": "Raheem Sterling kon er ook nog wel bij, hij is contractspeler nummer 43, al tekende hij tot het einde van het seizoen. In de strijd om het Champions League-ticket gaat Feyenoord nu echt all-in, maar de grootste uitdaging ligt in handen van de nieuwe technisch directeur.",
+      "publishedAt": "2026-02-18T06:00:00.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,7 +32,7 @@
       "title": "Vini Jr. accuses 'coward' Prestianni of racist abuse",
       "link": "https://www.espn.com/soccer/story/_/id/47958070/vinicius-junior-racist-abuse-real-madrid-benfica",
       "summary": "Real Madrid forward Vinícius Júnior accused Benfica's Gianluca Prestianni of racially abusing him during the teams' Champions League playoff first leg on Tuesday.",
-      "publishedAt": "2026-02-18T02:02:01.000Z"
+      "publishedAt": "2026-02-18T05:42:35.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +43,7 @@
       "title": "Balogun double sets U.S. mark in UCL knockouts",
       "link": "https://www.espn.com/soccer/story/_/id/47957489/balogun-double-monaco-usa-mark-ucl-knockouts",
       "summary": "American forward Folarin Balogun took less than one minute to give Monaco the lead against Paris Saint-Germain in their Champions League playoff on Tuesday.",
-      "publishedAt": "2026-02-18T02:02:01.000Z"
+      "publishedAt": "2026-02-18T05:42:35.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +54,7 @@
       "title": "Mourinho critical of Vinícius: 'Celebrate like Pele'",
       "link": "https://www.espn.com/soccer/story/_/id/47959301/jose-mourinho-critical-vinicius-celebrate-pele",
       "summary": "José Mourinho criticized Vinícius Júnior's goal celebration after the forward scored in Real Madrid's 1-0 Champions League win at Benfica, before a confrontation in which the player said he was racially abused.",
-      "publishedAt": "2026-02-18T02:02:01.000Z"
+      "publishedAt": "2026-02-18T05:42:35.000Z"
     },
     {
       "type": "rss",
@@ -150,17 +172,6 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Schreuder: 'Doorgaan op ingeslagen weg, ik maak Ajax-NEC niet groot'",
-      "link": "https://www.vi.nl/video/dick-schreuder-na-afloop-van-sparta-nec",
-      "summary": "De strijd om plek twee is nog altijd in volle gang, al is Dick Schreuder daar naar eigen zeggen niet mee bezig. Na het gelijkspel van NEC op bezoek bij Sparta Rotterdam hebben de Nijmegenaren de derde plaats overgenomen van Ajax, de tegenstander van zaterdag. De trainer van NEC blikt terug op het duel met Sparta, maar wordt ook gevraagd naar de wedstrijd tegen Ajax.",
-      "publishedAt": "2026-02-17T22:43:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
       "title": "Courtois: 'Vinicius gaf aan dat Prestianni hem aap heeft genoemd'",
       "link": "https://www.vi.nl/nieuws/courtois-vinicius-gaf-aan-dat-prestianni-hem-aap-heeft-genoemd",
       "summary": "Thibaut Courtois heeft gereageerd op de verwerpelijke ontwikkelingen tijdens het Champions League-duel tussen Benfica en Real Madrid . De Koninklijke won dankzij een treffer van Vinicius Júnior, maar na afloop stond de Braziliaan vooral centraal vanwege een confrontatie met Gianluca Prestianni.",
@@ -209,17 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/ce948p5gk3no?at_medium=RSS&at_campaign=rss",
       "summary": "Feyenoord will train in Belgium this week instead of their home in Rotterdam so new signing Raheem Sterling can work with his new team-mates.",
       "publishedAt": "2026-02-17T20:10:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "How key F1 meetings could have huge implications on 2026 season",
-      "link": "https://www.skysports.com/f1/news/12040/13508549/f1-2026-key-meetings-as-final-bahrain-testing-begins-set-to-impact-power-unit-and-start-procedure-disputes",
-      "summary": "The final test of the 2026 Formula 1 pre-season gets under way on Wednesday, but the most crucial action of the day may well be away from the track at the Bahrain International Circuit.",
-      "publishedAt": "2026-02-17T17:30:00.000Z"
     }
   ]
 }
