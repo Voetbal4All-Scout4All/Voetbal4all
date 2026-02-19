@@ -1,16 +1,71 @@
 {
-  "generatedAt": "2026-02-18T23:33:58.141Z",
+  "generatedAt": "2026-02-19T02:33:15.185Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arteta: Arsenal 'didn't show anything' vs. Wolves",
+      "link": "https://www.espn.com/soccer/story/_/id/47970300/arteta-arsenal-show-anything-wolves-draw",
+      "summary": "Arsenal boss Mikel Arteta said his team have only themselves to blame after surrendering a two-goal lead to draw 2-2 with rock-bottom Wolves at Molineux, adding that all criticism of his side was fair after the capitulation.",
+      "publishedAt": "2026-02-19T01:06:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Vinícius Jr. racism allegation prompts UEFA probe",
+      "link": "https://www.espn.com/soccer/story/_/id/47963819/vinicius-jr-racism-claim-investigated-uefa",
+      "summary": "UEFA will investigate the racism allegations made by Vinícius Júnior in Real Madrid's game against Benfica.",
+      "publishedAt": "2026-02-19T01:06:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Gordon makes UCL history with 4 goals in 1st half",
+      "link": "https://www.espn.com/soccer/story/_/id/47967394/newcastle-anthony-gordon-makes-ucl-history-4-goal-1st-half",
+      "summary": "Newcastle United forward Anthony Gordon has become just the second player to score four goals in the first half of a UEFA Champions League game and the first to do so in the knockout stage.",
+      "publishedAt": "2026-02-19T01:06:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Bodo/Glimt add win over Inter to impressive run",
+      "link": "https://www.espn.com/soccer/report/_/gameId/401858734",
+      "summary": "Champions League runner-up Inter Milan became the latest top team to suffer an upset by Bodø/Glimt in the Champions League, losing 3-1 away in the first leg of their playoff on Wednesday.",
+      "publishedAt": "2026-02-19T01:06:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Champions League talking points: PSG's comeback win, Bodø/Glimt surprise Inter, more",
+      "link": "https://www.espn.com/soccer/story/_/id/47967415/champions-league-talking-points-bodo-glimts-magical-win-paris-saint-germains-comeback-more",
+      "summary": "We had a very entertaining week of first leg knockout playoff matches in UEFA Champions League! ESPN FC's writers pick out their highs and lows of the tournament to this point.",
+      "publishedAt": "2026-02-19T01:06:50.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "UEFA Champions League",
-      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
-      "summary": "Newcastle head to Azerbaijan to take on Qarabag in the Champions League play-offs.",
-      "publishedAt": "2026-02-19T00:01:05.000Z"
+      "title": "'Bottle word will be used' for Arsenal - is title 'in Man City's hands'?",
+      "link": "https://www.bbc.com/sport/football/articles/czj1nm9jdy3o?at_medium=RSS&at_campaign=rss",
+      "summary": "After blowing a two-goal lead to draw against the Premier League's bottom club Wolves, there will be no dodging the questions on whether Arsenal are mentally ready to end their 22-year wait to become champions.",
+      "publishedAt": "2026-02-19T00:21:00.000Z"
     },
     {
       "type": "rss",
@@ -58,50 +113,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arsenal suffer title blow with dramatic Wolves draw",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740901",
-      "summary": "Debutant Tom Edozie scored a dramatic last-gasp equaliser as Wolves came from two goals down to snatch a 2-2 draw with Arsenal and plunge the Gunners' Premier League title hopes into further doubt.",
-      "publishedAt": "2026-02-18T22:20:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Vinícius Jr. racism allegation prompts UEFA probe",
-      "link": "https://www.espn.com/soccer/story/_/id/47963819/vinicius-jr-racism-claim-investigated-uefa",
-      "summary": "UEFA will investigate the racism allegations made by Vinícius Júnior in Real Madrid's game against Benfica.",
-      "publishedAt": "2026-02-18T22:20:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Gordon makes UCL history with 4 goals in 1st half",
-      "link": "https://www.espn.com/soccer/story/_/id/47967394/newcastle-anthony-gordon-makes-ucl-history-4-goal-1st-half",
-      "summary": "Newcastle United forward Anthony Gordon has become just the second player to score four goals in the first half of a UEFA Champions League game and the first to do so in the knockout stage.",
-      "publishedAt": "2026-02-18T22:20:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Bodo/Glimt add win over Inter to impressive run",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401858734",
-      "summary": "Champions League runner-up Inter Milan became the latest top team to suffer an upset by Bodø/Glimt in the Champions League, losing 3-1 away in the first leg of their playoff on Wednesday.",
-      "publishedAt": "2026-02-18T22:20:22.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -119,19 +130,8 @@
       "flag": "🌍",
       "title": "Arsenal suffer new blow in title race after Edozie’s equaliser boosts Wolves",
       "link": "https://www.theguardian.com/football/2026/feb/18/wolverhampton-arsenal-premier-league-match-report",
-      "summary": "Whichever way you look at it, Arsenal did not produce a performance worthy of champions. No one in red and white will want to remember this freezing cold night at Molineux but it will live long in the memory of Wolves’ Tom Edozie, whose debut goal was a just punishment for the Premier League leaders’ ineptitude. Arsenal are five points clear of Manchester City, having played a game more, and will feel their icy breath on their shoulders after winning twice in their past seven matches. Continue reading...",
+      "summary": "Whichever way you look at it, Arsenal did not produce a performance worthy of champions. No one in red and white will want to remember this freezing cold night at Molineux – but it will live long in the memory of Wolves’ Tom Edozie, whose debut goal was a just punishment for the Premier League leaders’ ineptitude. Arsenal are five points clear of Manchester City, having played a game more, and will feel their icy breath on their shoulders after winning twice in their past seven matches. Continue reading...",
       "publishedAt": "2026-02-18T22:15:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "European soccer recap: Bodø/Glimt stun Inter, Wolves steal point from Arsenal",
-      "link": "https://www.espn.com/soccer/story/_/id/47943498/champions-league-live-updates-internazionale-atletico-madrid-arsenal-premier-league",
-      "summary": "Enjoy all that happened from today's knockout phase playoff first legs, with Inter and Atléti in action. Also, Wolves took on Arsenal in the Premier League.",
-      "publishedAt": "2026-02-18T22:14:04.000Z"
     },
     {
       "type": "rss",
@@ -152,7 +152,7 @@
       "flag": "🌍",
       "title": "Arsenal set up Chelsea showdown in Women’s Champions League with win over Leuven",
       "link": "https://www.theguardian.com/football/2026/feb/18/arsenal-leuven-champions-league-second-leg-match-report",
-      "summary": "A hard-fought 3-1 victory over OH Leuven at Meadow Park sent Arsenal through to the quarter-finals of the Champions League. The visitors tested Renée Slegers’ side when Sara Pusztai cancelled out Alessia Russo’s goal but a penalty from Mariona Caldentey and second from Russo secured the win, earning them a comfortable 7-1 aggregate score. Confidence is flying high around Arsenal, they are almost at the end of one of the most taxing periods of the season to date. Since the return from the winter break, they have won seven of their nine fixtures and lost just one, featured in five different competitions, lifted the inaugural Champions Cup and now reached the quarter-finals of the Women’s Champions League. It has been a month that will have tested every single one of the playing squad and staff to their limits but one that will have given them belief that they can still challenge on multiple fronts. Continue reading...",
+      "summary": "A hard-fought victory over OH Leuven at Meadow Park sent Arsenal through to the quarter-finals of the Champions League, where they will face Chelsea next month. The visitors tested Renée Slegers’s side when Sára Pusztai cancelled out Alessia Russo’s goal but a penalty from Mariona Caldentey and second from Russo secured the win, earning them a comfortable 7-1 aggregate score. This was a disjointed performance from the hosts but it will have done little to dampen the high spirits in north London. Continue reading...",
       "publishedAt": "2026-02-18T22:03:40.000Z"
     },
     {
