@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-02-21T08:35:55.967Z",
+  "generatedAt": "2026-02-21T14:30:40.837Z",
   "items": [
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Man Utd latest: Carrick insists break came 'at a good time'",
-      "link": "https://www.skysports.com/football/live-blog/12040/13025492/man-utd-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-      "summary": "",
-      "publishedAt": "2026-02-21T08:25:00.000Z"
+      "title": "Aston Villa v Leeds, Chelsea v Burnley, Championship and more: Saturday clockwatch – live",
+      "link": "https://www.theguardian.com/football/live/2026/feb/21/aston-villa-leeds-chelsea-burnley-premier-league-championship-clockwatch-live",
+      "summary": "⚽ Latest updates from the Premier League and beyond ⚽ Live scores | Follow us on Bluesky | And email Dom Brentford: Kelleher; Hickey, Ajer, Van den Berg, Henry; Janelt, Henderson, Jensen; Ouattara, Lewis-Potter, Thiago. Subs: Valdimarsson, Pinnock, Schade, Nelson, Yamoliuk, Collins, Damsgaard, Donovan, Furo. Continue reading...",
+      "publishedAt": "2026-02-21T14:21:28.000Z"
     },
     {
       "type": "rss",
@@ -18,32 +18,65 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Goudhaantje Van der Sande redt Cambuur: 'Kon enkeltje cornervlag eindigen'",
-      "link": "https://www.vi.nl/nieuws/goudhaantje-van-der-sande-redt-cambuur-kon-enkeltje-cornervlag-eindigen",
-      "summary": "Jort van der Sande (30) bewees zichzelf vrijdagavond weer bij SC Cambuur. De spits schoot als invaller diep in blessuretijd de gelijkmaker tegen RKC Waalwijk tegen de touwen (1-1). Al had zijn volley ook zomaar ergens anders kunnen belanden, lachte de aanvaller.",
-      "publishedAt": "2026-02-21T08:20:02.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ihattaren prijst kritische Buijs: 'Aanpakken en liefde geven, dat is Danny'",
-      "link": "https://www.vi.nl/pro/ihattaren-prijst-kritische-buijs-aanpakken-en-liefde-geven-dat-is-danny",
-      "summary": "Na een bedroevende eerste helft wist Fortuna Sittard toch nog met 2-1 te winnen van Excelsior. Handhaving is daarmee weer dichtbij voor Danny Buijs, die zijn zwaarste seizoen bij de Limburgse Eredivisionist meemaakt. De trainer en de vorige week nog door hem aangepakte Mohamed Ihattaren maken de balans op.",
-      "publishedAt": "2026-02-21T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: degradatiekraker in Eredivisie, Manchester City tegen Newcastle",
+      "title": "VI Live: Milner breekt all-time record in Premier League",
       "link": "https://www.vi.nl/nieuws/vi-live-degradatiekraker-in-eredivisie-manchester-city-tegen-newcastle",
       "summary": "Zaterdagavond staat er met NAC Breda tegen FC Volendam een ware degradatiekraker op het programma. De duels van PSV en Ajax volgen we in een apart liveblog. Verder staat ons een druk programma in het buitenland te wachten. Mis niets met VI Live.",
-      "publishedAt": "2026-02-21T07:45:00.000Z"
+      "publishedAt": "2026-02-21T14:07:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Like landing on the moon': How Milner set a near-unbreakable Premier League record",
+      "link": "https://www.espn.com/soccer/story/_/id/47850214/how-james-milner-broke-premier-league-appearances-record",
+      "summary": "At age 40, James Milner is now the Premier League's all-time appearances leader. Teammates and coaches -- from Ashley Young to Jurgen Klopp -- share what makes him special.",
+      "publishedAt": "2026-02-21T14:06:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sources: Prestianni told UEFA he used anti-gay slur",
+      "link": "https://www.espn.com/soccer/story/_/id/47988961/gianluca-prestianni-uefa-vinicius-junior-anti-gay-racist",
+      "summary": "Gianluca Prestianni has already given evidence in UEFA's investigation into his alleged racist abuse of Vinícius Júnior, sources told ESPN.",
+      "publishedAt": "2026-02-21T13:52:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Milner to break Premier League appearance record",
+      "link": "https://www.espn.com/soccer/story/_/id/47963505/james-milner-breaks-record-most-premier-league-appearances",
+      "summary": "James Milner is set to break the record for the most appearances in Premier League history.",
+      "publishedAt": "2026-02-21T13:52:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "IOC to probe Infantino conduct after Trump event",
+      "link": "https://www.espn.com/soccer/story/_/id/47989711/ioc-fifa-president-gianni-infantino-trump-meeting-olympic",
+      "summary": "After FIFA leader Gianni Infantino took part in U.S. President Donald Trump's Board of Peace launch, IOC President Kirsty Coventry said the Olympic body will \"look into\" his conduct.",
+      "publishedAt": "2026-02-21T13:52:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arteta rejects 'bottlers' tag amid Arsenal wobble",
+      "link": "https://www.espn.com/soccer/story/_/id/47989973/arsenal-mikel-arteta-bottlers-premier-league-title-race",
+      "summary": "Mikel Arteta insisted the word \"bottlers\" is not part of his vocabulary as he denied Arsenal are blowing another chance to win the Premier League.",
+      "publishedAt": "2026-02-21T13:52:51.000Z"
     },
     {
       "type": "rss",
@@ -51,10 +84,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Nieuwe start Marseille wordt nachtmerrie: 'Timber enige die zich onderscheidde'",
-      "link": "https://www.vi.nl/nieuws/nieuwe-start-marseille-wordt-nachtmerrie-timber-enige-die-zich-onderscheidde",
-      "summary": "Marseille is slecht begonnen aan het tijdperk van nieuwe trainer Habib Beye. Vrijdagavond maakte de coach, die Roberto de Zerbi verving, zijn debuut tegen Stade Brest. Dat werd een fiasco, want de topclub van Quinten Timber verloor : 2-0.",
-      "publishedAt": "2026-02-21T07:36:33.000Z"
+      "title": "Howard: 'Als je van voetbal houdt, stuur je landen als Curaçao nooit naar een WK'",
+      "link": "https://www.vi.nl/nieuws/howard-als-je-van-voetbal-houdt-stuur-je-landen-als-cura-ao-nooit-naar-een-wk",
+      "summary": "Tim Howard speelde 121 interlands voor de Verenigde Staten en was op drie WK's actief. Nu het mondiale eindtoernooi naar zijn land komt, heeft hij een kritische kanttekening geplaatst bij de uitbreiding ervan. Zo zou een land als Curaçao nooit op het wereldkampioenschap moeten spelen, vindt de ex-doelman.",
+      "publishedAt": "2026-02-21T13:47:13.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +95,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Godts heeft als 'MVP' Van der Vaart, Dolberg en Eriksen in het vizier",
-      "link": "https://www.vi.nl/nieuws/godts-heeft-als-mvp-van-der-vaart-dolberg-en-eriksen-in-het-vizier",
-      "summary": "Ajacied Mika Godts heeft zich dit seizoen op basis van doelpunten en assist opgewerkt tot the most valuable player in de Eredivisie en kan eerdere prestaties van Rafael van der Vaart, Kasper Dolberg en Christian Eriksen verbeteren.",
-      "publishedAt": "2026-02-21T07:30:25.000Z"
+      "title": "Wereldgoals Juan Mata (37): oude Spanjaard zet Australië op z'n kop",
+      "link": "https://www.vi.nl/nieuws/wereldgoals-juan-mata-37-oude-spanjaard-zet-australi-op-z-n-kop",
+      "summary": "Juan Mata heeft zaterdag in Australië nog één keer zijn absolute klasse getoond. Het Manchester United-icoon deed dat nota bene tegen Melbourne City, dat onderdeel uitmaakt van de City Football Group waar zijn oude rivaal Manchester City ook eigendom van is.",
+      "publishedAt": "2026-02-21T13:45:48.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +106,109 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Brook: 'A shame' if Pakistan players overlooked for Hundred",
-      "link": "https://www.skysports.com/cricket/news/12040/13509999/the-hundred-england-captain-harry-brook-says-it-would-be-a-shame-if-pakistan-players-were-overlooked",
-      "summary": "England white-ball captain Harry Brook says it would be \"a shame\" if Pakistan players were overlooked for this year's edition of The Hundred.",
-      "publishedAt": "2026-02-21T07:30:00.000Z"
+      "title": "Rudoni rocket extends Coventry lead | 'An absolute STUNNER!'",
+      "link": "https://www.skysports.com/watch/video/13510272/jack-rudoni-rocket-extends-coventry-lead",
+      "summary": "Jack Rudoni took advantage of the back peddling West Brom defence to unleash a fierce left foot strike from distance.",
+      "publishedAt": "2026-02-21T13:06:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Klaebo makes history with sixth gold of 2026 Winter Olympics",
+      "link": "https://www.skysports.com/winter-olympics/news/12040/13510267/winter-olympics-johannes-klaebo-makes-history-with-sixth-gold-in-single-games-norwegian-wins-50km-mass-start",
+      "summary": "Norwegian cross-country skier Johannes Hoesflot Klaebo became the first athlete to win six gold medals at a single Winter Olympics after continuing his stunning run with victory in the 50km mass start.",
+      "publishedAt": "2026-02-21T13:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Six Nations LIVE! Ireland take early lead vs England",
+      "link": "https://www.skysports.com/rugby-union/live-blog/12040/13510099/six-nations-live-england-vs-ireland-and-wales-vs-scotland-updates-score-results-news",
+      "summary": "",
+      "publishedAt": "2026-02-21T13:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Nijkamp legt uit waarom Sparta en Ajax niet meer samenwerken",
+      "link": "https://www.vi.nl/nieuws/nijkamp-legt-uit-waarom-sparta-en-ajax-niet-meer-samenwerken",
+      "summary": "Het samenwerkingsverband tussen Sparta Rotterdam en Ajax is niet verlengd. In gesprek met Voetbal International vertelt technisch directeur Gerard Nijkamp waarom dat besluit is genomen.",
+      "publishedAt": "2026-02-21T12:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Coventry win at WBA! Stoke peg back Leicester - EFL LIVE!",
+      "link": "https://www.skysports.com/football/live-blog/12040/13510254/championship-live-scores-match-updates-and-free-highlights-plus-efl-latest-from-league-one-and-league-two",
+      "summary": "",
+      "publishedAt": "2026-02-21T12:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Slot reageert op Rooney: 'Dát is het enige wat Klopp en ik gemeen hebben'",
+      "link": "https://www.vi.nl/nieuws/slot-reageert-op-rooney-d-t-is-het-enige-wat-klopp-en-ik-gemeen-hebben",
+      "summary": "Arne Slot heeft gevat gereageerd op de opmerkingen van Wayne Rooney, die hem gebrek aan uitstraling verweet . Volgens de manager van Liverpool is het nogal een simpele constatering. Daarnaast wees hij op een belangrijke overeenkomst met Jürgen Klopp.",
+      "publishedAt": "2026-02-21T11:45:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Tudor could stay at Tottenham for 'long time'",
+      "link": "https://www.bbc.com/sport/football/articles/cy9g0xyl1g9o?at_medium=RSS&at_campaign=rss",
+      "summary": "Sporting director Johan Lange says Igor Tudor could be given the Tottenham job on a permanent basis if he impresses during the remainder of the season.",
+      "publishedAt": "2026-02-21T10:59:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Play Super 6's Golden Game to win £500,000!",
+      "link": "https://www.skysports.com/football/live-blog/12040/13401137/huge-jackpots-to-win-with-super-6-how-to-play-tips-analysis-and-latest-winner-stories",
+      "summary": "",
+      "publishedAt": "2026-02-21T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Losing the dressing room' - what does it mean and how can it happen?",
+      "link": "https://www.bbc.com/sport/football/articles/cy9gvle2n5qo?at_medium=RSS&at_campaign=rss",
+      "summary": "\"Losing the dressing room\" is now part of football's vocabulary. Chief football writer Phil McNulty asks what it means, how it happens and can it be solved?",
+      "publishedAt": "2026-02-21T09:25:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Sacrifices' & celebrations - why Chelsea's Neto is misunderstood",
+      "link": "https://www.bbc.com/sport/football/articles/c80jyejrx0zo?at_medium=RSS&at_campaign=rss",
+      "summary": "Pedro Neto has been criticised for lacking a \"killer instinct\", but the Chelsea winger's shape-shifting role goes some way to explain that.",
+      "publishedAt": "2026-02-21T08:47:42.000Z"
     },
     {
       "type": "rss",
@@ -88,138 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cjwzqn3e193o?at_medium=RSS&at_campaign=rss",
       "summary": "What's eating Arsenal? Sunday's North London derby is now a test of the Gunners' \"bottle\", says chief football writer Phil McNulty.",
       "publishedAt": "2026-02-21T07:04:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Fury vs AJ still possible? 'That's all about timing,' says Warren",
-      "link": "https://www.skysports.com/boxing/news/12040/13510092/tyson-fury-vs-anthony-joshua-fight-could-still-happen-thats-all-about-timing-says-promoter-frank-warren",
-      "summary": "There was a plan for Tyson Fury to fight Anthony Joshua later this year after both had warm-up bouts first.",
-      "publishedAt": "2026-02-21T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rice issues Arsenal warning and reveals dressing-room talks after Wolves draw",
-      "link": "https://www.skysports.com/football/news/12040/13510121/declan-rice-on-arsenals-current-form-the-draw-at-wolves-and-his-100th-premier-league-appearance-for-gunners-in-north-london-derby",
-      "summary": "Declan Rice believes Arsenal need to maintain \"perspective\" over their position in the Premier League - but admits they will need to return to winning ways quickly to silence their critics.",
-      "publishedAt": "2026-02-21T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Goalkeeper hauled off at half-time after howler for the ages sparks A-League rout",
-      "link": "https://www.theguardian.com/football/2026/feb/21/josh-oluwayemi-howler-a-league-men-goalkeeper-hauled-off-at-half-time",
-      "summary": "Wellington’s Josh Oluwayemi heads into his own goal from outside box Auckland FC run out 5-0 winners in New Zealand derby A comical own goal from goalkeeper Josh Oluwayemi has moved Auckland within touching distance of first spot on the A-League Men table after a 5-0 New Zealand derby thrashing of Wellington. Oluwayemi’s 24th-minute howler looks destined to be a permanent feature on goalkeeper gaffe compilations after the Phoenix No 1 completely misjudged a Jake Girdwood-Reich clearance at Sky Stadium in Wellington on Saturday. Continue reading...",
-      "publishedAt": "2026-02-21T06:34:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "‘I’m living year to year now’: Neymar says he may retire by end of 2026",
-      "link": "https://www.theguardian.com/football/2026/feb/21/neymar-says-he-may-retire-by-end-of-2026-brazil",
-      "summary": "Santos player has struggled with injury in recent seasons Brazilian forward remains doubtful for this year’s World Cup Brazil striker Neymar, who extended his contract with his boyhood club Santos last month, said that he may retire by the end of the year. The 34-year-old forward returned to Santos in January 2025 and played a key role in their survival in the Brazilian top flight, scoring five times in their last five matches. Continue reading...",
-      "publishedAt": "2026-02-21T02:54:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Sources: Prestianni told UEFA he used anti-gay slur",
-      "link": "https://www.espn.com/soccer/story/_/id/47988961/gianluca-prestianni-uefa-vinicius-junior-anti-gay-racist",
-      "summary": "Gianluca Prestianni has already given evidence in UEFA's investigation into his alleged racist abuse of Vinícius Júnior, sources told ESPN.",
-      "publishedAt": "2026-02-21T00:49:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "IOC to probe Infantino conduct after Trump event",
-      "link": "https://www.espn.com/soccer/story/_/id/47989711/ioc-fifa-president-gianni-infantino-trump-meeting-olympic",
-      "summary": "After FIFA leader Gianni Infantino took part in U.S. President Donald Trump's Board of Peace launch, IOC President Kirsty Coventry said the Olympic body will \"look into\" his conduct.",
-      "publishedAt": "2026-02-21T00:49:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta rejects 'bottlers' tag amid Arsenal wobble",
-      "link": "https://www.espn.com/soccer/story/_/id/47989973/arsenal-mikel-arteta-bottlers-premier-league-title-race",
-      "summary": "Mikel Arteta insisted the word \"bottlers\" is not part of his vocabulary as he denied Arsenal are blowing another chance to win the Premier League.",
-      "publishedAt": "2026-02-21T00:49:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "MLS team-by-team preview: Why is 2026 your team's year?",
-      "link": "https://www.espn.com/soccer/story/_/id/47966042/mls-team-team-preview-why-2026-your-team-year",
-      "summary": "With the 2026 MLS season kicking off Saturday, ESPN breaks down where the league's 30 clubs stand and how they've prepped for a run at MLS Cup.",
-      "publishedAt": "2026-02-21T00:49:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Can Messi reach Ronaldo's target of 1,000 goals?",
-      "link": "https://www.espn.com/soccer/story/_/id/47220729/messi-score-900th-goal-2026-reach-1000-pass-ronaldo",
-      "summary": "Lionel Messi begins the 2026 MLS season on the verge of another huge milestone: his 900th goal.",
-      "publishedAt": "2026-02-21T00:49:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Mikel Arteta rules out ‘bottlers’ jibe but accepts Arsenal must take title criticism",
-      "link": "https://www.theguardian.com/football/2026/feb/20/mikel-arteta-tottenham-arsenal-premier-league-title",
-      "summary": "‘It’s not part of my vocabulary. I wouldn’t use that word’ Arsenal visit Tottenham in Premier League on Sunday Mikel Arteta has insisted the word “bottlers” is not in his vocabulary and that Arsenal must take criticism “on the chin” after surrendering a 2-0 lead against the bottom side, Wolves, in midweek. With Manchester City facing Newcastle on Saturday night, the Premier League leaders could have their advantage over Pep Guardiola’s side cut to two points by the time they play at Tottenham on Sunday. Continue reading...",
-      "publishedAt": "2026-02-20T22:30:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Tudor promises Spurs will avoid relegation but accepts club are in ‘emergency situation’",
-      "link": "https://www.theguardian.com/football/2026/feb/20/igor-tudor-tottenham-premier-league-football",
-      "summary": "New coach starts tenure against Arsenal on Sunday Tudor insists ‘we have enormous quality in the squad’ Igor Tudor has said Tottenham are in “an emergency situation” but issued a guarantee that his new team would escape relegation. Tudor is a veteran of short-term appointments and has performed rescue jobs at Udinese, Verona and Juventus. He offered a curt “100%” in response to questions on his confidence in Spurs’s survival. The Croat’s tenure begins on Sunday with a north London derby at home to the wobbling Premier League leaders, though a lengthy injury list leaves him with only 13 fit senior players. Continue reading...",
-      "publishedAt": "2026-02-20T22:30:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "‘I won the league with Liverpool’: Arne Slot responds to Wayne Rooney jibe",
-      "link": "https://www.theguardian.com/football/2026/feb/20/i-won-the-league-with-liverpool-arne-slot-responds-to-wayne-rooney-jibe",
-      "summary": "Rooney claimed coach lacked ‘aura’ to manage club ‘Jürgen Klopp and me both won the league’ Arne Slot has responded to Wayne Rooney’s claim that the Liverpool head coach does not have the “aura” to manage the club by pointing to his Premier League title success last season. Rooney questioned Slot’s suitability for the job, telling The Overlap: “I have met him a few times. He was a nice fella but I just don’t think, for Liverpool, he’s got that aura about him. Maybe this is because you have just come off the back of Jürgen Klopp and it’s going to be difficult for anyone to have that, but I just don’t think there’s that aura about him.” Continue reading...",
-      "publishedAt": "2026-02-20T22:30:51.000Z"
     }
   ]
 }
