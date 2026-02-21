@@ -1,16 +1,82 @@
 {
-  "generatedAt": "2026-02-21T20:30:12.861Z",
+  "generatedAt": "2026-02-21T22:29:09.445Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Match of the Day",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Highlights from five Premier League games, including Man City against Newcastle United.",
+      "publishedAt": "2026-02-22T08:55:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: Ajax ontsnapt aan achterstand na buitenspel bij goal Ouaissa",
-      "link": "https://www.vi.nl/nieuws/vi-live-ajax-neemt-het-op-tegen-directe-concurrent-nec",
-      "summary": "Ajax neemt het zaterdag op tegen NEC. De twee ploegen zijn dit seizoen concurrenten van elkaar in de strijd om plek twee, goed voor een direct Champions League-ticket. Het duel gaat om 21.00 uur van start en volg je in deze VI Live.",
-      "publishedAt": "2026-02-21T20:28:20.000Z"
+      "title": "Vink laakt houding Ajax-spelers: 'Ze staan er maar een beetje bij'",
+      "link": "https://www.vi.nl/nieuws/vink-laakt-houding-ajax-spelers-ze-staan-er-maar-een-beetje-bij",
+      "summary": "NEC heeft zichzelf tekort gedaan door gelijk te spelen op bezoek bij Ajax ( 1-1 ). Dat was de conclusie van ESPN-analytici Arnold Bruggink en Marciano Vink.",
+      "publishedAt": "2026-02-21T22:22:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ronaldo bags brace as Al Nassr ease past Al Hazem",
+      "link": "https://www.espn.com/soccer/story/_/id/47997956/cristiano-ronaldo-scores-brace-al-nassr-ease-al-hazem",
+      "summary": "Cristiano Ronaldo scored twice as Al Nassr beat Al Hazem 4-0 to move top of the Saudi Pro League.",
+      "publishedAt": "2026-02-21T22:14:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "City beat Newcastle, go within 2 points of Arsenal",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740857",
+      "summary": "Nico O'Reilly scored twice in the first half as Manchester City cut Arsenal's Premier League lead to two points with a nervy 2-1 win over Newcastle.",
+      "publishedAt": "2026-02-21T22:14:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arbeloa: Madrid 'much better' than Osasuna loss",
+      "link": "https://www.espn.com/soccer/story/_/id/47997015/alvaro-arbeloa-real-madrid-stunning-defeat-osasuna-laliga",
+      "summary": "Álvaro Arbeloa admitted Real Madrid \"can play much better\" after a 2-1 defeat at Osasuna on Saturday saw the team drop points in the LaLiga title race.",
+      "publishedAt": "2026-02-21T22:14:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rosenior: Chelsea 'set fire to 4 points' in 2 games",
+      "link": "https://www.espn.com/soccer/story/_/id/47996663/liam-rosenior-chelsea-point-stamford-bridge-burnley-premier-league",
+      "summary": "Liam Rosenior said he is learning who he can and cannot rely on after Chelsea had Wesley Fofana sent off before throwing away two points in added time in a 1-1 draw against Burnley.",
+      "publishedAt": "2026-02-21T22:14:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Fofana and Hannibal subjected to racist abuse after Chelsea-Burnley draw",
+      "link": "https://www.skysports.com/football/news/12040/13510606/wesley-fofana-and-hannibal-subjected-to-racist-abuse-after-chelseas-draw-against-burnley",
+      "summary": "Chelsea centre-back Wesley Fofana highlighted some of the racist abuse he received on Instagram after the Blues' draw with Burnley, with Clarets midfielder Hannibal also subject to racist abuse.",
+      "publishedAt": "2026-02-21T22:10:00.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +84,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Manchester City v Newcastle: Premier League – live",
+      "title": "Manchester City 2-1 Newcastle: Premier League – live reaction",
       "link": "https://www.theguardian.com/football/live/2026/feb/21/manchester-city-v-newcastle-premier-league-live",
       "summary": "⚽ Premier League updates from the 8pm GMT kick-off ⚽ Live scores | Follow us on Bluesky | And email Scott Newcastle get the ball rolling! “No-one actually believes we’ll win this game, do they?” sighs Toon fan Chris Paraskevas. “I mean the last time we won at the Etihad, the goal-scorers were Moussa Sissoko (now ruining his reputation at Panathinaikos with Rafa Benitez) and Ryan Taylor.” The teams are out. Manchester City, in sky blue, are given a guard of honour by members of their 1976 League Cup winning side. The 50th anniversary of that victory, over Newcastle, comes up next week. The Toon in third-choice blue. As for the weather, Bert Challenor, the talent scout from Comedians by Trevor Griffiths, says it best: “I’ll never understand why they don’t run boats to Manchester.” We’ll be off in a minute. Continue reading...",
-      "publishedAt": "2026-02-21T20:26:59.000Z"
+      "publishedAt": "2026-02-21T22:08:24.000Z"
     },
     {
       "type": "rss",
@@ -29,65 +95,65 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: VAR zet streep door openingstreffer NAC, Man City op 1-1",
-      "link": "https://www.vi.nl/nieuws/vi-live-var-zet-streep-door-openingstreffer-nac-man-city-op-1-1",
+      "title": "B-ploeg freewheelt PSG terug naar Franse koppositie tegen hekkensluiter Metz",
+      "link": "https://www.vi.nl/nieuws/b-ploeg-freewheelt-psg-terug-naar-franse-koppositie-tegen-hekkensluiter-metz",
+      "summary": "Paris Saint-Germain heeft de koppositie in Frankrijk weer overgenomen van RC Lens. De Parijzenaars maakten zaterdagavond geen fout tegen hekkensluiter FC Metz en profiteerden zo van puntenverlies van de concurrent eerder op de dag.",
+      "publishedAt": "2026-02-21T22:06:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: Feyenoord mogelijk lachende derde na gelijkspel in Arena",
+      "link": "https://www.vi.nl/nieuws/vi-live-ajax-neemt-het-op-tegen-directe-concurrent-nec",
+      "summary": "Ajax neemt het zaterdag op tegen NEC. De twee ploegen zijn dit seizoen concurrenten van elkaar in de strijd om plek twee, goed voor een direct Champions League-ticket. Het duel gaat om 21.00 uur van start en volg je in deze VI Live.",
+      "publishedAt": "2026-02-21T22:03:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Godts laat Ajax ontsnappen aan Nijmeegs pressieplan",
+      "link": "https://www.vi.nl/pro/godts-laat-ajax-ontsnappen-aan-nijmeegs-pressieplan",
+      "summary": "Ajax en NEC zijn in de strijd om plek twee geen stap verder gekomen. In de Johan Cruijff Arena eindigt een vermakelijk duel op gelijke hoogte (1-1). Een uitslag waar vooral de Nijmeegse uitdagers van zullen balen. Hoe Ajax worstelde met de hoge druk van NEC.",
+      "publishedAt": "2026-02-21T22:01:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: Lookman floreert bij Atlético Madrid onder Simeone",
+      "link": "https://www.vi.nl/nieuws/vi-live-lookman-floreert-bij-atl-tico-madrid-onder-simeone",
       "summary": "Zaterdagavond staat er met NAC Breda tegen FC Volendam een ware degradatiekraker op het programma. De duels van PSV en Ajax volgen we in een apart liveblog. Verder staat ons een druk programma in het buitenland te wachten. Mis niets met VI Live.",
-      "publishedAt": "2026-02-21T20:22:06.000Z"
+      "publishedAt": "2026-02-21T21:57:57.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Laatkomers Heerenveen schuldbewust, Veldman eist topsportcultuur",
-      "link": "https://www.vi.nl/nieuws/laatkomers-heerenveen-schuldbewust-veldman-eist-topsportcultuur",
-      "summary": "SC Heerenveen ging zaterdag onderuit bij koploper PSV . Na afloop zal het in Friesland vooral gaan over Maxence Rivera en Vasilios Zagaritis. Het duo kwam te laat voor de wedstrijdbespreking en werd gestraft door trainer Robin Veldman.",
-      "publishedAt": "2026-02-21T20:15:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sources: Prestianni told UEFA he used anti-gay slur",
-      "link": "https://www.espn.com/soccer/story/_/id/47988961/gianluca-prestianni-uefa-vinicius-junior-anti-gay-racist",
-      "summary": "Gianluca Prestianni has already given evidence in UEFA's investigation into his alleged racist abuse of Vinícius Júnior, sources told ESPN.",
-      "publishedAt": "2026-02-21T19:56:51.000Z"
+      "title": "Motherwell romp to victory over St Mirren",
+      "link": "https://www.skysports.com/football/st-mirren-vs-motherwell/report/531894",
+      "summary": "Motherwell treated the watching Sir Alex Ferguson to a football masterclass as Jens Berthel Askou’s side romped to a 5-0 win over St Mirren.",
+      "publishedAt": "2026-02-21T21:55:00.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "654 and counting: Milner becomes PL record holder",
-      "link": "https://www.espn.com/soccer/story/_/id/47963505/james-milner-breaks-record-most-premier-league-appearances",
-      "summary": "James Milner has broken the record for the most appearances in Premier League history.",
-      "publishedAt": "2026-02-21T19:56:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Infantino to face no IOC action over Trump event",
-      "link": "https://www.espn.com/soccer/story/_/id/47995586/fifa-president-gianni-infantino-face-no-ioc-action-president-donald-trump-peace-board",
-      "summary": "The International Olympic Committee will take no action against its member Gianni Infantino for a possible breach of political neutrality rules over aligning FIFA with U.S. President Donald Trump's Board of Peace.",
-      "publishedAt": "2026-02-21T19:56:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Late winner sees Real Madrid stunned by Osasuna",
-      "link": "https://www.espn.com/soccer/report/_/gameId/748387",
-      "summary": "Raul García struck a dramatic stoppage-time winner as Osasuna beat LaLiga leaders Real Madrid 2-1 at Estadio El Sadar.",
-      "publishedAt": "2026-02-21T19:56:50.000Z"
+      "title": "Alcaraz speeds to Qatar title as Pegula wins in Dubai",
+      "link": "https://www.skysports.com/tennis/news/12040/13510461/carlos-alcaraz-brushes-aside-arthur-fils-to-win-qatar-open-as-jessica-pegula-dominates-elina-svitolina-in-dubai",
+      "summary": "Australian Open champion Carlos Alcaraz dispatched Frenchman Arthur Fils 6-2 6-1 in just 50 minutes to win the Qatar ExxonMobil Open in Doha.",
+      "publishedAt": "2026-02-21T21:30:00.000Z"
     },
     {
       "type": "rss",
@@ -97,30 +163,8 @@
       "flag": "🌍",
       "title": "West Ham miss chance to boost survival hopes with wasteful draw against Bournemouth",
       "link": "https://www.theguardian.com/football/2026/feb/21/west-ham-bournemouth-premier-league-match-report",
-      "summary": "When it comes to the back end of May and West Ham United are reflecting on the season that was, there is every chance that this soggy Saturday will go down as a missed opportunity that proved crucial in their survival plight. Victory here would have raised the possibility of Nuno Espírito Santo’s side ending the weekend out of the relegation zone for the first time since early December. In keeping with those of recent weeks, much of the performance was befitting of another three points. But, thanks to a couple of smart Djordje Petrovic saves and some profligacy in front of goal, they had to make do with a draw – an expected goals (xG) total of 2.87 from 20 shots yielding a blank in the only column that matters. Continue reading...",
+      "summary": "When it comes to the back end of May and West Ham reflect on the season that was, there is every chance that this soggy Saturday will go down as a missed opportunity that proved decisive in their survival plight. Victory here would have raised the possibility of Nuno Espírito Santo’s side ending the weekend out of the relegation zone for the first time since early December. In keeping with those over recent weeks, much of the performance was befitting of another three points. But, thanks to a couple of smart Djordje Petrovic saves and some profligacy in front of goal, the hosts had to make do with a draw – an expected goals (xG) total of 2.87 from 20 shots yielding a blank in the only column that matters. Continue reading...",
       "publishedAt": "2026-02-21T19:42:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Pepi en Boadu trefzeker: PSV herpakt zich na misstap in Volendam",
-      "link": "https://www.vi.nl/nieuws/pepi-en-boadu-trefzeker-psv-herpakt-zich-na-misstap-in-volendam",
-      "summary": "PSV heeft zaterdagavond een volgende stap gezet richting een hele vroege landstitel. Een week na de misstap tegen FC Volendam wonnen de Eindhovenaren in eigen huis van SC Heerenveen, dat nog wel brutaal op voorsprong kwam.",
-      "publishedAt": "2026-02-21T19:41:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Deze omzetting van Bosz neutraliseerde Heerenveen",
-      "link": "https://www.vi.nl/pro/deze-omzetting-van-bosz-liet-psv-meer-domineren-in-de-tweede-helft",
-      "summary": "PSV heeft in eigen huis sc Heerenveen verslagen: 3-1. Tactische analyse van een wedstrijd waarin PSV in de tweede helft het gevaar van Heerenveen neutraliseert.",
-      "publishedAt": "2026-02-21T19:37:35.000Z"
     },
     {
       "type": "rss",
@@ -172,54 +216,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Chelsea lacked ruthlessness in Burnley draw - Rosenior",
-      "link": "https://www.bbc.com/sport/football/videos/c4gj2zv9d09o?at_medium=RSS&at_campaign=rss",
-      "summary": "Chelsea head coach Liam Rosenior believes his side lacked the ruthlessness in their 1-1 draw with Burnley at Stamford Bridge in the Premier League.",
-      "publishedAt": "2026-02-21T18:09:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "From £70 a week to Premier League record 24 years later",
       "link": "https://www.bbc.com/sport/football/articles/cvgvq6xqnl4o?at_medium=RSS&at_campaign=rss",
       "summary": "James Milner has broken the Premier League appearance record, 24 years after making his debut as a 16-year-old.",
       "publishedAt": "2026-02-21T18:03:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Drive and hunger' take Milner to Premier League appearance record",
-      "link": "https://www.bbc.com/sport/football/articles/cjrqdnj2199o?at_medium=RSS&at_campaign=rss",
-      "summary": "Brighton's James Milner starts against Brentford to break the all-time Premier League appearance record in his 654th match.",
-      "publishedAt": "2026-02-21T17:53:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Not good enough' - Rosenior on Chelsea's FIVE big problems after Burnley draw",
-      "link": "https://www.skysports.com/football/news/12040/13510431/chelsea-liam-rosenior-hits-out-after-red-card-set-piece-and-blown-lead-cost-blues-at-stamford-bridge-again",
-      "summary": "It happened again for Chelsea - and perhaps the most damning situation of all is that you could see it coming a mile off.",
-      "publishedAt": "2026-02-21T17:14:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Tammy Abraham salvages late point for Aston Villa to deny battling Leeds",
-      "link": "https://www.theguardian.com/football/2026/feb/21/aston-villa-leeds-premier-league-match-report",
-      "summary": "This felt like the day Aston Villa’s faint title hopes were extinguished despite Tammy Abraham’s late equaliser against Leeds. Unai Emery’s side have won only once in their past four Premier League home games and fell short again to leave them seven points behind leaders Arsenal. They were punished for a sloppy opening 45 minutes when they failed to get almost anything right against their more aggressive opponents. Anton Stach’s incredible free-kick looked like it would secure victory for Leeds until the 88th minute but it felt like another important step in their fight for survival. Continue reading...",
-      "publishedAt": "2026-02-21T17:13:55.000Z"
     }
   ]
 }
