@@ -1302,7 +1302,7 @@ footer { margin-top: auto; }
   opacity: 0.92;
   display: flex;
   justify-content: center;
-  overflow: visible !important; /* avoid Safari half-rendered / clipped header ads */
+  max-height: 120px;  overflow: hidden;
 }
 
 .ad-slot-header ins.adsbygoogle,
