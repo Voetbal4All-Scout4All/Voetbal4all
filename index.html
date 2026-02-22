@@ -991,6 +991,18 @@
       overflow: hidden;
 }
 
+/* In-feed news ad: same compact height as header/in-content ads */
+.ad-slot-infeed {
+    max-height: 120px;
+      overflow: hidden;
+}
+
+/* Sidebar sticky ad: ensure visibility and sticky scroll */
+.ad-vertical {
+    min-height: 250px;
+      width: 100%;
+}
+
 
   </style>
 
@@ -2396,14 +2408,14 @@
                   </article>
                 `;
 
-                if (index === 9) {
+                if (index === 10) {
                   return articleHtml + `
                     <div class="card ad-infeed ad-slot-infeed">
                       <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-4062633211824348"
                         data-ad-slot="6252515674"
-                        data-ad-format="auto"
+                        data-ad-format="horizontal"
                         data-full-width-responsive="true"></ins>
                     </div>
                   `;
