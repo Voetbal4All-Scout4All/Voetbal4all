@@ -1001,7 +1001,16 @@
 .ad-vertical {
     min-height: 250px;
       width: 100%;
+    position: -webkit-sticky;
+        position: sticky;
+            top: 80px;
+                align-self: flex-start;      
 }
+
+/* Ensure right sidebar stretches full grid-row height so sticky ad can scroll */
+#home-lower-grid .column-right {
+    align-self: stretch !important;
+    }
 
 
   </style>
@@ -2408,7 +2417,7 @@
                   </article>
                 `;
 
-                if (index === 10) {
+                if (index === 9) {
                   return articleHtml + `
                     <div class="card ad-infeed ad-slot-infeed">
                       <ins class="adsbygoogle"
