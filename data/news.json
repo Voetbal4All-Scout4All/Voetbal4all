@@ -1,16 +1,115 @@
 {
-  "generatedAt": "2026-02-22T21:28:39.335Z",
+  "generatedAt": "2026-02-22T23:30:35.010Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Match of the Day",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Gabby Logan presents highlights of Sunday’s four Premier League games.",
+      "publishedAt": "2026-02-22T23:42:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Samenvatting: Ajax en NEC bezorgen elkaar averij in strijd om plek twee",
+      "link": "https://www.vi.nl/video/samenvatting-ajax-en-nec-bezorgen-elkaar-averij-in-strijd-om-plek-twee",
+      "summary": "Ajax en NEC hebben averij opgelopen in de strijd om plek twee in de Eredivisie. De twee concurrenten speelden gelijk tegen elkaar, na doelpunten van Mika Godts en Sami Ouaissa in de Johan Cruijff Arena.",
+      "publishedAt": "2026-02-22T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Samenvatting: PSV spoelt Eredivisie-kater weg tegen SC Heerenveen",
+      "link": "https://www.vi.nl/video/samenvatting-psv-spoelt-eredivisie-kater-weg-tegen-sc-heerenveen",
+      "summary": "PSV heeft de kater die het overhield aan de nederlaag tegen FC Volendam weggespoeld. Ricardo Pepi maakte zijn rentree in de met 3-1 gewonnen wedstrijd van SC Heerenveen.",
+      "publishedAt": "2026-02-22T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Samenvatting: Feyenoord wint debuutwedstrijd Sterling nipt van Telstar",
+      "link": "https://www.vi.nl/video/samenvatting-feyenoord-wint-debuutwedstrijd-sterling-nipt-van-telstar",
+      "summary": "Feyenoord boekte zondagavond zijn derde overwinning op rij in de Eredivisie. Anis Hadj Moussa bezorgde de Rotterdammers een minimale zege op Telstar in een wedstrijd waarin Raheem Sterling debuteerde.",
+      "publishedAt": "2026-02-22T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'NEC is alles wat Ajax wil zijn'",
+      "link": "https://www.vi.nl/nieuws/nec-is-alles-wat-ajax-wil-zijn",
+      "summary": "Ajax heeft geen goede indruk achtergelaten bij de analytici van Studio Voetbal . De Amsterdammers hadden het zaterdag lastig met het attractieve voetbal van NEC.",
+      "publishedAt": "2026-02-22T22:50:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van Persie geeft hoopvolle update over hoofdblessure St. Juste",
+      "link": "https://www.vi.nl/video/van-persie-geeft-hoopvolle-update-over-hoofdblessure-st-juste",
+      "summary": "Robin van Persie heeft een update gegeven over Jeremiah St. Juste. De verdediger van Feyenoord ging tegen Telstar noodgedwongen naar de kant vanwege een hoofdblessure, maar maakt het nu goed. 'We moeten de komende dagen even afwachten hoe hij er uit is gekomen.'",
+      "publishedAt": "2026-02-22T22:43:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Michael Carrick says he has not spoken to Jim Ratcliffe since last month",
+      "link": "https://www.theguardian.com/football/2026/feb/22/michael-carrick-jim-ratcliffe-manchester-united",
+      "summary": "Manchester United manager last saw Ratcliffe on 25 January ‘I’m fine with that,’ says Carrick, in buildup to Everton game Michael Carrick has revealed he and his Manchester United squad have not received an apology or a message of any sort from Sir Jim Ratcliffe after his claim that the United Kingdom has been “colonised by immigrants”. Ratcliffe, United’s largest single shareholder and head of the club’s football policy, made the comments during a Sky News interview on 11 February. The outcry was strong and immediate, leading the 73-year-old to say the next day he was sorry if his “choice of language has offended some people in the UK and Europe”. Continue reading...",
+      "publishedAt": "2026-02-22T22:30:49.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "MLS: Messi did not break policy in alleged video",
-      "link": "https://www.espn.com/soccer/story/_/id/48006266/mls-investigating-alleged-video-lionel-messi-entering-officials-locker-room",
-      "summary": "Major League Soccer is investigating allegations that Lionel Messi gained unauthorized access to the officials' locker room following the match between Inter Miami and LAFC on Saturday at the LA Memorial Coliseum.",
-      "publishedAt": "2026-02-22T21:13:51.000Z"
+      "title": "Arsenal answer title pressure with resounding derby win at Tottenham",
+      "link": "https://www.espn.com/soccer/story/_/id/48006586/arsenal-tottenham-premier-league-title-reaction-analysis-eze-gyokeres-goals-highlights",
+      "summary": "Despite the growing pressure in the title race, Mikel Arteta's team responded with character to claim a victory over their local rivals and deliver a message to their critics.",
+      "publishedAt": "2026-02-22T22:18:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "VAR review: Analyzing VAR drama for Liverpool's Mac Allister",
+      "link": "https://www.espn.com/soccer/story/_/id/48003135/var-review-analyzing-var-drama-liverpool-alexis-mac-allister",
+      "summary": "Alexis Mac Allister was involved in VAR decisions twice vs. Nottingham Forest. But what happened?",
+      "publishedAt": "2026-02-22T22:18:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Littler defies nine-dart Van Veen to win first-ever Poland Darts Open",
+      "link": "https://www.skysports.com/darts/news/12040/13510834/luke-littler-defies-nine-dart-gian-van-veen-to-win-first-ever-poland-darts-open-and-warm-up-for-premier-league-in-belfast-in-style",
+      "summary": "World No 1 Luke Littler defied a perfect leg from Dutchman Gian van Veen to win the first-ever Poland Darts Open on Sunday.",
+      "publishedAt": "2026-02-22T22:00:00.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +120,7 @@
       "title": "Wolves disgusted by 'abhorrent' Arokodare abuse",
       "link": "https://www.espn.com/soccer/story/_/id/48008435/wolves-condemn-abhorrent-unlawful-abuse-tolu-arokodare",
       "summary": "Wolves have reported \"abhorrent and unlawful\" racist abuse against striker Tolu Arokodare, who has become the latest Premier League player to be subjected to discriminatory social media attacks.",
-      "publishedAt": "2026-02-22T21:13:50.000Z"
+      "publishedAt": "2026-02-22T21:38:45.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +131,7 @@
       "title": "Arteta: 'Ashamed' Arsenal showed grit vs. Spurs",
       "link": "https://www.espn.com/soccer/story/_/id/48007575/arteta-arsenal-grit-tottenham-win",
       "summary": "Mikel Arteta said Arsenal \"showed what we're made of\" in Sunday's 4-1 win at Tottenham after feeling \"ashamed\" by their previous draw at Wolves.",
-      "publishedAt": "2026-02-22T21:13:50.000Z"
+      "publishedAt": "2026-02-22T21:38:45.000Z"
     },
     {
       "type": "rss",
@@ -40,76 +139,21 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Sterling makes 1st app in 9 months with Feyenoord",
-      "link": "https://www.espn.com/soccer/story/_/id/48008392/raheem-sterling-first-competitive-appearance-feyenoord",
-      "summary": "Raheem Sterling made his first competitive appearance since May 2025 on Sunday when he came off the bench for Feyenoord in their Eredivisie match against Telstar.",
-      "publishedAt": "2026-02-22T21:13:50.000Z"
+      "title": "MLS: Messi did not break policy in alleged video",
+      "link": "https://www.espn.com/soccer/story/_/id/48006266/mls-investigating-alleged-video-lionel-messi-entering-officials-locker-room",
+      "summary": "Major League Soccer is investigating allegations that Lionel Messi gained unauthorized access to the officials' locker room following the match between Inter Miami and LAFC on Saturday at the LA Memorial Coliseum.",
+      "publishedAt": "2026-02-22T21:38:45.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Feyenoord doet bij debuut Sterling uitstekende zaken in strijd om plek twee",
-      "link": "https://www.vi.nl/nieuws/feyenoord-doet-bij-debuut-sterling-uitstekende-zaken-in-strijd-om-plek-twee",
-      "summary": "Feyenoord heeft uitstekende zaken gedaan in de strijd om plek twee in de Eredivisie. Waar Ajax en NEC punten verspeelden, deden de Rotterdammers dat niet na een minimale zege op Telstar (2-1). Het hoogtepunt van de wedstrijd was het debuut van Raheem Sterling.",
-      "publishedAt": "2026-02-22T21:10:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Wellenreuther vol verbazing: 'Zie spelers opeens dribbelen rond de eigen zestien'",
-      "link": "https://www.vi.nl/nieuws/wellenreuther-vol-verbazing-zie-spelers-opeens-dribbelen-in-onze-eigen-zestien",
-      "summary": "Feyenoord-aanvoerder Timon Wellenreuther heeft zich enorm verbaasd over het spel van zijn ploeg. De Duitse doelman zag zijn teamgenoten de raarste dingen doen in de slotfase tegen Telstar.",
-      "publishedAt": "2026-02-22T21:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Roma breekt de ban tegen Cremonese, ook Porto op voorsprong",
-      "link": "https://www.vi.nl/nieuws/vi-live-roma-breekt-de-ban-tegen-cremonese-ook-porto-op-voorsprong",
-      "summary": "Zondag staan er liefst vijf Eredivisie-duels op het programma. De wedstrijd van Feyenoord volg je in een apart liveblog, voor de rest kun je in deze VI Live terecht, net als voor al het buitenlandse voetbal.",
-      "publishedAt": "2026-02-22T21:08:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Speciaalrol Bos helpt Feyenoord langs Telstar",
-      "link": "https://www.vi.nl/pro/speciaalrol-bos-helpt-feyenoord-langs-telstar",
-      "summary": "Feyenoord heeft uitstekende zaken op de ranglijst gedaan, door een wisselvallige wedstrijd tegen Telstar te winnen (2-1). Tegen de ploeg van Anthony Correia levert alleen de eerste helft Rotterdams doelgevaar op. Analyse van de doorslaggevende speciaalrol voor Jordan Bos.",
-      "publishedAt": "2026-02-22T21:06:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Arsenal pass derby test of nerve as title race looks set to go to wire",
-      "link": "https://www.bbc.com/sport/football/articles/cx2g3gq37xvo?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal passed the north London derby test with flying colours as Premier League title race looks likely to go to the wire, says chief football writer Phil McNulty",
-      "publishedAt": "2026-02-22T21:01:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: volg hier alle reacties van Feyenoord - Telstar",
-      "link": "https://www.vi.nl/nieuws/vi-live-volg-hier-alle-reacties-van-feyenoord-telstar",
-      "summary": "Feyenoord sluit zondag het Eredivisie-weekend af met een thuiswedstrijd tegen Telstar. De twee ploegen staan om 20.00 uur tegenover elkaar. Doet Feyenoord goede zaken in de strijd om plek twee? Je volgt het in deze VI Live. In onze andere VI Live kun je voor het overige voetbal terecht.",
-      "publishedAt": "2026-02-22T21:00:00.000Z"
+      "title": "Beating Tottenham can be a ‘turning point’ for Arsenal, says proud Arteta",
+      "link": "https://www.theguardian.com/football/2026/feb/22/beating-tottenham-can-be-a-turning-point-for-arsenal-says-proud-arteta",
+      "summary": "Manager delighted with reaction to midweek draw Arsenal go five points clear of Manchester City at top Mikel Arteta said that he could not be “prouder or happier” after his Arsenal side restored their five-point lead at the top of the Premier League table with a 4-1 win against Tottenham on Sunday that he suggested could be a “turning point” in their season. This was an emphatic response after squandering a 2-0 lead at Wolves on Wednesday, a result that means City will win the league if they win all their remaining 11 games this season. Continue reading...",
+      "publishedAt": "2026-02-22T21:19:49.000Z"
     },
     {
       "type": "rss",
@@ -121,17 +165,6 @@
       "link": "https://www.skysports.com/football/news/12040/13510929/gary-neville-arsenal-answered-questions-in-tottenham-win-and-withstood-man-city-pressure-in-premier-league-title-race",
       "summary": "Gary Neville says Arsenal have answered questions in their win at Tottenham, and withstood the pressure put on them by Manchester City in the Premier League title race.",
       "publishedAt": "2026-02-22T20:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arsenal answer title pressure with resounding derby win at Tottenham",
-      "link": "https://www.espn.com/soccer/story/_/id/48006586/arsenal-tottenham-premier-league-title-reaction-analysis-eze-gyokeres-goals-highlights",
-      "summary": "Despite the growing pressure in the title race, Mikel Arteta's team responded with character to claim a victory over their local rivals and deliver a message to their critics.",
-      "publishedAt": "2026-02-22T20:09:59.000Z"
     },
     {
       "type": "rss",
@@ -187,39 +220,6 @@
       "link": "https://www.bbc.com/sport/football/videos/cz0gdy3yd2eo?at_medium=RSS&at_campaign=rss",
       "summary": "Evann Guessand scores a late winner as Crystal Palace beat 10-man Wolves to claim their first home win since early November.",
       "publishedAt": "2026-02-22T19:59:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Spurs must shed 'bad habits' and 'become serious', says Tudor",
-      "link": "https://www.skysports.com/football/news/12040/13510922/tottenham-boss-igor-tudor-delivers-home-truths-after-arsenal-thrashing-become-serious-and-shed-bad-habits",
-      "summary": "Igor Tudor has called on relegation-threatened Tottenham to shed their \"bad habits\" and become \"serious\" after they were thrashed 4-1 at home to Arsenal in his first game in charge.",
-      "publishedAt": "2026-02-22T19:35:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "O'Neill, Röhl remain defiant despite dropping points in title race",
-      "link": "https://www.skysports.com/football/news/12040/13510874/celtic-and-rangers-drop-points-in-scottish-premiership-title-race-but-martin-oneill-and-danny-r246hl-remain-defiant",
-      "summary": "Martin O’Neill and Dany Röhl remained defiant in their pursuit of the Scottish Premiership title, despite both Celtic and Rangers both dropping points on Sunday.",
-      "publishedAt": "2026-02-22T19:05:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Eze and Gyökeres at the double to boost Arsenal title bid with Spurs rout",
-      "link": "https://www.theguardian.com/football/2026/feb/22/tottenham-arsenal-premier-league-match-report",
-      "summary": "Arsenal could feel the breath of Manchester City on their necks and the questions mounting; the anxiety all around them. The draw at Wolves on Wednesday had been a disaster and, with only two Premier League wins in seven, everybody seemed to want to say the same thing. Mikel Arteta and his players were cracking up in their pursuit of the title. Continue reading...",
-      "publishedAt": "2026-02-22T19:04:51.000Z"
     }
   ]
 }
