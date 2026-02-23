@@ -1,6 +1,39 @@
 {
-  "generatedAt": "2026-02-23T05:01:36.795Z",
+  "generatedAt": "2026-02-23T14:52:05.257Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van '007' naar Man of the match: Moreira deelt sneer uit aan Lyon",
+      "link": "https://www.vi.nl/nieuws/van-007-naar-man-of-the-match-moreira-deelt-sneer-uit-aan-lyon",
+      "summary": "Diego Moreira heeft zondag niet alleen op het veld, maar ook daarbuiten van zich laten horen. De 21-jarige Rode Duivel was met een goal en een assist de grote man bij de 3-1 zege van Strasbourg op Olympique Lyon en kon het daarna niet laten zijn voormalige club een steek onder water te geven.",
+      "publishedAt": "2026-02-23T14:50:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Benfica's Prestianni suspended for Madrid tie",
+      "link": "https://www.espn.com/soccer/story/_/id/48014025/gianluca-prestianni-provisionally-suspended-benfica-second-leg-tie-real-madrid",
+      "summary": "UEFA has provisionally suspended Benfica's Gianluca Prestianni for Wednesday's Champions League match against Real Madrid following the incident with Vinicius Junior in last week's first leg.",
+      "publishedAt": "2026-02-23T14:43:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Police investigate racist abuse of PL players",
+      "link": "https://www.espn.com/soccer/story/_/id/48013434/police-investigate-racist-abuse-four-premier-league-players",
+      "summary": "Police are investigating online abuse directed at four Premier League footballers over the weekend.",
+      "publishedAt": "2026-02-23T14:43:30.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,29 +43,7 @@
       "title": "Wolves disgusted by 'abhorrent' Arokodare abuse",
       "link": "https://www.espn.com/soccer/story/_/id/48008435/wolves-condemn-abhorrent-unlawful-abuse-tolu-arokodare",
       "summary": "Wolves have reported \"abhorrent and unlawful\" racist abuse against striker Tolu Arokodare, who has become the latest Premier League player to be subjected to discriminatory social media attacks.",
-      "publishedAt": "2026-02-23T01:40:30.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Games in Mexico called off after cartel boss killed",
-      "link": "https://www.espn.com/soccer/story/_/id/48010697/mexican-league-matches-postponed-cartel-leader-dies",
-      "summary": "Four high-level soccer matches were postponed Sunday after the Mexican army killed the leader of a powerful drug cartel in a town close to the World Cup host city of Guadalajara.",
-      "publishedAt": "2026-02-23T01:40:30.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arteta: 'Ashamed' Arsenal showed grit vs. Spurs",
-      "link": "https://www.espn.com/soccer/story/_/id/48007575/arteta-arsenal-grit-tottenham-win",
-      "summary": "Mikel Arteta said Arsenal \"showed what we're made of\" in Sunday's 4-1 win at Tottenham after feeling \"ashamed\" by their previous draw at Wolves.",
-      "publishedAt": "2026-02-23T01:40:30.000Z"
+      "publishedAt": "2026-02-23T14:43:30.000Z"
     },
     {
       "type": "rss",
@@ -40,87 +51,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "'Appalling weekend' - Arokodare & Mundle latest players to be racially abused",
-      "link": "https://www.bbc.com/sport/football/articles/cz6egezw1d3o?at_medium=RSS&at_campaign=rss",
-      "summary": "Wolves striker Tolu Arokodare and Sunderland winger Romaine Mundle have become the latest Premier League players to be sent racist abuse on social media this weekend.",
-      "publishedAt": "2026-02-22T23:35:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Bridgeman holds off late McIlroy charge to win Genesis Invitational",
-      "link": "https://www.skysports.com/golf/news/12040/13510878/the-genesis-invitational-jacob-bridgeman-holds-off-rory-mcilroy-to-claim-maiden-pga-tour-victory-by-one-shot",
-      "summary": "Jacob Bridgeman held off Rory McIlroy to claim his maiden PGA Tour victory at The Genesis Invitational as the American won by just one shot having led by seven earlier in the final round.",
-      "publishedAt": "2026-02-22T23:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'They were attacking from every angle in the end' - why Spurs couldn't keep Arsenal out",
-      "link": "https://www.bbc.com/sport/football/articles/c86yjp6037jo?at_medium=RSS&at_campaign=rss",
-      "summary": "MOTD pundit Danny Murphy explains why, as well as Arsenal's superior quality in Sunday's north London derby, they exploited Tottenham's tactical weakness too.",
-      "publishedAt": "2026-02-22T23:28:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Samenvatting: Ajax en NEC bezorgen elkaar averij in strijd om plek twee",
-      "link": "https://www.vi.nl/video/samenvatting-ajax-en-nec-bezorgen-elkaar-averij-in-strijd-om-plek-twee",
-      "summary": "Ajax en NEC hebben averij opgelopen in de strijd om plek twee in de Eredivisie. De twee concurrenten speelden gelijk tegen elkaar, na doelpunten van Mika Godts en Sami Ouaissa in de Johan Cruijff Arena.",
-      "publishedAt": "2026-02-22T22:59:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Samenvatting: PSV spoelt Eredivisie-kater weg tegen SC Heerenveen",
-      "link": "https://www.vi.nl/video/samenvatting-psv-spoelt-eredivisie-kater-weg-tegen-sc-heerenveen",
-      "summary": "PSV heeft de kater die het overhield aan de nederlaag tegen FC Volendam weggespoeld. Ricardo Pepi maakte zijn rentree in de met 3-1 gewonnen wedstrijd van SC Heerenveen.",
-      "publishedAt": "2026-02-22T22:59:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Samenvatting: Feyenoord wint debuutwedstrijd Sterling nipt van Telstar",
-      "link": "https://www.vi.nl/video/samenvatting-feyenoord-wint-debuutwedstrijd-sterling-nipt-van-telstar",
-      "summary": "Feyenoord boekte zondagavond zijn derde overwinning op rij in de Eredivisie. Anis Hadj Moussa bezorgde de Rotterdammers een minimale zege op Telstar in een wedstrijd waarin Raheem Sterling debuteerde.",
-      "publishedAt": "2026-02-22T22:59:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'NEC is alles wat Ajax wil zijn'",
-      "link": "https://www.vi.nl/nieuws/nec-is-alles-wat-ajax-wil-zijn",
-      "summary": "Ajax heeft geen goede indruk achtergelaten bij de analytici van Studio Voetbal . De Amsterdammers hadden het zaterdag lastig met het attractieve voetbal van NEC.",
-      "publishedAt": "2026-02-22T22:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Van Persie geeft hoopvolle update over hoofdblessure St. Juste",
-      "link": "https://www.vi.nl/video/van-persie-geeft-hoopvolle-update-over-hoofdblessure-st-juste",
-      "summary": "Robin van Persie heeft een update gegeven over Jeremiah St. Juste. De verdediger van Feyenoord ging tegen Telstar noodgedwongen naar de kant vanwege een hoofdblessure, maar maakt het nu goed. 'We moeten de komende dagen even afwachten hoe hij er uit is gekomen.'",
-      "publishedAt": "2026-02-22T22:43:00.000Z"
+      "title": "Benfica's Prestianni gets provisional one-match ban after Vinicius incident",
+      "link": "https://www.bbc.com/sport/football/articles/cly2vj1d443o?at_medium=RSS&at_campaign=rss",
+      "summary": "Benfica's Gianluca Prestianni receives a provisional one-match Uefa suspension after Real Madrid's Vinicius Jr reported alleged racist abuse during last week's Champions League meeting.",
+      "publishedAt": "2026-02-23T14:41:53.000Z"
     },
     {
       "type": "rss",
@@ -128,43 +62,43 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Michael Carrick says he has not spoken to Jim Ratcliffe since last month",
-      "link": "https://www.theguardian.com/football/2026/feb/22/michael-carrick-jim-ratcliffe-manchester-united",
-      "summary": "Manchester United manager last saw Ratcliffe on 25 January ‘I’m fine with that,’ says Carrick, in buildup to Everton game Michael Carrick has revealed he and his Manchester United squad have not received an apology or a message of any sort from Sir Jim Ratcliffe after his claim that the United Kingdom has been “colonised by immigrants”. Ratcliffe, United’s largest single shareholder and head of the club’s football policy, made the comments during a Sky News interview on 11 February. The outcry was strong and immediate, leading the 73-year-old to say the next day he was sorry if his “choice of language has offended some people in the UK and Europe”. Continue reading...",
-      "publishedAt": "2026-02-22T22:30:49.000Z"
+      "title": "Benfica’s Prestianni provisionally suspended by Uefa after Vinícius incident",
+      "link": "https://www.theguardian.com/football/2026/feb/23/uefa-suspends-benfica-gianluca-prestianni-vinicius-junior-real-madrid-champions-league",
+      "summary": "Prestianni to miss second leg against Real Madrid Vinícius alleged he was racially abused by Argentinian Uefa has provisionally suspended Benfica’s Gianluca Prestianni for Wednesday’s Champions League match against Real Madrid after the incident with Vinícius Júnior in last week’s first leg. Vinícius alleged that Prestianni racially abused him during Madrid’s Champions League playoff win in Lisbon, prompting Uefa to appoint an ethics and disciplinary inspector to investigate. Prestianni will miss this week’s return and Uefa said further punishment could be handed out once its investigation is completed. Continue reading...",
+      "publishedAt": "2026-02-23T14:27:14.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Arsenal answer title pressure with resounding derby win at Tottenham",
-      "link": "https://www.espn.com/soccer/story/_/id/48006586/arsenal-tottenham-premier-league-title-reaction-analysis-eze-gyokeres-goals-highlights",
-      "summary": "Despite the growing pressure in the title race, Mikel Arteta's team responded with character to claim a victory over their local rivals and deliver a message to their critics.",
-      "publishedAt": "2026-02-22T22:18:16.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Prestianni voorlopig geschorst",
+      "link": "https://www.vi.nl/nieuws/prestianni-voorlopig-geschorst-in-afwachting-van-uitspraak-in-racisme-rel",
+      "summary": "De UEFA heeft Gianluca Prestianni een voorlopige schorsing opgelegd. Er wordt momenteel onderzocht of de speler van Benfica zich schuldig heeft gemaakt aan racistische uitlatingen in het Champions League-duel met Real Madrid. Daardoor mist de Argentijn de return in de tussenronde.",
+      "publishedAt": "2026-02-23T14:25:24.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VAR review: Analyzing VAR drama for Liverpool's Mac Allister",
-      "link": "https://www.espn.com/soccer/story/_/id/48003135/var-review-analyzing-var-drama-liverpool-alexis-mac-allister",
-      "summary": "Alexis Mac Allister was involved in VAR decisions twice vs. Nottingham Forest. But what happened?",
-      "publishedAt": "2026-02-22T22:18:16.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Dumfries staat voor terugkeer bij Inter: 'Dat zullen jullie wel zien'",
+      "link": "https://www.vi.nl/nieuws/dumfries-staat-voor-terugkeer-bij-inter-dat-zullen-jullie-wel-zien",
+      "summary": "Denzel Dumfries maakt dinsdag mogelijk zijn langverwachte rentree bij Internazionale in de cruciale Champions League-wedstrijd tegen het Noorse Bodø/Glimt. Inter-trainer Cristian Chivu liet maandagmiddag op de persconferentie in het midden of de herstelde Dumfries direct zal starten.",
+      "publishedAt": "2026-02-23T13:58:43.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Littler defies nine-dart Van Veen to win first-ever Poland Darts Open",
-      "link": "https://www.skysports.com/darts/news/12040/13510834/luke-littler-defies-nine-dart-gian-van-veen-to-win-first-ever-poland-darts-open-and-warm-up-for-premier-league-in-belfast-in-style",
-      "summary": "World No 1 Luke Littler defied a perfect leg from Dutchman Gian van Veen to win the first-ever Poland Darts Open on Sunday.",
-      "publishedAt": "2026-02-22T22:00:00.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Bikkelharde tackle komt PEC-aanvaller duur te staan: geen weerzien met Ajax",
+      "link": "https://www.vi.nl/nieuws/bikkelharde-tackle-komt-pec-aanvaller-duur-te-staan-geen-weerzien-met-ajax",
+      "summary": "Jan Faberski heeft een schikkingsvoorstel ontvangen voor zijn rode kaart namens PEC Zwolle tegen FC Utrecht. De huurling van Ajax moet twee duels toekijken. Hij heeft het schikkingsvoorstel geaccepteerd.",
+      "publishedAt": "2026-02-23T13:58:09.000Z"
     },
     {
       "type": "rss",
@@ -172,21 +106,54 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Beating Tottenham can be a ‘turning point’ for Arsenal, says proud Arteta",
-      "link": "https://www.theguardian.com/football/2026/feb/22/beating-tottenham-can-be-a-turning-point-for-arsenal-says-proud-arteta",
-      "summary": "Manager delighted with reaction to midweek draw Arsenal go five points clear of Manchester City at top Mikel Arteta said that he could not be “prouder or happier” after his Arsenal side restored their five-point lead at the top of the Premier League table with a 4-1 win against Tottenham on Sunday that he suggested could be a “turning point” in their season. This was an emphatic response after squandering a 2-0 lead at Wolves on Wednesday, a result that means City will win the league if they win all their remaining 11 games this season. Continue reading...",
-      "publishedAt": "2026-02-22T21:19:49.000Z"
+      "title": "Police investigate racist abuse aimed at four Premier League players",
+      "link": "https://www.theguardian.com/football/2026/feb/23/police-launch-investigation-racist-abuse-premier-league-players",
+      "summary": "Incidents occurred across most recent weekend Prime Minister and Kick It Out call for action Police have warned anyone directing online racist abuse at Premier League footballers that they cannot “hide behind their keyboards” after opening investigations into four separate incidents over the weekend. The prime minister’s spokesperson has called for social media companies such as Meta – which owns Instagram – to help identify the culprits after the Wolves forward Tolu Arokodare and the Sunderland midfielder Romaine Mundle revealed they had been sent abusive messages after their matches on Sunday. That came after Chelsea’s Wesley Fofana and Burnley’s Hannibal Mejbri had also reported racist messages that were sent to them on Saturday. Continue reading...",
+      "publishedAt": "2026-02-23T13:53:33.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Laporta gaat in op 'beschadigde relatie' met Messi en Ballon d'Or-incident",
+      "link": "https://www.vi.nl/nieuws/laporta-gaat-in-op-beschadigde-relatie-met-messi-en-ballon-d-or-incident",
+      "summary": "Voormalig Barcelona-president Joan Laporta, die op 15 maart een nieuwe gooi wil doen naar het voorzitterschap bij Barça, is in een interview met Catalunya Ràdio ingegaan op zijn band met Lionel Messi. Laporta stelt dat de twee sinds het vertrek van Messi in de zomer van 2021 een 'beschadigde relatie' hebben.",
+      "publishedAt": "2026-02-23T13:34:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Nev: Arsenal answered questions in Spurs win and withstood title race pressure",
-      "link": "https://www.skysports.com/football/news/12040/13510929/gary-neville-arsenal-answered-questions-in-tottenham-win-and-withstood-man-city-pressure-in-premier-league-title-race",
-      "summary": "Gary Neville says Arsenal have answered questions in their win at Tottenham, and withstood the pressure put on them by Manchester City in the Premier League title race.",
-      "publishedAt": "2026-02-22T20:45:00.000Z"
+      "title": "Milan lose more ground on Inter as Loftus-Cheek suffers World Cup blow",
+      "link": "https://www.theguardian.com/football/2026/feb/23/milan-lose-more-ground-on-inter-serie-a-title-race-ruben-loftus-cheek-england-world-cup-blow",
+      "summary": "Defeat to Carlos Cuesta’s Parma leaves Rossoneri 10 points off top spot as England midfielder suffers broken jaw These were supposed to be the weeks when Milan held the upper hand over their Serie A rivals, granted six days to prepare for a home game against bottom-half opposition while the likes of Inter, Juventus and Atalanta dragged themselves back exhausted from European away trips. Demoralised, too, after losing to Bodø/Glimt, Galatasaray and Borussia Dortmund by a combined 10 goals to three. It was a grim week for Italian football, the sort that provokes another round of sad think-pieces about whether the nation’s teams will ever again be competitive in the continent’s biggest tournament. A discourse which often seems to skim over the fact one of them has gone to the final twice in the past three seasons. Continue reading...",
+      "publishedAt": "2026-02-23T13:33:59.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Arsenal back on track after big derby win; Real Madrid suffer shock LaLiga loss; more",
+      "link": "https://www.espn.com/soccer/story/_/id/48011933/arsenal-tottenham-premier-league-real-madrid-laliga-barcelona-analysis-gab-marcotti",
+      "summary": "After a stressful week, Arsenal didn't panic ahead of Sunday's north London derby, and it paid off. Man City also kept the pressure on and Real Madrid fell behind again in LaLiga.",
+      "publishedAt": "2026-02-23T13:16:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "The real deal? Arsenal's derby win a major moment in title race with Man City",
+      "link": "https://www.espn.com/soccer/story/_/id/48013409/arsenal-derby-win-tottenham-hotspur-major-step-premier-league-title-race-manchester-city",
+      "summary": "In Sunday's derby win, Arsenal might just have claimed the defining victory in their Premier League title chase.",
+      "publishedAt": "2026-02-23T13:16:16.000Z"
     },
     {
       "type": "rss",
@@ -194,10 +161,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Old Firm 'buckle under pressure' as incredible title race twists again",
-      "link": "https://www.bbc.com/sport/football/articles/cx24kgz91wjo?at_medium=RSS&at_campaign=rss",
-      "summary": "After a defeat for Celtic and surprise draw for Rangers, where does the latest weekend of drama leave the Scottish Premiership title race?",
-      "publishedAt": "2026-02-22T20:16:07.000Z"
+      "title": "Police investigate 'abhorrent' racist abuse of players",
+      "link": "https://www.bbc.com/sport/football/articles/cx24x0vg4jvo?at_medium=RSS&at_campaign=rss",
+      "summary": "Police confirm they are investigating after four Premier League players were targeted by online racial abuse at the weekend.",
+      "publishedAt": "2026-02-23T13:08:25.000Z"
     },
     {
       "type": "rss",
@@ -205,10 +172,21 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Gyokeres has best game for Arsenal, so why was it so good?",
-      "link": "https://www.skysports.com/football/news/12040/13510931/viktor-gyokeres-arsenal-striker-has-best-game-for-club-since-joining-with-two-goal-display-vs-tottenham",
-      "summary": "There are still a lot of questions about Arsenal, the title race and what is to come from them in the run-in this season. But one thing is absolutely certain: Viktor Gyokeres had his best game for the club against Tottenham.",
-      "publishedAt": "2026-02-22T20:02:00.000Z"
+      "title": "'Oh my goodness!' | HUGE KO finish leaves commentators stunned!",
+      "link": "https://www.skysports.com/watch/video/13511154/boxing-huge-knockout-finish-from-danielle-perkins-on-che-kenneally",
+      "summary": "Danielle Perkins stopped Che Kenneally in sensational fashion as she won the WBA light heavyweight title.",
+      "publishedAt": "2026-02-23T13:04:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Mexico erupts and World Cup security fears rise after a cartel boss’s killing",
+      "link": "https://www.theguardian.com/football/2026/feb/23/mexico-guadalajara-world-cup-host-el-mencho-drug-cartel-killing",
+      "summary": "The fallout from the operation that took out ‘El Mencho’ has already led to the cancellation of football matches. Could the World Cup be affected too? Violence erupts after Mexican forces kill cartel boss ‘El Mencho’ Who was ‘El Mencho’, the former police officer who co-founded an ultraviolent cartel? There is just one road that leads to the Estadio Akron, the stadium home to Mexican club Chivas de Guadalajara, which is scheduled to host four group matches at this year’s World Cup. As the tournament approaches, traffic has been the main concern about the stadium. On Sunday, there was a different issue. A little more than a mile away, near the go-kart track named for Mexican Formula One driver Sergio “Checo” Pérez, a burning bus blocked the road. Continue reading...",
+      "publishedAt": "2026-02-23T12:51:08.000Z"
     },
     {
       "type": "rss",
@@ -216,10 +194,32 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "'Heist' at Forest boosts Liverpool's top-four hopes",
-      "link": "https://www.bbc.com/sport/articles/c3v7de0zvnyo?at_medium=RSS&at_campaign=rss",
-      "summary": "Liverpool's late 1-0 win at Nottingham Forest puts the Reds firmly in the Champions League hunt after a \"robbery\" of a victory at the City Ground.",
-      "publishedAt": "2026-02-22T19:16:03.000Z"
+      "title": "Fifa wants injured players to stay off for one minute",
+      "link": "https://www.bbc.com/sport/football/articles/c98ql5ml885o?at_medium=RSS&at_campaign=rss",
+      "summary": "Players who receive treatment for an injury could be forced to stay off the field for one minute under proposals from Fifa.",
+      "publishedAt": "2026-02-23T12:33:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Women’s FA Cup talking points: Kerr shows the way and Liverpool resurgence continues",
+      "link": "https://www.theguardian.com/football/2026/feb/23/womens-fa-cup-talking-points-kerr-shows-the-way-and-liverpool-resurgence-continues",
+      "summary": "Sam Kerr is ready for business end of season, Chatham’s goalkeeper made to work and Kim Little continues to shine It has not been the easiest season for Sam Kerr. After missing 20 months with an anterior cruciate ligament injury, she has had her time limited to just a handful of starts across all competition – mainly the cups. She may not have scored the winner that sent Chelsea through to the Women’s FA Cup quarter-finals but her goal that gave the Blues the lead against Manchester United felt almost inevitable. Within six minutes of entering the pitch, the Australian produced an instinctive finish that will have gone some way to quieten questions about whether she could rediscover her top form. “It’s been a bit tough with many things, like not getting the minutes she wanted,” Sonia Bompastor said. “It was also a bit difficult emotionally with the decisions that have been made. [Today] will have been great for her confidence and I know she will be ready for the business end of the season.” Sophie Downey Match report: Chelsea 2-1 Manchester United Match report: Birmingham 8-0 Chatham Town Continue reading...",
+      "publishedAt": "2026-02-23T11:43:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Big plans to take world by storm!' - Benn targets 'mega fight' after Hearn split",
+      "link": "https://www.skysports.com/boxing/news/12040/13511056/conor-benn-targets-ryan-garcia-and-world-title-rules-out-floyd-mayweather-bout-but-would-box-chris-eubank-jr-at-168lbs",
+      "summary": "Conor Benn will target a “mega-fight” with Ryan Garcia after signing with new promoter Zuffa Boxing, but also revealed he is open to another bout with Chris Eubank Jr, this time up at super-middleweight.",
+      "publishedAt": "2026-02-23T09:38:00.000Z"
     }
   ]
 }
