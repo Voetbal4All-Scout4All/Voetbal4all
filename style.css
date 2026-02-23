@@ -869,7 +869,7 @@ footer { margin-top: auto; }
   text-align: center;
   font-size: 12px;
   line-height: 1.5;
-  min-height: 250px;
+   min-height: 250px ;
 }
 
 /* Verberg lege AdSense slots om "gaten" te vermijden */
@@ -1671,7 +1671,7 @@ ins.adsbygoogle iframe{
 @media (min-width: 901px){
   /* Header ad kan op desktop groter worden; reserveer zodat het niet verspringt */
   .ad-slot-header{
-    min-height: 250px;
+    min-height: 120px;
   }
 }
 
@@ -1681,7 +1681,7 @@ ins.adsbygoogle iframe{
 @media (max-width: 600px){
   /* Header ad: reserveer extra hoogte tegen auto-resize */
   .ad-slot-header{
-    min-height: 180px;
+    min-height: 90px;
   }
 
   /* Sponsor / banner blokken op mobile */
@@ -2322,7 +2322,7 @@ img {
 
 @media (min-width: 768px) {
   .ad-slot-header {
-    min-height: 250px;   /* desktop leaderboard / responsive */
+        min-height: 120px; /* was 250px, reduced to match max-height */
   }
 }
 
