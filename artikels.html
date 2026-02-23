@@ -53,7 +53,25 @@
       display: block;
       object-fit: cover;
     }
-  </style>
+    </style>
+    <style>
+        /* AdSense: reduce height of full-width banner ads (match index.html) */
+            .ad-slot-header,
+                .ad-infeed {
+                      max-height: 120px;
+                            overflow: hidden;
+                                }
+                                    /* Sticky sidebar ad: scrolls with page, starts below fixed advertiser block */
+                                        .v4-ad-sticky {
+                                              position: -webkit-sticky;
+                                                    position: sticky;
+                                                          top: 92px;
+                                                                align-self: flex-start;
+                                                                    }
+                                                                        .v4-sidebar {
+                                                                              align-self: stretch !important;
+                                                                                  }
+                                                                                    </style>
   </head>
 
 <body class="v4-hide-live-mobile">
