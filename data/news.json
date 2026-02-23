@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-02-23T20:49:56.055Z",
+  "generatedAt": "2026-02-23T22:45:44.797Z",
   "items": [
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Everton v Manchester United: Premier League – live",
-      "link": "https://www.theguardian.com/football/live/2026/feb/23/everton-v-manchester-united-premier-league-live",
-      "summary": "Follow updates from Monday’s 8pm (GMT) kick-off Ten talking points from the weekend | Email Daniel I’m minded of Martin Buchan’s legendary response – later pilfered by Gordon Strachan – to a reporter he didn’t know putting a hand on his chest to stop him going to get a drink. “A quick word, Martin? And because he’d been so rude I added ‘fuck off’.” Continue reading...",
-      "publishedAt": "2026-02-23T20:35:21.000Z"
+      "title": "Chelsea to host Spurs or Lionesses - full Women's FA Cup quarter-final draw",
+      "link": "https://www.bbc.com/sport/football/articles/c2046ddmm67o?at_medium=RSS&at_campaign=rss",
+      "summary": "Chelsea host Tottenham and WSL 2 leaders Charlton Athletic face Liverpool in the Women's FA Cup quarter-finals.",
+      "publishedAt": "2026-02-23T22:43:45.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Police investigate racist abuse of PL players",
-      "link": "https://www.espn.com/soccer/story/_/id/48013434/police-investigate-racist-abuse-four-premier-league-players",
-      "summary": "Police are investigating online abuse directed at four Premier League footballers over the weekend.",
-      "publishedAt": "2026-02-23T20:18:31.000Z"
+      "title": "Super-sub Sesko earns Man Utd win at Everton",
+      "link": "https://www.bbc.com/sport/football/videos/cwy953z4vedo?at_medium=RSS&at_campaign=rss",
+      "summary": "Watch Premier League highlights as Manchester United earn a narrow win over Everton thanks to a goal from substitute Benjamin Sesko.",
+      "publishedAt": "2026-02-23T22:30:11.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +32,7 @@
       "title": "Countdowns for throw-ins, goal kicks set for WC",
       "link": "https://www.espn.com/soccer/story/_/id/48014733/fifa-world-cup-countdown-throw-ins-goal-kicks-feature",
       "summary": "Five-second countdowns for throw-ins and goal kicks are set to feature at this summer's FIFA World Cup in a bid to speed up play.",
-      "publishedAt": "2026-02-23T20:18:31.000Z"
+      "publishedAt": "2026-02-23T22:08:23.000Z"
     },
     {
       "type": "rss",
@@ -43,7 +43,7 @@
       "title": "Madrid's Huijsen apologises for offensive post",
       "link": "https://www.espn.com/soccer/story/_/id/48013184/real-madrid-dean-huijsen-apologises-weibo-chinese-friends",
       "summary": "Spain international Dean Huijsen has apologised on Real Madrid's Weibo account for sharing content on social media that is offensive to Asians, EFE report.",
-      "publishedAt": "2026-02-23T20:18:31.000Z"
+      "publishedAt": "2026-02-23T22:08:23.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +54,40 @@
       "title": "Benfica's Prestianni suspended for Madrid tie",
       "link": "https://www.espn.com/soccer/story/_/id/48014025/gianluca-prestianni-provisionally-suspended-benfica-second-leg-tie-real-madrid",
       "summary": "UEFA has provisionally suspended Benfica's Gianluca Prestianni for Wednesday's Champions League match against Real Madrid following allegations that he used racist language directed at Vinícius Junior in last week's first leg.",
-      "publishedAt": "2026-02-23T20:18:30.000Z"
+      "publishedAt": "2026-02-23T22:08:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sesko sends Man United past Everton into top 4",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740856",
+      "summary": "Manchester United striker Benjamin Sesko came to Michael Carrick's rescue for the third time in four matches after arriving from the bench to score the only goal in the 1-0 victory at Everton.",
+      "publishedAt": "2026-02-23T22:08:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Police investigate racist abuse of PL players",
+      "link": "https://www.espn.com/soccer/story/_/id/48013434/police-investigate-racist-abuse-four-premier-league-players",
+      "summary": "Police are investigating online abuse directed at four Premier League footballers over the weekend.",
+      "publishedAt": "2026-02-23T22:08:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Supersub Benjamin Sesko fires Manchester United past Everton and into top four",
+      "link": "https://www.theguardian.com/football/2026/feb/23/everton-manchester-united-premier-league-match-report",
+      "summary": "Sir Jim Ratcliffe must be seriously conflicted. Manchester United’s advance towards the riches of the Champions League continued to gather pace under Michael Carrick thanks to the impact of Slovenia’s Benjamin Sesko for the second game in succession. The summer signing came off the bench to condemn Everton to another home defeat with a clinical finish and lift United to fourth in the table, only three points behind Aston Villa. Sesko, who preserved Carrick’s unbeaten record as United manager last time out at West Ham, was again their savour to settle a hard-fought contest with David Moyes’s side. It is now five wins and one draw from Carrick’s six games in charge. The audition for the permanent job could not have gone much better thus far. Continue reading...",
+      "publishedAt": "2026-02-23T22:06:11.000Z"
     },
     {
       "type": "rss",
@@ -69,17 +102,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Chelsea to host Spurs or Lionesses - full Women's FA Cup quarter-final draw",
-      "link": "https://www.bbc.com/sport/football/articles/c2046ddmm67o?at_medium=RSS&at_campaign=rss",
-      "summary": "Chelsea handed London derby and WSL 2 leaders Charlton Athletic host Liverpool in the Women's FA Cup quarter-finals.",
-      "publishedAt": "2026-02-23T19:58:48.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
@@ -88,17 +110,6 @@
       "link": "https://www.vi.nl/nieuws/psv-moet-voor-volgend-seizoen-op-zoek-naar-nieuwe-trainer",
       "summary": "In dit blog volgen we alle ontwikkelingen in het vrouwenvoetbal. We besteden onder meer aandacht aan de Eurojackpot Vrouwen Eredivisie, de Europese toernooien en het Nederlands elftal.",
       "publishedAt": "2026-02-23T19:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Follow live: Man United face road test at Everton",
-      "link": "https://www.espn.com/soccer/match/_/gameId/740856/manchester-united-everton",
-      "summary": "null",
-      "publishedAt": "2026-02-23T19:50:19.000Z"
     },
     {
       "type": "rss",
@@ -135,17 +146,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Barcelona sign 16-year-old Norwich prospect Tavares",
-      "link": "https://www.bbc.com/sport/football/articles/cgk2r1ydj68o?at_medium=RSS&at_campaign=rss",
-      "summary": "Spanish giants Barcelona have signed 16-year-old Norwich City academy prospect Ajay Tavares, who has played for England age-group teams.",
-      "publishedAt": "2026-02-23T18:31:50.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
@@ -161,10 +161,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Man Utd struggling to break down Everton LIVE!",
-      "link": "https://www.skysports.com/football/everton-vs-manchester-united/live/531393",
-      "summary": "",
-      "publishedAt": "2026-02-23T18:28:00.000Z"
+      "title": "Donnarumma vs Raya: Who is the better GK in the title race?",
+      "link": "https://www.skysports.com/football/news/12040/13511242/gianluigi-donnarumma-vs-david-raya-man-city-or-arsenal-who-have-the-better-goalkeeper-in-premier-league-title-race",
+      "summary": "In the last few weeks of the Premier League season, the importance of goalkeepers in the title race has been extremely visible.",
+      "publishedAt": "2026-02-23T17:39:00.000Z"
     },
     {
       "type": "rss",
