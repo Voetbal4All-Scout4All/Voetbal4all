@@ -952,14 +952,23 @@
 .home-top .home-top-grid{
   grid-template-columns: 1fr !important;
   row-gap: 12px !important;
+    grid-auto-rows: auto !important;
+    align-items: start !important;
 }
 
 /* Volgorde op mobiel (1 kolom) */
 .home-top .hero-card{ order: 1; }
-
 /* Standings onderaan */
 .home-top .home-standings--be{ order: 5; }
 .home-top .home-standings--nl{ order: 6; }
+
+     /* Standings: niet meer 2 rijen beslaan op mobiel, auto hoogte */
+     .home-top .home-standings-card{
+         grid-row: auto !important;
+         height: auto !important;
+         min-height: 0 !important;
+         align-self: start !important;
+     }
 
 /* Hero: meer ademruimte */
 .home-top .hero-card{
