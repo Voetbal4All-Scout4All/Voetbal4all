@@ -1011,7 +1011,7 @@
   border: 1px solid rgba(255,255,255,.14);
   background: rgba(255,255,255,.06);
 }
-.v.v4a-video{
+.v4a-video{
   width: 100%;
   height: 100%;
   display: block;
@@ -1757,14 +1757,14 @@
       const flagHtmlEvent = (countryCode) => {
         const c = String(countryCode || "INT").trim().toUpperCase();
         const FLAG_SRC = {
-          BE: "/assets/img/sources/flag-be.svg",
-          NL: "/assets/img/sources/flag-nl.svg",
-          DE: "/assets/img/sources/flag-de.svg",
-          FR: "/assets/img/sources/flag-fr.svg",
-          ES: "/assets/img/sources/flag-es.svg",
-          IT: "/assets/img/sources/flag-it.svg",
-          UK: "/assets/img/sources/flag-uk.svg",
-          INT: "/assets/img/sources/flag-int.svg",
+          BE: "assets/img/sources/flag-be.svg",
+          NL: "assets/img/sources/flag-nl.svg",
+          DE: "assets/img/sources/flag-de.svg",
+          FR: "assets/img/sources/flag-fr.svg",
+          ES: "assets/img/sources/flag-es.svg",
+          IT: "assets/img/sources/flag-it.svg",
+          UK: "assets/img/sources/flag-uk.svg",
+          INT: "assets/img/sources/flag-int.svg",
         };
         const src = FLAG_SRC[c] || FLAG_SRC.INT;
         const LABELS = {
@@ -2122,6 +2122,40 @@
       // Fallback thumbnail for missing/broken images.
       // Use a real file (small request, cacheable) instead of an inline data URI.
       const FALLBACK_THUMB = "assets/img/placeholder.svg";
+
+      function flagHtml(countryCode){
+  const c = String(countryCode || "INT").trim().toUpperCase();
+  const MAP = {
+    BE: "assets/img/sources/flag-be.svg",
+    NL: "assets/img/sources/flag-nl.svg",
+    DE: "assets/img/sources/flag-de.svg",
+    FR: "assets/img/sources/flag-fr.svg",
+    ES: "assets/img/sources/flag-es.svg",
+    IT: "assets/img/sources/flag-it.svg",
+    UK: "assets/img/sources/flag-uk.svg",
+    INT: "assets/img/sources/flag-int.svg"
+  };
+
+  const LABEL = {
+    BE: "België",
+    NL: "Nederland",
+    DE: "Duitsland",
+    FR: "Frankrijk",
+    ES: "Spanje",
+    IT: "Italië",
+    UK: "Verenigd Koninkrijk",
+    INT: "Internationaal"
+  };
+
+  const src = MAP[c] || MAP.INT;
+  const alt = LABEL[c] || LABEL.INT;
+
+  return `
+    <span class="v4a-flag" title="${alt}" aria-hidden="true">
+      <img src="${src}" alt="" width="18" height="12" loading="lazy" decoding="async">
+    </span>
+  `.trim();
+}
 
       // Nieuwsbrief inschrijving (POST -> backend -> DB)
       (function initNewsletterSignup(){
