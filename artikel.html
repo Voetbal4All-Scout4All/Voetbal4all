@@ -843,21 +843,32 @@
     };
 
     const countryLabel = (cc) => {
-      if (cc === 'BE') return 'België';
-      if (cc === 'NL') return 'Nederland';
-      return 'Internationaal';
+      const c = String(cc || "").trim().toUpperCase();
+      if (c === "BE") return "België";
+      if (c === "NL") return "Nederland";
+      if (c === "DE") return "Duitsland";
+      if (c === "FR") return "Frankrijk";
+      if (c === "ES") return "Spanje";
+      if (c === "IT") return "Italië";
+      if (c === "UK") return "Verenigd Koninkrijk";
+      return "Internationaal";
     };
 
-    function flagHtml(cc){
+    function flagHtml(cc) {
       const c = String(cc || "").trim().toUpperCase();
       const FLAG_SRC = {
         BE: "/assets/img/sources/flag-be.svg",
         NL: "/assets/img/sources/flag-nl.svg",
-        INT: "/assets/img/sources/flag-int.svg"
+        DE: "/assets/img/sources/flag-de.svg",
+        FR: "/assets/img/sources/flag-fr.svg",
+        ES: "/assets/img/sources/flag-es.svg",
+        IT: "/assets/img/sources/flag-it.svg",
+        UK: "/assets/img/sources/flag-uk.svg",
+        INT: "/assets/img/sources/flag-int.svg",
       };
 
       const src = FLAG_SRC[c] || FLAG_SRC.INT;
-      const alt = (c === "BE") ? "België" : (c === "NL") ? "Nederland" : "Internationaal";
+      const alt = countryLabel(c);
 
       return `
         <img
@@ -888,14 +899,12 @@
     document.getElementById('article-type').textContent = type;
     
     const countryEl = document.getElementById('article-country');
-    const cc = String(article.country || "").trim().toUpperCase();
+    const cc0 = String(article.country || "").trim().toUpperCase();
+    const supported = new Set(["BE", "NL", "DE", "FR", "ES", "IT", "UK", "INT"]);
+    const cc = supported.has(cc0) ? cc0 : "INT";
 
-    if (cc === 'BE' || cc === 'NL' || cc === 'INT') {
-      countryEl.style.display = '';
-      countryEl.innerHTML = `<span class="v4a-flag" aria-hidden="true">${flagHtml(cc)}</span>&nbsp;${countryLabel(cc)}`;
-    } else {
-      countryEl.style.display = 'none';
-    }
+    countryEl.style.display = '';
+    countryEl.innerHTML = `<span class="v4a-flag" aria-hidden="true">${flagHtml(cc)}</span>&nbsp;${countryLabel(cc)}`;
     
     if (article.publishedAt) {
       const date = new Date(article.publishedAt);
