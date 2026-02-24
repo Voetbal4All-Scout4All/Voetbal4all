@@ -757,7 +757,7 @@ let lastRenderKey = "";
         const categoryNorm = categoryRaw.toLowerCase();
         const category = (categoryRaw && !["algemeen", "news", "nieuws"].includes(categoryNorm)) ? categoryRaw : "";
         const date = safe(a.publishedAt || a.date || a.createdAt || "");
-        const snippet = safe(a.snippet || "");
+        const snippet = safe(a.snippet || a.standfirst || firstTwoSentences(a.body || "") || "");
         let snippetClean = snippet
           .replace(/\b(bron|source)\s*:\s*.*$/i, "")
           .replace(/\b[a-z0-9-]+\.(be|nl|com|net|org)\b/gi, "")
