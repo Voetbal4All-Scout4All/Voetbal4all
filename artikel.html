@@ -513,8 +513,8 @@
     const rawId = params.get("id") || params.get("newsId") || params.get("articleId");
     const idFromUrl = rawId ? String(rawId).trim() : "";
 
-    const isSha1 = (v) => /^[a-f0-9]{40}$/i.test(String(v || "").trim());
-    const articleId = isSha1(idFromUrl) ? idFromUrl : "";
+    // Accept any non-empty id (backend now uses ids like "ni-news-ES-xxxx")
+    const articleId = idFromUrl && idFromUrl.length > 0 ? idFromUrl : "";
 
     console.log("[ARTIKEL] URL params:", { id: articleId || null });
 
@@ -762,7 +762,7 @@
         setState("loading");
 
         if (!articleId) {
-          console.error('[ARTIKEL] Missing/invalid id param (expected 40-char sha1)');
+          console.error('[ARTIKEL] Missing id param');
           setState('error');
           return;
         }
