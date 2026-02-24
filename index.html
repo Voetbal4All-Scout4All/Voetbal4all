@@ -2450,9 +2450,14 @@
                 const displayTitle = (!rawTitle || looksLikeSlug) ? "Nieuwsartikel" : cleanTitle(rawTitle);
                 const safeTitle = String(displayTitle).replace(/"/g, "&quot;");
 
-                // vlag op basis van country
-                const country = (a?.country || "").toUpperCase();
-                const cc = (country === "BE" || country === "NL") ? country : "INT";
+                // vlag op basis van country (alle landen ondersteunen)
+                const rawCountry =
+                  (a?.country || a?.countryCode || a?.sourceCountry || "")
+                    .toString()
+                    .trim()
+                    .toUpperCase();
+
+                const cc = rawCountry || "INT";
                 const flag = flagHtml(cc);
 
                 const imgSrc =
