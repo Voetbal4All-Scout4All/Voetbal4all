@@ -1310,19 +1310,19 @@
                 <div class="regions-title">Welke editie wil je ontvangen?</div>
                 <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je zeker iets ontvangt).</div>
 
-                <div class="regions-grid" role="radiogroup" aria-label="Nieuwsbrief editie">
+                <div class="regions-grid" role="group" aria-label="Nieuwsbrief edities">
                   <label class="region-opt" for="newsletterRegionBE">
-                    <input type="radio" name="region" value="BE" id="newsletterRegionBE" />
+                    <input type="checkbox" name="regions" value="BE" id="newsletterRegionBE" />
                     <span><strong>BE</strong> · België</span>
                   </label>
-
+                
                   <label class="region-opt" for="newsletterRegionNL">
-                    <input type="radio" name="region" value="NL" id="newsletterRegionNL" />
+                    <input type="checkbox" name="regions" value="NL" id="newsletterRegionNL" />
                     <span><strong>NL</strong> · Nederland</span>
                   </label>
-
+                
                   <label class="region-opt" for="newsletterRegionALL">
-                    <input type="radio" name="region" value="ALL" id="newsletterRegionALL" checked />
+                    <input type="checkbox" name="regions" value="ALL" id="newsletterRegionALL" checked />
                     <span><strong>ALL</strong> · Alles / internationaal</span>
                   </label>
                 </div>
@@ -2136,6 +2136,22 @@
     INT: "assets/img/sources/flag-int.svg"
   };
 
+  function getCountryCode(it){
+  const raw =
+    it?.country ??
+    it?.countryCode ??
+    it?.sourceCountry ??
+    it?.source_country ??
+    it?.country_code ??
+    it?.meta?.country ??
+    it?.meta?.countryCode ??
+    "INT";
+
+  const c = String(raw || "INT").trim().toUpperCase();
+  if (c === "GB") return "UK";   // safety
+  return c;
+}
+
   const LABEL = {
     BE: "België",
     NL: "Nederland",
@@ -2176,6 +2192,34 @@
           statusEl.textContent = msg;
         }
 
+        // UI rule: ALL is exclusive (if user picks BE/NL, uncheck ALL; if ALL checked, uncheck others)
+        const allBox = form.querySelector('#newsletterRegionALL');
+        const otherBoxes = Array.from(form.querySelectorAll('input[name="regions"]'))
+          .filter(el => el && el.id !== 'newsletterRegionALL');
+
+        function syncAllExclusivity(changedEl){
+          if (!allBox) return;
+
+          if (changedEl === allBox && allBox.checked) {
+            otherBoxes.forEach(el => { el.checked = false; });
+            return;
+          }
+
+          if (changedEl !== allBox) {
+            const anyOtherChecked = otherBoxes.some(el => !!el.checked);
+            if (anyOtherChecked) allBox.checked = false;
+            else allBox.checked = true; // if user unchecks all others, fall back to ALL
+          }
+        }
+
+        // Attach listeners
+        if (allBox) {
+          allBox.addEventListener('change', () => syncAllExclusivity(allBox));
+        }
+        otherBoxes.forEach(el => {
+          el.addEventListener('change', () => syncAllExclusivity(el));
+        });
+
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
 
@@ -2211,9 +2255,21 @@
             // Backend contract: POST /api/newsletter/subscribe
             // Body: { email, source, consent: true }
             // Response: { ok: true, status: "subscribed"|"already" }
-            // 1 keuze (radio). Niets gekozen = ALL
-            const regionEl = form.querySelector('input[name="region"]:checked');
-            const region = String(regionEl?.value || "ALL").trim().toUpperCase();
+            // Multi-select (checkboxes). Niets gekozen = ALL
+            let regions = Array.from(form.querySelectorAll('input[name="regions"]:checked'))
+              .map(el => String(el?.value || "").trim().toUpperCase())
+              .filter(Boolean);
+
+            // Fallback: always send at least ALL
+            if (!regions.length) regions = ["ALL"];
+
+            // Make ALL exclusive: if ALL + others are selected, drop ALL
+            if (regions.includes("ALL") && regions.length > 1) {
+              regions = regions.filter(r => r !== "ALL");
+            }
+
+            // Backward-compatible primary region (current backend expects `region`)
+            const region = regions[0] || "ALL";
             const res = await fetch(`${API_BASE}/api/newsletter/subscribe`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -2223,7 +2279,7 @@
                 consent: true,
                 // backward/forward compatible: single field + array
                 region,
-                regions: [region]
+                regions
               })
             });
 
