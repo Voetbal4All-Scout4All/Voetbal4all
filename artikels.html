@@ -718,7 +718,11 @@ let lastRenderKey = "";
           return "";
         }
 
-        const url = "artikel.html?id=" + encodeURIComponent(id);
+        if (!title) {
+      console.warn("[ARTIKELS] Missing title for article, skipping card:", id);
+      return "";
+    }
+    const url = "artikel.html?id=" + encodeURIComponent(id);
 
         const cc = countryCodeFromBackend(a);
 
