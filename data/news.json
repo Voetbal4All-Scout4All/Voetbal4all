@@ -1,38 +1,27 @@
 {
-  "generatedAt": "2026-02-25T22:37:52.529Z",
+  "generatedAt": "2026-02-25T23:32:04.372Z",
   "items": [
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Tiental Juve koopt niets voor ongekende comeback: Lang en Galatasaray door in CL",
-      "link": "https://www.vi.nl/nieuws/tiental-juve-koopt-niets-voor-ongekende-comeback-lang-en-galatasaray-door-in-cl",
-      "summary": "Galatasaray heeft woensdagavond de achtste finale van de Champions League bereikt. Dat ging niet zonder slag of stoot. De Turken gaven een marge van drie goals weg tegen een Turijns tiental, maar stelden in de verlenging orde op zaken. Zo maakt basisklant Noa Lang zich op voor een ontmoeting met Liverpool of Tottenham Hotspur.",
-      "publishedAt": "2026-02-25T22:36:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Galatasaray beslist het in de verlenging, publiek Juve begint te klappen",
-      "link": "https://www.vi.nl/nieuws/vi-live-de-roon-moet-cl-uitschakeling-atalanta-voorkomen-tegen-dortmund",
-      "summary": "Woensdagavond vinden de laatste returns in de tussenronde van de Champions League plaats. Real Madrid en Paris Saint-Germain hopen het klusje te klaren. Atalanta en Juventus hebben een comeback nodig. Volg de duels in deze VI Live.",
-      "publishedAt": "2026-02-25T22:34:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Ronaldo scores as Al Nassr stay atop Saudi table",
-      "link": "https://www.espn.com/soccer/story/_/id/48034220/cristiano-ronaldo-goal-al-nassr-top-saudi-league",
-      "summary": "Cristiano Ronaldo scored in his third straight match since returning from a boycott of his team to lead Al Nassr back into first place in the Saudi Pro League with a 5-0 win over bottom-side Al Najma on Wednesday.",
-      "publishedAt": "2026-02-25T22:22:38.000Z"
+      "title": "Salah happy to stay at Liverpool - Thursday's gossip",
+      "link": "https://www.bbc.com/sport/football/articles/cwy89gl8qnvo?at_medium=RSS&at_campaign=rss",
+      "summary": "Mohamed Salah would be happy to stay at Liverpool until 2027, there are six Premier League clubs interested in Frankfurt's Nnamdi Collins, while Casemiro wants to keep playing in Europe.",
+      "publishedAt": "2026-02-25T23:26:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Galatasaray score twice in extra time to squash 10-man Juventus",
+      "link": "https://www.bbc.com/sport/football/videos/cqxdz0yvj2lo?at_medium=RSS&at_campaign=rss",
+      "summary": "Galatasaray survived a 10-man Juventus comeback, scoring twice in extra time to win 7-5 on aggregate, despite Lloyd Kelly's red card.",
+      "publishedAt": "2026-02-25T23:22:19.000Z"
     },
     {
       "type": "rss",
@@ -42,8 +31,19 @@
       "flag": "🌍",
       "title": "Vinícius seals Madrid progress amid Benfica boos",
       "link": "https://www.espn.com/soccer/story/_/id/48034957/vinicius-junior-boo-benfica-fans-real-madrid-banner",
-      "summary": "Benfica fans loudly booed Real Madrid forward Vinícius Júnior at the Santiago Bernabeu Stadium in the second leg of the Champions League playoffs on Wednesday.",
-      "publishedAt": "2026-02-25T22:22:37.000Z"
+      "summary": "Benfica fans loudly booed Real Madrid forward Vinícius Junior at the Santiago Bernabéu Stadium in the second leg of the Champions League playoffs on Wednesday.",
+      "publishedAt": "2026-02-25T23:19:17.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "VAR hands Atalanta winning pen after bloody foul",
+      "link": "https://www.espn.com/soccer/story/_/id/48036023/var-hands-atalanta-winning-pen-bloody-foul-dortmund",
+      "summary": "Two red cards, a VAR overturn and a decisive converted penalty with the last kick of the game that came after a bloody foul on Atalanta's Nikola Krstovic.",
+      "publishedAt": "2026-02-25T23:19:17.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +54,7 @@
       "title": "PSG advance to set up Barça or Chelsea clash",
       "link": "https://www.espn.com/soccer/report/_/gameId/401858763",
       "summary": "Mamadou Coulibaly's red card cost his side dearly as AS Monaco drew 2-2 at defending champion Paris Saint-Germain in the second leg of their Champions League playoff on Wednesday and went out 5-4 on aggregate.",
-      "publishedAt": "2026-02-25T22:22:37.000Z"
+      "publishedAt": "2026-02-25T23:19:17.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +62,10 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Atalanta shock Dortmund with last-gasp penalty",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401858762",
-      "summary": "Atalanta converted a penalty with the last kick of the game to beat Borussia Dortmund 4-1 and secure a place in the round of 16 in the Champions League.",
-      "publishedAt": "2026-02-25T22:22:37.000Z"
+      "title": "Bouanga signs multiyear DP extension with LAFC",
+      "link": "https://www.espn.com/soccer/story/_/id/48035929/denis-bouanga-signs-multiyear-dp-extension-lafc",
+      "summary": "High-scoring forward Denis Bouanga has agreed to a multiyear contract extension with LAFC.",
+      "publishedAt": "2026-02-25T23:19:17.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +73,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Champions League roundup: Atalanta oust Dortmund thanks to last-minute penalty",
-      "link": "https://www.theguardian.com/football/2026/feb/25/champions-league-playoffs-roundup-psg-monaco-juventus-galatasaray-atalanta-borussia-dortmund",
-      "summary": "Serie A side win 4-3 on aggregate after 4-1 victory Atalanta face Arsenal or Bayern Munich in last 16 Lazar Samardzic slotted home a stoppage-time penalty to complete a dramatic 4-1 victory for Atalanta against Borussia Dortmund on Wednesday, sending the Italian side into the Champions League’s last 16 with a comeback 4-3 aggregate triumph. Dortmund’s Ramy Bensebaini was sent off after his studs caught the head of Atalanta’s Nikola Krstovic in the penalty area and Samardzic converted the spot kick in the 98th minute to send the Italians through. Atalanta will now face either Arsenal or Bayern Munich in the round of 16, with the draw on Friday. Continue reading...",
-      "publishedAt": "2026-02-25T22:18:55.000Z"
+      "title": "Championship roundup: Coventry battle back to see off Sheffield United",
+      "link": "https://www.theguardian.com/football/2026/feb/25/championship-roundup-sheffield-united-coventry-millwall-birmingham-norwich-wednesday-stoke-oxford",
+      "summary": "Haji Wright and Jack Rudoni seal 2-1 comeback win Millwall beat Birmingham to keep up promotion push Coventry extended their lead at the top of the Championship to five points after coming from behind to win 2-1 at Sheffield United, while Millwall went third by beating Birmingham City 3-0 on Wednesday. After a run of two wins in eight games caused Frank Lampard’s men to blow a comfortable advantage in the race for promotion to the Premier League, Coventry have bounced back with three consecutive wins. Continue reading...",
+      "publishedAt": "2026-02-25T23:12:25.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +84,76 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "PSG avoid late scare against 10-man Monaco",
-      "link": "https://www.bbc.com/sport/football/videos/c5yv49v4g54o?at_medium=RSS&at_campaign=rss",
-      "summary": "PSG held on despite a late Jordan Teze goal, after Marquinhos and Khvicha Kvaratskhelia scored in quick succesion to seal the tie for French champions, as Mamadou Coulibaly was sent off for Monaco.",
-      "publishedAt": "2026-02-25T22:18:45.000Z"
+      "title": "'Darlings of Italian football' - how Atalanta salvaged national pride",
+      "link": "https://www.bbc.com/sport/football/articles/cj0d798vzeno?at_medium=RSS&at_campaign=rss",
+      "summary": "As Italy faced the embarrassment of having no clubs in the Champions League last 16, Atalanta became the saviours of national reputation - and pride.",
+      "publishedAt": "2026-02-25T23:06:24.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Champions League roundup: Atalanta oust Dortmund, Galatasaray thwart Juventus fightback",
+      "link": "https://www.theguardian.com/football/2026/feb/25/champions-league-playoffs-roundup-psg-monaco-juventus-galatasaray-atalanta-borussia-dortmund",
+      "summary": "Serie A side win 4-3 on aggregate after 4-1 victory Istanbul giants fend off 10-man Juve in extra time Lazar Samardzic slotted home a stoppage-time penalty to complete a dramatic 4-1 victory for Atalanta against Borussia Dortmund on Wednesday, sending the Italian side into the Champions League’s last 16 with a comeback 4-3 aggregate triumph. Dortmund’s Ramy Bensebaini was sent off after his studs caught the head of Atalanta’s Nikola Krstovic in the penalty area and Samardzic converted the spot kick in the 98th minute to send the Italians through. Atalanta will now face either Arsenal or Bayern Munich in the round of 16, with the draw on Friday. Continue reading...",
+      "publishedAt": "2026-02-25T23:02:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Courtois is blij met dansje van Vinícius en vreest voor Manchester City",
+      "link": "https://www.vi.nl/nieuws/courtois-is-blij-met-dansje-van-vin-cius-en-vreest-voor-manchester-city",
+      "summary": "Het dansje van Vinícius Júnior van woensdag ontging ploeggenoot Thibaut Courtois, maar het doet de keeper van Real Madrid deugd dat zijn ploegmakker danst, na alle ophef van de afgelopen week. Real bekerde tegen Benfica door in de Champions League. Courtois vreest dat Real in de volgende ronde weer Manchester City zal loten.",
+      "publishedAt": "2026-02-25T22:51:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Achtste finales Champions League: alle clubs en mogelijke affiches",
+      "link": "https://www.vi.nl/nieuws/achtste-finales-champions-league-alle-clubs-en-mogelijke-affiches",
+      "summary": "De tussenronde van de Champions League zit erop en dat betekent dat we zijn aangekomen in de achtste finales van het toernooi. Daarin zijn nog zestien clubs vertegenwoordigd. Voetbal International schetst welke clubs dit zijn én wat de affiches in de volgende ronde kunnen worden.",
+      "publishedAt": "2026-02-25T22:41:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Real Madrid verlengt KO-streak van geschorste Mourinho",
+      "link": "https://www.vi.nl/nieuws/vi-live-galatasaray-beslist-het-in-de-verlenging-publiek-juve-begint-te-klappen",
+      "summary": "Woensdagavond werden de laatste returns in de tussenronde van de Champions League gepeeld. Real Madrid en Paris Saint-Germain hoopten het klusje te klaren. Atalanta en Juventus hadden een comeback nodig. Lees de volledige avond terug in de VI Live.",
+      "publishedAt": "2026-02-25T22:41:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Wanneer is loting achtste finale Champions League en waar wordt die uitgezonden?",
+      "link": "https://www.vi.nl/nieuws/wanneer-is-loting-achtste-finale-champions-league-en-waar-wordt-die-uitgezonden",
+      "summary": "De tussenronde van de Champions League zit erop en dus kunnen we vooruitkijken richting de loting voor de achtste finale. Zestien ploegen doen daaraan mee. In dit artikel alles over de Champions League-loting.",
+      "publishedAt": "2026-02-25T22:39:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Tiental Juve koopt niets voor ongekende comeback: Lang en Galatasaray door in CL",
+      "link": "https://www.vi.nl/nieuws/tiental-juve-koopt-niets-voor-ongekende-comeback-lang-en-galatasaray-door-in-cl",
+      "summary": "Galatasaray heeft woensdagavond de achtste finale van de Champions League bereikt. Dat ging niet zonder slag of stoot. De Turken gaven een marge van drie goals weg tegen een Turijns tiental, maar stelden in de verlenging orde op zaken. Zo maakt basisklant Noa Lang zich op voor een ontmoeting met Liverpool of Tottenham Hotspur.",
+      "publishedAt": "2026-02-25T22:36:00.000Z"
     },
     {
       "type": "rss",
@@ -113,28 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Vinícius haalt gram met goal: Real Madrid schakelt Benfica uit in Champions League",
-      "link": "https://www.vi.nl/nieuws/vin-cius-haalt-gram-met-goal-real-madrid-schakelt-benfica-uit-in-champions-league",
-      "summary": "Real Madrid heeft de achtste finale van de Champions League bereikt. Woensdagavond rekende de Spaanse topclub in de tussenronde af met Benfica, nadat het al met een kleine voorsprong de return inging. In de volgende ronde is Sporting Portugal of Manchester City de tegenstander. Uitgerekend Vinícius Júnior greep een hoofdrol.",
-      "publishedAt": "2026-02-25T21:59:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Horrorminuut beslist Frans onderonsje: PSG door in de Champions League",
-      "link": "https://www.vi.nl/nieuws/scorende-teze-kan-cl-uitschakeling-monaco-niet-voorkomen-psg-stoot-door",
-      "summary": "Vanzelfsprekend was het lange tijd niet, maar Paris Saint-Germain heeft de achtste finales van de Champions League bereikt. Lang had AS Monaco het beste van het spel in de return van de tussenronde, maar na een horrorminuut met een rode kaart en een tegengoal was de club uit het prinsdom woensdagavond gezien. Daar veranderde een late gelijkmaker van Jordan Teze niets meer aan: 2-2.",
-      "publishedAt": "2026-02-25T21:53:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "INT",
@@ -146,24 +190,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Utrecht-aanwinst over vergelijking met Haaland: 'Dan moet ik wel gaan scoren'",
-      "link": "https://www.vi.nl/nieuws/utrecht-aanwinst-over-vergelijking-met-haaland-dan-moet-ik-wel-gaan-scoren",
-      "summary": "'Ja echt, ja echt, hij is de Haaland van Utrecht', zong de Bunnikside zondag tijdens het thuisduel met PEC Zwolle over Artem Stepanov. De winteraanwinst van FC Utrecht vindt het niet slecht om met de superspits van Manchester City te worden vergeleken, maar maakt ook een belangrijke kanttekening.",
-      "publishedAt": "2026-02-25T21:25:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Champions League live updates: Galatasaray lead Juventus in extra time",
+      "title": "Champions League as it happened: Gala's extra-time win over Juve caps chaotic day",
       "link": "https://www.espn.com/soccer/story/_/id/48018815/uefa-champions-league-live-updates-real-madrid-benfica-psg-monaco",
-      "summary": "Paris Saint-Germain and Real Madrid are off to the round of 16, but Juventus are looking to join them on a day full of Champions League action.",
+      "summary": "Galatasaray stunned Juventus and alongside Paris Saint-Germain and Real Madrid, are off to the round of 16 on after a wild day of Champions League action.",
       "publishedAt": "2026-02-25T21:04:07.000Z"
     },
     {
@@ -187,39 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/feb/25/martin-oneill-claims-var-debilitating-for-officials-after-celtic-fail-with-red-card-appeal",
       "summary": "Auston Trusty sent off against Hibernian O’Neill: ‘In time we won’t need a referee’ Celtic’s manager, Martin O’Neill, has delivered a withering assessment of VAR in Scottish football after what he called the “ridiculous” dismissal of Auston Trusty during Sunday’s loss by Hibernian. Trusty’s red card and a failed Celtic appeal mean the centre-back will miss three crucial Scottish Premiership games, starting with Sunday’s Old Firm visit to Ibrox. O’Neill claimed VAR actions must be “debilitating” for on-field officials. Continue reading...",
       "publishedAt": "2026-02-25T19:19:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Borthwick downplays Jones' England criticism",
-      "link": "https://www.skysports.com/rugby-union/news/12040/13512167/six-nations-england-coach-steve-borthwick-responds-to-eddie-jones-comments-suggesting-they-looked-too-far-ahead",
-      "summary": "Steve Borthwick downplayed suggestions from Eddie Jones that England were looking too far ahead coming into the Six Nations.",
-      "publishedAt": "2026-02-25T17:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Stuttgart vs Celtic preview: Tie not over, says Cvancara",
-      "link": "https://www.skysports.com/football/stuttgart-vs-celtic/live/553876",
-      "summary": "",
-      "publishedAt": "2026-02-25T16:37:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Football Daily | West Bromwich Albion and the beauty of the struggle",
-      "link": "https://www.theguardian.com/football/2026/feb/25/west-bromwich-albion-beauty-of-the-struggle-football-daily-newsletter",
-      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! When it comes to word association Football Daily immediately links West Bromwich Albion with Adrian Chiles, due in no small part to the avuncular broadcaster and star Big Website columnist being one of the Baggies’ more famous high priests of pessimism. Upon hearing that his struggling club had dispensed with the services of yet another head coach, we checked in to make sure the man we don’t know well enough to call “Chilesey” hadn’t taken it upon himself to sally forth to the Hawthorns and run amok with the new yellow power tool he recently bought in order to “address lifelong self-esteem issues” through the medium of DIY. We’re happy to report that, at the time of writing, the famous old ground’s Smethwick End is still standing and bears no resemblance to a colander. I thought I should remind James Harvey (yesterday’s Football Daily letters) that English language (and other) pedantry has a proud, well long, tradition in Football Daily! To that end, I think he will see, if he looks, that David Livesey’s use of tautology was entirely intentional, and unusually subtle for Football Daily … neither clear nor obvious” – David Mutimer. Regarding the recent James Milner quote, in which he puzzlingly pluralised the names of some of his former managers. Frankly I was surprised by this, coming from such a singular player” – Peter Oh. Can I (and 1,056 Norwegians) offer a hearty ‘Giorgia Meloni, can you hear me Giorgia Meloni? Your boys took a hell of a beating …’ to Bodø/Glimt on their success in San Siro” – Declan Hackett (and no other Norwegians). Re: the lead story on the stricken seagull (yesterday’s Football Daily). If one takes the folkloric Atatürk-seagull story as gospel, then perhaps Gani Caton’s reaction to recent suspensions were approached with the same seriousness one might show when interpreting prophetic messages from coastal wildlife. One imagines the seagulls of Istanbul have been placed on an unofficial watch list while the matter is reviewed with appropriate bureaucratic dignity” – Andrew Delaney (and no other wannabe Eric Cantonas). Re: yesterday’s Football Daily. After a lifetime of study, I can confirm for Football Daily Ed that drinking pints does not gain aura. Area, yes – but aura, no” – David Ford. This is an extract from our daily football email … Football Daily. To get the full version, just visit this page and follow the instructions. Continue reading...",
-      "publishedAt": "2026-02-25T15:51:02.000Z"
     }
   ]
 }
