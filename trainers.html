@@ -421,7 +421,7 @@
                         <div class="ad-card-body" style="margin-top:8px;">Ervaring met U13–U17. Sterk in structuur, communicatie en ontwikkeling.</div>
                         <div class="ad-card-actions event-actions" style="margin-top:10px;">
                           <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                          <a class="btn-ghost-sm" href="#" data-share-trainer="1">Delen</a>
+                          <button type="button" class="btn-ghost-sm" data-share-trainer="1">Delen</button>
                         </div>
                       </div>
                     </div>
@@ -437,7 +437,7 @@
                       <div class="ad-card-body" style="margin-top:8px;">Tactisch sterk, focus op prestatiecultuur en teamcohesie.</div>
                       <div class="ad-card-actions event-actions" style="margin-top:10px;">
                         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <a class="btn-ghost-sm" href="#" data-share-trainer="2">Delen</a>
+                        <button type="button" class="btn-ghost-sm" data-share-trainer="2">Delen</button>
                       </div>
                     </div></div>
                   </article>
@@ -452,7 +452,7 @@
                       <div class="ad-card-body" style="margin-top:8px;">Assistent rol, videoanalyse, voorbereiding en individuele begeleiding.</div>
                       <div class="ad-card-actions event-actions" style="margin-top:10px;">
                         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <a class="btn-ghost-sm" href="#" data-share-trainer="3">Delen</a>
+                        <button type="button" class="btn-ghost-sm" data-share-trainer="3">Delen</button>
                       </div>
                     </div></div>
                   </article>
@@ -467,7 +467,7 @@
                       <div class="ad-card-body" style="margin-top:8px;">Keepersopleiding, opbouw trainingsplannen en evaluatie.</div>
                       <div class="ad-card-actions event-actions" style="margin-top:10px;">
                         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <a class="btn-ghost-sm" href="#" data-share-trainer="4">Delen</a>
+                        <button type="button" class="btn-ghost-sm" data-share-trainer="4">Delen</button>
                       </div>
                     </div></div>
                   </article>
@@ -482,7 +482,7 @@
                       <div class="ad-card-body" style="margin-top:8px;">Opleidingsvisie, coach-the-coach en planning bovenbouw.</div>
                       <div class="ad-card-actions event-actions" style="margin-top:10px;">
                         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <a class="btn-ghost-sm" href="#" data-share-trainer="5">Delen</a>
+                        <button type="button" class="btn-ghost-sm" data-share-trainer="5">Delen</button>
                       </div>
                     </div></div>
                   </article>
@@ -497,7 +497,7 @@
                       <div class="ad-card-body" style="margin-top:8px;">Focus op techniek, spelintelligentie en plezier in ontwikkelen.</div>
                       <div class="ad-card-actions event-actions" style="margin-top:10px;">
                         <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <a class="btn-ghost-sm" href="#" data-share-trainer="6">Delen</a>
+                        <button type="button" class="btn-ghost-sm" data-share-trainer="6">Delen</button>
                       </div>
                     </div></div>
                   </article>
@@ -642,7 +642,7 @@
       ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
       : `<a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-         <a class="btn-ghost-sm" href="#" data-share-trainer="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
+         <button type="button" class="btn-ghost-sm" data-share-trainer="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</button>`;
 
     return `
       <article class="ad-card${isPremium ? " premium-card" : ""}" id="trainer-ad-${escHtml(String(idx + 1))}"
@@ -753,7 +753,27 @@
     }
   });
 
-  // --- Trainer filters (land + regio + gender) ---
+  // --- Delegated share handler for all trainer cards (static + dynamic) ---
+    document.getElementById('trainer-list')?.addEventListener('click', function(e) {
+      const btn = e.target.closest('[data-share-trainer]');
+      if (!btn) return;
+      e.preventDefault();
+      const detailHref = btn.getAttribute('data-detail-href') || '';
+      const abs = detailHref ? (new URL(detailHref, window.location.href)).toString() : window.location.href;
+      const title = document.title || 'Voetbal4All';
+      if (navigator.share) {
+        navigator.share({ title: title, url: abs }).catch(function(){});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(abs).then(function() {
+          btn.textContent = 'Gekopieerd!';
+          setTimeout(function(){ btn.textContent = 'Delen'; }, 2000);
+        }).catch(function() {
+          prompt('Kopieer deze link:', abs);
+        });
+      }
+    });
+
+    // --- Trainer filters (land + regio + gender) ---
   (function initTrainerFilters() {
     const adsContainer = document.getElementById("trainer-list");
     if (!adsContainer) return;
