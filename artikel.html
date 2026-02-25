@@ -842,6 +842,34 @@
       return out.replace(/\n{3,}/g, "\n\n").replace(/\s{2,}/g, " ").trim();
     };
 
+    // Normalize country code for flags.
+    // Prefer backend country if valid; otherwise infer from canonical_url hostname.
+    function normalizeCountryCode(raw, url) {
+      const ALLOWED = new Set(["BE","NL","DE","FR","ES","IT","UK","INT"]);
+
+      const c0 = String(raw || "").trim().toUpperCase();
+      if (c0 === "GB") return "UK";
+      if (ALLOWED.has(c0)) return c0;
+
+      const u = String(url || "").trim();
+      if (!u) return "INT";
+
+      try {
+        const host = new URL(u).hostname.toLowerCase();
+        if (host.endsWith(".be")) return "BE";
+        if (host.endsWith(".nl")) return "NL";
+        if (host.endsWith(".de")) return "DE";
+        if (host.endsWith(".fr")) return "FR";
+        if (host.endsWith(".es")) return "ES";
+        if (host.endsWith(".it")) return "IT";
+        if (host.endsWith(".uk") || host.endsWith(".co.uk")) return "UK";
+      } catch (e) {
+        // ignore URL parse errors
+      }
+
+      return "INT";
+    }
+
     const countryLabel = (cc) => {
       const c = String(cc || "").trim().toUpperCase();
       if (c === "BE") return "België";
@@ -900,8 +928,7 @@
     
     const countryEl = document.getElementById('article-country');
     const cc0 = String(article.country || "").trim().toUpperCase();
-    const supported = new Set(["BE", "NL", "DE", "FR", "ES", "IT", "UK", "INT"]);
-    const cc = supported.has(cc0) ? cc0 : "INT";
+    const cc = normalizeCountryCode(cc0, article.canonical_url || article.url || article.link);
 
     countryEl.style.display = '';
     countryEl.innerHTML = `<span class="v4a-flag" aria-hidden="true">${flagHtml(cc)}</span>&nbsp;${countryLabel(cc)}`;
