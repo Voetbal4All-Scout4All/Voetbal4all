@@ -944,7 +944,12 @@
     const start = (CURRENT_PAGE - 1) * PAGE_SIZE;
     const slice = OTHER_EVENTS.slice(start, start + PAGE_SIZE);
 
-    listEl.innerHTML = slice.map(cardHtml).join("");
+    if (total === 0) {
+          listEl.innerHTML = '<div style="padding:24px;text-align:center;"><p style="margin-bottom:16px;opacity:.85;">Er zijn momenteel geen club & fun events gepland.</p><a class="btn-ghost-sm" href="event-aanmelden.html">Meld je event aan</a></div>';
+          renderPagination(0);
+          return;
+        }
+        listEl.innerHTML = slice.map(cardHtml).join("");
 
     // Trigger AdSense for any inserted ins
     try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(_) {}
