@@ -436,52 +436,14 @@ let lastRenderKey = "";
         .replace(/'/g, "&#39;");
     }
 
-    function inferCountry(a){
+    function countryCodeFromBackend(a){
+      const ALLOWED = new Set(["BE","NL","DE","FR","ES","IT","UK","INT"]);
       const raw = String(a?.country || "").trim().toUpperCase();
-
-      // Supported explicit codes from backend
-      if (["BE","NL","DE","FR","ES","IT","UK","INT"].includes(raw)) return raw;
-
-      // Backwards compat: sometimes country comes as a label
-      const s = String(a?.country || "").toLowerCase();
-      if (s.includes("belg")) return "BE";
-      if (s.includes("neder")) return "NL";
-      if (s.includes("duits") || s.includes("german")) return "DE";
-      if (s.includes("frank") || s.includes("france")) return "FR";
-      if (s.includes("span") || s.includes("spain")) return "ES";
-      if (s.includes("ital") || s.includes("italy")) return "IT";
-      if (s.includes("verenigd") || s.includes("united kingdom") || s === "uk" || s === "gb") return "UK";
-
+      if (raw === "GB") return "UK";
+      if (ALLOWED.has(raw)) return raw;
       return "INT";
     }
 
-    function detectCountry(a){
-      // 1) Backend country is leading when present
-      const raw = safe(a?.country).toUpperCase().trim();
-      if (["BE","NL","DE","FR","ES","IT","UK","INT"].includes(raw)) return raw;
-
-      // 2) Fallback: sometimes it is written out
-      const raw2 = safe(a?.country).toLowerCase();
-      if (raw2.includes("belg")) return "BE";
-      if (raw2.includes("neder")) return "NL";
-      if (raw2.includes("duits") || raw2.includes("german")) return "DE";
-      if (raw2.includes("frank") || raw2.includes("france")) return "FR";
-      if (raw2.includes("span") || raw2.includes("spain")) return "ES";
-      if (raw2.includes("ital") || raw2.includes("italy")) return "IT";
-      if (raw2.includes("verenigd") || raw2.includes("united kingdom") || raw2 === "uk" || raw2 === "gb") return "UK";
-
-      // 3) Fallback: prefix in fileName
-      const fn = safe(a?.fileName).toLowerCase();
-      if (fn.startsWith("be_")) return "BE";
-      if (fn.startsWith("nl_")) return "NL";
-      if (fn.startsWith("de_")) return "DE";
-      if (fn.startsWith("fr_")) return "FR";
-      if (fn.startsWith("es_")) return "ES";
-      if (fn.startsWith("it_")) return "IT";
-      if (fn.startsWith("uk_")) return "UK";
-
-      return "INT";
-    }
 
     function countryLabel(cc){
       if (cc === "BE") return "België";
@@ -758,7 +720,7 @@ let lastRenderKey = "";
 
         const url = "artikel.html?id=" + encodeURIComponent(id);
 
-        const cc = inferCountry(a);
+        const cc = countryCodeFromBackend(a);
 
         // Category: hide noisy / redundant labels (these show up as "news" in the UI)
         const categoryRaw = safe(a.category || "").trim();
@@ -865,7 +827,7 @@ let lastRenderKey = "";
         if (q && !text.includes(q)) return false;
 
         if (c) {
-          const cc = detectCountry(a); // ✅ gebruikt AI-country eerst, dan fallback
+          const cc = countryCodeFromBackend(a);
           if (cc !== c) return false;
         }
         
