@@ -771,6 +771,12 @@ let lastRenderKey = "";
           a.standFirst ||
           a.summary ||
           a.excerpt ||
+          a.description ||
+          a.desc ||
+          a.teaser ||
+          a.lead ||
+          a.subtitle ||
+          a.contentSnippet ||
           firstTwoSentences(a.body || "") ||
           ""
         );
@@ -832,7 +838,9 @@ let lastRenderKey = "";
               </div>
             </div>
 
-            ${snippetClean ? `<p class="note" style="margin-top:10px;">${snippetClean}</p>` : ""}
+            <p class="note" style="margin-top:10px;${snippetClean ? "" : "opacity:0.85;"}">
+              ${snippetClean || "Klik op ‘Lees artikel’ voor de samenvatting en details."}
+            </p>
 
             <div class="ad-card-actions" style="margin-top:10px;">
               <a class="btn-ghost-sm" href="${url}">Lees artikel</a>

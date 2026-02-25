@@ -2123,6 +2123,35 @@
       // Use a real file (small request, cacheable) instead of an inline data URI.
       const FALLBACK_THUMB = "assets/img/placeholder.svg";
 
+      // HOME: normalize country code for flag rendering.
+      // 1) Prefer backend country if it is a known 2/3-letter code.
+      // 2) Otherwise infer from canonical_url TLD as a safe fallback.
+      function normalizeCountryCode(raw, url) {
+        const ALLOWED = new Set(["BE","NL","DE","FR","ES","IT","UK","INT"]);
+
+        const c0 = String(raw || "").trim().toUpperCase();
+        if (c0 === "GB") return "UK";
+        if (ALLOWED.has(c0)) return c0;
+
+        const u = String(url || "").trim();
+        if (!u) return "INT";
+
+        try {
+          const host = new URL(u).hostname.toLowerCase();
+          if (host.endsWith(".be")) return "BE";
+          if (host.endsWith(".nl")) return "NL";
+          if (host.endsWith(".de")) return "DE";
+          if (host.endsWith(".fr")) return "FR";
+          if (host.endsWith(".es")) return "ES";
+          if (host.endsWith(".it")) return "IT";
+          if (host.endsWith(".uk") || host.endsWith(".co.uk")) return "UK";
+        } catch (e) {
+          // ignore URL parse errors
+        }
+
+        return "INT";
+      }
+
       function flagHtml(countryCode){
   const c = String(countryCode || "INT").trim().toUpperCase();
   const MAP = {
@@ -2513,7 +2542,7 @@
                     .trim()
                     .toUpperCase();
 
-                const cc = rawCountry || "INT";
+                const cc = normalizeCountryCode(rawCountry, a?.canonical_url || a?.url || a?.link);
                 const flag = flagHtml(cc);
 
                 const imgSrc =
