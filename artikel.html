@@ -789,6 +789,12 @@
       } catch (err) {
         console.error('[ARTIKEL] ❌ Failed to load article:', err);
         setState('error');
+      } finally {
+        // Guarantee: if content is showing, error/loader are always hidden
+        if (elContent.style.display !== 'none') {
+          elError.style.display = 'none';
+          elLoading.style.display = 'none';
+        }
       }
     })();
   
