@@ -856,7 +856,8 @@ let lastRenderKey = "";
 
       // ✅ paginatie: clamp huidige pagina
       const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-      if (currentPage > totalPages) currentPage = totalPages;
+      currentPage = parseInt(currentPage, 10) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
       if (currentPage < 1) currentPage = 1;
 
       const start = (currentPage - 1) * PAGE_SIZE;
