@@ -18,8 +18,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
-</head>
   <link rel="stylesheet" href="style.css" />
+  </head>
   <style>
     /* Team/Medewerker in de kijker: make description textarea rectangular */
     .v4-textarea{
@@ -178,7 +178,7 @@
         data-ad-slot="1817736209"
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
     </div>
   </div>
 </section>
@@ -256,7 +256,7 @@
             data-ad-slot="5032068814"
             data-ad-format="auto"
             data-full-width-responsive="true"></ins>
-          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
         </article>
 
         <!-- AANMELDEN (GRATIS) -->
@@ -491,10 +491,13 @@
       }
       // Fallback: look for common month names in text (nl)
       const t = d.text;
-      if (m === '09') return t.includes('september');
-      if (m === '10') return t.includes('oktober');
-      if (m === '11') return t.includes('november');
-      return true;
+      const monthNames = {
+          '01': 'januari', '02': 'februari', '03': 'maart', '04': 'april',
+          '05': 'mei', '06': 'juni', '07': 'juli', '08': 'augustus',
+          '09': 'september', '10': 'oktober', '11': 'november', '12': 'december'
+        };
+        if (monthNames[m]) return t.includes(monthNames[m]);
+        return true;
     }
 
     function apply(){
