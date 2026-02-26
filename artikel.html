@@ -23,6 +23,7 @@
   <meta property="og:description" id="og-description" content="Lees het nieuwste voetbalnieuws" />
   <meta property="og:image" id="og-image" content="assets/img/placeholder.svg" />
   <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow">
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
@@ -523,7 +524,7 @@
 
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-    async function fetchJsonWithRetry(url, { timeoutMs = 9000, tries = 5, baseDelayMs = 650 } = {}) {
+    async function fetchJsonWithRetry(url, { timeoutMs = 6000, tries = 3, baseDelayMs = 650 } = {}) {
       let lastErr = null;
 
       for (let i = 0; i < tries; i++) {
@@ -773,7 +774,7 @@
         const url = `${API_BASE}/api/news/${encodeURIComponent(articleId)}?nocache=${Date.now()}`;
         console.log('[ARTIKEL] Fetching article by id:', articleId);
 
-        const json = await fetchJsonWithRetry(url, { tries: 5, timeoutMs: 9000 });
+        const json = await fetchJsonWithRetry(url, { tries: 3, timeoutMs: 6000 });
         const article = json && (json.item ? json.item : json);
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
@@ -832,7 +833,10 @@
         out = out.replace(new RegExp(`\\b${src.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}\\b`, "gi"), "");
       }
 
-      // Remove lines that are just 1-3 words (often a source) after stripping
+      // Case-sensitive AD removal (avoid matching "ad" in regular text)
+          out = out.replace(/\bAD\b/g, "");
+
+          // Remove lines that are just 1-3 words (often a source) after stripping
       out = out
         .split("\n")
         .map(line => line.trim())
@@ -920,6 +924,15 @@
     
     const title = article.title || 'Voetbal4All Artikel';
     document.getElementById('page-title').textContent = title + ' - Voetbal4All';
+
+        // Dynamic canonical URL
+        let canonicalEl = document.querySelector('link[rel="canonical"]');
+        if (!canonicalEl) {
+          canonicalEl = document.createElement('link');
+          canonicalEl.rel = 'canonical';
+          document.head.appendChild(canonicalEl);
+        }
+        canonicalEl.href = window.location.href;
     document.getElementById('og-title').setAttribute('content', title);
     document.getElementById('page-description').setAttribute('content', article.snippet || '');
     document.getElementById('og-description').setAttribute('content', article.snippet || '');
