@@ -1,6 +1,39 @@
 {
-  "generatedAt": "2026-02-26T10:52:07.313Z",
+  "generatedAt": "2026-02-26T11:41:54.925Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Leicester City-achtig sprookje in Zwitserland",
+      "link": "https://www.vi.nl/nieuws/leicester-city-achtig-sprookje-in-zwitserland",
+      "summary": "Wie vooraf had gezegd dat FC Thun als promovendus de Zwitserse Super League zou domineren, was waarschijnlijk meewarig aangekeken. Toch is dat precies wat er dit seizoen gebeurt. De club uit het Berner Oberland keerde deze zomer terug op het hoogste niveau, voor het eerst sinds het degradatieseizoen 2019/20, en doet dat met meer dan alleen bravoure.",
+      "publishedAt": "2026-02-26T11:39:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ronaldo becomes co-owner of Spanish side Almeria",
+      "link": "https://www.bbc.com/sport/football/articles/c39wry03jvmo?at_medium=RSS&at_campaign=rss",
+      "summary": "Cristiano Ronaldo becomes part-owner of Spanish second division side Almeria after acquiring a 25% share in the Saudi Arabian-owned club.",
+      "publishedAt": "2026-02-26T11:25:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Atalanta scrape through but Juve out of CL as Italian giants hit alarming low",
+      "link": "https://www.skysports.com/football/news/12040/13512182/champions-league-atalanta-only-serie-a-team-into-last-16-so-what-is-going-on-with-italian-football",
+      "summary": "Atalanta pulled off a thrilling, last-gasp turnaround to make it to the Champions League last 16. Juventus battled valiantly into extra-time with 10 men. But that show of fight hasn't lifted the dark cloud which settled over Italian football this week.",
+      "publishedAt": "2026-02-26T10:50:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -91,17 +124,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Waarom Osimhen niet juichte na zijn belangrijke doelpunt tegen Juventus",
-      "link": "https://www.vi.nl/nieuws/waarom-osimhen-niet-juichte-na-zijn-belangrijke-doelpunt-tegen-juventus",
-      "summary": "Victor Osimhen maakte woensdag in het Champions League-duel met Juventus het belangrijkste doelpunt van de avond. Opvallend was dat de spits van Galatasaray zijn treffer niet vierde. De Italiaanse media vroegen na afloop om uitleg.",
-      "publishedAt": "2026-02-26T09:59:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -121,17 +143,6 @@
       "link": "https://www.espn.com/soccer/story/_/id/48035109/champions-league-talking-points-madrid-psg-italian-football-worse-off",
       "summary": "The UEFA Champions League playoffs are over and we're into the last 16. Who has what it takes to win the Champions League? And who struggled in the last round?",
       "publishedAt": "2026-02-26T09:43:34.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Now it gets serious - can inconsistent Chelsea survive most difficult run-in?",
-      "link": "https://www.skysports.com/football/news/12040/13512113/chelsea-liam-roseniors-side-enter-defining-run-of-games-starting-with-arsenal-away-in-race-for-top-five-finish",
-      "summary": "Now it gets serious.",
-      "publishedAt": "2026-02-26T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -209,17 +220,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cewzn4leyx1o?at_medium=RSS&at_campaign=rss",
       "summary": "Real Madrid's win against Benfica was a \"victory for everyone who stands against racism\", midfielder Aurelien Tchouameni says.",
       "publishedAt": "2026-02-26T00:15:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Bizarre VAR? Why Kelly's second yellow card became 'awful' straight red",
-      "link": "https://www.bbc.com/sport/football/articles/cj32yy0vn3xo?at_medium=RSS&at_campaign=rss",
-      "summary": "An 'awful' decision, or 'always going to be a red'? Why Juventus' Lloyd Kelly's second yellow card became a straight red in his side's Champions League exit at the hands of Galatasaray.",
-      "publishedAt": "2026-02-25T23:45:11.000Z"
     }
   ]
 }
