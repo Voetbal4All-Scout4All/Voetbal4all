@@ -7,7 +7,7 @@
     (function() {
       function signalGooglefcPresent() {
         if (!window.frames['googlefcPresent']) {
-          if (document.body) {
+          if (document.body) 
             const iframe = document.createElement('iframe');
             iframe.style.cssText = 'width:0;height:0;border:none;display:none';
             iframe.name = 'googlefcPresent';
@@ -2410,22 +2410,7 @@
         return s;
       }
 
-      function flagHtml(cc){
-        const c = String(cc || "INT").trim().toUpperCase();
-        const FLAG_SRC = {
-          BE: "/assets/img/sources/flag-be.svg",
-          NL: "/assets/img/sources/flag-nl.svg",
-          INT: "/assets/img/sources/flag-int.svg",
-        };
-        const src = FLAG_SRC[c] || FLAG_SRC.INT;
-        const alt = c === "BE" ? "België" : (c === "NL" ? "Nederland" : "Internationaal");
 
-        return `
-          <span class="v4a-flag" title="${alt}" aria-hidden="true">
-            <img class="v4a-flag__img" src="${src}" alt="" loading="lazy" decoding="async" width="18" height="12" />
-          </span>
-        `.trim();
-      }
 
       async function loadHomeNews() {
         if (homeNewsInFlight) return; // prevent concurrent refreshes
