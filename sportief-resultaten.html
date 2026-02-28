@@ -48,6 +48,17 @@
     .v4-ad-slim__ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; font-size:12px; opacity:.55; letter-spacing:.06em; text-transform:uppercase; }
     .v4-ad-slim__ph::before{ content:""; width:8px; height:8px; border-radius:999px; background:rgba(255,255,255,0.35); }
     .v4-ad-slim ins.adsbygoogle{ position:relative; z-index:2; }
+
+    /* Fix: "Toon resultaten" button text was not readable on dark background */
+    .v4-filterbar .btn-ghost-sm{
+      color: rgba(255,255,255,0.95) !important;
+      background: rgba(255,255,255,0.08) !important;
+      border: 1px solid rgba(255,255,255,0.18) !important;
+    }
+    .v4-filterbar .btn-ghost-sm:hover{
+      background: rgba(255,255,255,0.12) !important;
+      border-color: rgba(255,255,255,0.26) !important;
+    }
   </style>
     <style>
       /* AdSense: reduce height of full-width banner ads (match index.html) */
