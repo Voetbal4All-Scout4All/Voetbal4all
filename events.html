@@ -579,6 +579,13 @@
                     </div>
 
                     <div class="v4-filtergroup" style="grid-column: span 3;">
+                      <div class="v4-filterlabel">Provincie</div>
+                      <select id="event-filter-province" class="v4-select" disabled>
+                        <option value="">Provincie (alles)</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="grid-column: span 3;">
                       <div class="v4-filterlabel">Type</div>
                       <select id="event-filter-type" class="v4-select">
                         <option value="">Type (alles)</option>
@@ -808,14 +815,36 @@
       }
     })();
 
+    // Auto province filter via ?province= (options depend on country)
+    (function initProvinceFromUrl(){
+      if (!provinceEl) return;
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get("province");
+      if (!p) return;
+      provinceEl.dataset.urlInit = String(p);
+    })();
+
     const listEl = document.getElementById("event-list");
     const searchEl = document.getElementById("event-search-text");
     const countryEl = document.getElementById("event-filter-country");
     const typeEl = document.getElementById("event-filter-type");
     const genderEl = document.getElementById("event-filter-gender");
     const monthEl = document.getElementById("event-filter-month");
+    const provinceEl = document.getElementById("event-filter-province");
 
     const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+    // Initialize province options based on the currently selected country
+    setProvinceOptionsForCountry(countryEl?.value || "");
+
+    // Apply province from URL if present
+    if (provinceEl && provinceEl.dataset.urlInit){
+      const p = provinceEl.dataset.urlInit;
+      for (const opt of provinceEl.options){
+        if (opt.value === p){ provinceEl.value = p; break; }
+      }
+      delete provinceEl.dataset.urlInit;
+    }
 
     // Normalize placeholder paths (avoid /assets/img/placeholder.svg 404)
     function normalizeThumbUrl(u){
@@ -985,6 +1014,7 @@
       try {
         // Fetch premium (paid) for next N days from dedicated endpoint (stable contract)
         const gender = String(genderEl?.value || "BOTH").toUpperCase();
+        setProvinceOptionsForCountry(countryEl?.value || "");
         const genderQs = `&gender=${encodeURIComponent(gender)}`;
 
         const premiumUrl = `${API_BASE}/api/events/premium?days=60&limit=50&nocache=${Date.now()}${genderQs}`;
@@ -1060,7 +1090,7 @@
           const dateLabel = start.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
 
           return `
-            <article class="ad-card" data-placeholder="1" data-gender="BOTH" aria-label="Niet-premium event placeholder">
+            <article class="ad-card" data-placeholder="1" data-country="${(s.flag === '🇧🇪' ? 'BE' : 'NL')}" data-province="" data-type="${s.type}" data-gender="BOTH" aria-label="Niet-premium event placeholder">
               <div class="event-row">
                 <div class="event-thumbbox" aria-label="Flyer thumbnail"></div>
 
@@ -1117,12 +1147,14 @@
           const desc = ev.description ? String(ev.description) : "";
           const thumb = getThumb(ev);
           const safeThumb = safeAttr(thumb);
+          const province = getEventProvince(ev);
 
           return `
             <article class="ad-card" id="event-ad-${encodeURIComponent(slug)}"
               data-ad-id="${String(slug)}"
               data-title="${String(ev.title || "").replaceAll('"','&quot;')}"
               data-country="${country}"
+              data-province="${safeAttr(province)}"
               data-type="${uiType}"
               data-gender="${String(ev.gender || 'BOTH').toUpperCase()}"
               data-date="${dateOnly}"
@@ -1464,6 +1496,81 @@
     }
 
     function norm(s){ return (s || "").toLowerCase(); }
+function normKey(s){
+  try { return String(s || "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\s+/g, " ").trim(); }
+  catch { return String(s || "").toLowerCase().replace(/\s+/g, " ").trim(); }
+}
+
+const PROVINCES_BE = [
+  "Antwerpen",
+  "Limburg",
+  "Oost-Vlaanderen",
+  "West-Vlaanderen",
+  "Vlaams-Brabant",
+  "Waals-Brabant",
+  "Henegouwen",
+  "Luik",
+  "Luxemburg",
+  "Namen",
+  "Brussel"
+];
+
+const PROVINCES_NL = [
+  "Drenthe",
+  "Flevoland",
+  "Friesland",
+  "Gelderland",
+  "Groningen",
+  "Limburg",
+  "Noord-Brabant",
+  "Noord-Holland",
+  "Overijssel",
+  "Utrecht",
+  "Zeeland",
+  "Zuid-Holland"
+];
+
+function setProvinceOptionsForCountry(countryCode){
+  if (!provinceEl) return;
+
+  const cc = String(countryCode || "").toUpperCase();
+  const list = cc === "BE" ? PROVINCES_BE : (cc === "NL" ? PROVINCES_NL : []);
+
+  const prev = String(provinceEl.value || "");
+
+  provinceEl.innerHTML = '';
+  provinceEl.insertAdjacentHTML('beforeend', '<option value="">Provincie (alles)</option>');
+  for (const p of list){
+    const v = String(p);
+    provinceEl.insertAdjacentHTML('beforeend', `<option value="${v.replaceAll('"','&quot;')}">${v}</option>`);
+  }
+
+  const enabled = list.length > 0;
+  provinceEl.disabled = !enabled;
+
+  if (enabled && prev && list.includes(prev)) provinceEl.value = prev;
+  else provinceEl.value = "";
+}
+
+// Prefer backend province fields; else best-effort from address/location/city
+function getEventProvince(ev){
+  const raw = ev?.province ?? ev?.provincie ?? ev?.region ?? ev?.state ?? "";
+  const p = String(raw || "").trim();
+  if (p) return p;
+
+  const loc = String(ev?.location_name || "");
+  const addr = String(ev?.address || "");
+  const city = String(ev?.city || "");
+  const blob = normKey([loc, addr, city].filter(Boolean).join(" · "));
+
+  const cc = String(ev?.country || "").toUpperCase();
+  const list = cc === "BE" ? PROVINCES_BE : (cc === "NL" ? PROVINCES_NL : []);
+  for (const candidate of list){
+    const ck = normKey(candidate);
+    if (ck && blob.includes(ck)) return candidate;
+  }
+  return "";
+}
 
     // Verberg events waarvan datum + 1 dag < vandaag
     function hidePastEvents() {
@@ -1490,6 +1597,7 @@
       const t = typeEl.value;
       const m = monthEl.value;
       const g = String(genderEl?.value || "BOTH").toUpperCase();
+      const p = String(provinceEl?.value || "");
 
       const cards = listEl.querySelectorAll(".ad-card");
       cards.forEach(card => {
@@ -1498,13 +1606,22 @@
         const dd = card.dataset.date || ""; // YYYY-MM-DD
         const hay = norm(card.textContent);
         const gg = String(card.dataset.gender || "BOTH").toUpperCase();
+        const pp = card.dataset.province || "";
 
         let ok = true;
         if (c && cc && cc !== c) ok = false;
         if (t && tt && tt !== t) ok = false;
         if (g && g !== "BOTH") {
-          if (!(gg === g || gg === "BOTH")) ok = false;
+        if (!(gg === g || gg === "BOTH")) ok = false;
         }
+
+        if (p) {
+          const pk = normKey(p);
+          const ppk = normKey(pp);
+          if (pp && ppk !== pk) ok = false;
+          // If card has no province, keep it visible (data may be incomplete)
+        }
+
         if (m && dd && dd.slice(5,7) !== m) ok = false;
         if (ok && q && !hay.includes(q)) ok = false;
 
@@ -1513,9 +1630,28 @@
     }
 
     searchEl.addEventListener("input", filterCards);
-    countryEl.addEventListener("change", filterCards);
+    countryEl.addEventListener("change", () => {
+    setProvinceOptionsForCountry(countryEl.value);
+
+    // Clear province param when country changes (prevents mismatch)
+    const params = new URLSearchParams(window.location.search);
+    params.delete("province");
+    const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+    history.replaceState(null, "", next);
+
+    filterCards();
+  });
     typeEl.addEventListener("change", filterCards);
     monthEl.addEventListener("change", filterCards);
+    provinceEl?.addEventListener("change", () => {
+    const params = new URLSearchParams(window.location.search);
+    const p = String(provinceEl.value || "");
+    if (!p) params.delete("province");
+    else params.set("province", p);
+    const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+    history.replaceState(null, "", next);
+    filterCards();
+  });
     genderEl.addEventListener("change", () => {
       // Persist in URL for shareable filtering
       const params = new URLSearchParams(window.location.search);
