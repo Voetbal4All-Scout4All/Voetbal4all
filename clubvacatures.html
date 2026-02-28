@@ -367,46 +367,82 @@
           <!-- LINKS -->
           <div class="v4-content">
 
-            <!-- ZOEK- EN FILTERBALK (zelfde layout als events.html) -->
-            <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
-              <input
-                type="text"
-                id="vacancy-search-text"
-                class="search-input"
-                placeholder="Zoek op club, functie, niveau, regio..."
-              />
-              <button type="button" id="vacancy-search-btn" class="btn-ghost-sm" style="white-space:nowrap;">Zoeken</button>
-              <div class="search-filters-row">
-                <select id="vacancy-filter-country" class="search-select">
-                  <option value="">Land (alles)</option>
-                  <option value="BE">🇧🇪 België</option>
-                  <option value="NL">🇳🇱 Nederland</option>
-                </select>
+            <!-- ZOEK- EN FILTERBALK (PREMIUM, consistent) -->
+            <div class="v4-filterbar" style="margin-bottom:12px;">
+              <div class="v4-filterbar__inner">
 
-                <select id="vacancy-filter-type" class="search-select">
-                  <option value="">Type vacature</option>
-                  <option value="Trainer">Trainer</option>
-                  <option value="Speler">Speler</option>
-                  <option value="Coördinator">Coördinator / TVJO</option>
-                  <option value="Vrijwilliger">Vrijwilliger</option>
-                  <option value="Bestuur">Bestuurslid / ondersteuning</option>
-                </select>
+                <!-- regel 1: zoeken -->
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                  <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                    <div class="v4-filterlabel">Zoeken</div>
+                    <input
+                      type="text"
+                      id="vacancy-search-text"
+                      class="v4-input"
+                      placeholder="Zoek op club, functie, niveau, regio..."
+                    />
+                  </div>
+                  <div class="v4-filtergroup" style="flex:0 0 auto;">
+                    <div class="v4-filterlabel">Actie</div>
+                    <button type="button" id="vacancy-search-btn" class="btn-ghost-sm" style="white-space:nowrap;height:44px;">Zoeken</button>
+                  </div>
+                </div>
 
-                <select id="vacancy-filter-gender" class="search-select">
-                  <option value="BOTH">Dames &amp; Heren</option>
-                  <option value="HEREN">Heren</option>
-                  <option value="DAMES">Dames</option>
-                </select>
+                <!-- regel 2: dropdowns -->
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
 
-                <select id="vacancy-filter-level" class="search-select">
-                  <option value="">Niveau (alles)</option>
-                  <option value="Gewestelijk">Gewestelijk / recreatief</option>
-                  <option value="Provinciaal">Provinciaal</option>
-                  <option value="Interprovinciaal">Interprovinciaal</option>
-                  <option value="Elite">Elite / hoogste jeugd</option>
-                </select>
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Land</div>
+                    <select id="vacancy-filter-country" class="v4-select">
+                      <option value="">Land (alles)</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Provincie</div>
+                    <select id="vacancy-filter-province" class="v4-select" disabled>
+                      <option value="">Provincie (alles)</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Type vacature</div>
+                    <select id="vacancy-filter-type" class="v4-select">
+                      <option value="">Type vacature</option>
+                      <option value="Trainer">Trainer</option>
+                      <option value="Speler">Speler</option>
+                      <option value="Coördinator">Coördinator / TVJO</option>
+                      <option value="Vrijwilliger">Vrijwilliger</option>
+                      <option value="Bestuur">Bestuurslid / ondersteuning</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Dames / Heren</div>
+                    <select id="vacancy-filter-gender" class="v4-select">
+                      <option value="BOTH">Dames &amp; Heren</option>
+                      <option value="HEREN">Heren</option>
+                      <option value="DAMES">Dames</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 200px;min-width:200px;">
+                    <div class="v4-filterlabel">Niveau</div>
+                    <select id="vacancy-filter-level" class="v4-select">
+                      <option value="">Niveau (alles)</option>
+                      <option value="Gewestelijk">Gewestelijk / recreatief</option>
+                      <option value="Provinciaal">Provinciaal</option>
+                      <option value="Interprovinciaal">Interprovinciaal</option>
+                      <option value="Elite">Elite / hoogste jeugd</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="form-helper">Tip: plaats je vacature via <a href="aanmelden.html">Vacature of profiel aanmelden</a>.</div>
               </div>
-              <div class="form-helper">Tip: plaats je vacature via <a href="aanmelden.html">Vacature of profiel aanmelden</a>.</div>
             </div>
 
             <!-- OVERZICHT (identieke card-structuur als events.html) -->
@@ -995,6 +1031,23 @@
     return "🌍";
   }
 
+  const PROVINCES = {
+    BE: ["Antwerpen","Limburg","Oost-Vlaanderen","West-Vlaanderen","Vlaams-Brabant","Waals-Brabant","Henegouwen","Luik","Luxemburg","Namen","Brussel"],
+    NL: ["Drenthe","Flevoland","Friesland","Gelderland","Groningen","Limburg","Noord-Brabant","Noord-Holland","Overijssel","Utrecht","Zeeland","Zuid-Holland"]
+  };
+
+  function setVacancyProvinceOptions(country){
+    const sel = document.getElementById("vacancy-filter-province");
+    if (!sel) return;
+    const cc = String(country || "").toUpperCase().trim();
+    const list = PROVINCES[cc] || [];
+    const prev = sel.value;
+
+    sel.innerHTML = ['<option value="">Provincie (alles)</option>', ...list.map(p => `<option value="${p}">${p}</option>`)].join("");
+    sel.disabled = list.length === 0;
+    sel.value = list.includes(prev) ? prev : "";
+  }
+
   function toGender(x) {
     const g = String(x?.gender || "BOTH").trim().toUpperCase();
     return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
@@ -1046,6 +1099,8 @@
         data-placeholder="${isPremium ? "0" : "1"}"
         data-gender="${escHtml(gender)}"
         data-country="${escHtml(country)}"
+        data-province="${escHtml(String(v.province || v.region || ""))}"
+        data-region="${escHtml(String(region || ""))}"
         data-type="${escHtml(cType)}"
         data-level="${escHtml(cLevel)}">
         <div class="event-row">
@@ -1167,6 +1222,7 @@
     const type = (document.getElementById("vacancy-filter-type")?.value || "").trim();
     const level = (document.getElementById("vacancy-filter-level")?.value || "").trim();
     const gender = normalizeGenderParam(document.getElementById("vacancy-filter-gender")?.value) || "BOTH";
+    const province = (document.getElementById("vacancy-filter-province")?.value || "").trim();
 
     const list = document.getElementById("vacancy-list");
     if (!list) return;
@@ -1181,10 +1237,18 @@
       const cType = String(card.dataset.type || "");
       const cLevel = String(card.dataset.level || "");
       const cGender = normalizeGenderParam(card.dataset.gender) || "BOTH";
+      const cProvince = String(card.dataset.province || "");
+      const cRegion = String(card.dataset.region || "");
 
       if (country && cCountry && cCountry !== country) ok = false;
       if (type && cType && cType !== type) ok = false;
       if (level && cLevel && cLevel !== level) ok = false;
+      if (province) {
+        const want = province.toLowerCase();
+        const have = (cProvince || cRegion || "").toLowerCase();
+        if (have && !have.includes(want)) ok = false;
+        // If card has no province/region metadata, keep it visible (data may be incomplete)
+      }
 
       if (gender && gender !== "BOTH") {
         // HEREN/DAMES should also include BOTH (suitable for both)
@@ -1235,9 +1299,14 @@
     const searchEl = document.getElementById("vacancy-search-text");
     const searchBtn = document.getElementById("vacancy-search-btn");
 
-    countryEl && countryEl.addEventListener("change", applyVacancyFilters);
+    countryEl && countryEl.addEventListener("change", () => {
+      setVacancyProvinceOptions(countryEl.value);
+      applyVacancyFilters();
+    });
     typeEl && typeEl.addEventListener("change", applyVacancyFilters);
     levelEl && levelEl.addEventListener("change", applyVacancyFilters);
+    const provinceEl = document.getElementById("vacancy-filter-province");
+    provinceEl && provinceEl.addEventListener("change", applyVacancyFilters);
     searchEl && searchEl.addEventListener("input", applyVacancyFilters);
     searchBtn && searchBtn.addEventListener("click", applyVacancyFilters);
     // Enter key in the search box triggers filtering as well.
