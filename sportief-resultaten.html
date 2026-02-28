@@ -322,40 +322,47 @@
             <div class="card-title">Selecteer competitie</div>
           </div>
         </div>
-        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;">
-          <div>
-            <label class="note">Land</label><br />
-            <select id="filter-country" class="input">
-              <option value="ALL">Alle</option>
-              <option value="BE">België</option>
-              <option value="NL">Nederland</option>
-              <option value="DE">Duitsland</option>
-              <option value="EN">Engeland</option>
-              <option value="IT">Italië</option>
-              <option value="ES">Spanje</option>
-              <option value="FR">Frankrijk</option>
-            </select>
-          </div>
+        <div class="v4-filterbar" style="margin:0;">
+          <div class="v4-filterbar__inner">
 
-          <div>
-            <label class="note">Sexe</label><br />
-            <select id="filter-gender" class="input">
-              <option value="ALL">Heren &amp; Dames</option>
-              <option value="M">Heren</option>
-              <option value="W">Dames</option>
-            </select>
-          </div>
+            <!-- 2-row premium layout: row 1 dropdowns, row 2 action -->
+            <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+              <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                <div class="v4-filterlabel">Land</div>
+                <select id="filter-country" class="v4-select">
+                  <option value="ALL">Alle</option>
+                  <option value="BE">België</option>
+                  <option value="NL">Nederland</option>
+                  <option value="DE">Duitsland</option>
+                  <option value="EN">Engeland</option>
+                  <option value="IT">Italië</option>
+                  <option value="ES">Spanje</option>
+                  <option value="FR">Frankrijk</option>
+                </select>
+              </div>
 
-          <div>
-            <label class="note">Competitie</label><br />
-            <select id="filter-league" class="input"></select>
-          </div>
+              <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                <div class="v4-filterlabel">Dames / Heren</div>
+                <select id="filter-gender" class="v4-select">
+                  <option value="ALL">Heren &amp; Dames</option>
+                  <option value="M">Heren</option>
+                  <option value="W">Dames</option>
+                </select>
+              </div>
 
-          <div>
-            <button id="btn-load" class="btn-primary">Toon resultaten</button>
+              <div class="v4-filtergroup" style="flex:2 1 260px;min-width:220px;">
+                <div class="v4-filterlabel">Competitie</div>
+                <select id="filter-league" class="v4-select"></select>
+              </div>
+
+              <div class="v4-filtergroup" style="flex:0 0 auto;min-width:0;">
+                <div class="v4-filterlabel">Actie</div>
+                <button id="btn-load" class="btn-ghost-sm" style="height:44px;white-space:nowrap;">Toon resultaten</button>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
 
       <!-- AD SLOT BOVEN RESULTATEN -->
       <div class="card" style="margin-bottom:12px;">
