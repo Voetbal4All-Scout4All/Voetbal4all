@@ -263,13 +263,13 @@
     }
 
     addSocial(
-      "https://www.facebook.com/voetbal4all",
+      "https://www.facebook.com/profile.php?id=61580843623593",
       "Voetbal4All op Facebook",
       ICON_FB,
       "is-facebook"
     );
     addSocial(
-      "https://www.instagram.com/voetbal.4.all/",
+      "https://www.instagram.com/voetbal4all.eu",
       "Voetbal4All op Instagram",
       ICON_IG,
       "is-instagram"
