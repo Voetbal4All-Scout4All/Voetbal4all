@@ -1081,7 +1081,11 @@ footer { margin-top: auto; }
 
   border: 1px solid rgba(255,255,255,0.10);
   box-shadow:
-    0 18px 44px rgba(0,0,0,0.58);
+    0 18px 44px rgba(0,0,0,0.58),
+    0 0 0 1px rgba(255,255,255,0.06),
+    0 0 36px rgba(24,160,251,0.10),
+    0 0 44px rgba(255,43,214,0.10),
+    0 0 42px rgba(255,122,24,0.09);
 }
 
 /* Neon gradient rim (soft, like the mock) */
@@ -1093,7 +1097,7 @@ footer { margin-top: auto; }
   border-radius: inherit;
 
   /* Gradient border using mask */
-  padding: 2px;
+  padding: 3px;
   background: linear-gradient(90deg,
     rgba(24,160,251,0.95),
     rgba(131,91,255,0.95),
@@ -1107,15 +1111,15 @@ footer { margin-top: auto; }
   mask-composite: exclude;
 
   /* Soft glow */
-  filter: blur(0.4px);
-  opacity: 0.55;
+  filter: blur(0.6px);
+  opacity: 0.78;
 }
 
 /* Outer glow bloom */
 .v4-filterbar::after{
   content:"";
   position:absolute;
-  inset:-18px;
+  inset:-26px;
   pointer-events:none;
   border-radius: calc(var(--radius-xl) + 18px);
   background: linear-gradient(90deg,
@@ -1124,8 +1128,14 @@ footer { margin-top: auto; }
     rgba(255,43,214,0.22),
     rgba(255,122,24,0.22)
   );
-  filter: blur(22px);
-  opacity: 0.22;
+  filter: blur(28px);
+  opacity: 0.40;
+}
+
+/* Extra glow bloom (stronger, but still premium) */
+.v4-filterbar.is-glow-strong::after{
+  opacity: 0.52;
+  filter: blur(30px);
 }
 
 .v4-filterbar__inner{
