@@ -274,28 +274,54 @@
           <!-- LINKS -->
           <div class="v4-content">
 
-            <!-- ZOEK- EN FILTERBALK (events.html stijl) -->
-            <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
-              <input id="player-search-text" type="search" class="search-input" placeholder="Zoek (bv. keeper, U17, middenvelder…)" />
-              <div class="search-filters-row">
-                <select id="player-filter-country" class="search-select">
-                  <option value="">Land (alles)</option>
-                  <option value="BE">🇧🇪 België</option>
-                  <option value="NL">🇳🇱 Nederland</option>
-                </select>
+            <!-- ZOEK- EN FILTERBALK (PREMIUM, 2 regels) -->
+            <div class="v4-filterbar" style="margin-bottom:12px;">
+              <div class="v4-filterbar__inner">
 
-                <select id="player-filter-gender" class="search-select">
-                  <option value="BOTH">Dames &amp; Heren</option>
-                  <option value="HEREN">Heren</option>
-                  <option value="DAMES">Dames</option>
-                </select>
+                <!-- regel 1: zoeken -->
+                <div class="v4-filterrow v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                  <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                    <div class="v4-filterlabel">Zoeken</div>
+                    <input id="player-search-text" type="search" class="v4-input" placeholder="Zoek (bv. keeper, U17, middenvelder…)" />
+                  </div>
+                </div>
 
-                <input id="player-filter-region" class="search-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+                <!-- regel 2: filters -->
+                <div class="v4-filterrow v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Land</div>
+                    <select id="player-filter-country" class="v4-select">
+                      <option value="">Land (alles)</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
 
-                <button id="player-filter-apply" type="button" class="btn-ghost-sm search-button">Zoeken</button>
-                <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Dames / Heren</div>
+                    <select id="player-filter-gender" class="v4-select">
+                      <option value="BOTH">Dames &amp; Heren</option>
+                      <option value="HEREN">Heren</option>
+                      <option value="DAMES">Dames</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 220px;min-width:200px;">
+                    <div class="v4-filterlabel">Regio</div>
+                    <input id="player-filter-region" class="v4-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:0 0 auto;min-width:0;">
+                    <div class="v4-filterlabel">Acties</div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+                      <button id="player-filter-apply" type="button" class="btn-ghost-sm search-button">Zoeken</button>
+                      <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
               </div>
-              <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
             </div>
 
             <!-- OVERZICHT -->
