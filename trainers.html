@@ -238,50 +238,64 @@
 
 
             <!-- ZOEK- EN FILTERBALK (2 regels: 1) zoeken 2) dropdowns naast elkaar) -->
-            <div class="v4-filter-card" style="margin-bottom:12px;">
-              <!-- regel 1: zoeken -->
-              <div class="v4-filter-row v4-filter-row--search">
-                <div class="v4-filter-field" style="width:100%;">
-                  <div class="v4-filter-label">Zoeken</div>
-                  <input id="trainer-search" type="search" class="v4-filter-input" placeholder="Zoek (bv. UEFA B, jeugd, T2…)" />
+            <div class="v4-filterbar" style="margin-bottom:12px;">
+              <!-- rij 1: zoeken -->
+              <div class="v4-filterbar-top">
+                <div class="v4-filterbar-field v4-filterbar-field--search">
+                  <label class="v4-filterbar-label" for="trainer-search">Zoek</label>
+                  <input
+                    id="trainer-search"
+                    class="v4-input"
+                    type="search"
+                    placeholder="Zoek (bv. UEFA B, jeugd, T2…)"
+                    autocomplete="off"
+                  />
                 </div>
               </div>
 
-              <!-- regel 2: dropdowns + regio + acties (alles naast elkaar) -->
-              <div class="v4-filter-row v4-filter-row--controls">
-                <div class="v4-filter-field">
-                  <div class="v4-filter-label">Land</div>
-                  <select id="trainer-country-filter" class="v4-filter-select">
+              <!-- rij 2: dropdowns + regio + acties (alles naast elkaar) -->
+              <div class="v4-filterbar-row">
+                <div class="v4-filterbar-field">
+                  <label class="v4-filterbar-label" for="trainer-country-filter">Land</label>
+                  <select id="trainer-country-filter" class="v4-select">
                     <option value="">Land (alles)</option>
                     <option value="BE">🇧🇪 België</option>
                     <option value="NL">🇳🇱 Nederland</option>
                   </select>
                 </div>
 
-                <div class="v4-filter-field">
-                  <div class="v4-filter-label">Dames / heren</div>
-                  <select id="trainer-gender-filter" class="v4-filter-select">
+                <div class="v4-filterbar-field">
+                  <label class="v4-filterbar-label" for="trainer-gender-filter">Dames / heren</label>
+                  <select id="trainer-gender-filter" class="v4-select">
                     <option value="BOTH">Dames &amp; Heren</option>
                     <option value="HEREN">Heren</option>
                     <option value="DAMES">Dames</option>
                   </select>
                 </div>
 
-                <div class="v4-filter-field" style="flex:1 1 240px; min-width:220px;">
-                  <div class="v4-filter-label">Regio</div>
-                  <input id="trainer-region-filter" class="v4-filter-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+                <div class="v4-filterbar-field v4-filterbar-field--region">
+                  <label class="v4-filterbar-label" for="trainer-region-filter">Regio</label>
+                  <input
+                    id="trainer-region-filter"
+                    class="v4-input"
+                    type="search"
+                    placeholder="Regio (bv. Kempen, Antwerpen…)"
+                    autocomplete="off"
+                  />
                 </div>
 
-                <div class="v4-filter-field" style="min-width:180px;">
-                  <div class="v4-filter-label">Acties</div>
-                  <div class="v4-filter-actions">
+                <div class="v4-filterbar-field v4-filterbar-field--actions">
+                  <label class="v4-filterbar-label">Acties</label>
+                  <div class="v4-filterbar-actions">
                     <button id="trainer-filter-apply" type="button" class="btn-ghost-sm">Zoeken</button>
                     <button id="trainer-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
                   </div>
                 </div>
               </div>
 
-              <div class="form-helper v4-filter-hint">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
+              <div class="form-helper" style="margin-top:8px;opacity:.85;">
+                Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.
+              </div>
             </div>
 
             <!-- OVERZICHT (identieke card-structuur als events.html) -->
