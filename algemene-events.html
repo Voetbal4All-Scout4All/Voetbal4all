@@ -460,13 +460,23 @@
                   <option value="NL">🇳🇱 Nederland</option>
                 </select>
 
+                <select id="event-filter-province" class="search-select">
+                  <option value="">Provincie (alles)</option>
+                </select>
+
                 <select id="event-filter-type" class="search-select">
-  <option value="">Type (alles)</option>
-  <option value="Dinner">Dinner</option>
-  <option value="Spelavond">Spelavond</option>
-  <option value="Fuif">Fuif / afterparty</option>
-  <option value="Sponsor">Sponsor & netwerk</option>
-</select>
+                  <option value="">Type (alles)</option>
+                  <option value="Dinner">Dinner</option>
+                  <option value="Spelavond">Spelavond</option>
+                  <option value="Fuif">Fuif / afterparty</option>
+                  <option value="Sponsor">Sponsor & netwerk</option>
+                </select>
+
+                <select id="event-filter-gender" class="search-select">
+                  <option value="BOTH">Dames &amp; Heren</option>
+                  <option value="DAMES">Dames</option>
+                  <option value="HEREN">Heren</option>
+                </select>
 
                 <select id="event-filter-month" class="search-select">
                   <option value="">Maand (alles)</option>
@@ -670,7 +680,9 @@
 
   const searchEl = document.getElementById("event-search-text");
   const countryEl = document.getElementById("event-filter-country");
+  const provinceEl = document.getElementById("event-filter-province");
   const typeEl = document.getElementById("event-filter-type");
+  const genderEl = document.getElementById("event-filter-gender");
   const monthEl = document.getElementById("event-filter-month");
 
   const premiumWrap = document.getElementById('premium-30-wrap');
@@ -685,6 +697,72 @@
 
   function norm(s){ return String(s || "").trim(); }
   function normLc(s){ return norm(s).toLowerCase(); }
+
+  function normKey(s){
+    return String(s || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "")
+      .trim();
+  }
+
+  function normGender(g){
+    const v = String(g || "").toUpperCase().trim();
+    if (!v || v === "ALL") return "BOTH";
+    if (v === "WOMEN" || v === "DAMES" || v === "F" || v === "FEMALE") return "DAMES";
+    if (v === "MEN" || v === "HEREN" || v === "M" || v === "MALE") return "HEREN";
+    if (v === "BOTH" || v === "DAMES&HEREN" || v === "DAMES/HEREN") return "BOTH";
+    return v;
+  }
+
+  const PROVINCES = {
+    BE: [
+      "Antwerpen",
+      "Limburg",
+      "Oost-Vlaanderen",
+      "West-Vlaanderen",
+      "Vlaams-Brabant",
+      "Waals-Brabant",
+      "Henegouwen",
+      "Luik",
+      "Luxemburg",
+      "Namen",
+      "Brussel"
+    ],
+    NL: [
+      "Drenthe",
+      "Flevoland",
+      "Friesland",
+      "Gelderland",
+      "Groningen",
+      "Limburg",
+      "Noord-Brabant",
+      "Noord-Holland",
+      "Overijssel",
+      "Utrecht",
+      "Zeeland",
+      "Zuid-Holland"
+    ]
+  };
+
+  function setProvinceOptions(country){
+    if (!provinceEl) return;
+
+    const cc = String(country || "").toUpperCase().trim();
+    const prev = provinceEl.value;
+
+    const opts = [
+      { v: "", t: "Provincie (alles)" },
+      ...(PROVINCES[cc] || []).map((p) => ({ v: p, t: p }))
+    ];
+
+    provinceEl.innerHTML = opts.map(o => `<option value="${String(o.v).replaceAll('"','&quot;')}">${o.t}</option>`).join("");
+
+    // keep previous selection if still available
+    const still = opts.some(o => o.v === prev);
+    provinceEl.value = still ? prev : "";
+  }
 
   function parseISO(d){
     try { return d ? new Date(d) : null; } catch(e){ return null; }
@@ -786,6 +864,11 @@
     params.set("limit", "200");
     params.set("nocache", "1");
     params.set("category", PAGE_CATEGORY);
+
+    // Optional server-side gender filter (backend returns gender + BOTH)
+    const g = normGender(genderEl?.value);
+    if (g && g !== "BOTH") params.set("gender", g);
+
     return `${API_BASE}/api/events?${params.toString()}`;
   }
 
@@ -833,20 +916,45 @@
     if (!listEl) return;
     const q = normLc(searchEl?.value);
     const c = norm(countryEl?.value);
+    const pp = norm(provinceEl?.value);
     const t = norm(typeEl?.value);
+    const g = normGender(genderEl?.value);
     const m = norm(monthEl?.value);
 
     const cards = listEl.querySelectorAll(".ad-card");
     cards.forEach(card => {
       const cc = card.dataset.country || "";
+      const p = card.dataset.province || "";
       const tt = card.dataset.type || "";
+      const gg = normGender(card.dataset.gender || "BOTH");
       const dd = card.dataset.date || ""; // YYYY-MM-DD
       const hay = normLc(card.textContent);
 
       let ok = true;
+
+      // Country
       if (c && cc && cc !== c) ok = false;
-      if (t && tt && tt !== t) ok = false;
-      if (m && dd && dd.slice(5,7) !== m) ok = false;
+
+      // Province (only enforce when card has a province; otherwise keep visible)
+      if (ok && pp) {
+        const pk = normKey(p);
+        const ppk = normKey(pp);
+        if (p && ppk !== pk) ok = false;
+        // If card has no province, keep it visible (data may be incomplete)
+      }
+
+      // Type
+      if (ok && t && tt && tt !== t) ok = false;
+
+      // Gender (backend should already apply, but keep a client-side safety net)
+      if (ok && g && g !== "BOTH") {
+        if (gg !== g && gg !== "BOTH") ok = false;
+      }
+
+      // Month
+      if (ok && m && dd && dd.slice(5,7) !== m) ok = false;
+
+      // Search
       if (ok && q && !hay.includes(q)) ok = false;
 
       card.style.display = ok ? "" : "none";
@@ -858,6 +966,8 @@
     const country = String(ev.country || "").toUpperCase();
     const uiType = typeToUiLabel(ev.event_type);
     const dateOnly = isoDateOnly(ev.start_at);
+    const province = String(ev.province || ev.region || ev.state || ev.provincie || "").trim();
+    const gender = normGender(ev.gender || ev.sex || ev.gender_code || "BOTH");
     const thumb = getThumb(ev);
     const safeThumb = safeAttr(thumb);
 
@@ -896,7 +1006,9 @@
         data-ad-id="${String(slug)}"
         data-title="${String(ev.title || "").replaceAll('"','&quot;')}"
         data-country="${country}"
+        data-province="${province.replaceAll('"','&quot;')}"
         data-type="${uiType}"
+        data-gender="${gender}"
         data-date="${dateOnly}"
         data-slug="${String(slug)}">
 
@@ -1186,8 +1298,27 @@
 
   // UI hooks
   searchEl?.addEventListener('input', () => filterCards());
-  countryEl?.addEventListener('change', () => { CURRENT_PAGE = 1; filterCards(); renderPage(1); });
+
+  countryEl?.addEventListener('change', () => {
+    setProvinceOptions(countryEl.value);
+    CURRENT_PAGE = 1;
+    filterCards();
+    renderPage(1);
+  });
+
+  provinceEl?.addEventListener('change', () => {
+    CURRENT_PAGE = 1;
+    filterCards();
+    renderPage(1);
+  });
+
   typeEl?.addEventListener('change', () => { CURRENT_PAGE = 1; filterCards(); renderPage(1); });
+
+  genderEl?.addEventListener('change', () => {
+    CURRENT_PAGE = 1;
+    loadEvents();
+  });
+
   monthEl?.addEventListener('change', () => { CURRENT_PAGE = 1; filterCards(); renderPage(1); });
 
   pagEl?.addEventListener('click', (e) => {
@@ -1229,6 +1360,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initTypeFromUrl();
+    setProvinceOptions(countryEl?.value);
     loadEvents();
   });
 })();
