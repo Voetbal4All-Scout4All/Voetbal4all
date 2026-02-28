@@ -58,99 +58,6 @@
   .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
   .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
   .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
-  /* === Shared premium filterbar (match spelers.html look & feel) === */
-  .v4-filterbar{
-    position:relative;
-    border-radius:18px;
-    padding:14px;
-    border:1px solid rgba(255,255,255,.14);
-    background:
-      radial-gradient(90% 120% at 12% 18%, rgba(70,90,220,.28), rgba(10,12,20,0) 55%),
-      radial-gradient(90% 120% at 88% 22%, rgba(210,90,120,.20), rgba(10,12,20,0) 55%),
-      linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02) 35%, rgba(255,255,255,.06) 70%, rgba(255,255,255,.02));
-    box-shadow: 0 14px 36px rgba(0,0,0,.40), inset 0 1px 0 rgba(255,255,255,.10);
-    overflow:hidden;
-  }
-  .v4-filterbar::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    pointer-events:none;
-    border-radius:20px;
-    background:linear-gradient(90deg, rgba(120,200,255,.55), rgba(170,120,255,.45) 40%, rgba(255,140,120,.45) 75%, rgba(255,200,120,.45));
-    opacity:.22;
-    filter: blur(10px);
-    mix-blend-mode: screen;
-  }
-  .v4-filterbar::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    background:
-      radial-gradient(10px 10px at 10% 22%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%),
-      radial-gradient(10px 10px at 22% 86%, rgba(255,255,255,.40), rgba(255,255,255,0) 60%),
-      radial-gradient(10px 10px at 52% 14%, rgba(255,255,255,.38), rgba(255,255,255,0) 60%),
-      radial-gradient(10px 10px at 78% 18%, rgba(255,255,255,.42), rgba(255,255,255,0) 60%),
-      radial-gradient(10px 10px at 92% 70%, rgba(255,255,255,.35), rgba(255,255,255,0) 60%);
-    opacity:.22;
-  }
-
-  .v4-filterbar-top{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
-  .v4-filterbar-row{position:relative;z-index:1;display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
-
-  .v4-filterbar-field{min-width:160px;flex:1 1 160px}
-  .v4-filterbar-field--search{flex:1 1 100%;min-width:260px}
-  .v4-filterbar-field--region{flex:1 1 240px;min-width:220px}
-  .v4-filterbar-field--actions{flex:0 0 auto;min-width:160px}
-
-  .v4-filterbar-label{
-    display:block;
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    opacity:.70;
-    margin:0 0 6px 4px;
-  }
-
-  /* Ensure inputs/selects match the premium glass look */
-  .v4-filterbar .v4-input,
-  .v4-filterbar .v4-select{
-    width:100%;
-    height:40px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.16);
-    background: rgba(0,0,0,.28);
-    color:#fff;
-    padding:0 14px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
-    outline:none;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-  }
-  .v4-filterbar .v4-input::placeholder{color: rgba(255,255,255,.55)}
-  .v4-filterbar .v4-input:focus,
-  .v4-filterbar .v4-select:focus{
-    border-color: rgba(120,200,255,.38);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 0 0 3px rgba(120,200,255,.10);
-  }
-
-  .v4-filterbar-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-  .v4-filterbar-actions .btn-ghost-sm{
-    height:40px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-  }
-
-  @media (max-width:900px){
-    .v4-filterbar{padding:12px}
-    .v4-filterbar-field{flex:1 1 100%;min-width:0}
-    .v4-filterbar-field--actions{flex:1 1 100%}
-    .v4-filterbar-actions{width:100%}
-    .v4-filterbar-actions .btn-ghost-sm{flex:1 1 140px}
-  }
 </style>
 
   <style>
@@ -329,64 +236,65 @@
           <div class="v4-content">
 
 
-            <!-- ZOEK- EN FILTERBALK (2 regels: 1) zoeken 2) dropdowns naast elkaar) -->
+            <!-- ZOEK- EN FILTERBALK (PREMIUM, 2 regels) -->
             <div class="v4-filterbar" style="margin-bottom:12px;">
-              <!-- rij 1: zoeken -->
-              <div class="v4-filterbar-top">
-                <div class="v4-filterbar-field v4-filterbar-field--search">
-                  <label class="v4-filterbar-label" for="trainer-search">Zoek</label>
-                  <input
-                    id="trainer-search"
-                    class="v4-input"
-                    type="search"
-                    placeholder="Zoek (bv. UEFA B, jeugd, T2…)"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
+              <div class="v4-filterbar__inner">
 
-              <!-- rij 2: dropdowns + regio + acties (alles naast elkaar) -->
-              <div class="v4-filterbar-row">
-                <div class="v4-filterbar-field">
-                  <label class="v4-filterbar-label" for="trainer-country-filter">Land</label>
-                  <select id="trainer-country-filter" class="v4-select">
-                    <option value="">Land (alles)</option>
-                    <option value="BE">🇧🇪 België</option>
-                    <option value="NL">🇳🇱 Nederland</option>
-                  </select>
-                </div>
-
-                <div class="v4-filterbar-field">
-                  <label class="v4-filterbar-label" for="trainer-gender-filter">Dames / heren</label>
-                  <select id="trainer-gender-filter" class="v4-select">
-                    <option value="BOTH">Dames &amp; Heren</option>
-                    <option value="HEREN">Heren</option>
-                    <option value="DAMES">Dames</option>
-                  </select>
-                </div>
-
-                <div class="v4-filterbar-field v4-filterbar-field--region">
-                  <label class="v4-filterbar-label" for="trainer-region-filter">Regio</label>
-                  <input
-                    id="trainer-region-filter"
-                    class="v4-input"
-                    type="search"
-                    placeholder="Regio (bv. Kempen, Antwerpen…)"
-                    autocomplete="off"
-                  />
-                </div>
-
-                <div class="v4-filterbar-field v4-filterbar-field--actions">
-                  <label class="v4-filterbar-label">Acties</label>
-                  <div class="v4-filterbar-actions">
-                    <button id="trainer-filter-apply" type="button" class="btn-ghost-sm">Zoeken</button>
-                    <button id="trainer-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                <!-- regel 1: zoeken -->
+                <div class="v4-filterrow v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                  <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                    <div class="v4-filterlabel">Zoeken</div>
+                    <input
+                      id="trainer-search"
+                      type="search"
+                      class="v4-input"
+                      placeholder="Zoek (bv. UEFA B, jeugd, T2…)"
+                      autocomplete="off"
+                    />
                   </div>
                 </div>
-              </div>
 
-              <div class="form-helper" style="margin-top:8px;opacity:.85;">
-                Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.
+                <!-- regel 2: filters -->
+                <div class="v4-filterrow v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Land</div>
+                    <select id="trainer-country-filter" class="v4-select">
+                      <option value="">Land (alles)</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Dames / Heren</div>
+                    <select id="trainer-gender-filter" class="v4-select">
+                      <option value="BOTH">Dames &amp; Heren</option>
+                      <option value="HEREN">Heren</option>
+                      <option value="DAMES">Dames</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 220px;min-width:200px;">
+                    <div class="v4-filterlabel">Regio</div>
+                    <input
+                      id="trainer-region-filter"
+                      class="v4-input"
+                      type="search"
+                      placeholder="Regio (bv. Kempen, Antwerpen…)"
+                      autocomplete="off"
+                    />
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:0 0 auto;min-width:0;">
+                    <div class="v4-filterlabel">Acties</div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+                      <button id="trainer-filter-apply" type="button" class="btn-ghost-sm search-button">Zoeken</button>
+                      <button id="trainer-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
               </div>
             </div>
 
