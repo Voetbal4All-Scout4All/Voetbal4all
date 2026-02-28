@@ -229,37 +229,56 @@
             <!-- LINKS -->
             <div class="v4-content">
 
-              <!-- ZOEK + FILTERS -->
-              <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
-                <input type="text" id="article-search-text" class="search-input" placeholder="Zoek op titel, club, competitie..." />
-                <div class="search-filters-row">
-                  <select id="article-filter-country" class="search-select">
-                    <option value="">Land (alles)</option>
-                    <option value="BE">België</option>
-                    <option value="NL">Nederland</option>
-                    <option value="DE">Duitsland</option>
-                    <option value="FR">Frankrijk</option>
-                    <option value="ES">Spanje</option>
-                    <option value="IT">Italië</option>
-                    <option value="UK">Verenigd Koninkrijk</option>
-                    <option value="INT">Internationaal</option>
-                  </select>
+              <!-- ZOEK + FILTERS (PREMIUM) -->
+              <div class="v4-filterbar" style="margin-bottom:12px;">
+                <div class="v4-filterbar__inner">
 
-                  <select id="article-filter-category" class="search-select">
-                    <option value="">Categorie (alles)</option>
-                    <option value="Jupiler Pro League">Jupiler Pro League</option>
-                    <option value="Challenger Pro League">Challenger Pro League</option>
-                    <option value="Beker">Beker</option>
-                    <option value="Amateur">Amateur</option>
-                    <option value="Jeugd">Jeugd</option>
-                    <option value="Internationaal">Internationaal</option>
-                    <option value="Vrouwen">Vrouwen</option>
-                    <option value="Transfers">Transfers</option>
-                    <option value="Algemeen">Algemeen</option>
-                  </select>
-                </div>
-                <div class="form-helper">
-                  Tip: klik op “Lees artikel” om jouw Voetbal4All-artikelpagina te openen.
+                  <div class="v4-filterrow">
+                    <div class="v4-filtergroup" style="grid-column: span 12;">
+                      <div class="v4-filterlabel">Zoeken</div>
+                      <input
+                        type="text"
+                        id="article-search-text"
+                        class="v4-input"
+                        placeholder="Zoek op titel, club, competitie..."
+                      />
+                    </div>
+                  </div>
+
+                  <div class="v4-filterrow">
+                    <div class="v4-filtergroup" style="grid-column: span 6;">
+                      <div class="v4-filterlabel">Land</div>
+                      <select id="article-filter-country" class="v4-select">
+                        <option value="">Land (alles)</option>
+                        <option value="BE">België</option>
+                        <option value="NL">Nederland</option>
+                        <option value="DE">Duitsland</option>
+                        <option value="FR">Frankrijk</option>
+                        <option value="ES">Spanje</option>
+                        <option value="IT">Italië</option>
+                        <option value="UK">Verenigd Koninkrijk</option>
+                        <option value="INT">Internationaal</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="grid-column: span 6;">
+                      <div class="v4-filterlabel">Categorie</div>
+                      <select id="article-filter-category" class="v4-select">
+                        <option value="">Categorie (alles)</option>
+                        <option value="Jupiler Pro League">Jupiler Pro League</option>
+                        <option value="Challenger Pro League">Challenger Pro League</option>
+                        <option value="Beker">Beker</option>
+                        <option value="Amateur">Amateur</option>
+                        <option value="Jeugd">Jeugd</option>
+                        <option value="Internationaal">Internationaal</option>
+                        <option value="Vrouwen">Vrouwen</option>
+                        <option value="Transfers">Transfers</option>
+                        <option value="Algemeen">Algemeen</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <p class="v4-filterhint">Tip: klik op “Lees artikel” om jouw Voetbal4All-artikelpagina te openen.</p>
                 </div>
               </div>
 
