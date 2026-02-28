@@ -8,6 +8,14 @@
   --bg-softer: #10162a;
   --accent: #18a0fb;
   --accent-soft: rgba(24, 160, 251, 0.2);
+  --logo-blue: #18a0fb;
+  --logo-cyan: #00d4ff;
+  --logo-fuchsia: #ff2bd6;
+  --logo-orange: #ff7a18;
+  --glass-bg: rgba(11, 16, 34, 0.55);
+  --glass-bg-soft: rgba(11, 16, 34, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
   --text: #f4f6fc;
   --muted: #9aa3c1;
   --danger: #ff3366;
@@ -1050,6 +1058,220 @@ footer { margin-top: auto; }
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+/* =======================
+   PREMIUM FILTERS (V4)
+   - reusable component for ALL pages
+   - matches platform colors (blue/fuchsia/orange)
+   ======================= */
+
+/* Container: glass + subtle multicolor glow */
+.v4-filterbar{
+  position: relative;
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(24,160,251,0.18), transparent 55%),
+    radial-gradient(circle at 82% 18%, rgba(255,43,214,0.16), transparent 60%),
+    radial-gradient(circle at 72% 84%, rgba(255,122,24,0.14), transparent 60%),
+    var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+/* Inner hairline to sell “premium glass” without shouting */
+.v4-filterbar::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  pointer-events:none;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    inset 0 -1px 0 rgba(0,0,0,0.35);
+  opacity: 0.9;
+}
+
+/* Optional top sparkle line */
+.v4-filterbar::after{
+  content:"";
+  position:absolute;
+  left: 12px;
+  right: 12px;
+  top: 12px;
+  height: 1px;
+  pointer-events:none;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(24,160,251,0.35),
+    rgba(255,43,214,0.25),
+    rgba(255,122,24,0.25),
+    transparent
+  );
+  opacity: 0.75;
+}
+
+.v4-filterbar__inner{
+  padding: 14px 14px 12px;
+  display: grid;
+  gap: 10px;
+}
+
+/* Layout row */
+.v4-filterrow{
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+/* Group (label + control) */
+.v4-filtergroup{
+  grid-column: span 4;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.v4-filterlabel{
+  font-size: 11px;
+  color: rgba(244,246,252,0.80);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.v4-filterhint{
+  font-size: 12px;
+  color: rgba(154,163,193,0.92);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Inputs/selects: premium pill with micro-glow border */
+.v4-input,
+.v4-select{
+  width: 100%;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,0.08), transparent 55%),
+    rgba(2,3,8,0.78);
+  color: var(--text);
+  font-size: 13px;
+  padding: 10px 14px;
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 10px 22px rgba(0,0,0,0.35);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.v4-input::placeholder{ color: rgba(154,163,193,0.85); }
+
+/* Make selects feel less “native” while staying safe */
+.v4-select{
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(244,246,252,0.75) 50%),
+    linear-gradient(135deg, rgba(244,246,252,0.75) 50%, transparent 50%),
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,0.08), transparent 55%),
+    linear-gradient(180deg, rgba(2,3,8,0.82), rgba(2,3,8,0.72));
+  background-position:
+    calc(100% - 18px) 18px,
+    calc(100% - 13px) 18px,
+    0 0,
+    0 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    100% 100%,
+    100% 100%;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+.v4-input:focus,
+.v4-select:focus{
+  border-color: rgba(24,160,251,0.55);
+  box-shadow:
+    0 0 0 3px rgba(24,160,251,0.18),
+    0 0 0 1px rgba(255,43,214,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 14px 30px rgba(0,0,0,0.45);
+  transform: translateY(-1px);
+}
+
+/* Action button that matches platform CTA */
+.v4-filterbtn{
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #020308;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--logo-blue), var(--logo-cyan));
+  box-shadow: 0 14px 32px rgba(0,212,255,0.40);
+  transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+  white-space: nowrap;
+}
+
+.v4-filterbtn:hover{
+  transform: translateY(-1px);
+  filter: saturate(1.05) brightness(1.03);
+  box-shadow: 0 18px 40px rgba(0,212,255,0.46);
+}
+
+.v4-filterbtn:active{ transform: translateY(0); }
+
+/* Mobile-first: stack nicely */
+@media (max-width: 900px){
+  .v4-filtergroup{ grid-column: span 6; }
+}
+
+@media (max-width: 600px){
+  .v4-filterbar__inner{ padding: 12px 12px 10px; }
+  .v4-filterrow{ grid-template-columns: 1fr; gap: 10px; }
+  .v4-filtergroup{ grid-column: auto; }
+  .v4-input, .v4-select, .v4-filterbtn{ height: 46px; }
+}
+
+/* Bridge existing “search-bar” styling to the premium look
+   (safe: only visual; keeps existing structure) */
+.search-bar{
+  background:
+    radial-gradient(circle at 18% 12%, rgba(24,160,251,0.14), transparent 55%),
+    radial-gradient(circle at 82% 18%, rgba(255,43,214,0.12), transparent 60%),
+    radial-gradient(circle at 72% 84%, rgba(255,122,24,0.10), transparent 60%),
+    var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.search-input,
+.search-select{
+  height: 44px;
+  padding: 10px 14px;
+  border-color: var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.search-input:focus,
+.search-select:focus{
+  outline: none;
+  border-color: rgba(24,160,251,0.55);
+  box-shadow:
+    0 0 0 3px rgba(24,160,251,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.10);
 }
 
 /* =======================
