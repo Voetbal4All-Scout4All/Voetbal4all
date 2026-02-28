@@ -449,49 +449,79 @@
           <!-- CONTENT -->
           <div class="v4-content">
 
-            <!-- FILTERS -->
-            <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
-              <input id="event-search-text" class="search-input" type="text"
-                     placeholder="Zoek op club, eventnaam, regio...">
+            <!-- ZOEK- EN FILTERBALK (PREMIUM) – identical structure as events.html -->
+            <div class="v4-filterbar" style="margin-bottom:12px;">
+              <div class="v4-filterbar__inner">
 
-              <!-- row 1: main dropdowns (same as events.html) -->
-              <div class="search-filters-row">
-                <select id="event-filter-country" class="search-select">
-                  <option value="">Land (alles)</option>
-                  <option value="BE">🇧🇪 België</option>
-                  <option value="NL">🇳🇱 Nederland</option>
-                </select>
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                  <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                    <div class="v4-filterlabel">Zoeken</div>
+                    <input
+                      type="text"
+                      id="event-search-text"
+                      class="v4-input"
+                      placeholder="Zoek op club, eventnaam, regio..."
+                    />
+                  </div>
+                </div>
 
-                <select id="event-filter-province" class="search-select">
-                  <option value="">Provincie (alles)</option>
-                </select>
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Land</div>
+                    <select id="event-filter-country" class="v4-select">
+                      <option value="">Land (alles)</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
 
-                <select id="event-filter-type" class="search-select">
-                  <option value="">Type (alles)</option>
-                  <option value="Dinner">Dinner</option>
-                  <option value="Spelavond">Spelavond</option>
-                  <option value="Fuif">Fuif / afterparty</option>
-                  <option value="Sponsor">Sponsor & netwerk</option>
-                </select>
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Provincie</div>
+                    <select id="event-filter-province" class="v4-select" disabled>
+                      <option value="">Provincie (alles)</option>
+                    </select>
+                  </div>
 
-                <select id="event-filter-gender" class="search-select">
-                  <option value="BOTH">Dames &amp; Heren</option>
-                  <option value="DAMES">Dames</option>
-                  <option value="HEREN">Heren</option>
-                </select>
-              </div>
+                  <div class="v4-filtergroup" style="flex:1 1 150px;min-width:150px;">
+                    <div class="v4-filterlabel">Type</div>
+                    <select id="event-filter-type" class="v4-select">
+                      <option value="">Type (alles)</option>
+                      <option value="Dinner">Dinner</option>
+                      <option value="Spelavond">Spelavond</option>
+                      <option value="Fuif">Fuif / afterparty</option>
+                      <option value="Sponsor">Sponsor &amp; netwerk</option>
+                    </select>
+                  </div>
 
-              <!-- row 2: month on its own row (matches events.html layout) -->
-              <div class="search-filters-row">
-                <select id="event-filter-month" class="search-select">
-                  <option value="">Maand (alles)</option>
-                  <option value="01">Januari</option><option value="02">Februari</option>
-                  <option value="03">Maart</option><option value="04">April</option>
-                  <option value="05">Mei</option><option value="06">Juni</option>
-                  <option value="07">Juli</option><option value="08">Augustus</option>
-                  <option value="09">September</option><option value="10">Oktober</option>
-                  <option value="11">November</option><option value="12">December</option>
-                </select>
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Dames / Heren</div>
+                    <select id="event-filter-gender" class="v4-select">
+                      <option value="BOTH">Dames &amp; Heren</option>
+                      <option value="HEREN">Heren</option>
+                      <option value="DAMES">Dames</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 150px;min-width:150px;">
+                    <div class="v4-filterlabel">Maand</div>
+                    <select id="event-filter-month" class="v4-select">
+                      <option value="">Maand (alles)</option>
+                      <option value="01">Januari</option>
+                      <option value="02">Februari</option>
+                      <option value="03">Maart</option>
+                      <option value="04">April</option>
+                      <option value="05">Mei</option>
+                      <option value="06">Juni</option>
+                      <option value="07">Juli</option>
+                      <option value="08">Augustus</option>
+                      <option value="09">September</option>
+                      <option value="10">Oktober</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
+                    </select>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -757,12 +787,19 @@
     const cc = String(country || "").toUpperCase().trim();
     const prev = provinceEl.value;
 
+    const list = PROVINCES[cc] || [];
+
     const opts = [
       { v: "", t: "Provincie (alles)" },
-      ...(PROVINCES[cc] || []).map((p) => ({ v: p, t: p }))
+      ...list.map((p) => ({ v: p, t: p }))
     ];
 
-    provinceEl.innerHTML = opts.map(o => `<option value="${String(o.v).replaceAll('"','&quot;')}">${o.t}</option>`).join("");
+    provinceEl.innerHTML = opts
+      .map(o => `<option value="${String(o.v).replaceAll('"','&quot;')}">${o.t}</option>`)
+      .join("");
+
+    // Disable until a supported country is chosen
+    provinceEl.disabled = list.length === 0;
 
     // keep previous selection if still available
     const still = opts.some(o => o.v === prev);
