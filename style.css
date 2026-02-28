@@ -1070,19 +1070,16 @@ footer { margin-top: auto; }
 .v4-filterbar{
   position: relative;
   border-radius: var(--radius-xl);
+
+  /* Professional glass + subtle color transition (NO neon outline glow) */
   background:
-    radial-gradient(circle at 16% 10%, rgba(24,160,251,0.28), transparent 52%),
-    radial-gradient(circle at 84% 14%, rgba(255,43,214,0.24), transparent 56%),
-    radial-gradient(circle at 70% 88%, rgba(255,122,24,0.20), transparent 58%),
-    linear-gradient(135deg, rgba(24,160,251,0.55), rgba(255,43,214,0.35) 45%, rgba(255,122,24,0.28)) border-box,
-    var(--glass-bg) padding-box;
-    border: 1px solid transparent;
-    box-shadow:
-    0 18px 45px rgba(0,0,0,0.55),
-    0 0 0 1px rgba(255,255,255,0.06),
-    0 0 28px rgba(24,160,251,0.16),
-    0 0 32px rgba(255,43,214,0.12),
-    0 0 34px rgba(255,122,24,0.10);
+    radial-gradient(circle at 10% 35%, rgba(24,160,251,0.08), transparent 62%),
+    radial-gradient(circle at 55% 25%, rgba(255,43,214,0.06), transparent 66%),
+    radial-gradient(circle at 90% 45%, rgba(255,122,24,0.05), transparent 68%),
+    rgba(11, 16, 34, 0.58);
+
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.55);
   overflow: hidden;
 }
 
@@ -1115,7 +1112,7 @@ footer { margin-top: auto; }
     rgba(255,122,24,0.25),
     transparent
   );
-  opacity: 0.75;
+  opacity: 0.12;
 }
 
 .v4-filterbar__inner{
@@ -1130,6 +1127,29 @@ footer { margin-top: auto; }
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 10px;
   align-items: end;
+}
+
+/* Events page: keep filters on one compact row (desktop) */
+.v4-filterrow--events{
+  grid-template-columns: 2.2fr 1.15fr 1.15fr 1.15fr 1.30fr 1.05fr;
+  gap: 8px;
+  align-items: end;
+}
+
+.v4-filterrow--events .v4-filtergroup{
+  grid-column: auto !important;
+}
+
+@media (max-width: 1100px){
+  .v4-filterrow--events{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px){
+  .v4-filterrow--events{
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Group (label + control) */
