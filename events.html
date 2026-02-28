@@ -552,53 +552,73 @@
             <!-- LINKS -->
             <div class="v4-content">
 
-              <!-- ZOEK- EN FILTERBALK -->
-              <div class="search-bar search-bar--advanced" style="margin-bottom:12px;">
-                <input
-                  type="text"
-                  id="event-search-text"
-                  class="search-input"
-                  placeholder="Zoek op club, eventnaam, regio..."
-                />
-                <div class="search-filters-row">
-                  <select id="event-filter-country" class="search-select">
-                    <option value="">Land (alles)</option>
-                    <option value="BE">🇧🇪 België</option>
-                    <option value="NL">🇳🇱 Nederland</option>
-                  </select>
+              <!-- ZOEK- EN FILTERBALK (PREMIUM) -->
+              <div class="v4-filterbar" style="margin-bottom:12px;">
+                <div class="v4-filterbar__inner">
 
-                  <select id="event-filter-type" class="search-select">
-                    <option value="">Type (alles)</option>
-                    <option value="Vriendschappelijk">Vriendschappelijk</option>
-                    <option value="Tornooi">Tornooi</option>
-                    <option value="Stage">Stage</option>
-                    <option value="Voetbalkamp">Voetbalkamp</option>
-                  </select>
+                  <div class="v4-filterrow">
+                    <div class="v4-filtergroup" style="grid-column: span 12;">
+                      <div class="v4-filterlabel">Zoeken</div>
+                      <input
+                        type="text"
+                        id="event-search-text"
+                        class="v4-input"
+                        placeholder="Zoek op club, eventnaam, regio..."
+                      />
+                    </div>
+                  </div>
 
-                  <select id="event-filter-gender" class="search-select">
-                    <option value="BOTH">Dames &amp; Heren</option>
-                    <option value="HEREN">Heren</option>
-                    <option value="DAMES">Dames</option>
-                  </select>
+                  <div class="v4-filterrow">
+                    <div class="v4-filtergroup" style="grid-column: span 3;">
+                      <div class="v4-filterlabel">Land</div>
+                      <select id="event-filter-country" class="v4-select">
+                        <option value="">Land (alles)</option>
+                        <option value="BE">🇧🇪 België</option>
+                        <option value="NL">🇳🇱 Nederland</option>
+                      </select>
+                    </div>
 
-                  <select id="event-filter-month" class="search-select">
-                    <option value="">Maand (alles)</option>
-                    <option value="01">Januari</option>
-                    <option value="02">Februari</option>
-                    <option value="03">Maart</option>
-                    <option value="04">April</option>
-                    <option value="05">Mei</option>
-                    <option value="06">Juni</option>
-                    <option value="07">Juli</option>
-                    <option value="08">Augustus</option>
-                    <option value="09">September</option>
-                    <option value="10">Oktober</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="form-helper">
-                  Tip: via de navigatie zet je automatisch een type-filter (bv. Tornooien).
+                    <div class="v4-filtergroup" style="grid-column: span 3;">
+                      <div class="v4-filterlabel">Type</div>
+                      <select id="event-filter-type" class="v4-select">
+                        <option value="">Type (alles)</option>
+                        <option value="Vriendschappelijk">Vriendschappelijk</option>
+                        <option value="Tornooi">Tornooi</option>
+                        <option value="Stage">Stage</option>
+                        <option value="Voetbalkamp">Voetbalkamp</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="grid-column: span 3;">
+                      <div class="v4-filterlabel">Dames / Heren</div>
+                      <select id="event-filter-gender" class="v4-select">
+                        <option value="BOTH">Dames &amp; Heren</option>
+                        <option value="HEREN">Heren</option>
+                        <option value="DAMES">Dames</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="grid-column: span 3;">
+                      <div class="v4-filterlabel">Maand</div>
+                      <select id="event-filter-month" class="v4-select">
+                        <option value="">Maand (alles)</option>
+                        <option value="01">Januari</option>
+                        <option value="02">Februari</option>
+                        <option value="03">Maart</option>
+                        <option value="04">April</option>
+                        <option value="05">Mei</option>
+                        <option value="06">Juni</option>
+                        <option value="07">Juli</option>
+                        <option value="08">Augustus</option>
+                        <option value="09">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <p class="v4-filterhint">Tip: via de navigatie zet je automatisch een type-filter (bv. Tornooien). Je kan dit ook delen via de URL.</p>
                 </div>
               </div>
 
