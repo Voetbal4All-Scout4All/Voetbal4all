@@ -1079,7 +1079,7 @@ footer { margin-top: auto; }
     rgba(11, 16, 34, 0.58);
 
   border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.55);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.55), 0 0 22px rgba(24,160,251,0.10), 0 0 26px rgba(255,43,214,0.08), 0 0 26px rgba(255,122,24,0.06);
   overflow: hidden;
 }
 
@@ -1131,18 +1131,43 @@ footer { margin-top: auto; }
 
 /* Events page: keep filters on one compact row (desktop) */
 .v4-filterrow--events{
-  grid-template-columns: 2.2fr 1.15fr 1.15fr 1.15fr 1.30fr 1.05fr;
-  gap: 8px;
+  /* 2 rows:
+     - row 1: search (full width)
+     - row 2: dropdowns (side-by-side)
+  */
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
   align-items: end;
 }
 
-.v4-filterrow--events .v4-filtergroup{
-  grid-column: auto !important;
+/* Row 1: search group spans full width */
+.v4-filterrow--events .v4-filtergroup:first-child{
+  grid-column: 1 / -1 !important;
 }
+
+/* Row 2: distribute dropdowns across 12 columns
+   Expected DOM order in events.html:
+   1) search, 2) country, 3) province, 4) type, 5) gender, 6) month
+*/
+.v4-filterrow--events .v4-filtergroup:nth-child(2){ grid-column: span 2 !important; }
+.v4-filterrow--events .v4-filtergroup:nth-child(3){ grid-column: span 2 !important; }
+.v4-filterrow--events .v4-filtergroup:nth-child(4){ grid-column: span 2 !important; }
+.v4-filterrow--events .v4-filtergroup:nth-child(5){ grid-column: span 3 !important; }
+.v4-filterrow--events .v4-filtergroup:nth-child(6){ grid-column: span 3 !important; }
 
 @media (max-width: 1100px){
   .v4-filterrow--events{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  /* Search still full width */
+  .v4-filterrow--events .v4-filtergroup:first-child{ grid-column: 1 / -1 !important; }
+  /* Dropdowns: 2 per row on medium screens */
+  .v4-filterrow--events .v4-filtergroup:nth-child(2),
+  .v4-filterrow--events .v4-filtergroup:nth-child(3),
+  .v4-filterrow--events .v4-filtergroup:nth-child(4),
+  .v4-filterrow--events .v4-filtergroup:nth-child(5),
+  .v4-filterrow--events .v4-filtergroup:nth-child(6){
+    grid-column: span 3 !important;
   }
 }
 
@@ -1150,6 +1175,7 @@ footer { margin-top: auto; }
   .v4-filterrow--events{
     grid-template-columns: 1fr;
   }
+  .v4-filterrow--events .v4-filtergroup{ grid-column: auto !important; }
 }
 
 /* Group (label + control) */
