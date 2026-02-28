@@ -61,77 +61,6 @@
   /* Fix: filter buttons (Zoek/Wissen) text should be white */
 </style>
 
-<style>
-  /* === Premium filter card (match events.html look & feel) === */
-  .v4-filter-card{
-    position:relative;
-    border-radius:18px;
-    padding:14px;
-    border:1px solid rgba(255,255,255,.14);
-    background:
-      radial-gradient(80% 120% at 50% 50%, rgba(255,255,255,.08), rgba(255,255,255,.03) 45%, rgba(10,12,20,.02) 100%),
-      linear-gradient(135deg, rgba(50,70,120,.12), rgba(120,60,140,.10) 40%, rgba(160,90,70,.08) 70%, rgba(10,12,20,.10));
-    box-shadow:
-      0 18px 46px rgba(0,0,0,.45),
-      inset 0 1px 0 rgba(255,255,255,.10);
-    overflow:hidden;
-  }
-  .v4-filter-card::before{
-    content:"";
-    position:absolute;
-    inset:-2px;
-    pointer-events:none;
-    border-radius:20px;
-    background:linear-gradient(90deg, rgba(120,200,255,.65), rgba(170,120,255,.55) 40%, rgba(255,140,170,.55) 70%, rgba(255,190,120,.55));
-    filter:blur(10px);
-    opacity:.55;
-  }
-  .v4-filter-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    border-radius:18px;
-    background:
-      radial-gradient(10px 10px at 8% 18%, rgba(255,255,255,.30), rgba(255,255,255,0) 60%),
-      radial-gradient(9px 9px at 18% 88%, rgba(255,255,255,.22), rgba(255,255,255,0) 62%),
-      radial-gradient(10px 10px at 52% 8%, rgba(255,255,255,.18), rgba(255,255,255,0) 60%),
-      radial-gradient(9px 9px at 74% 92%, rgba(255,255,255,.16), rgba(255,255,255,0) 62%),
-      radial-gradient(11px 11px at 92% 22%, rgba(255,255,255,.22), rgba(255,255,255,0) 64%),
-      radial-gradient(8px 8px at 94% 78%, rgba(255,255,255,.14), rgba(255,255,255,0) 64%);
-    opacity:.55;
-    mix-blend-mode:screen;
-  }
-  .v4-filter-card .v4-filter-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:relative;z-index:1}
-  .v4-filter-card .v4-filter-row + .v4-filter-row{margin-top:10px}
-  .v4-filter-card .v4-filter-row--search .v4-filter-input{width:100%}
-  .v4-filter-card .v4-filter-row--controls{justify-content:flex-start}
-
-  .v4-filter-input,
-  .v4-filter-select{
-    height:40px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.14);
-    background:rgba(0,0,0,.28);
-    color:#fff;
-    padding:0 14px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-    outline:none;
-  }
-  .v4-filter-input::placeholder{color:rgba(255,255,255,.55)}
-  .v4-filter-select{padding-right:36px}
-
-  .v4-filter-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-  .v4-filter-actions .btn-ghost-sm{height:40px;display:inline-flex;align-items:center}
-
-  .v4-filter-hint{margin-top:8px;opacity:.85;position:relative;z-index:1}
-
-  @media (max-width:900px){
-    .v4-filter-card{padding:12px}
-    .v4-filter-card .v4-filter-row{gap:8px}
-    .v4-filter-actions{width:100%}
-  }
-</style>
   <style>
         /* AdSense: reduce height of full-width banner ads (match index.html) */
             .ad-slot-header,
@@ -312,28 +241,43 @@
             <div class="v4-filter-card" style="margin-bottom:12px;">
               <!-- regel 1: zoeken -->
               <div class="v4-filter-row v4-filter-row--search">
-                <input id="trainer-search" type="search" class="v4-filter-input" placeholder="Zoek (bv. UEFA B, jeugd, T2…)" />
+                <div class="v4-filter-field" style="width:100%;">
+                  <div class="v4-filter-label">Zoeken</div>
+                  <input id="trainer-search" type="search" class="v4-filter-input" placeholder="Zoek (bv. UEFA B, jeugd, T2…)" />
+                </div>
               </div>
 
-              <!-- regel 2: dropdowns + regio + acties -->
+              <!-- regel 2: dropdowns + regio + acties (alles naast elkaar) -->
               <div class="v4-filter-row v4-filter-row--controls">
-                <select id="trainer-country-filter" class="v4-filter-select">
-                  <option value="">Land (alles)</option>
-                  <option value="BE">🇧🇪 België</option>
-                  <option value="NL">🇳🇱 Nederland</option>
-                </select>
+                <div class="v4-filter-field">
+                  <div class="v4-filter-label">Land</div>
+                  <select id="trainer-country-filter" class="v4-filter-select">
+                    <option value="">Land (alles)</option>
+                    <option value="BE">🇧🇪 België</option>
+                    <option value="NL">🇳🇱 Nederland</option>
+                  </select>
+                </div>
 
-                <select id="trainer-gender-filter" class="v4-filter-select">
-                  <option value="BOTH">Dames &amp; Heren</option>
-                  <option value="HEREN">Heren</option>
-                  <option value="DAMES">Dames</option>
-                </select>
+                <div class="v4-filter-field">
+                  <div class="v4-filter-label">Dames / heren</div>
+                  <select id="trainer-gender-filter" class="v4-filter-select">
+                    <option value="BOTH">Dames &amp; Heren</option>
+                    <option value="HEREN">Heren</option>
+                    <option value="DAMES">Dames</option>
+                  </select>
+                </div>
 
-                <input id="trainer-region-filter" class="v4-filter-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+                <div class="v4-filter-field" style="flex:1 1 240px; min-width:220px;">
+                  <div class="v4-filter-label">Regio</div>
+                  <input id="trainer-region-filter" class="v4-filter-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+                </div>
 
-                <div class="v4-filter-actions">
-                  <button id="trainer-filter-apply" type="button" class="btn-ghost-sm">Zoek</button>
-                  <button id="trainer-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                <div class="v4-filter-field" style="min-width:180px;">
+                  <div class="v4-filter-label">Acties</div>
+                  <div class="v4-filter-actions">
+                    <button id="trainer-filter-apply" type="button" class="btn-ghost-sm">Zoeken</button>
+                    <button id="trainer-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                  </div>
                 </div>
               </div>
 
