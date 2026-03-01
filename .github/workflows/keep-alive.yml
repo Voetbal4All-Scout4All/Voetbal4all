@@ -103,6 +103,19 @@ jobs:
 
           echo "Running postagent: channel=$CHANNEL slot=$SLOT"
 
-          curl -fsSL -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&nocache=$BUST" \
+          JSON="$(curl -fsSL -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&nocache=$BUST" \
+            -H "x-admin-key: $ADMIN_KEY")"
+
+          echo "$JSON" | head -200
+
+          SLOT_KEY="$(echo "$JSON" | jq -r '.slot.slotKey // empty')"
+          if [ -z "$SLOT_KEY" ]; then
+            echo "No slotKey returned from run; skipping dispatch.";
+            exit 0
+          fi
+
+          echo "Dispatching newest queued row for slotKey=$SLOT_KEY (channel=$CHANNEL)"
+
+          curl -fsSL -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&slot_key=$SLOT_KEY&nocache=$BUST" \
             -H "x-admin-key: $ADMIN_KEY" \
           | head -200
