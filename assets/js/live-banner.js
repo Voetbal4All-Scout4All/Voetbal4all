@@ -363,20 +363,17 @@
     }
 
     function renderFallback() {
-      const competitions = [
-        "Jupiler Pro League",
-        "Eredivisie",
-        "Bundesliga",
-        "Premier League",
-        "Serie A",
-        "La Liga",
-        "Ligue 1"
+      const fallbackLines = [
+        "Momenteel geen live wedstrijden",
+        "[BE] Jupiler Pro League",
+        "[NL] Eredivisie",
+        "[DE] Bundesliga",
+        "[GB] Premier League",
+        "[IT] Serie A",
+        "[ES] La Liga",
+        "[FR] Ligue 1"
       ];
-      mainTextEl.textContent = `Momenteel geen live wedstrijden (${competitions.join(
-        " · "
-      )}).`;
-      tickerWrap.innerHTML = "";
-      banner.classList.remove("is-marquee");
+      renderMarquee(fallbackLines);
     }
 
     // Marquee state (single source of truth)
