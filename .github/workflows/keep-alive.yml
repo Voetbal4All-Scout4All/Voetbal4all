@@ -1,9 +1,39 @@
-name: Keep Render alive
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Keep Render alive + Social postagent
 
-on:
+"on":
   schedule:
+    # Keep Render awake (UTC)
     - cron: "*/10 * * * *"
+
+    # Social postagent slots (UTC)
+    # NOTE: GitHub Actions cron runs in UTC (not Europe/Brussels). Adjust if needed for DST.
+    - cron: "0 7 * * *"   # 07:00 FB1
+    - cron: "0 8 * * *"   # 08:00 IG1
+    - cron: "0 9 * * *"   # 09:00 TT1
+    - cron: "0 10 * * *"  # 10:00 FB2
+    - cron: "0 11 * * *"  # 11:00 IG2
+    - cron: "0 12 * * *"  # 12:00 TT2
+    - cron: "0 13 * * *"  # 13:00 FB3
+    - cron: "0 14 * * *"  # 14:00 IG3
+    - cron: "0 15 * * *"  # 15:00 TT3
+    - cron: "0 16 * * *"  # 16:00 FB4
+    - cron: "0 17 * * *"  # 17:00 IG4
+    - cron: "0 18 * * *"  # 18:00 TT4
+    - cron: "0 19 * * *"  # 19:00 FB5
+    - cron: "0 20 * * *"  # 20:00 IG5
+    - cron: "0 21 * * *"  # 21:00 TT5
+
   workflow_dispatch:
+    inputs:
+      channel:
+        description: "Channel (FB|IG|TT)"
+        required: false
+        default: "FB"
+      slot:
+        description: "Slot number (1..5)"
+        required: false
+        default: "1"
 
 jobs:
   ping:
@@ -11,3 +41,68 @@ jobs:
     steps:
       - name: Ping Render health endpoint
         run: curl -fsS https://voetbal4all-backend-database.onrender.com/api/health
+
+  postagent:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call backend social postagent (auto slot mapping)
+        env:
+          SOCIAL_AGENT_ENABLED: "${{ secrets.SOCIAL_AGENT_ENABLED }}"
+          API: https://voetbal4all-backend-database.onrender.com
+          ADMIN_KEY: "${{ secrets.ADMIN_KEY }}"
+          SCHEDULE: "${{ github.event.schedule }}"
+          DISPATCH_CHANNEL: "${{ inputs.channel }}"
+          DISPATCH_SLOT: "${{ inputs.slot }}"
+        run: |
+          set -euo pipefail
+          if [ "${SOCIAL_AGENT_ENABLED:-0}" != "1" ]; then
+            echo "SOCIAL_AGENT_ENABLED is not '1' (skipping postagent).";
+            exit 0
+          fi
+          BUST="$(date +%s)"
+
+          CHANNEL=""
+          SLOT=""
+
+          # 1) If manual dispatch, use inputs
+          if [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
+            CHANNEL="${DISPATCH_CHANNEL:-FB}"
+            SLOT="${DISPATCH_SLOT:-1}"
+          else
+            # 2) If scheduled, map the triggering cron string to channel/slot
+            case "${SCHEDULE:-}" in
+              "0 7 * * *")   CHANNEL="FB"; SLOT="1" ;;
+              "0 8 * * *")   CHANNEL="IG"; SLOT="1" ;;
+              "0 9 * * *")   CHANNEL="TT"; SLOT="1" ;;
+              "0 10 * * *")  CHANNEL="FB"; SLOT="2" ;;
+              "0 11 * * *")  CHANNEL="IG"; SLOT="2" ;;
+              "0 12 * * *")  CHANNEL="TT"; SLOT="2" ;;
+              "0 13 * * *")  CHANNEL="FB"; SLOT="3" ;;
+              "0 14 * * *")  CHANNEL="IG"; SLOT="3" ;;
+              "0 15 * * *")  CHANNEL="TT"; SLOT="3" ;;
+              "0 16 * * *")  CHANNEL="FB"; SLOT="4" ;;
+              "0 17 * * *")  CHANNEL="IG"; SLOT="4" ;;
+              "0 18 * * *")  CHANNEL="TT"; SLOT="4" ;;
+              "0 19 * * *")  CHANNEL="FB"; SLOT="5" ;;
+              "0 20 * * *")  CHANNEL="IG"; SLOT="5" ;;
+              "0 21 * * *")  CHANNEL="TT"; SLOT="5" ;;
+              *)
+                echo "Not a postagent slot schedule (schedule='${SCHEDULE:-}'). Skipping.";
+                exit 0
+                ;;
+            esac
+          fi
+
+          # Hard validation
+          if ! echo "$CHANNEL" | grep -Eq '^(FB|IG|TT)$'; then
+            echo "Invalid CHANNEL='$CHANNEL'"; exit 1
+          fi
+          if ! echo "$SLOT" | grep -Eq '^[1-5]$'; then
+            echo "Invalid SLOT='$SLOT'"; exit 1
+          fi
+
+          echo "Running postagent: channel=$CHANNEL slot=$SLOT"
+
+          curl -fsSL -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&nocache=$BUST" \
+            -H "x-admin-key: $ADMIN_KEY" \
+          | head -200
