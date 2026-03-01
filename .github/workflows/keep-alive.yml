@@ -109,8 +109,15 @@ jobs:
           echo "$JSON" | head -200
 
           SLOT_KEY="$(echo "$JSON" | jq -r '.slot.slotKey // empty')"
+          IDEMPOTENT="$(echo "$JSON" | jq -r '.idempotent // false')"
+
           if [ -z "$SLOT_KEY" ]; then
             echo "No slotKey returned from run; skipping dispatch.";
+            exit 0
+          fi
+
+          if [ "$IDEMPOTENT" = "true" ]; then
+            echo "Run was idempotent for slotKey=$SLOT_KEY; no new queued row created. Skipping dispatch.";
             exit 0
           fi
 
