@@ -110,6 +110,7 @@ jobs:
 
           SLOT_KEY="$(echo "$JSON" | jq -r '.slot.slotKey // empty')"
           IDEMPOTENT="$(echo "$JSON" | jq -r '.idempotent // false')"
+          SKIPPED="$(echo "$JSON" | jq -r '.skipped // false')"
 
           if [ -z "$SLOT_KEY" ]; then
             echo "No slotKey returned from run; skipping dispatch.";
@@ -118,6 +119,12 @@ jobs:
 
           if [ "$IDEMPOTENT" = "true" ]; then
             echo "Run was idempotent for slotKey=$SLOT_KEY; no new queued row created. Skipping dispatch.";
+            exit 0
+          fi
+
+          if [ "$SKIPPED" = "true" ]; then
+            REASON="$(echo "$JSON" | jq -r '.reason // ""')"
+            echo "Run was skipped for slotKey=$SLOT_KEY; no queued row created. Skipping dispatch. Reason: $REASON";
             exit 0
           fi
 
