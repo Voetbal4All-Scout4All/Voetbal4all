@@ -1,48 +1,37 @@
-name: Keep Render alive + Social postagent
+name: Update live scores JSON
 
 on:
   schedule:
-    # Keep Render awake
-    - cron: "*/10 * * * *"
-
-    # Social postagent slots (Europe/Brussels)
-    - cron: "0 7 * * *"   # 07:00 FB1
-    - cron: "0 8 * * *"   # 08:00 IG1
-    - cron: "0 9 * * *"   # 09:00 TT1
-    - cron: "0 10 * * *"  # 10:00 FB2
-    - cron: "0 11 * * *"  # 11:00 IG2
-    - cron: "0 12 * * *"  # 12:00 TT2
-    - cron: "0 13 * * *"  # 13:00 FB3
-    - cron: "0 14 * * *"  # 14:00 IG3
-    - cron: "0 15 * * *"  # 15:00 TT3
-    - cron: "0 16 * * *"  # 16:00 FB4
-    - cron: "0 17 * * *"  # 17:00 IG4
-    - cron: "0 18 * * *"  # 18:00 TT4
-    - cron: "0 19 * * *"  # 19:00 FB5
-    - cron: "0 20 * * *"  # 20:00 IG5
-    - cron: "0 21 * * *"  # 21:00 TT5
-
+    - cron: "*/5 * * * *"   # elke 5 minuten (minimum)
   workflow_dispatch:
 
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping Render health endpoint
-        run: curl -fsS https://voetbal4all-backend-database.onrender.com/api/health
+permissions:
+  contents: write
 
-  postagent:
-    # Guarded: only runs when you set the secret SOCIAL_AGENT_ENABLED to "1"
-    if: ${{ secrets.SOCIAL_AGENT_ENABLED == '1' }}
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Call backend social postagent
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install (optional)
+        run: npm -v
+
+      - name: Fetch live scores
         env:
-          API: https://voetbal4all-backend-database.onrender.com
-          ADMIN_KEY: ${{ secrets.ADMIN_KEY }}
+          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
+        run: node scripts/fetch-live-scores.mjs
+
+      - name: Commit changes
         run: |
-          set -euo pipefail
-          BUST="$(date +%s)"
-          curl -fsSL -X POST "$API/api/admin/social/postagent/run?nocache=$BUST" \
-            -H "x-admin-key: $ADMIN_KEY" \
-          | head -200
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add data/live-scores.json
+          git commit -m "Update live scores" || exit 0
+          git push
