@@ -1,0 +1,94 @@
+name: Generate Share Pages
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 minutes
+  workflow_dispatch:          # manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch article manifest from backend
+        run: |
+          curl -sf "https://voetbal4all-backend-database.onrender.com/api/share-articles" \
+            -o /tmp/articles.json
+          echo "Articles fetched: $(cat /tmp/articles.json | python3 -c 'import sys,json; print(json.load(sys.stdin).get("count",0))')"
+
+      - name: Generate static share pages
+        run: |
+          python3 << 'PYEOF'
+          import json, os, html as htmlmod
+
+          FRONTEND = "https://www.voetbal4all.eu"
+          BACKEND  = "https://voetbal4all-backend-database.onrender.com"
+
+          with open("/tmp/articles.json") as f:
+              data = json.load(f)
+
+          if not data.get("ok"):
+              print("ERROR: API returned ok=false")
+              exit(1)
+
+          items = data.get("items", [])
+          print(f"Generating pages for {len(items)} articles...")
+
+          for item in items:
+              aid = item["id"]
+              title = htmlmod.escape(item.get("title") or "Voetbal4All")
+              desc  = htmlmod.escape(item.get("description") or title)
+              image = htmlmod.escape(item.get("image") or f"{BACKEND}/images/default/article-default.png")
+              share_url   = f"{FRONTEND}/share/article/{aid}"
+              artikel_url = f"{FRONTEND}/artikel.html?id={aid}"
+
+              page = f"""<!DOCTYPE html>
+          <html lang="nl">
+          <head>
+            <meta charset="utf-8">
+            <title>{title} - Voetbal4All</title>
+            <meta property="og:type" content="article">
+            <meta property="og:title" content="{title}">
+            <meta property="og:description" content="{desc}">
+            <meta property="og:image" content="{image}">
+            <meta property="og:url" content="{share_url}">
+            <meta property="og:site_name" content="Voetbal4All">
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:title" content="{title}">
+            <meta name="twitter:description" content="{desc}">
+            <meta name="twitter:image" content="{image}">
+            <link rel="canonical" href="{share_url}">
+          </head>
+          <body>
+            <p>Je wordt doorgestuurd naar het artikel...</p>
+            <p><a href="{artikel_url}">Klik hier als je niet automatisch wordt doorgestuurd.</a></p>
+            <script>setTimeout(function(){{window.location.replace("{artikel_url}")}},1000);</script>
+          </body>
+          </html>"""
+
+              outdir = f"share/article/{aid}"
+              os.makedirs(outdir, exist_ok=True)
+              with open(f"{outdir}/index.html", "w") as fout:
+                  fout.write(page)
+
+          print(f"Done. Generated {len(items)} share pages.")
+          PYEOF
+
+      - name: Commit & push if changed
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add share/
+          if git diff --cached --quiet; then
+            echo "No changes to share pages."
+          else
+            git commit -m "chore: update static share pages for OG tags [skip ci]"
+            git push
+            echo "Pushed updated share pages."
+          fi
+
