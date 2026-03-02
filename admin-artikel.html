@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0B1020">
+    <meta charset="UTF-8" />
+    <title>Voetbal4All - Admin Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── Admin-artikel specifieke stijlen (aanvulling op style.css) ── */
+      .admin-login-overlay {
+        position: fixed; inset: 0; z-index: 9999;
+        background: rgba(11,16,32,0.96);
+        display: flex; align-items: center; justify-content: center;
+      }
+      .admin-login-overlay.hidden { display: none; }
+      .admin-login-box {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 16px; padding: 2.5rem; max-width: 400px; width: 90%;
+        backdrop-filter: blur(12px); text-align: center;
+      }
+      .admin-login-box h2 { color: #fff; margin-bottom: 0.5rem; }
+      .admin-login-box p { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 1.5rem; }
+      .admin-login-box input[type="password"] {
+        width: 100%; padding: 0.75rem 1rem; border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08);
+        color: #fff; font-size: 1rem; margin-bottom: 1rem; box-sizing: border-box;
+      }
+      .admin-login-box input[type="password"]::placeholder { color: rgba(255,255,255,0.4); }
+      .admin-login-box button {
+        width: 100%; padding: 0.75rem; border: none; border-radius: 8px;
+        background: linear-gradient(135deg, #00c896, #00b4d8); color: #fff;
+        font-weight: 600; font-size: 1rem; cursor: pointer; transition: opacity 0.2s;
+      }
+      .admin-login-box button:hover { opacity: 0.9; }
+      .admin-login-error {
+        color: #ff6b6b; font-size: 0.85rem; margin-top: 0.75rem; min-height: 1.2em;
+      }
+      .admin-form-wrap { display: none; }
+      .admin-form-wrap.visible { display: block; }
+      /* Char counter */
+      .char-counter {
+        font-size: 0.78rem; color: rgba(255,255,255,0.45);
+        text-align: right; margin-top: 0.25rem;
+      }
+      .char-counter.below-min { color: #ff9f43; }
+      .char-counter.at-limit { color: #ff6b6b; }
+      /* Textarea sizing */
+      .admin-summary-field { min-height: 140px; resize: vertical; }
+      .admin-body-field { min-height: 360px; resize: vertical; }
+      /* Photo preview */
+      .photo-preview { margin-top: 0.5rem; max-width: 200px; max-height: 150px; border-radius: 8px; display: none; }
+      .photo-preview.visible { display: block; }
+      /* Submit area */
+      .admin-submit-area { margin-top: 1.5rem; }
+      .admin-submit-btn {
+        padding: 0.85rem 2.5rem; border: none; border-radius: 8px;
+        background: linear-gradient(135deg, #00c896, #00b4d8); color: #fff;
+        font-weight: 700; font-size: 1.05rem; cursor: pointer; transition: opacity 0.2s;
+      }
+      .admin-submit-btn:hover { opacity: 0.9; }
+      .admin-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+      .admin-loading { display: none; color: #00c896; margin-top: 1rem; }
+      .admin-loading.visible { display: block; }
+      .admin-success {
+        display: none; background: rgba(0,200,150,0.12); border: 1px solid rgba(0,200,150,0.3);
+        border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+      }
+      .admin-success.visible { display: block; }
+      .admin-success h3 { color: #00c896; margin-bottom: 0.5rem; }
+      .admin-success a { color: #00b4d8; text-decoration: underline; }
+      .admin-error {
+        display: none; background: rgba(255,107,107,0.12); border: 1px solid rgba(255,107,107,0.3);
+        border-radius: 12px; padding: 1rem; margin-top: 1rem; color: #ff6b6b;
+      }
+      .admin-error.visible { display: block; }
+    </style>
+</head>
+<body class="v4-hide-live-mobile">
+<div class="page">
+  <!-- ── NAVBAR (exact kopie) ── -->
+  <header class="navbar">
+    <div class="shell">
+      <div class="navbar-inner">
+        <a href="index.html" class="brand brand--logo-only">
+          <img src="assets/brand/logo-voetbal4all-full.png" alt="Voetbal4All" />
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="artikels.html">Artikels</a>
+          <div class="nav-dropdown">
+            <button>Sportieve events</button>
+            <div class="nav-dropdown-menu">
+              <a href="events.html">Alle sportieve events</a>
+              <a href="events.html?type=Tornooi">Tornooien</a>
+              <a href="events.html?type=Vriendschappelijk">Vriendschappelijke wedstrijden</a>
+              <a href="stages.html">Stages</a>
+              <a href="events.html?type=Voetbalkamp">Voetbalkampen</a>
+              <a href="event-aanmelden.html">Event aanmelden</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button>Club &amp; fun</button>
+            <div class="nav-dropdown-menu">
+              <a href="algemene-events.html">Alle club &amp; fun events</a>
+              <a href="dinners.html">Dinners &amp; eetdagen</a>
+              <a href="algemene-events.html?type=Spelavond">Spelavonden &amp; acties</a>
+              <a href="algemene-events.html?type=Fuif">Fuif / afterparty</a>
+              <a href="algemene-events.html?type=Sponsor">Sponsor &amp; netwerk</a>
+              <a href="event-aanmelden.html">Event aanmelden</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button">Vacatures &amp; profielen</button>
+            <div class="nav-dropdown-menu">
+              <a href="clubvacatures.html">Clubvacatures</a>
+              <a href="trainers.html">Trainers</a>
+              <a href="spelers.html">Spelers</a>
+              <a href="aanmelden.html">Vacature of profiel aanmelden</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button">Sportief</button>
+            <div class="nav-dropdown-menu">
+              <a href="sportief-spelers.html">Spelersstatistieken</a>
+              <a href="sportief-teams.html">Teamstatistieken</a>
+              <a href="sportief-resultaten.html">Resultaten</a>
+              <a href="sportief-rangschikkingen.html">Rangschikkingen</a>
+              <a href="sportief-teams-in-de-kijker.html">Team/Medewerker in de kijker</a>
+              <a href="sportief-supportersclubs.html">Supportersclubs</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button type="button">Voetbal4All</button>
+            <div class="nav-dropdown-menu">
+              <a href="gebruiksvoorwaarden.html">Gebruiksvoorwaarden</a>
+              <a href="privacyverklaring.html">Privacyverklaring</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+        </nav>
+        <a href="adverteren.html" class="nav-cta">
+          <span>Adverteer nu</span>
+          <span>Sponsor &amp; Ads</span>
+        </a>
+        <button class="nav-burger">Menu</button>
+      </div>
+    </div>
+  </header>
+  <!-- ── MAIN CONTENT ── -->
+  <main>
+    <section class="section-main">
+      <div class="shell">
+        <div class="v4-layout-sidebar">
+          <div class="v4-content">
+            <!-- Login overlay -->
+            <div class="admin-login-overlay" id="loginOverlay">
+              <div class="admin-login-box">
+                <h2>Admin Login</h2>
+                <p>Voer je admin-sleutel in om artikels te publiceren.</p>
+                <input type="password" id="adminKeyInput" placeholder="Admin key…" autocomplete="off" />
+                <button id="loginBtn" onclick="adminLogin()">Inloggen</button>
+                <div class="admin-login-error" id="loginError"></div>
+              </div>
+            </div>
+            <!-- Form (hidden until login) -->
+            <div class="admin-form-wrap" id="formWrap">
+              <article class="card">
+                <div class="card-header">
+                  <div class="card-caption">Admin</div>
+                  <div class="card-caption" style="font-size:1.3rem;font-weight:700;">Eigen artikel publiceren</div>
+                </div>
+                <form class="v4-form" id="articleForm" onsubmit="return submitArticle(event)">
+                  <!-- Titel -->
+                  <label>
+                    <div class="card-caption">Titel *</div>
+                    <input type="text" id="fieldTitle" name="title" required minlength="10" maxlength="300" placeholder="Titel van het artikel (min 10 tekens)" />
+                    <div class="char-counter" id="counterTitle">0 / 300</div>
+                  </label>
+                  <!-- Land -->
+                  <label>
+                    <div class="card-caption">Land *</div>
+                    <select id="fieldCountry" name="country" required>
+                      <option value="">Kies land…</option>
+                      <option value="BE">België</option>
+                      <option value="NL">Nederland</option>
+                      <option value="DE">Duitsland</option>
+                      <option value="FR">Frankrijk</option>
+                      <option value="ES">Spanje</option>
+                      <option value="IT">Italië</option>
+                      <option value="UK">Verenigd Koninkrijk</option>
+                      <option value="INT">Internationaal</option>
+                    </select>
+                  </label>
+                  <!-- Samenvatting -->
+                  <label>
+                    <div class="card-caption">Samenvatting *</div>
+                    <textarea id="fieldSummary" name="summary" required minlength="50" maxlength="2000" placeholder="Korte samenvatting van het artikel (min 50 tekens)" class="admin-summary-field"></textarea>
+                    <div class="char-counter" id="counterSummary">0 / 2.000</div>
+                  </label>
+                  <!-- Artikeltekst -->
+                  <label>
+                    <div class="card-caption">Artikeltekst *</div>
+                    <textarea id="fieldBody" name="body" required minlength="200" maxlength="50000" placeholder="Volledige artikeltekst (min 200 tekens)" class="admin-body-field"></textarea>
+                    <div class="char-counter" id="counterBody">0 / 50.000</div>
+                  </label>
+                  <!-- Club (optioneel) -->
+                  <label>
+                    <div class="card-caption">Club (optioneel)</div>
+                    <input type="text" id="fieldClub" name="club" placeholder="Bijv. Club Brugge, Ajax, …" />
+                  </label>
+                  <!-- Betrokkenen (optioneel) -->
+                  <label>
+                    <div class="card-caption">Betrokkenen (optioneel)</div>
+                    <input type="text" id="fieldPeople" name="people" placeholder="Komma-gescheiden namen (bijv. Kevin De Bruyne, Xavi Simons)" />
+                  </label>
+                  <!-- Foto (optioneel) -->
+                  <label>
+                    <div class="card-caption">Foto (optioneel)</div>
+                    <input type="file" id="fieldPhoto" name="photo" accept="image/jpeg,image/png,image/webp" onchange="previewPhoto(this)" />
+                    <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:0.25rem;">Max 5 MB · jpg, png of webp</div>
+                    <img class="photo-preview" id="photoPreview" alt="Preview" />
+                  </label>
+                  <!-- Prioriteit (optioneel) -->
+                  <label>
+                    <div class="card-caption">Prioriteit</div>
+                    <select id="fieldPriority" name="priority">
+                      <option value="normal" selected>Normaal</option>
+                      <option value="high">Hoog</option>
+                    </select>
+                  </label>
+                  <!-- Submit -->
+                  <div class="admin-submit-area">
+                    <button type="submit" class="admin-submit-btn" id="submitBtn">Publiceer artikel</button>
+                    <div class="admin-loading" id="loadingMsg">⏳ Artikel wordt verwerkt en herschreven door AI…</div>
+                    <div class="admin-success" id="successMsg">
+                      <h3>✅ Artikel gepubliceerd!</h3>
+                      <p id="successDetail"></p>
+                    </div>
+                    <div class="admin-error" id="errorMsg"></div>
+                  </div>
+                </form>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ── FOOTER (exact kopie) ── -->
+  <footer id="footer-contact" class="footer">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p>Voetbal4All · voor spelers, ouders, trainers en clubs.</p>
+          <p>© <span id="footerYear">2026</span> Voetbal4All. Alle rechten voorbehouden.</p>
+          <div style="display:flex;gap:0.75rem;margin-top:0.75rem;">
+            <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.08 4.08 0 011.47.958c.453.453.78.898.958 1.47.163.46.35 1.26.403 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.43a4.08 4.08 0 01-.958 1.47 4.08 4.08 0 01-1.47.958c-.46.163-1.26.35-2.43.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.43-.403a4.08 4.08 0 01-1.47-.958 4.08 4.08 0 01-.958-1.47c-.163-.46-.35-1.26-.403-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.43a4.08 4.08 0 01.958-1.47 4.08 4.08 0 011.47-.958c.46-.163 1.26-.35 2.43-.403C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.153 0-3.506.012-4.747.069-1.08.049-1.666.228-2.056.379a3.28 3.28 0 00-1.184.77 3.28 3.28 0 00-.77 1.184c-.151.39-.33.976-.379 2.056-.057 1.241-.069 1.594-.069 4.747s.012 3.506.069 4.747c.049 1.08.228 1.666.379 2.056.184.479.433.883.77 1.184.301.337.705.586 1.184.77.39.151.976.33 2.056.379 1.241.057 1.594.069 4.747.069s3.506-.012 4.747-.069c1.08-.049 1.666-.228 2.056-.379a3.28
