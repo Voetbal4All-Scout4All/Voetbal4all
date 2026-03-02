@@ -47,7 +47,17 @@
       }
       .admin-form-wrap { display: none; }
       .admin-form-wrap.visible { display: block; }
-      /* Char counter */
+        .admin-form-wrap .v4-form label,
+        .admin-form-wrap .v4-form input,
+        .admin-form-wrap .v4-form select,
+        .admin-form-wrap .v4-form textarea {
+             width: 100%;
+           max-width: 100%;
+        }
+
+.v4-layout-sidebar {
+  display: block;
+}      /* Char counter */
       .char-counter {
         font-size: 0.78rem; color: rgba(255,255,255,0.45);
         text-align: right; margin-top: 0.25rem;
