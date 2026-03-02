@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      /* ââ Admin-artikel specifieke stijlen (aanvulling op style.css) ââ */
+      /* ── Admin-artikel specifieke stijlen (aanvulling op style.css) ── */
       .admin-login-overlay {
         position: fixed; inset: 0; z-index: 9999;
         background: rgba(11,16,32,0.96);
@@ -87,7 +87,7 @@
 </head>
 <body class="v4-hide-live-mobile">
 <div class="page">
-  <!-- ââ NAVBAR (exact kopie) ââ -->
+  <!-- ── NAVBAR (exact kopie) ── -->
   <header class="navbar">
     <div class="shell">
       <div class="navbar-inner">
@@ -156,7 +156,7 @@
       </div>
     </div>
   </header>
-  <!-- ââ MAIN CONTENT ââ -->
+  <!-- ── MAIN CONTENT ── -->
   <main>
     <section class="section-main">
       <div class="shell">
@@ -167,7 +167,7 @@
               <div class="admin-login-box">
                 <h2>Admin Login</h2>
                 <p>Voer je admin-sleutel in om artikels te publiceren.</p>
-                <input type="password" id="adminKeyInput" placeholder="Admin keyâ¦" autocomplete="off" />
+                <input type="password" id="adminKeyInput" placeholder="Admin key…" autocomplete="off" />
                 <button id="loginBtn" onclick="adminLogin()">Inloggen</button>
                 <div class="admin-login-error" id="loginError"></div>
               </div>
@@ -190,13 +190,13 @@
                   <label>
                     <div class="card-caption">Land *</div>
                     <select id="fieldCountry" name="country" required>
-                      <option value="">Kies landâ¦</option>
-                      <option value="BE">BelgiÃ«</option>
+                      <option value="">Kies land…</option>
+                      <option value="BE">België</option>
                       <option value="NL">Nederland</option>
                       <option value="DE">Duitsland</option>
                       <option value="FR">Frankrijk</option>
                       <option value="ES">Spanje</option>
-                      <option value="IT">ItaliÃ«</option>
+                      <option value="IT">Italië</option>
                       <option value="UK">Verenigd Koninkrijk</option>
                       <option value="INT">Internationaal</option>
                     </select>
@@ -216,7 +216,7 @@
                   <!-- Club (optioneel) -->
                   <label>
                     <div class="card-caption">Club (optioneel)</div>
-                    <input type="text" id="fieldClub" name="club" placeholder="Bijv. Club Brugge, Ajax, â¦" />
+                    <input type="text" id="fieldClub" name="club" placeholder="Bijv. Club Brugge, Ajax, …" />
                   </label>
                   <!-- Betrokkenen (optioneel) -->
                   <label>
@@ -227,7 +227,7 @@
                   <label>
                     <div class="card-caption">Foto (optioneel)</div>
                     <input type="file" id="fieldPhoto" name="photo" accept="image/jpeg,image/png,image/webp" onchange="previewPhoto(this)" />
-                    <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:0.25rem;">Max 5 MB Â· jpg, png of webp</div>
+                    <div style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:0.25rem;">Max 5 MB · jpg, png of webp</div>
                     <img class="photo-preview" id="photoPreview" alt="Preview" />
                   </label>
                   <!-- Prioriteit (optioneel) -->
@@ -241,9 +241,9 @@
                   <!-- Submit -->
                   <div class="admin-submit-area">
                     <button type="submit" class="admin-submit-btn" id="submitBtn">Publiceer artikel</button>
-                    <div class="admin-loading" id="loadingMsg">â³ Artikel wordt verwerkt en herschreven door AIâ¦</div>
+                    <div class="admin-loading" id="loadingMsg">⏳ Artikel wordt verwerkt en herschreven door AI…</div>
                     <div class="admin-success" id="successMsg">
-                      <h3>â Artikel gepubliceerd!</h3>
+                      <h3>✅ Artikel gepubliceerd!</h3>
                       <p id="successDetail"></p>
                     </div>
                     <div class="admin-error" id="errorMsg"></div>
@@ -256,12 +256,12 @@
       </div>
     </section>
   </main>
-  <!-- ââ FOOTER (exact kopie) ââ -->
+  <!-- ── FOOTER (exact kopie) ── -->
   <footer id="footer-contact" class="footer">
     <div class="shell">
       <div class="footer-grid">
         <div class="footer-brand">
-          <p>Voetbal4All Â· voor spelers, ouders, trainers en clubs.</p>
+          <p>Voetbal4All · voor spelers, ouders, trainers en clubs.</p>
           <p>Â© <span id="footerYear">2026</span> Voetbal4All. Alle rechten voorbehouden.</p>
           <div style="display:flex;gap:0.75rem;margin-top:0.75rem;">
             <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener" aria-label="Facebook">
