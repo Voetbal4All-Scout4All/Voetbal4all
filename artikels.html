@@ -979,7 +979,7 @@ let lastRenderKey = "";
           return data;
         } catch (e) {
           lastErr = e;
-          const wait = baseDelayMs * (i + 1);
+          const wait = 2000 * Math.pow(2, i); // exponential backoff: 2s,4s,8s,16s,32s
           await sleep(wait);
         } finally {
           clearTimeout(t);
@@ -1070,18 +1070,48 @@ let lastRenderKey = "";
         v4aInitAdsense(document); // ensure static slots fill even if cache was used
         newsStatus.style.display = "none";
       } catch (e) {
-        // If cache already rendered, keep it and just show a subtle warning
-        if (allItems && allItems.length) {
-          newsStatus.style.display = "block";
-          newsStatus.textContent = "Artikels geladen uit cache. Vernieuwen lukt momenteel niet.";
-          return;
-        }
-        articleList.innerHTML = "";
-        newsCountTop.textContent = "—";
-        newsCountTop2.textContent = "—";
+      // If cache already rendered, keep it and just show a subtle warning
+      if (allItems && allItems.length) {
         newsStatus.style.display = "block";
-        newsStatus.textContent = "Kon artikels niet laden. Controleer /api/news en CORS.";
-      } finally {
+        newsStatus.textContent = "Artikels geladen uit cache. Vernieuwen lukt momenteel niet.";
+        return;
+      }
+      // Fallback: try loading static data/news.json
+      try {
+        console.warn("[ARTIKELS] API failed, trying fallback data/news.json");
+        const fbResp = await fetch("data/news.json", { cache: "no-store" });
+        if (fbResp.ok) {
+          const fbData = await fbResp.json();
+          const fbItems = (fbData.items || []).map((it, idx) => ({
+            id: it.link || ("fb-" + idx),
+            status: "ready",
+            title: it.title || "Zonder titel",
+            link: it.link || "#",
+            source: it.source || "",
+            country: it.country || "INT",
+            flag: it.flag || "",
+            summary: it.summary || "",
+            published_at: it.publishedAt || null,
+            image: null
+          }));
+          if (fbItems.length) {
+            allItems = fbItems;
+            lastRenderKey = "";
+            applyFilters();
+            newsStatus.style.display = "block";
+            newsStatus.textContent = "Artikels geladen uit lokale cache (beperkt overzicht).";
+            return;
+          }
+        }
+      } catch (fbErr) {
+        console.warn("[ARTIKELS] Fallback news.json also failed:", fbErr.message);
+      }
+      articleList.innerHTML = "";
+      newsCountTop.textContent = "\u2014";
+      newsCountTop2.textContent = "\u2014";
+      newsStatus.style.display = "block";
+      newsStatus.textContent = "Artikels tijdelijk niet beschikbaar. Probeer later opnieuw.";
+    } finally {
         newsInFlight = false;
       }
     }
