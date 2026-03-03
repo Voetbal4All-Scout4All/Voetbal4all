@@ -1,5 +1,6 @@
 import fs from "fs";
 import Parser from "rss-parser";
+import { classifyCountry } from "./countryClassifier.mjs";
 
 const parser = new Parser({
   timeout: 15000,
@@ -86,15 +87,16 @@ for (const feed of feeds) {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
-      const country = countryFromSourceName(feed.name);
-      const flag    = flagFromCountry(country);
-      const meta    = metaFromSource(feed.name);
+      const sourceCountry = countryFromSourceName(feed.name);
+      const contentCountry = classifyCountry(title, cleanText(item.contentSnippet || item.content || ""));
+      const finalCountry = contentCountry || sourceCountry;
+      const flag = flagFromCountry(finalCountry);
       allItems.push({
         type: "rss",
         source: feed.name,
         sourceSlug,
-        country: meta.country,
-        flag: meta.flag,
+        country: finalCountry,
+        flag,
         title: title || "Zonder titel",
         link,
         summary: cleanText(item.contentSnippet || item.content || ""),
