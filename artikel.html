@@ -519,6 +519,39 @@
 <script src="assets/js/image-utils.js"></script>
 
 <script>
+    // Repair truncated/hallucinated first names in body text using title as reference
+    const _NAME_PARTICLES = new Set(["de","van","den","der","het","el","di","le","la","da","dos","ter","du","von"]);
+    function _extractNamesFromTitle(t) {
+      var words = t.split(/\s+/), names = [], cur = [];
+      for (var i = 0; i < words.length; i++) {
+        var w = words[i];
+        if (/^[A-Z]/.test(w) || _NAME_PARTICLES.has(w.toLowerCase())) { cur.push(w); }
+        else { if (cur.length >= 2) names.push(cur.join(" ")); cur = []; }
+      }
+      if (cur.length >= 2) names.push(cur.join(" "));
+      return names;
+    }
+    function repairTruncatedNames(body, title) {
+      if (!body || !title) return body;
+      var names = _extractNamesFromTitle(title), repaired = body;
+      for (var n = 0; n < names.length; n++) {
+        var parts = names[n].split(/\s+/);
+        if (parts.length < 2) continue;
+        var firstName = parts[0], rest = parts.slice(1).join(" ");
+        var escaped = rest.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        var re = new RegExp("\\b([A-Z][a-z\\u00e0-\\u00ff]+)\\s+(" + escaped + ")\\b", "g");
+        repaired = repaired.replace(re, function(m, found, fRest) {
+          if (found === firstName) return m;
+          if (found[0] === firstName[0] && found.length < firstName.length) {
+            console.warn("[NAME REPAIR] \"" + found + " " + fRest + "\" → \"" + firstName + " " + fRest + "\"");
+            return firstName + " " + fRest;
+          }
+          return m;
+        });
+      }
+      return repaired;
+    }
+
   (function(){
     const params = new URLSearchParams(window.location.search);
 
@@ -1021,7 +1054,8 @@
     const bodyEl = document.getElementById('article-body');
     bodyEl.innerHTML = "";
 
-    const cleanBody = stripSources(toText(article.body || article.content || article.text || ""));
+    let cleanBody = stripSources(toText(article.body || article.content || article.text || ""));
+      cleanBody = repairTruncatedNames(cleanBody, title);
     const finalBody = cleanBody || cleanStandfirst || "";
 
     if (!finalBody || !String(finalBody).trim()) {
