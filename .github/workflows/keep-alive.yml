@@ -103,10 +103,21 @@ jobs:
 
           echo "Running postagent: channel=$CHANNEL slot=$SLOT"
 
-          JSON="$(curl -fsSL -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&nocache=$BUST" \
-            -H "x-admin-key: $ADMIN_KEY")"
+          # Call run endpoint (capture body + status; do NOT hide body on non-2xx)
+          RUN_RESP_FILE="$(mktemp)"
+          RUN_STATUS="$(curl -sS -o "$RUN_RESP_FILE" -w "%{http_code}" -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&nocache=$BUST" \
+            -H "x-admin-key: $ADMIN_KEY" || true)"
 
+          JSON="$(cat "$RUN_RESP_FILE" 2>/dev/null || true)"
+          rm -f "$RUN_RESP_FILE" || true
+
+          echo "== /postagent/run status=$RUN_STATUS =="
           echo "$JSON" | head -200
+
+          if ! echo "$RUN_STATUS" | grep -Eq '^2'; then
+            echo "Run endpoint returned HTTP $RUN_STATUS";
+            exit 1
+          fi
 
           LOG_ID="$(echo "$JSON" | jq -r '.logId // empty')"
           SLOT_KEY="$(echo "$JSON" | jq -r '.slot.slotKey // empty')"
@@ -126,9 +137,18 @@ jobs:
 
           if [ -n "$LOG_ID" ]; then
             echo "Dispatching queued row by id=$LOG_ID (channel=$CHANNEL)"
-            curl -fsSL -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&id=$LOG_ID&nocache=$BUST" \
-              -H "x-admin-key: $ADMIN_KEY" \
-            | head -200
+            DISP_RESP_FILE="$(mktemp)"
+            DISP_STATUS="$(curl -sS -o "$DISP_RESP_FILE" -w "%{http_code}" -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&id=$LOG_ID&nocache=$BUST" \
+              -H "x-admin-key: $ADMIN_KEY" || true)"
+
+            echo "== /postagent/dispatch (by id) status=$DISP_STATUS =="
+            cat "$DISP_RESP_FILE" | head -200
+            rm -f "$DISP_RESP_FILE" || true
+
+            if ! echo "$DISP_STATUS" | grep -Eq '^2'; then
+              echo "Dispatch endpoint returned HTTP $DISP_STATUS";
+              exit 1
+            fi
             exit 0
           fi
 
@@ -139,6 +159,15 @@ jobs:
 
           echo "Dispatching newest queued row for slotKey=$SLOT_KEY (channel=$CHANNEL) [fallback]"
 
-          curl -fsSL -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&slot_key=$SLOT_KEY&nocache=$BUST" \
-            -H "x-admin-key: $ADMIN_KEY" \
-          | head -200
+          DISP_RESP_FILE="$(mktemp)"
+          DISP_STATUS="$(curl -sS -o "$DISP_RESP_FILE" -w "%{http_code}" -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&slot_key=$SLOT_KEY&nocache=$BUST" \
+            -H "x-admin-key: $ADMIN_KEY" || true)"
+
+          echo "== /postagent/dispatch (by slot_key) status=$DISP_STATUS =="
+          cat "$DISP_RESP_FILE" | head -200
+          rm -f "$DISP_RESP_FILE" || true
+
+          if ! echo "$DISP_STATUS" | grep -Eq '^2'; then
+            echo "Dispatch endpoint returned HTTP $DISP_STATUS";
+            exit 1
+          fi
