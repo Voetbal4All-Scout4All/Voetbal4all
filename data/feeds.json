@@ -1,15 +1,55 @@
 {
-  "maxItems": 20,
+  "maxItems": 30,
   "feeds": [
-    { "name": "The Guardian Football", "url": "https://www.theguardian.com/football/rss" },
-    { "name": "BBC Sport - Football", "url": "https://feeds.bbci.co.uk/sport/football/rss.xml" },
-    { "name": "Sky Sports - Football", "url": "https://www.skysports.com/rss/12040" },
-    { "name": "ESPN - Soccer", "url": "https://www.espn.com/espn/rss/soccer/news" },
-    { "name": "UEFA", "url": "https://www.uefa.com/rssfeed/news/rss.xml" },
-    { "name": "FIFA", "url": "https://www.fifa.com/rss-feeds/news" },
-    { "name": "Voetbal International", "url": "https://www.vi.nl/rss/nieuws" },
-    { "name": "NOS Sport - Voetbal", "url": "https://feeds.nos.nl/nossportvoetbal" },
-    { "name": "HLN Sport", "url": "https://www.hln.be/rss/sport.xml" },
-    { "name": "Sporza Voetbal", "url": "https://sporza.be/nl/rss/sport/voetbal/" }
+    {
+      "name": "The Guardian Football",
+      "url": "https://www.theguardian.com/football/rss"
+    },
+    {
+      "name": "BBC Sport - Football",
+      "url": "https://feeds.bbci.co.uk/sport/football/rss.xml"
+    },
+    {
+      "name": "Sky Sports - Football",
+      "url": "https://www.skysports.com/rss/12040"
+    },
+    {
+      "name": "ESPN - Soccer",
+      "url": "https://www.espn.com/espn/rss/soccer/news"
+    },
+    {
+      "name": "UEFA",
+      "url": "https://www.uefa.com/rssfeed/news/rss.xml"
+    },
+    {
+      "name": "FIFA",
+      "url": "https://www.fifa.com/rss-feeds/news"
+    },
+    {
+      "name": "Voetbal International",
+      "url": "https://www.vi.nl/rss/nieuws"
+    },
+    {
+      "name": "NOS Sport - Voetbal",
+      "url": "https://feeds.nos.nl/nossportvoetbal"
+    },
+    {
+      "name": "HLN Sport",
+      "url": "https://www.hln.be/rss/sport.xml"
+    },
+    {
+      "name": "Sporza Voetbal",
+      "url": "https://sporza.be/nl/rss/sport/voetbal/"
+    },
+    {
+      "name": "Walfoot",
+      "url": "https://www.walfoot.be/rss",
+      "country": "BE"
+    },
+    {
+      "name": "Voetbalkrant",
+      "url": "https://www.voetbalkrant.com/rss",
+      "country": "BE"
+    }
   ]
 }
