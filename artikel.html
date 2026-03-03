@@ -1091,7 +1091,8 @@
       tagsEl.style.display = 'none';
     }
     
-    const articleUrl = window.location.href;
+    const _aid = new URLSearchParams(window.location.search).get("id");
+            const articleUrl = _aid ? "https://www.voetbal4all.eu/share/article/" + _aid + "/" : window.location.href;
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedTitle = encodeURIComponent(title);
     const fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
