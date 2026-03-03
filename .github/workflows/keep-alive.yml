@@ -34,6 +34,10 @@ name: Keep Render alive + Social postagent
         description: "Slot number (1..5)"
         required: false
         default: "1"
+      force:
+        description: "Force run even if slot already executed today (0|1)"
+        required: false
+        default: "1"
 
 jobs:
   ping:
@@ -53,6 +57,7 @@ jobs:
           SCHEDULE: "${{ github.event.schedule }}"
           DISPATCH_CHANNEL: "${{ inputs.channel }}"
           DISPATCH_SLOT: "${{ inputs.slot }}"
+          DISPATCH_FORCE: "${{ inputs.force }}"
         run: |
           set -euo pipefail
           if [ "${SOCIAL_AGENT_ENABLED:-0}" != "1" ]; then
@@ -63,13 +68,16 @@ jobs:
 
           CHANNEL=""
           SLOT=""
+          FORCE="0"
 
           # 1) If manual dispatch, use inputs
           if [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
             CHANNEL="${DISPATCH_CHANNEL:-FB}"
             SLOT="${DISPATCH_SLOT:-1}"
+            FORCE="${DISPATCH_FORCE:-1}"
           else
             # 2) If scheduled, map the triggering cron string to channel/slot
+            FORCE="0"
             case "${SCHEDULE:-}" in
               "0 7 * * *")   CHANNEL="FB"; SLOT="1" ;;
               "0 8 * * *")   CHANNEL="IG"; SLOT="1" ;;
@@ -100,12 +108,15 @@ jobs:
           if ! echo "$SLOT" | grep -Eq '^[1-5]$'; then
             echo "Invalid SLOT='$SLOT'"; exit 1
           fi
+          if ! echo "$FORCE" | grep -Eq '^(0|1)$'; then
+            echo "Invalid FORCE='$FORCE' (expected 0|1)"; exit 1
+          fi
 
-          echo "Running postagent: channel=$CHANNEL slot=$SLOT"
+          echo "Running postagent: channel=$CHANNEL slot=$SLOT force=$FORCE"
 
           # Call run endpoint (capture body + status; do NOT hide body on non-2xx)
           RUN_RESP_FILE="$(mktemp)"
-          RUN_STATUS="$(curl -sS -o "$RUN_RESP_FILE" -w "%{http_code}" -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&nocache=$BUST" \
+          RUN_STATUS="$(curl -sS -o "$RUN_RESP_FILE" -w "%{http_code}" -X POST "$API/api/admin/social/postagent/run?channel=$CHANNEL&slot=$SLOT&force=$FORCE&nocache=$BUST" \
             -H "x-admin-key: $ADMIN_KEY" || true)"
 
           JSON="$(cat "$RUN_RESP_FILE" 2>/dev/null || true)"
