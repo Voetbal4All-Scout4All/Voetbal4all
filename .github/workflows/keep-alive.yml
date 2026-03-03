@@ -108,27 +108,36 @@ jobs:
 
           echo "$JSON" | head -200
 
+          LOG_ID="$(echo "$JSON" | jq -r '.logId // empty')"
           SLOT_KEY="$(echo "$JSON" | jq -r '.slot.slotKey // empty')"
           IDEMPOTENT="$(echo "$JSON" | jq -r '.idempotent // false')"
           SKIPPED="$(echo "$JSON" | jq -r '.skipped // false')"
 
-          if [ -z "$SLOT_KEY" ]; then
-            echo "No slotKey returned from run; skipping dispatch.";
-            exit 0
-          fi
-
           if [ "$IDEMPOTENT" = "true" ]; then
-            echo "Run was idempotent for slotKey=$SLOT_KEY; no new queued row created. Skipping dispatch.";
+            echo "Run was idempotent (no new queued row). Skipping dispatch.";
             exit 0
           fi
 
           if [ "$SKIPPED" = "true" ]; then
             REASON="$(echo "$JSON" | jq -r '.reason // ""')"
-            echo "Run was skipped for slotKey=$SLOT_KEY; no queued row created. Skipping dispatch. Reason: $REASON";
+            echo "Run was skipped; no queued row created. Skipping dispatch. Reason: $REASON";
             exit 0
           fi
 
-          echo "Dispatching newest queued row for slotKey=$SLOT_KEY (channel=$CHANNEL)"
+          if [ -n "$LOG_ID" ]; then
+            echo "Dispatching queued row by id=$LOG_ID (channel=$CHANNEL)"
+            curl -fsSL -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&id=$LOG_ID&nocache=$BUST" \
+              -H "x-admin-key: $ADMIN_KEY" \
+            | head -200
+            exit 0
+          fi
+
+          if [ -z "$SLOT_KEY" ]; then
+            echo "No logId and no slotKey returned from run; skipping dispatch.";
+            exit 0
+          fi
+
+          echo "Dispatching newest queued row for slotKey=$SLOT_KEY (channel=$CHANNEL) [fallback]"
 
           curl -fsSL -X POST "$API/api/admin/social/postagent/dispatch?channel=$CHANNEL&slot_key=$SLOT_KEY&nocache=$BUST" \
             -H "x-admin-key: $ADMIN_KEY" \
