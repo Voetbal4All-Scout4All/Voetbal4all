@@ -2603,7 +2603,7 @@
               break;
             } catch (e) {
               lastErr = e;
-              const wait = 650 * (i + 1);
+              const wait = 2000 * Math.pow(2, i); // exponential backoff: 2s,4s,8s,16s,32s
               console.warn("[HOME] retry", i + 1, "in", wait, "ms:", e?.message || e);
               await sleep(wait);
             }
@@ -2615,7 +2615,82 @@
 
         } catch (err) {
           console.error("[HOME] loadHomeNews failed:", err);
-          showStatusOnceIfEmpty("Artikels worden geladen…");
+          // FIX 1: Fallback to static data/news.json when backend is down
+          try {
+            console.warn("[HOME] Attempting fallback to data/news.json");
+            const fbRes = await fetch("data/news.json", { cache: "no-store" });
+            if (fbRes.ok) {
+              const fbData = await fbRes.json();
+              const fbItems = Array.isArray(fbData.items) ? fbData.items : [];
+              if (fbItems.length > 0) {
+                // Inject status:"ready" and published_at so items work with existing rendering
+                const fbReady = fbItems.map(it => ({
+                  ...it,
+                  status: "ready",
+                  published_at: it.publishedAt || it.published_at || null
+                }));
+                // Re-fetch as if from API by constructing a compatible data object
+                const fbRawItems = fbReady;
+                const fbReadyItems = fbRawItems.filter(a => {
+                  const st = String(a?.status || "").toLowerCase();
+                  return st === "ready" || st === "ok";
+                });
+                function fbDedupeById(items) {
+                  const seen = new Set();
+                  const out = [];
+                  for (const it of (items || [])) {
+                    const key = String(it?.id || it?.link || "").trim();
+                    if (key && seen.has(key)) continue;
+                    if (key) seen.add(key);
+                    out.push(it);
+                  }
+                  return out;
+                }
+                let fbFiltered = fbDedupeById(fbReadyItems);
+                const fbDisplay = fbFiltered.slice(0, 30);
+                if (fbDisplay.length > 0) {
+                  const fbHtml = fbDisplay.map((a, index) => {
+                    const rawTitle = a?.title || "";
+                    const looksLikeSlug = rawTitle.endsWith(".json") || (rawTitle.length > 40 && rawTitle.split("-").length >= 6);
+                    const displayTitle = (!rawTitle || looksLikeSlug) ? "Nieuwsartikel" : cleanTitle(rawTitle);
+                    const safeTitle = String(displayTitle).replace(/"/g, "&quot;");
+                    const rawCountry = (a?.country || a?.countryCode || a?.sourceCountry || "").toString().trim().toUpperCase();
+                    const cc = normalizeCountryCode(rawCountry);
+                    const flag = flagHtml(cc);
+                    const thumbHtml = `<div class="home-news__thumbWrap">${FALLBACK_THUMB}</div>`;
+                    const rawSnippet = a?.snippet || a?.summary || a?.ai_summary || "";
+                    const snippet = String(rawSnippet).replace(/<[^>]*>/g, "").substring(0, 180);
+                    const safeSnippet = snippet.replace(/"/g, "&quot;");
+                    const rawDate = a?.published_at || a?.publishedAt || a?.created_at || "";
+                    const dateStr = rawDate ? new Date(rawDate).toLocaleDateString("nl-BE", { day: "numeric", month: "short" }) : "";
+                    const articleLink = a?.link || `artikel.html?id=${encodeURIComponent(a?.id || "")}`;
+                    const safeLink = String(articleLink).replace(/"/g, "&quot;");
+                    let articleHtml = `<a class="home-news__card" href="${safeLink}" data-country="${cc}">`;
+                    articleHtml += thumbHtml;
+                    articleHtml += `<div class="home-news__body">`;
+                    articleHtml += `<h3 class="home-news__title">${flag} ${safeTitle}</h3>`;
+                    if (safeSnippet) articleHtml += `<p class="home-news__snippet">${safeSnippet}</p>`;
+                    articleHtml += `<span class="home-news__date">${dateStr}</span>`;
+                    articleHtml += `</div></a>`;
+                    return articleHtml;
+                  }).join("");
+                  homeListEl.innerHTML = fbHtml;
+                  hasRenderedHomeNews = true;
+                  hideStatus();
+                  console.warn("[HOME] Using fallback data/news.json -", fbDisplay.length, "items rendered");
+                } else {
+                  showStatusOnceIfEmpty("Geen artikels beschikbaar.");
+                }
+              } else {
+                showStatusOnceIfEmpty("Geen artikels beschikbaar.");
+              }
+            } else {
+              showStatusOnceIfEmpty("Artikels tijdelijk niet beschikbaar.");
+            }
+          } catch (fbErr) {
+            console.error("[HOME] Fallback also failed:", fbErr);
+            showStatusOnceIfEmpty("Artikels tijdelijk niet beschikbaar.");
+          }
         } finally {
           homeNewsInFlight = false;
         }
