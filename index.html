@@ -1624,8 +1624,6 @@
       setInterval(render, intervalMs);
     }
 
-    makeRotatingList("#latest-trainers-list", 1, 4500);
-    makeRotatingList("#latest-players-list", 1, 4500);
 
     // HOME: Aankomende events (weekend) + Events kalender (komende 30 dagen)
     // Let op: geen globals, geen herdefinities van API_BASE, en geen impact op banner/standings/news/ads.
@@ -1901,10 +1899,17 @@
       }
 
       function isPremium(it) {
+        // Truth source: premium_until in the backend (ISO string) OR explicit flags
+        const pu = it?.premium_until ?? it?.premiumUntil ?? it?.premium_until_at ?? it?.premiumUntilAt;
+        if (pu) {
+          const d = new Date(pu);
+          if (!isNaN(d.getTime()) && d.getTime() > Date.now()) return true;
+        }
+
         const v = it?.premium ?? it?.is_premium ?? it?.isPremium ?? it?.paid ?? it?.status ?? it?.tier;
         if (typeof v === "boolean") return v;
         const s = String(v || "").toLowerCase();
-        return ["premium","paid","betalend","true","1"].includes(s);
+        return ["premium", "paid", "betalend", "true", "1"].includes(s);
       }
 
       function esc(s){
@@ -1994,10 +1999,17 @@
       }
 
       function isPremium(it) {
+        // Truth source: premium_until in the backend (ISO string) OR explicit flags
+        const pu = it?.premium_until ?? it?.premiumUntil ?? it?.premium_until_at ?? it?.premiumUntilAt;
+        if (pu) {
+          const d = new Date(pu);
+          if (!isNaN(d.getTime()) && d.getTime() > Date.now()) return true;
+        }
+
         const v = it?.premium ?? it?.is_premium ?? it?.isPremium ?? it?.paid ?? it?.status ?? it?.tier;
         if (typeof v === "boolean") return v;
         const s = String(v || "").toLowerCase();
-        return ["premium","paid","betalend","true","1"].includes(s);
+        return ["premium", "paid", "betalend", "true", "1"].includes(s);
       }
 
       function esc(s){
@@ -2092,6 +2104,7 @@
           media.style.display = "block";
           img.classList.add("is-fallback");
           img.setAttribute("src", fallback);
+          img.setAttribute("alt", "");
           return;
         }
 
@@ -2123,14 +2136,17 @@
         return "";
       }
 
-      document.querySelectorAll(".premium-list").forEach(list => {
+      document.querySelectorAll(".premium-list, #latest-trainers-list, #latest-players-list").forEach(list => {
         const items = Array.from(list.children).filter(n => n && n.nodeType === 1);
         const card = list.closest(".card");
 
         if (!items.length) {
-          // Placeholder state: show one friendly item
+          // Placeholder state: show one friendly item (with thumb)
           list.innerHTML = `
             <li class="event-item" data-image="assets/img/placeholder.svg">
+              <div class="event-thumb" aria-hidden="true">
+                <img src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
               <div class="event-body">
                 <div class="event-title">Jouw advertentie hier?</div>
                 <div class="event-meta">Premium zichtbaarheid voor clubs, events, spelers en trainers.</div>
