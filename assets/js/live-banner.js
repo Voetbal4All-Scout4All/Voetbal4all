@@ -5,7 +5,7 @@
 
     const textEl = banner.querySelector(".live-text");
     const labelEl = banner.querySelector(".live-label");
-    if (!textEl || !labelEl) return;
+    if (!textEl || !labelEl) return
 
     /* =========================================================
        Flags (single source of truth)
@@ -313,10 +313,10 @@
     }
     
     function formatScoreLine({ cc, home, away, hs, as, minute, status }) {
-      const dash = "â";
+              const dash = "\u2013";
       const score = (hs == null || as == null) ? `${dash}${dash}` : `${hs}${dash}${as}`;
       const tail = (minute != null && String(minute) !== "")
-        ? ` (${minute}â)`
+                  ? ` (${minute}\u2019)`
         : (status ? ` (${status})` : "");
       return `[${cc}] ${home} ${score} ${away}${tail}`;
     }
