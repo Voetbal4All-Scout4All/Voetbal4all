@@ -394,9 +394,9 @@
         return (div.textContent || "").replace(/\s+/g, " ").trim();
       };
 
-      // More âluchtâ between scores
+              // More \u201clutcht\u201d between scores
       const SEP =
-        " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 â¢ \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 ";
+                  " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 \u2022 \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 ";
 
       const joined = (lines || [])
         .map(sanitizeLine)
