@@ -4,13 +4,13 @@
   <!-- Google Funding Choices CMP (EU consent for AdSense) -->
   <script async src="https://fundingchoicesmessages.google.com/i/pub-4062633211824348?ers=1" nonce="v4a-cmp"></script>
   <script nonce="v4a-cmp">
-    (function() {
+    (function () {
       function signalGooglefcPresent() {
-        if (!window.frames['googlefcPresent']) {
-          if (document.body) 
-            const iframe = document.createElement('iframe');
-            iframe.style.cssText = 'width:0;height:0;border:none;display:none';
-            iframe.name = 'googlefcPresent';
+        if (!window.frames["googlefcPresent"]) {
+          if (document.body) {
+            const iframe = document.createElement("iframe");
+            iframe.style.cssText = "width:0;height:0;border:none;display:none";
+            iframe.name = "googlefcPresent";
             document.body.appendChild(iframe);
           } else {
             setTimeout(signalGooglefcPresent, 0);
@@ -727,6 +727,7 @@
     }
 
     /* Placeholder.svg: NIET meer 'contain + padding' (dat maakte het icoon te klein) */
+    .premium-profile-card .premium-card-media img.premium-media-img.is-fallback,
     .premium-profile-card .premium-card-media img.premium-media-img[src*="placeholder.svg"]{
       object-fit: cover;
       padding: 0;
@@ -736,6 +737,7 @@
     }
 
     /* HOME: premium TOP cards (clubvacatures/events) — placeholder should look like trainers/spelers (full banner) */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media img.premium-media-img.is-fallback,
     .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media img.premium-media-img[src*="placeholder.svg"]{
       object-fit: cover;
       padding: 0;
@@ -1389,21 +1391,11 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
-              <ul class="events-list premium-list" id="premium-clubvacatures-list">
-                <li class="event-item" data-image="">
-                  <div class="event-title">Jeugdcoördinator U6–U13 · Regio Kempen</div>
-                  <div class="event-meta">Provinciaal niveau · focus op opleiding &amp; structuur.</div>
-                </li>
-                <li class="event-item" data-image="">
-                  <div class="event-title">Trainer U17 · Interprovinciaal</div>
-                  <div class="event-meta">Diploma min. UEFA C · avondtrainingen.</div>
-                </li>
-              </ul>
+              <ul class="events-list premium-list" id="premium-clubvacatures-list"></ul>
               <a href="clubvacatures.html" class="event-link">Alle clubvacatures →</a>
             </article>
-
             <article class="card">
               <div class="card-header">
                 <div>
@@ -1412,21 +1404,11 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
-              <ul class="events-list premium-list" id="premium-events-list">
-                <li class="event-item" data-image="">
-                  <div class="event-title">Zomertornooi U8–U11</div>
-                  <div class="event-meta">15–16 augustus · Regio Kempen · tornooi met 2 speeldagen.</div>
-                </li>
-                <li class="event-item" data-image="">
-                  <div class="event-title">Zomerstage U7–U13</div>
-                  <div class="event-meta">Dagkamp eerste week juli · techniek &amp; fun.</div>
-                </li>
-              </ul>
+              <ul class="events-list premium-list" id="premium-events-list"></ul>
               <a href="events.html" class="event-link">Alle events →</a>
             </article>
-
             <article class="card">
               <div class="card-header">
                 <div>
@@ -1435,21 +1417,11 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
-              <ul class="events-list premium-list" id="premium-clubvacatures-list-2">
-                <li class="event-item" data-image="">
-                  <div class="event-title">Technisch coördinator · bovenbouw</div>
-                  <div class="event-meta">Regio Antwerpen · uitbouw visie &amp; trainingslijn.</div>
-                </li>
-                <li class="event-item" data-image="">
-                  <div class="event-title">Trainer Dames 1</div>
-                  <div class="event-meta">Ambitieus project · 2 trainingen/week + match.</div>
-                </li>
-              </ul>
+              <ul class="events-list premium-list" id="premium-clubvacatures-list-2"></ul>
               <a href="clubvacatures.html" class="event-link">Alle clubvacatures →</a>
             </article>
-
             <article class="card">
               <div class="card-header">
                 <div>
@@ -1458,18 +1430,9 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
-              <ul class="events-list premium-list" id="premium-events-list-2">
-                <li class="event-item" data-image="">
-                  <div class="event-title">Indoor wintertornooi U10–U12</div>
-                  <div class="event-meta">Komende maand · sporthal · snelle rotatieformule.</div>
-                </li>
-                <li class="event-item" data-image="">
-                  <div class="event-title">Keepersclinic (1 dag)</div>
-                  <div class="event-meta">Zaterdag · gasttrainer · beperkte plaatsen.</div>
-                </li>
-              </ul>
+              <ul class="events-list premium-list" id="premium-events-list-2"></ul>
               <a href="events.html" class="event-link">Alle events →</a>
             </article>
           </div>
@@ -1567,18 +1530,9 @@
                   <span class="pill-small">Trainers</span>
                 </div>
                 <div class="premium-card-media" aria-hidden="true">
-                  <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                  <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
                 </div>
-                <ul class="events-list" id="latest-trainers-list">
-                  <li class="event-item">
-                    <div class="event-title">Trainer U13 · Provinciaal</div>
-                    <div class="event-meta">Regio Vlaams-Brabant · beschikbaar vanaf volgend seizoen.</div>
-                  </li>
-                  <li class="event-item">
-                    <div class="event-title">Assistent-trainer onderbouw</div>
-                    <div class="event-meta">Regio Kempen · inzetbaar 2 avonden per week.</div>
-                  </li>
-                </ul>
+                <ul class="events-list" id="latest-trainers-list"></ul>
                 <a href="trainers.html" class="event-link">Alle premium trainers →</a>
               </article>
 
@@ -1591,18 +1545,9 @@
                   <span class="pill-small">Spelers</span>
                 </div>
                 <div class="premium-card-media" aria-hidden="true">
-                  <img class="premium-media-img" src="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                  <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
                 </div>
-                <ul class="events-list" id="latest-players-list">
-                  <li class="event-item">
-                    <div class="event-title">Aanvallende middenvelder U14</div>
-                    <div class="event-meta">Regio Antwerpen · zoekt club met sterke opleiding.</div>
-                  </li>
-                  <li class="event-item">
-                    <div class="event-title">Doelman U16</div>
-                    <div class="event-meta">Regio Limburg · zoekt meer speeltijd op provinciaal niveau.</div>
-                  </li>
-                </ul>
+                <ul class="events-list" id="latest-players-list"></ul>
                 <a href="spelers.html" class="event-link">Alle premium spelers →</a>
               </article>
 
@@ -1941,6 +1886,99 @@
       }
     })();
 
+    // HOME: premium top-row (clubvacatures/events) vullen
+    async function fillPremiumTopLists() {
+      async function fetchJson(url) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const ct = res.headers.get("content-type") || "";
+          return ct.includes("application/json") ? await res.json() : null;
+        } catch (e) {
+          console.warn("[HOME] premium top lists fetch failed:", url, e);
+          return null;
+        }
+      }
+
+      function isPremium(it) {
+        const v = it?.premium ?? it?.is_premium ?? it?.isPremium ?? it?.paid ?? it?.status ?? it?.tier;
+        if (typeof v === "boolean") return v;
+        const s = String(v || "").toLowerCase();
+        return ["premium","paid","betalend","true","1"].includes(s);
+      }
+
+      function esc(s){
+        return String(s || "")
+          .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+          .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+      }
+
+      function pickImage(it){
+        return (
+          it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || ""
+        );
+      }
+
+      const lists = {
+        cv1: document.getElementById("premium-clubvacatures-list"),
+        ev1: document.getElementById("premium-events-list"),
+        cv2: document.getElementById("premium-clubvacatures-list-2"),
+        ev2: document.getElementById("premium-events-list-2"),
+      };
+      if (!lists.cv1 || !lists.ev1 || !lists.cv2 || !lists.ev2) return;
+
+      // Fetch candidates
+      const cvData = await fetchJson(`${API_BASE}/api/clubvacatures?limit=80`);
+      const evData = await fetchJson(`${API_BASE}/api/events?limit=200`);
+
+      const cvItemsRaw = Array.isArray(cvData?.items) ? cvData.items : (Array.isArray(cvData) ? cvData : []);
+      const evItemsRaw = Array.isArray(evData?.items) ? evData.items : (Array.isArray(evData) ? evData : []);
+
+      const cvPrem = cvItemsRaw.filter(isPremium).slice(0, 6);
+      const evPrem = evItemsRaw.filter(isPremium).slice(0, 6);
+
+      function renderTo(ul, items, kind){
+        ul.innerHTML = "";
+        items.forEach(it => {
+          const li = document.createElement("li");
+          li.className = "event-item";
+
+          const img = pickImage(it);
+          if (img) li.setAttribute("data-image", img);
+
+          const title = it?.title || it?.name || (kind === "cv" ? "Clubvacature" : "Event");
+          const meta = it?.meta || it?.subtitle || it?.region || it?.city || it?.location || it?.type || "";
+
+          // Optional thumb (helps media rotation even if card banner is empty)
+          const thumb = img ? `<div class="event-thumb" aria-hidden="true"><img src="${esc(img)}" alt="" loading="lazy" decoding="async"></div>` : "";
+
+          li.innerHTML = `
+            ${thumb}
+            <div class="event-body">
+              <div class="event-title">${esc(title)}</div>
+              <div class="event-meta">${esc(meta)}</div>
+            </div>
+          `;
+
+          ul.appendChild(li);
+        });
+      }
+
+      // Split into 2 cards per type (3 + 3)
+      renderTo(lists.cv1, cvPrem.slice(0, 3), "cv");
+      renderTo(lists.cv2, cvPrem.slice(3, 6), "cv");
+      renderTo(lists.ev1, evPrem.slice(0, 3), "ev");
+      renderTo(lists.ev2, evPrem.slice(3, 6), "ev");
+
+      // Always show the premium row, even if there is no premium content
+      const allCount = cvPrem.length + evPrem.length;
+      const rowEl = document.querySelector(".section-main.premium-row");
+      if (rowEl) {
+        rowEl.style.display = "block";
+      }
+      // If there is no premium content, lists stay empty and initPremiumRotation() will render the friendly placeholder.
+    }
+
     // HOME: premium trainers/spelers vullen (fallback = huidige hardcoded items blijven staan)
     async function fillPremiumProfiles() {
       async function fetchJson(url) {
@@ -2001,6 +2039,9 @@
             trainersList.appendChild(li);
           });
         }
+        // Always show card, even if no premium trainers
+        const card = document.getElementById("premium-trainers-card");
+        if (card) card.style.display = "block";
       }
 
       if (Array.isArray(pItems)) {
@@ -2025,9 +2066,13 @@
             playersList.appendChild(li);
           });
         }
+        // Always show card, even if no premium players
+        const card = document.getElementById("premium-players-card");
+        if (card) card.style.display = "block";
       }
     }
 
+    fillPremiumTopLists();
     fillPremiumProfiles();
 
     // Premiumlijsten roteren (1 item zichtbaar) — image rotates WITH the item + no layout jump
@@ -2036,18 +2081,30 @@
 
       function setMedia(cardEl, src){
         const img = cardEl ? cardEl.querySelector(".premium-card-media img.premium-media-img") : null;
-        if (!img) return;
+        const media = cardEl ? cardEl.querySelector(".premium-card-media") : null;
+        if (!img || !media) return;
 
-        const next = String(src || "").trim() || FALLBACK_IMG;
-        img.classList.toggle("is-fallback", next === FALLBACK_IMG);
+        const fallback = (img.getAttribute("data-fallback") || FALLBACK_IMG).trim() || FALLBACK_IMG;
+        const next = String(src || "").trim();
+
+        if (!next) {
+          // No image: show the default placeholder banner
+          media.style.display = "block";
+          img.classList.add("is-fallback");
+          img.setAttribute("src", fallback);
+          return;
+        }
+
+        media.style.display = "block";
+        img.classList.remove("is-fallback");
         if (img.getAttribute("src") !== next) img.setAttribute("src", next);
 
-        // Defensive: if the provided image fails, fall back to the placeholder
         img.onerror = function(){
           try{
             img.onerror = null;
-            img.setAttribute("src", FALLBACK_IMG);
+            img.setAttribute("src", fallback);
             img.classList.add("is-fallback");
+            media.style.display = "block";
           }catch(e){}
         };
       }
@@ -2071,10 +2128,20 @@
         const card = list.closest(".card");
 
         if (!items.length) {
-          const msg = document.createElement("p");
-          msg.className = "note premium-empty";
-          msg.textContent = "Uw profiel / event / vacature hier? Druk op de knop voor extra zichtbaarheid.";
-          list.parentElement.appendChild(msg);
+          // Placeholder state: show one friendly item
+          list.innerHTML = `
+            <li class="event-item" data-image="assets/img/placeholder.svg">
+              <div class="event-body">
+                <div class="event-title">Jouw advertentie hier?</div>
+                <div class="event-meta">Premium zichtbaarheid voor clubs, events, spelers en trainers.</div>
+              </div>
+            </li>
+          `;
+
+          const newItems = Array.from(list.children).filter(n => n && n.nodeType === 1);
+          const cardEl = list.closest(".card");
+          setMedia(cardEl, getItemImage(newItems[0]));
+          newItems[0].style.display = "";
           return;
         }
 
