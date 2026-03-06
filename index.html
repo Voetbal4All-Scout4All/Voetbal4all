@@ -1391,7 +1391,7 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list"></ul>
               <a href="clubvacatures.html" class="event-link">Alle clubvacatures →</a>
@@ -1404,7 +1404,7 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-events-list"></ul>
               <a href="events.html" class="event-link">Alle events →</a>
@@ -1417,7 +1417,7 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-clubvacatures-list-2"></ul>
               <a href="clubvacatures.html" class="event-link">Alle clubvacatures →</a>
@@ -1430,7 +1430,7 @@
                 </div>
               </div>
               <div class="premium-card-media" aria-hidden="true">
-                <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
               </div>
               <ul class="events-list premium-list" id="premium-events-list-2"></ul>
               <a href="events.html" class="event-link">Alle events →</a>
@@ -1530,7 +1530,7 @@
                   <span class="pill-small">Trainers</span>
                 </div>
                 <div class="premium-card-media" aria-hidden="true">
-                  <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                  <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
                 </div>
                 <ul class="events-list" id="latest-trainers-list"></ul>
                 <a href="trainers.html" class="event-link">Alle premium trainers →</a>
@@ -1545,7 +1545,7 @@
                   <span class="pill-small">Spelers</span>
                 </div>
                 <div class="premium-card-media" aria-hidden="true">
-                  <img class="premium-media-img" src="" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                  <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
                 </div>
                 <ul class="events-list" id="latest-players-list"></ul>
                 <a href="spelers.html" class="event-link">Alle premium spelers →</a>
@@ -1984,8 +1984,20 @@
           if (img) li.setAttribute("data-image", img);
 
           const title = it?.title || it?.name || (kind === "cv" ? "Clubvacature" : "Event");
-          const metaVal = it?.subtitle || it?.region || it?.city || it?.location || it?.type || "";
-          const meta = (typeof metaVal === "string" ? metaVal : "");
+          // --- safer meta computation ---
+          const metaParts = [];
+          if (it?.city) metaParts.push(it.city);
+          if (it?.region) metaParts.push(it.region);
+          if (!metaParts.length && typeof it?.location === "string") metaParts.push(it.location);
+          if (!metaParts.length && it?.location && typeof it.location === "object") {
+            if (it.location.city) metaParts.push(it.location.city);
+            if (it.location.region) metaParts.push(it.location.region);
+            if (!metaParts.length && it.location.name) metaParts.push(it.location.name);
+          }
+          if (!metaParts.length && typeof it?.subtitle === "string") metaParts.push(it.subtitle);
+          if (!metaParts.length && typeof it?.type === "string") metaParts.push(it.type);
+
+          const meta = metaParts.filter(Boolean).join(" · ");
 
           li.innerHTML = `
             <div class="event-body">
@@ -2098,7 +2110,7 @@
             li.innerHTML = `
               <div class="event-body">
                 <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
-                <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+                <div class="event-meta">${esc((typeof it?.region === "string" && it.region) || (typeof it?.city === "string" && it.city) || (typeof it?.location === "string" && it.location) || "Regio")}</div>
               </div>
             `;
             trainersList.appendChild(li);
@@ -2123,7 +2135,7 @@
             li.innerHTML = `
               <div class="event-body">
                 <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
-                <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
+                <div class="event-meta">${esc((typeof it?.region === "string" && it.region) || (typeof it?.city === "string" && it.city) || (typeof it?.location === "string" && it.location) || "Regio")}</div>
               </div>
             `;
             playersList.appendChild(li);
