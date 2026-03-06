@@ -2084,11 +2084,8 @@
       }
     }
 
-    fillPremiumTopLists();
-    fillPremiumProfiles();
-
     // Premiumlijsten roteren (1 item zichtbaar) — image rotates WITH the item + no layout jump
-    (function initPremiumRotation(){
+    function initPremiumRotation(){
       const FALLBACK_IMG = "assets/img/placeholder.svg";
 
       function setMedia(cardEl, src){
@@ -2124,24 +2121,25 @@
 
       function getItemImage(li){
         if (!li) return "";
-
-        // Preferred: explicit data-image on the <li>
         const d = (li.getAttribute("data-image") || "").trim();
         if (d) return d;
-
-        // Secondary: any thumbnail inside the li (if later added)
         const innerImg = li.querySelector("img");
         if (innerImg && innerImg.getAttribute("src")) return innerImg.getAttribute("src");
-
         return "";
       }
 
       document.querySelectorAll(".premium-list, #latest-trainers-list, #latest-players-list").forEach(list => {
+        // prevent stacking timers when re-initializing
+        const prevTimer = list.dataset.rotTimer ? Number(list.dataset.rotTimer) : 0;
+        if (prevTimer) {
+          try { clearInterval(prevTimer); } catch (e) {}
+          delete list.dataset.rotTimer;
+        }
+
         const items = Array.from(list.children).filter(n => n && n.nodeType === 1);
         const card = list.closest(".card");
 
         if (!items.length) {
-          // Placeholder state: show one friendly item (with thumb)
           list.innerHTML = `
             <li class="event-item" data-image="assets/img/placeholder.svg">
               <div class="event-thumb" aria-hidden="true">
@@ -2161,10 +2159,8 @@
           return;
         }
 
-        // Ensure stable initial media
         setMedia(card, getItemImage(items[0]));
 
-        // If only 1 item: still set image and keep as-is
         if (items.length === 1) {
           items[0].style.display = "";
           return;
@@ -2180,8 +2176,22 @@
         }
 
         renderPremium();
-        setInterval(renderPremium, 4500);
+        const t = setInterval(renderPremium, 4500);
+        list.dataset.rotTimer = String(t);
       });
+    }
+
+    // Bootstrap premium blocks AFTER async fillers complete (prevents placeholders being wiped)
+    (async function initPremiumHome(){
+      try {
+        await Promise.all([
+          fillPremiumTopLists(),
+          fillPremiumProfiles(),
+        ]);
+      } catch (e) {
+        // ignore; rotation will still render placeholders
+      }
+      initPremiumRotation();
     })();
   </script>
 
