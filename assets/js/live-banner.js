@@ -30,11 +30,11 @@
       const c = String(code || "INT").trim().toUpperCase();
       const src = FLAG_SRC[c] || (c === "UK" ? FLAG_SRC.GB : FLAG_SRC.INT);
       const alt =
-        (c === "BE") ? "België" :
+        (c === "BE") ? "BelgiÃ«" :
         (c === "NL") ? "Nederland" :
         (c === "DE") ? "Duitsland" :
         (c === "GB" || c === "UK") ? "Verenigd Koninkrijk" :
-        (c === "IT") ? "Italië" :
+        (c === "IT") ? "ItaliÃ«" :
         (c === "ES") ? "Spanje" :
         (c === "FR") ? "Frankrijk" :
         "Internationaal";
@@ -55,7 +55,7 @@
     /* =========================================================
        0) Opruimen: verwijder ALLE oude/dubbele elementen
           - live-updated badge wordt volledig verwijderd (geen rode knop/badge)
-          - socials mogen enkel één keer bestaan
+          - socials mogen enkel Ã©Ã©n keer bestaan
     ========================================================= */
     // Verwijder ALLE live-updated badges (user request: geen rode knop/badge)
     banner.querySelectorAll(".live-updated").forEach((el) => el.remove());
@@ -210,7 +210,7 @@
     if (oldCta) oldCta.remove();
 
     /* =========================================================
-       5) Socials rechts (één set)
+       5) Socials rechts (Ã©Ã©n set)
           - label "Volg ons op:" (styling via CSS)
           - iconen naast elkaar
           - GEEN duplicaten
@@ -285,7 +285,7 @@
        6) Data + marquee render (start buiten rechts, eind buiten links)
           - Extra spacing tussen scores
           - Reset pas nadat laatste karakter links uit beeld is
-          - En start terug volledig rechts (geen “instant vullen”)
+          - En start terug volledig rechts (geen âinstant vullenâ)
     ========================================================= */
     const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
@@ -313,10 +313,10 @@
     }
     
     function formatScoreLine({ cc, home, away, hs, as, minute, status }) {
-      const dash = "–";
+      const dash = "â";
       const score = (hs == null || as == null) ? `${dash}${dash}` : `${hs}${dash}${as}`;
       const tail = (minute != null && String(minute) !== "")
-        ? ` (${minute}’)`
+        ? ` (${minute}â)`
         : (status ? ` (${status})` : "");
       return `[${cc}] ${home} ${score} ${away}${tail}`;
     }
@@ -394,9 +394,9 @@
         return (div.textContent || "").replace(/\s+/g, " ").trim();
       };
 
-      // More “lucht” between scores
+      // More âluchtâ between scores
       const SEP =
-        " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 • \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 ";
+        " \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 â¢ \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 ";
 
       const joined = (lines || [])
         .map(sanitizeLine)
@@ -437,7 +437,7 @@
 
           // End only slightly past the left edge.
           // If this value is too large, the text becomes fully invisible (due to the left fade)
-          // while the animation is still running, which looks like a long “pause”.
+          // while the animation is still running, which looks like a long âpauseâ.
           const endPad = Math.max(140, (fades?.leftW || 2) + 120);
           const endX = -textW - endPad;
 
@@ -485,7 +485,7 @@
             marqueeRunning = false;
 
             // After the text is fully out of view, wait a short moment before starting the next cycle.
-            // Keep this small to avoid a “long pause”, while still ensuring the cycle is fully finished.
+            // Keep this small to avoid a âlong pauseâ, while still ensuring the cycle is fully finished.
             const restartDelayMs = 50;
 
             // Apply deferred refresh update exactly at cycle boundary (no mid-run visual reset)
@@ -540,24 +540,12 @@
     refresh();
 
     // Refresh elke 3 minuten; updates worden pas toegepast op cycle-boundary (geen mid-run reset)
-    setInterval(refresh, 60 * 1000); // Elke 60s (was 3 min) voor live scores
+    setInterval(refresh, 3 * 60 * 1000);
   }
 
-  // Initialisatie
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
-
-  // Fix: herstel live scores na tab-wissel (Safari + alle browsers)
-  document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") refresh();
-  });
-
-  // Fix: herstel na Safari BFCache restore (voor/terug navigatie)
-  window.addEventListener("pageshow", (e) => {
-    if (e.persisted) refresh();
-  });
-
 })();
