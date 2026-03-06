@@ -1918,10 +1918,42 @@
           .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
       }
 
+      function normalizeImageUrl(raw){
+        const v = String(raw || "").trim();
+        if (!v) return "";
+
+        // Explicitly ignore legacy/dummy placeholders like "jouw-afbeelding.jpg"
+        if (/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)$/i.test(v)) return "";
+
+        // Absolute URLs
+        if (/^https?:\/\//i.test(v)) return v;
+
+        // Protocol-relative
+        if (v.startsWith("//")) return "https:" + v;
+
+        // Assets (site)
+        if (v.startsWith("assets/")) return v;
+
+        // Backend-relative paths
+        if (v.startsWith("/")) return `${API_BASE}${v}`;
+        if (v.startsWith("images/")) return `${API_BASE}/${v}`;
+
+        // Unknown / unsafe
+        return "";
+      }
+
       function pickImage(it){
-        return (
-          it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || ""
+        const cand = (
+          it?.image ||
+          it?.image_url ||
+          it?.imageUrl ||
+          it?.photo ||
+          it?.photo_url ||
+          it?.avatar ||
+          it?.avatar_url ||
+          ""
         );
+        return normalizeImageUrl(cand);
       }
 
       const lists = {
@@ -2015,6 +2047,32 @@
           .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
       }
 
+      function normalizeImageUrl(raw){
+        const v = String(raw || "").trim();
+        if (!v) return "";
+        if (/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)$/i.test(v)) return "";
+        if (/^https?:\/\//i.test(v)) return v;
+        if (v.startsWith("//")) return "https:" + v;
+        if (v.startsWith("assets/")) return v;
+        if (v.startsWith("/")) return `${API_BASE}${v}`;
+        if (v.startsWith("images/")) return `${API_BASE}/${v}`;
+        return "";
+      }
+
+      function pickImage(it){
+        const cand = (
+          it?.image ||
+          it?.image_url ||
+          it?.imageUrl ||
+          it?.photo ||
+          it?.photo_url ||
+          it?.avatar ||
+          it?.avatar_url ||
+          ""
+        );
+        return normalizeImageUrl(cand);
+      }
+
       const trainersList = document.getElementById("latest-trainers-list");
       const playersList  = document.getElementById("latest-players-list");
       if (!trainersList || !playersList) return;
@@ -2034,7 +2092,7 @@
             const li = document.createElement("li");
             li.className = "event-item";
 
-            const img = (it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || "");
+            const img = pickImage(it);
             if (img) li.setAttribute("data-image", img);
 
             li.innerHTML = `
@@ -2059,7 +2117,7 @@
             const li = document.createElement("li");
             li.className = "event-item";
 
-            const img = (it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || "");
+            const img = pickImage(it);
             if (img) li.setAttribute("data-image", img);
 
             li.innerHTML = `
@@ -2081,13 +2139,26 @@
     function initPremiumRotation(){
       const FALLBACK_IMG = "assets/img/placeholder.svg";
 
+      function normalizeMediaSrc(raw){
+        const v = String(raw || "").trim();
+        if (!v) return "";
+        if (/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)$/i.test(v)) return "";
+        if (/^https?:\/\//i.test(v)) return v;
+        if (v.startsWith("//")) return "https:" + v;
+        if (v.startsWith("assets/")) return v;
+        if (v.startsWith("/")) return `${API_BASE}${v}`;
+        if (v.startsWith("images/")) return `${API_BASE}/${v}`;
+        return "";
+      }
+
       function setMedia(cardEl, src){
         const img = cardEl ? cardEl.querySelector(".premium-card-media img.premium-media-img") : null;
         const media = cardEl ? cardEl.querySelector(".premium-card-media") : null;
         if (!img || !media) return;
 
         const fallback = (img.getAttribute("data-fallback") || FALLBACK_IMG).trim() || FALLBACK_IMG;
-        const next = String(src || "").trim();
+        const nextRaw = String(src || "").trim();
+        const next = normalizeMediaSrc(nextRaw);
 
         if (!next) {
           // No image: show the default placeholder banner
@@ -2098,10 +2169,7 @@
           return;
         }
 
-        media.style.display = "block";
-        img.classList.remove("is-fallback");
-        if (img.getAttribute("src") !== next) img.setAttribute("src", next);
-
+        // Install onerror BEFORE setting src to avoid race conditions on fast-failing URLs
         img.onerror = function(){
           try{
             img.onerror = null;
@@ -2110,12 +2178,17 @@
             media.style.display = "block";
           }catch(e){}
         };
+
+        media.style.display = "block";
+        img.classList.remove("is-fallback");
+        if (img.getAttribute("src") !== next) img.setAttribute("src", next);
       }
 
       function getItemImage(li){
         if (!li) return "";
         const d = (li.getAttribute("data-image") || "").trim();
-        if (d) return d;
+        const dn = normalizeMediaSrc(d);
+        if (dn) return dn;
         const innerImg = li.querySelector("img");
         if (innerImg && innerImg.getAttribute("src")) return innerImg.getAttribute("src");
         return "";
