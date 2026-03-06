@@ -540,12 +540,24 @@
     refresh();
 
     // Refresh elke 3 minuten; updates worden pas toegepast op cycle-boundary (geen mid-run reset)
-    setInterval(refresh, 3 * 60 * 1000);
+    setInterval(refresh, 60 * 1000); // Elke 60s (was 3 min) voor live scores
   }
 
+  // Initialisatie
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
   }
+
+  // Fix: herstel live scores na tab-wissel (Safari + alle browsers)
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") refresh();
+  });
+
+  // Fix: herstel na Safari BFCache restore (voor/terug navigatie)
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted) refresh();
+  });
+
 })();
