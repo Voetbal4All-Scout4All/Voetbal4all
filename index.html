@@ -1952,7 +1952,8 @@
           if (img) li.setAttribute("data-image", img);
 
           const title = it?.title || it?.name || (kind === "cv" ? "Clubvacature" : "Event");
-          const meta = it?.meta || it?.subtitle || it?.region || it?.city || it?.location || it?.type || "";
+          const metaVal = it?.subtitle || it?.region || it?.city || it?.location || it?.type || "";
+          const meta = (typeof metaVal === "string" ? metaVal : "");
 
           li.innerHTML = `
             <div class="event-body">
