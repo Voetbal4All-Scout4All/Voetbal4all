@@ -1954,11 +1954,7 @@
           const title = it?.title || it?.name || (kind === "cv" ? "Clubvacature" : "Event");
           const meta = it?.meta || it?.subtitle || it?.region || it?.city || it?.location || it?.type || "";
 
-          // Optional thumb (helps media rotation even if card banner is empty)
-          const thumb = img ? `<div class="event-thumb" aria-hidden="true"><img src="${esc(img)}" alt="" loading="lazy" decoding="async"></div>` : "";
-
           li.innerHTML = `
-            ${thumb}
             <div class="event-body">
               <div class="event-title">${esc(title)}</div>
               <div class="event-meta">${esc(meta)}</div>
@@ -2036,13 +2032,11 @@
           prem.forEach(it => {
             const li = document.createElement("li");
             li.className = "event-item";
+
             const img = (it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || "");
-            const thumb = img ? `
-              <div class="event-thumb" aria-hidden="true"><img src="${esc(img)}" alt="" loading="lazy" decoding="async"></div>
-            ` : "";
+            if (img) li.setAttribute("data-image", img);
 
             li.innerHTML = `
-              ${thumb}
               <div class="event-body">
                 <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
                 <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
@@ -2063,13 +2057,11 @@
           prem.forEach(it => {
             const li = document.createElement("li");
             li.className = "event-item";
+
             const img = (it?.image || it?.image_url || it?.imageUrl || it?.photo || it?.photo_url || it?.avatar || it?.avatar_url || "");
-            const thumb = img ? `
-              <div class="event-thumb" aria-hidden="true"><img src="${esc(img)}" alt="" loading="lazy" decoding="async"></div>
-            ` : "";
+            if (img) li.setAttribute("data-image", img);
 
             li.innerHTML = `
-              ${thumb}
               <div class="event-body">
                 <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
                 <div class="event-meta">${esc(it?.region || it?.location || it?.city || "Regio")}</div>
