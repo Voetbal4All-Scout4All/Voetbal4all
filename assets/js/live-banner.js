@@ -289,7 +289,7 @@
     ========================================================= */
     const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
-    // De codes die jouw backend ondersteunt: JPL, ERED, BUND, EPL, SA, LIGA, L1
+    // De codes die jouw backend ondersteunt: JPL, ERED, BUND, EPL, SA, LIGA, L1, BEL_W, NED_W
     const LIVE_LEAGUES = [
       { league: "JPL", cc: "BE", label: "JPL" },
       { league: "ERED", cc: "NL", label: "Eredivisie" },
@@ -298,6 +298,8 @@
       { league: "SA", cc: "IT", label: "Serie A" },
       { league: "LIGA", cc: "ES", label: "La Liga" },
       { league: "L1", cc: "FR", label: "Ligue 1" },
+      { league: "BEL_W", cc: "BE", label: "Super League ♀", isWomen: true },
+      { league: "NED_W", cc: "NL", label: "Eredivisie Vrouwen ♀", isWomen: true },
     ];
     
     async function fetchJsonWithTimeout(url, timeoutMs = 9000) {
@@ -312,13 +314,14 @@
       }
     }
     
-    function formatScoreLine({ cc, home, away, hs, as, minute, status }) {
+    function formatScoreLine({ cc, home, away, hs, as, minute, status, isWomen }) {
               const dash = "\u2013";
       const score = (hs == null || as == null) ? `${dash}${dash}` : `${hs}${dash}${as}`;
       const tail = (minute != null && String(minute) !== "")
                   ? ` (${minute}\u2019)`
         : (status ? ` (${status})` : "");
-      return `[${cc}] ${home} ${score} ${away}${tail}`;
+      const wTag = isWomen ? "\u2640 " : "";
+      return `[${cc}] ${wTag}${home} ${score} ${away}${tail}`;
     }
     
     async function fetchFreeLiveLines() {
@@ -355,6 +358,7 @@
             as: (m?.awayScore ?? null),
             minute: (m?.minute ?? null),
             status: (m?.status ?? null),
+            isWomen: !!r.isWomen,
           }));
         }
       }
@@ -371,7 +375,9 @@
         "[GB] Premier League",
         "[IT] Serie A",
         "[ES] La Liga",
-        "[FR] Ligue 1"
+        "[FR] Ligue 1",
+        "[BE] ♀ Super League",
+        "[NL] ♀ Eredivisie Vrouwen"
       ];
       renderMarquee(fallbackLines);
     }
