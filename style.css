@@ -602,8 +602,8 @@ footer { margin-top: auto; }
 
 /* Home/kaart titels & meta: breek woorden i.p.v. over de sidebar te lopen */
 .home-news__title,
-.ad-card-title,
-.ad-card-meta,
+.v4a-card-title,
+.v4a-card-meta,
 .card-title {
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -870,7 +870,7 @@ footer { margin-top: auto; }
   color: rgba(255, 255, 255, 0.7);
 }
 
-.ad-placeholder {
+.v4a-placeholder {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.24);
   padding: 18px 10px;
@@ -962,7 +962,7 @@ footer { margin-top: auto; }
   }
   
   /* Meta-rijen altijd op 1 lijn */
-  .ad-card-meta,
+  .v4a-card-meta,
   .article-meta-row,
   .flag-inline{
     display:inline-flex;
@@ -1520,12 +1520,12 @@ footer { margin-top: auto; }
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .ad-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .v4a-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 600px) {
-  .ad-card-grid { grid-template-columns: minmax(0, 1fr); }
+  .v4a-card-grid { grid-template-columns: minmax(0, 1fr); }
   .form-grid--2cols { grid-template-columns: minmax(0, 1fr); }
 
   .live-banner {
@@ -1692,7 +1692,7 @@ ins.adsbygoogle iframe{
    Artikels: onder elkaar (stack) + mooi “row” kaartje
    ======================= */
 
-.ad-card-list--stack{
+.v4a-card-list--stack{
   display: grid;
   grid-template-columns: 1fr !important;
   gap: 10px;
@@ -1704,8 +1704,8 @@ ins.adsbygoogle iframe{
    ======================= */
 
 
-.ad-card-list--stack .card,
-.ad-card-list--stack .ad-card {
+.v4a-card-list--stack .card,
+.v4a-card-list--stack .v4a-card {
   /* iets transparanter zodat de achtergrond (watermark) subtiel zichtbaar wordt */
   background: rgba(11, 16, 34, 0.42) !important; /* meer transparant */
   backdrop-filter: blur(10px);
@@ -1722,8 +1722,8 @@ ins.adsbygoogle iframe{
   /* Force transparency on the *actual* rendered list rows inside #article-list */
   .card:has(#article-list) #article-list > *,
   .card:has(#article-list) #article-list > * > *,
-  .card:has(#article-list) .ad-card,
-  .card:has(#article-list) .ad-card--row,
+  .card:has(#article-list) .v4a-card,
+  .card:has(#article-list) .v4a-card--row,
   .card:has(#article-list) .article-item,
   .card:has(#article-list) .article-list > * {
     background-color: rgba(11, 16, 34, 0.14) !important;
@@ -1743,7 +1743,7 @@ ins.adsbygoogle iframe{
 }
 
 /* Artikelkaart als horizontale rij (bronlogo links, tekst rechts) */
-.ad-card--row{
+.v4a-card--row{
   display: flex;
   gap: 12px;
   align-items: flex-start;
@@ -1762,7 +1762,7 @@ ins.adsbygoogle iframe{
 
 /* Mobile: kaart wordt verticaler */
 @media (max-width: 600px){
-  .ad-card--row{
+  .v4a-card--row{
     flex-direction: column;
   }
   .v4-source-thumb{
@@ -1900,7 +1900,7 @@ ins.adsbygoogle iframe{
 .v4-sidebar .ad-slot,
 .v4-sidebar ins.adsbygoogle,
 .v4-legal-ad ins.adsbygoogle,
-.ad-placeholder {
+.v4a-placeholder {
   display: block;
   min-height: 250px;
 }
@@ -1918,7 +1918,7 @@ ins.adsbygoogle iframe{
   /* Sidebar: reserveer 300x600 zodat de pagina niet verspringt */
   .v4-sidebar-sticky,
   .v4-sidebar ins.adsbygoogle,
-  .ad-placeholder{
+  .v4a-placeholder{
     min-height: 600px;
   }
 }
@@ -2034,7 +2034,7 @@ img {
   margin-bottom: 6px;
 }
 
-.home-sponsor-band .ad-placeholder {
+.home-sponsor-band .v4a-placeholder {
   min-height: 90px;            /* ⬅️ BELANGRIJK: hoogte beperken */
   padding: 10px;
   font-size: 13px;
@@ -2051,7 +2051,7 @@ img {
     padding: 12px 14px;
   }
 
-  .home-sponsor-band .ad-placeholder {
+  .home-sponsor-band .v4a-placeholder {
     min-height: 70px;
   }
 }
@@ -2335,7 +2335,7 @@ img {
 
 /* Titels mogen niet onder rechterkolom vallen */
 .home-news__title,
-.ad-card-title,
+.v4a-card-title,
 .card-title {
   word-break: break-word;
 }
@@ -2851,8 +2851,8 @@ img {
 }
 
 /* Make premium title/meta a touch brighter for scanability */
-.premium-card .ad-card-title{ opacity: .98; }
-.premium-card .ad-card-meta{ opacity: .92; }
+.premium-card .v4a-card-title{ opacity: .98; }
+.premium-card .v4a-card-meta{ opacity: .92; }
 /* ===== END EVENTS PREMIUM VISUAL (OVERVIEW) ===== */
 
 /* ===== EVENTS PREMIUM BADGE (OVERVIEW) ===== */
@@ -2881,7 +2881,7 @@ img {
    ======================= */
 
 /* === ARTIKELS.html – TRUE GLASS MODE === */
-#article-list.ad-card-list--stack .ad-card {
+#article-list.v4a-card-list--stack .v4a-card {
   background: rgba(11, 16, 34, 0.06) !important;
   backdrop-filter: blur(4px);
   box-shadow: none !important;
@@ -2889,27 +2889,27 @@ img {
 }
 
 /* Kill any remaining painted wrapper layers */
-#article-list.ad-card-list--stack *,
-#article-list.ad-card-list--stack *::before,
-#article-list.ad-card-list--stack *::after {
+#article-list.v4a-card-list--stack *,
+#article-list.v4a-card-list--stack *::before,
+#article-list.v4a-card-list--stack *::after {
   background-color: transparent !important;
 }
   
   /* Prevent inner wrappers from staying opaque */
-  #article-list.ad-card-list--stack .ad-card > * {
+  #article-list.v4a-card-list--stack .v4a-card > * {
     background-color: transparent !important;
   }
   
   /* Avoid an opaque strip in the header row */
-  #article-list.ad-card-list--stack .ad-card .ad-card-header {
+  #article-list.v4a-card-list--stack .v4a-card .v4a-card-header {
     background-color: transparent !important;
   }
 
-  /* Some builds wrap each item in an <a> or use .ad-card--row as the painted surface */
-  #article-list.ad-card-list--stack > a,
-  #article-list.ad-card-list--stack > a > *,
-  #article-list.ad-card-list--stack .ad-card--row,
-  #article-list.ad-card-list--stack .ad-card--row > * {
+  /* Some builds wrap each item in an <a> or use .v4a-card--row as the painted surface */
+  #article-list.v4a-card-list--stack > a,
+  #article-list.v4a-card-list--stack > a > *,
+  #article-list.v4a-card-list--stack .v4a-card--row,
+  #article-list.v4a-card-list--stack .v4a-card--row > * {
     background-color: rgba(11, 16, 34, 0.18) !important;
     background-image: none !important;
   }
