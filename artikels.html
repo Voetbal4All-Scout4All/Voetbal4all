@@ -35,7 +35,7 @@
 
     /* Force article thumbnails to be visible */
     #article-list img { display: block !important; visibility: visible !important; opacity: 1 !important; }
-    .ad-card-header img { max-width: 100%; height: auto; }
+    .v4a-card-header img { max-width: 100%; height: auto; }
 
     /* Normalize flag sizing (INT SVG can render oversized if intrinsic viewBox is large) */
     .v4a-flag {
@@ -305,7 +305,7 @@
                     <span class="pill-small" id="news-count-2">—</span>
                   </div>
 
-                  <div id="article-list" class="ad-card-list ad-card-list--stack">
+                  <div id="article-list" class="v4a-card-list v4a-card-list--stack">
                     <!-- gevuld via backend -->
                   </div>
 
@@ -330,7 +330,7 @@
                     </div>
                     <span class="pill-small">Premium</span>
                   </div>
-                  <div class="ad-placeholder">
+                  <div class="v4a-placeholder">
                     Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity? Ontdek wat Voetbal4All voor jouw merk kan betekenen!
                     <br/>
                     <span class="ad-size"><a href="adverteren.html">Bekijk de mogelijkheden →</a></span>
@@ -808,17 +808,17 @@ let lastRenderKey = "";
           `.trim();
 
         return `
-          <article class="ad-card" data-article-id="${id}" data-article-url="${url}">
-            <div class="ad-card-header" style="display:flex; gap:12px; align-items:flex-start;">
+          <article class="v4a-card" data-article-id="${id}" data-article-url="${url}">
+            <div class="v4a-card-header" style="display:flex; gap:12px; align-items:flex-start;">
             ${thumbHtml}
               <div style="min-width:0;flex:1;">
-                <a class="ad-card-title" href="${url}" style="display:block; text-decoration:none; color:inherit; line-height:1.25;">${title}</a>
-                <div class="ad-card-meta" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
+                <a class="v4a-card-title" href="${url}" style="display:block; text-decoration:none; color:inherit; line-height:1.25;">${title}</a>
+                <div class="v4a-card-meta" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
                   ${flagHtml(cc)}
-                  <span class="ad-card-meta__country">${countryLabel(cc)}</span>
-                  ${category ? `<span class="ad-card-meta__sep">·</span><span class="ad-card-meta__cat">${category}</span>` : ""}
-                  <span class="ad-card-meta__sep">·</span>
-                  <span class="ad-card-meta__date">${fmtDate(date)}</span>
+                  <span class="v4a-card-meta__country">${countryLabel(cc)}</span>
+                  ${category ? `<span class="v4a-card-meta__sep">·</span><span class="v4a-card-meta__cat">${category}</span>` : ""}
+                  <span class="v4a-card-meta__sep">·</span>
+                  <span class="v4a-card-meta__date">${fmtDate(date)}</span>
                 </div>
               </div>
             </div>
@@ -827,7 +827,7 @@ let lastRenderKey = "";
               ${snippetClean || "Klik op ‘Lees artikel’ voor de samenvatting en details."}
             </p>
 
-            <div class="ad-card-actions" style="margin-top:10px;">
+            <div class="v4a-card-actions" style="margin-top:10px;">
               <a class="btn-ghost-sm" href="${url}">Lees artikel</a>
             </div>
           </article>
@@ -1007,8 +1007,8 @@ let lastRenderKey = "";
           newsStatus.style.display = "block";
           newsStatus.textContent = "Artikels laden…";
           const skel = Array.from({ length: 8 }).map(() => `
-            <article class="ad-card" aria-hidden="true">
-              <div class="ad-card-header" style="display:flex; gap:12px; align-items:flex-start;">
+            <article class="v4a-card" aria-hidden="true">
+              <div class="v4a-card-header" style="display:flex; gap:12px; align-items:flex-start;">
                 <div style="width:96px;height:64px;border-radius:10px;background:rgba(255,255,255,0.06);"></div>
                 <div style="min-width:0;flex:1;">
                   <div style="height:14px;width:70%;border-radius:6px;background:rgba(255,255,255,0.06);margin:4px 0;"></div>
