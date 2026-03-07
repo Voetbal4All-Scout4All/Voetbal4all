@@ -236,35 +236,35 @@
     }
 
     /* Premium typography: smaller, clean */
-    .premium-grid .ad-card-title{
+    .premium-grid .v4a-card-title{
       font-size:14px;
       font-weight:800;
       line-height:1.25;
     }
 
-    .premium-grid .ad-card-meta{
+    .premium-grid .v4a-card-meta{
       font-size:12px;
       opacity:.86;
       line-height:1.25;
     }
 
     /* Remove any body text block spacing if present */
-    .premium-grid .ad-card-body{ display:none !important; }
+    .premium-grid .v4a-card-body{ display:none !important; }
 
     /* Prevent text bleed/overflow between premium cards */
-    .premium-grid .ad-card{
+    .premium-grid .v4a-card{
       overflow:hidden;
     }
-    .premium-grid .ad-card-title,
-    .premium-grid .ad-card-body{
+    .premium-grid .v4a-card-title,
+    .premium-grid .v4a-card-body{
       display:-webkit-box;
       -webkit-box-orient:vertical;
       overflow:hidden;
     }
-    .premium-grid .ad-card-title{
+    .premium-grid .v4a-card-title{
       -webkit-line-clamp:2;
     }
-    .premium-grid .ad-card-body{
+    .premium-grid .v4a-card-body{
       -webkit-line-clamp:3;
     }
 
@@ -355,7 +355,7 @@
     .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
 
     /* Non-premium cards: keep them scannable (and prevent long text blocks) */
-    #event-list .ad-card-body{
+    #event-list .v4a-card-body{
       display:-webkit-box;
       -webkit-box-orient:vertical;
       -webkit-line-clamp:2;
@@ -702,7 +702,7 @@
                     </div>
                     <span class="pill-small">Premium</span>
                   </div>
-                  <div class="ad-placeholder">
+                  <div class="v4a-placeholder">
                     Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity? Ontdek wat Voetbal4All voor jouw merk kan betekenen!<br/>
                     <span class="ad-size"><a href="adverteren.html">Bekijk de mogelijkheden →</a></span>
                   </div>
@@ -1091,26 +1091,26 @@
           const dateLabel = start.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
 
           return `
-            <article class="ad-card" data-placeholder="1" data-country="${(s.flag === '🇧🇪' ? 'BE' : 'NL')}" data-province="" data-type="${s.type}" data-gender="BOTH" aria-label="Niet-premium event placeholder">
+            <article class="v4a-card" data-placeholder="1" data-country="${(s.flag === '🇧🇪' ? 'BE' : 'NL')}" data-province="" data-type="${s.type}" data-gender="BOTH" aria-label="Niet-premium event placeholder">
               <div class="event-row">
                 <div class="event-thumbbox" aria-label="Flyer thumbnail"></div>
 
                 <div class="event-main">
-                  <div class="ad-card-header" style="margin:0;">
+                  <div class="v4a-card-header" style="margin:0;">
                     <div>
-                      <div class="ad-card-title">Voorbeeld event (niet-premium)</div>
-                      <div class="ad-card-meta">${s.flag} · ${s.city}</div>
-                      <div class="ad-card-meta">${s.club}</div>
-                      <div class="ad-card-meta">${dateLabel}</div>
-                      <div class="ad-card-meta">${s.type}</div>
+                      <div class="v4a-card-title">Voorbeeld event (niet-premium)</div>
+                      <div class="v4a-card-meta">${s.flag} · ${s.city}</div>
+                      <div class="v4a-card-meta">${s.club}</div>
+                      <div class="v4a-card-meta">${dateLabel}</div>
+                      <div class="v4a-card-meta">${s.type}</div>
                     </div>
                   </div>
 
-                  <div class="ad-card-body" style="margin-top:8px;">
+                  <div class="v4a-card-body" style="margin-top:8px;">
                     Dit is een tijdelijke voorbeeldkaart om de pagina-indeling te beoordelen.
                   </div>
 
-                  <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                  <div class="v4a-card-actions event-actions" style="margin-top:10px;">
                     <a class="btn-ghost-sm" href="adverteren.html">Event toevoegen</a>
                     <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
                   </div>
@@ -1151,7 +1151,7 @@
           const province = getEventProvince(ev);
 
           return `
-            <article class="ad-card" id="event-ad-${encodeURIComponent(slug)}"
+            <article class="v4a-card" id="event-ad-${encodeURIComponent(slug)}"
               data-ad-id="${String(slug)}"
               data-title="${String(ev.title || "").replaceAll('"','&quot;')}"
               data-country="${country}"
@@ -1167,48 +1167,48 @@
                 </div>
 
                 <div class="event-main">
-                  <div class="ad-card-header" style="margin:0;">
+                  <div class="v4a-card-header" style="margin:0;">
                     <div>
                       <!-- Regel 1: Titel (klikbaar) -->
-                      <div class="ad-card-title">
+                      <div class="v4a-card-title">
                         <a href="event.html?slug=${encodeURIComponent(slug)}" style="color:inherit;text-decoration:none;">
                           ${ev.title || ""}
                         </a>
                       </div>
 
                       <!-- Regel 2: Vlag + stad -->
-                      <div class="ad-card-meta">
+                      <div class="v4a-card-meta">
                         ${countryToFlag(country)}${ev.city ? " · " + ev.city : ""}
                       </div>
 
                       <!-- Regel 3: Club -->
                       ${(() => {
                         const club = ev.club_name || ev.club || ev.clubName || ev.clubname || ev.organizer_name || "";
-                        return club ? `<div class="ad-card-meta">${club}</div>` : ``;
+                        return club ? `<div class="v4a-card-meta">${club}</div>` : ``;
                       })()}
 
                       <!-- Regel 4: Datum -->
-                      <div class="ad-card-meta">
+                      <div class="v4a-card-meta">
                         ${fmtDayMonth(ev.start_at)}${ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
                       </div>
 
                       <!-- Regel 5: Type -->
-                      <div class="ad-card-meta">
+                      <div class="v4a-card-meta">
                         ${uiType ? uiType : ""}
                       </div>
                     </div>
                   </div>
 
-                  <div class="ad-card-body" style="margin-top:8px;">
+                  <div class="v4a-card-body" style="margin-top:8px;">
                     ${bodyTop}
                     ${desc}
                   </div>
                   ${mapsQuery ? `
-                    <div class="ad-card-meta" style="margin-top:8px;opacity:.9;">
+                    <div class="v4a-card-meta" style="margin-top:8px;opacity:.9;">
                       <strong>Locatie:</strong> ${[locName, addr, [pc, city].filter(Boolean).join(' ')].filter(Boolean).join(' · ')}
                     </div>
                   ` : ``}
-                  <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                  <div class="v4a-card-actions event-actions" style="margin-top:10px;">
                     <a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>
                     <button type="button" class="btn-ghost-sm" data-reply-event="${String(slug)}">Contact</button>
                   </div>
@@ -1361,7 +1361,7 @@
           const uiType = ev ? typeToUiLabel(ev.event_type) : '';
 
           grid.insertAdjacentHTML('beforeend', `
-            <article class="ad-card premium-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
+            <article class="v4a-card premium-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
               <div class="event-row">
                 <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
                   <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
@@ -1371,29 +1371,29 @@
                 </div>
 
                 <div class="event-main">
-                  <div class="ad-card-header" style="margin:0;">
+                  <div class="v4a-card-header" style="margin:0;">
                     <div>
                       <!-- Titel: kleiner, bold -->
-                      <div class="ad-card-title">${cardTitle}</div>
+                      <div class="v4a-card-title">${cardTitle}</div>
 
                       <!-- Vlag + provincie + stad -->
-                      <div class="ad-card-meta">
+                      <div class="v4a-card-meta">
                         ${ev ? placeBits.join(' · ') : "Premium slot"}
                       </div>
 
                       <!-- Datum -->
-                      <div class="ad-card-meta">
+                      <div class="v4a-card-meta">
                         ${ev ? fmtDayMonth(ev.start_at) : "Binnenkort"}${ev && ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
                       </div>
 
                       <!-- Categorie (type) -->
-                      <div class="ad-card-meta">
+                      <div class="v4a-card-meta">
                         ${ev ? (uiType ? uiType : "") : ""}
                       </div>
                     </div>
                   </div>
 
-                  <div class="ad-card-actions event-actions" style="margin-top:10px;">
+                  <div class="v4a-card-actions event-actions" style="margin-top:10px;">
                     ${
                       ev
                         ? `<a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>`
@@ -1575,7 +1575,7 @@ function getEventProvince(ev){
 
     // Verberg events waarvan datum + 1 dag < vandaag
     function hidePastEvents() {
-      const cards = document.querySelectorAll("#event-list .ad-card[data-date]");
+      const cards = document.querySelectorAll("#event-list .v4a-card[data-date]");
       const today = new Date();
       today.setHours(0,0,0,0);
 
@@ -1600,7 +1600,7 @@ function getEventProvince(ev){
       const g = String(genderEl?.value || "BOTH").toUpperCase();
       const p = String(provinceEl?.value || "");
 
-      const cards = listEl.querySelectorAll(".ad-card");
+      const cards = listEl.querySelectorAll(".v4a-card");
       cards.forEach(card => {
         const cc = card.dataset.country || "";
         const tt = card.dataset.type || "";
@@ -1722,8 +1722,8 @@ function getEventProvince(ev){
       if (!btn) return;
 
       const id = btn.getAttribute("data-reply-event");
-      const card = btn.closest(".ad-card");
-      const title = card?.querySelector(".ad-card-title")?.textContent?.trim() || card?.dataset?.title || "Sportief event";
+      const card = btn.closest(".v4a-card");
+      const title = card?.querySelector(".v4a-card-title")?.textContent?.trim() || card?.dataset?.title || "Sportief event";
       const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
       if (!ok) return;
 
