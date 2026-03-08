@@ -654,7 +654,6 @@
                         
                       </div>
                     </div>
-                    <span class="pill-small">Rotatie</span>
                   </div>
                       <div id="premium-grid-30" class="events-grid-2 premium-grid"></div>
                     </div>
@@ -743,7 +742,6 @@
                       <div class="card-caption">Premium</div>
                       <div class="card-title">Uitgelicht (later)</div>
                     </div>
-                    <span class="pill-small">Rotatie</span>
                   </div>
                   <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
                 </article>
@@ -1112,7 +1110,6 @@
 
                   <div class="v4a-card-actions event-actions" style="margin-top:10px;">
                     <a class="btn-ghost-sm" href="adverteren.html">Event toevoegen</a>
-                    <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
                   </div>
                 </div>
               </div>
@@ -1383,7 +1380,7 @@
 
                       <!-- Datum -->
                       <div class="v4a-card-meta">
-                        ${ev ? fmtDayMonth(ev.start_at) : "Binnenkort"}${ev && ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
+                        ${ev ? fmtDayMonth(ev.start_at) : ""}${ev && ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
                       </div>
 
                       <!-- Categorie (type) -->
@@ -1430,9 +1427,9 @@
       const MIN_SLOTS = 10;
 
       const placeholders = [
-        { title: "Jouw premium event hier?", place: "—", type: "Premium", date: "Binnenkort" },
-        { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "Binnenkort" },
-        { title: "Bereik clubs & teams", place: "—", type: "Premium", date: "Binnenkort" }
+        { title: "Jouw premium event hier?", place: "—", type: "Premium", date: "" },
+        { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
+        { title: "Bereik clubs & teams", place: "—", type: "Premium", date: "" }
       ];
 
       const source = (premiumLater && premiumLater.length)
