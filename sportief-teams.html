@@ -396,66 +396,43 @@ const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 // ── League categorieën ──────────────────────────────────────────────────────────────────────────────
 const LEAGUE_CATS = [
   {
-    id: "be_men", label: "🇧🇪 Mannen",
+    id: "be", label: "🇧🇪 België",
     leagues: [
-      { code:"JPL",             label:"Jupiler Pro League",          defaultSeason:"2025" },
-      { code:"BEL2",            label:"Challenger Pro League",        defaultSeason:"2025" },
-      { code:"BEL_D2_VFVA",    label:"Nationale 1 VFVA",             defaultSeason:"2024" },
-      { code:"BEL_D2_VFVB",    label:"Nationale 1 VFVB",             defaultSeason:"2024" },
-      { code:"BEL_D2_ACFF",    label:"Nationale 1 ACFF",             defaultSeason:"2024" },
-      { code:"BEL_D3_VFVA",    label:"Nationale 2 VFVA",             defaultSeason:"2024" },
-      { code:"BEL_D3_VFVB",    label:"Nationale 2 VFVB",             defaultSeason:"2024" },
-      { code:"BEL_D3_ACFF_A",  label:"Nationale 2 ACFF A",           defaultSeason:"2024" },
-      { code:"BEL_D3_ACFF_B",  label:"Nationale 2 ACFF B",           defaultSeason:"2024" },
-      { code:"BE_PROV_ANT",    label:"Prov. Antwerpen",               defaultSeason:"2024" },
-      { code:"BE_PROV_LIM",    label:"Prov. Limburg",                 defaultSeason:"2024" },
-      { code:"BE_PROV_OVL",    label:"Prov. Oost-Vlaanderen",         defaultSeason:"2024" },
-      { code:"BE_PROV_WVL",    label:"Prov. West-Vlaanderen",         defaultSeason:"2024" },
-      { code:"BE_PROV_BRA_VFV",label:"Prov. Brabant VFV",             defaultSeason:"2024" },
-      { code:"BE_PROV_BRA_ACFF",label:"Prov. Brabant ACFF",           defaultSeason:"2024" },
-      { code:"BE_PROV_LIE",    label:"Prov. Luik",                    defaultSeason:"2024" },
-      { code:"BE_PROV_HAI",    label:"Prov. Henegouwen",              defaultSeason:"2024" },
-      { code:"BE_PROV_NAM",    label:"Prov. Namen",                   defaultSeason:"2024" },
-      { code:"BE_PROV_LUX",    label:"Prov. Luxemburg",               defaultSeason:"2024" },
-    ]
-  },
-  {
-    id: "be_women", label: "🇧🇪 Vrouwen",
-    leagues: [
-      { code:"BEL_W",       label:"Super League Women",      defaultSeason:"2024" },
-      { code:"BE_PROV_WVL", label:"Prov. West-Vl. Vrouwen",  defaultSeason:"2024" },
+      { code:"JPL",              label:"Jupiler Pro League",         defaultSeason:"2025" },
+      { code:"BEL2",             label:"Challenger Pro League",      defaultSeason:"2025" },
+      { code:"BEL_W",            label:"Super League Women",         defaultSeason:"2024" },
+      { code:"BEL_D2_VFVA",     label:"Nationale 1 VFVA",           defaultSeason:"2024" },
+      { code:"BEL_D2_VFVB",     label:"Nationale 1 VFVB",           defaultSeason:"2024" },
+      { code:"BEL_D2_ACFF",     label:"Nationale 1 ACFF",           defaultSeason:"2024" },
+      { code:"BEL_D3_VFVA",     label:"Nationale 2 VFVA",           defaultSeason:"2024" },
+      { code:"BEL_D3_VFVB",     label:"Nationale 2 VFVB",           defaultSeason:"2024" },
+      { code:"BEL_D3_ACFF_A",   label:"Nationale 2 ACFF A",         defaultSeason:"2024" },
+      { code:"BEL_D3_ACFF_B",   label:"Nationale 2 ACFF B",         defaultSeason:"2024" },
+      { code:"BE_PROV_ANT",     label:"Prov. Antwerpen",             defaultSeason:"2024" },
+      { code:"BE_PROV_LIM",     label:"Prov. Limburg",               defaultSeason:"2024" },
+      { code:"BE_PROV_OVL",     label:"Prov. Oost-Vlaanderen",       defaultSeason:"2024" },
+      { code:"BE_PROV_WVL",     label:"Prov. West-Vlaanderen",       defaultSeason:"2024" },
+      { code:"BE_PROV_BRA_VFV", label:"Prov. Brabant VFV",           defaultSeason:"2024" },
+      { code:"BE_PROV_BRA_ACFF",label:"Prov. Brabant ACFF",          defaultSeason:"2024" },
+      { code:"BE_PROV_LIE",     label:"Prov. Luik",                  defaultSeason:"2024" },
+      { code:"BE_PROV_HAI",     label:"Prov. Henegouwen",            defaultSeason:"2024" },
+      { code:"BE_PROV_NAM",     label:"Prov. Namen",                 defaultSeason:"2024" },
+      { code:"BE_PROV_LUX",     label:"Prov. Luxemburg",             defaultSeason:"2024" },
     ]
   },
   {
     id: "nl", label: "🇳🇱 Nederland",
     leagues: [
-      { code:"ERED",   label:"Eredivisie",              defaultSeason:"2024" },
-      { code:"NED2",   label:"Keuken Kampioen Div.",    defaultSeason:"2024" },
-      { code:"NED_W",  label:"Eredivisie Vrouwen",       defaultSeason:"2024" },
-    ]
-  },
-  {
-    id: "europa", label: "🌍 Europa",
-    leagues: [
-      { code:"EPL",   label:"Premier League",      defaultSeason:"2024" },
-      { code:"LIGA",  label:"La Liga",              defaultSeason:"2024" },
-      { code:"BUND",  label:"Bundesliga",           defaultSeason:"2024" },
-      { code:"SA",    label:"Serie A",              defaultSeason:"2024" },
-      { code:"L1",    label:"Ligue 1",              defaultSeason:"2024" },
-      { code:"GER2",  label:"2. Bundesliga",        defaultSeason:"2024" },
-      { code:"ENG2",  label:"Championship",         defaultSeason:"2024" },
-      { code:"GER_W", label:"Frauen-Bundesliga",    defaultSeason:"2024" },
-      { code:"ENG_W", label:"WSL (Women)",          defaultSeason:"2024" },
-      { code:"ESP_W", label:"Primera Iberdrola",    defaultSeason:"2024" },
-      { code:"FRA_W", label:"Division 1 Féminine",  defaultSeason:"2024" },
-      { code:"ITA_W", label:"Serie A Femminile",    defaultSeason:"2024" },
+      { code:"ERED",  label:"Eredivisie",             defaultSeason:"2024" },
+      { code:"NED2",  label:"Keuken Kampioen Div.",   defaultSeason:"2024" },
+      { code:"NED_W", label:"Eredivisie Vrouwen",      defaultSeason:"2024" },
     ]
   }
-];
+]
 
 const ALL_LEAGUES = LEAGUE_CATS.flatMap(c => c.leagues.map(l => ({...l, catId: c.id})));
 
-let activeCat    = "be_men";
+let activeCat    = "be";
 let activeLeague = ALL_LEAGUES[0];
 let activeSeason = "2025";
 let activeTab    = "attack";
