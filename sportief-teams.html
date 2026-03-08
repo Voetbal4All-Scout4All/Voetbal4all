@@ -592,7 +592,7 @@ if (teamSearch) {
 // ── Fetch standings ──────────────────────────────────────────────────────────────────
 async function load() {
   activeSeason = seasonSel.value || activeLeague.season;
-  const key = `standings_`;
+  const key = `standings_${activeLeague.code}_${activeSeason}`;
   if (cache[key]) { currentData = cache[key]; render(); return; }
   showLoading();
   try {
