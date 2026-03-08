@@ -615,7 +615,7 @@ function renderStandingsTable(rows){
 
     const cells = [
       `<td style="opacity:.85;">${rank}</td>`,
-      `<td style="white-space:nowrap;padding-right:24px;min-width:160px;">${team}</td>`,
+      `<td style="white-space:nowrap;padding-right:48px;min-width:180px;">${team}</td>`,
       `<td style="text-align:center;opacity:.85;">${escapeHtml(played)}</td>`,
     ];
 
@@ -640,7 +640,7 @@ function renderStandingsTable(rows){
     return `<tr>${cells.join("")}</tr>`;
   }).join("");
 
-  return `<div style="overflow:auto;">
+  return `<div style="overflow:auto;display:flex;justify-content:center;">
     <table class="v4-results-table" style="width:100%;border-collapse:collapse;">
       ${head}
       <tbody>${body}</tbody>
@@ -686,7 +686,7 @@ function renderMatchesList(items){
     </tr>`;
   }).join("");
 
-  return `<div style="overflow:auto;">
+  return `<div style="overflow:auto;display:flex;justify-content:center;">
     <table class="v4-mini-fixtures">
       <thead>
         <tr>
@@ -732,7 +732,7 @@ function renderResultsTable(items){
     </tr>`;
   }).join("");
 
-  return `<div style="overflow:auto;">
+  return `<div style="overflow:auto;display:flex;justify-content:center;">
     <table class="v4-mini-fixtures v4-mini-results">
       <thead>
         <tr>
@@ -981,7 +981,7 @@ loadTopCompetitions();
   function loadFixtures(league){var fc=document.getElementById("fixtures-card"),ft=document.getElementById("fixtures-title"),fb=document.getElementById("fixtures-body");if(!league||!fc){if(fc)fc.style.display="none";return;}var cfg=(LEAGUES||[]).find(function(l){return l.code===league;});var t=cfg?(cfg.label||cfg.code):league;var isW=cfg&&(cfg.gender==="W");ft.innerHTML=escapeHtml(t)+(isW?womenBadgeHtml():"");fb.innerHTML='<p class="note">Laden...</p>';fc.style.display="";fetch(API_BASE+"/api/fixtures?league="+encodeURIComponent(league)+"&next=10&bust="+Date.now()).then(function(r){return r.json();}).then(function(j){if(j.ok&&Array.isArray(j.items)&&j.items.length){fb.innerHTML=renderFixturesTable(j.items);}else{fb.innerHTML='<p class="note">Geen aankomende wedstrijden gevonden.</p>';}}).catch(function(){fb.innerHTML='<p class="note">Kon wedstrijden niet laden.</p>';});}
 
   // STAP 3: Standings
-  function renderStandingsTable(tbl){var a=Array.isArray(tbl)?tbl:[];if(!a.length)return '<p class="note">Geen rangschikking beschikbaar.</p>';var rows=a.map(function(t){var logo=t.logo?'<img src="'+escapeHtml(t.logo)+'" alt="'+escapeHtml(t.team)+'" style="width:18px;height:18px;object-fit:contain;border-radius:3px;flex-shrink:0;" loading="lazy">':"";var teamCell='<span style="display:inline-flex;align-items:center;gap:6px;">'+logo+escapeHtml(t.team||"")+"</span>";return "<tr><td>"+escapeHtml(String(t.rank||""))+"</td><td style='white-space:nowrap;padding-right:24px;min-width:160px;'>"+teamCell+"</td><td style='text-align:center'>"+(t.played!=null?t.played:"")+"</td><td style='text-align:center'>"+(t.win!=null?t.win:"")+"</td><td style='text-align:center'>"+(t.draw!=null?t.draw:"")+"</td><td style='text-align:center'>"+(t.lose!=null?t.lose:"")+"</td><td style='text-align:center'>"+(t.goalsFor!=null?t.goalsFor:"")+"</td><td style='text-align:center'>"+(t.goalsAgainst!=null?t.goalsAgainst:"")+"</td><td style='text-align:center'>"+(t.goalDiff!=null?t.goalDiff:"")+"</td><td style='text-align:center;font-weight:bold'>"+(t.points!=null?t.points:"")+"</td></tr>";}).join("");return '<div style="overflow:auto"><table class="v4-results-table"><thead><tr><th>#</th><th style="padding-right:24px">Team</th><th style="text-align:center">P</th><th style="text-align:center">W</th><th style="text-align:center">G</th><th style="text-align:center">V</th><th style="text-align:center">DV</th><th style="text-align:center">DT</th><th style="text-align:center">DS</th><th style="text-align:center">Pts</th></tr></thead><tbody>'+rows+'</tbody></table></div>';}
+  function renderStandingsTable(tbl){var a=Array.isArray(tbl)?tbl:[];if(!a.length)return '<p class="note">Geen rangschikking beschikbaar.</p>';var rows=a.map(function(t){var logo=t.logo?'<img src="'+escapeHtml(t.logo)+'" alt="'+escapeHtml(t.team)+'" style="width:18px;height:18px;object-fit:contain;border-radius:3px;flex-shrink:0;" loading="lazy">':"";var teamCell='<span style="display:inline-flex;align-items:center;gap:6px;">'+logo+escapeHtml(t.team||"")+"</span>";return "<tr><td>"+escapeHtml(String(t.rank||""))+"</td><td style='white-space:nowrap;padding-right:48px;min-width:180px;'>"+teamCell+"</td><td style='text-align:center'>"+(t.played!=null?t.played:"")+"</td><td style='text-align:center'>"+(t.win!=null?t.win:"")+"</td><td style='text-align:center'>"+(t.draw!=null?t.draw:"")+"</td><td style='text-align:center'>"+(t.lose!=null?t.lose:"")+"</td><td style='text-align:center'>"+(t.goalsFor!=null?t.goalsFor:"")+"</td><td style='text-align:center'>"+(t.goalsAgainst!=null?t.goalsAgainst:"")+"</td><td style='text-align:center'>"+(t.goalDiff!=null?t.goalDiff:"")+"</td><td style='text-align:center;font-weight:bold'>"+(t.points!=null?t.points:"")+"</td></tr>";}).join("");return '<div style="overflow:auto;display:flex;justify-content:center;"><table class="v4-results-table"><thead><tr><th>#</th><th style="padding-right:24px">Team</th><th style="text-align:center">P</th><th style="text-align:center">W</th><th style="text-align:center">G</th><th style="text-align:center">V</th><th style="text-align:center">DV</th><th style="text-align:center">DT</th><th style="text-align:center">DS</th><th style="text-align:center">Pts</th></tr></thead><tbody>'+rows+'</tbody></table></div>';}
 
   function loadStandings(league){var sc=document.getElementById("standings-card"),st=document.getElementById("standings-title"),sb=document.getElementById("standings-body");if(!league||!sc){if(sc)sc.style.display="none";return;}var cfg=(LEAGUES||[]).find(function(l){return l.code===league;});var t=cfg?(cfg.label||cfg.code):league;var isW=cfg&&(cfg.gender==="W");st.innerHTML=escapeHtml(t)+(isW?womenBadgeHtml():"");sb.innerHTML='<p class="note">Laden...</p>';sc.style.display="";fetch(API_BASE+"/api/standings?league="+encodeURIComponent(league)+"&bust="+Date.now()).then(function(r){return r.json();}).then(function(j){if(j.ok&&Array.isArray(j.table)&&j.table.length){sb.innerHTML=renderStandingsTable(j.table);}else{sb.innerHTML='<p class="note">Geen rangschikking beschikbaar.</p>';}}).catch(function(){sb.innerHTML='<p class="note">Kon rangschikking niet laden.</p>';});}
 
