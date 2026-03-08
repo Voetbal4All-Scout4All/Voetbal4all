@@ -431,7 +431,6 @@
               <div class="card-caption">Club &amp; fun</div>
               <div class="card-title">Fundraising &amp; sociale clubactiviteiten</div>
             </div>
-            <span class="pill-small">Niet-sportief</span>
           </div>
           <p class="note">
             Eetdagen, spelavonden, sponsoractiviteiten en andere clubinitiatieven.
@@ -439,8 +438,7 @@
           </p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
             <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
-            <a class="btn-ghost-sm" href="event-aanmelden.html">Formulieren</a>
-            <a class="btn-ghost-sm" href="events.html">Naar sportieve events</a>
+              <a class="btn-ghost-sm" href="events.html">Naar sportieve events</a>
           </div>
         </article>
 
@@ -534,7 +532,6 @@
                     <div class="card-caption">Overzicht</div>
                     <div class="card-title">Club &amp; fun events</div>
                   </div>
-                  <span class="pill-small">Onder elkaar</span>
                 </div>
 
                 <p class="note">
@@ -548,7 +545,6 @@
                         <div class="card-caption">Premium</div>
                         <div class="card-title premium-title-lg">Premium events die eraan komen!</div>
                       </div>
-                      <span class="pill-small">Rotatie</span>
                     </div>
                     <div id="premium-grid-30" class="events-grid-2 premium-grid"></div>
                   </div>
@@ -635,7 +631,6 @@
                     <div class="card-caption">Premium</div>
                     <div class="card-title">Uitgelicht (later)</div>
                   </div>
-                  <span class="pill-small">Rotatie</span>
                 </div>
                 <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
               </article>
@@ -1158,7 +1153,7 @@
                     }
                   </div>
                   <div class="v4a-card-meta">${hasReal ? (placeBits || 'Premium slot') : 'Meer zichtbaarheid in jouw regio'}</div>
-                  <div class="v4a-card-meta">${hasReal ? fmtDayMonth(ev.start_at) : 'Binnenkort'}${hasReal && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
+                  <div class="v4a-card-meta">${hasReal ? fmtDayMonth(ev.start_at) : ''}${hasReal && ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : ''}</div>
                   <div class="v4a-card-meta">${hasReal ? (uiType || '') : ''}</div>
                 </div>
               </div>
@@ -1208,9 +1203,9 @@
     const MIN_SLOTS = 10;
 
     const placeholders = [
-      { title: "Jouw premium event hier?", place: "—", type: "Premium", date: "Binnenkort" },
-      { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "Binnenkort" },
-      { title: "Bereik supporters", place: "—", type: "Premium", date: "Binnenkort" }
+      { title: "Jouw premium event hier?", place: "—", type: "Premium", date: "" },
+      { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
+      { title: "Bereik supporters", place: "—", type: "Premium", date: "" }
     ];
 
     const source = (items && items.length) ? items : [];
