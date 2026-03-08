@@ -29,7 +29,9 @@
     .v4-tab.active { background:linear-gradient(135deg,#2979ff,#7c4dff); border-color:transparent; color:#fff; }
 
     /* ── Stat table ── */
-    .v4-stat-table { width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed; }
+    .v4-stat-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .v4-stat-table td, .v4-stat-table th { text-align:center; white-space:nowrap; }
+    .v4-stat-table td:nth-child(2), .v4-stat-table th:nth-child(2) { text-align:left; }
     .v4-stat-table th {
       text-align:left; color:rgba(255,255,255,0.45); font-size:11px; font-weight:600;
       text-transform:uppercase; letter-spacing:.05em; padding:8px 10px;
@@ -40,8 +42,6 @@
     .v4-stat-table th.sort-asc::after  { content:' ▲'; font-size:9px; }
     .v4-stat-table th.sort-desc::after { content:' ▼'; font-size:9px; }
     .v4-stat-table th.num, .v4-stat-table td.num { text-align:center; }
-    .v4-stat-table td, .v4-stat-table th { min-width:36px; }
-    .v4-stat-table td:nth-child(2), .v4-stat-table th:nth-child(2) { text-align:left; min-width:140px; max-width:200px; overflow:hidden; text-overflow:ellipsis; }
     .v4-stat-table td {
       padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.05);
       color:rgba(255,255,255,0.85); vertical-align:middle;
