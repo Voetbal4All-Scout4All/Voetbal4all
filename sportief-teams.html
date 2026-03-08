@@ -110,16 +110,32 @@
     .v4-empty { text-align:center; padding:40px 16px; color:rgba(255,255,255,0.35); font-size:13px; }
 
     /* ── League bar ── */
-    .v4-league-bar { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; }
-    .v4-league-pill {
-      display:flex; align-items:center; gap:5px;
-      padding:5px 12px; border-radius:16px;
-      border:1.5px solid rgba(255,255,255,0.10);
-      background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.55);
-      font-size:12px; font-weight:600; cursor:pointer; transition:all .15s; font-family:inherit;
+    .v4-league-bar { display:flex; flex-direction:column; gap:8px; margin-bottom:10px; }
+    .v4-cat-tabs { display:flex; gap:4px; flex-wrap:wrap; }
+    .v4-cat-tab {
+      padding:5px 12px; border-radius:14px; font-size:12px; font-weight:600;
+      border:1.5px solid rgba(255,255,255,0.10); background:rgba(255,255,255,0.04);
+      color:rgba(255,255,255,0.55); cursor:pointer; transition:all .15s; font-family:inherit;
     }
-    .v4-league-pill:hover { border-color:rgba(255,255,255,0.22); color:#fff; }
-    .v4-league-pill.active { background:rgba(41,121,255,0.18); border-color:rgba(41,121,255,0.5); color:#6fa8ff; }
+    .v4-cat-tab:hover { border-color:rgba(255,255,255,0.22); color:#fff; }
+    .v4-cat-tab.active { background:rgba(41,121,255,0.18); border-color:rgba(41,121,255,0.5); color:#6fa8ff; }
+    .v4-league-select {
+      width:100%; padding:8px 12px; border-radius:8px;
+      border:1.5px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.05);
+      color:rgba(255,255,255,0.85); font-size:13px; font-family:inherit; font-weight:600;
+      cursor:pointer; appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:right 12px center; padding-right:32px;
+    }
+    .v4-league-select option, .v4-league-select optgroup { background:#1a1f35; color:#fff; }
+    .v4-search-row { margin-bottom:10px; }
+    .v4-search-input {
+      width:100%; padding:7px 12px; border-radius:8px; box-sizing:border-box;
+      border:1.5px solid rgba(255,255,255,0.10); background:rgba(255,255,255,0.05);
+      color:rgba(255,255,255,0.85); font-size:13px; font-family:inherit;
+    }
+    .v4-search-input::placeholder { color:rgba(255,255,255,0.3); }
+    .v4-search-input:focus { outline:none; border-color:rgba(41,121,255,0.4); }
 
     .v4-controls-row { display:flex; gap:8px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
     .v4-season-select {
@@ -239,9 +255,13 @@
         <div class="v4-content">
 
           <div class="v4-league-bar" id="league-bar"></div>
+          <div class="v4-search-row">
+            <input type="text" class="v4-search-input" id="team-search" placeholder="🔍 Zoek team..." autocomplete="off">
+          </div>
 
           <div class="v4-controls-row">
             <select class="v4-season-select" id="season-select">
+              <option value="2025">2025–2026</option>
               <option value="2024">2024–2025</option>
               <option value="2023">2023–2024</option>
               <option value="2022">2022–2023</option>
@@ -373,21 +393,77 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
-const LEAGUES = [
-  { code:"JPL",    label:"Jupiler Pro League",    flag:"🇧🇪", apiId:144 },
-  { code:"BEL2",   label:"Challenger Pro League", flag:"🇧🇪", apiId:145 },
-  { code:"BEL_W",  label:"Super League Women",    flag:"🇧🇪", apiId:195 },
-  { code:"ERED",   label:"Eredivisie",            flag:"🇳🇱", apiId:88  },
-  { code:"NED_D2", label:"Keuken Kampioen Div.",  flag:"🇳🇱", apiId:89  },
+// ── League categorieën ──────────────────────────────────────────────────────────────────────────────
+const LEAGUE_CATS = [
+  {
+    id: "be_men", label: "🇧🇪 Mannen",
+    leagues: [
+      { code:"JPL",             label:"Jupiler Pro League",          defaultSeason:"2025" },
+      { code:"BEL2",            label:"Challenger Pro League",        defaultSeason:"2025" },
+      { code:"BEL_D2_VFVA",    label:"Nationale 1 VFVA",             defaultSeason:"2024" },
+      { code:"BEL_D2_VFVB",    label:"Nationale 1 VFVB",             defaultSeason:"2024" },
+      { code:"BEL_D2_ACFF",    label:"Nationale 1 ACFF",             defaultSeason:"2024" },
+      { code:"BEL_D3_VFVA",    label:"Nationale 2 VFVA",             defaultSeason:"2024" },
+      { code:"BEL_D3_VFVB",    label:"Nationale 2 VFVB",             defaultSeason:"2024" },
+      { code:"BEL_D3_ACFF_A",  label:"Nationale 2 ACFF A",           defaultSeason:"2024" },
+      { code:"BEL_D3_ACFF_B",  label:"Nationale 2 ACFF B",           defaultSeason:"2024" },
+      { code:"BE_PROV_ANT",    label:"Prov. Antwerpen",               defaultSeason:"2024" },
+      { code:"BE_PROV_LIM",    label:"Prov. Limburg",                 defaultSeason:"2024" },
+      { code:"BE_PROV_OVL",    label:"Prov. Oost-Vlaanderen",         defaultSeason:"2024" },
+      { code:"BE_PROV_WVL",    label:"Prov. West-Vlaanderen",         defaultSeason:"2024" },
+      { code:"BE_PROV_BRA_VFV",label:"Prov. Brabant VFV",             defaultSeason:"2024" },
+      { code:"BE_PROV_BRA_ACFF",label:"Prov. Brabant ACFF",           defaultSeason:"2024" },
+      { code:"BE_PROV_LIE",    label:"Prov. Luik",                    defaultSeason:"2024" },
+      { code:"BE_PROV_HAI",    label:"Prov. Henegouwen",              defaultSeason:"2024" },
+      { code:"BE_PROV_NAM",    label:"Prov. Namen",                   defaultSeason:"2024" },
+      { code:"BE_PROV_LUX",    label:"Prov. Luxemburg",               defaultSeason:"2024" },
+    ]
+  },
+  {
+    id: "be_women", label: "🇧🇪 Vrouwen",
+    leagues: [
+      { code:"BEL_W",       label:"Super League Women",      defaultSeason:"2024" },
+      { code:"BE_PROV_WVL", label:"Prov. West-Vl. Vrouwen",  defaultSeason:"2024" },
+    ]
+  },
+  {
+    id: "nl", label: "🇳🇱 Nederland",
+    leagues: [
+      { code:"ERED",   label:"Eredivisie",              defaultSeason:"2024" },
+      { code:"NED2",   label:"Keuken Kampioen Div.",    defaultSeason:"2024" },
+      { code:"NED_W",  label:"Eredivisie Vrouwen",       defaultSeason:"2024" },
+    ]
+  },
+  {
+    id: "europa", label: "🌍 Europa",
+    leagues: [
+      { code:"EPL",   label:"Premier League",      defaultSeason:"2024" },
+      { code:"LIGA",  label:"La Liga",              defaultSeason:"2024" },
+      { code:"BUND",  label:"Bundesliga",           defaultSeason:"2024" },
+      { code:"SA",    label:"Serie A",              defaultSeason:"2024" },
+      { code:"L1",    label:"Ligue 1",              defaultSeason:"2024" },
+      { code:"GER2",  label:"2. Bundesliga",        defaultSeason:"2024" },
+      { code:"ENG2",  label:"Championship",         defaultSeason:"2024" },
+      { code:"GER_W", label:"Frauen-Bundesliga",    defaultSeason:"2024" },
+      { code:"ENG_W", label:"WSL (Women)",          defaultSeason:"2024" },
+      { code:"ESP_W", label:"Primera Iberdrola",    defaultSeason:"2024" },
+      { code:"FRA_W", label:"Division 1 Féminine",  defaultSeason:"2024" },
+      { code:"ITA_W", label:"Serie A Femminile",    defaultSeason:"2024" },
+    ]
+  }
 ];
 
-let activeLeague = LEAGUES[0];
-let activeSeason = "2024";
+const ALL_LEAGUES = LEAGUE_CATS.flatMap(c => c.leagues.map(l => ({...l, catId: c.id})));
+
+let activeCat    = "be_men";
+let activeLeague = ALL_LEAGUES[0];
+let activeSeason = "2025";
 let activeTab    = "attack";
 let sortCol      = null;
 let sortDir      = -1;
 let cache        = {};
-let currentData  = [];   // standings rows (met form, goals etc.)
+let currentData  = [];
+let searchQuery  = "";
 
 const leagueBar    = document.getElementById("league-bar");
 const seasonSel    = document.getElementById("season-select");
@@ -397,21 +473,56 @@ const tableTitle   = document.getElementById("table-title");
 const tableCount   = document.getElementById("table-count");
 const sourceBadge  = document.getElementById("source-badge");
 const heroLabel    = document.getElementById("hero-label");
+const teamSearch   = document.getElementById("team-search");
 
-// ── Build league bar ──────────────────────────────────────────────────────────
+// ── Bouw league bar: categorie-tabs + league dropdown ───────────────────────────────────────
 function buildLeagueBar() {
   leagueBar.innerHTML = "";
-  LEAGUES.forEach(lg => {
+
+  const catRow = document.createElement("div");
+  catRow.className = "v4-cat-tabs";
+  LEAGUE_CATS.forEach(cat => {
     const btn = document.createElement("button");
-    btn.className = "v4-league-pill" + (lg.code === activeLeague.code ? " active" : "");
-    btn.innerHTML = `<span>${lg.flag}</span>${lg.label}`;
-    btn.addEventListener("click", () => { activeLeague = lg; sortCol = null; buildLeagueBar(); load(); });
-    leagueBar.appendChild(btn);
+    btn.className = "v4-cat-tab" + (cat.id === activeCat ? " active" : "");
+    btn.textContent = cat.label;
+    btn.addEventListener("click", () => {
+      activeCat = cat.id;
+      activeLeague = ALL_LEAGUES.find(l => l.catId === activeCat);
+      activeSeason = activeLeague.defaultSeason;
+      seasonSel.value = activeSeason;
+      sortCol = null;
+      searchQuery = "";
+      if (teamSearch) teamSearch.value = "";
+      buildLeagueBar();
+      load();
+    });
+    catRow.appendChild(btn);
   });
-  heroLabel.textContent = activeLeague.flag + " " + activeLeague.label;
+  leagueBar.appendChild(catRow);
+
+  const cat = LEAGUE_CATS.find(c => c.id === activeCat);
+  const sel = document.createElement("select");
+  sel.className = "v4-league-select";
+  cat.leagues.forEach(lg => {
+    const opt = document.createElement("option");
+    opt.value = lg.code;
+    opt.textContent = lg.label;
+    if (lg.code === activeLeague.code) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener("change", () => {
+    activeLeague = ALL_LEAGUES.find(l => l.code === sel.value);
+    activeSeason = activeLeague.defaultSeason;
+    seasonSel.value = activeSeason;
+    sortCol = null;
+    load();
+  });
+  leagueBar.appendChild(sel);
+
+  heroLabel.textContent = activeLeague.label;
 }
 
-// ── Tabs ──────────────────────────────────────────────────────────────────────
+// ── Tabs ────────────────────────────────────────────────────────────────────────────────
 document.querySelectorAll(".v4-tab").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".v4-tab").forEach(b => b.classList.remove("active"));
@@ -424,9 +535,17 @@ document.querySelectorAll(".v4-tab").forEach(btn => {
 
 seasonSel.addEventListener("change", () => { activeSeason = seasonSel.value; load(); });
 
-// ── Fetch standings (we derive team stats from standings data) ─────────────────
+// ── Zoekfunctie ───────────────────────────────────────────────────────────────────────
+if (teamSearch) {
+  teamSearch.addEventListener("input", () => {
+    searchQuery = teamSearch.value.trim().toLowerCase();
+    render();
+  });
+}
+
+// ── Fetch standings ──────────────────────────────────────────────────────────────────
 async function load() {
-  const key = `standings_${activeLeague.apiId}_${activeSeason}`;
+  const key = `standings_${activeLeague.code}_${activeSeason}`;
   if (cache[key]) { currentData = cache[key]; render(); return; }
   showLoading();
   try {
@@ -534,7 +653,10 @@ function render() {
 
   const sc  = sortCol || meta.defaultSort;
   const dir = (meta.sortDirOverride && sortCol === null) ? meta.sortDirOverride : sortDir;
-  const sorted = [...currentData].sort((a,b) => {
+  const rows = searchQuery
+    ? currentData.filter(r => (r.team || r.name || "").toLowerCase().includes(searchQuery))
+    : [...currentData];
+  const sorted = [...rows].sort((a,b) => {
     const va = getVal(a,sc), vb = getVal(b,sc);
     return (va < vb ? -1 : va > vb ? 1 : 0) * dir;
   });
