@@ -1,96 +1,624 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0B1020">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Teamstatistieken</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .ad-slot-header { max-height: 120px; overflow: hidden; }
+
+    /* ── Tabs ── */
+    .v4-tabs { display:flex; gap:6px; margin-bottom:14px; flex-wrap:wrap; }
+    .v4-tab {
+      padding:7px 16px; border-radius:20px;
+      border:1.5px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.6);
+      font-size:13px; font-weight:600; cursor:pointer; transition:all .15s; font-family:inherit;
+    }
+    .v4-tab:hover { border-color:rgba(255,255,255,0.25); color:#fff; }
+    .v4-tab.active { background:linear-gradient(135deg,#2979ff,#7c4dff); border-color:transparent; color:#fff; }
+
+    /* ── Stat table ── */
+    .v4-stat-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .v4-stat-table th {
+      text-align:left; color:rgba(255,255,255,0.45); font-size:11px; font-weight:600;
+      text-transform:uppercase; letter-spacing:.05em; padding:8px 10px;
+      border-bottom:1px solid rgba(255,255,255,0.07); white-space:nowrap;
+      cursor:pointer; user-select:none;
+    }
+    .v4-stat-table th:hover { color:rgba(255,255,255,0.75); }
+    .v4-stat-table th.sort-asc::after  { content:' ▲'; font-size:9px; }
+    .v4-stat-table th.sort-desc::after { content:' ▼'; font-size:9px; }
+    .v4-stat-table th.num, .v4-stat-table td.num { text-align:center; }
+    .v4-stat-table td {
+      padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.05);
+      color:rgba(255,255,255,0.85); vertical-align:middle;
+    }
+    .v4-stat-table tr:last-child td { border-bottom:none; }
+    .v4-stat-table tr:hover td { background:rgba(255,255,255,0.03); }
+
+    /* ── Team cell ── */
+    .v4-team-cell { display:flex; align-items:center; gap:10px; min-width:150px; }
+    .v4-team-logo { width:28px; height:28px; object-fit:contain; flex-shrink:0; }
+    .v4-team-name { font-weight:600; font-size:13px; }
+
+    /* ── Rank ── */
+    .v4-rank {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:22px; height:22px; border-radius:50%;
+      font-size:11px; font-weight:700;
+      background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.6);
+    }
+    .v4-rank.r1 { background:linear-gradient(135deg,#FFD700,#FF8C00); color:#fff; }
+    .v4-rank.r2 { background:linear-gradient(135deg,#C0C0C0,#808080); color:#fff; }
+    .v4-rank.r3 { background:linear-gradient(135deg,#CD7F32,#8B4513); color:#fff; }
+
+    /* ── Pills ── */
+    .v4-pill {
+      display:inline-block; padding:2px 9px; border-radius:10px;
+      font-size:12px; font-weight:700;
+    }
+    .v4-pill.goals   { background:rgba(41,121,255,0.18); color:#6fa8ff; }
+    .v4-pill.against { background:rgba(229,57,53,0.18); color:#ef9a9a; }
+    .v4-pill.cs      { background:rgba(0,200,83,0.15); color:#69f0ae; }
+    .v4-pill.wins    { background:rgba(76,175,80,0.18); color:#a5d6a7; }
+    .v4-pill.draws   { background:rgba(255,193,7,0.15); color:#ffd54f; }
+    .v4-pill.losses  { background:rgba(229,57,53,0.15); color:#ef9a9a; }
+    .v4-pill.form    { background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.75); letter-spacing:.08em; font-size:11px; }
+    .v4-pill.neutral { background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.6); }
+
+    /* ── Form bullets ── */
+    .v4-form { display:flex; gap:3px; justify-content:center; }
+    .v4-form-dot {
+      width:16px; height:16px; border-radius:50%;
+      display:inline-flex; align-items:center; justify-content:center;
+      font-size:9px; font-weight:700; color:#fff;
+    }
+    .v4-form-dot.W { background:#43a047; }
+    .v4-form-dot.D { background:#f9a825; color:#222; }
+    .v4-form-dot.L { background:#e53935; }
+
+    /* ── Progress bar for percentages ── */
+    .v4-bar-wrap { display:flex; align-items:center; gap:6px; min-width:70px; }
+    .v4-bar-track { flex:1; height:4px; border-radius:2px; background:rgba(255,255,255,0.08); overflow:hidden; }
+    .v4-bar-fill  { height:100%; border-radius:2px; }
+    .v4-bar-label { font-size:11px; color:rgba(255,255,255,0.6); min-width:28px; text-align:right; }
+
+    /* ── Loading ── */
+    .v4-loading {
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; padding:48px 16px; gap:12px;
+      color:rgba(255,255,255,0.4); font-size:13px;
+    }
+    .v4-spinner {
+      width:28px; height:28px; border-radius:50%;
+      border:3px solid rgba(255,255,255,0.1);
+      border-top-color:#2979ff;
+      animation:v4spin .7s linear infinite;
+    }
+    @keyframes v4spin { to { transform:rotate(360deg); } }
+    .v4-empty { text-align:center; padding:40px 16px; color:rgba(255,255,255,0.35); font-size:13px; }
+
+    /* ── League bar ── */
+    .v4-league-bar { display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap; }
+    .v4-league-pill {
+      display:flex; align-items:center; gap:5px;
+      padding:5px 12px; border-radius:16px;
+      border:1.5px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.55);
+      font-size:12px; font-weight:600; cursor:pointer; transition:all .15s; font-family:inherit;
+    }
+    .v4-league-pill:hover { border-color:rgba(255,255,255,0.22); color:#fff; }
+    .v4-league-pill.active { background:rgba(41,121,255,0.18); border-color:rgba(41,121,255,0.5); color:#6fa8ff; }
+
+    .v4-controls-row { display:flex; gap:8px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
+    .v4-season-select {
+      padding:6px 12px; border-radius:8px;
+      border:1.5px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.8);
+      font-size:12px; font-family:inherit; font-weight:600; cursor:pointer;
+    }
+    .v4-season-select option { background:#1a1f35; color:#fff; }
+    .v4-source-badge {
+      font-size:10px; padding:3px 8px; border-radius:8px;
+      background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.35); margin-left:auto;
+    }
+  </style>
+</head>
+<body class="v4-hide-live-mobile">
+<div class="page">
+
 <header class="navbar">
-      <div class="shell">
-        <div class="navbar-inner">
-          <a href="index.html" class="brand brand--logo-only">
-            <img
-              src="assets/img/brand/logo-voetbal4all.png"
-              alt="Voetbal4All"
-              class="brand-logo"
-              loading="eager"
-            />
-          </a>
-
-          <nav class="nav-links">
-            <a href="index.html" class="nav-link ">Home</a>
-            <a href="artikels.html" class="nav-link">Artikels</a>
-
-            <!-- SPORTIEVE EVENTS -->
-            <div class="nav-item nav-item--dropdown">
-              <button class="nav-link nav-link--dropdown">
-                Sportieve events <span class="nav-link-caret">▾</span>
-              </button>
-              <div class="nav-dropdown">
-                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
-                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
-                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
-                <a href="stages.html" class="nav-dropdown-link">Stages</a>
-                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
-                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
-              </div>
-            </div>
-
-            <!-- CLUB & FUN -->
-            <div class="nav-item nav-item--dropdown">
-              <button class="nav-link nav-link--dropdown">
-                Club &amp; fun <span class="nav-link-caret">▾</span>
-              </button>
-              <div class="nav-dropdown">
-                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
-                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
-                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
-                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
-                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
-                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
-              </div>
-            </div>
-
-            <!-- VACATURES & PROFIELEN -->
-            <div class="nav-item nav-item--dropdown">
-              <button type="button" class="nav-link nav-link--dropdown">
-                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
-              </button>
-              <div class="nav-dropdown">
-                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
-                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
-                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
-                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
-              </div>
-            </div>
-
-            <!-- SPORTIEF -->
-            <div class="nav-item nav-item--dropdown">
-              <button type="button" class="nav-link nav-link--dropdown">
-                Sportief <span class="nav-link-caret">▾</span>
-              </button>
-              <div class="nav-dropdown">
-                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
-                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
-                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
-                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
-                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
-                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
-              </div>
-            </div>
-
-            <!-- VOETBAL4ALL -->
-            <div class="nav-item nav-item--dropdown">
-              <button type="button" class="nav-link nav-link--dropdown">
-                Voetbal4All <span class="nav-link-caret">▾</span>
-              </button>
-              <div class="nav-dropdown">
-                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
-                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
-                <a href="contact.html" class="nav-dropdown-link">Contact</a>
-              </div>
-            </div>
-          </nav>
-
-          <a href="adverteren.html" class="nav-cta">
-            <span>Adverteer nu</span>
-            <span>Sponsor &amp; Ads</span>
-          </a>
-
-          <button class="nav-burger" aria-label="Menu">☰</button>
+  <div class="shell"><div class="navbar-inner">
+    <a href="index.html" class="brand brand--logo-only">
+      <img src="assets/img/brand/logo-voetbal4all.png" alt="Voetbal4All" class="brand-logo" loading="eager" />
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link ">Home</a>
+      <a href="artikels.html" class="nav-link">Artikels</a>
+      <div class="nav-item nav-item--dropdown">
+        <button class="nav-link nav-link--dropdown">Sportieve events <span class="nav-link-caret">▾</span></button>
+        <div class="nav-dropdown">
+          <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+          <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+          <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+          <a href="stages.html" class="nav-dropdown-link">Stages</a>
+          <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+          <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
         </div>
       </div>
-    </header>
+      <div class="nav-item nav-item--dropdown">
+        <button class="nav-link nav-link--dropdown">Club &amp; fun <span class="nav-link-caret">▾</span></button>
+        <div class="nav-dropdown">
+          <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+          <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+          <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+          <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+          <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+          <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+        </div>
+      </div>
+      <div class="nav-item nav-item--dropdown">
+        <button type="button" class="nav-link nav-link--dropdown">Vacatures &amp; profielen <span class="nav-link-caret">▾</span></button>
+        <div class="nav-dropdown">
+          <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+          <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+          <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+          <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+        </div>
+      </div>
+      <div class="nav-item nav-item--dropdown">
+        <button type="button" class="nav-link nav-link--dropdown">Sportief <span class="nav-link-caret">▾</span></button>
+        <div class="nav-dropdown">
+          <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+          <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+          <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+          <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+          <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+          <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+        </div>
+      </div>
+      <div class="nav-item nav-item--dropdown">
+        <button type="button" class="nav-link nav-link--dropdown">Voetbal4All <span class="nav-link-caret">▾</span></button>
+        <div class="nav-dropdown">
+          <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+          <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+          <a href="contact.html" class="nav-dropdown-link">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <a href="adverteren.html" class="nav-cta"><span>Adverteer nu</span><span>Sponsor &amp; Ads</span></a>
+    <button class="nav-burger" aria-label="Menu">☰</button>
+  </div></div>
+</header>
+
+<section class="live-banner-top">
+  <div class="shell"><div class="live-banner">
+    <div class="live-label"><span class="live-dot"></span>Live score</div>
+    <div class="live-text"><span class="live-text-main"></span><div class="live-updated"></div></div>
+    <div class="live-socials"><div class="live-socials-label">Volg ons</div><div class="live-socials-icons"></div></div>
+  </div></div>
+</section>
+
+<section class="section-main" style="padding:10px 0;">
+  <div class="shell">
+    <div class="ad-slot ad-slot-header">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4062633211824348"
+        data-ad-slot="3461990368" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="section-main">
+    <div class="shell">
+
+      <article class="card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Sportief</div>
+            <div class="card-title">Teamstatistieken</div>
+          </div>
+          <span class="pill-small" id="hero-label">België · Nederland</span>
+        </div>
+        <p class="note">Aanvals- en verdedigingsstatistieken per team, gerangschikt per competitie en seizoen.</p>
+      </article>
+
+      <div class="v4-layout-sidebar">
+        <div class="v4-content">
+
+          <div class="v4-league-bar" id="league-bar"></div>
+
+          <div class="v4-controls-row">
+            <select class="v4-season-select" id="season-select">
+              <option value="2024">2024–2025</option>
+              <option value="2023">2023–2024</option>
+              <option value="2022">2022–2023</option>
+            </select>
+            <span class="v4-source-badge" id="source-badge">API-Football</span>
+          </div>
+
+          <div class="v4-tabs">
+            <button class="v4-tab active" data-tab="attack">⚽ Aanval</button>
+            <button class="v4-tab" data-tab="defense">🛡️ Verdediging</button>
+            <button class="v4-tab" data-tab="form">📈 Vorm</button>
+            <button class="v4-tab" data-tab="overview">📊 Overzicht</button>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-caption" id="table-caption">Aanval</div>
+                <div class="card-title" id="table-title">Meeste goals gescoord</div>
+              </div>
+              <span class="pill-small" id="table-count"></span>
+            </div>
+            <div style="overflow-x:auto;" id="table-wrap">
+              <div class="v4-loading"><div class="v4-spinner"></div><span>Data laden…</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="v4-sidebar">
+          <div class="v4-sidebar-sticky">
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-caption">Advertentie</div>
+                  <div class="card-title">Analyse &amp; performance</div>
+                </div>
+              </div>
+              <div class="v4a-placeholder">
+                Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity?
+                Ontdek wat Voetbal4All voor jouw merk kan betekenen!<br>
+                <span class="ad-size">300 × 250 / 300 × 600</span>
+              </div>
+            </article>
+            <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4062633211824348"
+                data-ad-slot="4105999957" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell"><div class="footer-grid">
+    <div class="footer-brand">
+      <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+      <div class="footer-legal">&copy; <span id="year"></span> Voetbal4All.</div>
+    </div>
+    <div class="footer-ad">Zet jouw merk in de kijker bij de voetbalcommunity!<br>
+      <span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span>
+    </div>
+  </div></div>
+</footer>
+
+</div>
+
+       <div>
+                <div class="card-caption" id="table-caption">Aanval</div>
+                <div class="card-title" id="table-title">Meeste goals gescoord</div>
+              </div>
+              <span class="pill-small" id="table-count"></span>
+            </div>
+            <div style="overflow-x:auto;" id="table-wrap">
+              <div class="v4-loading"><div class="v4-spinner"></div><span>Data laden…</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="v4-sidebar">
+          <div class="v4-sidebar-sticky">
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-caption">Advertentie</div>
+                  <div class="card-title">Analyse &amp; performance</div>
+                </div>
+              </div>
+              <div class="v4a-placeholder">
+                Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity?
+                Ontdek wat Voetbal4All voor jouw merk kan betekenen!<br>
+                <span class="ad-size">300 × 250 / 300 × 600</span>
+              </div>
+            </article>
+            <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4062633211824348"
+                data-ad-slot="4105999957" data-ad-format="auto" data-full-width-responsive="true"></ins>
+              <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell"><div class="footer-grid">
+    <div class="footer-brand">
+      <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+      <div class="footer-legal">&copy; <span id="year"></span> Voetbal4All.</div>
+    </div>
+    <div class="footer-ad">Zet jouw merk in de kijker bij de voetbalcommunity!<br>
+      <span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span>
+    </div>
+  </div></div>
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+const LEAGUES = [
+  { code:"JPL",    label:"Jupiler Pro League",    flag:"🇧🇪", apiId:144 },
+  { code:"BEL2",   label:"Challenger Pro League", flag:"🇧🇪", apiId:145 },
+  { code:"BEL_W",  label:"Super League Women",    flag:"🇧🇪", apiId:195 },
+  { code:"ERED",   label:"Eredivisie",            flag:"🇳🇱", apiId:88  },
+  { code:"NED_D2", label:"Keuken Kampioen Div.",  flag:"🇳🇱", apiId:89  },
+];
+
+let activeLeague = LEAGUES[0];
+let activeSeason = "2024";
+let activeTab    = "attack";
+let sortCol      = null;
+let sortDir      = -1;
+let cache        = {};
+let currentData  = [];   // standings rows (met form, goals etc.)
+
+const leagueBar    = document.getElementById("league-bar");
+const seasonSel    = document.getElementById("season-select");
+const tableWrap    = document.getElementById("table-wrap");
+const tableCaption = document.getElementById("table-caption");
+const tableTitle   = document.getElementById("table-title");
+const tableCount   = document.getElementById("table-count");
+const sourceBadge  = document.getElementById("source-badge");
+const heroLabel    = document.getElementById("hero-label");
+
+// ── Build league bar ──────────────────────────────────────────────────────────
+function buildLeagueBar() {
+  leagueBar.innerHTML = "";
+  LEAGUES.forEach(lg => {
+    const btn = document.createElement("button");
+    btn.className = "v4-league-pill" + (lg.code === activeLeague.code ? " active" : "");
+    btn.innerHTML = `<span>${lg.flag}</span>${lg.label}`;
+    btn.addEventListener("click", () => { activeLeague = lg; sortCol = null; buildLeagueBar(); load(); });
+    leagueBar.appendChild(btn);
+  });
+  heroLabel.textContent = activeLeague.flag + " " + activeLeague.label;
+}
+
+// ── Tabs ──────────────────────────────────────────────────────────────────────
+document.querySelectorAll(".v4-tab").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".v4-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeTab = btn.dataset.tab;
+    sortCol = null;
+    render();
+  });
+});
+
+seasonSel.addEventListener("change", () => { activeSeason = seasonSel.value; load(); });
+
+// ── Fetch standings (we derive team stats from standings data) ─────────────────
+async function load() {
+  const key = `standings_${activeLeague.apiId}_${activeSeason}`;
+  if (cache[key]) { currentData = cache[key]; render(); return; }
+  showLoading();
+  try {
+    const r = await fetch(`${API_BASE}/api/standings?leagueCode=${activeLeague.code}&season=${activeSeason}`);
+    const json = await r.json();
+    currentData = (json.ok && json.table && json.table.length) ? json.table
+                : (json.ok && json.items && json.items.length) ? json.items
+                : [];
+    cache[key] = currentData;
+  } catch(e) {
+    currentData = [];
+  }
+  render();
+}
+
+// ── Get value from row for sorting ───────────────────────────────────────────
+function getVal(row, col) {
+  if (!row) return 0;
+  switch(col) {
+    case "name":       return (row.team||"").toLowerCase();
+    case "played":     return row.played || 0;
+    case "goalsFor":   return row.goalsFor || 0;
+    case "goalsAgainst": return row.goalsAgainst || 0;
+    case "goalDiff":   return row.goalDiff || 0;
+    case "wins":       return row.win || 0;
+    case "draws":      return row.draw || 0;
+    case "losses":     return row.lose || 0;
+    case "points":     return row.points || 0;
+    case "cleanSheets": {
+      return row.cleanSheets || 0;
+    }
+    case "formW": {
+      const f = row.form || "";
+      return (f.match(/W/g)||[]).length;
+    }
+    case "avgGoals": return row.played ? (row.goalsFor / row.played) : 0;
+    case "avgAgainst": return row.played ? (row.goalsAgainst / row.played) : 0;
+    default: return 0;
+  }
+}
+
+const TAB_META = {
+  attack: {
+    caption: "Aanval",
+    title:   "Meeste goals gescoord",
+    defaultSort: "goalsFor",
+    cols: [
+      { col:"goalsFor",   label:"⚽ Goals",    tip:"Totaal goals gescoord" },
+      { col:"avgGoals",   label:"⌀/W",         tip:"Gemiddeld goals per wedstrijd" },
+      { col:"goalDiff",   label:"+/−",          tip:"Doelsaldo" },
+      { col:"played",     label:"W",            tip:"Gespeelde wedstrijden" },
+    ]
+  },
+  defense: {
+    caption: "Verdediging",
+    title:   "Minste goals toegelaten",
+    defaultSort: "goalsAgainst",
+    sortDirOverride: 1,
+    cols: [
+      { col:"goalsAgainst", label:"🥅 Tegen",  tip:"Totaal goals toegelaten" },
+      { col:"avgAgainst",   label:"⌀/W",       tip:"Gemiddeld goals tegen per wedstrijd" },
+      { col:"goalDiff",     label:"+/−",        tip:"Doelsaldo" },
+      { col:"played",       label:"W",          tip:"Gespeelde wedstrijden" },
+    ]
+  },
+  form: {
+    caption: "Vorm",
+    title:   "Laatste 5 wedstrijden",
+    defaultSort: "formW",
+    cols: [
+      { col:"form",    label:"Vorm",   tip:"Laatste 5 resultaten" },
+      { col:"formW",   label:"W",      tip:"Overwinningen in laatste 5" },
+      { col:"wins",    label:"Totaal W", tip:"Totaal overwinningen" },
+      { col:"draws",   label:"G",      tip:"Totaal gelijke spelen" },
+      { col:"losses",  label:"V",      tip:"Totaal verliespartijen" },
+    ]
+  },
+  overview: {
+    caption: "Overzicht",
+    title:   "Alle statistieken",
+    defaultSort: "points",
+    cols: [
+      { col:"points",      label:"Ptn" },
+      { col:"wins",        label:"W" },
+      { col:"draws",       label:"G" },
+      { col:"losses",      label:"V" },
+      { col:"goalsFor",    label:"GV" },
+      { col:"goalsAgainst",label:"GT" },
+      { col:"goalDiff",    label:"+/−" },
+    ]
+  }
+};
+
+function render() {
+  const meta = TAB_META[activeTab];
+  tableCaption.textContent = meta.caption;
+  tableTitle.textContent   = meta.title;
+
+  if (!currentData.length) {
+    sourceBadge.textContent = "Gecu data";
+    tableCount.textContent  = "";
+    tableWrap.innerHTML = `<div class="v4-empty">📊 Geen gegevens beschikbaar voor <strong>${activeLeague.label}</strong> ${activeSeason}–${+activeSeason+1}.<br><small style="color:rgba(255,255,255,.2);margin-top:6px;display:block">Seizoen mogelijk nog niet gestart of niet beschikbaar.</small></div>`;
+    return;
+  }
+
+  const sc  = sortCol || meta.defaultSort;
+  const dir = (meta.sortDirOverride && sortCol === null) ? meta.sortDirOverride : sortDir;
+  const sorted = [...currentData].sort((a,b) => {
+    const va = getVal(a,sc), vb = getVal(b,sc);
+    return (va < vb ? -1 : va > vb ? 1 : 0) * dir;
+  });
+
+  sourceBadge.textContent = "API-Football";
+  tableCount.textContent  = sorted.length + " teams";
+
+  let html = `<table class="v4-stat-table"><thead><tr><th class="num" data-col="_rank">#</th><th data-col="name">Team</th>`;
+  meta.cols.forEach(c => {
+    const active = sc === c.col;
+    const cls = "num" + (active ? (dir > 0 ? " sort-asc" : " sort-desc") : "");
+    html += `<th class="${cls}" data-col="${c.col}" title="${c.tip||c.label}">${c.label}</th>`;
+  });
+  html += `</tr></thead><tbody>`;
+
+  sorted.forEach((row, i) => {
+    const rank = i + 1;
+    const rankCls = rank===1?"r1":rank===2?"r2":rank===3?"r3":"";
+    const logo = row.logo ? `<img class="v4-team-logo" src="${row.logo}" alt="" loading="lazy" onerror="this.style.display='none'">` : `<div style="width:28px"></div>`;
+    html += `<tr><td class="num"><span class="v4-rank ${rankCls}">${rank}</span></td><td><div class="v4-team-cell">${logo}<span class="v4-team-name">${esc(row.team||"–")}</span></div></td>`;
+    meta.cols.forEach(c => {
+      const v = getVal(row, c.col);
+      html += `<td class="num">${renderCell(c.col, v, row)}</td>`;
+    });
+    html += `</tr>`;
+  });
+  html += `</tbody></table>`;
+  tableWrap.innerHTML = html;
+
+  tableWrap.querySelectorAll("th[data-col]").forEach(th => {
+    th.addEventListener("click", () => {
+      const col = th.dataset.col;
+      if (col === "_rank") return;
+      if (sortCol === col) sortDir *= -1;
+      else { sortCol = col; sortDir = -1; }
+      render();
+    });
+  });
+}
+
+function renderCell(col, v, row) {
+  switch(col) {
+    case "goalsFor":     return `<span class="v4-pill goals">${v}</span>`;
+    case "goalsAgainst": return `<span class="v4-pill against">${v}</span>`;
+    case "goalDiff": {
+      const cls = v > 0 ? "goals" : v < 0 ? "against" : "neutral";
+      return `<span class="v4-pill ${cls}">${v > 0 ? "+" : ""}${v}</span>`;
+    }
+    case "wins":   return `<span class="v4-pill wins">${v}</span>`;
+    case "draws":  return `<span class="v4-pill draws">${v}</span>`;
+    case "losses": return `<span class="v4-pill losses">${v}</span>`;
+    case "points": return `<span class="v4-pill wins">${v}</span>`;
+    case "avgGoals": case "avgAgainst":
+      return `<span class="v4-pill neutral">${v.toFixed(2)}</span>`;
+    case "form": {
+      const f = (row.form || "").substring(0, 5);
+      if (!f) return `<span style="color:rgba(255,255,255,">–</span>`;
+      return `<div class="v4-form">${f.split("").map(c => `<span class="v4-form-dot ${c}" title="${c==="W"?"Winst":c==="D"?"Gelijk":"Verlies"}">${c}</span>`).join("")}</div>`;
+    }
+    case "formW": {
+      const f = (row.form || "").substring(0, 5);
+      const w = (f.match(/W/g)||[]).length;
+      const cls = w >= 4 ? "wins" : w >= 2 ? "draws" : "losses";
+      return `<span class="v4-pill ${cls}">${w}/5</span>`;
+    }
+    default:
+      return v ? `<span class="v4-pill neutral">${v}</span>` : `<span style="color:rgba(255,255,255,.25)">0</span>`;
+  }
+}
+
+function showLoading() {
+  tableWrap.innerHTML = `<div class="v4-loading"><div class="v4-spinner"></div><span>Data laden…</span></div>`;
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+buildLeagueBar();
+load();
+</script>
+
+<script src="assets/js/nav-active.js" defer></script>
+<script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+</body>
+</html>
