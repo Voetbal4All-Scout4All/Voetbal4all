@@ -1,0 +1,14 @@
+.form { display: flex; flex-direction: column; gap: var(--s4a-space-4); width: 100%; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4a-space-3); }
+.forgotRow { display: flex; justify-content: flex-end; }
+.link { color: var(--s4a-blue-bright); text-decoration: none; font-size: 0.85rem; transition: color 250ms ease; }
+.link:hover { color: var(--s4a-blue); text-decoration: underline; }
+.errorMsg { color: var(--s4a-error); font-size: 0.85rem; text-align: center; padding: var(--s4a-space-2) var(--s4a-space-3); background: rgba(255,61,87,0.08); border: 1px solid rgba(255,61,87,0.2); border-radius: var(--s4a-radius); }
+.switchText { text-align: center; color: var(--s4a-text-secondary); font-size: 0.85rem; }
+.selectWrap { display: flex; flex-direction: column; gap: var(--s4a-space-1); }
+.selectLabel { font-family: var(--s4a-font-body); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--s4a-text-muted); }
+.select { background: var(--s4a-bg-elevated); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius); color: var(--s4a-text-primary); font-family: var(--s4a-font-body); font-size: 0.9rem; padding: var(--s4a-space-2) var(--s4a-space-3); outline: none; transition: all 250ms ease; cursor: pointer; }
+.select:focus { border-color: var(--s4a-blue); box-shadow: 0 0 0 3px rgba(45,142,255,0.15); }
+.select option { background: var(--s4a-bg-elevated); color: var(--s4a-text-primary); }
+.checkRow { display: flex; align-items: center; gap: var(--s4a-space-2); color: var(--s4a-text-secondary); font-size: 0.85rem; cursor: pointer; }
+.checkRow input[type="checkbox"] { accent-color: var(--s4a-blue); width: 16px; height: 16px; }
