@@ -45,13 +45,13 @@
 .btn--ghost:hover:not(:disabled) { color: var(--s4a-text-primary); border-color: var(--s4a-border-active); background: var(--s4a-bg-hover); }
 
 .btn--danger { background: var(--s4a-error); color: var(--s4a-text-primary); }
-.btn--danger:hover:not(:disabled) { box-shadow: 0 0 25px rgba(255,61,87,0.4), 0 0 60px rgba(255,61,87,0.15); }
+.btn--danger:hover:not(:disabled) { box-shadow: 0 0 25px var(--s4a-red-bg-subtle), 0 0 60px rgba(255,61,87,0.10); }
 
 .btn--loading { pointer-events: none; }
 .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: var(--s4a-text-primary); border-radius: 50%; animation: spin 0.6s linear infinite; }
 .icon { display: inline-flex; align-items: center; flex-shrink: 0; }
 .label { display: inline-flex; align-items: center; }
-.btn:focus-visible { box-shadow: 0 0 0 3px rgba(45,142,255,0.3), 0 0 20px rgba(45,142,255,0.15); }
+.btn:focus-visible { box-shadow: 0 0 0 3px var(--s4a-focus-ring), 0 0 20px var(--s4a-blue-bg-subtle); }
 
 @keyframes shine { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
 @keyframes spin { to { transform: rotate(360deg); } }
