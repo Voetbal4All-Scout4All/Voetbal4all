@@ -1,0 +1,180 @@
+/* ============================================
+   Scout4All Design Tokens
+   4All Ventures BV · v1.0
+   ============================================ */
+
+:root {
+    /* Achtergronden */
+  --s4a-bg-base:          #080C18;
+    --s4a-bg-surface:       #0D1526;
+    --s4a-bg-elevated:      #111E35;
+    --s4a-bg-hover:         #162240;
+
+  /* Primaire accenten */
+  --s4a-blue:             #2D8EFF;
+    --s4a-blue-bright:      #00AAFF;
+    --s4a-blue-dark:        #1A5FCC;
+    --s4a-orange:           #FF6B1A;
+    --s4a-orange-bright:    #FF8C42;
+    --s4a-red:              #FF3D00;
+    --s4a-purple:           #C84BFF;
+
+  /* Tekst */
+  --s4a-text-primary:     #FFFFFF;
+    --s4a-text-secondary:   #A8B8D0;
+    --s4a-text-muted:       #5A6E8A;
+
+  /* Status */
+  --s4a-success:          #00E676;
+    --s4a-warning:          #FFB300;
+    --s4a-error:            #FF3D57;
+
+  /* Borders */
+  --s4a-border:           rgba(45, 142, 255, 0.15);
+    --s4a-border-hover:     rgba(45, 142, 255, 0.40);
+    --s4a-border-active:    rgba(45, 142, 255, 0.70);
+
+  /* Glow shadows */
+  --s4a-glow-blue:        0 0 25px rgba(45,142,255,0.40), 0 0 60px rgba(45,142,255,0.15);
+    --s4a-glow-blue-strong: 0 0 40px rgba(0,170,255,0.60), 0 0 100px rgba(0,170,255,0.20);
+    --s4a-glow-orange:      0 0 25px rgba(255,107,26,0.40), 0 0 60px rgba(255,107,26,0.15);
+    --s4a-glow-purple:      0 0 20px rgba(200,75,255,0.35), 0 0 60px rgba(200,75,255,0.12);
+
+  /* Gradiënten */
+  --s4a-grad-primary:     linear-gradient(135deg, #2D8EFF 0%, #FF6B1A 100%);
+    --s4a-grad-blue:        linear-gradient(135deg, #1A5FCC 0%, #00AAFF 100%);
+    --s4a-grad-orange:      linear-gradient(135deg, #FF3D00 0%, #FF8C42 100%);
+    --s4a-grad-surface:     linear-gradient(145deg, #111E35 0%, #0D1526 100%);
+
+  /* Typografie */
+  --s4a-font-display:     'Rajdhani', 'Exo 2', sans-serif;
+    --s4a-font-body:        'DM Sans', 'Outfit', sans-serif;
+    --s4a-font-mono:        'JetBrains Mono', monospace;
+
+  /* Spacing systeem (4px grid) */
+  --s4a-space-1: 0.25rem;
+    --s4a-space-2: 0.5rem;
+    --s4a-space-3: 0.75rem;
+    --s4a-space-4: 1rem;
+    --s4a-space-6: 1.5rem;
+    --s4a-space-8: 2rem;
+    --s4a-space-10: 2.5rem;
+    --s4a-space-12: 3rem;
+    --s4a-space-16: 4rem;
+
+  /* Border radius */
+  --s4a-radius-sm: 4px;
+    --s4a-radius: 8px;
+    --s4a-radius-md: 12px;
+    --s4a-radius-lg: 16px;
+    --s4a-radius-xl: 24px;
+
+  /* Layout */
+  --s4a-sidebar-width: 240px;
+    --s4a-navbar-height: 60px;
+
+  /* Logo */
+  --s4a-logo-url: url('/scout/assets/img/scout4all-logo.png');
+}
+
+/* ============================================
+   Global Scout4All Resets
+   ============================================ */
+
+.s4a-root {
+    background-color: var(--s4a-bg-base);
+    color: var(--s4a-text-primary);
+    font-family: var(--s4a-font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+.s4a-root *,
+.s4a-root *::before,
+.s4a-root *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================
+   Typography Utility Classes
+   ============================================ */
+
+.s4a-heading {
+    font-family: var(--s4a-font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.s4a-body {
+    font-family: var(--s4a-font-body);
+}
+
+.s4a-mono {
+    font-family: var(--s4a-font-mono);
+}
+
+/* Gradient text utility */
+.s4a-gradient-text {
+    background: var(--s4a-grad-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes s4a-fadeInUp {
+    from {
+          opacity: 0;
+          transform: translateY(20px);
+    }
+    to {
+          opacity: 1;
+          transform: translateY(0);
+    }
+}
+
+@keyframes s4a-glow-pulse {
+    0%, 100% {
+          opacity: 0.6;
+    }
+    50% {
+          opacity: 1;
+    }
+}
+
+@keyframes s4a-shine {
+    from {
+          transform: translateX(-100%);
+    }
+    to {
+          transform: translateX(100%);
+    }
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+
+.s4a-root ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.s4a-root ::-webkit-scrollbar-track {
+    background: var(--s4a-bg-base);
+}
+
+.s4a-root ::-webkit-scrollbar-thumb {
+    background: var(--s4a-border-hover);
+    border-radius: 3px;
+}
+
+.s4a-root ::-webkit-scrollbar-thumb:hover {
+    background: var(--s4a-border-active);
+}
