@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+  background: var(--s4a-bg-surface);
+  border: 1px solid var(--s4a-border);
+  border-radius: var(--s4a-radius-lg);
+  padding: var(--s4a-space-6);
+  transition: all 300ms ease;
+}
+.card--no-padding { padding: 0; }
+.card--hoverable:hover {
+  border-color: var(--s4a-border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(45,142,255,0.08);
+}
+.glowLine {
+  position: absolute;
+  top: 0; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--s4a-blue), transparent);
+  opacity: 0; transition: opacity 300ms ease;
+}
+.card--hoverable:hover .glowLine { opacity: 1; }
+.card--glow-orange .glowLine { background: linear-gradient(90deg, transparent, var(--s4a-orange), transparent); }
+.card--glow-purple .glowLine { background: linear-gradient(90deg, transparent, var(--s4a-purple), transparent); }
