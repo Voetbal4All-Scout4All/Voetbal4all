@@ -29,10 +29,14 @@
     --s4a-warning:          #FFB300;
     --s4a-error:            #FF3D57;
 
-  /* Borders */
+  /* Borders *
   --s4a-border:           rgba(45, 142, 255, 0.15);
     --s4a-border-hover:     rgba(45, 142, 255, 0.40);
     --s4a-border-active:    rgba(45, 142, 255, 0.70);
+     --s4a-blue-bg-subtle:      rgba(45, 142, 255, 0.12);  /* active nav, subtle highlights */
+     --s4a-blue-border-subtle:  rgba(45, 142, 255, 0.20);  /* active nav border */
+     --s4a-red-bg-subtle:       rgba(255, 61, 87, 0.12);   /* danger hover */
+     --s4a-focus-ring:          rgba(45, 142, 255, 0.30);  /* focus-visible glow ring */
 
   /* Glow shadows */
   --s4a-glow-blue:        0 0 25px rgba(45,142,255,0.40), 0 0 60px rgba(45,142,255,0.15);
