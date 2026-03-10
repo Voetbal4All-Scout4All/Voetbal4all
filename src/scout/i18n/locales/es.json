@@ -1,0 +1,91 @@
+{
+    "common": {
+          "loading": "Cargando...",
+          "save": "Guardar",
+          "cancel": "Cancelar",
+          "confirm": "Confirmar",
+          "delete": "Eliminar",
+          "edit": "Editar",
+          "back": "Volver",
+          "next": "Siguiente",
+          "search": "Buscar",
+          "filter": "Filtrar",
+          "export": "Exportar",
+          "close": "Cerrar",
+          "yes": "Sí",
+          "no": "No"
+    },
+    "nav": {
+          "overview": "Resumen",
+          "dashboard": "Panel",
+          "search": "Buscar",
+          "scouting": "Scouting",
+          "players": "Jugadores",
+          "reports": "Informes",
+          "videos": "Vídeos",
+          "watchlists": "Watchlists",
+          "analysis": "Análisis",
+          "compare": "Comparar",
+          "shadowTeams": "Shadow Teams",
+          "club": "Club",
+          "clubDashboard": "Panel",
+          "tasks": "Tareas"
+    },
+    "auth": {
+          "login": "Iniciar sesión",
+          "logout": "Cerrar sesión",
+          "register": "Registrarse",
+          "email": "Correo electrónico",
+          "password": "Contraseña",
+          "passwordConfirm": "Confirmar contraseña",
+          "firstName": "Nombre",
+          "lastName": "Apellido",
+          "forgotPassword": "¿Olvidaste tu contraseña?",
+          "resetPassword": "Restablecer contraseña",
+          "welcomeBack": "Bienvenido de nuevo",
+          "loginSubtitle": "Inicia sesión en tu cuenta Scout4All",
+          "createAccount": "Crear cuenta",
+          "registerSubtitle": "Crea tu cuenta Scout4All",
+          "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+          "noAccountYet": "¿Aún no tienes cuenta?",
+          "loginHere": "Inicia sesión aquí",
+          "registerHere": "Regístrate aquí",
+          "agreeToTerms": "Acepto los",
+          "terms": "términos y condiciones",
+          "passwordMinLength": "Mín. 8 caracteres",
+          "passwordRepeat": "Repetir contraseña",
+          "passwordMismatch": "Las contraseñas no coinciden",
+          "termsRequired": "Debes aceptar los términos y condiciones",
+          "loginFailed": "Error de inicio de sesión",
+          "registerFailed": "Error de registro",
+          "platform": "Plataforma"
+    },
+    "dashboard": {
+          "welcome": "¡Bienvenido, {{name}}!",
+          "welcomeSubtitle": "Tu panel Scout4All está listo para usar.",
+          "availableInPhase2": "Disponible en Fase 2",
+          "reports": "Informes",
+          "players": "Jugadores",
+          "plan": "Plan",
+          "dashboardExpandPhase2": "El contenido del panel se ampliará en la Fase 2."
+    },
+    "topbar": {
+          "searchPlaceholder": "Buscar jugadores, clubes, informes...",
+          "notifications": "Notificaciones",
+          "newReport": "+ Nuevo informe"
+    },
+    "language": {
+          "select": "Idioma",
+          "nl": "Nederlands",
+          "fr": "Français",
+          "en": "English",
+          "de": "Deutsch",
+          "es": "Español",
+          "it": "Italiano"
+    },
+    "errors": {
+          "generic": "Se ha producido un error",
+          "network": "Error de red — comprueba tu conexión",
+          "unauthorized": "Sesión expirada — inicia sesión de nuevo"
+    }
+}
