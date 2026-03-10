@@ -11,7 +11,7 @@
           },
           {
                   "source": "/scout/(.*)",
-                  "destination": "/scout/index.html"
+                  "destination": "/index.html"
           }
     ],
     "headers": [
