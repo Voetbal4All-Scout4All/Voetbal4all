@@ -1,0 +1,91 @@
+{
+    "common": {
+          "loading": "Loading...",
+          "save": "Save",
+          "cancel": "Cancel",
+          "confirm": "Confirm",
+          "delete": "Delete",
+          "edit": "Edit",
+          "back": "Back",
+          "next": "Next",
+          "search": "Search",
+          "filter": "Filter",
+          "export": "Export",
+          "close": "Close",
+          "yes": "Yes",
+          "no": "No"
+    },
+    "nav": {
+          "overview": "Overview",
+          "dashboard": "Dashboard",
+          "search": "Search",
+          "scouting": "Scouting",
+          "players": "Players",
+          "reports": "Reports",
+          "videos": "Videos",
+          "watchlists": "Watchlists",
+          "analysis": "Analysis",
+          "compare": "Compare",
+          "shadowTeams": "Shadow Teams",
+          "club": "Club",
+          "clubDashboard": "Dashboard",
+          "tasks": "Tasks"
+    },
+    "auth": {
+          "login": "Log in",
+          "logout": "Log out",
+          "register": "Register",
+          "email": "Email",
+          "password": "Password",
+          "passwordConfirm": "Confirm password",
+          "firstName": "First name",
+          "lastName": "Last name",
+          "forgotPassword": "Forgot password?",
+          "resetPassword": "Reset password",
+          "welcomeBack": "Welcome back",
+          "loginSubtitle": "Log in to your Scout4All account",
+          "createAccount": "Create account",
+          "registerSubtitle": "Create your Scout4All account",
+          "alreadyHaveAccount": "Already have an account?",
+          "noAccountYet": "Don't have an account yet?",
+          "loginHere": "Log in here",
+          "registerHere": "Register here",
+          "agreeToTerms": "I agree to the",
+          "terms": "terms and conditions",
+          "passwordMinLength": "Min. 8 characters",
+          "passwordRepeat": "Repeat password",
+          "passwordMismatch": "Passwords do not match",
+          "termsRequired": "You must agree to the terms and conditions",
+          "loginFailed": "Login failed",
+          "registerFailed": "Registration failed",
+          "platform": "Platform"
+    },
+    "dashboard": {
+          "welcome": "Welcome, {{name}}!",
+          "welcomeSubtitle": "Your Scout4All dashboard is ready to use.",
+          "availableInPhase2": "Available in Phase 2",
+          "reports": "Reports",
+          "players": "Players",
+          "plan": "Plan",
+          "dashboardExpandPhase2": "Dashboard content will be expanded in Phase 2."
+    },
+    "topbar": {
+          "searchPlaceholder": "Search players, clubs, reports...",
+          "notifications": "Notifications",
+          "newReport": "+ New report"
+    },
+    "language": {
+          "select": "Language",
+          "nl": "Nederlands",
+          "fr": "Français",
+          "en": "English",
+          "de": "Deutsch",
+          "es": "Español",
+          "it": "Italiano"
+    },
+    "errors": {
+          "generic": "An error occurred",
+          "network": "Network error — check your connection",
+          "unauthorized": "Session expired — please log in again"
+    }
+}
