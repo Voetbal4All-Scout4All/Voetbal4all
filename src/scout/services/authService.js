@@ -1,11 +1,14 @@
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_SCOUT_API_URL || '/api/scout';
+
+const API_BASE = import.meta.env.VITE_SCOUT_API_URL || '/api/scout';
+
 
 const api = axios.create({
   baseURL: API_BASE,
   headers: { 'Content-Type': 'application/json' },
 });
+
 
 // Attach JWT token to every request
 api.interceptors.request.use((config) => {
@@ -15,6 +18,7 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
 
 // Handle 401 responses — attempt token refresh
 api.interceptors.response.use(
@@ -34,20 +38,3 @@ api.interceptors.response.use(
         window.location.href = '/scout/login';
         return Promise.reject(refreshError);
       }
-    }
-    return Promise.reject(error);
-  }
-);
-
-export const authService = {
-  login: (email, password) => api.post('/auth/login', { email, password }),
-  register: (data) => api.post('/auth/register', data),
-  logout: () => api.post('/auth/logout'),
-  refreshToken: () => api.post('/auth/refresh'),
-  verifyEmail: (token) => api.post('/auth/verify-email', { token }),
-  forgotPassword: (email) => api.post('/auth/forgot-password', { email }),
-  resetPassword: (token, password) => api.post('/auth/reset-password', { token, password }),
-  getMe: () => api.get('/users/me'),
-};
-
-export default api;
