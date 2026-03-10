@@ -1,0 +1,91 @@
+{
+    "common": {
+          "loading": "Laden...",
+          "save": "Opslaan",
+          "cancel": "Annuleren",
+          "confirm": "Bevestigen",
+          "delete": "Verwijderen",
+          "edit": "Bewerken",
+          "back": "Terug",
+          "next": "Volgende",
+          "search": "Zoeken",
+          "filter": "Filteren",
+          "export": "Exporteren",
+          "close": "Sluiten",
+          "yes": "Ja",
+          "no": "Nee"
+    },
+    "nav": {
+          "overview": "Overzicht",
+          "dashboard": "Dashboard",
+          "search": "Zoeken",
+          "scouting": "Scouting",
+          "players": "Spelers",
+          "reports": "Rapporten",
+          "videos": "Video's",
+          "watchlists": "Watchlists",
+          "analysis": "Analyse",
+          "compare": "Vergelijken",
+          "shadowTeams": "Shadow Teams",
+          "club": "Club",
+          "clubDashboard": "Dashboard",
+          "tasks": "Taken"
+    },
+    "auth": {
+          "login": "Inloggen",
+          "logout": "Uitloggen",
+          "register": "Registreren",
+          "email": "E-mail",
+          "password": "Wachtwoord",
+          "passwordConfirm": "Wachtwoord bevestigen",
+          "firstName": "Voornaam",
+          "lastName": "Achternaam",
+          "forgotPassword": "Wachtwoord vergeten?",
+          "resetPassword": "Wachtwoord herstellen",
+          "welcomeBack": "Welkom terug",
+          "loginSubtitle": "Log in op je Scout4All account",
+          "createAccount": "Account aanmaken",
+          "registerSubtitle": "Maak je Scout4All account aan",
+          "alreadyHaveAccount": "Heb je al een account?",
+          "noAccountYet": "Nog geen account?",
+          "loginHere": "Log hier in",
+          "registerHere": "Registreer hier",
+          "agreeToTerms": "Ik ga akkoord met de",
+          "terms": "voorwaarden",
+          "passwordMinLength": "Min. 8 karakters",
+          "passwordRepeat": "Herhaal wachtwoord",
+          "passwordMismatch": "Wachtwoorden komen niet overeen",
+          "termsRequired": "Je moet akkoord gaan met de voorwaarden",
+          "loginFailed": "Inloggen mislukt",
+          "registerFailed": "Registratie mislukt",
+          "platform": "Platform"
+    },
+    "dashboard": {
+          "welcome": "Welkom, {{name}}!",
+          "welcomeSubtitle": "Je Scout4All dashboard is klaar voor gebruik.",
+          "availableInPhase2": "Beschikbaar in Fase 2",
+          "reports": "Rapporten",
+          "players": "Spelers",
+          "plan": "Plan",
+          "dashboardExpandPhase2": "Dashboard content wordt uitgebreid in Fase 2."
+    },
+    "topbar": {
+          "searchPlaceholder": "Zoek spelers, clubs, rapporten...",
+          "notifications": "Notificaties",
+          "newReport": "+ Nieuw rapport"
+    },
+    "language": {
+          "select": "Taal",
+          "nl": "Nederlands",
+          "fr": "Français",
+          "en": "English",
+          "de": "Deutsch",
+          "es": "Español",
+          "it": "Italiano"
+    },
+    "errors": {
+          "generic": "Er is een fout opgetreden",
+          "network": "Netwerkfout — controleer je verbinding",
+          "unauthorized": "Sessie verlopen — log opnieuw in"
+    }
+}
