@@ -8,7 +8,7 @@
 .sectionLabel { display: block; font-family: var(--s4a-font-mono); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--s4a-text-muted); padding: var(--s4a-space-2) var(--s4a-space-2); }
 .navItem { display: flex; align-items: center; gap: var(--s4a-space-2); padding: 0.6rem 0.75rem; border-radius: var(--s4a-radius); color: var(--s4a-text-secondary); text-decoration: none; font-family: var(--s4a-font-body); font-size: 0.875rem; transition: all 250ms ease; border: 1px solid transparent; }
 .navItem:hover { background: var(--s4a-bg-hover); color: var(--s4a-text-primary); }
-.navItem--active { background: rgba(45,142,255,0.12); color: var(--s4a-blue-bright); border: 1px solid rgba(45,142,255,0.20); }
+.navItem--active { background: var(--s4a-blue-bg-subtle); color: var(--s4a-blue-bright); border: 1px solid var(--s4a-blue-border-subtle); }
 .navIcon { font-size: 1rem; width: 20px; text-align: center; flex-shrink: 0; }
 .userCard { display: flex; align-items: center; gap: var(--s4a-space-3); padding: var(--s4a-space-4); border-top: 1px solid var(--s4a-border); }
 .avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--s4a-grad-primary); display: flex; align-items: center; justify-content: center; font-family: var(--s4a-font-display); font-size: 0.8rem; font-weight: 700; color: var(--s4a-text-primary); flex-shrink: 0; }
