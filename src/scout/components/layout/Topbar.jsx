@@ -10,16 +10,16 @@ const Topbar = () => {
     const location = useLocation();
 
     const TITLES = {
-          '/scout/dashboard':    t('nav.dashboard'),
-          '/scout/zoeken':       t('nav.search'),
-          '/scout/spelers':      t('nav.players'),
-          '/scout/rapporten':    t('nav.reports'),
-          '/scout/videos':       t('nav.videos'),
-          '/scout/watchlists':   t('nav.watchlists'),
-          '/scout/vergelijken':  t('nav.compare'),
-          '/scout/shadow-teams': t('nav.shadowTeams'),
-          '/scout/club':         t('nav.clubDashboard'),
-          '/scout/club/taken':   t('nav.tasks'),
+          '/dashboard':    t('nav.dashboard'),
+          '/zoeken':       t('nav.search'),
+          '/spelers':      t('nav.players'),
+          '/rapporten':    t('nav.reports'),
+          '/videos':       t('nav.videos'),
+          '/watchlists':   t('nav.watchlists'),
+          '/vergelijken':  t('nav.compare'),
+          '/shadow-teams': t('nav.shadowTeams'),
+          '/club':         t('nav.clubDashboard'),
+          '/club/taken':   t('nav.tasks'),
     };
 
     const title = TITLES[location.pathname] || 'Scout4All';
