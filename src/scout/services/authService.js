@@ -1,14 +1,11 @@
 import axios from 'axios';
 
-
 const API_BASE = import.meta.env.VITE_SCOUT_API_URL || '/api/scout';
-
 
 const api = axios.create({
   baseURL: API_BASE,
   headers: { 'Content-Type': 'application/json' },
 });
-
 
 // Attach JWT token to every request
 api.interceptors.request.use((config) => {
@@ -18,7 +15,6 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
-
 
 // Handle 401 responses — attempt token refresh
 api.interceptors.response.use(
@@ -38,3 +34,9 @@ api.interceptors.response.use(
         window.location.href = '/scout/login';
         return Promise.reject(refreshError);
       }
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default api;
