@@ -1,97 +1,100 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuthContext } from '../../context/AuthContext';
 import Badge from '../ui/Badge';
 import styles from './Sidebar.module.css';
 
-const NAV_SECTIONS = [
-  {
-    label: 'Overzicht',
-    items: [
-      { to: '/scout/dashboard', icon: '\u229E', label: 'Dashboard' },
-      { to: '/scout/zoeken', icon: '\uD83D\uDD0D', label: 'Zoeken' },
-    ],
-  },
-  {
-    label: 'Scouting',
-    items: [
-      { to: '/scout/spelers', icon: '\uD83D\uDC65', label: 'Spelers' },
-      { to: '/scout/rapporten', icon: '\uD83D\uDCCB', label: 'Rapporten' },
-      { to: '/scout/videos', icon: '\uD83C\uDFA5', label: "Video's" },
-      { to: '/scout/watchlists', icon: '\uD83D\uDCCC', label: 'Watchlists' },
-    ],
-  },
-  {
-    label: 'Analyse',
-    items: [
-      { to: '/scout/vergelijken', icon: '\uD83D\uDCC8', label: 'Vergelijken' },
-      { to: '/scout/shadow-teams', icon: '\u26BD', label: 'Shadow Teams' },
-    ],
-  },
-];
-
-const CLUB_SECTION = {
-  label: 'Club',
-  items: [
-    { to: '/scout/club', icon: '\uD83C\uDFDF\uFE0F', label: 'Dashboard' },
-    { to: '/scout/club/taken', icon: '\u2705', label: 'Taken' },
-  ],
-};
-
 const Sidebar = () => {
-  const { user, plan } = useAuthContext();
-  const location = useLocation();
-  const hasClub = plan && (plan.slug || '').startsWith('club');
-  const sections = hasClub ? [...NAV_SECTIONS, CLUB_SECTION] : NAV_SECTIONS;
+    const { t } = useTranslation();
+    const { user, plan } = useAuthContext();
+    const location = useLocation();
 
-  const initials = user
-    ? (user.first_name?.[0] || '') + (user.last_name?.[0] || '')
-    : '??';
+    const NAV_SECTIONS = [
+      {
+              label: t('nav.overview'),
+              items: [
+                { to: '/scout/dashboard', icon: '⊞', label: t('nav.dashboard') },
+                { to: '/scout/zoeken',    icon: '🔍', label: t('nav.search') },
+                      ],
+      },
+      {
+              label: t('nav.scouting'),
+              items: [
+                { to: '/scout/spelers',    icon: '👥', label: t('nav.players') },
+                { to: '/scout/rapporten',  icon: '📋', label: t('nav.reports') },
+                { to: '/scout/videos',     icon: '🎥', label: t('nav.videos') },
+                { to: '/scout/watchlists', icon: '📌', label: t('nav.watchlists') },
+                      ],
+      },
+      {
+              label: t('nav.analysis'),
+              items: [
+                { to: '/scout/vergelijken',  icon: '📈', label: t('nav.compare') },
+                { to: '/scout/shadow-teams', icon: '⚽', label: t('nav.shadowTeams') },
+                      ],
+      },
+        ];
 
-  return (
-    <aside className={styles.sidebar}>
-      <div className={styles.logoWrap}>
-        <img
-          src="/scout/assets/img/scout4all-logo.png"
-          alt="Scout4All"
-          className={styles.logo}
-        />
-        <span className={styles.logoText}>
-          Scout<span className={styles.logoAccent}>4</span>All
-        </span>
-      </div>
+    const CLUB_SECTION = {
+          label: t('nav.club'),
+          items: [
+            { to: '/scout/club',       icon: '🏟️', label: t('nav.clubDashboard') },
+            { to: '/scout/club/taken', icon: '✅', label: t('nav.tasks') },
+                ],
+    };
 
-      <nav className={styles.nav}>
-        {sections.map((section) => (
-          <div key={section.label} className={styles.section}>
-            <span className={styles.sectionLabel}>{section.label}</span>
-            {section.items.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  [styles.navItem, isActive ? styles['navItem--active'] : ''].join(' ')
-                }
-              >
-                <span className={styles.navIcon}>{item.icon}</span>
-                <span>{item.label}</span>
-              </NavLink>
-            ))}
-          </div>
-        ))}
-      </nav>
+    const hasClub = plan && (plan.slug || '').startsWith('club');
+    const sections = hasClub ? [...NAV_SECTIONS, CLUB_SECTION] : NAV_SECTIONS;
 
-      <div className={styles.userCard}>
-        <div className={styles.avatar}>{initials}</div>
-        <div className={styles.userInfo}>
-          <span className={styles.userName}>
-            {user ? user.first_name + ' ' + user.last_name : 'Laden...'}
-          </span>
-          <Badge variant="plan">{plan?.slug || 'free'}</Badge>
-        </div>
-      </div>
-    </aside>
-  );
+    const initials = user
+      ? (user.first_name?.[0] || '') + (user.last_name?.[0] || '')
+          : '??';
+
+    return (
+          <aside className={styles.sidebar}>
+                  <div className={styles.logoWrap}>
+                            <img
+                                        src="/scout/assets/img/scout4all-logo.png"
+                                        alt="Scout4All"
+                                        className={styles.logo}
+                                      />
+                            <span className={styles.logoText}>
+                                        Scout<span className={styles.logoAccent}>4</span>span>All
+                            </span>span>
+                  </div>div>
+
+                  <nav className={styles.nav}>
+                    {sections.map((section) => (
+                      <div key={section.label} className={styles.section}>
+                                    <span className={styles.sectionLabel}>{section.label}</span>span>
+                        {section.items.map((item) => (
+                                      <NavLink
+                                                        key={item.to}
+                                                        to={item.to}
+                                                        className={({ isActive }) =>
+                                                                            [styles.navItem, isActive ? styles['navItem--active'] : ''].join(' ')
+                                                        }
+                                                      >
+                                                      <span className={styles.navIcon}>{item.icon}</span>span>
+                                                      <span>{item.label}</span>span>
+                                      </NavLink>NavLink>
+                                    ))}
+                      </div>div>
+                    ))}
+                  </nav>nav>
+          
+                <div className={styles.userCard}>
+                        <div className={styles.avatar}>{initials}</div>div>
+                        <div className={styles.userInfo}>
+                                  <span className={styles.userName}>
+                                    {user ? user.first_name + ' ' + user.last_name : t('common.loading')}
+                                  </span>span>
+                                  <Badge variant="plan">{plan?.slug || 'free'}</Badge>Badge>
+                        </div>div>
+                </div>div>
+          </aside>aside>
+        );
 };
 
-export default Sidebar;
+export default Sidebar;</NavLink>
