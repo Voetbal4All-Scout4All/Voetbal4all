@@ -1,0 +1,91 @@
+{
+    "common": {
+          "loading": "Caricamento...",
+          "save": "Salva",
+          "cancel": "Annulla",
+          "confirm": "Conferma",
+          "delete": "Elimina",
+          "edit": "Modifica",
+          "back": "Indietro",
+          "next": "Avanti",
+          "search": "Cerca",
+          "filter": "Filtra",
+          "export": "Esporta",
+          "close": "Chiudi",
+          "yes": "Sì",
+          "no": "No"
+    },
+    "nav": {
+          "overview": "Panoramica",
+          "dashboard": "Dashboard",
+          "search": "Cerca",
+          "scouting": "Scouting",
+          "players": "Giocatori",
+          "reports": "Report",
+          "videos": "Video",
+          "watchlists": "Watchlists",
+          "analysis": "Analisi",
+          "compare": "Confronta",
+          "shadowTeams": "Shadow Teams",
+          "club": "Club",
+          "clubDashboard": "Dashboard",
+          "tasks": "Attività"
+    },
+    "auth": {
+          "login": "Accedi",
+          "logout": "Esci",
+          "register": "Registrati",
+          "email": "E-mail",
+          "password": "Password",
+          "passwordConfirm": "Conferma password",
+          "firstName": "Nome",
+          "lastName": "Cognome",
+          "forgotPassword": "Password dimenticata?",
+          "resetPassword": "Reimposta password",
+          "welcomeBack": "Bentornato",
+          "loginSubtitle": "Accedi al tuo account Scout4All",
+          "createAccount": "Crea account",
+          "registerSubtitle": "Crea il tuo account Scout4All",
+          "alreadyHaveAccount": "Hai già un account?",
+          "noAccountYet": "Non hai ancora un account?",
+          "loginHere": "Accedi qui",
+          "registerHere": "Registrati qui",
+          "agreeToTerms": "Accetto i",
+          "terms": "termini e condizioni",
+          "passwordMinLength": "Min. 8 caratteri",
+          "passwordRepeat": "Ripeti password",
+          "passwordMismatch": "Le password non corrispondono",
+          "termsRequired": "Devi accettare i termini e le condizioni",
+          "loginFailed": "Accesso non riuscito",
+          "registerFailed": "Registrazione non riuscita",
+          "platform": "Piattaforma"
+    },
+    "dashboard": {
+          "welcome": "Benvenuto, {{name}}!",
+          "welcomeSubtitle": "La tua dashboard Scout4All è pronta all'uso.",
+          "availableInPhase2": "Disponibile nella Fase 2",
+          "reports": "Report",
+          "players": "Giocatori",
+          "plan": "Piano",
+          "dashboardExpandPhase2": "I contenuti della dashboard saranno ampliati nella Fase 2."
+    },
+    "topbar": {
+          "searchPlaceholder": "Cerca giocatori, club, report...",
+          "notifications": "Notifiche",
+          "newReport": "+ Nuovo report"
+    },
+    "language": {
+          "select": "Lingua",
+          "nl": "Nederlands",
+          "fr": "Français",
+          "en": "English",
+          "de": "Deutsch",
+          "es": "Español",
+          "it": "Italiano"
+    },
+    "errors": {
+          "generic": "Si è verificato un errore",
+          "network": "Errore di rete — controlla la connessione",
+          "unauthorized": "Sessione scaduta — effettua nuovamente l'accesso"
+    }
+}
