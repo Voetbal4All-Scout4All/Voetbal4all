@@ -39,4 +39,11 @@ api.interceptors.response.use(
   }
 );
 
+export const authService = {
+  login: (email, password) => api.post('/auth/login', { email, password }),
+  register: (formData) => api.post('/auth/register', formData),
+  logout: () => api.post('/auth/logout'),
+  getMe: () => api.get('/auth/me'),
+};
+
 export default api;
