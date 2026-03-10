@@ -1,0 +1,91 @@
+{
+    "common": {
+          "loading": "Laden...",
+          "save": "Speichern",
+          "cancel": "Abbrechen",
+          "confirm": "Bestätigen",
+          "delete": "Löschen",
+          "edit": "Bearbeiten",
+          "back": "Zurück",
+          "next": "Weiter",
+          "search": "Suchen",
+          "filter": "Filtern",
+          "export": "Exportieren",
+          "close": "Schließen",
+          "yes": "Ja",
+          "no": "Nein"
+    },
+    "nav": {
+          "overview": "Übersicht",
+          "dashboard": "Dashboard",
+          "search": "Suchen",
+          "scouting": "Scouting",
+          "players": "Spieler",
+          "reports": "Berichte",
+          "videos": "Videos",
+          "watchlists": "Watchlists",
+          "analysis": "Analyse",
+          "compare": "Vergleichen",
+          "shadowTeams": "Shadow Teams",
+          "club": "Verein",
+          "clubDashboard": "Dashboard",
+          "tasks": "Aufgaben"
+    },
+    "auth": {
+          "login": "Anmelden",
+          "logout": "Abmelden",
+          "register": "Registrieren",
+          "email": "E-Mail",
+          "password": "Passwort",
+          "passwordConfirm": "Passwort bestätigen",
+          "firstName": "Vorname",
+          "lastName": "Nachname",
+          "forgotPassword": "Passwort vergessen?",
+          "resetPassword": "Passwort zurücksetzen",
+          "welcomeBack": "Willkommen zurück",
+          "loginSubtitle": "Melden Sie sich bei Ihrem Scout4All-Konto an",
+          "createAccount": "Konto erstellen",
+          "registerSubtitle": "Erstellen Sie Ihr Scout4All-Konto",
+          "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+          "noAccountYet": "Noch kein Konto?",
+          "loginHere": "Hier anmelden",
+          "registerHere": "Hier registrieren",
+          "agreeToTerms": "Ich stimme den",
+          "terms": "Nutzungsbedingungen",
+          "passwordMinLength": "Min. 8 Zeichen",
+          "passwordRepeat": "Passwort wiederholen",
+          "passwordMismatch": "Passwörter stimmen nicht überein",
+          "termsRequired": "Sie müssen den Nutzungsbedingungen zustimmen",
+          "loginFailed": "Anmeldung fehlgeschlagen",
+          "registerFailed": "Registrierung fehlgeschlagen",
+          "platform": "Plattform"
+    },
+    "dashboard": {
+          "welcome": "Willkommen, {{name}}!",
+          "welcomeSubtitle": "Ihr Scout4All-Dashboard ist einsatzbereit.",
+          "availableInPhase2": "Verfügbar in Phase 2",
+          "reports": "Berichte",
+          "players": "Spieler",
+          "plan": "Plan",
+          "dashboardExpandPhase2": "Dashboard-Inhalte werden in Phase 2 erweitert."
+    },
+    "topbar": {
+          "searchPlaceholder": "Spieler, Vereine, Berichte suchen...",
+          "notifications": "Benachrichtigungen",
+          "newReport": "+ Neuer Bericht"
+    },
+    "language": {
+          "select": "Sprache",
+          "nl": "Nederlands",
+          "fr": "Français",
+          "en": "English",
+          "de": "Deutsch",
+          "es": "Español",
+          "it": "Italiano"
+    },
+    "errors": {
+          "generic": "Ein Fehler ist aufgetreten",
+          "network": "Netzwerkfehler — überprüfen Sie Ihre Verbindung",
+          "unauthorized": "Sitzung abgelaufen — bitte erneut anmelden"
+    }
+}
