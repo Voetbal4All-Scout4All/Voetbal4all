@@ -14,24 +14,24 @@ const Sidebar = () => {
       {
               label: t('nav.overview'),
               items: [
-                { to: '/scout/dashboard', icon: '⊞', label: t('nav.dashboard') },
-                { to: '/scout/zoeken',    icon: '🔍', label: t('nav.search') },
+                { to: '/dashboard', icon: '⊞', label: t('nav.dashboard') },
+                { to: '/zoeken',    icon: '🔍', label: t('nav.search') },
                       ],
       },
       {
               label: t('nav.scouting'),
               items: [
-                { to: '/scout/spelers',    icon: '👥', label: t('nav.players') },
-                { to: '/scout/rapporten',  icon: '📋', label: t('nav.reports') },
-                { to: '/scout/videos',     icon: '🎥', label: t('nav.videos') },
-                { to: '/scout/watchlists', icon: '📌', label: t('nav.watchlists') },
+                { to: '/spelers',    icon: '👥', label: t('nav.players') },
+                { to: '/rapporten',  icon: '📋', label: t('nav.reports') },
+                { to: '/videos',     icon: '🎥', label: t('nav.videos') },
+                { to: '/watchlists', icon: '📌', label: t('nav.watchlists') },
                       ],
       },
       {
               label: t('nav.analysis'),
               items: [
-                { to: '/scout/vergelijken',  icon: '📈', label: t('nav.compare') },
-                { to: '/scout/shadow-teams', icon: '⚽', label: t('nav.shadowTeams') },
+                { to: '/vergelijken',  icon: '📈', label: t('nav.compare') },
+                { to: '/shadow-teams', icon: '⚽', label: t('nav.shadowTeams') },
                       ],
       },
         ];
@@ -39,8 +39,8 @@ const Sidebar = () => {
     const CLUB_SECTION = {
           label: t('nav.club'),
           items: [
-            { to: '/scout/club',       icon: '🏟️', label: t('nav.clubDashboard') },
-            { to: '/scout/club/taken', icon: '✅', label: t('nav.tasks') },
+            { to: '/club',       icon: '🏟️', label: t('nav.clubDashboard') },
+            { to: '/club/taken', icon: '✅', label: t('nav.tasks') },
                 ],
     };
 
