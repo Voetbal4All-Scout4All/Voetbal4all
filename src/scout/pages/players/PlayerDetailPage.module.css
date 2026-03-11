@@ -1,0 +1,39 @@
+.page { padding: var(--s4a-spacing-xl); max-width: 900px; }
+.loading { padding: var(--s4a-spacing-xl); color: var(--s4a-text-secondary); }
+.back { background: none; border: none; color: var(--s4a-text-secondary); cursor: pointer; font-size: 0.875rem; padding: 0; margin-bottom: var(--s4a-spacing-lg); display: block; }
+.back:hover { color: var(--s4a-text-primary); }
+.profileHeader { display: flex; gap: var(--s4a-spacing-lg); align-items: flex-start; margin-bottom: var(--s4a-spacing-xl); background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); padding: var(--s4a-spacing-lg); flex-wrap: wrap; }
+.avatarWrapper { flex-shrink: 0; }
+.avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid var(--s4a-border); }
+.avatarFallback { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--s4a-blue), var(--s4a-orange)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: white; font-family: var(--s4a-font-display); }
+.profileInfo { flex: 1; display: flex; flex-direction: column; gap: var(--s4a-spacing-sm); }
+.playerName { font-family: var(--s4a-font-display); font-size: 1.75rem; font-weight: 700; color: var(--s4a-text-primary); margin: 0; }
+.profileMeta { display: flex; gap: var(--s4a-spacing-md); flex-wrap: wrap; font-size: 0.875rem; color: var(--s4a-text-secondary); align-items: center; }
+.positionBadge { font-family: var(--s4a-font-mono); font-size: 0.75rem; font-weight: 700; background: rgba(45,142,255,0.12); color: var(--s4a-blue); padding: 2px 8px; border-radius: 4px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 0.75rem; padding: 2px 10px; border-radius: 999px; background: var(--s4a-bg-elevated); color: var(--s4a-text-secondary); border: 1px solid var(--s4a-border); }
+.profileActions { margin-left: auto; }
+.statsRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s4a-spacing-md); margin-bottom: var(--s4a-spacing-xl); }
+.statItem { background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); padding: var(--s4a-spacing-md); display: flex; flex-direction: column; gap: 4px; text-align: center; }
+.statVal { font-family: var(--s4a-font-mono); font-size: 1.5rem; font-weight: 700; color: var(--s4a-text-primary); }
+.statLbl { font-size: 0.75rem; color: var(--s4a-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.notesCard { background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); padding: var(--s4a-spacing-lg); margin-bottom: var(--s4a-spacing-lg); }
+.notesTitle { font-size: 0.875rem; font-weight: 600; color: var(--s4a-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 var(--s4a-spacing-sm); }
+.notesText { color: var(--s4a-text-primary); font-size: 0.9rem; line-height: 1.6; margin: 0; }
+.reportsSection { background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); overflow: hidden; }
+.sectionHeader { padding: var(--s4a-spacing-md) var(--s4a-spacing-lg); border-bottom: 1px solid var(--s4a-border); }
+.sectionTitle { font-family: var(--s4a-font-display); font-size: 1rem; font-weight: 600; color: var(--s4a-text-primary); margin: 0; }
+.reportsList { display: flex; flex-direction: column; }
+.reportRow { display: flex; justify-content: space-between; align-items: center; padding: var(--s4a-spacing-md) var(--s4a-spacing-lg); border-bottom: 1px solid var(--s4a-border); cursor: pointer; transition: background 0.15s; }
+.reportRow:last-child { border-bottom: none; }
+.reportRow:hover { background: var(--s4a-bg-elevated); }
+.reportLeft { display: flex; flex-direction: column; gap: 3px; }
+.reportDate { font-weight: 600; color: var(--s4a-text-primary); font-size: 0.9rem; }
+.reportComp { font-size: 0.8rem; color: var(--s4a-text-secondary); }
+.reportRight { display: flex; align-items: center; gap: var(--s4a-spacing-sm); }
+.score { font-family: var(--s4a-font-mono); font-size: 1.1rem; font-weight: 700; color: var(--s4a-blue); }
+.badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 999px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge_draft { background: rgba(255,107,26,0.15); color: var(--s4a-orange); }
+.badge_completed { background: rgba(45,142,255,0.15); color: var(--s4a-blue); }
+.arrow { color: var(--s4a-text-secondary); font-size: 1.2rem; }
+.emptyReports { display: flex; flex-direction: column; align-items: center; gap: var(--s4a-spacing-md); padding: var(--s4a-spacing-xl); color: var(--s4a-text-secondary); text-align: center; }
