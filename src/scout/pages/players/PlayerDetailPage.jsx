@@ -159,4 +159,4 @@ const PlayerDetailPage = () => {
         );
 };
 
-export default PlayerDetailPage;</span>
+export default PlayerDetailPage;
