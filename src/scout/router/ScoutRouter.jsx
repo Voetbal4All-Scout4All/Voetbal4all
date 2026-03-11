@@ -39,7 +39,7 @@ const ProtectedRoute = ({ children }) => {
                                                     animation: 'spin 0.6s linear infinite',
                                       }}
                                     />
-                  </div>div>
+                  </div>
                 );
     }
   
@@ -68,7 +68,7 @@ const ScoutRouter = () => {
                                                 element={
                                                                 <PublicRoute>
                                                                                 <LoginPage />
-                                                                </PublicRoute>PublicRoute>
+                                                                </PublicRoute>
                                     }
                                             />
                                             <Route
@@ -76,7 +76,7 @@ const ScoutRouter = () => {
                                                           element={
                                                                           <PublicRoute>
                                                                                           <RegisterPage />
-                                                                          </PublicRoute>PublicRoute>
+                                                                          </PublicRoute>
                                               }
                                                       />
                                             
@@ -86,7 +86,7 @@ const ScoutRouter = () => {
                                                                     element={
                                                                                     <ProtectedRoute>
                                                                                                     <ScoutLayout />
-                                                                                    </ProtectedRoute>ProtectedRoute>
+                                                                                    </ProtectedRoute>
                                                         }
                                                                 >
                                                                   <Route index element={<Navigate to="/dashboard" replace />} />
@@ -111,7 +111,7 @@ const ScoutRouter = () => {
                                                                   <Route path="shadow-teams" element={<Placeholder titleKey="nav.shadowTeams" />} />
                                                                   <Route path="club" element={<Placeholder titleKey="nav.clubDashboard" />} />
                                                                   <Route path="club/taken" element={<Placeholder titleKey="nav.tasks" />} />
-                                                      </Route>Route>
+                                                      </Route>
                                             
                                               {/* Catch-all redirect */}
                                                       <Route path="*" element={<Navigate to="/login" replace />} />
@@ -144,11 +144,11 @@ const ScoutRouter = () => {
                                     }}
                                   >
                             {t(titleKey)}
-                          </h2>h2>
+                          </h2>
                           <p style={{ color: 'var(--s4a-text-muted)', fontStyle: 'italic' }}>
                             {t('dashboard.availableInPhase2')}
-                          </p>p>
-                    </div>div>
+                          </p>
+                    </div>
                   );
                   };
                 
