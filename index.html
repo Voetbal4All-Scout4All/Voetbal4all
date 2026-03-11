@@ -2515,8 +2515,16 @@
         if (low === "broken-link" || low === "[object object]") return null;
         // NOTE: do not hard-block placeholders here; rendering falls back to FALLBACK_THUMB if needed.
 
-        // allow absolute
-        if (/^https?:\/\//i.test(s)) return s;
+        // allow absolute, but proxy direct Pollinations URLs through backend
+        if (/^https?:\/\//i.test(s)) {
+          try {
+            const parsed = new URL(s);
+            if (String(parsed.hostname || "").toLowerCase() === "image.pollinations.ai") {
+              return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
+            }
+          } catch (_) {}
+          return s;
+        }
 
         // normalize common relative forms
         // - "images/articles/..." -> "/images/articles/..."
@@ -2684,12 +2692,12 @@
                 const flag = flagHtml(cc);
 
                 const imgSrc =
-                  resolveImageUrl(a?.image_path) ||
-                  resolveImageUrl(a?.imagePath) ||
-                  resolveImageUrl(a?.publicPath) ||
                   resolveImageUrl(a?.image) ||
                   resolveImageUrl(a?.imageUrl) ||
-                  resolveImageUrl(a?.image_url);
+                  resolveImageUrl(a?.image_url) ||
+                  resolveImageUrl(a?.image_path) ||
+                  resolveImageUrl(a?.imagePath) ||
+                  resolveImageUrl(a?.publicPath);
 
                 const safeImg = imgSrc ? String(imgSrc).replace(/"/g, "&quot;") : "";
 
