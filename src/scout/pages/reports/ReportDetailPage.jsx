@@ -165,4 +165,4 @@ const ReportDetailPage = () => {
         );
 };
 
-export default ReportDetailPage;</div>
+export default ReportDetailPage;
