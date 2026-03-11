@@ -637,7 +637,7 @@
     if (!safeId) return null;
 
     try {
-      const listUrl = `${API_BASE}/api/news?limit=200&nocache=${Date.now()}`;
+      const listUrl = `${API_BASE}/api/news?limit=2000&nocache=${Date.now()}`;
       const json = await fetchJsonWithRetry(listUrl, { tries: 2, timeoutMs: 7000, baseDelayMs: 400 });
       const items = Array.isArray(json?.items) ? json.items : [];
       const hit = items.find((it) => String(it?.id || "").trim() === safeId);
