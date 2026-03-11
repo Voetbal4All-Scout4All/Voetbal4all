@@ -1,4 +1,4 @@
-name: Deploy Scout4All to GitHub Pages
+name: Deploy naar GitHub Pages
 
 on:
   push:
@@ -19,14 +19,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build Scout4All + copy static
+      - name: Build
         run: npm run build
 
-      - name: Deploy to gh-pages
+      - name: Deploy naar gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
