@@ -51,13 +51,13 @@ const PlayerListPage = () => {
           <div className={styles.page}>
                   <div className={styles.header}>
                             <div>
-                                      <h1 className={styles.title}>Spelers</h1>h1>
-                                      <p className={styles.subtitle}>{players.length} speler{players.length !== 1 ? 's' : ''} in je database</p>p>
-                            </div>div>
+                                      <h1 className={styles.title}>Spelers</h1>
+                                      <p className={styles.subtitle}>{players.length} speler{players.length !== 1 ? 's' : ''} in je database</p>
+                            </div>
                           <Button variant="primary" onClick={() => navigate('/players/add')}>
                                     + Nieuwe speler
-                          </Button>Button>
-                  </div>div>
+                          </Button>
+                  </div>
           
             {/* Filters */}
                 <div className={styles.filters}>
@@ -72,37 +72,37 @@ const PlayerListPage = () => {
                                     onChange={e => setPosFilter(e.target.value)}
                                   >
                           {POSITIONS.map(p => (
-                                                <option key={p.code} value={p.code}>{p.label}</option>option>
+                                                <option key={p.code} value={p.code}>{p.label}</option>
                                               ))}
-                        </select>select>
-                </div>div>
+                        </select>
+                </div>
           
             {/* Lijst */}
             {loading ? (
-                    <div className={styles.loading}>Laden&hellip;</div>div>
+                    <div className={styles.loading}>Laden&hellip;</div>
                   ) : filtered.length === 0 ? (
                     <div className={styles.empty}>
                       {players.length === 0 ? (
                                   <>
-                                                <p>Je hebt nog geen spelers toegevoegd.</p>p>
+                                                <p>Je hebt nog geen spelers toegevoegd.</p>
                                                 <Button variant="primary" onClick={() => navigate('/players/add')}>
                                                                 Eerste speler toevoegen
-                                                </Button>Button>
+                                                </Button>
                                   </>>
                                 ) : (
-                                  <p>Geen spelers gevonden voor deze zoekopdracht.</p>p>
+                                  <p>Geen spelers gevonden voor deze zoekopdracht.</p>
                               )}
-                    </div>div>
+                    </div>
                   ) : (
                     <div className={styles.table}>
                               <div className={styles.tableHeader}>
-                                          <span>Naam</span>span>
-                                          <span>Positie</span>span>
-                                          <span>Leeftijd</span>span>
-                                          <span>Club</span>span>
-                                          <span>Rapporten</span>span>
-                                          <span></span>span>
-                              </div>div>
+                                          <span>Naam</span>
+                                          <span>Positie</span>
+                                          <span>Leeftijd</span>
+                                          <span>Club</span>
+                                          <span>Rapporten</span>
+                                          <span></span>
+                              </div>
                       {filtered.map(player => {
                                   const dob = player.date_of_birth ? new Date(player.date_of_birth) : null;
                                   const age = dob
@@ -116,23 +116,23 @@ const PlayerListPage = () => {
                                                                   >
                                                                   <span className={styles.playerName}>
                                                                     {player.first_name} {player.last_name}
-                                                                  </span>span>
+                                                                  </span>
                                                                   <span className={styles.positionBadge}>
                                                                     {player.primary_position_code || '\u2014'}
-                                                                  </span>span>
-                                                                  <span>{age ? `${age} jr` : '\u2014'}</span>span>
+                                                                  </span>
+                                                                  <span>{age ? `${age} jr` : '\u2014'}</span>
                                                                   <span className={styles.clubName}>
                                                                     {player.current_club_name || '\u2014'}
-                                                                  </span>span>
-                                                                  <span>{player.report_count ?? 0}</span>span>
-                                                                  <span className={styles.arrow}>&rsaquo;</span>span>
-                                                  </div>div>
+                                                                  </span>
+                                                                  <span>{player.report_count ?? 0}</span>
+                                                                  <span className={styles.arrow}>&rsaquo;</span>
+                                                  </div>
                                                 );
                     })}
-                    </div>div>
+                    </div>
                 )}
-          </div>div>
+          </div>
         );
 };
 
-export default PlayerListPage;</></div>
+export default PlayerListPage;
