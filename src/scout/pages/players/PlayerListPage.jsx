@@ -88,7 +88,7 @@ const PlayerListPage = () => {
                                                 <Button variant="primary" onClick={() => navigate('/players/add')}>
                                                                 Eerste speler toevoegen
                                                 </Button>
-                                  </>>
+                                  </>
                                 ) : (
                                   <p>Geen spelers gevonden voor deze zoekopdracht.</p>
                               )}
