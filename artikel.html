@@ -596,7 +596,6 @@
   function resolveImageUrl(raw) {
     if (!raw) return null;
 
-    // Accept both string and object shapes
     let s = "";
     if (typeof raw === "string") {
       s = raw;
@@ -609,8 +608,6 @@
     s = String(s || "").trim();
     if (!s) return null;
 
-    // Treat known placeholders / invalid tokens as "no image"
-    // This prevents broken boxes and avoids backend placeholder routes (cold start / 502).
     const lower = s.toLowerCase();
     if (
       lower === "broken-link" ||
@@ -625,19 +622,39 @@
       return null;
     }
 
-    // Allow data URIs (already self-contained)
     if (lower.startsWith("data:image/")) return s;
-
-    // Already absolute
     if (/^https?:\/\//i.test(s)) return s;
 
-    // Backend-served images (Render)
+    if (s.startsWith("/api/")) return API_BASE + s;
     if (s.startsWith("/images/")) return API_BASE + s;
-
-    // Site-relative assets
     if (s.startsWith("/assets/")) return s;
 
     return s;
+  }
+
+  async function fetchArticleListImageById(id) {
+    const safeId = String(id || "").trim();
+    if (!safeId) return null;
+
+    try {
+      const listUrl = `${API_BASE}/api/news?limit=200&nocache=${Date.now()}`;
+      const json = await fetchJsonWithRetry(listUrl, { tries: 2, timeoutMs: 7000, baseDelayMs: 400 });
+      const items = Array.isArray(json?.items) ? json.items : [];
+      const hit = items.find((it) => String(it?.id || "").trim() === safeId);
+      if (!hit) return null;
+
+      return resolveImageUrl(
+        hit.image ||
+        hit.image_path ||
+        hit.imagePath ||
+        hit.imageUrl ||
+        hit.image_url ||
+        null
+      );
+    } catch (e) {
+      console.warn("[ARTIKEL] fetchArticleListImageById failed:", e?.message || e);
+      return null;
+    }
   }
 
   function escapeXml(s) {
@@ -823,6 +840,17 @@
         const article = json && (json.item ? json.item : json);
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
+
+        const currentImg = resolveImageUrl(
+          article.image || article.image_path || article.imageUrl || article.imageURL || null
+        );
+
+        if (!currentImg) {
+          const fallbackImg = await fetchArticleListImageById(articleId);
+          if (fallbackImg) {
+            article.image = fallbackImg;
+          }
+        }
 
         console.log('[ARTIKEL] ✅ Article found via API:', article.title);
         const ok = displayArticle(article);
