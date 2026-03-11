@@ -60,14 +60,14 @@ const Sidebar = () => {
                                         className={styles.logo}
                                       />
                             <span className={styles.logoText}>
-                                        Scout<span className={styles.logoAccent}>4</span>span>All
-                            </span>span>
-                  </div>div>
+                                        Scout<span className={styles.logoAccent}>4</span>All
+                            </span>
+                  </div>
 
                   <nav className={styles.nav}>
                     {sections.map((section) => (
                       <div key={section.label} className={styles.section}>
-                                    <span className={styles.sectionLabel}>{section.label}</span>span>
+                                    <span className={styles.sectionLabel}>{section.label}</span>
                         {section.items.map((item) => (
                                       <NavLink
                                                         key={item.to}
@@ -76,24 +76,24 @@ const Sidebar = () => {
                                                                             [styles.navItem, isActive ? styles['navItem--active'] : ''].join(' ')
                                                         }
                                                       >
-                                                      <span className={styles.navIcon}>{item.icon}</span>span>
-                                                      <span>{item.label}</span>span>
-                                      </NavLink>NavLink>
+                                                      <span className={styles.navIcon}>{item.icon}</span>
+                                                      <span>{item.label}</span>
+                                      </NavLink>
                                     ))}
-                      </div>div>
+                      </div>
                     ))}
-                  </nav>nav>
+                  </nav>
           
                 <div className={styles.userCard}>
-                        <div className={styles.avatar}>{initials}</div>div>
+                        <div className={styles.avatar}>{initials}</div>
                         <div className={styles.userInfo}>
                                   <span className={styles.userName}>
                                     {user ? user.first_name + ' ' + user.last_name : t('common.loading')}
-                                  </span>span>
-                                  <Badge variant="plan">{plan?.slug || 'free'}</Badge>Badge>
-                        </div>div>
-                </div>div>
-          </aside>aside>
+                                  </span>
+                                  <Badge variant="plan">{plan?.slug || 'free'}</Badge>
+                        </div>
+                </div>
+          </aside>
         );
 };
 
