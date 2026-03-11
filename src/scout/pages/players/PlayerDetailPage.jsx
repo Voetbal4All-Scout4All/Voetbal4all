@@ -30,7 +30,7 @@ const PlayerDetailPage = () => {
           load();
     }, [id]);
 
-    if (loading) return <div className={styles.loading}>Laden&hellip;</div>div>;
+    if (loading) return <div className={styles.loading}>Laden&hellip;</div>;
     if (!player) return null;
 
     const dob = player.date_of_birth ? new Date(player.date_of_birth) : null;
@@ -42,7 +42,7 @@ const PlayerDetailPage = () => {
 
     return (
           <div className={styles.page}>
-                  <button className={styles.back} onClick={() => navigate('/players')}>&larr; Alle spelers</button>button>
+                  <button className={styles.back} onClick={() => navigate('/players')}>&larr; Alle spelers</button>
 
             {/* Profiel header */}
                   <div className={styles.profileHeader}>
@@ -52,76 +52,76 @@ const PlayerDetailPage = () => {
                       ) : (
                         <div className={styles.avatarFallback}>
                           {player.first_name?.[0]}{player.last_name?.[0]}
-                        </div>div>
+                        </div>
                       )}
-                            </div>div>
+                            </div>
                             <div className={styles.profileInfo}>
-                                        <h1 className={styles.playerName}>{player.first_name} {player.last_name}</h1>h1>
+                                        <h1 className={styles.playerName}>{player.first_name} {player.last_name}</h1>
                                         <div className={styles.profileMeta}>
                                           {player.primary_position_code && (
-                          <span className={styles.positionBadge}>{player.primary_position_code}</span>span>
+                          <span className={styles.positionBadge}>{player.primary_position_code}</span>
                         )}
-                                          {age && <span>{age} jaar</span>span>}
-                                          {player.nationality && <span>{player.nationality}</span>span>}
-                                          {player.current_club_name && <span>{player.current_club_name}</span>span>}
-                                        </div>div>
+                                          {age && <span>{age} jaar</span>}
+                                          {player.nationality && <span>{player.nationality}</span>}
+                                          {player.current_club_name && <span>{player.current_club_name}</span>}
+                                        </div>
                               {player.tags && (
                         <div className={styles.tags}>
                           {player.tags.split(',').map(tag => (
-                                          <span key={tag} className={styles.tag}>{tag.trim()}</span>span>
+                                          <span key={tag} className={styles.tag}>{tag.trim()}</span>
                                         ))}
-                        </div>div>
+                        </div>
                                       )}
-                            </div>div>
+                            </div>
                           <div className={styles.profileActions}>
                                     <Button variant="primary" onClick={() => navigate(`/reports/add?player=${id}`)}>
                                                 + Nieuw rapport
-                                    </Button>Button>
-                          </div>div>
-                  </div>div>
+                                    </Button>
+                          </div>
+                  </div>
           
             {/* Stats row */}
                 <div className={styles.statsRow}>
                         <div className={styles.statItem}>
-                                  <span className={styles.statVal}>{reports.length}</span>span>
-                                  <span className={styles.statLbl}>Rapporten</span>span>
-                        </div>div>
+                                  <span className={styles.statVal}>{reports.length}</span>
+                                  <span className={styles.statLbl}>Rapporten</span>
+                        </div>
                         <div className={styles.statItem}>
-                                  <span className={styles.statVal}>{avgScore ?? '\u2014'}</span>span>
-                                  <span className={styles.statLbl}>Gem. score</span>span>
-                        </div>div>
+                                  <span className={styles.statVal}>{avgScore ?? '\u2014'}</span>
+                                  <span className={styles.statLbl}>Gem. score</span>
+                        </div>
                         <div className={styles.statItem}>
-                                  <span className={styles.statVal}>{player.height_cm ? `${player.height_cm} cm` : '\u2014'}</span>span>
-                                  <span className={styles.statLbl}>Lengte</span>span>
-                        </div>div>
+                                  <span className={styles.statVal}>{player.height_cm ? `${player.height_cm} cm` : '\u2014'}</span>
+                                  <span className={styles.statLbl}>Lengte</span>
+                        </div>
                         <div className={styles.statItem}>
                                   <span className={styles.statVal}>
                                     {player.preferred_foot === 'right' ? 'Rechts' : player.preferred_foot === 'left' ? 'Links' : player.preferred_foot === 'both' ? 'Beide' : '\u2014'}
-                                  </span>span>
-                                  <span className={styles.statLbl}>Voorkeursbeen</span>span>
-                        </div>div>
-                </div>div>
+                                  </span>
+                                  <span className={styles.statLbl}>Voorkeursbeen</span>
+                        </div>
+                </div>
           
             {/* Notities */}
             {player.notes && (
                     <div className={styles.notesCard}>
-                              <h3 className={styles.notesTitle}>Notities</h3>h3>
-                              <p className={styles.notesText}>{player.notes}</p>p>
-                    </div>div>
+                              <h3 className={styles.notesTitle}>Notities</h3>
+                              <p className={styles.notesText}>{player.notes}</p>
+                    </div>
                 )}
           
             {/* Rapporten lijst */}
                 <div className={styles.reportsSection}>
                         <div className={styles.sectionHeader}>
-                                  <h2 className={styles.sectionTitle}>Scoutingrapporten ({reports.length})</h2>h2>
-                        </div>div>
+                                  <h2 className={styles.sectionTitle}>Scoutingrapporten ({reports.length})</h2>
+                        </div>
                   {reports.length === 0 ? (
                       <div className={styles.emptyReports}>
-                                  <p>Nog geen rapporten voor deze speler.</p>p>
+                                  <p>Nog geen rapporten voor deze speler.</p>
                                   <Button variant="primary" onClick={() => navigate(`/reports/add?player=${id}`)}>
                                                 Eerste rapport schrijven
-                                  </Button>Button>
-                      </div>div>
+                                  </Button>
+                      </div>
                     ) : (
                       <div className={styles.reportsList}>
                         {reports.map(report => (
@@ -135,27 +135,27 @@ const PlayerDetailPage = () => {
                                                                           {report.match_date
                                                                                                   ? new Date(report.match_date).toLocaleDateString('nl-BE')
                                                                                                   : 'Geen datum'}
-                                                                        </span>span>
+                                                                        </span>
                                                                         <span className={styles.reportComp}>
                                                                           {report.match_competition || 'Onbekende competitie'}
                                                                           {report.match_home_team && ` \u00B7 ${report.match_home_team} vs ${report.match_away_team}`}
-                                                                        </span>span>
-                                                      </div>div>
+                                                                        </span>
+                                                      </div>
                                                       <div className={styles.reportRight}>
                                                         {report.score_overall != null && (
-                                                                            <span className={styles.score}>{Number(report.score_overall).toFixed(1)}</span>span>
+                                                                            <span className={styles.score}>{Number(report.score_overall).toFixed(1)}</span>
                                                                         )}
                                                                         <span className={`${styles.badge} ${styles['badge_' + report.status]}`}>
                                                                           {report.status === 'draft' ? 'Draft' : 'Voltooid'}
-                                                                        </span>span>
-                                                                        <span className={styles.arrow}>&rsaquo;</span>span>
-                                                      </div>div>
-                                      </div>div>
+                                                                        </span>
+                                                                        <span className={styles.arrow}>&rsaquo;</span>
+                                                      </div>
+                                      </div>
                                     ))}
-                      </div>div>
+                      </div>
                         )}
-                </div>div>
-          </div>div>
+                </div>
+          </div>
         );
 };
 
