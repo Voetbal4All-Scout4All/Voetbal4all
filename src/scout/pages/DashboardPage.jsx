@@ -1,143 +1,143 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../context/AuthContext';
-import Card from '../components/ui/Card';
-import Badge from '../components/ui/Badge';
-import GlowDivider from '../components/ui/GlowDivider';
+import playerService from '../services/playerService';
+import reportService from '../services/reportService';
+import Button from '../components/ui/Button';
+import styles from './DashboardPage.module.css';
+
+const StatCard = ({ label, value, icon, accent }) => (
+    <div className={`${styles.statCard} ${accent ? styles['accent_' + accent] : ''}`}>
+          <span className={styles.statIcon}>{icon}</span>span>
+          <span className={styles.statValue}>{value ?? '\u2014'}</span>span>
+          <span className={styles.statLabel}>{label}</span>span>
+    </div>div>
+  );
 
 const DashboardPage = () => {
-  const { t } = useTranslation();
-  const { user, plan } = useAuthContext();
+    const { user } = useAuthContext();
+    const navigate = useNavigate();
+    const [stats, setStats] = useState({ players: null, reports: null, drafts: null });
+    const [recentReports, setRecentReports] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  return (
-    <div>
-      <div style={{ marginBottom: 'var(--s4a-space-6)' }}>
-        <h2
-          style={{
-            fontFamily: 'var(--s4a-font-display)',
-            fontSize: '1.4rem',
-            textTransform: 'uppercase',
-            letterSpacing: '0.04em',
-            marginBottom: 'var(--s4a-space-2)',
-          }}
-        >
-          {t('dashboard.welcome', { name: user?.first_name || 'Scout' })}
-        </h2>
-        <p style={{ color: 'var(--s4a-text-secondary)', fontSize: '0.9rem' }}>
-          {t('dashboard.welcomeSubtitle')}
-        </p>
-      </div>
+    useEffect(() => {
+          const load = async () => {
+                  try {
+                            const [playersData, reportsData] = await Promise.all([
+                                        playerService.getPlayers({ limit: 1 }),
+                                        reportService.getMyRecentReports(5),
+                                      ]);
+                            setStats({
+                                        players: playersData.total ?? playersData.length ?? 0,
+                                        reports: reportsData.total ?? reportsData.length ?? 0,
+                                        drafts: reportsData.filter?.(r => r.status === 'draft').length ?? 0,
+                            });
+                            setRecentReports(Array.isArray(reportsData) ? reportsData : reportsData.data ?? []);
+                  } catch {
+                            // Toon lege staat bij API-fout
+                  } finally {
+                            setLoading(false);
+                  }
+          };
+          load();
+    }, []);
 
-      <GlowDivider />
+    const firstName = user?.first_name || user?.email?.split('@')[0] || 'Scout';
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-          gap: 'var(--s4a-space-4)',
-        }}
-      >
-        <Card hoverable glowColor="blue">
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: 'var(--s4a-space-3)',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--s4a-font-display)',
-                textTransform: 'uppercase',
-                fontSize: '0.85rem',
-                color: 'var(--s4a-text-muted)',
-              }}
-            >
-              {t('dashboard.reports')}
-            </span>
-            <Badge variant="position">0 / {plan?.max_reports || 10}</Badge>
-          </div>
-          <span style={{ fontFamily: 'var(--s4a-font-mono)', fontSize: '2rem', fontWeight: 700 }}>
-            0
-          </span>
-        </Card>
-
-        <Card hoverable glowColor="orange">
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: 'var(--s4a-space-3)',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--s4a-font-display)',
-                textTransform: 'uppercase',
-                fontSize: '0.85rem',
-                color: 'var(--s4a-text-muted)',
-              }}
-            >
-              {t('dashboard.players')}
-            </span>
-            <Badge variant="orange">0 / {plan?.max_players || 25}</Badge>
-          </div>
-          <span style={{ fontFamily: 'var(--s4a-font-mono)', fontSize: '2rem', fontWeight: 700 }}>
-            0
-          </span>
-        </Card>
-
-        <Card hoverable glowColor="purple">
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: 'var(--s4a-space-3)',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'var(--s4a-font-display)',
-                textTransform: 'uppercase',
-                fontSize: '0.85rem',
-                color: 'var(--s4a-text-muted)',
-              }}
-            >
-              {t('dashboard.plan')}
-            </span>
-            <Badge variant="plan">{plan?.slug || 'free'}</Badge>
-          </div>
-          <span
-            style={{
-              fontFamily: 'var(--s4a-font-mono)',
-              fontSize: '1.2rem',
-              fontWeight: 700,
-              textTransform: 'capitalize',
-            }}
-          >
-            {plan?.slug || 'Free'}
-          </span>
-        </Card>
-      </div>
-
-      <div
-        style={{
-          marginTop: 'var(--s4a-space-8)',
-          padding: 'var(--s4a-space-6)',
-          background: 'var(--s4a-bg-surface)',
-          borderRadius: 'var(--s4a-radius-lg)',
-          border: '1px solid var(--s4a-border)',
-        }}
-      >
-        <p style={{ color: 'var(--s4a-text-muted)', fontStyle: 'italic', textAlign: 'center' }}>
-          {t('dashboard.dashboardExpandPhase2')}
-        </p>
-      </div>
-    </div>
-  );
+    return (
+          <div className={styles.page}>
+            {/* Header */}
+                  <div className={styles.header}>
+                            <div>
+                                      <h1 className={styles.greeting}>Welkom terug, {firstName} </h1>h1>
+                                      <p className={styles.subtitle}>Hier is een overzicht van je scoutingactiviteit.</p>p>
+                            </div>div>
+                          <div className={styles.headerActions}>
+                                    <Button variant="secondary" onClick={() => navigate('/players/add')}>
+                                                + Nieuwe speler
+                                    </Button>Button>
+                                    <Button variant="primary" onClick={() => navigate('/reports/add')}>
+                                                + Nieuw rapport
+                                    </Button>Button>
+                          </div>div>
+                  </div>div>
+          
+            {/* Stat cards */}
+                <div className={styles.statsGrid}>
+                        <StatCard label="Spelers in database" value={loading ? '\u2026' : stats.players} icon="\uD83D\uDC65" accent="blue" />
+                        <StatCard label="Rapporten" value={loading ? '\u2026' : stats.reports} icon="\uD83D\uDCCB" />
+                        <StatCard label="Drafts" value={loading ? '\u2026' : stats.drafts} icon="\u270F\uFE0F" accent="orange" />
+                        <StatCard label="Actief plan" value={user?.subscription_plan ?? 'Free'} icon="\u2B50" />
+                </div>div>
+          
+            {/* Recente rapporten */}
+                <div className={styles.section}>
+                        <div className={styles.sectionHeader}>
+                                  <h2 className={styles.sectionTitle}>Recente rapporten</h2>h2>
+                                  <button className={styles.seeAll} onClick={() => navigate('/players')}>
+                                              Alle spelers &rarr;
+                                  </button>button>
+                        </div>div>
+                  {loading ? (
+                      <div className={styles.loading}>Laden&hellip;</div>div>
+                    ) : recentReports.length === 0 ? (
+                      <div className={styles.empty}>
+                                  <p>Nog geen rapporten. Start met scouten!</p>p>
+                                  <Button variant="primary" onClick={() => navigate('/players/add')}>
+                                                Eerste speler toevoegen
+                                  </Button>Button>
+                      </div>div>
+                    ) : (
+                      <div className={styles.reportsList}>
+                        {recentReports.map(report => (
+                                      <div
+                                                        key={report.id}
+                                                        className={styles.reportRow}
+                                                        onClick={() => navigate(`/reports/${report.id}`)}
+                                                      >
+                                                      <div className={styles.reportInfo}>
+                                                                        <span className={styles.reportPlayer}>
+                                                                          {report.player_first_name} {report.player_last_name}
+                                                                        </span>span>
+                                                                        <span className={styles.reportMeta}>
+                                                                          {report.match_date
+                                                                                                  ? new Date(report.match_date).toLocaleDateString('nl-BE')
+                                                                                                  : 'Geen datum'}{' '}
+                                                                                            &middot; {report.match_competition || 'Onbekende competitie'}
+                                                                        </span>span>
+                                                      </div>div>
+                                                      <div className={styles.reportRight}>
+                                                        {report.score_overall != null && (
+                                                                            <span className={styles.score}>{Number(report.score_overall).toFixed(1)}</span>span>
+                                                                        )}
+                                                                        <span className={`${styles.badge} ${styles['badge_' + report.status]}`}>
+                                                                          {report.status === 'draft' ? 'Draft' : 'Voltooid'}
+                                                                        </span>span>
+                                                                        <span className={styles.reportArrow}>&rsaquo;</span>span>
+                                                      </div>div>
+                                      </div>div>
+                                    ))}
+                      </div>div>
+                        )}
+                </div>div>
+          
+            {/* Upgrade CTA (alleen bij Free plan) */}
+            {(user?.subscription_plan === 'free' || !user?.subscription_plan) && (
+                    <div className={styles.upgradeCta}>
+                              <div className={styles.upgradeText}>
+                                          <span className={styles.upgradeTitle}>Upgrade naar Pro</span>span>
+                                          <span className={styles.upgradeDesc}>
+                                                        Onbeperkt spelers, radargrafieken, PDF-export en meer.
+                                          </span>span>
+                              </div>div>
+                              <Button variant="primary" onClick={() => navigate('/upgrade')}>
+                                          Bekijk plannen
+                              </Button>Button>
+                    </div>div>
+                )}
+          </div>div>
+        );
 };
 
-export default DashboardPage;
+export default DashboardPage;</div>
