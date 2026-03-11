@@ -623,7 +623,15 @@
     }
 
     if (lower.startsWith("data:image/")) return s;
-    if (/^https?:\/\//i.test(s)) return s;
+    if (/^https?:\/\//i.test(s)) {
+      try {
+        const u = new URL(s);
+        if (String(u.hostname || "").toLowerCase() === "image.pollinations.ai") {
+          return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
+        }
+      } catch (_) {}
+      return s;
+    }
 
     if (s.startsWith("/api/")) return API_BASE + s;
     if (s.startsWith("/images/")) return API_BASE + s;
