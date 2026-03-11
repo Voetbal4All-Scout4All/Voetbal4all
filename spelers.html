@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Speler zoekt club</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+<style>
+  /* === Events.html shared UI (layout parity) === */
+  .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  @media (max-width:900px){.events-grid-2{grid-template-columns:1fr}}
+
+  .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
+  .event-thumbbox{width:140px;height:96px;flex:0 0 140px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);overflow:hidden;position:relative;}
+  .event-thumbbox::after{content:"Pro";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+  .event-thumbbox.has-img::after{display:none}
+  .event-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+  .event-main{flex:1 1 auto;min-width:0}
+  .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+  .premium-block{margin:12px 0 18px}
+  .premium-block .premium-grid{margin-top:10px}
+
+  .premium-block .premium-shell{border-radius:18px;border:1px solid rgba(255,255,255,.18);background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03));box-shadow:0 12px 34px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.12);overflow:hidden;position:relative;}
+  .premium-block .premium-shell::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.45;}
+
+  .premium-grid .premium-card{position:relative;border-radius:16px;overflow:hidden;outline:none !important;border:1px solid rgba(255,255,255,.18) !important;background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03)),linear-gradient(180deg,rgba(180,190,210,.12),rgba(10,12,20,.08)) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 26px rgba(0,0,0,.38) !important;}
+  .premium-grid .premium-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.55;}
+  .premium-grid .premium-card::after{display:none !important;}
+  .premium-grid .premium-card .v4a-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
+  .premium-grid .premium-card .v4a-card-meta{font-size:12px;opacity:.86;line-height:1.25}
+  .premium-grid .premium-card .v4a-card-body{display:none !important;}
+
+  .premium-grid .premium-card .event-thumbbox{position:relative;}
+  .premium-grid .premium-card .premium-ribbon{position:absolute;top:10px;right:-44px;width:160px;text-align:center;padding:6px 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.95);transform:rotate(30deg);z-index:3;background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));border:1px solid rgba(255,255,255,.22);box-shadow:0 8px 20px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.18);}
+
+  .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
+  .sidebar-premium-card{padding:10px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02) 40%,rgba(255,255,255,.06) 70%,rgba(255,255,255,.02));box-shadow:0 10px 26px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.10);position:relative;overflow:hidden;}
+  .sidebar-premium-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.45;}
+  .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0;position:relative;z-index:1}
+  .sidebar-premium-thumbbox{width:72px;height:54px;flex:0 0 72px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);overflow:hidden;position:relative;}
+  .sidebar-premium-thumbbox .premium-ribbon{position:absolute;top:8px;right:-40px;width:140px;text-align:center;padding:5px 0;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.95);transform:rotate(30deg);z-index:3;background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));border:1px solid rgba(255,255,255,.22);box-shadow:0 6px 16px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.16);}
+  .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
+  .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
+  .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
+
+  /* Pagination (optional parity) */
+  .events-pagination{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
+  .events-pagination .page-btn{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:rgba(255,255,255,.92);border-radius:999px;padding:8px 12px;font-family:inherit;font-weight:600;cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease;}
+  .events-pagination .page-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .events-pagination .page-btn:active{transform:translateY(0)}
+  .events-pagination .page-btn.is-active{background:rgba(22,163,74,.22);border-color:rgba(22,163,74,.55)}
+  .events-pagination .page-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+  /* --- Fix: buttons readable (white text) on dark UI --- */
+  .btn-ghost-sm,
+  .btn-ghost-sm:visited,
+  .btn-share,
+  .btn-share:visited,
+  /* players filter actions */
+  #player-filter-clear,
+  #player-filter-clear:visited,
+  .search-bar--advanced button,
+  .search-bar--advanced button:visited,
+  .search-bar--advanced .btn-ghost-sm,
+  .search-bar--advanced .btn-ghost-sm:visited,
+  /* any future explicit search buttons */
+  .search-button,
+  .search-button:visited{
+    color: rgba(255,255,255,.92) !important;
+  }
+
+  #player-filter-apply,
+  #player-filter-apply:visited,
+  #player-filter-apply:hover{
+    color: rgba(255,255,255,.95) !important;
+  }
+
+  .btn-ghost-sm:hover,
+  .btn-share:hover,
+  #player-filter-clear:hover,
+  .search-bar--advanced button:hover,
+  .search-button:hover{
+    color: rgba(255,255,255,1) !important;
+  }
+</style>
+  <style>
+        /* AdSense: reduce height of full-width banner ads (match index.html) */
+            .ad-slot-header,
+                .ad-infeed {
+                      max-height: 120px;
+                                            min-height: 0 !important;
+                            overflow: hidden;
+                                }
+                                  </style>
+</head>
+
+<!-- Live banner NIET op mobiel (zoals afgesproken voor niet-home pagina’s) -->
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+  <!-- LIVE BANNER -->
+  <section class="live-banner-top">
+    <div class="shell">
+      <div class="live-banner">
+        <div class="live-label"><span class="live-dot"></span>Live score</div>
+        <div class="live-text">
+          <span class="live-text-main"></span>
+          <div class="live-updated"></div>
+        </div>
+        <div class="live-socials" aria-label="Volg Voetbal4All op social media">
+          <div class="live-socials-label">Volg ons</div>
+          <div class="live-socials-icons"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEADER AD -->
+  <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+    <div class="shell">
+      <div class="ad-slot ad-slot-header sticky-ad-header">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4062633211824348"
+          data-ad-slot="9844384127"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section-main">
+      <div class="shell">
+
+        <!-- KORTE INTRO -->
+        <article class="card" style="margin-bottom:12px; max-width:900px;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Spelers</div>
+              <div class="card-title">Speler zoekt club</div>
+            </div>
+            <span class="pill-small">België · Nederland</span>
+          </div>
+          <p class="note">
+            Je kan je <strong>naam</strong> en <strong>woonplaats</strong> anoniem houden. Je e-mailadres wordt
+            <strong>nooit</strong> getoond in de advertentie. Clubs reageren via Voetbal4All.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
+            <a class="btn-ghost-sm" href="aanmelden.html">Vacature of profiel aanmelden</a>
+          </div>
+          <p class="form-helper" style="margin-top:8px;">
+            Spelersprofielen worden centraal ingediend via <a href="aanmelden.html">Vacature of profiel aanmelden</a>. Deze pagina toont het overzicht.
+          </p>
+        </article>
+
+        <!-- CONTENT LINKS + STICKY ADS RECHTS (zelfde indeling als events.html) -->
+        <div class="v4-layout-sidebar">
+
+          <!-- LINKS -->
+          <div class="v4-content">
+
+            <!-- ZOEK- EN FILTERBALK (PREMIUM, 2 regels) -->
+            <div class="v4-filterbar" style="margin-bottom:12px;">
+              <div class="v4-filterbar__inner">
+
+                <!-- regel 1: zoeken -->
+                <div class="v4-filterrow v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                  <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                    <div class="v4-filterlabel">Zoeken</div>
+                    <input id="player-search-text" type="search" class="v4-input" placeholder="Zoek (bv. keeper, U17, middenvelder…)" />
+                  </div>
+                </div>
+
+                <!-- regel 2: filters -->
+                <div class="v4-filterrow v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Land</div>
+                    <select id="player-filter-country" class="v4-select">
+                      <option value="">Land (alles)</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Dames / Heren</div>
+                    <select id="player-filter-gender" class="v4-select">
+                      <option value="BOTH">Dames &amp; Heren</option>
+                      <option value="HEREN">Heren</option>
+                      <option value="DAMES">Dames</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 220px;min-width:200px;">
+                    <div class="v4-filterlabel">Regio</div>
+                    <input id="player-filter-region" class="v4-input" type="search" placeholder="Regio (bv. Kempen, Antwerpen…)" />
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:0 0 auto;min-width:0;">
+                    <div class="v4-filterlabel">Acties</div>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+                      <button id="player-filter-apply" type="button" class="btn-ghost-sm search-button">Zoeken</button>
+                      <button id="player-filter-clear" type="button" class="btn-ghost-sm">Wissen</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-helper">Filter op <strong>land</strong> en <strong>regio</strong>. De zoekbalk zoekt ook in de tekst van het profiel.</div>
+              </div>
+            </div>
+
+            <!-- OVERZICHT -->
+            <section class="section-main" style="padding-top:0;">
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Overzicht</div>
+                    <div class="card-title">Spelers die een club zoeken</div>
+                  </div>
+                  <span class="pill-small">2 kolommen</span>
+                </div>
+
+                <p class="note">
+                  Premium profielen staan bovenaan. Je kan een advertentie delen en clubs reageren via Voetbal4All.
+                </p>
+
+                <!-- PREMIUM: 6 kaarten -->
+                <div id="premium-30-wrap" class="premium-block" style="display:block;">
+                  <div class="card premium-shell" style="margin-bottom:12px;">
+                    <div class="card-header">
+                      <div>
+                        <div class="card-caption">Premium</div>
+                        <div class="card-title premium-title-lg">Premium spelersprofielen</div>
+                      </div>
+                      <span class="pill-small">Rotatie</span>
+                    </div>
+
+                    <div id="premium-grid-30" class="events-grid-2 premium-grid">
+                      <article class="v4a-card premium-card" id="premium-player-1" data-gender="BOTH">
+                        <div class="event-row">
+                          <div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div>
+                          <div class="event-main">
+                            <div class="v4a-card-header" style="margin:0;"><div>
+                              <div class="v4a-card-title">Anonieme speler</div>
+                              <div class="v4a-card-meta">🇧🇪 België · Regio Kempen</div>
+                              <div class="v4a-card-meta">17 jaar · Middenvelder</div>
+                            </div></div>
+                            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                              <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+                              <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="v4a-card premium-card" id="premium-player-2" data-gender="BOTH">
+                        <div class="event-row">
+                          <div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div>
+                          <div class="event-main">
+                            <div class="v4a-card-header" style="margin:0;"><div>
+                              <div class="v4a-card-title">Anonieme speler</div>
+                              <div class="v4a-card-meta">🇳🇱 Nederland · Eindhoven</div>
+                              <div class="v4a-card-meta">20 jaar · Keeper</div>
+                            </div></div>
+                            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                              <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+                              <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="v4a-card premium-card" id="premium-player-3" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇧🇪 België · Antwerpen</div><div class="v4a-card-meta">16 jaar · Aanvaller</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                      <article class="v4a-card premium-card" id="premium-player-4" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇳🇱 Nederland · Limburg</div><div class="v4a-card-meta">19 jaar · Verdediger</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                      <article class="v4a-card premium-card" id="premium-player-5" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇧🇪 België · Oost-Vlaanderen</div><div class="v4a-card-meta">18 jaar · Middenvelder</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                      <article class="v4a-card premium-card" id="premium-player-6" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇳🇱 Nederland · Utrecht</div><div class="v4a-card-meta">15 jaar · Flankspeler</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- INFEED ADSENSE: dezelfde zone als events.html -->
+                <section class="section-main" style="padding-top:0;padding-bottom:10px;">
+                  <div class="ad-infeed">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4062633211824348" data-ad-slot="5386990710" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                  </div>
+                </section>
+
+                <!-- Spelers (2 kolommen) -->
+                <div id="player-list" class="events-grid-2">
+                  <!-- gevuld via backend / placeholders -->
+                </div>
+
+                <div id="players-pagination" class="events-pagination" aria-label="Paginatie spelers"></div>
+                <p id="player-status" class="note" style="margin-top:10px; display:none;"></p>
+
+              </div>
+            </section>
+
+          </div>
+
+          <!-- RECHTS -->
+          <aside class="v4-sidebar">
+            <div class="v4-sidebar-sticky">
+
+              <article class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Anonimiteit</div>
+                    <div class="card-title">Wat ziet een club?</div>
+                  </div>
+                </div>
+                <p class="note">In een publieke spelersadvertentie tonen we:</p>
+                <ul class="events-list">
+                  <li class="event-item">
+                    <div class="event-title">Naam &amp; woonplaats</div>
+                    <div class="event-meta">Alleen zichtbaar als je anonimiteit uitzet.</div>
+                  </li>
+                  <li class="event-item">
+                    <div class="event-title">E-mailadres</div>
+                    <div class="event-meta">Nooit zichtbaar. Reacties lopen via Voetbal4All.</div>
+                  </li>
+                </ul>
+              </article>
+
+              <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+                <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-4062633211824348"
+                  data-ad-slot="5251560661"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              </div>
+
+              <article class="card" style="margin-top:12px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Ook adverteren?</div>
+                    <div class="card-title">Bereik spelers &amp; ouders</div>
+                  </div>
+                </div>
+                <p class="note">
+                  Ideaal voor sportkleding, sportscholen, kinesisten, voetbalacademies, voeding en lokale sponsors.
+                </p>
+                <div class="v4a-card-actions">
+                  <a href="adverteren.html" class="btn-ghost-sm">Bekijk mogelijkheden</a>
+                </div>
+              </article>
+
+              <!-- Premium spelers > later (zelfde als events.html) -->
+              <article class="card" style="margin-top:12px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Uitgelicht (later)</div>
+                  </div>
+                  <span class="pill-small">Rotatie</span>
+                </div>
+                <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
+              </article>
+
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer-contact">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+          <div class="footer-legal">
+            &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+            · Mogelijkheden voor hoofdsponsor, partners en advertenties.
+          </div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+            <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+            <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-ad">
+          FOOTER ADVERTENTIE / PARTNERLOGO<br>
+          <span class="ad-size">Footer-banner met zichtbaarheid voor terugkerende bezoekers.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Backend API base (same as other pages)
+  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+
+  // Reageren via mailto (zelfde patroon)
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-reply-ad]");
+    if (!btn) return;
+
+    const adId = btn.getAttribute("data-reply-ad");
+    const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
+    if (!ok) return;
+
+    const clubEmail = prompt("Vul je e-mailadres in om mee te geven aan de speler:");
+    if (!clubEmail) return alert("E-mailadres is nodig om te kunnen reageren.");
+
+    const subject = encodeURIComponent("Reactie via Voetbal4All op spelersadvertentie " + adId);
+    const body = encodeURIComponent(
+      "Advertentie-ID: " + adId +
+      "\n\nE-mailadres van de club/contactpersoon: " + clubEmail +
+      "\n\nBericht:\n(Voeg hier in jouw mail je bericht aan de speler toe.)"
+    );
+
+    window.location.href = "mailto:voetbal4all@outlook.com?subject=" + subject + "&body=" + body;
+  });
+
+  // Social sharing: link naar specifieke advertentie
+  function updateShareLinks() {
+    const baseUrl = "https://www.voetbal4all.eu/spelers.html";
+    document.querySelectorAll("[data-share-ad]").forEach(link => {
+      const adId = link.getAttribute("data-share-ad");
+      const detailHref = (link.getAttribute("data-detail-href") || "").trim();
+
+      const shareUrl = detailHref
+        ? (new URL(detailHref, baseUrl)).toString()
+        : (baseUrl + "#player-ad-" + adId);
+
+      link.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+  }
+  updateShareLinks();
+
+  // --- Backend wiring: fetch player profiles ---
+  // Keep a copy of the original premium placeholders so we can restore them
+  const PREMIUM_PLACEHOLDER_HTML = (function(){
+    const el = document.getElementById('premium-grid-30');
+    return el ? el.innerHTML : '';
+  })();
+  function escHtml(s) {
+    return String(s ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function isUuid(v) {
+    const s = String(v || "").trim();
+    if (!s) return false;
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s);
+  }
+
+  function flagForCountry(c) {
+    const cc = String(c || "").toUpperCase();
+    if (cc === "BE") return "🇧🇪";
+    if (cc === "NL") return "🇳🇱";
+    return "🌍";
+  }
+
+  function formatLocation(p) {
+    const country = String(p.country || "").toUpperCase();
+    const parts = [];
+    if (country) parts.push(country === "BE" ? "België" : country === "NL" ? "Nederland" : country);
+    const region = (p.region || p.city || "").trim();
+    if (region) parts.push(region);
+    return parts.join(" · ") || "—";
+  }
+
+  function toGender(p) {
+    const g = String(p.gender || "BOTH").trim().toUpperCase();
+    return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+  }
+
+  function isPremiumActive(p) {
+    // premium_until may be null. If present and in the future => premium.
+    const pu = p.premium_until ? Date.parse(p.premium_until) : NaN;
+    return Number.isFinite(pu) && pu > Date.now();
+  }
+
+  function playerCardHtml(p, idx, isPremium) {
+    const id = escHtml(String(p.id || idx + 1));
+    const name = escHtml(p.name || "Anonieme speler");
+    const pos = escHtml(p.position || "Speler");
+    const bio = escHtml(p.bio || "");
+    const url = String(p.url || "").trim();
+    const rawId = String(p.id || "").trim();
+    const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
+    const country = String(p.country || "").toUpperCase();
+    const region = escHtml(p.region || p.city || "");
+    const locText = escHtml(formatLocation(p));
+    const flag = flagForCountry(country);
+    const gender = toGender(p);
+
+    const metaLine = `${flag} · ${locText}`;
+
+    const actions = isPremium
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
+         <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
+      : `<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
+         <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
+
+    // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
+    return `
+      <article class="v4a-card${isPremium ? " premium-card" : ""}" id="player-ad-${escHtml(String(idx + 1))}"
+        data-ad-id="${escHtml(String(idx + 1))}"
+        data-country="${escHtml(country)}"
+        data-gender="${escHtml(gender)}">
+        <div class="event-row">
+          <div class="event-thumbbox" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}</div>
+          <div class="event-main">
+            <div class="v4a-card-header" style="margin:0;">
+              <div>
+                <div class="v4a-card-title">${detailHref ? `<a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${name}</a>` : name}</div>
+                <div class="v4a-card-meta">${metaLine}${region ? "" : ""}</div>
+                <div class="v4a-card-meta">${pos}</div>
+              </div>
+            </div>
+            ${bio ? `<div class="v4a-card-body" style="margin-top:8px;">${bio}</div>` : ""}
+            ${url ? `<div class="v4a-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
+            <div class="v4a-card-actions event-actions" style="margin-top:10px;">${actions}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadPlayersFromBackend() {
+    const listEl = document.getElementById("player-list");
+    const premiumGrid = document.getElementById("premium-grid-30");
+    const statusEl = document.getElementById("player-status");
+    if (!listEl) return false;
+
+    // Reset UI immediately to avoid showing stale results between gender switches
+    listEl.innerHTML = "";
+    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (statusEl) {
+      statusEl.style.display = "";
+      statusEl.textContent = "Spelers laden…";
+    }
+
+    // read current gender filter
+    const genderSel = document.getElementById("player-filter-gender");
+    const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
+    const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+
+    const url = `${API_BASE}/api/player-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+
+    try {
+      const r = await fetch(url, { credentials: "omit" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+
+      const items = j.items;
+      // split premium active vs rest
+      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const rest = items.filter((x) => !isPremiumActive(x));
+
+      // Premium grid: render up to 6 premium items, otherwise restore placeholders
+      if (premiumGrid) {
+        premiumGrid.innerHTML = premium.length
+          ? premium.map((p, i) => playerCardHtml(p, i, true)).join("")
+          : PREMIUM_PLACEHOLDER_HTML;
+      }
+
+      // Render main list (non-premium)
+      listEl.innerHTML = rest.map((p, i) => playerCardHtml(p, i, false)).join("");
+
+      // Status
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = items.length
+          ? `${items.length} speler(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          : "Nog geen spelersprofielen.";
+      }
+
+      // Ensure share links point to correct anchors
+      try { updateShareLinks(); } catch (_) {}
+
+      // Re-apply the active UI filters (country/region/search) on the newly rendered cards
+      if (typeof window.__applyPlayerFilters === 'function') {
+        window.__applyPlayerFilters();
+      }
+
+      return true;
+    } catch (e) {
+      // keep fallback behavior; do not throw
+      console.warn("[spelers] backend load failed:", e?.message || e);
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = "Kon spelers niet laden. We tonen tijdelijk placeholders.";
+      }
+      return false;
+    }
+  }
+  // --- end backend wiring ---
+
+  // --- Zoeken & filteren (land + regio) ---
+  (function initPlayerFilters() {
+    const adsContainer = document.getElementById("player-list");
+    if (!adsContainer) return;
+
+    const qEl = document.getElementById("player-search-text");
+    const countryEl = document.getElementById("player-filter-country");
+    const genderEl = document.getElementById("player-filter-gender");
+    const regionEl = document.getElementById("player-filter-region");
+    const applyEl = document.getElementById("player-filter-apply");
+    const clearEl = document.getElementById("player-filter-clear");
+
+    if (!qEl || !countryEl || !regionEl || !clearEl) return;
+
+    function normalize(s) {
+      return String(s || "").toLowerCase().trim();
+    }
+
+    function normalizeGenderParam(v) {
+      if (v == null) return null;
+      const s = String(v).trim().toUpperCase();
+      if (!s) return null;
+      if (s === "HEREN" || s === "DAMES" || s === "BOTH") return s;
+      return "__INVALID__";
+    }
+
+    (function initGenderFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const g = params.get("gender");
+      if (!g) return;
+      if (!genderEl) return;
+
+      const gv = String(g).trim().toUpperCase();
+      for (const opt of genderEl.options) {
+        if (opt.value === gv) { genderEl.value = gv; break; }
+      }
+    })();
+
+    function detectCountryFromCard(card) {
+      const ds = String(card?.dataset?.country || "").toUpperCase();
+      if (ds) return ds;
+      // Heuristic: look at the meta line which contains e.g. "🇧🇪 België · Regio Kempen"
+      const meta = card.querySelector(".v4a-card-meta")?.textContent || "";
+      const m = meta.toLowerCase();
+      if (m.includes("belgië") || m.includes("belgie") || meta.includes("🇧🇪")) return "BE";
+      if (m.includes("nederland") || meta.includes("🇳🇱")) return "NL";
+      return "";
+    }
+
+    function detectGenderFromCard(card) {
+      // Prefer explicit dataset (for backend-wired cards)
+      const ds = normalizeGenderParam(card?.dataset?.gender);
+      if (ds) return ds;
+      return "BOTH";
+    }
+
+    function detectRegionFromCard(card) {
+      // Prefer the country/regio meta if present
+      const meta = card.querySelector(".v4a-card-meta")?.textContent || "";
+      // Common pattern: "België · Regio Kempen" or "Nederland · Regio ..."
+      const parts = meta.split("·").map(p => p.trim());
+      if (parts.length >= 2) return parts.slice(1).join(" · ");
+
+      // Fallback: try body line containing "Regio:"
+      const body = card.querySelector(".v4a-card-body")?.textContent || "";
+      const idx = body.toLowerCase().indexOf("regio");
+      return idx >= 0 ? body.slice(idx, idx + 120) : "";
+    }
+
+    function cardText(card) {
+      return normalize(card.textContent);
+    }
+
+    function applyFilters() {
+      const q = normalize(qEl.value);
+      const country = (countryEl.value || "").toUpperCase();
+      const regionQ = normalize(regionEl.value);
+      const gender = normalizeGenderParam(genderEl?.value) || "BOTH";
+
+      const cards = Array.from(adsContainer.querySelectorAll(".v4a-card"));
+      cards.forEach(card => {
+        const textOk = !q || cardText(card).includes(q);
+
+        const c = detectCountryFromCard(card);
+        const countryOk = !country || c === country;
+
+        const region = normalize(detectRegionFromCard(card));
+        const regionOk = !regionQ || region.includes(regionQ);
+
+        const g = detectGenderFromCard(card);
+        const genderOk = (gender === "BOTH") || (g === gender) || (g === "BOTH");
+
+        card.style.display = (textOk && countryOk && regionOk && genderOk) ? "" : "none";
+      });
+    }
+
+    // Expose for backend reloads
+    window.__applyPlayerFilters = applyFilters;
+
+    // Debounce typing
+    let t = null;
+    function schedule() {
+      if (t) clearTimeout(t);
+      t = setTimeout(applyFilters, 80);
+    }
+
+    qEl.addEventListener("input", schedule);
+    regionEl.addEventListener("input", schedule);
+    countryEl.addEventListener("change", applyFilters);
+    if (genderEl) {
+      genderEl.addEventListener("change", () => {
+        const params = new URLSearchParams(window.location.search);
+        const g = normalizeGenderParam(genderEl.value) || "BOTH";
+        if (!g || g === "BOTH") params.delete("gender");
+        else params.set("gender", g);
+        const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+        history.replaceState(null, "", next);
+        // Reload from backend so premium + list remain consistent
+        loadPlayersFromBackend().then(() => {
+          applyFilters();
+        });
+      });
+    }
+    if (applyEl) {
+      applyEl.addEventListener("click", applyFilters);
+    }
+
+    clearEl.addEventListener("click", () => {
+      qEl.value = "";
+      regionEl.value = "";
+      countryEl.value = "";
+      if (genderEl) genderEl.value = "BOTH";
+      applyFilters();
+    });
+
+    // Initial run is handled after the first backend load (or fallback)
+  })();
+
+  // Fill main list with placeholders if backend is not wired yet (layout parity)
+  (function fillPlayerPlaceholders(){
+    const el = document.getElementById('player-list');
+    if (!el) return;
+
+    // Try backend first; if it succeeds, do not render placeholders.
+    loadPlayersFromBackend().then((ok) => {
+      if (ok) return;
+
+      // Backend failed: apply filters to placeholders after we inject them
+      if (typeof window.__applyPlayerFilters === 'function') {
+        // Will run after placeholders are inserted below
+      }
+
+      // If already contains cards, do nothing
+      if (el.querySelector('.v4a-card')) return;
+
+      const items = [
+        {flag:'🇧🇪', place:'België · Regio Kempen', meta:'17 jaar · Middenvelder, Aanvaller', body:'Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.'},
+        {flag:'🇳🇱', place:'Nederland · Eindhoven', meta:'20 jaar · Keeper', body:'Keeper met wedstrijdritme, zoekt club met duidelijke structuur en doelstellingen.'},
+        {flag:'🇧🇪', place:'België · Antwerpen', meta:'16 jaar · Aanvaller', body:'Snelle flankaanvaller, sterk in 1v1 en diepgang. Zoekt stap hoger in jeugdopleiding.'},
+        {flag:'🇳🇱', place:'Nederland · Limburg', meta:'19 jaar · Verdediger', body:'Centrale verdediger met leiderschap. Open voor eerste elftal of belofteploeg.'},
+        {flag:'🇧🇪', place:'België · Oost-Vlaanderen', meta:'18 jaar · Middenvelder', body:'Box-to-box middenvelder, veel loopvermogen en passing. Ambitieus traject.'},
+        {flag:'🇳🇱', place:'Nederland · Utrecht', meta:'15 jaar · Flankspeler', body:'Flankspeler met techniek en dribbel. Wil groeien in een opleidingsomgeving.'}
+      ];
+
+      el.innerHTML = items.map((s, idx) => `
+        <article class="v4a-card" id="player-ad-${idx+1}" data-ad-id="${idx+1}" data-gender="BOTH">
+          <div class="event-row">
+            <div class="event-thumbbox" aria-label="Thumbnail"></div>
+            <div class="event-main">
+              <div class="v4a-card-header" style="margin:0;">
+                <div>
+                  <div class="v4a-card-title">Anonieme speler</div>
+                  <div class="v4a-card-meta">${s.flag} · ${s.place}</div>
+                  <div class="v4a-card-meta">${s.meta}</div>
+                </div>
+              </div>
+              <div class="v4a-card-body" style="margin-top:8px;">${s.body}</div>
+              <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                <button type="button" class="btn-ghost-sm" data-reply-ad="${idx+1}">Reageer op speler</button>
+                <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${idx+1}">Delen</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      // re-bind share links after injecting
+      try { updateShareLinks(); } catch(_) {}
+
+      // Apply filters on the injected placeholders
+      if (typeof window.__applyPlayerFilters === 'function') {
+        window.__applyPlayerFilters();
+      }
+    });
+  })();
+
+  // Initial backend load: after rendering, apply current UI filters
+  loadPlayersFromBackend().then(() => {
+    if (typeof window.__applyPlayerFilters === 'function') {
+      window.__applyPlayerFilters();
+    }
+  });
+
+  // Fill sidebar premium block with placeholders (layout parity with events.html)
+  (function fillSidebarPremiumLater(){
+    const el = document.getElementById('sidebar-premium-later');
+    if (!el) return;
+    const MIN_SLOTS = 10;
+    el.innerHTML = '';
+    for (let i=0;i<MIN_SLOTS;i++){
+      el.insertAdjacentHTML('beforeend', `
+        <div class="sidebar-premium-card">
+          <div class="sidebar-premium-top">
+            <div class="sidebar-premium-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
+            <div style="min-width:0;">
+              <div class="sidebar-premium-title">Jouw premium profiel hier?</div>
+              <div class="sidebar-premium-meta">—</div>
+              <div class="sidebar-premium-meta">Binnenkort</div>
+              <div class="sidebar-premium-meta">Premium</div>
+            </div>
+          </div>
+          <div class="sidebar-premium-actions"></div>
+        </div>
+      `);
+    }
+    el.insertAdjacentHTML('beforeend', `
+      <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+        <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
+        <div class="sidebar-premium-meta">Bovenaan en in de sidebar.</div>
+        <div class="sidebar-premium-actions" style="justify-content:center;">
+          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
+        </div>
+      </div>
+    `);
+  })();
+</script>
+
+<script src="assets/js/nav-active.js" defer></script>
+<script src="assets/js/nav-mobile.js" defer></script>
+<script src="assets/js/live-banner.js"></script>
+</body>
+</html>

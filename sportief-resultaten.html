@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0B1020">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348" crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Resultaten</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Resultaten: in lijn met bestaande dark UI */
+    .v4-results-table td, .v4-results-table th { white-space: nowrap; }
+    .v4-results-table td.team { white-space: normal; }
+    .v4-results-table tr.is-highlight td { background: rgba(0,255,180,0.06); }
+    .v4-results-list .v4-result-row { display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+    .v4-results-list .v4-result-score { font-weight:700; }
+    @media (max-width: 860px){
+      .v4-topleagues-standings{ grid-template-columns: 1fr !important; }
+      .v4-topleagues-results{ grid-template-columns: 1fr !important; }
+    }
+    .v4-mini-fixtures{ width:100%; border-collapse:collapse; }
+    .v4-mini-fixtures th, .v4-mini-fixtures td{ padding:6px 6px; border-bottom:1px solid rgba(255,255,255,0.05); font-size:12px; }
+    .v4-mini-fixtures td:nth-child(3), .v4-mini-fixtures td:nth-child(4){ width:49%; }
+    .v4-mini-fixtures th{ opacity:.75; font-weight:600; text-align:left; }
+    .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ white-space:nowrap; }
+    .v4-mini-fixtures td:nth-child(1), .v4-mini-fixtures td:nth-child(2){ width:1%; }
+    /* Results table: pull Score + Uit left by constraining column widths */
+    .v4-mini-results{ table-layout:fixed; }
+    .v4-mini-results th:nth-child(1), .v4-mini-results td:nth-child(1){ width:52px; }
+    .v4-mini-results th:nth-child(2), .v4-mini-results td:nth-child(2){ width:56px; }
+    .v4-mini-results th:nth-child(4), .v4-mini-results td:nth-child(4){ width:94px; }
+    .v4-mini-results th:nth-child(3), .v4-mini-results td:nth-child(3){ width:calc(40% - 20px); }
+    .v4-mini-results th:nth-child(5), .v4-mini-results td:nth-child(5){ width:40%; }
+    /* Slim horizontal AdSense placeholder (visible even on no-fill/adblock) */
+    .v4-ad-slim{ position:relative; min-height:72px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03); }
+    .v4-ad-slim__ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; font-size:12px; opacity:.55; letter-spacing:.06em; text-transform:uppercase; }
+    .v4-ad-slim__ph::before{ content:""; width:8px; height:8px; border-radius:999px; background:rgba(255,255,255,0.35); }
+    .v4-ad-slim ins.adsbygoogle{ position:relative; z-index:2; }
+
+    /* Fix: "Toon resultaten" button text was not readable on dark background */
+    .v4-filterbar .btn-ghost-sm{
+      color: rgba(255,255,255,0.95) !important;
+      background: rgba(255,255,255,0.08) !important;
+      border: 1px solid rgba(255,255,255,0.18) !important;
+    }
+    .v4-filterbar .btn-ghost-sm:hover{
+      background: rgba(255,255,255,0.12) !important;
+      border-color: rgba(255,255,255,0.26) !important;
+    }
+  </style>
+    <style>
+      /* AdSense: reduce height of full-width banner ads (match index.html) */
+          .ad-slot-header,
+              .ad-infeed {
+                    max-height: 120px;
+                                          min-height: 0 !important;
+                          overflow: hidden;
+                              }
+                                </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+<!-- ================= LIVE BANNER ================= -->
+<section class="live-banner-top">
+  <div class="shell">
+    <div class="live-banner">
+      <div class="live-label"><span class="live-dot"></span>Live score</div>
+      <div class="live-text">
+        <span class="live-text-main"></span>
+        <div class="live-updated"></div>
+      </div>
+      <div class="live-socials">
+        <div class="live-socials-label">Volg ons</div>
+        <div class="live-socials-icons"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HEADER AD ================= -->
+<section class="section-main" style="padding:10px 0;">
+  <div class="shell">
+    <div class="ad-slot ad-slot-header">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4062633211824348"
+        data-ad-slot="7209663682"
+        data-ad-format="horizontal"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main>
+<section class="section-main">
+<div class="shell">
+
+  <!-- ================= TOPCOMPETITIES (ALTijd zichtbaar) ================= -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-header">
+      <div>
+        <div class="card-caption">Topcompetities</div>
+        <div class="card-title">Nederland &amp; België</div>
+      </div>
+      <span class="pill-small">Rangschikking · Laatste resultaten · Aankomende</span>
+    </div>
+
+    <div class="card-body" style="padding-top:0;">
+      <!-- RIJ 1: RANGSCHIKKING (2 kolommen) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-standings">
+
+        <!-- EREDIVISIE (STANDINGS) -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Nederland</div>
+              <div class="card-title" id="top-ered-title">Eredivisie</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Rangschikking</div>
+            <div id="top-ered-standings" class="note">Laden…</div>
+          </div>
+        </div>
+
+        <!-- JUPILER PRO LEAGUE (STANDINGS) -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">België</div>
+              <div class="card-title" id="top-jpl-title">Jupiler Pro League</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Rangschikking</div>
+            <div id="top-jpl-standings" class="note">Laden…</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 1x AD (FULL-WIDTH) TUSSEN STANDINGS EN RESULTATEN -->
+      <div class="v4-ad-slim" style="margin:12px 0;">
+        <div class="v4-ad-slim__ph">Wil jij hier adverteren? <a href="adverteren.html">Ontdek de mogelijkheden →</a></div>
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4062633211824348"
+          data-ad-slot="7209663682"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- RIJ 2: RESULTATEN + AANKOMENDE (2 kolommen) -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="v4-topleagues-results">
+
+        <!-- EREDIVISIE (RESULTS + UPCOMING) -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Nederland</div>
+              <div class="card-title">Eredivisie</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-ered-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-ered-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
+        <!-- JUPILER PRO LEAGUE (RESULTS + UPCOMING) -->
+        <div class="card" style="margin:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">België</div>
+              <div class="card-title">Jupiler Pro League</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="note" style="margin-bottom:6px;">Laatste resultaten</div>
+            <div id="top-jpl-results" class="note">Laden…</div>
+            <hr style="border:0;border-top:1px solid rgba(255,255,255,0.06);margin:12px 0;" />
+            <div class="note" style="margin-bottom:6px;">Aankomende wedstrijden</div>
+            <div id="top-jpl-upcoming" class="note">Laden…</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <article class="card" style="margin-bottom:12px;">
+    <div class="card-header">
+      <div>
+        <div class="card-caption">Sportief</div>
+        <div class="card-title">Resultaten</div>
+      </div>
+      <span class="pill-small">Alle competities · M/V</span>
+    </div>
+    <p class="note">
+      Filter op land, geslacht en competitie. Dames-competities krijgen een duidelijke badge.
+    </p>
+  </article>
+
+  <div class="v4-layout-sidebar">
+
+    <!-- CONTENT -->
+    <div class="v4-content">
+
+      <!-- FILTERS -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Filters</div>
+            <div class="card-title">Selecteer competitie</div>
+          </div>
+        </div>
+        <div class="v4-filterbar" style="margin:0;">
+          <div class="v4-filterbar__inner">
+
+            <!-- 2-row premium layout: row 1 dropdowns, row 2 action -->
+            <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+              <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                <div class="v4-filterlabel">Land</div>
+                <select id="filter-country" class="v4-select">
+                  <option value="ALL">Alle</option>
+                  <option value="BE">België</option>
+                  <option value="NL">Nederland</option>
+                  <option value="DE">Duitsland</option>
+                  <option value="EN">Engeland</option>
+                  <option value="IT">Italië</option>
+                  <option value="ES">Spanje</option>
+                  <option value="FR">Frankrijk</option>
+                </select>
+              </div>
+
+              <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                <div class="v4-filterlabel">Dames / Heren</div>
+                <select id="filter-gender" class="v4-select">
+                  <option value="ALL">Heren &amp; Dames</option>
+                  <option value="M">Heren</option>
+                  <option value="W">Dames</option>
+                </select>
+              </div>
+
+              <div class="v4-filtergroup" style="flex:2 1 260px;min-width:220px;">
+                <div class="v4-filterlabel">Competitie</div>
+                <select id="filter-league" class="v4-select"></select>
+              </div>
+
+              <div class="v4-filtergroup" style="flex:0 0 auto;min-width:0;">
+                <div class="v4-filterlabel">Actie</div>
+                <button id="btn-load" class="btn-ghost-sm" style="height:44px;white-space:nowrap;">Toon resultaten</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      <!-- AD SLOT BOVEN RESULTATEN -->
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTATEN -->
+      <div class="card" id="results-card">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Laatste resultaten</div>
+            <div class="card-title" id="results-title">Selecteer een competitie</div>
+          </div>
+        </div>
+        <div class="card-body" id="results-body">
+          <p class="note">Nog geen competitie geselecteerd.</p>
+        </div>
+      </div>
+
+      <!-- FIXTURES CARD -->
+      <div class="card" id="fixtures-card" style="display:none">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Aankomende wedstrijden</div>
+            <div class="card-title" id="fixtures-title"></div>
+          </div>
+        </div>
+        <div class="card-body" id="fixtures-body">
+          <p class="note">Selecteer een competitie en klik op "Toon resultaten".</p>
+        </div>
+      </div>
+
+      <!-- STANDINGS CARD -->
+      <div class="card" id="standings-card" style="display:none">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Rangschikking</div>
+            <div class="card-title" id="standings-title"></div>
+          </div>
+        </div>
+        <div class="card-body" id="standings-body">
+          <p class="note">Selecteer een competitie en klik op "Toon resultaten".</p>
+        </div>
+      </div>
+
+      <!-- AD SLOT ONDER RESULTATEN -->
+      <div class="card" style="margin-top:12px;">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR (ruimte voor paid placements) -->
+    <aside class="v4-sidebar">
+      <div class="card" style="margin-bottom:12px;">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Uitgelicht</div>
+            <div class="card-title">Paid placements</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <p class="note">Wil jij jouw merk zichtbaar maken bij de voetbalcommunity? <a href="adverteren.html">Ontdek de mogelijkheden →</a></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="ad-slot">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7209663682"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+</div>
+</section>
+</main>
+
+<script>
+const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+// Optional endpoints (page must not break if these don't exist)
+const STANDINGS_ENDPOINT = `${API_BASE}/api/standings`;          // expected: ?league=CODE
+const UPCOMING_ENDPOINT  = `${API_BASE}/api/fixtures`;           // expected: ?league=CODE&next=N
+const UPCOMING_NEXT      = 10;
+
+function setHtml(id, html){
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+}
+
+
+function toDateLabel(iso){
+  const s = String(iso || "");
+  return s ? escapeHtml(s.slice(0,10)) : "";
+}
+
+function pickLogo(obj){
+  if (!obj) return "";
+  // common shapes we might receive
+  return (
+    obj.logo ||
+    obj.teamLogo ||
+    obj.badge ||
+    obj.strTeamBadge ||
+    obj.strBadge ||
+    obj.team?.logo ||
+    obj.team?.badge ||
+    obj.teams?.home?.logo ||
+    obj.teams?.away?.logo ||
+    ""
+  );
+}
+
+function logoHtml(url, alt){
+  const u = String(url || "").trim();
+  if (!u) {
+    // subtle placeholder dot (doesn't break layout)
+    return `<span style="display:inline-block;width:18px;height:18px;border-radius:999px;background:rgba(255,255,255,0.10);border:1px solid rgba(255,255,255,0.12);"></span>`;
+  }
+  return `<img src="${escapeHtml(u)}" alt="${escapeHtml(alt || "")}" loading="lazy" referrerpolicy="no-referrer" style="width:18px;height:18px;object-fit:contain;border-radius:4px;" />`;
+}
+
+function teamCellHtml(name, logoUrl){
+  const n = escapeHtml(name || "");
+  const l = logoHtml(logoUrl, name || "");
+  return `<span style="display:inline-flex;align-items:center;gap:8px;min-width:0;">${l}<span style="min-width:0;overflow:hidden;text-overflow:ellipsis;">${n}</span></span>`;
+}
+
+function renderStandingsTable(rows){
+  const arr = Array.isArray(rows) ? rows : [];
+  if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
+
+  const getNum = (v) => {
+    if (v == null) return "";
+    const n = Number(v);
+    return Number.isFinite(n) ? String(n) : "";
+  };
+
+  const pick = (r, paths) => {
+    for (const p of paths) {
+      const parts = p.split(".");
+      let cur = r;
+      let ok = true;
+      for (const k of parts) {
+        if (cur && Object.prototype.hasOwnProperty.call(cur, k)) cur = cur[k];
+        else { ok = false; break; }
+      }
+      if (ok && cur != null) return cur;
+    }
+    return null;
+  };
+
+  const hasAny = (predicate) => arr.some((r) => {
+    try { return predicate(r); } catch { return false; }
+  });
+
+  // Detect available fields across rows (flexible across backend providers)
+  const showWDL = hasAny((r) => pick(r, ["wins","win","w","all.win","all.wins","stats.wins","stats.win"]) != null) ||
+                  hasAny((r) => pick(r, ["draws","draw","d","all.draw","all.draws","stats.draws"]) != null) ||
+                  hasAny((r) => pick(r, ["losses","loss","l","all.lose","all.lost","all.loss","stats.losses"]) != null);
+
+  const showGoals = hasAny((r) => pick(r, ["goalsFor","gf","for","all.goals.for","goals.for","stats.goalsFor"]) != null) ||
+                    hasAny((r) => pick(r, ["goalsAgainst","ga","against","all.goals.against","goals.against","stats.goalsAgainst"]) != null) ||
+                    hasAny((r) => pick(r, ["goalDifference","gd","diff","goalsDiff","all.goalsDiff","goals.diff","stats.goalDifference"]) != null);
+
+  // Columns: rank, team, P, (W D L), (GF GA GD), Pts
+  const headCells = [
+    `<th style="text-align:left;opacity:.75;">#</th>`,
+    `<th style="text-align:left;opacity:.75;">Team</th>`,
+    `<th style="text-align:center;opacity:.75;">P</th>`,
+  ];
+
+  if (showWDL) {
+    headCells.push(
+      `<th style="text-align:center;opacity:.75;">W</th>`,
+      `<th style="text-align:center;opacity:.75;">G</th>`,
+      `<th style="text-align:center;opacity:.75;">V</th>`,
+    );
+  }
+
+  if (showGoals) {
+    headCells.push(
+      `<th style="text-align:center;opacity:.75;">DV</th>`,
+      `<th style="text-align:center;opacity:.75;">DT</th>`,
+      `<th style="text-align:center;opacity:.75;">DS</th>`,
+    );
+  }
+
+  headCells.push(`<th style="text-align:center;opacity:.75;">Pts</th>`);
+
+  const head = `<thead><tr>${headCells.join("")}</tr></thead>`;
+
+  const body = arr.map((r) => {
+    const rank = escapeHtml(pick(r, ["rank","position"]) ?? "");
+    const teamName = pick(r, ["teamName","team","name","team.name"]) ?? "";
+    const teamLogo = pick(r, ["teamLogo","logo","badge","team.logo","team.badge","strTeamBadge","strBadge"]) ?? "";
+    const team = teamCellHtml(teamName, teamLogo);
+
+    const played = getNum(pick(r, ["played","pld","games","matches","all.played","stats.played"]) ?? "");
+    const points = getNum(pick(r, ["points","pts","point","stats.points"]) ?? "");
+
+    const w = getNum(pick(r, ["wins","win","w","all.win","all.wins","stats.wins","stats.win"]) ?? "");
+    const d = getNum(pick(r, ["draws","draw","d","all.draw","all.draws","stats.draws"]) ?? "");
+    const l = getNum(pick(r, ["losses","loss","l","all.lose","all.lost","all.loss","stats.losses"]) ?? "");
+
+    const gf = getNum(pick(r, ["goalsFor","gf","for","all.goals.for","goals.for","stats.goalsFor"]) ?? "");
+    const ga = getNum(pick(r, ["goalsAgainst","ga","against","all.goals.against","goals.against","stats.goalsAgainst"]) ?? "");
+    const gd = getNum(pick(r, ["goalDifference","gd","diff","goalsDiff","all.goalsDiff","goals.diff","stats.goalDifference"]) ?? "");
+
+    const cells = [
+      `<td style="opacity:.85;">${rank}</td>`,
+      `<td style="white-space:nowrap;padding-right:48px;min-width:180px;">${team}</td>`,
+      `<td style="text-align:center;opacity:.85;">${escapeHtml(played)}</td>`,
+    ];
+
+    if (showWDL) {
+      cells.push(
+        `<td style="text-align:center;opacity:.85;">${escapeHtml(w)}</td>`,
+        `<td style="text-align:center;opacity:.85;">${escapeHtml(d)}</td>`,
+        `<td style="text-align:center;opacity:.85;">${escapeHtml(l)}</td>`,
+      );
+    }
+
+    if (showGoals) {
+      cells.push(
+        `<td style="text-align:center;opacity:.85;">${escapeHtml(gf)}</td>`,
+        `<td style="text-align:center;opacity:.85;">${escapeHtml(ga)}</td>`,
+        `<td style="text-align:center;opacity:.85;">${escapeHtml(gd)}</td>`,
+      );
+    }
+
+    cells.push(`<td style="text-align:center;font-weight:700;">${escapeHtml(points)}</td>`);
+
+    return `<tr>${cells.join("")}</tr>`;
+  }).join("");
+
+  return `<div style="overflow:auto;display:flex;justify-content:center;">
+    <table class="v4-results-table" style="width:100%;border-collapse:collapse;">
+      ${head}
+      <tbody>${body}</tbody>
+    </table>
+  </div>`;
+}
+
+function renderMatchesList(items){
+  const arr = Array.isArray(items) ? items : [];
+  if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
+
+  const rows = arr.slice(0,8).map((m) => {
+    const homeName = (m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
+    const awayName = (m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+
+    const dtRaw = (m.dateEvent ?? m.date ?? m.fixture?.date ?? "");
+    const dt = dtRaw ? new Date(dtRaw) : null;
+    const dateCell = dt ? dt.toLocaleDateString('nl-BE', { day:'2-digit', month:'2-digit' }) : toDateLabel(dtRaw);
+    const timeCell = dt ? dt.toLocaleTimeString('nl-BE', { hour:'2-digit', minute:'2-digit' }) : "";
+
+    const homeScore = (m.homeGoals ?? m.homeScore ?? m.goals?.home);
+    const awayScore = (m.awayGoals ?? m.awayScore ?? m.goals?.away);
+    const hasScore = (homeScore != null || awayScore != null);
+
+    // No logos in results/upcoming (keeps layout cleaner). Standings still show logos.
+    const homeCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(homeName)}</span>`;
+    const awayCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(awayName)}</span>`;
+
+    const scoreText = hasScore
+      ? `${escapeHtml(homeScore ?? "")} - ${escapeHtml(awayScore ?? "")}`
+      : "";
+
+    // We keep score as small suffix to home team on the left to preserve requested columns.
+    const homeWithScore = scoreText
+      ? `${homeCell} <span style="opacity:.85;font-weight:700;">(${escapeHtml(scoreText)})</span>`
+      : homeCell;
+
+    return `<tr>
+      <td>${escapeHtml(dateCell)}</td>
+      <td>${escapeHtml(timeCell)}</td>
+      <td style="white-space:normal;">${homeWithScore}</td>
+      <td style="white-space:normal;">${awayCell}</td>
+    </tr>`;
+  }).join("");
+
+  return `<div style="overflow:auto;display:flex;justify-content:center;">
+    <table class="v4-mini-fixtures">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Tijd</th>
+          <th>Thuis</th>
+          <th>Uit</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+function renderResultsTable(items){
+  const arr = Array.isArray(items) ? items : [];
+  if (!arr.length) return `<p class="note">Nog niet beschikbaar.</p>`;
+
+  const rows = arr.slice(0,8).map((m) => {
+    const homeName = (m.homeTeam ?? m.home ?? m.teams?.home?.name ?? "");
+    const awayName = (m.awayTeam ?? m.away ?? m.teams?.away?.name ?? "");
+
+    const dtRaw = (m.dateEvent ?? m.date ?? m.fixture?.date ?? "");
+    const dt = dtRaw ? new Date(dtRaw) : null;
+    const dateCell = dt ? dt.toLocaleDateString('nl-BE', { day:'2-digit', month:'2-digit' }) : toDateLabel(dtRaw);
+    const timeCell = dt ? dt.toLocaleTimeString('nl-BE', { hour:'2-digit', minute:'2-digit' }) : "";
+
+    const homeScore = (m.homeGoals ?? m.homeScore ?? m.goals?.home);
+    const awayScore = (m.awayGoals ?? m.awayScore ?? m.goals?.away);
+    const scoreText = (homeScore != null || awayScore != null)
+      ? `${escapeHtml(homeScore ?? "")} - ${escapeHtml(awayScore ?? "")}`
+      : "";
+
+    const homeCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(homeName)}</span>`;
+    const awayCell = `<span style="display:inline-block;min-width:0;overflow:hidden;text-overflow:ellipsis;">${escapeHtml(awayName)}</span>`;
+
+    return `<tr>
+      <td>${escapeHtml(dateCell)}</td>
+      <td>${escapeHtml(timeCell)}</td>
+      <td style="white-space:normal;">${homeCell}</td>
+      <td style="text-align:center;font-weight:800;white-space:nowrap;">${scoreText || "-"}</td>
+      <td style="white-space:normal;">${awayCell}</td>
+    </tr>`;
+  }).join("");
+
+  return `<div style="overflow:auto;display:flex;justify-content:center;">
+    <table class="v4-mini-fixtures v4-mini-results">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Tijd</th>
+          <th>Thuis</th>
+          <th style="text-align:center;">Score</th>
+          <th>Uit</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>`;
+}
+
+async function safeFetchJson(url){
+  try {
+    const r = await fetch(url);
+    const j = await r.json().catch(()=>null);
+    return j;
+  } catch (e) {
+    return null;
+  }
+}
+
+async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upcomingId }){
+  // set titles from /api/leagues if possible
+  const cfg = (LEAGUES || []).find(l => l.code === league);
+  if (cfg && document.getElementById(titleId)) {
+    const isWomen = cfg.isWomen === true || cfg.genderLabel === "women" || cfg.gender === "W";
+    document.getElementById(titleId).innerHTML = escapeHtml(cfg.label || cfg.code) + (isWomen ? womenBadgeHtml() : "");
+  }
+
+  // Standings (optional)
+  setHtml(standingsId, `<p class="note">Laden…</p>`);
+  const st = await safeFetchJson(`${STANDINGS_ENDPOINT}?league=${encodeURIComponent(league)}&nocache=1`);
+  const stRows = st?.items || st?.standings || st?.table || st?.data || [];
+  setHtml(standingsId, renderStandingsTable(stRows));
+
+  // Results (last finished matches)
+  setHtml(resultsId, `<p class="note">Laden…</p>`);
+  const rr = await safeFetchJson(
+    `${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=10&nocache=1&bust=${Date.now()}`
+  );
+  setHtml(resultsId, renderResultsTable(rr?.items || []));
+
+  // Upcoming (optional)
+  // Backend: /api/fixtures?league=CODE&next=N
+  setHtml(upcomingId, `<p class="note">Laden…</p>`);
+  const up = await safeFetchJson(
+    `${UPCOMING_ENDPOINT}?league=${encodeURIComponent(league)}&next=${encodeURIComponent(String(UPCOMING_NEXT))}&nocache=1`
+  );
+  setHtml(upcomingId, renderMatchesList(up?.items || up?.fixtures || up?.data || []));
+}
+
+async function loadTopCompetitions(){
+  // Ensure LEAGUES is loaded (so we can label properly)
+  if (!Array.isArray(LEAGUES) || !LEAGUES.length) {
+    await loadLeagues();
+    // loadLeagues auto-loads one league into the main results section; that's fine.
+  }
+
+  await loadTopLeagueBlock({
+    league: "ERED",
+    titleId: "top-ered-title",
+    standingsId: "top-ered-standings",
+    resultsId: "top-ered-results",
+    upcomingId: "top-ered-upcoming",
+  });
+
+  await loadTopLeagueBlock({
+    league: "JPL",
+    titleId: "top-jpl-title",
+    standingsId: "top-jpl-standings",
+    resultsId: "top-jpl-results",
+    upcomingId: "top-jpl-upcoming",
+  });
+}
+
+// Leagues are discovered from backend (extendable, no hardcoding)
+let LEAGUES = [];
+
+const countrySelect = document.getElementById("filter-country");
+const genderSelect  = document.getElementById("filter-gender");
+const leagueSelect  = document.getElementById("filter-league");
+const loadBtn       = document.getElementById("btn-load");
+
+function escapeHtml(s){
+  return String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+function renderLeagueOptionName(l){
+  const base = l.label || l.code;
+  const isWomen = l.isWomen === true || l.genderLabel === "women" || l.gender === "W";
+  return isWomen ? `${base} (Dames)` : base;
+}
+
+function populateLeagues(){
+  leagueSelect.innerHTML = "";
+
+  const country = countrySelect.value;
+  const gender  = genderSelect.value;
+
+  const filtered = (LEAGUES || []).filter(l =>
+    (country === "ALL" || (String(l.country || l.countryCode || "").toUpperCase() === country)) &&
+    (gender === "ALL" || (String(l.gender || "").toUpperCase() === gender) || (gender === "W" && l.isWomen === true) || (gender === "M" && l.isWomen === false))
+  );
+
+  if (!filtered.length) {
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "Geen competities";
+    leagueSelect.appendChild(opt);
+    leagueSelect.disabled = true;
+    loadBtn.disabled = true;
+    return;
+  }
+
+  leagueSelect.disabled = false;
+  loadBtn.disabled = false;
+
+  filtered.forEach(l => {
+    const opt = document.createElement("option");
+    opt.value = l.code;
+    opt.textContent = renderLeagueOptionName(l);
+    leagueSelect.appendChild(opt);
+  });
+}
+
+async function loadLeagues(){
+  // keep UI responsive
+  leagueSelect.innerHTML = "";
+  const opt = document.createElement("option");
+  opt.value = "";
+  opt.textContent = "Laden…";
+  leagueSelect.appendChild(opt);
+  leagueSelect.disabled = true;
+  loadBtn.disabled = true;
+
+  try {
+    const res = await fetch(`${API_BASE}/api/leagues?nocache=1`);
+    const json = await res.json().catch(()=>({}));
+    LEAGUES = Array.isArray(json.items) ? json.items : [];
+  } catch (e) {
+    LEAGUES = [];
+  }
+
+  populateLeagues();
+
+  // auto-load first available league
+  setTimeout(() => {
+    if (leagueSelect.options.length && leagueSelect.value) {
+      loadLeague(leagueSelect.value);
+    } else if (leagueSelect.options.length && leagueSelect.options[0].value) {
+      leagueSelect.selectedIndex = 0;
+      loadLeague(leagueSelect.value);
+    }
+  }, 0);
+}
+
+countrySelect.addEventListener("change", populateLeagues);
+genderSelect.addEventListener("change", populateLeagues);
+
+function womenBadgeHtml(){
+  // small pill in Voetbal4All style
+  return `<span style="display:inline-flex;align-items:center;gap:6px;margin-left:10px;padding:3px 9px;border-radius:999px;background:rgba(255,120,200,0.12);border:1px solid rgba(255,120,200,0.35);font-size:12px;line-height:1;">♀ dames</span>`;
+}
+
+async function loadLeague(league) {
+  if (!league) return;
+
+  const cfg = (LEAGUES || []).find(l => l.code === league);
+  const baseTitle = cfg ? (cfg.label || cfg.code) : league;
+
+  const rTitleEl = document.getElementById("results-title");
+  const isWomen = cfg ? (cfg.isWomen === true || cfg.genderLabel === "women" || cfg.gender === "W") : false;
+  rTitleEl.innerHTML = escapeHtml(baseTitle) + (isWomen ? womenBadgeHtml() : "");
+
+  const rBody = document.getElementById("results-body");
+  rBody.innerHTML = `<p class="note">Laden…</p>`;
+
+  try {
+    const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=25&nocache=1&bust=${Date.now()}`);
+    const rJson = await rRes.json().catch(()=>({}));
+
+    // prefer backend meta (authoritative)
+    const metaIsWomen = rJson?.meta?.isWomen === true;
+    if (metaIsWomen && !isWomen) {
+      rTitleEl.innerHTML = escapeHtml(baseTitle) + womenBadgeHtml();
+    }
+
+    if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
+      rBody.innerHTML = renderResultsTable(rJson.items);
+    } else {
+      rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
+    }
+  } catch (e) {
+    rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
+  }
+}
+
+loadBtn.addEventListener("click", async () => {
+  await loadLeague(leagueSelect.value);
+});
+
+// init
+loadLeagues();
+// Load fixed top competitions (ERED + JPL)
+loadTopCompetitions();
+</script>
+
+    <!-- STAP 1-3: League labels, Fixtures & Standings -->
+  <script>
+  // STAP 1: League label mapping
+  const _LM={"BE_D2_PO":"Tweede Nationale Play-offs – KBVB","BE_D3_PO":"Derde Nationale Play-offs – KBVB","BE_PROV_ANT":"Provinciale Antwerpen – Voetbal Vlaanderen","BE_PROV_BRA_ACFF":"Provinciale Brabant – ACFF","BE_PROV_BRA_VFV":"Provinciale Vlaams-Brabant – Voetbal Vlaanderen","BE_PROV_HAI":"Provinciale Henegouwen – ACFF","BE_PROV_LIE":"Provinciale Luik – ACFF","BE_PROV_LIM":"Provinciale Limburg – Voetbal Vlaanderen","BE_PROV_LUX":"Provinciale Luxemburg – ACFF","BE_PROV_NAM":"Provinciale Namen – ACFF","BE_PROV_OVL":"Provinciale Oost-Vlaanderen – Voetbal Vlaanderen","BE_PROV_PO_ACFF":"Provinciale Play-offs – ACFF","BE_PROV_PO_VV":"Provinciale Play-offs – Voetbal Vlaanderen","BEL_AM1":"Eerste Nationale – Voetbal Vlaanderen / ACFF","BEL_CUP":"Beker van België – KBVB","BEL_D2_ACFF":"Tweede Nationale ACFF – ACFF","BEL_D2_VFVA":"Tweede Nationale VFV A – Voetbal Vlaanderen","BEL_D2_VFVB":"Tweede Nationale VFV B – Voetbal Vlaanderen","BEL_D3_ACFF_A":"Derde Nationale ACFF A – ACFF","BEL_D3_ACFF_B":"Derde Nationale ACFF B – ACFF","BEL_D3_VFVA":"Derde Nationale VFV A – Voetbal Vlaanderen","BEL_D3_VFVB":"Derde Nationale VFV B – Voetbal Vlaanderen","BEL_RES":"Reserves Pro League – België","BEL_SUPERCUP":"Belgische Supercup – KBVB","JPL":"Jupiler Pro League – België","BEL2":"Challenger Pro League – België","BE_PROV_WVL":"Provinciale West-Vlaanderen – Voetbal Vlaanderen","BEL_W":"Super League Vrouwen – België","BUND":"Bundesliga – Duitsland","GER_CUP":"DFB-Pokal – Duitsland","GER_SUPERCUP":"DFL-Supercup – Duitsland","GER_U19":"Onder 19 Bundesliga – Duitsland","GER_U19_CUP":"Onder 19 DFB-Pokal – Duitsland","GER1":"2. Bundesliga – Duitsland","GER3":"Regionalliga – Duitsland","GER2":"3. Liga – Duitsland","ENG_EFL":"EFL Cup – Engeland","ENG_FA":"FA Cup – Engeland","EPL":"Premier League – Engeland","ENG2":"Championship – Engeland","ESP_CUP":"Copa del Rey – Spanje","LIGA":"La Liga – Spanje","ESP2":"La Liga 2 – Spanje","FRA_CUP":"Coupe de France – Frankrijk","L1":"Ligue 1 – Frankrijk","FRA2":"Ligue 2 – Frankrijk","ITA_CUP":"Coppa Italia – Italië","SA":"Serie A – Italië","ITA2":"Serie B – Italië","ERED":"Eredivisie – Nederland","NED_CUP":"KNVB Beker – Nederland","NED_D3_PO":"Derde Divisie Play-offs – Nederland","NED_D3_SAT":"Derde Divisie Zaterdag – Nederland","NED_D3_SUN":"Derde Divisie Zondag – Nederland","NED_RES":"Reserves Eredivisie – Nederland","NED_SUPERCUP":"Johan Cruijff Schaal – Nederland","NED_U18_1":"Onder 18 Eredivisie – Nederland","NED_U19_1":"Onder 19 Eredivisie – Nederland","NED_U21_1":"Onder 21 Eredivisie – Nederland","NED_D2":"Tweede Divisie – Nederland","NED2":"Eerste Divisie – Nederland"};
+  function _applyLabels(){LEAGUES.forEach(function(l){if(_LM[l.code])l.label=_LM[l.code];});}
+  // Override populateLeagues so labels are applied before EVERY repopulation
+  var _origPL = populateLeagues;
+  populateLeagues = function(){
+    _applyLabels();
+    _origPL();
+    // Also update results-title if a league is selected
+    var sel = document.getElementById('filter-league');
+    var rt = document.getElementById('results-title');
+    if(rt && sel && sel.value && _LM[sel.value]){
+      var cfg = (LEAGUES||[]).find(function(l){return l.code===sel.value;});
+      var isW = cfg && (cfg.isWomen===true || cfg.genderLabel==="women" || cfg.gender==="W");
+      rt.innerHTML = escapeHtml(_LM[sel.value]) + (isW ? womenBadgeHtml() : "");
+    }
+  };
+  // If LEAGUES already loaded, apply immediately; otherwise poll
+  (function(){
+    function kick(){ _applyLabels(); populateLeagues(); var sel=document.getElementById('filter-league'); if(sel&&sel.value){loadFixtures(sel.value);loadStandings(sel.value);} }
+    if(LEAGUES.length){ kick(); }
+    else {
+      var _t = setInterval(function(){
+        if(LEAGUES.length){ clearInterval(_t); kick(); }
+      }, 200);
+      setTimeout(function(){ clearInterval(_t); }, 15000);
+    }
+  })();
+
+  // STAP 2: Fixtures
+  function renderFixturesTable(items){var a=Array.isArray(items)?items:[];if(!a.length)return '<p class="note">Geen aankomende wedstrijden gevonden.</p>';var rows=a.slice(0,10).map(function(m){var h=m.homeTeam||m.home||(m.teams&&m.teams.home?m.teams.home.name:"")||"";var aw=m.awayTeam||m.away||(m.teams&&m.teams.away?m.teams.away.name:"")||"";var d=m.dateEvent||m.date||(m.fixture?m.fixture.date:"")||"";var dt=d?new Date(d):null;var dc=dt?dt.toLocaleDateString("nl-BE",{day:"2-digit",month:"2-digit"}):"";var tc=dt?dt.toLocaleTimeString("nl-BE",{hour:"2-digit",minute:"2-digit"}):"";return "<tr><td>"+escapeHtml(dc)+"</td><td>"+escapeHtml(tc)+"</td><td>"+escapeHtml(h)+"</td><td>"+escapeHtml(aw)+"</td></tr>";}).join("");return '<div style="overflow:auto"><table class="v4-mini-fixtures"><thead><tr><th>Datum</th><th>Tijd</th><th>Thuis</th><th>Uit</th></tr></thead><tbody>'+rows+'</tbody></table></div>';}
+
+  function loadFixtures(league){var fc=document.getElementById("fixtures-card"),ft=document.getElementById("fixtures-title"),fb=document.getElementById("fixtures-body");if(!league||!fc){if(fc)fc.style.display="none";return;}var cfg=(LEAGUES||[]).find(function(l){return l.code===league;});var t=cfg?(cfg.label||cfg.code):league;var isW=cfg&&(cfg.gender==="W");ft.innerHTML=escapeHtml(t)+(isW?womenBadgeHtml():"");fb.innerHTML='<p class="note">Laden...</p>';fc.style.display="";fetch(API_BASE+"/api/fixtures?league="+encodeURIComponent(league)+"&next=10&bust="+Date.now()).then(function(r){return r.json();}).then(function(j){if(j.ok&&Array.isArray(j.items)&&j.items.length){fb.innerHTML=renderFixturesTable(j.items);}else{fb.innerHTML='<p class="note">Geen aankomende wedstrijden gevonden.</p>';}}).catch(function(){fb.innerHTML='<p class="note">Kon wedstrijden niet laden.</p>';});}
+
+  // STAP 3: Standings
+  function renderStandingsTable(tbl){var a=Array.isArray(tbl)?tbl:[];if(!a.length)return '<p class="note">Geen rangschikking beschikbaar.</p>';var rows=a.map(function(t){var logo=t.logo?'<img src="'+escapeHtml(t.logo)+'" alt="'+escapeHtml(t.team)+'" style="width:18px;height:18px;object-fit:contain;border-radius:3px;flex-shrink:0;" loading="lazy">':"";var teamCell='<span style="display:inline-flex;align-items:center;gap:6px;">'+logo+escapeHtml(t.team||"")+"</span>";return "<tr><td>"+escapeHtml(String(t.rank||""))+"</td><td style='white-space:nowrap;padding-right:48px;min-width:180px;'>"+teamCell+"</td><td style='text-align:center'>"+(t.played!=null?t.played:"")+"</td><td style='text-align:center'>"+(t.win!=null?t.win:"")+"</td><td style='text-align:center'>"+(t.draw!=null?t.draw:"")+"</td><td style='text-align:center'>"+(t.lose!=null?t.lose:"")+"</td><td style='text-align:center'>"+(t.goalsFor!=null?t.goalsFor:"")+"</td><td style='text-align:center'>"+(t.goalsAgainst!=null?t.goalsAgainst:"")+"</td><td style='text-align:center'>"+(t.goalDiff!=null?t.goalDiff:"")+"</td><td style='text-align:center;font-weight:bold'>"+(t.points!=null?t.points:"")+"</td></tr>";}).join("");return '<div style="overflow:auto;display:flex;justify-content:center;"><table class="v4-results-table"><thead><tr><th>#</th><th style="padding-right:24px">Team</th><th style="text-align:center">P</th><th style="text-align:center">W</th><th style="text-align:center">G</th><th style="text-align:center">V</th><th style="text-align:center">DV</th><th style="text-align:center">DT</th><th style="text-align:center">DS</th><th style="text-align:center">Pts</th></tr></thead><tbody>'+rows+'</tbody></table></div>';}
+
+  function loadStandings(league){var sc=document.getElementById("standings-card"),st=document.getElementById("standings-title"),sb=document.getElementById("standings-body");if(!league||!sc){if(sc)sc.style.display="none";return;}var cfg=(LEAGUES||[]).find(function(l){return l.code===league;});var t=cfg?(cfg.label||cfg.code):league;var isW=cfg&&(cfg.gender==="W");st.innerHTML=escapeHtml(t)+(isW?womenBadgeHtml():"");sb.innerHTML='<p class="note">Laden...</p>';sc.style.display="";fetch(API_BASE+"/api/standings?league="+encodeURIComponent(league)+"&bust="+Date.now()).then(function(r){return r.json();}).then(function(j){if(j.ok&&Array.isArray(j.table)&&j.table.length){sb.innerHTML=renderStandingsTable(j.table);}else{sb.innerHTML='<p class="note">Geen rangschikking beschikbaar.</p>';}}).catch(function(){sb.innerHTML='<p class="note">Kon rangschikking niet laden.</p>';});}
+
+  // Override loadLeague to also trigger fixtures + standings
+  var _origLoadLeague=loadLeague;
+  loadLeague=async function(league){await _origLoadLeague(league);loadFixtures(league);loadStandings(league);};
+  </script>
+
+<script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+
+</div>
+</body>
+</html>

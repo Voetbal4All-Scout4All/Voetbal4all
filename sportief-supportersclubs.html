@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Supportersclubs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Supportersclubs: make form look identical to the Voetbal4All dark UI */
+    .v4-two-col{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap: 18px;
+      align-items:start;
+    }
+    @media (max-width: 980px){
+      .v4-two-col{ grid-template-columns: 1fr; }
+    }
+
+    /* Published items grid: 2 per row, stretch, responsive */
+    #supportersclubsList,
+    #supportersclubList,
+    #supporters-list,
+    #supportersclubs-list,
+    #supportersclubsGrid,
+    #supporters-grid,
+    .supporters-list,
+    .supporters-grid{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      #supportersclubsList,
+      #supportersclubList,
+      #supporters-list,
+      #supportersclubs-list,
+      #supportersclubsGrid,
+      #supporters-grid,
+      .supporters-list,
+      .supporters-grid{
+        grid-template-columns: 1fr;
+      }
+    }
+    #supportersclubsList .card,
+    #supportersclubList .card,
+    #supporters-list .card,
+    #supportersclubs-list .card,
+    #supportersclubsGrid .card,
+    #supporters-grid .card,
+    .supporters-list .card,
+    .supporters-grid .card{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Search controls (filters) */
+    #supportersSearch{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    @media (max-width: 980px){
+      #supportersSearch{ grid-template-columns: 1fr; }
+    }
+    #supportersSearch input,
+    #supportersSearch select{
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 12px;
+      padding: 12px 12px;
+      border: 1px solid rgba(120, 200, 180, 0.22);
+      background: rgba(11, 18, 32, 0.72);
+      color: rgba(255,255,255,0.92);
+      outline: none;
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+    }
+    #supportersSearch input::placeholder{ color: rgba(255,255,255,0.45); }
+    #supportersSearchActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+    #supportersSearchActions .btn-ghost-sm{
+      border-radius: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(11,16,32,.35);
+      color: rgba(255,255,255,.92);
+      cursor: pointer;
+      font-weight: 800;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    /* Make the sidebar card consistent */
+    .v4-form-card .card-title{ line-height:1.15; }
+    .v4-form-card .pill-small{ white-space:nowrap; }
+
+    /* Uniform field styling (no white inputs) */
+    #supportersclubForm label{ display:grid; gap:6px; }
+    #supportersclubForm input[type="text"],
+    #supportersclubForm input[type="email"],
+    #supportersclubForm input[type="url"],
+    #supportersclubForm select,
+    #supportersclubForm textarea{
+      width:100%;
+      box-sizing:border-box;
+      border-radius: 12px;
+      padding: 12px 12px;
+      border: 1px solid rgba(120, 200, 180, 0.22);
+      background: rgba(11, 18, 32, 0.72);
+      color: rgba(255,255,255,0.92);
+      outline: none;
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    #supportersclubForm textarea{
+      resize: vertical;
+      min-height: 140px;
+      /* Keep the textarea clean/rectangular feel without looking "childish" */
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    #supportersclubForm input::placeholder,
+    #supportersclubForm textarea::placeholder{
+      color: rgba(255,255,255,0.45);
+    }
+
+    #supportersclubForm input[type="file"]{
+      width:100%;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Button full-width and consistent */
+    #supportersclubForm button.nav-cta{
+      justify-content:center;
+      width:100%;
+    }
+
+    /* Status message visual */
+    #scStatus{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(120, 200, 180, 0.18);
+      background: rgba(11, 18, 32, 0.55);
+    }
+  </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+<!-- ================= LIVE BANNER ================= -->
+<section class="live-banner-top">
+  <div class="shell">
+    <div class="live-banner">
+      <div class="live-label"><span class="live-dot"></span>Live score</div>
+      <div class="live-text">
+        <span class="live-text-main"></span>
+        <div class="live-updated"></div>
+      </div>
+      <div class="live-socials">
+        <div class="live-socials-label">Volg ons</div>
+        <div class="live-socials-icons"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HEADER AD ================= -->
+<section class="section-main" style="padding:10px 0;">
+  <div class="shell">
+    <div class="ad-slot ad-slot-header">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4062633211824348"
+        data-ad-slot="6283594823"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main>
+<section class="section-main">
+<div class="shell">
+
+  <div class="v4-two-col">
+
+    <article class="card" style="margin-bottom:12px;">
+      <div class="card-header">
+        <div>
+          <div class="card-caption">Sportief</div>
+          <div class="card-title">Supportersclubs</div>
+        </div>
+        <span class="pill-small">Gratis promotie</span>
+      </div>
+      <p class="note">
+        Supportersclubs zorgen voor sfeer, beleving en verbondenheid.
+        Meld je supportersclub gratis aan en bereik nieuwe leden via Voetbal4All.
+      </p>
+    </article>
+
+    <article class="card" style="margin-bottom:12px;">
+      <div class="card-header" style="align-items:flex-start;">
+        <div>
+          <div class="card-caption">Zoeken</div>
+          <div class="card-title" style="font-size:18px;">Zoek supportersclubs</div>
+        </div>
+        <span class="pill-small">Filter</span>
+      </div>
+
+      <div class="note" style="margin-top:6px;opacity:.95;">
+        Filter op <strong>land</strong>, <strong>club/team</strong> en <strong>stad</strong>.
+      </div>
+
+      <div id="supportersSearch">
+        <label>
+          <span class="note">Land</span>
+          <select id="filterCountry">
+            <option value="" selected>Alle landen</option>
+            <option value="BE">België</option>
+            <option value="NL">Nederland</option>
+            <option value="INT">Internationaal</option>
+          </select>
+        </label>
+
+        <label>
+          <span class="note">Club/team</span>
+          <input id="filterTeam" type="text" placeholder="Bijv. Anderlecht, Genk…" />
+        </label>
+
+        <label>
+          <span class="note">Stad</span>
+          <input id="filterCity" type="text" placeholder="Bijv. Genk, Brugge…" />
+        </label>
+      </div>
+
+      <div id="supportersSearchActions">
+        <button type="button" id="filterClear" class="btn-ghost-sm">Wis filters</button>
+        <span id="filterCount" class="note" style="opacity:.85;"></span>
+      </div>
+    </article>
+
+    <div id="supportersclubsList" aria-live="polite"></div>
+
+    <aside class="sidebar">
+
+      <div class="ad-slot ad-slot-sidebar">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4062633211824348"
+          data-ad-slot="7533097310"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <div class="card v4-form-card">
+        <div class="card-header" style="align-items:flex-start;">
+          <div>
+            <div class="card-caption">Gratis aanmelden</div>
+            <div class="card-title" style="font-size:18px;">Supportersclub aanmelden</div>
+          </div>
+          <span class="pill-small">Niet‑premium</span>
+        </div>
+
+        <div class="note" style="margin-top:6px;opacity:.95;">
+          Na verzending ontvang je een e‑mail om te <strong>bevestigen</strong>. Zonder bevestiging wordt de aanvraag automatisch verwijderd.
+          Na publicatie blijft je supportersclub <strong>6 maanden</strong> zichtbaar.
+        </div>
+
+        <form id="supportersclubForm" style="margin-top:12px;display:grid;gap:10px;">
+          <label>
+            <span class="note">Naam supportersclub *</span>
+            <input id="scName" name="name" required type="text" placeholder="Bijv. Blue Army" />
+          </label>
+
+          <label>
+            <span class="note">Club/team dat jullie steunen *</span>
+            <input id="scTeam" name="supported_team" required type="text" placeholder="Bijv. KRC Genk" />
+          </label>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <label>
+              <span class="note">Gemeente/Stad *</span>
+              <input id="scCity" name="city" required type="text" placeholder="Bijv. Genk" />
+            </label>
+            <label>
+              <span class="note">Land *</span>
+              <select id="scCountry" name="country" required>
+                <option value="" selected>Kies…</option>
+                <option value="BE">België</option>
+                <option value="NL">Nederland</option>
+                <option value="INT">Internationaal</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span class="note">Contact e‑mail *</span>
+            <input id="scEmail" name="email" required type="email" placeholder="contact@..." />
+          </label>
+
+          <label>
+            <span class="note">Website of inschrijvingslink (optioneel)</span>
+            <input id="scWebsite" name="website" type="url" placeholder="https://..." />
+          </label>
+
+          <label>
+            <span class="note">Social link (optioneel)</span>
+            <input id="scSocial" name="social" type="url" placeholder="https://instagram.com/..." />
+          </label>
+
+          <label>
+            <span class="note">Korte omschrijving *</span>
+            <textarea id="scDesc" name="description" required rows="5" placeholder="Wie zijn jullie, wanneer komen jullie samen, hoe kan iemand lid worden…"></textarea>
+          </label>
+
+          <label>
+            <span class="note">Logo / foto (optioneel)</span>
+            <input id="scLogo" name="photo" type="file" accept="image/*" />
+            <div class="note" style="opacity:.8;margin-top:4px;">We tonen geen persoonlijke gegevens. Upload geen ID’s of privé-informatie.</div>
+          </label>
+
+          <button type="submit" class="nav-cta" style="justify-content:center;width:100%;">Verstuur aanvraag</button>
+
+          <div id="scStatus" class="note" style="display:none;opacity:.95;"></div>
+        </form>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+        <div class="footer-legal">
+          &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+        </div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+            <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+            <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+          </div>
+      </div>
+      <div class="footer-ad">FOOTER ADVERTENTIE</div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (function () {
+    const BACKEND_BASE = "https://voetbal4all-backend-database.onrender.com";
+    const ENDPOINTS = [
+      `${BACKEND_BASE}/api/forms/supportersclub-submission`,
+      // fallback(s) in case the backend route name differs
+      `${BACKEND_BASE}/api/forms/supportersclubs-submission`,
+      `${BACKEND_BASE}/api/forms/supportersclub-submission/pre`,
+    ];
+    const THANKYOU = "bedankt.html";
+
+    const form = document.getElementById("supportersclubForm");
+    const statusEl = document.getElementById("scStatus");
+    if (!form) return;
+
+    function setStatus(msg, isError) {
+      if (!statusEl) return;
+      statusEl.style.display = "block";
+      statusEl.style.color = isError ? "#ffb4b4" : "#b7ffdf";
+      statusEl.textContent = msg;
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = (document.getElementById("scName")?.value || "").trim();
+      const team = (document.getElementById("scTeam")?.value || "").trim();
+      const city = (document.getElementById("scCity")?.value || "").trim();
+      const country = (document.getElementById("scCountry")?.value || "").trim();
+      const email = (document.getElementById("scEmail")?.value || "").trim();
+      const website = (document.getElementById("scWebsite")?.value || "").trim();
+      const social = (document.getElementById("scSocial")?.value || "").trim();
+      const desc = (document.getElementById("scDesc")?.value || "").trim();
+      const logo = document.getElementById("scLogo")?.files?.[0] || null;
+
+      if (!name || !team || !city || !country || !email || !desc) {
+        setStatus("Vul alle verplichte velden (*) in.", true);
+        return;
+      }
+
+      // Build a clean subject/body (backend expects this pattern on other forms)
+      const subject = `Supportersclub: ${name} (steunt ${team})`;
+      const bodyLines = [
+        `Naam supportersclub: ${name}`,
+        `Steunt: ${team}`,
+        `Gemeente/Stad: ${city}`,
+        `Land: ${country}`,
+        `Contact e-mail: ${email}`,
+        website ? `Website: ${website}` : null,
+        social ? `Social: ${social}` : null,
+        "",
+        "Omschrijving:",
+        desc,
+      ].filter(Boolean);
+      const body = bodyLines.join("\n");
+
+      const fd = new FormData();
+      fd.append("subject", subject);
+      fd.append("body", body);
+      fd.append("name", name);
+      fd.append("supported_team", team);
+      fd.append("city", city);
+      fd.append("country", country);
+      fd.append("email", email);
+      if (website) fd.append("website", website);
+      if (social) fd.append("social", social);
+      fd.append("description", desc);
+      fd.append("is_premium", "false");
+      fd.append("form_kind", "supportersclub");
+      if (logo) fd.append("photo", logo);
+
+      try {
+        setStatus("Verzenden…", false);
+        let lastErrMsg = "";
+        let okJson = null;
+
+        for (const url of ENDPOINTS) {
+          try {
+            const r = await fetch(url, { method: "POST", body: fd });
+
+            // Some backends return an HTML error page like "Cannot POST /...".
+            const ct = String(r.headers.get("content-type") || "").toLowerCase();
+            const raw = ct.includes("application/json")
+              ? null
+              : await r.text().catch(() => "");
+
+            // If it's not ok and looks like a route-missing case, try next endpoint.
+            if (!r.ok) {
+              const looksLikeCannotPost = raw && raw.toLowerCase().includes("cannot post");
+              if (r.status === 404 || looksLikeCannotPost) {
+                lastErrMsg = "Backend endpoint niet gevonden (404).";
+                continue;
+              }
+            }
+
+            // Try JSON parse (either from body or by re-fetching text as needed)
+            let j = null;
+            if (ct.includes("application/json")) {
+              j = await r.json().catch(() => null);
+            } else {
+              // if we already read text into raw, try to parse if it looks like json
+              try {
+                j = raw ? JSON.parse(raw) : null;
+              } catch (_) {
+                j = null;
+              }
+            }
+
+            if (!r.ok || !j || !j.id) {
+              const msg = (j && (j.userMessage || j.error))
+                ? String(j.userMessage || j.error)
+                : "Verzenden mislukt. Probeer opnieuw.";
+              lastErrMsg = msg;
+              // For non-404 errors, stop trying because the endpoint exists but rejected.
+              if (r.status && r.status !== 404) break;
+              continue;
+            }
+
+            okJson = j;
+            break;
+          } catch (e) {
+            lastErrMsg = "Netwerkfout. Probeer opnieuw.";
+            // try next endpoint
+          }
+        }
+
+        if (!okJson) {
+          setStatus(lastErrMsg || "Verzenden mislukt. Probeer opnieuw.", true);
+          return;
+        }
+
+        const sid = String(okJson.id);
+        window.location.href = `${THANKYOU}?source=supportersclub&sid=${encodeURIComponent(sid)}`;
+      } catch (err) {
+        setStatus("Er is een fout opgetreden. Probeer opnieuw.", true);
+      }
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    // Find the list container (we created #supportersclubsList, but keep it resilient)
+    const listEl = document.getElementById('supportersclubsList')
+      || document.getElementById('supportersclubList')
+      || document.getElementById('supporters-list')
+      || document.getElementById('supportersclubs-list')
+      || document.querySelector('.supporters-list')
+      || document.querySelector('.supporters-grid');
+
+    const countryEl = document.getElementById('filterCountry');
+    const teamEl = document.getElementById('filterTeam');
+    const cityEl = document.getElementById('filterCity');
+    const clearEl = document.getElementById('filterClear');
+    const countEl = document.getElementById('filterCount');
+
+    if (!listEl || !countryEl || !teamEl || !cityEl) return;
+
+    // --- BEGIN: Fetch and render supportersclubs ---
+    // We'll fetch published supportersclubs from the backend and render them.
+    const API_URLS = [
+      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclubs",
+      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclub",
+      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclub-submission"
+    ];
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/[&<>"']/g, function (c) {
+        return ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        })[c];
+      });
+    }
+
+    function supportersclubCardHtml(sc, idx) {
+      // Compose anchor id for this card
+      const anchorId = `sc-${idx + 1}`;
+      // Compose share URL (absolute, with anchor)
+      const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
+      // Card fields
+      const name = escapeHtml(sc.name || '');
+      const team = escapeHtml(sc.supported_team || '');
+      const city = escapeHtml(sc.city || '');
+      const country = escapeHtml(sc.country || '');
+      const desc = escapeHtml(sc.description || '');
+      const website = sc.website ? String(sc.website) : '';
+      const social = sc.social ? String(sc.social) : '';
+      const photo = sc.photo ? String(sc.photo) : '';
+      // Share link if present
+      // We only render a share button if the original card had one (simulate presence for patch)
+      // For this patch, let's assume a share button is present if sc.share is true or always render if needed.
+
+      let shareHtml = '';
+      if (sc.share !== false) {
+        shareHtml = `<a href="#" class="card-share" data-share-url="${shareUrl}" onclick="if(window.navigator.share){window.navigator.share({url:this.getAttribute('data-share-url'),title:'${name}'});return false;}else{window.prompt('Kopieer deze link:',this.getAttribute('data-share-url'));return false;}" title="Deel deze supportersclub">Delen</a>`;
+      }
+
+      // Compose logo/photo if present
+      let photoHtml = '';
+      if (photo) {
+        photoHtml = `<div class="card-photo"><img src="${escapeHtml(photo)}" alt="Logo van ${name}" loading="lazy" /></div>`;
+      }
+
+      // Compose website/social links
+      let linksHtml = '';
+      if (website || social) {
+        linksHtml = '<div class="card-links">';
+        if (website) linksHtml += `<a href="${escapeHtml(website)}" target="_blank" rel="noopener">Website</a>`;
+        if (social) linksHtml += `<a href="${escapeHtml(social)}" target="_blank" rel="noopener">Social</a>`;
+        linksHtml += '</div>';
+      }
+
+      // Compose card
+      return `<article class="card" id="${anchorId}" data-country="${country}" data-team="${team}" data-city="${city}">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">${team ? 'Steunt: ' + team : ''}</div>
+            <div class="card-title"><a href="#${anchorId}" style="color:inherit;text-decoration:none;">${name}</a></div>
+          </div>
+          <span class="pill-small">${country}</span>
+        </div>
+        ${photoHtml}
+        <div class="card-body">
+          <div class="card-desc">${desc}</div>
+          <div class="card-meta">
+            <span>${city}</span>
+          </div>
+          ${linksHtml}
+          ${shareHtml}
+        </div>
+      </article>`;
+    }
+
+    async function fetchAndRenderSupportersclubs() {
+      let data = [];
+      for (const url of API_URLS) {
+        try {
+          const r = await fetch(url);
+          if (!r.ok) continue;
+          const arr = await r.json();
+          if (Array.isArray(arr) && arr.length > 0) {
+            data = arr;
+            break;
+          }
+        } catch (e) { /* try next */ }
+      }
+      // Render
+      listEl.innerHTML = data.map((sc, idx) => supportersclubCardHtml(sc, idx)).join('');
+      // After rendering, update share links if needed (see below)
+      updateShareLinks();
+    }
+
+    // --- Share link updater: ensures share links use correct anchor ---
+    function updateShareLinks() {
+      // For each card, update its share link to use the correct anchor
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      cards.forEach((card, idx) => {
+        const anchorId = `sc-${idx + 1}`;
+        const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
+        // Update any share links in this card
+        const shareEl = card.querySelector('.card-share');
+        if (shareEl) {
+          shareEl.setAttribute('data-share-url', shareUrl);
+          shareEl.onclick = function() {
+            if (window.navigator.share) {
+              window.navigator.share({ url: shareUrl, title: card.querySelector('.card-title').innerText.trim() });
+              return false;
+            } else {
+              window.prompt('Kopieer deze link:', shareUrl);
+              return false;
+            }
+          };
+        }
+      });
+    }
+
+    // --- END: Fetch and render supportersclubs ---
+    // Fetch and render supportersclubs on page load
+    fetchAndRenderSupportersclubs();
+
+    // The rest is filtering logic (unchanged)
+    function norm(s){
+      return String(s || '').trim().toLowerCase();
+    }
+
+    function pickFromCard(card){
+      // Prefer data attributes if present, else fall back to text content.
+      const dc = norm(card.getAttribute('data-country') || card.dataset.country);
+      const dt = norm(card.getAttribute('data-team') || card.dataset.team || card.getAttribute('data-supported-team') || card.dataset.supportedTeam);
+      const dcity = norm(card.getAttribute('data-city') || card.dataset.city);
+
+      if (dc || dt || dcity) {
+        return { country: dc, team: dt, city: dcity, text: norm(card.textContent) };
+      }
+
+      const text = norm(card.textContent);
+      // Weak parsing fallback based on common labels
+      let country = '';
+      if (text.includes('belgië')) country = 'be';
+      else if (text.includes('nederland')) country = 'nl';
+      else if (text.includes('internationaal')) country = 'int';
+
+      return { country, team: '', city: '', text };
+    }
+
+    function applyFilters(){
+      const fc = norm(countryEl.value);
+      const ft = norm(teamEl.value);
+      const fcity = norm(cityEl.value);
+
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      let shown = 0;
+
+      cards.forEach(card => {
+        const d = pickFromCard(card);
+
+        const matchCountry = !fc || d.country === fc || d.text.includes(fc);
+        const matchTeam = !ft || d.team.includes(ft) || d.text.includes(ft);
+        const matchCity = !fcity || d.city.includes(fcity) || d.text.includes(fcity);
+
+        const ok = matchCountry && matchTeam && matchCity;
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+
+      if (countEl) {
+        if (cards.length === 0) countEl.textContent = '';
+        else countEl.textContent = `${shown} / ${cards.length} zichtbaar`;
+      }
+    }
+
+    // Debounced typing
+    let t = null;
+    function schedule(){
+      clearTimeout(t);
+      t = setTimeout(applyFilters, 120);
+    }
+
+    countryEl.addEventListener('change', applyFilters);
+    teamEl.addEventListener('input', schedule);
+    cityEl.addEventListener('input', schedule);
+
+    if (clearEl) {
+      clearEl.addEventListener('click', function(){
+        countryEl.value = '';
+        teamEl.value = '';
+        cityEl.value = '';
+        applyFilters();
+      });
+    }
+
+    // Run once now and also when content is dynamically injected later.
+    applyFilters();
+
+    const mo = new MutationObserver(() => applyFilters());
+    mo.observe(listEl, { childList: true, subtree: true });
+  })();
+</script>
+<script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+</body>
+</html>

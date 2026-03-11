@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Clubvacatures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+<style>
+  /* === Events.html shared UI (layout parity) === */
+
+  /* Fix contrast: ensure ghost buttons remain readable on dark backgrounds */
+  .btn-ghost-sm,
+  .btn-ghost-sm:visited,
+  button.btn-ghost-sm{color:#ffffff;}
+  .btn-ghost-sm svg,
+  button.btn-ghost-sm svg{stroke:currentColor;fill:none;}
+  .btn-ghost-sm .fill,
+  button.btn-ghost-sm .fill{fill:currentColor;stroke:none;}
+
+  /* Pagination */
+  .events-pagination{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
+  .events-pagination .page-btn{
+    appearance:none;border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.04);color:rgba(255,255,255,.92);
+    border-radius:999px;padding:8px 12px;font-family:inherit;font-weight:600;
+    cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease;
+  }
+  .events-pagination .page-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+  .events-pagination .page-btn:active{transform:translateY(0)}
+  .events-pagination .page-btn.is-active{background:rgba(22,163,74,.22);border-color:rgba(22,163,74,.55)}
+  .events-pagination .page-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+  /* Card row with thumbnail */
+  .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
+  .event-thumbbox{
+    width:140px;height:96px;flex:0 0 140px;border-radius:12px;
+    border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);
+    overflow:hidden;position:relative;
+  }
+  .event-thumbbox::after{content:"Flyer";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+  .event-thumbbox.has-img::after{display:none}
+  .event-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+  .event-main{flex:1 1 auto;min-width:0}
+  .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+  /* 2-column grids */
+  .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  @media (max-width:900px){.events-grid-2{grid-template-columns:1fr}}
+
+  /* Premium blocks */
+  .premium-block{margin:12px 0 18px}
+  .premium-block .premium-grid{margin-top:10px}
+
+  /* Metallic frame for the premium section container */
+  .premium-block .premium-shell{
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.18);
+    background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03));
+    box-shadow:0 12px 34px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,255,255,.12);
+    overflow:hidden;
+    position:relative;
+  }
+  .premium-block .premium-shell::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));
+    opacity:.45;
+  }
+
+  /* Premium tile cards: metallic frame */
+  .premium-grid .premium-card{
+    position:relative;
+    border-radius:16px;
+    overflow:hidden;
+    outline:none !important;
+    border:1px solid rgba(255,255,255,.18) !important;
+    background:
+      linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03)),
+      linear-gradient(180deg,rgba(180,190,210,.12),rgba(10,12,20,.08)) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.12),
+      0 10px 26px rgba(0,0,0,.38) !important;
+  }
+  .premium-grid .premium-card:hover,
+  .premium-grid .premium-card:focus,
+  .premium-grid .premium-card:focus-within{
+    border-color:rgba(255,255,255,.26) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.14),
+      0 12px 30px rgba(0,0,0,.42) !important;
+    transform:none !important;
+  }
+  .premium-grid .premium-card::after{display:none !important;}
+  .premium-grid .premium-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));
+    opacity:.55;
+  }
+
+  /* Premium: smaller typography, bold title */
+  .premium-grid .premium-card .v4a-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
+  .premium-grid .premium-card .v4a-card-meta{font-size:12px;opacity:.86;line-height:1.25}
+
+  /* Premium: hide body text for clean tiles */
+  .premium-grid .premium-card .v4a-card-body{display:none !important;}
+
+  /* Premium: no 'Flyer' label */
+  .premium-grid .premium-card .event-thumbbox::after{display:none !important;}
+
+  /* Premium ribbon badge (metal, ~30deg) */
+  .premium-grid .premium-card .event-thumbbox{position:relative;}
+  .premium-grid .premium-card .premium-ribbon{
+    position:absolute;
+    top:10px;
+    right:-44px;
+    width:160px;
+    text-align:center;
+    padding:6px 0;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.95);
+    transform:rotate(30deg);
+    z-index:3;
+    background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 8px 20px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.18);
+  }
+
+  /* Sidebar premium list (later) */
+  .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
+  .sidebar-premium-card{
+    padding:10px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.16);
+    background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02) 40%,rgba(255,255,255,.06) 70%,rgba(255,255,255,.02));
+    box-shadow:0 10px 26px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.10);
+    position:relative;
+    overflow:hidden;
+  }
+  .sidebar-premium-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));
+    opacity:.45;
+  }
+  .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0;position:relative;z-index:1}
+  .sidebar-premium-thumbbox{
+    width:72px;height:54px;flex:0 0 72px;border-radius:12px;
+    border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);
+    overflow:hidden;position:relative;
+  }
+  .sidebar-premium-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+  .sidebar-premium-thumbbox .premium-ribbon{
+    position:absolute;
+    top:8px;
+    right:-40px;
+    width:140px;
+    text-align:center;
+    padding:5px 0;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.95);
+    transform:rotate(30deg);
+    z-index:3;
+    background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 6px 16px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.16);
+  }
+  .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
+  .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
+  .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
+</style>
+  <style>
+        /* AdSense: reduce height of full-width banner ads (match index.html) */
+            .ad-slot-header,
+                .ad-infeed {
+                      max-height: 120px;
+                                            min-height: 0 !important;
+                            overflow: hidden;
+                                }
+                                  </style>
+</head>
+
+<!-- Live banner NIET op mobiel (zoals artikels/events/algemene-events) -->
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+  <!-- LIVE BANNER -->
+  <section class="live-banner-top">
+    <div class="shell">
+      <div class="live-banner">
+        <div class="live-label"><span class="live-dot"></span>Live score</div>
+        <div class="live-text">
+          <span class="live-text-main"></span>
+          <div class="live-updated"></div>
+        </div>
+        <div class="live-socials">
+          <div class="live-socials-label">Volg ons</div>
+          <div class="live-socials-icons"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEADER AD -->
+  <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+    <div class="shell">
+      <div class="ad-slot ad-slot-header sticky-ad-header">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-4062633211824348"
+          data-ad-slot="4285963351"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section-main">
+      <div class="shell">
+
+        <!-- INTRO (same layout as events.html) -->
+        <article class="card" style="margin-bottom:12px;">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Clubvacatures</div>
+              <div class="card-title">Vacatures voor trainers, spelers &amp; medewerkers</div>
+            </div>
+            <span class="pill-small">Clubs · recruiters · vrijwilligers</span>
+          </div>
+          <p class="note">
+            Dit overzicht is voor clubvacatures. Vacatures kunnen centraal worden ingediend via het formulier.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
+            <a class="btn-ghost-sm" href="aanmelden.html">Vacature of profiel aanmelden</a>
+          </div>
+        </article>
+
+        <!-- CONTENT LINKS + STICKY ADS RECHTS (identiek aan events.html) -->
+        <div class="v4-layout-sidebar">
+
+          <!-- LINKS -->
+          <div class="v4-content">
+
+            <!-- ZOEK- EN FILTERBALK (PREMIUM, consistent) -->
+            <div class="v4-filterbar" style="margin-bottom:12px;">
+              <div class="v4-filterbar__inner">
+
+                <!-- regel 1: zoeken -->
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                  <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                    <div class="v4-filterlabel">Zoeken</div>
+                    <input
+                      type="text"
+                      id="vacancy-search-text"
+                      class="v4-input"
+                      placeholder="Zoek op club, functie, niveau, regio..."
+                    />
+                  </div>
+                  <div class="v4-filtergroup" style="flex:0 0 auto;">
+                    <div class="v4-filterlabel">Actie</div>
+                    <button type="button" id="vacancy-search-btn" class="btn-ghost-sm" style="white-space:nowrap;height:44px;">Zoeken</button>
+                  </div>
+                </div>
+
+                <!-- regel 2: dropdowns -->
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Land</div>
+                    <select id="vacancy-filter-country" class="v4-select">
+                      <option value="">Land (alles)</option>
+                      <option value="BE">🇧🇪 België</option>
+                      <option value="NL">🇳🇱 Nederland</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                    <div class="v4-filterlabel">Provincie</div>
+                    <select id="vacancy-filter-province" class="v4-select" disabled>
+                      <option value="">Provincie (alles)</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Type vacature</div>
+                    <select id="vacancy-filter-type" class="v4-select">
+                      <option value="">Type vacature</option>
+                      <option value="Trainer">Trainer</option>
+                      <option value="Speler">Speler</option>
+                      <option value="Coördinator">Coördinator / TVJO</option>
+                      <option value="Vrijwilliger">Vrijwilliger</option>
+                      <option value="Bestuur">Bestuurslid / ondersteuning</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                    <div class="v4-filterlabel">Dames / Heren</div>
+                    <select id="vacancy-filter-gender" class="v4-select">
+                      <option value="BOTH">Dames &amp; Heren</option>
+                      <option value="HEREN">Heren</option>
+                      <option value="DAMES">Dames</option>
+                    </select>
+                  </div>
+
+                  <div class="v4-filtergroup" style="flex:1 1 200px;min-width:200px;">
+                    <div class="v4-filterlabel">Niveau</div>
+                    <select id="vacancy-filter-level" class="v4-select">
+                      <option value="">Niveau (alles)</option>
+                      <option value="Gewestelijk">Gewestelijk / recreatief</option>
+                      <option value="Provinciaal">Provinciaal</option>
+                      <option value="Interprovinciaal">Interprovinciaal</option>
+                      <option value="Elite">Elite / hoogste jeugd</option>
+                    </select>
+                  </div>
+
+                </div>
+
+                <div class="form-helper">Tip: plaats je vacature via <a href="aanmelden.html">Vacature of profiel aanmelden</a>.</div>
+              </div>
+            </div>
+
+            <!-- OVERZICHT (identieke card-structuur als events.html) -->
+            <section class="section-main" style="padding-top:0;">
+              <div class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Overzicht</div>
+                    <div class="card-title">Clubvacatures</div>
+                  </div>
+                </div>
+
+                <p class="note">Premium vacatures staan bovenaan. Vacatures die verlopen zijn, worden later automatisch verborgen.</p>
+
+                <!-- PREMIUM (zelfde plaats als events.html): 6 kaarten -->
+                <div id="premium-30-wrap" class="premium-block" style="display:block;">
+                  <div class="card premium-shell" style="margin-bottom:12px;">
+                    <div class="card-header">
+                      <div>
+                        <div class="card-caption">Premium</div>
+                        <div class="card-title premium-title-lg">Premium clubvacatures die bijna verlopen!</div>
+                      </div>
+                    </div>
+                    <div id="premium-grid-30" class="events-grid-2 premium-grid">
+
+  <article class="v4a-card premium-card" id="premium-vacancy-1">
+    <div class="event-row">
+      <div class="event-thumbbox" aria-label="Thumbnail">
+        <div class="premium-ribbon">Premium</div>
+      </div>
+      <div class="event-main">
+        <div class="v4a-card-header" style="margin:0;">
+          <div>
+            <div class="v4a-card-title">Trainer U17 · Provinciaal</div>
+            <div class="v4a-card-meta">🇧🇪 België · Regio Kempen</div>
+            <div class="v4a-card-meta">K. ASV Geel</div>
+          </div>
+        </div>
+        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+          <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="v4a-card premium-card" id="premium-vacancy-2">
+    <div class="event-row">
+      <div class="event-thumbbox" aria-label="Thumbnail">
+        <div class="premium-ribbon">Premium</div>
+      </div>
+      <div class="event-main">
+        <div class="v4a-card-header" style="margin:0;">
+          <div>
+            <div class="v4a-card-title">Trainer Dames 1</div>
+            <div class="v4a-card-meta">🇳🇱 Nederland · Noord-Brabant</div>
+            <div class="v4a-card-meta">FC Voorbeeld</div>
+          </div>
+        </div>
+        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+          <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="v4a-card premium-card" id="premium-vacancy-3">
+    <div class="event-row">
+      <div class="event-thumbbox" aria-label="Thumbnail">
+        <div class="premium-ribbon">Premium</div>
+      </div>
+      <div class="event-main">
+        <div class="v4a-card-header" style="margin:0;">
+          <div>
+            <div class="v4a-card-title">TVJO / Coördinator</div>
+            <div class="v4a-card-meta">🇧🇪 België · Antwerpen</div>
+            <div class="v4a-card-meta">Club Voorbeeld</div>
+          </div>
+        </div>
+        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+          <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="v4a-card premium-card" id="premium-vacancy-4">
+    <div class="event-row">
+      <div class="event-thumbbox" aria-label="Thumbnail">
+        <div class="premium-ribbon">Premium</div>
+      </div>
+      <div class="event-main">
+        <div class="v4a-card-header" style="margin:0;">
+          <div>
+            <div class="v4a-card-title">Keeperstrainer</div>
+            <div class="v4a-card-meta">🇳🇱 Nederland · Limburg</div>
+            <div class="v4a-card-meta">VV Voorbeeld</div>
+          </div>
+        </div>
+        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+          <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="v4a-card premium-card" id="premium-vacancy-5">
+    <div class="event-row">
+      <div class="event-thumbbox" aria-label="Thumbnail">
+        <div class="premium-ribbon">Premium</div>
+      </div>
+      <div class="event-main">
+        <div class="v4a-card-header" style="margin:0;">
+          <div>
+            <div class="v4a-card-title">Trainer U13 · Interprovinciaal</div>
+            <div class="v4a-card-meta">🇧🇪 België · Oost-Vlaanderen</div>
+            <div class="v4a-card-meta">KVC Voorbeeld</div>
+          </div>
+        </div>
+        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+          <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="v4a-card premium-card" id="premium-vacancy-6">
+    <div class="event-row">
+      <div class="event-thumbbox" aria-label="Thumbnail">
+        <div class="premium-ribbon">Premium</div>
+      </div>
+      <div class="event-main">
+        <div class="v4a-card-header" style="margin:0;">
+          <div>
+            <div class="v4a-card-title">Vrijwilliger · Kantine</div>
+            <div class="v4a-card-meta">🇳🇱 Nederland · Utrecht</div>
+            <div class="v4a-card-meta">SV Voorbeeld</div>
+          </div>
+        </div>
+        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+          <a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+                  </div>
+                </div>
+
+                <!-- IN-CONTENT AD (zelfde positie als events.html) -->
+                <section class="section-main" style="padding-top:0;padding-bottom:10px;">
+                  <div class="ad-infeed">
+                    <ins class="adsbygoogle"
+                      style="display:block"
+                      data-ad-client="ca-pub-4062633211824348"
+                      data-ad-slot="5386990710"
+                      data-ad-format="horizontal"
+                      data-full-width-responsive="true"></ins>
+                    <script>
+                      (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                  </div>
+                </section>
+
+                <!-- Overige vacatures (2 kolommen, zelfde grid-class als events.html) -->
+                <div id="vacancy-list" class="events-grid-2">
+                  <!-- gevuld via data (later) -->
+                  <article class="v4a-card" id="vacancy-ad-1" data-placeholder="1" data-gender="BOTH" data-country="BE" data-type="Trainer" data-level="Provinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">K. ASV Geel</div>
+                            <div class="v4a-card-meta">🇧🇪 België · Regio Kempen</div>
+                            <div class="v4a-card-meta">Trainer U17 · Provinciaal</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Ambitieuze jeugdploeg zoekt gedreven trainer met oog voor opleiding en teamspirit.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="1">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="1">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-2" data-placeholder="1" data-gender="BOTH" data-country="NL" data-type="Trainer" data-level="Provinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">FC Eindhoven (voorbeeld)</div>
+                            <div class="v4a-card-meta">🇳🇱 Nederland · Noord-Brabant</div>
+                            <div class="v4a-card-meta">Trainer U15 · Provinciaal</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Jeugdtrainer gezocht met focus op ontwikkeling, discipline en plezier.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="2">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="2">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-3" data-placeholder="1" data-gender="BOTH" data-country="BE" data-type="Speler" data-level="Provinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">KV Voorbeeld</div>
+                            <div class="v4a-card-meta">🇧🇪 België · Limburg</div>
+                            <div class="v4a-card-meta">Speler · Eerste elftal</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Op zoek naar versterking voor het komende seizoen. Positie bespreekbaar.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="3">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="3">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-4" data-placeholder="1" data-gender="BOTH" data-country="NL" data-type="Coördinator" data-level="Elite">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">SV Voorbeeld</div>
+                            <div class="v4a-card-meta">🇳🇱 Nederland · Gelderland</div>
+                            <div class="v4a-card-meta">TVJO / Coördinator · Elite jeugd</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Bouw mee aan een duidelijke opleidingslijn en begeleid trainers.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="4">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="4">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-5" data-placeholder="1" data-gender="BOTH" data-country="BE" data-type="Trainer" data-level="Interprovinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">KFC Voorbeeld</div>
+                            <div class="v4a-card-meta">🇧🇪 België · West-Vlaanderen</div>
+                            <div class="v4a-card-meta">Trainer U19 · Interprovinciaal</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Ervaring met jeugdopleiding is een plus. Sterke communicatieve skills.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="5">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="5">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-6" data-placeholder="1" data-gender="BOTH" data-country="NL" data-type="Vrijwilliger" data-level="Gewestelijk">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">VV Voorbeeld</div>
+                            <div class="v4a-card-meta">🇳🇱 Nederland · Zuid-Holland</div>
+                            <div class="v4a-card-meta">Vrijwilliger · Wedstrijddag</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Help mee bij organisatie, onthaal en kantine op wedstrijddagen.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="6">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="6">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-7" data-placeholder="1" data-gender="BOTH" data-country="BE" data-type="Bestuur" data-level="Provinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">Royal Voorbeeld</div>
+                            <div class="v4a-card-meta">🇧🇪 België · Antwerpen</div>
+                            <div class="v4a-card-meta">Bestuurslid · Communicatie</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Ondersteun communicatie en organisatie binnen de clubwerking.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="7">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="7">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-8" data-placeholder="1" data-gender="BOTH" data-country="NL" data-type="Speler" data-level="Interprovinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">FC Voorbeeld</div>
+                            <div class="v4a-card-meta">🇳🇱 Nederland · Overijssel</div>
+                            <div class="v4a-card-meta">Speler · U23</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Selectie U23 zoekt extra spelers voor het volgende seizoen.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="8">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="8">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-9" data-placeholder="1" data-gender="BOTH" data-country="BE" data-type="Trainer" data-level="Gewestelijk">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">SK Voorbeeld</div>
+                            <div class="v4a-card-meta">🇧🇪 België · Vlaams-Brabant</div>
+                            <div class="v4a-card-meta">Trainer · Gewestelijk</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Gezellige club zoekt trainer met passie en duidelijke structuur.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="9">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="9">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-10" data-placeholder="1" data-gender="BOTH" data-country="NL" data-type="Vrijwilliger" data-level="Gewestelijk">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">SV Voorbeeld</div>
+                            <div class="v4a-card-meta">🇳🇱 Nederland · Friesland</div>
+                            <div class="v4a-card-meta">Vrijwilliger · Jeugdwerking</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Ondersteun jeugdactiviteiten en help bij planning en communicatie.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="10">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="10">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-11" data-placeholder="1" data-gender="BOTH" data-country="BE" data-type="Coördinator" data-level="Provinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">KSV Voorbeeld</div>
+                            <div class="v4a-card-meta">🇧🇪 België · Oost-Vlaanderen</div>
+                            <div class="v4a-card-meta">Coördinator · bovenbouw</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Coördineer bovenbouw en begeleid trainers in de opleidingsvisie.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="11">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="11">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="v4a-card" id="vacancy-ad-12" data-placeholder="1" data-gender="BOTH" data-country="NL" data-type="Bestuur" data-level="Provinciaal">
+                    <div class="event-row">
+                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
+                      <div class="event-main">
+                        <div class="v4a-card-header" style="margin:0;">
+                          <div>
+                            <div class="v4a-card-title">VV Voorbeeld</div>
+                            <div class="v4a-card-meta">🇳🇱 Nederland · Drenthe</div>
+                            <div class="v4a-card-meta">Bestuurslid · Organisatie</div>
+                          </div>
+                        </div>
+                        <div class="v4a-card-body" style="margin-top:8px;">Ondersteun organisatie rond events, wedstrijden en vrijwilligerswerking.</div>
+                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                          <button type="button" class="btn-ghost-sm" data-reply-vacancy="12">Reageer</button>
+                          <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="12">Delen</a>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+
+                <div id="vacancy-pagination" class="events-pagination" aria-label="Paginatie vacatures"></div>
+                <p id="vacancy-status" class="note" style="margin-top:10px; display:none;"></p>
+              </div>
+            </section>
+
+          </div>
+
+          <!-- RECHTS (identiek aan events.html) -->
+          <aside class="v4-sidebar">
+            <div class="v4-sidebar-sticky">
+
+              <article class="card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Advertentie</div>
+                    <div class="card-title">Sponsor / Partner</div>
+                  </div>
+                  <span class="pill-small">Premium</span>
+                </div>
+                <div class="v4a-placeholder">
+                  Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity? Ontdek wat Voetbal4All voor jouw merk kan betekenen!
+                    <br/>
+                  <span class="ad-size"><a href="adverteren.html">Bekijk de mogelijkheden →</a></span>
+                </div>
+              </article>
+
+              <!-- Sticky AdSense (zelfde positie als events.html) -->
+              <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+                <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-4062633211824348"
+                  data-ad-slot="7066193457"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+              </div>
+
+              <article class="card" style="margin-top:12px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Vacature plaatsen?</div>
+                    <div class="card-title">Meer bereik, betere matches</div>
+                  </div>
+                </div>
+                <p class="note">Gebruik het centrale formulier. Premium zichtbaarheid is mogelijk.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
+                  <a class="btn-ghost-sm" href="aanmelden.html">Vacature of profiel aanmelden</a>
+                </div>
+              </article>
+
+              <!-- Premium later (zelfde sectie als events.html) -->
+              <article class="card" style="margin-top:12px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Uitgelicht (later)</div>
+                  </div>
+                </div>
+                <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
+              </article>
+
+            </div>
+          </aside>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer-contact">
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+          <div class="footer-legal">
+            &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+            · Mogelijkheden voor hoofdsponsor, partners en advertenties.
+          </div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+            <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+            <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+          </div>
+        </div>
+        <div class="footer-ad">
+          Zet jouw merk in de kijker bij de voetbalcommunity!<br>
+          <span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Backend API base
+  const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+
+  document.addEventListener("click", function (e) {
+    const btn = e.target.closest("[data-reply-vacancy]");
+    if (!btn) return;
+
+    const adId = btn.getAttribute("data-reply-vacancy");
+    const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
+    if (!ok) return;
+
+    const replyEmail = prompt("Vul je e-mailadres in zodat de club je kan contacteren:");
+    if (!replyEmail) return alert("E-mailadres is nodig om te kunnen reageren.");
+
+    const subject = encodeURIComponent("Reactie via Voetbal4All op clubvacature " + adId);
+    const body = encodeURIComponent(
+      "Vacature-ID: " + adId +
+      "\n\nE-mailadres van de geïnteresseerde: " + replyEmail +
+      "\n\nBericht:\n(Voeg hier in jouw mail je bericht aan de club toe.)"
+    );
+
+    window.location.href = "mailto:voetbal4all@outlook.com?subject=" + subject + "&body=" + body;
+  });
+
+  function updateVacancyShareLinks() {
+    const baseUrl = window.location.origin + window.location.pathname;
+    document.querySelectorAll("#vacancy-list [data-share-vacancy]").forEach(link => {
+      const adId = link.getAttribute("data-share-vacancy");
+      const detailHref = (link.getAttribute("data-detail-href") || "").trim();
+
+      const shareUrl = detailHref
+        ? (new URL(detailHref, baseUrl)).toString()
+        : (baseUrl + "#vacancy-ad-" + adId);
+
+      link.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    });
+  }
+  updateVacancyShareLinks();
+
+  // --- Backend wiring: fetch club vacancies ---
+
+  // Keep a copy of the original premium placeholders so we can restore them
+  const PREMIUM_PLACEHOLDER_HTML = (function(){
+    const el = document.getElementById('premium-grid-30');
+    return el ? el.innerHTML : '';
+  })();
+  function escHtml(s) {
+    return String(s ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#39;");
+  }
+
+  function isUuid(v) {
+    const s = String(v || "").trim();
+    if (!s) return false;
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s);
+  }
+
+  function flagForCountry(c) {
+    const cc = String(c || "").toUpperCase();
+    if (cc === "BE") return "🇧🇪";
+    if (cc === "NL") return "🇳🇱";
+    return "🌍";
+  }
+
+  const PROVINCES = {
+    BE: ["Antwerpen","Limburg","Oost-Vlaanderen","West-Vlaanderen","Vlaams-Brabant","Waals-Brabant","Henegouwen","Luik","Luxemburg","Namen","Brussel"],
+    NL: ["Drenthe","Flevoland","Friesland","Gelderland","Groningen","Limburg","Noord-Brabant","Noord-Holland","Overijssel","Utrecht","Zeeland","Zuid-Holland"]
+  };
+
+  function setVacancyProvinceOptions(country){
+    const sel = document.getElementById("vacancy-filter-province");
+    if (!sel) return;
+    const cc = String(country || "").toUpperCase().trim();
+    const list = PROVINCES[cc] || [];
+    const prev = sel.value;
+
+    sel.innerHTML = ['<option value="">Provincie (alles)</option>', ...list.map(p => `<option value="${p}">${p}</option>`)].join("");
+    sel.disabled = list.length === 0;
+    sel.value = list.includes(prev) ? prev : "";
+  }
+
+  function toGender(x) {
+    const g = String(x?.gender || "BOTH").trim().toUpperCase();
+    return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+  }
+
+  function isPremiumActive(x) {
+    const pu = x?.premium_until ? Date.parse(x.premium_until) : NaN;
+    return Number.isFinite(pu) && pu > Date.now();
+  }
+
+  function vacancyCardHtml(v, idx, isPremium) {
+    const title = escHtml(v.title || "Vacature");
+    const club = escHtml(v.club || "Club");
+    const desc = escHtml(v.description || "");
+    const url = String(v.url || "").trim();
+    const rawId = String(v.id || "").trim();
+    const detailHref = isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
+
+    const country = String(v.country || "").toUpperCase();
+    const region = escHtml(v.region || v.city || "");
+    const flag = flagForCountry(country);
+    const meta = `${flag} ${country === "BE" ? "België" : country === "NL" ? "Nederland" : (country || "")}${region ? " · " + region : ""}`.trim();
+
+    const gender = toGender(v);
+
+    // meta can contain type/level (optional) but we keep placeholders compatible
+    const cType = String(v?.meta?.type || "");
+    const cLevel = String(v?.meta?.level || "");
+
+    const thumbUrl = String(v.image_url || "").trim();
+    const thumb = thumbUrl
+      ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
+      : "";
+
+    // Match existing premium placeholders:
+    // Premium tiles show vacancy title as main title, then location meta, then club name.
+    // Non-premium list keeps existing layout (club as title).
+    const displayTitle = isPremium ? title : club;
+    const displayMeta2 = isPremium ? club : title;
+
+    const actions = isPremium
+      ? `<a class="btn-ghost-sm" href="aanmelden.html">Plaats jouw vacature</a>
+         <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
+      : `<button type="button" class="btn-ghost-sm" data-reply-vacancy="${escHtml(String(idx + 1))}">Reageer</button>
+         <a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
+
+    return `
+      <article class="v4a-card${isPremium ? " premium-card" : ""}" id="vacancy-ad-${escHtml(String(idx + 1))}"
+        data-placeholder="${isPremium ? "0" : "1"}"
+        data-gender="${escHtml(gender)}"
+        data-country="${escHtml(country)}"
+        data-province="${escHtml(String(v.province || v.region || ""))}"
+        data-region="${escHtml(String(region || ""))}"
+        data-type="${escHtml(cType)}"
+        data-level="${escHtml(cLevel)}">
+        <div class="event-row">
+          <div class="event-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}${thumb}</div>
+          <div class="event-main">
+            <div class="v4a-card-header" style="margin:0;">
+              <div>
+                <div class="v4a-card-title">${detailHref ? `<a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${displayTitle}</a>` : displayTitle}</div>
+                <div class="v4a-card-meta">${escHtml(meta || "—")}</div>
+                <div class="v4a-card-meta">${displayMeta2}${cLevel ? " · " + escHtml(cLevel) : ""}</div>
+              </div>
+            </div>
+            ${desc ? `<div class="v4a-card-body" style="margin-top:8px;">${desc}</div>` : ""}
+            ${(!isPremium && url) ? `<div class="v4a-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
+            <div class="v4a-card-actions event-actions" style="margin-top:10px;">${actions}</div>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  async function loadVacanciesFromBackend() {
+    const listEl = document.getElementById("vacancy-list");
+    const premiumGrid = document.getElementById("premium-grid-30");
+    const statusEl = document.getElementById("vacancy-status");
+    if (!listEl) return false;
+
+    // Reset UI immediately to avoid showing stale results between gender switches
+    listEl.innerHTML = "";
+    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (statusEl) {
+      statusEl.style.display = "";
+      statusEl.textContent = "Vacatures laden…";
+    }
+
+    const genderSel = document.getElementById("vacancy-filter-gender");
+    const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
+    const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
+
+    const url = `${API_BASE}/api/club-vacancies?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+
+    try {
+      const r = await fetch(url, { credentials: "omit" });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json();
+      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+
+      const items = j.items;
+      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const rest = items.filter((x) => !isPremiumActive(x));
+
+      // Premium grid: render up to 6 premium items, otherwise restore placeholders
+      if (premiumGrid) {
+        premiumGrid.innerHTML = premium.length
+          ? premium.map((v, i) => vacancyCardHtml(v, i, true)).join("")
+          : PREMIUM_PLACEHOLDER_HTML;
+      }
+
+      // Replace main list with non-premium vacancies.
+      listEl.innerHTML = rest.map((v, i) => vacancyCardHtml(v, i, false)).join("");
+
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = items.length
+          ? `${items.length} vacature(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          : "Nog geen clubvacatures.";
+      }
+
+      // Update share links after (re)render
+      updateVacancyShareLinks();
+
+      // Re-apply active UI filters (country/type/level/search) on the newly rendered cards
+      try { applyVacancyFilters(); } catch (_) {}
+
+      return true;
+    } catch (e) {
+      console.warn("[clubvacatures] backend load failed:", e?.message || e);
+      if (statusEl) {
+        statusEl.style.display = "";
+        statusEl.textContent = "Kon vacatures niet laden. We tonen tijdelijk placeholders.";
+      }
+      return false;
+    }
+  }
+  // --- end backend wiring ---
+
+  // --- Gender filter + client-side filtering (HEREN/DAMES/BOTH) ---
+
+  // Try backend once on initial load; keep placeholders if it fails.
+  loadVacanciesFromBackend().then(() => {
+    // After loading (or falling back), run client-side filters for country/type/level/search.
+    applyVacancyFilters();
+  });
+  function normalizeGenderParam(v) {
+    if (v == null) return null;
+    const s = String(v).trim().toUpperCase();
+    if (!s) return null;
+    if (s === "HEREN" || s === "DAMES" || s === "BOTH") return s;
+    return "__INVALID__";
+  }
+
+  (function initGenderFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const g = params.get("gender");
+    if (!g) return;
+
+    const sel = document.getElementById("vacancy-filter-gender");
+    if (!sel) return;
+
+    const gv = String(g).trim().toUpperCase();
+    for (const opt of sel.options) {
+      if (opt.value === gv) { sel.value = gv; break; }
+    }
+  })();
+
+  function applyVacancyFilters() {
+    const q = (document.getElementById("vacancy-search-text")?.value || "").trim().toLowerCase();
+    const country = (document.getElementById("vacancy-filter-country")?.value || "").trim().toUpperCase();
+    const type = (document.getElementById("vacancy-filter-type")?.value || "").trim();
+    const level = (document.getElementById("vacancy-filter-level")?.value || "").trim();
+    const gender = normalizeGenderParam(document.getElementById("vacancy-filter-gender")?.value) || "BOTH";
+    const province = (document.getElementById("vacancy-filter-province")?.value || "").trim();
+
+    const list = document.getElementById("vacancy-list");
+    if (!list) return;
+
+    const cards = Array.from(list.querySelectorAll("article.v4a-card"));
+    let visible = 0;
+
+    for (const card of cards) {
+      let ok = true;
+
+      const cCountry = String(card.dataset.country || "").toUpperCase();
+      const cType = String(card.dataset.type || "");
+      const cLevel = String(card.dataset.level || "");
+      const cGender = normalizeGenderParam(card.dataset.gender) || "BOTH";
+      const cProvince = String(card.dataset.province || "");
+      const cRegion = String(card.dataset.region || "");
+
+      if (country && cCountry && cCountry !== country) ok = false;
+      if (type && cType && cType !== type) ok = false;
+      if (level && cLevel && cLevel !== level) ok = false;
+      if (province) {
+        const want = province.toLowerCase();
+        const have = (cProvince || cRegion || "").toLowerCase();
+        if (have && !have.includes(want)) ok = false;
+        // If card has no province/region metadata, keep it visible (data may be incomplete)
+      }
+
+      if (gender && gender !== "BOTH") {
+        // HEREN/DAMES should also include BOTH (suitable for both)
+        if (!(cGender === gender || cGender === "BOTH")) ok = false;
+      }
+
+      if (q) {
+        const text = (card.innerText || "").toLowerCase();
+        if (!text.includes(q)) ok = false;
+      }
+
+      card.style.display = ok ? "" : "none";
+      if (ok) visible++;
+    }
+
+    const statusEl = document.getElementById("vacancy-status");
+    if (statusEl) {
+      statusEl.style.display = "";
+      statusEl.textContent = visible ? `${visible} vacature(s) zichtbaar.` : "Geen vacatures gevonden met deze filters.";
+    }
+
+    // Keep share links correct even if the list changes
+    updateVacancyShareLinks();
+  }
+
+  // Persist gender in URL for shareable filtering
+  (function wireVacancyFilterEvents(){
+    const genderEl = document.getElementById("vacancy-filter-gender");
+    if (genderEl) {
+      genderEl.addEventListener("change", () => {
+        const params = new URLSearchParams(window.location.search);
+        const g = normalizeGenderParam(genderEl.value) || "BOTH";
+        if (!g || g === "BOTH") params.delete("gender");
+        else params.set("gender", g);
+        const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+        history.replaceState(null, "", next);
+        // Reload from backend so premium + list remain consistent
+        loadVacanciesFromBackend().then((ok) => {
+          // Always run local filters afterward (country/type/level/search)
+          applyVacancyFilters();
+        });
+      });
+    }
+
+    const countryEl = document.getElementById("vacancy-filter-country");
+    const typeEl = document.getElementById("vacancy-filter-type");
+    const levelEl = document.getElementById("vacancy-filter-level");
+    const searchEl = document.getElementById("vacancy-search-text");
+    const searchBtn = document.getElementById("vacancy-search-btn");
+
+    countryEl && countryEl.addEventListener("change", () => {
+      setVacancyProvinceOptions(countryEl.value);
+      applyVacancyFilters();
+    });
+    typeEl && typeEl.addEventListener("change", applyVacancyFilters);
+    levelEl && levelEl.addEventListener("change", applyVacancyFilters);
+    const provinceEl = document.getElementById("vacancy-filter-province");
+    provinceEl && provinceEl.addEventListener("change", applyVacancyFilters);
+    searchEl && searchEl.addEventListener("input", applyVacancyFilters);
+    searchBtn && searchBtn.addEventListener("click", applyVacancyFilters);
+    // Enter key in the search box triggers filtering as well.
+    searchEl && searchEl.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter") applyVacancyFilters();
+    });
+
+    // Initial run is handled after backend load.
+  })();
+  // --- end gender filter ---
+
+  // Fill sidebar premium block with placeholders (layout parity with events.html)
+  (function fillSidebarPremiumLater(){
+    const el = document.getElementById('sidebar-premium-later');
+    if (!el) return;
+    const MIN_SLOTS = 10;
+    el.innerHTML = '';
+    for (let i=0;i<MIN_SLOTS;i++){
+      el.insertAdjacentHTML('beforeend', `
+        <div class="sidebar-premium-card">
+          <div class="sidebar-premium-top">
+            <div class="sidebar-premium-thumbbox" aria-label="Thumbnail">
+              <div class="premium-ribbon">Premium</div>
+            </div>
+            <div style="min-width:0;">
+              <div class="sidebar-premium-title">Jouw premium vacature hier?</div>
+              <div class="sidebar-premium-meta">—</div>
+              <div class="sidebar-premium-meta"></div>
+              <div class="sidebar-premium-meta">Premium</div>
+            </div>
+          </div>
+          <div class="sidebar-premium-actions"></div>
+        </div>
+      `);
+    }
+    el.insertAdjacentHTML('beforeend', `
+      <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+        <div class="sidebar-premium-title">Plaats jouw premium vacature</div>
+        <div class="sidebar-premium-meta">Bovenaan, in de sidebar.</div>
+        <div class="sidebar-premium-actions" style="justify-content:center;">
+          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium vacature</a>
+        </div>
+      </div>
+    `);
+  })();
+</script>
+
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js" defer></script>
+<script src="assets/js/live-banner.js"></script>
+</body>
+</html>

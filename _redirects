@@ -1,0 +1,3 @@
+# Netlify rewrite: proxy share endpoint to backend (status 200 = rewrite, not redirect)
+/share/article/*  https://voetbal4all-backend-database.onrender.com/share/article/:splat  200
+

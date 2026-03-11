@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title id="page-title">Voetbal4All - Artikel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" id="page-description" content="Lees het nieuwste voetbalnieuws op Voetbal4All" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" id="og-title" content="Voetbal4All - Artikel" />
+  <meta property="og:description" id="og-description" content="Lees het nieuwste voetbalnieuws" />
+  <meta property="og:image" id="og-image" content="assets/img/placeholder.svg" />
+  <meta property="og:type" content="article" />
+    <meta name="robots" content="index, follow">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Ensure header AdSense slot has measurable size at first paint */
+    .ad-slot-header {
+      min-height: 90px;
+            max-height: 120px;
+            overflow: hidden;
+    }
+    .ad-slot-header ins.adsbygoogle {
+      min-height: 90px;
+    }
+    /* Make sure ad containers keep measurable width/height across browsers */
+    .ad-slot ins.adsbygoogle {
+      display: block;
+      min-height: 90px;
+    }
+    .article-hero-image {
+      width: 100%;
+      max-height: 500px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Fallback state when article has no image (inline SVG placeholder) */
+    .article-hero-image.is-empty {
+      max-height: 320px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 18px;
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .article-body {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+    
+    .article-body p {
+      margin-bottom: 1.2em;
+    }
+    
+    .share-section-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin: 24px 0;
+    }
+    
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .share-btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+    
+    .share-btn svg {
+      flex-shrink: 0;
+    }
+    
+    .share-btn-facebook:hover { background: rgba(24, 119, 242, 0.3); }
+        .share-btn-x:hover { background: rgba(0, 0, 0, 0.3); }
+    .share-btn-whatsapp:hover { background: rgba(37, 211, 102, 0.3); }
+    .share-btn-linkedin:hover { background: rgba(10, 102, 194, 0.3); }
+        .share-btn-instagram:hover { background: rgba(225, 48, 108, 0.3); }
+    
+    .article-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    
+    .article-tag {
+      padding: 6px 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 4px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    .loading-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .error-state {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .error-state h2 {
+      color: #ff6b6b;
+      margin-bottom: 12px;
+    }
+
+    .inline-ad-wrapper {
+      margin: 32px 0;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+    }
+
+    .inline-ad-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    /* Normalize flag sizing (prevents oversized INT SVG) */
+    .v4a-flag {
+      width: 18px;
+      height: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex: 0 0 18px;
+    }
+    .v4a-flag__img {
+      width: 18px !important;
+      height: 12px !important;
+      display: block;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+<!-- ================= LIVE BANNER ================= -->
+<section class="live-banner-top">
+  <div class="shell">
+    <div class="live-banner">
+      <div class="live-label"><span class="live-dot"></span>Live score</div>
+      <div class="live-text">
+        <span class="live-text-main"></span>
+        <div class="live-updated"></div>
+      </div>
+      <div class="live-socials">
+        <div class="live-socials-label">Volg ons</div>
+        <div class="live-socials-icons"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HEADER ADSENSE ================= -->
+<section class="section-main" style="padding:10px 0;">
+  <div class="shell">
+    <div class="ad-slot ad-slot-header">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4062633211824348"
+        data-ad-slot="7185311630"
+        data-ad-format="horizontal"
+        data-full-width-responsive="true"></ins>
+      <!-- AdSense init is triggered in JS after content is visible -->
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main>
+<section class="section-main">
+<div class="shell">
+
+  <div id="loading-state" class="loading-state">
+    <div class="card"><p>Artikel laden...</p></div>
+  </div>
+
+  <div id="error-state" class="error-state" style="display:none;">
+    <div class="card">
+      <h2>Artikel nog niet beschikbaar</h2>
+      <p>Dit artikel is nog in verwerking (afbeelding wordt opgehaald) of is niet meer beschikbaar. Probeer straks opnieuw.</p>
+      <a href="artikels.html" class="btn btn-primary" style="margin-top:20px;">Terug naar overzicht</a>
+    </div>
+  </div>
+
+  <div id="article-content" style="display:none;">
+    <div class="v4-layout-sidebar">
+      
+      <div class="v4-content">
+
+        <!-- VASTE ROOT CONTAINER (NIEUW) -->
+        <article id="article-container" class="article-detail">
+      
+          <!-- BESTAANDE CARD BLIJFT -->
+          <article class="card">
+          
+          <div style="margin-bottom:16px;">
+            <a href="index.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Home</a>
+            <span style="color:rgba(255,255,255,0.4); margin:0 8px;">›</span>
+            <a href="artikels.html" style="color:rgba(255,255,255,0.6); text-decoration:none;">Artikels</a>
+            <span style="color:rgba(255,255,255,0.4); margin:0 8px;">›</span>
+            <span style="color:rgba(255,255,255,0.8);" id="breadcrumb-title">Artikel</span>
+          </div>
+          
+          <div class="card-header">
+            <div>
+              <div class="card-caption" id="article-caption">Voetbal4All · Nieuws</div>
+              <h1 class="card-title" id="article-title">Laden...</h1>
+            </div>
+            <span class="pill-small" id="article-type">Artikel</span>
+          </div>
+          
+          <div class="article-meta">
+            <span class="pill-small" id="article-country"></span>
+            <span style="color:rgba(255,255,255,0.6); font-size:14px;" id="article-date"></span>
+          </div>
+          
+          <img
+            id="article-image"
+            src="assets/img/placeholder.svg"
+            alt=""
+            class="article-hero-image is-empty"
+            loading="eager"
+            decoding="async"
+            referrerpolicy="no-referrer"
+          />
+          
+          <div class="note" id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;"></div>
+          
+          <div class="share-section-title">Deel dit artikel op:</div>
+          <div class="share-buttons">
+            <a href="#" id="share-facebook" class="share-btn share-btn-facebook" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Facebook
+            </a>
+              <a href="#" id="share-x" class="share-btn share-btn-x" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                X
+            </a>
+            <a href="#" id="share-whatsapp" class="share-btn share-btn-whatsapp" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              WhatsApp
+            </a>
+            <a href="#" id="share-linkedin" class="share-btn share-btn-linkedin" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+              <button id="share-instagram" class="share-btn share-btn-instagram" style="background:rgba(255,255,255,0.1); border:none; cursor:pointer; color:white; font-size:14px; font-weight:500;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                Instagram
+              </button>
+            <button id="share-copy" class="share-btn" style="background:rgba(255,255,255,0.1); border:none; cursor:pointer;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+              </svg>
+              <span id="copy-text">Kopieer link</span>
+            </button>
+          </div>
+          
+          <div class="article-body" id="article-body"></div>
+          
+          <div class="ad-slot" style="margin:32px 0; padding:20px; background:rgba(255,255,255,0.05); border-radius:8px;">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="7768583806"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <!-- AdSense init is triggered in JS after content is visible -->
+          </div>
+          
+          <div class="article-tags" id="article-tags"></div>
+          
+          <div style="margin-top:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
+            <a href="artikels.html" class="btn" style="background:rgba(255,255,255,0.1);">← Terug naar overzicht</a>
+          </div>
+          
+        </article> <!-- einde .card -->
+      </article>   <!-- einde #article-container -->
+      </div>
+      
+      <aside class="v4-sidebar">
+        <div class="v4-sidebar-sticky">
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-caption">Meer nieuws</div>
+                <div class="card-title">Gerelateerde artikels</div>
+              </div>
+            </div>
+            <p class="note">Ontdek meer voetbalnieuws op onze artikelpagina.</p>
+            <a href="artikels.html" class="btn btn-primary" style="margin-top:12px;">Bekijk alle artikels →</a>
+          </article>
+          
+          <article class="card" style="margin-top:12px;">
+            <div class="card-header">
+              <div>
+                <div class="card-caption">Wil jij hier adverteren?</div>
+                <div class="card-title"><a href="adverteren.html">Ontdek de mogelijkheden →</a></div>
+              </div>
+            </div>
+            <div class="ad-slot" style="padding:12px;">
+              <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-4062633211824348"
+                data-ad-slot="8303963944"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+              <!-- AdSense init is triggered in JS after content is visible -->
+            </div>
+          </article>
+        </div>
+      </aside>
+      
+    </div>
+  </div>
+
+</div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+        <div class="footer-legal">&copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.</div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+            <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+            <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+          </div>
+      </div>
+      <div class="footer-ad">Zet jouw merk in de kijker bij de voetbalcommunity!<br><span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span></div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+<script src="assets/js/image-utils.js"></script>
+
+<script>
+    // Repair truncated/hallucinated first names in body text using title as reference
+    const _NAME_PARTICLES = new Set(["de","van","den","der","het","el","di","le","la","da","dos","ter","du","von"]);
+    function _extractNamesFromTitle(t) {
+      var words = t.split(/\s+/), names = [], cur = [];
+      for (var i = 0; i < words.length; i++) {
+        var w = words[i];
+        if (/^[A-Z]/.test(w) || _NAME_PARTICLES.has(w.toLowerCase())) { cur.push(w); }
+        else { if (cur.length >= 2) names.push(cur.join(" ")); cur = []; }
+      }
+      if (cur.length >= 2) names.push(cur.join(" "));
+      return names;
+    }
+    function repairTruncatedNames(body, title) {
+      if (!body || !title) return body;
+      var names = _extractNamesFromTitle(title), repaired = body;
+      for (var n = 0; n < names.length; n++) {
+        var parts = names[n].split(/\s+/);
+        if (parts.length < 2) continue;
+        var firstName = parts[0], rest = parts.slice(1).join(" ");
+        var escaped = rest.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        var re = new RegExp("\\b([A-Z][a-z\\u00e0-\\u00ff]+)\\s+(" + escaped + ")\\b", "g");
+        repaired = repaired.replace(re, function(m, found, fRest) {
+          if (found === firstName) return m;
+          if (found[0] === firstName[0] && found.length < firstName.length) {
+            console.warn("[NAME REPAIR] \"" + found + " " + fRest + "\" → \"" + firstName + " " + fRest + "\"");
+            return firstName + " " + fRest;
+          }
+          return m;
+        });
+      }
+      return repaired;
+    }
+
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+
+    // ✅ ID-only detail page (backend supports /api/news/:id)
+    const rawId = params.get("id") || params.get("newsId") || params.get("articleId");
+    const idFromUrl = rawId ? String(rawId).trim() : "";
+
+    // Accept any non-empty id (backend now uses ids like "ni-news-ES-xxxx")
+    const articleId = idFromUrl && idFromUrl.length > 0 ? idFromUrl : "";
+
+    console.log("[ARTIKEL] URL params:", { id: articleId || null });
+
+    // NOTE: we keep the UI states below; if ID is missing/invalid we show the error state.
+    const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
+
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+    async function fetchJsonWithRetry(url, { timeoutMs = 6000, tries = 3, baseDelayMs = 650 } = {}) {
+      let lastErr = null;
+
+      for (let i = 0; i < tries; i++) {
+        const controller = new AbortController();
+        const t = setTimeout(() => controller.abort(), timeoutMs);
+
+        try {
+          const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return await res.json();
+        } catch (e) {
+          lastErr = e;
+          const wait = baseDelayMs * (i + 1);
+          console.warn('[ARTIKEL] retry', i + 1, 'in', wait, 'ms:', e?.message || e);
+          await sleep(wait);
+        } finally {
+          clearTimeout(t);
+        }
+      }
+
+      throw lastErr || new Error('fetchJsonWithRetry failed');
+    }
+
+  function resolveImageUrl(raw) {
+    if (!raw) return null;
+
+    let s = "";
+    if (typeof raw === "string") {
+      s = raw;
+    } else if (typeof raw === "object") {
+      s = raw.publicPath || raw.image_path || raw.imagePath || raw.path || raw.url || raw.href || "";
+    } else {
+      s = String(raw);
+    }
+
+    s = String(s || "").trim();
+    if (!s) return null;
+
+    const lower = s.toLowerCase();
+    if (
+      lower === "broken-link" ||
+      lower === "/broken-link" ||
+      lower === "placeholder" ||
+      lower === "placeholder.svg" ||
+      lower.endsWith("/placeholder.svg") ||
+      lower.includes("placeholder.svg?") ||
+      lower.startsWith("/images/placeholder") ||
+      lower.includes("/images/placeholder")
+    ) {
+      return null;
+    }
+
+    if (lower.startsWith("data:image/")) return s;
+    if (/^https?:\/\//i.test(s)) {
+      try {
+        const u = new URL(s);
+        if (String(u.hostname || "").toLowerCase() === "image.pollinations.ai") {
+          return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
+        }
+      } catch (_) {}
+      return s;
+    }
+
+    if (s.startsWith("/api/")) return API_BASE + s;
+    if (s.startsWith("/images/")) return API_BASE + s;
+    if (s.startsWith("/assets/")) return s;
+
+    return s;
+  }
+
+  async function fetchArticleListImageById(id) {
+    const safeId = String(id || "").trim();
+    if (!safeId) return null;
+
+    try {
+      const listUrl = `${API_BASE}/api/news?limit=2000&nocache=${Date.now()}`;
+      const json = await fetchJsonWithRetry(listUrl, { tries: 2, timeoutMs: 7000, baseDelayMs: 400 });
+      const items = Array.isArray(json?.items) ? json.items : [];
+      const hit = items.find((it) => String(it?.id || "").trim() === safeId);
+      if (!hit) return null;
+
+      return resolveImageUrl(
+        hit.image ||
+        hit.image_path ||
+        hit.imagePath ||
+        hit.imageUrl ||
+        hit.image_url ||
+        null
+      );
+    } catch (e) {
+      console.warn("[ARTIKEL] fetchArticleListImageById failed:", e?.message || e);
+      return null;
+    }
+  }
+
+  function buildProxyImageFromTitle(title) {
+    const safeTitle = String(title || "Voetbal4All").trim() || "Voetbal4All";
+    const prompt = `${safeTitle} football soccer match stadium, cinematic, realistic, blue glow, football context, professional sports photography, stadium atmosphere, dramatic lighting, no text, no logos, no watermark`;
+    const upstream = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=630&nologo=true&model=flux`;
+    return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(upstream)}`;
+  }
+
+  function escapeXml(s) {
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function inlineSvgPlaceholderDataUri(title) {
+    const safeTitle = escapeXml(title || "Voetbal4All");
+    const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0f2740"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="36" y="36" width="1128" height="558" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="80" y="185" font-family="Montserrat, Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff" filter="url(#glow)">Voetbal4All</text>
+  <text x="80" y="250" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600" fill="rgba(255,255,255,0.75)">Afbeelding wordt verwerkt</text>
+  <text x="80" y="330" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.9)">${safeTitle}</text>
+  <text x="80" y="385" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="500" fill="rgba(255,255,255,0.65)">Ga verder onder het artikel voor de volledige tekst.</text>
+  <circle cx="1040" cy="360" r="78" fill="rgba(0,255,120,0.10)" stroke="rgba(0,255,120,0.22)"/>
+  <path d="M1018 360c0-25 21-46 46-46 25 0 46 21 46 46 0 25-21 46-46 46-25 0-46-21-46-46z" fill="rgba(255,255,255,0.10)"/>
+</svg>`;
+
+    // Encode as data URI (safe for production, no backend dependency)
+    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+  }
+
+  const elLoading = document.getElementById("loading-state");
+  const elError   = document.getElementById("error-state");
+  const elContent = document.getElementById("article-content");
+
+  function setState(state) {
+    // state: "loading" | "error" | "content"
+    elLoading.style.display = (state === "loading") ? "block" : "none";
+    elError.style.display   = (state === "error") ? "block" : "none";
+    elContent.style.display = (state === "content") ? "block" : "none";
+  }
+
+  // AdSense: robust init (Safari/Chrome) — only push when the slot has real width and is visible.
+  function initAdSense() {
+    try {
+      const insList = Array.from(document.querySelectorAll('ins.adsbygoogle'));
+      for (const ins of insList) {
+        if (ins.getAttribute('data-ads-loaded') === '1') continue;
+        queueAdPushWhenReady(ins);
+      }
+    } catch (e) {
+      console.warn('[ARTIKEL] AdSense init failed:', e);
+    }
+  }
+
+  function slotWidth(ins) {
+    const host = ins.parentElement || ins;
+    const rect = host.getBoundingClientRect();
+    const w = Math.floor(rect.width || host.offsetWidth || ins.offsetWidth || 0);
+    return w;
+  }
+
+  function isVisible(ins) {
+    const host = ins.parentElement || ins;
+    // If hidden by CSS/display:none, don't push.
+    const cs = window.getComputedStyle(host);
+    if (!cs || cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return false;
+    const rect = host.getBoundingClientRect();
+    // Consider visible if it has height and is on-screen-ish
+    if (rect.height <= 0) return false;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    return rect.bottom > -200 && rect.top < vh + 200;
+  }
+
+  function safePush(ins) {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      ins.setAttribute('data-ads-loaded', '1');
+      return true;
+    } catch (e) {
+      console.warn('[ARTIKEL] AdSense push failed:', e);
+      return false;
+    }
+  }
+
+  const _adObservers = new WeakMap();
+
+  function queueAdPushWhenReady(ins) {
+    if (_adObservers.has(ins)) return;
+
+    const attempt = () => {
+      if (ins.getAttribute('data-ads-loaded') === '1') return true;
+      const w = slotWidth(ins);
+      if (w < 50) return false;
+      if (!isVisible(ins)) return false;
+      return safePush(ins);
+    };
+
+    // First immediate attempt (after layout has a chance to settle)
+    requestAnimationFrame(() => {
+      if (attempt()) return;
+
+      // Observe size changes (Safari often reports 0 width briefly)
+      const host = ins.parentElement || ins;
+      const ro = new ResizeObserver(() => {
+        if (attempt()) {
+          ro.disconnect();
+          _adObservers.delete(ins);
+        }
+      });
+      ro.observe(host);
+
+      // Also retry on scroll/visibility changes
+      let io = null;
+      if ('IntersectionObserver' in window) {
+        io = new IntersectionObserver(() => {
+          if (attempt()) {
+            io.disconnect();
+            ro.disconnect();
+            _adObservers.delete(ins);
+          }
+        }, { root: null, rootMargin: '200px 0px', threshold: 0.01 });
+        io.observe(host);
+      }
+
+      // Safety timeout: stop observing after 20s
+      const timer = setTimeout(() => {
+        try { ro.disconnect(); } catch (_) {}
+        try { io && io.disconnect(); } catch (_) {}
+        _adObservers.delete(ins);
+      }, 20000);
+
+      _adObservers.set(ins, { ro, io, timer });
+    });
+  }
+
+  function scheduleAdSense() {
+    // Multiple kicks help on Safari where layout/width arrives late
+    requestAnimationFrame(() => initAdSense());
+    setTimeout(() => initAdSense(), 400);
+    setTimeout(() => initAdSense(), 1200);
+  }
+
+  // Kick AdSense as early as possible for header/sidebar slots (do not wait for article render)
+  scheduleAdSense();
+  window.addEventListener('load', () => scheduleAdSense());
+  
+  // console.log('[ARTIKEL] Fetching article from API...', lookup);
+   
+  // 4.3: laad 1 artikel op basis van id/slug
+  setState("loading");
+
+
+
+    (async () => {
+      try {
+        setState("loading");
+
+        if (!articleId) {
+          console.error('[ARTIKEL] Missing id param');
+          setState('error');
+          return;
+        }
+
+        // Small start delay to avoid racing backend during pipeline/cache refresh
+        await sleep(250);
+
+        const url = `${API_BASE}/api/news/${encodeURIComponent(articleId)}?nocache=${Date.now()}`;
+        console.log('[ARTIKEL] Fetching article by id:', articleId);
+
+        const json = await fetchJsonWithRetry(url, { tries: 3, timeoutMs: 6000 });
+        const article = json && (json.item ? json.item : json);
+
+        if (!article || !article.title) throw new Error('Invalid payload: missing article');
+
+        const currentImg = resolveImageUrl(
+          article.image || article.image_path || article.imageUrl || article.imageURL || null
+        );
+
+        if (!currentImg) {
+          const fallbackImg = await fetchArticleListImageById(articleId);
+          if (fallbackImg) {
+            article.image = fallbackImg;
+          }
+        }
+
+        console.log('[ARTIKEL] ✅ Article found via API:', article.title);
+        const ok = displayArticle(article);
+        setState(ok ? 'content' : 'error');
+
+        if (ok) {
+          // Ensure ad slots are visible before pushing
+          scheduleAdSense();
+        }
+      } catch (err) {
+        console.error('[ARTIKEL] ❌ Failed to load article:', err);
+        setState('error');
+      } finally {
+        // Guarantee: if content is showing, error/loader are always hidden
+        if (elContent.style.display !== 'none') {
+          elError.style.display = 'none';
+          elLoading.style.display = 'none';
+        }
+      }
+    })();
+  
+  function displayArticle(article) {
+    console.log('[ARTIKEL] Displaying article:', article.title);
+
+    // Normalize fields and strip any source/publisher mentions (HLN, VI.nl, Sporza, etc.)
+    const toText = (v) => {
+      if (Array.isArray(v)) {
+        return v
+          .map(x => (typeof x === "string" ? x : (x && typeof x === "object" ? (x.text || x.content || x.body || "") : "")))
+          .filter(Boolean)
+          .join("\n\n");
+      }
+      return typeof v === "string" ? v : (v == null ? "" : String(v));
+    };
+
+    const stripSources = (s) => {
+      let out = String(s || "");
+
+      // Remove common publisher/source tokens and lines that are only a source name
+      const FORBIDDEN = [
+        "HLN","VI.nl","VI","Sporza","NOS","VoetbalPrimeur","Voetbalkrant","AD","De Telegraaf","Telegraaf",
+        "NRC","Belga","VRT","Het Laatste Nieuws","hln.be","nos.nl","sporza.be","vi.nl","voetbalprimeur",
+        "MSN","msn","MSN Nieuws","msn.com","msn.nl"
+      ];
+
+      // Remove explicit patterns like "Bron:" / "Volgens" / "via" lines
+      out = out
+        .replace(/^\s*(bron|bron:|volgens|via)\s*[:\-].*$/gim, "")
+        .replace(/\b(volgens|bron|via)\b\s*[:\-]?\s*(hln|vi\.nl|vi|sporza|nos|ad|telegraaf|belga|vrt|msn|msn\.com)\b/gi, "")
+        .replace(/\s*\((hln|vi\.nl|sporza|nos|ad|telegraaf|belga|vrt|msn|msn\.com)\)\s*/gi, " ");
+
+      for (const src of FORBIDDEN) {
+        out = out.replace(new RegExp(`\\b${src.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}\\b`, "gi"), "");
+      }
+
+      // Case-sensitive AD removal (avoid matching "ad" in regular text)
+          out = out.replace(/\bAD\b/g, "");
+
+          // Remove lines that are just 1-3 words (often a source) after stripping
+      out = out
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => {
+          if (!line) return false;
+          const words = line.split(/\s+/).filter(Boolean);
+          // drop tiny leftover lines like "HLN"
+          if (words.length <= 3 && line.length <= 20) return false;
+          return true;
+        })
+        .join("\n");
+
+      return out.replace(/\n{3,}/g, "\n\n").replace(/\s{2,}/g, " ").trim();
+    };
+
+    // Normalize country code for flags.
+    // Prefer backend country if valid; otherwise infer from canonical_url hostname.
+    function normalizeCountryCode(raw, url) {
+      const ALLOWED = new Set(["BE","NL","DE","FR","ES","IT","UK","INT"]);
+
+      const c0 = String(raw || "").trim().toUpperCase();
+      if (c0 === "GB") return "UK";
+      if (ALLOWED.has(c0)) return c0;
+
+      const u = String(url || "").trim();
+      if (!u) return "INT";
+
+      try {
+        const host = new URL(u).hostname.toLowerCase();
+        if (host.endsWith(".be")) return "BE";
+        if (host.endsWith(".nl")) return "NL";
+        if (host.endsWith(".de")) return "DE";
+        if (host.endsWith(".fr")) return "FR";
+        if (host.endsWith(".es")) return "ES";
+        if (host.endsWith(".it")) return "IT";
+        if (host.endsWith(".uk") || host.endsWith(".co.uk")) return "UK";
+      } catch (e) {
+        // ignore URL parse errors
+      }
+
+      return "INT";
+    }
+
+    const countryLabel = (cc) => {
+      const c = String(cc || "").trim().toUpperCase();
+      if (c === "BE") return "België";
+      if (c === "NL") return "Nederland";
+      if (c === "DE") return "Duitsland";
+      if (c === "FR") return "Frankrijk";
+      if (c === "ES") return "Spanje";
+      if (c === "IT") return "Italië";
+      if (c === "UK") return "Verenigd Koninkrijk";
+      return "Internationaal";
+    };
+
+    function flagHtml(cc) {
+      const c = String(cc || "").trim().toUpperCase();
+      const FLAG_SRC = {
+        BE: "/assets/img/sources/flag-be.svg",
+        NL: "/assets/img/sources/flag-nl.svg",
+        DE: "/assets/img/sources/flag-de.svg",
+        FR: "/assets/img/sources/flag-fr.svg",
+        ES: "/assets/img/sources/flag-es.svg",
+        IT: "/assets/img/sources/flag-it.svg",
+        UK: "/assets/img/sources/flag-uk.svg",
+        INT: "/assets/img/sources/flag-int.svg",
+      };
+
+      const src = FLAG_SRC[c] || FLAG_SRC.INT;
+      const alt = countryLabel(c);
+
+      return `
+        <img
+          class="v4a-flag__img"
+          src="${src}"
+          alt="${alt}"
+          width="18"
+          height="12"
+          loading="lazy"
+          decoding="async"
+        />
+      `.trim();
+    }
+
+    
+    const title = article.title || 'Voetbal4All Artikel';
+    document.getElementById('page-title').textContent = title + ' - Voetbal4All';
+
+        // Dynamic canonical URL
+        let canonicalEl = document.querySelector('link[rel="canonical"]');
+        if (!canonicalEl) {
+          canonicalEl = document.createElement('link');
+          canonicalEl.rel = 'canonical';
+          document.head.appendChild(canonicalEl);
+        }
+        canonicalEl.href = window.location.href;
+    document.getElementById('og-title').setAttribute('content', title);
+    document.getElementById('page-description').setAttribute('content', article.snippet || '');
+    document.getElementById('og-description').setAttribute('content', article.snippet || '');
+    
+    const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
+    document.getElementById('breadcrumb-title').textContent = shortTitle;
+    document.getElementById('article-title').textContent = title;
+    document.getElementById('article-caption').textContent = 'Voetbal4All · ' + (article.country || 'Nieuws');
+    
+    const type = article._meta?.type === 'merged' ? 'Samengesteld (' + (article._meta?.sourceCount || 0) + ' bronnen)' : 'Artikel';
+    document.getElementById('article-type').textContent = type;
+    
+    const countryEl = document.getElementById('article-country');
+    const cc0 = String(article.country || "").trim().toUpperCase();
+    const cc = normalizeCountryCode(cc0, article.canonical_url || article.url || article.link);
+
+    countryEl.style.display = '';
+    countryEl.innerHTML = `<span class="v4a-flag" aria-hidden="true">${flagHtml(cc)}</span>&nbsp;${countryLabel(cc)}`;
+    
+    if (article.publishedAt) {
+      const date = new Date(article.publishedAt);
+      const formatted = date.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+      document.getElementById('article-date').textContent = formatted;
+    }
+    
+    // --- Image: support string OR object + prefix backend base for /images/... ---
+    const imageEl = document.getElementById('article-image');
+    const imgUrl = resolveImageUrl(article.image || article.image_path || article.imageUrl || article.imageURL) || buildProxyImageFromTitle(title);
+    const fallbackUrl = inlineSvgPlaceholderDataUri(title);
+
+    // Always show an image element: real image if present, otherwise inline SVG placeholder.
+    // This prevents white/empty gaps and avoids backend placeholder routes.
+    imageEl.style.display = "block";
+    imageEl.alt = title;
+    imageEl.loading = "eager";
+    imageEl.decoding = "async";
+    imageEl.referrerPolicy = "no-referrer";
+    // Ensure CSS fallback state matches actual src
+    imageEl.classList.add('is-empty');
+
+    if (imgUrl) {
+      imageEl.classList.remove('is-empty');
+      imageEl.src = imgUrl;
+      imageEl.setAttribute("fetchpriority", "high");
+      document.getElementById('og-image').setAttribute('content', imgUrl);
+    } else {
+      imageEl.classList.add('is-empty');
+      imageEl.src = fallbackUrl;
+      imageEl.removeAttribute("fetchpriority");
+      document.getElementById('og-image').setAttribute('content', fallbackUrl);
+    }
+
+    imageEl.onerror = function(){
+      // If the real image fails (502/cold start/404), fall back to inline SVG
+      this.onerror = null;
+      this.alt = title;
+      this.classList.add('is-empty');
+      this.src = fallbackUrl;
+      this.removeAttribute("fetchpriority");
+      document.getElementById('og-image').setAttribute('content', fallbackUrl);
+    };
+
+    // If the resolved URL is an SVG (rare), keep hero from becoming too tall
+    if (imgUrl && String(imgUrl).toLowerCase().includes('.svg')) imageEl.style.maxHeight = '320px';
+    
+    const standfirstEl = document.getElementById('article-standfirst');
+    const cleanStandfirst = stripSources(toText(article.snippet || article.standfirst || article.summary || ""));
+    if (cleanStandfirst) {
+      standfirstEl.textContent = cleanStandfirst;
+    } else {
+      standfirstEl.style.display = 'none';
+    }
+    
+    const bodyEl = document.getElementById('article-body');
+    bodyEl.innerHTML = "";
+
+    let cleanBody = stripSources(toText(article.body || article.content || article.text || ""));
+      cleanBody = repairTruncatedNames(cleanBody, title);
+    const finalBody = cleanBody || cleanStandfirst || "";
+
+    if (!finalBody || !String(finalBody).trim()) {
+      // If the article body is still empty after cleaning, do not hard-fail.
+      // Render a minimal fallback so users don't see a false "not available" state.
+      console.warn("[ARTIKEL] Empty body after cleaning; rendering fallback message.");
+
+      // Hide share buttons when there is no real article text
+      const share = document.querySelector('.share-buttons');
+      if (share) share.style.display = 'none';
+      const shareTitle = document.querySelector('.share-section-title');
+      if (shareTitle) shareTitle.style.display = 'none';
+
+      // Show a friendly placeholder message in the body
+      bodyEl.innerHTML = '';
+      const p = document.createElement('p');
+      p.textContent = 'Dit artikel wordt nog verwerkt. Probeer het later opnieuw.';
+      bodyEl.appendChild(p);
+
+      // Continue rendering the page (do not trigger error-state)
+      return true;
+    }
+
+    // Show share buttons if valid article
+    const share = document.querySelector('.share-buttons');
+    if (share) share.style.display = '';
+    const shareTitle = document.querySelector('.share-section-title');
+    if (shareTitle) shareTitle.style.display = '';
+
+    // Prefer paragraphs split by blank lines; fallback to single-line splits
+    let paragraphs = finalBody
+      .split(/\n{2,}/)
+      .map(p => p.trim())
+      .filter(Boolean);
+
+    if (paragraphs.length <= 1) {
+      paragraphs = finalBody
+        .split(/\n+/)
+        .map(p => p.trim())
+        .filter(Boolean);
+    }
+
+    let inlineAdToggle = 0;
+    paragraphs.forEach((text, index) => {
+      const p = document.createElement("p");
+      p.textContent = text;
+      bodyEl.appendChild(p);
+
+      // Na elke 10 paragrafen: AdSense
+      if ((index + 1) % 10 === 0) {
+        const adWrapper = document.createElement("div");
+        adWrapper.className = "inline-ad-wrapper";
+
+        adWrapper.innerHTML = `
+          <div class="inline-ad-label">Ga verder onder de advertentie</div>
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="${inlineAdToggle++ % 2 === 0 ? '5142420468' : '3829338794'}"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+          <!-- AdSense init is triggered in JS after content is visible -->
+        `;
+
+        bodyEl.appendChild(adWrapper);
+        scheduleAdSense();
+      }
+    });
+    
+    const tagsEl = document.getElementById('article-tags');
+    if (article.tags && article.tags.length > 0) {
+      tagsEl.innerHTML = article.tags.slice(0, 10).map(tag => '<span class="article-tag">' + tag + '</span>').join('');
+    } else {
+      tagsEl.style.display = 'none';
+    }
+    
+    const _aid = new URLSearchParams(window.location.search).get("id");
+            const articleUrl = _aid ? "https://www.voetbal4all.eu/share/article/" + _aid + "/" : window.location.href;
+    const encodedUrl = encodeURIComponent(articleUrl);
+    const encodedTitle = encodeURIComponent(title);
+    const fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+    document.getElementById('share-facebook').href = fbUrl;
+
+    const xUrl = 'https://x.com/intent/post?url=' + encodedUrl + '&text=' + encodedTitle;
+    document.getElementById('share-x').href = xUrl; 
+
+    const waUrl = 'https://wa.me/?text=' + encodedTitle + '%20' + encodedUrl;
+    document.getElementById('share-whatsapp').href = waUrl;
+    
+    const liUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodedUrl;
+    document.getElementById('share-linkedin').href = liUrl;
+    
+    setupCopyButton('share-copy', 'copy-text', articleUrl);
+
+      // Instagram share: copy link and notify user
+      const igBtn = document.getElementById('share-instagram');
+      if (igBtn) {
+        igBtn.addEventListener('click', function() {
+          navigator.clipboard.writeText(articleUrl).then(function() {
+            igBtn.textContent = 'Link gekopieerd!';
+            setTimeout(function() { igBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram'; }, 2000);
+          });
+        });
+      }
+    
+    console.log('[ARTIKEL] ✅ Article fully displayed');
+    return true;
+  }
+  
+  function setupCopyButton(btnId, textId, url) {
+    const btn = document.getElementById(btnId);
+    const textEl = document.getElementById(textId);
+    if (!btn || !textEl) return;
+
+    btn.addEventListener('click', async function() {
+      try {
+        await navigator.clipboard.writeText(url);
+        textEl.textContent = '✓ Gekopieerd!';
+        setTimeout(() => { textEl.textContent = 'Kopieer link'; }, 2000);
+      } catch (err) {
+        alert('Kon link niet kopiëren');
+      }
+    });
+  }
+window.addEventListener('resize', () => {
+  // In case slots were hidden/width=0 at first render
+  scheduleAdSense();
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "leagueKey": "BE1",
+      "status": "LIVE",
+      "minute": 67,
+      "home": "Anderlecht",
+      "away": "Club Brugge",
+      "homeGoals": 1,
+      "awayGoals": 0
+    },
+    {
+      "leagueKey": "NL1",
+      "status": "HT",
+      "minute": 45,
+      "home": "Ajax",
+      "away": "PSV",
+      "homeGoals": 0,
+      "awayGoals": 1
+    }
+  ]
+}

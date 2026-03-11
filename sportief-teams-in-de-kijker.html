@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Team/Medewerker in de kijker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    /* Team/Medewerker in de kijker: make description textarea rectangular */
+    .v4-textarea{
+      border-radius: 0px !important; /* rectangular */
+      min-height: 140px;
+      height: auto;
+      resize: vertical;
+      line-height: 1.5;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    /* Spotlight cards: 2 per row + stretch (responsive) */
+    #spotlight-list{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){
+      #spotlight-list{ grid-template-columns: 1fr; }
+    }
+    #spotlight-list .card{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+<!-- ================= LIVE BANNER ================= -->
+<section class="live-banner-top">
+  <div class="shell">
+    <div class="live-banner">
+      <div class="live-label"><span class="live-dot"></span>Live score</div>
+      <div class="live-text">
+        <span class="live-text-main"></span>
+        <div class="live-updated"></div>
+      </div>
+      <div class="live-socials">
+        <div class="live-socials-label">Volg ons</div>
+        <div class="live-socials-icons"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HEADER AD ================= -->
+<section class="section-main" style="padding:10px 0;">
+  <div class="shell">
+    <div class="ad-slot ad-slot-header">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-4062633211824348"
+        data-ad-slot="1817736209"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main>
+<section class="section-main">
+<div class="shell">
+
+  <article class="card" style="margin-bottom:12px;">
+    <div class="card-header">
+      <div>
+        <div class="card-caption">Sportief</div>
+        <div class="card-title">Team/Medewerker in de kijker</div>
+      </div>
+      <span class="pill-small">6 maanden zichtbaar</span>
+    </div>
+    <p class="note">
+      In deze rubriek zetten we teams, jeugdploegen, trainers, coördinatoren of clubmedewerkers
+      extra in de kijker. Elk verhaal blijft standaard 6 maanden online.
+    </p>
+  </article>
+
+  <div class="v4-layout-sidebar">
+
+    <!-- LINKS -->
+    <div class="v4-content">
+
+      <!-- FILTERS -->
+      <div class="search-bar search-bar--advanced" style="margin-bottom:14px;">
+        <input id="spotlight-search-text" class="search-input" type="text"
+               placeholder="Zoek op club, team, medewerker of titel..." />
+        <div class="search-filters-row">
+          <select id="spotlight-filter-country" class="search-select">
+            <option value="">Land (alles)</option>
+            <option value="BE">🇧🇪 België</option>
+            <option value="NL">🇳🇱 Nederland</option>
+          </select>
+          <select id="spotlight-filter-type" class="search-select">
+            <option value="">Type (alles)</option>
+            <option value="Team">Team</option>
+            <option value="Medewerker">Medewerker</option>
+            <option value="Project">Project</option>
+          </select>
+          <select id="spotlight-filter-month" class="search-select">
+            <option value="">Maand (alles)</option>
+            <option value="01">Januari</option>
+            <option value="02">Februari</option>
+            <option value="03">Maart</option>
+            <option value="04">April</option>
+            <option value="05">Mei</option>
+            <option value="06">Juni</option>
+            <option value="07">Juli</option>
+            <option value="08">Augustus</option>
+            <option value="09">September</option>
+            <option value="10">Oktober</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CARDS -->
+      <section class="v4a-card-list v4a-card-grid" id="spotlight-list">
+        <!-- bestaande demo-cards kan je hier behouden -->
+      </section>
+
+    </div>
+
+    <!-- RECHTS -->
+    <aside class="v4-sidebar">
+      <div class="v4-sidebar-sticky">
+
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Advertentie</div>
+              <div class="card-title">Partners & projecten</div>
+            </div>
+          </div>
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="5032068814"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+          <script>try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}</script>
+        </article>
+
+        <!-- AANMELDEN (GRATIS) -->
+        <article class="card" id="spotlightFormCard">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Gratis aanmelden</div>
+              <div class="card-title">Team/Medewerker in de kijker</div>
+            </div>
+            <span class="pill-small">Bevestiging via e-mail</span>
+          </div>
+
+          <p class="note" style="margin-top:2px;">
+            Vul het formulier in. Je ontvangt een e-mail om de aanvraag te bevestigen.
+            Na bevestiging blijft je item 6 maanden zichtbaar op Voetbal4All.
+          </p>
+
+          <form id="spotlightForm" style="margin-top:12px;">
+            <div class="form-grid" style="display:grid;gap:10px;">
+
+              <label>
+                <span class="note">Type *</span>
+                <select id="spotlightType" name="type" class="search-select" required>
+                  <option value="" selected>Kies…</option>
+                  <option value="Team">Team</option>
+                  <option value="Medewerker">Medewerker</option>
+                  <option value="Project">Project</option>
+                </select>
+              </label>
+
+              <label>
+                <span class="note">Titel / naam *</span>
+                <input id="spotlightTitle" name="subject" class="search-input" type="text" required
+                  placeholder="Bijv. U15 in de kijker / Coördinator jeugd / Project…" />
+              </label>
+
+              <label>
+                <span class="note">Club / organisatie</span>
+                <input id="spotlightClub" name="club" class="search-input" type="text"
+                  placeholder="Bijv. KFC …" />
+              </label>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                <label>
+                  <span class="note">Land *</span>
+                  <select id="spotlightCountry" name="country" class="search-select" required>
+                    <option value="" selected>Kies…</option>
+                    <option value="BE">🇧🇪 België</option>
+                    <option value="NL">🇳🇱 Nederland</option>
+                  </select>
+                </label>
+                <label>
+                  <span class="note">Stad</span>
+                  <input id="spotlightCity" name="city" class="search-input" type="text" placeholder="Bijv. Geel" />
+                </label>
+              </div>
+
+              <label>
+                <span class="note">Omschrijving *</span>
+                <textarea id="spotlightBody" name="body" class="search-input v4-textarea" required rows="6"
+                  placeholder="Korte, duidelijke omschrijving. Wat wil je in de kijker zetten? Waarom is dit bijzonder?"></textarea>
+              </label>
+
+              <label>
+                <span class="note">Contact e-mail *</span>
+                <input id="spotlightEmail" name="email" class="search-input" type="email" required
+                  placeholder="Bijv. info@club.be" />
+              </label>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+                <label>
+                  <span class="note">Telefoon (optioneel)</span>
+                  <input id="spotlightPhone" name="phone" class="search-input" type="text" placeholder="+32 …" />
+                </label>
+                <label>
+                  <span class="note">Website / link (optioneel)</span>
+                  <input id="spotlightLink" name="link" class="search-input" type="url" placeholder="https://…" />
+                </label>
+              </div>
+
+              <label>
+                <span class="note">Foto / logo (optioneel)</span>
+                <input id="spotlightPhoto" name="photo" type="file" accept="image/*" style="width:100%;" />
+              </label>
+
+              <label style="display:flex;gap:10px;align-items:flex-start;">
+                <input id="spotlightConsent" type="checkbox" required style="margin-top:3px;" />
+                <span class="note" style="opacity:.95;">Ik bevestig dat ik de rechten heb om deze inhoud en eventuele foto te delen via Voetbal4All.</span>
+              </label>
+
+              <button type="submit" class="nav-cta" style="width:100%;justify-content:center;">
+                Verzenden
+              </button>
+
+              <div id="spotlightFormStatus" class="note" style="display:none;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(11,16,32,.35);"></div>
+            </div>
+          </form>
+        </article>
+
+      </div>
+    </aside>
+
+  </div>
+
+</div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+        <div class="footer-legal">
+          &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+          <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+          <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+        </div>
+      </div>
+      <div class="footer-ad">FOOTER ADVERTENTIE</div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  (function initSpotlightForm(){
+    const form = document.getElementById('spotlightForm');
+    if (!form) return;
+
+    const statusEl = document.getElementById('spotlightFormStatus');
+    const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
+    // Backend route for Team/Medewerker in de kijker
+    // Some environments may still point to an older route name; we try primary first and fall back.
+    const ENDPOINT_PRIMARY = API_BASE + '/api/forms/team-in-de-kijker-submission';
+    const ENDPOINT_FALLBACK = API_BASE + '/api/forms/spotlight-submission';
+
+    function setStatus(msg, isError){
+      if (!statusEl) return;
+      statusEl.style.display = '';
+      statusEl.textContent = msg;
+      statusEl.style.borderColor = isError ? 'rgba(255,90,90,.35)' : 'rgba(120,255,140,.25)';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      try {
+        setStatus('Bezig met verzenden…', false);
+
+        const fd = new FormData();
+        fd.append('subject', (document.getElementById('spotlightTitle')?.value || '').trim());
+        fd.append('body', (document.getElementById('spotlightBody')?.value || '').trim());
+        fd.append('type', (document.getElementById('spotlightType')?.value || '').trim());
+        fd.append('club', (document.getElementById('spotlightClub')?.value || '').trim());
+        fd.append('country', (document.getElementById('spotlightCountry')?.value || '').trim());
+        fd.append('city', (document.getElementById('spotlightCity')?.value || '').trim());
+        fd.append('email', (document.getElementById('spotlightEmail')?.value || '').trim());
+        fd.append('phone', (document.getElementById('spotlightPhone')?.value || '').trim());
+        fd.append('link', (document.getElementById('spotlightLink')?.value || '').trim());
+
+        const photo = document.getElementById('spotlightPhoto')?.files?.[0];
+        if (photo) fd.append('photo', photo, photo.name);
+
+        // backend uses route-specific kind; keep a stable marker in payload fields
+        fd.append('form_kind', 'team-in-de-kijker');
+
+        // Try primary endpoint first, then fallback if the backend returns a classic Express “Cannot POST …” (404).
+        let r = await fetch(ENDPOINT_PRIMARY, { method: 'POST', body: fd });
+        let j = await r.json().catch(() => null);
+
+        if (!r.ok) {
+          // Fallback if the primary endpoint is not available yet.
+          const isCannotPost = (j == null) && (r.status === 404);
+          if (isCannotPost) {
+            r = await fetch(ENDPOINT_FALLBACK, { method: 'POST', body: fd });
+            j = await r.json().catch(() => ({}));
+          }
+        }
+        if (!r.ok || !j || j.ok === false) {
+          const msg = (j && (j.userMessage || j.error)) ? String(j.userMessage || j.error) : 'Verzenden mislukt.';
+          setStatus(msg, true);
+          return;
+        }
+
+        const sid = j.id || j.sid || '';
+        setStatus('Aanvraag ontvangen. Controleer je e-mail om te bevestigen.', false);
+
+        // Redirect to bedankt page (consistent UX)
+        const url = `bedankt.html?source=team-in-de-kijker&sid=${encodeURIComponent(sid)}`;
+        window.location.href = url;
+      } catch (err) {
+        setStatus('Er ging iets mis bij het verzenden. Probeer opnieuw.', true);
+      }
+    });
+  })();
+
+  (function initSpotlightSearch(){
+    const listEl = document.getElementById('spotlight-list');
+    if (!listEl) return;
+
+    const qEl = document.getElementById('spotlight-search-text');
+    const countryEl = document.getElementById('spotlight-filter-country');
+    const typeEl = document.getElementById('spotlight-filter-type');
+    const monthEl = document.getElementById('spotlight-filter-month');
+
+    // If the controls are missing, do nothing.
+    if (!qEl || !countryEl || !typeEl || !monthEl) return;
+
+    function norm(s){ return String(s || '').trim().toLowerCase(); }
+
+    function getCardData(card){
+      // Prefer data-* attributes if present (future-proof), else fallback to text
+      const dc = norm(card.getAttribute('data-country') || card.dataset.country);
+      const dt = norm(card.getAttribute('data-type') || card.dataset.type);
+      const dclub = norm(card.getAttribute('data-club') || card.dataset.club);
+      const dcity = norm(card.getAttribute('data-city') || card.dataset.city);
+      const ddate = norm(card.getAttribute('data-date') || card.dataset.date);
+      const text = norm(card.textContent);
+
+      return { country: dc, type: dt, club: dclub, city: dcity, date: ddate, text };
+    }
+
+    function matchesMonth(d, mm){
+      if (!mm) return true;
+      // Try to match month against data-date like YYYY-MM-DD or DD/MM/YYYY or text fallback.
+      const m = String(mm).padStart(2, '0');
+      if (d.date) {
+        if (/\d{4}-\d{2}-\d{2}/.test(d.date)) return d.date.slice(5,7) === m;
+        if (/\d{2}\/\d{2}\/\d{4}/.test(d.date)) return d.date.slice(3,5) === m;
+      }
+      // Fallback: look for common month names in text (nl)
+      const t = d.text;
+      const monthNames = {
+          '01': 'januari', '02': 'februari', '03': 'maart', '04': 'april',
+          '05': 'mei', '06': 'juni', '07': 'juli', '08': 'augustus',
+          '09': 'september', '10': 'oktober', '11': 'november', '12': 'december'
+        };
+        if (monthNames[m]) return t.includes(monthNames[m]);
+        return true;
+    }
+
+    function apply(){
+      const q = norm(qEl.value);
+      const fc = norm(countryEl.value);
+      const ft = norm(typeEl.value);
+      const fm = norm(monthEl.value);
+
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      let shown = 0;
+
+      cards.forEach(card => {
+        const d = getCardData(card);
+
+        const okCountry = !fc || d.country === fc || d.text.includes(fc);
+        const okType = !ft || d.type === ft || d.text.includes(ft);
+        const okMonth = matchesMonth(d, fm);
+
+        // Query searches in club/city/text, so users can find on club + stad too.
+        const okQuery = !q || d.club.includes(q) || d.city.includes(q) || d.text.includes(q);
+
+        const ok = okCountry && okType && okMonth && okQuery;
+        card.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+
+      // Optional: keep the UX clean if no cards
+      if (cards.length > 0 && shown === 0) {
+        listEl.setAttribute('data-empty', '1');
+      } else {
+        listEl.removeAttribute('data-empty');
+      }
+    }
+
+    // Debounced typing
+    let t = null;
+    function schedule(){
+      clearTimeout(t);
+      t = setTimeout(apply, 120);
+    }
+
+    qEl.addEventListener('input', schedule);
+    countryEl.addEventListener('change', apply);
+    typeEl.addEventListener('change', apply);
+    monthEl.addEventListener('change', apply);
+
+    apply();
+
+    // Re-apply if cards are injected later
+    const mo = new MutationObserver(() => apply());
+    mo.observe(listEl, { childList: true, subtree: true });
+  })();
+
+  (function initSpotlightAnchors(){
+    const listEl = document.getElementById('spotlight-list');
+    if (!listEl) return;
+
+    function applyAnchors(){
+      const cards = Array.from(listEl.querySelectorAll('.card'));
+      cards.forEach((card, idx) => {
+        const anchorId = `spotlight-${idx + 1}`;
+        if (!card.id) card.id = anchorId;
+
+        // Make the title clickable to the anchor (no extra buttons)
+        const titleEl = card.querySelector('.card-title');
+        if (!titleEl) return;
+
+        // If already linked, leave as-is
+        if (titleEl.querySelector('a')) return;
+
+        const text = titleEl.textContent || '';
+        titleEl.textContent = '';
+
+        const a = document.createElement('a');
+        a.href = `#${card.id}`;
+        a.style.color = 'inherit';
+        a.style.textDecoration = 'none';
+        a.textContent = text.trim();
+        titleEl.appendChild(a);
+      });
+    }
+
+    applyAnchors();
+
+    // Re-apply if cards are injected later
+    const mo = new MutationObserver(() => applyAnchors());
+    mo.observe(listEl, { childList: true, subtree: true });
+  })();
+</script>
+<script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+</body>
+</html>

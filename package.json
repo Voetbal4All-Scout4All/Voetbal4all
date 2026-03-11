@@ -1,0 +1,27 @@
+{
+  "name": "voetbal4all-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:news": "node scripts/build-news.mjs",
+    "dev:scout": "vite --config vite.config.js",
+    "build:scout": "vite build --config vite.config.js",
+    "preview:scout": "vite preview --config vite.config.js",
+    "copy-static": "node scripts/copy-static.mjs",
+    "build": "npm run build:scout && npm run copy-static"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "axios": "^1.7.7",
+    "i18next": "^23.15.1",
+    "react-i18next": "^15.0.2",
+    "i18next-browser-languagedetector": "^8.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

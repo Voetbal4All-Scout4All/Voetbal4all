@@ -1,0 +1,17 @@
+.env
+.env.local
+.DS_Store
+backend/
+dist/
+
+# local deps
+node_modules/
+
+package-lock.json
+
+# local helper scripts
+*.sh
+
+_backup_brand_fix_*/
+assets/img/brand/*.png
+assets/img/brand/*oud*.png

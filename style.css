@@ -1,0 +1,2980 @@
+/* =======================
+   BASIS & THEMA
+   ======================= */
+
+:root {
+  --bg: #050814;
+  --bg-soft: #0b1022;
+  --bg-softer: #10162a;
+  --accent: #18a0fb;
+  --accent-soft: rgba(24, 160, 251, 0.2);
+  --logo-blue: #18a0fb;
+  --logo-cyan: #00d4ff;
+  --logo-fuchsia: #ff2bd6;
+  --logo-orange: #ff7a18;
+  --glass-bg: rgba(11, 16, 34, 0.55);
+  --glass-bg-soft: rgba(11, 16, 34, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
+  --text: #f4f6fc;
+  --muted: #9aa3c1;
+  --danger: #ff3366;
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+  --shadow-subtle: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Volledige hoogte voor footer-layout */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #18213d 0, #050814 45%, #020308 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =======================
+   V4A – GLOBAL PAGE BACKGROUND WATERMARK (fixed, non-scrolling)
+   - Stays behind all content
+   - Full width/height
+   - Adjustable transparency without affecting layout
+   ======================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image: url("/assets/img/brand/Voetbal4All-Page-Background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* Keep it visible but never hurt readability */
+  opacity: 0.16;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+@media (max-width: 600px) {
+  body::before {
+    opacity: 0.13;
+
+    /* Mobiel: schermvullend */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    /* Mobiel: voorkom buggy "fixed" gedrag */
+    background-attachment: scroll;
+  }
+}
+
+
+
+a { color: inherit; text-decoration: none; }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Pagina-structuur zodat footer onderaan blijft */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* ensure content sits above the fixed background watermark */
+  z-index: 1;
+}
+
+main { flex: 1 0 auto; }
+footer { margin-top: auto; }
+
+.shell {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* =======================
+   NAVBAR + DROPDOWNS
+   ======================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 8, 20, 0.93),
+    rgba(5, 8, 20, 0.85),
+    transparent
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* NAVBAR: professioneel 3-zone layout */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo links blijft zoals hij is */
+.brand {
+  flex-shrink: 0;
+}
+
+/* Navigatie exact gecentreerd tussen logo en CTA */
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 14px;
+}
+
+/* CTA exact rechts, uitgelijnd met bannerbox */
+.nav-cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.brand--logo-only { gap: 0; }
+
+/* Logo (houdt ratio correct + vult navbar bijna volledig) */
+/* NAVBAR LOGO — visueel groter ZONDER layout impact */
+  .brand-logo{
+    height: 88px;              /* layout-anker: NIET verhogen */
+    width: auto;
+    display: block;
+    object-fit: contain;
+
+    /* visueel groter + verder naar links, zonder layout te duwen */
+    transform: translateX(-56px) scale(1.72);
+    transform-origin: left center;
+  }
+
+@media (max-width: 600px){
+  .brand-logo{
+    height: 64px;
+    transform: translateX(-24px) scale(1.28);
+    transform-origin: left center;
+  }
+}
+
+/* Forceer logo look op alle pagina's (defensief) */
+.navbar .brand-logo {
+  background: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .navbar-inner { height: 58px; }
+  .brand-logo { height: 64px; }
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 10%, #ffffff 0, #ffd86f 18%, #ff3366 50%, #050814 100%);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brand-text-main {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 18px;
+}
+
+.brand-text-sub {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.nav-link {
+  color: var(--muted);
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.nav-link--active {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* CTA in navbar */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #18a0fb, #00d4ff);
+  color: #020308;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 12px 26px rgba(0, 212, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.nav-cta span:last-child {
+  font-size: 11px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* Burger */
+.nav-burger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 22px;
+}
+
+/* Dropdown structuren */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item--dropdown .nav-link--dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--muted);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-item--dropdown .nav-link--dropdown:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.nav-link-caret {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* Dropdown menu */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 6px;
+  min-width: 240px;
+  border-radius: 14px;
+  background: rgba(5, 8, 20, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.65);
+  padding: 6px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+  z-index: 60;
+}
+
+.nav-dropdown-link {
+  display: block;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.nav-dropdown-link:hover {
+  background: rgba(24, 160, 251, 0.12);
+  color: var(--text);
+}
+
+/* Tonen bij hover / focus (desktop) */
+.nav-item--dropdown:hover .nav-dropdown,
+.nav-item--dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* =======================
+   LIVE BANNER
+   ======================= */
+
+.live-banner-top { margin-top: 4px; }
+
+.live-banner {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 255, 157, 0.4);
+  background:
+    radial-gradient(circle at left, rgba(0, 255, 157, 0.18), transparent 55%),
+    rgba(2, 12, 6, 0.92);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: nowrap;
+  min-width: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+  /* voor update overlay */
+  position: relative;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.live-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7dfccb;
+  white-space: nowrap;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #00ff9d;
+  box-shadow: 0 0 14px rgba(0, 255, 157, 0.9);
+}
+
+.live-label-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.live-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--muted);
+
+  /* Desktop: center the (no-live / live) message vertically & visually in the banner */
+  display: flex;
+  flex-direction: row;      /* prevent “column” baseline/top bias */
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* center within available middle space */
+}
+
+.live-text-main { display: block; }
+
+/* Update badge (overlay, centraal boven de banner) */
+.live-banner .live-updated {
+  position: absolute;
+  top: 0;               /* bovenzijde badge = bovenzijde banner */
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+
+  color: #ff5a7a;
+  background: rgba(5, 8, 20, 0.98);
+  border: 1px solid rgba(255, 90, 122, 0.85);
+
+  box-shadow:
+    0 0 10px rgba(255, 90, 122, 0.55),
+    0 0 22px rgba(255, 90, 122, 0.35);
+
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Ticker container */
+.live-text-ticker {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 28px;
+  min-width: 0; /* belangrijk voor flex layouts op Windows/Chromium */
+}
+
+/* Marquee track via JS variabelen (start buiten rechts, eind buiten links) */
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  will-change: transform;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+
+  transform: translateX(var(--live-marquee-start, 100%));
+  animation: liveMarqueeVars var(--live-marquee-duration, 20s) linear infinite;
+}
+
+
+@keyframes liveMarqueeVars {
+  from { transform: translateX(var(--live-marquee-start, 100%)); }
+  to   { transform: translateX(var(--live-marquee-end, -100%)); }
+}
+
+/* Socials rechts */
+.live-socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-left: 8px;
+}
+
+.live-socials-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #7dfccb;
+  white-space: nowrap;
+  opacity: 0.9;
+  line-height: 1;
+}
+
+.live-socials-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-social {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 255, 157, 0.60);
+  background: rgba(1, 10, 6, 0.85);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #7dfccb;
+  animation: liveSocialPulse 7s ease-in-out infinite;
+  transition: transform 160ms ease, filter 160ms ease, opacity 160ms ease;
+  opacity: 0.9;
+}
+
+.live-social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* altijd groen */
+}
+
+.live-social:hover {
+  transform: translateY(-1px);
+  filter: drop-shadow(0 0 7px rgba(0, 255, 157, 0.30));
+}
+
+@keyframes liveSocialPulse {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(0, 255, 157, 0.18)); }
+  50%      { filter: drop-shadow(0 0 6px rgba(0, 255, 157, 0.26)); }
+}
+
+/* =======================
+   SECTIONS & LAYOUT
+   ======================= */
+
+.section-main { padding: 18px 0; }
+.home-intro { padding-top: 14px; }
+
+.lower-grid-layout {
+  display: grid;
+  gap: 16px;
+}
+
+/* Grid helpers */
+.lower-grid-layout.grid-2 {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+}
+
+.lower-grid-layout.grid-3 {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.lower-grid-layout.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Kleine typografie helpers */
+.page-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.page-sub {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 540px;
+}
+
+.page-label,
+.card-caption {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+/* Kolommen in grid (home) */
+.column-middle,
+.column-right {
+  display: grid;
+  gap: 12px;
+  min-width: 0; /* cruciaal: voorkomt dat content de kolom ‘open duwt’ */
+}
+
+/* Zorg dat grid items binnen de kolommen nooit buiten hun kolom renderen */
+.column-middle > *,
+.column-right > * {
+  min-width: 0;
+}
+
+/* Home/kaart titels & meta: breek woorden i.p.v. over de sidebar te lopen */
+.home-news__title,
+.v4a-card-title,
+.v4a-card-meta,
+.card-title {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* AdSense: voorkom overlap/overflow in cards en kolommen */
+.ad-slot,
+.ad-infeed,
+.ad-vertical {
+  overflow: hidden;
+}
+
+.ad-slot ins.adsbygoogle,
+.ad-infeed ins.adsbygoogle,
+.ad-vertical ins.adsbygoogle {
+  max-width: 100%;
+  width: 100% !important;
+}
+
+/* Weekendlijst (events blok) */
+.weekend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.weekend-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.weekend-item a { color: var(--accent); }
+
+/* Artikellijst */
+.article-list {
+  display: grid;
+  gap: 10px;
+}
+
+.article-item { margin: 0; }
+
+/* =======================
+   KAARTEN & LIJSTEN
+   ======================= */
+
+.card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+  padding: 14px 14px 12px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pill-small {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--muted);
+}
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+/* Event/overzichtslijsten */
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 6px;
+  display: grid;
+  gap: 6px;
+}
+
+.event-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.event-title { font-weight: 500; }
+.event-meta { font-size: 12px; color: var(--muted); }
+
+.event-link {
+  font-size: 12px;
+  color: var(--accent);
+  display: inline-flex;
+  margin-top: 4px;
+}
+
+/* HOME: left column event cards must grow with content (10 events / 30 days)
+   Targeted via extra class so premium cards are NOT affected. */
+   .home-events-card{
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .home-events-card .weekend-list,
+  .home-events-card .events-list{
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .home-events-card .weekend-list,
+  .home-events-card .events-list{
+    max-height: none;
+    overflow: visible;
+  }
+  
+  .home-events-card .event-item{
+    height: auto;
+  }
+
+/* =======================
+   BUTTONS
+   ======================= */
+
+.btn-primary {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #18a0fb, #00d4ff);
+  color: #020308;
+  box-shadow: 0 16px 36px rgba(0, 212, 255, 0.55);
+}
+
+.btn-secondary {
+  padding: 8px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: rgba(2, 3, 8, 0.65);
+  color: var(--muted);
+}
+
+.btn-ghost-sm {
+  padding: 5px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(2, 3, 8, 0.75);
+  font-size: 11px;
+  cursor: pointer;
+}
+/* =======================
+   LIVE BANNER – MOBILE FIX
+   ======================= */
+   @media (max-width: 600px) {
+
+    /* Live tekst volledig binnen banner laten starten */
+    .live-text {
+      width: 100%;
+      align-items: flex-start;
+    }
+  
+    /* Social icons onderaan gecentreerd */
+    .live-socials {
+      width: 100%;
+      margin-top: 10px;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .live-socials-label {
+      display: none; /* label weglaten op mobiel */
+    }
+  }
+/* Jouw advertentie-knop (home) */
+.btn-advert {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #18a0fb, #00d4ff);
+  color: #020308;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1.1;
+  box-shadow: 0 14px 32px rgba(0, 212, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+}
+
+.btn-advert .sub {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+/* =======================
+   AD ZONES (GENERIC)
+   ======================= */
+
+/* Generieke ad container (voor non-AdSense placeholders) */
+.ad-slot {
+  margin: 10px auto;
+  max-width: 1100px;
+  opacity: 0.96;
+}
+
+/* Header-ad onder live banner, gewoon in de flow (niet sticky) */
+.sticky-ad-header {
+  position: static;
+  background: transparent;
+  padding: 2px 0;
+}
+
+/* Sidebar ad wrapper (rechts) */
+.ad-vertical {
+  margin-top: 12px;
+  border-radius: 14px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.ad-size {
+  font-size: 10px;
+  margin-top: 3px;
+  opacity: 0.8;
+  display: block;
+}
+
+.ad-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.v4a-placeholder {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 18px 10px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+   min-height: 250px ;
+}
+
+/* Verberg lege AdSense slots om "gaten" te vermijden */
+.adsbygoogle[data-ad-status="unfilled"] {
+  display: none !important;
+}
+
+/* Home/Artikel-kaarten (compact) */
+.home-article-card--compact {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.home-article-media-thumb {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.home-article-media-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.home-article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 auto;
+}
+
+.home-article-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.flag-badge {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =======================
+   FLAGS – SINGLE SOURCE OF TRUTH (ALL PAGES)
+   Gebruik overal lokale SVG/PNG/WebP uit: /assets/img/sources/
+   - Geen emoji flags (OS-afhankelijk)
+   - Geen inline SVG varianten per pagina
+   ======================= */
+
+   .v4a-flag{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:0 0 auto;
+    line-height:1;
+    vertical-align:middle;
+  }
+  
+  .v4a-flag__img{
+    display:block;
+    height:14px;
+    width:auto;
+    border-radius:3px;
+    object-fit:cover;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.12);
+  }
+  
+  /* iets groter voor globe (INT) */
+  .v4a-flag--int .v4a-flag__img{
+    height:16px;
+  }
+  
+  /* Meta-rijen altijd op 1 lijn */
+  .v4a-card-meta,
+  .article-meta-row,
+  .flag-inline{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    white-space:nowrap;
+  }
+
+  /* Legacy/compat: als er nog oude classes in HTML staan */
+  img.flag-icon{
+    display:block;
+    height:14px;
+    width:auto;
+    border-radius:3px;
+    object-fit:cover;
+    box-shadow:0 0 0 1px rgba(255,255,255,0.12);
+  }
+  
+  img.flag-icon.flag-icon--int{
+    height:16px;
+  }
+
+.article-meta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.article-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.article-title a { color: var(--text); }
+.article-title a:hover { text-decoration: underline; }
+
+.article-excerpt {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.source-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px;
+}
+
+/* =======================
+   SEARCH & FILTERS
+   ======================= */
+
+.search-bar {
+  border-radius: var(--radius-lg);
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+  padding: 10px 12px;
+  display: grid;
+  gap: 8px;
+}
+
+/* Premium filter card (professional glass) */
+.search-bar--advanced{
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+
+  /* clean glass (no neon ring) */
+  background:
+    radial-gradient(120% 140% at 50% 45%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 42%, transparent 70%),
+    rgba(11, 16, 34, 0.62);
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 18px 44px rgba(0,0,0,0.58),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+}
+
+/* subtle top highlight line */
+.search-bar--advanced::before{
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 8px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* very soft edge tint (premium, not flashy) */
+.search-bar--advanced::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 12% 30%, rgba(24,160,251,0.10), transparent 55%),
+    radial-gradient(circle at 88% 40%, rgba(255,122,24,0.08), transparent 58%),
+    radial-gradient(circle at 55% 85%, rgba(255,43,214,0.06), transparent 60%);
+
+  opacity: 0.55;
+}
+
+.search-input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(2, 3, 8, 0.8);
+  color: var(--text);
+  font-size: 13px;
+  padding: 7px 11px;
+}
+
+.search-input::placeholder { color: var(--muted); }
+
+.search-select {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(2, 3, 8, 0.9);
+  color: var(--text);
+  font-size: 13px;
+  padding: 7px 11px;
+}
+
+.search-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.v4-filterbar{
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+
+  background:
+    radial-gradient(120% 140% at 50% 45%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 42%, transparent 70%),
+    rgba(11, 16, 34, 0.62);
+
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow:
+    0 18px 44px rgba(0,0,0,0.58),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(14px);
+}
+
+/* Premium highlight + soft tint */
+.v4-filterbar::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.10), transparent 40%),
+    radial-gradient(circle at 12% 30%, rgba(24,160,251,0.10), transparent 55%),
+    radial-gradient(circle at 88% 40%, rgba(255,122,24,0.08), transparent 58%),
+    radial-gradient(circle at 55% 85%, rgba(255,43,214,0.06), transparent 60%);
+
+  opacity: 0.7;
+}
+
+.v4-filterbar__inner{
+  position: relative;
+  z-index: 1;
+  padding: 14px 14px 12px;
+  display: grid;
+  gap: 10px;
+}
+
+/* Layout row */
+.v4-filterrow{
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+/* EVENTS: EXACTLY 2 ROWS
+   - row 1: search (full width)
+   - row 2: ALL dropdowns side-by-side (country/province/type/gender/month)
+*/
+.v4-filterrow--events{
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+/* Search group spans full width */
+.v4-filterrow--events .v4-filtergroup:first-child{
+  grid-column: 1 / -1 !important;
+}
+
+/* All dropdown groups share the remaining row equally (5 items = 2 cols each) */
+.v4-filterrow--events .v4-filtergroup:not(:first-child){
+  grid-column: span 2 !important;
+}
+
+@media (max-width: 1100px){
+  .v4-filterrow--events{
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .v4-filterrow--events .v4-filtergroup:first-child{
+    grid-column: 1 / -1 !important;
+  }
+  .v4-filterrow--events .v4-filtergroup:not(:first-child){
+    grid-column: span 3 !important; /* 2 per row */
+  }
+}
+
+@media (max-width: 600px){
+  .v4-filterrow--events{
+    grid-template-columns: 1fr;
+  }
+  .v4-filterrow--events .v4-filtergroup{
+    grid-column: auto !important;
+  }
+}
+
+/* Group (label + control) */
+.v4-filtergroup{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.v4-filterlabel{
+  font-size: 11px;
+  color: rgba(244,246,252,0.82);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.v4-filterhint{
+  font-size: 12px;
+  color: rgba(154,163,193,0.92);
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Inputs/selects: pill with subtle internal highlight + slight rim */
+.v4-input,
+.v4-select{
+  width: 100%;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background:
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,0.10), transparent 55%),
+    rgba(2,3,8,0.78);
+  color: var(--text);
+  font-size: 13px;
+  padding: 10px 14px;
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.10),
+    0 10px 22px rgba(0,0,0,0.35);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.v4-input::placeholder{ color: rgba(154,163,193,0.88); }
+
+/* Make selects feel less “native” while staying safe */
+.v4-select{
+  appearance: none;
+  -webkit-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(244,246,252,0.78) 50%),
+    linear-gradient(135deg, rgba(244,246,252,0.78) 50%, transparent 50%),
+    radial-gradient(circle at 12% 10%, rgba(255,255,255,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(2,3,8,0.84), rgba(2,3,8,0.72));
+  background-position:
+    calc(100% - 18px) 18px,
+    calc(100% - 13px) 18px,
+    0 0,
+    0 0;
+  background-size:
+    6px 6px,
+    6px 6px,
+    100% 100%,
+    100% 100%;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+.v4-input:focus,
+.v4-select:focus{
+  border-color: rgba(24,160,251,0.60);
+  box-shadow:
+    0 0 0 3px rgba(24,160,251,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 14px 30px rgba(0,0,0,0.45);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px){
+  .v4-filterbar__inner{ padding: 12px 12px 10px; }
+  .v4-input, .v4-select{ height: 46px; }
+}
+
+/* Bridge existing “search-bar” styling to the premium look
+   (safe: only visual; keeps existing structure) */
+.search-bar{
+  background:
+    radial-gradient(circle at 18% 12%, rgba(24,160,251,0.12), transparent 55%),
+    radial-gradient(circle at 82% 18%, rgba(255,43,214,0.10), transparent 60%),
+    radial-gradient(circle at 72% 84%, rgba(255,122,24,0.08), transparent 60%),
+    var(--glass-bg);
+  border: 1px solid var(--glass-border);
+}
+
+.search-input,
+.search-select{
+  height: 44px;
+  padding: 10px 14px;
+  border-color: var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.search-input:focus,
+.search-select:focus{
+  outline: none;
+  border-color: rgba(24,160,251,0.55);
+  box-shadow:
+    0 0 0 3px rgba(24,160,251,0.16),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+}
+
+/* =======================
+   FORMULIEREN
+   ======================= */
+
+.form-card {
+  border-radius: var(--radius-lg);
+  background: var(--bg-soft);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-subtle);
+  padding: 18px 20px 16px;
+  margin-bottom: 18px;
+  max-width: 900px;
+}
+
+.form-card--compact { font-size: 12px; }
+
+.form-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.form-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.form-section {
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.form-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 2px;
+}
+
+.form-section-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 8px 14px;
+}
+
+.form-grid--2cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.form-label .required {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.form-label small {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(2, 3, 8, 0.85);
+  color: var(--text);
+  font-size: 12px;
+  padding: 6px 9px;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder { color: var(--muted); }
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  font-size: 12px;
+}
+
+.form-checkbox-row label { cursor: pointer; }
+
+.form-helper {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.form-actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Pill checkbox (land/positie, enz.) */
+.pill-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 9px;
+  font-size: 12px;
+  cursor: pointer;
+  background: rgba(2, 3, 8, 0.75);
+}
+
+.pill-checkbox input { accent-color: var(--accent); }
+
+/* Kleine vlag bij land */
+.flag-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+/* =======================
+   FOOTER
+   ======================= */
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: radial-gradient(circle at top, #141a33 0, #050814 55%, #020308 100%);
+  padding-top: 18px;
+  padding-bottom: 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+  gap: 16px;
+  align-items: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-legal {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.footer-social-link {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--muted);
+}
+
+.footer-social-link:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.footer-ad {
+  border-radius: var(--radius-lg);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  text-align: center;
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-burger { display: block; }
+
+  .lower-grid-layout.grid-2,
+  .lower-grid-layout.grid-3,
+  .lower-grid-layout.grid-4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .v4a-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .v4a-card-grid { grid-template-columns: minmax(0, 1fr); }
+  .form-grid--2cols { grid-template-columns: minmax(0, 1fr); }
+
+  .live-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-article-card--compact { gap: 8px; }
+
+  .home-article-media-thumb {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Mobile nav correct onder lagere navbar */
+  .nav-links { top: 58px; }
+}
+
+/* =========================
+   ADSENSE – UNIFORM & COMPACT
+   Header + In-feed identiek
+   ========================= */
+
+.ad-slot-header,
+.ad-infeed {
+  margin: 2px auto !important;
+  padding: 0 !important;
+  max-width: 1000px;
+  opacity: 0.92;
+  display: flex;
+  justify-content: center;
+  max-height: 120px;  overflow: hidden;
+}
+
+.ad-slot-header ins.adsbygoogle,
+.ad-infeed ins.adsbygoogle {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  border-radius: 12px;
+}
+
+/* Global safety: keep AdSense responsive, but avoid Safari clipping */
+ins.adsbygoogle{
+  display:block !important;
+  width:100% !important;
+  max-width:100% !important;
+  overflow:visible !important; /* critical: prevents Safari from clipping iframe creatives */
+}
+
+ins.adsbygoogle iframe{
+  max-width:100% !important;
+}
+
+/* In-feed wrapper should behave like a normal block in the middle column */
+.ad-slot-infeed{
+  margin: 16px 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+.ad-slot-header iframe,
+.ad-infeed iframe { max-width: 100% !important; }
+
+.ad-slot-header,
+.ad-infeed,
+.ad-slot-header *,
+.ad-infeed * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+@media (min-width: 900px) {
+  .ad-slot-header,
+  .ad-infeed {
+    max-width: 920px;
+  }
+}
+
+/* =======================
+   MOBILE NAV (burger menu) — SINGLE SOURCE
+   ======================= */
+
+   @media (max-width: 900px) {
+    /* nav default dicht */
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 58px;              /* altijd onder de mobile navbar */
+      left: 0;
+      right: 0;
+      padding: 12px 16px 16px;
+      background: rgba(5, 8, 20, 0.98);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      z-index: 500;           /* lager dan burger (1000) */
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    /* open toestand */
+    .nav-links.is-open { display: flex; }
+  
+    /* dropdown menu: op mobiel niet hover-based */
+    .nav-item--dropdown .nav-dropdown {
+      position: static;
+      margin-top: 8px;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      display: none;          /* dicht tot .is-open op item */
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(2, 3, 8, 0.55);
+    }
+  
+    /* hover/focus gedrag uitschakelen op mobiel */
+    .nav-item--dropdown:hover .nav-dropdown,
+    .nav-item--dropdown:focus-within .nav-dropdown {
+      display: none;
+    }
+  
+    /* Alleen tonen via JS class */
+    .nav-item--dropdown.is-open .nav-dropdown { display: block; }
+  
+    /* dropdown button: volledige breedte */
+    .nav-item--dropdown .nav-link--dropdown {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+/* =======================
+   V4: CONTENT LINKS + STICKY SIDEBAR RECHTS
+   (template voor veel pagina’s)
+   ======================= */
+
+.v4-layout-sidebar{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px; /* content + sidebar */
+  gap: 16px;
+  align-items: start;
+}
+
+.v4-sidebar-sticky{
+  position: sticky;
+  top: 92px; /* onder navbar + wat spacing */
+}
+
+@media (max-width: 900px){
+  .v4-layout-sidebar{
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .v4-sidebar-sticky{
+    position: static;
+    top: auto;
+  }
+}
+
+/* =======================
+   Artikels: onder elkaar (stack) + mooi “row” kaartje
+   ======================= */
+
+.v4a-card-list--stack{
+  display: grid;
+  grid-template-columns: 1fr !important;
+  gap: 10px;
+}
+
+/* =======================
+   ARTIKELS (artikels.html) – laat watermark licht doorkomen
+   Scoped: enkel binnen de artikellijst-stack
+   ======================= */
+
+
+.v4a-card-list--stack .card,
+.v4a-card-list--stack .v4a-card {
+  /* iets transparanter zodat de achtergrond (watermark) subtiel zichtbaar wordt */
+  background: rgba(11, 16, 34, 0.42) !important; /* meer transparant */
+  backdrop-filter: blur(10px);
+}
+
+/* Outer overview card on artikels.html wraps #article-list.
+   We use :has() so we do NOT touch global .card styling. */
+@supports selector(.card:has(#article-list)) {
+  .card:has(#article-list) {
+    background: rgba(11, 16, 34, 0.18) !important;
+    backdrop-filter: blur(6px);
+  }
+
+  /* Force transparency on the *actual* rendered list rows inside #article-list */
+  .card:has(#article-list) #article-list > *,
+  .card:has(#article-list) #article-list > * > *,
+  .card:has(#article-list) .v4a-card,
+  .card:has(#article-list) .v4a-card--row,
+  .card:has(#article-list) .article-item,
+  .card:has(#article-list) .article-list > * {
+    background-color: rgba(11, 16, 34, 0.14) !important;
+    background-image: none !important;
+  }
+
+  /* If the row is an <a> link wrapper, ensure it doesn't stay opaque */
+  .card:has(#article-list) #article-list a {
+    background-color: transparent !important;
+  }
+
+  /* Pagination container card (if present) */
+  .card:has(#pagination) {
+    background: rgba(11, 16, 34, 0.50) !important;
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Artikelkaart als horizontale rij (bronlogo links, tekst rechts) */
+.v4a-card--row{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.v4-source-thumb{
+  width: 54px;
+  height: 54px;
+}
+
+.v4-source-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Mobile: kaart wordt verticaler */
+@media (max-width: 600px){
+  .v4a-card--row{
+    flex-direction: column;
+  }
+  .v4-source-thumb{
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Sidebar sticky ad: beetje ademruimte */
+.v4-ad-sticky{
+  overflow: visible;
+}
+
+/* =======================
+   Live banner: op niet-home pagina’s verbergen op mobiel
+   - Index.html: geen class => banner blijft zichtbaar op mobiel
+   - Andere pagina’s: body krijgt class "v4-hide-live-mobile"
+   ======================= */
+@media (max-width: 600px) {
+  body.v4-hide-live-mobile .live-banner-top {
+    display: none !important;
+  }
+}
+
+/* Live banner: socials altijd klikbaar boven andere lagen */
+.live-socials {
+  position: relative;
+  z-index: 5;
+}
+
+.live-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* =======================
+   V4: LEGAL 3-COLUMN LAYOUT
+   - sticky AdSense links en rechts
+   ======================= */
+
+.v4-legal-3col{
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 200px; /* left ad | content | right ad */
+  gap: 16px;
+  align-items: start;
+}
+
+.v4-legal-sticky{
+  position: sticky;
+  top: 92px; /* onder navbar */
+}
+
+.v4-legal-ad{
+  min-width: 160px;
+  max-width: 200px;
+}
+
+.v4-legal-ad ins.adsbygoogle{
+  display: block;
+  min-height: 250px; /* cruciaal */
+}
+
+.v4-legal-ad .ad-slot{
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+@media (max-width: 1100px){
+  .v4-legal-3col{
+    grid-template-columns: 180px minmax(0, 1fr) 180px;
+  }
+}
+
+/* Tablet: toon 1 zij-ad (links), verberg rechts */
+@media (max-width: 900px){
+  .v4-legal-3col{
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+  .v4-legal-3col > aside:last-of-type{
+    display: none;
+  }
+}
+
+/* Enkel op mobiel alles verbergen */
+@media (max-width: 600px){
+  .v4-legal-3col{
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .v4-legal-ad{
+    display: none;
+  }
+}
+
+/* Vermijd layout shift (CLS) */
+.ad-slot-header { min-height: 90px; }
+.v4-ad-sticky, .v4-legal-ad { min-height: 250px; }
+
+/* =========================
+   ADSENSE – MIN HEIGHTS
+   (voorkomt CLS & verhoogt viewability)
+   ========================= */
+
+/* Header / banner advertenties */
+.ad-slot-header {
+  min-height: 90px;
+}
+
+/* Sticky sidebar advertenties */
+.v4-ad-sticky,
+.v4-sidebar-sticky .adsbygoogle,
+.v4-legal-ad {
+  min-height: 250px;
+}
+
+/* In-feed / in-article advertenties */
+.ad-slot-infeed {
+  min-height: 180px;
+}
+
+/* =========================
+   CLS FIXES – GLOBAL
+   ========================= */
+
+/* Live banner: reserveer ruimte zodat JS-invulling niet “springt” */
+.live-banner { min-height: 64px; }
+.live-text-main { display: inline-block; min-width: 240px; }
+.live-updated { min-height: 16px; }
+.live-socials-icons { display:flex; gap:10px; min-width: 130px; min-height: 24px; }
+
+/* Header ad: reserveer stabieler (minder 0px→hoogte) */
+.ad-slot-header { min-height: 110px; }
+
+/* Sidebar/legal ad containers: reserveer stabiele hoogte */
+.v4-legal-ad,
+.v4-sidebar .ad-slot,
+.v4-sidebar ins.adsbygoogle,
+.v4-legal-ad ins.adsbygoogle,
+.v4a-placeholder {
+  display: block;
+  min-height: 250px;
+}
+
+/* Sticky container zelf ook stabiel */
+.v4-sidebar-sticky { min-height: 260px; top: 92px; }
+
+/* (Als je in-feed ads gebruikt) */
+.ad-slot-infeed { min-height: 180px; }
+
+/* =========================
+   CLS FIXES – DESKTOP RESERVE
+   ========================= */
+@media (min-width: 901px){
+  /* Sidebar: reserveer 300x600 zodat de pagina niet verspringt */
+  .v4-sidebar-sticky,
+  .v4-sidebar ins.adsbygoogle,
+  .v4a-placeholder{
+    min-height: 600px;
+  }
+}
+
+@media (min-width: 901px){
+  /* Header ad kan op desktop groter worden; reserveer zodat het niet verspringt */
+  .ad-slot-header{
+    min-height: 120px;
+  }
+}
+
+/* =========================
+   CLS FIXES – MOBILE INDEX
+   ========================= */
+@media (max-width: 600px){
+  /* Header ad: reserveer extra hoogte tegen auto-resize */
+  .ad-slot-header{
+    min-height: 90px;
+  }
+
+  /* Sponsor / banner blokken op mobile */
+  .banner-box,
+  .hero-sponsor,
+  .sponsor-box{
+    min-height: 120px;
+  }
+}
+
+/* =========================
+   CLS FIXES – CARD / IMAGE STABILITY
+   ========================= */
+
+/* Voorkom dat images de layout later doen verschuiven */
+img {
+  height: auto;
+}
+
+/* Als je thumbnails/afbeeldingen in kaarten gebruikt */
+.card img,
+.article-card img,
+.event-card img,
+.card-media img {
+  width: 100%;
+  display: block;
+}
+
+/* Reserveer altijd ruimte voor media in cards (werkt ook als sommige selectors niet bestaan) */
+.card-media,
+.article-thumb,
+.event-thumb,
+.thumb,
+.card-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* Zorg dat de afbeelding netjes de gereserveerde ruimte vult */
+.card-media img,
+.article-thumb img,
+.event-thumb img,
+.thumb img,
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Home B: rustige hero + keuzes eronder */
+.home-hero-min .hero-card { max-width: 980px; margin: 0 auto; }
+.hero-cta-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
+
+.quick-grid .quick-card { text-decoration:none; display:block; transition: transform .12s ease; }
+.quick-grid .quick-card:hover { transform: translateY(-2px); }
+
+.quick-kicker { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .75; }
+.quick-title { font-size: 18px; font-weight: 700; margin-top: 6px; }
+
+.quick-card--highlight { border: 1px solid rgba(24,160,251,.45); }
+
+@media (max-width: 900px){
+  .home-hero-min .hero-card { max-width: 100%; }
+}
+@media (max-width: 700px){
+  .hero-cta-row { flex-direction: column; }
+}
+
+/* ----------------------------
+   HOOFDSPONSOR – COMPACTE VERSIE
+   ---------------------------- */
+
+.home-sponsor-band .sponsor-card {
+  padding: 14px 18px;          /* was veel groter via .card */
+}
+
+.home-sponsor-band .card-header {
+  margin-bottom: 6px;
+}
+
+.home-sponsor-band .card-title {
+  font-size: 18px;             /* kleiner, maar nog premium */
+  line-height: 1.2;
+}
+
+.home-sponsor-band .card-caption {
+  font-size: 11px;
+  letter-spacing: .08em;
+}
+
+.home-sponsor-band .note {
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.home-sponsor-band .v4a-placeholder {
+  min-height: 90px;            /* ⬅️ BELANGRIJK: hoogte beperken */
+  padding: 10px;
+  font-size: 13px;
+}
+
+.home-sponsor-band .ad-size {
+  font-size: 11px;
+  opacity: .65;
+}
+
+/* Mobile: nog compacter */
+@media (max-width: 700px) {
+  .home-sponsor-band .sponsor-card {
+    padding: 12px 14px;
+  }
+
+  .home-sponsor-band .v4a-placeholder {
+    min-height: 70px;
+  }
+}
+
+/* =======================
+   MOBILE NAV + HEADER FIX (SINGLE SOURCE OF TRUTH)
+   - menu standaard dicht (ook als JS faalt)
+   - burger altijd klikbaar
+   - dropdowns klikbaar (via .is-open uit nav-mobile.js)
+   - CTA links op mobiel, nooit over logo
+   ======================= */
+
+/* Desktop/algemeen: support “click-open” dropdown (JS toggelt .is-open) */
+.nav-item--dropdown.is-open .nav-dropdown{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px){
+
+  .navbar-inner{
+    position: relative;
+  }
+
+  /* Burger altijd zichtbaar en boven alle lagen */
+  .nav-burger{
+    display: block;
+    position: absolute;
+    right: max(12px, env(safe-area-inset-right));
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    pointer-events: auto;
+  }
+
+  /* Mobile panel: standaard dicht */
+  .nav-links{
+    display: none !important;   /* hard dicht (voorkomt open bij load) */
+    position: absolute;
+    top: 58px;                  /* onder mobile navbar */
+    left: 0;
+    right: 0;
+    padding: 12px 16px 16px;
+    background: rgba(5, 8, 20, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    z-index: 900;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    pointer-events: auto;
+  }
+
+  .nav-links.is-open{
+    display: flex !important;
+  }
+
+  /* Links/buttons in panel full width */
+  .nav-links .nav-item,
+  .nav-links .nav-link,
+  .nav-links .nav-link--dropdown{
+    width: 100%;
+  }
+
+  /* Dropdowns: op mobiel enkel via class (geen hover) */
+  .nav-item--dropdown .nav-dropdown{
+    position: static;
+    margin-top: 8px;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+
+    display: none;              /* dicht tot .is-open */
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(2, 3, 8, 0.55);
+  }
+
+  .nav-item--dropdown:hover .nav-dropdown,
+  .nav-item--dropdown:focus-within .nav-dropdown{
+    display: none;
+  }
+
+  .nav-item--dropdown.is-open .nav-dropdown{
+    display: block;
+  }
+
+  .nav-item--dropdown .nav-link--dropdown{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 600px){
+
+  .navbar-inner{
+    height: 58px;
+  }
+
+  /* Logo exact midden */
+  .brand.brand--logo-only{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  /* CTA links, compact, onder burger qua z-index */
+  .navbar .nav-cta,
+  .navbar .btn-adverteer{
+    position: absolute;
+    left: max(12px, env(safe-area-inset-left));
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;                 /* lager dan burger */
+
+    max-width: 34vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    padding: 5px 9px;
+    font-size: 11px;
+    line-height: 1;
+    box-shadow: none;
+  }
+}
+
+.article-thumb{
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   HOME – COMPACT ARTICLE THUMBNAILS (FINAL)
+   ================================ */
+
+   .home-articles .article-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .home-articles .article-thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: 0 0 auto;
+  }
+  
+  .home-articles h4 {
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0;
+  }
+  
+  .home-articles img:not(.article-thumb) {
+    display: none;
+  }
+
+  .home-news__link{
+    display:flex;
+    gap:14px;
+    align-items:center;
+    min-width:0;
+  }
+  
+  .home-news__thumbWrap{
+    width:96px;
+    height:64px;
+    border-radius:12px;
+    overflow:hidden;
+    flex:0 0 auto;
+    background: rgba(255,255,255,0.06);
+  }
+  
+  .home-news__thumb{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .home-news__meta{
+    min-width:0;
+    flex:1 1 auto;
+    position: relative; /* nodig om vlag in titelregel te positioneren */
+  }
+
+  /* Forceer vlag VISUEEL in dezelfde titelregel, zonder overflow naar de rechterkolom */
+.home-news__meta .v4a-flag,
+.home-news__meta .flag-inline,
+.home-news__meta img.flag-icon{
+  position: absolute;
+  left: 0;
+  top: 2px;
+  margin: 0;
+  line-height: 1;
+}
+
+.home-news__meta .v4a-flag__img,
+.home-news__meta img.flag-icon{
+  height: 12px;
+  width: 18px;
+  object-fit: cover;
+}
+
+/* Reserveer horizontale ruimte voor de vlag in de titel zelf */
+.home-news__meta .home-news__title{
+  padding-left: 26px;
+  max-width: 100%;
+}
+
+  .home-news__title{
+    white-space:normal;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    min-width:0;
+  }
+  
+  /* Title rows must be allowed to wrap to avoid overlapping the right column */
+  .home-news__titleRow{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    white-space:normal;
+    flex-wrap:wrap;
+    min-width:0;
+  }
+  
+  .is-fallback {
+    object-fit: cover;
+    opacity: 0.95;
+  }
+
+  /* HOME – latest articles: slightly less bold titles (index.html) */
+  #latest-news-grid .home-news__title,
+  #latest-news-grid .home-news__titleRow .home-news__title,
+  #latest-news-grid h4.home-news__title {
+    font-weight: 200;
+  }
+
+  /* ==============================
+   HOME – FIX GRID STRUCTURE
+   ============================== */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 300px;
+  gap: 16px;
+  align-items: start;
+}
+
+/* Kolommen */
+.column-left,
+.column-middle,
+.column-right {
+  min-width: 0; /* voorkomt overlopen van titels */
+}
+
+/* Ads mogen nooit breken */
+.adsbygoogle,
+.ad-slot,
+.ad-infeed,
+.ad-vertical {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Titels mogen niet onder rechterkolom vallen */
+.home-news__title,
+.v4a-card-title,
+.card-title {
+  word-break: break-word;
+}
+
+/* Quick cards – 2 kolommen */
+.quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* HOME – Quick cards + standings naast elkaar */
+.home-quick-standings-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap:14px;
+  align-items:stretch;
+}
+
+.home-col-stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-width:0;
+}
+
+.home-standings-card{
+  min-width:0;
+}
+
+/* Tablet */
+@media (max-width: 1100px){
+  .home-quick-standings-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .home-quick-standings-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* === HOME TOP GRID – FINAL OVERRIDE (4 cols, hero spans 2) === */
+.home-top-grid{
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 1.6fr) minmax(0, 1fr) !important;
+  gap: 14px !important;
+  align-items: start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  row-gap: 10px !important;
+}
+
+.hero-card--span2{
+  grid-column: 2 / span 2 !important;
+  grid-row: 1 !important;
+  width: 100% !important;
+}
+
+.home-standings--nl{
+  grid-column: 1 !important;
+  grid-row: 1 / span 2 !important;
+  align-self: start !important;
+  justify-self: stretch !important;
+}
+
+.home-standings--be{
+  grid-column: 4 !important;
+  grid-row: 1 / span 2 !important;
+  align-self: start !important;
+  justify-self: stretch !important;
+}
+
+.home-stack--left{
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  min-width: 0 !important;
+}
+
+.home-stack--right{
+  grid-column: 3 !important;
+  grid-row: 2 !important;
+  min-width: 0 !important;
+}
+
+/* Only stack on smaller screens; 1100px was too aggressive and caused the “everything under each other” issue */
+@media (max-width: 900px){
+  .home-top-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-card--span2,
+  .home-standings--nl,
+  .home-standings--be,
+  .home-stack--left,
+  .home-stack--right{
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+
+/* ================================
+   HOME – STANDINGS (SINGLE SOURCE)
+   - compact rows
+   - small logos
+   - show 6 teams (no clipping)
+   ================================ */
+
+/* Card must not clip the 6th row */
+.home-standings-card{
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 360px; /* header + 6 compacte rijen */
+}
+
+@media (max-width: 1200px){
+  .home-standings-card{ min-height: 340px; }
+}
+
+.home-standings-card .events-list{
+  margin-top: 6px;
+  max-height: none;
+  height: auto;
+  overflow: visible;
+}
+
+.home-standings-card .events-list .event-item{
+  padding: 8px 10px;
+}
+
+.home-standings-card .standings-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.home-standings-card .standings-left{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  min-width:0;
+  flex: 1 1 auto;
+}
+
+.home-standings-card .standings-ranklogo{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.home-standings-card .standings-rank{
+  font-weight:600;
+  opacity:0.9;
+  flex: 0 0 auto;
+}
+
+/* Logo klein en fixed (override globale img rules) */
+.home-standings-card .standings-logo{
+  width:16px !important;
+  height:16px !important;
+  max-width:16px !important;
+  max-height:16px !important;
+  object-fit:contain;
+  flex:0 0 16px;
+  display:block;
+}
+
+/* Clubnaam op volgende regel; max 2 lijnen */
+.home-standings-card .standings-name{
+  font-size:13px;
+  line-height:1.2;
+  opacity:0.95;
+  min-width:0;
+  overflow:hidden;
+  display:-webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.home-standings-card .standings-pts{
+  white-space: nowrap;
+  font-weight: 600;
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+/* ===============================
+   HOME – latest articles (index)
+   FIX: titles may NEVER push into the right column
+   - allow wrapping
+   - keep flag + title aligned
+   =============================== */
+.home-news__titleRow{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  min-width:0;
+  flex-wrap:wrap;
+  white-space:normal;
+}
+
+.home-news__titleRow > *{ min-width:0; }
+
+.v4a-flag{
+  display:inline-flex;
+  align-items:center;
+  flex:0 0 auto;
+}
+
+.v4a-flag__img{
+  display:block;
+  width:18px;
+  height:12px;
+  object-fit:contain;
+}
+
+.home-news__title{
+  margin:0;
+  min-width:0;
+  max-width: 100%;
+  white-space:normal;
+  overflow:visible;
+  text-overflow:clip;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+
+.ad-slot-header {
+  min-height: 90px;      /* mobiel */
+}
+
+@media (min-width: 768px) {
+  .ad-slot-header {
+        min-height: 120px; /* was 250px, reduced to match max-height */
+  }
+}
+
+.adsbygoogle {
+  overflow: visible !important;
+}
+/* === Bedankt pagina: logo bijsnijden zonder logo te beschadigen === */
+
+.thanks-logo-crop{
+  max-width: 520px;      /* zelfde schaal als eerder */
+  height: 300px;         /* bepaalt hoeveel boven/onder wordt afgesneden */
+  margin: 6px auto 18px;
+  overflow: hidden;      /* HIER gebeurt het bijsnijden */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks-logo-img{
+  width: 100%;
+  height: auto;
+  transform: translateY(+15px); 
+  /* ↑ hiermee schuif je het beeld omhoog/omlaag
+     positief = meer onderkant zichtbaar
+     negatief = meer bovenkant zichtbaar */
+}
+
+.thanks-logo-crop{
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* =======================
+   BEDANKT PAGINA – UX POLISH
+   - success / warning / error notices
+   - rustige hiërarchie
+   - geen impact op andere pagina’s
+   ======================= */
+
+.thanks-card{
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtiele ‘status glow’ op de card (alleen bedankt pagina) */
+.thanks-card::before{
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  border-radius: calc(var(--radius-lg) + 2px);
+  background: radial-gradient(circle at top left, rgba(0,255,157,0.12), transparent 55%);
+  opacity: 0.75;
+}
+
+/* Badge (als aanwezig) */
+.thanks-card .pill-small,
+.thanks-card #thanksBadge{
+  border-color: rgba(0, 255, 157, 0.28);
+  color: rgba(180, 255, 230, 0.9);
+  background: rgba(0, 255, 157, 0.06);
+}
+
+/* Notices – gedeelde basis */
+.thanks-card .notice{
+  margin-top: 12px;
+  border-radius: 14px;
+  padding: 14px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(2, 3, 8, 0.55);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+}
+
+.thanks-card .notice strong{
+  letter-spacing: 0.01em;
+}
+
+/* Warning (non-premium pending) */
+.thanks-card .notice-warning{
+  border-color: rgba(255,183,77,.35);
+  background: rgba(255,183,77,.08);
+}
+
+/* Danger (rejected/failed) */
+.thanks-card .notice-danger{
+  border-color: rgba(255, 51, 102, 0.55);
+  background:
+    radial-gradient(circle at left, rgba(255, 51, 102, 0.14), transparent 55%),
+    rgba(12, 6, 10, 0.75);
+}
+
+/* CTA binnen error notice: net iets compacter */
+.thanks-card .notice-danger .nav-cta{
+  box-shadow: 0 12px 26px rgba(255, 51, 102, 0.18);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Success icon (als aanwezig via #thanksIcon) */
+.thanks-card #thanksIcon{
+  filter: drop-shadow(0 0 10px rgba(0,255,157,0.25));
+}
+
+/* Bedankt: Success checkmark (SVG draw) */
+.thanks-card .thanks-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  height:56px;
+  margin: 0 auto 10px;
+  color: rgba(0, 255, 157, 0.95);
+}
+
+.thanks-card .checkmark{
+  width:56px;
+  height:56px;
+}
+
+.thanks-card .checkmark__circle{
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+}
+
+.thanks-card .checkmark__check{
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+}
+
+.thanks-card .thanks-icon.is-animate .checkmark__circle{
+  animation: v4-stroke 520ms ease-out forwards;
+}
+
+.thanks-card .thanks-icon.is-animate .checkmark__check{
+  animation: v4-stroke 360ms 200ms ease-out forwards;
+}
+
+@keyframes v4-stroke{
+  to { stroke-dashoffset: 0; }
+}
+
+/* Bedankt: error notice entrance (optioneel) */
+#errorNotice.is-animate{
+  animation: v4-pop 220ms ease-out both;
+}
+
+@keyframes v4-pop{
+  from { transform: translateY(-6px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .thanks-card .checkmark__circle,
+  .thanks-card .checkmark__check{
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+  #errorNotice.is-animate{
+    animation: none !important;
+  }
+}
+/* ===== EVENTS UI FINAL ===== */
+
+/* Event detail: two-column layout (support both class names to avoid regressions) */
+.event-layout,
+.ev-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Left column media container (support both class names) */
+.event-media,
+.ev-media {
+  width: 100%;
+}
+
+/* Ensure flyer/media is always fully visible (no cropping) */
+.event-media img,
+.event-media embed,
+.event-media iframe,
+.ev-media img,
+.ev-media embed,
+.ev-media iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* Images: never crop, always show full */
+.event-media img,
+.ev-media img {
+  height: auto;
+  max-height: none;
+}
+
+/* PDF flyer via <embed>: give it real height */
+.event-media embed,
+.ev-media embed {
+  height: 760px;
+}
+
+/* Maps iframe: fixed, readable height */
+.event-media iframe,
+.ev-media iframe {
+  height: 420px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .event-layout,
+  .ev-two-col {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .event-media embed,
+  .ev-media embed {
+    height: 540px;
+  }
+
+  .event-media iframe,
+  .ev-media iframe {
+    height: 320px;
+  }
+}
+
+/* ===== END EVENTS UI FINAL ===== */
+
+/* ===== EVENTS PREMIUM VISUAL (OVERVIEW) ===== */
+.premium-title-lg{
+  font-size: clamp(20px, 2.1vw, 28px);
+  line-height: 1.15;
+}
+
+/* Premium cards: stronger border + subtle glow, without changing existing grid/card layout */
+.premium-card{
+  position: relative;
+  border: 1px solid rgba(22,163,74,.55) !important;
+  background: rgba(22,163,74,.06);
+  box-shadow: 0 0 0 1px rgba(22,163,74,.18), 0 10px 28px rgba(0,0,0,.35);
+}
+
+/* Small ribbon label */
+.premium-card::before{
+  content: "PREMIUM";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.92);
+  background: rgba(22,163,74,.28);
+  border: 1px solid rgba(22,163,74,.55);
+  text-transform: uppercase;
+}
+
+/* Make premium title/meta a touch brighter for scanability */
+.premium-card .v4a-card-title{ opacity: .98; }
+.premium-card .v4a-card-meta{ opacity: .92; }
+/* ===== END EVENTS PREMIUM VISUAL (OVERVIEW) ===== */
+
+/* ===== EVENTS PREMIUM BADGE (OVERVIEW) ===== */
+.premium-card{ position: relative; }
+
+.premium-badge{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: rgba(255,255,255,.92);
+  background: rgba(22,163,74,.28);
+  border: 1px solid rgba(22,163,74,.55);
+  text-transform: uppercase;
+  z-index: 2;
+}
+/* ===== END EVENTS PREMIUM BADGE (OVERVIEW) ===== */
+
+/* =======================
+   ARTIKELS.html – FINAL GLASS OVERRIDE (highest specificity)
+   Scope: ONLY inside #article-list.
+   ======================= */
+
+/* === ARTIKELS.html – TRUE GLASS MODE === */
+#article-list.v4a-card-list--stack .v4a-card {
+  background: rgba(11, 16, 34, 0.06) !important;
+  backdrop-filter: blur(4px);
+  box-shadow: none !important;
+  border: none !important;          /* VERWIJDER KADER ROND ARTIKELS */
+}
+
+/* Kill any remaining painted wrapper layers */
+#article-list.v4a-card-list--stack *,
+#article-list.v4a-card-list--stack *::before,
+#article-list.v4a-card-list--stack *::after {
+  background-color: transparent !important;
+}
+  
+  /* Prevent inner wrappers from staying opaque */
+  #article-list.v4a-card-list--stack .v4a-card > * {
+    background-color: transparent !important;
+  }
+  
+  /* Avoid an opaque strip in the header row */
+  #article-list.v4a-card-list--stack .v4a-card .v4a-card-header {
+    background-color: transparent !important;
+  }
+
+  /* Some builds wrap each item in an <a> or use .v4a-card--row as the painted surface */
+  #article-list.v4a-card-list--stack > a,
+  #article-list.v4a-card-list--stack > a > *,
+  #article-list.v4a-card-list--stack .v4a-card--row,
+  #article-list.v4a-card-list--stack .v4a-card--row > * {
+    background-color: rgba(11, 16, 34, 0.18) !important;
+    background-image: none !important;
+  }
+
+  /* =======================
+   ARTIKELS.html – MATCH BACKGROUND TRANSPARENCY
+   Zorg dat het VELD achter de artikels even transparant is
+   ======================= */
+
+@supports selector(.card:has(#article-list)) {
+  .card:has(#article-list) {
+    background: rgba(11, 16, 34, 0.06) !important;
+    backdrop-filter: blur(4px);
+    box-shadow: none !important;
+    border: none !important;        /* VERWIJDER KADER ACHTER ARTIKELS */
+  }
+}
+
+#article-list,
+#article-list * {
+  border: none !important;
+}
+
+/* =======================
+   GLOBAL (EXCEPT INDEX) – MAIN CONTENT BLOCKS: subtle glass background
+   - Applies on all pages except index.html
+   - Only adjusts the background transparency of the main .card blocks
+   ======================= */
+
+@supports selector(body:has(.home-top-grid)) {
+  /* Exclude index.html by detecting the home grid that exists on the homepage */
+  body:not(:has(.home-top-grid)) main .card {
+    background: rgba(11, 16, 34, 0.18) !important;
+  }
+}
+
+/* Fallback (browsers without :has): keep current behavior (no global change) */
+
+/* ==========================================
+   HOME (index.html) – Left column events cards
+   - auto height (no stretching)
+   - show full lists (no internal scrolling)
+   - scoped via #home-lower-grid so no other pages change
+   ========================================== */
+
+#home-lower-grid .column-left{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  align-self:start;
+}
+
+#home-lower-grid .home-events-card{
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+}
+
+#home-lower-grid .home-events-card .weekend-list,
+#home-lower-grid .home-events-card .events-list{
+  max-height:none !important;
+  overflow:visible !important;
+}
+
+#home-lower-grid .home-events-card .note,
+#home-lower-grid .home-events-card .event-link{
+  display:block;
+}

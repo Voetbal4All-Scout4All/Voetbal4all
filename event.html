@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Event</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts + CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Leaflet (OpenStreetMap) for event map -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+    <style>
+    /* 2-column event layout */
+    .ev-two-col{ display:grid; grid-template-columns: 1.35fr 1.05fr; gap:16px; margin-top:12px; }
+    .ev-col-media{ min-width:0; }
+    .ev-col-info{ min-width:0; }
+    @media (max-width: 980px){
+      .ev-two-col{ grid-template-columns:1fr; }
+    }
+
+    /* Title + meta visual hierarchy */
+    #ev-title{
+      font-size:34px;
+      line-height:1.12;
+      font-weight:800;
+      letter-spacing:-0.02em;
+    }
+    @media (max-width: 980px){
+      #ev-title{ font-size:28px; }
+    }
+    #ev-meta{
+      opacity:0.95;
+      gap:12px;
+    }
+    #ev-meta .ev-meta-chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.10);
+      white-space:nowrap;
+    }
+    #ev-meta .ev-meta-chip .ev-ico{ opacity:.95; }
+
+    /* Media gallery */
+    .ev-media { margin:0; }
+    .ev-media-grid { display:flex; gap:10px; flex-wrap:wrap; }
+    /* Ensure flyer/media is never clipped by parent containers */
+    .ev-col-media, .event-media, .ev-media, #ev-media-grid { overflow: visible; }
+    .ev-media-grid { width:100%; }
+
+    /* Single flyer/cover should be fully visible */
+    .ev-media-hero{
+      width:100%;
+      height:auto;
+      /* Ensure the entire flyer is always visible (no cropping) */
+      object-fit:contain;
+      object-position:center;
+      /* Allow tall flyers to use available viewport height without being clipped */
+      max-height: calc(100vh - 260px);
+      background:rgba(255,255,255,0.04);
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.10);
+      cursor:pointer;
+      display:block;
+    }
+
+    /* Thumbnails for multiple media */
+    .ev-media-thumb {
+      width:140px; height:98px; object-fit: contain; border-radius:10px;
+      cursor:pointer; border:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Lightbox */
+    .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.8); display:none; z-index:9999; }
+    .lightbox.is-open { display:flex; align-items:center; justify-content:center; padding:20px; }
+    .lightbox-inner { max-width:1100px; width:100%; }
+    .lightbox-img { width:100%; height:auto; border-radius:12px; display:block; }
+    .lightbox-actions { display:flex; justify-content:flex-end; margin-bottom:10px; }
+    .lightbox-close {
+      background:#16a34a; color:#fff; border:0; border-radius:10px; padding:10px 14px;
+      cursor:pointer; font-weight:700;
+    }
+
+    /* Share icons: same visual style as live-score banner, but not managed by live-banner.js */
+    .share-socials { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .share-socials-label { font-weight:700; letter-spacing:.08em; text-transform:uppercase; opacity:.85; font-size:12px; }
+    .share-socials-icons { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  
+    /* Share icons – match live-score banner look (and force SVG to inherit currentColor) */
+    .share-socials .live-social-link{
+      width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:999px;
+      background:transparent;
+      border:1px solid rgba(22,163,74,.55);
+      box-shadow:none;
+      color:rgba(34,197,94,.95);
+      text-decoration:none;cursor:pointer;flex:0 0 auto;
+      transition:transform .12s ease,filter .12s ease,background .12s ease,box-shadow .12s ease;
+    }
+    .share-socials .live-social-link svg{width:18px;height:18px}
+    .share-socials svg{fill:none;stroke:currentColor;stroke-width:2}
+    .share-socials .fill{fill:currentColor;stroke:none}
+    .share-socials .live-social-link:hover{
+      filter:brightness(1.08);
+      transform:translateY(-1px);
+      background:transparent;
+      box-shadow:none;
+    }
+    .share-socials .live-social-link:active{transform:translateY(0)}
+    .share-socials [data-share-channel="ig"] svg{transform:scale(1.28);transform-origin:50% 50%}
+    /* Event map */
+    .ev-map-wrap { margin-top:14px; }
+    .ev-map-title { font-weight:800; margin:0 0 8px 0; }
+    #ev-map {
+      width:100%;
+      height:320px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.10);
+      overflow:hidden;
+    }
+    #ev-map iframe{
+      width:100%;
+      height:320px;
+      border:0;
+      display:block;
+    }
+
+    /* Ensure dark ghost buttons have readable text on this page */
+    .btn-ghost-sm{ color:#fff !important; }
+    .btn-ghost-sm:hover{ color:#fff !important; }
+    .btn-ghost-sm:visited{ color:#fff !important; }
+    .ev-map-fallback { opacity:.85; font-size:14px; }
+    /* External map links are kept as a hidden fallback (we embed the map on-page) */
+    .ev-map-links { margin-top:10px; display:none; gap:10px; flex-wrap:wrap; }
+    .ev-map-links a { text-decoration:none; }
+    /* Fix: contact button text should be readable (white) */
+    #ev-contact { color: #fff !important; }
+    </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+  <div class="page">
+
+    <!-- NAVBAR (zelfde structuur als events.html) -->
+    <header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- LIVE BANNER -->
+    <section class="live-banner-top">
+      <div class="shell">
+        <div class="live-banner">
+          <div class="live-label">
+            <span class="live-dot"></span>
+            Live score
+          </div>
+          <div class="live-text">
+            <span class="live-text-main"></span>
+            <div class="live-updated"></div>
+          </div>
+          <div class="live-socials" aria-label="Volg Voetbal4All op social media">
+            <div class="live-socials-label">Volg ons</div>
+            <div class="live-socials-icons"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AD: Top placement (responsive) -->
+    <section class="section-main" style="padding-top:10px; padding-bottom:0;">
+      <div class="shell">
+        <div class="footer-ad" style="margin-bottom:12px;">
+          <!-- Google AdSense unit (set your slot id) -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-4062633211824348"
+               data-ad-slot="6508500694"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section-main" style="padding-top:10px;">
+        <div class="shell">
+
+          <div class="card" style="margin-bottom:12px;">
+            <div class="card-header">
+              <div>
+                <div class="card-caption">Event detail</div>
+              </div>
+              <span class="pill-small" id="ev-pill">Sportieve events</span>
+            </div>
+
+            <div class="ev-two-col">
+              <!-- LEFT: information + actions + map -->
+              <div class="ev-col-info">
+                <div class="card-title" id="ev-title" style="margin-top:0;">Event</div>
+
+                <!-- Meta in vaste structuur (kalender, vlag, regio, stad, club) -->
+                <div class="note" id="ev-meta" style="margin-top:6px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <span class="ev-meta-chip">
+                    <span class="ev-ico" aria-hidden="true">📅</span>
+                    <span id="ev-date"></span>
+                  </span>
+                  <span id="ev-flag" aria-label="Land" title="Land"></span>
+                  <span id="ev-region" style="display:none;"></span>
+                  <span id="ev-city" style="display:none;"></span>
+                  <span id="ev-club" style="display:none;"></span>
+                </div>
+
+                <!-- AD: In-card placement (above content) -->
+                <div class="footer-ad" style="margin-top:10px;">
+                  <ins class="adsbygoogle"
+                       style="display:block"
+                       data-ad-client="ca-pub-4062633211824348"
+                       data-ad-slot="4567705393"
+                       data-ad-format="auto"
+                       data-full-width-responsive="true"></ins>
+                  <script>
+                    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                  </script>
+                </div>
+
+                <div id="ev-premium" style="display:none; margin-top:10px;">
+                  <span class="pill-small">Premium</span>
+                </div>
+
+                <div class="v4a-card-actions" style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+                  <a href="events.html" class="btn-ghost-sm" id="back-link">← Terug naar events</a>
+
+                  <div class="share-socials" aria-label="Deel dit event" style="gap:10px; align-items:center;">
+                    <div class="share-socials-label" style="margin-right:2px;">Delen</div>
+                    <div class="share-socials-icons">
+                      <a class="live-social-link" id="share-fb" href="#" target="_blank" rel="noopener noreferrer" aria-label="Deel op Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" />
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-ig" href="#" aria-label="Deel op Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/>
+                          <path d="M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                          <path d="M17.6 6.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/>
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-tt" href="#" aria-label="Deel op TikTok">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M14 3c.6 2.9 2.5 4.8 5 5v3c-2 0-3.8-.7-5-1.9V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v3.1c-.3-.2-.6-.3-1-.3a2 2 0 1 0 2 2V3h3z"/>
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-x" href="#" target="_blank" rel="noopener noreferrer" aria-label="Deel op X">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M18.9 3H21l-7.6 8.7L22 21h-6.6l-5.2-6.2L4.6 21H2.5l8.2-9.4L2 3h6.7l4.7 5.6L18.9 3zm-2.3 16h1.8L7.4 4.9H5.5L16.6 19z"/>
+                        </svg>
+                      </a>
+
+                      <a class="live-social-link" id="share-copy" href="#" aria-label="Kopieer link">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                          <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1z"/>
+                          <path d="M18 5H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h8v14z"/>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+
+                  <button type="button" class="btn-ghost-sm" id="ev-contact">Inschrijven / contact</button>
+                </div>
+
+                <div class="v4a-card-body" style="margin-top:12px;">
+                  <!-- Details -->
+                  <div id="ev-desc"></div>
+                  <div id="ev-extra" style="margin-top:10px;"></div>
+
+                  <div class="ev-map-wrap" id="ev-map-wrap" style="display:none;">
+                    <div class="ev-map-title">Locatie op kaart</div>
+                    <div id="ev-map"></div>
+
+                    <div class="ev-map-links" id="ev-map-links" style="display:none;">
+                      <a class="btn-ghost-sm" id="ev-map-google" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                    </div>
+
+                    <div class="ev-map-fallback" id="ev-map-fallback" style="display:none;">
+                      Locatiegegevens ontbreken om een kaart te tonen.
+                    </div>
+                  </div>
+
+                  <!-- AD: In-card placement (below content) -->
+                  <div class="footer-ad" style="margin-top:12px;">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-4062633211824348"
+                         data-ad-slot="8259538394"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                      try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+                    </script>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT: flyer/media -->
+              <div class="ev-col-media">
+                <div class="ev-media" id="ev-media" style="display:none;">
+                  <div class="note" id="ev-media-label" style="margin:0 0 8px 0;">Flyer / foto's</div>
+                  <div class="ev-media-grid" id="ev-media-grid"></div>
+                </div>
+              </div>
+            </div>
+
+            <p id="ev-status" class="note" style="margin-top:10px; display:none;"></p>
+          </div>
+
+        </div>
+      </section>
+    
+  </div>
+</div>
+</main>
+
+    
+    <!-- AD: Bottom placement (responsive) -->
+    <section class="section-main" style="padding-top:0; padding-bottom:10px;">
+      <div class="shell">
+        <div class="footer-ad" style="margin-top:12px;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-4062633211824348"
+               data-ad-slot="7564585586"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+            try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer-contact">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+            <div class="footer-legal">
+              &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+            </div>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+              <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+              <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+            </div>
+          </div>
+          <div class="footer-ad">
+            FOOTER ADVERTENTIE / PARTNERLOGO<br>
+            <span class="ad-size">Footer-banner</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- LIGHTBOX for flyer/photos -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-inner">
+        <div class="lightbox-actions">
+          <button type="button" class="lightbox-close" id="lightbox-close">Sluiten</button>
+        </div>
+        <img id="lightbox-img" class="lightbox-img" alt="Flyer / foto" />
+      </div>
+    </div>
+
+  </div>
+
+  <script src="assets/js/image-utils.js"></script>
+  <script>
+    // Helper for inline onerror fallbacks
+    window.V4A_PLACEHOLDER = function () {
+      try {
+        return (window.V4AImage && typeof window.V4AImage.resolve === "function")
+          ? window.V4AImage.resolve("")
+          : "/images/placeholder.svg";
+      } catch (e) {
+        return "/images/placeholder.svg";
+      }
+    };
+  </script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+    const titleEl = document.getElementById("ev-title");
+    const metaEl  = document.getElementById("ev-meta");
+    const descEl  = document.getElementById("ev-desc");
+    const extraEl = document.getElementById("ev-extra");
+    const statusEl = document.getElementById("ev-status");
+    const premiumEl = document.getElementById("ev-premium");
+
+    const dateEl = document.getElementById("ev-date");
+    const flagEl = document.getElementById("ev-flag");
+    const regionEl = document.getElementById("ev-region");
+    const cityEl = document.getElementById("ev-city");
+    const clubEl = document.getElementById("ev-club");
+
+    const contactBtn = document.getElementById("ev-contact");
+
+    const shareFb = document.getElementById("share-fb");
+    const shareIg = document.getElementById("share-ig");
+    const shareTt = document.getElementById("share-tt");
+    const shareX  = document.getElementById("share-x");
+    const shareCopy = document.getElementById("share-copy");
+
+    const mediaWrap = document.getElementById("ev-media");
+    const mediaGrid = document.getElementById("ev-media-grid");
+    const backLink = document.getElementById("back-link");
+    const mediaLabel = document.getElementById("ev-media-label");
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxClose = document.getElementById("lightbox-close");
+
+    function fmtDateTime(iso){
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return "";
+      return d.toLocaleString("nl-BE", {
+        day: "2-digit", month: "long", year: "numeric",
+        hour: "2-digit", minute: "2-digit"
+      });
+    }
+
+    function typeLabel(t){
+      const x = String(t || "").toLowerCase();
+      if (x === "tournament" || x === "tornooi") return "Tornooi";
+      if (x === "friendly" || x === "vriendschappelijk") return "Vriendschappelijk";
+      if (x === "stage") return "Stage";
+      if (x === "camp" || x === "voetbalkamp") return "Voetbalkamp";
+      return t || "";
+    }
+
+    function flagEmoji(countryCode){
+      const cc = String(countryCode || "").trim().toUpperCase();
+      if (!cc || cc.length !== 2) return "";
+      const A = 0x1F1E6;
+      const codePoints = [cc.charCodeAt(0) - 65 + A, cc.charCodeAt(1) - 65 + A];
+      try { return String.fromCodePoint(...codePoints); } catch(e) { return ""; }
+    }
+
+    function escapeHtml(s){
+      return String(s ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function sanitizeEventText(raw){
+      const txt = String(raw || "");
+      if (!txt.trim()) return "";
+
+      // Drop everything from invoice/billing sections onward (these must never be public)
+      const invoiceMarkers = [
+        "FACTUURGEGEVENS",
+        "FACTUUR",
+        "FACTURATIE",
+        "FACTURATIEGEGEVENS",
+        "INVOICE",
+        "BILLING",
+        "PREMIUM-DUUR",
+        "PREMIUM-TOTAAL",
+        "PREMIUM-PERIODE",
+        "PREMIUM LOOPT",
+        "PREMIUM:",
+        "PREMIUM -",
+      ];
+
+      let cutTxt = txt;
+      for (const m of invoiceMarkers) {
+        const idx = cutTxt.toUpperCase().indexOf(m);
+        if (idx >= 0) {
+          cutTxt = cutTxt.slice(0, idx).trim();
+        }
+      }
+
+      // Remove common sensitive lines that sometimes get dumped into description text
+      const dropLine = (line) => {
+        const l = line.trim();
+        if (!l) return false;
+        // explicit invoice-like fields
+        if (/\b(btw|vat)\b/i.test(l)) return true;
+        if (/\biban\b/i.test(l)) return true;
+        if (/\b(bic|swift)\b/i.test(l)) return true;
+        if (/\b(kvk|ondernemingsnummer|ondernemings\s*nr)\b/i.test(l)) return true;
+        if (/\b(factuur|facturatie|invoice|billing)\b/i.test(l)) return true;
+        if (/\b(rekening|bank)\b/i.test(l)) return true;
+        // hide raw contact details if they were injected into the long description block
+        if (/\b(contact\s*e-?mail|e-?mail\s*:\s*\S+@)\b/i.test(l)) return true;
+        if (/\b(telefoon|gsm|mobiel)\b\s*:/i.test(l)) return true;
+        // premium / pricing details from submission form must never be public
+        if (/^\s*premium\b/i.test(l)) return true;
+        if (/\bpremium\s*[-:]\s*/i.test(l)) return true;
+        if (/\bpremium\s*(duur|totaal|periode|loopt|start|actief)\b/i.test(l)) return true;
+        if (/\b(€|eur)\b/i.test(l) && /premium/i.test(l)) return true;
+        if (/\b\d+\s*(,\d+)?\s*€\b/i.test(l) && /premium/i.test(l)) return true;
+        if (/\b\d+\s*(,\d+)?\s*€\s*\/\s*(week|maand|dag)\b/i.test(l)) return true;
+        if (/\b\d+\s*(,\d+)?\s*€\s*(per|\/)?\s*(week|maand|dag)\b/i.test(l)) return true;
+        // hide flyer filename lines when backend only stores a filename
+        if (/\bflyer\b|\baffiche\b/i.test(l) && /\.(png|jpe?g|webp|pdf)\b/i.test(l)) return true;
+        return false;
+      };
+
+      const cleanedLines = cutTxt
+        .split(/\r?\n/)
+        .map((l) => l.replace(/\s+/g, " ").trim())
+        .filter((l) => !dropLine(l));
+
+      return cleanedLines.join("\n").trim();
+    }
+
+    function getEventParams(){
+      const params = new URLSearchParams(location.search);
+      const type = (params.get("type") || "").trim().toLowerCase();
+      const slug = (params.get("slug") || "").trim();
+      const id = (params.get("id") || "").trim();
+      // Backward compat: if no explicit type but slug/id present, treat as event
+      const normalizedType = type || ((id || slug) ? "event" : "");
+      return { type: normalizedType, slug, id };
+    }
+    function isYouTubeUrl(u){
+      const s = String(u || "").trim();
+      if (!s) return false;
+      return /(^|\/\/)(www\.)?(youtube\.com|youtu\.be)\//i.test(s);
+    }
+
+    function extractYouTubeId(u){
+      const s = String(u || "").trim();
+      if (!s) return "";
+      try {
+        // youtu.be/<id>
+        let m = s.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+
+        // youtube.com/watch?v=<id>
+        m = s.match(/[?&]v=([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+
+        // youtube.com/shorts/<id>
+        m = s.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+
+        // youtube.com/embed/<id>
+        m = s.match(/youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/i);
+        if (m && m[1]) return m[1];
+      } catch (e) {}
+      return "";
+    }
+
+    function renderYouTubeEmbed(url){
+      if (!mediaWrap || !mediaGrid) return false;
+      if (!isYouTubeUrl(url)) return false;
+      const vid = extractYouTubeId(url);
+      if (!vid) return false;
+
+      if (mediaLabel) mediaLabel.textContent = "Video";
+      mediaWrap.style.display = "block";
+      mediaGrid.innerHTML = `
+        <div style="width:100%; aspect-ratio:16/9; background:rgba(255,255,255,0.04); border-radius:14px; border:1px solid rgba(255,255,255,0.10); overflow:hidden;">
+          <iframe
+            title="YouTube video"
+            width="100%"
+            height="100%"
+            style="border:0; display:block;"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            src="https://www.youtube-nocookie.com/embed/${vid}">
+          </iframe>
+        </div>
+      `;
+      return true;
+    }
+
+    function openLightbox(src){
+      if (!src) return;
+      lightboxImg.src = src;
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+    }
+
+    function closeLightbox(){
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+    }
+
+    lightboxClose?.addEventListener("click", closeLightbox);
+    lightbox?.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    function setShareLinks(shareUrl, title){
+      const text = encodeURIComponent(title || "Voetbal4All event");
+      const url = encodeURIComponent(shareUrl);
+
+      // These open the share dialog on the user's social network;
+      // any clicks on the shared post will go to `shareUrl` (voetbal4all.eu).
+      if (shareFb) shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      if (shareX)  shareX.href  = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+
+      const canWebShare = !!navigator.share;
+
+      function tryWebShare(fallbackOpenUrl){
+        return async (ev) => {
+          ev.preventDefault();
+          if (canWebShare) {
+            try {
+              await navigator.share({ title: title || "Voetbal4All event", text: title || "Voetbal4All event", url: shareUrl });
+              return;
+            } catch (e) {
+              // user cancelled or not supported by target app -> fall through
+            }
+          }
+          try {
+            await navigator.clipboard.writeText(shareUrl);
+          } catch (e) {
+            // ignore
+          }
+          window.open(fallbackOpenUrl, "_blank", "noopener,noreferrer");
+        };
+      }
+
+      if (shareIg) shareIg.onclick = tryWebShare("https://www.instagram.com/");
+      if (shareTt) shareTt.onclick = tryWebShare("https://www.tiktok.com/");
+
+      if (shareCopy) {
+        shareCopy.onclick = async (ev) => {
+          ev.preventDefault();
+          try {
+            await navigator.clipboard.writeText(shareUrl);
+            alert("Link gekopieerd: " + shareUrl);
+          } catch (e) {
+            prompt("Kopieer deze link:", shareUrl);
+          }
+        };
+      }
+    }
+
+    function normalizeThumbUrl(u){
+      let url = String(u || "").trim();
+      if (!url) return "";
+
+      // If backend returns a PDF flyer, try a PNG sibling (when conversion exists)
+      if (/\.pdf(\?.*)?$/i.test(url)) {
+        url = url.replace(/\.pdf(\?.*)?$/i, ".png$1");
+      }
+
+      // Normalize wrong placeholder paths (/assets/img/placeholder.svg) -> real placeholder
+      if (url.includes("/assets/img/placeholder.svg") || url.includes("assets/img/placeholder.svg")) {
+        return (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "/images/placeholder.svg");
+      }
+
+      // If a relative /images/... path slips through, force it to the backend
+      if (url.startsWith("/images/")) {
+        return API_BASE + url;
+      }
+      if (url.startsWith("images/")) {
+        return API_BASE + "/" + url;
+      }
+
+      return url;
+    }
+
+    function renderMedia(mediaUrls){
+      const placeholder = (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "/images/placeholder.svg");
+      if (mediaLabel) mediaLabel.textContent = "Flyer / foto's";
+      const placeholderNormalized = normalizeThumbUrl(placeholder);
+
+      // Resolve + filter: toon enkel échte media (geen placeholder)
+      const resolvedUrls = (mediaUrls || [])
+        .filter(Boolean)
+        .map((u) => {
+          const raw = String(u || "").trim();
+          if (!raw) return "";
+          if (window.V4AImage && typeof window.V4AImage.resolve === "function") {
+            return String(window.V4AImage.resolve(raw) || "");
+          }
+          return raw;
+        })
+        .map((u) => normalizeThumbUrl(u))
+        .filter((u) => u && u !== placeholderNormalized);
+
+      if (!resolvedUrls.length) {
+        if (mediaWrap) mediaWrap.style.display = "none";
+        return;
+      }
+
+      if (mediaWrap) mediaWrap.style.display = "block";
+      if (!mediaGrid) return;
+
+      // Single media: render as a full, readable flyer/cover
+      if (resolvedUrls.length === 1) {
+        const u = String(resolvedUrls[0]);
+        const safeResolved = u.replaceAll('"','&quot;');
+        mediaGrid.innerHTML = `
+          <img
+            class="ev-media-hero"
+            src="${safeResolved}"
+            alt="Flyer / foto"
+            data-media-src="${safeResolved}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');"
+          />
+        `;
+      } else {
+        // Multiple media: render thumbnails
+        mediaGrid.innerHTML = resolvedUrls.map((u, idx) => {
+          const safeResolved = String(u).replaceAll('"','&quot;');
+          return `<img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx+1}" data-media-src="${safeResolved}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');" />`;
+        }).join("");
+      }
+
+      mediaGrid.querySelectorAll("[data-media-src]").forEach(img => {
+        img.addEventListener("click", () => openLightbox(img.getAttribute("data-media-src")));
+      });
+    }
+
+    async function loadEvent(){
+      const { type, slug, id } = getEventParams();
+
+      // Shared detail requires at least an id (except legacy event slug mode)
+      const hasAny = Boolean(id || slug);
+      if (!hasAny) {
+        statusEl.style.display = "block";
+        statusEl.textContent = "Geen item geselecteerd. U wordt doorgestuurd naar het overzicht.";
+        setTimeout(() => {
+          try { window.location.href = "events.html"; } catch (e) {}
+        }, 900);
+        return;
+      }
+
+      // Resolve API endpoint + UI labels per type
+      const t = String(type || "event").toLowerCase();
+      const isEvent = (t === "event");
+
+      let apiPath = "/api/events/";
+      let pill = "Sportieve events";
+      let caption = "Event detail";
+      let backHref = "events.html";
+      let backText = "← Terug naar events";
+      let shareType = "event";
+
+      if (t === "clubvacature") {
+        apiPath = "/api/club-vacancies/";
+        pill = "Clubvacatures";
+        caption = "Clubvacature detail";
+        backHref = "clubvacatures.html";
+        backText = "← Terug naar clubvacatures";
+        shareType = "clubvacature";
+      } else if (t === "speler") {
+        apiPath = "/api/player-profiles/";
+        pill = "Spelers";
+        caption = "Spelerprofiel detail";
+        backHref = "spelers.html";
+        backText = "← Terug naar spelers";
+        shareType = "speler";
+      } else if (t === "trainer") {
+        apiPath = "/api/staff-profiles/";
+        pill = "Trainers";
+        caption = "Trainerprofiel detail";
+        backHref = "trainers.html";
+        backText = "← Terug naar trainers";
+        shareType = "trainer";
+      }
+
+      // Apply header labels
+      const captionEl = document.querySelector(".card-caption");
+      if (captionEl) captionEl.textContent = caption;
+      const pillEl = document.getElementById("ev-pill");
+      if (pillEl) pillEl.textContent = pill;
+      if (backLink) {
+        backLink.href = backHref;
+        backLink.textContent = backText;
+      }
+
+      // Map is only relevant for events
+      const mapWrap = document.getElementById("ev-map-wrap");
+      if (mapWrap) mapWrap.style.display = isEvent ? "none" : "none"; // will be enabled later for events when data loads
+
+      try {
+        let data = null;
+
+        if (isEvent) {
+          // Legacy: slug first when explicitly provided
+          if (slug) {
+            try {
+              const resSlug = await fetch(`${API_BASE}/api/events/slug/${encodeURIComponent(slug)}?nocache=1`);
+              data = await resSlug.json();
+            } catch (e) {
+              data = null;
+            }
+          }
+
+          // Fallback (or direct) to ID endpoint
+          if (!data || !data.ok || !data.item) {
+            const key = id || slug;
+            const resId = await fetch(`${API_BASE}/api/events/${encodeURIComponent(key)}?nocache=1`);
+            data = await resId.json();
+          }
+        } else {
+          // Shared detail types require id
+          if (!id) throw new Error("Missing id");
+          const res = await fetch(`${API_BASE}${apiPath}${encodeURIComponent(id)}?nocache=1`);
+          data = await res.json();
+        }
+
+        if (!data || !data.ok || !data.item) {
+          throw new Error("Item not found");
+        }
+
+        const item = data.item;
+
+        // Title
+        const pageTitle = (item.title || item.name || "Detail") + " – Voetbal4All";
+        document.title = pageTitle;
+        titleEl.textContent = (item.title || item.name || "Detail");
+
+        // Meta chips
+        // Date chip: only for events
+        if (dateEl) {
+          if (isEvent && item.start_at) {
+            const when = fmtDateTime(item.start_at);
+            const evType = typeLabel(item.event_type);
+            dateEl.textContent = [evType, when].filter(Boolean).join(" · ");
+            dateEl.closest(".ev-meta-chip")?.setAttribute("style", "");
+            dateEl.closest(".ev-meta-chip")?.setAttribute("aria-hidden", "false");
+            dateEl.parentElement.style.display = "inline-flex";
+          } else {
+            // Hide date chip container for non-events
+            const chip = dateEl.closest(".ev-meta-chip");
+            if (chip) chip.style.display = "none";
+          }
+        }
+
+        // Flag chip (country)
+        const cc = item.country || "";
+        const fe = flagEmoji(cc);
+        if (flagEl) {
+          flagEl.style.display = (fe || cc) ? "inline" : "none";
+          flagEl.className = "ev-meta-chip";
+          const ccTxt = (cc ? String(cc).toUpperCase() : "");
+          const label = fe ? (fe + (ccTxt ? " " + ccTxt : "")) : ccTxt;
+          flagEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${escapeHtml(label)}</span>`;
+        }
+
+        // City
+        const city = item.city || "";
+        if (cityEl) {
+          if (city) {
+            cityEl.style.display = "inline";
+            cityEl.className = "ev-meta-chip";
+            cityEl.innerHTML = `<span class="ev-ico" aria-hidden="true">📍</span><span>${escapeHtml(city)}</span>`;
+          } else {
+            cityEl.style.display = "none";
+          }
+        }
+
+        // Club / role
+        if (clubEl) {
+          let clubText = "";
+          if (t === "clubvacature") clubText = item.club || "";
+          if (t === "speler") clubText = item.position || "";
+          if (t === "trainer") clubText = item.role || "";
+          if (isEvent) clubText = item.club || item.organizer_name || "";
+
+          if (clubText) {
+            clubEl.style.display = "inline";
+            clubEl.className = "ev-meta-chip";
+            const ico = (t === "speler") ? "⚽" : (t === "trainer") ? "🧑‍🏫" : "🏟️";
+            clubEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${ico}</span><span>${escapeHtml(clubText)}</span>`;
+          } else {
+            clubEl.style.display = "none";
+          }
+        }
+
+        // Premium marker
+        if (premiumEl) premiumEl.style.display = (item.premium_until || item.is_premium) ? "block" : "none";
+
+        // Description/Bio
+        const rawText = (isEvent ? (item.description || "") : (item.description || item.bio || ""));
+        const safeText = isEvent ? sanitizeEventText(rawText) : String(rawText || "").trim();
+        const safeHtml = safeText ? escapeHtml(safeText).replace(/\n/g, "<br>") : "";
+        if (safeHtml) {
+          descEl.style.display = "block";
+          descEl.innerHTML = safeHtml;
+        } else {
+          descEl.style.display = "none";
+          descEl.innerHTML = "";
+        }
+
+        // Extras
+        const extras = [];
+        if (isEvent) {
+          if (item.location_name) extras.push(`<div><strong>Locatie:</strong> ${escapeHtml(item.location_name)}</div>`);
+          if (item.address) extras.push(`<div><strong>Adres:</strong> ${escapeHtml(item.address)}</div>`);
+          if (item.organizer_name) extras.push(`<div><strong>Organisator:</strong> ${escapeHtml(item.organizer_name)}</div>`);
+          if (item.organizer_url) extras.push(`<div><strong>Website:</strong> ${escapeHtml(item.organizer_url)}</div>`);
+        } else {
+          if (item.region) extras.push(`<div><strong>Regio:</strong> ${escapeHtml(item.region)}</div>`);
+          if (item.city) extras.push(`<div><strong>Plaats:</strong> ${escapeHtml(item.city)}</div>`);
+          if (item.url && !isYouTubeUrl(item.url)) extras.push(`<div><strong>Website:</strong> <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.url)}</a></div>`);
+        }
+        extraEl.innerHTML = extras.join("");
+
+        // Map (events only)
+        if (isEvent) {
+          const mapWrap2 = document.getElementById("ev-map-wrap");
+          const mapEl2 = document.getElementById("ev-map");
+          const mapFallback2 = document.getElementById("ev-map-fallback");
+          const mapLinks2 = document.getElementById("ev-map-links");
+          const mapGoogle2 = document.getElementById("ev-map-google");
+
+          const lat = (item.lat !== null && item.lat !== undefined) ? Number(item.lat) : NaN;
+          const lng = (item.lng !== null && item.lng !== undefined) ? Number(item.lng) : NaN;
+
+          const qParts = [item.location_name, item.address, item.postal_code, item.city, item.country]
+            .filter(Boolean)
+            .map((s) => String(s).trim())
+            .filter(Boolean);
+
+          const mapsQueryRaw = qParts.join(", ").trim();
+          const mapsQuery = encodeURIComponent(mapsQueryRaw);
+          const label = item.title || "Event";
+
+          const hasLocationSignal = (Number.isFinite(lat) && Number.isFinite(lng)) || Boolean(mapsQueryRaw);
+          if (mapWrap2) mapWrap2.style.display = hasLocationSignal ? "block" : "none";
+          if (mapLinks2) mapLinks2.style.display = "none";
+          if (mapGoogle2 && mapsQueryRaw) {
+            mapGoogle2.href = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+          }
+
+          if (!mapEl2) {
+            // nothing
+          } else if (Number.isFinite(lat) && Number.isFinite(lng) && window.L) {
+            mapEl2.style.display = "block";
+            mapEl2.innerHTML = "";
+            if (mapFallback2) mapFallback2.style.display = "none";
+
+            const m = L.map("ev-map", { scrollWheelZoom: false }).setView([lat, lng], 14);
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+              maxZoom: 19,
+              attribution: "&copy; OpenStreetMap",
+            }).addTo(m);
+            L.marker([lat, lng]).addTo(m).bindPopup(label).openPopup();
+          } else if (mapsQueryRaw) {
+            mapEl2.style.display = "block";
+            if (mapFallback2) mapFallback2.style.display = "none";
+            mapEl2.innerHTML = `
+              <iframe
+                title="Locatie op kaart"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=${mapsQuery}&output=embed">
+              </iframe>
+            `;
+          } else {
+            mapEl2.style.display = "none";
+            if (mapFallback2) mapFallback2.style.display = "block";
+          }
+        } else {
+          const mapWrap3 = document.getElementById("ev-map-wrap");
+          if (mapWrap3) mapWrap3.style.display = "none";
+        }
+
+        // Share URL
+        let shareUrl = "https://www.voetbal4all.eu/event.html";
+        if (isEvent) {
+          const shareKey = id ? ("id=" + encodeURIComponent(id)) : ("slug=" + encodeURIComponent(slug));
+          shareUrl = shareUrl + "?" + shareKey;
+        } else {
+          shareUrl = shareUrl + `?type=${encodeURIComponent(shareType)}&id=${encodeURIComponent(id)}`;
+        }
+        setShareLinks(shareUrl, pageTitle);
+
+        // Media (YouTube has priority for shared types)
+        // For non-events: if url is YouTube -> embed, else use images fields
+        if (!isEvent && item.url && isYouTubeUrl(item.url)) {
+          const rendered = renderYouTubeEmbed(item.url);
+          if (rendered) {
+            // done
+          } else {
+            renderMedia([]);
+          }
+        } else {
+          // Event: keep existing multi-field media extraction
+          const media = [];
+          function pushMedia(val){
+            if (!val) return;
+            if (typeof val === "string") {
+              const s = val.trim();
+              if (s) media.push(s);
+              return;
+            }
+            if (typeof val === "object") {
+              const u = val.url || val.publicUrl || val.public_url || val.publicPath || val.public_path || val.path;
+              if (typeof u === "string" && u.trim()) media.push(u.trim());
+            }
+          }
+
+          if (isEvent) {
+            [
+              item.cover_image_url,
+              item.flyer_image_url,
+              item.thumbnail_url,
+              item.thumb_url,
+              item.flyer_url,
+              item.image_url,
+              item.flyer,
+              item.image,
+              item.media_url,
+              item.flyer_pdf_url,
+              item.pdf_url,
+            ].forEach(pushMedia);
+
+            if (Array.isArray(item.photo_urls)) media.push(...item.photo_urls);
+            if (typeof item.photo_urls === "string" && item.photo_urls.trim()) {
+              media.push(...item.photo_urls.split(",").map(s => s.trim()).filter(Boolean));
+            }
+            if (Array.isArray(item.photos)) media.push(...item.photos);
+            if (typeof item.photos === "string" && item.photos.trim()) {
+              media.push(...item.photos.split(",").map(s => s.trim()).filter(Boolean));
+            }
+          } else {
+            // Shared types: common image fields
+            [item.image_url, item.photo_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
+          }
+
+          renderMedia(media);
+        }
+
+        // Contact
+        // Keep current mailto flow, but make subject reflect type
+        contactBtn.onclick = () => {
+          const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
+          if (!ok) return;
+
+          const email = prompt("Vul je e-mailadres in zodat Voetbal4All je aanvraag kan verwerken:");
+          if (!email) return alert("E-mailadres is nodig om te kunnen reageren.");
+
+          const subject = encodeURIComponent("Reactie via Voetbal4All – " + (item.title || item.name || "Detail"));
+          const body = encodeURIComponent(
+            "Item: " + (item.title || item.name || "") +
+            "\nType: " + (type || "event") +
+            "\nId: " + (id || slug || "") +
+            "\n\nE-mailadres: " + email +
+            "\n\nBericht:\n(Voeg je bericht toe.)"
+          );
+
+          location.href = "mailto:voetbal4all@outlook.com?subject=" + subject + "&body=" + body;
+        };
+
+      } catch (e) {
+        console.error("[DETAIL] load failed", e);
+        statusEl.style.display = "block";
+        statusEl.textContent = "Detail kon niet geladen worden.";
+      }
+    }
+
+    loadEvent();
+  </script>
+
+  <!-- (Removed stray closing script tag) -->
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+  <script src="assets/js/live-banner.js"></script>
+</body>
+</html>

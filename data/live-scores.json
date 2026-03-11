@@ -1,0 +1,25 @@
+{
+  "updatedAt": "2025-12-19T21:59:04.783Z",
+  "leagues": [
+    {
+      "key": "JPL",
+      "name": "Jupiler Pro League",
+      "matches": []
+    },
+    {
+      "key": "CPL",
+      "name": "Challenger Pro League",
+      "matches": []
+    },
+    {
+      "key": "ERE",
+      "name": "Eredivisie",
+      "matches": []
+    },
+    {
+      "key": "KKD",
+      "name": "Keuken Kampioen Divisie",
+      "matches": []
+    }
+  ]
+}

@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Artikels & verhalen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://voetbal4all-backend-database.onrender.com" crossorigin>
+  <link rel="dns-prefetch" href="https://voetbal4all-backend-database.onrender.com">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Ensure pagination button labels are visible on dark background */
+    #pagination .btn-ghost-sm {
+      color: #fff;
+    }
+    #pagination .btn-ghost-sm:disabled {
+      color: rgba(255,255,255,0.6);
+      opacity: 1; /* keep text readable even when disabled */
+    }
+
+    /* Force article thumbnails to be visible */
+    #article-list img { display: block !important; visibility: visible !important; opacity: 1 !important; }
+    .v4a-card-header img { max-width: 100%; height: auto; }
+
+    /* Normalize flag sizing (INT SVG can render oversized if intrinsic viewBox is large) */
+    .v4a-flag {
+      width: 18px;
+      height: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex: 0 0 18px;
+    }
+    .v4a-flag__img {
+      width: 18px !important;
+      height: 12px !important;
+      display: block;
+      object-fit: cover;
+    }
+    </style>
+    <style>
+        /* AdSense: reduce height of full-width banner ads (match index.html) */
+            .ad-slot-header,
+                .ad-infeed {
+                      max-height: 120px;
+                            overflow: hidden;
+                                }
+                                    /* Sticky sidebar ad: scrolls with page, starts below fixed advertiser block */
+                                        .v4-ad-sticky {
+                                              position: -webkit-sticky;
+                                                    position: sticky;
+                                                          top: 92px;
+                                                                align-self: flex-start;
+                                                                    }
+                                                                        .v4-sidebar {
+                                                                              align-self: stretch !important;
+                                                                                  }
+                                                                                    </style>
+  </head>
+
+<body class="v4-hide-live-mobile">
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- LIVE BANNER -->
+    <section class="live-banner-top">
+      <div class="shell">
+        <div class="live-banner">
+          <div class="live-label"><span class="live-dot"></span>Live score</div>
+          <div class="live-text">
+            <span class="live-text-main"></span>
+            <div class="live-updated"></div>
+          </div>
+          <div class="live-socials" aria-label="Volg Voetbal4All">
+            <div class="live-socials-label">Volg ons</div>
+            <div class="live-socials-icons"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEADER AD -->
+    <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+      <div class="shell">
+        <div class="ad-slot ad-slot-header sticky-ad-header">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="4750719980"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"></ins>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section-main">
+        <div class="shell">
+
+          <!-- INTRO -->
+          <article class="card" style="margin-bottom:12px;">
+            <div class="card-header">
+              <div>
+                <div class="card-caption">Artikels</div>
+                <div class="card-title">Laatste voetbalnieuws &amp; verhalen (BE &amp; NL)</div>
+              </div>
+              <span class="pill-small" id="news-count">—</span>
+            </div>
+            <p class="note">
+              Filter op land en categorie, en zoek op club/competitie. <strong>/</strong>.
+            </p>
+          </article>
+
+          <div class="v4-layout-sidebar">
+
+            <!-- LINKS -->
+            <div class="v4-content">
+
+              <!-- ZOEK + FILTERS (PREMIUM) -->
+              <div class="v4-filterbar" style="margin-bottom:12px;">
+                <div class="v4-filterbar__inner">
+
+                  <div class="v4-filterrow">
+                    <div class="v4-filtergroup" style="grid-column: span 12;">
+                      <div class="v4-filterlabel">Zoeken</div>
+                      <input
+                        type="text"
+                        id="article-search-text"
+                        class="v4-input"
+                        placeholder="Zoek op titel, club, competitie..."
+                      />
+                    </div>
+                  </div>
+
+                  <div class="v4-filterrow">
+                    <div class="v4-filtergroup" style="grid-column: span 6;">
+                      <div class="v4-filterlabel">Land</div>
+                      <select id="article-filter-country" class="v4-select">
+                        <option value="">Land (alles)</option>
+                        <option value="BE">België</option>
+                        <option value="NL">Nederland</option>
+                        <option value="DE">Duitsland</option>
+                        <option value="FR">Frankrijk</option>
+                        <option value="ES">Spanje</option>
+                        <option value="IT">Italië</option>
+                        <option value="UK">Verenigd Koninkrijk</option>
+                        <option value="INT">Internationaal</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="grid-column: span 6;">
+                      <div class="v4-filterlabel">Categorie</div>
+                      <select id="article-filter-category" class="v4-select">
+                        <option value="">Categorie (alles)</option>
+                        <option value="Jupiler Pro League">Jupiler Pro League</option>
+                        <option value="Challenger Pro League">Challenger Pro League</option>
+                        <option value="Beker">Beker</option>
+                        <option value="Amateur">Amateur</option>
+                        <option value="Jeugd">Jeugd</option>
+                        <option value="Internationaal">Internationaal</option>
+                        <option value="Vrouwen">Vrouwen</option>
+                        <option value="Transfers">Transfers</option>
+                        <option value="Algemeen">Algemeen</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <p class="v4-filterhint">Tip: klik op “Lees artikel” om jouw Voetbal4All-artikelpagina te openen.</p>
+                </div>
+              </div>
+
+              <!-- TOP INFEED AD -->
+              <section class="section-main" style="padding-top:0;padding-bottom:10px;">
+                <div class="ad-infeed">
+                  <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-4062633211824348"
+                    data-ad-slot="5714293772"
+                    data-ad-format="horizontal"
+                    data-full-width-responsive="true"></ins>
+                </div>
+              </section>
+
+              <!-- OVERZICHT -->
+              <section class="section-main" style="padding-top:0;">
+                <div class="card">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Overzicht</div>
+                      <div class="card-title">Laatste artikels &amp; verhalen</div>
+                    </div>
+                    <span class="pill-small" id="news-count-2">—</span>
+                  </div>
+
+                  <div id="article-list" class="v4a-card-list v4a-card-list--stack">
+                    <!-- gevuld via backend -->
+                  </div>
+
+                  <!-- PAGINATIE -->
+                  <div id="pagination" style="margin-top:12px;"></div>
+
+                  <p id="news-status" class="note" style="margin-top:10px; display:none;"></p>
+                </div>
+              </section>
+
+            </div>
+
+            <!-- RECHTS -->
+            <aside class="v4-sidebar">
+              <div class="v4-sidebar-sticky">
+
+                <article class="card">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Advertentie</div>
+                      <div class="card-title">Sponsor / Partner</div>
+                    </div>
+                    <span class="pill-small">Premium</span>
+                  </div>
+                  <div class="v4a-placeholder">
+                    Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity? Ontdek wat Voetbal4All voor jouw merk kan betekenen!
+                    <br/>
+                    <span class="ad-size"><a href="adverteren.html">Bekijk de mogelijkheden →</a></span>
+                  </div>
+                </article>
+
+                <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+                  <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-4062633211824348"
+                    data-ad-slot="9137505792"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                </div>
+
+              </div>
+            </aside>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer-contact">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+            <div class="footer-legal">
+              &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+            </div>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+              <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+              <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+            </div>
+          </div>
+          <div class="footer-ad">
+            Zet jouw merk in de kijker bij de voetbalcommunity!<br>
+            <span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/image-utils.js"></script>
+  <script>
+   // Footer year (safe)
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+    // Backend endpoints
+    const IMG_BASE = "https://voetbal4all-backend-database.onrender.com";
+    const NEWS_URL_FAST = IMG_BASE + "/api/news?limit=20";   // fast first paint (first page)
+
+    // FULL dataset for filters/pagination.
+    // We need enough items to cover many pages (PAGE_SIZE=20). 200 items = 10 pages.
+    // 2000 items = 100 pages.
+    const NEWS_URL_FULL = IMG_BASE + "/api/news?limit=2000";
+
+    const articleList = document.getElementById("article-list");
+    const newsStatus = document.getElementById("news-status");
+    const newsCountTop = document.getElementById("news-count");
+    const newsCountTop2 = document.getElementById("news-count-2");
+    const paginationEl = document.getElementById("pagination");
+
+    const articleSearchText = document.getElementById("article-search-text");
+    const articleFilterCountry = document.getElementById("article-filter-country");
+    const articleFilterCategory = document.getElementById("article-filter-category");
+
+    let allItems = [];
+    let filteredItems = [];       // ✅ nieuw: huidige filterresultaat
+    let currentPage = 1;          // ✅ nieuw
+    const PAGE_SIZE = 20;         // ✅ sneller eerste paint
+
+    // Client-side cache to render instantly on repeat visits (does not affect backend order)
+    const NEWS_CACHE_KEY = "v4_news_cache_v2";
+    const NEWS_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+let lastRenderKey = "";
+
+    const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+    let newsInFlight = false;
+
+    function readNewsCache(){
+      try {
+        const raw = localStorage.getItem(NEWS_CACHE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || !Array.isArray(parsed.items) || !parsed.ts) return null;
+        if ((Date.now() - parsed.ts) > NEWS_CACHE_TTL_MS) return null;
+        return parsed.items;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function writeNewsCache(items){
+      try {
+        localStorage.setItem(NEWS_CACHE_KEY, JSON.stringify({ ts: Date.now(), items }));
+      } catch (_) {}
+    }
+
+    function itemsSignature(items){
+      // stable signature based on first N ids + length
+      const arr = (items || []).slice(0, 80).map(it => String(it?.id || "").trim()).filter(Boolean);
+      return `${(items || []).length}|${arr.join(",")}`;
+    }
+
+    function safe(s){ return (s ?? "").toString(); }
+    function norm(s){ return safe(s).toLowerCase().trim(); }
+    function escapeHtml(str){
+      return safe(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function countryCodeFromBackend(a){
+      const ALLOWED = new Set(["BE","NL","DE","FR","ES","IT","UK","INT"]);
+      const raw = String(a?.country || "").trim().toUpperCase();
+      if (raw === "GB") return "UK";
+      if (ALLOWED.has(raw)) return raw;
+      return "INT";
+    }
+
+
+    function countryLabel(cc){
+      if (cc === "BE") return "België";
+      if (cc === "NL") return "Nederland";
+      if (cc === "DE") return "Duitsland";
+      if (cc === "FR") return "Frankrijk";
+      if (cc === "ES") return "Spanje";
+      if (cc === "IT") return "Italië";
+      if (cc === "UK") return "Verenigd Koninkrijk";
+      return "Internationaal";
+    }
+
+    // Flags: single source of truth (local assets)
+    const FLAG_SRC = {
+      BE: "/assets/img/sources/flag-be.svg",
+      NL: "/assets/img/sources/flag-nl.svg",
+      DE: "/assets/img/sources/flag-de.svg",
+      FR: "/assets/img/sources/flag-fr.svg",
+      ES: "/assets/img/sources/flag-es.svg",
+      IT: "/assets/img/sources/flag-it.svg",
+      UK: "/assets/img/sources/flag-uk.svg",
+      INT: "/assets/img/sources/flag-int.svg"
+    };
+
+    function flagHtml(cc){
+      const c = String(cc || "INT").trim().toUpperCase();
+      const src = FLAG_SRC[c] || FLAG_SRC.INT;
+      const alt = countryLabel(c);
+
+      return `
+        <span class="v4a-flag" aria-hidden="true">
+          <img
+            class="v4a-flag__img"
+            src="${src}"
+            alt="${alt}"
+            loading="lazy"
+            decoding="async"
+            width="18"
+            height="12"
+          />
+        </span>
+      `.trim();
+    }
+
+    function fmtDate(iso){
+      if (!iso) return "";
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return safe(iso);
+      return d.toLocaleDateString("nl-BE", { year: "numeric", month: "short", day: "2-digit" });
+    }
+
+    function toImgUrl(imageVal){
+      // Supports backend formats:
+      // - string: "/images/articles/..." or full https url
+      // - object: { publicPath: "/images/..." } or { url: "https://..." }
+      if (!imageVal) return null;
+
+      let p = "";
+      if (typeof imageVal === "string") {
+        p = imageVal;
+      } else if (typeof imageVal === "object") {
+        p = String(imageVal.publicPath || imageVal.url || imageVal.src || "");
+      }
+
+      p = safe(p).trim();
+      if (!p) return null;
+
+      // Guard against accidental "[object Object]" / garbage
+      if (p === "[object Object]") return null;
+
+      // Determine special cases
+      const pl = p.toLowerCase();
+
+      // Allow placeholder.svg (so we never end up with “no thumbnail” in the UI)
+      const isPlaceholderSvg = pl.includes("/images/placeholder.svg") || pl.endsWith("/images/placeholder.svg");
+
+      // Suppress accidental brand/logo assets as thumbnails
+      const isBrandLogo = pl.includes("/images/brand/") && pl.includes("voetbal4all") && pl.endsWith(".svg");
+      if (isBrandLogo) return null;
+
+      // Keep placeholder.svg (with or without query params) as a valid image
+      if (isPlaceholderSvg) {
+        if (p.startsWith("http://") || p.startsWith("https://")) return p;
+        if (p.startsWith("/")) return IMG_BASE + p;
+        return IMG_BASE + "/" + p;
+      }
+
+      if (p.startsWith("http://") || p.startsWith("https://")) return p;
+      if (p.startsWith("/")) return IMG_BASE + p;
+      return IMG_BASE + "/" + p;
+    }
+
+    function isDbReadyWithImage(a){
+      const st = String(a?.status || "").toLowerCase().trim();
+      // Allow additional “good” statuses and also tolerate missing status.
+      const okStatus = (!st || st === "ready" || st === "ok" || st === "published" || st === "live");
+
+      const id = String(a?.id || "").trim();
+      if (!okStatus || !id) return false;
+
+      // Do NOT require http-only images; backend may return relative paths.
+      // We accept placeholders too, so the UI never goes empty.
+      const imgUrl = toImgUrl(
+        a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url
+      );
+
+      // Always keep the item; thumbnails will fall back when imgUrl is missing/bad.
+      return true;
+    }
+
+    function enforceDbOnlyWithImages(items){
+      return (items || []).filter(isDbReadyWithImage);
+    }
+
+    function dedupeById(items){
+      const seen = new Set();
+      const out = [];
+      for (const it of (items || [])) {
+        const key = String(it?.id || "").trim();
+        if (!key) continue;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        out.push(it);
+      }
+      return out;
+    }
+
+    // AdSense: safe init (avoid push when slot width is 0)
+    const V4A_ADS_MAX_TRIES = 20;
+    const V4A_ADS_RETRY_MS = 250;
+
+    function v4aCanFillAd(ins){
+      if (!ins) return false;
+      // AdSense sets this when done
+      if (ins.getAttribute("data-adsbygoogle-status") === "done") return false;
+
+      const rect = ins.getBoundingClientRect();
+      const w = Math.floor(rect.width || 0);
+      const h = Math.floor(rect.height || 0);
+
+      // Must have real width; height can be 0 before fill
+      if (w <= 0) return false;
+
+      // Avoid filling when hidden
+      const cs = window.getComputedStyle(ins);
+      if (!cs || cs.display === "none" || cs.visibility === "hidden") return false;
+
+      // Some layouts keep the parent collapsed; ensure parent is visible too
+      const parent = ins.parentElement;
+      if (parent) {
+        const pcs = window.getComputedStyle(parent);
+        if (pcs && (pcs.display === "none" || pcs.visibility === "hidden")) return false;
+      }
+
+      // Guard: if both are 0, it is definitely not laid out
+      if (w === 0 && h === 0) return false;
+
+      return true;
+    }
+
+    function v4aPushAdOnce(ins){
+      if (!v4aCanFillAd(ins)) return false;
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function v4aInitAdsense(root = document){
+      const slots = Array.from((root || document).querySelectorAll('ins.adsbygoogle'));
+      if (!slots.length) return;
+
+      let remaining = slots.filter(s => s.getAttribute('data-adsbygoogle-status') !== 'done');
+      if (!remaining.length) return;
+
+      let tries = 0;
+
+      const tick = () => {
+        tries++;
+        remaining = remaining.filter(ins => {
+          // Try fill; if it succeeded, keep it out of retry list.
+          const ok = v4aPushAdOnce(ins);
+          return !ok;
+        });
+
+        if (!remaining.length) return;
+        if (tries >= V4A_ADS_MAX_TRIES) return;
+
+        setTimeout(tick, V4A_ADS_RETRY_MS);
+      };
+
+      // Start slightly deferred to allow layout to settle
+      setTimeout(tick, 50);
+    }
+
+    function renderAdInfeed(slot){
+      return `
+        <div class="ad-infeed" style="margin: 10px 0; min-height: 120px;">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="${slot}"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"></ins>
+        </div>
+      `;
+    }
+
+    function cleanTitle(t){
+      let s = String(t || "").trim();
+
+      // Verwijder veelvoorkomende bron-tags / afkortingen
+      s = s.replace(/\bVP\b/g, "");              // VoetbalPrimeur
+      s = s.replace(/\bVI\b/g, "");              // Voetbal International
+      s = s.replace(/\bNOS\b/g, "");
+      s = s.replace(/\bHLN\b/g, "");
+      s = s.replace(/\bAD\b/g, "");
+
+      // Verwijder bronpatronen zoals " - VoetbalPrimeur", "| VI", "(VP)"
+      s = s.replace(/\s*[\-|–|—|·|\|]\s*(Voetbalprimeur|Voetbal International|VI\.nl|NOS|HLN|AD|De Telegraaf)\s*$/i, "");
+      s = s.replace(/\(\s*(VP|VI|NOS|HLN|AD)\s*\)\s*$/i, "");
+
+      // Opruimen dubbele spaties
+      s = s.replace(/\s{2,}/g, " ").trim();
+
+      return s;
+    }
+
+    function firstTwoSentences(text){
+      const s = safe(text).replace(/\s+/g, " ").trim();
+      if (!s) return "";
+      const parts = s.split(/(?<=[.!?])\s+/); // split op einde zin
+      return parts.slice(0, 2).join(" ").trim();
+    }
+
+    function isBadThumb(url){
+      const u = safe(url).trim().toLowerCase();
+      if (!u) return true;
+      if (u === "[object object]") return true;
+      if (u.includes("placeholder")) return true;
+      if (u.includes("/images/brand/") && u.includes("voetbal4all") && u.endsWith(".svg")) return true;
+      return false;
+    }
+
+    // Inline SVG fallback (zelfde idee als home) – voorkomt "lege" thumbs bij tijdelijke 404/502
+    const FALLBACK_THUMB = "data:image/svg+xml;utf8," + encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="192" height="128" viewBox="0 0 192 128">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1b2a4a" stop-opacity="0.55"/>
+            <stop offset="1" stop-color="#0b1222" stop-opacity="0.55"/>
+          </linearGradient>
+        </defs>
+        <rect width="192" height="128" rx="12" fill="url(#g)"/>
+        <g fill="none" stroke="#8fb6ff" stroke-opacity="0.65" stroke-width="2">
+          <path d="M54 86l22-24 18 18 18-22 22 28"/>
+          <rect x="48" y="38" width="96" height="58" rx="10"/>
+          <circle cx="82" cy="58" r="6"/>
+        </g>
+        <text x="96" y="118" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="11" fill="#cfe0ff" fill-opacity="0.8">Voetbal4All</text>
+      </svg>`
+    );
+
+      function renderCard(a, idx = 0){
+        const title = escapeHtml(cleanTitle(a.title));
+
+        const id = (a && a.id) ? String(a.id).trim() : "";
+        if (!id) {
+          console.warn("[ARTIKELS] Missing id for article, skipping card:", a);
+          return "";
+        }
+
+        if (!title) {
+      console.warn("[ARTIKELS] Missing title for article, skipping card:", id);
+      return "";
+    }
+    const url = "artikel.html?id=" + encodeURIComponent(id);
+
+        const cc = countryCodeFromBackend(a);
+
+        // Category: hide noisy / redundant labels (these show up as "news" in the UI)
+        const categoryRaw = safe(a.category || "").trim();
+        const categoryNorm = categoryRaw.toLowerCase();
+        const category = (categoryRaw && !["algemeen", "news", "nieuws"].includes(categoryNorm)) ? categoryRaw : "";
+        const date = safe(a.publishedAt || a.date || a.createdAt || "");
+        const snippetRaw = safe(
+          a.snippet ||
+          a.standfirst ||
+          a.standFirst ||
+          a.summary ||
+          a.excerpt ||
+          a.description ||
+          a.desc ||
+          a.teaser ||
+          a.lead ||
+          a.subtitle ||
+          a.contentSnippet ||
+          firstTwoSentences(a.body || "") ||
+          ""
+        );
+
+        let snippetClean = snippetRaw
+          .replace(/\b(bron|source)\s*:\s*.*$/i, "")
+          .replace(/\b[a-z0-9-]+\.(be|nl|com|net|org)\b/gi, "")
+          .replace(/\s*[-—|]\s*[A-Za-zÀ-ÿ0-9 .]{2,40}\s*$/i, "")
+          .replace(/\s{2,}/g, " ")
+          .trim();
+
+        snippetClean = firstTwoSentences(snippetClean); // ✅ max 2 zinnen
+        snippetClean = escapeHtml(snippetClean);
+
+        // Backend is single source of truth for image URLs (absolute or relative).
+        // Accept multiple shapes/fields and resolve them to a usable URL.
+        const imgSrc = toImgUrl(
+          a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url
+        );
+        const safeTitleAttr = escapeHtml(a.title || "");
+
+        const thumbHtml = imgSrc
+          ? `
+            <a href="${url}" aria-label="Lees artikel" style="display:inline-block;">
+              <img
+                src="${imgSrc}"
+                alt="${safeTitleAttr}"
+                loading="${idx < 6 ? "eager" : "lazy"}"
+                decoding="async"
+                fetchpriority="${idx < 2 ? "high" : "low"}"
+                referrerpolicy="no-referrer"
+                width="96"
+                height="64"
+                style="width:96px;height:64px;object-fit:cover;border-radius:10px;"
+                onerror="try{this.onerror=null;this.src='${FALLBACK_THUMB}';}catch(e){}"
+              />
+            </a>
+          `.trim()
+          : `
+            <div
+              aria-hidden="true"
+              style="width:96px;height:64px;border-radius:10px;background:rgba(255,255,255,0.06);"
+            ></div>
+          `.trim();
+
+        return `
+          <article class="v4a-card" data-article-id="${id}" data-article-url="${url}">
+            <div class="v4a-card-header" style="display:flex; gap:12px; align-items:flex-start;">
+            ${thumbHtml}
+              <div style="min-width:0;flex:1;">
+                <a class="v4a-card-title" href="${url}" style="display:block; text-decoration:none; color:inherit; line-height:1.25;">${title}</a>
+                <div class="v4a-card-meta" style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
+                  ${flagHtml(cc)}
+                  <span class="v4a-card-meta__country">${countryLabel(cc)}</span>
+                  ${category ? `<span class="v4a-card-meta__sep">·</span><span class="v4a-card-meta__cat">${category}</span>` : ""}
+                  <span class="v4a-card-meta__sep">·</span>
+                  <span class="v4a-card-meta__date">${fmtDate(date)}</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="note" style="margin-top:10px;${snippetClean ? "" : "opacity:0.85;"}">
+              ${snippetClean || "Klik op ‘Lees artikel’ voor de samenvatting en details."}
+            </p>
+
+            <div class="v4a-card-actions" style="margin-top:10px;">
+              <a class="btn-ghost-sm" href="${url}">Lees artikel</a>
+            </div>
+          </article>
+        `;
+      }
+    
+
+      function applyFilters(){
+        const q = norm(articleSearchText?.value || "");
+        const cRaw = articleFilterCountry?.value || "";
+        const catRaw = articleFilterCategory?.value || "";
+
+
+      // normalize "all" variants to empty string (= no filter)
+      const c = (cRaw === "all" || cRaw === "alles") ? "" : cRaw;
+      const cat = (catRaw === "all" || catRaw === "alles") ? "" : catRaw;
+
+      const filtered = allItems.filter(a => {
+        const text = norm((a.title||"") + " " + (a.snippet||"") + " " + (a.category||"") + " " + (a.country||""));
+        if (q && !text.includes(q)) return false;
+
+        if (c) {
+          const cc = countryCodeFromBackend(a);
+          if (cc !== c) return false;
+        }
+        
+        if (cat) {
+          const ca = safe(a.category || "");
+          if (ca !== cat) return false;
+        }
+        return true;
+      });
+
+      filteredItems = filtered; // ✅ bewaren voor paginatie
+      const total = filteredItems.length;
+
+      const countLabel = total ? (total + " artikels") : "0 artikels";
+      newsCountTop.textContent = countLabel;
+      newsCountTop2.textContent = countLabel;
+
+      if (!total){
+        newsStatus.style.display = "block";
+        newsStatus.textContent = "Geen artikels gevonden met deze filters.";
+        if (paginationEl) paginationEl.innerHTML = "";
+        return;
+      } else {
+        newsStatus.style.display = "none";
+      }
+
+      // ✅ paginatie: clamp huidige pagina
+      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+      currentPage = parseInt(currentPage, 10) || 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const start = (currentPage - 1) * PAGE_SIZE;
+      const pageItems = filteredItems.slice(start, start + PAGE_SIZE);
+
+      // Skip work if the visible state did not change
+      const renderKey = [
+        "p=" + currentPage,
+        "q=" + norm(articleSearchText.value),
+        "c=" + (articleFilterCountry?.value || ""),
+        "cat=" + (articleFilterCategory?.value || ""),
+        "ids=" + pageItems.map(it => String(it?.id || "")).join("|")
+      ].join("::");
+      if (renderKey === lastRenderKey) {
+        // still ensure counts/pagination stay consistent
+        return;
+      }
+      lastRenderKey = renderKey;
+
+      articleList.innerHTML = "";
+      const htmlParts = [];
+      const adQueue = [];
+      pageItems.forEach((a, i) => {
+        htmlParts.push(renderCard(a, i));
+
+        // In-feed ads (per pagina)
+        if (i === 5) {
+          htmlParts.push(renderAdInfeed("7960155498"));
+          adQueue.push(true);
+        }
+        if (i === 13) {
+          htmlParts.push(renderAdInfeed("7301679948"));
+          adQueue.push(true);
+        }
+      });
+
+      // Single DOM write (much faster, less layout thrash)
+      articleList.innerHTML = htmlParts.join("");
+
+      // Safely (re)initialize AdSense for any newly injected in-feed slots
+      v4aInitAdsense(articleList);
+
+      // ✅ paginatie UI onderaan (buiten #article-list zodat ads/cards het niet kunnen overlappen)
+      if (paginationEl) {
+        paginationEl.innerHTML = `
+          <div class="card">
+            <div style="display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+              <button class="btn-ghost-sm" id="pg-prev" ${currentPage === 1 ? "disabled" : ""}>Vorige</button>
+              <div class="note" style="margin:0;">Pagina <strong>${currentPage}</strong> / ${totalPages}</div>
+              <button class="btn-ghost-sm" id="pg-next" ${currentPage === totalPages ? "disabled" : ""}>Volgende</button>
+            </div>
+          </div>
+        `;
+
+        const btnPrev = document.getElementById("pg-prev");
+        const btnNext = document.getElementById("pg-next");
+
+        if (btnPrev) {
+          btnPrev.onclick = () => {
+            currentPage = Math.max(1, currentPage - 1);
+            applyFilters();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          };
+        }
+
+        if (btnNext) {
+          btnNext.onclick = () => {
+            currentPage = Math.min(totalPages, currentPage + 1);
+            applyFilters();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          };
+        }
+      }
+    }
+
+    async function fetchJsonWithRetry(url, { timeoutMs, tries = 5, baseDelayMs = 650, minItems = 8 } = {}) {
+      let lastErr = null;
+
+      for (let i = 0; i < tries; i++) {
+        const controller = new AbortController();
+        const t = setTimeout(() => controller.abort(), timeoutMs);
+
+        try {
+          const res = await fetch(url, { signal: controller.signal, cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+
+          const data = await res.json();
+          const items = Array.isArray(data) ? data : (Array.isArray(data?.items) ? data.items : []);
+
+          // Backend is source of truth, but during a pipeline refresh the list can briefly be sparse.
+          // Treat too-few-items as a transient condition and retry.
+          if (!items || items.length < minItems) {
+            throw new Error(`Too few items (${items?.length || 0})`);
+          }
+
+          return data;
+        } catch (e) {
+          lastErr = e;
+          const wait = 2000 * Math.pow(2, i); // exponential backoff: 2s,4s,8s,16s,32s
+          await sleep(wait);
+        } finally {
+          clearTimeout(t);
+        }
+      }
+
+      throw lastErr || new Error("fetchJsonWithRetry failed");
+    }
+
+    async function loadNews(){
+      if (newsInFlight) return;
+      newsInFlight = true;
+
+      try {
+        // Small start delay to avoid racing the backend during pipeline/cache refresh
+        await sleep(900);
+        // 1) Try instant render from cache
+        const cached = readNewsCache();
+        if (cached && cached.length) {
+          allItems = enforceDbOnlyWithImages(dedupeById(cached));
+          // show immediately
+          applyFilters();
+        } else {
+          // show loading state + quick skeleton to avoid "blank page" perception
+          newsStatus.style.display = "block";
+          newsStatus.textContent = "Artikels laden…";
+          const skel = Array.from({ length: 8 }).map(() => `
+            <article class="v4a-card" aria-hidden="true">
+              <div class="v4a-card-header" style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:96px;height:64px;border-radius:10px;background:rgba(255,255,255,0.06);"></div>
+                <div style="min-width:0;flex:1;">
+                  <div style="height:14px;width:70%;border-radius:6px;background:rgba(255,255,255,0.06);margin:4px 0;"></div>
+                  <div style="height:12px;width:45%;border-radius:6px;background:rgba(255,255,255,0.06);margin:8px 0;"></div>
+                </div>
+              </div>
+            </article>
+          `).join("");
+          articleList.innerHTML = skel;
+        }
+
+        // 2) Refresh in background (network)
+        // FAST: allow caching (browser/CDN) and time out quickly to avoid 10–15s hangs
+        const data = await fetchJsonWithRetry(NEWS_URL_FAST, { timeoutMs: 4500, tries: 5, baseDelayMs: 650, minItems: 1 });
+        const fresh = enforceDbOnlyWithImages(dedupeById(Array.isArray(data) ? data : (Array.isArray(data?.items) ? data.items : [])));
+
+        // Fast paint: if we had no cache, render ASAP with the first page results
+        if (!cached || !cached.length) {
+          allItems = fresh;
+          if (!allItems.length) {
+            articleList.innerHTML = "";
+            newsCountTop.textContent = "0 artikels";
+            newsCountTop2.textContent = "0 artikels";
+            newsStatus.style.display = "block";
+            newsStatus.textContent = "Geen artikels beschikbaar.";
+            return;
+          }
+          lastRenderKey = "";
+          applyFilters();
+          newsStatus.style.display = "none";
+          // push the 3 static ad slots (header, top infeed, sidebar) after first paint
+          v4aInitAdsense(document);
+        }
+
+        // FULL: fetch in background with a longer timeout
+        const dataFull = await fetchJsonWithRetry(NEWS_URL_FULL, { timeoutMs: 12000, tries: 5, baseDelayMs: 650, minItems: 20 });
+        const fullItems = enforceDbOnlyWithImages(dedupeById(Array.isArray(dataFull) ? dataFull : (Array.isArray(dataFull?.items) ? dataFull.items : [])));
+
+        // Only re-render if data actually changed
+        const prevSig = itemsSignature(allItems);
+        const nextSig = itemsSignature(fullItems);
+
+        writeNewsCache(fullItems);
+
+        if (nextSig !== prevSig) {
+          allItems = fullItems;
+          if (!allItems.length) {
+            articleList.innerHTML = "";
+            newsCountTop.textContent = "0 artikels";
+            newsCountTop2.textContent = "0 artikels";
+            newsStatus.style.display = "block";
+            newsStatus.textContent = "Geen artikels beschikbaar.";
+            return;
+          }
+          lastRenderKey = ""; // force a single re-render
+          applyFilters();
+        }
+
+        v4aInitAdsense(document); // ensure static slots fill even if cache was used
+        newsStatus.style.display = "none";
+      } catch (e) {
+      // If cache already rendered, keep it and just show a subtle warning
+      if (allItems && allItems.length) {
+        newsStatus.style.display = "block";
+        newsStatus.textContent = "Artikels geladen uit cache. Vernieuwen lukt momenteel niet.";
+        return;
+      }
+      // Fallback: try loading static data/news.json
+      try {
+        console.warn("[ARTIKELS] API failed, trying fallback data/news.json");
+        const fbResp = await fetch("data/news.json", { cache: "no-store" });
+        if (fbResp.ok) {
+          const fbData = await fbResp.json();
+          const fbItems = (fbData.items || []).map((it, idx) => ({
+            id: it.link || ("fb-" + idx),
+            status: "ready",
+            title: it.title || "Zonder titel",
+            link: it.link || "#",
+            source: it.source || "",
+            country: it.country || "INT",
+            flag: it.flag || "",
+            summary: it.summary || "",
+            published_at: it.publishedAt || null,
+            image: null
+          }));
+          if (fbItems.length) {
+            allItems = fbItems;
+            lastRenderKey = "";
+            applyFilters();
+            newsStatus.style.display = "block";
+            newsStatus.textContent = "Artikels geladen uit lokale cache (beperkt overzicht).";
+            return;
+          }
+        }
+      } catch (fbErr) {
+        console.warn("[ARTIKELS] Fallback news.json also failed:", fbErr.message);
+      }
+      articleList.innerHTML = "";
+      newsCountTop.textContent = "\u2014";
+      newsCountTop2.textContent = "\u2014";
+      newsStatus.style.display = "block";
+      newsStatus.textContent = "Artikels tijdelijk niet beschikbaar. Probeer later opnieuw.";
+    } finally {
+        newsInFlight = false;
+      }
+    }
+
+if (articleSearchText) {
+  articleSearchText.addEventListener("input", () => { currentPage = 1; applyFilters(); });
+}
+if (articleFilterCountry) {
+  articleFilterCountry.addEventListener("change", () => { currentPage = 1; applyFilters(); });
+}
+if (articleFilterCategory) {
+  articleFilterCategory.addEventListener("change", () => { currentPage = 1; applyFilters(); });
+}
+
+
+    window.addEventListener('load', () => v4aInitAdsense(document));
+
+    loadNews();
+  </script>
+
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+  <script src="assets/js/live-banner.js"></script>
+</body>
+</html>

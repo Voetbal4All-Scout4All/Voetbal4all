@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <meta charset="UTF-8" />
+  <title>Bedankt – Voetbal4All</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Page feel (professional confirmation) */
+    .thanks-wrap{padding:22px 0 70px;}
+    .thanks-card{max-width:1040px;margin:0 auto;text-align:left;}
+
+    /* Hero header */
+    .thanks-hero{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:6px 0 8px;}
+
+    /* Logo that blends into page background */
+    .thanks-logo-crop{
+      width:min(640px, 94vw);
+      border-radius:22px;
+      position:relative;
+      margin:0 auto;
+
+      /* Blend with page (no visible "tile" behind the logo) */
+      background: transparent;
+      border:none;
+      box-shadow:none;
+
+      /* Give the drop-shadow room so it never gets clipped */
+      padding:28px 30px 22px;
+      overflow:visible;
+      isolation:isolate;
+      -webkit-backdrop-filter: blur(0px);
+      backdrop-filter: blur(0px);
+    }
+    .thanks-logo-img{
+      width:100%;
+      height:auto;
+      display:block;
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+      box-sizing:border-box;
+
+      /* Premium depth without hard edges */
+      filter: drop-shadow(0 18px 48px rgba(0,0,0,.45));
+      transform: translateZ(0);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .thanks-subtitle{margin:0;opacity:.9;max-width:780px;}
+
+    /* Summary grid */
+    .thanks-summary{margin-top:16px;display:grid;grid-template-columns:1.2fr .8fr;gap:14px;}
+    .thanks-panel{border-radius:18px;padding:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);}
+    .thanks-panel h3{margin:0 0 10px;font-size:16px;font-weight:800;}
+    .thanks-kv{display:grid;grid-template-columns:170px 1fr;gap:8px 12px;align-items:start;}
+    .thanks-kv dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.72;}
+    .thanks-kv dd{margin:0;font-weight:600;}
+    /* Sub-sections inside Overzicht (premium + ingevulde gegevens) */
+    .kv-block{
+      grid-column: 1 / -1;
+      margin-top: 10px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .kv-block + .kv-block{ margin-top: 12px; }
+    .kv-block-title{
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      opacity:.85;
+      font-weight:800;
+      margin:0 0 10px;
+    }
+    .kv-block-body{ display:block; }
+    .kv-inline-row{
+      display:grid;
+      grid-template-columns:170px 1fr;
+      gap:8px 12px;
+      align-items:start;
+      margin-top:10px;
+    }
+    .kv-inline-row dt{ font-size:12px; letter-spacing:.06em; text-transform:uppercase; opacity:.72; }
+    .kv-inline-row dd{ margin:0; font-weight:600; }
+    /* Ingevulde gegevens (zelfde typografie als Overzicht) */
+    #formFieldsList .ff-label{
+      font-size:12px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      opacity:.72;
+      font-weight:400; /* exact match with .thanks-kv dt (computed) */
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    #formFieldsList .ff-value{
+      font-weight:600; /* exact match with .thanks-kv dd */
+      margin:0;
+      white-space:pre-wrap;
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .thanks-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(24,160,251,.35);background:rgba(24,160,251,.08);
+      font-size:12px;font-weight:800;letter-spacing:.02em;}
+
+    /* Pending confirmation notice */
+    .notice{border-radius:16px;padding:14px 14px;margin-top:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);}
+    .notice strong{font-weight:900;}
+    .notice-warning{border-color:rgba(255,183,77,.35);background:rgba(255,183,77,.08);}
+    .notice-danger{border-color:rgba(255, 51, 102, 0.55);background:rgba(255, 51, 102, 0.10);}
+    .notice-warning a{color:inherit;text-decoration:underline;}
+    .notice-meta{margin-top:8px;display:grid;grid-template-columns:170px 1fr;gap:6px 12px;align-items:start;}
+    .notice-meta dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.72;}
+    .notice-meta dd{margin:0;font-weight:700;}
+    /* Message preview */
+    .thanks-msg{margin-top:14px;}
+    .thanks-msg .note{margin:0;}
+    .thanks-msg-box{margin-top:10px;border-radius:14px;padding:12px 12px;
+      border:1px dashed rgba(255,255,255,.18);background:rgba(0,0,0,.18);text-align:left;}
+    .thanks-msg-box pre{margin:0;white-space:pre-wrap;word-break:break-word;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12.5px;line-height:1.5;opacity:.95;}
+
+    /* CTA grid */
+    .thanks-cta{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);}
+    .thanks-cta-title{font-size:18px;font-weight:800;margin-bottom:10px;text-align:center;}
+    .thanks-cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    .thanks-cta-card{display:block;text-decoration:none;padding:14px;border-radius:16px;
+      border:1px solid rgba(24,160,251,.35);background:rgba(24,160,251,.06);transition:transform .12s ease, border-color .12s ease;}
+    .thanks-cta-card:hover{transform:translateY(-2px);border-color:rgba(24,160,251,.55);}
+    .thanks-cta-kicker{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.78;}
+    .thanks-cta-title-card{font-size:16px;font-weight:800;margin-top:6px;}
+
+    /* Mobile */
+    @media (max-width:900px){
+      .thanks-summary{grid-template-columns:1fr;}
+      .thanks-cta-grid{grid-template-columns:1fr;}
+      .thanks-kv{grid-template-columns:140px 1fr;}
+    }
+  
+
+    /* Premium window highlight (shown only when provided) */
+    .premium-window-chip{
+      display:grid;
+      grid-template-columns:1fr 48px 1fr;
+      align-items:center;
+      gap:16px;
+      padding:16px 18px;
+      border-radius:14px;
+      border:1px solid rgba(34,197,94,.55);
+      background: rgba(10,19,36,.78);
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      font-size:14px;
+      line-height:1.25;
+      font-weight:900;
+    }
+
+    .premium-window-chip > div:first-child{
+      text-align:left;
+    }
+
+    .premium-window-chip > div:last-child{
+      text-align:right;
+    }
+
+    .premium-window-chip .arrow{
+      text-align:center;
+      opacity:.75;
+      font-weight:900;
+      font-size:18px;
+      line-height:1;
+      transform: translateY(1px);
+    }
+
+    .premium-window-chip small{
+      display:block;
+      font-size:11px;
+      opacity:.82;
+      margin-bottom:4px;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+    .premium-window-chip span{ display:block; font-weight:900; }
+
+    .premium-upsell-chip{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid rgba(24,160,251,.55);
+      background:rgba(24,160,251,.10);
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+      font-size:14px;
+    }
+    .premium-upsell-chip strong{font-weight:900;}
+    .premium-upsell-chip span{opacity:.9;}
+    .premium-upsell-chip .upsell-cta{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(24,160,251,.65);
+      background:rgba(24,160,251,.20);
+      font-weight:800;
+    }
+
+</style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================= NAVBAR (zelfde als Contact) ================= -->
+<header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+<!-- ================= LIVE BANNER (zelfde als Contact) ================= -->
+<section class="live-banner-top">
+  <div class="shell">
+    <div class="live-banner">
+      <div class="live-label"><span class="live-dot"></span>Live score</div>
+      <div class="live-text">
+        <span class="live-text-main"></span>
+        <div class="live-updated"></div>
+      </div>
+      <div class="live-socials">
+        <div class="live-socials-label">Volg ons</div>
+        <div class="live-socials-icons"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="section-main thanks-wrap">
+    <div class="shell">
+      <article class="card thanks-card">
+        <div class="thanks-hero">
+          <!-- HEILIG LOGO: transparante master (hoge resolutie) -->
+          <!-- Bestand: assets/img/brand/logo-voetbal4all_Bedankt_transparent.png -->
+          <div class="thanks-logo-crop">
+            <img class="thanks-logo-img" src="assets/img/brand/logo-voetbal4all_Bedankt_transparent.png" alt="Voetbal4All" loading="eager" decoding="async">
+          </div>
+
+          <!-- Success checkmark animation (shown on success, hidden on error) -->
+          <div id="thanksIcon" class="thanks-icon" aria-hidden="true" style="display:none;">
+            <svg class="checkmark" viewBox="0 0 52 52" role="img" aria-label="Succes">
+              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"></circle>
+              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+            </svg>
+          </div>
+          <div class="card-title" id="thanksTitle">Bedankt</div>
+          <p class="note thanks-subtitle" id="thanksSubtitle">
+            We hebben je aanvraag goed ontvangen. Hieronder vind je een overzicht.
+          </p>
+
+        <div class="thanks-badge" id="thanksBadge" style="display:none;"></div>
+      </div>
+
+        <!-- Non-premium confirmation notice (shown only when status=pending) -->
+        <div id="pendingNotice" class="notice notice-warning" style="display:none;">
+          <strong>Bevestiging vereist binnen 12 uur</strong><br>
+          Je event is ontvangen maar is nog <b>niet bevestigd</b>. Bevestig binnen <b>12 uur</b>, anders wordt deze aanvraag verwijderd.
+          <div style="height:8px"></div>
+          <span style="opacity:.9;">Na <b>24 uur</b> zonder bevestiging wordt de aanvraag automatisch definitief verwijderd.</span>
+          <dl class="notice-meta" aria-label="Deadlines">
+            <dt>Bevestigen vóór</dt><dd id="confirmByText">—</dd>
+            <dt>Auto-verwijderen na</dt><dd id="deleteAfterText">—</dd>
+          </dl>
+          <div id="confirmCtaWrap" style="margin-top:10px; display:none;">
+            <a id="confirmCta" class="nav-cta" href="#" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
+              <span>Bevestig je event</span>
+              <span style="font-weight:800;opacity:.9;">(12u)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Email keep notice (primary guidance after submit) -->
+        <div id="emailKeepNotice" class="notice" style="display:none;">
+          <strong>Belangrijk: bewaar de e-mail met uw Event-ID tot na het event</strong><br>
+          Verdere instructies en beheeropties worden uitsluitend via die e-mail gecommuniceerd.
+          <div style="height:10px"></div>
+          <ul style="margin:0;padding-left:18px;line-height:1.7;">
+            <li>U heeft de e-mail nodig om uw aanvraag te <strong>bevestigen</strong> (niet-premium).</li>
+            <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
+            <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>Event-ID</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Error notice (shown when an action failed or was rejected) -->
+        <div id="errorNotice" class="notice notice-danger" style="display:none;">
+          <strong>Uw aanvraag kon niet verwerkt worden</strong><br>
+          <span id="errorReasonText" style="opacity:.95;">Er ging iets mis bij het verwerken van uw aanvraag.</span>
+          <div style="height:10px"></div>
+          <span style="opacity:.9;">Voor meer info, contacteer ons via het contactformulier.</span>
+          <div style="height:10px"></div>
+          <a class="nav-cta" href="contact.html" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
+            <span>Contactformulier</span>
+            <span style="font-weight:800;opacity:.9;">Support</span>
+          </a>
+        </div>
+
+        <!-- Cancel notice (shown when payment was cancelled) -->
+        <div id="cancelNotice" class="notice notice-warning" style="display:none;">
+          <strong>Betaling geannuleerd</strong><br>
+          Uw Premium betaling werd geannuleerd. Uw event werd <b>niet</b> gepubliceerd.
+          <div style="height:10px"></div>
+          <span style="opacity:.9;">U kan opnieuw proberen of een niet-premium aanvraag indienen.</span>
+          <div style="height:10px"></div>
+          <a class="nav-cta" href="event-aanmelden.html" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
+            <span>Event aanmelden</span>
+            <span style="font-weight:800;opacity:.9;">Opnieuw</span>
+          </a>
+        </div>
+
+        <div class="thanks-summary">
+          <section class="thanks-panel" aria-label="Overzicht">
+            <h3>Overzicht</h3>
+            <dl class="thanks-kv">
+              <dt>Bestelling</dt>
+              <dd id="orderWhat">—</dd>
+              <dt>ID-nummer</dt>
+              <dd id="orderId">—</dd>
+              <dt>Naam</dt>
+              <dd id="orderName">—</dd>
+              <dt>E-mail</dt>
+              <dd id="orderEmail">—</dd>
+              <dt>Status</dt>
+              <dd id="orderStatus">Ontvangen</dd>
+            </dl>
+
+            <div id="premiumBlock" class="kv-block" style="display:none;">
+              <div class="kv-block-title">Premium</div>
+              <div class="kv-block-body">
+                <div id="premiumWindowWrap" style="display:none;"></div>
+                <dl id="premiumWindowRow" class="kv-inline-row" style="margin:0; display:none;">
+                  <dt id="premiumWindowLabel" style="display:none;">Premium-periode</dt>
+                  <dd id="premiumWindowValue" style="display:none;">—</dd>
+                </dl>
+              </div>
+            </div>
+
+            <div id="formFieldsWrap" class="kv-block" style="display:none;">
+              <div class="kv-block-title">Ingevulde gegevens</div>
+              <div class="kv-block-body">
+                <div id="formFieldsList" style="display:grid;grid-template-columns:170px 1fr;gap:8px 12px;align-items:start;"></div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="thanks-panel" aria-label="Volgende stappen">
+            <h3>Volgende stappen</h3>
+            <p class="note" style="margin:0;" id="nextStepsIntro">
+              Uw aanvraag is goed ontvangen. U ontvangt een e-mail met verdere instructies.
+            </p>
+            <div style="height:10px"></div>
+            <p class="note" style="margin:0;opacity:.85;" id="nextStepsTip">
+              Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer verloopt via die e-mail.
+            </p>
+          </aside>
+        </div>
+
+        <div class="thanks-msg" id="msgWrap" style="display:none;">
+          <div class="thanks-panel">
+            <h3>Bericht (voorvertoning)</h3>
+            <p class="note">Dit is een kopie van wat je hebt ingestuurd.</p>
+            <div class="thanks-msg-box"><pre id="msgPreview"></pre></div>
+          </div>
+        </div>
+
+        <div class="thanks-cta">
+          <div class="thanks-cta-title">Misschien wil je ook dit bekijken</div>
+          <div class="thanks-cta-grid">
+            <a class="thanks-cta-card" href="adverteren.html">
+              <div class="thanks-cta-kicker">Sponsor &amp; Ads</div>
+              <div class="thanks-cta-title-card">Adverteer nu</div>
+              <div class="note">Vergroot je zichtbaarheid op Voetbal4All.</div>
+            </a>
+            <a class="thanks-cta-card" href="events.html">
+              <div class="thanks-cta-kicker">Events</div>
+              <div class="thanks-cta-title-card">Plaats een event</div>
+              <div class="note">Tornooien, stages, kampen en meer.</div>
+            </a>
+            <a class="thanks-cta-card" href="clubvacatures.html">
+              <div class="thanks-cta-kicker">Vacatures</div>
+              <div class="thanks-cta-title-card">Plaats een vacature</div>
+              <div class="note">Bereik trainers en spelers.</div>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+        <div class="footer-legal">
+          &copy; <span id="year"></span> Voetbal4All.
+        </div>
+      </div>
+      <div class="footer-ad">FOOTER ADVERTENTIE</div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ------------------------------
+  // Professional thank-you content
+  // ------------------------------
+  (async function(){
+    const qs = new URLSearchParams(window.location.search);
+    let fetchedEventItem = null;
+    let storedEventPayload = null;
+
+    // EARLY FILL: always render name/email from the querystring ASAP.
+    // This guarantees the UI is filled even if later logic returns early or a fetch fails.
+    const __earlyName = (qs.get('name') || '').trim();
+    const __earlyEmail = (qs.get('email') || '').trim();
+    const __earlySet = (id, v) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const s = String(v || '').trim();
+      if (s) el.textContent = s;
+    };
+    __earlySet('orderName', __earlyName);
+    __earlySet('orderEmail', __earlyEmail);
+
+    // Read stored payload (event-aanmelden.html stores it before redirecting to Stripe)
+    function loadStoredPayload(sid) {
+      if (!sid) return null;
+      const key = `v4_event_payload_${sid}`;
+      try {
+        const s1 = sessionStorage.getItem(key);
+        if (s1) return JSON.parse(s1);
+      } catch (_) {}
+      try {
+        const s2 = localStorage.getItem(key);
+        if (s2) return JSON.parse(s2);
+      } catch (_) {}
+      return null;
+    }
+
+   // ------------------------------
+    // Flow resolver (edge-case proof)
+    // ------------------------------
+    function pickFirst(params, keys) {
+      for (const k of keys) {
+        const v = params.get(k);
+        if (v !== null && String(v).trim() !== "") return String(v).trim();
+      }
+      return "";
+    }
+
+    function asBool(v) {
+      if (v === null || v === undefined) return false;
+      const s = String(v).toLowerCase().trim();
+      return s === "1" || s === "true" || s === "yes" || s === "ok";
+    }
+
+    function resolveFlow(params) {
+      const sid = pickFirst(params, ["sid", "session_id", "stripe_session_id"]);
+      const eventId = pickFirst(params, ["eventId", "event_id", "id", "eid"]);
+      const submissionId = pickFirst(params, ["submissionId", "submission_id"]);
+
+      const paid = asBool(pickFirst(params, ["paid", "success"]));
+      const cancelled = asBool(pickFirst(params, ["cancelled", "canceled", "cancel"]));
+      const error = pickFirst(params, ["error", "err", "reason", "message"]);
+
+      const confirmed = asBool(pickFirst(params, ["confirmed", "confirm", "published"]));
+      const deleted = asBool(pickFirst(params, ["deleted", "remove"]));
+
+      const premiumStart = pickFirst(params, ["premiumStart", "premium_from", "premium_activated_at", "premiumActivatedAt", "premium_start"]);
+      const premiumEnd = pickFirst(params, ["premiumEnd", "premium_to", "premium_expires_at", "premiumExpiresAt", "premium_end"]);
+      const packageCode = pickFirst(params, ["package_code", "packageCode", "package", "pkg"]);
+      const quantity = pickFirst(params, ["quantity", "qty", "q"]);
+
+      if (error && !asBool(error)) {
+        return { kind: "error", sid, eventId, submissionId, error, premiumStart, premiumEnd, packageCode, quantity };
+      }
+      if (deleted) return { kind: "nonpremium_deleted", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (confirmed) return { kind: "nonpremium_confirmed", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (cancelled) return { kind: "premium_cancel", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (paid && sid) return { kind: "premium_success", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (paid && !sid) return { kind: "error", sid: "", eventId, submissionId, error: "paid=1 maar geen sid/session_id", premiumStart, premiumEnd, packageCode, quantity };
+      return { kind: "unknown", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+    }
+
+    const flow = resolveFlow(qs); 
+    storedEventPayload = loadStoredPayload((flow && flow.sid) ? String(flow.sid).trim() : '');
+
+    // Source/type (e.g. contact, event, vacature, premium, betaling)
+    const source = (qs.get('source') || '').trim();
+    // Normalize source/kind so premium profiles & vacatures render premium window
+    const kind = (qs.get('kind') || source || '').trim();
+    const isNonEventPremium = (kind === 'vacature' || kind === 'profile' || kind === 'trainer' || kind === 'speler');
+
+    // Primary params used by the event flow
+    const sid = (flow.sid || '').trim();
+    const paid = flow.kind === 'premium_success';
+    const isCancelledFlow = flow.kind === 'premium_cancel';
+
+    // Premium window (optional): provided by backend after payment/confirmation
+    // Supported param names (robust): premiumStart/premiumEnd OR premium_from/premium_to
+    // Also accept backend-style names: premium_activated_at / premium_expires_at
+
+    function getParamAny(keys) {
+      for (const k of keys) {
+        const v = qs.get(k);
+        if (v && String(v).trim()) return String(v).trim();
+      }
+      return '';
+    }
+
+    function normalizePkg(p) {
+      const s0 = String(p || '').trim().toLowerCase();
+      if (!s0) return '';
+
+      if (s0 === 'weeks' || s0 === 'week' || s0 === 'w') return 'week';
+      if (s0 === 'months' || s0 === 'month' || s0 === 'm') return 'month';
+
+      if (
+        s0 === 'month4_5' || s0 === 'month-4-5' || s0 === 'months_4_5' || s0 === 'months-4-5' ||
+        s0 === '4_5_months' || s0 === '4-5_months' || s0 === '4-5months' || s0 === 'month_4_5'
+      ) return 'month_4_5';
+
+      if (
+        s0 === 'month6' || s0 === 'month-6' || s0 === 'months6' || s0 === 'months-6' ||
+        s0 === '6months' || s0 === '6_months' || s0 === '6-months' || s0 === 'month_6'
+      ) return 'month_6';
+
+      // allow more specific codes like week_1, month_2, etc.
+      return s0;
+    }
+
+    function parseIsoDate(v) {
+      if (!v) return null;
+      const d = new Date(v);
+      if (isNaN(d.getTime())) return null;
+      return d;
+    }
+
+    function parseYMD(s) {
+      const v = String(s || '').trim();
+      const m = v.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (!m) return null;
+      const y = Number(m[1]);
+      const mo = Number(m[2]);
+      const d = Number(m[3]);
+      const dt = new Date(y, mo - 1, d, 0, 0, 0, 0);
+      return Number.isNaN(dt.getTime()) ? null : dt;
+    }
+
+    function addMonths(d, months) {
+      const dt = new Date(d.getTime());
+      const day = dt.getDate();
+      dt.setMonth(dt.getMonth() + months);
+      // handle month rollover (e.g., Jan 31 -> Feb)
+      if (dt.getDate() !== day) dt.setDate(0);
+      return dt;
+    }
+
+    function addWeeks(d, weeks) {
+      return new Date(d.getTime() + (weeks * 7 * 24 * 60 * 60 * 1000));
+    }
+
+    function computeEventPremiumWindowFromSignupDeadline(sdRaw, pkg, qty) {
+      const sd = parseYMD(sdRaw) || parseIsoDate(sdRaw);
+      if (!sd) return null;
+
+      const p = normalizePkg(pkg);
+      const q = Math.max(1, parseInt(String(qty || '1'), 10) || 1);
+
+      let months = 0;
+      let weeks = 0;
+
+      if (p === 'week') weeks = Math.min(3, Math.max(1, q));
+      else if (p === 'month') months = Math.min(6, Math.max(1, q));
+      else if (p === 'month_4_5') months = Math.min(5, Math.max(4, q));
+      else if (p === 'month_6') months = 6;
+      else if (/^week_\d+$/.test(p)) weeks = Math.min(3, Math.max(1, parseInt(p.split('_')[1], 10) || 1));
+      else if (/^month_\d+$/.test(p)) months = Math.min(6, Math.max(1, parseInt(p.split('_')[1], 10) || 1));
+
+      // premium end = day AFTER last signup day, at 18:00
+      const premiumEnd = new Date(sd.getFullYear(), sd.getMonth(), sd.getDate() + 1, 18, 0, 0, 0);
+
+      // premium start = premiumEnd - chosen period
+      let premiumStart = new Date(premiumEnd.getTime());
+      if (months > 0) premiumStart = addMonths(premiumStart, -months);
+      if (weeks > 0) premiumStart = addWeeks(premiumStart, -weeks);
+
+      return {
+        startIso: premiumStart.toISOString(),
+        endIso: premiumEnd.toISOString()
+      };
+    }
+
+    // Raw values (if backend already provides them)
+    let premiumStartRaw = getParamAny(['premiumStart', 'premium_from', 'premium_activated_at', 'premiumActivatedAt']);
+    let premiumEndRaw = getParamAny(['premiumEnd', 'premium_to', 'premium_expires_at', 'premiumExpiresAt']);
+
+    // Used in multiple branches; declare ONCE to avoid redeclare errors.
+    // Track whether we have a signupDeadline rule (event premium end = signupDeadline + 1 day)
+    // Must not be declared twice in the same scope.
+    let signupDeadlinePresent = false;
+    const signupDeadlineRaw2 =
+      getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+      || (storedEventPayload && storedEventPayload.signupDeadline
+          ? String(storedEventPayload.signupDeadline).trim()
+          : '');
+    signupDeadlinePresent = !!String(signupDeadlineRaw2 || '').trim();
+
+    // If we have a signup deadline, it is authoritative for EVENT premium.
+    // Always derive the window from signupDeadline (+1 day) and selected package/quantity.
+    if (signupDeadlinePresent) {
+      const pkgRawSD = getParamAny(['package_code', 'packageCode', 'pkg'])
+        || (storedEventPayload && storedEventPayload.package_code ? String(storedEventPayload.package_code).trim() : '')
+        || (storedEventPayload && storedEventPayload.premiumDuration ? String(storedEventPayload.premiumDuration).trim() : '');
+
+      const qtyRawSD = getParamAny(['quantity', 'qty', 'q'])
+        || (storedEventPayload && storedEventPayload.quantity ? String(storedEventPayload.quantity).trim() : '1');
+
+      const winSD = computeEventPremiumWindowFromSignupDeadline(signupDeadlineRaw2, pkgRawSD, qtyRawSD);
+      if (winSD) {
+        premiumStartRaw = winSD.startIso;
+        premiumEndRaw = winSD.endIso;
+      }
+    }
+
+    // If premium window is not present in the URL, try to derive it from event date + package
+    // This fixes the common case where confirm/delete links don't carry premiumStart/premiumEnd.
+    if (!premiumStartRaw || !premiumEndRaw) {
+      const startAtRaw = getParamAny(['start_at', 'startAt', 'event_start', 'eventStart', 'start'])
+        || (storedEventPayload && (storedEventPayload.eventStart || storedEventPayload.start_at || storedEventPayload.startAt)
+          ? String(storedEventPayload.eventStart || storedEventPayload.start_at || storedEventPayload.startAt).trim()
+          : '');
+
+      const endAtRaw = getParamAny(['end_at', 'endAt', 'event_end', 'eventEnd', 'end'])
+        || (storedEventPayload && (storedEventPayload.eventEnd || storedEventPayload.end_at || storedEventPayload.endAt)
+          ? String(storedEventPayload.eventEnd || storedEventPayload.end_at || storedEventPayload.endAt).trim()
+          : '');
+
+      const eventStart = parseIsoDate(startAtRaw);
+      const eventEnd = parseIsoDate(endAtRaw) || eventStart;
+
+      // package_code + quantity are used by Stripe flow
+      const pkgRaw = getParamAny(['package_code', 'packageCode', 'pkg'])
+        || (storedEventPayload && storedEventPayload.package_code ? String(storedEventPayload.package_code).trim() : '');
+
+      const qtyRaw = getParamAny(['quantity', 'qty', 'q'])
+        || (storedEventPayload && storedEventPayload.quantity ? String(storedEventPayload.quantity).trim() : '');
+
+      const pkg = normalizePkg(pkgRaw);
+      const qty = Math.max(1, parseInt(qtyRaw || '1', 10) || 1);
+
+      if (pkg) {
+        let months = 0;
+        let weeks = 0;
+
+        if (pkg === 'week') weeks = Math.min(3, Math.max(1, qty));
+        else if (pkg === 'month') months = Math.min(6, Math.max(1, qty));
+        else if (pkg === 'month_4_5') months = Math.min(5, Math.max(4, qty));
+        else if (pkg === 'month_6') months = 6;
+        else if (/^week_\d+$/.test(pkg)) weeks = Math.min(3, Math.max(1, parseInt(pkg.split('_')[1], 10) || 1));
+        else if (/^month_\d+$/.test(pkg)) months = Math.min(6, Math.max(1, parseInt(pkg.split('_')[1], 10) || 1));
+
+        /**
+         * EVENT PREMIUM LOGIC (DEFINITIEF)
+         * - Laatste inschrijfdag = signupDeadline (YYYY-MM-DD)
+         * - Premium EINDE = signupDeadline + 1 dag om 00:00
+         * - Premium START = EINDE - gekozen periode
+         */
+
+        const signupDeadlineRaw =
+          getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+          || (storedEventPayload && storedEventPayload.signupDeadline
+              ? String(storedEventPayload.signupDeadline).trim()
+              : '');
+
+        const sd =
+          parseYMD(signupDeadlineRaw)
+          || parseIsoDate(signupDeadlineRaw);
+
+        if (sd) {
+          // premium end = dag NA laatste inschrijfdag, start van de dag
+          const premiumEnd = new Date(sd.getFullYear(), sd.getMonth(), sd.getDate() + 1, 0, 0, 0, 0);
+
+          let premiumStart = new Date(premiumEnd.getTime());
+          if (months > 0) premiumStart = addMonths(premiumStart, -months);
+          if (weeks > 0) premiumStart = addWeeks(premiumStart, -weeks);
+
+          premiumStartRaw = premiumStart.toISOString();
+          premiumEndRaw   = premiumEnd.toISOString();
+        }
+      }
+    }
+
+    // If we still don't have the premium window, try to fetch it from the backend event record.
+    // Supports both numeric event IDs and external_id (UUID) used by forms:event-submission.
+    async function tryFetchPremiumWindowFromEvent() {
+      // We may still want to fetch the event even if the premium window exists,
+      // because we use the event payload to render the submitted fields.
+
+      // Prefer the SID from the flow. This can be either:
+      // - forms external_id (UUID)
+      // - a numeric event id (some success redirects pass sid=<eventId>)
+      // - a Stripe session id (session_id)
+      const extIdRaw = String((flow && flow.sid) || '').trim();
+
+      const eventIdRaw = getParamAny(['eventId', 'event_id', 'event', 'eid', 'id']);
+      let eventId = String(eventIdRaw || '').trim();
+
+      // If sid is numeric and eventId is missing, treat sid as the event id.
+      if (!eventId && extIdRaw && /^\d+$/.test(extIdRaw)) {
+        eventId = extIdRaw;
+      }
+
+      // Only treat extId as an external UUID if it looks like a UUID.
+      const extIdIsUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(extIdRaw);
+      const extId = extIdIsUuid ? extIdRaw : '';
+
+      // Nothing to query with.
+      if (!extId && !eventId) return;
+
+      // Backend base (prod). Keep it explicit to avoid relying on relative origins.
+      const BACKEND_BASE = 'https://voetbal4all-backend-database.onrender.com';
+
+      // Try a few endpoints in order. Some deployments expose an external-id lookup.
+      // We keep this resilient: any endpoint may or may not exist.
+      const candidates = [];
+
+      // 1) External-id lookup endpoints (UUID)
+      if (extId) {
+        candidates.push(`${BACKEND_BASE}/api/events/by-external-id/${encodeURIComponent(extId)}?nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events/by-external/${encodeURIComponent(extId)}?nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events/lookup?external_id=${encodeURIComponent(extId)}&nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events?external_id=${encodeURIComponent(extId)}&nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events?externalId=${encodeURIComponent(extId)}&nocache=1`);
+        candidates.push(`${BACKEND_BASE}/api/events?sid=${encodeURIComponent(extId)}&nocache=1`);
+      }
+
+      // 2) Numeric ID endpoint
+      if (eventId && /^\d+$/.test(eventId)) {
+        candidates.push(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`);
+      }
+
+      // 2b) Some deployments expose event by id via query
+      if (eventId && /^\d+$/.test(eventId)) {
+        candidates.push(`${BACKEND_BASE}/api/events?id=${encodeURIComponent(eventId)}&limit=1&nocache=1`);
+      }
+
+      // 3) Fallbacks: some deployments don't expose /api/events/:id publicly.
+      // Fetch lists and pick the matching item by id/external_id (safe: we never take items[0]).
+      candidates.push(`${BACKEND_BASE}/api/events/premium?days=365&limit=200&nocache=1`);
+      candidates.push(`${BACKEND_BASE}/api/events?limit=200&nocache=1`);
+
+      // Helper: pick the *correct* event item (avoid grabbing the first item from /api/events when a filter is unsupported)
+      const isMatch = (item) => {
+        if (!item) return false;
+
+        // If we have a numeric ID, accept only that ID
+        if (eventId && /^\d+$/.test(eventId)) {
+          if (String(item.id || '').trim() === String(eventId).trim()) return true;
+        }
+
+        // If we have an external UUID (forms submission SID), accept only matching external_id
+        if (extId) {
+          const ext = String(item.external_id || item.externalId || item.sid || '').trim();
+          if (ext && ext === extId) return true;
+
+          // Some payloads may encode it in source (rare, but safe)
+          const src = String(item.source || '').trim();
+          if (src && src.includes(extId)) return true;
+        }
+
+        return false;
+      };
+
+      const pickMatchingItem = (data) => {
+        if (!data) return null;
+
+        // 1) Single-item shape
+        if (data.item) {
+          return isMatch(data.item) ? data.item : null;
+        }
+
+        // 2) List shape with items
+        if (Array.isArray(data.items) && data.items.length) {
+          const hit = data.items.find(isMatch);
+          return hit || null;
+        }
+
+        // 3) Raw array
+        if (Array.isArray(data) && data.length) {
+          const hit = data.find(isMatch);
+          return hit || null;
+        }
+
+        return null;
+      };
+
+      for (const url of candidates) {
+        try {
+          const r = await fetch(url, {
+            method: 'GET',
+            headers: { 'accept': 'application/json' },
+            cache: 'no-store'
+          });
+          if (!r.ok) continue;
+
+          const data = await r.json();
+          const item = pickMatchingItem(data);
+          if (!item) continue;
+          fetchedEventItem = item;
+
+          // Prefer SIGNUP-DEADLINE logic for events (authoritative), even if backend sends a different window.
+          // If signupDeadline is present (from URL, stored payload, or fetched item), we compute:
+          // end = signupDeadline + 1 day @ 00:00, start = end - package duration.
+          const hasSignupDeadline = !!String(
+            getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+            || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '')
+            || (item && (item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay) ? String(item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay).trim() : '')
+            || ''
+          ).trim();
+
+          if (hasSignupDeadline) {
+            const sdRaw =
+              getParamAny(['signupDeadline','signup_deadline','lastSignupDay','last_signup_day'])
+              || (storedEventPayload && storedEventPayload.signupDeadline ? String(storedEventPayload.signupDeadline).trim() : '')
+              || (item && (item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay)
+                ? String(item.signup_deadline || item.signupDeadline || item.last_signup_day || item.lastSignupDay).trim()
+                : '');
+
+            const pkgRaw3 = (item && (item.package_code || item.packageCode || item.pkg) ? String(item.package_code || item.packageCode || item.pkg).trim() : '')
+              || getParamAny(['package_code','packageCode','pkg'])
+              || (storedEventPayload && storedEventPayload.package_code ? String(storedEventPayload.package_code).trim() : '');
+
+            const qtyRaw3 = (item && (item.quantity || item.qty || item.q) ? String(item.quantity || item.qty || item.q).trim() : '')
+              || getParamAny(['quantity','qty','q'])
+              || (storedEventPayload && storedEventPayload.quantity ? String(storedEventPayload.quantity).trim() : '1');
+
+            const win = computeEventPremiumWindowFromSignupDeadline(sdRaw, pkgRaw3, qtyRaw3);
+            if (win) {
+              premiumStartRaw = win.startIso;
+              premiumEndRaw = win.endIso;
+              break;
+            }
+          }
+
+          // Otherwise: use backend-calculated premium window if available
+          const pStart = item.premium_activated_at || item.premiumActivatedAt || item.premium_start || item.premiumStart || '';
+          const pEnd = item.premium_expires_at || item.premiumExpiresAt || item.premium_end || item.premiumEnd || '';
+
+          if (pStart && pEnd) {
+            premiumStartRaw = String(pStart);
+            premiumEndRaw = String(pEnd);
+            break;
+          }
+
+          // Fallback: only use start/end if we STILL don't have a premium window
+          // AND there is no signupDeadline rule to apply.
+          if (!hasSignupDeadline && !(premiumStartRaw && premiumEndRaw)) {
+            const fallbackStart = item.premium_activated_at || item.start_at || item.startAt || '';
+            const fallbackEnd = item.premium_expires_at || item.end_at || item.endAt || item.start_at || item.startAt || '';
+            if (fallbackStart && fallbackEnd) {
+              premiumStartRaw = String(fallbackStart);
+              premiumEndRaw = String(fallbackEnd);
+              break;
+            }
+          }
+        } catch (e) {
+          // silent
+        }
+      }
+    }
+
+    // Error/failure params (for rejected submissions)
+    const errorFlag = flow.kind === 'error' ? '1' : (qs.get('error') || '').trim();
+    const reason = (flow.kind === 'error' ? (flow.error || '') : (qs.get('reason') || qs.get('message') || '')).trim();
+
+    // Who
+    const name = ((qs.get('name') || '').trim()) || (storedEventPayload && storedEventPayload.name ? String(storedEventPayload.name).trim() : '');
+    const email = ((qs.get('email') || '').trim()) || (storedEventPayload && storedEventPayload.email ? String(storedEventPayload.email).trim() : '');
+    const what = ((qs.get('what') || qs.get('product') || qs.get('type') || '').trim()) || (storedEventPayload && storedEventPayload.what ? String(storedEventPayload.what).trim() : '');
+
+    // IDs (support multiple conventions)
+    const id = (sid || flow.eventId || flow.submissionId || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
+
+    // Status (optional)
+    let status = (qs.get('status') || 'Ontvangen').trim();
+    const deletion = (qs.get('deletion') || '').trim();
+
+    const isDeleted =
+      flow.kind === 'nonpremium_deleted' ||
+      ['deleted','already_deleted'].includes(String(deletion).toLowerCase()) ||
+      String(status).toLowerCase() === 'deleted';
+
+    const isError =
+      flow.kind === 'error' ||
+      errorFlag === '1' ||
+      ['error','failed','mislukt'].includes(String(status).toLowerCase());
+
+    // NOTE: `hasPremiumWindow` is declared later (after backend lookup).
+    // Do NOT mark as paid just because dates exist: non-premium events may still have
+    // computed windows (e.g. signupDeadline logic). Only Stripe success = paid.
+    const hasPremiumWindowNow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
+    if (paid) status = 'Betaald';
+    if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
+    if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
+    if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
+
+    const statusLower = String(status).toLowerCase();
+
+    // Success checkmark animation: show only on success (hide on error)
+    const iconWrap = document.getElementById('thanksIcon');
+    if (iconWrap) {
+      if (isError) {
+        iconWrap.style.display = 'none';
+      } else {
+        iconWrap.style.display = '';
+        // restart animation when navigating to this page (works on repeat visits)
+        iconWrap.classList.remove('is-animate');
+        void iconWrap.offsetWidth; // reflow
+        iconWrap.classList.add('is-animate');
+      }
+    }
+
+    // Non-premium confirmation timing (optional)
+    const confirmBy = (qs.get('confirmBy') || '').trim();
+    const deleteAfter = (qs.get('deleteAfter') || '').trim();
+    const confirmUrl = (qs.get('confirmUrl') || '').trim();
+
+    const pendingNotice = document.getElementById('pendingNotice');
+    if (pendingNotice && !isError && statusLower === 'pending') {
+      pendingNotice.style.display = '';
+
+      const fmt = (iso) => {
+        if (!iso) return '—';
+        const d = new Date(iso);
+        if (isNaN(d.getTime())) return iso;
+        try { return d.toLocaleString('nl-BE'); } catch(e) { return d.toISOString(); }
+      };
+
+      const confirmByEl = document.getElementById('confirmByText');
+      const deleteAfterEl = document.getElementById('deleteAfterText');
+      if (confirmByEl) confirmByEl.textContent = fmt(confirmBy);
+      if (deleteAfterEl) deleteAfterEl.textContent = fmt(deleteAfter);
+
+      // Optional CTA if a confirmUrl is provided
+      const ctaWrap = document.getElementById('confirmCtaWrap');
+      const cta = document.getElementById('confirmCta');
+      if (confirmUrl && ctaWrap && cta) {
+        ctaWrap.style.display = '';
+        cta.href = confirmUrl;
+      }
+    }
+
+    // Show the primary guidance notice after a form submit
+    const emailKeepNotice = document.getElementById('emailKeepNotice');
+    if (emailKeepNotice) {
+      // Show for event submissions; for premium (paid=1) we still recommend keeping the email,
+      // but the “bevestigen” step applies to non-premium.
+      const isEventFlow = !!sid || source === 'event' || isNonEventPremium;
+      if (isEventFlow && !isError && !isDeleted) {
+        emailKeepNotice.style.display = '';
+        if (paid) {
+          emailKeepNotice.querySelectorAll('li')[0].innerHTML = 'Bewaar de e-mail met uw <strong>Event-ID</strong> tot na het event.';
+        }
+      } else {
+        emailKeepNotice.style.display = 'none';
+      }
+    }
+
+    // Show error notice when the submission was rejected/failed
+    // Show cancel notice when Stripe checkout was cancelled
+    const cancelNotice = document.getElementById('cancelNotice');
+    if (cancelNotice) {
+      if (!isError && !isDeleted && isCancelledFlow) {
+        cancelNotice.style.display = '';
+        if (pendingNotice) pendingNotice.style.display = 'none';
+        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+      } else {
+        cancelNotice.style.display = 'none';
+      }
+    }
+
+    // Message preview (for contact forms)
+    const subject = (qs.get('subject') || '').trim();
+    const message = (qs.get('message') || qs.get('msg') || '').trim();
+
+    // Helpers
+    const safeText = (v) => {
+      // Basic safety: prevent HTML injection by only assigning to textContent later.
+      if (!v) return '';
+      return v.replace(/\s+/g,' ').trim();
+    };
+
+    const fmtDateTime = (iso) => {
+      if (!iso) return '';
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return String(iso);
+      try { return d.toLocaleString('nl-BE'); } catch(e) { return d.toISOString(); }
+    };
+
+    const setText = (id, value, fallback='—') => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const v = safeText(value);
+      el.textContent = v || fallback;
+    };
+
+    // Render all submitted event fields (mirrors email intent): show only fields that are present AIMED at event form
+    function renderFormFields() {
+      const wrap = document.getElementById('formFieldsWrap');
+      const list = document.getElementById('formFieldsList');
+      if (!wrap || !list) return;
+
+      // Prefer URL params (works for forms that redirect with full querystring),
+      // but for Stripe/paid flow we usually only have `sid`.
+      // In that case we render from the event record fetched from the backend.
+      const data = fetchedEventItem || storedEventPayload || null;
+
+      const fieldDefs = [
+        ['title', 'Titel'],
+        ['description', 'Beschrijving'],
+        ['start_at', 'Start'],
+        ['end_at', 'Einde'],
+        ['timezone', 'Tijdzone'],
+        ['location_name', 'Locatie'],
+        ['address', 'Adres'],
+        ['postal_code', 'Postcode'],
+        ['city', 'Gemeente'],
+        ['country', 'Land'],
+        ['category', 'Categorie'],
+        ['event_type', 'Type'],
+        ['audience', 'Doelgroep'],
+        ['tags', 'Tags'],
+        ['organizer_name', 'Organisator'],
+        ['organizer_email', 'E-mail organisator'],
+        ['organizer_phone', 'Telefoon'],
+        ['organizer_url', 'Website'],
+        ['package_code', 'Premium pakket'],
+        ['quantity', 'Aantal'],
+        ['invoice_company', 'Factuur: Bedrijf'],
+        ['invoice_vat', 'Factuur: BTW-nummer'],
+        ['invoice_email', 'Factuur: E-mail'],
+        ['invoice_address', 'Factuur: Adres'],
+        ['invoice_city', 'Factuur: Gemeente'],
+        ['invoice_postal', 'Factuur: Postcode'],
+        ['invoice_country', 'Factuur: Land']
+      ];
+
+      const aliases = {
+        // URL param aliases
+        title: ['title', 'event_title'],
+        description: ['description', 'desc', 'body'],
+        start_at: ['start_at', 'startAt', 'start', 'eventStart'],
+        end_at: ['end_at', 'endAt', 'end', 'eventEnd'],
+        city: ['city', 'gemeente'],
+        country: ['country', 'land'],
+        category: ['category', 'cat'],
+        event_type: ['event_type', 'type'],
+        organizer_name: ['organizer_name', 'organizer', 'club'],
+        organizer_email: ['organizer_email', 'club_email'],
+        organizer_phone: ['organizer_phone', 'phone'],
+        organizer_url: ['organizer_url', 'url', 'website'],
+        postal_code: ['postal_code', 'postcode'],
+        location_name: ['location_name', 'location'],
+        invoice_company: ['invoice_company', 'company'],
+        invoice_vat: ['invoice_vat', 'vat'],
+        invoice_email: ['invoice_email', 'invoiceEmail'],
+        invoice_address: ['invoice_address', 'invoiceAddress'],
+        invoice_city: ['invoice_city', 'invoiceCity'],
+        invoice_postal: ['invoice_postal', 'invoicePostal'],
+        invoice_country: ['invoice_country', 'invoiceCountry'],
+        package_code: ['package_code', 'packageCode', 'pkg'],
+        quantity: ['quantity', 'qty', 'q'],
+        tags: ['tags', 'tag']
+      };
+
+      const getAnyFromQS = (keys) => {
+        for (const k of keys) {
+          const v = qs.get(k);
+          if (v && String(v).trim()) return String(v).trim();
+        }
+        return '';
+      };
+
+      const getAnyFromData = (key) => {
+        if (!data) return '';
+        // normalize typical backend shapes
+        const direct = data[key];
+        if (direct !== undefined && direct !== null && String(direct).trim() !== '') return String(direct).trim();
+
+        // map a few common backend fields
+        const map = {
+          description: ['description', 'desc', 'body'],
+          start_at: ['start_at', 'startAt'],
+          end_at: ['end_at', 'endAt'],
+          category: ['category'],
+          organizer_name: ['organizer_name'],
+          organizer_email: ['organizer_email'],
+          organizer_phone: ['organizer_phone'],
+          organizer_url: ['organizer_url'],
+          location_name: ['location_name', 'location'],
+          postal_code: ['postal_code'],
+          package_code: ['package_code'],
+          quantity: ['quantity']
+        };
+
+        const keys = map[key] || [key];
+        for (const k of keys) {
+          const v = data[k];
+          if (v !== undefined && v !== null && String(v).trim() !== '') return String(v).trim();
+        }
+
+        // if tags is an array
+        if (key === 'tags' && Array.isArray(data.tags) && data.tags.length) return data.tags.join(', ');
+
+        return '';
+      };
+
+      const rows = [];
+      for (const [key, label] of fieldDefs) {
+        // First attempt: querystring (if present)
+        const keys = aliases[key] || [key];
+        let val = getAnyFromQS(keys);
+
+        // Second attempt: backend-fetched event item
+        if (!val) val = getAnyFromData(key);
+
+        if (!val) continue;
+
+        if (key === 'start_at' || key === 'end_at') val = fmtDateTime(val);
+        if (key === 'description') val = String(val).replace(/\s+/g, ' ').trim();
+
+        rows.push({ label, val });
+      }
+
+      if (!rows.length && !fetchedEventItem) {
+        wrap.style.display = 'none';
+        return;
+      }
+
+      list.innerHTML = '';
+      for (const r of rows) {
+        const dt = document.createElement('div');
+        dt.className = 'ff-label';
+        dt.textContent = r.label;
+
+        const dd = document.createElement('div');
+        dd.className = 'ff-value';
+        dd.textContent = r.val;
+
+        list.appendChild(dt);
+        list.appendChild(dd);
+      }
+
+      wrap.style.display = '';
+    }
+
+    // Title/subtitle adapt based on source
+    const titleEl = document.getElementById('thanksTitle');
+    const subEl = document.getElementById('thanksSubtitle');
+    if (titleEl && subEl){
+      const isEventFlow = !!sid || source === 'event';
+
+      if (isError) {
+        titleEl.textContent = 'Uw aanvraag kon niet verwerkt worden';
+        subEl.textContent = 'Controleer uw gegevens en probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
+        return;
+      }
+
+      if (isDeleted) {
+        titleEl.textContent = 'Uw event werd verwijderd';
+        subEl.textContent = 'Uw event is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
+        // In delete state: no pending/keep-email guidance
+        if (pendingNotice) pendingNotice.style.display = 'none';
+        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+        return;
+      }
+
+      if (isCancelledFlow) {
+        titleEl.textContent = 'Betaling geannuleerd';
+        subEl.textContent = 'Uw Premium betaling werd geannuleerd. Uw event werd niet gepubliceerd. U kan opnieuw proberen of een niet-premium aanvraag indienen.';
+        if (pendingNotice) pendingNotice.style.display = 'none';
+        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
+        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
+        return;
+      }
+
+      if (source === 'contact'){
+        titleEl.textContent = 'Bedankt voor je bericht';
+        subEl.textContent = 'We hebben je bericht goed ontvangen. Hieronder vind je een overzicht van je aanvraag.';
+      } else if (isEventFlow){
+        if (paid){
+          titleEl.textContent = 'Bedankt. Uw Premium event is succesvol aangemeld.';
+          subEl.textContent = 'Uw event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+        } else {
+          titleEl.textContent = 'Uw aanvraag is goed ontvangen';
+          subEl.textContent = 'U ontvangt een e-mail met verdere instructies om uw aanvraag te bevestigen. Bewaar die e-mail tot na het event.';
+        }
+      } else if (source === 'vacature'){
+        titleEl.textContent = 'Bedankt voor je aanvraag';
+        subEl.textContent = 'We hebben je aanvraag goed ontvangen. Hieronder vind je een overzicht.';
+      } else if (source){
+        titleEl.textContent = 'Bedankt';
+        subEl.textContent = 'We hebben je aanvraag goed ontvangen. Hieronder vind je een overzicht.';
+      }
+    }
+
+    // Badge
+    const badgeEl = document.getElementById('thanksBadge');
+    if (badgeEl){
+      const parts = [];
+      const isEventFlow = !!sid || source === 'event' || isNonEventPremium;
+      if (isEventFlow) {
+        if (isError) parts.push('EVENT · NIET VERWERKT');
+        else if (isDeleted) parts.push('EVENT · VERWIJDERD');
+        else parts.push(paid ? 'EVENT · PREMIUM' : 'EVENT');
+      } else if (source) {
+        parts.push(source.toUpperCase());
+      }
+      if (id) parts.push('#' + id);
+      if (parts.length){
+        badgeEl.style.display = 'inline-flex';
+        badgeEl.textContent = parts.join(' · ');
+      }
+    }
+
+    // Summary values
+    const isEventFlow2 = !!sid || source === 'event' || isNonEventPremium;
+    const whatResolved = what || (isEventFlow2 ? 'Event-aanmelding' : (source ? ('Aanvraag: ' + source) : ''));
+    setText('orderWhat', whatResolved, 'Aanvraag ontvangen');
+    setText('orderId', id, '—');
+    setText('orderName', name, name ? name : (email ? '—' : '—'));
+    setText('orderEmail', email, '—');
+    setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
+    // Render fields now (URL params), then re-render after backend lookup (for paid flow where only SID exists)
+    renderFormFields();
+
+    // Update the “Volgende stappen” panel dynamically for event flow
+    // (declare before Premium window logic because it may override copy)
+    const nextIntro = document.getElementById('nextStepsIntro');
+    const nextTip = document.getElementById('nextStepsTip');
+
+    // Premium window UI (only when both start+end are provided, and not error/deleted)
+    const pwWrap = document.getElementById('premiumWindowWrap');
+    const pwLabel = document.getElementById('premiumWindowLabel');
+    const pwValue = document.getElementById('premiumWindowValue');
+    const premiumBlock = document.getElementById('premiumBlock');
+    const pwRow = document.getElementById('premiumWindowRow');
+
+    // If links don't carry premium params, fetch them from backend using eventId (if present)
+    // NOTE: this is safe to run even if eventId is missing.
+    await tryFetchPremiumWindowFromEvent();
+    // Re-render form fields once we have the backend event payload
+    renderFormFields();
+
+    // If Premium window was fetched after initial derivation, recompute helpers.
+    premiumStartRaw = String(premiumStartRaw || '').trim();
+    premiumEndRaw = String(premiumEndRaw || '').trim();
+
+    let premiumStartTxt = fmtDateTime(premiumStartRaw);
+    let premiumEndTxt = fmtDateTime(premiumEndRaw);
+    let hasPremiumWindow = !!premiumStartRaw && !!premiumEndRaw;
+
+    const recomputePremiumTexts = () => {
+      premiumStartTxt = fmtDateTime(String(premiumStartRaw || '').trim());
+      premiumEndTxt = fmtDateTime(String(premiumEndRaw || '').trim());
+      hasPremiumWindow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
+    };
+
+    // HARD GUARD: non-premium flows must NEVER show a premium window.
+    // We may still compute dates internally (e.g. signupDeadline logic), but we must not render them.
+    if (!paid) {
+      premiumStartRaw = '';
+      premiumEndRaw = '';
+      recomputePremiumTexts();
+    }
+
+    if (!isError && !isDeleted && paid && (hasPremiumWindow || isNonEventPremium)) {
+      if (premiumBlock) premiumBlock.style.display = '';
+      // Fallback label for non-event premium (profiles/vacatures)
+      // Non-event premium (profiles/vacatures): if premium window is still missing, derive from package + quantity.
+      if (!hasPremiumWindow && isNonEventPremium) {
+        const pkgRaw2 = getParamAny(['package_code','packageCode','pkg']);
+        const qtyRaw2 = getParamAny(['quantity','qty','q']) || '1';
+        const pkg2 = normalizePkg(pkgRaw2);
+        const qty2 = Math.max(1, parseInt(qtyRaw2, 10) || 1);
+
+        if (pkg2) {
+          let months2 = 0;
+          let weeks2 = 0;
+
+          if (pkg2 === 'week') weeks2 = Math.min(3, Math.max(1, qty2));
+          else if (pkg2 === 'month') months2 = Math.min(3, Math.max(1, qty2));
+          else if (pkg2 === 'month_4_5') months2 = Math.min(5, Math.max(4, qty2));
+          else if (pkg2 === 'month_6') months2 = 6;
+          else if (/^week_\d+$/.test(pkg2)) weeks2 = Math.min(3, Math.max(1, parseInt(pkg2.split('_')[1], 10) || 1));
+          else if (/^month_\d+$/.test(pkg2)) months2 = Math.min(6, Math.max(1, parseInt(pkg2.split('_')[1], 10) || 1));
+
+          const paidAtRaw2 = getParamAny(['paid_at','paidAt','paidOn','created_at','createdAt','ts','timestamp']);
+          const paidAt2 = parseIsoDate(paidAtRaw2) || new Date();
+
+          const pStart2 = paidAt2;
+          let pEnd2 = new Date(paidAt2.getTime());
+          if (months2 > 0) pEnd2 = addMonths(pEnd2, months2);
+          if (weeks2 > 0) pEnd2 = addWeeks(pEnd2, weeks2);
+
+          // Update the raw values so the chip renders real dates
+          premiumStartRaw = premiumStartRaw || pStart2.toISOString();
+          premiumEndRaw = premiumEndRaw || pEnd2.toISOString();
+          recomputePremiumTexts();
+        }
+      }
+      recomputePremiumTexts();
+      // Keep the plain row hidden by default to avoid duplicate rendering.
+      // We still set the textContent for accessibility/fallback.
+      if (pwRow) pwRow.style.display = 'none';
+      if (pwLabel) pwLabel.style.display = 'none';
+      if (pwValue) pwValue.style.display = 'none';
+
+      // Text-only value for accessibility/fallback
+      if (pwValue) pwValue.textContent = premiumStartTxt + ' → ' + premiumEndTxt;
+
+      // Highlighted chip above the row
+      if (pwWrap) {
+        pwWrap.style.display = '';
+        pwWrap.innerHTML = '';
+        const chip = document.createElement('div');
+        chip.className = 'premium-window-chip';
+        chip.setAttribute('role','note');
+        chip.innerHTML = `
+          <div>
+            <small>Premium actief van</small>
+            <span>${premiumStartTxt}</span>
+          </div>
+          <div class="arrow">→</div>
+          <div>
+            <small>tot en met</small>
+            <span>${premiumEndTxt}</span>
+          </div>
+        `;
+        pwWrap.appendChild(chip);
+      }
+
+      // Also enhance next steps copy when paid=1
+      if (paid && nextIntro && nextTip) {
+        recomputePremiumTexts();
+        if (isNonEventPremium) {
+          nextIntro.textContent = 'Uw Premium zichtbaarheid is geactiveerd en loopt gedurende uw gekozen Premium-periode.';
+          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '.';
+        } else {
+          nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All tijdens uw Premium-periode.';
+          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '. Bewaar de e-mail met uw Event-ID tot na het event.';
+        }
+      }
+    } else {
+      if (premiumBlock) premiumBlock.style.display = 'none';
+      if (pwWrap) pwWrap.style.display = 'none';
+      if (pwRow) pwRow.style.display = 'none';
+      if (pwLabel) pwLabel.style.display = 'none';
+      if (pwValue) pwValue.style.display = 'none';
+      // Premium upsell for non-premium pending events
+      const statusIsPending = String(status).toLowerCase() === 'pending';
+      if (statusIsPending && !paid && premiumBlock) {
+        premiumBlock.style.display = '';
+        if (pwWrap) {
+          pwWrap.style.display = '';
+          pwWrap.innerHTML = `
+            <div class="premium-upsell-chip">
+              <strong>Wil je meer bereik?</strong>
+              <span>Kies Premium en vergroot de zichtbaarheid van je event.</span>
+              <a href="event-aanmelden.html" class="upsell-cta">Kies Premium</a>
+            </div>
+          `;
+        }
+      }
+    }
+
+    // (nextIntro/nextTip already resolved above)
+    const isEventFlow3 = !!sid || source === 'event' || isNonEventPremium;
+    if (isEventFlow3 && nextIntro && nextTip){
+      if (isError) {
+        nextIntro.textContent = 'Uw aanvraag kon niet verwerkt worden.';
+        nextTip.textContent = 'Voor meer info, contacteer ons via het contactformulier.';
+        return;
+      }
+      if (isDeleted) {
+        nextIntro.textContent = 'Uw event werd verwijderd en is niet langer zichtbaar op Voetbal4All.';
+        nextTip.textContent = 'In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
+        return;
+      }
+      if (paid){
+        // If Premium window is already rendered above (green chip), do not overwrite the copy.
+        // Otherwise show a clean Premium message here.
+        if (!hasPremiumWindow) {
+          nextIntro.textContent = 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt (publicatie wordt automatisch bevestigd).';
+          nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
+        }
+      } else if (isCancelledFlow) {
+        nextIntro.textContent = 'De betaling werd geannuleerd. Uw event werd niet gepubliceerd.';
+        nextTip.textContent = 'U kan opnieuw proberen via Event aanmelden.';
+      } else {
+        nextIntro.textContent = 'U ontvangt een e-mail met een bevestigingsstap. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
+        nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer (bevestigen, verwijderen, contact) verloopt via die e-mail.';
+      }
+    }
+
+    // Optional: message preview
+    const msgWrap = document.getElementById('msgWrap');
+    const msgPreview = document.getElementById('msgPreview');
+    if (msgWrap && msgPreview){
+      const lines = [];
+      if (subject) lines.push('Onderwerp: ' + subject);
+      if (name) lines.push('Naam: ' + name);
+      if (email) lines.push('E-mail: ' + email);
+      if (lines.length && message) lines.push('');
+      if (message) lines.push(message);
+
+      if (lines.length){
+        msgWrap.style.display = '';
+        msgPreview.textContent = lines.join('\n');
+      }
+    }
+
+    // Optional: allow reading from sessionStorage if forms set it
+    try {
+      const stored = sessionStorage.getItem('v4_thanks_payload');
+      if (stored){
+        const p = JSON.parse(stored);
+        if (!qs.get('name') && p.name) setText('orderName', p.name);
+        if (!qs.get('email') && p.email) setText('orderEmail', p.email);
+        if (!qs.get('what') && p.what) setText('orderWhat', p.what);
+        if (!qs.get('id') && p.id) setText('orderId', p.id);
+        if (!qs.get('status') && p.status) setText('orderStatus', p.status);
+        if (p.message || p.subject){
+          const msgWrap2 = document.getElementById('msgWrap');
+          const msgPreview2 = document.getElementById('msgPreview');
+          if (msgWrap2 && msgPreview2){
+            const lines2 = [];
+            if (p.subject) lines2.push('Onderwerp: ' + p.subject);
+            if (p.name) lines2.push('Naam: ' + p.name);
+            if (p.email) lines2.push('E-mail: ' + p.email);
+            if (lines2.length && p.message) lines2.push('');
+            if (p.message) lines2.push(p.message);
+            if (lines2.length){
+              msgWrap2.style.display = '';
+              msgPreview2.textContent = lines2.join('\n');
+            }
+          }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
+<script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+<script src="assets/js/live-banner.js"></script>
+</body>
+</html>

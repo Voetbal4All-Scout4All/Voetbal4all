@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <title>Voetbal4All - Sportieve events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts + CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Fix contrast: ensure ghost buttons remain readable on dark backgrounds */
+    .btn-ghost-sm,
+    .btn-ghost-sm:visited,
+    button.btn-ghost-sm {
+      color: #ffffff;
+    }
+    .btn-ghost-sm svg,
+    button.btn-ghost-sm svg {
+      stroke: currentColor;
+      fill: none;
+    }
+    .btn-ghost-sm .fill,
+    button.btn-ghost-sm .fill {
+      fill: currentColor;
+      stroke: none;
+    }
+  </style>
+  <style>
+    /* Share icons – identical sizing/feel as live-score banner socials */
+    .v4-share{display:flex;gap:10px;flex-wrap:wrap;align-items:center;min-width:0}
+    .v4-share .live-social-link{
+      width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;
+      border-radius:999px;
+
+      /* match live-score banner: groen, no glow */
+      background:transparent;
+      border:1px solid rgba(22,163,74,.55);
+      box-shadow:none;
+
+      color:rgba(34,197,94,.95);
+      text-decoration:none;cursor:pointer;flex:0 0 auto;
+      transition:transform .12s ease,filter .12s ease,background .12s ease,box-shadow .12s ease;
+    }
+    /* Small variant for share icons */
+    .v4-share .live-social-link.is-small{width:28px;height:28px}
+    .v4-share .live-social-link svg{width:18px;height:18px}
+    .v4-share .live-social-link.is-small svg{width:15px;height:15px}
+    /* Ensure SVG inherits the green color (prevents black icons) */
+    .v4-share svg{fill:none;stroke:currentColor;stroke-width:2}
+    .v4-share .fill{fill:currentColor;stroke:none}
+    .event-thumb-socials--row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .share-label{font-size:10px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;opacity:.70;line-height:1}
+    .v4-share .live-social-link:hover{
+      filter:brightness(1.08);
+      transform:translateY(-1px);
+      background:transparent;
+      box-shadow:none;
+    }
+    /* Slightly larger Instagram glyph (circle size unchanged) */
+    .v4-share [data-share-channel="ig"] svg{transform:scale(1.28);transform-origin:50% 50%}
+    .v4-share .live-social-link:active{transform:translateY(0)}
+    /* Pagination */
+    .events-pagination{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
+    .events-pagination .page-btn{
+      appearance:none;border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);color:rgba(255,255,255,.92);
+      border-radius:999px;padding:8px 12px;font-family:inherit;font-weight:600;
+      cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease;
+    }
+    .events-pagination .page-btn:hover{filter:brightness(1.05);transform:translateY(-1px)}
+    .events-pagination .page-btn:active{transform:translateY(0)}
+    .events-pagination .page-btn.is-active{background:rgba(22,163,74,.22);border-color:rgba(22,163,74,.55)}
+    .events-pagination .page-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+    /* Flyer thumbnail – fixed size, never stretches the card */
+    .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
+    .event-thumbbox{
+      width:140px;height:96px;flex:0 0 140px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);
+      overflow:hidden;position:relative;
+    }
+    .event-thumbbox::after{content:"Flyer";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+    .event-thumbbox.has-img::after{display:none}
+    .event-thumbbox .thumbbg{
+      position:absolute; inset:0;
+      background-size:contain;          /* <= geen crop */
+      background-position:center;
+      background-repeat:no-repeat;
+      background-color:rgba(255,255,255,0.04);
+      filter:none;
+    }
+
+    .event-main{flex:1 1 auto;min-width:0}
+    .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+    /* 2-column grids */
+    .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    @media (max-width: 900px){.events-grid-2{grid-template-columns:1fr}}
+
+    /* Premium blocks */
+    .premium-block{margin:12px 0 18px}
+    .premium-block .premium-grid{margin-top:10px}
+
+    /* Metallic frame for the premium section container (the card that wraps the 6 premium tiles) */
+    .premium-block .premium-shell{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.18);
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        );
+      box-shadow:
+        0 12px 34px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+    }
+    .premium-block .premium-shell::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.45;
+    }
+
+    /* Premium cards: do not show share/social row here (keeps premium tiles clean) */
+    .premium-grid .event-thumb-socials{display:none !important;}
+
+    /* ===== PREMIUM (METAL) LOOK ===== */
+    .premium-grid .premium-card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+
+  /* Force-remove any inherited green accent borders/shadows */
+  outline:none !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+
+  /* Metallic surface */
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.02) 35%,
+      rgba(255,255,255,.08) 65%,
+      rgba(255,255,255,.03)
+    ),
+    linear-gradient(180deg,
+      rgba(180,190,210,.12),
+      rgba(10,12,20,.08)
+    ) !important;
+
+  /* Metallic shadow (no green glow) */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    0 10px 26px rgba(0,0,0,.38) !important;
+}
+
+/* Override any green hover/focus glow coming from style.css */
+.premium-grid .premium-card:hover,
+.premium-grid .premium-card:focus,
+.premium-grid .premium-card:focus-within{
+  border-color:rgba(255,255,255,.26) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.14),
+    0 12px 30px rgba(0,0,0,.42) !important;
+  transform:none !important;
+}
+
+/* Some base cards add an ::after outline—kill it in premium grid */
+.premium-grid .premium-card::after{display:none !important;}
+
+    .premium-grid .premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      /* subtle metal shine */
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.55;
+    }
+
+    /* Ribbon badge – metallic, rotated ~30deg, over flyer corner */
+    .premium-grid .event-thumbbox{ position:relative; }
+    .premium-grid .premium-ribbon{
+      position:absolute;
+      top:10px;
+      right:-44px;               /* pushes ribbon across corner */
+      width:160px;
+      text-align:center;
+      padding:6px 0;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.95);
+      transform:rotate(30deg);
+      z-index:3;
+
+      background:linear-gradient(135deg,
+        rgba(240,240,240,.30),
+        rgba(180,180,180,.10) 35%,
+        rgba(255,255,255,.22) 65%,
+        rgba(120,120,120,.12)
+      );
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.18);
+    }
+
+    /* Premium typography: smaller, clean */
+    .premium-grid .v4a-card-title{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.25;
+    }
+
+    .premium-grid .v4a-card-meta{
+      font-size:12px;
+      opacity:.86;
+      line-height:1.25;
+    }
+
+    /* Remove any body text block spacing if present */
+    .premium-grid .v4a-card-body{ display:none !important; }
+
+    /* Prevent text bleed/overflow between premium cards */
+    .premium-grid .v4a-card{
+      overflow:hidden;
+    }
+    .premium-grid .v4a-card-title,
+    .premium-grid .v4a-card-body{
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
+    }
+    .premium-grid .v4a-card-title{
+      -webkit-line-clamp:2;
+    }
+    .premium-grid .v4a-card-body{
+      -webkit-line-clamp:3;
+    }
+
+    /* Sidebar premium list (later) */
+    .sidebar-premium-stack{display:flex;flex-direction:column;gap:10px}
+
+    /* Metallic card look to match the premium grid */
+    .sidebar-premium-card{
+      padding:10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(135deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.02) 40%,
+        rgba(255,255,255,.06) 70%,
+        rgba(255,255,255,.02)
+      );
+      box-shadow:
+        0 10px 26px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .sidebar-premium-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(120deg,
+        rgba(255,255,255,.14),
+        rgba(255,255,255,0) 35%,
+        rgba(255,255,255,.10) 60%,
+        rgba(255,255,255,0)
+      );
+      opacity:.45;
+    }
+
+    .sidebar-premium-top{display:flex;gap:10px;align-items:flex-start;min-width:0;position:relative;z-index:1}
+
+    .sidebar-premium-thumbbox{
+      width:72px;
+      height:54px;
+      flex:0 0 72px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.05);
+      overflow:hidden;
+      position:relative;
+    }
+    .sidebar-premium-thumbbox .thumbbg{
+      position:absolute; inset:0;
+      background-size:contain;          /* <= geen crop */
+      background-position:center;
+      background-repeat:no-repeat;
+      background-color:rgba(255,255,255,0.04);
+      filter:none;
+    }
+
+    /* Small ribbon for sidebar thumbnails */
+    .sidebar-premium-thumbbox .premium-ribbon{
+      position:absolute;
+      top:8px;
+      right:-40px;
+      width:140px;
+      text-align:center;
+      padding:5px 0;
+      font-size:10px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.95);
+      transform:rotate(30deg);
+      z-index:3;
+      background:linear-gradient(135deg,
+        rgba(240,240,240,.30),
+        rgba(180,180,180,.10) 35%,
+        rgba(255,255,255,.22) 65%,
+        rgba(120,120,120,.12)
+      );
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 6px 16px rgba(0,0,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
+    .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
+    .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
+
+    /* Non-premium cards: keep them scannable (and prevent long text blocks) */
+    #event-list .v4a-card-body{
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2;
+      overflow:hidden;
+    }
+
+    /* Non-premium: hide share icons if they ever appear there */
+    #event-list .v4-share{display:none !important;}
+    /* Ensure ghost buttons keep readable text */
+    .btn-ghost-sm{
+      color:#ffffff;
+    }
+    .btn-ghost-sm svg{
+      color:#ffffff;
+      fill:#ffffff;
+      stroke:#ffffff;
+    }
+  </style>
+  <style>
+        /* AdSense: reduce height of full-width banner ads (match index.html) */
+            .ad-slot-header,
+                .ad-infeed, .v4-ad-sticky {
+                      max-height: 120px;
+                                            min-height: 0 !important;
+                            overflow: hidden;
+                                }
+                                  </style>
+</head>
+
+<!-- Live banner NIET op mobiel voor niet-home pagina’s -->
+<body class="v4-hide-live-mobile">
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- LIVE BANNER (PC + tablet, mobiel hidden via body class) -->
+    <section class="live-banner-top">
+      <div class="shell">
+        <div class="live-banner">
+          <div class="live-label">
+            <span class="live-dot"></span>
+            Live score
+          </div>
+          <div class="live-text">
+            <span class="live-text-main"></span>
+            <div class="live-updated"></div>
+          </div>
+          <div class="live-socials" aria-label="Volg Voetbal4All op social media">
+            <div class="live-socials-label">Volg ons</div>
+            <div class="live-socials-icons"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEADER AD -->
+    <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+      <div class="shell">
+        <div class="ad-slot ad-slot-header sticky-ad-header">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="8695680337"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="section-main">
+        <div class="shell">
+
+          <!-- INTRO -->
+          <article class="card" style="margin-bottom:12px;">
+            <div class="card-header">
+              <div>
+                <div class="card-caption">Sportieve events</div>
+                <div class="card-title">Vriendschappelijk, tornooi, stage &amp; voetbalkamp</div>
+              </div>
+              <span class="pill-small">Clubs · trainers · teams</span>
+            </div>
+            <p class="note">
+              Dit overzicht is uitsluitend voor sportieve events. Voor eetdagen, bingo, darts, quiz of fuif ga je naar <strong>Club &amp; fun</strong>.
+            </p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
+              <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
+              <a class="btn-ghost-sm" href="algemene-events.html">Naar Club &amp; fun</a>
+            </div>
+          </article>
+
+          <!-- CONTENT LINKS + STICKY ADS RECHTS -->
+          <div class="v4-layout-sidebar">
+
+            <!-- LINKS -->
+            <div class="v4-content">
+
+              <!-- ZOEK- EN FILTERBALK (PREMIUM) -->
+              <div class="v4-filterbar" style="margin-bottom:12px;">
+                <div class="v4-filterbar__inner">
+
+                  <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                    <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
+                      <div class="v4-filterlabel">Zoeken</div>
+                      <input
+                        type="text"
+                        id="event-search-text"
+                        class="v4-input"
+                        placeholder="Zoek op club, eventnaam, regio..."
+                      />
+                    </div>
+                  </div>
+
+                  <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+                    <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                      <div class="v4-filterlabel">Land</div>
+                      <select id="event-filter-country" class="v4-select">
+                        <option value="">Land (alles)</option>
+                        <option value="BE">🇧🇪 België</option>
+                        <option value="NL">🇳🇱 Nederland</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
+                      <div class="v4-filterlabel">Provincie</div>
+                      <select id="event-filter-province" class="v4-select" disabled>
+                        <option value="">Provincie (alles)</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="flex:1 1 150px;min-width:150px;">
+                      <div class="v4-filterlabel">Type</div>
+                      <select id="event-filter-type" class="v4-select">
+                        <option value="">Type (alles)</option>
+                        <option value="Vriendschappelijk">Vriendschappelijk</option>
+                        <option value="Tornooi">Tornooi</option>
+                        <option value="Stage">Stage</option>
+                        <option value="Voetbalkamp">Voetbalkamp</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="flex:1 1 170px;min-width:170px;">
+                      <div class="v4-filterlabel">Dames / Heren</div>
+                      <select id="event-filter-gender" class="v4-select">
+                        <option value="BOTH">Dames &amp; Heren</option>
+                        <option value="HEREN">Heren</option>
+                        <option value="DAMES">Dames</option>
+                      </select>
+                    </div>
+
+                    <div class="v4-filtergroup" style="flex:1 1 150px;min-width:150px;">
+                      <div class="v4-filterlabel">Maand</div>
+                      <select id="event-filter-month" class="v4-select">
+                        <option value="">Maand (alles)</option>
+                        <option value="01">Januari</option>
+                        <option value="02">Februari</option>
+                        <option value="03">Maart</option>
+                        <option value="04">April</option>
+                        <option value="05">Mei</option>
+                        <option value="06">Juni</option>
+                        <option value="07">Juli</option>
+                        <option value="08">Augustus</option>
+                        <option value="09">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+
+              <!-- OVERZICHT -->
+              <section class="section-main" style="padding-top:0;">
+                <div class="card">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Overzicht</div>
+                      <div class="card-title">Sportieve events</div>
+                    </div>
+                    <span class="pill-small">Onder elkaar</span>
+                  </div>
+
+                  <p class="note">
+                  </p>
+
+                  <!-- PREMIUM (komende 60 dagen): 3 rijen x 2 kolommen = 6 kaarten, roterend per kaart -->
+                  <div id="premium-30-wrap" class="premium-block" style="display:none;">
+                    <div class="card premium-shell" style="margin-bottom:12px;">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Premium</div>
+                      <div class="card-title premium-title-lg">Premium events die eraan komen!
+                        
+                      </div>
+                    </div>
+                  </div>
+                      <div id="premium-grid-30" class="events-grid-2 premium-grid"></div>
+                    </div>
+                  </div>
+
+                  <!-- IN-CONTENT AD -->
+                  <section class="section-main" style="padding-top:0;padding-bottom:10px;">
+                    <div class="ad-infeed">
+                      <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-4062633211824348"
+                        data-ad-slot="5386990710"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                      <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                      </script>
+                    </div>
+                  </section>
+
+                  <!-- Overige events (2 kolommen) -->
+
+                  <div id="event-list" class="events-grid-2">
+                    <!-- gevuld via backend -->
+                  </div>
+
+                  <div id="events-pagination" class="events-pagination" aria-label="Paginatie events"></div>
+
+                  <p id="event-status" class="note" style="margin-top:10px; display:none;"></p>
+                </div>
+
+              </section>
+
+            </div>
+
+            <!-- RECHTS -->
+            <aside class="v4-sidebar">
+              <div class="v4-sidebar-sticky">
+
+                <article class="card">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Advertentie</div>
+                      <div class="card-title">Sponsor / Partner</div>
+                    </div>
+                    <span class="pill-small">Premium</span>
+                  </div>
+                  <div class="v4a-placeholder">
+                    Wil jij jouw bedrijf of product zichtbaar maken bij de voetbalcommunity? Ontdek wat Voetbal4All voor jouw merk kan betekenen!<br/>
+                    <span class="ad-size"><a href="adverteren.html">Bekijk de mogelijkheden →</a></span>
+                  </div>
+                </article>
+
+                <!-- Sticky AdSense -->
+                <div class="ad-vertical v4-ad-sticky" style="margin-top:12px;">
+                  <ins class="adsbygoogle"
+                    style="display:block"
+                    data-ad-client="ca-pub-4062633211824348"
+                    data-ad-slot="9233902238"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"></ins>
+                  <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                  </script>
+                </div>
+
+                <article class="card" style="margin-top:12px;">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Organiseer je een sportief event?</div>
+                      <div class="card-title">Meer teams, meer bereik</div>
+                    </div>
+                  </div>
+                  <p class="note">
+                    Plaats je tornooi, stage of vriendschappelijke wedstrijd en bereik clubs en teams in jouw regio én daarbuiten.
+                  </p>
+                  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;">
+                    <a class="btn-ghost-sm" href="event-aanmelden.html">Event aanmelden</a>
+                  </div>
+                </article>
+
+                <!-- Premium events > 30 dagen (10 cards, roterend) -->
+                <article class="card" style="margin-top:12px;">
+                  <div class="card-header">
+                    <div>
+                      <div class="card-caption">Premium</div>
+                      <div class="card-title">Uitgelicht (later)</div>
+                    </div>
+                  </div>
+                  <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
+                </article>
+
+              </div>
+            </aside>
+
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer-contact">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+            <div class="footer-legal">
+              &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+            </div>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener noreferrer" class="footer-social-link">Facebook</a>
+              <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+              <a href="https://www.tiktok.com/@voetbal4all.eu" target="_blank" rel="noopener noreferrer" class="footer-social-link">TikTok</a>
+            </div>
+          </div>
+          <div class="footer-ad">
+            Zet jouw merk in de kijker bij de voetbalcommunity!<br>
+            <span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="assets/js/image-utils.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Auto type filter via ?type=
+    (function initTypeFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const t = params.get("type");
+      if (!t) return;
+
+      const sel = document.getElementById("event-filter-type");
+      if (!sel) return;
+
+      for (const opt of sel.options) {
+        if (opt.value === t) { sel.value = t; break; }
+      }
+    })();
+
+    // Auto gender filter via ?gender=
+    (function initGenderFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      const g = params.get("gender");
+      if (!g) return;
+
+      const sel = document.getElementById("event-filter-gender");
+      if (!sel) return;
+
+      const gv = String(g).trim().toUpperCase();
+      for (const opt of sel.options) {
+        if (opt.value === gv) { sel.value = gv; break; }
+      }
+    })();
+
+    // Auto province filter via ?province= (options depend on country)
+    (function initProvinceFromUrl(){
+      const provinceEl = document.getElementById("event-filter-province");
+      if (!provinceEl) return;
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get("province");
+      if (!p) return;
+      provinceEl.dataset.urlInit = String(p);
+    })();
+
+    const listEl = document.getElementById("event-list");
+    const searchEl = document.getElementById("event-search-text");
+    const countryEl = document.getElementById("event-filter-country");
+    const typeEl = document.getElementById("event-filter-type");
+    const genderEl = document.getElementById("event-filter-gender");
+    const monthEl = document.getElementById("event-filter-month");
+    const provinceEl = document.getElementById("event-filter-province");
+
+    const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+    // Initialize province options based on the currently selected country
+    setProvinceOptionsForCountry(countryEl?.value || "");
+
+    // Apply province from URL if present
+    if (provinceEl && provinceEl.dataset.urlInit){
+      const p = provinceEl.dataset.urlInit;
+      for (const opt of provinceEl.options){
+        if (opt.value === p){ provinceEl.value = p; break; }
+      }
+      delete provinceEl.dataset.urlInit;
+    }
+
+    // Normalize placeholder paths (avoid /assets/img/placeholder.svg 404)
+    function normalizeThumbUrl(u){
+      const url = String(u || "");
+      if (!url) return "";
+      if (url.includes("/assets/img/placeholder.svg") || url.includes("assets/img/placeholder.svg")) {
+        return API_BASE + "/images/placeholder.svg";
+      }
+      return url;
+    }
+
+    function typeToUiLabel(eventType){
+      const t = String(eventType || "").toLowerCase();
+      if (t === "tournament" || t === "tornooi") return "Tornooi";
+      if (t === "friendly" || t === "vriendschappelijk") return "Vriendschappelijk";
+      if (t === "stage") return "Stage";
+      if (t === "camp" || t === "voetbalkamp") return "Voetbalkamp";
+      // fallback: keep existing value if it matches one of the UI options
+      return eventType || "";
+    }
+
+    function countryToLabel(cc){
+      const c = String(cc || "").toUpperCase();
+      if (c === "BE") return "🇧🇪 België";
+      if (c === "NL") return "🇳🇱 Nederland";
+      return c || "";
+    }
+
+    function countryToFlag(cc){
+      const c = String(cc || "").toUpperCase();
+      if (c === "BE") return "🇧🇪";
+      if (c === "NL") return "🇳🇱";
+      return c || "";
+    }
+
+    function fmtDayMonth(dateStrOrIso){
+      const d = new Date(dateStrOrIso);
+      if (isNaN(d.getTime())) return "";
+      return d.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
+    }
+
+    function isoDateOnly(dateStrOrIso){
+      const d = new Date(dateStrOrIso);
+      if (isNaN(d.getTime())) return "";
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    }
+
+    // --- Share SVG icons (clone from live-score banner so they are identical) ---
+    function normalizeSvgMarkup(svgMarkup){
+      const s = String(svgMarkup || "");
+      // Force banner SVGs to use currentColor so icons are always green and no odd internal fills appear.
+      return s
+        .replace(/fill="(?!none)[^"]*"/g, 'fill="currentColor"')
+        .replace(/stroke="[^"]*"/g, 'stroke="currentColor"');
+    }
+
+    let _BANNER_SVGS = null;
+
+    function loadBannerSvgs(){
+      if (_BANNER_SVGS) return _BANNER_SVGS;
+      _BANNER_SVGS = {};
+
+      const nodes = document.querySelectorAll(".live-banner-top .live-socials-icons a.live-social-link");
+      nodes.forEach(a => {
+        const href = String(a.getAttribute("href") || "").toLowerCase();
+        const svg = a.querySelector("svg");
+        if (!svg) return;
+
+        const raw = svg.outerHTML;
+        const norm = normalizeSvgMarkup(raw);
+
+        if (href.includes("facebook.com")) _BANNER_SVGS.fb = norm;
+        else if (href.includes("instagram.com")) _BANNER_SVGS.ig = norm;
+        else if (href.includes("tiktok.com")) _BANNER_SVGS.tt = norm;
+        else if (href.includes("twitter.com") || href.includes("x.com")) _BANNER_SVGS.x = norm;
+      });
+
+      return _BANNER_SVGS;
+    }
+
+    // Fallbacks (only used if banner icons are not present for some reason)
+    const FALLBACK_FB = `<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M14 8.5V7c0-.8.3-1.2 1.2-1.2H17V3h-2.4C12 3 11 4.5 11 6.8V8.5H9v3h2V21h3v-9.5h2.4l.6-3H14z"/></svg>`;
+    const FALLBACK_IG = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="3"/><circle cx="12" cy="12" r="2.5"/><circle cx="15.5" cy="8.5" r=".5" class="fill"/></svg>`;
+    const FALLBACK_TT = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a3.8 3.8 0 1 1-3-3.7"/><path d="M14 4c.4 2.6 2.1 4.4 4.8 4.8"/></svg>`;
+    const FALLBACK_X  = `<svg viewBox="0 0 24 24" aria-hidden="true"><path class="fill" d="M18.7 3H21l-6.7 7.7L21 21h-6l-4.2-5.7L5.8 21H3l7.3-8.4L3 3h6.1l3.8 5.1L18.7 3z"/></svg>`;
+    const ICON_COPY = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="10" height="10" rx="2"/><path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1"/></svg>`;
+
+    function iconSvg(channel){
+      const m = loadBannerSvgs();
+      // Use the previous simple X icon (not the live-banner cloned variant)
+      if (channel === "x")  return FALLBACK_X;
+      if (m && m[channel]) return m[channel];
+      if (channel === "fb") return FALLBACK_FB;
+      if (channel === "ig") return FALLBACK_IG;
+      if (channel === "tt") return FALLBACK_TT;
+      if (channel === "copy") return ICON_COPY;
+      return "";
+    }
+
+    function shareButtonsHtml(slug, title, small=false){
+      const cls = small ? 'is-small' : '';
+      const safeTitle = String(title || '').replaceAll('"','&quot;');
+      return `
+        <div class="live-socials-icons v4-share" aria-label="Deel dit event">
+          <a class="live-social-link ${cls}" href="#" data-share-channel="fb" data-share-slug="${String(slug)}" data-share-title="${safeTitle}" target="_blank" rel="noopener noreferrer" aria-label="Deel op Facebook">${iconSvg("fb")}</a>
+          <a class="live-social-link ${cls}" href="#" data-share-channel="ig" data-share-slug="${String(slug)}" data-share-title="${safeTitle}" aria-label="Deel op Instagram">${iconSvg("ig")}</a>
+          <a class="live-social-link ${cls}" href="#" data-share-channel="tt" data-share-slug="${String(slug)}" data-share-title="${safeTitle}" aria-label="Deel op TikTok">${iconSvg("tt")}</a>
+          <a class="live-social-link ${cls}" href="#" data-share-channel="x"  data-share-slug="${String(slug)}" data-share-title="${safeTitle}" target="_blank" rel="noopener noreferrer" aria-label="Deel op X">${iconSvg("x")}</a>
+          <a class="live-social-link ${cls}" href="#" data-share-channel="copy" data-share-slug="${String(slug)}" data-share-title="${safeTitle}" aria-label="Kopieer link">${iconSvg("copy")}</a>
+        </div>
+      `;
+    }
+
+    function getThumb(ev){
+      const raw = ev.cover_image_url || ev.flyer_image_url || ev.thumbnail_url || ev.thumb_url || ev.image || (Array.isArray(ev.photo_urls) ? ev.photo_urls[0] : null) || (typeof ev.photo_urls === "string" ? ev.photo_urls.split(",")[0]?.trim() : null) || "";
+
+      // ❗ GEEN placeholder forceren
+      if (!raw) return "";
+
+      let out = raw;
+
+      // If PDF slips through, try PNG sibling (when backend conversion exists)
+      if (/\.pdf(\?.*)?$/i.test(out)) {
+        out = out.replace(/\.pdf(\?.*)?$/i, ".png$1");
+      }
+
+      // First resolve to absolute (backend) URLs when possible
+      if (window.V4AImage && typeof window.V4AImage.resolve === "function") {
+        out = window.V4AImage.resolve(raw);
+      }
+
+      // Normalize legacy placeholder paths so we never hit /assets/img/placeholder.svg
+      out = normalizeThumbUrl(out);
+
+      // Hide placeholder completely (we don't want to render it as a thumbnail)
+      if (out === (API_BASE + "/images/placeholder.svg")) return "";
+
+      return out;
+    }
+
+    function safeAttr(s){
+      return String(s || '').replaceAll('"','&quot;');
+    }
+
+    // Pagination and global event lists
+    const PAGE_SIZE = 8;
+    let ALL_EVENTS_SORTED = [];
+    let PINNED_PREMIUM_30 = [];
+    let CURRENT_PAGE = 1;
+
+    // Prevent stacking intervals when loadEvents() is called multiple times (e.g., gender changes)
+    let __premium30IntervalId = null;
+
+    // Only show events that are not deleted; if status exists, it must be published.
+    function isVisibleEvent(ev){
+      if (!ev) return false;
+      if (ev.is_deleted === true) return false;
+      const st = String(ev.status || "").toLowerCase();
+      if (st && st !== "published") return false;
+      return true;
+    }
+
+    async function loadEvents(){
+      try {
+        // Fetch premium (paid) for next N days from dedicated endpoint (stable contract)
+        const gender = String(genderEl?.value || "BOTH").toUpperCase();
+        setProvinceOptionsForCountry(countryEl?.value || "");
+        const genderQs = `&gender=${encodeURIComponent(gender)}`;
+
+        const premiumUrl = `${API_BASE}/api/events/premium?days=60&limit=50&nocache=${Date.now()}${genderQs}`;
+
+        const nocache = Date.now();
+        const [res, premiumRes] = await Promise.all([
+          fetch(`${API_BASE}/api/events?limit=200&nocache=${nocache}${genderQs}`),
+          fetch(premiumUrl)
+        ]);
+
+        const data = await res.json();
+        const premiumData = await premiumRes.json();
+
+        if (!data || !data.ok || !Array.isArray(data.items)) {
+          throw new Error("Bad response");
+        }
+
+        if (!premiumData || !premiumData.ok || !Array.isArray(premiumData.items)) {
+          // Do not fail the whole page if premium endpoint is temporarily unavailable
+          console.warn("[EVENTS] premium endpoint returned an unexpected shape");
+        }
+
+        // Sort by start date (soonest first) and hide deleted/non-published
+        const itemsSorted = [...data.items]
+          .filter(isVisibleEvent)
+          .sort((a,b) => new Date(a.start_at).getTime() - new Date(b.start_at).getTime());
+
+        ALL_EVENTS_SORTED = itemsSorted;
+
+        // Premium buckets
+        const now = new Date();
+        const in60 = new Date(now.getTime() + 60*24*60*60*1000);
+
+        // Premium <= 60 days comes from backend (paid-only) + hide deleted/non-published
+        PINNED_PREMIUM_30 = (premiumData && premiumData.ok && Array.isArray(premiumData.items))
+          ? premiumData.items.filter(isVisibleEvent)
+          : [];
+
+        const pinnedIds = new Set(
+          PINNED_PREMIUM_30.map(ev => String(ev.slug || ev.id))
+        );
+
+        // Premium later than 60 days (paid-only) derived from the main list for now
+        const premiumAllPaid = itemsSorted.filter(ev => {
+          const paid = String(ev.premium_status || "").toLowerCase() === "paid" ||
+                       String(ev.payment_status || "").toLowerCase() === "paid";
+          return !!ev.is_premium && paid;
+        });
+
+        const premiumLater = premiumAllPaid.filter(ev => {
+          const d = new Date(ev.start_at);
+          return !isNaN(d.getTime()) && d > in60;
+        });
+
+        // Other list below (everything except the pinned premium <=60d from backend)
+        const otherEvents = itemsSorted.filter(ev => {
+          const key = String(ev.slug || ev.id);
+          return !pinnedIds.has(key);
+        });
+
+        // --- Placeholder for non-premium event cards (visual filler) ---
+        function placeholderNonPremiumHtml(i){
+          // Neutral, fictive placeholders for visual inspection (no personal references)
+          const samples = [
+            { flag: "🇧🇪", city: "Mechelen", club: "FC Voorbeeld", type: "Tornooi" },
+            { flag: "🇳🇱", city: "Breda", club: "SV Voorbeeld", type: "Stage" },
+            { flag: "🇧🇪", city: "Leuven", club: "KVC Testclub", type: "Vriendschappelijk" },
+            { flag: "🇳🇱", city: "Tilburg", club: "VV Demo", type: "Voetbalkamp" }
+          ];
+          const s = samples[i % samples.length];
+          const start = new Date();
+          start.setDate(start.getDate() + 14 + i);
+          const dateLabel = start.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
+
+          return `
+            <article class="v4a-card" data-placeholder="1" data-country="${(s.flag === '🇧🇪' ? 'BE' : 'NL')}" data-province="" data-type="${s.type}" data-gender="BOTH" aria-label="Niet-premium event placeholder">
+              <div class="event-row">
+                <div class="event-thumbbox" aria-label="Flyer thumbnail"></div>
+
+                <div class="event-main">
+                  <div class="v4a-card-header" style="margin:0;">
+                    <div>
+                      <div class="v4a-card-title">Voorbeeld event (niet-premium)</div>
+                      <div class="v4a-card-meta">${s.flag} · ${s.city}</div>
+                      <div class="v4a-card-meta">${s.club}</div>
+                      <div class="v4a-card-meta">${dateLabel}</div>
+                      <div class="v4a-card-meta">${s.type}</div>
+                    </div>
+                  </div>
+
+                  <div class="v4a-card-body" style="margin-top:8px;">
+                    Dit is een tijdelijke voorbeeldkaart om de pagina-indeling te beoordelen.
+                  </div>
+
+                </div>
+              </div>
+            </article>
+          `;
+        }
+
+        function cardHtml(ev){
+          const slug = ev.slug || ev.id;
+          const country = String(ev.country || "").toUpperCase();
+          const uiType = typeToUiLabel(ev.event_type);
+          const dateOnly = isoDateOnly(ev.start_at);
+
+          // Build bodyParts and Google Maps link
+          const bodyParts = [];
+          const locName = ev.location_name ? String(ev.location_name).trim() : "";
+          const addr = ev.address ? String(ev.address).trim() : "";
+          const city = ev.city ? String(ev.city).trim() : "";
+          const pc = ev.postal_code ? String(ev.postal_code).trim() : "";
+
+          if (locName) bodyParts.push(`<strong>Locatie:</strong> ${locName}`);
+          if (addr) bodyParts.push(addr);
+          if (pc || city) bodyParts.push([pc, city].filter(Boolean).join(" "));
+
+          // Build a best-effort maps query. Prefer address; else fall back to city.
+          const mapsQuery = (addr || locName || city)
+            ? encodeURIComponent([addr || locName, pc, city, country].filter(Boolean).join(", "))
+            : "";
+          // No more mapsUrl or button
+
+          const bodyTop = bodyParts.length ? (bodyParts.join(" · ") + "<br/>") : "";
+
+          const desc = ev.description ? String(ev.description) : "";
+          const thumb = getThumb(ev);
+          const safeThumb = safeAttr(thumb);
+          const province = getEventProvince(ev);
+
+          return `
+            <article class="v4a-card" id="event-ad-${encodeURIComponent(slug)}"
+              data-ad-id="${String(slug)}"
+              data-title="${String(ev.title || "").replaceAll('"','&quot;')}"
+              data-country="${country}"
+              data-province="${safeAttr(province)}"
+              data-type="${uiType}"
+              data-gender="${String(ev.gender || 'BOTH').toUpperCase()}"
+              data-date="${dateOnly}"
+              data-slug="${String(slug)}">
+
+              <div class="event-row">
+                <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
+                  ${safeThumb ? `<div class="thumbbg" style="background-image:url('${safeThumb}')"></div>` : ``}
+                </div>
+
+                <div class="event-main">
+                  <div class="v4a-card-header" style="margin:0;">
+                    <div>
+                      <!-- Regel 1: Titel (klikbaar) -->
+                      <div class="v4a-card-title">
+                        <a href="event.html?slug=${encodeURIComponent(slug)}" style="color:inherit;text-decoration:none;">
+                          ${ev.title || ""}
+                        </a>
+                      </div>
+
+                      <!-- Regel 2: Vlag + stad -->
+                      <div class="v4a-card-meta">
+                        ${countryToFlag(country)}${ev.city ? " · " + ev.city : ""}
+                      </div>
+
+                      <!-- Regel 3: Club -->
+                      ${(() => {
+                        const club = ev.club_name || ev.club || ev.clubName || ev.clubname || ev.organizer_name || "";
+                        return club ? `<div class="v4a-card-meta">${club}</div>` : ``;
+                      })()}
+
+                      <!-- Regel 4: Datum -->
+                      <div class="v4a-card-meta">
+                        ${fmtDayMonth(ev.start_at)}${ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
+                      </div>
+
+                      <!-- Regel 5: Type -->
+                      <div class="v4a-card-meta">
+                        ${uiType ? uiType : ""}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="v4a-card-body" style="margin-top:8px;">
+                    ${bodyTop}
+                    ${desc}
+                  </div>
+                  ${mapsQuery ? `
+                    <div class="v4a-card-meta" style="margin-top:8px;opacity:.9;">
+                      <strong>Locatie:</strong> ${[locName, addr, [pc, city].filter(Boolean).join(' ')].filter(Boolean).join(' · ')}
+                    </div>
+                  ` : ``}
+                  <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                    <a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>
+                    <button type="button" class="btn-ghost-sm" data-reply-event="${String(slug)}">Contact</button>
+                  </div>
+                </div>
+              </div>
+
+            </article>
+          `;
+        }
+
+        function renderPagination(totalPages){
+          const pagEl = document.getElementById('events-pagination');
+          if (!pagEl) return;
+          if (totalPages <= 1){ pagEl.innerHTML = ''; return; }
+
+          const btn = (label, page, disabled=false, active=false) =>
+            `<button type="button" class="page-btn ${active ? 'is-active' : ''}" data-page="${page}" ${disabled ? 'disabled' : ''}>${label}</button>`;
+
+          const pages = [];
+          // compact paging: show first, last, current ±2
+          const set = new Set([1, totalPages, CURRENT_PAGE-2, CURRENT_PAGE-1, CURRENT_PAGE, CURRENT_PAGE+1, CURRENT_PAGE+2]);
+          const nums = Array.from(set).filter(n => n>=1 && n<=totalPages).sort((a,b)=>a-b);
+
+          let html = '';
+          html += btn('Vorige', Math.max(1, CURRENT_PAGE-1), CURRENT_PAGE===1);
+          let last = 0;
+          for (const n of nums){
+            if (last && n > last + 1) html += `<span style="opacity:.55;padding:0 4px;">…</span>`;
+            html += btn(String(n), n, false, n===CURRENT_PAGE);
+            last = n;
+          }
+          html += btn('Volgende', Math.min(totalPages, CURRENT_PAGE+1), CURRENT_PAGE===totalPages);
+
+          pagEl.innerHTML = html;
+        }
+
+        function renderPage(page){
+          // Always render pinned premium grid (top)
+          startPremium30Grid(PINNED_PREMIUM_30);
+
+          const total = otherEvents.length;
+          const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+          CURRENT_PAGE = Math.min(Math.max(1, page), totalPages);
+
+          const start = (CURRENT_PAGE - 1) * PAGE_SIZE;
+          const slice = otherEvents.slice(start, start + PAGE_SIZE);
+
+          // Build 2-col grid items
+          const parts = [];
+          slice.forEach((ev) => {
+            parts.push(cardHtml(ev));
+          });
+
+          // If fewer than PAGE_SIZE items, add placeholders so the layout can be inspected.
+          const missing = Math.max(0, PAGE_SIZE - slice.length);
+          for (let i = 0; i < missing; i++){
+            parts.push(placeholderNonPremiumHtml(i));
+          }
+
+          listEl.innerHTML = parts.join('');
+
+          // Trigger AdSense for any inserted ins
+          try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(_) {}
+
+          // Apply existing behaviors after render
+          hidePastEvents();
+          filterCards();
+          updateShareLinks();
+          renderPagination(totalPages);
+        }
+
+        // initial page render
+        renderPage(1);
+
+        // pagination click
+        document.getElementById('events-pagination')?.addEventListener('click', (e) => {
+          const b = e.target.closest('button[data-page]');
+          if (!b) return;
+          const p = Number(b.getAttribute('data-page') || '1');
+          if (!Number.isFinite(p)) return;
+          renderPage(p);
+          const overview = document.querySelector('.card-title')?.closest('.card') || document.querySelector('main');
+          const y = overview ? overview.getBoundingClientRect().top + window.scrollY - 90 : 0;
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        });
+
+        // Sidebar premium later rotator stays
+        startSidebarPremiumLater(premiumLater);
+
+      } catch (e) {
+        console.error("[EVENTS] load failed", e);
+        const status = document.getElementById("event-status");
+        if (status) {
+          status.style.display = "block";
+          status.textContent = "Events konden niet geladen worden.";
+        }
+      }
+    }
+    function startPremium30Grid(premium30){
+      const wrap = document.getElementById('premium-30-wrap');
+      const grid = document.getElementById('premium-grid-30');
+      if (!wrap || !grid) return;
+
+      // Always show the premium block (even if empty), but keep placeholders limited (max 2)
+      wrap.style.display = 'block';
+
+      // 6 visible cards (3x2). Each slot advances with its own offset so the order differs.
+      const slots = 6;
+      const offsets = [0, 2, 5, 7, 9, 11];
+      let tick = 0;
+
+      function render(){
+        grid.innerHTML = '';
+        for (let s=0; s<slots; s++){
+          const hasReal = premium30 && premium30.length > 0;
+          const ev = hasReal
+            ? premium30[(tick + offsets[s]) % premium30.length]
+            : null;
+
+          // Limit placeholders to 2 cards; skip rendering the remaining empty slots
+          if (!ev && s >= 2) continue;
+
+          const slug = ev ? (ev.slug || ev.id) : (`placeholder-${s+1}`);
+          const thumb = ev ? getThumb(ev) : '';
+          const safeThumb = safeAttr(thumb);
+
+          // Title for placeholder
+          const cardTitle = ev
+            ? (ev.title || '')
+            : 'Jouw premium event hier?';
+
+          // Prepare placeBits: flag, province, city
+          const country = ev ? String(ev.country || '').toUpperCase() : '';
+          const provinceRaw = ev ? (ev.province || ev.region || ev.state || ev.provincie || "") : "";
+          const province = String(provinceRaw || "").trim();
+          const placeBits = [];
+          if (ev) {
+            const flag = countryToFlag(country);
+            if (flag) placeBits.push(flag);
+            if (province) placeBits.push(province);
+            if (ev.city) placeBits.push(String(ev.city));
+          }
+
+          // Premium placeholder content
+          const desc = ev
+            ? (ev.description ? String(ev.description) : '')
+            : 'Bereik clubs en teams in jouw regio. Plaats jouw event als premium.';
+
+          // Type label
+          const uiType = ev ? typeToUiLabel(ev.event_type) : '';
+
+          grid.insertAdjacentHTML('beforeend', `
+            <article class="v4a-card premium-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
+              <div class="event-row">
+                <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
+                  <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
+                    <div class="premium-ribbon">Premium</div>
+                    ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
+                  </div>
+                </div>
+
+                <div class="event-main">
+                  <div class="v4a-card-header" style="margin:0;">
+                    <div>
+                      <!-- Titel: kleiner, bold -->
+                      <div class="v4a-card-title">${cardTitle}</div>
+
+                      <!-- Vlag + provincie + stad -->
+                      <div class="v4a-card-meta">
+                        ${ev ? placeBits.join(' · ') : "Premium slot"}
+                      </div>
+
+                      <!-- Datum -->
+                      <div class="v4a-card-meta">
+                        ${ev ? fmtDayMonth(ev.start_at) : ""}${ev && ev.end_at ? " – " + fmtDayMonth(ev.end_at) : ""}
+                      </div>
+
+                      <!-- Categorie (type) -->
+                      <div class="v4a-card-meta">
+                        ${ev ? (uiType ? uiType : "") : ""}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                    ${
+                      ev
+                        ? `<a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>`
+                        : `<a class="btn-ghost-sm" href="adverteren.html">Plaats premium event</a>`
+                    }
+                  </div>
+                </div>
+              </div>
+            </article>
+          `);
+        }
+        updateShareLinks();
+      }
+
+      render();
+
+      // Clear any previous rotator interval (important when loadEvents() re-runs)
+      if (__premium30IntervalId) {
+        clearInterval(__premium30IntervalId);
+        __premium30IntervalId = null;
+      }
+
+      __premium30IntervalId = setInterval(() => {
+        tick = (tick + 1) % (premium30.length > 0 ? premium30.length : 1);
+        render();
+      }, 10000);
+    }
+
+    function startSidebarPremiumLater(premiumLater){
+      const el = document.getElementById('sidebar-premium-later');
+      if (!el) return;
+
+      // Fill sidebar visually with a stable number of tiles
+      const MIN_SLOTS = 10;
+
+      const placeholders = [
+        { title: "Jouw premium event hier?", place: "—", type: "Premium", date: "" },
+        { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
+        { title: "Bereik clubs & teams", place: "—", type: "Premium", date: "" }
+      ];
+
+      const source = (premiumLater && premiumLater.length)
+        ? premiumLater
+        : [];
+
+      el.innerHTML = '';
+
+      for (let i = 0; i < MIN_SLOTS; i++) {
+        const ev = source.length ? source[i % source.length] : null;
+        const ph = placeholders[i % placeholders.length];
+
+        const title = ev ? (ev.title || '') : ph.title;
+        const slug = ev ? (ev.slug || ev.id) : '';
+
+        const country = ev ? String(ev.country || '').toUpperCase() : '';
+        const province = ev ? String(ev.province || ev.region || ev.state || ev.provincie || '').trim() : '';
+        const city = ev ? String(ev.city || '').trim() : '';
+        const placeBits = [countryToFlag(country), province, city].filter(Boolean).join(' · ');
+
+        const uiType = ev ? typeToUiLabel(ev.event_type) : '';
+        const dateLine = ev ? (fmtDayMonth(ev.start_at) + (ev.end_at ? ' – ' + fmtDayMonth(ev.end_at) : '')) : ph.date;
+
+        const thumb = ev ? getThumb(ev) : '';
+        const safeThumb = safeAttr(thumb);
+
+        el.insertAdjacentHTML('beforeend', `
+          <div class="sidebar-premium-card">
+            <div class="sidebar-premium-top">
+              <div class="sidebar-premium-thumbbox" aria-label="Flyer thumbnail">
+                <div class="premium-ribbon">Premium</div>
+                ${safeThumb ? `<div class=\"thumbbg\" style=\"background-image:url('${safeThumb}')\"></div>` : ``}
+              </div>
+              <div style="min-width:0;">
+                <div class="sidebar-premium-title">${title}</div>
+                <div class="sidebar-premium-meta">${ev ? (placeBits || '—') : ph.place}</div>
+                <div class="sidebar-premium-meta">${dateLine}</div>
+                <div class="sidebar-premium-meta">${uiType || ''}</div>
+              </div>
+            </div>
+            <div class="sidebar-premium-actions">
+              ${
+                ev
+                  ? `<a class=\"btn-ghost-sm\" href=\"event.html?slug=${encodeURIComponent(slug)}\">Bekijk</a>`
+                  : ``
+              }
+            </div>
+          </div>
+        `);
+      }
+
+      // End with a clear CTA in the sidebar
+      el.insertAdjacentHTML('beforeend', `
+        <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+          <div class="sidebar-premium-title">Plaats jouw premium event</div>
+          <div class="sidebar-premium-meta">Promoot je event ruim op voorhand, bovenaan elke pagina.</div>
+          <div class="sidebar-premium-actions" style="justify-content:center;">
+            <a class="btn-ghost-sm" href="adverteren.html">Plaats premium event</a>
+          </div>
+        </div>
+      `);
+    }
+
+    function norm(s){ return (s || "").toLowerCase(); }
+function normKey(s){
+  try { return String(s || "").toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\s+/g, " ").trim(); }
+  catch { return String(s || "").toLowerCase().replace(/\s+/g, " ").trim(); }
+}
+
+const PROVINCES_BE = [
+  "Antwerpen",
+  "Limburg",
+  "Oost-Vlaanderen",
+  "West-Vlaanderen",
+  "Vlaams-Brabant",
+  "Waals-Brabant",
+  "Henegouwen",
+  "Luik",
+  "Luxemburg",
+  "Namen",
+  "Brussel"
+];
+
+const PROVINCES_NL = [
+  "Drenthe",
+  "Flevoland",
+  "Friesland",
+  "Gelderland",
+  "Groningen",
+  "Limburg",
+  "Noord-Brabant",
+  "Noord-Holland",
+  "Overijssel",
+  "Utrecht",
+  "Zeeland",
+  "Zuid-Holland"
+];
+
+function setProvinceOptionsForCountry(countryCode){
+  if (!provinceEl) return;
+
+  const cc = String(countryCode || "").toUpperCase();
+  const list = cc === "BE" ? PROVINCES_BE : (cc === "NL" ? PROVINCES_NL : []);
+
+  const prev = String(provinceEl.value || "");
+
+  provinceEl.innerHTML = '';
+  provinceEl.insertAdjacentHTML('beforeend', '<option value="">Provincie (alles)</option>');
+  for (const p of list){
+    const v = String(p);
+    provinceEl.insertAdjacentHTML('beforeend', `<option value="${v.replaceAll('"','&quot;')}">${v}</option>`);
+  }
+
+  const enabled = list.length > 0;
+  provinceEl.disabled = !enabled;
+
+  if (enabled && prev && list.includes(prev)) provinceEl.value = prev;
+  else provinceEl.value = "";
+}
+
+// Prefer backend province fields; else best-effort from address/location/city
+function getEventProvince(ev){
+  const raw = ev?.province ?? ev?.provincie ?? ev?.region ?? ev?.state ?? "";
+  const p = String(raw || "").trim();
+  if (p) return p;
+
+  const loc = String(ev?.location_name || "");
+  const addr = String(ev?.address || "");
+  const city = String(ev?.city || "");
+  const blob = normKey([loc, addr, city].filter(Boolean).join(" · "));
+
+  const cc = String(ev?.country || "").toUpperCase();
+  const list = cc === "BE" ? PROVINCES_BE : (cc === "NL" ? PROVINCES_NL : []);
+  for (const candidate of list){
+    const ck = normKey(candidate);
+    if (ck && blob.includes(ck)) return candidate;
+  }
+  return "";
+}
+
+    // Verberg events waarvan datum + 1 dag < vandaag
+    function hidePastEvents() {
+      const cards = document.querySelectorAll("#event-list .v4a-card[data-date]");
+      const today = new Date();
+      today.setHours(0,0,0,0);
+
+      cards.forEach(card => {
+        const dateStr = card.getAttribute("data-date");
+        if (!dateStr) return;
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return;
+
+        d.setDate(d.getDate() + 1);
+        d.setHours(0,0,0,0);
+
+        if (d < today) card.style.display = "none";
+      });
+    }
+
+    function filterCards(){
+      const q = norm(searchEl.value);
+      const c = countryEl.value;
+      const t = typeEl.value;
+      const m = monthEl.value;
+      const g = String(genderEl?.value || "BOTH").toUpperCase();
+      const p = String(provinceEl?.value || "");
+
+      const cards = listEl.querySelectorAll(".v4a-card");
+      cards.forEach(card => {
+        const cc = card.dataset.country || "";
+        const tt = card.dataset.type || "";
+        const dd = card.dataset.date || ""; // YYYY-MM-DD
+        const hay = norm(card.textContent);
+        const gg = String(card.dataset.gender || "BOTH").toUpperCase();
+        const pp = card.dataset.province || "";
+
+        let ok = true;
+        if (c && cc && cc !== c) ok = false;
+        if (t && tt && tt !== t) ok = false;
+        if (g && g !== "BOTH") {
+        if (!(gg === g || gg === "BOTH")) ok = false;
+        }
+
+        if (p) {
+          const pk = normKey(p);
+          const ppk = normKey(pp);
+          if (pp && ppk !== pk) ok = false;
+          // If card has no province, keep it visible (data may be incomplete)
+        }
+
+        if (m && dd && dd.slice(5,7) !== m) ok = false;
+        if (ok && q && !hay.includes(q)) ok = false;
+
+        card.style.display = ok ? "" : "none";
+      });
+    }
+
+    searchEl.addEventListener("input", filterCards);
+    countryEl.addEventListener("change", () => {
+    setProvinceOptionsForCountry(countryEl.value);
+
+    // Clear province param when country changes (prevents mismatch)
+    const params = new URLSearchParams(window.location.search);
+    params.delete("province");
+    const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+    history.replaceState(null, "", next);
+
+    filterCards();
+  });
+    typeEl.addEventListener("change", filterCards);
+    monthEl.addEventListener("change", filterCards);
+    provinceEl?.addEventListener("change", () => {
+    const params = new URLSearchParams(window.location.search);
+    const p = String(provinceEl.value || "");
+    if (!p) params.delete("province");
+    else params.set("province", p);
+    const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
+    history.replaceState(null, "", next);
+    filterCards();
+  });
+    genderEl.addEventListener("change", () => {
+      // Persist in URL for shareable filtering
+      const params = new URLSearchParams(window.location.search);
+      const g = String(genderEl.value || "BOTH").toUpperCase();
+      if (!g || g === "BOTH") params.delete("gender");
+      else params.set("gender", g);
+      const next = window.location.pathname + "?" + params.toString();
+      history.replaceState(null, "", next);
+
+      // Reload from backend so premium + list stay consistent
+      loadEvents();
+    });
+
+    function updateShareLinks(){
+      document.querySelectorAll('[data-share-channel][data-share-slug]').forEach(a => {
+        a.onclick = null;
+        const slug = a.getAttribute('data-share-slug') || '';
+        const title = (a.getAttribute('data-share-title') || 'Event') + ' – Voetbal4All';
+        const shareUrl = 'https://www.voetbal4all.eu/event.html?slug=' + encodeURIComponent(slug);
+
+        const ch = a.getAttribute('data-share-channel');
+        const encUrl = encodeURIComponent(shareUrl);
+        const encText = encodeURIComponent(title);
+
+        if (ch === 'fb') {
+          a.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encUrl;
+          a.target = '_blank';
+        }
+        else if (ch === 'x') {
+          a.href = 'https://twitter.com/intent/tweet?text=' + encText + '&url=' + encUrl;
+          a.target = '_blank';
+        }
+        else if (ch === 'ig' || ch === 'tt') {
+          // Instagram/TikTok: no reliable web share URL; use Web Share on supported devices, else copy.
+          a.href = '#';
+          a.onclick = async (ev) => {
+            ev.preventDefault();
+            const payload = { title, text: title, url: shareUrl };
+            try {
+              if (navigator.share) {
+                await navigator.share(payload);
+                return;
+              }
+            } catch (_) {}
+            try {
+              await navigator.clipboard.writeText(shareUrl);
+              alert('Link gekopieerd. Plak hem nu in je ' + (ch === 'ig' ? 'Instagram' : 'TikTok') + ' post: ' + shareUrl);
+            } catch(e){
+              prompt('Kopieer deze link en plak hem in je ' + (ch === 'ig' ? 'Instagram' : 'TikTok') + ' post:', shareUrl);
+            }
+          };
+        }
+        else if (ch === 'copy') {
+          a.href = '#';
+          a.onclick = async (ev) => {
+            ev.preventDefault();
+            try { await navigator.clipboard.writeText(shareUrl); alert('Link gekopieerd: ' + shareUrl); }
+            catch(e){ prompt('Kopieer deze link:', shareUrl); }
+          };
+        }
+      });
+    }
+
+    // Reply flow via mailto (zelfde patroon)
+    document.addEventListener("click", function(e){
+      const btn = e.target.closest("[data-reply-event]");
+      if (!btn) return;
+
+      const id = btn.getAttribute("data-reply-event");
+      const card = btn.closest(".v4a-card");
+      const title = card?.querySelector(".v4a-card-title")?.textContent?.trim() || card?.dataset?.title || "Sportief event";
+      const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
+      if (!ok) return;
+
+      const email = prompt("Vul je e-mailadres in zodat de club je kan contacteren:");
+      if (!email) return alert("E-mailadres is nodig om te kunnen reageren.");
+
+      const subject = encodeURIComponent("Reactie via Voetbal4All – " + title);
+      const body = encodeURIComponent(
+        "Event: " + title +
+        "\nSlug/ID: " + id +
+        "\n\nE-mailadres: " + email +
+        "\n\nBericht:\n(Voeg je bericht toe.)"
+      );
+
+      location.href = "mailto:voetbal4all@outlook.com?subject=" + subject + "&body=" + body;
+    });
+
+    // Load events from backend
+    loadEvents();
+  </script>
+
+  <script src="assets/js/nav-active.js" defer></script>
+  <script src="assets/js/nav-mobile.js"></script>
+  <script src="assets/js/live-banner.js"></script>
+</body>
+</html>
+<!-- EVENTS_BUILD_MARKER: premium60 + sidebarCTA + adSimplified -->
