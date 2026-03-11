@@ -1,0 +1,39 @@
+.page { padding: var(--s4a-spacing-xl); max-width: 860px; }
+.loading { padding: var(--s4a-spacing-xl); color: var(--s4a-text-secondary); }
+.back { background: none; border: none; color: var(--s4a-text-secondary); cursor: pointer; font-size: 0.875rem; padding: 0; margin-bottom: var(--s4a-spacing-lg); display: block; }
+.back:hover { color: var(--s4a-text-primary); }
+.header { display: flex; justify-content: space-between; align-items: flex-start; background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); padding: var(--s4a-spacing-lg); margin-bottom: var(--s4a-spacing-lg); gap: var(--s4a-spacing-md); flex-wrap: wrap; }
+.title { font-family: var(--s4a-font-display); font-size: 1.5rem; font-weight: 700; color: var(--s4a-text-primary); margin: 0 0 6px; }
+.meta { display: flex; gap: var(--s4a-spacing-sm); color: var(--s4a-text-secondary); font-size: 0.875rem; flex-wrap: wrap; }
+.match { font-size: 0.875rem; color: var(--s4a-text-secondary); margin-top: 4px; }
+.headerRight { display: flex; flex-direction: column; align-items: flex-end; gap: var(--s4a-spacing-sm); }
+.overallScore { display: flex; flex-direction: column; align-items: center; }
+.overallVal { font-family: var(--s4a-font-mono); font-size: 2.5rem; font-weight: 700; color: var(--s4a-blue); line-height: 1; }
+.overallLbl { font-size: 0.7rem; color: var(--s4a-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+.badge { font-size: 0.7rem; padding: 3px 10px; border-radius: 999px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.badge_draft { background: rgba(255,107,26,0.15); color: var(--s4a-orange); }
+.badge_completed { background: rgba(45,142,255,0.15); color: var(--s4a-blue); }
+.card { background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); padding: var(--s4a-spacing-lg); margin-bottom: var(--s4a-spacing-lg); }
+.categoryScores { background: var(--s4a-bg-surface); border: 1px solid var(--s4a-border); border-radius: var(--s4a-radius-lg); padding: var(--s4a-spacing-lg); margin-bottom: var(--s4a-spacing-lg); }
+.sectionTitle { font-family: var(--s4a-font-display); font-size: 1rem; font-weight: 600; color: var(--s4a-text-primary); margin: 0 0 var(--s4a-spacing-md); padding-bottom: var(--s4a-spacing-sm); border-bottom: 1px solid var(--s4a-border); }
+.scoreBars { display: flex; flex-direction: column; gap: var(--s4a-spacing-sm); }
+.scoreBar { display: flex; flex-direction: column; gap: 6px; }
+.scoreBarHeader { display: flex; justify-content: space-between; }
+.scoreBarName { font-size: 0.875rem; color: var(--s4a-text-primary); }
+.scoreBarVal { font-family: var(--s4a-font-mono); font-weight: 700; color: var(--s4a-blue); }
+.scoreBarTrack { height: 6px; background: var(--s4a-bg-elevated); border-radius: 999px; overflow: hidden; }
+.scoreBarFill { height: 100%; background: linear-gradient(90deg, var(--s4a-blue), var(--s4a-orange)); border-radius: 999px; transition: width 0.4s ease; }
+.stars { display: flex; gap: 4px; font-size: 1.5rem; margin-bottom: var(--s4a-spacing-sm); }
+.star { color: var(--s4a-border); }
+.starActive { color: var(--s4a-orange); }
+.nextLevel { font-size: 0.875rem; color: var(--s4a-text-secondary); margin: 0; }
+.textBlock { margin-bottom: var(--s4a-spacing-md); }
+.textBlock p { color: var(--s4a-text-primary); font-size: 0.9rem; line-height: 1.6; margin: 6px 0 0; white-space: pre-line; }
+.textLabel { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--s4a-text-secondary); }
+.swGrid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4a-spacing-md); margin-bottom: var(--s4a-spacing-md); }
+.strengths { border-left: 3px solid #34C759; padding-left: var(--s4a-spacing-sm); }
+.weaknesses { border-left: 3px solid var(--s4a-orange); padding-left: var(--s4a-spacing-sm); }
+.detailScores { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4a-spacing-md); }
+.detailScore { display: flex; flex-direction: column; gap: 4px; }
+.detailNote { font-size: 0.75rem; color: var(--s4a-text-secondary); margin: 0; font-style: italic; }
+.actions { display: flex; gap: var(--s4a-spacing-sm); margin-top: var(--s4a-spacing-lg); }
