@@ -79,6 +79,12 @@
 
   /* Logo */
   --s4a-logo-url: url('/scout/assets/img/scout4all-logo.png');
+
+     /* Spacing aliassen voor Fase 2 modules */
+     --s4a-spacing-sm: var(--s4a-space-2);
+  --s4a-spacing-md: var(--s4a-space-4);
+  --s4a-spacing-lg: var(--s4a-space-6);
+  --s4a-spacing-xl: var(--s4a-space-8);
 }
 
 /* ============================================
