@@ -65,88 +65,88 @@ const AddPlayerPage = () => {
     return (
           <div className={styles.page}>
                   <div className={styles.header}>
-                            <button className={styles.back} onClick={() => navigate('/players')}>&larr; Terug</button>button>
-                            <h1 className={styles.title}>Nieuwe speler</h1>h1>
-                  </div>div>
+                            <button className={styles.back} onClick={() => navigate('/players')}>&larr; Terug</button>
+                            <h1 className={styles.title}>Nieuwe speler</h1>
+                  </div>
 
                   <form className={styles.form} onSubmit={handleSubmit}>
                     {/* Persoonlijke info */}
                             <section className={styles.section}>
-                                        <h2 className={styles.sectionTitle}>Persoonlijke informatie</h2>h2>
+                                        <h2 className={styles.sectionTitle}>Persoonlijke informatie</h2>
                                         <div className={styles.row}>
                                                       <Input label="Voornaam *" value={form.first_name} onChange={set('first_name')} />
                                                       <Input label="Achternaam *" value={form.last_name} onChange={set('last_name')} />
-                                        </div>div>
+                                        </div>
                                         <div className={styles.row}>
                                                       <Input label="Geboortedatum" type="date" value={form.date_of_birth} onChange={set('date_of_birth')} />
                                                       <Input label="Nationaliteit (ISO code)" placeholder="BE / NL / FR" value={form.nationality} onChange={set('nationality')} maxLength={2} />
-                                        </div>div>
+                                        </div>
                                         <div className={styles.row}>
                                                       <Input label="Lengte (cm)" type="number" value={form.height_cm} onChange={set('height_cm')} placeholder="180" />
                                                       <Input label="Gewicht (kg)" type="number" value={form.weight_kg} onChange={set('weight_kg')} placeholder="75" />
-                                        </div>div>
+                                        </div>
                                         <div className={styles.fieldGroup}>
-                                                      <label className={styles.label}>Voorkeursbeen</label>label>
+                                                      <label className={styles.label}>Voorkeursbeen</label>
                                                       <div className={styles.radioGroup}>
                                                         {['right', 'left', 'both'].map(foot => (
                             <label key={foot} className={styles.radioLabel}>
                                                 <input type="radio" name="preferred_foot" value={foot} checked={form.preferred_foot === foot} onChange={set('preferred_foot')} />
                               {foot === 'right' ? 'Rechts' : foot === 'left' ? 'Links' : 'Beide'}
-                            </label>label>
+                            </label>
                           ))}
-                                                      </div>div>
-                                        </div>div>
-                            </section>section>
+                                                      </div>
+                                        </div>
+                            </section>
 
                     {/* Positie */}
                             <section className={styles.section}>
-                                        <h2 className={styles.sectionTitle}>Positie</h2>h2>
+                                        <h2 className={styles.sectionTitle}>Positie</h2>
                                         <div className={styles.row}>
                                                       <div className={styles.fieldGroup}>
-                                                                      <label className={styles.label}>Primaire positie *</label>label>
+                                                                      <label className={styles.label}>Primaire positie *</label>
                                                                       <select className={styles.select} value={form.primary_position_code} onChange={set('primary_position_code')}>
-                                                                                        <option value="">Selecteer positie</option>option>
-                                                                        {POSITIONS.map(p => <option key={p.code} value={p.code}>{p.code} &mdash; {p.label}</option>option>)}
-                                                                      </select>select>
-                                                      </div>div>
+                                                                                        <option value="">Selecteer positie</option>
+                                                                        {POSITIONS.map(p => <option key={p.code} value={p.code}>{p.code} &mdash; {p.label}</option>)}
+                                                                      </select>
+                                                      </div>
                                                     <div className={styles.fieldGroup}>
-                                                                  <label className={styles.label}>Secundaire positie</label>label>
+                                                                  <label className={styles.label}>Secundaire positie</label>
                                                                   <select className={styles.select} value={form.secondary_position_code} onChange={set('secondary_position_code')}>
-                                                                                  <option value="">Geen</option>option>
-                                                                    {POSITIONS.map(p => <option key={p.code} value={p.code}>{p.code} &mdash; {p.label}</option>option>)}
-                                                                  </select>select>
-                                                    </div>div>
-                                        </div>div>
-                            </section>section>
+                                                                                  <option value="">Geen</option>
+                                                                    {POSITIONS.map(p => <option key={p.code} value={p.code}>{p.code} &mdash; {p.label}</option>)}
+                                                                  </select>
+                                                    </div>
+                                        </div>
+                            </section>
                   
                     {/* Huidige club */}
                           <section className={styles.section}>
-                                    <h2 className={styles.sectionTitle}>Huidige club (van de speler)</h2>h2>
+                                    <h2 className={styles.sectionTitle}>Huidige club (van de speler)</h2>
                                     <div className={styles.row}>
                                                 <Input label="Clubnaam" value={form.current_club_name} onChange={set('current_club_name')} placeholder="bv. Club Brugge" />
                                                 <Input label="Stad" value={form.current_club_city} onChange={set('current_club_city')} placeholder="bv. Brugge" />
-                                    </div>div>
+                                    </div>
                                     <Input label="Ploeg / leeftijdscategorie" value={form.current_team_name} onChange={set('current_team_name')} placeholder="bv. U17 A" />
-                          </section>section>
+                          </section>
                   
                     {/* Extra */}
                           <section className={styles.section}>
-                                    <h2 className={styles.sectionTitle}>Extra</h2>h2>
+                                    <h2 className={styles.sectionTitle}>Extra</h2>
                                     <div className={styles.fieldGroup}>
-                                                <label className={styles.label}>Notities</label>label>
+                                                <label className={styles.label}>Notities</label>
                                                 <textarea className={styles.textarea} value={form.notes} onChange={set('notes')} placeholder="Algemene indrukken, bijzonderheden\u2026" rows={4} />
-                                    </div>div>
+                                    </div>
                                     <Input label="Tags (komma-gescheiden)" value={form.tags} onChange={set('tags')} placeholder="snelheid, linksbenig, technisch" />
-                          </section>section>
+                          </section>
                   
-                    {error && <div className={styles.error}>{error}</div>div>}
+                    {error && <div className={styles.error}>{error}</div>}
                   
                           <div className={styles.formActions}>
-                                    <Button variant="secondary" type="button" onClick={() => navigate('/players')}>Annuleren</Button>Button>
-                                    <Button variant="primary" type="submit" loading={loading}>Speler opslaan</Button>Button>
-                          </div>div>
-                  </form>form>
-          </div>div>
+                                    <Button variant="secondary" type="button" onClick={() => navigate('/players')}>Annuleren</Button>
+                                    <Button variant="primary" type="submit" loading={loading}>Speler opslaan</Button>
+                          </div>
+                  </form>
+          </div>
         );
 };
 
