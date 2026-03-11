@@ -150,4 +150,4 @@ const AddPlayerPage = () => {
         );
 };
 
-export default AddPlayerPage;</option>
+export default AddPlayerPage;
