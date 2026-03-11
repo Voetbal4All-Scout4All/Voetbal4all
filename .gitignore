@@ -14,4 +14,7 @@ package-lock.json
 
 _backup_brand_fix_*/
 assets/img/brand/*.png
+!assets/img/brand/logo-voetbal4all.png
+!assets/img/brand/Voetbal4All-Page-Background.png
+!assets/img/brand/logo-voetbal4all_Bedankt_transparent.png
 assets/img/brand/*oud*.png
