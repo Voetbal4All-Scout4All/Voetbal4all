@@ -2694,12 +2694,12 @@
                 const flag = flagHtml(cc);
 
                 const imgSrc =
-                  resolveImageUrl(a?.image) ||
-                  resolveImageUrl(a?.imageUrl) ||
-                  resolveImageUrl(a?.image_url) ||
                   resolveImageUrl(a?.image_path) ||
                   resolveImageUrl(a?.imagePath) ||
-                  resolveImageUrl(a?.publicPath);
+                  resolveImageUrl(a?.publicPath) ||
+                  resolveImageUrl(a?.image) ||
+                  resolveImageUrl(a?.imageUrl) ||
+                  resolveImageUrl(a?.image_url);
 
                 const safeImg = imgSrc ? String(imgSrc).replace(/"/g, "&quot;") : "";
 
