@@ -555,6 +555,48 @@ let lastRenderKey = "";
       return IMG_BASE + "/" + p;
     }
 
+    function pickArticleImageValue(article){
+      if (!article || typeof article !== "object") return null;
+
+      const rootCandidates = [
+        article.image_path,
+        article.imagePath,
+        article.publicPath,
+        article.imageUrl,
+        article.image_url,
+        article.path,
+        article.url,
+        article.href,
+        article.src
+      ];
+
+      for (const val of rootCandidates) {
+        if (val != null && String(val).trim()) return val;
+      }
+
+      const nested = article.image;
+      if (nested == null) return null;
+      if (typeof nested === "string") return nested;
+      if (typeof nested === "object") {
+        const nestedCandidates = [
+          nested.image,
+          nested.image_url,
+          nested.image_path,
+          nested.imagePath,
+          nested.publicPath,
+          nested.path,
+          nested.url,
+          nested.href,
+          nested.src
+        ];
+        for (const val of nestedCandidates) {
+          if (val != null && String(val).trim()) return val;
+        }
+      }
+
+      return null;
+    }
+
     function isDbReadyWithImage(a){
       const st = String(a?.status || "").toLowerCase().trim();
       // Allow additional “good” statuses and also tolerate missing status.
@@ -776,15 +818,12 @@ let lastRenderKey = "";
         snippetClean = firstTwoSentences(snippetClean); // ✅ max 2 zinnen
         snippetClean = escapeHtml(snippetClean);
 
-        // Backend is single source of truth for image URLs (absolute or relative).
-        // Accept multiple shapes/fields and resolve them to a usable URL.
-        const imgSrc = (window.V4AImage && typeof window.V4AImage.resolve === "function")
-  ? window.V4AImage.resolve(
-      a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url
-    )
-  : (
-      a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url || FALLBACK_THUMB
-    );
+      // Backend is single source of truth for image URLs (absolute or relative).
+      // Accept multiple shapes/fields and resolve them to a usable URL.
+      const rawImageVal = pickArticleImageValue(a);
+      const imgSrc = (window.V4AImage && typeof window.V4AImage.resolve === "function")
+        ? window.V4AImage.resolve(rawImageVal || FALLBACK_THUMB)
+        : (toImgUrl(rawImageVal) || FALLBACK_THUMB);
         const safeTitleAttr = escapeHtml(a.title || "");
 
         const thumbHtml = imgSrc
