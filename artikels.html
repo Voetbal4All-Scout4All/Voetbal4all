@@ -524,7 +524,18 @@ let lastRenderKey = "";
       if (typeof imageVal === "string") {
         p = imageVal;
       } else if (typeof imageVal === "object") {
-        p = String(imageVal.publicPath || imageVal.url || imageVal.src || "");
+        p = String(
+          imageVal.image ||
+          imageVal.image_url ||
+          imageVal.image_path ||
+          imageVal.imagePath ||
+          imageVal.publicPath ||
+          imageVal.path ||
+          imageVal.url ||
+          imageVal.href ||
+          imageVal.src ||
+          ""
+        );
       }
 
       p = safe(p).trim();
@@ -608,7 +619,7 @@ let lastRenderKey = "";
       // Do NOT require http-only images; backend may return relative paths.
       // We accept placeholders too, so the UI never goes empty.
       const imgUrl = toImgUrl(
-        a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url
+        a?.image_path || a?.imagePath || a?.publicPath || a?.image || a?.imageUrl || a?.image_url
       );
 
       // Always keep the item; thumbnails will fall back when imgUrl is missing/bad.
@@ -820,7 +831,15 @@ let lastRenderKey = "";
 
       // Backend is single source of truth for image URLs (absolute or relative).
       // Accept multiple shapes/fields and resolve them to a usable URL.
-      const rawImageVal = pickArticleImageValue(a);
+      const rawImageVal =
+        a?.image_path ||
+        a?.imagePath ||
+        a?.publicPath ||
+        a?.image ||
+        a?.imageUrl ||
+        a?.image_url ||
+        pickArticleImageValue(a);
+
       const imgSrc = (window.V4AImage && typeof window.V4AImage.resolve === "function")
         ? window.V4AImage.resolve(rawImageVal || FALLBACK_THUMB)
         : (toImgUrl(rawImageVal) || FALLBACK_THUMB);
