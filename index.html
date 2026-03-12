@@ -2496,9 +2496,11 @@
         } else if (typeof u === "object") {
           // Support multiple shapes coming from backend / DB / legacy pipeline
           s = String(
-            u.publicPath ||
+            u.image ||
+            u.image_url ||
             u.image_path ||
             u.imagePath ||
+            u.publicPath ||
             u.path ||
             u.url ||
             u.href ||
