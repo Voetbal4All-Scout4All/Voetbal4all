@@ -13,8 +13,14 @@
       raw = imageVal;
     } else if (typeof imageVal === "object") {
       raw = String(
+        imageVal.image ||
+        imageVal.image_url ||
+        imageVal.image_path ||
+        imageVal.imagePath ||
         imageVal.publicPath ||
+        imageVal.path ||
         imageVal.url ||
+        imageVal.href ||
         imageVal.src ||
         ""
       );
@@ -24,11 +30,11 @@
     if (!raw || raw === "[object Object]") return PLACEHOLDER;
     if (raw.toLowerCase().includes("placeholder")) return PLACEHOLDER;
 
-    const clean = raw.split("?")[0];
+    const clean = raw.trim();
 
     if (clean.startsWith("http://") || clean.startsWith("https://")) return clean;
     if (clean.startsWith("/")) return API_BASE + clean;
-
+    
     return API_BASE + "/" + clean;
   }
 
