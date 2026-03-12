@@ -778,9 +778,13 @@ let lastRenderKey = "";
 
         // Backend is single source of truth for image URLs (absolute or relative).
         // Accept multiple shapes/fields and resolve them to a usable URL.
-        const imgSrc = toImgUrl(
-          a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url
-        );
+        const imgSrc = (window.V4AImage && typeof window.V4AImage.resolve === "function")
+  ? window.V4AImage.resolve(
+      a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url
+    )
+  : (
+      a?.image || a?.image_path || a?.imagePath || a?.publicPath || a?.imageUrl || a?.image_url || FALLBACK_THUMB
+    );
         const safeTitleAttr = escapeHtml(a.title || "");
 
         const thumbHtml = imgSrc
