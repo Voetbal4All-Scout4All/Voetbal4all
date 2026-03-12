@@ -2693,15 +2693,27 @@
                     const cc = normalizeCountryCode(rawCountry);
                 const flag = flagHtml(cc);
 
-                const imgSrc =
-                  resolveImageUrl(a?.image_path) ||
-                  resolveImageUrl(a?.imagePath) ||
-                  resolveImageUrl(a?.publicPath) ||
-                  resolveImageUrl(a?.image) ||
-                  resolveImageUrl(a?.imageUrl) ||
-                  resolveImageUrl(a?.image_url);
+                const rawImageVal =
+                  a?.image_path ||
+                  a?.imagePath ||
+                  a?.publicPath ||
+                  a?.image ||
+                  a?.imageUrl ||
+                  a?.image_url;
 
-                const safeImg = imgSrc ? String(imgSrc).replace(/"/g, "&quot;") : "";
+                const imgSrc = (window.V4AImage && typeof window.V4AImage.resolve === "function")
+                  ? window.V4AImage.resolve(rawImageVal || FALLBACK_THUMB)
+                  : (
+                      resolveImageUrl(a?.image) ||
+                      resolveImageUrl(a?.imageUrl) ||
+                      resolveImageUrl(a?.image_url) ||
+                      resolveImageUrl(a?.image_path) ||
+                      resolveImageUrl(a?.imagePath) ||
+                      resolveImageUrl(a?.publicPath) ||
+                      FALLBACK_THUMB
+                    );
+
+                const safeImg = String(imgSrc || FALLBACK_THUMB).replace(/"/g, "&quot;");
 
                 const thumbHtml = imgSrc
                   ? `
