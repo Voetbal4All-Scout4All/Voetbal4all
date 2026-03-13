@@ -55,10 +55,11 @@
     gap: var(--s4a-space-6);
     animation: s4a-fadeInUp 0.4s ease;
     overflow: visible;
+    clip-path: none;
 }
 
 .logo {
-    width: 220px;
+    width: 320px;
     height: 220px;
     object-fit: contain;
     display: block;
