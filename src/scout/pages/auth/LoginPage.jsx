@@ -20,7 +20,7 @@ const LoginPage = () => {
       <div className={styles.glowOrange} />
       <div className={styles.card}>
         <img
-          src="/scout/assets/img/scout4all-logo.png"
+          src="/assets/img/scout4all-logo.png"
           alt="Scout4All"
           className={styles.logo}
         />

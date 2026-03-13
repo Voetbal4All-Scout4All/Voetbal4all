@@ -55,7 +55,7 @@ const Sidebar = () => {
           <aside className={styles.sidebar}>
                   <div className={styles.logoWrap}>
                             <img
-                                        src="/scout/assets/img/scout4all-logo.png"
+                                        src="/assets/img/scout4all-logo.png"
                                         alt="Scout4All"
                                         className={styles.logo}
                                       />
