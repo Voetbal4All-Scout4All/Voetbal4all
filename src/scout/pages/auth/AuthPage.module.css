@@ -60,8 +60,9 @@
 }
 
 .logo {
-    width: 280px;
-    height: 200px;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
     object-fit: contain;
     display: block;
     margin: 0 auto -60px;
