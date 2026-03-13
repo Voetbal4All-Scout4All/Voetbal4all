@@ -18,12 +18,12 @@ const LoginPage = () => {
       <div className={styles.bgGrid} />
       <div className={styles.glowBlue} />
       <div className={styles.glowOrange} />
-      <div className={styles.card}>
-        <img
+      <img
           src="/assets/img/scout4all-logo.png"
           alt="Scout4All"
           className={styles.logo}
         />
+      <div className={styles.card}>
         <h1 className={styles.title}>
           {t('auth.welcomeBack')}
         </h1>
