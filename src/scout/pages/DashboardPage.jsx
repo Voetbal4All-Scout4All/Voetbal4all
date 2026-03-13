@@ -65,10 +65,10 @@ const DashboardPage = () => {
           
             {/* Stat cards */}
                 <div className={styles.statsGrid}>
-                        <StatCard label="Spelers in database" value={loading ? '\u2026' : stats.players} icon="\uD83D\uDC65" accent="blue" />
-                        <StatCard label="Rapporten" value={loading ? '\u2026' : stats.reports} icon="\uD83D\uDCCB" />
-                        <StatCard label="Drafts" value={loading ? '\u2026' : stats.drafts} icon="\u270F\uFE0F" accent="orange" />
-                        <StatCard label="Actief plan" value={user?.subscription_plan ?? 'Free'} icon="\u2B50" />
+                        <StatCard label="Spelers in database" value={loading ? '\u2026' : stats.players} icon="👥" accent="blue" />
+                        <StatCard label="Rapporten" value={loading ? '\u2026' : stats.reports} icon="📋" />
+                        <StatCard label="Drafts" value={loading ? '\u2026' : stats.drafts} icon="✏️" accent="orange" />
+                        <StatCard label="Actief plan" value={user?.subscription_plan ?? 'Free'} icon="⭐" />
                 </div>
           
             {/* Recente rapporten */}

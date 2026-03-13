@@ -48,8 +48,8 @@ const Sidebar = () => {
     const sections = hasClub ? [...NAV_SECTIONS, CLUB_SECTION] : NAV_SECTIONS;
 
     const initials = user
-      ? (user.first_name?.[0] || '') + (user.last_name?.[0] || '')
-          : '??';
+      ? (user.name?.[0] || '').toUpperCase()
+      : '??';
 
     return (
           <aside className={styles.sidebar}>
@@ -88,7 +88,7 @@ const Sidebar = () => {
                         <div className={styles.avatar}>{initials}</div>
                         <div className={styles.userInfo}>
                                   <span className={styles.userName}>
-                                    {user ? user.first_name + ' ' + user.last_name : t('common.loading')}
+                                    {user ? user.name : t('common.loading')}
                                   </span>
                                   <Badge variant="plan">{plan?.slug || 'free'}</Badge>
                         </div>
