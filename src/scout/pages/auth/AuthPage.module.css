@@ -46,7 +46,7 @@
     background: var(--s4a-bg-surface);
     border: 1px solid var(--s4a-border);
     border-radius: var(--s4a-radius-xl);
-    padding: var(--s4a-space-10) var(--s4a-space-8);
+    padding: var(--s4a-space-6) var(--s4a-space-8) var(--s4a-space-10);
     width: 100%;
     max-width: 420px;
     display: flex;
@@ -54,15 +54,16 @@
     align-items: center;
     gap: var(--s4a-space-6);
     animation: s4a-fadeInUp 0.4s ease;
+    overflow: visible;
 }
 
 .logo {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     object-fit: contain;
-    overflow: visible;
     display: block;
-    margin: 0 auto -16px;
+    margin: -80px auto -24px;
+    filter: drop-shadow(0 0 24px rgba(45,142,255,0.3));
 }
 
 .title {
