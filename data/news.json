@@ -1,6 +1,83 @@
 {
-  "generatedAt": "2026-03-13T07:50:59.306Z",
+  "generatedAt": "2026-03-13T08:48:00.887Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Winnende Emery vestigt record bij Villa en jaagt op vijfde Europa League-zege",
+      "link": "https://www.vi.nl/nieuws/winnende-emery-vestigt-record-bij-villa-en-jaagt-op-vijfde-europa-league-zege",
+      "summary": "Unai Emery heeft donderdagavond een record gevestigd bij Aston Villa. De manager leidde zijn ploeg in de heenwedstrijd van de achtste finale van de Europa League voorbij Lille (0-1) , waarmee hij zijn honderdste zege bij de club boekte. Daardoor blijft hij jagen op zijn vijfde Europa League-trofee.",
+      "publishedAt": "2026-03-13T08:43:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Another centimetre! Duplantis sets 15th pole vault world record",
+      "link": "https://www.skysports.com/athletics/news/12040/13519023/mondo-duplantis-pole-vaulter-sets-15th-world-record-as-he-registers-jump-of-6-31m-in-sweden",
+      "summary": "Pole vaulter Mondo Duplantis added another centimetre to his world record after he cleared 6.31 metres in Sweden on Thursday.",
+      "publishedAt": "2026-03-13T08:32:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Où en est la recherche d'un nouvel investisseur au Standard ? Le point sur le dossier",
+      "link": "https://www.walfoot.be/news/2026-03-13/ou-en-est-la-recherche-dun-nouvel-investisseur-au-standard--le-point-sur-le-dossier",
+      "summary": "Giacomo Angelini, CEO du Standard, poursuit sa recherche de l'investisseur idéal. Une liste de six profils s'est détachée.",
+      "publishedAt": "2026-03-13T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Overwinning van KRC Genk is veel waard: België snoept punten af van Nederland op UEFA-coëfficiëntenranking",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-13/overwinning-van-krc-genk-is-veel-waard-belgie-snoept-punten-af-van-nederland-op-uefa-coefficientenranking",
+      "summary": "België blijft punten sprokkelen voor de UEFA-coëfficiënt. De overwinning van KRC Genk tegen Freiburg op donderdag levert ons land 0,400 punt op.",
+      "publishedAt": "2026-03-13T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Het WK 1990 en de les van een geamputeerde finale",
+      "link": "https://www.vi.nl/nieuws/het-wk-1990-en-de-les-van-een-geamputeerde-finale",
+      "summary": "In de aanloop naar het WK staan we elke dag stil bij een WK-feitje. Met nog 90 dagen te gaan, zoomen we in op het Argentinië van 1990, een ware gelekaartenmachine.",
+      "publishedAt": "2026-03-13T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Neville en Rooney over blunder Tudor: 'Moet zijn verantwoordelijkheid nemen'",
+      "link": "https://www.vi.nl/video/neville-en-rooney-over-keeperblunder-tudor-moet-zijn-verantwoordelijkheid-nemen",
+      "summary": "Het veelbesproken moment rond Tottenham Hotspur-keeper Antonín Kinsky houdt de gemoederen bezig. Dinsdag kreeg de jonge Tsjech de kans van manager Igor Tudor in het Champions League-duel met Atlético Madrid. Na twee blunders, werd hij na een kwartier alweer gewisseld . Terecht, vindt Manchester United-icoon Wayne Rooney. Gary Neville is een andere mening toebedeeld.",
+      "publishedAt": "2026-03-13T08:11:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Time to target Brentford, Liverpool and Fulham stars? FPL talking point",
+      "link": "https://www.bbc.com/sport/football/articles/cx2gzlddz8no?at_medium=RSS&at_campaign=rss",
+      "summary": "With gameweek 32 emerging as a popular point to wildcard for Fantasy Premier League managers, there's a chance to make short-term gains by targeting teams with good fixtures in weeks 30 and 31.",
+      "publishedAt": "2026-03-13T08:09:30.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -9,19 +86,74 @@
       "flag": "🌍",
       "title": "VI Catwalk WK 2026: Brazilië toont uitshirt, Oranje snel aan de beurt bij Nike?",
       "link": "https://www.vi.nl/nieuws/vi-catwalk-de-thuis-en-uitshirts-die-op-het-wk-2026-worden-gedragen",
-      "summary": "Nog honderd dagen te gaan tot de start van het WK in Canada, Mexico en de Verenigde Staten. Het vooruitblikken kan beginnen en dat doet VI op verschillende manieren. Zo zetten we in dit artikel de WK-tenues van landen op een rijtje.",
-      "publishedAt": "2026-03-13T07:48:44.000Z"
+      "summary": "Het WK in Canada, Mexico en de Verenigde Staten nadert met rasse schreden. Het vooruitblikken kan beginnen en dat doet VI op verschillende manieren. Zo zetten we in dit artikel de WK-tenues van landen op een rijtje.",
+      "publishedAt": "2026-03-13T08:02:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tottenham may have reached a nadir in Madrid but it could still get worse | Max Rushden",
+      "link": "https://www.theguardian.com/football/2026/mar/13/tottenham-may-have-reached-a-nadir-in-madrid-but-it-could-still-get-worse",
+      "summary": "Masochistically rewatching the horror show against Atlético confirms that in a season of disasters this is perhaps the biggest The Guardian published a story on its website late on Wednesday with the headline: Igor Tudor to carry on at Spurs but future in doubt beyond Liverpool match. Given the past four games, and especially Tuesday night, most Tottenham fans may find it surprising that the (seemingly-disastrously-poor-at-making-decisions) decision makers are giving the emotionless Croat one more roll of the dice. But beneath the headline, in slightly smaller font: “Harry Redknapp rules himself out of return.” A real human person wrote the words that a 79-year-old has had to rule himself out of managing Tottenham again. In March 2026. Continue reading...",
+      "publishedAt": "2026-03-13T08:00:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Fridolina Rolfö: ‘It’s been a great first season at United but now the fun starts …’",
+      "link": "https://www.theguardian.com/football/2026/mar/13/fridolina-rolfo-manchester-united-womens-league-cup-final-chelsea-interview",
+      "summary": "Sweden winger was a serial winner at Barcelona and hopes her experience can help Manchester United claim their first Women’s League Cup trophy on Sunday against Chelsea When a club is preparing for its fourth major cup final, it helps to have somebody in the squad whose tally of Champions League final appearances alone surpasses that. Enter the serial winner Fridolina Rolfö, who has helped Manchester United reach a final at the first attempt in her first season in England. What else did we expect? It is just what she does. The Sweden winger, who arrived from Barcelona last summer, is speaking to the Guardian about Sunday’s Women’s League Cup final against Chelsea, the holders, and her winning mentality quickly reveals itself when she says of reaching the final: “Yes, we should be proud, but of course we’re not happy – we want to win the final as well. Continue reading...",
+      "publishedAt": "2026-03-13T08:00:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La Belgique grappille des points sur les Pays-Bas au coefficient UEFA suite au succès de Genk contre Fribourg",
+      "link": "https://www.walfoot.be/news/2026-03-13/la-belgique-grappille-des-points-sur-les-pays-bas-au-coefficient-uefa-suite-au-succes-de-genk-contre-fribourg",
+      "summary": "La Belgique continue de prendre des points au coefficient UEFA. La victoire du KRC Genk contre Fribourg ce jeudi permet au plat pays d'engranger 0,400 point.",
+      "publishedAt": "2026-03-13T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Russell claims dominant Chinese GP Sprint pole",
+      "link": "https://www.skysports.com/f1/news/12040/13518952/chinese-gp-sprint-qualifying-george-russell-claims-dominant-pole-as-kimi-antonelli-seals-mercedes-front-row-lockout",
+      "summary": "George Russell continued his imperious start to the 2026 Formula 1 season by comfortably beating his Mercedes team-mate Kimi Antonelli to pole position for the Chinese Grand Prix Sprint.",
+      "publishedAt": "2026-03-13T08:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Het grote vraagteken wordt misschien wel Manager van het Jaar",
+      "link": "https://www.vi.nl/pro/het-grote-vraagteken-wordt-misschien-wel-manager-van-het-jaar",
+      "summary": "Keith wie? Dat was afgelopen zomer de eerste reactie toen hij werd aangekondigd als opvolger van Thomas Frank. Intussen heeft Keith Andrews (45) een nieuw zesjarig contract getekend en lonkt er voor Brentford voor het eerst in de clubgeschiedenis Europees voetbal.",
+      "publishedAt": "2026-03-13T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
       "country": "INT",
       "flag": "🌍",
-      "title": "Niet alleen maar euforie in Portugal na veiligstellen tweede CL-ticket",
-      "link": "https://www.vi.nl/nieuws/blijdschap-in-portugal-groot-contrast-met-zwakke-campagnes-nederlandse-clubs",
-      "summary": "Portugese media zijn blij met het veiligstellen van het tweede rechtstreekse Champions League-ticket. Toch was het allerminst een onbezorgde Europese week voor de Portugese clubs.",
-      "publishedAt": "2026-03-13T07:43:04.000Z"
+      "title": "Discussie over WK-deelname escaleert: Iran dient Trump van bijzonder scherp antwoord",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-13/discussie-over-wk-deelname-escaleert-iran-dient-trump-van-bijzonder-scherp-antwoord",
+      "summary": "De spanningen rond het WK 2026 nemen toe. Na de uitspraken van Donald Trump heeft de nationale ploeg van Iran nu ook zelf stevig gereageerd op de discussie over haar deelname.",
+      "publishedAt": "2026-03-13T08:00:00.000Z"
     },
     {
       "type": "rss",
@@ -36,17 +168,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Mourinho in beroep tegen twee duels schorsing na opstootje tegen Porto",
-      "link": "https://www.vi.nl/nieuws/mourinho-mist-twee-wedstrijden-na-opstootje-tegen-porto",
-      "summary": "José Mourinho moet in Portugal twee wedstrijden brommen na zijn rode kaart tegen FC Porto zondag. De trainer van Benfica werd in de slotfase weggestuurd na een opstootje met de reservebank van de tegenstander. Ook moet Mourinho een geldboete betalen.",
-      "publishedAt": "2026-03-13T07:36:41.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "UK",
@@ -55,39 +176,6 @@
       "link": "https://www.walfoot.be/news/2026-03-13/cest-la-preuve-que-tout-le-monde-se-sent-bien--ilay-camara-donne-son-avis-sur-jeremy-taravel",
       "summary": "Ilay Camara s'est confié à propos de son entraîneur, toujours intérimaire pour l'instant, Jérémy Taravel, au micro de la RTBF dans l'émission &quot;Sur le Grill&quot;. Il n'en a dit que des choses positives !",
       "publishedAt": "2026-03-13T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "F1 Academy: Palmowski on pole for season-opener in Shanghai",
-      "link": "https://www.skysports.com/f1/live-blog/12040/13518208/f1-academy-2026-reports-calendar-news-results-standings-and-highlights-for-races-this-season",
-      "summary": "",
-      "publishedAt": "2026-03-13T07:27:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Rondje Europa: Parrott helemaal los bij AZ en druk op Van Persie blijft groot",
-      "link": "https://www.vi.nl/nieuws/rondje-europa-parrott-helemaal-los-bij-az-en-druk-op-van-persie-blijft-groot",
-      "summary": "Een nieuwe aflevering van Rondje Europa met Geert-Jan Jakobs en Martijn Krabbendam! AZ redt dankzij twee doelpunten van Troy Parrott voorlopig namelijk de eer van het Nederlandse voetbal. Samen met presentator Kalum van Oudheusen wordt de derde Europese avond van de week uitgebreid besproken.",
-      "publishedAt": "2026-03-13T07:26:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "From Norfolk to La Masia - Tavares is 'England's one to watch'",
-      "link": "https://www.bbc.com/sport/football/articles/cpqw8regdz4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Family, ex-coaches and former team-mates of Ajay Tavares describe the 16-year-old's rise from a small Norfolk market town to FC Barcelona.",
-      "publishedAt": "2026-03-13T07:24:27.000Z"
     },
     {
       "type": "rss",
@@ -110,17 +198,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-03-13/ex-speler-van-standard-is-duidelijk-anderlecht-blijft-de-beste-club-van-belgie",
       "summary": "Ilay Camara heeft in een interview met de RTBF, in het programma &quot;Sur le Gril&quot;, duidelijkheid gegeven over zijn keuze om afgelopen zomer naar Anderlecht te trekken, terwijl hij het seizoen daarvoor nog voor Standard speelde.",
       "publishedAt": "2026-03-13T07:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Zonder te spelen, bij Telstar of in eigen huis? Alle kampioensduels PSV op een rij",
-      "link": "https://www.vi.nl/nieuws/zonder-te-spelen-bij-telstar-of-in-eigen-huis-alle-kampioensduels-psv-op-een-rij",
-      "summary": "In Nederland zullen er maar weinig voetballiefhebbers zijn die nog twijfelen over het kampioenschap van PSV. De grote vraag is niet of, maar wanneer PSV de 27 ste landstitel verovert. Voetbal International zet alle mogelijke kampioensduels van PSV in de Eredivisie op een rij.",
-      "publishedAt": "2026-03-13T07:12:23.000Z"
     },
     {
       "type": "rss",
@@ -157,17 +234,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Rik De Mil moet puzzelen tegen Zulte Waregem na domper bij KAA Gent",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-13/rik-de-mil-moet-puzzelen-tegen-zulte-waregem-na-domper-bij-kaa-gent",
-      "summary": "KAA Gent staat vrijdagavond voor een wedstrijd met enorme inzet. Tegen Zulte Waregem kunnen de Buffalo's een grote stap zetten richting de Champions' Play-offs, maar de druk is voelbaar.",
-      "publishedAt": "2026-03-13T06:40:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
       "country": "UK",
@@ -176,28 +242,6 @@
       "link": "https://www.skysports.com/tennis/news/12040/13518978/jack-draper-british-no-1-sees-his-indian-wells-title-defence-ended-by-daniil-medvedev-in-controversial-fashion",
       "summary": "British No 1 Jack Draper was controversially ruled to have caused a hindrance to opponent Daniil Medvedev as his Indian Wells title defence ended in the quarter-finals.",
       "publishedAt": "2026-03-13T06:35:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "La Finalissima en danger d'annulation ? Le point sur la situation",
-      "link": "https://www.walfoot.be/news/2026-03-13/la-finalissima-en-danger-dannulation--le-point-sur-la-situation",
-      "summary": "Cette Finalissima entre l'Argentine et l'Espagne fait décidément couler beaucoup d'encre. La rencontre serait désormais en danger d'annulation.",
-      "publishedAt": "2026-03-13T06:21:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Adnan Januzaj wil slagen in een nieuwe comeback",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-13/adnan-januzaj-wil-slagen-in-een-nieuwe-comeback",
-      "summary": "Adnan Januzaj maakt een erg moeilijke periode door bij Sevilla FC. Door opeenvolgende blessures wil hij de Andalusische club in dit seizoenseinde toch nog zoveel mogelijk teruggeven.",
-      "publishedAt": "2026-03-13T06:20:00.000Z"
     },
     {
       "type": "rss",
@@ -249,32 +293,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Russell, Hamilton set early pace in China Sprint Qualifying LIVE!",
+      "title": "Antonelli faces investigation after Russell takes China Sprint pole LIVE!",
       "link": "https://www.skysports.com/f1/live-blog/12040/13518220/f1-chinese-gp-live-race-qualifying-sprint-practice-updates-results-stream-highlights-from-shanghai-round",
       "summary": "",
       "publishedAt": "2026-03-13T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Si j'avais écouté les gens, je serais mort\" : Adnan Januzaj veut réussir un nouveau come-back",
-      "link": "https://www.walfoot.be/news/2026-03-13/si-javais-ecoute-les-gens-je-serais-mort--adnan-januzaj-veut-reussir-un-nouveau-come-back",
-      "summary": "Adnan Januzaj vit une période très difficile au FC Séville. Victime de blessures à répétition, il veut cependant rendre un maximum au club andalou en cette fin de saison.",
-      "publishedAt": "2026-03-13T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Russell edges Antonelli as Mercedes make strong start in China",
-      "link": "https://www.skysports.com/f1/news/12040/13518951/chinese-gp-practice-george-russell-fastest-for-mercedes-as-lewis-hamilton-collides-with-lando-norris-before-spin",
-      "summary": "George Russell edged out his Mercedes team-mate Kimi Antonelli to top Chinese Grand Prix practice as the Silver Arrows continued their strong start to the 2026 season.",
-      "publishedAt": "2026-03-13T04:30:00.000Z"
     },
     {
       "type": "rss",
@@ -308,28 +330,6 @@
       "link": "https://www.theguardian.com/football/2026/mar/13/premier-league-10-things-to-look-out-for-this-weekend",
       "summary": "Bukayo Saka could switch to No 10, Brentford’s Igor Thiago sets sights on 20-goal mark and a key selection dilemma looms for Chelsea Premier League top scorers: latest top-flight standings In the summer, Burnley signed two new goalkeepers. Martin Dubravka agreed a one-year deal after leaving Newcastle, and has been one of the successes from a questionable round of recruitment. At 37, however, and with a need to cut costs should relegation be confirmed, it feels unlikely the veteran would be kept on at Turf Moor in the Championship. On the bench throughout the Premier League season has been Max Weiss, 16 years Dubravka’s junior. The German has featured in cup competitions but is awaiting his league debut and it feels as if Scott Parker should give him one soon as part of planning for next season. The head coach needs to look beyond the next nine games and to the future, which is more likely to include Weiss, who has another three years remaining on his contract, than Dubravka. Will Unwin Burnley v Bournemouth, Saturday 3pm (all times GMT) Sunderland v Brighton, Saturday 3pm Arsenal v Everton, Saturday 5.30pm Chelsea v Newcastle, Saturday 5.30pm West Ham v Manchester City, Saturday 8pm Crystal Palace v Leeds, Sunday 2pm Continue reading...",
       "publishedAt": "2026-03-13T00:01:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Fastest to 100 wins - Europa specialist Emery sets Villa record",
-      "link": "https://www.bbc.com/sport/football/articles/c6204z3x4jqo?at_medium=RSS&at_campaign=rss",
-      "summary": "Unai Emery becomes the quickest of the three Aston Villa managers to reach 100 victories as his side defeat Lille in the Europa League last 16.",
-      "publishedAt": "2026-03-12T23:38:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Midtjylland weather the storm as Cho stuns wasteful Nottingham Forest",
-      "link": "https://www.theguardian.com/football/2026/mar/12/nottingham-forest-midtjylland-europa-league-last-16-first-leg-match-report",
-      "summary": "It never rains but it pours. Nottingham Forest, forced to cut their ticket prices twice this week to entice a capacity crowd back to the City Ground, can’t seem to buy a win at the moment. Twice now they have lost to FC Midtjylland in this competition this season after the substitute Cho Gue-sung further dampened their spirits with the only goal on a night when a second-half deluge was so severe the ball started getting stuck in puddles. What a muddle Forest find themselves in: above the relegation zone only on goal difference, their fourth manager of the season, Vítor Pereira, is without a win in his five games since an opening triumph in Fenerbahce set up this last-16 window of opportunity. But as the Danish players celebrated with their hardy, bare-chested fans in a small, sodden but voluble corner of the Bridgford Stand, Pereira warned them they are far from home and dry. Continue reading...",
-      "publishedAt": "2026-03-12T22:10:08.000Z"
     }
   ]
 }
