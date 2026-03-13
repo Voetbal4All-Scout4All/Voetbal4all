@@ -65,7 +65,7 @@
     height: auto;
     object-fit: contain;
     display: block;
-    margin: 0 auto 8px;
+    margin: 0 auto 0px;
     mix-blend-mode: lighten;
     filter: drop-shadow(0 0 40px rgba(45,142,255,0.6));
 }
