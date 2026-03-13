@@ -19,6 +19,10 @@
   ],
   "rewrites": [
     {
+      "source": "/scout/assets/img/(.*)",
+      "destination": "/scout/assets/img/$1"
+    },
+    {
       "source": "/api/scout/(.*)",
       "destination": "https://voetbal4all-backend-database.onrender.com/api/scout/$1"
     },
