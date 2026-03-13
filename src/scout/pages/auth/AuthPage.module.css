@@ -57,9 +57,12 @@
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     object-fit: contain;
+    overflow: visible;
+    display: block;
+    margin: 0 auto -16px;
 }
 
 .title {
