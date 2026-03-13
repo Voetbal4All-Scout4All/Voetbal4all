@@ -43,7 +43,7 @@ const DashboardPage = () => {
           load();
     }, []);
 
-    const firstName = user?.first_name || user?.email?.split('@')[0] || 'Scout';
+    const firstName = user?.name || user?.email?.split('@')[0] || 'Scout';
 
     return (
           <div className={styles.page}>
