@@ -63,7 +63,8 @@
     object-fit: contain;
     display: block;
     margin: -80px auto -24px;
-    filter: drop-shadow(0 0 24px rgba(45,142,255,0.3));
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 32px rgba(45,142,255,0.5));
 }
 
 .title {
