@@ -2978,3 +2978,119 @@ img {
 #home-lower-grid .home-events-card .event-link{
   display:block;
 }
+
+
+/* ============================================
+   Scout4All advertentieblok — boven artikels
+   ============================================ */
+a.scout4all-ad-block {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+a.scout4all-ad-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(37,99,235,.25);
+  text-decoration: none;
+}
+.scout4all-ad-inner {
+  background: linear-gradient(135deg, #0f2044 0%, #1a3a72 60%, #1e4d94 100%);
+  border: 1px solid rgba(37,99,235,.35);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.scout4all-ad-inner::after {
+  content: 'Aangeboden door 4All-Ventures';
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 9px;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .3px;
+  pointer-events: none;
+}
+.scout4all-ad-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.scout4all-ad-logo img {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+.scout4all-ad-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.scout4all-ad-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -.3px;
+}
+.scout4all-ad-name span {
+  color: #f97316;
+}
+.scout4all-ad-tag {
+  font-size: .68rem;
+  color: rgba(255,255,255,.45);
+  margin-top: 1px;
+}
+.scout4all-ad-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 180px;
+}
+.scout4all-ad-features li {
+  font-size: .78rem;
+  color: rgba(255,255,255,.82);
+  line-height: 1.4;
+}
+.scout4all-ad-features li::first-letter {
+  color: #4ade80;
+}
+.scout4all-ad-cta {
+  background: #f97316;
+  color: #fff;
+  font-weight: 700;
+  font-size: .82rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .15s;
+}
+a.scout4all-ad-block:hover .scout4all-ad-cta {
+  background: #ea6c00;
+}
+
+/* Mobiel: stapel verticaal */
+@media (max-width: 540px) {
+  .scout4all-ad-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .scout4all-ad-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
