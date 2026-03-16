@@ -2878,6 +2878,2889 @@
                     const dateStr = rawDate ? new Date(rawDate).toLocaleDateString("nl-BE", { day: "numeric", month: "short" }) : "";
                     const articleLink = a?.link || `artikel.html?id=${encodeURIComponent(a?.id || "")}`;
                     const safeLink = String(articleLink).replace(/"/g, "&quot;");
+                    let articleHtml = `<a href="https://scout.voetbal4all.eu/" target="_blank" rel="noopener" class="scout4all-ad-block">
+          <div class="scout4all-ad-inner">
+            <div class="scout4all-ad-side">Voor Clubs &amp; Scouts</div>
+            <div class="scout4all-ad-logo">
+              <img src="assets/img/scout4all-logo.png" alt="Scout4All" loading="lazy">
+            </div>
+            <div class="scout4all-ad-brand">
+              <span class="scout4all-ad-name">Scout<span>4</span>All</span>
+              <span class="scout4all-ad-tag">Digitale scouting tool</span>
+            </div>
+            <div class="scout4all-ad-divider"></div>
+            <ul class="scout4all-ad-features">
+              <li><span class="chk">&#10003;</span>Digitale spelersevaluatie</li>
+              <li><span class="chk">&#10003;</span>Rapporten met eigen datamodel</li>
+              <li><span class="chk">&#10003;</span>Eenvoudige interface</li>
+              <li><span class="chk">&#10003;</span>GDPR-conform &amp; veilig</li>
+            </ul>
+            <div class="scout4all-ad-cta-wrap">
+              <div class="scout4all-ad-cta">Probeer GRATIS! &#8594;</div>
+            </div>
+            <div class="scout4all-ad-screenshot">
+              <img src="assets/img/scout4all-logo.png" alt="Scout4All app" loading="lazy">
+            </div>
+          </div>
+        </a>OCTYPE html>
+<html lang="nl">
+<head>
+  <!-- Google Funding Choices CMP (EU consent for AdSense) -->
+  <script async src="https://fundingchoicesmessages.google.com/i/pub-4062633211824348?ers=1" nonce="v4a-cmp"></script>
+  <script nonce="v4a-cmp">
+    (function () {
+      function signalGooglefcPresent() {
+        if (!window.frames["googlefcPresent"]) {
+          if (document.body) {
+            const iframe = document.createElement("iframe");
+            iframe.style.cssText = "width:0;height:0;border:none;display:none";
+            iframe.name = "googlefcPresent";
+            document.body.appendChild(iframe);
+          } else {
+            setTimeout(signalGooglefcPresent, 0);
+          }
+        }
+      }
+      signalGooglefcPresent();
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <title>Voetbal4All - Home</title>
+  <link rel="canonical" href="https://www.voetbal4all.eu/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <!-- Hoofd-stylesheet -->
+  <link rel="stylesheet" href="style.css?v=20251227a" />
+
+  <style>
+    /* HOME standings: keep both cards equal height by preventing name wrap */
+    .home-standings-card .standings-name{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      max-width: 100%;
+    }
+
+    /* HOME news thumbnails: keep perfect alignment even when image is missing */
+    .home-news__thumbWrap{
+      width: 92px;
+      height: 64px;
+      flex: 0 0 92px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(255,255,255,.06);
+    }
+    .home-news__thumbWrap.is-empty{
+      background: rgba(255,255,255,.04);
+    }
+    .home-news__thumb{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* FORCE home news thumbnails to be visible & laid out (defensive overrides) */
+    #latest-news-grid.article-list{ display: grid; gap: 10px; }
+    .home-news__item{ width: 100%; }
+    .home-news__link{ display: flex; gap: 12px; align-items: center; width: 100%; }
+    .home-news__thumbWrap{ display: block !important; visibility: visible !important; opacity: 1 !important; }
+    .home-news__thumb{ display: block !important; visibility: visible !important; opacity: 1 !important; }
+
+    /* ==========================================
+       HOME (index) – Left column event cards
+       Fix: cards must size to content (no stretching)
+       Scope: only affects the lower grid on the homepage
+       ========================================== */
+    #home-lower-grid .lower-grid-layout{
+      align-items: flex-start !important;
+    }
+    #home-lower-grid .column-left{
+      align-self: flex-start !important;
+      height: auto !important;
+      overflow: visible !important;
+    }
+    #home-lower-grid .home-events-card{
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: none !important;
+    }
+    #home-lower-grid .home-events-card .weekend-list,
+    #home-lower-grid .home-events-card .events-list{
+      max-height: none !important;
+      overflow: visible !important;
+    }
+
+    /* PREMIUM RIJ (Home): metallic grey frame, keep existing layout */
+    .premium-row .lower-grid-layout.grid-4 > .card{
+      /* keep spacing/layout as-is; only adjust surface + border */
+      outline: none !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        ),
+        linear-gradient(180deg,
+          rgba(180,190,210,.12),
+          rgba(10,12,20,.08)
+        ) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 10px 26px rgba(0,0,0,.38) !important;
+    }
+
+    /* Remove any green hover/focus glow from global styles */
+    .premium-row .lower-grid-layout.grid-4 > .card:hover,
+    .premium-row .lower-grid-layout.grid-4 > .card:focus,
+    .premium-row .lower-grid-layout.grid-4 > .card:focus-within{
+      border-color: rgba(255,255,255,.26) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 12px 30px rgba(0,0,0,.42) !important;
+      transform: none !important;
+    }
+
+    /* Kill any extra outline pseudo elements that may add a green border */
+    .premium-row .lower-grid-layout.grid-4 > .card::after{ display:none !important; }
+
+    /* HOME: premium cards — FIXED SIZE to avoid layout jump when rotating content */
+    .premium-row .lower-grid-layout.grid-4 > .card{
+      /* fixed height on desktop prevents the homepage from shifting when text rotates */
+      height: 250px;
+      min-height: 250px;
+    }
+
+    /* Keep the content layout stable inside the premium card */
+    .premium-row .lower-grid-layout.grid-4 > .card .card-header{ margin-bottom: 6px; }
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media{ flex: 0 0 auto; }
+
+    /* Reserve a stable window for the rotating list item (no reflow) */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list{
+      min-height: 88px;
+    }
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list .event-item{
+      min-height: 88px;
+    }
+
+    /* Clamp text so different items don't change the card height */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list .event-title{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list .event-meta{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+
+    /* On smaller screens, allow natural height */
+    @media (max-width: 900px){
+      .premium-row .lower-grid-layout.grid-4 > .card{
+        height: auto;
+        min-height: 0;
+      }
+    }
+
+    .premium-card-media{
+      width: 100%;
+      height: 78px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 8px 0 10px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .premium-card-media img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Make sure media always keeps its space even if the image fails */
+    .premium-card-media img.is-fallback{
+      object-fit: cover;
+      padding: 0;
+      opacity: .95;
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 16px rgba(255,120,40,.22));
+    }
+
+    /* HOME: premium list items can also show an optional thumbnail (backend-provided) */
+    .premium-list .event-item{ display:flex; gap:10px; align-items:flex-start; }
+    .premium-list .event-thumb{
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex: 0 0 56px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .premium-list .event-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .premium-list .event-body{ min-width:0; flex: 1 1 auto; }
+
+    /* HOME: consistent quick-card sizing + alignment between left/right stacks */
+    .home-col-stack{
+      --quick-card-h: 110px;
+      --quick-card-w: 100%;
+      --quick-gap: 14px;
+    }
+
+    /* HOME: full-width quick buttons row (4 equal buttons) */
+    .home-quick-row{
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .home-quick-row a.quick-card{
+      width: 100%;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px 14px;
+    }
+    .home-quick-row a.quick-card .quick-title{
+      width: 100%;
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 900px){
+      .home-quick-row{
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .home-quick-row a.quick-card{
+        height: auto;
+        min-height: 92px;
+        padding: 14px !important;
+      }
+    }
+
+        /* ======================= MOBILE: knoppen 2x2 + artikelen direct onder knoppen ======================= */
+        @media (max-width: 900px){
+                /* Main als flex-container zodat we secties kunnen herordenen */
+                main{
+                          display: flex;
+                          flex-direction: column;
+                }
+                /* Volgorde op mobiel:
+                   1. home-top (hero/newsletter + knoppen)
+                   2. home-lower-grid (artikelen)
+                   3. premium-row
+                   4. rest
+                */
+                .section-main.home-top{ order: 1; }
+                .section-main.premium-row{ order: 3; }
+                #home-lower-grid{ order: 2; }
+                main > section:not(.home-top):not(.premium-row):not(#home-lower-grid){ order: 4; }
+
+                /* In het lower-grid: toon alleen de artikelen-kolom eerst,
+                   events en sidebar eronder */
+                #home-lower-grid .lower-grid-layout.grid-3{
+                          display: flex;
+                          flex-direction: column;
+                }
+                #home-lower-grid .column-middle{ order: 1; }
+                #home-lower-grid .column-left{ order: 2; }
+                #home-lower-grid .column-right{ order: 3; }
+
+                /* Quick-card styling voor 2x2 grid op mobiel */
+                .home-quick-row a.quick-card{
+                          height: auto;
+                          min-height: 72px;
+                          padding: 10px 8px !important;
+                          font-size: 13px;
+                }
+                .home-quick-row a.quick-card .quick-title{
+                          font-size: 13px;
+                          line-height: 1.15;
+                }
+                .home-quick-row{
+                          gap: 10px;
+                }
+        }
+
+    /* HOME: tweak top-grid proportions (narrower middle, wider standings) */
+    .home-top-grid{
+      /* Slightly narrower side columns (standings), wider middle area (hero + quick cards) */
+      grid-template-columns: 1.25fr 1.75fr 1.75fr 1.25fr !important;
+      column-gap: 14px !important;
+      align-items: stretch !important;
+
+      /* Ensure the grid has 2 equal-height rows so hero + standings can align bottoms */
+      grid-auto-rows: 1fr;
+    }
+
+    /* Standings cards must also span the same 2 grid rows (defensive) */
+    .home-top-grid .home-standings-card{
+      grid-row: span 2 !important;
+    }
+
+    /* HOME: standings row — FORCE logo + clubnaam op dezelfde regel */
+    .home-standings-card .event-item{ padding: 6px 0; }
+
+    .home-standings-card .standings-row{
+      display:flex !important;
+      align-items:center !important;
+      justify-content:space-between !important;
+      gap: 2px !important;
+    }
+
+    /* Left side (rank + logo + name) is one flex row */
+    .home-standings-card .standings-ranklogo{
+      display:flex !important;
+      align-items:center !important;
+      gap:1px !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .home-standings-card .standings-rank{
+      margin-right: 1px !important;
+    }
+
+    .home-standings-card .standings-logo{
+      width: 20px !important;
+      height: 20px !important;
+      object-fit: contain !important;
+      flex: 0 0 auto !important;
+    }
+
+    .home-standings-card .standings-name{
+      display:inline-block !important;
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      font-size: 12.5px !important;
+      line-height: 1.15 !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+
+    .home-standings-card .standings-pts{
+      flex: 0 0 auto !important;
+      white-space: nowrap !important;
+      margin-left: 6px !important;
+    }
+
+    /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
+    .newsletter-card{
+      cursor: default;
+      /* Align bottom with the bottom of the 2nd button on the left stack:
+         (2 quick cards + 1 gap) */
+      min-height: calc((var(--quick-card-h) * 2) + var(--quick-gap));
+    }
+
+    /* Uniform home quick-card heights (hero excluded; newsletter has its own height) */
+    .home-col-stack .quick-card{
+      height: var(--quick-card-h);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: var(--quick-card-w);
+    }
+    .home-col-stack .quick-card.newsletter-card{
+      height: auto; /* allow newsletter to use min-height calc above */
+    }
+
+    /* Prevent the supportersclub card (and all quick cards) from growing taller due to wrapping */
+    .home-col-stack .quick-card .quick-title,
+    .home-col-stack .quick-card .note{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .home-col-stack .quick-card .quick-title{ -webkit-line-clamp: 3; }
+    .home-col-stack .quick-card .note{ -webkit-line-clamp: 2; }
+
+
+    /* Standings card height: allow room for Top 8 list */
+    .home-standings-card{
+      min-height: 430px;
+      align-self: stretch;
+      height: 100%;
+    }
+
+    /* HOME: hero height — force bottom to align with standings cards */
+    .home-top-grid .hero-card{
+      min-height: 430px;      /* match .home-standings-card min-height */
+      align-self: stretch;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* CRITICAL: make the HERO span the same 2 grid rows as the standings cards */
+    .home-top-grid .hero-card.hero-card--span2{
+      grid-row: span 2 !important;
+    }
+
+    /* Let the split (video + newsletter) take remaining height so the card reaches the same bottom line */
+    .home-top-grid .hero-card .hero-split{
+      flex: 1 1 auto;
+    }
+
+    /* Keep inner columns stretching nicely when the hero grows */
+    .home-top-grid .hero-card .hero-video-col,
+    .home-top-grid .hero-card .hero-newsletter-col{
+      height: 100%;
+    }
+
+    .home-standings-card .events-list{
+      margin-bottom: 0;
+    }
+
+    .home-standings-card .event-item{
+      padding: 5px 0;
+    }
+
+    /* Compact titles on quick cards (except hero) */
+    .home-col-stack .quick-card .quick-title{
+      font-size: 16px;
+      line-height: 1.15;
+    }
+
+    /* HOME: center text inside the quick-button cards (NOT the newsletter card) */
+    .home-col-stack a.quick-card{
+      text-align: center;
+      align-items: center;
+    }
+    .home-col-stack a.quick-card .quick-title{
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Ensure newsletter UI keeps its original (left) alignment */
+    .newsletter-card,
+    .newsletter-card .quick-kicker,
+    .newsletter-card .quick-title,
+    .newsletter-card .note{
+      text-align: left;
+    }
+    .home-col-stack .quick-card .note{ margin-top: 4px; }
+
+    .newsletter-card .quick-kicker{ margin-bottom: 2px; }
+    .newsletter-card .quick-title{ margin-bottom: 4px; font-size: 18px; line-height: 1.15; }
+    .newsletter-card .note{ font-size: 12px; line-height: 1.25; opacity: .85; }
+
+    .newsletter-form{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-top:10px;
+    }
+    /* Orange flowing highlight for key words inside the home buttons */
+    .flow-orange{
+      font-weight: 800;
+      background: linear-gradient(90deg,
+        rgba(255,120,40,1) 0%,
+        rgba(255,200,120,1) 35%,
+        rgba(255,80,0,1) 70%,
+        rgba(255,220,140,1) 100%
+      );
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: flowOrange 3.6s linear infinite;
+      text-shadow:
+        0 0 10px rgba(255,120,40,.35),
+        0 0 18px rgba(255,80,0,.28),
+        0 0 28px rgba(255,200,120,.20);
+      filter: drop-shadow(0 0 10px rgba(255,120,40,.18));
+    }
+
+    @keyframes flowOrange{
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 220% 50%; }
+    }
+    .newsletter-form .row{
+      display:flex;
+      gap:8px;
+      align-items:stretch;
+    }
+    .newsletter-form input[type="email"]{
+      flex:1;
+      min-width: 0;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.22);
+      color: #fff;
+      outline: none;
+    }
+    .newsletter-form input[type="email"]::placeholder{ color: rgba(255,255,255,.55); }
+    .newsletter-form .btn-submit{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color:#fff;
+      font-weight: 700;
+      cursor:pointer;
+      white-space: nowrap;
+    }
+    .newsletter-form .btn-submit:hover{ background: rgba(255,255,255,.12); }
+
+    /* compact consent row */
+    .newsletter-form label{
+      display:flex;
+      gap:8px;
+      align-items:flex-start;
+      font-size: 11px;
+      line-height: 1.25;
+      opacity: .9;
+      margin-top: 2px;
+    }
+    .newsletter-regions{
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.16);
+    }
+    .newsletter-regions .regions-title{
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      margin-bottom: 4px;
+    }
+    .newsletter-regions .regions-note{
+      font-size: 11px;
+      line-height: 1.25;
+      opacity: .85;
+      margin-bottom: 8px;
+    }
+    .newsletter-regions .regions-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .newsletter-regions .region-opt{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      font-size: 12px;
+      line-height: 1.25;
+      opacity: .95;
+      margin: 0;
+    }
+    .newsletter-regions .region-opt input{
+      margin-top: 2px;
+      flex: 0 0 auto;
+    }
+
+    .newsletter-form input[type="checkbox"]{ margin-top: 2px; }
+
+    /* hide fineprint in the card to keep height aligned; details live in privacy page */
+    .newsletter-form .fineprint{ display:none; }
+
+    .newsletter-status{
+      display:none;
+      font-size: 12px;
+      line-height: 1.25;
+      opacity: .95;
+      padding-top: 0;
+    }
+    .newsletter-status.is-ok{ display:block; }
+    .newsletter-status.is-err{ display:block; }
+    .newsletter-hp{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+    @media (max-width: 560px){
+      .newsletter-form .row{ flex-direction: column; }
+      .newsletter-form .btn-submit{ width: 100%; }
+    }
+    /* HOME: hero card centered text */
+    .hero-card--center .card-header,
+    .hero-card--center .note{
+      text-align:center;
+    }
+    .hero-card--center .card-header > div{
+      width:100%;
+    }
+
+    /* HERO VIDEO — stabiel, full width, gecentreerd, geen verschuiving */
+    .v4a-video-wrap{
+      width: 100%;
+      height: 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+
+    /* HERO: split layout (video half width + newsletter form in hero) */
+    .hero-split{
+      display:flex;
+      gap: 14px;
+      align-items: stretch;
+      margin-top: 10px;
+    }
+    .hero-video-col{
+      flex: 1 1 50%;
+      min-width: 0;
+    }
+    .hero-newsletter-col{
+      flex: 1 1 50%;
+      min-width: 0;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.16);
+      padding: 12px 12px 10px;
+    }
+    .hero-newsletter-col .quick-kicker{ margin-bottom: 2px; }
+    .hero-newsletter-col .quick-title{ margin-bottom: 4px; font-size: 18px; line-height: 1.15; }
+    .hero-newsletter-col .note{ font-size: 12px; line-height: 1.25; opacity: .85; }
+
+    @media (max-width: 900px){
+      .hero-split{ flex-direction: column; }
+    }
+
+    .v4a-video{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;        /* vult volledige breedte zonder stretch */
+      object-position: center;  /* altijd vanuit het midden */
+      display: block;
+      pointer-events: none;     /* gedraagt zich als GIF */
+    }
+
+    /* HERO: only zoom out the hero video on the homepage hero card */
+    .hero-card .v4a-video{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.05);
+      transform-origin: center center;
+      display: block;
+      pointer-events: none;
+    }
+
+    .hero-card .v4a-video-wrap{
+  background: #000 !important;
+}
+
+    @media (max-width: 900px){
+      .v4a-video-wrap{
+        height: 240px;
+      }
+    }
+
+    /* HOME: premium surface for profile cards */
+    .premium-profile-card{
+      border: 1px solid rgba(255,255,255,.18) !important;
+      background:
+        linear-gradient(135deg,
+          rgba(255,255,255,.10),
+          rgba(255,255,255,.02) 35%,
+          rgba(255,255,255,.08) 65%,
+          rgba(255,255,255,.03)
+        ),
+        linear-gradient(180deg,
+          rgba(180,190,210,.12),
+          rgba(10,12,20,.08)
+        ) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 10px 26px rgba(0,0,0,.38) !important;
+    }
+    .premium-profile-card:hover,
+    .premium-profile-card:focus,
+    .premium-profile-card:focus-within{
+      border-color: rgba(255,255,255,.26) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.14),
+        0 12px 30px rgba(0,0,0,.42) !important;
+      transform:none !important;
+    }
+    .premium-profile-card::after{ display:none !important; }
+
+    /* FIX: Trainers/Spelers placeholder terug mooi (zoals vroeger) */
+    .premium-profile-card .premium-card-media{
+      height: 78px;
+      background: rgba(255,255,255,.06);
+    }
+
+    /* Gebruik dezelfde uitstraling als de premium cards bovenaan: full-width banner */
+    .premium-profile-card .premium-card-media img.premium-media-img{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Placeholder.svg: NIET meer 'contain + padding' (dat maakte het icoon te klein) */
+    .premium-profile-card .premium-card-media img.premium-media-img.is-fallback,
+    .premium-profile-card .premium-card-media img.premium-media-img[src*="placeholder.svg"]{
+      object-fit: cover;
+      padding: 0;
+      opacity: .95;
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 16px rgba(255,120,40,.22));
+    }
+
+    /* HOME: premium TOP cards (clubvacatures/events) — placeholder should look like trainers/spelers (full banner) */
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media img.premium-media-img.is-fallback,
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-card-media img.premium-media-img[src*="placeholder.svg"]{
+      object-fit: cover;
+      padding: 0;
+      opacity: .95;
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 16px rgba(255,120,40,.22));
+    }
+
+    /* HOME: keep the "Alle ..." links INSIDE the top premium cards (same behavior as trainers/spelers) */
+    .premium-row .lower-grid-layout.grid-4 > .card{
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+
+    .premium-row .lower-grid-layout.grid-4 > .card .premium-list{
+      flex: 1 1 auto;
+      margin-bottom: 0;
+    }
+
+    .premium-row .lower-grid-layout.grid-4 > .card .event-link{
+      /* Always visible INSIDE the card (bottom-aligned) */
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      margin-top: auto !important;
+      padding-top: 10px !important;
+      padding-bottom: 2px !important;
+      display: inline-block !important;
+      z-index: 3 !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      text-decoration: none;
+    }
+
+    .premium-row .lower-grid-layout.grid-4 > .card .event-link:hover{
+      text-decoration: underline;
+    }
+
+    /* FIX: Keep the "Alle premium ..." links INSIDE the card (not outside the border) */
+    .premium-profile-card{
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+
+    .premium-profile-card .events-list{
+      flex: 1 1 auto;
+      margin-bottom: 0;
+    }
+
+    .premium-profile-card .event-link{
+      position: relative !important;
+      left: auto !important;
+      right: auto !important;
+      bottom: auto !important;
+      margin-top: auto !important;
+      padding-top: 10px !important;
+      padding-bottom: 2px !important;
+      display: inline-block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    /* HOME: button under latest articles — fire / ember glow */
+    .btn-more-articles{
+      display:block;
+      width:100%;
+      margin-top:14px;
+      padding:16px 18px;
+      border-radius:16px;
+      text-align:center;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.3px;
+      color:#FFF3E8;
+
+      border:1px solid rgba(255,140,60,.55);
+      background:
+        radial-gradient(120% 140% at 10% 120%, rgba(255,80,0,.45), transparent 45%),
+        radial-gradient(120% 140% at 90% -20%, rgba(255,200,120,.35), transparent 40%),
+        linear-gradient(180deg, #1a0d08, #0e0704);
+
+      box-shadow:
+        0 0 0 1px rgba(255,120,40,.18) inset,
+        0 10px 26px rgba(0,0,0,.45),
+        0 0 22px rgba(255,90,0,.45),
+        0 0 38px rgba(255,40,0,.35);
+
+      position:relative;
+      overflow:hidden;
+      transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+      isolation: isolate;
+    }
+
+    /* hover reveal: football pitch inside the CTA button */
+    .btn-more-articles::before{
+      content:"";
+      position:absolute;
+      inset:4px;
+      border-radius:12px;
+      pointer-events:none;
+      z-index:1;
+
+      /* football pitch lines + subtle grass texture in the same warm/orange palette */
+      background:
+      /* center circle (kleiner + dunner) */
+      radial-gradient(circle at 50% 50%, transparent 0 17.8%, rgba(255,200,120,.55) 17.8% 18.4%, transparent 18.4% 100%),
+      /* midfield line (dunner) */
+      linear-gradient(90deg, transparent 0 49.85%, rgba(255,200,120,.55) 49.85% 50.15%, transparent 50.15% 100%),
+        /* penalty boxes (left/right) */
+        linear-gradient(90deg,
+          rgba(255,200,120,.55) 0 0,
+          rgba(255,200,120,.55) 0 0,
+          transparent 0 0
+        ),
+        linear-gradient(90deg,
+          transparent 0 14.2%,
+          rgba(255,200,120,.55) 14.2% 14.6%,
+          transparent 14.6% 85.4%,
+          rgba(255,200,120,.55) 85.4% 85.8%,
+          transparent 85.8% 100%
+        ),
+        /* goal boxes (left/right) */
+        linear-gradient(90deg,
+          transparent 0 8.2%,
+          rgba(255,200,120,.55) 8.2% 8.6%,
+          transparent 8.6% 91.4%,
+          rgba(255,200,120,.55) 91.4% 91.8%,
+          transparent 91.8% 100%
+        ),
+        /* pitch border */
+        linear-gradient(0deg,
+          rgba(255,200,120,.55) 0 .4px, transparent .4px calc(100% - .4px), rgba(255,200,120,.55) calc(100% - .4px) 100%),
+        linear-gradient(90deg,
+          rgba(255,200,120,.55) 0 .4px, transparent .4px calc(100% - .4px), rgba(255,200,120,.55) calc(100% - .4px) 100%),
+        /* warm grass texture */
+        repeating-linear-gradient(90deg,
+          rgba(255,120,40,.10) 0 10px,
+          rgba(255,90,0,.08) 10px 20px
+        );
+
+      opacity:0;
+      transform: scale(.985);
+      filter: blur(.2px);
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .btn-more-articles:hover::before{
+      opacity:.85;
+      transform: scale(1);
+    }
+
+    /* pause the ball when user prefers reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .btn-more-articles::after{ animation: none; }
+      .btn-more-articles::before{ transition: none; }
+    }
+
+    /* animated ember layer */
+    .btn-more-articles::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255,180,80,.35), transparent 30%),
+        radial-gradient(circle at 70% 30%, rgba(255,90,0,.35), transparent 32%),
+        radial-gradient(circle at 40% 50%, rgba(255,220,140,.25), transparent 28%);
+      background-size: 80% 80%;
+      background-position: center;
+      opacity:.65;
+      filter: blur(6px);
+      animation: emberFloat 6s linear infinite;
+      pointer-events:none;
+      z-index: 2;
+    }
+
+    @keyframes emberFloat{
+      0%   { transform: translateY(8%) rotate(0deg); }
+      50%  { transform: translateY(-6%) rotate(180deg); }
+      100% { transform: translateY(8%) rotate(360deg); }
+    }
+
+    .btn-more-articles:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,160,80,.85);
+      box-shadow:
+        0 0 0 1px rgba(255,140,60,.28) inset,
+        0 14px 34px rgba(0,0,0,.55),
+        0 0 32px rgba(255,120,40,.65),
+        0 0 54px rgba(255,60,0,.55);
+    }
+
+    .btn-more-articles:active{
+      transform: translateY(0);
+      box-shadow:
+        0 0 0 1px rgba(255,140,60,.22) inset,
+        0 8px 20px rgba(0,0,0,.55),
+        0 0 22px rgba(255,90,0,.45);
+    }
+
+    /* =========================
+   HOME TOP – MOBILE ONLY FIX
+   Geldt ENKEL voor mobiel
+   Raakt geen andere secties
+   ========================= */
+   @media (max-width: 900px){
+
+/* Grid: alles netjes onder elkaar */
+.home-top .home-top-grid{
+  grid-template-columns: 1fr !important;
+  row-gap: 12px !important;
+    grid-auto-rows: auto !important;
+    align-items: start !important;
+}
+
+/* Volgorde op mobiel (1 kolom) */
+.home-top .hero-card{ order: 1; }
+/* Standings onderaan */
+.home-top .home-standings--be{ order: 5; }
+.home-top .home-standings--nl{ order: 6; }
+
+     /* Standings: niet meer 2 rijen beslaan op mobiel, auto hoogte */
+     .home-top .home-standings-card{
+         grid-row: auto !important;
+         height: auto !important;
+         min-height: 0 !important;
+         align-self: start !important;
+     }
+
+/* Hero: meer ademruimte */
+.home-top .hero-card{
+  padding: 16px !important;
+}
+.home-top .hero-card .card-title{
+  font-size: 20px !important;
+  line-height: 1.25 !important;
+}
+
+/* Quick cards: niet samendrukken */
+.home-top .home-col-stack{
+  --quick-card-h: auto;
+}
+
+.home-top .home-col-stack .quick-card{
+  height: auto !important;
+  min-height: 92px;
+  padding: 14px !important;
+}
+
+.home-top .home-col-stack .quick-title{
+  font-size: 16px !important;
+  line-height: 1.2 !important;
+}
+
+/* Nieuwsbrief: inputs onder elkaar */
+.home-top .newsletter-form .row{
+  flex-direction: column !important;
+}
+.home-top .newsletter-form button{
+  width: 100% !important;
+}
+}
+/* HOME: video block styling */
+.v4a-video-wrap{
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+}
+.v4a-video{
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scale(1.0);           /* +10% zoom */
+  transform-origin: center center; /* zoom vanuit het midden */
+  pointer-events: none;
+}
+
+/* Visibility rules */
+.v4a-home-video--mobile{ display: none; }
+.v4a-home-video--desktop{ display: block; }
+
+@media (max-width: 900px){
+  .v4a-home-video--desktop{ display: none; }
+  .v4a-home-video--mobile{ display: block; }
+}
+.v4a-video{
+  pointer-events: none;   /* gedraagt zich als gif */
+}
+
+.v4a-video-wrap{
+  width: 100%;
+  overflow: hidden;   /* essentieel om randen af te snijden */
+}
+
+/* AdSense: reduce height of full-width banner ads */
+.ad-slot-header,
+.ad-infeed {
+    max-height: 120px;
+      overflow: hidden;
+}
+
+/* In-feed news ad: same compact height as header/in-content ads */
+.ad-slot-infeed {
+    max-height: 120px;
+      overflow: hidden;
+}
+
+/* Sidebar sticky ad: ensure visibility and sticky scroll */
+.ad-vertical {
+    min-height: 250px;
+      width: 100%;
+    position: -webkit-sticky;
+        position: sticky;
+            top: 80px;
+                align-self: flex-start;      
+}
+
+/* Ensure right sidebar stretches full grid-row height so sticky ad can scroll */
+#home-lower-grid .column-right {
+    align-self: stretch !important;
+    }
+
+
+  </style>
+
+  <!-- Redirect: /index.html -> / -->
+  <script>
+    if (location.pathname.endsWith("/index.html")) {
+      location.replace("/");
+    }
+  </script>
+
+
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="shell">
+        <div class="navbar-inner">
+          <a href="index.html" class="brand brand--logo-only">
+            <img
+              src="assets/img/brand/logo-voetbal4all.png"
+              alt="Voetbal4All"
+              class="brand-logo"
+              loading="eager"
+            />
+          </a>
+
+          <nav class="nav-links">
+            <a href="index.html" class="nav-link ">Home</a>
+            <a href="artikels.html" class="nav-link">Artikels</a>
+
+            <!-- SPORTIEVE EVENTS -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Sportieve events <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="events.html" class="nav-dropdown-link">Alle sportieve events</a>
+                <a href="events.html?type=Tornooi" class="nav-dropdown-link">Tornooien</a>
+                <a href="events.html?type=Vriendschappelijk" class="nav-dropdown-link">Vriendschappelijke wedstrijden</a>
+                <a href="stages.html" class="nav-dropdown-link">Stages</a>
+                <a href="events.html?type=Voetbalkamp" class="nav-dropdown-link">Voetbalkampen</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- CLUB & FUN -->
+            <div class="nav-item nav-item--dropdown">
+              <button class="nav-link nav-link--dropdown">
+                Club &amp; fun <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="algemene-events.html" class="nav-dropdown-link">Alle club &amp; fun events</a>
+                <a href="dinners.html" class="nav-dropdown-link">Dinners &amp; eetdagen</a>
+                <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+                <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+                <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+                <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+              </div>
+            </div>
+
+            <!-- VACATURES & PROFIELEN -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Vacatures &amp; profielen <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+                <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+                <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+                <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+              </div>
+            </div>
+
+            <!-- SPORTIEF -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Sportief <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+                <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+                <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+                <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+                <a href="sportief-teams-in-de-kijker.html" class="nav-dropdown-link">Team/Medewerker in de kijker</a>
+                <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+              </div>
+            </div>
+
+            <!-- VOETBAL4ALL -->
+            <div class="nav-item nav-item--dropdown">
+              <button type="button" class="nav-link nav-link--dropdown">
+                Voetbal4All <span class="nav-link-caret">▾</span>
+              </button>
+              <div class="nav-dropdown">
+                <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+                <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+                <a href="contact.html" class="nav-dropdown-link">Contact</a>
+              </div>
+            </div>
+          </nav>
+
+          <a href="adverteren.html" class="nav-cta">
+            <span>Adverteer nu</span>
+            <span>Sponsor &amp; Ads</span>
+          </a>
+
+          <button class="nav-burger" aria-label="Menu">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- LIVE SCORES BANNER NET ONDER NAVBAR -->
+    <section class="live-banner-top">
+      <div class="shell">
+        <div class="live-banner">
+          <div class="live-label">
+            <span class="live-dot"></span>
+            Live score
+          </div>
+          <div class="live-text">
+            <span class="live-text-main">We werken hard om deze optie zo snel mogelijk werkend te krijgen.</span>
+            <div class="live-updated" role="status" aria-label="Laatst gecontroleerd">
+              Laatst gecontroleerd
+            </div>
+          </div>
+          <div class="live-socials" aria-label="Volg Voetbal4All op social media">
+            <a class="live-social" href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54V12h2.74l-.44 2.89h-2.3v6.99A10 10 0 0 0 22 12Z"/>
+              </svg>
+            </a>
+
+            <a class="live-social" href="https://www.instagram.com/voetbal4all.eu" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm9 2h-9A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Zm-4.5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.1-2.3a1.05 1.05 0 1 1-1.05 1.05 1.05 1.05 0 0 1 1.05-1.05Z"/>
+              </svg>
+            </a>
+            <a class="live-social" href="https://www.tiktok.com/@voetbal4all" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.6 8.2c-1.5-.1-2.8-.8-3.8-1.8-1-1-1.6-2.3-1.7-3.8h-3.2v13.1c0 1.5-1.2 2.8-2.8 2.8s-2.8-1.2-2.8-2.8 1.2-2.8 2.8-2.8c.3 0 .6 0 .9.1V9.1c-.3 0-.6-.1-.9-.1-3.3 0-5.9 2.6-5.9 5.9s2.6 5.9 5.9 5.9 5.9-2.6 5.9-5.9V9.4c1.2.8 2.6 1.2 4.1 1.2V8.2Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AdSense: HEADER advertentie ONDER de live banner -->
+    <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+      <div class="shell">
+        <div class="ad-slot ad-slot-header sticky-ad-header">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="5968416978"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"></ins>
+        </div>
+      </div>
+    </section>
+
+    <main>
+<!-- TOP GRID: HERO (2 cols) + STANDINGS (side cols) -->
+<section class="section-main home-top">
+  <div class="shell">
+    <div class="home-top-grid">
+
+      <!-- COL 1 (spans 2 rows): Rangschikking Eredivisie (NL) -->
+      <article class="card home-standings-card home-standings--nl">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">Nederland</div>
+            <div class="card-title">Rangschikking Eredivisie</div>
+          </div>
+          <span class="pill-small">Top 10</span>
+        </div>
+        <ul class="events-list" id="eredivisie-standings"></ul>
+        <p class="note" id="eredivisie-standings-empty" style="display:none;">Rangschikking niet beschikbaar.</p>
+      </article>
+
+      <!-- COL 2-3: HERO (spans 2 columns) -->
+      <article class="card hero-card hero-card--span2 hero-card--center">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">www.voetbal4all.eu</div>
+            <div class="card-title" style="font-size:22px; line-height:1.25; font-weight:800;">
+              Voor iedereen met een <span style="color:#ff3b30">❤</span> voor voetbal
+            </div>
+          </div>
+        </div>
+
+        <p class="note" style="margin-top:6px;">
+          <strong>Eén platform waar clubs, trainers, spelers en initiatieven elkaar écht vinden.</strong><br>
+          Ontdek kansen, promoot jezelf of je club en maak zichtbaar deel uit van de voetbalcommunity.
+        </p>
+        <div class="hero-split">
+          <div class="hero-video-col">
+            <div class="v4a-video-wrap">
+              <video
+                class="v4a-video"
+                src="assets/video/hero.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+            </div>
+          </div>
+
+          <div class="hero-newsletter-col" id="newsletter">
+            <div class="quick-kicker">Nieuwsbrief</div>
+            <div class="quick-title">Wil je onze <span class="flow-orange">wekelijkse nieuwsbrief</span> ontvangen?</div>
+            <div class="note">Maximaal 1 bericht per week.</div>
+
+            <form class="newsletter-form" id="newsletterForm" novalidate method="post" action="https://voetbal4all-backend-database.onrender.com/api/newsletter/subscribe">
+              <!-- honeypot (anti-spam) -->
+              <div class="newsletter-hp" aria-hidden="true">
+                <label>Website
+                  <input type="text" id="newsletterWebsite" name="website" autocomplete="off" tabindex="-1" />
+                </label>
+              </div>
+
+              <input type="hidden" name="source" value="index_home_card" />
+              <input type="hidden" name="consent" value="true" />
+
+              <div class="row">
+                <input
+                  type="email"
+                  id="newsletterEmail"
+                  name="email"
+                  placeholder="jouw@email.be"
+                  inputmode="email"
+                  autocomplete="email"
+                  required
+                />
+                <button class="btn-submit" type="submit">Inschrijven</button>
+              </div>
+
+              <div class="newsletter-regions" aria-label="Kies je nieuwsbrief editie">
+                <div class="regions-title">Welke editie wil je ontvangen?</div>
+                <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je zeker iets ontvangt).</div>
+
+                <div class="regions-grid" role="group" aria-label="Nieuwsbrief edities">
+                  <label class="region-opt" for="newsletterRegionBE">
+                    <input type="checkbox" name="regions" value="BE" id="newsletterRegionBE" />
+                    <span><strong>BE</strong> · België</span>
+                  </label>
+                
+                  <label class="region-opt" for="newsletterRegionNL">
+                    <input type="checkbox" name="regions" value="NL" id="newsletterRegionNL" />
+                    <span><strong>NL</strong> · Nederland</span>
+                  </label>
+                
+                  <label class="region-opt" for="newsletterRegionALL">
+                    <input type="checkbox" name="regions" value="ALL" id="newsletterRegionALL" checked />
+                    <span><strong>ALL</strong> · Alles / internationaal</span>
+                  </label>
+                </div>
+              </div>
+
+              <label>
+                <input type="checkbox" id="newsletterConsent" name="consent_checkbox" required />
+                <span>Ik ga akkoord met de <a href="privacyverklaring.html" style="color:inherit; text-decoration:underline;">privacyverklaring</a>.</span>
+              </label>
+
+              <div class="fineprint">Je kan je op elk moment uitschrijven via een link in elke nieuwsbrief.</div>
+              <div class="newsletter-status" id="newsletterStatus" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <!-- COL 4 (spans 2 rows): Rangschikking Jupiler Pro League (BE) -->
+      <article class="card home-standings-card home-standings--be">
+        <div class="card-header">
+          <div>
+            <div class="card-caption">België</div>
+            <div class="card-title">Rangschikking Jupiler Pro League</div>
+          </div>
+          <span class="pill-small">Top 10</span>
+        </div>
+        <ul class="events-list" id="jpl-standings"></ul>
+        <p class="note" id="jpl-standings-empty" style="display:none;">Rangschikking niet beschikbaar.</p>
+      </article>
+
+    </div>
+
+    <!-- FULL-WIDTH QUICK BUTTONS (4 equal buttons) -->
+    <div class="home-quick-row" aria-label="Snelle acties">
+      <a class="card quick-card" href="aanmelden.html">
+        <div class="quick-title">Ik wil een <span class="flow-orange">Clubvacature</span> promoten of ik ben <span class="flow-orange">speler/trainer</span> en zoek een club</div>
+      </a>
+
+      <a class="card quick-card" href="event-aanmelden.html">
+        <div class="quick-title">Ik wil een <span class="flow-orange">Event</span> promoten</div>
+      </a>
+
+      <a class="card quick-card" href="sportief-teams-in-de-kijker.html">
+        <div class="quick-title">Ik wil <span class="flow-orange">iemand of team</span> in de kijker zetten</div>
+      </a>
+
+      <a class="card quick-card" href="sportief-supportersclubs.html">
+        <div class="quick-title">Ik wil een <span class="flow-orange">Supportersclub</span> aanmelden</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+      
+      <!-- PREMIUM RIJ -->
+      <section class="section-main premium-row">
+        <div class="shell">
+          <div class="lower-grid-layout grid-4">
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-caption">Premium</div>
+                  <div class="card-title">Premium clubvacatures</div>
+                </div>
+              </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
+              <ul class="events-list premium-list" id="premium-clubvacatures-list"></ul>
+              <a href="clubvacatures.html" class="event-link">Alle clubvacatures →</a>
+            </article>
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-caption">Premium</div>
+                  <div class="card-title">Premium events</div>
+                </div>
+              </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
+              <ul class="events-list premium-list" id="premium-events-list"></ul>
+              <a href="events.html" class="event-link">Alle events →</a>
+            </article>
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-caption">Premium</div>
+                  <div class="card-title">Premium clubvacatures</div>
+                </div>
+              </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
+              <ul class="events-list premium-list" id="premium-clubvacatures-list-2"></ul>
+              <a href="clubvacatures.html" class="event-link">Alle clubvacatures →</a>
+            </article>
+            <article class="card">
+              <div class="card-header">
+                <div>
+                  <div class="card-caption">Premium</div>
+                  <div class="card-title">Premium events</div>
+                </div>
+              </div>
+              <div class="premium-card-media" aria-hidden="true">
+                <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+              </div>
+              <ul class="events-list premium-list" id="premium-events-list-2"></ul>
+              <a href="events.html" class="event-link">Alle events →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- IN-CONTENT AD -->
+      <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+        <div class="shell">
+          <div class="ad-infeed">
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-4062633211824348"
+              data-ad-slot="1191760681"
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"></ins>
+          </div>
+        </div>
+      </section>
+
+      <!-- ONDERSTE GRID -->
+      <section class="section-main" id="home-lower-grid">
+        <div class="shell">
+          <div class="lower-grid-layout grid-3">
+
+      <!-- LINKS -->
+      <section class="column-left">
+        <!-- 1) Aankomende events -->
+        <article class="card home-events-card home-events-card--week">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Komende 7 dagen</div>
+              <div class="card-title">Aankomende events</div>
+            </div>
+          </div>
+
+          <ul class="weekend-list" id="weekend-events-list"></ul>
+
+          <p class="note">
+            Jouw event ook in deze lijsten? Meld het aan via de knoppen!
+          </p>
+
+          <a href="events.html" class="event-link">Volledig eventsoverzicht →</a>
+        </article>
+
+        <!-- 2) Kalender / komende maand -->
+        <article class="card home-events-card home-events-card--month">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Komende maand</div>
+              <div class="card-title">Events kalender</div>
+            </div>
+          </div>
+
+          <ul class="events-list" id="monthly-events-list" style="margin-top:6px;"></ul>
+          <p class="note" id="monthly-events-empty" style="display:none; margin-top:10px;">
+            Geen events gevonden voor deze maand.
+          </p>
+
+          <a href="events.html" class="event-link" style="margin-top:10px; display:inline-block;">Alle events →</a>
+        </article>
+
+        
+        
+
+      </section>
+
+            <!-- MIDDEN: ARTIKELS -->
+            <section class="column-middle">
+              <div class="card" style="margin-bottom:12px;">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">In de kijker</div>
+                    <div class="card-title">Laatste artikels &amp; verhalen</div>
+                  </div>
+                </div>
+                <p class="note">
+                  De nieuwste publicaties van Voetbal4All.
+                </p>
+              </div>
+
+              <div id="latest-news-grid" class="article-list"></div>
+              <p id="latest-news-status" class="note" style="display:none;"></p>
+              <a href="artikels.html" class="btn-more-articles" aria-label="Meer artikels laden">Meer artikels laden</a>
+            </section>
+
+            <!-- RECHTS -->
+            <aside class="column-right" style="display:flex; flex-direction:column; gap:14px; height:100%; align-items:stretch; overflow:visible;">
+              <article class="card premium-profile-card" id="premium-trainers-card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Premium trainers</div>
+                  </div>
+                  <span class="pill-small">Trainers</span>
+                </div>
+                <div class="premium-card-media" aria-hidden="true">
+                  <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                </div>
+                <ul class="events-list" id="latest-trainers-list"></ul>
+                <a href="trainers.html" class="event-link">Alle premium trainers →</a>
+              </article>
+
+              <article class="card premium-profile-card" id="premium-players-card">
+                <div class="card-header">
+                  <div>
+                    <div class="card-caption">Premium</div>
+                    <div class="card-title">Premium spelers</div>
+                  </div>
+                  <span class="pill-small">Spelers</span>
+                </div>
+                <div class="premium-card-media" aria-hidden="true">
+                  <img class="premium-media-img is-fallback" src="assets/img/placeholder.svg" data-fallback="assets/img/placeholder.svg" alt="" loading="lazy" decoding="async">
+                </div>
+                <ul class="events-list" id="latest-players-list"></ul>
+                <a href="spelers.html" class="event-link">Alle premium spelers →</a>
+              </article>
+
+              <!-- Sticky ad: blijft mee scrollen maar blijft onder spelers -->
+              <div class="ad-vertical" style="position:-webkit-sticky; position:sticky; top:80px; align-self:flex-start;">
+                <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-4062633211824348"
+                  data-ad-slot="7400934055"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+      
+      
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer-contact">
+      <div class="shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div>Voetbal4All · voor spelers, ouders, trainers en clubs.</div>
+            <div class="footer-legal">
+              &copy; <span id="year"></span> Voetbal4All. Alle rechten voorbehouden.
+              · Mogelijkheden voor hoofdsponsor, partners en advertenties.
+            </div>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/profile.php?id=61580843623593" target="_blank" class="footer-social-link">Facebook</a>
+              <a href="https://www.instagram.com/voetbal4all.eu" target="_blank" class="footer-social-link">Instagram</a>
+            </div>
+          </div>
+          <div class="footer-ad">
+            Zet jouw merk in de kijker bij de voetbalcommunity!<br>
+            <span class="ad-size"><a href="adverteren.html">Interesse? Ontdek de mogelijkheden →</a></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="assets/js/image-utils.js"></script>
+
+  </div>
+
+  <script>
+    // Jaar in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // HOME: backend base URL (used by premium profiles + events fillers)
+    const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+    // Generieke rotatiefunctie
+    function makeRotatingList(selector, visibleCount, intervalMs) {
+      const list = document.querySelector(selector);
+      if (!list) return;
+      const items = Array.from(list.children);
+      if (items.length <= visibleCount) return;
+
+      let startIndex = 0;
+
+      function render() {
+        items.forEach((item, index) => {
+          const inWindow = index >= startIndex && index < startIndex + visibleCount;
+          item.style.display = inWindow ? "" : "none";
+        });
+
+        startIndex += visibleCount;
+        if (startIndex >= items.length) startIndex = 0;
+      }
+
+      render();
+      setInterval(render, intervalMs);
+    }
+
+
+    // HOME: Aankomende events (weekend) + Events kalender (komende 30 dagen)
+    // Let op: geen globals, geen herdefinities van API_BASE, en geen impact op banner/standings/news/ads.
+    (function initHomeUpcomingEvents(){
+      const weekendList = document.getElementById("weekend-events-list");
+      const monthlyList = document.getElementById("monthly-events-list");
+      const monthlyEmpty = document.getElementById("monthly-events-empty");
+      if (!weekendList && !monthlyList) return;
+
+      const API = (typeof API_BASE === "string" && API_BASE) ? API_BASE : "https://voetbal4all-backend-database.onrender.com";
+
+      const esc = (s) => String(s || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/\"/g,"&quot;")
+        .replace(/'/g,"&#39;");
+
+      const pickDate = (it) => {
+        // Support many common field names (backend + legacy + forms)
+        const raw = (
+          it?.start_date ??
+          it?.startDate ??
+          it?.starts_at ??
+          it?.startsAt ??
+          it?.start_at ??
+          it?.startAt ??
+          it?.start ??
+          it?.date_start ??
+          it?.dateStart ??
+          it?.datetime ??
+          it?.date ??
+          it?.event_date ??
+          it?.eventDate ??
+          it?.start_time ??
+          it?.startTime ??
+          null
+        );
+
+        if (!raw) return null;
+
+        // 1) ISO / date-like strings
+        const d1 = new Date(raw);
+        if (!isNaN(d1.getTime())) return d1;
+
+        // 2) unix timestamp (ms) or numeric-ish string
+        const n = Number(raw);
+        if (Number.isFinite(n)) {
+          const d2 = new Date(n);
+          return isNaN(d2.getTime()) ? null : d2;
+        }
+
+        return null;
+      };
+
+      const fmtShort = (d) => {
+        try{
+          return d.toLocaleDateString("nl-BE", { weekday: "short", day: "2-digit", month: "short" });
+        }catch(e){
+          return d.toISOString().slice(0,10);
+        }
+      };
+
+      const buildMeta = (it, d) => {
+        const city = it?.city || it?.location_city || it?.municipality || it?.plaats || it?.town || "";
+        const region = it?.region || it?.province || it?.provincie || "";
+        const country = (it?.country || it?.land || "").toString().toUpperCase();
+        const place = [city, region].filter(Boolean).join(" · ");
+        const cc = (country === "BE" || country === "NL") ? country : (country ? country : "");
+        const tail = [fmtShort(d), place, cc].filter(Boolean).join(" · ");
+        return tail;
+      };
+
+      const flagHtmlEvent = (countryCode) => {
+        const c = String(countryCode || "INT").trim().toUpperCase();
+        const FLAG_SRC = {
+          BE: "assets/img/sources/flag-be.svg",
+          NL: "assets/img/sources/flag-nl.svg",
+          DE: "assets/img/sources/flag-de.svg",
+          FR: "assets/img/sources/flag-fr.svg",
+          ES: "assets/img/sources/flag-es.svg",
+          IT: "assets/img/sources/flag-it.svg",
+          UK: "assets/img/sources/flag-uk.svg",
+          INT: "assets/img/sources/flag-int.svg",
+        };
+        const src = FLAG_SRC[c] || FLAG_SRC.INT;
+        const LABELS = {
+          BE: "België",
+          NL: "Nederland",
+          DE: "Duitsland",
+          FR: "Frankrijk",
+          ES: "Spanje",
+          IT: "Italië",
+          UK: "Verenigd Koninkrijk",
+          INT: "Internationaal"
+        };
+        const alt = LABELS[c] || "Internationaal";
+        return `
+          <span class="v4a-flag" title="${alt}" aria-hidden="true">
+            <img class="v4a-flag__img" src="${src}" alt="" loading="lazy" decoding="async" width="18" height="12" />
+          </span>
+        `.trim();
+      };
+
+      const renderList = (ul, items, emptyHtml) => {
+        if (!ul) return;
+        if (!items || !items.length) {
+          ul.innerHTML = emptyHtml;
+          return;
+        }
+
+        ul.innerHTML = items.map(it => {
+          const d = pickDate(it);
+          const title = esc(it?.title || it?.name || "Event");
+          const meta  = d ? esc(buildMeta(it, d)) : esc(it?.type || "");
+
+          const ccRaw = (it?.country || it?.land || it?.meta?.country || "").toString().toUpperCase();
+          const cc    = (ccRaw === "BE" || ccRaw === "NL") ? ccRaw : "INT";
+          const flag  = flagHtmlEvent(cc);
+
+          const id = String(it?.id || "").trim();
+          const href = id ? `event.html?id=${encodeURIComponent(id)}` : "events.html";
+
+          return `
+            <li class="event-item">
+              <a href="${href}" class="home-event-row" style="display:block; color:inherit; text-decoration:none;">
+                <div class="event-title">${flag} ${title}</div>
+                <div class="event-meta">${meta}</div>
+              </a>
+            </li>
+          `;
+        }).join("");
+      };
+
+      const next7DaysRange = () => {
+      const now = new Date();
+
+      const start = new Date(now);
+      start.setHours(0,0,0,0);
+
+      const end = new Date(start);
+      end.setDate(start.getDate() + 7); // vandaag + 6 dagen inbegrepen
+
+      return { start, end };
+    };
+
+      const monthRange = () => {
+        const now = new Date();
+        const start = new Date(now);
+        start.setHours(0,0,0,0);
+
+        const end = new Date(start);
+        end.setDate(start.getDate() + 30);
+        end.setHours(23,59,59,999);
+
+        return { start, end };
+      };
+
+      const inRange = (d, start, end) => d && d >= start && d < end;
+
+      // Keep last good payload to avoid empty UI on transient fetch failures (e.g. hard refresh + cold backend)
+      let lastAllEvents = null;
+      let retryAttempt = 0;
+
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+      async function fetchEvents(limit){
+        const url = `${API}/api/events?limit=${limit || 200}`;
+
+        // A few fast retries smooth out cold-start / transient network issues.
+        // IMPORTANT: no globals; state stays inside this IIFE.
+        const maxTries = 3;
+        for (let i = 0; i < maxTries; i++) {
+          try{
+            const res = await fetch(url, { cache: "no-store", mode: "cors", credentials: "omit" });
+            if (!res.ok) throw new Error("HTTP " + res.status);
+
+            const ct = res.headers.get("content-type") || "";
+            const data = ct.includes("application/json") ? await res.json() : null;
+            const items =
+              (Array.isArray(data?.items) && data.items) ||
+              (Array.isArray(data?.events) && data.events) ||
+              (Array.isArray(data?.data) && data.data) ||
+              (Array.isArray(data?.result?.items) && data.result.items) ||
+              (Array.isArray(data?.result?.events) && data.result.events) ||
+              (Array.isArray(data) && data) ||
+              [];
+            const out = Array.isArray(items) ? items : [];
+
+            // store last known good
+            lastAllEvents = out;
+            retryAttempt = 0;
+            return out;
+          }catch(e){
+            // small backoff
+            if (i < maxTries - 1) {
+              await sleep(350 + (i * 650));
+              continue;
+            }
+          }
+        }
+
+        // total failure
+        return null;
+      }
+
+      async function run(){
+        const fetched = await fetchEvents(200);
+        const all = Array.isArray(fetched) ? fetched : (Array.isArray(lastAllEvents) ? lastAllEvents : []);
+
+        // If we have nothing due to a transient failure, retry shortly without permanently wiping the UI.
+        if (!all.length && fetched === null) {
+          retryAttempt = Math.min((retryAttempt || 0) + 1, 4);
+          const delay = 900 + (retryAttempt * 1400);
+          setTimeout(run, delay);
+        }
+
+        // Weekend
+        // Komende 7 dagen
+        const wk = next7DaysRange();
+        const weekItems = all
+          .map(it => ({ it, d: pickDate(it) }))
+          .filter(x => x.d && inRange(x.d, wk.start, wk.end))
+          .sort((a,b) => a.d - b.d)
+          .map(x => x.it)
+          .slice(0, 10);
+
+        renderList(
+          weekendList,
+          weekItems,
+          `
+            <li class="event-item">
+              <div class="event-title">${flagHtmlEvent("INT")} Geen events gevonden in de komende 7 dagen.</div>
+              <div class="event-meta">Wil jij jouw event ook in deze lijst? Zorg dat je het publiceert!.</div>
+            </li>
+          `
+        );
+
+
+        // Monthly (next 30 days)
+        const mr = monthRange();
+        const monthlyItems = all
+          .map(it => ({ it, d: pickDate(it) }))
+          .filter(x => x.d && inRange(x.d, mr.start, mr.end))
+          .sort((a,b) => a.d - b.d)
+          .map(x => x.it);
+
+        renderList(monthlyList, monthlyItems, "");
+        if (monthlyEmpty) {
+          monthlyEmpty.style.display = monthlyItems.length ? "none" : "block";
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", run, { once: true });
+      } else {
+        run();
+      }
+    })();
+
+    // HOME: premium top-row (clubvacatures/events) vullen
+    async function fillPremiumTopLists() {
+      async function fetchJson(url) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const ct = res.headers.get("content-type") || "";
+          return ct.includes("application/json") ? await res.json() : null;
+        } catch (e) {
+          console.warn("[HOME] premium top lists fetch failed:", url, e);
+          return null;
+        }
+      }
+
+      function isPremium(it) {
+        // Truth source: premium_until in the backend (ISO string) OR explicit flags
+        const pu = it?.premium_until ?? it?.premiumUntil ?? it?.premium_until_at ?? it?.premiumUntilAt;
+        if (pu) {
+          const d = new Date(pu);
+          if (!isNaN(d.getTime()) && d.getTime() > Date.now()) return true;
+        }
+
+        const v = it?.premium ?? it?.is_premium ?? it?.isPremium ?? it?.paid ?? it?.status ?? it?.tier;
+        if (typeof v === "boolean") return v;
+        const s = String(v || "").toLowerCase();
+        return ["premium", "paid", "betalend", "true", "1"].includes(s);
+      }
+
+      function esc(s){
+        return String(s || "")
+          .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+          .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+      }
+
+      function normalizeImageUrl(raw){
+        const v = String(raw || "").trim();
+        if (!v) return "";
+
+        // Explicitly ignore legacy/dummy placeholders like "jouw-afbeelding.jpg"
+        if (/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)$/i.test(v)) return "";
+
+        // Absolute URLs
+        if (/^https?:\/\//i.test(v)) return v;
+
+        // Protocol-relative
+        if (v.startsWith("//")) return "https:" + v;
+
+        // Assets (site)
+        if (v.startsWith("assets/")) return v;
+
+        // Backend-relative paths
+        if (v.startsWith("/")) return `${API_BASE}${v}`;
+        if (v.startsWith("images/")) return `${API_BASE}/${v}`;
+
+        // Unknown / unsafe
+        return "";
+      }
+
+      function pickImage(it){
+        const cand = (
+          it?.image ||
+          it?.image_url ||
+          it?.imageUrl ||
+          it?.photo ||
+          it?.photo_url ||
+          it?.avatar ||
+          it?.avatar_url ||
+          ""
+        );
+        return normalizeImageUrl(cand);
+      }
+
+      const lists = {
+        cv1: document.getElementById("premium-clubvacatures-list"),
+        ev1: document.getElementById("premium-events-list"),
+        cv2: document.getElementById("premium-clubvacatures-list-2"),
+        ev2: document.getElementById("premium-events-list-2"),
+      };
+      if (!lists.cv1 || !lists.ev1 || !lists.cv2 || !lists.ev2) return;
+
+      // Fetch candidates
+      const cvData = await fetchJson(`${API_BASE}/api/clubvacatures?limit=80`);
+      const evData = await fetchJson(`${API_BASE}/api/events?limit=200`);
+
+      const cvItemsRaw = Array.isArray(cvData?.items) ? cvData.items : (Array.isArray(cvData) ? cvData : []);
+      const evItemsRaw = Array.isArray(evData?.items) ? evData.items : (Array.isArray(evData) ? evData : []);
+
+      const cvPrem = cvItemsRaw.filter(isPremium).slice(0, 6);
+      const evPrem = evItemsRaw.filter(isPremium).slice(0, 6);
+
+      function renderTo(ul, items, kind){
+        ul.innerHTML = "";
+        items.forEach(it => {
+          const li = document.createElement("li");
+          li.className = "event-item";
+
+          const img = pickImage(it);
+          if (img) li.setAttribute("data-image", img);
+
+          const title = it?.title || it?.name || (kind === "cv" ? "Clubvacature" : "Event");
+          // --- safer meta computation ---
+          const metaParts = [];
+          if (it?.city) metaParts.push(it.city);
+          if (it?.region) metaParts.push(it.region);
+          if (!metaParts.length && typeof it?.location === "string") metaParts.push(it.location);
+          if (!metaParts.length && it?.location && typeof it.location === "object") {
+            if (it.location.city) metaParts.push(it.location.city);
+            if (it.location.region) metaParts.push(it.location.region);
+            if (!metaParts.length && it.location.name) metaParts.push(it.location.name);
+          }
+          if (!metaParts.length && typeof it?.subtitle === "string") metaParts.push(it.subtitle);
+          if (!metaParts.length && typeof it?.type === "string") metaParts.push(it.type);
+
+          const meta = metaParts.filter(Boolean).join(" · ");
+
+          li.innerHTML = `
+            <div class="event-body">
+              <div class="event-title">${esc(title)}</div>
+              <div class="event-meta">${esc(meta)}</div>
+            </div>
+          `;
+
+          ul.appendChild(li);
+        });
+      }
+
+      // Split into 2 cards per type (3 + 3)
+      renderTo(lists.cv1, cvPrem.slice(0, 3), "cv");
+      renderTo(lists.cv2, cvPrem.slice(3, 6), "cv");
+      renderTo(lists.ev1, evPrem.slice(0, 3), "ev");
+      renderTo(lists.ev2, evPrem.slice(3, 6), "ev");
+
+      // Always show the premium row, even if there is no premium content
+      const allCount = cvPrem.length + evPrem.length;
+      const rowEl = document.querySelector(".section-main.premium-row");
+      if (rowEl) {
+        rowEl.style.display = "block";
+      }
+      // If there is no premium content, lists stay empty and initPremiumRotation() will render the friendly placeholder.
+    }
+
+    // HOME: premium trainers/spelers vullen (fallback = huidige hardcoded items blijven staan)
+    async function fillPremiumProfiles() {
+      async function fetchJson(url) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const ct = res.headers.get("content-type") || "";
+          return ct.includes("application/json") ? await res.json() : null;
+        } catch (e) {
+          console.warn("[HOME] premium profiles fetch failed:", url, e);
+          return null;
+        }
+      }
+
+      function isPremium(it) {
+        // Truth source: premium_until in the backend (ISO string) OR explicit flags
+        const pu = it?.premium_until ?? it?.premiumUntil ?? it?.premium_until_at ?? it?.premiumUntilAt;
+        if (pu) {
+          const d = new Date(pu);
+          if (!isNaN(d.getTime()) && d.getTime() > Date.now()) return true;
+        }
+
+        const v = it?.premium ?? it?.is_premium ?? it?.isPremium ?? it?.paid ?? it?.status ?? it?.tier;
+        if (typeof v === "boolean") return v;
+        const s = String(v || "").toLowerCase();
+        return ["premium", "paid", "betalend", "true", "1"].includes(s);
+      }
+
+      function esc(s){
+        return String(s || "")
+          .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+          .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
+      }
+
+      function normalizeImageUrl(raw){
+        const v = String(raw || "").trim();
+        if (!v) return "";
+        if (/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)$/i.test(v)) return "";
+        if (/^https?:\/\//i.test(v)) return v;
+        if (v.startsWith("//")) return "https:" + v;
+        if (v.startsWith("assets/")) return v;
+        if (v.startsWith("/")) return `${API_BASE}${v}`;
+        if (v.startsWith("images/")) return `${API_BASE}/${v}`;
+        return "";
+      }
+
+      function pickImage(it){
+        const cand = (
+          it?.image ||
+          it?.image_url ||
+          it?.imageUrl ||
+          it?.photo ||
+          it?.photo_url ||
+          it?.avatar ||
+          it?.avatar_url ||
+          ""
+        );
+        return normalizeImageUrl(cand);
+      }
+
+      const trainersList = document.getElementById("latest-trainers-list");
+      const playersList  = document.getElementById("latest-players-list");
+      if (!trainersList || !playersList) return;
+
+      // Probeer gangbare endpoints. Als ze nog niet bestaan: niets stukmaken.
+      const tData = await fetchJson(`${API_BASE}/api/trainers?limit=50`);
+      const pData = await fetchJson(`${API_BASE}/api/players?limit=50`);
+
+      const tItems = Array.isArray(tData?.items) ? tData.items : (Array.isArray(tData) ? tData : null);
+      const pItems = Array.isArray(pData?.items) ? pData.items : (Array.isArray(pData) ? pData : null);
+
+      if (Array.isArray(tItems)) {
+        const prem = tItems.filter(isPremium).slice(0, 6);
+        if (prem.length) {
+          trainersList.innerHTML = "";
+          prem.forEach(it => {
+            const li = document.createElement("li");
+            li.className = "event-item";
+
+            const img = pickImage(it);
+            if (img) li.setAttribute("data-image", img);
+
+            li.innerHTML = `
+              <div class="event-body">
+                <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
+                <div class="event-meta">${esc((typeof it?.region === "string" && it.region) || (typeof it?.city === "string" && it.city) || (typeof it?.location === "string" && it.location) || "Regio")}</div>
+              </div>
+            `;
+            trainersList.appendChild(li);
+          });
+        }
+        // Always show card, even if no premium trainers
+        const card = document.getElementById("premium-trainers-card");
+        if (card) card.style.display = "block";
+      }
+
+      if (Array.isArray(pItems)) {
+        const prem = pItems.filter(isPremium).slice(0, 6);
+        if (prem.length) {
+          playersList.innerHTML = "";
+          prem.forEach(it => {
+            const li = document.createElement("li");
+            li.className = "event-item";
+
+            const img = pickImage(it);
+            if (img) li.setAttribute("data-image", img);
+
+            li.innerHTML = `
+              <div class="event-body">
+                <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
+                <div class="event-meta">${esc((typeof it?.region === "string" && it.region) || (typeof it?.city === "string" && it.city) || (typeof it?.location === "string" && it.location) || "Regio")}</div>
+              </div>
+            `;
+            playersList.appendChild(li);
+          });
+        }
+        // Always show card, even if no premium players
+        const card = document.getElementById("premium-players-card");
+        if (card) card.style.display = "block";
+      }
+    }
+
+    // Premiumlijsten roteren (1 item zichtbaar) — image rotates WITH the item + no layout jump
+    function initPremiumRotation(){
+      const FALLBACK_IMG = "assets/img/placeholder.svg";
+
+      function normalizeMediaSrc(raw){
+        const v = String(raw || "").trim();
+        if (!v) return "";
+        if (/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)$/i.test(v)) return "";
+        if (/^https?:\/\//i.test(v)) return v;
+        if (v.startsWith("//")) return "https:" + v;
+        if (v.startsWith("assets/")) return v;
+        if (v.startsWith("/")) return `${API_BASE}${v}`;
+        if (v.startsWith("images/")) return `${API_BASE}/${v}`;
+        return "";
+      }
+
+      function setMedia(cardEl, src){
+        const img = cardEl ? cardEl.querySelector(".premium-card-media img.premium-media-img") : null;
+        const media = cardEl ? cardEl.querySelector(".premium-card-media") : null;
+        if (!img || !media) return;
+
+        const fallback = (img.getAttribute("data-fallback") || FALLBACK_IMG).trim() || FALLBACK_IMG;
+        const nextRaw = String(src || "").trim();
+        const next = normalizeMediaSrc(nextRaw);
+
+        if (!next) {
+          // No image: show the default placeholder banner
+          media.style.display = "block";
+          img.classList.add("is-fallback");
+          img.setAttribute("src", fallback);
+          img.setAttribute("alt", "");
+          return;
+        }
+
+        // Install onerror BEFORE setting src to avoid race conditions on fast-failing URLs
+        img.onerror = function(){
+          try{
+            img.onerror = null;
+            img.setAttribute("src", fallback);
+            img.classList.add("is-fallback");
+            media.style.display = "block";
+          }catch(e){}
+        };
+
+        media.style.display = "block";
+        img.classList.remove("is-fallback");
+        if (img.getAttribute("src") !== next) img.setAttribute("src", next);
+      }
+
+      function getItemImage(li){
+        if (!li) return "";
+        const d = (li.getAttribute("data-image") || "").trim();
+        const dn = normalizeMediaSrc(d);
+        if (dn) return dn;
+        const innerImg = li.querySelector("img");
+        if (innerImg && innerImg.getAttribute("src")) return innerImg.getAttribute("src");
+        return "";
+      }
+
+      document.querySelectorAll(".premium-list, #latest-trainers-list, #latest-players-list").forEach(list => {
+        // prevent stacking timers when re-initializing
+        const prevTimer = list.dataset.rotTimer ? Number(list.dataset.rotTimer) : 0;
+        if (prevTimer) {
+          try { clearInterval(prevTimer); } catch (e) {}
+          delete list.dataset.rotTimer;
+        }
+
+        const items = Array.from(list.children).filter(n => n && n.nodeType === 1);
+        const card = list.closest(".card");
+
+        if (!items.length) {
+          list.innerHTML = `
+            <li class="event-item" data-image="assets/img/placeholder.svg">
+              <div class="event-body">
+                <div class="event-title">Jouw advertentie hier?</div>
+                <div class="event-meta">Premium zichtbaarheid voor clubs, events, spelers en trainers.</div>
+              </div>
+            </li>
+          `;
+
+          const newItems = Array.from(list.children).filter(n => n && n.nodeType === 1);
+          const cardEl = list.closest(".card");
+          setMedia(cardEl, getItemImage(newItems[0]));
+          newItems[0].style.display = "";
+          return;
+        }
+
+        setMedia(card, getItemImage(items[0]));
+
+        if (items.length === 1) {
+          items[0].style.display = "";
+          return;
+        }
+
+        let index = 0;
+        function renderPremium(){
+          items.forEach((item, i) => {
+            item.style.display = (i === index) ? "" : "none";
+          });
+          setMedia(card, getItemImage(items[index]));
+          index = (index + 1) % items.length;
+        }
+
+        renderPremium();
+        const t = setInterval(renderPremium, 4500);
+        list.dataset.rotTimer = String(t);
+      });
+    }
+
+    // Bootstrap premium blocks AFTER async fillers complete (prevents placeholders being wiped)
+    (async function initPremiumHome(){
+      try {
+        await Promise.all([
+          fillPremiumTopLists(),
+          fillPremiumProfiles(),
+        ]);
+      } catch (e) {
+        // ignore; rotation will still render placeholders
+      }
+      initPremiumRotation();
+    })();
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      // NOTE: Homepage upcoming events are handled by the dedicated IIFE
+      // `(function initHomeUpcomingEvents(){ ... })();` earlier in this file.
+      // Do not run legacy event fillers here (prevents race conditions / empty renders).
+
+      const homeListEl = document.getElementById("latest-news-grid");
+      const homeStatusEl = document.getElementById("latest-news-status");
+
+      if (!homeListEl) {
+        console.error("Container #latest-news-grid niet gevonden");
+        return;
+      }
+
+      const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+      const IMG_BASE = "https://voetbal4all-backend-database.onrender.com";
+      // Fallback thumbnail for missing/broken images.
+      // Use a real file (small request, cacheable) instead of an inline data URI.
+      const FALLBACK_THUMB = "assets/img/placeholder.svg";
+
+      // HOME: normalize country code for flag rendering.
+      // 1) Prefer backend country if it is a known 2/3-letter code.
+      // 2) Otherwise infer from canonical_url TLD as a safe fallback.
+      function normalizeCountryCode(raw) {
+      const ALLOWED = new Set(["BE","NL","DE","FR","ES","IT","UK","INT"]);
+
+      const c0 = String(raw || "").trim().toUpperCase();
+      if (c0 === "GB") return "UK";
+      if (ALLOWED.has(c0)) return c0;
+
+      // NO URL/TLD inference here. Country must come from backend (content-based).
+      return "INT";
+    }
+
+      function flagHtml(countryCode){
+  const c = String(countryCode || "INT").trim().toUpperCase();
+  const MAP = {
+    BE: "assets/img/sources/flag-be.svg",
+    NL: "assets/img/sources/flag-nl.svg",
+    DE: "assets/img/sources/flag-de.svg",
+    FR: "assets/img/sources/flag-fr.svg",
+    ES: "assets/img/sources/flag-es.svg",
+    IT: "assets/img/sources/flag-it.svg",
+    UK: "assets/img/sources/flag-uk.svg",
+    INT: "assets/img/sources/flag-int.svg"
+  };
+
+  function getCountryCode(it){
+  const raw =
+    it?.country ??
+    it?.countryCode ??
+    it?.sourceCountry ??
+    it?.source_country ??
+    it?.country_code ??
+    it?.meta?.country ??
+    it?.meta?.countryCode ??
+    "INT";
+
+  const c = String(raw || "INT").trim().toUpperCase();
+  if (c === "GB") return "UK";   // safety
+  return c;
+}
+
+  const LABEL = {
+    BE: "België",
+    NL: "Nederland",
+    DE: "Duitsland",
+    FR: "Frankrijk",
+    ES: "Spanje",
+    IT: "Italië",
+    UK: "Verenigd Koninkrijk",
+    INT: "Internationaal"
+  };
+
+  const src = MAP[c] || MAP.INT;
+  const alt = LABEL[c] || LABEL.INT;
+
+  return `
+    <span class="v4a-flag" title="${alt}" aria-hidden="true">
+      <img src="${src}" alt="" width="18" height="12" loading="lazy" decoding="async">
+    </span>
+  `.trim();
+}
+
+      // Nieuwsbrief inschrijving (POST -> backend -> DB)
+      (function initNewsletterSignup(){
+        const form = document.getElementById("newsletterForm");
+        if (!form) return;
+
+        const emailEl = document.getElementById("newsletterEmail");
+        const consentEl = document.getElementById("newsletterConsent");
+        const hpEl = document.getElementById("newsletterWebsite");
+        const statusEl = document.getElementById("newsletterStatus");
+
+        function setStatus(msg, kind){
+          if (!statusEl) return;
+          statusEl.classList.remove("is-ok", "is-err");
+          if (kind === "ok") statusEl.classList.add("is-ok");
+          if (kind === "err") statusEl.classList.add("is-err");
+          statusEl.style.display = "block";
+          statusEl.textContent = msg;
+        }
+
+        // UI rule: ALL is exclusive (if user picks BE/NL, uncheck ALL; if ALL checked, uncheck others)
+        const allBox = form.querySelector('#newsletterRegionALL');
+        const otherBoxes = Array.from(form.querySelectorAll('input[name="regions"]'))
+          .filter(el => el && el.id !== 'newsletterRegionALL');
+
+        function syncAllExclusivity(changedEl){
+          if (!allBox) return;
+
+          if (changedEl === allBox && allBox.checked) {
+            otherBoxes.forEach(el => { el.checked = false; });
+            return;
+          }
+
+          if (changedEl !== allBox) {
+            const anyOtherChecked = otherBoxes.some(el => !!el.checked);
+            if (anyOtherChecked) allBox.checked = false;
+            else allBox.checked = true; // if user unchecks all others, fall back to ALL
+          }
+        }
+
+        // Attach listeners
+        if (allBox) {
+          allBox.addEventListener('change', () => syncAllExclusivity(allBox));
+        }
+        otherBoxes.forEach(el => {
+          el.addEventListener('change', () => syncAllExclusivity(el));
+        });
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = String(emailEl?.value || "").trim();
+          const consent = !!consentEl?.checked;
+          const hp = String(hpEl?.value || "").trim();
+
+          // simple validation
+          if (hp) {
+            // bot detected: pretend success (no signal)
+            setStatus("Bedankt! Je inschrijving is ontvangen.", "ok");
+            form.reset();
+            return;
+          }
+          if (!email) {
+            setStatus("Vul je e-mailadres in.", "err");
+            return;
+          }
+          if (!consent) {
+            setStatus("Bevestig eerst de privacyverklaring.", "err");
+            return;
+          }
+
+          // browser-level email validation
+          if (emailEl && typeof emailEl.checkValidity === "function" && !emailEl.checkValidity()) {
+            setStatus("Vul een geldig e-mailadres in.", "err");
+            return;
+          }
+
+          try {
+            setStatus("Bezig met inschrijven…", "ok");
+
+            // Backend contract: POST /api/newsletter/subscribe
+            // Body: { email, source, consent: true }
+            // Response: { ok: true, status: "subscribed"|"already" }
+            // Multi-select (checkboxes). Niets gekozen = ALL
+            let regions = Array.from(form.querySelectorAll('input[name="regions"]:checked'))
+              .map(el => String(el?.value || "").trim().toUpperCase())
+              .filter(Boolean);
+
+            // Fallback: always send at least ALL
+            if (!regions.length) regions = ["ALL"];
+
+            // Make ALL exclusive: if ALL + others are selected, drop ALL
+            if (regions.includes("ALL") && regions.length > 1) {
+              regions = regions.filter(r => r !== "ALL");
+            }
+
+            // Backward-compatible primary region (current backend expects `region`)
+            const region = regions[0] || "ALL";
+            const res = await fetch(`${API_BASE}/api/newsletter/subscribe`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                email,
+                source: "index_home_card",
+                consent: true,
+                // backward/forward compatible: single field + array
+                region,
+                regions
+              })
+            });
+
+            const ct = res.headers.get("content-type") || "";
+            const data = ct.includes("application/json") ? await res.json() : null;
+
+            if (!res.ok) {
+              const msg = (data && (data.error || data.message)) ? (data.error || data.message) : `Inschrijving mislukt (HTTP ${res.status}).`;
+              throw new Error(msg);
+            }
+
+            const st = String(data?.status || "subscribed").toLowerCase();
+            if (st === "already") {
+              setStatus("Je stond al ingeschreven. Bedankt!", "ok");
+            } else {
+              setStatus("Bedankt! Je bent ingeschreven op de nieuwsbrief.", "ok");
+            }
+            form.reset();
+          } catch (err) {
+            console.error("[NEWSLETTER] subscribe failed", err);
+            setStatus("Er ging iets mis. Probeer later opnieuw.", "err");
+          }
+        });
+      })();
+
+      function resolveImageUrl(u) {
+        if (u == null) return null;
+
+        let s = "";
+        if (typeof u === "string") {
+          s = u.trim();
+        } else if (typeof u === "object") {
+          // Support multiple shapes coming from backend / DB / legacy pipeline
+          s = String(
+            u.image ||
+            u.image_url ||
+            u.image_path ||
+            u.imagePath ||
+            u.publicPath ||
+            u.path ||
+            u.url ||
+            u.href ||
+            u.src ||
+            ""
+          ).trim();
+        }
+
+        if (!s) return null;
+
+        const low = s.toLowerCase();
+
+        // block known junk
+        if (low === "broken-link" || low === "[object object]") return null;
+        // NOTE: do not hard-block placeholders here; rendering falls back to FALLBACK_THUMB if needed.
+
+        // allow absolute, but proxy direct Pollinations URLs through backend
+        if (/^https?:\/\//i.test(s)) {
+          try {
+            const parsed = new URL(s);
+            if (String(parsed.hostname || "").toLowerCase() === "image.pollinations.ai") {
+              return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
+            }
+          } catch (_) {}
+          return s;
+        }
+
+        // normalize common relative forms
+        // - "images/articles/..." -> "/images/articles/..."
+        // - "./images/articles/..." -> "/images/articles/..."
+        // - "../images/articles/..." -> "/images/articles/..." (best-effort)
+        s = s.replace(/^\.(\/)+/, "/");
+        s = s.replace(/^(\.\.\/)+/, "/");
+        if (!s.startsWith("/") && (low.startsWith("images/") || low.startsWith("assets/"))) {
+          s = "/" + s;
+        }
+
+        // allow backend-served root-relative only
+        if (s.startsWith("/")) return IMG_BASE + s;
+
+        return null;
+      }
+      // NOTE: Homepage gebruikt backend DB-cache (geen nocache=1) + retry/backoff voor consistent laden
+      const CACHE_KEY = "home_news_html_v9";
+      try {
+        Object.keys(localStorage)
+          .filter(k => k && k.startsWith("home_news_html_v"))
+          .forEach(k => localStorage.removeItem(k));
+      } catch (e) {}
+      
+      const REFRESH_MS = 5 * 60 * 1000; // 5 min (pas aan indien gewenst)
+
+      let hasRenderedHomeNews = false;
+
+      const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+      let homeNewsInFlight = false;
+
+      function showStatusOnceIfEmpty(msg) {
+        if (!hasRenderedHomeNews && homeStatusEl) {
+          homeStatusEl.style.display = "block";
+          homeStatusEl.textContent = msg;
+        }
+      }
+
+      function hideStatus() {
+        if (homeStatusEl) homeStatusEl.style.display = "none";
+      }
+
+      function cleanTitle(t){
+        let s = String(t || "").trim();
+
+        // Verwijder bron-tags / afkortingen
+        s = s.replace(/\bVP\b/g, "");   // VoetbalPrimeur
+        s = s.replace(/\bVI\b/g, "");
+        s = s.replace(/\bNOS\b/g, "");
+        s = s.replace(/\bHLN\b/g, "");
+        s = s.replace(/\bAD\b/g, "");
+
+        // Verwijder trailing bronstukjes
+        s = s.replace(/\s*[\-|–|—|·|\|]\s*(Voetbalprimeur|Voetbal International|VI\.nl|NOS|HLN|AD|De Telegraaf)\s*$/i, "");
+        s = s.replace(/\(\s*(VP|VI|NOS|HLN|AD)\s*\)\s*$/i, "");
+
+        // Opruimen
+        s = s.replace(/\s{2,}/g, " ").trim();
+        return s;
+      }
+
+
+
+      async function loadHomeNews() {
+        if (homeNewsInFlight) return; // prevent concurrent refreshes
+        homeNewsInFlight = true;
+
+        try {
+          // Small start delay to avoid racing the backend during a pipeline/cache refresh
+          await sleep(900);
+
+          // Cache-first: do NOT use nocache=1 on the homepage.
+          // DB-cache on backend ensures consistent results, while retries handle short transient gaps.
+          const url = `${API_BASE}/api/news?limit=30`;
+
+          const tries = 5;
+          let lastErr = null;
+
+          for (let i = 0; i < tries; i++) {
+            try {
+              const res = await fetch(url, { cache: "no-store" });
+              console.log("[HOME] fetch", url, "->", res.status);
+
+              if (!res.ok) throw new Error("[HOME] API error: " + res.status);
+
+              const ct = res.headers.get("content-type") || "";
+              if (!ct.includes("application/json")) {
+                const txt = await res.text();
+                throw new Error("[HOME] Expected JSON, got: " + ct + " / " + txt.slice(0, 200));
+              }
+
+              const data = await res.json();
+              const rawItems = Array.isArray(data.items) ? data.items : [];
+
+              // ✅ Alleen artikels tonen die "ready" zijn
+              const readyItems = rawItems.filter(a => {
+                const st = String(a?.status || "").toLowerCase();
+                return st === "ready" || st === "ok";
+              });
+
+              function dedupeById(items) {
+                const seen = new Set();
+                const out = [];
+                for (const it of (items || [])) {
+                  const key = String(it?.id || "").trim();
+                  if (!key) continue;
+                  if (seen.has(key)) continue;
+                  seen.add(key);
+                  out.push(it);
+                }
+                return out;
+              }
+
+              let items = dedupeById(readyItems);
+              console.log(`[DEDUPE] ${rawItems.length} → ${items.length} articles (removed ${rawItems.length - items.length} duplicates)`);
+
+              // 🔥 FOOTBALL FILTER - SOFT VERSION: Only exclude explicit non-football sports
+              const nonFootballKeywords = [
+                "darts", "dart", "dartsnieuws", "dartswedstrijd",
+                "snooker", "snookertafel",
+                "tennis", "tennisbal", "tennisbaan",
+                "basketbal", "basketball", "nba",
+                "hockey", "hockeystick",
+                "handbal", "volleybal",
+                "formule 1", "formule1", "f1-coureur", "grand prix", "verstappen",
+                "wielrennen", "cycling",
+                "schaatsen", "zwemmen", "atletiek",
+                "golf", "rugby", "boksen", "motorsport"
+              ];
+
+              const filteredItems = items.filter(article => {
+                const text = `${article.title || ""} ${article.snippet || ""}`.toLowerCase();
+                const hasNonFootball = nonFootballKeywords.some(k => text.includes(k));
+                if (hasNonFootball) {
+                  console.log(`[FILTER] ❌ Excluded (non-football): ${article.title}`);
+                  return false;
+                }
+                return true;
+              });
+
+              // ✅ Do NOT hard-require an image.
+              // Backend can temporarily return null/placeholder during refresh; UI will always show FALLBACK_THUMB.
+              const displayItems = filteredItems.slice(0, 30);
+              console.log(`[HOME] no image gate: ${filteredItems.length} → ${displayItems.length}`);
+
+              if (displayItems.length < 1) {
+                throw new Error(`[HOME] No usable items (${displayItems.length}); retrying`);
+              }
+
+              const html = displayItems.map((a, index) => {
+                const rawTitle = a?.title || "";
+                const looksLikeSlug = rawTitle.endsWith(".json") || (rawTitle.length > 40 && rawTitle.split("-").length >= 6);
+
+                const displayTitle = (!rawTitle || looksLikeSlug) ? "Nieuwsartikel" : cleanTitle(rawTitle);
+                const safeTitle = String(displayTitle).replace(/"/g, "&quot;");
+
+                // vlag op basis van country (alle landen ondersteunen)
+                const rawCountry =
+                  (a?.country || a?.countryCode || a?.sourceCountry || "")
+                    .toString()
+                    .trim()
+                    .toUpperCase();
+
+                    const cc = normalizeCountryCode(rawCountry);
+                const flag = flagHtml(cc);
+
+                const rawImageVal =
+                  a?.image_path ||
+                  a?.imagePath ||
+                  a?.publicPath ||
+                  a?.image ||
+                  a?.imageUrl ||
+                  a?.image_url;
+
+                const imgSrc = (window.V4AImage && typeof window.V4AImage.resolve === "function")
+                  ? window.V4AImage.resolve(rawImageVal || FALLBACK_THUMB)
+                  : (
+                      resolveImageUrl(a?.image) ||
+                      resolveImageUrl(a?.imageUrl) ||
+                      resolveImageUrl(a?.image_url) ||
+                      resolveImageUrl(a?.image_path) ||
+                      resolveImageUrl(a?.imagePath) ||
+                      resolveImageUrl(a?.publicPath) ||
+                      FALLBACK_THUMB
+                    );
+
+                const safeImg = String(imgSrc || FALLBACK_THUMB).replace(/"/g, "&quot;");
+
+                const thumbHtml = imgSrc
+                  ? `
+                      <div class="home-news__thumbWrap">
+                        <img
+                          class="home-news__thumb"
+                          src="${safeImg}"
+                          alt="${safeTitle}"
+                          loading="${index < 6 ? 'eager' : 'lazy'}"
+                          fetchpriority="${index < 2 ? 'high' : 'auto'}"
+                          decoding="async"
+                          width="92"
+                          height="64"
+                          referrerpolicy="no-referrer"
+                          onerror="try{this.onerror=null;this.src='${FALLBACK_THUMB}';this.closest('.home-news__thumbWrap')&&this.closest('.home-news__thumbWrap').classList.add('is-empty');}catch(e){}"
+                        />
+                      </div>
+                    `
+                  : `
+                      <div class="home-news__thumbWrap is-empty">
+                        <img
+                          class="home-news__thumb"
+                          src="${FALLBACK_THUMB}"
+                          alt="${safeTitle}"
+                          loading="lazy"
+                          decoding="async"
+                          width="92"
+                          height="64"
+                        />
+                      </div>
+                    `;
+
+                // --- ID-FIRST URL LOGIC (artikel.html expects id; slug is fallback) ---
+                const slug = String(a?.slug || "").trim();
+                const id = String(a?.id || "").trim();
+                const articleUrl = id
+                  ? ("artikel.html?id=" + encodeURIComponent(id))
+                  : (slug ? ("artikel.html?slug=" + encodeURIComponent(slug)) : "artikels.html");
+
+                const articleHtml = `
+                  <article class="home-news__item">
+                    <a class="home-news__link" href="${articleUrl}">
+                      ${thumbHtml}
+
+                      <div class="home-news__meta">
+                        <div class="home-news__titleRow">
+                          ${flag}
+                          <h4 class="home-news__title">${safeTitle}</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                `;
+
+                if (index === 9) {
+                  return articleHtml + `
+                    <div class="card ad-infeed ad-slot-infeed">
+                      <ins class="adsbygoogle"
+                        style="display:block"
+                        data-ad-client="ca-pub-4062633211824348"
+                        data-ad-slot="6252515674"
+                        data-ad-format="horizontal"
+                        data-full-width-responsive="true"></ins>
+                    </div>
+                  `;
+                }
+
+                return articleHtml;
+              }).join("");
+
+              homeListEl.innerHTML = html;
+              hasRenderedHomeNews = true;
+              hideStatus();
+
+              // success: exit retry loop
+              lastErr = null;
+              break;
+            } catch (e) {
+              lastErr = e;
+              const wait = 2000 * Math.pow(2, i); // exponential backoff: 2s,4s,8s,16s,32s
+              console.warn("[HOME] retry", i + 1, "in", wait, "ms:", e?.message || e);
+              await sleep(wait);
+            }
+          }
+
+          if (lastErr) {
+            throw lastErr;
+          }
+
+        } catch (err) {
+          console.error("[HOME] loadHomeNews failed:", err);
+          // FIX 1: Fallback to static data/news.json when backend is down
+          try {
+            console.warn("[HOME] Attempting fallback to data/news.json");
+            const fbRes = await fetch("data/news.json", { cache: "no-store" });
+            if (fbRes.ok) {
+              const fbData = await fbRes.json();
+              const fbItems = Array.isArray(fbData.items) ? fbData.items : [];
+              if (fbItems.length > 0) {
+                // Inject status:"ready" and published_at so items work with existing rendering
+                const fbReady = fbItems.map(it => ({
+                  ...it,
+                  status: "ready",
+                  published_at: it.publishedAt || it.published_at || null
+                }));
+                // Re-fetch as if from API by constructing a compatible data object
+                const fbRawItems = fbReady;
+                const fbReadyItems = fbRawItems.filter(a => {
+                  const st = String(a?.status || "").toLowerCase();
+                  return st === "ready" || st === "ok";
+                });
+                function fbDedupeById(items) {
+                  const seen = new Set();
+                  const out = [];
+                  for (const it of (items || [])) {
+                    const key = String(it?.id || it?.link || "").trim();
+                    if (key && seen.has(key)) continue;
+                    if (key) seen.add(key);
+                    out.push(it);
+                  }
+                  return out;
+                }
+                let fbFiltered = fbDedupeById(fbReadyItems);
+                const fbDisplay = fbFiltered.slice(0, 30);
+                if (fbDisplay.length > 0) {
+                  const fbHtml = fbDisplay.map((a, index) => {
+                    const rawTitle = a?.title || "";
+                    const looksLikeSlug = rawTitle.endsWith(".json") || (rawTitle.length > 40 && rawTitle.split("-").length >= 6);
+                    const displayTitle = (!rawTitle || looksLikeSlug) ? "Nieuwsartikel" : cleanTitle(rawTitle);
+                    const safeTitle = String(displayTitle).replace(/"/g, "&quot;");
+                    const rawCountry = (a?.country || a?.countryCode || a?.sourceCountry || "").toString().trim().toUpperCase();
+                    const cc = normalizeCountryCode(rawCountry);
+                    const flag = flagHtml(cc);
+                    const thumbHtml = `<div class="home-news__thumbWrap">${FALLBACK_THUMB}</div>`;
+                    const rawSnippet = a?.snippet || a?.summary || a?.ai_summary || "";
+                    const snippet = String(rawSnippet).replace(/<[^>]*>/g, "").substring(0, 180);
+                    const safeSnippet = snippet.replace(/"/g, "&quot;");
+                    const rawDate = a?.published_at || a?.publishedAt || a?.created_at || "";
+                    const dateStr = rawDate ? new Date(rawDate).toLocaleDateString("nl-BE", { day: "numeric", month: "short" }) : "";
+                    const articleLink = a?.link || `artikel.html?id=${encodeURIComponent(a?.id || "")}`;
+                    const safeLink = String(articleLink).replace(/"/g, "&quot;");
                     let articleHtml = `<a class="home-news__card" href="${safeLink}" data-country="${cc}">`;
                     articleHtml += thumbHtml;
                     articleHtml += `<div class="home-news__body">`;
