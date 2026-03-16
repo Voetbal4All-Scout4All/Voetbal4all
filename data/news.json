@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-16T02:46:24.994Z",
+  "generatedAt": "2026-03-16T05:19:41.390Z",
   "items": [
     {
       "type": "rss",
@@ -278,6 +278,17 @@
     },
     {
       "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La RAAL s'offre le Cercle de Bruges et relance la lutte pour éviter les Relegation Play-Offs",
+      "link": "https://www.walfoot.be/news/2026-03-15/la-raal-soffre-le-cercle-de-bruges-et-relance-la-lutte-pour-eviter-les-relegation-play-offs",
+      "summary": "La RAAL La Louvière s'impose 1-3 au Cercle de Bruges grâce à un réalisme glacial et un grand Marco Peano.",
+      "publishedAt": "2026-03-15T10:05:00.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -300,6 +311,17 @@
     },
     {
       "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Saint-Trond s'essouffle-t-il avant les Play-Offs ? Wouter Vrancken dresse un constat inquiétant",
+      "link": "https://www.walfoot.be/news/2026-03-15/saint-trond-sessouffle-t-il-avant-les-play-offs--wouter-vrancken-dresse-un-constat-inquietant",
+      "summary": "Wouter Vrancken avait des regrets après la défaite de Saint-Trond dans le derby limbourgeois contre Genk.",
+      "publishedAt": "2026-03-15T09:30:00.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -308,28 +330,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-03-15/de-kaarten-geschud-rsc-anderlecht-kaa-gent-krc-genk-en-standard-weten-wat-te-doen",
       "summary": "KV Mechelen heeft gewonnen van RSC Anderlecht en zo is de situatie rondom het behalen van de Champions' Play-offs heel wat duidelijker geworden. Wat staat er nog op het spel op de slotspeeldag?",
       "publishedAt": "2026-03-15T09:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Anderlecht-trainer Taravel weigert van Bertaccini zondebok te maken: \"Het gaat niet om hem alleen\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-15/match-reactie--anderlecht-trainer-taravel-weigert-van-bertaccini-zondebok-te-maken-het-gaat-niet-om-hem-alleen",
-      "summary": "Wat Anderlecht zondag in Mechelen meemaakte, past in het lijstje met moeilijkere momenten voor Adriano Bertaccini. Na zijn rode kaart ging Anderlecht nog kopje-onder.",
-      "publishedAt": "2026-03-15T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Lammens versus Onana (en meer lekkers) in de Premier League",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-15/lammens-versus-onana-en-meer-lekkers-in-de-premier-league",
-      "summary": "Manchester United heeft Aston Villa met 3-1 geklopt in een duel om de derde plaats. Senne Lammens en Amadou Onana stonden allebei tussen de lijnen.",
-      "publishedAt": "2026-03-15T08:40:00.000Z"
     }
   ]
 }
