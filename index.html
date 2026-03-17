@@ -7,7 +7,7 @@
     (function () {
       function signalGooglefcPresent() {
         if (!window.frames["googlefcPresent"]) {
-          if (document.body) 
+          if (document.body) {
             const iframe = document.createElement("iframe");
             iframe.style.cssText = "width:0;height:0;border:none;display:none";
             iframe.name = "googlefcPresent";
