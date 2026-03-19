@@ -62,12 +62,30 @@
     },
     "dashboard": {
           "welcome": "Welkom, {{name}}!",
+          "welcomeBack": "Welkom terug, {{name}}",
           "welcomeSubtitle": "Je Scout4All dashboard is klaar voor gebruik.",
+          "overviewSubtitle": "Hier is een overzicht van je scoutingactiviteit.",
           "availableInPhase2": "Beschikbaar in Fase 2",
           "reports": "Rapporten",
           "players": "Spelers",
           "plan": "Plan",
-          "dashboardExpandPhase2": "Dashboard content wordt uitgebreid in Fase 2."
+          "dashboardExpandPhase2": "Dashboard content wordt uitgebreid in Fase 2.",
+          "newPlayer": "+ Nieuwe speler",
+          "newReport": "+ Nieuw rapport",
+          "playersInDb": "Spelers in database",
+          "drafts": "Drafts",
+          "activePlan": "Actief plan",
+          "recentReports": "Recente rapporten",
+          "allPlayers": "Alle spelers",
+          "noReports": "Nog geen rapporten. Start met scouten!",
+          "addFirstPlayer": "Eerste speler toevoegen",
+          "noDate": "Geen datum",
+          "unknownCompetition": "Onbekende competitie",
+          "statusDraft": "Draft",
+          "statusCompleted": "Voltooid",
+          "upgradeToPro": "Upgrade naar Pro",
+          "upgradeDesc": "Onbeperkt spelers, radargrafieken, PDF-export en meer.",
+          "viewPlans": "Bekijk plannen"
     },
     "topbar": {
           "searchPlaceholder": "Zoek spelers, clubs, rapporten...",
@@ -77,15 +95,15 @@
     "language": {
           "select": "Taal",
           "nl": "Nederlands",
-          "fr": "Français",
+          "fr": "Fran\u00e7ais",
           "en": "English",
           "de": "Deutsch",
-          "es": "Español",
+          "es": "Espa\u00f1ol",
           "it": "Italiano"
     },
     "errors": {
           "generic": "Er is een fout opgetreden",
-          "network": "Netwerkfout — controleer je verbinding",
-          "unauthorized": "Sessie verlopen — log opnieuw in"
+          "network": "Netwerkfout \u2014 controleer je verbinding",
+          "unauthorized": "Sessie verlopen \u2014 log opnieuw in"
     }
 }
