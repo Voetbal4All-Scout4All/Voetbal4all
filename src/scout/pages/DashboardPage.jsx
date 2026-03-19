@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuthContext } from '../context/AuthContext';
 import playerService from '../services/playerService';
 import reportService from '../services/reportService';
@@ -17,6 +18,7 @@ const StatCard = ({ label, value, icon, accent }) => (
 const DashboardPage = () => {
     const { user } = useAuthContext();
     const navigate = useNavigate();
+    const { t } = useTranslation();
     const [stats, setStats] = useState({ players: null, reports: null, drafts: null });
     const [recentReports, setRecentReports] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -25,13 +27,13 @@ const DashboardPage = () => {
           const load = async () => {
                   try {
                             const [playersData, reportsData] = await Promise.all([
-                                        playerService.getPlayers({ limit: 1 }),
-                                        reportService.getMyRecentReports(5),
-                                      ]);
+                                          playerService.getPlayers({ limit: 1 }),
+                                          reportService.getMyRecentReports(5),
+                                        ]);
                             setStats({
-                                        players: playersData.total ?? playersData.length ?? 0,
-                                        reports: reportsData.total ?? reportsData.length ?? 0,
-                                        drafts: reportsData.filter?.(r => r.status === 'draft').length ?? 0,
+                                          players: playersData.total ?? playersData.length ?? 0,
+                                          reports: reportsData.total ?? reportsData.length ?? 0,
+                                          drafts: reportsData.filter?.(r => r.status === 'draft').length ?? 0,
                             });
                             setRecentReports(Array.isArray(reportsData) ? reportsData : reportsData.data ?? []);
                   } catch {
@@ -48,92 +50,92 @@ const DashboardPage = () => {
     return (
           <div className={styles.page}>
             {/* Header */}
-                  <div className={styles.header}>
+                 <div className={styles.header}>
                             <div>
-                                      <h1 className={styles.greeting}>Welkom terug, {firstName} </h1>
-                                      <p className={styles.subtitle}>Hier is een overzicht van je scoutingactiviteit.</p>
+                                     <h1 className={styles.greeting}>{t('dashboard.welcomeBack', { name: firstName })}</h1>
+                                     <p className={styles.subtitle}>{t('dashboard.overviewSubtitle')}</p>
                             </div>
                           <div className={styles.headerActions}>
                                     <Button variant="secondary" onClick={() => navigate('/players/add')}>
-                                                + Nieuwe speler
+                                               {t('dashboard.newPlayer')}
                                     </Button>
                                     <Button variant="primary" onClick={() => navigate('/reports/add')}>
-                                                + Nieuw rapport
+                                               {t('dashboard.newReport')}
                                     </Button>
                           </div>
-                  </div>
-          
+                 </div>
+
             {/* Stat cards */}
                 <div className={styles.statsGrid}>
-                        <StatCard label="Spelers in database" value={loading ? '\u2026' : stats.players} icon="👥" accent="blue" />
-                        <StatCard label="Rapporten" value={loading ? '\u2026' : stats.reports} icon="📋" />
-                        <StatCard label="Drafts" value={loading ? '\u2026' : stats.drafts} icon="✏️" accent="orange" />
-                        <StatCard label="Actief plan" value={user?.subscription_plan ?? 'Free'} icon="⭐" />
+                        <StatCard label={t('dashboard.playersInDb')} value={loading ? '\u2026' : stats.players} icon="\ud83d\udc65" accent="blue" />
+                        <StatCard label={t('dashboard.reports')} value={loading ? '\u2026' : stats.reports} icon="\ud83d\udccb" />
+                        <StatCard label={t('dashboard.drafts')} value={loading ? '\u2026' : stats.drafts} icon="\u270f\ufe0f" accent="orange" />
+                        <StatCard label={t('dashboard.activePlan')} value={user?.subscription_plan ?? 'Free'} icon="\u2b50" />
                 </div>
-          
+
             {/* Recente rapporten */}
                 <div className={styles.section}>
                         <div className={styles.sectionHeader}>
-                                  <h2 className={styles.sectionTitle}>Recente rapporten</h2>
-                                  <button className={styles.seeAll} onClick={() => navigate('/players')}>
-                                              Alle spelers &rarr;
-                                  </button>
+                                   <h2 className={styles.sectionTitle}>{t('dashboard.recentReports')}</h2>
+                                   <button className={styles.seeAll} onClick={() => navigate('/players')}>
+                                               {t('dashboard.allPlayers')} &rarr;
+                                   </button>
                         </div>
                   {loading ? (
-                      <div className={styles.loading}>Laden&hellip;</div>
+                      <div className={styles.loading}>{t('common.loading')}</div>
                     ) : recentReports.length === 0 ? (
                       <div className={styles.empty}>
-                                  <p>Nog geen rapporten. Start met scouten!</p>
-                                  <Button variant="primary" onClick={() => navigate('/players/add')}>
-                                                Eerste speler toevoegen
-                                  </Button>
+                                   <p>{t('dashboard.noReports')}</p>
+                                   <Button variant="primary" onClick={() => navigate('/players/add')}>
+                                               {t('dashboard.addFirstPlayer')}
+                                   </Button>
                       </div>
                     ) : (
                       <div className={styles.reportsList}>
                         {recentReports.map(report => (
-                                      <div
-                                                        key={report.id}
-                                                        className={styles.reportRow}
-                                                        onClick={() => navigate(`/reports/${report.id}`)}
-                                                      >
-                                                      <div className={styles.reportInfo}>
-                                                                        <span className={styles.reportPlayer}>
-                                                                          {report.player_first_name} {report.player_last_name}
-                                                                        </span>
-                                                                        <span className={styles.reportMeta}>
-                                                                          {report.match_date
+                                    <div
+                                                       key={report.id}
+                                                       className={styles.reportRow}
+                                                       onClick={() => navigate(`/reports/${report.id}`)}
+                                                     >
+                                                     <div className={styles.reportInfo}>
+                                                                    <span className={styles.reportPlayer}>
+                                                                                   {report.player_first_name} {report.player_last_name}
+                                                                    </span>
+                                                                    <span className={styles.reportMeta}>
+                                                                                   {report.match_date
                                                                                                   ? new Date(report.match_date).toLocaleDateString('nl-BE')
-                                                                                                  : 'Geen datum'}{' '}
-                                                                                            &middot; {report.match_competition || 'Onbekende competitie'}
-                                                                        </span>
-                                                      </div>
-                                                      <div className={styles.reportRight}>
-                                                        {report.score_overall != null && (
-                                                                            <span className={styles.score}>{Number(report.score_overall).toFixed(1)}</span>
-                                                                        )}
-                                                                        <span className={`${styles.badge} ${styles['badge_' + report.status]}`}>
-                                                                          {report.status === 'draft' ? 'Draft' : 'Voltooid'}
-                                                                        </span>
-                                                                        <span className={styles.reportArrow}>&rsaquo;</span>
-                                                      </div>
-                                      </div>
-                                    ))}
+                                                                                                  : t('dashboard.noDate')}{' '}
+                                                                                   &middot; {report.match_competition || t('dashboard.unknownCompetition')}
+                                                                    </span>
+                                                     </div>
+                                                     <div className={styles.reportRight}>
+                                                                    {report.score_overall != null && (
+                                                                                   <span className={styles.score}>{Number(report.score_overall).toFixed(1)}</span>
+                                                                    )}
+                                                                    <span className={`${styles.badge} ${styles['badge_' + report.status]}`}>
+                                                                                   {report.status === 'draft' ? t('dashboard.statusDraft') : t('dashboard.statusCompleted')}
+                                                                    </span>
+                                                                    <span className={styles.reportArrow}>&rsaquo;</span>
+                                                     </div>
+                                    </div>
+                                  ))}
                       </div>
                         )}
                 </div>
-          
+
             {/* Upgrade CTA (alleen bij Free plan) */}
             {(user?.subscription_plan === 'free' || !user?.subscription_plan) && (
                     <div className={styles.upgradeCta}>
-                              <div className={styles.upgradeText}>
-                                          <span className={styles.upgradeTitle}>Upgrade naar Pro</span>
+                                 <div className={styles.upgradeText}>
+                                          <span className={styles.upgradeTitle}>{t('dashboard.upgradeToPro')}</span>
                                           <span className={styles.upgradeDesc}>
-                                                        Onbeperkt spelers, radargrafieken, PDF-export en meer.
+                                                    {t('dashboard.upgradeDesc')}
                                           </span>
-                              </div>
-                              <Button variant="primary" onClick={() => navigate('/upgrade')}>
-                                          Bekijk plannen
-                              </Button>
+                                 </div>
+                                 <Button variant="primary" onClick={() => navigate('/upgrade')}>
+                                          {t('dashboard.viewPlans')}
+                                 </Button>
                     </div>
                 )}
           </div>
