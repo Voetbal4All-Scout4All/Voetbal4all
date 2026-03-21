@@ -47,8 +47,9 @@
 
     .v4-player-cell { display:flex; align-items:center; gap:10px; min-width:160px; }
     .v4-player-photo {
-      width:32px; height:32px; border-radius:50%;
-      object-fit:cover; background:rgba(255,255,255,0.08); flex-shrink:0;
+      width:32px ; height:32px ; min-width:32px; max-width:32px;
+      border-radius:50%; object-fit:cover; object-position:top center;
+      background:rgba(255,255,255,0.08); flex-shrink:0;
     }
     .v4-player-name { font-weight:600; font-size:13px; }
     .v4-player-nat { font-size:11px; color:rgba(255,255,255,0.35); }
