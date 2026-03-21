@@ -222,6 +222,7 @@
 
           <div class="v4-controls-row">
             <select class="v4-season-select" id="season-select">
+              <option value="2025">2025–2026</option>
               <option value="2024">2024–2025</option>
               <option value="2023">2023–2024</option>
               <option value="2022">2022–2023</option>
@@ -309,7 +310,11 @@ const LEAGUES = [
 ];
 
 let activeLeague = LEAGUES[0];
-let activeSeason = "2024";
+function getCurrentSeason() {
+      const now = new Date();
+      return now.getMonth() >= 6 ? String(now.getFullYear()) : String(now.getFullYear() - 1);
+    }
+    let activeSeason = getCurrentSeason();
 let activeTab    = "goals";
 let sortCol      = null;
 let sortDir      = -1;
@@ -494,6 +499,7 @@ function esc(s) {
 }
 
 buildLeagueBar();
+seasonSel.value = activeSeason;
 load();
 </script>
 
