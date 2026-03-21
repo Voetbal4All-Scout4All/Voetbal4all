@@ -83,8 +83,7 @@
     .home-news__thumbWrap{ display: block !important; visibility: visible !important; opacity: 1 !important; }
     .home-news__thumb{ display: block !important; visibility: visible !important; opacity: 1 !important; }
 
-    /* ==========================================
-       HOME (index) – Left column event cards
+    /* ===================================       HOME (index) – Left column event cards
        Fix: cards must size to content (no stretching)
        Scope: only affects the lower grid on the homepage
        ========================================== */
@@ -943,8 +942,7 @@
         0 0 22px rgba(255,90,0,.45);
     }
 
-    /* =========================
-   HOME TOP – MOBILE ONLY FIX
+    /* ==================   HOME TOP – MOBILE ONLY FIX
    Geldt ENKEL voor mobiel
    Raakt geen andere secties
    ========================= */
@@ -1310,7 +1308,7 @@
 
               <div class="newsletter-regions" aria-label="Kies je nieuwsbrief editie">
                 <div class="regions-title">Welke editie wil je ontvangen?</div>
-                <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je zeker iets ontvangt).</div>
+                <div class="regions-note">Standaard staat <strong>ALL</strong> geselecteerd (zodat je de meest uitgebreide editie ontvangt).</div>
 
                 <div class="regions-grid" role="group" aria-label="Nieuwsbrief edities">
                   <label class="region-opt" for="newsletterRegionBE">
@@ -2631,6 +2629,7 @@
               const rawItems = Array.isArray(data.items) ? data.items : [];
 
               // ✅ Alleen artikels tonen die "ready" zijn
+              // Alleen artikels tonen die "ready" zijn
               const readyItems = rawItems.filter(a => {
                 const st = String(a?.status || "").toLowerCase();
                 return st === "ready" || st === "ok";
@@ -2677,6 +2676,7 @@
               });
 
               // ✅ Do NOT hard-require an image.
+              // Do NOT hard-require an image.
               // Backend can temporarily return null/placeholder during refresh; UI will always show FALLBACK_THUMB.
               const displayItems = filteredItems.slice(0, 30);
               console.log(`[HOME] no image gate: ${filteredItems.length} → ${displayItems.length}`);
@@ -2899,10 +2899,8 @@
       loadHomeNews();
 
       if (false) {
-      // =========================
-      // HOME: Events (Weekend + Kalender) — defensive rendering
-      // =========================
-      var __v4aEventsState = window.__V4A_EVENTS_STATE || (window.__V4A_EVENTS_STATE = { weekendInFlight:false, monthInFlight:false });
+      // ==================      // HOME: Events (Weekend + Kalender) — defensive rendering
+      // ==================      var __v4aEventsState = window.__V4A_EVENTS_STATE || (window.__V4A_EVENTS_STATE = { weekendInFlight:false, monthInFlight:false });
 
       function escHtml(s){
         return String(s || "")
