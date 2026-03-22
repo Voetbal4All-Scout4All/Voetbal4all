@@ -627,14 +627,46 @@
     if (/^https?:\/\//i.test(s)) {
       try {
         const u = new URL(s);
-        if (String(u.hostname || "").toLowerCase() === "image.pollinations.ai") {
+        const host = String(u.hostname || "").toLowerCase();
+        const apiHost = new URL(API_BASE).hostname.toLowerCase();
+
+        if (host === "image.pollinations.ai") {
           return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
+        }
+
+        if (host === apiHost && u.pathname === "/api/image-proxy") {
+          const upstream = String(u.searchParams.get("url") || "").trim();
+          if (upstream) {
+            try {
+              const upstreamUrl = new URL(upstream);
+              const upstreamHost = String(upstreamUrl.hostname || "").toLowerCase();
+              if (upstreamHost === apiHost && upstreamUrl.pathname.startsWith("/images/")) {
+                return `${API_BASE}${upstreamUrl.pathname}${upstreamUrl.search || ""}`;
+              }
+            } catch (_) {}
+          }
         }
       } catch (_) {}
       return s;
     }
 
-    if (s.startsWith("/api/")) return API_BASE + s;
+    if (s.startsWith("/api/")) {
+      if (s.startsWith("/api/image-proxy?url=")) {
+        try {
+          const rel = new URL(`${API_BASE}${s}`);
+          const upstream = String(rel.searchParams.get("url") || "").trim();
+          if (upstream) {
+            const upstreamUrl = new URL(upstream);
+            const apiHost = new URL(API_BASE).hostname.toLowerCase();
+            const upstreamHost = String(upstreamUrl.hostname || "").toLowerCase();
+            if (upstreamHost === apiHost && upstreamUrl.pathname.startsWith("/images/")) {
+              return `${API_BASE}${upstreamUrl.pathname}${upstreamUrl.search || ""}`;
+            }
+          }
+        } catch (_) {}
+      }
+      return API_BASE + s;
+    }
     if (s.startsWith("/images/")) return API_BASE + s;
     if (s.startsWith("/assets/")) return s;
 
