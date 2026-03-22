@@ -858,7 +858,15 @@
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
         const currentImg = resolveImageUrl(
-          article.image || article.image_path || article.imageUrl || article.imageURL || null
+          article.image ||
+          article.image_path ||
+          article.imagePath ||
+          article.imageUrl ||
+          article.imageURL ||
+          article.image_url ||
+          article.publicPath ||
+          article.public_path ||
+          null
         );
 
         if (!currentImg) {
@@ -1049,7 +1057,17 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = resolveImageUrl(article.image || article.image_path || article.imageUrl || article.imageURL) || buildProxyImageFromTitle(title);
+    const imgUrl = resolveImageUrl(
+      article.image ||
+      article.image_path ||
+      article.imagePath ||
+      article.imageUrl ||
+      article.imageURL ||
+      article.image_url ||
+      article.publicPath ||
+      article.public_path ||
+      null
+    ) || buildProxyImageFromTitle(title);
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
