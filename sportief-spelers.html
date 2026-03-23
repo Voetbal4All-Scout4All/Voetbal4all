@@ -47,9 +47,8 @@
 
     .v4-player-cell { display:flex; align-items:center; gap:10px; min-width:160px; }
     .v4-player-photo {
-      width:32px ; height:32px ; min-width:32px; max-width:32px;
-      border-radius:50%; object-fit:cover; object-position:top center;
-      background:rgba(255,255,255,0.08); flex-shrink:0;
+      width:32px; height:32px; border-radius:50%;
+      object-fit:cover; background:rgba(255,255,255,0.08); flex-shrink:0;
     }
     .v4-player-name { font-weight:600; font-size:13px; }
     .v4-player-nat { font-size:11px; color:rgba(255,255,255,0.35); }
@@ -172,7 +171,6 @@
       <div class="nav-item nav-item--dropdown">
         <button type="button" class="nav-link nav-link--dropdown">Voetbal4All <span class="nav-link-caret">▾</span></button>
         <div class="nav-dropdown">
-          <a href="https://scout.voetbal4all.eu" class="nav-dropdown-link" target="_blank" rel="noopener noreferrer">🔍 Scout4All</a>
           <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
           <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
           <a href="contact.html" class="nav-dropdown-link">Contact</a>
@@ -224,7 +222,6 @@
 
           <div class="v4-controls-row">
             <select class="v4-season-select" id="season-select">
-              <option value="2025">2025–2026</option>
               <option value="2024">2024–2025</option>
               <option value="2023">2023–2024</option>
               <option value="2022">2022–2023</option>
@@ -312,11 +309,7 @@ const LEAGUES = [
 ];
 
 let activeLeague = LEAGUES[0];
-function getCurrentSeason() {
-      const now = new Date();
-      return now.getMonth() >= 6 ? String(now.getFullYear()) : String(now.getFullYear() - 1);
-    }
-    let activeSeason = getCurrentSeason();
+let activeSeason = "2024";
 let activeTab    = "goals";
 let sortCol      = null;
 let sortDir      = -1;
@@ -501,7 +494,6 @@ function esc(s) {
 }
 
 buildLeagueBar();
-seasonSel.value = activeSeason;
 load();
 </script>
 

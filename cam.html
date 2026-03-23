@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0B1020">
+  <!-- Google AdSense -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scout4All Cam — Professioneel filmen zonder Veo-abonnement | Voetbal4All</title>
+  <meta name="description" content="Combineer een slimme XbotGo camera met het Scout4All scouting platform. Geen maandelijks camera-abonnement. Eenmalige aankoop." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <!-- Hoofd-stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===========================
+       Scout4All Cam pagina styles
+       =========================== */
+
+    /* Affiliate constant — update bij ontvangst affiliate-ID */
+    /* const XBOTGO_AFFILIATE = 'https://xbotgo.com?ref=scout4all'; */
+
+    .cam-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* HERO */
+    .cam-hero {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+    }
+    .cam-hero__eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--logo-orange);
+      margin-bottom: 1rem;
+    }
+    .cam-hero__title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .cam-hero__title span {
+      color: var(--accent);
+    }
+    .cam-hero__sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .cam-hero__cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: .85rem 2rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .cam-hero__cta:hover { opacity: .85; }
+
+    /* VIDEO SECTIE */
+    .cam-video-section {
+      margin: 2rem 0 3rem;
+      text-align: center;
+    }
+    .cam-video-section h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .cam-video-section .cam-section-sub {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+    .s4a-video-placeholder {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 */
+      background: var(--bg-soft);
+      border: 2px dashed rgba(255,255,255,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .s4a-video-coming-soon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .s4a-video-coming-soon span {
+      font-size: 3rem;
+      display: block;
+      margin-bottom: .75rem;
+    }
+    .s4a-video-coming-soon p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 0 0 .4rem;
+    }
+    .s4a-video-sub {
+      font-size: .85rem !important;
+      color: var(--muted) !important;
+      font-weight: 400 !important;
+    }
+
+    /* STAPPEN */
+    .cam-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .cam-step {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .cam-step__icon {
+      font-size: 2rem;
+      margin-bottom: .75rem;
+    }
+    .cam-step__title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .4rem;
+      font-size: .95rem;
+    }
+    .cam-step__desc {
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* BUNDELS */
+    .cam-bundles {
+      margin: 3rem 0;
+    }
+    .cam-bundles h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+    .cam-bundle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .cam-bundle-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .cam-bundle-card--recommended {
+      border-color: var(--accent);
+      background: rgba(24, 160, 251, 0.08);
+    }
+    .cam-bundle-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .cam-bundle-card__camera {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--logo-orange);
+      font-weight: 600;
+      margin-bottom: .35rem;
+    }
+    .cam-bundle-card__title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .25rem;
+    }
+    .cam-bundle-card__platform {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .cam-bundle-card__price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .cam-bundle-card__price small {
+      font-size: .9rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .cam-bundle-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      flex: 1;
+    }
+    .cam-bundle-features li {
+      font-size: .9rem;
+      color: var(--text);
+      padding: .3rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+    }
+    .cam-bundle-features li span.check {
+      color: #4caf78;
+      flex-shrink: 0;
+    }
+    .cam-bundle-cta {
+      display: block;
+      text-align: center;
+      padding: .75rem 1.5rem;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .cam-bundle-cta--outline {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+    }
+    .cam-bundle-cta--primary {
+      background: var(--accent);
+      color: #fff;
+      border: 2px solid var(--accent);
+    }
+    .cam-bundle-cta:hover { opacity: .85; }
+
+    /* VERGELIJKING */
+    .cam-comparison {
+      margin: 3rem 0;
+    }
+    .cam-comparison h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2rem;
+    }
+    .cam-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+    }
+    .cam-comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--glass-bg);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .cam-comparison-table th,
+    .cam-comparison-table td {
+      padding: .9rem 1.2rem;
+      text-align: left;
+      font-size: .9rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .cam-comparison-table th {
+      font-weight: 700;
+      color: var(--text);
+      background: var(--bg-soft);
+    }
+    .cam-comparison-table th:nth-child(2) {
+      color: var(--accent);
+    }
+    .cam-comparison-table td:first-child {
+      color: var(--muted);
+    }
+    .cam-comparison-table td:nth-child(2) {
+      color: var(--text);
+      font-weight: 500;
+    }
+    .cam-comparison-table td:nth-child(3) {
+      color: var(--muted);
+    }
+    .cam-comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .cam-comparison-table tr:hover td {
+      background: rgba(255,255,255,.03);
+    }
+
+    /* CONTACT */
+    .cam-contact {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      margin-top: 3rem;
+    }
+    .cam-contact h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+    .cam-contact p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+    .cam-contact__btn {
+      display: inline-block;
+      background: var(--logo-orange);
+      color: #fff;
+      font-weight: 600;
+      padding: .8rem 2rem;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+    .cam-contact__btn:hover { opacity: .85; }
+
+    @media (max-width: 640px) {
+      .cam-bundle-grid { grid-template-columns: 1fr; }
+      .cam-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="v4-hide-live-mobile">
+<div class="page">
+
+<!-- ================== NAVBAR ================== -->
+<header class="navbar">
+  <div class="shell">
+    <div class="navbar-inner">
+      <a href="index.html" class="brand brand--logo-only">
+        <img
+          src="assets/img/brand/logo-voetbal4all.png"
+          alt="Voetbal4All"
+          class="brand-logo"
+          loading="eager"
+        />
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="artikels.html" class="nav-link">Artikels</a>
+
+        <!-- SPORTIEVE EVENTS -->
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-link nav-link--dropdown">
+            Sportieve events <span class="nav-link-caret">&#x25be;</span>
+          </button>
+          <div class="nav-dropdown">
+            <a href="algemene-events.html?type=Spelavond" class="nav-dropdown-link">Spelavonden &amp; acties</a>
+            <a href="algemene-events.html?type=Fuif" class="nav-dropdown-link">Fuif / afterparty</a>
+            <a href="algemene-events.html?type=Sponsor" class="nav-dropdown-link">Sponsor &amp; netwerk</a>
+            <a href="event-aanmelden.html" class="nav-dropdown-link">Event aanmelden</a>
+          </div>
+        </div>
+
+        <!-- VACATURES & PROFIELEN -->
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-link nav-link--dropdown">
+            Vacatures &amp; profielen <span class="nav-link-caret">&#x25be;</span>
+          </button>
+          <div class="nav-dropdown">
+            <a href="clubvacatures.html" class="nav-dropdown-link">Clubvacatures</a>
+            <a href="trainers.html" class="nav-dropdown-link">Trainers</a>
+            <a href="spelers.html" class="nav-dropdown-link">Spelers</a>
+            <a href="aanmelden.html" class="nav-dropdown-link">Vacature of profiel aanmelden</a>
+          </div>
+        </div>
+
+        <!-- SPORTIEF -->
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-link nav-link--dropdown">
+            Sportief <span class="nav-link-caret">&#x25be;</span>
+          </button>
+          <div class="nav-dropdown">
+            <a href="sportief-spelers.html" class="nav-dropdown-link">Spelersstatistieken</a>
+            <a href="sportief-teams.html" class="nav-dropdown-link">Teamstatistieken</a>
+            <a href="sportief-resultaten.html" class="nav-dropdown-link">Resultaten</a>
+            <a href="sportief-rangschikkingen.html" class="nav-dropdown-link">Rangschikkingen</a>
+            <a href="sportief-supportersclubs.html" class="nav-dropdown-link">Supportersclubs</a>
+          </div>
+        </div>
+
+        <!-- VOETBAL4ALL -->
+        <div class="nav-item nav-item--dropdown">
+          <button type="button" class="nav-link nav-link--dropdown">
+            Voetbal4All <span class="nav-link-caret">&#x25be;</span>
+          </button>
+          <div class="nav-dropdown">
+            <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
+            <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
+            <a href="contact.html" class="nav-dropdown-link">Contact</a>
+          </div>
+        </div>
+
+        <!-- SCOUT4ALL CAM - AKTIEF -->
+        <a href="cam.html" class="nav-link nav-link--active" style="color:var(--logo-orange);font-weight:700;">&#x1F4F7; Scout4All Cam</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ================== CONTENT ================== -->
+<main>
+<section class="section-main">
+<div class="cam-page">
+
+  <!-- ===== HERO SECTIE ===== -->
+  <section class="cam-hero" id="hero">
+    <span class="cam-hero__eyebrow">&#x1F4F7; Scout4All &times; XbotGo</span>
+    <h1 class="cam-hero__title">
+      Scout4All Cam &mdash;<br>
+      <span>Professioneel filmen zonder Veo-abonnement</span>
+    </h1>
+    <p class="cam-hero__sub">
+      Combineer een slimme camera met ons scouting platform.
+      Geen maandelijks abonnement op de camera. &Eacute;&eacute;nmalige aankoop.
+    </p>
+    <a href="#bundels" class="cam-hero__cta">Bekijk de bundels &darr;</a>
+  </section>
+
+  <!-- ===== VIDEO SECTIE ===== -->
+  <section class="cam-video-section" id="demo-video">
+    <h2>Zie het in actie</h2>
+    <p class="cam-section-sub">Van opname tot AI-analyse in enkele minuten</p>
+
+    <div class="s4a-video-placeholder" id="cam-demo-video">
+      <!-- Vervang src door echte YouTube/Vimeo URL na opname -->
+      <div class="s4a-video-coming-soon">
+        <span>&#x1F3A5;</span>
+        <p>Demovideo komt binnenkort</p>
+        <p class="s4a-video-sub">
+          Opname met Falcon Elite &mdash; AI frameanalyse &mdash; scoresuggesties
+        </p>
+      </div>
+    </div>
+
+    <!-- STAP-VOOR-STAP -->
+    <div class="cam-steps">
+      <div class="cam-step">
+        <div class="cam-step__icon">&#x1F4F7;</div>
+        <div class="cam-step__title">Film de wedstrijd</div>
+        <p class="cam-step__desc">Falcon Elite filmt automatisch mee met slimme camera-tracking</p>
+      </div>
+      <div class="cam-step">
+        <div class="cam-step__icon">&#x2601;&#xFE0F;</div>
+        <div class="cam-step__title">Upload naar Scout4All</div>
+        <p class="cam-step__desc">Video direct beschikbaar in de app voor analyse en coaching</p>
+      </div>
+      <div class="cam-step">
+        <div class="cam-step__icon">&#x1F916;</div>
+        <div class="cam-step__title">AI analyseert</div>
+        <p class="cam-step__desc">Scoresuggesties per speler per moment &mdash; via Gemini AI</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUNDEL SECTIE ===== -->
+  <section class="cam-bundles" id="bundels">
+    <h2>Kies jouw bundel</h2>
+    <div class="cam-bundle-grid">
+
+      <!-- Starter Bundle -->
+      <div class="cam-bundle-card">
+        <div class="cam-bundle-card__camera">Camera: Chameleon (XbotGo)</div>
+        <div class="cam-bundle-card__title">Starter Bundle</div>
+        <div class="cam-bundle-card__platform">Platform: Scout4All Club Pro</div>
+        <div class="cam-bundle-card__price">
+          Vanaf &euro;44,99/maand <small>+ camera</small>
+        </div>
+        <ul class="cam-bundle-features">
+          <li><span class="check">&#x2705;</span> Automatische camera-tracking</li>
+          <li><span class="check">&#x2705;</span> RTMP livestream</li>
+          <li><span class="check">&#x2705;</span> Evaluaties &amp; rapporten</li>
+          <li><span class="check">&#x2705;</span> Tot 3 scouts</li>
+        </ul>
+        <a
+          href="mailto:tom@4all-ventures.be?subject=Scout4All Cam Starter"
+          class="cam-bundle-cta cam-bundle-cta--outline">
+          Meer info
+        </a>
+      </div>
+
+      <!-- Elite Bundle (aanbevolen) -->
+      <div class="cam-bundle-card cam-bundle-card--recommended">
+        <div class="cam-bundle-badge">&#x2B50; Aanbevolen</div>
+        <div class="cam-bundle-card__camera">Camera: Falcon Elite (XbotGo) &mdash; &euro;909,99 eenmalig</div>
+        <div class="cam-bundle-card__title">Elite Bundle</div>
+        <div class="cam-bundle-card__platform">Platform: Scout4All Club Elite</div>
+        <div class="cam-bundle-card__price">
+          Vanaf &euro;149,99/maand <small>+ camera</small>
+        </div>
+        <ul class="cam-bundle-features">
+          <li><span class="check">&#x2705;</span> AI frameanalyse via Gemini</li>
+          <li><span class="check">&#x2705;</span> Automatische scoresuggesties</li>
+          <li><span class="check">&#x2705;</span> Highlight compilatie</li>
+          <li><span class="check">&#x2705;</span> Onbeperkte scouts</li>
+          <li><span class="check">&#x2705;</span> Publieke spelerprofielen</li>
+          <li><span class="check">&#x2705;</span> Livestream viewer</li>
+        </ul>
+        <a
+          href="https://xbotgo.com?ref=scout4all"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cam-bundle-cta cam-bundle-cta--primary">
+          Bestel nu &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== VERGELIJKING SECTIE ===== -->
+  <section class="cam-comparison" id="vergelijking">
+    <h2>Scout4All Cam vs. Veo</h2>
+    <div class="cam-table-wrap">
+      <table class="cam-comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Scout4All + XbotGo</th>
+            <th>Veo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Camera-abonnement</td>
+            <td>&#x274C; Niet nodig</td>
+            <td>&#x2705; &euro;49/maand</td>
+          </tr>
+          <tr>
+            <td>Eenmalige camera</td>
+            <td>&#x2705; &euro;909,99</td>
+            <td>&#x274C; Lease verplicht</td>
+          </tr>
+          <tr>
+            <td>AI analyse</td>
+            <td>&#x2705; Inbegrepen</td>
+            <td>&#x2705; Inbegrepen</td>
+          </tr>
+          <tr>
+            <td>Scouting platform</td>
+            <td>&#x2705; Inbegrepen</td>
+            <td>&#x274C; Niet inbegrepen</td>
+          </tr>
+          <tr>
+            <td>Spelerevaluaties</td>
+            <td>&#x2705; Inbegrepen</td>
+            <td>&#x274C; Niet inbegrepen</td>
+          </tr>
+          <tr>
+            <td>Publiek spelersprofiel</td>
+            <td>&#x2705; Inbegrepen</td>
+            <td>&#x274C; Niet inbegrepen</td>
+          </tr>
+          <tr>
+            <td>Prijs na 2 jaar</td>
+            <td>&#x2705; Lager</td>
+            <td>&#x274C; Hoger</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTIE ===== -->
+  <section class="cam-contact" id="contact">
+    <h2>Interesse in een demo of meer info?</h2>
+    <p>Ons team helpt je graag met de juiste bundel voor jouw club.</p>
+    <a
+      href="mailto:tom@4all-ventures.be?subject=Scout4All Cam info"
+      class="cam-contact__btn">
+      Contacteer ons &#x2192;
+    </a>
+  </section>
+
+</div>
+</section>
+</main>
+
+</div><!-- .page -->
+
+<script>
+/* ===================================================
+   Scout4All Cam — affiliate link constante
+   Pas aan zodra affiliate-ID ontvangen is van XbotGo
+   =================================================== */
+const XBOTGO_AFFILIATE = 'https://xbotgo.com?ref=scout4all';
+
+/* Anchor scroll voor #bundels CTA */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* Navbar dropdown (hergebruikt van bestaande site) */
+  document.querySelectorAll('.nav-link--dropdown').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.nav-item--dropdown');
+      parent.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-item--dropdown')) {
+      document.querySelectorAll('.nav-item--dropdown.open').forEach(el => el.classList.remove('open'));
+    }
+  });
+});
+</script>
+
+</body>
+</html>

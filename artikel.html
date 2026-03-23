@@ -280,7 +280,6 @@
                 Voetbal4All <span class="nav-link-caret">▾</span>
               </button>
               <div class="nav-dropdown">
-                <a href="https://scout.voetbal4all.eu" class="nav-dropdown-link" target="_blank" rel="noopener noreferrer">🔍 Scout4All</a>
                 <a href="gebruiksvoorwaarden.html" class="nav-dropdown-link">Gebruiksvoorwaarden</a>
                 <a href="privacyverklaring.html" class="nav-dropdown-link">Privacyverklaring</a>
                 <a href="contact.html" class="nav-dropdown-link">Contact</a>
@@ -627,46 +626,14 @@
     if (/^https?:\/\//i.test(s)) {
       try {
         const u = new URL(s);
-        const host = String(u.hostname || "").toLowerCase();
-        const apiHost = new URL(API_BASE).hostname.toLowerCase();
-
-        if (host === "image.pollinations.ai") {
+        if (String(u.hostname || "").toLowerCase() === "image.pollinations.ai") {
           return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
-        }
-
-        if (host === apiHost && u.pathname === "/api/image-proxy") {
-          const upstream = String(u.searchParams.get("url") || "").trim();
-          if (upstream) {
-            try {
-              const upstreamUrl = new URL(upstream);
-              const upstreamHost = String(upstreamUrl.hostname || "").toLowerCase();
-              if (upstreamHost === apiHost && upstreamUrl.pathname.startsWith("/images/")) {
-                return `${API_BASE}${upstreamUrl.pathname}${upstreamUrl.search || ""}`;
-              }
-            } catch (_) {}
-          }
         }
       } catch (_) {}
       return s;
     }
 
-    if (s.startsWith("/api/")) {
-      if (s.startsWith("/api/image-proxy?url=")) {
-        try {
-          const rel = new URL(`${API_BASE}${s}`);
-          const upstream = String(rel.searchParams.get("url") || "").trim();
-          if (upstream) {
-            const upstreamUrl = new URL(upstream);
-            const apiHost = new URL(API_BASE).hostname.toLowerCase();
-            const upstreamHost = String(upstreamUrl.hostname || "").toLowerCase();
-            if (upstreamHost === apiHost && upstreamUrl.pathname.startsWith("/images/")) {
-              return `${API_BASE}${upstreamUrl.pathname}${upstreamUrl.search || ""}`;
-            }
-          }
-        } catch (_) {}
-      }
-      return API_BASE + s;
-    }
+    if (s.startsWith("/api/")) return API_BASE + s;
     if (s.startsWith("/images/")) return API_BASE + s;
     if (s.startsWith("/assets/")) return s;
 
@@ -890,15 +857,7 @@
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
         const currentImg = resolveImageUrl(
-          article.image ||
-          article.image_path ||
-          article.imagePath ||
-          article.imageUrl ||
-          article.imageURL ||
-          article.image_url ||
-          article.publicPath ||
-          article.public_path ||
-          null
+          article.image || article.image_path || article.imageUrl || article.imageURL || null
         );
 
         if (!currentImg) {
@@ -1089,17 +1048,7 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = resolveImageUrl(
-      article.image ||
-      article.image_path ||
-      article.imagePath ||
-      article.imageUrl ||
-      article.imageURL ||
-      article.image_url ||
-      article.publicPath ||
-      article.public_path ||
-      null
-    ) || buildProxyImageFromTitle(title);
+    const imgUrl = resolveImageUrl(article.image || article.image_path || article.imageUrl || article.imageURL) || buildProxyImageFromTitle(title);
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
