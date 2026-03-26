@@ -640,6 +640,50 @@
     return s;
   }
 
+  function pickArticleImageValue(article){
+    if (!article || typeof article !== "object") return null;
+
+    const rootCandidates = [
+      article.image_path,
+      article.imagePath,
+      article.publicPath,
+      article.public_path,
+      article.imageUrl,
+      article.image_url,
+      article.path,
+      article.url,
+      article.href,
+      article.src
+    ];
+
+    for (const val of rootCandidates) {
+      if (val != null && String(val).trim()) return val;
+    }
+
+    const nested = article.image;
+    if (nested == null) return null;
+    if (typeof nested === "string") return nested;
+    if (typeof nested === "object") {
+      const nestedCandidates = [
+        nested.image,
+        nested.image_url,
+        nested.image_path,
+        nested.imagePath,
+        nested.publicPath,
+        nested.public_path,
+        nested.path,
+        nested.url,
+        nested.href,
+        nested.src
+      ];
+      for (const val of nestedCandidates) {
+        if (val != null && String(val).trim()) return val;
+      }
+    }
+
+    return null;
+  }
+
   async function fetchArticleListMetaById(id) {
     const safeId = String(id || "").trim();
     if (!safeId) return null;
@@ -652,16 +696,7 @@
       if (!hit) return null;
 
       return {
-        image: resolveImageUrl(
-          hit.image ||
-          hit.image_path ||
-          hit.imagePath ||
-          hit.imageUrl ||
-          hit.image_url ||
-          hit.publicPath ||
-          hit.public_path ||
-          null
-        ),
+        image: resolveImageUrl(pickArticleImageValue(hit)),
         title: String(hit.title || "").trim(),
         snippet: String(hit.snippet || hit.summary || hit.standfirst || "").trim(),
       };
@@ -880,14 +915,8 @@
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
         const currentImg = resolveImageUrl(
-          article.image ||
-          article.image_path ||
-          article.imagePath ||
-          article.imageUrl ||
+          pickArticleImageValue(article) ||
           article.imageURL ||
-          article.image_url ||
-          article.publicPath ||
-          article.public_path ||
           null
         );
 
@@ -1086,14 +1115,8 @@
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
     const imgUrl = resolveImageUrl(
-      article.image ||
-      article.image_path ||
-      article.imagePath ||
-      article.imageUrl ||
+      pickArticleImageValue(article) ||
       article.imageURL ||
-      article.image_url ||
-      article.publicPath ||
-      article.public_path ||
       null
     );
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
