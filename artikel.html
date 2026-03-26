@@ -640,7 +640,7 @@
     return s;
   }
 
-  async function fetchArticleListImageById(id) {
+  async function fetchArticleListMetaById(id) {
     const safeId = String(id || "").trim();
     if (!safeId) return null;
 
@@ -651,16 +651,22 @@
       const hit = items.find((it) => String(it?.id || "").trim() === safeId);
       if (!hit) return null;
 
-      return resolveImageUrl(
-        hit.image ||
-        hit.image_path ||
-        hit.imagePath ||
-        hit.imageUrl ||
-        hit.image_url ||
-        null
-      );
+      return {
+        image: resolveImageUrl(
+          hit.image ||
+          hit.image_path ||
+          hit.imagePath ||
+          hit.imageUrl ||
+          hit.image_url ||
+          hit.publicPath ||
+          hit.public_path ||
+          null
+        ),
+        title: String(hit.title || "").trim(),
+        snippet: String(hit.snippet || hit.summary || hit.standfirst || "").trim(),
+      };
     } catch (e) {
-      console.warn("[ARTIKEL] fetchArticleListImageById failed:", e?.message || e);
+      console.warn("[ARTIKEL] fetchArticleListMetaById failed:", e?.message || e);
       return null;
     }
   }
@@ -670,6 +676,23 @@
     const prompt = `${safeTitle} football soccer match stadium, cinematic, realistic, blue glow, football context, professional sports photography, stadium atmosphere, dramatic lighting, no text, no logos, no watermark`;
     const upstream = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=630&nologo=true&model=flux`;
     return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(upstream)}`;
+  }
+
+  function cleanDisplayTitle(rawTitle) {
+    let s = String(rawTitle || "").trim();
+    if (!s) return "Voetbal4All Artikel";
+
+    s = s.replace(/\bVP\b/g, "");
+    s = s.replace(/\bVI\b/g, "");
+    s = s.replace(/\bNOS\b/g, "");
+    s = s.replace(/\bHLN\b/g, "");
+    s = s.replace(/\bAD\b/g, "");
+
+    s = s.replace(/\s*[\-|–|—|·|\|]\s*(Voetbalprimeur|Voetbal International|VI\.nl|NOS|HLN|AD|De Telegraaf)\s*$/i, "");
+    s = s.replace(/\(\s*(VP|VI|NOS|HLN|AD)\s*\)\s*$/i, "");
+    s = s.replace(/\s{2,}/g, " ").trim();
+
+    return s || "Voetbal4All Artikel";
   }
 
   function escapeXml(s) {
@@ -857,14 +880,29 @@
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
         const currentImg = resolveImageUrl(
-          article.image || article.image_path || article.imageUrl || article.imageURL || null
+          article.image ||
+          article.image_path ||
+          article.imagePath ||
+          article.imageUrl ||
+          article.imageURL ||
+          article.image_url ||
+          article.publicPath ||
+          article.public_path ||
+          null
         );
 
-        if (!currentImg) {
-          const fallbackImg = await fetchArticleListImageById(articleId);
-          if (fallbackImg) {
-            article.image = fallbackImg;
-          }
+        const listMeta = await fetchArticleListMetaById(articleId);
+
+        if (!currentImg && listMeta?.image) {
+          article.image = listMeta.image;
+        }
+
+        if (!String(article.title || "").trim() && listMeta?.title) {
+          article.title = listMeta.title;
+        }
+
+        if (!String(article.snippet || "").trim() && listMeta?.snippet) {
+          article.snippet = listMeta.snippet;
         }
 
         console.log('[ARTIKEL] ✅ Article found via API:', article.title);
@@ -1010,7 +1048,7 @@
     }
 
     
-    const title = article.title || 'Voetbal4All Artikel';
+    const title = cleanDisplayTitle(article.title || 'Voetbal4All Artikel');
     document.getElementById('page-title').textContent = title + ' - Voetbal4All';
 
         // Dynamic canonical URL
@@ -1025,8 +1063,7 @@
     document.getElementById('page-description').setAttribute('content', article.snippet || '');
     document.getElementById('og-description').setAttribute('content', article.snippet || '');
     
-    const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
-    document.getElementById('breadcrumb-title').textContent = shortTitle;
+    document.getElementById('breadcrumb-title').textContent = title;
     document.getElementById('article-title').textContent = title;
     document.getElementById('article-caption').textContent = 'Voetbal4All · ' + (article.country || 'Nieuws');
     
@@ -1048,7 +1085,17 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = resolveImageUrl(article.image || article.image_path || article.imageUrl || article.imageURL) || buildProxyImageFromTitle(title);
+    const imgUrl = resolveImageUrl(
+      article.image ||
+      article.image_path ||
+      article.imagePath ||
+      article.imageUrl ||
+      article.imageURL ||
+      article.image_url ||
+      article.publicPath ||
+      article.public_path ||
+      null
+    );
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
