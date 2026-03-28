@@ -763,58 +763,14 @@
     return `${s}${sep}v=${Date.now()}`;
   }
 
-  async function preloadImage(url) {
-    const src = String(url || '').trim();
-    if (!src) return false;
-
-    return await new Promise((resolve) => {
-      const img = new Image();
-      img.decoding = 'async';
-      img.referrerPolicy = 'no-referrer';
-      img.onload = () => resolve(true);
-      img.onerror = () => resolve(false);
-      img.src = src;
-    });
-  }
-
   async function resolveBestArticleImage(article, articleId) {
     const direct = extractArticleImageSource(article);
-    if (direct) {
-      const ok = await preloadImage(direct);
-      if (ok) return direct;
-
-      const directRetry = appendNoCache(direct);
-      if (directRetry !== direct) {
-        const okRetry = await preloadImage(directRetry);
-        if (okRetry) return directRetry;
-      }
-    }
+    if (direct) return direct;
 
     const listFallback = await fetchArticleListImageById(articleId, article);
-    if (listFallback) {
-      const ok = await preloadImage(listFallback);
-      if (ok) return listFallback;
+    if (listFallback) return listFallback;
 
-      const listRetry = appendNoCache(listFallback);
-      if (listRetry !== listFallback) {
-        const okRetry = await preloadImage(listRetry);
-        if (okRetry) return listRetry;
-      }
-    }
-
-    const proxyFallback = buildProxyImageFromTitle(article?.title || 'Voetbal4All');
-    if (proxyFallback) {
-      const ok = await preloadImage(proxyFallback);
-      if (ok) return proxyFallback;
-
-      const proxyRetry = appendNoCache(proxyFallback);
-      if (proxyRetry !== proxyFallback) {
-        const okRetry = await preloadImage(proxyRetry);
-        if (okRetry) return proxyRetry;
-      }
-    }
-
-    return null;
+    return buildProxyImageFromTitle(article?.title || 'Voetbal4All');
   }
 
   async function fetchArticleListImageById(id, article = null) {
@@ -1228,7 +1184,7 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = extractArticleImageSource(article) || resolveViaSharedImageUtil(ARTICLE_IMAGE_FALLBACK) || ARTICLE_IMAGE_FALLBACK;
+    const imgUrl = extractArticleImageSource(article) || buildProxyImageFromTitle(title);
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
