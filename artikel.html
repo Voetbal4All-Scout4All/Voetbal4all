@@ -765,12 +765,15 @@
 
   async function resolveBestArticleImage(article, articleId) {
     const direct = extractArticleImageSource(article);
-    if (direct) return direct;
+    if (direct) return { url: direct, listHit: null };
 
-    const listFallback = await fetchArticleListImageById(articleId, article);
-    if (listFallback) return listFallback;
+    const listHit = await fetchArticleListImageById(articleId, article);
+    if (listHit) {
+      const listHitUrl = extractArticleImageSource(listHit);
+      if (listHitUrl) return { url: listHitUrl, listHit };
+    }
 
-    return buildProxyImageFromTitle(article?.title || 'Voetbal4All');
+    return { url: buildProxyImageFromTitle(article?.title || 'Voetbal4All'), listHit: null };
   }
 
   async function fetchArticleListImageById(id, article = null) {
@@ -784,19 +787,19 @@
       const json = await fetchJsonWithRetry(listUrl, { tries: 2, timeoutMs: 7000, baseDelayMs: 400 });
       const items = Array.isArray(json?.items) ? json.items : [];
 
+      const norm = (s) => String(s || "").trim().toLowerCase();
       const hit = items.find((it) => {
         const itemId = String(it?.id || "").trim();
-        const itemTitle = String(it?.title || "").trim().toLowerCase();
+        const itemTitle = norm(it?.title);
         const itemCanonical = String(it?.canonical_url || it?.url || it?.link || "").trim();
         return (
           (safeId && itemId === safeId) ||
           (targetCanonical && itemCanonical && itemCanonical === targetCanonical) ||
-          (targetTitle && itemTitle && itemTitle === targetTitle)
+          (targetTitle && itemTitle && (itemTitle === targetTitle || itemTitle.includes(targetTitle) || targetTitle.includes(itemTitle)))
         );
       });
 
-      if (!hit) return null;
-      return extractArticleImageSource(hit);
+      return hit || null;
     } catch (e) {
       console.warn("[ARTIKEL] fetchArticleListImageById failed:", e?.message || e);
       return null;
@@ -994,7 +997,29 @@
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
-        const bestImg = await resolveBestArticleImage(article, articleId);
+        const bestImageResult = await resolveBestArticleImage(article, articleId);
+        const bestImg = bestImageResult?.url || null;
+        const listHit = bestImageResult?.listHit || null;
+
+        if (listHit && typeof listHit === 'object') {
+          article.image = article.image || listHit.image;
+          article.image_path = article.image_path || listHit.image_path;
+          article.imagePath = article.imagePath || listHit.imagePath;
+          article.image_url = article.image_url || listHit.image_url;
+          article.imageUrl = article.imageUrl || listHit.imageUrl;
+          article.imageURL = article.imageURL || listHit.imageURL;
+          article.publicPath = article.publicPath || listHit.publicPath;
+          article.path = article.path || listHit.path;
+          article.url = article.url || listHit.url;
+          article.href = article.href || listHit.href;
+          article.src = article.src || listHit.src;
+          article.remoteUrl = article.remoteUrl || listHit.remoteUrl;
+          article.local = article.local || listHit.local;
+          article.generated = article.generated || listHit.generated;
+          article.original = article.original || listHit.original;
+          article._meta = article._meta || listHit._meta;
+        }
+
         if (bestImg) {
           article.image = bestImg;
           article.image_path = bestImg;
@@ -1184,7 +1209,7 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = extractArticleImageSource(article) || buildProxyImageFromTitle(title);
+    const imgUrl = extractArticleImageSource(article) || resolveImageUrl(article.image) || buildProxyImageFromTitle(title);
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
