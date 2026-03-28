@@ -579,6 +579,21 @@
       }
     }
 
+    function isPlaceholderLikeUrl(value) {
+      const s = String(value || '').trim().toLowerCase();
+      if (!s) return true;
+      return (
+        s === 'placeholder' ||
+        s === 'placeholder.svg' ||
+        s.endsWith('/placeholder.svg') ||
+        s.includes('placeholder.svg?') ||
+        s.includes('/images/placeholder') ||
+        s.includes('afbeelding wordt verwerkt') ||
+        s.includes('afbeelding tijdelijk niet beschikbaar') ||
+        s.startsWith('data:image/svg+xml')
+      );
+    }
+
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     async function fetchJsonWithRetry(url, { timeoutMs = 6000, tries = 3, baseDelayMs = 650 } = {}) {
@@ -609,7 +624,7 @@
     if (!raw) return null;
 
     const sharedResolvedDirect = resolveViaSharedImageUtil(raw);
-    if (sharedResolvedDirect) return sharedResolvedDirect;
+    if (sharedResolvedDirect && !isPlaceholderLikeUrl(sharedResolvedDirect)) return sharedResolvedDirect;
 
     let s = "";
     if (typeof raw === "string") {
@@ -661,7 +676,7 @@
       lower.startsWith("/images/placeholder") ||
       lower.includes("/images/placeholder")
     ) {
-      return resolveViaSharedImageUtil(ARTICLE_IMAGE_FALLBACK) || ARTICLE_IMAGE_FALLBACK;
+      return null;
     }
 
     if (lower.startsWith("data:image/")) return s;
@@ -732,13 +747,13 @@
 
     for (const candidate of candidates) {
       const sharedResolved = resolveViaSharedImageUtil(candidate);
-      if (sharedResolved && !/placeholder\.svg/i.test(sharedResolved)) return sharedResolved;
+      if (sharedResolved && !isPlaceholderLikeUrl(sharedResolved)) return sharedResolved;
 
       const resolved = resolveImageUrl(candidate);
-      if (resolved && !/placeholder\.svg/i.test(resolved)) return resolved;
+      if (resolved && !isPlaceholderLikeUrl(resolved)) return resolved;
     }
 
-    return resolveViaSharedImageUtil(ARTICLE_IMAGE_FALLBACK) || ARTICLE_IMAGE_FALLBACK;
+    return null;
   }
 
   function appendNoCache(url) {
@@ -1213,7 +1228,7 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = extractArticleImageSource(article);
+    const imgUrl = extractArticleImageSource(article) || resolveViaSharedImageUtil(ARTICLE_IMAGE_FALLBACK) || ARTICLE_IMAGE_FALLBACK;
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
