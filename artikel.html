@@ -573,7 +573,7 @@
       try {
         if (!window.V4AImage || typeof window.V4AImage.resolve !== 'function') return null;
         const resolved = window.V4AImage.resolve(raw || ARTICLE_IMAGE_FALLBACK);
-        return resolved ? String(resolved).trim() : null;
+        return resolved ? unwrapProxiedBackendImageUrl(String(resolved).trim()) : null;
       } catch (_) {
         return null;
       }
@@ -593,6 +593,39 @@
         s.startsWith('data:image/svg+xml')
       );
     }
+
+    function unwrapProxiedBackendImageUrl(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return raw;
+
+  try {
+    const absolute = raw.startsWith('http://') || raw.startsWith('https://')
+      ? raw
+      : new URL(raw, window.location.origin).toString();
+    const u = new URL(absolute);
+    const apiBaseUrl = new URL(API_BASE);
+
+    const isProxyPath = u.pathname === '/api/image-proxy' || u.pathname.endsWith('/api/image-proxy');
+    if (!isProxyPath) return raw;
+
+    const encoded = u.searchParams.get('url');
+    if (!encoded) return raw;
+
+    const decoded = decodeURIComponent(encoded);
+    const inner = new URL(decoded);
+
+    const sameBackendHost = inner.hostname === apiBaseUrl.hostname;
+    const backendImagesPath = inner.pathname.startsWith('/images/');
+
+    if (sameBackendHost && backendImagesPath) {
+      return inner.toString();
+    }
+
+    return raw;
+  } catch (_) {
+    return raw;
+  }
+}
 
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -681,14 +714,21 @@
 
     if (lower.startsWith("data:image/")) return s;
     if (/^https?:\/\//i.test(s)) {
-      try {
-        const u = new URL(s);
-        if (String(u.hostname || "").toLowerCase() === "image.pollinations.ai") {
-          return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
-        }
-      } catch (_) {}
-      return s;
+  try {
+    const u = new URL(s);
+    const apiBaseUrl = new URL(API_BASE);
+    const hostname = String(u.hostname || '').toLowerCase();
+
+    if (hostname === String(apiBaseUrl.hostname || '').toLowerCase() && u.pathname.startsWith('/images/')) {
+      return u.toString();
     }
+
+    if (hostname === 'image.pollinations.ai') {
+      return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(s)}`;
+    }
+  } catch (_) {}
+  return s;
+}
 
     if (s.startsWith("/api/")) return API_BASE + s;
     if (s.startsWith("api/")) return API_BASE + "/" + s;
