@@ -567,6 +567,18 @@
     // NOTE: we keep the UI states below; if ID is missing/invalid we show the error state.
     const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
 
+    const ARTICLE_IMAGE_FALLBACK = 'assets/img/placeholder.svg';
+
+    function resolveViaSharedImageUtil(raw) {
+      try {
+        if (!window.V4AImage || typeof window.V4AImage.resolve !== 'function') return null;
+        const resolved = window.V4AImage.resolve(raw || ARTICLE_IMAGE_FALLBACK);
+        return resolved ? String(resolved).trim() : null;
+      } catch (_) {
+        return null;
+      }
+    }
+
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
     async function fetchJsonWithRetry(url, { timeoutMs = 6000, tries = 3, baseDelayMs = 650 } = {}) {
@@ -595,6 +607,9 @@
 
   function resolveImageUrl(raw) {
     if (!raw) return null;
+
+    const sharedResolvedDirect = resolveViaSharedImageUtil(raw);
+    if (sharedResolvedDirect) return sharedResolvedDirect;
 
     let s = "";
     if (typeof raw === "string") {
@@ -646,7 +661,7 @@
       lower.startsWith("/images/placeholder") ||
       lower.includes("/images/placeholder")
     ) {
-      return null;
+      return resolveViaSharedImageUtil(ARTICLE_IMAGE_FALLBACK) || ARTICLE_IMAGE_FALLBACK;
     }
 
     if (lower.startsWith("data:image/")) return s;
@@ -684,6 +699,23 @@
       article.path,
       article.url,
       article.href,
+      article.src,
+      article.remoteUrl,
+      article.local?.publicPath,
+      article.local?.image_path,
+      article.local?.imagePath,
+      article.local?.path,
+      article.local?.url,
+      article.generated?.publicPath,
+      article.generated?.image_path,
+      article.generated?.imagePath,
+      article.generated?.path,
+      article.generated?.url,
+      article.original?.publicPath,
+      article.original?.image_path,
+      article.original?.imagePath,
+      article.original?.path,
+      article.original?.url,
       article._meta?.image,
       article._meta?.image_path,
       article._meta?.imagePath,
@@ -693,15 +725,20 @@
       article._meta?.publicPath,
       article._meta?.path,
       article._meta?.url,
-      article._meta?.href
+      article._meta?.href,
+      article._meta?.src,
+      article._meta?.remoteUrl
     ];
 
     for (const candidate of candidates) {
+      const sharedResolved = resolveViaSharedImageUtil(candidate);
+      if (sharedResolved && !/placeholder\.svg/i.test(sharedResolved)) return sharedResolved;
+
       const resolved = resolveImageUrl(candidate);
-      if (resolved) return resolved;
+      if (resolved && !/placeholder\.svg/i.test(resolved)) return resolved;
     }
 
-    return null;
+    return resolveViaSharedImageUtil(ARTICLE_IMAGE_FALLBACK) || ARTICLE_IMAGE_FALLBACK;
   }
 
   function appendNoCache(url) {
