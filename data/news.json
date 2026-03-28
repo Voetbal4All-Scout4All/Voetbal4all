@@ -1,16 +1,115 @@
 {
-  "generatedAt": "2026-03-27T20:43:26.759Z",
+  "generatedAt": "2026-03-25T11:00:23.544Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Richards, Robinson injuries leave U.S. shorthanded",
-      "link": "https://www.espn.com/soccer/story/_/id/48322909/chris-richards-miles-robinson-injury-usa-belgium-portugal",
-      "summary": "Miles Robinson will miss the United States' friendlies against Belgium and Portugal because of a groin injury and Chris Richards is likely to sit out both games with a knee problem.",
-      "publishedAt": "2026-03-27T21:13:38.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Toby Alderweireld rêve d'un grand retour... mais quand ? \"S'ils ont besoin de moi, qu'ils m'appellent\"",
+      "link": "https://www.walfoot.be/news/2026-03-25/toby-alderweireld-reve-dun-grand-retour-mais-quand--sils-ont-besoin-de-moi-quils-mappellent",
+      "summary": "Consultant pour la télévision du nord du pays depuis la fin de sa carrière sportive, Toby Alderweireld rêve d'un retour à l'Antwerp, dans un rôle important. L'appel du pied de l'ancien défenseur des Diables Rouges est on ne peut plus clair.",
+      "publishedAt": "2026-03-25T11:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Het Twentse toptalent dat aanvoerder Robin Pröpper uit de basis houdt",
+      "link": "https://www.vi.nl/pro/het-twentse-toptalent-dat-aanvoerder-robin-pr-pper-uit-de-basis-houdt",
+      "summary": "Een duivels dilemma? Niet voor John van den Brom. De trainer van FC Twente gaf Ruud Nijstad (18) op bezoek bij Fortuna Sittard opnieuw de voorkeur boven Robin Pröpper. De aanvoerder van De Tukkers lijkt zijn basisplaats kwijt te zijn.",
+      "publishedAt": "2026-03-25T11:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Dit keer lukt het wel: Bilal El Khannouss kan met een gerust hart naar het WK",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-25/dit-keer-lukt-het-wel-bilal-el-khannouss-kan-met-een-gerust-hart-naar-het-wk",
+      "summary": "Bilal El Khannouss blijft ook de komende jaren actief bij VfB Stuttgart. De Duitse club heeft namelijk beslist om de aankoopoptie in zijn huurovereenkomst met Leicester City te lichten.",
+      "publishedAt": "2026-03-25T11:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Onwaarschijnlijk: hoe de derde van de play-offs zonder Europees ticket zou kunnen eindigen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-25/onwaarschijnlijk-hoe-de-derde-van-de-play-offs-zonder-europees-ticket-zou-kunnen-eindigen",
+      "summary": "Dit is de allerlaatste keer dat play-offs zullen beslissen wie landskampioen wordt in de Jupiler Pro League. Al hoopt elke ploeg uit de top 6 mikt vooral op een Europees ticket voor volgend seizoen.",
+      "publishedAt": "2026-03-25T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Door de grote poort: Mohamed Salah is straks geschiedenis",
+      "link": "https://www.vi.nl/pro/door-de-grote-poort-mohamed-salah-is-straks-geschiedenis",
+      "summary": "Zoals dat gaat bij iconen die afscheid nemen: er komt een bak met herinneringen los, verhalen die samen een compleet beeld schetsen van de impact die iemand heeft gemaakt. In dit geval op de levens van veel Liverpool-supporters. Mohamed Salah heeft een afscheid door de grote poort verdiend.",
+      "publishedAt": "2026-03-25T10:30:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Improbable mais pas impossible : comment le troisième des Playoffs pourrait finir sans ticket européen",
+      "link": "https://www.walfoot.be/news/2026-03-25/improbable-mais-pas-impossible--comment-le-troisieme-des-playoffs-pourrait-finir-sans-ticket-europeen",
+      "summary": "Pour la dernière fois, les Playoffs s'apprêtent à rebattre les cartes de toute une saison. Dans le top 6, tout le monde vise une place européenne pour la saison prochaine.",
+      "publishedAt": "2026-03-25T10:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "📷 OFFICIEEL KV Mechelen neemt afscheid van clubmonument",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-25/officieel-kv-mechelen-neemt-afscheid-van-clubmonument",
+      "summary": "KV Mechelen ziet Sven Swinnen na 27 jaar vertrekken. Hij gaat aan de slag bij de Belgische voetbalbond.",
+      "publishedAt": "2026-03-25T10:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Defour houdt zich niet in: dit worden de winnaars in de Champions' en Europe Play-offs",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-25/defour-houdt-zich-niet-dit-worden-de-winnaars-in-de-champions-en-europe-play-offs",
+      "summary": "De reguliere fase van de Jupiler Pro League zit erop. Steven Defour doet nu al een voorspelling wie er als winnaar uit de bus zal komen.",
+      "publishedAt": "2026-03-25T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Ook bod van 200 miljoen euro shockeert Bayern niet: 'Gaan toekomst in met Olise'",
+      "link": "https://www.vi.nl/nieuws/ook-bod-van-200-miljoen-euro-shockeert-bayern-niet-gaan-toekomst-in-met-olise",
+      "summary": "Met een geschatte marktwaarde van 140 miljoen euro is Michael Olise van Bayern München in potentie de duurste Bundesliga-speler, maar tot een verkoop gaat het deze zomer niet komen. De clubleiding van Bayern is heel stellig in Duitse media.",
+      "publishedAt": "2026-03-25T10:14:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Zwalkend Spurs sprak al met mogelijke opvolger Tudor'",
+      "link": "https://www.vi.nl/nieuws/dortmund-houdt-schlotterbeck-uit-handen-real-barcelona-wil-door-met-cancelo",
+      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-03-25T10:05:58.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +117,10 @@
       "sourceSlug": "espn-soccer",
       "country": "ES",
       "flag": "🌍",
-      "title": "Raphinha ruled out for 5 weeks in blow to Barça",
-      "link": "https://www.espn.com/soccer/story/_/id/48323145/raphinha-injury-barcelona-brazil-hamstring",
-      "summary": "Barcelona forward Raphinha faces five weeks on the sidelines after suffering a hamstring injury while on international duty, the club have confirmed.",
-      "publishedAt": "2026-03-27T21:13:38.000Z"
+      "title": "Sources: Barça to listen to offers for Torres",
+      "link": "https://www.espn.com/soccer/story/_/id/48296409/barcelona-listen-offers-ferran-torres-search-two-strikers-sources",
+      "summary": "Barcelona are considering an attacking shake-up this summer which would include listening to offers for Ferran Torres and the arrival of up to two new forwards, various sources have told ESPN.",
+      "publishedAt": "2026-03-25T10:01:39.000Z"
     },
     {
       "type": "rss",
@@ -29,43 +128,21 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Casemiro: Man Utd decision 'made and done'",
-      "link": "https://www.espn.com/soccer/story/_/id/48320903/casemiro-man-united-decision-made-done",
-      "summary": "Casemiro has dismissed the idea of reversing his decision to leave Manchester United at the end of the season.",
-      "publishedAt": "2026-03-27T21:13:38.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "England v Uruguay: men’s international football friendly – live",
-      "link": "https://www.theguardian.com/football/live/2026/mar/27/england-v-uruguay-mens-international-football-friendly-live",
-      "summary": "⚽ Updates from the Wembley game; kick-off 7.45pm GMT ⚽ Live scores | Follow us on Bluesky | And email Scott The teams are out! England in that aforementioned red, Uruguay in their sky blue. Time for the anthems. God Save the King we all know about; the Uruguayan one really gets the juices flowing, though. And while we’re on the subject of Jonathan Wilson, which we kind of were, he tells a wonderful anecdote about that anthem during today’s edition of Football Weekly Extra. Just before the 45-minute mark should get you there; enjoy, enjoy. We’ll be off in a couple of seconds. Uruguay are not heading into this match in the finest of fettle. Jonathan Wilson reports on that 5-1 shellacking by the USA and some Luis Suárez-infused rancour. Continue reading...",
-      "publishedAt": "2026-03-27T20:35:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Oranje gaat met gelijke stand de kleedkamers opzoeken voor de rust",
-      "link": "https://www.vi.nl/nieuws/vi-live-oranje-gaat-met-gelijke-stand-de-kleedkamers-opzoeken-voor-de-rust",
-      "summary": "Het Nederlands elftal oefent vrijdag om 20.45 uur tegen Noorwegen. In deze editie van VI Live blijf je op de hoogte van de vriendschappelijke ontmoeting in de Johan Cruijff Arena.",
-      "publishedAt": "2026-03-27T20:33:18.000Z"
+      "title": "Salah to leave Liverpool at end of the season",
+      "link": "https://www.espn.com/soccer/story/_/id/48297617/mohamed-salah-leave-liverpool-end-season",
+      "summary": "Mohamed Salah will leave Liverpool at the end of the season, the Premier League club announced Tuesday.",
+      "publishedAt": "2026-03-25T10:01:38.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "The USMNT's weakness at World Cups has been a lack of depth. Has that finally changed?",
-      "link": "https://www.espn.com/soccer/story/_/id/48308993/can-usmnt-depth-2026-world-cup-make-difference-results-finish",
-      "summary": "World Cup-winning teams need more than their starting 11, but the U.S. men's national team never had enough good bench options. Maybe that has finally changed?",
-      "publishedAt": "2026-03-27T20:33:18.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Carragher: Salah PL legacy eclipses Ronaldo's",
+      "link": "https://www.espn.com/soccer/story/_/id/48302113/mohamed-salah-premier-league-legacy-greater-cristiano-ronaldo-jamie-carragher",
+      "summary": "Former Liverpool defender Jamie Carragher believes that Mohamed Salah's Premier League legacy eclipses that of Cristiano Ronaldo with only Arsenal great Thierry Henry above him.",
+      "publishedAt": "2026-03-25T10:01:38.000Z"
     },
     {
       "type": "rss",
@@ -73,21 +150,43 @@
       "sourceSlug": "espn-soccer",
       "country": "US",
       "flag": "🇺🇸",
-      "title": "USMNT players reveal what 'strict' but 'loving' Pochettino is like behind the scenes",
-      "link": "https://www.espn.com/soccer/story/_/id/48281342/usmnt-players-pochettino-coach-exclusive-interviews-world-cup-2026",
-      "summary": "The USMNT used to be \"inmates running the asylum,\" but Pochettino has transformed the culture.",
-      "publishedAt": "2026-03-27T20:33:18.000Z"
+      "title": "Roldan: 'Huge gap' in U.S. midfield without Adams",
+      "link": "https://www.espn.com/soccer/story/_/id/48297948/roldan-competitive-us-midfield-huge-gap-adams",
+      "summary": "United States midfielder Cristian Roldan said that upcoming friendlies against Belgium and Portugal are a \"great opportunity\" for the contingent of USMNT midfielders to show what they're capable of.",
+      "publishedAt": "2026-03-25T10:01:38.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
       "flag": "🌍",
-      "title": "Geblesseerde Lukaku ligt overhoop met Napoli",
-      "link": "https://www.vi.nl/nieuws/geblesseerde-lukaku-ligt-overhoop-met-napoli",
-      "summary": "De situatie rond Romelu Lukaku is behoorlijk op scherp komen te staan. De spits van Napoli verblijft nog altijd bij de Belgische nationale ploeg om daar aan zijn fitheid te werken, maar dat is tegen het zere been van de Italiaanse club, die Lukaku zo snel mogelijk terug wil hebben en inmiddels een deadline heeft gesteld.",
-      "publishedAt": "2026-03-27T20:28:00.000Z"
+      "title": "The unlikely story of the first English manager to reach a World Cup final",
+      "link": "https://www.theguardian.com/football/the-set-pieces-blog/2026/mar/25/george-raynor-first-english-manager-world-cup-final-sweden-olympic-gold",
+      "summary": "George Raynor led Sweden to Olympic glory and a World Cup final, but he was never appreciated back home By The Set Pieces Nobody wanted him. An ambitious young English coach who was bursting with new ideas grew more and more frustrated as his efforts to land a job in his homeland fell flat. Application after application came to nothing, his reputation as a lower-league player meaning he rarely received a reply. But then came hope. A new opportunity opened up in Sweden. It was a relative football outpost, but it was the foothold the coach had been craving. George Raynor was finally going to be a football manager. Raynor’s big break in 1946 has a few parallels to the path that Graham Potter has taken in management. Potter is unlikely to win an Olympic gold medal or lead Sweden to the World Cup final but that was not the aim for Raynor either. Swedish football was very different when Raynor took the job in the 1940s. The domestic league maintained a staunch amateur philosophy that extended to the national side. Continue reading...",
+      "publishedAt": "2026-03-25T10:00:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bientôt réunis chez les Diables ? Le frère de Nathan Ngoy signe son premier contrat professionnel en Belgique",
+      "link": "https://www.walfoot.be/news/2026-03-25/bientot-reunis-chez-les-diables-le-frere-de-nathan-ngoy-signe-son-premier-contrat-professionnel-en-belgique",
+      "summary": "Nathan Ngoy n'est plus le seul joueur professionnel de sa famille : son frère Yanis vient de signer son premier contrat professionnel à Saint-Trond.",
+      "publishedAt": "2026-03-25T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Standard komt met stevig finaal statement na incidenten van match tegen Antwerp",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-03-25/standard-komt-met-stevig-finaal-statement-na-incidenten-van-match-tegen-antwerp",
+      "summary": "Standard kan de onderbroken wedstrijd tegen Royal Antwerp FC eindelijk afsluiten. Die dateerde ondertussen al van 17 oktober vorig jaar.",
+      "publishedAt": "2026-03-25T10:00:00.000Z"
     },
     {
       "type": "rss",
@@ -95,32 +194,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Johan Cruijff Arena staat in minuut veertien stil bij overlijden Cruijff",
-      "link": "https://www.vi.nl/nieuws/johan-cruijff-arena-staat-in-minuut-veertien-stil-bij-overlijden-cruijff",
-      "summary": "In de Johan Cruijff Arena werd vrijdagavond stilgestaan bij het overlijden van Johan Cruijff, dinsdag tien jaar geleden. In de veertiende minuut van de oefeninterland tussen Nederland en Noorwegen gingen de toeschouwers staan om te applaudisseren.",
-      "publishedAt": "2026-03-27T20:08:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Bondscoach Senegal: 'Prijzen worden op het veld gewonnen'",
-      "link": "https://www.vi.nl/video/bondscoach-senegal-prijzen-worden-op-het-veld-gewonnen",
-      "summary": "Bondscoach Pape Thiaw van Senegal beschouwt zijn team nog steeds als de Afrikaanse kampioen, de recente uitspraak van de CAF ten spijt. De Afrikaanse federatie kende de titel aan Marokko toe omdat de spelers van Senegal het veld verlieten tijdens de finale.",
-      "publishedAt": "2026-03-27T19:58:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "EK-hoop vloeit weg bij Zechiël: 'Het is om je te schamen, schandalig'",
-      "link": "https://www.vi.nl/nieuws/ek-hoop-vloeit-weg-bij-zechi-l-het-is-om-je-te-schamen-schandalig",
-      "summary": "Gjivai Zechiël stond met een vervelend gevoel voor de camera vrijdagavond. De middenvelder van FC Utrecht scoorde twee keer voor Jong Oranje, maar verloor wel het cruciale EK-kwalificatieduel van Noorwegen . Hij vindt dat zijn ploeg zich moet schamen.",
-      "publishedAt": "2026-03-27T19:53:14.000Z"
+      "title": "Romário waarschuwt Ancelotti: 'Een ster als Neymar moet altijd spelen'",
+      "link": "https://www.vi.nl/nieuws/rom-rio-waarschuwt-ancelotti-een-ster-als-neymar-moet-altijd-spelen",
+      "summary": "Romário heeft zich kritisch uitgelaten over Carlo Ancelotti. De oud-PSV'er snapt niet dat Neymar niet is opgeroepen voor de oefenwedstrijden van Brazilië tegen Frankrijk en Kroatië. 'Talent mag niet worden verspild.'",
+      "publishedAt": "2026-03-25T09:47:00.000Z"
     },
     {
       "type": "rss",
@@ -128,54 +205,54 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Tiger Woods involved in car crash in Florida",
-      "link": "https://www.skysports.com/golf/news/12040/13525241/tiger-woods-has-been-involved-in-car-crash-in-jupiter-island-florida",
-      "summary": "Tiger Woods has been involved in a car crash in Jupiter Island, Florida on Friday, confirmed by the Sheriff's Office for Martin County.",
-      "publishedAt": "2026-03-27T19:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Super League's 30th birthday LIVE! Hull KR running riot versus St Helens",
-      "link": "https://www.skysports.com/rugby-league/live-blog/12040/13525237/super-leagues-30th-birthday-live-hull-kr-vs-st-helens-updates-video-scores-analysis",
+      "title": "Alonso to miss media day ahead of Japanese GP due to birth of first child",
+      "link": "https://www.skysports.com/f1/live-blog/12040/12466779/f1-news-rumours-and-gossip-formula-1-latest-updates-on-teams-driver-transfer-market-and-contracts",
       "summary": "",
-      "publishedAt": "2026-03-27T19:30:00.000Z"
+      "publishedAt": "2026-03-25T09:40:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Salah set completely new standards - Klopp",
-      "link": "https://www.bbc.com/sport/football/videos/cz67pzzv0j1o?at_medium=RSS&at_campaign=rss",
-      "summary": "Jurgen Klopp says Mohamed Salah is an \"all-time great\" at Liverpool and that he \"would not be surprised if he plays another six or seven years\" after the forward announced he will leave the club at the end of the season.",
-      "publishedAt": "2026-03-27T18:19:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Jürgen Klopp believes Mohamed Salah will be irreplaceable for Liverpool",
-      "link": "https://www.theguardian.com/football/2026/mar/27/jurgen-klopp-believes-mohamed-salah-will-be-irreplaceable-for-liverpool",
-      "summary": "Klopp tells former club to quickly move on from forward He calls his Anfield spell ‘a beautiful movie with a happy end’ Jürgen Klopp has described Mohamed Salah’s Liverpool career as “a beautiful movie with a happy end” and claimed the forward’s phenomenal output will be impossible to replace. Klopp was in charge when Liverpool signed Salah for an initial £34m from Roma in June 2017 and, despite the occasional row, remains close to the 33-year-old. The pair exchanged messages on Tuesday after Salah announced he would be leaving Liverpool at the end of the season, 12 months before his contract is due to expire. Continue reading...",
-      "publishedAt": "2026-03-27T18:00:05.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "ES",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "DE",
       "flag": "🌍",
-      "title": "Tennis set to kick-off at Real Madrid's ‌iconic Bernabeu stadium for Madrid Open",
-      "link": "https://www.skysports.com/tennis/news/12040/13525135/carlos-alcaraz-set-for-bernabeu-experience-as-real-madrids-8204stadium-to-install-practice-clay-tennis-court-for-madrid-open",
-      "summary": "Carlos Alcaraz could realise a ‌long-held dream by stepping onto the turf of Real Madrid's ‌Bernabeu Stadium, after Madrid Open organisers announced plans to install a practice court inside the iconic venue.",
-      "publishedAt": "2026-03-27T17:39:00.000Z"
+      "title": "Julien Duranville sur Nathan De Cat, son... beau-frère : \"Il n'aura pas de mal à s'adapter avec les Diables\"",
+      "link": "https://www.walfoot.be/news/2026-03-25/julien-duranville-sur-nathan-de-cat-son-beau-frere--il-naura-pas-de-mal-a-sadapter-avec-les-diables",
+      "summary": "Sélectionné avec les U21, Julien Duranville s'est exprimé sur la première convocation chez les Diables Rouges de... son beau-frère, Nathan De Cat, en couple avec la sœur du joueur prêté par Dortmund au FC Bâle.",
+      "publishedAt": "2026-03-25T09:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Salah's exit felt inevitable and then inconceivable: Examining Liverpool's huge loss",
+      "link": "https://www.espn.com/soccer/story/_/id/48298128/mohamed-salah-leaving-liverpool-reaction-analysis-transfers-beth-lindop",
+      "summary": "It's hard to imagine Liverpool without Mohamed Salah, but all good things must come to an end. Could his farewell include an FA Cup or Champions League trophy?",
+      "publishedAt": "2026-03-25T09:07:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Victoire, amende, huis clos : le Standard annonce la fin du dossier relatif au match arrêté contre l'Antwerp",
+      "link": "https://www.walfoot.be/news/2026-03-25/victoire-amende-huis-clos--le-standard-annonce-la-fin-du-dossier-relatif-au-match-arrete-contre-lantwerp",
+      "summary": "C'est la fin définitive du dossier lié à l'interruption de la rencontre entre le Standard et l'Antwerp. Les supporters ayant jeté des gobelets sur la pelouse devront payer une partie de l'amende de 50.000 € reçue par le club.",
+      "publishedAt": "2026-03-25T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "‘I can’t leave like a coward’: Romania’s Mircea Lucescu on illness and his World Cup dream at 80",
+      "link": "https://www.theguardian.com/football/2026/mar/25/i-cant-leave-like-a-coward-romanias-mircea-lucescu-on-illness-and-his-world-cup-dream-at-80",
+      "summary": "Head coach has been preparing for playoff against Turkey in hospital and sees job as ‘duty to Romanian football’ Mircea Lucescu is fighting for one last World Cup while at the same time battling his own body. He has lived through thousands of games as a player and manager but these could be the hardest of them all: two playoff games to take Romania to their first World Cup in 28 years. Lucescu is 80 years old now and has not been well – but he has lost none of his energy, nor love for the game. Since December he has been admitted to hospital on three occasions but here he is, with an espresso in front of him, discussing his long career, the playoff semi‑final against Turkey on Thursday and Ukraine, a place he used to call home. He does not, however, want to disclose the exact nature of his illness for fear that it will become the focus over the next few weeks. Continue reading...",
+      "publishedAt": "2026-03-25T08:00:01.000Z"
     },
     {
       "type": "rss",
@@ -183,21 +260,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "WSL derby weekend is here but glut of games could have diluting effect",
-      "link": "https://www.theguardian.com/football/2026/mar/27/wsl-derby-weekend-is-here-but-glut-of-games-could-have-diluting-effect",
-      "summary": "Organisers take advantage of no Premier League football with Manchester United v City and Arsenal-Spurs the highlights Derby weekend has arrived in the Women’s Super League and WSL2. Not one, not two, but six local rivalries will be reignited as the divisions try to capitalise on the men’s international break. Is it clever to schedule so many of these clashes on the same weekend though, and especially staging three top-flight ones on the same afternoon? Everton host Liverpool, Manchester United welcome Manchester City and Arsenal entertain Tottenham on Saturday, all within the space of six hours. The answer will probably lie in the attendances. Continue reading...",
-      "publishedAt": "2026-03-27T17:28:54.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Irreplaceable' Salah could play for seven more years - Klopp",
-      "link": "https://www.bbc.com/sport/football/articles/cdj7d0vv98go?at_medium=RSS&at_campaign=rss",
-      "summary": "Jurgen Klopp says Mohamed Salah could carry on playing until the age of 40 after the forward leaves Liverpool at the end of the season.",
-      "publishedAt": "2026-03-27T16:58:05.000Z"
+      "title": "Who was the first footballer to announce their international retirement? | The Knowledge",
+      "link": "https://www.theguardian.com/football/2026/mar/25/who-was-the-first-footballer-to-announce-their-international-retirement-knowledge",
+      "summary": "Plus: swift ascents up the pyramid, Steve Palmer’s maverick set of shirts and an infamous 2004 Olympic penalty Mail us with your questions and answers “During a rather animated discussion at the pub recently, the topic of footballers ‘retiring from international football’ came up,” says Edd Crick. “We were reminiscing about the days when footballers simply stopped being picked for international games, so who was the first to come out and declare their retirement this way?” We assumed this was a fairly modern development, but it goes back at least as far as the 1950s. Let’s look at the leading answers in reverse chronological order, starting with one of the stars of Italia 90. “Roger Milla is arguably responsible for popularising the concept of international retirement (not to mention elaborate goal celebrations) by famously unretiring at the request of the Cameroon president Paul Biya to play in the 1990 World Cup,” writes Tom Reed. “Milla had formally retired from playing for Cameroon at a jubilee event following victory in the 1988 Africa Cup of Nations.” Continue reading...",
+      "publishedAt": "2026-03-25T08:00:01.000Z"
     },
     {
       "type": "rss",
@@ -205,43 +271,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Djokovic withdraws from Monte-Carlo Masters",
-      "link": "https://www.skysports.com/tennis/news/12040/13525131/two-time-champion-novak-djokovic-8204has-withdrawn-from-the-monte-carlo-masters",
-      "summary": "Two-time champion Novak Djokovic ‌has withdrawn from the Monte-Carlo Masters, ‌tournament organisers said on Friday.",
-      "publishedAt": "2026-03-27T16:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Does Chukwuemeka show the demise of the 90-minute player?",
-      "link": "https://www.bbc.com/sport/football/articles/cq8wkyyv43ko?at_medium=RSS&at_campaign=rss",
-      "summary": "Is former Aston Villa and Chelsea midfielder Carney Chukwuemeka, who has made 97 senior appearances across all competitions without playing a full 90 minutes, an exception or becoming the norm?",
-      "publishedAt": "2026-03-27T14:15:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The remarkable return of Roy Hodgson aged 78",
-      "link": "https://www.bbc.com/sport/football/articles/ckg97pgj2q0o?at_medium=RSS&at_campaign=rss",
-      "summary": "Roy Hodgson's idea of celebrating 50 years in management is not to sit back reflecting on his career, but instead to return to the dugout at Bristol City.",
-      "publishedAt": "2026-03-27T13:24:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Everton to offer David Moyes new deal in recognition of success at club",
-      "link": "https://www.theguardian.com/football/2026/mar/27/everton-to-offer-david-moyes-new-deal-in-recognition-of-success-at-club",
-      "summary": "Moyes has turned Everton into European contenders Talks over extending second spell due in summer Everton are planning to offer David Moyes a new contract this summer in recognition of his achievement in transforming the club from relegation candidates to challengers for European qualification. Moyes signed a two-and-a-half-year deal when succeeding Sean Dyche last January, with Everton one point above the relegation zone. They are currently eighth, only three points outside the Champions League qualification places. Continue reading...",
-      "publishedAt": "2026-03-27T12:23:39.000Z"
+      "title": "County cricket ins and outs: Latest updates ahead of new season",
+      "link": "https://www.skysports.com/cricket/news/12040/13447638/county-cricket-ins-and-outs-all-the-signings-departures-and-overseas-arrivals-ahead-of-the-2026-season",
+      "summary": "Keep up to speed with all the signings, departures and overseas players in county cricket for the 2026 season.",
+      "publishedAt": "2026-03-25T08:00:00.000Z"
     },
     {
       "type": "rss",
@@ -249,87 +282,54 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "What next for Bellamy and Wales after World Cup agony?",
-      "link": "https://www.bbc.com/sport/football/articles/c62jqj5jq9xo?at_medium=RSS&at_campaign=rss",
-      "summary": "Wales' failure to qualify for the World Cup raises big issues for the team, head coach Craig Bellamy and the FAW's finances.",
-      "publishedAt": "2026-03-27T12:17:32.000Z"
+      "title": "£123 for a child's England kit - have prices gone too far?",
+      "link": "https://www.bbc.com/sport/football/articles/cj94nm47823o?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport explores the rise in the cost of kits for the 2026 World Cup, with insights from experts and fans.",
+      "publishedAt": "2026-03-25T07:23:06.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Roy Hodgson makes shock return to management at 78 with Bristol City",
-      "link": "https://www.theguardian.com/football/2026/mar/27/roy-hodgson-return-management-bristol-city",
-      "summary": "Hodgson replaces Gerhard Struber for rest of season He last managed second-tier club in 1982 Roy Hodgson has made a sensational return to management at the age of 78 with Bristol City after Gerhard Struber was sacked by the Championship club. The former England manager, who has been out of work since leaving Crystal Palace in February 2024, will take charge of City for the remaining seven games of the season. They are currently 16th in the Championship. Continue reading...",
-      "publishedAt": "2026-03-27T10:44:32.000Z"
+      "title": "30 years of Super League: Pundits remember their favourite moments",
+      "link": "https://www.skysports.com/rugby-league/news/12040/13517648/30-years-of-super-league-pundits-remember-their-favourite-moments-including-rob-burrow-magic-that-jack-welsby-moment-and-a-good-friday-brawl",
+      "summary": "The Sky Sports Rugby League team have spent 30 years following the highs, the lows, the jubilation, the heartbreak we see each week in Super League.",
+      "publishedAt": "2026-03-25T07:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Je ne pense pas qu'ils en soient capables\" : Steven Defour très critique envers Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-03-27/je-ne-pense-pas-quils-en-soient-capables--steven-defour-tres-critique-envers-anderlecht",
-      "summary": "Anderlecht a arraché de justesse sa place dans le top 6. Un soulagement pour les Mauves, qualifiés in extremis pour les Champions' Play-offs.",
-      "publishedAt": "2026-03-27T08:40:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Selby hopes World Championship stays in UK when Crucible is being refurbished",
+      "link": "https://www.skysports.com/snooker/news/12040/13523917/mark-selby-wants-to-see-world-snooker-championship-stay-in-the-uk-when-crucible-is-being-refurbished-in-2029-and-possibly-also-2030",
+      "summary": "Mark Selby says he would like to see the World Snooker Championship stay in the UK when the Crucible is being refurbished in 2029 - and possibly also 2030 - but is aware President of Matchroom Sport, Barry Hearn, has a \"variety of ideas\".",
+      "publishedAt": "2026-03-25T07:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Wat gebeurt er met Stankovic? Vanhaezebrouck zegt wat Inter moet doen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-27/wat-gebeurt-er-met-stankovic-vanhaezebrouck-zegt-wat-inter-moet-doen",
-      "summary": "Eén van de grote ontdekkingen bij Club Brugge was ongetwijfeld Aleksandar Stankovic. De kans dat hij volgend seizoen nog bij blauw-zwart speelt lijkt bijzonder klein.",
-      "publishedAt": "2026-03-27T08:40:00.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Where does Salah rank among greatest Premier League forwards?",
+      "link": "https://www.bbc.com/sport/football/articles/c2evxggw1xro?at_medium=RSS&at_campaign=rss",
+      "summary": "As Mohamed Salah announces he will leave Liverpool this summer, BBC Sport asks you to rank the best forwards in Premier League history.",
+      "publishedAt": "2026-03-25T06:30:23.000Z"
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "LIVE : Penalty raté par Vermant ! C'est toujours 0-0",
-      "link": "https://www.walfoot.be/news/2026-03-27/live-penalty-rate-par-vermant-cest-toujours-0-0",
-      "summary": "Les Espoirs jouent un match très important ce vendredi en qualifications pour l'Euro U21. Une victoire, et la Belgique ferait un pas vers l'Euro.",
-      "publishedAt": "2026-03-27T08:23:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Rudi Garcia prend la parole sur le cas Lukaku et redistribue les cartes",
-      "link": "https://www.walfoot.be/news/2026-03-27/rudi-garcia-prend-la-parole-sur-le-cas-lukaku-et-redistribue-les-cartes",
-      "summary": "Privé de cadres comme Lukaku ou Courtois aux USA, Rudi Garcia reste calme. Le coach belge en profite pour tester ses jeunes.",
-      "publishedAt": "2026-03-27T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "'Kan hij blijven? Wilmots weet wat hij wil doen met Teuma'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-27/kan-hij-blijven-wilmots-weet-wat-hij-wil-doen-met-teuma",
-      "summary": "De toekomst van Teddy Teuma blijft onderwerp van intern overleg, nu zijn contract afloopt en de sportieve staf van Standard een beslissing moet nemen.",
-      "publishedAt": "2026-03-27T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le RFC Seraing se prépare à perdre deux joueurs très convoités",
-      "link": "https://www.walfoot.be/news/2026-03-27/le-rfc-seraing-se-prepare-a-perdre-deux-joueurs-tres-convoites",
-      "summary": "Hemsley Akpa-Chukwu et Emmanuel Da Costa attirent l'attention de plusieurs clubs. Le RFC Seraing devrait perdre ses deux joueurs cet été.",
-      "publishedAt": "2026-03-27T08:00:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Russell vs Antonelli at iconic Suzuka and can McLaren, Red Bull hit back?",
+      "link": "https://www.skysports.com/f1/news/12040/13523805/japanese-gp-george-russell-vs-kimi-antonelli-at-suzuka-and-can-mclaren-red-bull-hit-back-in-third-round-of-2026-f1-season",
+      "summary": "Sky Sports F1 look at the key talking points ahead of the Japanese Grand Prix at the iconic Suzuka Circuit.",
+      "publishedAt": "2026-03-25T06:00:00.000Z"
     }
   ]
 }

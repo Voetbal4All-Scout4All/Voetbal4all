@@ -302,7 +302,7 @@
       { league: "NED_W", cc: "NL", label: "Eredivisie Vrouwen ♀", isWomen: true },
     ];
     
-    async function fetchJsonWithTimeout(url, timeoutMs = 5000) {
+    async function fetchJsonWithTimeout(url, timeoutMs = 9000) {
       const controller = new AbortController();
       const t = setTimeout(() => controller.abort(), timeoutMs);
       try {
@@ -334,7 +334,7 @@
       const results = await Promise.all(
         reqs.map(async (r) => {
           try {
-            const data = await fetchJsonWithTimeout(r.url, 5000);
+            const data = await fetchJsonWithTimeout(r.url, 9000);
             const items = Array.isArray(data?.items) ? data.items : [];
             return { ok: true, ...r, items };
           } catch (e) {
@@ -542,9 +542,8 @@
       }
     }
 
-// Init: toon direct fallback, laad live data in achtergrond (verbetert LCP)
-    renderFallback();
-    setTimeout(() => refresh(), 100);
+    // Init
+    refresh();
 
     // Refresh elke 3 minuten; updates worden pas toegepast op cycle-boundary (geen mid-run reset)
     setInterval(refresh, 3 * 60 * 1000);
