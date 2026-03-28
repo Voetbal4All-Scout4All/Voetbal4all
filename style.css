@@ -1497,7 +1497,7 @@ footer { margin-top: auto; }
 
 .footer-social-link:hover {
   border-color: var(--accent);
-  color: var(--text);
+  /* MINIFIED */color: var(--text);
 }
 
 .footer-ad {
