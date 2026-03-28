@@ -704,6 +704,67 @@
     return null;
   }
 
+  function appendNoCache(url) {
+    const s = String(url || '').trim();
+    if (!s) return s;
+    const sep = s.includes('?') ? '&' : '?';
+    return `${s}${sep}v=${Date.now()}`;
+  }
+
+  async function preloadImage(url) {
+    const src = String(url || '').trim();
+    if (!src) return false;
+
+    return await new Promise((resolve) => {
+      const img = new Image();
+      img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = src;
+    });
+  }
+
+  async function resolveBestArticleImage(article, articleId) {
+    const direct = extractArticleImageSource(article);
+    if (direct) {
+      const ok = await preloadImage(direct);
+      if (ok) return direct;
+
+      const directRetry = appendNoCache(direct);
+      if (directRetry !== direct) {
+        const okRetry = await preloadImage(directRetry);
+        if (okRetry) return directRetry;
+      }
+    }
+
+    const listFallback = await fetchArticleListImageById(articleId, article);
+    if (listFallback) {
+      const ok = await preloadImage(listFallback);
+      if (ok) return listFallback;
+
+      const listRetry = appendNoCache(listFallback);
+      if (listRetry !== listFallback) {
+        const okRetry = await preloadImage(listRetry);
+        if (okRetry) return listRetry;
+      }
+    }
+
+    const proxyFallback = buildProxyImageFromTitle(article?.title || 'Voetbal4All');
+    if (proxyFallback) {
+      const ok = await preloadImage(proxyFallback);
+      if (ok) return proxyFallback;
+
+      const proxyRetry = appendNoCache(proxyFallback);
+      if (proxyRetry !== proxyFallback) {
+        const okRetry = await preloadImage(proxyRetry);
+        if (okRetry) return proxyRetry;
+      }
+    }
+
+    return null;
+  }
+
   async function fetchArticleListImageById(id, article = null) {
     const safeId = String(id || "").trim();
     const targetTitle = String(article?.title || "").trim().toLowerCase();
@@ -925,16 +986,13 @@
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
-        const currentImg = extractArticleImageSource(article);
-
-        if (!currentImg) {
-          const fallbackImg = await fetchArticleListImageById(articleId, article);
-          if (fallbackImg) {
-            article.image = fallbackImg;
-            article.image_path = fallbackImg;
-            article.imagePath = fallbackImg;
-            article.imageUrl = fallbackImg;
-          }
+        const bestImg = await resolveBestArticleImage(article, articleId);
+        if (bestImg) {
+          article.image = bestImg;
+          article.image_path = bestImg;
+          article.imagePath = bestImg;
+          article.imageUrl = bestImg;
+          article.imageURL = bestImg;
         }
 
         console.log('[ARTIKEL] ✅ Article found via API:', article.title);
@@ -1118,7 +1176,7 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = extractArticleImageSource(article) || buildProxyImageFromTitle(title);
+    const imgUrl = extractArticleImageSource(article);
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
@@ -1144,7 +1202,16 @@
     }
 
     imageEl.onerror = function(){
-      // If the real image fails (502/cold start/404), fall back to inline SVG
+      const currentSrc = String(this.src || '').trim();
+      const retrySrc = appendNoCache(currentSrc);
+      const alreadyRetried = this.getAttribute('data-image-retried') === '1';
+
+      if (!alreadyRetried && currentSrc && currentSrc !== fallbackUrl) {
+        this.setAttribute('data-image-retried', '1');
+        this.src = retrySrc;
+        return;
+      }
+
       this.onerror = null;
       this.alt = title;
       this.classList.add('is-empty');
@@ -1152,6 +1219,7 @@
       this.removeAttribute("fetchpriority");
       document.getElementById('og-image').setAttribute('content', fallbackUrl);
     };
+    imageEl.removeAttribute('data-image-retried');
 
     // If the resolved URL is an SVG (rare), keep hero from becoming too tall
     if (imgUrl && String(imgUrl).toLowerCase().includes('.svg')) imageEl.style.maxHeight = '320px';
