@@ -28,6 +28,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0B1020">
+  <!-- Preconnect: early connection to critical origins -->
+  <link rel="preconnect" href="https://voetbal4all-backend-database.onrender.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8H0LDE2SM5"></script>
@@ -51,8 +55,9 @@
   <link rel="canonical" href="https://www.voetbal4all.eu/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <!-- Fonts (async laden - voorkomt renderblokkering) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
   <!-- Hoofd-stylesheet -->
   <link rel="stylesheet" href="style.css?v=20251227a" />
 
@@ -1113,6 +1118,9 @@
   }
   </script>
 
+  <!-- Preload critical assets -->
+  <link rel="preload" as="style" href="style.css?v=20251227a">
+  <link rel="preload" as="image" href="/assets/img/brand/logo-voetbal4all.png">
 </head>
 
 <body>
