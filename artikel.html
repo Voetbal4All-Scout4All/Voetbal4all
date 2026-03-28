@@ -600,7 +600,34 @@
     if (typeof raw === "string") {
       s = raw;
     } else if (typeof raw === "object") {
-      s = raw.publicPath || raw.image_path || raw.imagePath || raw.path || raw.url || raw.href || "";
+      s =
+        raw.publicPath ||
+        raw.image_path ||
+        raw.imagePath ||
+        raw.image_url ||
+        raw.imageUrl ||
+        raw.imageURL ||
+        raw.path ||
+        raw.url ||
+        raw.href ||
+        raw.src ||
+        raw.remoteUrl ||
+        raw.local?.publicPath ||
+        raw.local?.image_path ||
+        raw.local?.imagePath ||
+        raw.local?.path ||
+        raw.local?.url ||
+        raw.generated?.publicPath ||
+        raw.generated?.image_path ||
+        raw.generated?.imagePath ||
+        raw.generated?.path ||
+        raw.generated?.url ||
+        raw.original?.publicPath ||
+        raw.original?.image_path ||
+        raw.original?.imagePath ||
+        raw.original?.path ||
+        raw.original?.url ||
+        "";
     } else {
       s = String(raw);
     }
@@ -634,8 +661,11 @@
     }
 
     if (s.startsWith("/api/")) return API_BASE + s;
+    if (s.startsWith("api/")) return API_BASE + "/" + s;
     if (s.startsWith("/images/")) return API_BASE + s;
+    if (s.startsWith("images/")) return API_BASE + "/" + s;
     if (s.startsWith("/assets/")) return s;
+    if (s.startsWith("assets/")) return "/" + s;
 
     return s;
   }
@@ -674,25 +704,30 @@
     return null;
   }
 
-  async function fetchArticleListImageById(id) {
+  async function fetchArticleListImageById(id, article = null) {
     const safeId = String(id || "").trim();
-    if (!safeId) return null;
+    const targetTitle = String(article?.title || "").trim().toLowerCase();
+    const targetCanonical = String(article?.canonical_url || article?.url || article?.link || "").trim();
+    if (!safeId && !targetTitle && !targetCanonical) return null;
 
     try {
       const listUrl = `${API_BASE}/api/news?limit=2000&nocache=${Date.now()}`;
       const json = await fetchJsonWithRetry(listUrl, { tries: 2, timeoutMs: 7000, baseDelayMs: 400 });
       const items = Array.isArray(json?.items) ? json.items : [];
-      const hit = items.find((it) => String(it?.id || "").trim() === safeId);
-      if (!hit) return null;
 
-      return resolveImageUrl(
-        hit.image ||
-        hit.image_path ||
-        hit.imagePath ||
-        hit.imageUrl ||
-        hit.image_url ||
-        null
-      );
+      const hit = items.find((it) => {
+        const itemId = String(it?.id || "").trim();
+        const itemTitle = String(it?.title || "").trim().toLowerCase();
+        const itemCanonical = String(it?.canonical_url || it?.url || it?.link || "").trim();
+        return (
+          (safeId && itemId === safeId) ||
+          (targetCanonical && itemCanonical && itemCanonical === targetCanonical) ||
+          (targetTitle && itemTitle && itemTitle === targetTitle)
+        );
+      });
+
+      if (!hit) return null;
+      return extractArticleImageSource(hit);
     } catch (e) {
       console.warn("[ARTIKEL] fetchArticleListImageById failed:", e?.message || e);
       return null;
@@ -893,7 +928,7 @@
         const currentImg = extractArticleImageSource(article);
 
         if (!currentImg) {
-          const fallbackImg = await fetchArticleListImageById(articleId);
+          const fallbackImg = await fetchArticleListImageById(articleId, article);
           if (fallbackImg) {
             article.image = fallbackImg;
             article.image_path = fallbackImg;
