@@ -640,6 +640,40 @@
     return s;
   }
 
+  function extractArticleImageSource(article) {
+    if (!article || typeof article !== 'object') return null;
+
+    const candidates = [
+      article.image,
+      article.image_path,
+      article.imagePath,
+      article.image_url,
+      article.imageUrl,
+      article.imageURL,
+      article.publicPath,
+      article.path,
+      article.url,
+      article.href,
+      article._meta?.image,
+      article._meta?.image_path,
+      article._meta?.imagePath,
+      article._meta?.image_url,
+      article._meta?.imageUrl,
+      article._meta?.imageURL,
+      article._meta?.publicPath,
+      article._meta?.path,
+      article._meta?.url,
+      article._meta?.href
+    ];
+
+    for (const candidate of candidates) {
+      const resolved = resolveImageUrl(candidate);
+      if (resolved) return resolved;
+    }
+
+    return null;
+  }
+
   async function fetchArticleListImageById(id) {
     const safeId = String(id || "").trim();
     if (!safeId) return null;
@@ -856,14 +890,15 @@
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
-        const currentImg = resolveImageUrl(
-          article.image || article.image_path || article.imageUrl || article.imageURL || null
-        );
+        const currentImg = extractArticleImageSource(article);
 
         if (!currentImg) {
           const fallbackImg = await fetchArticleListImageById(articleId);
           if (fallbackImg) {
             article.image = fallbackImg;
+            article.image_path = fallbackImg;
+            article.imagePath = fallbackImg;
+            article.imageUrl = fallbackImg;
           }
         }
 
@@ -1048,7 +1083,7 @@
     
     // --- Image: support string OR object + prefix backend base for /images/... ---
     const imageEl = document.getElementById('article-image');
-    const imgUrl = resolveImageUrl(article.image || article.image_path || article.imageUrl || article.imageURL) || buildProxyImageFromTitle(title);
+    const imgUrl = extractArticleImageSource(article) || buildProxyImageFromTitle(title);
     const fallbackUrl = inlineSvgPlaceholderDataUri(title);
 
     // Always show an image element: real image if present, otherwise inline SVG placeholder.
