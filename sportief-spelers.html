@@ -357,6 +357,9 @@ const FALLBACK_AVATAR = "data:image/svg+xml," + encodeURIComponent(
   + '</svg>'
 );
 
+// Expose on window so inline onerror handlers can access it without quote nesting
+window._v4FallbackAvatar = FALLBACK_AVATAR;
+
 const leagueBar    = document.getElementById("league-bar");
 const seasonSel    = document.getElementById("season-select");
 const tableWrap    = document.getElementById("table-wrap");
@@ -475,7 +478,7 @@ function render() {
     const photoUrl = p.player && p.player.photo;
     const playerName = (p.player && p.player.name) || "";
     const photoHtml = photoUrl
-      ? '<img class="v4-player-photo" src="' + photoUrl + '" alt="' + esc(playerName) + '" loading="lazy" onerror="this.onerror=null;this.src='' + FALLBACK_AVATAR + ''">'
+      ? '<img class="v4-player-photo" src="' + photoUrl + '" alt="' + esc(playerName) + '" loading="lazy" onerror="this.onerror=null;this.src=window._v4FallbackAvatar">'
       : '<img class="v4-player-photo" src="' + FALLBACK_AVATAR + '" alt="">';
     const tLogo = s && s.team && s.team.logo
       ? '<img class="v4-club-logo" src="' + s.team.logo + '" alt="" loading="lazy" onerror="this.style.display='none'">'
