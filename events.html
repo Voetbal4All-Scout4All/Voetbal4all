@@ -992,7 +992,9 @@
     const PAGE_SIZE = 8;
     let ALL_EVENTS_SORTED = [];
     let PINNED_PREMIUM_30 = [];
+    let OTHER_EVENTS = [];
     let CURRENT_PAGE = 1;
+    let rerenderEventList = () => {};
 
     // Prevent stacking intervals when loadEvents() is called multiple times (e.g., gender changes)
     let __premium30IntervalId = null;
@@ -1004,6 +1006,91 @@
       const st = String(ev.status || "").toLowerCase();
       if (st && st !== "published") return false;
       return true;
+    }
+
+    function eventSortTime(ev){
+      const ts = new Date(ev?.start_at || "").getTime();
+      return Number.isFinite(ts) ? ts : Number.MAX_SAFE_INTEGER;
+    }
+
+    function normalizeGenderValue(g){
+      const v = String(g || "").toUpperCase().trim();
+      if (!v || v === "ALL") return "BOTH";
+      if (v === "WOMEN" || v === "DAMES" || v === "F" || v === "FEMALE") return "DAMES";
+      if (v === "MEN" || v === "HEREN" || v === "M" || v === "MALE") return "HEREN";
+      if (v === "BOTH" || v === "DAMES&HEREN" || v === "DAMES/HEREN") return "BOTH";
+      return v;
+    }
+
+    function isUpcomingListEvent(ev){
+      const dateOnly = isoDateOnly(ev?.start_at);
+      if (!dateOnly) return true;
+
+      const d = new Date(dateOnly);
+      if (isNaN(d.getTime())) return true;
+
+      d.setDate(d.getDate() + 1);
+      d.setHours(0,0,0,0);
+
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      return d >= today;
+    }
+
+    function buildEventSearchHaystack(ev){
+      const country = String(ev?.country || "").toUpperCase();
+      const province = getEventProvince(ev);
+      const club = ev?.club_name || ev?.club || ev?.clubName || ev?.clubname || ev?.organizer_name || "";
+
+      return norm([
+        ev?.title,
+        club,
+        ev?.city,
+        province,
+        typeToUiLabel(ev?.event_type),
+        ev?.description,
+        ev?.location_name,
+        ev?.address,
+        ev?.postal_code,
+        countryToFlag(country),
+        countryToLabel(country)
+      ].filter(Boolean).join(" "));
+    }
+
+    function filterCards(){
+      const q = norm(searchEl?.value || "");
+      const c = String(countryEl?.value || "");
+      const t = String(typeEl?.value || "");
+      const m = String(monthEl?.value || "");
+      const g = normalizeGenderValue(genderEl?.value || "BOTH");
+      const p = String(provinceEl?.value || "");
+
+      return OTHER_EVENTS.filter(ev => {
+        if (!ev || !isUpcomingListEvent(ev)) return false;
+
+        const cc = String(ev.country || "").toUpperCase();
+        const tt = String(typeToUiLabel(ev.event_type) || "");
+        const dd = isoDateOnly(ev.start_at);
+        const hay = buildEventSearchHaystack(ev);
+        const gg = normalizeGenderValue(ev.gender || ev.sex || ev.gender_code || "BOTH");
+        const pp = String(getEventProvince(ev) || "");
+
+        let ok = true;
+        if (c && cc && cc !== c) ok = false;
+        if (t && tt && tt !== t) ok = false;
+        if (g && g !== "BOTH" && !(gg === g || gg === "BOTH")) ok = false;
+
+        if (p) {
+          const pk = normKey(p);
+          const ppk = normKey(pp);
+          if (pp && ppk !== pk) ok = false;
+        }
+
+        if (m && dd && dd.slice(5,7) !== m) ok = false;
+        if (ok && q && !hay.includes(q)) ok = false;
+
+        return ok;
+      });
     }
 
     async function loadEvents(){
@@ -1036,7 +1123,7 @@
         // Sort by start date (soonest first) and hide deleted/non-published
         const itemsSorted = [...data.items]
           .filter(isVisibleEvent)
-          .sort((a,b) => new Date(a.start_at).getTime() - new Date(b.start_at).getTime());
+          .sort((a,b) => eventSortTime(a) - eventSortTime(b));
 
         ALL_EVENTS_SORTED = itemsSorted;
 
@@ -1066,50 +1153,10 @@
         });
 
         // Other list below (everything except the pinned premium <=60d from backend)
-        const otherEvents = itemsSorted.filter(ev => {
+        OTHER_EVENTS = itemsSorted.filter(ev => {
           const key = String(ev.slug || ev.id);
           return !pinnedIds.has(key);
         });
-
-        // --- Placeholder for non-premium event cards (visual filler) ---
-        function placeholderNonPremiumHtml(i){
-          // Neutral, fictive placeholders for visual inspection (no personal references)
-          const samples = [
-            { flag: "🇧🇪", city: "Mechelen", club: "FC Voorbeeld", type: "Tornooi" },
-            { flag: "🇳🇱", city: "Breda", club: "SV Voorbeeld", type: "Stage" },
-            { flag: "🇧🇪", city: "Leuven", club: "KVC Testclub", type: "Vriendschappelijk" },
-            { flag: "🇳🇱", city: "Tilburg", club: "VV Demo", type: "Voetbalkamp" }
-          ];
-          const s = samples[i % samples.length];
-          const start = new Date();
-          start.setDate(start.getDate() + 14 + i);
-          const dateLabel = start.toLocaleDateString("nl-BE", { day: "numeric", month: "long" });
-
-          return `
-            <article class="v4a-card" data-placeholder="1" data-country="${(s.flag === '🇧🇪' ? 'BE' : 'NL')}" data-province="" data-type="${s.type}" data-gender="BOTH" aria-label="Niet-premium event placeholder">
-              <div class="event-row">
-                <div class="event-thumbbox" aria-label="Flyer thumbnail"></div>
-
-                <div class="event-main">
-                  <div class="v4a-card-header" style="margin:0;">
-                    <div>
-                      <div class="v4a-card-title">Voorbeeld event (niet-premium)</div>
-                      <div class="v4a-card-meta">${s.flag} · ${s.city}</div>
-                      <div class="v4a-card-meta">${s.club}</div>
-                      <div class="v4a-card-meta">${dateLabel}</div>
-                      <div class="v4a-card-meta">${s.type}</div>
-                    </div>
-                  </div>
-
-                  <div class="v4a-card-body" style="margin-top:8px;">
-                    Dit is een tijdelijke voorbeeldkaart om de pagina-indeling te beoordelen.
-                  </div>
-
-                </div>
-              </div>
-            </article>
-          `;
-        }
 
         function cardHtml(ev){
           const slug = ev.slug || ev.id;
@@ -1237,54 +1284,38 @@
         }
 
         function renderPage(page){
-          // Always render pinned premium grid (top)
-          startPremium30Grid(PINNED_PREMIUM_30);
+          if (!listEl) return;
 
-          const total = otherEvents.length;
-          const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+          const filteredEvents = filterCards();
+          const total = filteredEvents.length;
+
+          if (total === 0){
+            CURRENT_PAGE = 1;
+            listEl.innerHTML = '<div style="padding:24px;text-align:center;"><p style="margin-bottom:16px;opacity:.85;">Er zijn momenteel geen sportieve events gevonden.</p><a class="btn-ghost-sm" href="event-aanmelden.html">Meld je event aan</a></div>';
+            renderPagination(0);
+            return;
+          }
+
+          const totalPages = Math.ceil(total / PAGE_SIZE);
           CURRENT_PAGE = Math.min(Math.max(1, page), totalPages);
 
           const start = (CURRENT_PAGE - 1) * PAGE_SIZE;
-          const slice = otherEvents.slice(start, start + PAGE_SIZE);
+          const slice = filteredEvents.slice(start, start + PAGE_SIZE);
 
-          // Build 2-col grid items
-          const parts = [];
-          slice.forEach((ev) => {
-            parts.push(cardHtml(ev));
-          });
-
-          // If fewer than PAGE_SIZE items, add placeholders so the layout can be inspected.
-          const missing = Math.max(0, PAGE_SIZE - slice.length);
-          for (let i = 0; i < missing; i++){
-            parts.push(placeholderNonPremiumHtml(i));
-          }
-
-          listEl.innerHTML = parts.join('');
+          listEl.innerHTML = slice.map(cardHtml).join('');
 
           // Trigger AdSense for any inserted ins
           try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(_) {}
 
-          // Apply existing behaviors after render
-          hidePastEvents();
-          filterCards();
           updateShareLinks();
           renderPagination(totalPages);
         }
 
-        // initial page render
-        renderPage(1);
+        rerenderEventList = (page = 1) => renderPage(page);
 
-        // pagination click
-        document.getElementById('events-pagination')?.addEventListener('click', (e) => {
-          const b = e.target.closest('button[data-page]');
-          if (!b) return;
-          const p = Number(b.getAttribute('data-page') || '1');
-          if (!Number.isFinite(p)) return;
-          renderPage(p);
-          const overview = document.querySelector('.card-title')?.closest('.card') || document.querySelector('main');
-          const y = overview ? overview.getBoundingClientRect().top + window.scrollY - 90 : 0;
-          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-        });
+        // initial page render
+        startPremium30Grid(PINNED_PREMIUM_30);
+        renderPage(1);
 
         // Sidebar premium later rotator stays
         startSidebarPremiumLater(premiumLater);
@@ -1564,65 +1595,11 @@ function getEventProvince(ev){
   return "";
 }
 
-    // Verberg events waarvan datum + 1 dag < vandaag
-    function hidePastEvents() {
-      const cards = document.querySelectorAll("#event-list .v4a-card[data-date]");
-      const today = new Date();
-      today.setHours(0,0,0,0);
-
-      cards.forEach(card => {
-        const dateStr = card.getAttribute("data-date");
-        if (!dateStr) return;
-        const d = new Date(dateStr);
-        if (isNaN(d.getTime())) return;
-
-        d.setDate(d.getDate() + 1);
-        d.setHours(0,0,0,0);
-
-        if (d < today) card.style.display = "none";
-      });
-    }
-
-    function filterCards(){
-      const q = norm(searchEl.value);
-      const c = countryEl.value;
-      const t = typeEl.value;
-      const m = monthEl.value;
-      const g = String(genderEl?.value || "BOTH").toUpperCase();
-      const p = String(provinceEl?.value || "");
-
-      const cards = listEl.querySelectorAll(".v4a-card");
-      cards.forEach(card => {
-        const cc = card.dataset.country || "";
-        const tt = card.dataset.type || "";
-        const dd = card.dataset.date || ""; // YYYY-MM-DD
-        const hay = norm(card.textContent);
-        const gg = String(card.dataset.gender || "BOTH").toUpperCase();
-        const pp = card.dataset.province || "";
-
-        let ok = true;
-        if (c && cc && cc !== c) ok = false;
-        if (t && tt && tt !== t) ok = false;
-        if (g && g !== "BOTH") {
-        if (!(gg === g || gg === "BOTH")) ok = false;
-        }
-
-        if (p) {
-          const pk = normKey(p);
-          const ppk = normKey(pp);
-          if (pp && ppk !== pk) ok = false;
-          // If card has no province, keep it visible (data may be incomplete)
-        }
-
-        if (m && dd && dd.slice(5,7) !== m) ok = false;
-        if (ok && q && !hay.includes(q)) ok = false;
-
-        card.style.display = ok ? "" : "none";
-      });
-    }
-
-    searchEl.addEventListener("input", filterCards);
-    countryEl.addEventListener("change", () => {
+    searchEl?.addEventListener("input", () => {
+      CURRENT_PAGE = 1;
+      rerenderEventList(1);
+    });
+    countryEl?.addEventListener("change", () => {
     setProvinceOptionsForCountry(countryEl.value);
 
     // Clear province param when country changes (prevents mismatch)
@@ -1631,10 +1608,17 @@ function getEventProvince(ev){
     const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
     history.replaceState(null, "", next);
 
-    filterCards();
+    CURRENT_PAGE = 1;
+    rerenderEventList(1);
   });
-    typeEl.addEventListener("change", filterCards);
-    monthEl.addEventListener("change", filterCards);
+    typeEl?.addEventListener("change", () => {
+      CURRENT_PAGE = 1;
+      rerenderEventList(1);
+    });
+    monthEl?.addEventListener("change", () => {
+      CURRENT_PAGE = 1;
+      rerenderEventList(1);
+    });
     provinceEl?.addEventListener("change", () => {
     const params = new URLSearchParams(window.location.search);
     const p = String(provinceEl.value || "");
@@ -1642,9 +1626,10 @@ function getEventProvince(ev){
     else params.set("province", p);
     const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
     history.replaceState(null, "", next);
-    filterCards();
+    CURRENT_PAGE = 1;
+    rerenderEventList(1);
   });
-    genderEl.addEventListener("change", () => {
+    genderEl?.addEventListener("change", () => {
       // Persist in URL for shareable filtering
       const params = new URLSearchParams(window.location.search);
       const g = String(genderEl.value || "BOTH").toUpperCase();
@@ -1655,6 +1640,17 @@ function getEventProvince(ev){
 
       // Reload from backend so premium + list stay consistent
       loadEvents();
+    });
+
+    document.getElementById('events-pagination')?.addEventListener('click', (e) => {
+      const b = e.target.closest('button[data-page]');
+      if (!b) return;
+      const p = Number(b.getAttribute('data-page') || '1');
+      if (!Number.isFinite(p)) return;
+      rerenderEventList(p);
+      const overview = document.querySelector('.card-title')?.closest('.card') || document.querySelector('main');
+      const y = overview ? overview.getBoundingClientRect().top + window.scrollY - 90 : 0;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
     });
 
     function updateShareLinks(){
