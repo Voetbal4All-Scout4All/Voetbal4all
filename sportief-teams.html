@@ -766,7 +766,7 @@ function renderCell(col, v, row) {
       return `<span class="v4-pill neutral">${v.toFixed(2)}</span>`;
     case "form": {
       const f = (row.form || "").substring(0, 5);
-      if (!f) return `<span style="color:rgba(255,255,255,">–</span>`;
+      if (!f) return `<span style="color:rgba(255,255,255,.25)">–</span>`;
       return `<div class="v4-form">${f.split("").map(c => `<span class="v4-form-dot ${c}" title="${c==="W"?"Winst":c==="D"?"Gelijk":"Verlies"}">${c}</span>`).join("")}</div>`;
     }
     case "formW": {
