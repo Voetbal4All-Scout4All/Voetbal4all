@@ -1,6 +1,61 @@
 {
-  "generatedAt": "2026-03-29T21:36:21.879Z",
+  "generatedAt": "2026-03-29T22:35:50.052Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Pulisic, U.S. 'shocked' by Belgium jersey clash",
+      "link": "https://www.espn.com/soccer/story/_/id/48334604/usa-belgium-jersey-color-clash-christian-pulisic",
+      "summary": "Christian Pulisic was among several U.S. players who said that the similarly colored jerseys worn by Belgium and the USMNT made it more difficult to pick out teammates.",
+      "publishedAt": "2026-03-29T22:42:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tudor leaves Tottenham after just seven games",
+      "link": "https://www.espn.com/soccer/story/_/id/48120237/tottenham-igor-tudor-part-ways-club-deep-relegation-mire",
+      "summary": "Tottenham Hotspur have parted ways with Igor Tudor amid a worrying battle to avoid relegation from the Premier League",
+      "publishedAt": "2026-03-29T22:42:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Doué double sees France down Colombia in style",
+      "link": "https://www.espn.com/soccer/report/_/gameId/762453",
+      "summary": "Désiré Doué scored his first senior goals for France as they swept Colombia aside in a 3-1 friendly win at the Northwest Stadium in Maryland.",
+      "publishedAt": "2026-03-29T22:42:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tottenham target De Zerbi to save them from relegation after parting company with Tudor",
+      "link": "https://www.theguardian.com/football/2026/mar/29/igor-tudor-leaves-tottenham-after-44-days-with-club-mired-in-relegation-troubled",
+      "summary": "Croat failed to win a league match during 44-day tenure Spurs hoping former Brighton manager can arrest slide Tottenham have parted company with Igor Tudor after seven games and 44 days in a desperate attempt to halt their slide towards relegation from the Premier League. According to the club, the decision was mutually agreed. Spurs have now moved once again to try to persuade Roberto De Zerbi to come to their rescue and join them straight away. The club considered a move for De Zerbi, the former Brighton manager, after they sacked Thomas Frank on 11 February and before they appointed Tudor. De Zerbi had just left Marseille but he decided he needed a break from the game and would most likely look to resume work in the summer. Continue reading...",
+      "publishedAt": "2026-03-29T22:16:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Winters weer verstoort voorbereidingen van Italië voor cruciaal duel in Bosnië",
+      "link": "https://www.vi.nl/nieuws/beslissend-duel-tussen-bosni-en-itali-getroffen-door-winterse-omstandigheden",
+      "summary": "De finale van de play-offs voor WK-kwalificatie tussen Bosnië en Herzegovina en Italië staat onder druk. Het sneeuwt flink in de Balkan. Daardoor besloot de Italiaanse ploeg zondag niet naar Bosnië af te reizen.",
+      "publishedAt": "2026-03-29T21:45:14.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -33,39 +88,6 @@
       "link": "https://www.vi.nl/nieuws/b-elftal-frankrijk-met-eerste-interlandgoals-dou-eenvoudig-langs-colombia",
       "summary": "Frankrijk heeft tijdens een oefenwedstrijd in het Amerikaanse Landover afgerekend met Colombia. Voor Désiré Doué werd het een prachtige avond. De jonge aanvaller maakte zijn eerste twee goals voor het Franse elftal.",
       "publishedAt": "2026-03-29T21:01:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "USMNT routed by Belgium in blow to WCup prep",
-      "link": "https://www.espn.com/soccer/story/_/id/48332813/usa-vs-belgium-friendly-world-cup-2026-atlanta-pochettino",
-      "summary": "The USMNT suffered a setback in its preparations for the World Cup as Belgium ran rampant in the second half to emerge with a 5-2 win at Atlanta's Mercedes-Benz Stadium on Saturday.",
-      "publishedAt": "2026-03-29T20:50:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Pulisic, U.S. 'shocked' by Belgium jersey clash",
-      "link": "https://www.espn.com/soccer/story/_/id/48334604/usa-belgium-jersey-color-clash-christian-pulisic",
-      "summary": "Christian Pulisic was among several U.S. players who said that the similarly colored jerseys worn by Belgium and the USMNT made it more difficult to pick out teammates.",
-      "publishedAt": "2026-03-29T20:50:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Tudor leaves Tottenham after just seven games",
-      "link": "https://www.espn.com/soccer/story/_/id/48120237/tottenham-igor-tudor-part-ways-club-deep-relegation-mire",
-      "summary": "Tottenham Hotspur have parted ways with Igor Tudor amid a worrying battle to avoid relegation from the Premier League",
-      "publishedAt": "2026-03-29T20:50:02.000Z"
     },
     {
       "type": "rss",
@@ -110,17 +132,6 @@
       "link": "https://www.espn.com/soccer/story/_/id/48287537/reranking-mvp-top-premier-league-clubs-arsenal-man-united-chelsea-man-city-liverpool-spurs",
       "summary": "Based on a simple combination of ability and tactical importance, we've reranked the best players in order.",
       "publishedAt": "2026-03-29T20:03:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Defoe heeft eerste klus als hoofdcoach binnen",
-      "link": "https://www.vi.nl/nieuws/defoe-heeft-eerste-klus-als-hoofdcoach-binnen",
-      "summary": "Jermain Defoe heeft zijn eerste klus als hoofdtrainer te pakken. De oud-spits gaat aan de slag als coach van Woking FC.",
-      "publishedAt": "2026-03-29T19:35:00.000Z"
     },
     {
       "type": "rss",
@@ -176,17 +187,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cy8l6z4gxlvo?at_medium=RSS&at_campaign=rss",
       "summary": "With one game to go until Thomas Tuchel picks his England World Cup squad, BBC Sport reporters choose their starting XIs for the summer. Who would you pick?",
       "publishedAt": "2026-03-29T16:19:41.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Igor Tudor leaves Tottenham after 44 days with club mired in relegation trouble",
-      "link": "https://www.theguardian.com/football/2026/mar/29/igor-tudor-leaves-tottenham-after-44-days-with-club-mired-in-relegation-troubled",
-      "summary": "Croat failed to win a league match as interim head coach Spurs considering move for De Zerbi as Tudor’s successor Tottenham have parted company with Igor Tudor after seven games and 44 days in a desperate attempt to halt their slide towards relegation from the Premier League. According to the club, the decision was mutually agreed. Tudor took one point from his five league matches to leave Tottenham one point and one place above the bottom three, the final straw coming with last Sunday’s 3-0 home defeat by Nottingham Forest. A previously unthinkable demotion to the Championship would be devastating for prestige and revenues. Continue reading...",
-      "publishedAt": "2026-03-29T14:40:14.000Z"
     },
     {
       "type": "rss",
