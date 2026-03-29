@@ -717,17 +717,22 @@
   let PINNED_PREMIUM_60 = [];
   let OTHER_EVENTS = [];
   let PREMIUM_LATER = [];
+  let __premium60IntervalId = null;
 
   function norm(s){ return String(s || "").trim(); }
   function normLc(s){ return norm(s).toLowerCase(); }
 
   function normKey(s){
-    return String(s || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9]+/g, "")
-      .trim();
+    const raw = String(s || "").toLowerCase();
+    try {
+      return raw
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "")
+        .trim();
+    } catch(e) {
+      return raw.replace(/[^a-z0-9]+/g, "").trim();
+    }
   }
 
   function normGender(g){
@@ -796,6 +801,11 @@
 
   function parseISO(d){
     try { return d ? new Date(d) : null; } catch(e){ return null; }
+  }
+
+  function eventSortTime(ev){
+    const ts = parseISO(ev?.start_at)?.getTime();
+    return Number.isFinite(ts) ? ts : Number.MAX_SAFE_INTEGER;
   }
 
   function isoDateOnly(dateStrOrIso){
@@ -925,40 +935,58 @@
     pagEl.innerHTML = html;
   }
 
-  function hidePastEvents(){
-    if (!listEl) return;
-    const cards = listEl.querySelectorAll(".v4a-card[data-date]");
+  function isUpcomingListEvent(ev){
+    const dateOnly = isoDateOnly(ev?.start_at);
+    if (!dateOnly) return true;
+
+    const d = new Date(dateOnly);
+    if (isNaN(d.getTime())) return true;
+
+    d.setDate(d.getDate() + 1);
+    d.setHours(0,0,0,0);
+
     const today = new Date();
     today.setHours(0,0,0,0);
+    return d >= today;
+  }
 
-    cards.forEach(card => {
-      const dateStr = card.getAttribute("data-date");
-      if (!dateStr) return;
-      const d = new Date(dateStr);
-      if (isNaN(d.getTime())) return;
-      d.setDate(d.getDate() + 1);
-      d.setHours(0,0,0,0);
-      if (d < today) card.style.display = "none";
-    });
+  function buildEventSearchHaystack(ev){
+    const country = String(ev?.country || "").toUpperCase();
+    const province = String(ev?.province || ev?.region || ev?.state || ev?.provincie || "").trim();
+    const club = ev?.club_name || ev?.club || ev?.clubName || ev?.clubname || ev?.organizer_name || "";
+    const desc = ev?.description ? String(ev.description) : "";
+
+    return normLc([
+      ev?.title,
+      club,
+      ev?.city,
+      province,
+      typeToUiLabel(ev?.event_type),
+      desc,
+      ev?.location_name,
+      ev?.address,
+      ev?.postal_code,
+      countryToFlag(country)
+    ].filter(Boolean).join(" "));
   }
 
   function filterCards(){
-    if (!listEl) return;
     const q = normLc(searchEl?.value);
-    const c = norm(countryEl?.value);
-    const pp = norm(provinceEl?.value);
-    const t = norm(typeEl?.value);
+    const c = String(countryEl?.value || "").toUpperCase();
+    const pp = String(provinceEl?.value || "");
+    const t = String(typeEl?.value || "");
     const g = normGender(genderEl?.value);
-    const m = norm(monthEl?.value);
+    const m = String(monthEl?.value || "");
 
-    const cards = listEl.querySelectorAll(".v4a-card");
-    cards.forEach(card => {
-      const cc = card.dataset.country || "";
-      const p = card.dataset.province || "";
-      const tt = card.dataset.type || "";
-      const gg = normGender(card.dataset.gender || "BOTH");
-      const dd = card.dataset.date || ""; // YYYY-MM-DD
-      const hay = normLc(card.textContent);
+    return OTHER_EVENTS.filter(ev => {
+      if (!ev || !isUpcomingListEvent(ev)) return false;
+
+      const cc = String(ev.country || "").toUpperCase();
+      const p = String(ev.province || ev.region || ev.state || ev.provincie || "").trim();
+      const tt = String(typeToUiLabel(ev.event_type) || "");
+      const gg = normGender(ev.gender || ev.sex || ev.gender_code || "BOTH");
+      const dd = isoDateOnly(ev.start_at);
+      const hay = buildEventSearchHaystack(ev);
 
       let ok = true;
 
@@ -967,8 +995,8 @@
 
       // Province (only enforce when card has a province; otherwise keep visible)
       if (ok && pp) {
-        const pk = normKey(p);
-        const ppk = normKey(pp);
+        const pk = normKey(pp);
+        const ppk = normKey(p);
         if (p && ppk !== pk) ok = false;
         // If card has no province, keep it visible (data may be incomplete)
       }
@@ -987,7 +1015,7 @@
       // Search
       if (ok && q && !hay.includes(q)) ok = false;
 
-      card.style.display = ok ? "" : "none";
+      return ok;
     });
   }
 
@@ -1080,25 +1108,27 @@
   function renderPage(page){
     if (!listEl) return;
 
-    const total = OTHER_EVENTS.length;
-    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    const filteredEvents = filterCards();
+    const total = filteredEvents.length;
+
+    if (total === 0) {
+      CURRENT_PAGE = 1;
+      listEl.innerHTML = '<div style="padding:24px;text-align:center;"><p style="margin-bottom:16px;opacity:.85;">Er zijn momenteel geen club & fun events gepland.</p><a class="btn-ghost-sm" href="event-aanmelden.html">Meld je event aan</a></div>';
+      renderPagination(0);
+      return;
+    }
+
+    const totalPages = Math.ceil(total / PAGE_SIZE);
     CURRENT_PAGE = Math.min(Math.max(1, page), totalPages);
 
     const start = (CURRENT_PAGE - 1) * PAGE_SIZE;
-    const slice = OTHER_EVENTS.slice(start, start + PAGE_SIZE);
+    const slice = filteredEvents.slice(start, start + PAGE_SIZE);
 
-    if (total === 0) {
-          listEl.innerHTML = '<div style="padding:24px;text-align:center;"><p style="margin-bottom:16px;opacity:.85;">Er zijn momenteel geen club & fun events gepland.</p><a class="btn-ghost-sm" href="event-aanmelden.html">Meld je event aan</a></div>';
-          renderPagination(0);
-          return;
-        }
-        listEl.innerHTML = slice.map(cardHtml).join("");
+    listEl.innerHTML = slice.map(cardHtml).join("");
 
     // Trigger AdSense for any inserted ins
     try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(_) {}
 
-    hidePastEvents();
-    filterCards();
     renderPagination(totalPages);
   }
 
@@ -1173,16 +1203,18 @@
         // When empty: render placeholders in all 6 slots (so the layout stays 3 rijen × 2 kolommen)
         premiumGrid.insertAdjacentHTML('beforeend', premiumTileHtml(ev, s));
       }
-
-      hidePastEvents();
-      filterCards();
     }
 
     render();
 
     // Rotate only when we have real premium items
+    if (__premium60IntervalId) {
+      clearInterval(__premium60IntervalId);
+      __premium60IntervalId = null;
+    }
+
     if (items && items.length > 0){
-      setInterval(() => {
+      __premium60IntervalId = setInterval(() => {
         tick = (tick + 1) % items.length;
         render();
       }, 10000);
@@ -1290,7 +1322,7 @@
       ALL_EVENTS_SORTED = [...mainItems]
         .filter(isVisibleEvent)
         .filter(isClubFun)
-        .sort((a,b) => new Date(a.start_at).getTime() - new Date(b.start_at).getTime());
+        .sort((a,b) => eventSortTime(a) - eventSortTime(b));
 
       PINNED_PREMIUM_60 = [...premiumItems]
         .filter(isVisibleEvent)
@@ -1327,29 +1359,36 @@
   }
 
   // UI hooks
-  searchEl?.addEventListener('input', () => filterCards());
+  searchEl?.addEventListener('input', () => {
+    CURRENT_PAGE = 1;
+    renderPage(1);
+  });
 
   countryEl?.addEventListener('change', () => {
     setProvinceOptions(countryEl.value);
     CURRENT_PAGE = 1;
-    filterCards();
     renderPage(1);
   });
 
   provinceEl?.addEventListener('change', () => {
     CURRENT_PAGE = 1;
-    filterCards();
     renderPage(1);
   });
 
-  typeEl?.addEventListener('change', () => { CURRENT_PAGE = 1; filterCards(); renderPage(1); });
+  typeEl?.addEventListener('change', () => {
+    CURRENT_PAGE = 1;
+    renderPage(1);
+  });
 
   genderEl?.addEventListener('change', () => {
     CURRENT_PAGE = 1;
     loadEvents();
   });
 
-  monthEl?.addEventListener('change', () => { CURRENT_PAGE = 1; filterCards(); renderPage(1); });
+  monthEl?.addEventListener('change', () => {
+    CURRENT_PAGE = 1;
+    renderPage(1);
+  });
 
   pagEl?.addEventListener('click', (e) => {
     const b = e.target.closest('button[data-page]');
