@@ -1970,6 +1970,40 @@
           .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
       }
 
+      function isUuid(v) {
+        const s = String(v || "").trim();
+        return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s);
+      }
+
+      function getClubVacancyDetailHref(it) {
+        const rawId = String(it?.id || "").trim();
+        return isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
+      }
+
+      function getEventDetailHref(it) {
+        const slug = String(it?.slug || "").trim();
+        const id = String(it?.id || "").trim();
+        if (slug) return `event.html?slug=${encodeURIComponent(slug)}`;
+        if (id) return `event.html?id=${encodeURIComponent(id)}`;
+        return "";
+      }
+
+      function wirePremiumItem(li, href) {
+        if (!li || !href) return;
+        li.setAttribute("role", "link");
+        li.tabIndex = 0;
+        li.style.cursor = "pointer";
+        li.addEventListener("click", (ev) => {
+          if (ev.target.closest("a, button")) return;
+          window.location.href = href;
+        });
+        li.addEventListener("keydown", (ev) => {
+          if (ev.key !== "Enter" && ev.key !== " ") return;
+          ev.preventDefault();
+          window.location.href = href;
+        });
+      }
+
       function normalizeImageUrl(raw){
         const v = String(raw || "").trim();
         if (!v) return "";
@@ -2017,14 +2051,16 @@
       if (!lists.cv1 || !lists.ev1 || !lists.cv2 || !lists.ev2) return;
 
       // Fetch candidates
-      const cvData = await fetchJson(`${API_BASE}/api/clubvacatures?limit=80`);
-      const evData = await fetchJson(`${API_BASE}/api/events?limit=200`);
+      const cvData = await fetchJson(`${API_BASE}/api/club-vacancies?limit=200`);
+      const evData = await fetchJson(`${API_BASE}/api/events/premium?days=60&limit=50`);
 
       const cvItemsRaw = Array.isArray(cvData?.items) ? cvData.items : (Array.isArray(cvData) ? cvData : []);
-      const evItemsRaw = Array.isArray(evData?.items) ? evData.items : (Array.isArray(evData) ? evData : []);
+      const evItemsRaw = (evData && evData.ok === true && Array.isArray(evData.items))
+        ? evData.items
+        : (Array.isArray(evData?.items) ? evData.items : (Array.isArray(evData) ? evData : []));
 
       const cvPrem = cvItemsRaw.filter(isPremium).slice(0, 6);
-      const evPrem = evItemsRaw.filter(isPremium).slice(0, 6);
+      const evPrem = evItemsRaw.slice(0, 6);
 
       function renderTo(ul, items, kind){
         ul.innerHTML = "";
@@ -2050,14 +2086,22 @@
           if (!metaParts.length && typeof it?.type === "string") metaParts.push(it.type);
 
           const meta = metaParts.filter(Boolean).join(" · ");
+          const detailHref = kind === "cv"
+            ? getClubVacancyDetailHref(it)
+            : getEventDetailHref(it);
+          const safeTitle = esc(title);
+          const titleHtml = detailHref
+            ? `<a href="${esc(detailHref)}" style="color:inherit;text-decoration:none;">${safeTitle}</a>`
+            : safeTitle;
 
           li.innerHTML = `
             <div class="event-body">
-              <div class="event-title">${esc(title)}</div>
+              <div class="event-title">${titleHtml}</div>
               <div class="event-meta">${esc(meta)}</div>
             </div>
           `;
 
+          wirePremiumItem(li, detailHref);
           ul.appendChild(li);
         });
       }
@@ -2111,6 +2155,37 @@
           .replace(/\"/g,"&quot;").replace(/'/g,"&#39;");
       }
 
+      function isUuid(v) {
+        const s = String(v || "").trim();
+        return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(s);
+      }
+
+      function getTrainerDetailHref(it) {
+        const rawId = String(it?.id || "").trim();
+        return rawId ? `event.html?type=trainer&id=${encodeURIComponent(rawId)}` : "";
+      }
+
+      function getPlayerDetailHref(it) {
+        const rawId = String(it?.id || "").trim();
+        return isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
+      }
+
+      function wirePremiumItem(li, href) {
+        if (!li || !href) return;
+        li.setAttribute("role", "link");
+        li.tabIndex = 0;
+        li.style.cursor = "pointer";
+        li.addEventListener("click", (ev) => {
+          if (ev.target.closest("a, button")) return;
+          window.location.href = href;
+        });
+        li.addEventListener("keydown", (ev) => {
+          if (ev.key !== "Enter" && ev.key !== " ") return;
+          ev.preventDefault();
+          window.location.href = href;
+        });
+      }
+
       function normalizeImageUrl(raw){
         const v = String(raw || "").trim();
         if (!v) return "";
@@ -2142,8 +2217,8 @@
       if (!trainersList || !playersList) return;
 
       // Probeer gangbare endpoints. Als ze nog niet bestaan: niets stukmaken.
-      const tData = await fetchJson(`${API_BASE}/api/trainers?limit=50`);
-      const pData = await fetchJson(`${API_BASE}/api/players?limit=50`);
+      const tData = await fetchJson(`${API_BASE}/api/staff-profiles?limit=50`);
+      const pData = await fetchJson(`${API_BASE}/api/player-profiles?limit=50`);
 
       const tItems = Array.isArray(tData?.items) ? tData.items : (Array.isArray(tData) ? tData : null);
       const pItems = Array.isArray(pData?.items) ? pData.items : (Array.isArray(pData) ? pData : null);
@@ -2159,12 +2234,18 @@
             const img = pickImage(it);
             if (img) li.setAttribute("data-image", img);
 
+            const detailHref = getTrainerDetailHref(it);
+            const titleHtml = detailHref
+              ? `<a href="${esc(detailHref)}" style="color:inherit;text-decoration:none;">${esc(it?.title || it?.name || "Trainer")}</a>`
+              : esc(it?.title || it?.name || "Trainer");
+
             li.innerHTML = `
               <div class="event-body">
-                <div class="event-title">${esc(it?.title || it?.name || "Trainer")}</div>
+                <div class="event-title">${titleHtml}</div>
                 <div class="event-meta">${esc((typeof it?.region === "string" && it.region) || (typeof it?.city === "string" && it.city) || (typeof it?.location === "string" && it.location) || "Regio")}</div>
               </div>
             `;
+            wirePremiumItem(li, detailHref);
             trainersList.appendChild(li);
           });
         }
@@ -2184,12 +2265,18 @@
             const img = pickImage(it);
             if (img) li.setAttribute("data-image", img);
 
+            const detailHref = getPlayerDetailHref(it);
+            const titleHtml = detailHref
+              ? `<a href="${esc(detailHref)}" style="color:inherit;text-decoration:none;">${esc(it?.title || it?.name || "Speler")}</a>`
+              : esc(it?.title || it?.name || "Speler");
+
             li.innerHTML = `
               <div class="event-body">
-                <div class="event-title">${esc(it?.title || it?.name || "Speler")}</div>
+                <div class="event-title">${titleHtml}</div>
                 <div class="event-meta">${esc((typeof it?.region === "string" && it.region) || (typeof it?.city === "string" && it.city) || (typeof it?.location === "string" && it.location) || "Regio")}</div>
               </div>
             `;
+            wirePremiumItem(li, detailHref);
             playersList.appendChild(li);
           });
         }
@@ -2642,6 +2729,16 @@
 
 
 
+      function buildArticleUrl(article) {
+        const id = String(article?.id || article?.articleId || article?.newsId || "").trim();
+        const slug = String(article?.slug || article?.articleSlug || "").trim();
+        const link = String(article?.link || article?.href || "").trim();
+        if (id) return "artikel.html?id=" + encodeURIComponent(id);
+        if (slug) return "artikel.html?slug=" + encodeURIComponent(slug);
+        if (/(^|\/)artikel\.html\?/i.test(link)) return link;
+        return "artikels.html";
+      }
+
       async function loadHomeNews() {
         if (homeNewsInFlight) return; // prevent concurrent refreshes
         homeNewsInFlight = true;
@@ -2803,9 +2900,7 @@
                 // --- ID-FIRST URL LOGIC (artikel.html expects id; slug is fallback) ---
                 const slug = String(a?.slug || "").trim();
                 const id = String(a?.id || "").trim();
-                const articleUrl = id
-                  ? ("artikel.html?id=" + encodeURIComponent(id))
-                  : (slug ? ("artikel.html?slug=" + encodeURIComponent(slug)) : "artikels.html");
+                const articleUrl = buildArticleUrl(a);
 
                 const articleHtml = `
                   <article class="home-news__item">
@@ -2907,7 +3002,7 @@
                     const safeSnippet = snippet.replace(/"/g, "&quot;");
                     const rawDate = a?.published_at || a?.publishedAt || a?.created_at || "";
                     const dateStr = rawDate ? new Date(rawDate).toLocaleDateString("nl-BE", { day: "numeric", month: "short" }) : "";
-                    const articleLink = a?.link || `artikel.html?id=${encodeURIComponent(a?.id || "")}`;
+                    const articleLink = buildArticleUrl(a);
                     const safeLink = String(articleLink).replace(/"/g, "&quot;");
                     let articleHtml = `<a class="home-news__card" href="${safeLink}" data-country="${cc}">`;
                     articleHtml += thumbHtml;

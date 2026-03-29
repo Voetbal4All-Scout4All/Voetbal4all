@@ -555,16 +555,18 @@
   (function(){
     const params = new URLSearchParams(window.location.search);
 
-    // ✅ ID-only detail page (backend supports /api/news/:id)
     const rawId = params.get("id") || params.get("newsId") || params.get("articleId");
     const idFromUrl = rawId ? String(rawId).trim() : "";
+    const rawSlug = params.get("slug") || params.get("articleSlug");
+    const slugFromUrl = rawSlug ? String(rawSlug).trim() : "";
 
-    // Accept any non-empty id (backend now uses ids like "ni-news-ES-xxxx")
     const articleId = idFromUrl && idFromUrl.length > 0 ? idFromUrl : "";
+    const articleSlug = slugFromUrl && slugFromUrl.length > 0 ? slugFromUrl : "";
+    let resolvedArticleId = articleId;
+    let resolvedArticleSlug = articleSlug;
 
-    console.log("[ARTIKEL] URL params:", { id: articleId || null });
+    console.log("[ARTIKEL] URL params:", { id: articleId || null, slug: articleSlug || null });
 
-    // NOTE: we keep the UI states below; if ID is missing/invalid we show the error state.
     const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
 
     const ARTICLE_IMAGE_FALLBACK = 'assets/img/placeholder.svg';
@@ -803,11 +805,11 @@
     return `${s}${sep}v=${Date.now()}`;
   }
 
-  async function resolveBestArticleImage(article, articleId) {
+  async function resolveBestArticleImage(article, lookup) {
     const direct = extractArticleImageSource(article);
     if (direct) return { url: direct, listHit: null };
 
-    const listHit = await fetchArticleListImageById(articleId, article);
+    const listHit = await fetchArticleListMatch(lookup, article);
     if (listHit) {
       const listHitUrl = extractArticleImageSource(listHit);
       if (listHitUrl) return { url: listHitUrl, listHit };
@@ -816,11 +818,28 @@
     return { url: buildProxyImageFromTitle(article?.title || 'Voetbal4All'), listHit: null };
   }
 
-  async function fetchArticleListImageById(id, article = null) {
-    const safeId = String(id || "").trim();
+  function normalizeSlugValue(value) {
+    return String(value || "").trim().toLowerCase().replace(/^\/+|\/+$/g, "");
+  }
+
+  function extractSlugFromUrlish(value) {
+    const raw = String(value || "").trim();
+    if (!raw) return "";
+    try {
+      const url = new URL(raw, window.location.origin);
+      const parts = url.pathname.split("/").filter(Boolean);
+      return normalizeSlugValue(parts[parts.length - 1] || "");
+    } catch (_) {
+      return normalizeSlugValue(raw.split("?")[0]);
+    }
+  }
+
+  async function fetchArticleListMatch(lookup, article = null) {
+    const safeId = String((lookup && typeof lookup === "object" ? lookup.id : lookup) || "").trim();
+    const safeSlug = normalizeSlugValue(lookup && typeof lookup === "object" ? lookup.slug : "");
     const targetTitle = String(article?.title || "").trim().toLowerCase();
     const targetCanonical = String(article?.canonical_url || article?.url || article?.link || "").trim();
-    if (!safeId && !targetTitle && !targetCanonical) return null;
+    if (!safeId && !safeSlug && !targetTitle && !targetCanonical) return null;
 
     try {
       const listUrl = `${API_BASE}/api/news?limit=2000&nocache=${Date.now()}`;
@@ -830,10 +849,12 @@
       const norm = (s) => String(s || "").trim().toLowerCase();
       const hit = items.find((it) => {
         const itemId = String(it?.id || "").trim();
+        const itemSlug = normalizeSlugValue(it?.slug || extractSlugFromUrlish(it?.canonical_url || it?.url || it?.link));
         const itemTitle = norm(it?.title);
         const itemCanonical = String(it?.canonical_url || it?.url || it?.link || "").trim();
         return (
           (safeId && itemId === safeId) ||
+          (safeSlug && itemSlug === safeSlug) ||
           (targetCanonical && itemCanonical && itemCanonical === targetCanonical) ||
           (targetTitle && itemTitle && (itemTitle === targetTitle || itemTitle.includes(targetTitle) || targetTitle.includes(itemTitle)))
         );
@@ -844,6 +865,25 @@
       console.warn("[ARTIKEL] fetchArticleListImageById failed:", e?.message || e);
       return null;
     }
+  }
+
+  async function resolveArticleLookup() {
+    if (articleId) {
+      return { id: articleId, slug: articleSlug, listHit: null };
+    }
+
+    if (!articleSlug) {
+      return { id: "", slug: "", listHit: null };
+    }
+
+    const listHit = await fetchArticleListMatch({ slug: articleSlug });
+    if (!listHit) {
+      throw new Error("Article not found for slug");
+    }
+
+    const matchedId = String(listHit.id || "").trim();
+    const matchedSlug = String(listHit.slug || articleSlug).trim();
+    return { id: matchedId, slug: matchedSlug, listHit };
   }
 
   function buildProxyImageFromTitle(title) {
@@ -1020,26 +1060,40 @@
       try {
         setState("loading");
 
-        if (!articleId) {
-          console.error('[ARTIKEL] Missing id param');
+        if (!articleId && !articleSlug) {
+          console.error('[ARTIKEL] Missing id/slug param');
           setState('error');
           return;
         }
 
+        const lookup = await resolveArticleLookup();
+        resolvedArticleId = lookup.id || resolvedArticleId;
+        resolvedArticleSlug = lookup.slug || resolvedArticleSlug;
+
         // Small start delay to avoid racing backend during pipeline/cache refresh
         await sleep(250);
 
-        const url = `${API_BASE}/api/news/${encodeURIComponent(articleId)}?nocache=${Date.now()}`;
-        console.log('[ARTIKEL] Fetching article by id:', articleId);
+        let preMatchedListHit = lookup.listHit || null;
+        let article = null;
 
-        const json = await fetchJsonWithRetry(url, { tries: 3, timeoutMs: 6000 });
-        const article = json && (json.item ? json.item : json);
+        if (lookup.id) {
+          const url = `${API_BASE}/api/news/${encodeURIComponent(lookup.id)}?nocache=${Date.now()}`;
+          console.log('[ARTIKEL] Fetching article by id:', lookup.id);
+          const json = await fetchJsonWithRetry(url, { tries: 3, timeoutMs: 6000 });
+          article = json && (json.item ? json.item : json);
+        } else if (preMatchedListHit) {
+          console.log('[ARTIKEL] Falling back to slug-matched list item:', resolvedArticleSlug);
+          article = preMatchedListHit;
+        }
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
 
-        const bestImageResult = await resolveBestArticleImage(article, articleId);
+        resolvedArticleId = String(article.id || resolvedArticleId || "").trim();
+        resolvedArticleSlug = String(article.slug || resolvedArticleSlug || "").trim();
+
+        const bestImageResult = await resolveBestArticleImage(article, { id: resolvedArticleId, slug: resolvedArticleSlug });
         const bestImg = bestImageResult?.url || null;
-        const listHit = bestImageResult?.listHit || null;
+        const listHit = bestImageResult?.listHit || preMatchedListHit || null;
 
         if (listHit && typeof listHit === 'object') {
           article.image = article.image || listHit.image;
@@ -1386,8 +1440,11 @@
       tagsEl.style.display = 'none';
     }
     
-    const _aid = new URLSearchParams(window.location.search).get("id");
-            const articleUrl = _aid ? "https://www.voetbal4all.eu/share/article/" + _aid + "/" : window.location.href;
+    const shareId = String(article.id || resolvedArticleId || "").trim();
+    const shareSlug = String(article.slug || resolvedArticleSlug || "").trim();
+    const articleUrl = shareId
+      ? ("https://www.voetbal4all.eu/artikel.html?id=" + encodeURIComponent(shareId))
+      : (shareSlug ? ("https://www.voetbal4all.eu/artikel.html?slug=" + encodeURIComponent(shareSlug)) : window.location.href);
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedTitle = encodeURIComponent(title);
     const fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
