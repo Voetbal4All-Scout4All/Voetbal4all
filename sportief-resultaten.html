@@ -488,12 +488,21 @@ const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 const STANDINGS_ENDPOINT = `${API_BASE}/api/standings`;          // expected: ?league=CODE
 const UPCOMING_ENDPOINT  = `${API_BASE}/api/fixtures`;           // expected: ?league=CODE&next=N
 const UPCOMING_NEXT      = 10;
+const LEAGUE_LABELS = {"BE_D2_PO":"Tweede Nationale Play-offs – KBVB","BE_D3_PO":"Derde Nationale Play-offs – KBVB","BE_PROV_ANT":"Provinciale Antwerpen – Voetbal Vlaanderen","BE_PROV_BRA_ACFF":"Provinciale Brabant – ACFF","BE_PROV_BRA_VFV":"Provinciale Vlaams-Brabant – Voetbal Vlaanderen","BE_PROV_HAI":"Provinciale Henegouwen – ACFF","BE_PROV_LIE":"Provinciale Luik – ACFF","BE_PROV_LIM":"Provinciale Limburg – Voetbal Vlaanderen","BE_PROV_LUX":"Provinciale Luxemburg – ACFF","BE_PROV_NAM":"Provinciale Namen – ACFF","BE_PROV_OVL":"Provinciale Oost-Vlaanderen – Voetbal Vlaanderen","BE_PROV_PO_ACFF":"Provinciale Play-offs – ACFF","BE_PROV_PO_VV":"Provinciale Play-offs – Voetbal Vlaanderen","BE_PROV_WVL":"Provinciale West-Vlaanderen – Voetbal Vlaanderen","BEL_AM1":"Eerste Nationale – Voetbal Vlaanderen / ACFF","BEL_CUP":"Beker van België – KBVB","BEL_D2_ACFF":"Tweede Nationale ACFF – ACFF","BEL_D2_VFVA":"Tweede Nationale VFV A – Voetbal Vlaanderen","BEL_D2_VFVB":"Tweede Nationale VFV B – Voetbal Vlaanderen","BEL_D3_ACFF_A":"Derde Nationale ACFF A – ACFF","BEL_D3_ACFF_B":"Derde Nationale ACFF B – ACFF","BEL_D3_VFVA":"Derde Nationale VFV A – Voetbal Vlaanderen","BEL_D3_VFVB":"Derde Nationale VFV B – Voetbal Vlaanderen","BEL_RES":"Reserves Pro League – België","BEL_SUPERCUP":"Belgische Supercup – KBVB","JPL":"Jupiler Pro League – België","BEL2":"Challenger Pro League – België","BEL_W":"Super League Vrouwen – België","BUND":"Bundesliga – Duitsland","GER_CUP":"DFB-Pokal – Duitsland","GER_SUPERCUP":"DFL-Supercup – Duitsland","GER_U19":"Onder 19 Bundesliga – Duitsland","GER_U19_CUP":"Onder 19 DFB-Pokal – Duitsland","GER1":"2. Bundesliga – Duitsland","GER3":"Regionalliga – Duitsland","GER2":"3. Liga – Duitsland","ENG_EFL":"EFL Cup – Engeland","ENG_FA":"FA Cup – Engeland","EPL":"Premier League – Engeland","ENG2":"Championship – Engeland","ESP_CUP":"Copa del Rey – Spanje","LIGA":"La Liga – Spanje","ESP2":"La Liga 2 – Spanje","FRA_CUP":"Coupe de France – Frankrijk","L1":"Ligue 1 – Frankrijk","FRA2":"Ligue 2 – Frankrijk","ITA_CUP":"Coppa Italia – Italië","SA":"Serie A – Italië","ITA2":"Serie B – Italië","ERED":"Eredivisie – Nederland","NED_CUP":"KNVB Beker – Nederland","NED_D3_PO":"Derde Divisie Play-offs – Nederland","NED_D3_SAT":"Derde Divisie Zaterdag – Nederland","NED_D3_SUN":"Derde Divisie Zondag – Nederland","NED_RES":"Reserves Eredivisie – Nederland","NED_SUPERCUP":"Johan Cruijff Schaal – Nederland","NED_U18_1":"Onder 18 Eredivisie – Nederland","NED_U19_1":"Onder 19 Eredivisie – Nederland","NED_U21_1":"Onder 21 Eredivisie – Nederland","NED_D2":"Tweede Divisie – Nederland","NED2":"Eerste Divisie – Nederland"};
 
 function setHtml(id, html){
   const el = document.getElementById(id);
   if (el) el.innerHTML = html;
 }
 
+function pickArray(payload, keys = []){
+  if (Array.isArray(payload)) return payload;
+  if (!payload || typeof payload !== "object") return [];
+  for (const key of keys) {
+    if (Array.isArray(payload[key])) return payload[key];
+  }
+  return [];
+}
 
 function toDateLabel(iso){
   const s = String(iso || "");
@@ -530,6 +539,19 @@ function teamCellHtml(name, logoUrl){
   const n = escapeHtml(name || "");
   const l = logoHtml(logoUrl, name || "");
   return `<span style="display:inline-flex;align-items:center;gap:8px;min-width:0;">${l}<span style="min-width:0;overflow:hidden;text-overflow:ellipsis;">${n}</span></span>`;
+}
+
+function isWomenLeague(cfg){
+  return cfg?.isWomen === true || cfg?.genderLabel === "women" || cfg?.gender === "W";
+}
+
+function getLeagueLabel(cfgOrCode){
+  if (cfgOrCode && typeof cfgOrCode === "object") {
+    return LEAGUE_LABELS[cfgOrCode.code] || cfgOrCode.label || cfgOrCode.code || "";
+  }
+  const code = String(cfgOrCode || "");
+  const cfg = (LEAGUES || []).find((league) => league.code === code);
+  return LEAGUE_LABELS[code] || cfg?.label || code;
 }
 
 function renderStandingsTable(rows){
@@ -751,6 +773,7 @@ function renderResultsTable(items){
 async function safeFetchJson(url){
   try {
     const r = await fetch(url);
+    if (!r.ok) return null;
     const j = await r.json().catch(()=>null);
     return j;
   } catch (e) {
@@ -762,14 +785,13 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
   // set titles from /api/leagues if possible
   const cfg = (LEAGUES || []).find(l => l.code === league);
   if (cfg && document.getElementById(titleId)) {
-    const isWomen = cfg.isWomen === true || cfg.genderLabel === "women" || cfg.gender === "W";
-    document.getElementById(titleId).innerHTML = escapeHtml(cfg.label || cfg.code) + (isWomen ? womenBadgeHtml() : "");
+    document.getElementById(titleId).innerHTML = escapeHtml(getLeagueLabel(cfg)) + (isWomenLeague(cfg) ? womenBadgeHtml() : "");
   }
 
   // Standings (optional)
   setHtml(standingsId, `<p class="note">Laden…</p>`);
   const st = await safeFetchJson(`${STANDINGS_ENDPOINT}?league=${encodeURIComponent(league)}&nocache=1`);
-  const stRows = st?.items || st?.standings || st?.table || st?.data || [];
+  const stRows = pickArray(st, ["items", "standings", "table", "data"]);
   setHtml(standingsId, renderStandingsTable(stRows));
 
   // Results (last finished matches)
@@ -777,7 +799,7 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
   const rr = await safeFetchJson(
     `${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=10&nocache=1&bust=${Date.now()}`
   );
-  setHtml(resultsId, renderResultsTable(rr?.items || []));
+  setHtml(resultsId, renderResultsTable(pickArray(rr, ["items", "results", "data", "matches"])));
 
   // Upcoming (optional)
   // Backend: /api/fixtures?league=CODE&next=N
@@ -785,35 +807,31 @@ async function loadTopLeagueBlock({ league, titleId, standingsId, resultsId, upc
   const up = await safeFetchJson(
     `${UPCOMING_ENDPOINT}?league=${encodeURIComponent(league)}&next=${encodeURIComponent(String(UPCOMING_NEXT))}&nocache=1`
   );
-  setHtml(upcomingId, renderMatchesList(up?.items || up?.fixtures || up?.data || []));
+  setHtml(upcomingId, renderMatchesList(pickArray(up, ["items", "fixtures", "data", "matches"])));
 }
 
 async function loadTopCompetitions(){
-  // Ensure LEAGUES is loaded (so we can label properly)
-  if (!Array.isArray(LEAGUES) || !LEAGUES.length) {
-    await loadLeagues();
-    // loadLeagues auto-loads one league into the main results section; that's fine.
-  }
-
-  await loadTopLeagueBlock({
-    league: "ERED",
-    titleId: "top-ered-title",
-    standingsId: "top-ered-standings",
-    resultsId: "top-ered-results",
-    upcomingId: "top-ered-upcoming",
-  });
-
-  await loadTopLeagueBlock({
-    league: "JPL",
-    titleId: "top-jpl-title",
-    standingsId: "top-jpl-standings",
-    resultsId: "top-jpl-results",
-    upcomingId: "top-jpl-upcoming",
-  });
+  await Promise.all([
+    loadTopLeagueBlock({
+      league: "ERED",
+      titleId: "top-ered-title",
+      standingsId: "top-ered-standings",
+      resultsId: "top-ered-results",
+      upcomingId: "top-ered-upcoming",
+    }),
+    loadTopLeagueBlock({
+      league: "JPL",
+      titleId: "top-jpl-title",
+      standingsId: "top-jpl-standings",
+      resultsId: "top-jpl-results",
+      upcomingId: "top-jpl-upcoming",
+    })
+  ]);
 }
 
 // Leagues are discovered from backend (extendable, no hardcoding)
 let LEAGUES = [];
+let leaguesPromise = null;
 
 const countrySelect = document.getElementById("filter-country");
 const genderSelect  = document.getElementById("filter-gender");
@@ -825,16 +843,21 @@ function escapeHtml(s){
 }
 
 function renderLeagueOptionName(l){
-  const base = l.label || l.code;
-  const isWomen = l.isWomen === true || l.genderLabel === "women" || l.gender === "W";
+  const base = getLeagueLabel(l);
+  const isWomen = isWomenLeague(l);
   return isWomen ? `${base} (Dames)` : base;
 }
 
 function populateLeagues(){
+  const previousValue = leagueSelect.value;
   leagueSelect.innerHTML = "";
 
   const country = countrySelect.value;
   const gender  = genderSelect.value;
+  const resultsTitleEl = document.getElementById("results-title");
+  const resultsBodyEl = document.getElementById("results-body");
+  const fixturesCardEl = document.getElementById("fixtures-card");
+  const standingsCardEl = document.getElementById("standings-card");
 
   const filtered = (LEAGUES || []).filter(l =>
     (country === "ALL" || (String(l.country || l.countryCode || "").toUpperCase() === country)) &&
@@ -848,6 +871,10 @@ function populateLeagues(){
     leagueSelect.appendChild(opt);
     leagueSelect.disabled = true;
     loadBtn.disabled = true;
+    if (resultsTitleEl) resultsTitleEl.textContent = "Geen competitie beschikbaar";
+    if (resultsBodyEl) resultsBodyEl.innerHTML = `<p class="note">Geen competitie beschikbaar voor deze filters.</p>`;
+    if (fixturesCardEl) fixturesCardEl.style.display = "none";
+    if (standingsCardEl) standingsCardEl.style.display = "none";
     return;
   }
 
@@ -860,9 +887,17 @@ function populateLeagues(){
     opt.textContent = renderLeagueOptionName(l);
     leagueSelect.appendChild(opt);
   });
+
+  if (previousValue && filtered.some((l) => l.code === previousValue)) {
+    leagueSelect.value = previousValue;
+  } else if (leagueSelect.options.length) {
+    leagueSelect.selectedIndex = 0;
+  }
 }
 
-async function loadLeagues(){
+async function ensureLeaguesLoaded(){
+  if (leaguesPromise) return leaguesPromise;
+
   // keep UI responsive
   leagueSelect.innerHTML = "";
   const opt = document.createElement("option");
@@ -872,25 +907,23 @@ async function loadLeagues(){
   leagueSelect.disabled = true;
   loadBtn.disabled = true;
 
-  try {
-    const res = await fetch(`${API_BASE}/api/leagues?nocache=1`);
-    const json = await res.json().catch(()=>({}));
-    LEAGUES = Array.isArray(json.items) ? json.items : [];
-  } catch (e) {
-    LEAGUES = [];
-  }
-
-  populateLeagues();
-
-  // auto-load first available league
-  setTimeout(() => {
-    if (leagueSelect.options.length && leagueSelect.value) {
-      loadLeague(leagueSelect.value);
-    } else if (leagueSelect.options.length && leagueSelect.options[0].value) {
-      leagueSelect.selectedIndex = 0;
-      loadLeague(leagueSelect.value);
+  leaguesPromise = (async () => {
+    try {
+      const res = await fetch(`${API_BASE}/api/leagues?nocache=1`);
+      const json = await res.json().catch(()=>({}));
+      LEAGUES = pickArray(json, ["items", "data", "leagues"]).map((league) => ({
+        ...league,
+        label: getLeagueLabel(league),
+      }));
+    } catch (e) {
+      LEAGUES = [];
     }
-  }, 0);
+
+    populateLeagues();
+    return LEAGUES;
+  })();
+
+  return leaguesPromise;
 }
 
 countrySelect.addEventListener("change", populateLeagues);
@@ -901,36 +934,71 @@ function womenBadgeHtml(){
   return `<span style="display:inline-flex;align-items:center;gap:6px;margin-left:10px;padding:3px 9px;border-radius:999px;background:rgba(255,120,200,0.12);border:1px solid rgba(255,120,200,0.35);font-size:12px;line-height:1;">♀ dames</span>`;
 }
 
+function setLeagueTitles(league, showWomenBadge){
+  const cfg = (LEAGUES || []).find((item) => item.code === league);
+  const title = escapeHtml(getLeagueLabel(cfg || league));
+  const badge = showWomenBadge ? womenBadgeHtml() : "";
+
+  const resultsTitleEl = document.getElementById("results-title");
+  const fixturesTitleEl = document.getElementById("fixtures-title");
+  const standingsTitleEl = document.getElementById("standings-title");
+
+  if (resultsTitleEl) resultsTitleEl.innerHTML = title + badge;
+  if (fixturesTitleEl) fixturesTitleEl.innerHTML = title + badge;
+  if (standingsTitleEl) standingsTitleEl.innerHTML = title + badge;
+}
+
 async function loadLeague(league) {
   if (!league) return;
 
   const cfg = (LEAGUES || []).find(l => l.code === league);
-  const baseTitle = cfg ? (cfg.label || cfg.code) : league;
-
-  const rTitleEl = document.getElementById("results-title");
-  const isWomen = cfg ? (cfg.isWomen === true || cfg.genderLabel === "women" || cfg.gender === "W") : false;
-  rTitleEl.innerHTML = escapeHtml(baseTitle) + (isWomen ? womenBadgeHtml() : "");
-
   const rBody = document.getElementById("results-body");
-  rBody.innerHTML = `<p class="note">Laden…</p>`;
+  const fixturesCard = document.getElementById("fixtures-card");
+  const fixturesBody = document.getElementById("fixtures-body");
+  const standingsCard = document.getElementById("standings-card");
+  const standingsBody = document.getElementById("standings-body");
+  const initialWomenState = isWomenLeague(cfg);
 
-  try {
-    const rRes = await fetch(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=25&nocache=1&bust=${Date.now()}`);
-    const rJson = await rRes.json().catch(()=>({}));
+  setLeagueTitles(league, initialWomenState);
+  if (rBody) rBody.innerHTML = `<p class="note">Laden…</p>`;
+  if (fixturesCard) fixturesCard.style.display = "";
+  if (fixturesBody) fixturesBody.innerHTML = `<p class="note">Laden...</p>`;
+  if (standingsCard) standingsCard.style.display = "";
+  if (standingsBody) standingsBody.innerHTML = `<p class="note">Laden...</p>`;
 
-    // prefer backend meta (authoritative)
-    const metaIsWomen = rJson?.meta?.isWomen === true;
-    if (metaIsWomen && !isWomen) {
-      rTitleEl.innerHTML = escapeHtml(baseTitle) + womenBadgeHtml();
-    }
+  const [resultsJson, fixturesJson, standingsJson] = await Promise.all([
+    safeFetchJson(`${API_BASE}/api/results?league=${encodeURIComponent(league)}&last=25&nocache=1&bust=${Date.now()}`),
+    safeFetchJson(`${UPCOMING_ENDPOINT}?league=${encodeURIComponent(league)}&next=${encodeURIComponent(String(UPCOMING_NEXT))}&nocache=1&bust=${Date.now()}`),
+    safeFetchJson(`${STANDINGS_ENDPOINT}?league=${encodeURIComponent(league)}&nocache=1&bust=${Date.now()}`),
+  ]);
 
-    if (rJson.ok && Array.isArray(rJson.items) && rJson.items.length) {
-      rBody.innerHTML = renderResultsTable(rJson.items);
-    } else {
-      rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
-    }
-  } catch (e) {
-    rBody.innerHTML = `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
+  const showWomenBadge = initialWomenState ||
+    resultsJson?.meta?.isWomen === true ||
+    fixturesJson?.meta?.isWomen === true ||
+    standingsJson?.meta?.isWomen === true;
+
+  setLeagueTitles(league, showWomenBadge);
+
+  const resultsItems = pickArray(resultsJson, ["items", "results", "data", "matches"]);
+  const fixturesItems = pickArray(fixturesJson, ["items", "fixtures", "data", "matches"]);
+  const standingsItems = pickArray(standingsJson, ["items", "standings", "table", "data"]);
+
+  if (rBody) {
+    rBody.innerHTML = resultsItems.length
+      ? renderResultsTable(resultsItems)
+      : `<p class="note">Nog geen recente resultaten (of niet beschikbaar).</p>`;
+  }
+
+  if (fixturesBody) {
+    fixturesBody.innerHTML = fixturesItems.length
+      ? renderMatchesList(fixturesItems)
+      : `<p class="note">Geen aankomende wedstrijden gevonden.</p>`;
+  }
+
+  if (standingsBody) {
+    standingsBody.innerHTML = standingsItems.length
+      ? renderStandingsTable(standingsItems)
+      : `<p class="note">Geen rangschikking beschikbaar.</p>`;
   }
 }
 
@@ -939,57 +1007,15 @@ loadBtn.addEventListener("click", async () => {
 });
 
 // init
-loadLeagues();
-// Load fixed top competitions (ERED + JPL)
-loadTopCompetitions();
+ensureLeaguesLoaded().then(async () => {
+  const initialLeague = leagueSelect.value || leagueSelect.options[0]?.value || "";
+  if (initialLeague) {
+    await loadLeague(initialLeague);
+  }
+  await loadTopCompetitions();
+});
 </script>
-
-    <!-- STAP 1-3: League labels, Fixtures & Standings -->
-  <script>
-  // STAP 1: League label mapping
-  const _LM={"BE_D2_PO":"Tweede Nationale Play-offs – KBVB","BE_D3_PO":"Derde Nationale Play-offs – KBVB","BE_PROV_ANT":"Provinciale Antwerpen – Voetbal Vlaanderen","BE_PROV_BRA_ACFF":"Provinciale Brabant – ACFF","BE_PROV_BRA_VFV":"Provinciale Vlaams-Brabant – Voetbal Vlaanderen","BE_PROV_HAI":"Provinciale Henegouwen – ACFF","BE_PROV_LIE":"Provinciale Luik – ACFF","BE_PROV_LIM":"Provinciale Limburg – Voetbal Vlaanderen","BE_PROV_LUX":"Provinciale Luxemburg – ACFF","BE_PROV_NAM":"Provinciale Namen – ACFF","BE_PROV_OVL":"Provinciale Oost-Vlaanderen – Voetbal Vlaanderen","BE_PROV_PO_ACFF":"Provinciale Play-offs – ACFF","BE_PROV_PO_VV":"Provinciale Play-offs – Voetbal Vlaanderen","BEL_AM1":"Eerste Nationale – Voetbal Vlaanderen / ACFF","BEL_CUP":"Beker van België – KBVB","BEL_D2_ACFF":"Tweede Nationale ACFF – ACFF","BEL_D2_VFVA":"Tweede Nationale VFV A – Voetbal Vlaanderen","BEL_D2_VFVB":"Tweede Nationale VFV B – Voetbal Vlaanderen","BEL_D3_ACFF_A":"Derde Nationale ACFF A – ACFF","BEL_D3_ACFF_B":"Derde Nationale ACFF B – ACFF","BEL_D3_VFVA":"Derde Nationale VFV A – Voetbal Vlaanderen","BEL_D3_VFVB":"Derde Nationale VFV B – Voetbal Vlaanderen","BEL_RES":"Reserves Pro League – België","BEL_SUPERCUP":"Belgische Supercup – KBVB","JPL":"Jupiler Pro League – België","BEL2":"Challenger Pro League – België","BE_PROV_WVL":"Provinciale West-Vlaanderen – Voetbal Vlaanderen","BEL_W":"Super League Vrouwen – België","BUND":"Bundesliga – Duitsland","GER_CUP":"DFB-Pokal – Duitsland","GER_SUPERCUP":"DFL-Supercup – Duitsland","GER_U19":"Onder 19 Bundesliga – Duitsland","GER_U19_CUP":"Onder 19 DFB-Pokal – Duitsland","GER1":"2. Bundesliga – Duitsland","GER3":"Regionalliga – Duitsland","GER2":"3. Liga – Duitsland","ENG_EFL":"EFL Cup – Engeland","ENG_FA":"FA Cup – Engeland","EPL":"Premier League – Engeland","ENG2":"Championship – Engeland","ESP_CUP":"Copa del Rey – Spanje","LIGA":"La Liga – Spanje","ESP2":"La Liga 2 – Spanje","FRA_CUP":"Coupe de France – Frankrijk","L1":"Ligue 1 – Frankrijk","FRA2":"Ligue 2 – Frankrijk","ITA_CUP":"Coppa Italia – Italië","SA":"Serie A – Italië","ITA2":"Serie B – Italië","ERED":"Eredivisie – Nederland","NED_CUP":"KNVB Beker – Nederland","NED_D3_PO":"Derde Divisie Play-offs – Nederland","NED_D3_SAT":"Derde Divisie Zaterdag – Nederland","NED_D3_SUN":"Derde Divisie Zondag – Nederland","NED_RES":"Reserves Eredivisie – Nederland","NED_SUPERCUP":"Johan Cruijff Schaal – Nederland","NED_U18_1":"Onder 18 Eredivisie – Nederland","NED_U19_1":"Onder 19 Eredivisie – Nederland","NED_U21_1":"Onder 21 Eredivisie – Nederland","NED_D2":"Tweede Divisie – Nederland","NED2":"Eerste Divisie – Nederland"};
-  function _applyLabels(){LEAGUES.forEach(function(l){if(_LM[l.code])l.label=_LM[l.code];});}
-  // Override populateLeagues so labels are applied before EVERY repopulation
-  var _origPL = populateLeagues;
-  populateLeagues = function(){
-    _applyLabels();
-    _origPL();
-    // Also update results-title if a league is selected
-    var sel = document.getElementById('filter-league');
-    var rt = document.getElementById('results-title');
-    if(rt && sel && sel.value && _LM[sel.value]){
-      var cfg = (LEAGUES||[]).find(function(l){return l.code===sel.value;});
-      var isW = cfg && (cfg.isWomen===true || cfg.genderLabel==="women" || cfg.gender==="W");
-      rt.innerHTML = escapeHtml(_LM[sel.value]) + (isW ? womenBadgeHtml() : "");
-    }
-  };
-  // If LEAGUES already loaded, apply immediately; otherwise poll
-  (function(){
-    function kick(){ _applyLabels(); populateLeagues(); var sel=document.getElementById('filter-league'); if(sel&&sel.value){loadFixtures(sel.value);loadStandings(sel.value);} }
-    if(LEAGUES.length){ kick(); }
-    else {
-      var _t = setInterval(function(){
-        if(LEAGUES.length){ clearInterval(_t); kick(); }
-      }, 200);
-      setTimeout(function(){ clearInterval(_t); }, 15000);
-    }
-  })();
-
-  // STAP 2: Fixtures
-  function renderFixturesTable(items){var a=Array.isArray(items)?items:[];if(!a.length)return '<p class="note">Geen aankomende wedstrijden gevonden.</p>';var rows=a.slice(0,10).map(function(m){var h=m.homeTeam||m.home||(m.teams&&m.teams.home?m.teams.home.name:"")||"";var aw=m.awayTeam||m.away||(m.teams&&m.teams.away?m.teams.away.name:"")||"";var d=m.dateEvent||m.date||(m.fixture?m.fixture.date:"")||"";var dt=d?new Date(d):null;var dc=dt?dt.toLocaleDateString("nl-BE",{day:"2-digit",month:"2-digit"}):"";var tc=dt?dt.toLocaleTimeString("nl-BE",{hour:"2-digit",minute:"2-digit"}):"";return "<tr><td>"+escapeHtml(dc)+"</td><td>"+escapeHtml(tc)+"</td><td>"+escapeHtml(h)+"</td><td>"+escapeHtml(aw)+"</td></tr>";}).join("");return '<div style="overflow:auto"><table class="v4-mini-fixtures"><thead><tr><th>Datum</th><th>Tijd</th><th>Thuis</th><th>Uit</th></tr></thead><tbody>'+rows+'</tbody></table></div>';}
-
-  function loadFixtures(league){var fc=document.getElementById("fixtures-card"),ft=document.getElementById("fixtures-title"),fb=document.getElementById("fixtures-body");if(!league||!fc){if(fc)fc.style.display="none";return;}var cfg=(LEAGUES||[]).find(function(l){return l.code===league;});var t=cfg?(cfg.label||cfg.code):league;var isW=cfg&&(cfg.gender==="W");ft.innerHTML=escapeHtml(t)+(isW?womenBadgeHtml():"");fb.innerHTML='<p class="note">Laden...</p>';fc.style.display="";fetch(API_BASE+"/api/fixtures?league="+encodeURIComponent(league)+"&next=10&bust="+Date.now()).then(function(r){return r.json();}).then(function(j){if(j.ok&&Array.isArray(j.items)&&j.items.length){fb.innerHTML=renderFixturesTable(j.items);}else{fb.innerHTML='<p class="note">Geen aankomende wedstrijden gevonden.</p>';}}).catch(function(){fb.innerHTML='<p class="note">Kon wedstrijden niet laden.</p>';});}
-
-  // STAP 3: Standings
-  function renderStandingsTable(tbl){var a=Array.isArray(tbl)?tbl:[];if(!a.length)return '<p class="note">Geen rangschikking beschikbaar.</p>';var rows=a.map(function(t){var logo=t.logo?'<img src="'+escapeHtml(t.logo)+'" alt="'+escapeHtml(t.team)+'" style="width:18px;height:18px;object-fit:contain;border-radius:3px;flex-shrink:0;" loading="lazy">':"";var teamCell='<span style="display:inline-flex;align-items:center;gap:6px;">'+logo+escapeHtml(t.team||"")+"</span>";return "<tr><td>"+escapeHtml(String(t.rank||""))+"</td><td style='white-space:nowrap;padding-right:48px;min-width:180px;'>"+teamCell+"</td><td style='text-align:center'>"+(t.played!=null?t.played:"")+"</td><td style='text-align:center'>"+(t.win!=null?t.win:"")+"</td><td style='text-align:center'>"+(t.draw!=null?t.draw:"")+"</td><td style='text-align:center'>"+(t.lose!=null?t.lose:"")+"</td><td style='text-align:center'>"+(t.goalsFor!=null?t.goalsFor:"")+"</td><td style='text-align:center'>"+(t.goalsAgainst!=null?t.goalsAgainst:"")+"</td><td style='text-align:center'>"+(t.goalDiff!=null?t.goalDiff:"")+"</td><td style='text-align:center;font-weight:bold'>"+(t.points!=null?t.points:"")+"</td></tr>";}).join("");return '<div style="overflow:auto;display:flex;justify-content:center;"><table class="v4-results-table"><thead><tr><th>#</th><th style="padding-right:24px">Team</th><th style="text-align:center">P</th><th style="text-align:center">W</th><th style="text-align:center">G</th><th style="text-align:center">V</th><th style="text-align:center">DV</th><th style="text-align:center">DT</th><th style="text-align:center">DS</th><th style="text-align:center">Pts</th></tr></thead><tbody>'+rows+'</tbody></table></div>';}
-
-  function loadStandings(league){var sc=document.getElementById("standings-card"),st=document.getElementById("standings-title"),sb=document.getElementById("standings-body");if(!league||!sc){if(sc)sc.style.display="none";return;}var cfg=(LEAGUES||[]).find(function(l){return l.code===league;});var t=cfg?(cfg.label||cfg.code):league;var isW=cfg&&(cfg.gender==="W");st.innerHTML=escapeHtml(t)+(isW?womenBadgeHtml():"");sb.innerHTML='<p class="note">Laden...</p>';sc.style.display="";fetch(API_BASE+"/api/standings?league="+encodeURIComponent(league)+"&bust="+Date.now()).then(function(r){return r.json();}).then(function(j){if(j.ok&&Array.isArray(j.table)&&j.table.length){sb.innerHTML=renderStandingsTable(j.table);}else{sb.innerHTML='<p class="note">Geen rangschikking beschikbaar.</p>';}}).catch(function(){sb.innerHTML='<p class="note">Kon rangschikking niet laden.</p>';});}
-
-  // Override loadLeague to also trigger fixtures + standings
-  var _origLoadLeague=loadLeague;
-  loadLeague=async function(league){await _origLoadLeague(league);loadFixtures(league);loadStandings(league);};
-  </script>
-
+<script src="assets/js/nav-active.js" defer></script>
 <script src="assets/js/nav-mobile.js"></script>
 <script src="assets/js/live-banner.js"></script>
 

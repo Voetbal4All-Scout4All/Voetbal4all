@@ -720,19 +720,42 @@
       </article>`;
     }
 
+    function normalizeSupportersclubsPayload(payload) {
+      if (Array.isArray(payload)) return payload;
+      if (payload && Array.isArray(payload.items)) return payload.items;
+      return [];
+    }
+
+    function renderEmptyState() {
+      listEl.innerHTML = `
+        <article class="card" data-empty-state="1" style="grid-column:1 / -1;">
+          <div class="card-body">
+            <p class="note">Er zijn momenteel nog geen supportersclubs beschikbaar.</p>
+          </div>
+        </article>
+      `;
+    }
+
     async function fetchAndRenderSupportersclubs() {
       let data = [];
       for (const url of API_URLS) {
         try {
           const r = await fetch(url);
           if (!r.ok) continue;
-          const arr = await r.json();
-          if (Array.isArray(arr) && arr.length > 0) {
-            data = arr;
-            break;
-          }
+          const payload = await r.json().catch(() => null);
+          const arr = normalizeSupportersclubsPayload(payload);
+          if (!Array.isArray(arr)) continue;
+          data = arr;
+          if (arr.length > 0) break;
         } catch (e) { /* try next */ }
       }
+
+      if (!data.length) {
+        renderEmptyState();
+        updateShareLinks();
+        return;
+      }
+
       // Render
       listEl.innerHTML = data.map((sc, idx) => supportersclubCardHtml(sc, idx)).join('');
       // After rendering, update share links if needed (see below)
@@ -797,7 +820,7 @@
       const ft = norm(teamEl.value);
       const fcity = norm(cityEl.value);
 
-      const cards = Array.from(listEl.querySelectorAll('.card'));
+      const cards = Array.from(listEl.querySelectorAll('.card:not([data-empty-state="1"])'));
       let shown = 0;
 
       cards.forEach(card => {
