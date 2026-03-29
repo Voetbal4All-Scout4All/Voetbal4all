@@ -1053,6 +1053,17 @@
     return Number.isFinite(pu) && pu > Date.now();
   }
 
+  function normalizeVacancyThumb(raw) {
+    const value = String(raw || "").trim();
+    if (!value) return "";
+
+    // Ignore legacy dummy values so the visual placeholder state stays intact.
+    if (/\/jouw[-_ ]?afbeelding\.(png|jpe?g|webp|gif)(?:[?#].*)?$/i.test(value)) return "";
+    if (/^https?:\/\/\.\.\.\//i.test(value)) return "";
+
+    return value;
+  }
+
   function vacancyCardHtml(v, idx, isPremium) {
     const title = escHtml(v.title || "Vacature");
     const club = escHtml(v.club || "Club");
@@ -1072,7 +1083,7 @@
     const cType = String(v?.meta?.type || "");
     const cLevel = String(v?.meta?.level || "");
 
-    const thumbUrl = String(v.image_url || "").trim();
+    const thumbUrl = normalizeVacancyThumb(v.image_url || v.image || "");
     const thumb = thumbUrl
       ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
       : "";
