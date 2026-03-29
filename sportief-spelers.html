@@ -47,8 +47,20 @@
 
     .v4-player-cell { display:flex; align-items:center; gap:10px; min-width:160px; }
     .v4-player-photo {
-      width:32px; height:32px; border-radius:50%;
-      object-fit:cover; background:rgba(255,255,255,0.08); flex-shrink:0;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:top;
+      background:rgba(255,255,255,0.08);
+      flex-shrink:0;
+      border:2px solid rgba(255,255,255,0.08);
+    }
+    @media (min-width: 768px) {
+      .v4-player-photo {
+        width:44px;
+        height:44px;
+      }
     }
     .v4-player-name { font-weight:600; font-size:13px; }
     .v4-player-nat { font-size:11px; color:rgba(255,255,255,0.35); }
@@ -221,11 +233,7 @@
           <div class="v4-league-bar" id="league-bar"></div>
 
           <div class="v4-controls-row">
-            <select class="v4-season-select" id="season-select">
-              <option value="2024">2024–2025</option>
-              <option value="2023">2023–2024</option>
-              <option value="2022">2022–2023</option>
-            </select>
+            <select class="v4-season-select" id="season-select"></select>
             <span class="v4-source-badge" id="source-badge">API-Football</span>
           </div>
 
@@ -300,21 +308,54 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
+// Fix 1A: Dynamic season determination
+function getCurrentSeason() {
+  const now = new Date();
+  // Football seasons start in July (month index 6)
+  // In March 2026 → getFullYear()=2026, getMonth()=2 → return "2025"
+  // In August 2026 → getFullYear()=2026, getMonth()=7 → return "2026"
+  return now.getMonth() >= 6 ? String(now.getFullYear()) : String(now.getFullYear() - 1);
+}
+let activeSeason = getCurrentSeason();
+
+// Fix 1B: Build season dropdown dynamically
+(function buildSeasonDropdown() {
+  const sel = document.getElementById("season-select");
+  const current = parseInt(activeSeason);
+  for (let i = 0; i < 3; i++) {
+    const s = current - i;
+    const opt = document.createElement("option");
+    opt.value = String(s);
+    opt.textContent = s + "–" + (s + 1);
+    if (i === 0) opt.selected = true;
+    sel.appendChild(opt);
+  }
+})();
+
+// Fix 1C: LEAGUES array with season per league
 const LEAGUES = [
-  { code:"JPL",    label:"Jupiler Pro League",    flag:"🇧🇪", apiId:144 },
-  { code:"BEL2",   label:"Challenger Pro League", flag:"🇧🇪", apiId:145 },
-  { code:"BEL_W",  label:"Super League Women",    flag:"🇧🇪", apiId:195 },
-  { code:"ERED",   label:"Eredivisie",            flag:"🇳🇱", apiId:88  },
-  { code:"NED_D2", label:"Keuken Kampioen Div.",  flag:"🇳🇱", apiId:89  },
+  { code:"JPL",    label:"Jupiler Pro League",    flag:"🇧🇪", apiId:144, season: getCurrentSeason() },
+  { code:"BEL2",   label:"Challenger Pro League", flag:"🇧🇪", apiId:145, season: getCurrentSeason() },
+  { code:"BEL_W",  label:"Super League Women",    flag:"🇧🇪", apiId:195, season: getCurrentSeason() },
+  { code:"ERED",   label:"Eredivisie",            flag:"🇳🇱", apiId:88,  season: getCurrentSeason() },
+  { code:"NED_D2", label:"Keuken Kampioen Div.",  flag:"🇳🇱", apiId:89,  season: getCurrentSeason() },
 ];
 
 let activeLeague = LEAGUES[0];
-let activeSeason = "2024";
 let activeTab    = "goals";
 let sortCol      = null;
 let sortDir      = -1;
 let cache        = {};
 let currentData  = [];
+
+// Fix 2C: FALLBACK_AVATAR defined once outside render()
+const FALLBACK_AVATAR = "data:image/svg+xml," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">'
+  + '<circle cx="20" cy="20" r="20" fill="rgba(255,255,255,0.06)"/>'
+  + '<circle cx="20" cy="15" r="7" fill="rgba(255,255,255,0.18)"/>'
+  + '<ellipse cx="20" cy="33" rx="11" ry="9" fill="rgba(255,255,255,0.18)"/>'
+  + '</svg>'
+);
 
 const leagueBar    = document.getElementById("league-bar");
 const seasonSel    = document.getElementById("season-select");
@@ -330,7 +371,7 @@ function buildLeagueBar() {
   LEAGUES.forEach(lg => {
     const btn = document.createElement("button");
     btn.className = "v4-league-pill" + (lg.code === activeLeague.code ? " active" : "");
-    btn.innerHTML = `<span>${lg.flag}</span>${lg.label}`;
+    btn.innerHTML = "<span>" + lg.flag + "</span>" + lg.label;
     btn.addEventListener("click", () => { activeLeague = lg; sortCol = null; buildLeagueBar(); load(); });
     leagueBar.appendChild(btn);
   });
@@ -350,11 +391,11 @@ document.querySelectorAll(".v4-tab").forEach(btn => {
 seasonSel.addEventListener("change", () => { activeSeason = seasonSel.value; load(); });
 
 async function load() {
-  const key = `${activeLeague.apiId}_${activeSeason}`;
+  const key = activeLeague.apiId + "_" + activeSeason;
   if (cache[key]) { currentData = cache[key]; render(); return; }
   showLoading();
   try {
-    const r = await fetch(`${API_BASE}/api/topscorers?leagueApiId=${activeLeague.apiId}&season=${activeSeason}`);
+    const r = await fetch(API_BASE + "/api/topscorers?leagueApiId=" + activeLeague.apiId + "&season=" + activeSeason);
     const json = await r.json();
     currentData = (json.ok && json.items && json.items.length) ? json.items : [];
     cache[key] = currentData;
@@ -387,10 +428,10 @@ const TAB_META = {
   assists: { caption:"Assists",     title:"Assists gegeven", defaultSort:"assists", cols:[
     {col:"assists",label:"🎯 Assists"},{col:"goals",label:"⚽ Goals"},{col:"played",label:"W"},{col:"minutes",label:"Min"},{col:"rating",label:"★ Rating"}
   ]},
-  yellow:  { caption:"Discipline",  title:"Gele kaarten",   defaultSort:"yellow",  cols:[
+  yellow:  { caption:"Discipline",  title:"Gele kaarten",    defaultSort:"yellow",  cols:[
     {col:"yellow",label:"🟨 Geel"},{col:"red",label:"🟥 Rood"},{col:"played",label:"W"}
   ]},
-  red:     { caption:"Discipline",  title:"Rode kaarten",   defaultSort:"red",     cols:[
+  red:     { caption:"Discipline",  title:"Rode kaarten",    defaultSort:"red",     cols:[
     {col:"red",label:"🟥 Rood"},{col:"yellow",label:"🟨 Geel"},{col:"played",label:"W"}
   ]},
 };
@@ -403,7 +444,7 @@ function render() {
   if (!currentData.length) {
     sourceBadge.textContent = "Geen data";
     tableCount.textContent  = "";
-    tableWrap.innerHTML = `<div class="v4-empty">📊 Geen statistieken beschikbaar voor <strong>${activeLeague.label}</strong> ${activeSeason}–${+activeSeason+1}.<br><small style="color:rgba(255,255,255,0.2);margin-top:6px;display:block">Seizoen mogelijk nog niet gestart of niet beschikbaar.</small></div>`;
+    tableWrap.innerHTML = '<div class="v4-empty">📊 Geen statistieken beschikbaar voor <strong>' + activeLeague.label + '</strong> ' + activeSeason + '–' + (+activeSeason+1) + '.<br><small style="color:rgba(255,255,255,0.2);margin-top:6px;display:block">Seizoen mogelijk nog niet gestart of niet beschikbaar.</small></div>';
     return;
   }
 
@@ -416,50 +457,51 @@ function render() {
   sourceBadge.textContent = "API-Football";
   tableCount.textContent  = sorted.length + " spelers";
 
-  let html = `<table class="v4-stat-table"><thead><tr>
-    <th class="num" data-col="_rank">#</th>
-    <th data-col="name">Speler</th>`;
+  let html = '<table class="v4-stat-table"><thead><tr>'
+    + '<th class="num" data-col="_rank">#</th>'
+    + '<th data-col="name">Speler</th>';
   meta.cols.forEach(c => {
     const active = sc === c.col;
     const cls = "num" + (active ? (sortDir > 0 ? " sort-asc" : " sort-desc") : "");
-    html += `<th class="${cls}" data-col="${c.col}">${c.label}</th>`;
+    html += '<th class="' + cls + '" data-col="' + c.col + '">' + c.label + '</th>';
   });
-  html += `</tr></thead><tbody>`;
+  html += '</tr></thead><tbody>';
 
   sorted.forEach((p, i) => {
     const s   = p.statistics && p.statistics[0];
     const rank = i + 1;
     const rankCls = rank === 1 ? "r1" : rank === 2 ? "r2" : rank === 3 ? "r3" : "";
+    // Fix 2B: SVG fallback avatar + better onerror + accessibility alt
     const photoUrl = p.player && p.player.photo;
+    const playerName = (p.player && p.player.name) || "";
     const photoHtml = photoUrl
-      ? `<img class="v4-player-photo" src="${photoUrl}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`
-      : `<div class="v4-player-photo"></div>`;
-    const nat  = (p.player && p.player.nationality) || "";
+      ? '<img class="v4-player-photo" src="' + photoUrl + '" alt="' + esc(playerName) + '" loading="lazy" onerror="this.onerror=null;this.src='' + FALLBACK_AVATAR + ''">'
+      : '<img class="v4-player-photo" src="' + FALLBACK_AVATAR + '" alt="">';
     const tLogo = s && s.team && s.team.logo
-      ? `<img class="v4-club-logo" src="${s.team.logo}" alt="" loading="lazy" onerror="this.style.display='none'">`
+      ? '<img class="v4-club-logo" src="' + s.team.logo + '" alt="" loading="lazy" onerror="this.style.display='none'">'
       : "";
     const tName = (s && s.team && s.team.name) || "–";
 
-    html += `<tr>
-      <td class="num"><span class="v4-rank ${rankCls}">${rank}</span></td>
-      <td>
-        <div class="v4-player-cell">
-          ${photoHtml}
-          <div>
-            <div class="v4-player-name">${esc(p.player && p.player.name || "–")}</div>
-            <div class="v4-player-club">${tLogo}${esc(tName)}</div>
-          </div>
-        </div>
-      </td>`;
+    html += '<tr>'
+      + '<td class="num"><span class="v4-rank ' + rankCls + '">' + rank + '</span></td>'
+      + '<td>'
+      + '<div class="v4-player-cell">'
+      + photoHtml
+      + '<div>'
+      + '<div class="v4-player-name">' + esc(p.player && p.player.name || "–") + '</div>'
+      + '<div class="v4-player-club">' + tLogo + esc(tName) + '</div>'
+      + '</div>'
+      + '</div>'
+      + '</td>';
 
     meta.cols.forEach(c => {
       const v = getVal(p, c.col);
-      html += `<td class="num">${pill(c.col, v)}</td>`;
+      html += '<td class="num">' + pill(c.col, v) + '</td>';
     });
-    html += `</tr>`;
+    html += '</tr>';
   });
 
-  html += `</tbody></table>`;
+  html += '</tbody></table>';
   tableWrap.innerHTML = html;
 
   tableWrap.querySelectorAll("th[data-col]").forEach(th => {
@@ -474,19 +516,19 @@ function render() {
 }
 
 function pill(col, v) {
-  if (!v && col !== "rating") return `<span style="color:rgba(255,255,255,.2)">0</span>`;
+  if (!v && col !== "rating") return '<span style="color:rgba(255,255,255,.2)">0</span>';
   switch(col) {
-    case "goals":   return `<span class="v4-pill goals">${v}</span>`;
-    case "assists": return `<span class="v4-pill assists">${v}</span>`;
-    case "yellow":  return `<span class="v4-pill yellow">${v}</span>`;
-    case "red":     return `<span class="v4-pill red">${v}</span>`;
-    case "rating":  return v ? `<span class="v4-pill rating">${parseFloat(v).toFixed(2)}</span>` : `<span class="v4-pill rating">–</span>`;
-    default:        return `<span class="v4-pill neutral">${v}</span>`;
+    case "goals":   return '<span class="v4-pill goals">' + v + '</span>';
+    case "assists": return '<span class="v4-pill assists">' + v + '</span>';
+    case "yellow":  return '<span class="v4-pill yellow">' + v + '</span>';
+    case "red":     return '<span class="v4-pill red">' + v + '</span>';
+    case "rating":  return v ? '<span class="v4-pill rating">' + parseFloat(v).toFixed(2) + '</span>' : '<span class="v4-pill rating">–</span>';
+    default:        return '<span class="v4-pill neutral">' + v + '</span>';
   }
 }
 
 function showLoading() {
-  tableWrap.innerHTML = `<div class="v4-loading"><div class="v4-spinner"></div><span>Data laden…</span></div>`;
+  tableWrap.innerHTML = '<div class="v4-loading"><div class="v4-spinner"></div><span>Data laden…</span></div>';
 }
 
 function esc(s) {
