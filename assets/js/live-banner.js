@@ -19,11 +19,11 @@
  const c = String(code || "INT").trim().toUpperCase();
  const src = FLAG_SRC[c] || (c === "UK" ? FLAG_SRC.GB : FLAG_SRC.INT);
  const alt =
- (c === "BE") ? "BelgiÃ«" :
+ (c === "BE") ? "België" :
  (c === "NL") ? "Nederland" :
  (c === "DE") ? "Duitsland" :
  (c === "GB" || c === "UK") ? "Verenigd Koninkrijk" :
- (c === "IT") ? "ItaliÃ«" :
+ (c === "IT") ? "Italië" :
  (c === "ES") ? "Spanje" :
  (c === "FR") ? "Frankrijk" :
  "Internationaal";

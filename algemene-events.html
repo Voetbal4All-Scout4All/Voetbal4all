@@ -16,7 +16,9 @@
 
   <meta charset="UTF-8" />
   <title>Voetbal4All - Club & fun events</title>
+  <meta name="description" content="Vind club- en funevents zoals eetdagen, fuiven, sponsoravonden en acties bij voetbalclubs op Voetbal4All." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://www.voetbal4all.eu/algemene-events.html" />
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
@@ -843,12 +845,22 @@
     return String(ev.category || "").toLowerCase() === PAGE_CATEGORY.toLowerCase();
   }
 
+  function getPlaceholderThumb(){
+    return (window.V4AImage && typeof window.V4AImage.getPlaceholder === "function")
+      ? window.V4AImage.getPlaceholder()
+      : "assets/img/placeholder.svg";
+  }
+
+  function isPlaceholderThumb(url){
+    return (window.V4AImage && typeof window.V4AImage.isPlaceholder === "function")
+      ? window.V4AImage.isPlaceholder(url)
+      : String(url || "").toLowerCase().includes("placeholder");
+  }
+
   function normalizeThumbUrl(u){
-    const url = String(u || "");
+    const url = String(u || "").trim();
     if (!url) return "";
-    if (url.includes("/assets/img/placeholder.svg") || url.includes("assets/img/placeholder.svg")) {
-      return API_BASE + "/images/placeholder.svg";
-    }
+    if (isPlaceholderThumb(url)) return getPlaceholderThumb();
     return url;
   }
 
@@ -869,7 +881,7 @@
     out = normalizeThumbUrl(out);
 
     // Hide placeholder thumbnails completely
-    if (out === (API_BASE + "/images/placeholder.svg")) return "";
+    if (out === normalizeThumbUrl(getPlaceholderThumb())) return "";
     return out;
   }
 

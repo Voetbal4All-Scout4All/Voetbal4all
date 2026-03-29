@@ -502,11 +502,11 @@
     // Helper for inline onerror fallbacks
     window.V4A_PLACEHOLDER = function () {
       try {
-        return (window.V4AImage && typeof window.V4AImage.resolve === "function")
-          ? window.V4AImage.resolve("")
-          : "/images/placeholder.svg";
+        return (window.V4AImage && typeof window.V4AImage.getPlaceholder === "function")
+          ? window.V4AImage.getPlaceholder()
+          : "assets/img/placeholder.svg";
       } catch (e) {
-        return "/images/placeholder.svg";
+        return "assets/img/placeholder.svg";
       }
     };
   </script>
@@ -780,9 +780,8 @@
         url = url.replace(/\.pdf(\?.*)?$/i, ".png$1");
       }
 
-      // Normalize wrong placeholder paths (/assets/img/placeholder.svg) -> real placeholder
-      if (url.includes("/assets/img/placeholder.svg") || url.includes("assets/img/placeholder.svg")) {
-        return (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "/images/placeholder.svg");
+      if (window.V4AImage && typeof window.V4AImage.isPlaceholder === "function" && window.V4AImage.isPlaceholder(url)) {
+        return (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "assets/img/placeholder.svg");
       }
 
       // If a relative /images/... path slips through, force it to the backend
@@ -797,7 +796,7 @@
     }
 
     function renderMedia(mediaUrls){
-      const placeholder = (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "/images/placeholder.svg");
+      const placeholder = (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "assets/img/placeholder.svg");
       if (mediaLabel) mediaLabel.textContent = "Flyer / foto's";
       const placeholderNormalized = normalizeThumbUrl(placeholder);
 
@@ -834,14 +833,14 @@
             alt="Flyer / foto"
             data-media-src="${safeResolved}"
             loading="lazy"
-            onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');"
+            onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');"
           />
         `;
       } else {
         // Multiple media: render thumbnails
         mediaGrid.innerHTML = resolvedUrls.map((u, idx) => {
           const safeResolved = String(u).replaceAll('"','&quot;');
-          return `<img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx+1}" data-media-src="${safeResolved}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'/images/placeholder.svg');" />`;
+          return `<img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx+1}" data-media-src="${safeResolved}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');" />`;
         }).join("");
       }
 

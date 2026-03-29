@@ -1223,16 +1223,16 @@
 
       const flyerFile = document.getElementById('evFlyer')?.files?.[0] || null;
 
-      // Always submit via HTTP (with or without flyer). This prevents opening a mail client.
-      const FRONTEND_BASE_URL = (function () {
+      function getCanonicalFrontendBaseUrl() {
         const host = String(window.location.hostname || '').toLowerCase();
-        // Force canonical domain for Stripe return URLs in production (prevents www/non-www mismatches)
         if (host.endsWith('voetbal4all.eu')) return 'https://www.voetbal4all.eu';
         return window.location.origin;
-      })();
+      }
+
+      const FRONTEND_BASE_URL = getCanonicalFrontendBaseUrl();
       const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
-      const THANKYOU_URL = 'bedankt.html';
+      const THANKYOU_URL = `${FRONTEND_BASE_URL}/bedankt.html`;
       const fd = new FormData();
       if (flyerFile) fd.append('flyer', flyerFile);
       fd.append('subject', subject);
