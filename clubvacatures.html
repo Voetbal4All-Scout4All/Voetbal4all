@@ -1182,11 +1182,6 @@
 
   // --- Gender filter + client-side filtering (HEREN/DAMES/BOTH) ---
 
-  // Try backend once on initial load; keep placeholders if it fails.
-  loadVacanciesFromBackend().then(() => {
-    // After loading (or falling back), run client-side filters for country/type/level/search.
-    applyVacancyFilters();
-  });
   function normalizeGenderParam(v) {
     if (v == null) return null;
     const s = String(v).trim().toUpperCase();
@@ -1195,19 +1190,26 @@
     return "__INVALID__";
   }
 
-  (function initGenderFromUrl() {
+  function initVacancyStateFromUrl() {
     const params = new URLSearchParams(window.location.search);
-    const g = params.get("gender");
-    if (!g) return;
+    const g = normalizeGenderParam(params.get("gender"));
+    if (!g || g === "__INVALID__") return;
 
     const sel = document.getElementById("vacancy-filter-gender");
     if (!sel) return;
 
-    const gv = String(g).trim().toUpperCase();
     for (const opt of sel.options) {
-      if (opt.value === gv) { sel.value = gv; break; }
+      if (opt.value === g) { sel.value = g; break; }
     }
-  })();
+  }
+
+  initVacancyStateFromUrl();
+
+  // Try backend once on initial load; keep placeholders if it fails.
+  loadVacanciesFromBackend().then(() => {
+    // After loading (or falling back), run client-side filters for country/type/level/search.
+    applyVacancyFilters();
+  });
 
   function applyVacancyFilters() {
     const q = (document.getElementById("vacancy-search-text")?.value || "").trim().toLowerCase();

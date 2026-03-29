@@ -755,25 +755,6 @@
       if (typeof window.__applyTrainerFilters === 'function') {
         window.__applyTrainerFilters();
       }
-
-      // Wire up share buttons to the correct detail URL
-      listEl.querySelectorAll('[data-share-trainer]').forEach((btn) => {
-        btn.addEventListener('click', (ev) => {
-          ev.preventDefault();
-          const href = btn.getAttribute('data-detail-href') || '';
-          const abs = href ? (new URL(href, window.location.href)).toString() : window.location.href;
-          const title = document.title || 'Voetbal4All';
-          if (navigator.share) {
-            navigator.share({ title, url: abs }).catch(() => {});
-          } else {
-            navigator.clipboard?.writeText(abs).then(() => {
-              alert('Link gekopieerd!');
-            }).catch(() => {
-              prompt('Kopieer deze link:', abs);
-            });
-          }
-        });
-      });
       return true;
     } catch (e) {
       console.warn("[trainers] backend load failed:", e?.message || e);
@@ -785,13 +766,6 @@
     }
   }
   // --- end backend wiring ---
-
-  // Try backend once on initial load; keep existing placeholders if it fails.
-  loadTrainersFromBackend().then(() => {
-    if (typeof window.__applyTrainerFilters === 'function') {
-      window.__applyTrainerFilters();
-    }
-  });
 
   // --- Delegated share handler for all trainer cards (static + dynamic) ---
     document.getElementById('trainer-list')?.addEventListener('click', function(e) {
@@ -813,6 +787,30 @@
       }
     });
 
+  function normalizeTrainerGenderParam(v) {
+    if (v == null) return null;
+    const s = String(v).trim().toUpperCase();
+    if (!s) return null;
+    if (s === "HEREN" || s === "DAMES" || s === "BOTH") return s;
+    return "__INVALID__";
+  }
+
+  function initTrainerStateFromUrl() {
+    const genderEl = document.getElementById("trainer-gender-filter");
+    if (!genderEl) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const g = normalizeTrainerGenderParam(params.get("gender"));
+    if (!g || g === "__INVALID__") return;
+
+    for (const opt of genderEl.options) {
+      if (opt.value === g) {
+        genderEl.value = g;
+        break;
+      }
+    }
+  }
+
     // --- Trainer filters (land + regio + gender) ---
   (function initTrainerFilters() {
     const adsContainer = document.getElementById("trainer-list");
@@ -830,26 +828,6 @@
       return String(s || "").toLowerCase().trim();
     }
 
-    function normalizeGenderParam(v) {
-      if (v == null) return null;
-      const s = String(v).trim().toUpperCase();
-      if (!s) return null;
-      if (s === "HEREN" || s === "DAMES" || s === "BOTH") return s;
-      return "__INVALID__";
-    }
-
-    (function initGenderFromUrl() {
-      const params = new URLSearchParams(window.location.search);
-      const g = params.get("gender");
-      if (!g) return;
-      if (!genderEl) return;
-
-      const gv = String(g).trim().toUpperCase();
-      for (const opt of genderEl.options) {
-        if (opt.value === gv) { genderEl.value = gv; break; }
-      }
-    })();
-
     function detectCountryFromCard(card) {
       const ds = String(card?.dataset?.country || "").toUpperCase();
       if (ds) return ds;
@@ -861,7 +839,7 @@
     }
 
     function detectGenderFromCard(card) {
-      const ds = normalizeGenderParam(card?.dataset?.gender);
+      const ds = normalizeTrainerGenderParam(card?.dataset?.gender);
       if (ds) return ds;
       return "BOTH";
     }
@@ -881,12 +859,10 @@
     }
 
     function applyFilters() {
-    // Expose for backend reloads
-    window.__applyTrainerFilters = applyFilters;
       const q = normalize(qEl.value);
       const country = (countryEl.value || "").toUpperCase();
       const regionQ = normalize(regionEl.value);
-      const gender = normalizeGenderParam(genderEl?.value) || "BOTH";
+      const gender = normalizeTrainerGenderParam(genderEl?.value) || "BOTH";
 
       const cards = Array.from(adsContainer.querySelectorAll(".v4a-card"));
       cards.forEach(card => {
@@ -900,6 +876,7 @@
         card.style.display = (textOk && countryOk && regionOk && genderOk) ? "" : "none";
       });
     }
+    window.__applyTrainerFilters = applyFilters;
 
     let t = null;
     function schedule() {
@@ -913,7 +890,7 @@
     if (genderEl) {
       genderEl.addEventListener("change", () => {
         const params = new URLSearchParams(window.location.search);
-        const g = normalizeGenderParam(genderEl.value) || "BOTH";
+        const g = normalizeTrainerGenderParam(genderEl.value) || "BOTH";
         if (!g || g === "BOTH") params.delete("gender");
         else params.set("gender", g);
         const next = window.location.pathname + (params.toString() ? ("?" + params.toString()) : "");
@@ -939,6 +916,13 @@
 
     // Initial run is handled after the first backend load (or fallback)
   })();
+
+  initTrainerStateFromUrl();
+  loadTrainersFromBackend().then(() => {
+    if (typeof window.__applyTrainerFilters === 'function') {
+      window.__applyTrainerFilters();
+    }
+  });
 
   // Fill sidebar premium block with placeholders (layout parity with events.html)
   (function fillSidebarPremiumLater(){

@@ -385,9 +385,15 @@
           loading.classList.remove("visible");
           submitBtn.disabled = false;
           if (!ok) throw new Error(data.error || "Onbekende fout");
+          const publishedId = String(data.id || data.articleId || data.newsId || "").trim();
+          const publishedSlug = String(data.slug || "").trim();
+          const articleHref = publishedId
+            ? ('artikel.html?id=' + encodeURIComponent(publishedId))
+            : (publishedSlug ? ('artikel.html?slug=' + encodeURIComponent(publishedSlug)) : "");
+
           successDt.innerHTML =
             "<strong>" + (data.title || "Artikel") + "</strong> is gepubliceerd." +
-            (data.slug ? ' <a href="artikel.html?slug=' + data.slug + '" target="_blank">Bekijk artikel</a>' : "");
+            (articleHref ? ' <a href="' + articleHref + '" target="_blank">Bekijk artikel</a>' : "");
           successEl.classList.add("visible");
           form.reset();
           document.getElementById("photoPreview").classList.remove("visible");
