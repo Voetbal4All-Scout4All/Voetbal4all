@@ -736,8 +736,19 @@
       `;
     }
 
+    function renderUnavailableState() {
+      listEl.innerHTML = `
+        <article class="card" data-empty-state="1" style="grid-column:1 / -1;">
+          <div class="card-body">
+            <p class="note">Supportersclubs konden tijdelijk niet geladen worden. Probeer later opnieuw.</p>
+          </div>
+        </article>
+      `;
+    }
+
     async function fetchAndRenderSupportersclubs() {
       let data = [];
+      let hadSuccessfulPayload = false;
       for (const url of API_URLS) {
         try {
           const r = await fetch(url);
@@ -745,13 +756,15 @@
           const payload = await r.json().catch(() => null);
           const arr = normalizeSupportersclubsPayload(payload);
           if (!Array.isArray(arr)) continue;
+          hadSuccessfulPayload = true;
           data = arr;
           if (arr.length > 0) break;
         } catch (e) { /* try next */ }
       }
 
       if (!data.length) {
-        renderEmptyState();
+        if (hadSuccessfulPayload) renderEmptyState();
+        else renderUnavailableState();
         updateShareLinks();
         return;
       }

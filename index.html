@@ -3247,11 +3247,9 @@
       window.V4A_EVENTS.fillUpcomingWeekendEvents = fillUpcomingWeekendEvents;
       window.V4A_EVENTS.fillMonthlyCalendarFromBackend = fillMonthlyCalendarFromBackend;
 
-      // Initial fill + light refresh (no overlap)
-      fillUpcomingWeekendEvents();
-      fillMonthlyCalendarFromBackend();
-      setInterval(fillUpcomingWeekendEvents, 5 * 60 * 1000);
-      setInterval(fillMonthlyCalendarFromBackend, 10 * 60 * 1000);
+      // Disabled here: the homepage already initializes these blocks via
+      // `initHomeUpcomingEvents()` earlier in this file. Triggering both flows
+      // causes duplicate backend requests and can race the same DOM targets.
     }
       setInterval(() => { loadHomeNews(); }, REFRESH_MS);
       
