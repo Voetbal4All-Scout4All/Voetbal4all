@@ -1382,8 +1382,15 @@
         return `${base}/profile-submission`;
       }
 
+      function getCanonicalFrontendBaseUrl() {
+        const host = String(window.location.hostname || '').toLowerCase();
+        if (host.endsWith('voetbal4all.eu')) return 'https://www.voetbal4all.eu';
+        return window.location.origin;
+      }
+
+      const FRONTEND_BASE_URL = getCanonicalFrontendBaseUrl();
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
-      const THANKYOU_URL = 'bedankt.html';
+      const THANKYOU_URL = `${FRONTEND_BASE_URL}/bedankt.html`;
 
       const fd = new FormData();
       // optional media
@@ -1520,7 +1527,7 @@
               },
               // Ensure bedankt.html can always render the Premium-periode (even after Stripe redirect)
               success_url: (function () {
-                const u = new URL(`${window.location.origin}/bedankt.html`);
+                const u = new URL(`${FRONTEND_BASE_URL}/bedankt.html`);
                 u.searchParams.set('sid', sid);
                 u.searchParams.set('paid', '1');
                 u.searchParams.set('status', 'Ontvangen');
@@ -1543,7 +1550,7 @@
 
                 return u.toString();
               })(),
-              cancel_url: `${window.location.origin}/aanmelden.html`
+              cancel_url: `${FRONTEND_BASE_URL}/aanmelden.html`
             };
 
             if (hint) hint.textContent = 'Je wordt doorgestuurd naar betaling…';

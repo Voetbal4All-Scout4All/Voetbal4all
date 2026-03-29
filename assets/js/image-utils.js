@@ -5,8 +5,27 @@
   const API_BASE = "https://voetbal4all-backend-database.onrender.com";
   const PLACEHOLDER = "assets/img/placeholder.svg";
 
+  function getPlaceholderPath() {
+    return PLACEHOLDER;
+  }
+
+  function isPlaceholderValue(value) {
+    const raw = String(value || "").trim().toLowerCase();
+    if (!raw || raw === "[object object]") return true;
+
+    return (
+      raw === "placeholder" ||
+      raw === "placeholder.svg" ||
+      raw.endsWith("/placeholder.svg") ||
+      raw.includes("placeholder.svg?") ||
+      raw.startsWith("/images/placeholder") ||
+      raw.includes("/images/placeholder") ||
+      raw.includes("assets/img/placeholder.svg")
+    );
+  }
+
   function resolveImageUrl(imageVal) {
-    if (!imageVal) return PLACEHOLDER;
+    if (!imageVal) return getPlaceholderPath();
 
     let raw = "";
     if (typeof imageVal === "string") {
@@ -27,8 +46,7 @@
     }
 
     raw = (raw || "").toString().trim();
-    if (!raw || raw === "[object Object]") return PLACEHOLDER;
-    if (raw.toLowerCase().includes("placeholder")) return PLACEHOLDER;
+    if (isPlaceholderValue(raw)) return getPlaceholderPath();
 
     const clean = raw.trim();
 
@@ -41,5 +59,7 @@
   window.V4AImage = {
     resolve: resolveImageUrl,
     placeholder: PLACEHOLDER,
+    getPlaceholder: getPlaceholderPath,
+    isPlaceholder: isPlaceholderValue,
   };
 })();
