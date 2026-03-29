@@ -878,7 +878,7 @@
 
     const listHit = await fetchArticleListMatch({ slug: articleSlug });
     if (!listHit) {
-      throw new Error("Article not found for slug");
+      return { id: "", slug: articleSlug, listHit: null };
     }
 
     const matchedId = String(listHit.id || "").trim();
@@ -891,6 +891,25 @@
     const prompt = `${safeTitle} football soccer match stadium, cinematic, realistic, blue glow, football context, professional sports photography, stadium atmosphere, dramatic lighting, no text, no logos, no watermark`;
     const upstream = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=1200&height=630&nologo=true&model=flux`;
     return `${API_BASE}/api/image-proxy?url=${encodeURIComponent(upstream)}`;
+  }
+
+  function humanizeSlug(slug) {
+    const raw = String(slug || "").trim();
+    if (!raw) return "Voetbal4All Artikel";
+
+    const parts = raw
+      .split("?")[0]
+      .split("#")[0]
+      .split("-")
+      .filter(Boolean)
+      .filter((part) => !/^[0-9a-f]{8,}$/i.test(part));
+
+    const title = parts
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ")
+      .trim();
+
+    return title || "Voetbal4All Artikel";
   }
 
   function escapeXml(s) {
@@ -1084,6 +1103,17 @@
         } else if (preMatchedListHit) {
           console.log('[ARTIKEL] Falling back to slug-matched list item:', resolvedArticleSlug);
           article = preMatchedListHit;
+        }
+
+        if ((!article || !article.title) && !lookup.id && resolvedArticleSlug) {
+          article = {
+            id: "",
+            slug: resolvedArticleSlug,
+            title: humanizeSlug(resolvedArticleSlug),
+            snippet: "",
+            body: "",
+            country: ""
+          };
         }
 
         if (!article || !article.title) throw new Error('Invalid payload: missing article');
