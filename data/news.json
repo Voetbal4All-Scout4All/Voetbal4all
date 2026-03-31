@@ -1,16 +1,38 @@
 {
-  "generatedAt": "2026-03-31T21:43:16.136Z",
+  "generatedAt": "2026-03-31T22:38:03.120Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Wie zet zijn wekker? Rode Duivels willen na de VS nu ook Mexico aanpakken",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-01/match-live-live-wie-zet-zijn-wekker-rode-duivels-willen-na-de-vs-nu-ook-mexico-aanpakken",
+      "summary": "De Rode Duivels sluiten dinsdag hun Amerikaanse interlandtrip af met een oefenmatch tegen Mexico. In Chicago wacht een andere test dan tegen de VS, al wordt het voor Belgische fans vooral een nachtelijke afspraak.",
+      "publishedAt": "2026-04-01T10:33:00.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Türkiye win playoff to set up USMNT clash at WCup",
+      "title": "Italy miss out on 3rd straight WC in shootout loss",
+      "link": "https://www.espn.com/soccer/story/_/id/48359181/italy-miss-3rd-straight-world-cup-loss-bosnia",
+      "summary": "Italy has missed out on a third-consecutive World Cup after losing to Bosnia and Herzegovina in a penalty shootout on Tuesday in Zenica.",
+      "publishedAt": "2026-03-31T23:25:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Türkiye to face USMNT at WCup after playoff win",
       "link": "https://www.espn.com/soccer/story/_/id/48359655/turkiye-kosovo-playoff-usmnt-group-2026-world-cup-uefa-qualifying",
       "summary": "Türkiye beat Kosovo in Tuesday's European playoff final to secure a berth at the 2026 World Cup and a place alongside co-hosts the United States in Group D.",
-      "publishedAt": "2026-03-31T22:21:44.000Z"
+      "publishedAt": "2026-03-31T23:25:29.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +43,7 @@
       "title": "Fans warned for anti-Muslim chants at Spain game",
       "link": "https://www.espn.com/soccer/story/_/id/48359649/fans-warned-anti-muslim-chants-spain-egypt-match",
       "summary": "Fans were issued several warnings to stop anti-Muslim chants during Spain's friendly with Egypt on Tuesday after a series of such shouts were repeated during the first half.",
-      "publishedAt": "2026-03-31T22:21:44.000Z"
+      "publishedAt": "2026-03-31T23:25:29.000Z"
     },
     {
       "type": "rss",
@@ -29,76 +51,87 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Gyökeres strikes late to punch Sweden's WC ticket",
-      "link": "https://www.espn.com/soccer/report/_/gameId/761954",
-      "summary": "Sweden beat Poland 3-2 thanks to a late Viktor Gyökeres goal to qualify for the 2026 World Cup.",
-      "publishedAt": "2026-03-31T22:21:44.000Z"
+      "title": "Sweden's Potter to 'dust off' cowboy hat for WCup",
+      "link": "https://www.espn.com/soccer/story/_/id/48360620/graham-potter-sweden-world-cup-cowboy-hat-poland",
+      "summary": "Graham Potter said he will \"dust off my cowboy hat\" after fulfilling his short-term mission to get Sweden to the World Cup.",
+      "publishedAt": "2026-03-31T23:25:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "2026 World Cup European playoffs recap: Bosnia deny Italy for third straight World Cup",
+      "link": "https://www.espn.com/soccer/story/_/id/48342734/2026-world-cup-european-playoffs-live-updates-highlights-reaction",
+      "summary": "Enjoy all the moments from Tuesday's 2026 World Cup European playoffs as eight teams look to qualify for four spots at this summer's tournament.",
+      "publishedAt": "2026-03-31T22:58:21.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Italië voor derde keer op rij niet naar WK na thriller in Bosnië-Herzegovina",
-      "link": "https://www.vi.nl/nieuws/itali-voor-derde-keer-op-rij-niet-naar-wk-na-thriller-in-bosnie-herzegovina",
-      "summary": "Italië ontbreekt voor de derde keer op rij op het WK. Bosnië & Herzegovina vergrootte het trauma van de Squadra Azzurra door via penalty's het laatste ticket in de Europese play-offs te grijpen en treft op het WK van komende zomer gastland Canada, Qatar en Zwitserland in Groep B. Voor Bosnië is het de eerste keer sinds 2014 dat het erbij is.",
-      "publishedAt": "2026-03-31T21:40:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Italië rouwt om missen derde WK op rij",
-      "link": "https://www.vi.nl/nieuws/itali-rouwt-om-missen-derde-wk-op-rij",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Oranje noteert laagste balbezitpercentage in laatste 150 duels",
+      "link": "https://www.vi.nl/nieuws/oranje-noteert-laagste-balbezitpercentage-in-laatste-150-duels",
       "summary": "Nederland sloot de interlandperiode van maart af met een oefenwedstrijd tegen Ecuador, in Eindhoven. Alles rondom deze wedstrijd volgen we in de VI Live. Ook de beslissingen in de play-offs volgden we in dit artikel. Lees de knotsgekke avond in zijn geheel terug!",
-      "publishedAt": "2026-03-31T21:39:32.000Z"
+      "publishedAt": "2026-03-31T22:23:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'I put players first' - O'Neill disappointed with concerns",
+      "link": "https://www.bbc.com/sport/football/articles/c1krv48k702o?at_medium=RSS&at_campaign=rss",
+      "summary": "Northern Ireland manager Michael O'Neill says he is \"disappointed\" by clubs who raised concerns with the EFL about his dual role with Blackburn Rovers.",
+      "publishedAt": "2026-03-31T22:20:23.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Tsjechië en Kovar hebben langste adem in Praag en gaan naar WK",
-      "link": "https://www.vi.nl/nieuws/tsjechi-en-kovar-hebben-langste-adem-in-praag-en-gaan-naar-wk",
-      "summary": "Tsjechië maakt komende zomer na twintig jaar zijn rentree op een WK. In de finale van de play-offs rekenden de Tsjechen in een penaltyserie af met Denemarken. PSV-keeper Matej Kovar keerde een van de strafschoppen van de Denen, die drie keer misten vanaf elf meter.",
-      "publishedAt": "2026-03-31T21:34:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Schouten noemt verbeterpunt: 'Uitstralen dat we wereldkampioen willen worden'",
-      "link": "https://www.vi.nl/video/schouten-noemt-verbeterpunt-uitstralen-dat-we-wereldkampioen-willen-worden",
-      "summary": "Oranje speelde in het Philips Stadion gelijk tegen Ecuador. Na afloop sprak verslaggever Kalum van Oudheusden met Jerdy Schouten, die positief is over de afgelopen interlandperiode.",
-      "publishedAt": "2026-03-31T21:33:02.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Koeman: 'De fitheid bij een aantal internationals kan wel wat beter'",
-      "link": "https://www.vi.nl/nieuws/koeman-de-fitheid-bij-een-aantal-internationals-kan-wel-wat-beter",
-      "summary": "Ronald Koeman heeft dinsdagavond gereageerd op het gelijkspel tegen Ecuador (1-1). De bondscoach van het Nederlands elftal zag zijn plan al snel in de war gebracht worden, na de vroege rode kaart van Denzel Dumfries. Tóch werd het spelen met tien man gezien als mooie test voor het WK van komende zomer.",
-      "publishedAt": "2026-03-31T21:27:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "IT",
+      "country": "INT",
       "flag": "🌍",
-      "title": "Bosnia and Herzegovina v Italy: World Cup playoff goes to penalties – live",
-      "link": "https://www.theguardian.com/football/live/2026/mar/31/bosnia-and-herzegovina-v-italy-world-cup-playoff-live",
-      "summary": "⚽️ Updates from this 7.45pm BST KO at the Bilino Polje Stadium ⚽️ Tonight’s live scores | Email Scott 4 min: Dzeko makes a nuisance of himself on the edge of the Italian box. He feeds Dedic on the left. A low cross is hacked clear by Calafiori … but straight into Locatelli and back out for a corner! That rebound could have gone absolutely anywhere. Nothing comes of the resulting corner. Italy’s defence was all over the shop during that build-up. 2 min: Dimarco goes long for Kean, who cushions down for Tonali. The ball’s slipped wide right to Politano, one of Italy’s better performers against Northern Ireland. But his cross hits the first man. The hosts clear their lines. Continue reading...",
-      "publishedAt": "2026-03-31T21:25:06.000Z"
+      "title": "Koeman over WK-selectie Oranje: 'Nog discussiepunten, ook door fitheid'",
+      "link": "https://www.vi.nl/video/koeman-over-wk-selectie-oranje-nog-discussiepunten-ook-door-fitheid",
+      "summary": "Ronald Koeman heeft de WK-selectie van het Nederlands elftal grotendeels rond, maar nog niet helemaal. Er zijn nog een paar discussiepunten binnen de technische staf en dat heeft ook met de fitheid van een aantal spelers te maken, aldus de bondscoach.",
+      "publishedAt": "2026-03-31T22:14:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Flekken blikt terug op penaltymoment: 'Ik kom net iets te laat'",
+      "link": "https://www.vi.nl/nieuws/flekken-blikt-terug-op-penaltymoment-ik-kom-net-iets-te-laat",
+      "summary": "Mark Flekken toonde zich na het gelijkspel van Oranje tegen Ecuador schuldbewust over zijn actie waarmee hij een strafschop veroorzaakte. De keeper van Bayer Leverkusen kon niet voorkomen dat Enner Valencia vanaf elf meter kon scoren.",
+      "publishedAt": "2026-03-31T22:12:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Tranen bij Gattuso na mislopen WK: 'Dit is moeilijk te verkroppen'",
+      "link": "https://www.vi.nl/nieuws/tranen-bij-gattuso-na-mislopen-wk-dit-is-moeilijk-te-verkroppen",
+      "summary": "Het mislopen van het WK komt hard aan bij Gennaro Gattuso en zijn spelers. De Italiaanse bondscoach wilde zo kort na de nederlaag via strafschoppen tegen Bosnië & Herzegovina niet over zijn toekomst praten. Behalve teleurstelling was er ook trots op de vechtlust van zijn ploeg.",
+      "publishedAt": "2026-03-31T22:12:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van Hooijdonk: 'Kunnen niet terugkijken op geweldige wedstrijden'",
+      "link": "https://www.vi.nl/nieuws/van-hooijdonk-kunnen-niet-terugkijken-op-geweldige-wedstrijden",
+      "summary": "Pierre van Hooijdonk geeft Oranje een voldoende voor de afgelopen oefencampagne, maar daar is alles mee gezegd. Hij hecht niet al te veel waarde aan de resultaten tegen Noorwegen en Ecuador.",
+      "publishedAt": "2026-03-31T22:05:57.000Z"
     },
     {
       "type": "rss",
@@ -106,10 +139,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "World Cup 2026 playoff: Czech Republic v Denmark goes to penalties – live",
-      "link": "https://www.theguardian.com/football/live/2026/mar/31/world-cup-2026-playoffs-sweden-v-poland-czech-republic-v-denmark-kosovo-v-turkey-live",
-      "summary": "⚽️ World Cup playoffs updates from 7.45pm BST ⚽️ Tonight’s live scores | Email Yara The teams are out and the national anthems are being sung … Kick-off in less than five minutes across the grounds. Great atmospheres across the board in Pristina, Solna and Prague. Bosnia and Herzegovina v Italy: Reminder, you can follow along the fourth European playoff final with Scott Murray below. Continue reading...",
-      "publishedAt": "2026-03-31T21:24:51.000Z"
+      "title": "Italy miss out on World Cup again after Bosnia and Herzegovina’s shootout triumph",
+      "link": "https://www.theguardian.com/football/2026/mar/31/bosnia-herzegovina-italy-world-cup-2026-qualifying-playoff-match-report",
+      "summary": "The story will be of another Italian apocalypse, yet another infamous occasion for a nation that has won four men’s World Cups but is starting to believe it might never go to another after missing out for the third time in a row. After a North Macedonian bolt from the blue in 2022, and a stultifying two-legged defeat to Sweden five years before that they found a new way to come up short in 2026 – eliminated on penalties in their playoff final against Bosnia and Herzegovina. But this night should also be remembered for an electric performance by the hosts, who richly deserve the place they have claimed at this summer’s tournament in the USA, Mexico and Canada. Despite falling behind early to a Moise Kean goal, Sergej Barbarez’s side kept their heads, kept attacking and ultimately played the Italians off the park. The only area in which they came up short was scoring the goals their performance deserved. They put that right in the shootout, converting four out of four. Continue reading...",
+      "publishedAt": "2026-03-31T21:56:38.000Z"
     },
     {
       "type": "rss",
@@ -119,7 +152,7 @@
       "flag": "🇬🇧",
       "title": "Mitoma pounces as Japan beat England to give Tuchel World Cup headache",
       "link": "https://www.theguardian.com/football/2026/mar/31/england-japan-international-friendly-match-report",
-      "summary": "It is not a question that Thomas Tuchel wants to entertain at the World Cup this summer but one he had a run at here in what was supposed to be England’s grand Wembley send-off. Can the team thrive against good opposition without Harry Kane? The answer was played out across an increasingly frustrating 90 minutes. It was no. It was not all about Kane, who missed out because of a sore foot. But it was easy to conflate England’s lack of cutting edge with his absence. Tuchel had highlighted the poor goal returns from his other attacking players before this friendly. They needed to bring more to the party. There was only bluntness. Continue reading...",
+      "summary": "It is not a question that Thomas Tuchel wants to entertain at the World Cup this summer but one he had a run at here in what was supposed to be England’s grand Wembley sendoff. Can the team thrive against good opposition without Harry Kane? The answer was played out across an increasingly frustrating 90 minutes. It was no. It was not all about Kane, who missed out because of a sore foot. But it was easy to conflate England’s lack of cutting edge with his absence. Tuchel had highlighted on Monday the poor goal returns from his other attacking players. They needed to bring more to the party. There was only bluntness. Continue reading...",
       "publishedAt": "2026-03-31T21:02:24.000Z"
     },
     {
@@ -130,18 +163,18 @@
       "flag": "🌍",
       "title": "Akturkoglu edges Turkey through to end Kosovo hopes of World Cup finals debut",
       "link": "https://www.theguardian.com/football/2026/mar/31/kosovo-turkey-world-cup-2026-qualifying-playoff-match-report",
-      "summary": "It was a step too far for Kosovo, but only just. They could hardly have given more in running Turkey to the wire but it is Vincenzo Montella’s team, relieved and jubilant at the end, that will play at the World Cup in a little over two months’ time. Turkey make their return after 24 years away; Kosovo had been seeking the most unlikely of debuts and could have made that prospect real if Fisnik Asllani’s first-half effort had not come back off the bar. In the end, though, a scruffy and hotly contested finish by Kerem Akturkoglu settled things early in the second half and, via some minor scares, Turkey could scrape home from there. Kosovo will surely be back, a technically exceptional side richer for this heady experience. Continue reading...",
+      "summary": "When Kosovo had run out of last chances, they sunk to the floor as one. They had taken Turkey the distance, every drop of perspiration spent and the once unthinkable prospect of a World Cup spot remaining real until Michael Oliver finally called time. The emotion was overwhelming, Lumbardh Dellova among the players clearly covering up tears. In the end Edon Zhegrova, the playmaker whose introduction from the bench had sparked a late flurry of pressure, beckoned his teammates to face their support. They had nothing to fear, departing to an ovation from a crowd who had been allowed the giddiest of fantasies. Continue reading...",
       "publishedAt": "2026-03-31T20:54:16.000Z"
     },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
+      "country": "INT",
+      "flag": "🌍",
       "title": "Sweden qualify for World Cup after Viktor Gyökeres hits late winner against Poland",
       "link": "https://www.theguardian.com/football/2026/mar/31/sweden-poland-world-cup-playoff-match-report",
-      "summary": "The Graham Potter magic knows no bounds. There will be those who wonder what right Sweden had to be in this playoff, but they will be in the World Cup after an extraordinarily dramatic victory secured by Viktor Gyökeres’s 89th-minute winner. A patchy, anxious game in which Poland had twice equalised, its shapelessness an apt reflection of the stakes, had seemed to be drifting towards extra-time when Sweden, in a rare forward sally, won a pair of corners in a row. Suddenly there was momentum and a mounting sense of anticipation. The second corner was half-cleared, Lucas Bergvall jabbed it goalwards. His shot was saved but Besfort Zeneli skewed against the post and the ball fell for Gyökeres five yards out with the goal gaping. Destiny called and the Arsenal forward answered emphatically. Continue reading...",
+      "summary": "There are easy ways to qualify for the World Cup and there are complicated ways. Poland won six qualifiers whereas Sweden won two but it is Sweden, elevated by the magic of Graham Potter, the persistence of Viktor Gyökeres and the noble head of the 11th Baron Lagerbielke who will be going to the World Cup. They have qualified not so much through the back door as up the tree and through the bathroom window, but it they will take their place in a group with Tunisia, the Netherlands and Japan. As the final whistle blew and Sweden’s substitutes and coaching staff surged across the pitch in gleeful celebration, Robert Lewandowski dropped to his haunches on the edge of the penalty area, his face mask dangling loose around his throat. The World Cup has never been a particularly kind tournament for the Poland forward; he has played in just two and scored only twice; at 37, he will surely not get another chance to improve his record. Continue reading...",
       "publishedAt": "2026-03-31T20:52:45.000Z"
     },
     {
@@ -157,28 +190,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "2026 World Cup European playoffs recap: Bosnia deny Italy for third straight World Cup",
-      "link": "https://www.espn.com/soccer/story/_/id/48342734/2026-world-cup-european-playoffs-live-updates-highlights-reaction",
-      "summary": "Enjoy all the moments from Tuesday's 2026 World Cup European playoffs as eight teams look to qualify for four spots at this summer's tournament.",
-      "publishedAt": "2026-03-31T20:29:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Cup playoffs: Predicting who will claim the final six places",
-      "link": "https://www.espn.com/soccer/story/_/id/48334351/2026-world-cup-playoffs-claim-final-six-spots",
-      "summary": "The last six World Cup berths will be decided on Tuesday in six winner-take-all games.",
-      "publishedAt": "2026-03-31T20:29:28.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -187,6 +198,17 @@
       "link": "https://www.bbc.com/sport/football/articles/cp845egder8o?at_medium=RSS&at_campaign=rss",
       "summary": "Manchester City lead Manchester United in the race for Elliot Anderson, the Red Devils receive a boost in their pursuit of Sandro Tonali, Liverpool want Francisco Conceicao to replace Mohamed Salah, plus more.",
       "publishedAt": "2026-03-31T20:17:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tottenham Supporters’ Trust expresses ‘serious concerns’ over De Zerbi’s support for Greenwood",
+      "link": "https://www.theguardian.com/football/2026/mar/31/tottenham-supporters-trust-roberto-de-zerbi-mason-greenwood",
+      "summary": "New Spurs head coach supported Greenwood at Marseille Greenwood had charges including attempted rape dropped in 2023 The Tottenham Hotspur Supporters’ Trust has strongly criticised the appointment of Roberto De Zerbi as the club’s head coach, expressing “serious and far-reaching concerns” over his past support for Mason Greenwood. In a statement released soon after De Zerbi signed a five-year contract on Tuesday, the Trust said his arrival placed a “heavy strain” on unity at a time when Spurs are battling against relegation from the Premier League. It also called on Spurs and the Italian to publicly reassert their “commitment to the values that fans hold dear – chief among them equality, respect, and integrity”. Continue reading...",
+      "publishedAt": "2026-03-31T18:55:35.000Z"
     },
     {
       "type": "rss",
@@ -212,14 +234,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'I like surprises' - Wiegman calls up 17-year-old Parkinson",
-      "link": "https://www.bbc.com/sport/football/articles/cyv1qv55p17o?at_medium=RSS&at_campaign=rss",
-      "summary": "England manager Sarina Wiegman names Erica Meg Parkinson as a surprise inclusion in her 23-player squad.",
-      "publishedAt": "2026-03-31T12:54:23.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Sortie par la Bosnie l'Italie ne verra pas le Mondial, la Suède miraculée : tous les qualifiés européens sont connus",
+      "link": "https://www.walfoot.be/news/2026-03-31/sortie-par-la-bosnie-litalie-ne-verra-pas-le-mondial-la-suede-miraculee--tous-les-qualifies-europeens-sont-connus",
+      "summary": "Les quatre derniers tickets européens pour la Coupe du Monde se jouaient ce soir, entre Stockholm, Pristina, Prague et Zenica.",
+      "publishedAt": "2026-03-31T09:50:00.000Z"
     },
     {
       "type": "rss",
@@ -300,17 +322,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"C'est une illusion\" : le CEO de la Pro League évoque une réforme loin de faire l'unanimité",
-      "link": "https://www.walfoot.be/news/2026-03-31/cest-une-illusion--le-ceo-de-la-pro-league-evoque-une-reforme-loin-de-faire-lunanimite",
-      "summary": "La réunion de vote de la Pro League a fait énormément parler. Après toute la polémique, le CEO a réagi aux critiques, mais tente de tempérer le débat et de garder une position équilibrée.",
-      "publishedAt": "2026-03-31T07:40:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "UK",
@@ -319,17 +330,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-03-31/rode-duivel-gepasseerd-door-rudi-garcia--maar-wel-gegeerd-wild-in-italie-en-premier-league",
       "summary": "De Rode Duivels nemen het deze nacht op tegen Mexico in een volgend oefenduel om het WK in de Verenigde Staten, Canada en Mexico voor te bereiden. Dat doen ze zonder Mandela Keita in de selectie. Die wordt nochtans wel naar waarde geschat.",
       "publishedAt": "2026-03-31T07:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Opvallend voordeel voor Mexico? België kan eindelijk op gelijke hoogte komen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-03-31/opvallend-voordeel-voor-mexico-belgie-kan-eindelijk-op-gelijke-hoogte-komen",
-      "summary": "Voor de match van dinsdag hebben België en Mexico in hun geschiedenis al 7 keer tegen elkaar gespeeld. De balans is in het voordeel van Mexico, maar de Rode Duivels kunnen bij winst op gelijke hoogte komen.",
-      "publishedAt": "2026-03-31T07:20:00.000Z"
     }
   ]
 }
