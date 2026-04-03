@@ -27,7 +27,17 @@
     .v4-tab:hover { border-color:rgba(255,255,255,0.25); color:#fff; }
     .v4-tab.active { background:linear-gradient(135deg,#2979ff,#7c4dff); border-color:transparent; color:#fff; }
 
-    .v4-stat-table { width:100%; border-collapse:collapse; font-size:13px; }
+    .v4-stat-table {
+      width:100%;
+      min-width:860px;
+      border-collapse:collapse;
+      table-layout:fixed;
+      font-size:13px;
+    }
+    .v4-stat-table col.col-rank   { width:58px; }
+    .v4-stat-table col.col-player { width:290px; }
+    .v4-stat-table col.col-club   { width:220px; }
+    .v4-stat-table col.col-num    { width:88px; }
     .v4-stat-table th {
       text-align:left; color:rgba(255,255,255,0.45); font-size:11px; font-weight:600;
       text-transform:uppercase; letter-spacing:.05em; padding:8px 10px;
@@ -38,22 +48,111 @@
     .v4-stat-table th.sort-asc::after { content:' ▲'; font-size:9px; }
     .v4-stat-table th.sort-desc::after { content:' ▼'; font-size:9px; }
     .v4-stat-table th.num, .v4-stat-table td.num { text-align:center; }
+    .v4-stat-table th.player-col, .v4-stat-table td.player-col,
+    .v4-stat-table th.club-col, .v4-stat-table td.club-col {
+      text-align:left;
+    }
     .v4-stat-table td {
       padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.05);
       color:rgba(255,255,255,0.85); vertical-align:middle;
+      overflow:hidden;
     }
     .v4-stat-table tr:last-child td { border-bottom:none; }
     .v4-stat-table tr:hover td { background:rgba(255,255,255,0.03); }
+    .v4-stat-table td.num { font-variant-numeric:tabular-nums; }
 
-    .v4-player-cell { display:flex; align-items:center; gap:10px; min-width:160px; }
-    .v4-player-photo {
-      width:32px; height:32px; border-radius:50%;
-      object-fit:cover; background:rgba(255,255,255,0.08); flex-shrink:0;
+    .v4-player-cell,
+    .v4-club-cell {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+      width:100%;
     }
-    .v4-player-name { font-weight:600; font-size:13px; }
-    .v4-player-nat { font-size:11px; color:rgba(255,255,255,0.35); }
-    .v4-player-club { font-size:11px; color:rgba(255,255,255,0.45); margin-top:1px; display:flex; align-items:center; gap:5px; }
-    .v4-club-logo { width:18px; height:18px; object-fit:contain; }
+    .v4-player-avatar {
+      position:relative;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      overflow:hidden;
+      flex:0 0 40px;
+      background:linear-gradient(135deg,rgba(41,121,255,0.3),rgba(124,77,255,0.18));
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+    .v4-player-photo,
+    .v4-player-photo-fallback {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border-radius:inherit;
+    }
+    .v4-player-photo {
+      object-fit:cover;
+      opacity:0;
+      transition:opacity .15s ease;
+    }
+    .v4-player-avatar.is-ready .v4-player-photo { opacity:1; }
+    .v4-player-photo-fallback {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:4px;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.04em;
+      color:rgba(255,255,255,0.9);
+      text-transform:uppercase;
+      background:radial-gradient(circle at top,rgba(255,255,255,0.16),rgba(255,255,255,0.06));
+      opacity:1;
+      transition:opacity .15s ease;
+    }
+    .v4-player-avatar.is-ready .v4-player-photo-fallback {
+      opacity:0;
+      pointer-events:none;
+    }
+    .v4-player-meta,
+    .v4-club-meta {
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .v4-player-name,
+    .v4-club-name {
+      font-weight:600;
+      font-size:13px;
+      line-height:1.2;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .v4-player-nat {
+      font-size:11px;
+      color:rgba(255,255,255,0.35);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .v4-club-subline {
+      font-size:11px;
+      color:rgba(255,255,255,0.38);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .v4-club-logo-wrap {
+      width:28px;
+      height:28px;
+      border-radius:10px;
+      flex:0 0 28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,0.05);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.06);
+    }
+    .v4-club-logo { width:20px; height:20px; object-fit:contain; }
 
     .v4-rank {
       display:inline-flex; align-items:center; justify-content:center;
@@ -102,16 +201,38 @@
     .v4-league-pill.active { background:rgba(41,121,255,0.18); border-color:rgba(41,121,255,0.5); color:#6fa8ff; }
 
     .v4-controls-row { display:flex; gap:8px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
-    .v4-season-select {
-      padding:6px 12px; border-radius:8px;
-      border:1.5px solid rgba(255,255,255,0.10);
-      background:rgba(255,255,255,0.05); color:rgba(255,255,255,0.8);
-      font-size:12px; font-family:inherit; font-weight:600; cursor:pointer;
+    .v4-current-season-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1.5px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.05);
+      color:rgba(255,255,255,0.82);
+      font-size:12px;
+      font-weight:700;
     }
-    .v4-season-select option { background:#1a1f35; color:#fff; }
+    .v4-current-season-badge::before {
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#6fa8ff;
+      box-shadow:0 0 0 4px rgba(41,121,255,0.12);
+      flex:0 0 auto;
+    }
     .v4-source-badge {
       font-size:10px; padding:3px 8px; border-radius:8px;
       background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.35); margin-left:auto;
+    }
+    @media (max-width:900px) {
+      .v4-stat-table {
+        min-width:780px;
+      }
+      .v4-stat-table col.col-player { width:250px; }
+      .v4-stat-table col.col-club { width:190px; }
+      .v4-stat-table col.col-num { width:78px; }
     }
   </style>
 </head>
@@ -212,7 +333,7 @@
           </div>
           <span class="pill-small" id="hero-label">België · Nederland</span>
         </div>
-        <p class="note">Topscorers, assists en disciplinaire statistieken per competitie en seizoen.</p>
+        <p class="note">Topscorers, assists en disciplinaire statistieken van het huidige seizoen per competitie.</p>
       </article>
 
       <div class="v4-layout-sidebar">
@@ -221,11 +342,7 @@
           <div class="v4-league-bar" id="league-bar"></div>
 
           <div class="v4-controls-row">
-            <select class="v4-season-select" id="season-select">
-              <option value="2024">2024–2025</option>
-              <option value="2023">2023–2024</option>
-              <option value="2022">2022–2023</option>
-            </select>
+            <span class="v4-current-season-badge" id="season-badge">Huidig seizoen</span>
             <span class="v4-source-badge" id="source-badge">API-Football</span>
           </div>
 
@@ -309,7 +426,7 @@ const LEAGUES = [
 ];
 
 let activeLeague = LEAGUES[0];
-let activeSeason = "2024";
+let activeSeason = getCurrentFootballSeasonStartYear();
 let activeTab    = "goals";
 let sortCol      = null;
 let sortDir      = -1;
@@ -317,13 +434,54 @@ let cache        = {};
 let currentData  = [];
 
 const leagueBar    = document.getElementById("league-bar");
-const seasonSel    = document.getElementById("season-select");
+const seasonBadge  = document.getElementById("season-badge");
 const tableWrap    = document.getElementById("table-wrap");
 const tableCaption = document.getElementById("table-caption");
 const tableTitle   = document.getElementById("table-title");
 const tableCount   = document.getElementById("table-count");
 const sourceBadge  = document.getElementById("source-badge");
 const heroLabel    = document.getElementById("hero-label");
+
+function getCurrentFootballSeasonStartYear(now = new Date()) {
+  const month = now.getMonth();
+  const year = now.getFullYear();
+  return String(month >= 6 ? year : year - 1);
+}
+
+function formatSeasonLabel(season) {
+  const start = Number.parseInt(season, 10);
+  return Number.isFinite(start) ? `${start}–${start + 1}` : String(season || "");
+}
+
+function getStatsEntry(p) {
+  const stats = p && Array.isArray(p.statistics) ? p.statistics : [];
+  return stats.find(Boolean) || null;
+}
+
+function getTeamInfo(p) {
+  const stats = p && Array.isArray(p.statistics) ? p.statistics : [];
+  const statWithTeam = stats.find(entry => entry && entry.team && (entry.team.name || entry.team.logo));
+  return (statWithTeam && statWithTeam.team) || null;
+}
+
+function getPlayerInitials(name) {
+  const parts = String(name || "")
+    .split(/\s+/)
+    .map(part => part.trim())
+    .filter(Boolean)
+    .slice(0, 2);
+
+  if (!parts.length) return "SP";
+  return parts.map(part => part.charAt(0)).join("").toUpperCase();
+}
+
+function normalizeRemoteImage(raw) {
+  const value = String(raw || "").trim();
+  if (!value) return "";
+  if (/^https?:\/\//i.test(value)) return value;
+  if (value.startsWith("//")) return `https:${value}`;
+  return value;
+}
 
 function buildLeagueBar() {
   leagueBar.innerHTML = "";
@@ -335,6 +493,7 @@ function buildLeagueBar() {
     leagueBar.appendChild(btn);
   });
   heroLabel.textContent = activeLeague.flag + " " + activeLeague.label;
+  seasonBadge.textContent = `Huidig seizoen ${formatSeasonLabel(activeSeason)}`;
 }
 
 document.querySelectorAll(".v4-tab").forEach(btn => {
@@ -346,8 +505,6 @@ document.querySelectorAll(".v4-tab").forEach(btn => {
     render();
   });
 });
-
-seasonSel.addEventListener("change", () => { activeSeason = seasonSel.value; load(); });
 
 async function load() {
   const key = `${activeLeague.apiId}_${activeSeason}`;
@@ -365,10 +522,11 @@ async function load() {
 }
 
 function getVal(p, col) {
-  const s = p.statistics && p.statistics[0];
+  const s = getStatsEntry(p);
   if (!s) return 0;
   switch(col) {
     case "name":    return (p.player && p.player.name || "").toLowerCase();
+    case "club":    return ((getTeamInfo(p) && getTeamInfo(p).name) || "").toLowerCase();
     case "goals":   return (s.goals && s.goals.total) || 0;
     case "assists": return (s.goals && s.goals.assists) || 0;
     case "played":  return (s.games && s.games.appearences) || 0;
@@ -403,7 +561,7 @@ function render() {
   if (!currentData.length) {
     sourceBadge.textContent = "Geen data";
     tableCount.textContent  = "";
-    tableWrap.innerHTML = `<div class="v4-empty">📊 Geen statistieken beschikbaar voor <strong>${activeLeague.label}</strong> ${activeSeason}–${+activeSeason+1}.<br><small style="color:rgba(255,255,255,0.2);margin-top:6px;display:block">Seizoen mogelijk nog niet gestart of niet beschikbaar.</small></div>`;
+    tableWrap.innerHTML = `<div class="v4-empty">📊 Geen statistieken beschikbaar voor <strong>${activeLeague.label}</strong> in seizoen ${formatSeasonLabel(activeSeason)}.<br><small style="color:rgba(255,255,255,0.2);margin-top:6px;display:block">Het huidige seizoen is actief, maar voor deze competitie is er nog geen bruikbare spelersdata beschikbaar.</small></div>`;
     return;
   }
 
@@ -416,9 +574,15 @@ function render() {
   sourceBadge.textContent = "API-Football";
   tableCount.textContent  = sorted.length + " spelers";
 
-  let html = `<table class="v4-stat-table"><thead><tr>
+  let html = `<table class="v4-stat-table"><colgroup>
+    <col class="col-rank">
+    <col class="col-player">
+    <col class="col-club">
+    ${meta.cols.map(() => '<col class="col-num">').join("")}
+  </colgroup><thead><tr>
     <th class="num" data-col="_rank">#</th>
-    <th data-col="name">Speler</th>`;
+    <th class="player-col" data-col="name">Speler</th>
+    <th class="club-col" data-col="club">Club</th>`;
   meta.cols.forEach(c => {
     const active = sc === c.col;
     const cls = "num" + (active ? (sortDir > 0 ? " sort-asc" : " sort-desc") : "");
@@ -427,27 +591,39 @@ function render() {
   html += `</tr></thead><tbody>`;
 
   sorted.forEach((p, i) => {
-    const s   = p.statistics && p.statistics[0];
+    const s = getStatsEntry(p);
+    const team = getTeamInfo(p);
     const rank = i + 1;
     const rankCls = rank === 1 ? "r1" : rank === 2 ? "r2" : rank === 3 ? "r3" : "";
-    const photoUrl = p.player && p.player.photo;
+    const playerName = (p.player && p.player.name) || "–";
+    const playerInitials = getPlayerInitials(playerName);
+    const photoUrl = normalizeRemoteImage(p.player && p.player.photo);
     const photoHtml = photoUrl
-      ? `<img class="v4-player-photo" src="${photoUrl}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">`
-      : `<div class="v4-player-photo"></div>`;
+      ? `<span class="v4-player-avatar"><img class="v4-player-photo" src="${escAttr(photoUrl)}" alt="Foto van ${escAttr(playerName)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"><span class="v4-player-photo-fallback" aria-hidden="true">${esc(playerInitials)}</span></span>`
+      : `<span class="v4-player-avatar"><span class="v4-player-photo-fallback" aria-hidden="true">${esc(playerInitials)}</span></span>`;
     const nat  = (p.player && p.player.nationality) || "";
-    const tLogo = s && s.team && s.team.logo
-      ? `<img class="v4-club-logo" src="${s.team.logo}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    const tLogo = team && team.logo
+      ? `<img class="v4-club-logo" src="${escAttr(normalizeRemoteImage(team.logo))}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'">`
       : "";
-    const tName = (s && s.team && s.team.name) || "–";
+    const tName = (team && team.name) || "–";
 
     html += `<tr>
       <td class="num"><span class="v4-rank ${rankCls}">${rank}</span></td>
-      <td>
+      <td class="player-col">
         <div class="v4-player-cell">
           ${photoHtml}
-          <div>
-            <div class="v4-player-name">${esc(p.player && p.player.name || "–")}</div>
-            <div class="v4-player-club">${tLogo}${esc(tName)}</div>
+          <div class="v4-player-meta">
+            <div class="v4-player-name">${esc(playerName)}</div>
+            <div class="v4-player-nat">${esc(nat || "Nationaliteit onbekend")}</div>
+          </div>
+        </div>
+      </td>
+      <td class="club-col">
+        <div class="v4-club-cell">
+          <span class="v4-club-logo-wrap">${tLogo}</span>
+          <div class="v4-club-meta">
+            <div class="v4-club-name">${esc(tName)}</div>
+            <div class="v4-club-subline">${esc(activeLeague.label)}</div>
           </div>
         </div>
       </td>`;
@@ -461,6 +637,7 @@ function render() {
 
   html += `</tbody></table>`;
   tableWrap.innerHTML = html;
+  hydratePlayerPhotos();
 
   tableWrap.querySelectorAll("th[data-col]").forEach(th => {
     th.addEventListener("click", () => {
@@ -470,6 +647,29 @@ function render() {
       else { sortCol = col; sortDir = -1; }
       render();
     });
+  });
+}
+
+function hydratePlayerPhotos() {
+  tableWrap.querySelectorAll(".v4-player-avatar").forEach(avatar => {
+    const img = avatar.querySelector(".v4-player-photo");
+    if (!img) return;
+
+    const markReady = () => {
+      if (img.naturalWidth > 0) avatar.classList.add("is-ready");
+    };
+    const markFallback = () => {
+      avatar.classList.remove("is-ready");
+      img.removeAttribute("src");
+    };
+
+    img.addEventListener("load", markReady, { once:true });
+    img.addEventListener("error", markFallback, { once:true });
+
+    if (img.complete) {
+      if (img.naturalWidth > 0) markReady();
+      else markFallback();
+    }
   });
 }
 
@@ -491,6 +691,10 @@ function showLoading() {
 
 function esc(s) {
   return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+function escAttr(s) {
+  return esc(s).replace(/"/g, "&quot;");
 }
 
 buildLeagueBar();
