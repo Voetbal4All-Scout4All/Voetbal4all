@@ -27,17 +27,28 @@
     .v4-tab:hover { border-color:rgba(255,255,255,0.25); color:#fff; }
     .v4-tab.active { background:linear-gradient(135deg,#2979ff,#7c4dff); border-color:transparent; color:#fff; }
 
+    #table-wrap {
+      overflow-x:auto;
+      overflow-y:hidden;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(111,168,255,0.38) rgba(255,255,255,0.05);
+    }
     .v4-stat-table {
       width:100%;
-      min-width:860px;
       border-collapse:collapse;
       table-layout:fixed;
       font-size:13px;
     }
-    .v4-stat-table col.col-rank   { width:58px; }
-    .v4-stat-table col.col-player { width:290px; }
-    .v4-stat-table col.col-club   { width:220px; }
-    .v4-stat-table col.col-num    { width:88px; }
+    .v4-stat-table.stats-5 { min-width:720px; }
+    .v4-stat-table.stats-3 { min-width:640px; }
+    .v4-stat-table.stats-5 col.col-rank   { width:7%; }
+    .v4-stat-table.stats-5 col.col-player { width:31%; }
+    .v4-stat-table.stats-5 col.col-club   { width:22%; }
+    .v4-stat-table.stats-5 col.col-num    { width:8%; }
+    .v4-stat-table.stats-3 col.col-rank   { width:7%; }
+    .v4-stat-table.stats-3 col.col-player { width:36%; }
+    .v4-stat-table.stats-3 col.col-club   { width:25%; }
+    .v4-stat-table.stats-3 col.col-num    { width:10.6667%; }
     .v4-stat-table th {
       text-align:left; color:rgba(255,255,255,0.45); font-size:11px; font-weight:600;
       text-transform:uppercase; letter-spacing:.05em; padding:8px 10px;
@@ -55,11 +66,14 @@
     .v4-stat-table td {
       padding:9px 10px; border-bottom:1px solid rgba(255,255,255,0.05);
       color:rgba(255,255,255,0.85); vertical-align:middle;
-      overflow:hidden;
     }
     .v4-stat-table tr:last-child td { border-bottom:none; }
     .v4-stat-table tr:hover td { background:rgba(255,255,255,0.03); }
     .v4-stat-table td.num { font-variant-numeric:tabular-nums; }
+    .v4-stat-table th.num,
+    .v4-stat-table td.num {
+      white-space:nowrap;
+    }
 
     .v4-player-cell,
     .v4-club-cell {
@@ -165,7 +179,8 @@
     .v4-rank.r3 { background:linear-gradient(135deg,#CD7F32,#8B4513); color:#fff; }
 
     .v4-pill {
-      display:inline-block; padding:2px 9px; border-radius:10px;
+      display:inline-flex; align-items:center; justify-content:center;
+      min-width:40px; padding:2px 9px; border-radius:10px;
       font-size:12px; font-weight:700;
     }
     .v4-pill.goals   { background:rgba(41,121,255,0.18); color:#6fa8ff; }
@@ -227,12 +242,8 @@
       background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.35); margin-left:auto;
     }
     @media (max-width:900px) {
-      .v4-stat-table {
-        min-width:780px;
-      }
-      .v4-stat-table col.col-player { width:250px; }
-      .v4-stat-table col.col-club { width:190px; }
-      .v4-stat-table col.col-num { width:78px; }
+      .v4-stat-table.stats-5 { min-width:700px; }
+      .v4-stat-table.stats-3 { min-width:620px; }
     }
   </style>
 </head>
@@ -361,7 +372,7 @@
               </div>
               <span class="pill-small" id="table-count"></span>
             </div>
-            <div style="overflow-x:auto;" id="table-wrap">
+            <div id="table-wrap">
               <div class="v4-loading" id="loading-indicator">
                 <div class="v4-spinner"></div><span>Data laden…</span>
               </div>
@@ -420,9 +431,10 @@ const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 const LEAGUES = [
   { code:"JPL",    label:"Jupiler Pro League",    flag:"🇧🇪", apiId:144 },
   { code:"BEL2",   label:"Challenger Pro League", flag:"🇧🇪", apiId:145 },
-  { code:"BEL_W",  label:"Super League Women",    flag:"🇧🇪", apiId:195 },
+  { code:"BEL_W",  label:"Super League Women",    flag:"🇧🇪", apiId:146 },
   { code:"ERED",   label:"Eredivisie",            flag:"🇳🇱", apiId:88  },
   { code:"NED_D2", label:"Keuken Kampioen Div.",  flag:"🇳🇱", apiId:89  },
+  { code:"NED_W",  label:"Eredivisie Vrouwen",    flag:"🇳🇱", apiId:91  },
 ];
 
 let activeLeague = LEAGUES[0];
@@ -432,6 +444,7 @@ let sortCol      = null;
 let sortDir      = -1;
 let cache        = {};
 let currentData  = [];
+let currentMeta  = null;
 
 const leagueBar    = document.getElementById("league-bar");
 const seasonBadge  = document.getElementById("season-badge");
@@ -455,12 +468,23 @@ function formatSeasonLabel(season) {
 
 function getStatsEntry(p) {
   const stats = p && Array.isArray(p.statistics) ? p.statistics : [];
-  return stats.find(Boolean) || null;
+  return stats.find(isActiveLeagueStat) || stats.find(Boolean) || null;
+}
+
+function getLeagueInfo(entry) {
+  return (entry && entry.league) || null;
+}
+
+function isActiveLeagueStat(entry) {
+  if (!entry || !entry.league) return false;
+  return String(entry.league.id) === String(activeLeague.apiId)
+    && String(entry.league.season) === String(activeSeason);
 }
 
 function getTeamInfo(p) {
   const stats = p && Array.isArray(p.statistics) ? p.statistics : [];
-  const statWithTeam = stats.find(entry => entry && entry.team && (entry.team.name || entry.team.logo));
+  const statWithTeam = stats.find(entry => isActiveLeagueStat(entry) && entry.team && (entry.team.name || entry.team.logo))
+    || stats.find(entry => entry && entry.team && (entry.team.name || entry.team.logo));
   return (statWithTeam && statWithTeam.team) || null;
 }
 
@@ -508,17 +532,43 @@ document.querySelectorAll(".v4-tab").forEach(btn => {
 
 async function load() {
   const key = `${activeLeague.apiId}_${activeSeason}`;
-  if (cache[key]) { currentData = cache[key]; render(); return; }
+  if (cache[key]) {
+    currentData = cache[key].items;
+    currentMeta = cache[key].meta;
+    render();
+    return;
+  }
   showLoading();
   try {
     const r = await fetch(`${API_BASE}/api/topscorers?leagueApiId=${activeLeague.apiId}&season=${activeSeason}`);
     const json = await r.json();
-    currentData = (json.ok && json.items && json.items.length) ? json.items : [];
-    cache[key] = currentData;
+    currentData = (json.ok && json.items && Array.isArray(json.items)) ? json.items : [];
+    currentMeta = buildCurrentMeta(json, currentData);
+    cache[key] = { items: currentData, meta: currentMeta };
   } catch(e) {
     currentData = [];
+    currentMeta = buildCurrentMeta(null, []);
   }
   render();
+}
+
+function buildCurrentMeta(json, items) {
+  const sample = items.find(Boolean);
+  const sampleStat = getStatsEntry(sample);
+  const leagueInfo = getLeagueInfo(sampleStat);
+  return {
+    source: (json && json.source) || "unknown",
+    requestedLeagueApiId: activeLeague.apiId,
+    leagueId: leagueInfo && leagueInfo.id ? String(leagueInfo.id) : String(activeLeague.apiId),
+    leagueName: leagueInfo && leagueInfo.name ? leagueInfo.name : activeLeague.label,
+    country: leagueInfo && leagueInfo.country ? leagueInfo.country : "",
+    season: leagueInfo && leagueInfo.season ? String(leagueInfo.season) : String(activeSeason),
+  };
+}
+
+function getSourceBadgeText() {
+  const leagueLabel = (currentMeta && currentMeta.leagueName) || activeLeague.label;
+  return `${leagueLabel} · API-Football`;
 }
 
 function getVal(p, col) {
@@ -559,7 +609,7 @@ function render() {
   tableTitle.textContent   = meta.title;
 
   if (!currentData.length) {
-    sourceBadge.textContent = "Geen data";
+    sourceBadge.textContent = getSourceBadgeText();
     tableCount.textContent  = "";
     tableWrap.innerHTML = `<div class="v4-empty">📊 Geen statistieken beschikbaar voor <strong>${activeLeague.label}</strong> in seizoen ${formatSeasonLabel(activeSeason)}.<br><small style="color:rgba(255,255,255,0.2);margin-top:6px;display:block">Het huidige seizoen is actief, maar voor deze competitie is er nog geen bruikbare spelersdata beschikbaar.</small></div>`;
     return;
@@ -571,10 +621,10 @@ function render() {
     return (va < vb ? -1 : va > vb ? 1 : 0) * sortDir;
   });
 
-  sourceBadge.textContent = "API-Football";
+  sourceBadge.textContent = getSourceBadgeText();
   tableCount.textContent  = sorted.length + " spelers";
 
-  let html = `<table class="v4-stat-table"><colgroup>
+  let html = `<table class="v4-stat-table stats-${meta.cols.length}"><colgroup>
     <col class="col-rank">
     <col class="col-player">
     <col class="col-club">
@@ -623,7 +673,7 @@ function render() {
           <span class="v4-club-logo-wrap">${tLogo}</span>
           <div class="v4-club-meta">
             <div class="v4-club-name">${esc(tName)}</div>
-            <div class="v4-club-subline">${esc(activeLeague.label)}</div>
+            <div class="v4-club-subline">${esc((currentMeta && currentMeta.leagueName) || activeLeague.label)}</div>
           </div>
         </div>
       </td>`;
