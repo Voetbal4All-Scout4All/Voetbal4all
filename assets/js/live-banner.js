@@ -15,6 +15,9 @@
     };
     const API_BASE = "https://voetbal4all-backend-database.onrender.com";
     const REFRESH_INTERVAL_MS = 3 * 60 * 1000;
+    const FETCH_TIMEOUT_MS = 4000;
+    const LIVE_CACHE_KEY = "v4a-live-banner-cache-v1";
+    const LIVE_CACHE_TTL_MS = 90 * 1000;
     const LIVE_LEAGUES = [
       { league: "JPL", cc: "BE", label: "JPL" },
       { league: "ERED", cc: "NL", label: "Eredivisie" },
@@ -187,6 +190,15 @@
     const socialsEl = ensureSocials();
     [labelEl, textEl, socialsEl].forEach((node) => banner.appendChild(node));
     banner.classList.add("is-ready");
+    const countryLabel = {
+      BE: "Belgie",
+      NL: "Nederland",
+      DE: "Duitsland",
+      GB: "Verenigd Koninkrijk",
+      IT: "Italie",
+      ES: "Spanje",
+      FR: "Frankrijk"
+    };
 
     function formatStatus(minute, status) {
       if (minute != null && String(minute).trim() !== "") {
@@ -210,15 +222,6 @@
     }
 
     function buildFallbackItems() {
-      const countryLabel = {
-        BE: "Belgie",
-        NL: "Nederland",
-        DE: "Duitsland",
-        GB: "Verenigd Koninkrijk",
-        IT: "Italie",
-        ES: "Spanje",
-        FR: "Frankrijk"
-      };
       return [
         { type: "empty", label: "Momenteel geen live wedstrijden" },
         ...LIVE_LEAGUES.map((league) => ({
@@ -231,7 +234,43 @@
       ];
     }
 
-    async function fetchJsonWithTimeout(url, timeoutMs = 9000) {
+    function readCachedLiveItems() {
+      try {
+        const raw = window.sessionStorage.getItem(LIVE_CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (!cached || !Array.isArray(cached.items)) return null;
+        if (Date.now() - Number(cached.savedAt || 0) > LIVE_CACHE_TTL_MS) return null;
+        return hasLiveMatches(cached.items) ? cached.items : null;
+      } catch (_error) {
+        return null;
+      }
+    }
+
+    function writeCachedLiveItems(items) {
+      if (!hasLiveMatches(items)) return;
+      try {
+        window.sessionStorage.setItem(
+          LIVE_CACHE_KEY,
+          JSON.stringify({
+            savedAt: Date.now(),
+            items
+          })
+        );
+      } catch (_error) {
+        // Ignore storage failures; the banner can still run live-only.
+      }
+    }
+
+    function clearCachedLiveItems() {
+      try {
+        window.sessionStorage.removeItem(LIVE_CACHE_KEY);
+      } catch (_error) {
+        // Ignore storage failures.
+      }
+    }
+
+    async function fetchJsonWithTimeout(url, timeoutMs = FETCH_TIMEOUT_MS) {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), timeoutMs);
       try {
@@ -246,75 +285,72 @@
       }
     }
 
-    async function fetchFreeLiveItems() {
-      const requests = LIVE_LEAGUES.map((league) => ({
-        ...league,
-        url: `${API_BASE}/api/live-scores?league=${encodeURIComponent(league.league)}`
-      }));
-      const results = await Promise.all(
-        requests.map(async (request) => {
-          try {
-            const data = await fetchJsonWithTimeout(request.url);
-            return {
-              ...request,
-              items: Array.isArray(data?.items) ? data.items : []
-            };
-          } catch (_error) {
-            return { ...request, items: [] };
-          }
-        })
-      );
-
-      const countryLabel = {
-        BE: "Belgie",
-        NL: "Nederland",
-        DE: "Duitsland",
-        GB: "Verenigd Koninkrijk",
-        IT: "Italie",
-        ES: "Spanje",
-        FR: "Frankrijk"
-      };
+    function normalizeLiveItems(request, data) {
       const matches = [];
-      for (const result of results) {
-        for (const match of result.items) {
-          const home = String(match?.homeTeam || "").trim();
-          const away = String(match?.awayTeam || "").trim();
-          if (!home || !away) continue;
-          matches.push({
-            type: "match",
-            cc: result.cc,
-            countryLabel: countryLabel[result.cc] || "Internationaal",
-            leagueLabel: result.label,
-            isWomen: !!result.isWomen,
-            home,
-            away,
-            hs: match?.homeScore ?? null,
-            as: match?.awayScore ?? null,
-            minute: match?.minute ?? null,
-            status: match?.status ?? null
-          });
-        }
+      for (const match of Array.isArray(data?.items) ? data.items : []) {
+        const home = String(match?.homeTeam || "").trim();
+        const away = String(match?.awayTeam || "").trim();
+        if (!home || !away) continue;
+        matches.push({
+          type: "match",
+          cc: request.cc,
+          countryLabel: countryLabel[request.cc] || "Internationaal",
+          leagueLabel: request.label,
+          isWomen: !!request.isWomen,
+          home,
+          away,
+          hs: match?.homeScore ?? null,
+          as: match?.awayScore ?? null,
+          minute: match?.minute ?? null,
+          status: match?.status ?? null
+        });
       }
       return matches;
     }
 
-    let marqueeRunning = false;
-    let marqueeCycleEndsAt = 0;
-    let pendingItems = null;
+    async function fetchFreeLiveItems(options = {}) {
+      const { onPartialItems } = options;
+      const requests = LIVE_LEAGUES.map((league) => ({
+        ...league,
+        url: `${API_BASE}/api/live-scores?league=${encodeURIComponent(league.league)}`
+      }));
+
+      const matchesByLeague = new Array(requests.length).fill(null);
+      let partialSent = false;
+      let successfulResponses = 0;
+
+      await Promise.allSettled(
+        requests.map(async (request, index) => {
+          try {
+            const data = await fetchJsonWithTimeout(request.url);
+            successfulResponses += 1;
+            matchesByLeague[index] = normalizeLiveItems(request, data);
+            if (!partialSent && matchesByLeague[index].length) {
+              partialSent = true;
+              onPartialItems?.(matchesByLeague.flat().filter(Boolean));
+            }
+          } catch (_error) {
+            matchesByLeague[index] = [];
+          }
+        })
+      );
+
+      return {
+        items: matchesByLeague.flat().filter(Boolean),
+        successfulResponses
+      };
+    }
+
     let lastItems = buildFallbackItems();
-    let restartTimer = 0;
-    const NEXT_CYCLE_DELAY_MS = 140;
-    const SWAP_DELAY_MS = 48;
+    let lastSignature = "";
+    let refreshSeq = 0;
 
     function hasLiveMatches(items) {
       return Array.isArray(items) && items.some((item) => item.type === "match");
     }
 
-    function stopMarquee() {
-      marqueeRunning = false;
-      marqueeCycleEndsAt = 0;
-      window.clearTimeout(restartTimer);
-      restartTimer = 0;
+    function getItemsSignature(items) {
+      return JSON.stringify(items || []);
     }
 
     function updateBannerMeta(items) {
@@ -327,28 +363,32 @@
           : "Momenteel geen live wedstrijden";
     }
 
-    function renderRail(items) {
+    function renderRail(items, options = {}) {
+      const { force = false } = options;
       if (!Array.isArray(items) || !items.length) return false;
+      const signature = getItemsSignature(items);
+      if (!force && signature === lastSignature) return false;
+      lastSignature = signature;
       lastItems = items;
-      pendingItems = null;
-      stopMarquee();
       updateBannerMeta(items);
       tickerWrap.classList.remove("is-scrollable");
       tickerWrap.innerHTML = '<div class="marquee-track"></div>';
       const track = tickerWrap.querySelector(".marquee-track");
-      track.innerHTML = items
+      const segmentMarkup = items
         .map(buildMatchMarkup)
         .join('<span class="live-rail-separator" aria-hidden="true"></span>');
+      track.innerHTML = `<span class="marquee-segment">${segmentMarkup}</span>`;
 
       requestAnimationFrame(() => {
         const containerWidth = tickerWrap.clientWidth || 0;
-        const trackWidth = track.scrollWidth || 0;
-        if (!containerWidth || !trackWidth) {
+        const segment = track.querySelector(".marquee-segment");
+        const segmentWidth = segment?.scrollWidth || 0;
+        if (!containerWidth || !segmentWidth) {
           track.classList.add("is-static");
           return;
         }
 
-        const overflow = trackWidth > containerWidth + 12;
+        const overflow = segmentWidth > containerWidth + 12;
         if (!overflow || prefersReducedMotion) {
           track.classList.add("is-static");
           if (prefersReducedMotion && overflow) {
@@ -357,44 +397,26 @@
           return;
         }
 
-        const socialsWidth = Math.round(socialsEl.getBoundingClientRect().width || 0);
-        const startX = Math.max(44, Math.min(84, Math.round((socialsWidth || 112) * 0.5)));
-        const endPadding = Math.max(20, Math.min(44, Math.round(containerWidth * 0.04)));
-        const endX = -trackWidth - endPadding;
-        const distance = startX - endX;
-        const pxPerSecond = 64;
-        const durationSec = Math.max(16, distance / pxPerSecond);
+        const loopSeparator = document.createElement("span");
+        loopSeparator.className = "live-rail-separator live-rail-separator--loop";
+        loopSeparator.setAttribute("aria-hidden", "true");
+        const clone = segment.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        track.append(loopSeparator, clone);
 
-        track.style.setProperty("--live-marquee-start", `${startX}px`);
-        track.style.setProperty("--live-marquee-end", `${endX}px`);
-        track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
-
-        const startAnimation = () => {
+        requestAnimationFrame(() => {
           if (!track.isConnected) return;
+          const loopDistance = clone.offsetLeft || segmentWidth;
+          const pxPerSecond = 72;
+          const durationSec = Math.max(12, loopDistance / pxPerSecond);
+
+          track.style.setProperty("--live-marquee-start", "0px");
+          track.style.setProperty("--live-marquee-end", `${-loopDistance}px`);
+          track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
           track.classList.remove("is-static", "is-animated");
-          track.style.transform = `translate3d(${startX}px,0,0)`;
           void track.offsetWidth;
-          requestAnimationFrame(() => {
-            if (!track.isConnected) return;
-            marqueeRunning = true;
-            marqueeCycleEndsAt = Date.now() + Math.ceil(durationSec * 1000);
-            track.classList.add("is-animated");
-            track.style.transform = "";
-          });
-        };
-
-        track.onanimationend = () => {
-          marqueeRunning = false;
-          if (pendingItems && pendingItems.length) {
-            const nextItems = pendingItems;
-            pendingItems = null;
-            restartTimer = window.setTimeout(() => renderRail(nextItems), SWAP_DELAY_MS);
-            return;
-          }
-          restartTimer = window.setTimeout(startAnimation, NEXT_CYCLE_DELAY_MS);
-        };
-
-        startAnimation();
+          track.classList.add("is-animated");
+        });
       });
       return true;
     }
@@ -404,23 +426,29 @@
     }
 
     async function refresh() {
+      const currentSeq = ++refreshSeq;
       try {
-        const liveItems = await fetchFreeLiveItems();
+        const canQuickSwap = !hasLiveMatches(lastItems);
+        const result = await fetchFreeLiveItems({
+          onPartialItems(partialItems) {
+            if (currentSeq !== refreshSeq || !canQuickSwap || !partialItems.length) return;
+            writeCachedLiveItems(partialItems);
+            renderRail(partialItems);
+          }
+        });
+        if (currentSeq !== refreshSeq) return;
+        const { items: liveItems, successfulResponses } = result;
         if (!liveItems.length) {
+          if (successfulResponses === 0 && hasLiveMatches(lastItems)) return;
+          clearCachedLiveItems();
           renderFallback();
           return;
         }
-        if (marqueeRunning && !hasLiveMatches(lastItems)) {
-          renderRail(liveItems);
-          return;
-        }
-        if (marqueeRunning && Date.now() < marqueeCycleEndsAt - 180) {
-          pendingItems = liveItems;
-          return;
-        }
+        writeCachedLiveItems(liveItems);
         renderRail(liveItems);
       } catch (error) {
         console.warn("Live banner fout:", error);
+        if (hasLiveMatches(lastItems)) return;
         renderFallback();
       }
     }
@@ -428,7 +456,7 @@
     if (reduceMotionQuery) {
       const onMotionChange = (event) => {
         prefersReducedMotion = !!event.matches;
-        renderRail(lastItems);
+        renderRail(lastItems, { force: true });
       };
       if (typeof reduceMotionQuery.addEventListener === "function") {
         reduceMotionQuery.addEventListener("change", onMotionChange);
@@ -437,7 +465,12 @@
       }
     }
 
-    renderFallback();
+    const cachedItems = readCachedLiveItems();
+    if (cachedItems?.length) {
+      renderRail(cachedItems);
+    } else {
+      renderFallback();
+    }
     refresh();
     window.setInterval(refresh, REFRESH_INTERVAL_MS);
   }
