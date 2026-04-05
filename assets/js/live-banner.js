@@ -303,8 +303,12 @@
     let pendingItems = null;
     let lastItems = buildFallbackItems();
     let restartTimer = 0;
-    const NEXT_CYCLE_DELAY_MS = 420;
-    const SWAP_DELAY_MS = 120;
+    const NEXT_CYCLE_DELAY_MS = 140;
+    const SWAP_DELAY_MS = 48;
+
+    function hasLiveMatches(items) {
+      return Array.isArray(items) && items.some((item) => item.type === "match");
+    }
 
     function stopMarquee() {
       marqueeRunning = false;
@@ -337,64 +341,60 @@
         .join('<span class="live-rail-separator" aria-hidden="true"></span>');
 
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          const containerWidth = tickerWrap.clientWidth || 0;
-          const trackWidth = track.scrollWidth || 0;
-          if (!containerWidth || !trackWidth) {
-            track.classList.add("is-static");
-            return;
+        const containerWidth = tickerWrap.clientWidth || 0;
+        const trackWidth = track.scrollWidth || 0;
+        if (!containerWidth || !trackWidth) {
+          track.classList.add("is-static");
+          return;
+        }
+
+        const overflow = trackWidth > containerWidth + 12;
+        if (!overflow || prefersReducedMotion) {
+          track.classList.add("is-static");
+          if (prefersReducedMotion && overflow) {
+            tickerWrap.classList.add("is-scrollable");
           }
+          return;
+        }
 
-          const overflow = trackWidth > containerWidth + 12;
-          if (!overflow || prefersReducedMotion) {
-            track.classList.add("is-static");
-            if (prefersReducedMotion && overflow) {
-              tickerWrap.classList.add("is-scrollable");
-            }
-            return;
-          }
+        const socialsWidth = Math.round(socialsEl.getBoundingClientRect().width || 0);
+        const startX = Math.max(44, Math.min(84, Math.round((socialsWidth || 112) * 0.5)));
+        const endPadding = Math.max(20, Math.min(44, Math.round(containerWidth * 0.04)));
+        const endX = -trackWidth - endPadding;
+        const distance = startX - endX;
+        const pxPerSecond = 64;
+        const durationSec = Math.max(16, distance / pxPerSecond);
 
-          const leadIn = Math.max(26, Math.min(60, Math.round(containerWidth * 0.05)));
-          const tailOut = Math.max(56, Math.min(120, Math.round(containerWidth * 0.12)));
-          const startX = leadIn;
-          const endX = -trackWidth - tailOut;
-          const distance = startX - endX;
-          const pxPerSecond = 52;
-          const durationSec = Math.max(18, distance / pxPerSecond);
+        track.style.setProperty("--live-marquee-start", `${startX}px`);
+        track.style.setProperty("--live-marquee-end", `${endX}px`);
+        track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
 
-          track.style.setProperty("--live-marquee-start", `${startX}px`);
-          track.style.setProperty("--live-marquee-end", `${endX}px`);
-          track.style.setProperty("--live-marquee-duration", `${durationSec}s`);
-
-          const startAnimation = () => {
+        const startAnimation = () => {
+          if (!track.isConnected) return;
+          track.classList.remove("is-static", "is-animated");
+          track.style.transform = `translate3d(${startX}px,0,0)`;
+          void track.offsetWidth;
+          requestAnimationFrame(() => {
             if (!track.isConnected) return;
-            track.classList.remove("is-static", "is-animated");
-            track.style.opacity = "0.35";
-            track.style.transform = `translate3d(${startX}px,0,0)`;
-            void track.offsetWidth;
-            requestAnimationFrame(() => {
-              if (!track.isConnected) return;
-              marqueeRunning = true;
-              marqueeCycleEndsAt = Date.now() + Math.ceil(durationSec * 1000);
-              track.classList.add("is-animated");
-              track.style.opacity = "1";
-              track.style.transform = "";
-            });
-          };
+            marqueeRunning = true;
+            marqueeCycleEndsAt = Date.now() + Math.ceil(durationSec * 1000);
+            track.classList.add("is-animated");
+            track.style.transform = "";
+          });
+        };
 
-          track.onanimationend = () => {
-            marqueeRunning = false;
-            if (pendingItems && pendingItems.length) {
-              const nextItems = pendingItems;
-              pendingItems = null;
-              restartTimer = window.setTimeout(() => renderRail(nextItems), SWAP_DELAY_MS);
-              return;
-            }
-            restartTimer = window.setTimeout(startAnimation, NEXT_CYCLE_DELAY_MS);
-          };
+        track.onanimationend = () => {
+          marqueeRunning = false;
+          if (pendingItems && pendingItems.length) {
+            const nextItems = pendingItems;
+            pendingItems = null;
+            restartTimer = window.setTimeout(() => renderRail(nextItems), SWAP_DELAY_MS);
+            return;
+          }
+          restartTimer = window.setTimeout(startAnimation, NEXT_CYCLE_DELAY_MS);
+        };
 
-          startAnimation();
-        });
+        startAnimation();
       });
       return true;
     }
@@ -410,7 +410,11 @@
           renderFallback();
           return;
         }
-        if (marqueeRunning && Date.now() < marqueeCycleEndsAt - 400) {
+        if (marqueeRunning && !hasLiveMatches(lastItems)) {
+          renderRail(liveItems);
+          return;
+        }
+        if (marqueeRunning && Date.now() < marqueeCycleEndsAt - 180) {
           pendingItems = liveItems;
           return;
         }
