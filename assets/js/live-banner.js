@@ -417,7 +417,7 @@
           const entryOffset = Math.max(8, Math.min(18, Math.round((socialsWidth || 0) * 0.08)));
           const startX = containerWidth + entryOffset;
           const endX = startX - loopDistance;
-          const durationSec = Math.max(15, Math.min(20, loopDistance / 75));
+          const durationSec = Math.max(20, Math.min(28, loopDistance / 55));
 
           track.style.setProperty("--live-marquee-start", `${startX}px`);
           track.style.setProperty("--live-marquee-end", `${endX}px`);
