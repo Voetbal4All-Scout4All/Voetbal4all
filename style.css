@@ -187,7 +187,7 @@
   display:inline-flex;
   align-items:center;
   gap:7px;
-  max-width:100%;
+  max-width:none;
   padding:7px 9px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,0.08);
@@ -237,21 +237,35 @@
   color:#a5d8ff;
 }
 
+.live-score-chip--women-icon{
+  width:20px;
+  height:20px;
+  padding:0;
+  justify-content:center;
+  color:#a5d8ff;
+}
+
+.live-score-chip--women-icon svg{
+  width:12px;
+  height:12px;
+  display:block;
+}
+
 .live-score-game{
   display:inline-flex;
   align-items:center;
-  flex:1 1 auto;
+  flex:0 0 auto;
   gap:5px;
-  min-width:0;
+  min-width:max-content;
   color:#f6f9ff;
 }
 
 .live-score-team{
-  flex:1 1 16ch;
-  min-width:0;
-  max-width:clamp(18ch,24vw,34ch);
-  overflow:hidden;
-  text-overflow:ellipsis;
+  flex:0 0 auto;
+  min-width:max-content;
+  max-width:none;
+  overflow:visible;
+  text-overflow:clip;
 }
 
 .live-score-score{
@@ -341,7 +355,7 @@
   }
 
   .live-score-team{
-    max-width:clamp(15ch,25vw,26ch);
+    max-width:none;
   }
 }
 
@@ -414,7 +428,7 @@
 
   .live-score-team{
     flex-basis:13ch;
-    max-width:clamp(13ch,36vw,20ch);
+    max-width:none;
   }
 
   .live-score-status{
