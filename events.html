@@ -685,7 +685,7 @@
 
                   <div id="events-pagination" class="events-pagination" aria-label="Paginatie events"></div>
 
-                  <p id="event-status" class="note" style="margin-top:10px; display:none;"></p>
+                  <p id="event-status" class="note v4-status-note" role="status" aria-live="polite" style="margin-top:10px; display:none;"></p>
                 </div>
 
               </section>
@@ -1303,7 +1303,7 @@
 
           if (total === 0){
             CURRENT_PAGE = 1;
-            listEl.innerHTML = '<div style="padding:24px;text-align:center;"><p style="margin-bottom:16px;opacity:.85;">Er zijn momenteel geen sportieve events gevonden.</p><a class="btn-ghost-sm" href="event-aanmelden.html">Meld je event aan</a></div>';
+            listEl.innerHTML = '<div class="v4-state-card v4-state-card--empty"><p>Er zijn momenteel geen sportieve events gevonden.</p><a class="btn-ghost-sm" href="event-aanmelden.html">Meld je event aan</a></div>';
             renderPagination(0);
             return;
           }
@@ -1338,6 +1338,9 @@
         if (status) {
           status.style.display = "block";
           status.textContent = "Events konden niet geladen worden.";
+        }
+        if (listEl) {
+          listEl.innerHTML = '<div class="v4-state-card v4-state-card--error"><p>Fout bij laden van events.</p></div>';
         }
       }
     }
@@ -1395,7 +1398,7 @@
           const uiType = ev ? typeToUiLabel(ev.event_type) : '';
 
           grid.insertAdjacentHTML('beforeend', `
-            <article class="v4a-card premium-card" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
+            <article class="v4a-card premium-card${ev ? '' : ' premium-card--placeholder'}" id="premium30-${encodeURIComponent(String(slug))}" data-slug="${String(slug)}">
               <div class="event-row">
                 <div class="event-thumbcol" style="width:140px;flex:0 0 140px;min-width:0;">
                   <div class="event-thumbbox ${safeThumb ? 'has-img' : ''}" aria-label="Flyer thumbnail">
@@ -1520,10 +1523,10 @@
 
       // End with a clear CTA in the sidebar
       el.insertAdjacentHTML('beforeend', `
-        <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+        <div class="sidebar-premium-card sidebar-premium-card--cta">
           <div class="sidebar-premium-title">Plaats jouw premium event</div>
           <div class="sidebar-premium-meta">Promoot je event ruim op voorhand, bovenaan elke pagina.</div>
-          <div class="sidebar-premium-actions" style="justify-content:center;">
+          <div class="sidebar-premium-actions">
             <a class="btn-ghost-sm" href="adverteren.html">Plaats premium event</a>
           </div>
         </div>

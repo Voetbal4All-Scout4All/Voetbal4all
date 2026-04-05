@@ -861,7 +861,7 @@
                 </div>
 
                 <div id="vacancy-pagination" class="events-pagination" aria-label="Paginatie vacatures"></div>
-                <p id="vacancy-status" class="note" style="margin-top:10px; display:none;"></p>
+                <p id="vacancy-status" class="note v4-status-note" role="status" aria-live="polite" style="margin-top:10px; display:none;"></p>
               </div>
             </section>
 
@@ -1352,10 +1352,10 @@
       `);
     }
     el.insertAdjacentHTML('beforeend', `
-      <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+      <div class="sidebar-premium-card sidebar-premium-card--cta">
         <div class="sidebar-premium-title">Plaats jouw premium vacature</div>
         <div class="sidebar-premium-meta">Bovenaan, in de sidebar.</div>
-        <div class="sidebar-premium-actions" style="justify-content:center;">
+        <div class="sidebar-premium-actions">
           <a class="btn-ghost-sm" href="adverteren.html">Plaats premium vacature</a>
         </div>
       </div>
