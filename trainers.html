@@ -548,7 +548,7 @@
                 </div>
 
                 <div id="trainer-pagination" class="events-pagination" aria-label="Paginatie trainers"></div>
-                <p id="trainer-status" class="note" style="margin-top:10px; display:none;"></p>
+                <p id="trainer-status" class="note v4-status-note" role="status" aria-live="polite" style="margin-top:10px; display:none;"></p>
 
               </div>
             </section>
@@ -948,10 +948,10 @@
       `);
     }
     el.insertAdjacentHTML('beforeend', `
-      <div class="sidebar-premium-card" style="border-style:dashed;text-align:center;">
+      <div class="sidebar-premium-card sidebar-premium-card--cta">
         <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
         <div class="sidebar-premium-meta">Bovenaan, in de sidebar en in rotatie.</div>
-        <div class="sidebar-premium-actions" style="justify-content:center;">
+        <div class="sidebar-premium-actions">
           <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
         </div>
       </div>
