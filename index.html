@@ -1079,6 +1079,128 @@
     align-self: stretch !important;
     }
 
+/* Homepage first-fold polish: small spacing and alignment cleanup only */
+.home-page .navbar{
+  border-bottom-color: rgba(255,255,255,.06);
+}
+
+.home-page .navbar-inner{
+  min-height: 68px;
+  gap: 16px;
+}
+
+.home-page .nav-cta{
+  margin-left: 10px;
+}
+
+.home-page .live-banner-top{
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.home-page .home-header-ad{
+  padding-top: 8px !important;
+  padding-bottom: 6px !important;
+}
+
+.home-page .home-top{
+  padding-top: 16px;
+}
+
+.home-page .home-top-grid{
+  column-gap: 16px !important;
+  row-gap: 14px !important;
+}
+
+.home-page .hero-card{
+  padding: 18px 18px 16px !important;
+}
+
+.home-page .hero-card .card-header{
+  margin-bottom: 8px;
+}
+
+.home-page .hero-card > .note{
+  max-width: 56ch;
+  margin: 2px auto 0 !important;
+  line-height: 1.5;
+}
+
+.home-page .hero-split{
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.home-page .hero-newsletter-col{
+  padding: 14px 14px 12px;
+  background: rgba(0,0,0,.14);
+}
+
+.home-page .home-quick-row{
+  margin-top: 16px;
+  gap: 12px;
+}
+
+.home-page .home-quick-row a.quick-card{
+  min-height: 84px;
+  padding: 14px 16px;
+}
+
+.home-page .home-quick-row a.quick-card .quick-title{
+  line-height: 1.22;
+}
+
+@media (max-width: 900px){
+  .home-page .navbar-inner{
+    min-height: 62px;
+  }
+
+  .home-page .nav-links{
+    top: 62px !important;
+  }
+
+  .home-page .live-banner-top{
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .home-page .home-header-ad{
+    padding-top: 6px !important;
+    padding-bottom: 4px !important;
+  }
+
+  .home-page .home-top{
+    padding-top: 14px;
+  }
+
+  .home-page .hero-card{
+    padding: 18px 16px !important;
+  }
+
+  .home-page .hero-card > .note{
+    max-width: 100%;
+  }
+
+  .home-page .hero-split{
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .home-page .hero-newsletter-col{
+    padding: 12px;
+  }
+
+  .home-page .home-quick-row{
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .home-page .home-quick-row a.quick-card{
+    min-height: 78px;
+    padding: 12px 10px !important;
+  }
+}
+
 
   </style>
 
@@ -1123,7 +1245,7 @@
   <link rel="preload" as="image" href="/assets/img/brand/logo-voetbal4all.png">
 </head>
 
-<body>
+<body class="home-page">
   <div class="page">
 
     <!-- NAVBAR -->
@@ -1248,7 +1370,7 @@
     </section>
 
     <!-- AdSense: HEADER advertentie ONDER de live banner -->
-    <section class="section-main" style="padding-top:10px;padding-bottom:10px;">
+    <section class="section-main home-header-ad" style="padding-top:10px;padding-bottom:10px;">
       <div class="shell">
         <div class="ad-slot ad-slot-header sticky-ad-header">
           <ins class="adsbygoogle"
