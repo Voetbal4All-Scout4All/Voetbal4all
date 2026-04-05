@@ -674,6 +674,22 @@
     return Number.isFinite(pu) && pu > Date.now();
   }
 
+  function isPublicTestTrainer(p) {
+    const name = String(p?.name || "").trim().toLowerCase();
+    const role = String(p?.role || "").trim().toLowerCase();
+    const bio = String(p?.bio || "").trim().toLowerCase();
+
+    return name.startsWith("test ")
+      || name.startsWith("demo ")
+      || name.includes("testprofiel")
+      || name.includes("test profiel")
+      || role.includes("testprofiel")
+      || role.includes("test profiel")
+      || bio.includes("testprofiel")
+      || bio.includes("test profiel")
+      || bio.includes("demo profiel");
+  }
+
   function trainerCardHtml(p, idx, isPremium) {
     const name = escHtml(p.name || "Anonieme trainer");
     const role = escHtml(p.role || "Trainer");
@@ -739,7 +755,7 @@
       const j = await r.json();
       if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
 
-      const items = j.items;
+      const items = j.items.filter((item) => !isPublicTestTrainer(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
       const rest = items.filter((x) => !isPremiumActive(x));
 

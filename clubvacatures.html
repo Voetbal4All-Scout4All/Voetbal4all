@@ -1060,6 +1060,19 @@
     return Number.isFinite(pu) && pu > Date.now();
   }
 
+  function isPublicTestVacancy(v) {
+    const title = String(v?.title || "").trim().toLowerCase();
+    const description = String(v?.description || "").trim().toLowerCase();
+
+    return title.startsWith("test ")
+      || title.startsWith("demo ")
+      || title.includes("testvacature")
+      || title.includes("test vacature")
+      || description.includes("testvacature")
+      || description.includes("test vacature")
+      || description.includes("demo vacature");
+  }
+
   function normalizeVacancyThumb(raw) {
     const value = String(raw || "").trim();
     if (!value) return "";
@@ -1161,7 +1174,7 @@
       const j = await r.json();
       if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
 
-      const items = j.items;
+      const items = j.items.filter((item) => !isPublicTestVacancy(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
       const rest = items.filter((x) => !isPremiumActive(x));
 
