@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-04-05T19:36:39.467Z",
+  "generatedAt": "2026-04-05T23:38:08.601Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "PSV clinch 3rd-straight Eredivisie in record time",
+      "link": "https://www.espn.com/soccer/story/_/id/48405282/psv-clinch-3rd-straight-eredivisie-feyenoord-draw",
+      "summary": "PSV Eindhoven were crowned Eredivisie champion for a third straight year and 27th time overall after their closest rival Feyenoord failed to win on Sunday.",
+      "publishedAt": "2026-04-05T23:32:20.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City expect Silva's story coming 'to an end'",
+      "link": "https://www.espn.com/soccer/story/_/id/48404937/manchester-city-bernardo-silva-story-coming-end",
+      "summary": "Manchester City assistant Pep Lijnders has given the strongest hint yet that Bernardo Silva is set to leave the club at the end of the season by saying \"every good story comes to an end.\"",
+      "publishedAt": "2026-04-05T23:32:20.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,7 +32,18 @@
       "title": "FA Cup draw: City-Southampton; Chelsea-Leeds",
       "link": "https://www.espn.com/soccer/story/_/id/48404745/fa-cup-semifinal-draw-man-city-meet-southampton-chelsea-face-leeds",
       "summary": "Manchester City will face Southampton in the FA Cup semifinal, while Chelsea will meet Leeds United.",
-      "publishedAt": "2026-04-05T20:02:56.000Z"
+      "publishedAt": "2026-04-05T23:32:20.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Balogun fires Monaco to win amid late UCL push",
+      "link": "https://www.espn.com/soccer/report/_/gameId/746661",
+      "summary": "Folarin Balogun proved decisive for Monaco to extend their winning run in Ligue 1 to seven matches as they earned a 2-1 victory over fellow Champions League chasers Marseille.",
+      "publishedAt": "2026-04-05T23:32:20.000Z"
     },
     {
       "type": "rss",
@@ -21,40 +54,18 @@
       "title": "Palmer: Chelsea captaincy a 'long time coming'",
       "link": "https://www.espn.com/soccer/story/_/id/48402439/cole-palmer-chelsea-captaincy-was-long-coming",
       "summary": "Cole Palmer said it had been a \"long time coming\" after he was handed the Chelsea captaincy for the first time in Saturday's FA Cup mauling of Port Vale.",
-      "publishedAt": "2026-04-05T20:02:56.000Z"
+      "publishedAt": "2026-04-05T23:32:20.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Police investigate after fan unrest in Germany",
-      "link": "https://www.espn.com/soccer/story/_/id/48402937/german-police-investigate-dangerous-bodily-harm-fan-trouble",
-      "summary": "Police in Dresden have opened more than a dozen investigations into offenses, including causing \"dangerous bodily harm\" after large-scale disorder.",
-      "publishedAt": "2026-04-05T20:02:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Beckham: Inter Miami stadium 'dream come true'",
-      "link": "https://www.espn.com/soccer/story/_/id/48403897/david-beckham-inter-miami-new-stadium-dreams-come-true",
-      "summary": "Inter Miami co-owner David Beckham spoke of a dream come true as his team played its first ever game at Nu Stadium on Saturday -- a 2-2 draw with Austin FC.",
-      "publishedAt": "2026-04-05T20:02:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "With Messi goal, Inter Miami get dream moment as they finally find home",
-      "link": "https://www.espn.com/soccer/story/_/id/48402571/lionel-messi-goal-inter-miami-david-beckham-opens-new-stadium-dream-moment",
-      "summary": "For months, Inter Miami advertised Nu Stadium with one simple message: \"We're coming home.'\" On Saturday, in a 2-2 draw with Austin FC, they made good on their promise.",
-      "publishedAt": "2026-04-05T19:43:40.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'We have written history but greedy to go to the next step'",
+      "link": "https://www.bbc.com/sport/football/articles/cly9x7755w0o?at_medium=RSS&at_campaign=rss",
+      "summary": "After a 39-year absence, Leeds are back in the FA Cup semi-finals, with the supporters dreaming of a trophy after a dramatic win over West Ham.",
+      "publishedAt": "2026-04-05T22:02:56.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +73,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Portugese media wijzen naar Ajax: 'Spook van de ineenstorting hangt boven Porto'",
-      "link": "https://www.vi.nl/nieuws/portugese-media-wijzen-naar-ajax-spook-van-de-ineenstorting-hangt-boven-porto",
-      "summary": "FC Porto heeft dure punten laten liggen in de Portugese titelstrijd, waardoor de druk op trainer Francesco Farioli meer zal toenemen. In Portugal wordt inmiddels gewezen op eerdere inzinkingen van de Italiaan.",
-      "publishedAt": "2026-04-05T19:34:00.000Z"
+      "title": "Samenvatting: Feyenoord loopt schade op in Volendam",
+      "link": "https://www.vi.nl/video/samenvatting-feyenoord-loopt-schade-op-in-volendam",
+      "summary": "Feyenoord staat nog altijd tweede in de Eredivisie, maar liet op bezoek bij FC Volendam na om die positie te verstevigen. Het team van Robin van Persie maakte eigenlijk ook weinig aanspraak op meer dan 0-0 aan De Dijk.",
+      "publishedAt": "2026-04-05T21:59:00.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +84,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Turkse derby ontploft in minuut 110: Fenerbahçe blijft overeind in titelstrijd",
-      "link": "https://www.vi.nl/nieuws/turkse-derby-ontploft-in-minuut-110-fenerbah-e-blijft-overeind-in-titelstrijd",
-      "summary": "De Turkse derby tussen Fenerbahçe en Besiktas is diep in blessuretijd tot ontbranding gekomen. De thuisploeg trok het duel in de 110e minuut van de wedstrijd naar zich toe.",
-      "publishedAt": "2026-04-05T19:23:50.000Z"
+      "title": "Samenvatting: PSV in spektakelstuk langs FC Utrecht",
+      "link": "https://www.vi.nl/video/samenvatting-psv-in-spektakelstuk-langs-fc-utrecht",
+      "summary": "PSV heeft zaterdag in een heerlijk spektakelstuk afgerekend met FC Utrecht. In Eindhoven kwam de ploeg van Ron Jans sterk voor de dag, maar de Brabanders trokken toch aan het langste eind. Een dag later bleek deze zege te volstaan voor de landstitel.",
+      "publishedAt": "2026-04-05T21:59:00.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +95,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Harde kritiek op 'schildpad' Sliti: 'Dit is schandalig slecht'",
-      "link": "https://www.vi.nl/nieuws/harde-kritiek-op-schildpad-sliti-dit-is-schandalig-slecht",
-      "summary": "Feyenoord gooide geen hoge ogen in Volendam , maar had zondag wel nog kunnen winnen aan De Dijk. Aymen Sliti kreeg een riante kopkans, maar zijn poging eindigde wat knullig naast het doel van de thuisploeg. Analyticus Kenneth Perez kon zijn ogen niet geloven.",
-      "publishedAt": "2026-04-05T19:21:20.000Z"
+      "title": "Samenvatting: sterk FC Twente wint in Amsterdam van Ajax",
+      "link": "https://www.vi.nl/video/samenvatting-sterk-fc-twente-wint-in-amsterdam-van-ajax",
+      "summary": "FC Twente heeft zaterdag uitstekende zaken gedaan in de strijd om Champions League-voetbal. De ploeg van John van den Brom won in de Johan Cruijff Arena van Ajax. De Amsterdammers moeten alle zeilen bijzetten om zich de mannen uit Enschede van het lijf te houden.",
+      "publishedAt": "2026-04-05T21:59:00.000Z"
     },
     {
       "type": "rss",
@@ -95,10 +106,54 @@
       "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Man City in halve finale FA Cup tegen Arsenal-beul",
-      "link": "https://www.vi.nl/nieuws/man-city-in-halve-finale-fa-cup-tegen-arsenal-beul",
-      "summary": "Manchester City is bij de loting voor de halve finale van de FA Cup gekoppeld aan Southampton. De Championship-club stuntte in de kwartfinale door Premier League-koploper Arsenal uit te schakelen. De andere halve finale is tussen Chelsea en Leeds United.",
-      "publishedAt": "2026-04-05T19:04:23.000Z"
+      "title": "Lijnders bevestigt transfervrij vertrek van Manchester City-icoon",
+      "link": "https://www.vi.nl/nieuws/lijnders-bevestigt-transfervrij-vertrek-van-manchester-city-icoon",
+      "summary": "Bernardo Silva gaat Manchester City transfervrij verlaten. Dat hing al in de lucht, en is nu ook bevestigd door assistent-manager Pepijn Lijnders.",
+      "publishedAt": "2026-04-05T21:51:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Struijk schiet Leeds naar de halve finale: 'Ik haalde diep adem en scoorde'",
+      "link": "https://www.vi.nl/nieuws/struijk-schiet-leeds-naar-de-halve-finale-ik-haalde-diep-adem-en-scoorde",
+      "summary": "Pascal Struijk kan niet wachten om tegen Chelsea aan te treden in de halve finale van de FA Cup. Het is voor het eerst dat de verdediger van Leeds United op Wembley zal gaan spelen.",
+      "publishedAt": "2026-04-05T21:39:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Lijnders hints at Man City departure for Silva",
+      "link": "https://www.bbc.com/sport/football/articles/c1krz9kxrdvo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City assistant manager Pep Lijnders hints that midfielder Bernardo Silva's could be leaving in the summer.",
+      "publishedAt": "2026-04-05T21:30:40.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bernardo Silva will leave Manchester City this summer, reveals Pep Lijnders",
+      "link": "https://www.theguardian.com/football/2026/apr/05/bernardo-silva-pep-lijnders-manchester-city-captain-leaving-summer",
+      "summary": "Captain deserves good farewell, says assistant manager Silva has interest from Barcelona as contract ends in June Pep Lijnders has revealed that Bernardo Silva will leave Manchester City in the summer, with the assistant manager hoping the captain is given a fitting farewell. The 31-year-old Silva, whose contract expires in June, has been in impressive form this season but Lijnders stated it will be his last for City. Continue reading...",
+      "publishedAt": "2026-04-05T21:30:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Was 11 minutes of stoppage time at West Ham excessive?",
+      "link": "https://www.bbc.com/sport/football/articles/cvge47evx0no?at_medium=RSS&at_campaign=rss",
+      "summary": "There were 11 minutes of stoppage time at the end of the second half of West Ham's FA Cup quarter-final against Leeds - but was that an excessive or an explainable amount of added time?",
+      "publishedAt": "2026-04-05T21:16:05.000Z"
     },
     {
       "type": "rss",
@@ -108,7 +163,7 @@
       "flag": "🇬🇧",
       "title": "Leeds hold nerve to win shootout after West Ham’s dramatic fightback",
       "link": "https://www.theguardian.com/football/2026/apr/05/west-ham-leeds-fa-cup-quarter-final-match-report",
-      "summary": "The familiar London Stadium rush for the exit has never been so misjudged. A lot of West Ham fans decided they had seen enough when Dominic ­Calvert-Lewin put Leeds within touching distance of a first FA Cup semi-final since 1987, but how wrong they were. The non-believers ­reckoned ­without their side forcing extra time with a wild fightback from 2-0 down and were not allowed back in to see a ridiculously game go the distance. Continue reading...",
+      "summary": "The familiar London Stadium rush for the exit has never been so misjudged. A lot of West Ham fans decided they had seen enough when Dominic Calvert-Lewin put Leeds 2-0 up and within touching distance of a first FA Cup semi-final since 1987, but how wrong they were. The non-believers reckoned without their side forcing extra time and were not allowed back in to see a ridiculous game go the distance. It ended with Finlay Herrick, a 20-year-old goalkeeper whose experience of senior football extended no further than 10 games during a loan spell with National League side Boreham Wood earlier this season, coming on for his West Ham debut after Alphonse Areola went off injured just before penalties. Talk about a baptism of fire. Herrick is West Ham’s No 3 goalkeeper and it seemed he was about to steal the headlines when he opened the shootout by saving a tame effort from Joël Piroe. Continue reading...",
       "publishedAt": "2026-04-05T19:01:41.000Z"
     },
     {
@@ -135,24 +190,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Clubicoon Van Polen fileert PEC Zwolle: 'Schande voor het voetbal'",
-      "link": "https://www.vi.nl/nieuws/clubicoon-van-polen-fileert-pec-zwolle-schande-voor-het-voetbal",
-      "summary": "Het was geen zondag waar Bram van Polen heel vrolijk van werd. Zijn geliefde PEC Zwolle kwam slecht in het nieuws rondom de IJsselderby: een groepje Zwolse supporters vertraagden de aftrap met anderhalf uur. Toen ze naar huis waren gestuurd, kregen de Blauwvingers ook nog met 5-0 op de broek van rivaal Go Ahead Eagles.",
-      "publishedAt": "2026-04-05T18:52:58.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "Scottish Premiership: Hearts back on top but drop points in Livingston draw",
       "link": "https://www.theguardian.com/football/2026/apr/04/scottish-premiership-rangers-dundee-united-hearts-celtic",
-      "summary": "Hearts point clear of Rangers with six games left Celtic stay in contention with 2-1 win at Dundee Hearts reclaimed their status as Scottish Premiership leaders but missed the chance to restore their three-point cushion after being held to a 2-2 draw by the bottom side Livingston. The Jambos had been knocked off the top for the first time since September after Rangers edged ahead of them on goal difference by defeating Dundee United on Saturday. Continue reading...",
+      "summary": "Hearts point clear of Rangers with six games left Celtic stay in contention with 2-1 win at Dundee Hearts reclaimed their status as Scottish Premiership leaders but missed the chance to restore their three‑point cushion after being held to a 2-2 draw by the bottom side, Livingston. The Jambos had been knocked off the top for the first time since September after Rangers edged ahead of them on goal difference by defeating Dundee United on Saturday. Continue reading...",
       "publishedAt": "2026-04-05T18:13:38.000Z"
     },
     {
@@ -161,21 +205,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Brighton stun Arsenal in FA Cup shock; Liverpool also through to last four",
+      "title": "Brighton stun Arsenal in Women’s FA Cup shock; Liverpool also through to last four",
       "link": "https://www.theguardian.com/football/2026/apr/05/arsenal-brighton-charlton-liverpool-womens-fa-cup-quarter-finals",
       "summary": "Brighton two wins away from first major trophy Liverpool edge out Charlton in extra time Arsenal made a surprise exit at the quarter-final stage of the Women’s FA Cup for the second successive season as Brighton stunned the record 14-time cup winners at Borehamwood. Liverpool managed to avoid it becoming a day of shocks as they struck late in extra time to eventually find a way past a stubborn Charlton Athletic side, but they was no such joy for Arsenal, who paid the price for a performance that was well below their best. Continue reading...",
       "publishedAt": "2026-04-05T17:51:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "European football: PSV crowned Dutch champions after Feyenoord draw with Volendam",
-      "link": "https://www.theguardian.com/football/2026/apr/05/european-football-psv-eindhoven-eredivisie-champions-inter-roma-serie-a",
-      "summary": "PSV hold 17-point lead to clinch title with five games left Second-placed Feyenoord draw 0-0 against Volendam PSV Eindhoven were crowned on Sunday as Dutch champions for the 27th time, with five matches left of the season, after second-placed Feyenoord’s 0-0 draw with Volendam. PSV hold an unassailable 17-point lead at the top of the table after bouncing back from successive defeats with a 4-3 victory against Utrecht on Saturday. Continue reading...",
-      "publishedAt": "2026-04-05T16:09:20.000Z"
     },
     {
       "type": "rss",
@@ -190,14 +223,91 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "🎥 \"Het is ongelooflijk\": nieuwe assist, maar ook weer een flinke tegenvaller voor Mika Godts",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/-het-is-ongelooflijk-nieuwe-assist-maar-ook-weer-een-flinke-tegenvaller-voor-mika-godts",
+      "summary": "Zaterdag werd Mika Godts de eerste speler die dit seizoen in de Eredivisie een 'double-double' haalde. Veertien goals en tien assists: de Rode Duivel is in bloedvorm, maar moest wel de nieuwe nederlaag van Ajax tegen Twente vaststellen.",
+      "publishedAt": "2026-04-05T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Liverpool 'gave up' in FA Cup exit - Van Dijk",
-      "link": "https://www.bbc.com/sport/football/articles/cz670q6583jo?at_medium=RSS&at_campaign=rss",
-      "summary": "Liverpool captain Virgil van Dijk apologises to the supporters and says his side \"gave up\" during their 4-0 FA Cup quarter-final defeat by Manchester City.",
-      "publishedAt": "2026-04-05T12:34:15.000Z"
+      "title": "\"Je suis peut-être bizarre\" : Wout Faes se confie sur son choix de vie peu commun dans le monde actuel",
+      "link": "https://www.walfoot.be/news/2026-04-05/je-suis-peut-etre-bizarre--wout-faes-se-confie-sur-son-choix-de-vie-peu-commun-dans-le-monde-actuel",
+      "summary": "Wout Faes s'est confié au micro de L'Équipe sur son choix de s'éloigner des réseaux sociaux. Le Diable Rouge a choisi une vie sans aucun réseau social.",
+      "publishedAt": "2026-04-05T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"M. Verboomen est venu s'excuser\" : Hans Cornelis très frustré après la défaite de Charleroi",
+      "link": "https://www.walfoot.be/news/2026-04-05/m-verboomen-est-venu-sexcuser--hans-cornelis-tres-frustre-apres-la-defaite-de-charleroi",
+      "summary": "Hans Cornelis s'est exprimé au micro de DAZN après la défaite des Zèbres contre Westerlo (2-0). L'entraîneur est déçu et se sent lésé par l'arbitrage.",
+      "publishedAt": "2026-04-05T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Simon Mignolet bij de KBVB: Franky Van der Elst wil er nog wat over kwijt",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/simon-mignolet-bij-de-kbvb-franky-van-der-elst-wil-er-nog-wat-over-kwijt",
+      "summary": "Simon Mignolet stopt na dit seizoen als profvoetballer, maar verdwijnt niet uit het voetbal. De doelman van Club Brugge begint straks aan een nieuwe rol, en dat stemt ook Franky Van der Elst bijzonder positief.",
+      "publishedAt": "2026-04-05T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Lukaku en De Bruyne inspireren plots ook... Jannik Sinner en Zizou Bergs",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/-lukaku-en-de-bruyne-inspireren-plots-ook-jannik-sinner-en-zizou-bergs",
+      "summary": "Romelu Lukaku en Kevin De Bruyne inspireerden de hele wereld op die avond in 2014, tijdens België - Verenigde Staten. Twaalf jaar later doet de beste Belgische tennisser, Zizou Bergs, die iconische viering nog eens over met... de nummer twee van de wereld, Jannik Sinner.",
+      "publishedAt": "2026-04-05T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "\"Son rôle est très important\" : Sébastien Pocognoli se confie sur sa relation avec son président",
+      "link": "https://www.walfoot.be/news/2026-04-05/son-role-est-tres-important--sebastien-pocognoli-se-confie-sur-sa-relation-avec-son-president",
+      "summary": "Après des débuts compliqués, Sébastien Pocognoli commence à s'installer à l'AS Monaco. L'entraîneur belge s'est exprimé sur sa relation avec le président du club français, Dmitri Rybolovlev.",
+      "publishedAt": "2026-04-05T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Verboomen excuseert zich voor rode kaart, Charleroi woedend: \"Echt ridicuul, hier kan je niet mee leven\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/verboomen-excuseert-zich-voor-rode-kaart-charleroi-woedend-echt-ridicuul-hier-kan-je-niet-mee-leven",
+      "summary": "De rode kaart voor Etienne Camara was een van de opvallendste fases van het weekend. De middenvelder van Charleroi kreeg zijn tweede geel na een korte opmerking tegen scheidsrechter Nathan Verboomen.",
+      "publishedAt": "2026-04-05T07:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Les sommes immenses touchées par Ronaldo, Messi, Mbappé et Vinicius pour la fameuse publicité LEGO",
+      "link": "https://www.walfoot.be/news/2026-04-05/les-sommes-immenses-touchees-par-ronaldo-messi-mbappe-et-vinicius-pour-la-fameuse-publicite-lego",
+      "summary": "La publicité de LEGO avec Vinicius Junior, Kylian Mbappé, Lionel Messi et Cristiano Ronaldo a certes fait le buzz, mais elle a coûté très cher à la marque de jouets de construction.",
+      "publishedAt": "2026-04-05T07:40:00.000Z"
     },
     {
       "type": "rss",
@@ -220,116 +330,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/ngoy-en-meunier-helpen-lille-aan-belangrijke-zege-franse-pers-heeft-duidelijke-mening",
       "summary": "Nathan Ngoy en Thomas Meunier hebben zaterdagavond hun steentje bijgedragen aan de zege van Lille tegen Lens. Beide Rode Duivels zetten een sterke prestatie neer, zoals ook verschillende Franse media benadrukken.",
       "publishedAt": "2026-04-05T07:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Stijn Stijnen, agacé, quitte le terrain avant le coup de sifflet final",
-      "link": "https://www.walfoot.be/news/2026-04-05/stijn-stijnen-agace-quitte-le-terrain-avant-le-coup-de-sifflet-final",
-      "summary": "Stijn Stijnen était frustré après la défaite du Patro Eisden à Seraing (2-0 ce dimanche après-midi). L'entraîneur du Matricule 3434 est rentré prématurément aux vestiaires alors que la rencontre n'était pas encore terminée.",
-      "publishedAt": "2026-04-05T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Het blijft duren: arbitrage opnieuw onder vuur na heel opvallende rode kaart in Westerlo-Charleroi",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/-het-blijft-duren-arbitrage-opnieuw-onder-vuur-na-heel-opvallende-rode-kaart-in-westerlo-charleroi",
-      "summary": "Westerlo is met een zege aan de Europe Play-offs begonnen. Tegen Charleroi maakten de Kemphanen het verschil op de juiste momenten, al bleef er na afloop vooral ook discussie hangen over een rode kaart.",
-      "publishedAt": "2026-04-05T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Westerlo zet Europese ambities kracht bij tegen Charleroi",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/westerlo-zet-europese-ambities-kracht-bij-tegen-charleroi",
-      "summary": "Charleroi heeft zijn slechte reeks verlengd met een 2-0-nederlaag op bezoek bij Westerlo. De Zebra's kregen nochtans opnieuw grote kansen, zelfs na de uitsluiting van Etienne Camara. Westerlo doet zo een goede zaak in de strijd om Europees voetbal.",
-      "publishedAt": "2026-04-05T06:38:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Les occasions sont là, les buts toujours pas : la passe de dix pour Charleroi, déjà distancé au classement",
-      "link": "https://www.walfoot.be/news/2026-04-05/les-occasions-sont-la-les-buts-toujours-pas--la-passe-de-dix-pour-charleroi-deja-distance-au-classement",
-      "summary": "Charleroi a prolongé sa mauvaise série en s'inclinant 2-0 à Westerlo. Les Zèbres ont pourtant à nouveau eu de grosses occasions, même après l'exclusion d'Etienne Camara.",
-      "publishedAt": "2026-04-05T06:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Florucz en Rodriguez terug bij Union, maar Van de Perre niet: David Hubert komt met meer nieuws",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/florucz-en-rodriguez-terug-bij-union-maar-van-de-perre-niet-david-hubert-komt-met-meer-nieuws",
-      "summary": "Union Saint-Gilloise heeft gedaan wat het moest doen tegen STVV en is zo op ideale wijze aan de play-offs begonnen. David Hubert toonde zich tevreden over de collectieve prestatie van zijn ploeg.",
-      "publishedAt": "2026-04-05T06:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "La presse française salue la prestation de Nathan Ngoy : \"Il a tenu son rang sur ce derby du Nord\"",
-      "link": "https://www.walfoot.be/news/2026-04-05/la-presse-francaise-salue-la-prestation-de-nathan-ngoy--il-a-tenu-son-rang-sur-ce-derby-du-nord",
-      "summary": "Nathan Ngoy et Thomas Meunier ont contribué au succès du LOSC contre Lens ce samedi soir. Les deux Diables Rouges ont réalisé une bonne prestation, comme le soulignent plusieurs médias français.",
-      "publishedAt": "2026-04-05T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Zware domper voor kersvers kampioen PSV: drama voor aanvoerder Schouten",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-05/zware-domper-voor-kersvers-kampioen-psv-drama-voor-aanvoerder-schouten",
-      "summary": "PSV vierde zondag de landstitel, maar niet iedereen in Eindhoven beleefde een zorgeloze kampioensdag. Aanvoerder Jerdy Schouten kreeg namelijk bijzonder slecht nieuws te verwerken na de match tegen FC Utrecht.",
-      "publishedAt": "2026-04-05T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "🎥 Luis Vazquez montre l'exemple à Anderlecht, et frappe encore avec Getafe",
-      "link": "https://www.walfoot.be/news/2026-04-05/-luis-vazquez-montre-lexemple-a-anderlecht-et-frappe-encore-avec-getafe",
-      "summary": "Troisième but pour Luis Vazquez avec Getafe. L'attaquant argentin, prêté par le Sporting d'Anderlecht, a ouvert le score lors de la victoire 2-0 de son équipe face à l'Athletic Bilbao.",
-      "publishedAt": "2026-04-05T05:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Survival or FA Cup glory - which would you choose?",
-      "link": "https://www.bbc.com/sport/football/articles/c1l9ged3vq3o?at_medium=RSS&at_campaign=rss",
-      "summary": "Leeds visit West Ham on Sunday in the FA Cup quarter-finals but both are also in a relegation scrap. Would you risk safety for glory?",
-      "publishedAt": "2026-04-05T05:25:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Is season running away from frazzled Arsenal?",
-      "link": "https://www.bbc.com/sport/football/articles/cvg0350nlwzo?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal must regroup after their hopes of a quadruple are wrecked in two weeks by successive defeats for the first time this season.",
-      "publishedAt": "2026-04-05T05:16:14.000Z"
     }
   ]
 }
