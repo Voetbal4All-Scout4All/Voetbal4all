@@ -21,6 +21,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
 <style>
   /* === Events.html shared UI (layout parity) === */
   .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -777,12 +778,10 @@
       const title = document.title || 'Voetbal4All';
       if (navigator.share) {
         navigator.share({ title: title, url: abs }).catch(function(){});
-      } else if (navigator.clipboard) {
-        navigator.clipboard.writeText(abs).then(function() {
-          btn.textContent = 'Gekopieerd!';
-          setTimeout(function(){ btn.textContent = 'Delen'; }, 2000);
-        }).catch(function() {
-          prompt('Kopieer deze link:', abs);
+      } else {
+        window.V4AFeedback.copyText(abs, {
+          successMessage: 'De deellink staat klaar op je klembord.',
+          fallbackMessage: 'Kopieer de link hieronder.'
         });
       }
     });

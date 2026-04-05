@@ -21,6 +21,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
 <style>
   /* === Events.html shared UI (layout parity) === */
 
@@ -959,16 +960,16 @@
   const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
 
-  document.addEventListener("click", function (e) {
+  document.addEventListener("click", async function (e) {
     const btn = e.target.closest("[data-reply-vacancy]");
     if (!btn) return;
 
     const adId = btn.getAttribute("data-reply-vacancy");
-    const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
-    if (!ok) return;
-
-    const replyEmail = prompt("Vul je e-mailadres in zodat de club je kan contacteren:");
-    if (!replyEmail) return alert("E-mailadres is nodig om te kunnen reageren.");
+    const replyEmail = await window.V4AFeedback.requestEmail({
+      message: "Vul je e-mailadres in zodat de club je kan contacteren.",
+      description: "Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All."
+    });
+    if (!replyEmail) return;
 
     const subject = encodeURIComponent("Reactie via Voetbal4All op clubvacature " + adId);
     const body = encodeURIComponent(

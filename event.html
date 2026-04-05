@@ -20,6 +20,7 @@
   <!-- Fonts + CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
   <!-- Leaflet (OpenStreetMap) for event map -->
   <link
     rel="stylesheet"
@@ -761,12 +762,10 @@
       if (shareCopy) {
         shareCopy.onclick = async (ev) => {
           ev.preventDefault();
-          try {
-            await navigator.clipboard.writeText(shareUrl);
-            alert("Link gekopieerd: " + shareUrl);
-          } catch (e) {
-            prompt("Kopieer deze link:", shareUrl);
-          }
+          await window.V4AFeedback.copyText(shareUrl, {
+            successMessage: "De deellink staat klaar op je klembord.",
+            fallbackMessage: "Kopieer de link hieronder."
+          });
         };
       }
     }
@@ -1164,12 +1163,12 @@
 
         // Contact
         // Keep current mailto flow, but make subject reflect type
-        contactBtn.onclick = () => {
-          const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
-          if (!ok) return;
-
-          const email = prompt("Vul je e-mailadres in zodat Voetbal4All je aanvraag kan verwerken:");
-          if (!email) return alert("E-mailadres is nodig om te kunnen reageren.");
+        contactBtn.onclick = async () => {
+          const email = await window.V4AFeedback.requestEmail({
+            message: "Vul je e-mailadres in zodat Voetbal4All je aanvraag kan verwerken.",
+            description: "Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All."
+          });
+          if (!email) return;
 
           const subject = encodeURIComponent("Reactie via Voetbal4All – " + (item.title || item.name || "Detail"));
           const body = encodeURIComponent(

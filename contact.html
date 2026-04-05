@@ -19,6 +19,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
 </head>
 
 <body class="v4-hide-live-mobile">
@@ -372,7 +373,7 @@
           statusEl.style.display = 'block';
           statusEl.textContent = msg;
         } else {
-          alert(msg);
+          window.V4AFeedback.toast(msg, { tone: 'danger', title: 'Verzenden mislukt', duration: 5000 });
         }
 
       } catch(err){
@@ -381,7 +382,7 @@
           statusEl.style.display = 'block';
           statusEl.textContent = msg;
         } else {
-          alert(msg);
+          window.V4AFeedback.toast(msg, { tone: 'danger', title: 'Netwerkprobleem', duration: 5000 });
         }
       } finally {
         if(submitBtn){
