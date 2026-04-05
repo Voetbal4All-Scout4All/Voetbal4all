@@ -50,7 +50,7 @@
 .live-label{
   display:grid;
   gap:5px;
-  min-width:132px;
+  min-width:118px;
   color:var(--text);
 }
 
@@ -131,7 +131,7 @@
   position:absolute;
   top:0;
   bottom:0;
-  width:22px;
+  width:30px;
   pointer-events:none;
   z-index:2;
 }
@@ -159,6 +159,8 @@
   transform:none;
   animation:none;
   will-change:transform;
+  transition:opacity 220ms ease;
+  opacity:1;
 }
 
 .marquee-track.is-static{
@@ -174,6 +176,7 @@
   display:inline-flex;
   align-items:center;
   gap:10px;
+  max-width:100%;
   padding:8px 12px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,0.08);
@@ -225,13 +228,16 @@
 .live-score-game{
   display:inline-flex;
   align-items:center;
-  gap:6px;
+  flex:1 1 auto;
+  gap:8px;
   min-width:0;
   color:#f6f9ff;
 }
 
 .live-score-team{
-  max-width:18ch;
+  flex:1 1 auto;
+  min-width:0;
+  max-width:22ch;
   overflow:hidden;
   text-overflow:ellipsis;
 }
@@ -242,6 +248,7 @@
 }
 
 .live-score-status{
+  flex:0 0 auto;
   font-size:12px;
   font-weight:700;
   color:#9dd7ff;
@@ -258,9 +265,9 @@
 .live-socials{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   margin-left:0;
-  padding-left:12px;
+  padding-left:10px;
   border-left:1px solid rgba(255,255,255,0.08);
 }
 
@@ -276,7 +283,7 @@
 .live-socials-icons{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   min-width:0;
   min-height:auto;
 }
@@ -313,7 +320,7 @@
   }
 
   .live-label{
-    min-width:116px;
+    min-width:104px;
   }
 
   .live-score-item{
@@ -321,7 +328,7 @@
   }
 
   .live-score-team{
-    max-width:14ch;
+    max-width:16ch;
   }
 }
 
@@ -392,7 +399,7 @@
   }
 
   .live-score-team{
-    max-width:11ch;
+    max-width:13ch;
   }
 
   .live-score-status{

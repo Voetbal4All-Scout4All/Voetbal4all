@@ -303,6 +303,8 @@
     let pendingItems = null;
     let lastItems = buildFallbackItems();
     let restartTimer = 0;
+    const NEXT_CYCLE_DELAY_MS = 420;
+    const SWAP_DELAY_MS = 120;
 
     function stopMarquee() {
       marqueeRunning = false;
@@ -314,10 +316,7 @@
     function updateBannerMeta(items) {
       const liveCount = items.filter((item) => item.type === "match").length;
       banner.classList.toggle("is-empty", liveCount === 0);
-      labelMetaEl.textContent =
-        liveCount > 0
-          ? `${liveCount} live${liveCount === 1 ? "" : " scores"} · auto 3 min`
-          : "Auto refresh elke 3 min";
+      labelMetaEl.textContent = "Voetbal4All scores";
       mainTextEl.textContent =
         liveCount > 0
           ? `${liveCount} live${liveCount === 1 ? " wedstrijd" : " wedstrijden"}`
@@ -355,9 +354,9 @@
             return;
           }
 
-          const leadIn = Math.max(72, Math.min(156, Math.round(containerWidth * 0.14)));
-          const tailOut = Math.max(72, Math.min(156, Math.round(containerWidth * 0.18)));
-          const startX = containerWidth + leadIn;
+          const leadIn = Math.max(26, Math.min(60, Math.round(containerWidth * 0.05)));
+          const tailOut = Math.max(56, Math.min(120, Math.round(containerWidth * 0.12)));
+          const startX = leadIn;
           const endX = -trackWidth - tailOut;
           const distance = startX - endX;
           const pxPerSecond = 52;
@@ -370,12 +369,15 @@
           const startAnimation = () => {
             if (!track.isConnected) return;
             track.classList.remove("is-static", "is-animated");
+            track.style.opacity = "0.35";
             track.style.transform = `translate3d(${startX}px,0,0)`;
             void track.offsetWidth;
             requestAnimationFrame(() => {
+              if (!track.isConnected) return;
               marqueeRunning = true;
               marqueeCycleEndsAt = Date.now() + Math.ceil(durationSec * 1000);
               track.classList.add("is-animated");
+              track.style.opacity = "1";
               track.style.transform = "";
             });
           };
@@ -385,10 +387,10 @@
             if (pendingItems && pendingItems.length) {
               const nextItems = pendingItems;
               pendingItems = null;
-              restartTimer = window.setTimeout(() => renderRail(nextItems), 180);
+              restartTimer = window.setTimeout(() => renderRail(nextItems), SWAP_DELAY_MS);
               return;
             }
-            restartTimer = window.setTimeout(startAnimation, 1200);
+            restartTimer = window.setTimeout(startAnimation, NEXT_CYCLE_DELAY_MS);
           };
 
           startAnimation();
