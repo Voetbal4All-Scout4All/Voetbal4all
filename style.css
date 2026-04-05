@@ -152,7 +152,7 @@
 .marquee-track{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:14px;
   min-height:44px;
   white-space:nowrap;
   font-size:14px;
@@ -285,7 +285,8 @@
   width:6px;
   height:6px;
   border-radius:999px;
-  background:rgba(141,188,255,0.36);
+  background:#3fe08d;
+  box-shadow:0 0 8px rgba(63,224,141,0.65);
   flex:0 0 auto;
 }
 
