@@ -123,7 +123,7 @@
   display:flex;
   align-items:center;
   overflow:hidden;
-  padding-right:4px;
+  padding-right:2px;
 }
 
 .live-text-ticker::before,
@@ -139,20 +139,20 @@
 
 .live-text-ticker::before{
   left:0;
-  width:22px;
+  width:20px;
   background:linear-gradient(90deg,rgba(7,13,27,0.98),rgba(7,13,27,0));
 }
 
 .live-text-ticker::after{
   right:0;
-  width:52px;
+  width:40px;
   background:linear-gradient(270deg,rgba(7,13,27,1) 12%,rgba(7,13,27,0.94) 46%,rgba(7,13,27,0));
 }
 
 .marquee-track{
   display:inline-flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   min-height:44px;
   white-space:nowrap;
   font-size:14px;
@@ -166,21 +166,29 @@
   opacity:1;
 }
 
+.marquee-segment{
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+  flex:0 0 auto;
+  min-width:max-content;
+}
+
 .marquee-track.is-static{
   transform:none !important;
   animation:none !important;
 }
 
 .marquee-track.is-animated{
-  animation:liveMarqueeVars var(--live-marquee-duration,24s) linear 1 both;
+  animation:liveMarqueeVars var(--live-marquee-duration,24s) linear infinite;
 }
 
 .live-score-item{
   display:inline-flex;
   align-items:center;
-  gap:8px;
+  gap:7px;
   max-width:100%;
-  padding:8px 10px;
+  padding:7px 9px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,0.08);
   background:rgba(15,24,46,0.78);
@@ -201,21 +209,21 @@
 .live-score-meta{
   display:inline-flex;
   align-items:center;
-  gap:5px;
+  gap:4px;
   flex:0 0 auto;
 }
 
 .live-score-chip{
   display:inline-flex;
   align-items:center;
-  gap:5px;
-  padding:4px 7px;
+  gap:4px;
+  padding:3px 6px;
   border-radius:999px;
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.06);
-  font-size:11px;
+  font-size:10px;
   font-weight:600;
-  letter-spacing:0.06em;
+  letter-spacing:0.04em;
   text-transform:uppercase;
   color:rgba(201,219,255,0.76);
 }
@@ -233,15 +241,15 @@
   display:inline-flex;
   align-items:center;
   flex:1 1 auto;
-  gap:6px;
+  gap:5px;
   min-width:0;
   color:#f6f9ff;
 }
 
 .live-score-team{
-  flex:1 1 14ch;
+  flex:1 1 16ch;
   min-width:0;
-  max-width:clamp(16ch,22vw,30ch);
+  max-width:clamp(18ch,24vw,34ch);
   overflow:hidden;
   text-overflow:ellipsis;
 }
@@ -253,8 +261,8 @@
 
 .live-score-status{
   flex:0 0 auto;
-  margin-left:2px;
-  font-size:12px;
+  margin-left:1px;
+  font-size:11px;
   font-weight:700;
   color:#9dd7ff;
 }
@@ -270,9 +278,9 @@
 .live-socials{
   display:flex;
   align-items:center;
-  gap:8px;
+  gap:6px;
   margin-left:0;
-  padding-left:10px;
+  padding-left:8px;
   border-left:1px solid rgba(255,255,255,0.08);
 }
 
@@ -329,11 +337,11 @@
   }
 
   .live-score-item{
-    padding:7px 10px;
+    padding:7px 8px;
   }
 
   .live-score-team{
-    max-width:clamp(14ch,24vw,24ch);
+    max-width:clamp(15ch,25vw,26ch);
   }
 }
 
@@ -381,13 +389,13 @@
 
   .marquee-track{
     min-height:38px;
-    gap:10px;
+    gap:8px;
     font-size:13px;
   }
 
   .live-score-item{
-    padding:7px 9px;
-    gap:8px;
+    padding:6px 8px;
+    gap:7px;
   }
 
   .live-score-meta{
@@ -395,22 +403,22 @@
   }
 
   .live-score-chip{
-    padding:3px 6px;
-    font-size:10px;
+    padding:3px 5px;
+    font-size:9px;
   }
 
   .live-score-game{
-    gap:5px;
+    gap:4px;
     font-size:13px;
   }
 
   .live-score-team{
-    flex-basis:12ch;
-    max-width:clamp(12ch,34vw,18ch);
+    flex-basis:13ch;
+    max-width:clamp(13ch,36vw,20ch);
   }
 
   .live-score-status{
-    font-size:11px;
+    font-size:10px;
   }
 
   .live-socials{
@@ -422,7 +430,7 @@
   }
 
   .live-text-ticker::after{
-    width:40px;
+    width:30px;
   }
 
   .live-socials-label{
