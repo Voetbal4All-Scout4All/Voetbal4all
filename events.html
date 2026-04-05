@@ -22,6 +22,7 @@
   <!-- Fonts + CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
   <style>
     /* Fix contrast: ensure ghost buttons remain readable on dark backgrounds */
     .btn-ghost-sm,
@@ -1695,38 +1696,40 @@ function getEventProvince(ev){
                 return;
               }
             } catch (_) {}
-            try {
-              await navigator.clipboard.writeText(shareUrl);
-              alert('Link gekopieerd. Plak hem nu in je ' + (ch === 'ig' ? 'Instagram' : 'TikTok') + ' post: ' + shareUrl);
-            } catch(e){
-              prompt('Kopieer deze link en plak hem in je ' + (ch === 'ig' ? 'Instagram' : 'TikTok') + ' post:', shareUrl);
-            }
+            await window.V4AFeedback.copyText(shareUrl, {
+              successTitle: 'Klaar om te delen',
+              successMessage: 'Link gekopieerd. Plak hem nu in je ' + (ch === 'ig' ? 'Instagram' : 'TikTok') + '-post.',
+              fallbackTitle: 'Kopieer link voor ' + (ch === 'ig' ? 'Instagram' : 'TikTok'),
+              fallbackMessage: 'Kopieer de link hieronder en plak hem in je ' + (ch === 'ig' ? 'Instagram' : 'TikTok') + '-post.'
+            });
           };
         }
         else if (ch === 'copy') {
           a.href = '#';
           a.onclick = async (ev) => {
             ev.preventDefault();
-            try { await navigator.clipboard.writeText(shareUrl); alert('Link gekopieerd: ' + shareUrl); }
-            catch(e){ prompt('Kopieer deze link:', shareUrl); }
+            await window.V4AFeedback.copyText(shareUrl, {
+              successMessage: 'De deellink staat klaar op je klembord.',
+              fallbackMessage: 'Kopieer de link hieronder.'
+            });
           };
         }
       });
     }
 
     // Reply flow via mailto (zelfde patroon)
-    document.addEventListener("click", function(e){
+    document.addEventListener("click", async function(e){
       const btn = e.target.closest("[data-reply-event]");
       if (!btn) return;
 
       const id = btn.getAttribute("data-reply-event");
       const card = btn.closest(".v4a-card");
       const title = card?.querySelector(".v4a-card-title")?.textContent?.trim() || card?.dataset?.title || "Sportief event";
-      const ok = confirm("Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All.");
-      if (!ok) return;
-
-      const email = prompt("Vul je e-mailadres in zodat de club je kan contacteren:");
-      if (!email) return alert("E-mailadres is nodig om te kunnen reageren.");
+      const email = await window.V4AFeedback.requestEmail({
+        message: "Vul je e-mailadres in zodat de club je kan contacteren.",
+        description: "Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All."
+      });
+      if (!email) return;
 
       const subject = encodeURIComponent("Reactie via Voetbal4All – " + title);
       const body = encodeURIComponent(

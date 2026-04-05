@@ -19,6 +19,7 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
   <style>
     /* Supportersclubs: make form look identical to the Voetbal4All dark UI */
     .v4-two-col{
@@ -681,7 +682,7 @@
 
       let shareHtml = '';
       if (sc.share !== false) {
-        shareHtml = `<a href="#" class="card-share" data-share-url="${shareUrl}" onclick="if(window.navigator.share){window.navigator.share({url:this.getAttribute('data-share-url'),title:'${name}'});return false;}else{window.prompt('Kopieer deze link:',this.getAttribute('data-share-url'));return false;}" title="Deel deze supportersclub">Delen</a>`;
+        shareHtml = `<a href="#" class="card-share" data-share-url="${shareUrl}" title="Deel deze supportersclub">Delen</a>`;
       }
 
       // Compose logo/photo if present
@@ -786,12 +787,17 @@
         const shareEl = card.querySelector('.card-share');
         if (shareEl) {
           shareEl.setAttribute('data-share-url', shareUrl);
-          shareEl.onclick = function() {
+          shareEl.onclick = async function() {
             if (window.navigator.share) {
-              window.navigator.share({ url: shareUrl, title: card.querySelector('.card-title').innerText.trim() });
+              try {
+                await window.navigator.share({ url: shareUrl, title: card.querySelector('.card-title').innerText.trim() });
+              } catch (_) {}
               return false;
             } else {
-              window.prompt('Kopieer deze link:', shareUrl);
+              await window.V4AFeedback.copyText(shareUrl, {
+                successMessage: 'De deellink staat klaar op je klembord.',
+                fallbackMessage: 'Kopieer de link hieronder.'
+              });
               return false;
             }
           };

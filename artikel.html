@@ -27,6 +27,7 @@
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <script src="assets/js/interaction-feedback.js"></script>
   
   <style>
     /* Ensure header AdSense slot has measurable size at first paint */
@@ -1517,7 +1518,10 @@
         textEl.textContent = '✓ Gekopieerd!';
         setTimeout(() => { textEl.textContent = 'Kopieer link'; }, 2000);
       } catch (err) {
-        alert('Kon link niet kopiëren');
+        window.V4AFeedback.toast('Kon link niet kopiëren. Probeer het opnieuw.', {
+          tone: 'warning',
+          title: 'Delen'
+        });
       }
     });
   }
