@@ -207,10 +207,6 @@
       return String(status || "Live").trim() || "Live";
     }
 
-    function womenMarker() {
-      return '<span class="live-score-chip live-score-chip--women-icon" title="Vrouwencompetitie" aria-label="Vrouwencompetitie"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1.75a3.75 3.75 0 1 1 0 7.5a3.75 3.75 0 0 1 0-7.5Zm0 8.9a.65.65 0 0 1 .65.65v1.05h1.1a.65.65 0 1 1 0 1.3h-1.1v1.1a.65.65 0 1 1-1.3 0v-1.1h-1.1a.65.65 0 1 1 0-1.3h1.1V11.3a.65.65 0 0 1 .65-.65Z" fill="currentColor"/></svg></span>';
-    }
-
     function formatLeagueLabel(leagueLabel, isWomen) {
       const baseLabel = String(leagueLabel || "").trim();
       if (!isWomen || !baseLabel) return baseLabel;
@@ -222,13 +218,13 @@
         return `<span class="live-score-item is-empty"><span class="live-score-empty-text">${escapeHtml(item.label)}</span></span>`;
       }
       if (item.type === "league") {
-        return `<span class="live-score-item is-league"><span class="live-score-meta"><span class="live-score-chip live-score-chip--flag" title="${escapeHtml(item.countryLabel)}">${flagImg(item.cc, "live-score-flag", true)}</span><span class="live-score-chip">${escapeHtml(formatLeagueLabel(item.leagueLabel, item.isWomen))}</span>${item.isWomen ? womenMarker() : ""}</span></span>`;
+        return `<span class="live-score-item is-league"><span class="live-score-meta"><span class="live-score-chip live-score-chip--flag" title="${escapeHtml(item.countryLabel)}">${flagImg(item.cc, "live-score-flag", true)}</span><span class="live-score-chip">${escapeHtml(formatLeagueLabel(item.leagueLabel, item.isWomen))}</span></span></span>`;
       }
       const score =
         item.hs == null || item.as == null
           ? "\u2013\u2013"
           : `${item.hs}\u2013${item.as}`;
-      return `<span class="live-score-item"><span class="live-score-meta"><span class="live-score-chip live-score-chip--flag" title="${escapeHtml(item.countryLabel)}">${flagImg(item.cc, "live-score-flag", true)}</span><span class="live-score-chip">${escapeHtml(formatLeagueLabel(item.leagueLabel, item.isWomen))}</span>${item.isWomen ? womenMarker() : ""}</span><span class="live-score-game"><span class="live-score-team">${escapeHtml(item.home)}</span><span class="live-score-score">${escapeHtml(score)}</span><span class="live-score-team">${escapeHtml(item.away)}</span></span><span class="live-score-status">${escapeHtml(formatStatus(item.minute, item.status))}</span></span>`;
+      return `<span class="live-score-item"><span class="live-score-meta"><span class="live-score-chip live-score-chip--flag" title="${escapeHtml(item.countryLabel)}">${flagImg(item.cc, "live-score-flag", true)}</span><span class="live-score-chip">${escapeHtml(formatLeagueLabel(item.leagueLabel, item.isWomen))}</span></span><span class="live-score-game"><span class="live-score-team">${escapeHtml(item.home)}</span><span class="live-score-score">${escapeHtml(score)}</span><span class="live-score-team">${escapeHtml(item.away)}</span></span><span class="live-score-status">${escapeHtml(formatStatus(item.minute, item.status))}</span></span>`;
     }
 
     function buildFallbackItems() {
@@ -421,7 +417,7 @@
           const entryOffset = Math.max(8, Math.min(18, Math.round((socialsWidth || 0) * 0.08)));
           const startX = containerWidth + entryOffset;
           const endX = startX - loopDistance;
-          const durationSec = Math.max(11.5, Math.min(15, loopDistance / 105));
+          const durationSec = Math.max(13, Math.min(17, loopDistance / 90));
 
           track.style.setProperty("--live-marquee-start", `${startX}px`);
           track.style.setProperty("--live-marquee-end", `${endX}px`);

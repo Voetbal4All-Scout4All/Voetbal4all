@@ -233,24 +233,6 @@
   gap:0;
 }
 
-.live-score-chip--women{
-  color:#a5d8ff;
-}
-
-.live-score-chip--women-icon{
-  width:20px;
-  height:20px;
-  padding:0;
-  justify-content:center;
-  color:#a5d8ff;
-}
-
-.live-score-chip--women-icon svg{
-  width:12px;
-  height:12px;
-  display:block;
-}
-
 .live-score-game{
   display:inline-flex;
   align-items:center;
