@@ -132,15 +132,21 @@
     </header>
 
 <!-- ================= LIVE BANNER ================= -->
-<section class="live-banner-top">
+<section class="live-banner-top" aria-label="Live scores">
   <div class="shell">
     <div class="live-banner">
-      <div class="live-label"><span class="live-dot"></span>Live score</div>
-      <div class="live-text">
-        <span class="live-text-main"></span>
-        <div class="live-updated"></div>
+      <div class="live-label">
+        <div class="live-label-pill">
+          <span class="live-dot"></span>
+          <span class="live-label-title">LIVE</span>
+        </div>
+        <div class="live-label-meta">Voetbal4All scores</div>
       </div>
-      <div class="live-socials">
+      <div class="live-text" aria-live="polite">
+        <span class="live-text-main">Live scores laden...</span>
+        <div class="live-text-ticker"></div>
+      </div>
+      <div class="live-socials" aria-label="Volg Voetbal4All op social media">
         <div class="live-socials-label">Volg ons</div>
         <div class="live-socials-icons"></div>
       </div>
