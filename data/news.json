@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-04-06T23:40:21.591Z",
+  "generatedAt": "2026-04-07T11:59:18.778Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Harry Maguire signs new Man United contract",
+      "link": "https://www.espn.com/soccer/story/_/id/48418254/harry-maguire-signs-new-man-united-contract",
+      "summary": "Harry Maguire has signed a new contract with Manchester United, the club have confirmed.",
+      "publishedAt": "2026-04-07T12:54:02.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Minnesota denies Rodriguez muscle-wasting issue",
+      "link": "https://www.espn.com/soccer/story/_/id/48414947/minnesota-united-shut-rumours-james-rodriguez-rare-muscle-wasting-condition",
+      "summary": "Colombian star James Rodríguez, who was hospitalized last week for severe dehydration, returned to his MLS club Minnesota United FC on Monday to continue his ramp-up to game readiness.",
+      "publishedAt": "2026-04-07T12:54:01.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,29 +32,18 @@
       "title": "USMNT's Agyemang stretchered off, set for scan",
       "link": "https://www.espn.com/soccer/story/_/id/48413159/usmnt-patrick-agyemang-stretchered-set-scans",
       "summary": "United States striker Patrick Agyemang was stretchered off in the first half of a 2-0 win for Derby County on Monday with a non-contact injury that will require a scan.",
-      "publishedAt": "2026-04-07T00:06:13.000Z"
+      "publishedAt": "2026-04-07T12:54:01.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "James back with Minnesota after hospitalization",
-      "link": "https://www.espn.com/soccer/story/_/id/48414947/james-back-mls-club-minnesota-hospitalization",
-      "summary": "Colombian star James Rodríguez, who was hospitalized last week for severe dehydration, returned to his MLS club Minnesota United FC on Monday to continue his ramp-up to game readiness.",
-      "publishedAt": "2026-04-07T00:06:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arteta preaches calm ahead of Sporting quarterfinal",
-      "link": "https://www.espn.com/soccer/story/_/id/48413837/arsenal-mikel-arteta-preaches-calm-ahead-sporting-quarterfinal",
-      "summary": "Mikel Arteta has urged Arsenal's players not to panic as they aim to get their season back on track against Sporting Lisbon.",
-      "publishedAt": "2026-04-07T00:06:13.000Z"
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Cuca: Neymar had knee procedure over break",
+      "link": "https://www.espn.com/soccer/story/_/id/48419167/neymar-knee-procedure-international-break-santos-coach",
+      "summary": "Santos coach Cuca has revealed that Neymar underwent a knee procedure during the international break to \"be raring to go\" leading up to the World Cup in June.",
+      "publishedAt": "2026-04-07T12:54:01.000Z"
     },
     {
       "type": "rss",
@@ -40,10 +51,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Coventry edge ever closer - but who will join them in Premier League?",
-      "link": "https://www.bbc.com/sport/football/articles/cddqmlzz34qo?at_medium=RSS&at_campaign=rss",
-      "summary": "As Coventry edge ever closer to ending their 25-year wait for Premier League football, who is best placed to join them?",
-      "publishedAt": "2026-04-06T22:26:52.000Z"
+      "title": "Maguire signs one-year contract at Man Utd",
+      "link": "https://www.bbc.com/sport/football/articles/cly92470le8o?at_medium=RSS&at_campaign=rss",
+      "summary": "Former captain Harry Maguire signs a new one-year contract with Manchester United.",
+      "publishedAt": "2026-04-07T11:58:50.000Z"
     },
     {
       "type": "rss",
@@ -51,10 +62,43 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Benfica laat kans om weer serieuze titelkandidaat te worden liggen",
-      "link": "https://www.vi.nl/nieuws/benfica-laat-kans-om-weer-serieuze-titelkandidaat-te-worden-liggen",
-      "summary": "Benfica heeft maandagavond verzuimd om te profiteren van het puntenverlies dat koploper FC Porto zaterdag leed tegen Famalicão ( 2-2 ). De manschappen van José Mourinho verspeelden zelf een voorsprong bij laagvlieger Casa Pia en blijven door alweer de negende remise van dit seizoen ver van de landstitel verwijderd.",
-      "publishedAt": "2026-04-06T22:05:23.000Z"
+      "title": "Pepi ziet WK-concurrent bij Verenigde Staten geblesseerd wegvallen",
+      "link": "https://www.vi.nl/nieuws/pepi-ziet-wk-concurrent-bij-verenigde-staten-geblesseerd-wegvallen",
+      "summary": "Patrick Agyemang zal het komende WK met de Verenigde Staten missen door een achillespeesblessure. Dit meldt zijn werkgever Derby County. Agyemang kan gezien worden als een concurrent van PSV'er Ricardo Pepi, eveneens spits in het Amerikaanse elftal.",
+      "publishedAt": "2026-04-07T11:57:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Champions League: previews and predictions for the quarter-finals",
+      "link": "https://www.theguardian.com/football/who-scored-blog/2026/apr/07/champions-league-quarter-finals-sporting-arsenal-real-madrid-bayern-munich-barcelona-atletico-madrid-psg-liverpool",
+      "summary": "All the stats for Sporting v Arsenal, Real Madrid v Bayern, Barcelona v Atlético Madrid and PSG v Liverpool By WhoScored Arsenal arrive in Lisbon having seen their quadruple dreams unravel after back-to-back defeats to Manchester City in the League Cup final and Southampton in the FA Cup quarter-finals. Those missed opportunities, though disappointing, should focus the players’ minds on a Double that is very much attainable. Continue reading...",
+      "publishedAt": "2026-04-07T11:21:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Gaat Feyenoord rechtstreeks de Champions League in?",
+      "link": "https://www.vi.nl/nieuws/gaat-feyenoord-rechtstreeks-de-champions-league-in",
+      "summary": "De laatste kilometers van de marathon van Rotterdam loop je op karakter, maar Feyenoord gaat strompelend en sjokkend richting de eindstreep van zijn eigen duurloop. Trainer Robin van Persie noemde de komende wedstrijden al 'finales', in de nieuwste VI gaat het over het komende programma van Feyenoord en het huidige niveau van de prestaties.",
+      "publishedAt": "2026-04-07T11:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: PSV-fans huldigen de kampioenen",
+      "link": "https://www.vi.nl/nieuws/vi-live-psv-fans-huldigen-de-kampioenen",
+      "summary": "PSV is landskampioen. De vroegste ooit in Nederland. Door de averij van Feyenoord op bezoek bij FC Volendam kan PSV dit Eredivisie-seizoen niet meer ingehaald worden. In deze VI Live volgen we de laatste ontwikkelingen rond het Brabantse kampioensfeest.",
+      "publishedAt": "2026-04-07T11:16:28.000Z"
     },
     {
       "type": "rss",
@@ -62,32 +106,10 @@
       "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "Bosnisch boefje is volksheld na verduisteren van cruciale informatie",
-      "link": "https://www.vi.nl/nieuws/bosnisch-boefje-is-volksheld-na-verduisteren-van-cruciale-informatie",
-      "summary": "Er is een mooi detail uitgelekt over de strafschoppenserie tussen Bosnië-Herzegovina en Italië, vorige week. De Bosniërs scoorden met alle vier hun pogingen en gaan dus naar het WK. Een grijpgrage ballenjongen heeft daar iets mee te maken, en is nu een nationale held.",
-      "publishedAt": "2026-04-06T21:55:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "MLS Power Rankings: LAFC practically perfect atop table",
-      "link": "https://www.espn.com/soccer/story/_/id/48406965/mls-power-rankings-lafc-practically-perfect-atop-table",
-      "summary": "LAFC still hasn't conceded in league play in 2026, with only a draw blemishing its record this season. And it's enough to top our MLS Power Rankings.",
-      "publishedAt": "2026-04-06T21:38:54.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "With Messi goal, Inter Miami finally find home",
-      "link": "https://www.espn.com/soccer/story/_/id/48402571/lionel-messi-goal-inter-miami-david-beckham-opens-new-stadium-dream-moment",
-      "summary": "For months, Inter Miami advertised Nu Stadium with one message: \"We're coming home.'\" And they made good.",
-      "publishedAt": "2026-04-06T21:38:53.000Z"
+      "title": "De lange weg terug van Jordy Clasie: 'Hij tilt het niveau omhoog'",
+      "link": "https://www.vi.nl/pro/de-lange-weg-terug-van-jordy-clasie-hij-tilt-het-niveau-omhoog",
+      "summary": "Voor AZ moet het de komende weken gebeuren, met de kwart­finale van de Conference League en de bekerfinale in aantocht. Een opsteker is de rentree van roerganger Jordy Clasie na een half jaar blessureleed. ‘Ik weet zeker dat ik nog van waarde kan zijn.’",
+      "publishedAt": "2026-04-07T11:00:00.000Z"
     },
     {
       "type": "rss",
@@ -95,219 +117,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "PSV-quiz: weet jij alle kampioenen sinds 2023/24?",
-      "link": "https://www.vi.nl/nieuws/psv-quiz-weet-jij-alle-kampioenen-sinds-2023-24",
-      "summary": "PSV realiseert een heuse hattrick aan landstitels. Om stil te staan bij deze bijzondere prestatie is er een kampioensquiz. We willen simpelweg weten welke 54 PSV'ers er in de afgelopen drie seizoenen in actie zijn gekomen in de Eredivisie. Als hint, want sommige antwoorden zijn best pittig, geven we de huidige club van de speler weer. Succes!",
-      "publishedAt": "2026-04-06T21:30:00.000Z"
+      "title": "Op krukken lopende Jerdy Schouten toegezongen voor Philips Stadion",
+      "link": "https://www.vi.nl/video/op-krukken-lopende-jerdy-schouten-toegezongen-voor-philips-stadion",
+      "summary": "Jerdy Schouten werd dinsdag toegezongen bij zijn aankomst bij het Philips Stadion. De middenvelder van PSV maakte zich op voor de huldiging van landskampioen PSV. Hij liep op krukken, door zijn zware knieblessure .",
+      "publishedAt": "2026-04-07T10:58:15.000Z"
     },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Championship roundup: Coventry stay 12 points clear at top despite Hull stalemate",
-      "link": "https://www.theguardian.com/football/2026/apr/06/championship-roundup-portsmouth-oxford-millwall-ipswich-hull-middlesbrough-coventry",
-      "summary": "Results elsewhere favour Frank Lampard’s side Norwich deal blow to Millwall’s promotion push Coventry crept closer to promotion to the Premier League despite an off-colour display in a goalless draw at Hull. Setbacks for promotion rivals Millwall and Middlesbrough meant a win for Coventry would have moved them to within two points of guaranteeing a return to the top flight for the first time in 25 years. While the Sky Blues were second best for large spells at the MKM Stadium and fortunate to avoid defeat, they retained their 12-point lead at the top of the table. Continue reading...",
-      "publishedAt": "2026-04-06T21:24:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Charlton defender Coady leaves hospital after scans",
-      "link": "https://www.bbc.com/sport/football/articles/c62jl11qqgpo?at_medium=RSS&at_campaign=rss",
-      "summary": "On-loan Charlton Athletic defender Conor Coady is discharged from hospital after being knocked out at Watford on Monday.",
-      "publishedAt": "2026-04-06T21:19:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Engels Klein Duimpje na 65 jaar terug op tweede niveau, met dank aan Arsenal",
-      "link": "https://www.vi.nl/nieuws/engels-klein-duimpje-na-65-jaar-terug-op-tweede-niveau-met-dank-aan-arsenal",
-      "summary": "Lincoln City is gepromoveerd naar de Championship. De Imps hadden een enorme voorsprong en zetten maandag de beslissende stap met een 1-2 zege op het veld van Reading. Het is een historische promotie, die op meer dan één manier verband houdt met Arsenal.",
-      "publishedAt": "2026-04-06T21:09:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Braziliaanse media weten wel wie de nieuwe coach van Memphis wordt",
-      "link": "https://www.vi.nl/nieuws/braziliaanse-media-weten-wel-wie-de-nieuwe-coach-van-memphis-wordt",
-      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-04-06T20:53:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arteta calls for perspective as Arsenal look to avoid slump",
-      "link": "https://www.bbc.com/sport/football/articles/c77md5mp475o?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal boss Mikel Arteta wants his side to channel the pain of back-to-back defeats when they take on Sporting in the Champions League quarter-finals.",
-      "publishedAt": "2026-04-06T20:43:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "‘Use that fuel’: Mikel Arteta and David Raya urge Arsenal to feed off cup losses",
-      "link": "https://www.theguardian.com/football/2026/apr/06/use-that-fuel-mikel-arteta-and-david-raya-urge-arsenal-to-feed-off-cup-losses",
-      "summary": "Team will not panic in wake of City and Southampton defeats Raya set to return in goal for Tuesday’s first leg at Sporting Mikel Arteta has insisted that Arsenal will not panic after losing successive games for the first time this season but admitted that they must rediscover their identity to get their campaign back on track. The Premier League leaders face Sporting in the first leg of their Champions League quarter-final in Lisbon on Tuesday after seeing their hopes of an unprecedented quadruple crumble with defeats by Manchester City in the Carabao Cup final and the Championship side Southampton in the FA Cup. Bukayo Saka and Jurriën Timber have been ruled out as they continue to struggle with injuries, although there was better news for Arteta with Gabriel Magalhães, Declan Rice and Leandro Trossard all expected to feature against the Portuguese champions. Continue reading...",
-      "publishedAt": "2026-04-06T19:55:18.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Bayern face waiting game on 'very special' Kane",
-      "link": "https://www.bbc.com/sport/football/articles/cm2rzp8lrzdo?at_medium=RSS&at_campaign=rss",
-      "summary": "Bayern Munich are waiting on the fitness of \"very special\" Harry Kane to see if he can lead their challenge to overcome Real Madrid in the Champions League quarter-final.",
-      "publishedAt": "2026-04-06T19:13:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Quiet and steady' - how Lincoln's promotion was 20 years in the making",
-      "link": "https://www.bbc.com/sport/football/articles/cp86mde460no?at_medium=RSS&at_campaign=rss",
-      "summary": "John Pakey looks back over the past 20 years from Keith Alexander to the Cowleys to Lincoln City now calling themselves a Championship club.",
-      "publishedAt": "2026-04-06T18:57:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "EFL roundup: Lincoln promoted to Championship with win at Reading",
-      "link": "https://www.theguardian.com/football/2026/apr/06/efl-roundup-lincoln-promoted-to-championship-with-win-at-reading",
-      "summary": "Lincoln up with five games to spare after 2-1 win Bolton draw with Stockport leaves Imps’ result moot Lincoln celebrated promotion to the Championship with a hard-earned 2-1 victory at the playoff chasers Reading as they returned to the second tier after 65 years. Lincoln, needing only a point, made a bright start and went ahead in the fifth minute through Ryan Oné and seemed destined for a 1-0 win, only for Reading to level in the second minute of stoppage time from a Lewis Wing free-kick. However, Jack Moylan snatched the winner four minutes later, seconds after promotion had been secured by Bolton v Stockport finishing in a 2-2 draw, meaning neither could catch the Imps. Continue reading...",
-      "publishedAt": "2026-04-06T16:46:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The FA Cup still has an important place. This weekend was proof",
-      "link": "https://www.theguardian.com/football/2026/apr/06/fa-cup-premier-league-arsenal-southampton",
-      "summary": "From exposed anxieties to unexpected heroes, this weekend’s cup contests papered over a weird three-week Premier League break Sign up for our World Cup newsletter Live in a World Cup host city? Tell us your stories The soccer calendar has been particularly quirky this year. There’s always an international break in March, but because this year’s edition involved World Cup qualifying playoffs, most games were scheduled for the Thursday and the Tuesday, which meant there was very little soccer played over the weekend; barely even a smattering of friendlies. For a Saturday in early spring, it all felt very weird; it was a day for pacing the floors, wondering how on earth people who don’t like soccer fill the time. And with the Carabao Cup final falling the previous Sunday, and the FA Cup sixth round this weekend, that has meant a three-week hiatus in the title race. Which has been disorienting and, perhaps, not entirely to Arsenal’s benefit. Continue reading...",
-      "publishedAt": "2026-04-06T15:45:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Buurman strikes late against Spurs to send Chelsea into Women’s FA Cup semi-finals",
-      "link": "https://www.theguardian.com/football/2026/apr/06/chelsea-tottenham-womens-fa-cup-quarter-final-match-report",
-      "summary": "Sonia Bompastor believes national team managers will need to be “smart” with her Chelsea players after a gruelling block of games concluded positively, with a 2-1 defeat of Tottenham, earning a place in the FA Cup semi-finals. Chelsea’s hopes of retaining two of their three titles remain alive after Veerle Buurman’s wonderful drive and strike earned the Blues a win in an end-to-end battle with Tottenham. Continue reading...",
-      "publishedAt": "2026-04-06T15:01:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Fred Vanderbiest pleit voor realisme, maar er kan een titelgrapje af: \"Dan gaan we er niet ver van zijn\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-06/fred-vanderbiest-pleit-voor-realisme-maar-er-kan-een-titelgrapje-af-dan-gaan-we-er-niet-ver-van-zijn",
-      "summary": "Fred Vanderbiest verscheen op zijn paasbest in de Planet Group Arena. In minuut 96 kon hij nog een puntje pakken op bezoek bij KAA Gent. En zo zijn de Champions' Play-offs toch degelijk tot goed begonnen voor Malinwa.",
-      "publishedAt": "2026-04-06T09:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Fred Vanderbiest garde de l'humour : \"On ne sera pas loin du titre !\"",
-      "link": "https://www.walfoot.be/news/2026-04-06/fred-vanderbiest-garde-de-lhumour--on-ne-sera-pas-loin-du-titre",
-      "summary": "Pour leur entame de Playoffs, les Malinois ont été prendre un point à l'arraché à Gand. Fred Vanderbiest avait le sourire après la rencontre.",
-      "publishedAt": "2026-04-06T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Hein Vanhaezebrouck zwaar onder de indruk van Club Brugge, maar ziet ook duidelijke les",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-06/hein-vanhaezebrouck-zwaar-onder-de-indruk-van-club-brugge-maar-ziet-ook-duidelijke-les",
-      "summary": "Club Brugge veegde Anderlecht voor de rust volledig van de mat, maar liet het na de pauze toch nog spannend worden. Hein Vanhaezebrouck zag tegelijk een stevige waarschuwing én een krachtig signaal.",
-      "publishedAt": "2026-04-06T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Et si la RAAL avait relancé Dender ? \"Oui, on peut y croire !\"",
-      "link": "https://www.walfoot.be/news/2026-04-06/et-si-la-raal-avait-relance-dender--oui-on-peut-y-croire",
-      "summary": "Le FCV Dender a remporté une victoire capitale sur la pelouse de La Louvière. Grâce à ce succès, l'espoir de maintien reste vivant, même si Yannick Ferrera sait que son équipe fait encore face à une mission extrêmement difficile.",
-      "publishedAt": "2026-04-06T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Nog een groot vraagteken voor Kompany en Bayern voor clash met Real Madrid: \"Morgen nemen we beslissing\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-06/nog-een-groot-vraagteken-voor-kompany-en-bayern-voor-clash-met-real-madrid-morgen-nemen-we-beslissing",
-      "summary": "Vincent Kompany trekt dinsdag met Bayern München naar het Bernabéu voor een topaffiche tegen Real Madrid. Rond Harry Kane blijft het nog even afwachten, al gaf de Belgische coach maandag wel een voorzichtig positief signaal.",
-      "publishedAt": "2026-04-06T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Roef en De Mil reageren na late opdoffer tegen KV Mechelen: \"Of ik me zorgen maak?\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-06/roef-en-de-mil-reageren-na-late-opdoffer-tegen-kv-mechelen-of-ik-me-zorgen-maak",
-      "summary": "KAA Gent leek op weg naar een deugddoende en belangrijke driepunter om de Champions' Play-offs mee te starten, maar in het slot van de wedstrijd liep het alsnog verkeerd. De late gelijkmaker van Bill Antonio was dan ook pijnlijk te noemen.",
-      "publishedAt": "2026-04-06T08:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Naples ne relâche pas la pression sur Lukaku : \"Il sait qu'il y aura des conséquences\"",
-      "link": "https://www.walfoot.be/news/2026-04-06/naples-ne-relache-pas-la-pression-sur-lukaku--il-sait-quil-y-aura-des-consequences",
-      "summary": "La situation de Romelu Lukaku à Naples ne s'est pas vraiment améliorée. Le directeur sportif du club italien a tenu des propos sévères au sujet du choix du Diable Rouge de rester en Belgique pour sa rééducation.",
-      "publishedAt": "2026-04-06T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
       "country": "FR",
       "flag": "🌍",
-      "title": "🎥 Nathan Ngoy gooit olie op het vuur na derbyzege: ex-Standard-speler doet fans helemaal ontploffen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-06/-nathan-ngoy-gooit-olie-op-het-vuur-na-derbyzege-ex-standard-speler-doet-fans-helemaal-ontploffen",
-      "summary": "Lille verkeert in volle euforie na de 3-0-zege tegen Lens in de Noord-Franse derby. Nathan Ngoy profiteerde daarvan om zich nog wat meer in de harten van de fans te spelen.",
-      "publishedAt": "2026-04-06T08:00:00.000Z"
+      "title": "Aaron Ramsey, former Wales captain and Arsenal midfielder, retires aged 35",
+      "link": "https://www.theguardian.com/football/2026/apr/07/aaron-ramsey-former-wales-captain-arsenal-midfielder-retires-35",
+      "summary": "Had been without a club since end of last year ‘It has been my privilege to wear the Welsh shirt’ The former Wales captain Aaron Ramsey has announced his retirement from football at the age of 35. The midfielder, who spent more than a decade with Arsenal before stints with Juventus, Nice, Cardiff and Rangers, has been without a club since leaving the Mexican side Pumas at the end of last year. Having won the last of his 86 caps for the national side in 2024, due to a combination of injuries and limited game time, he was overlooked for Wales’s recent World Cup playoff against Bosnia and Herzegovina. Wales’s defeat in that game ended Ramsey’s hopes of a grand finale on the biggest stage and he has now confirmed the end of his playing days. Continue reading...",
+      "publishedAt": "2026-04-07T10:41:17.000Z"
     },
     {
       "type": "rss",
@@ -315,10 +139,153 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "\"Inimaginable que Taravel refasse une chose pareille\" : un ancien entraîneur d'Anderlecht très inquiet",
-      "link": "https://www.walfoot.be/news/2026-04-06/inimaginable-que-taravel-refasse-une-chose-pareille--un-ancien-entraneur-danderlecht-tres-inquiet",
-      "summary": "Anderlecht a encaissé un premier uppercut au Club de Bruges. Hein Vanhaezebrouck est très inquiet pour les Mauves après leur prestation.",
-      "publishedAt": "2026-04-06T07:40:00.000Z"
+      "title": "Marc Degryse, spectateur attentif du Topper : \"Anderlecht me fait peur pour la suite\"",
+      "link": "https://www.walfoot.be/news/2026-04-07/marc-degryse-spectateur-attentif-du-topper--anderlecht-me-fait-peur-pour-la-suite",
+      "summary": "Marc Degryse a été impressionné par la première période du Club de Bruges lors de sa victoire 4-2 face au Sporting d'Anderlecht. Avant la pause, les Mauves n'ont trouvé aucune solution face à l'intensité des Blauw & Zwart.",
+      "publishedAt": "2026-04-07T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Wesley Sonck schuift favoriet naar voren voor Real-Bayern en wijst op Courtois",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/wesley-sonck-schuift-favoriet-naar-voren-voor-real-bayern-en-wijst-op-courtois",
+      "summary": "Real Madrid en Bayern München openen dinsdagavond de kwartfinales van de Champions League met een absolute kraker. Volgens Wesley Sonck ligt de favorietenrol opvallend genoeg niet bij de thuisploeg.",
+      "publishedAt": "2026-04-07T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Ex-footballer Barton denies golf club attack",
+      "link": "https://www.bbc.com/news/articles/c05d1j0q9jro?at_medium=RSS&at_campaign=rss",
+      "summary": "The ex-Manchester City, Newcastle United, QPR, Burnley and Rangers player is accused of assault.",
+      "publishedAt": "2026-04-07T10:26:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Christian Burgess spreekt zich uit: \"We moeten hen beter opvoeden\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/christian-burgess-spreekt-zich-uit-we-moeten-hen-beter-opvoeden",
+      "summary": "Christian Burgess heeft zich in een interview met La DH opnieuw uitgesproken over zijn politieke overtuigingen. De verdediger laat er geen twijfel over bestaan waar hij staat: &quot;Ik bevind me eerder aan de linkerkant van het politieke spectrum.&quot;",
+      "publishedAt": "2026-04-07T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "\"Tel un astronaute à bord d'Artemis II\" : la presse italienne rend un nouvel hommage à Kevin De Bruyne",
+      "link": "https://www.walfoot.be/news/2026-04-07/tel-un-astronaute-a-bord-dartemis-ii--la-presse-italienne-rend-un-nouvel-hommage-a-kevin-de-bruyne",
+      "summary": "Kevin De Bruyne n'a pas été l'auteur d'une très grande prestation, mais le Diable Rouge s'est montré important dans la victoire du Napoli face à l'AC Milan, décisive dans la course à la deuxième place.",
+      "publishedAt": "2026-04-07T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Keira Barry gets first England call-up and Niamh Charles joins Wiegman’s squad",
+      "link": "https://www.theguardian.com/football/2026/apr/07/keira-barry-first-england-call-up-niamh-charles-bay-fc",
+      "summary": "Bay FC forward Barry in for injured Freya Godfrey Lionesses face Spain and Iceland in qualifiers The Bay FC forward Keira Barry has received her first senior England call-up after being added to Sarina Wiegman’s squad for Women’s World Cup qualifiers against Spain and Iceland alongside the fit-again Chelsea full-back Niamh Charles. Their additions come after the London City Lionesses forward Freya Godfrey withdrew because of a shoulder injury. Barry, promoted for the Under-23s squad, is a product of Manchester United’s academy and also played for clubs including Crystal Palace and Sunderland before signing for Bay FC in February. Continue reading...",
+      "publishedAt": "2026-04-07T10:09:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wales captain and ex-Arsenal star Ramsey retires",
+      "link": "https://www.bbc.com/sport/football/articles/cp9jvpl3m8go?at_medium=RSS&at_campaign=rss",
+      "summary": "Wales captain and former Arsenal midfielder Aaron Ramsey retires from professional football with immediate effect.",
+      "publishedAt": "2026-04-07T10:02:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Barry gets first England call-up as Godfrey injured",
+      "link": "https://www.bbc.com/sport/football/articles/cn531wzr2d1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Bay FC forward Keira Barry receives her first call-up to the England squad for the upcoming Women's World Cup qualifiers against Spain and Iceland.",
+      "publishedAt": "2026-04-07T10:00:33.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Ook Peter Vandenbempt haalt uit naar scheidsrechters: \"Leg mij dat een keer uit. Dat gaat niet\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/ook-peter-vandenbempt-haalt-uit-naar-scheidsrechters-leg-mij-dat-een-keer-uit-dat-gaat-niet",
+      "summary": "Peter Vandenbempt was na afloop van Union tegen STVV bijzonder scherp, vooral voor de arbitrage. Volgens de analist was het &quot;opgeteld geen goed weekend voor de Belgische scheidsrechters&quot; en begrijpt hij de frustratie bij de Truienaars volledig.",
+      "publishedAt": "2026-04-07T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "🎥 Un but de classe mondiale : quand un joueur... à l'essai met tout le monde d'accord à Anderlecht",
+      "link": "https://www.walfoot.be/news/2026-04-07/-un-but-de-classe-mondiale--quand-un-joueur-a-lessai-met-tout-le-monde-daccord-a-anderlecht",
+      "summary": "Alors que l'équipe première d'Anderlecht peinait au Club de Bruges, les U17 ont remporté la Future Cup en s'imposant face au Real Madrid en finale. Lors de cette rencontre, une action décisive : le splendide coup franc de Cheikh Dieng, un joueur... à l'essai dans la capitale.",
+      "publishedAt": "2026-04-07T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Harry Maguire takes wage cut to sign Manchester United contract extension",
+      "link": "https://www.theguardian.com/football/2026/apr/07/harry-maguire-signs-manchester-united-contract-extension",
+      "summary": "Defender’s new deal goes up to to 2027 Says playing for United is ‘the ultimate honour’ Harry Maguire has described playing for Manchester United as “the ultimate honour” after signing a one-year contract extension, with the option of a further season. The centre-back struggled under Ruben Amorim, putting his future into doubt, but he has become integral to Michael Carrick as United battle for a Champions League place. The 33-year-old has agreed to wage reduction, with his previous deal – which expires this summer – worth £190,000 a week. Maguire has been an ever-present since Carrick replaced Amorim and earned an England recall last month. He made two appearances in the friendlies, putting him in contention for the squad for this summer’s World Cup. Continue reading...",
+      "publishedAt": "2026-04-07T09:10:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Valverde's hunger, sacrifice and goals should have Madrid confident -- and Bayern fearful",
+      "link": "https://www.espn.com/soccer/story/_/id/48405118/fede-valverde-real-madrid-confident-bayern-munich-fearful-ucl-clash",
+      "summary": "This has been something of a lost season for Real Madrid, but the tenacity and form of Federico Valverde may yet bring trophies to the Spanish capital.",
+      "publishedAt": "2026-04-07T08:08:12.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Viktor who? Sporting’s new Gyökeres has sights trained on Arsenal",
+      "link": "https://www.theguardian.com/football/2026/apr/07/viktor-gyokeres-sporting-arsenal-champions-league-quarter-final-luis-suarez",
+      "summary": "The Sweden striker’s goals had inspired Sporting for two years but in Colombian Luis Suárez they have found an equally prolific target man In Portugal, two of the most familiar sayings claim that “green is the colour of hope” and that “hope is the last thing to die”. For Sporting, a club draped in green, those proverbs are not merely poetic – they are operational. After a humiliating 3–0 defeat in Norway by Bodø/Glimt in the first leg of their Champions League last-16 tie, logic suggested it was all over. Sporting disagreed. Backed by about 50,000 supporters, the team surged with belief and delivered a 5–0 victory that carried the club to their first quarter-final in the tournament in 43 years. Arsenal come next, as does an old question: is hope a cultural relic or Sporting’s most powerful ally? Continue reading...",
+      "publishedAt": "2026-04-07T07:00:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Why Real Madrid tie could make or break Kane's Ballon d'Or hopes",
+      "link": "https://www.bbc.com/sport/football/articles/cp86v8zq4jeo?at_medium=RSS&at_campaign=rss",
+      "summary": "Harry Kane is the leading goalscorer in Europe but does he need to win a major trophy to have a chance of winning the prestigious award?",
+      "publishedAt": "2026-04-07T05:40:38.000Z"
     },
     {
       "type": "rss",
@@ -326,10 +293,43 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Ni Gand ni Malines ne profite des défaites de Saint-Trond et d'Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-04-06/ni-gand-ni-malines-ne-profite-des-defaites-de-saint-trond-et-danderlecht",
-      "summary": "La Gantoise et Malines fermaient la première journée de Playoffs ce lundi soir. Les Buffalos pensaient prendre trois points précieux, mais le Kavé a égalisé au bout du bout des arrêts de jeu.",
-      "publishedAt": "2026-04-06T07:20:00.000Z"
+      "title": "Christian Burgess : \"Ce serait impossible pour moi de jouer dans un club avec des supporters d'extrême droite\"",
+      "link": "https://www.walfoot.be/news/2026-04-07/christian-burgess-ce-serait-impossible-pour-moi-de-jouer-dans-un-club-avec-des-supporters-dextreme-droite",
+      "summary": "Pas le défenseur le plus apprécié du championnat, Christian Burgess est cependant un joueur doté de fortes valeurs, auxquelles il ne déroge jamais. L'arrière central anglais n'hésite pas non plus à se prononcer sur d'importants faits de société.",
+      "publishedAt": "2026-04-06T23:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "\"Als een astronaut aan boord van Artemis II\": Italiaanse pers smult van Kevin De Bruyne",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/als-een-astronaut-aan-boord-van-artemis-ii-italiaanse-pers-smult-van-kevin-de-bruyne",
+      "summary": "Kevin De Bruyne leverde geen al te grootse prestatie, maar de Rode Duivel was wel belangrijk in de overwinning van Napoli tegen AC Milan, die cruciaal was in de strijd om de tweede plaats.",
+      "publishedAt": "2026-04-06T23:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le verdict final est tombé concernant le match Seraing - Courtrai annulé pour un incendie au Pairay",
+      "link": "https://www.walfoot.be/news/2026-04-07/le-verdict-final-est-tombe-concernant-le-match-seraing---courtrai-annule-pour-un-incendie-au-pairay",
+      "summary": "Le dossier du match annulé entre Seraing et Courtrai est clos. La victoire des Kerels par forfait a été confirmée par la Cour belge d'Arbitrage pour le Sport, ce mardi.",
+      "publishedAt": "2026-04-06T23:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Belgische trainers krijgen unieke inkijk bij Bayern en zijn zwaar onder de indruk van Kompany",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/belgische-trainers-krijgen-unieke-inkijk-bij-bayern-en-zijn-zwaar-onder-de-indruk-van-kompany",
+      "summary": "Vincent Kompany heeft indruk gemaakt op een groep Belgische trainers die onlangs Bayern München bezochten. Tijdens hun Pro License-stage kregen ze niet alleen training te zien, maar ook een inkijk in zijn aanpak.",
+      "publishedAt": "2026-04-06T23:00:00.000Z"
     }
   ]
 }
