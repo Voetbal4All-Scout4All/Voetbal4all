@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T22:41:52.963Z",
+  "generatedAt": "2026-04-07T23:40:43.427Z",
   "items": [
     {
       "type": "rss",
@@ -16,12 +16,23 @@
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "ES",
+      "country": "DE",
       "flag": "🌍",
-      "title": "Real Madrid say they can beat Bayern Munich after poor Champions League first leg. Are they right?",
-      "link": "https://www.espn.com/soccer/story/_/id/48423353/real-madrid-say-overcome-bayern-munich-poor-first-leg-right",
-      "summary": "Lacking Bernabéu magic, Real Madrid can tee up a more spectacular comeback in Munich in the Champions League -- they've done it before.",
-      "publishedAt": "2026-04-07T23:27:47.000Z"
+      "title": "Fab 40: Veteran Neuer stops Madrid on MVP night",
+      "link": "https://www.espn.com/soccer/story/_/id/48423434/bayern-munich-neuer-mvp-night-win-real-madrid",
+      "summary": "Vincent Kompany said he's \"impressed every day\" by Manuel Neuer after the veteran goalkeeper made nine saves in Bayern Munich's 2-1 Champions League win over Real Madrid on Tuesday.",
+      "publishedAt": "2026-04-08T00:13:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Havertz says Arsenal are ready to 'win big titles'",
+      "link": "https://www.espn.com/soccer/story/_/id/48423396/kai-havertz-arsenal-ready-win-big-titles",
+      "summary": "Kai Havertz scored in stoppage time to give Arsenal a 1-0 win in the first leg of its Champions League quarterfinal against Sporting Lisbon on Tuesday.",
+      "publishedAt": "2026-04-08T00:13:38.000Z"
     },
     {
       "type": "rss",
@@ -32,29 +43,7 @@
       "title": "Madrid grateful as Mbappé keeps Bayern tie 'alive'",
       "link": "https://www.espn.com/soccer/story/_/id/48423458/kylian-mbappe-goal-real-madrid-bayern-munich-champions-league",
       "summary": "Coach Álvaro Arbeloa said Real Madrid's chances of progressing in the Champions League are \"still alive\" after Kylian Mbappé's second-half goal saw Madrid beaten 2-1 by Bayern Munich in their quarterfinal first leg.",
-      "publishedAt": "2026-04-07T23:20:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Kane gives Bayern 1st-leg edge at Real Madrid",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862886",
-      "summary": "Harry Kane delivered for Bayern Munich on his return from injury, scoring a goal and helping set up another in his team's 2-1 win at Real Madrid.",
-      "publishedAt": "2026-04-07T23:20:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Havertz rescues Arsenal in 1st-leg win vs. Sporting",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862888",
-      "summary": "Kai Havertz scored a stoppage-time winner to fire Arsenal to a crucial 1-0 victory against Sporting in the first leg of their Champions League quarterfinal in Lisbon.",
-      "publishedAt": "2026-04-07T23:20:49.000Z"
+      "publishedAt": "2026-04-08T00:13:37.000Z"
     },
     {
       "type": "rss",
@@ -65,7 +54,51 @@
       "title": "Southampton drop Wrexham from top 6 in rout",
       "link": "https://www.espn.com/soccer/report/_/gameId/745085",
       "summary": "FA Cup semifinalists Southampton continued their Championship charge as they thrashed Wrexham 5-1 at Stok Cae Ras to replace the Welsh side in the playoff places.",
-      "publishedAt": "2026-04-07T23:20:49.000Z"
+      "publishedAt": "2026-04-08T00:13:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Real Madrid say they can beat Bayern Munich after poor Champions League first leg. Are they right?",
+      "link": "https://www.espn.com/soccer/story/_/id/48423353/real-madrid-say-overcome-bayern-munich-poor-first-leg-right",
+      "summary": "Lacking Bernabéu magic, Real Madrid can tee up a more spectacular comeback in Munich in the Champions League. They've done it before.",
+      "publishedAt": "2026-04-07T23:27:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "World's best keeper? Raya helps Arsenal get back on track",
+      "link": "https://www.bbc.com/sport/football/articles/cvgldp4gjqlo?at_medium=RSS&at_campaign=rss",
+      "summary": "David Raya is the best goalkeeper in the world, according to his Arsenal team-mates - and the Spaniard played a key role in his side's 1-0 win at Sporting.",
+      "publishedAt": "2026-04-07T23:09:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Alexander-Arnold fails to ease Tuchel concerns as Kane stars",
+      "link": "https://www.bbc.com/sport/football/articles/cp38dlkl7eko?at_medium=RSS&at_campaign=rss",
+      "summary": "Thomas Tuchel's doubts about Trent Alexander-Arnold and reliance on Harry Kane are confirmed on the England manager's Madrid mission.",
+      "publishedAt": "2026-04-07T23:04:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arteta admits Arsenal had point to prove after ‘big moment in season’ with win at Sporting",
+      "link": "https://www.theguardian.com/football/2026/apr/07/mikel-arteta-arsenal-sporting-champions-league",
+      "summary": "Havertz goal offers response after back-to-back defeats Arteta praises ‘extraordinary’ Raya for crucial saves Mikel Arteta acknowledged that Arsenal had a point to prove against Sporting after losing their last two matches and believes that Kai Havertz’s late winner could prove to be a “big moment” in their season. Arsenal had David Raya to thank for making three superb saves that kept the scores level before Havertz came off the bench to seal a priceless away victory. It was a huge relief for Arteta, who had urged his players to rediscover their identity after they suffered back-to-back defeats for the first time this season against Manchester City in the Carabao Cup final and Championship side Southampton in the FA Cup. Continue reading...",
+      "publishedAt": "2026-04-07T22:43:45.000Z"
     },
     {
       "type": "rss",
@@ -88,6 +121,17 @@
       "link": "https://www.bbc.com/sport/football/articles/c4gv3zre8m5o?at_medium=RSS&at_campaign=rss",
       "summary": "Tottenham choose Guglielmo Vicario replacement, Liverpool monitor Italy defender, Manchester United set to miss out on England midfielder.",
       "publishedAt": "2026-04-07T22:00:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Southampton leapfrog Wrexham after thrashing to climb into playoff spots",
+      "link": "https://www.theguardian.com/football/2026/apr/07/southampton-thrash-wrexham-to-leapfrog-opponents-and-climb-into-playoff-spots",
+      "summary": "Southampton continued their Championship charge as they thrashed Wrexham 5-1 to replace the Welsh side in the playoff places. Fuelled by their stunning weekend FA Cup quarter-final triumph over Arsenal, Tonda Eckert’s in-form side flew out of the traps at Stōk Cae Ras with early goals from Kuryu Matsuki and Flynn Downes, having already hit the woodwork twice. Continue reading...",
+      "publishedAt": "2026-04-07T21:44:33.000Z"
     },
     {
       "type": "rss",
@@ -119,7 +163,7 @@
       "flag": "🌍",
       "title": "Harry Kane gives Bayern Munich edge despite Real Madrid fightback in thriller",
       "link": "https://www.theguardian.com/football/2026/apr/07/real-madrid-bayern-munich-champions-league-quarter-final-first-leg-match-report",
-      "summary": "“This is why you guys come to these games,” Vincent Kompany had said, and here especially. For the quality, the chaos, and the goals, the noise, the drama and the history that invades every moment, even when it seems to be finally left behind. Another wild night at the Santiago Bernabéu seemed to have set up for another barely believable finish, another of those crazy comebacks, but in the end Bayern Munich held on, setting up what is sure to be a special second leg instead. Goals from Luis Díaz and Harry Kane had given Bayern a 2-0 lead here and at that stage there was an authority about them that had seemed incontestable, but Madrid it seemed always have a response and a Kylian Mbappé goal brought about a revival, a rebellion that threatened to secure a draw. But there was Bayern’s 40-year-old goalkeeper Manuel Neuer to keep them at bay, just. Continue reading...",
+      "summary": "“This is why you guys come to these games,” Vincent Kompany had said, and especially here. For the quality, the chaos and the goals, the edge, the drama and the history that invades every moment. Another wild Champions League night had this place believing in another crazy comeback, the noise level rising towards what appeared destined to be one, last thunderous crescendo as Real Madrid rose again and went for their biggest European rivals. In the end, though, Bayern Munich held on for a win that sets up another, definitive battle at the Allianz Arena next week. Strikes from Luis Díaz and Harry Kane either side of half-time had given Bayern a 2-0 lead, underlining an incontestable authority in the opening hour. But a Kylian Mbappé goal 16 minutes from the end began a rebellion that could have left the tie on even more of a knife edge than it is, Madrid finding chances for a draw or even another victory. They also found Manuel Neuer rolling back the years, aged 40, with nine saves. Continue reading...",
       "publishedAt": "2026-04-07T21:12:18.000Z"
     },
     {
@@ -135,17 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Kai Havertz snatches late victory for Arsenal to take control against Sporting",
-      "link": "https://www.theguardian.com/football/2026/apr/07/sporting-arsenal-champions-league-quarter-final-first-leg-match-report",
-      "summary": "How Mikel Arteta treasured this win. All the tension that had built up in the Arsenal manager after devastating defeats in the Carabao Cup and FA Cup was suddenly released in the moment that Kai Havertz calmly slotted home from fellow substitute Gabriel Martinelli’s cross in the first minute of injury time and Arteta set off on a celebration charge down the touchline, fists pumping. He had been a frustrated presence until then as Arsenal put in another anxious performance against a spirited Sporting side who could have established a precious lead ahead of next week’s second leg in north London if they had taken their chances. But having scored in the last round against his former club Bayer Leverkusen, once again it was Havertz who edged Arsenal closer to the last four for only the fourth time in their history. Continue reading...",
-      "publishedAt": "2026-04-07T21:06:43.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -154,28 +187,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c9vl1y7g1mjo?at_medium=RSS&at_campaign=rss",
       "summary": "The Premier League will have at least five teams in the Champions League next season after securing a European Performance Spot for the second straight year.",
       "publishedAt": "2026-04-07T20:55:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Legendary manager Lucescu dies fives days after resigning as Romania coach",
-      "link": "https://www.bbc.com/sport/football/articles/cgj0d8dz5dgo?at_medium=RSS&at_campaign=rss",
-      "summary": "Legendary manager Mircea Lucescu dies aged 80, five days after stepping down as Romania's head coach.",
-      "publishedAt": "2026-04-07T20:39:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arne Slot backs his Liverpool side to go ‘toe-to-toe’ with PSG in Champions League",
-      "link": "https://www.theguardian.com/football/2026/apr/07/arne-slot-liverpool-champions-league-psg-alexander-isak",
-      "summary": "Wirtz denies Liverpool ‘gave up’ in Manchester City loss Isak could return off bench after four months out injured Arne Slot has warned Liverpool will suffer another emphatic defeat should they switch off against Paris Saint-Germain in their Champions League quarter-final first leg on Wednesday evening but believes his toiling team can save their season by going “toe-to-toe” with the European champions. The pressure on Liverpool and their head coach has intensified following Saturday’s 4-0 capitulation against Manchester City in the quarter-final of the FA Cup. Florian Wirtz disagreed with the captain Virgil van Dijk’s damning assessment that Liverpool “gave up” at the Etihad Stadium, but both the £116m playmaker and Slot admitted there can be no repeat of that performance at Parc des Princes. Continue reading...",
-      "publishedAt": "2026-04-07T19:36:35.000Z"
     },
     {
       "type": "rss",
@@ -209,17 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/apr/07/wsl-academy-teams-to-play-in-third-tier-fa-plans-womens-national-league",
       "summary": "Four youth sides picked could not be promoted Plans involve mid-season split and up to £1m investment Major structural changes to the Women’s National League, including four Women’s Super League academy sides entering tier three of the pyramid from 2027 and the introduction of a mid-season split similar to that used in Scotland, have been proposed by the Football Association, the Guardian can reveal. The plans come alongside a potential investment package of about £1m, enhancements to legal and medical support in the loan system, and a hope of attracting more fans and media attention to the league. Continue reading...",
       "publishedAt": "2026-04-07T18:06:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Thousands of England & Scotland World Cup tickets on resale at inflated prices",
-      "link": "https://www.bbc.com/sport/football/articles/c20d5pq6zplo?at_medium=RSS&at_campaign=rss",
-      "summary": "England and Scotland fans hoping to get to ticket to this summer's World Cup finals face paying vastly inflated prices through Fifa's official resale platform.",
-      "publishedAt": "2026-04-07T18:04:15.000Z"
     },
     {
       "type": "rss",
