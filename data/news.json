@@ -1,17 +1,6 @@
 {
-  "generatedAt": "2026-04-08T02:46:13.025Z",
+  "generatedAt": "2026-04-08T13:41:26.332Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Engeland verzekert zich door zege Arsenal van vijfde Champions League-ticket",
-      "link": "https://www.vi.nl/nieuws/engeland-verzekert-zich-door-zege-arsenal-van-vijfde-champions-league-ticket",
-      "summary": "Engeland heeft zich dinsdagavond verzekerd van een vijfde Champions League-ticket. Door de overwinning van Arsenal op Sporting Lissabon heeft het land voldoende coëfficiëntenpunten binnengehaald en is het niet meer te achterhalen op de seizoensranglijst. Dat is goed nieuws voor het Liverpool van Arne Slot.",
-      "publishedAt": "2026-04-08T21:35:47.000Z"
-    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -21,7 +10,18 @@
       "title": "Fab 40: Veteran Neuer stops Madrid on MVP night",
       "link": "https://www.espn.com/soccer/story/_/id/48423434/bayern-munich-neuer-mvp-night-win-real-madrid",
       "summary": "Vincent Kompany said he's \"impressed every day\" by Manuel Neuer after the veteran goalkeeper made nine saves in Bayern Munich's 2-1 Champions League win over Real Madrid on Tuesday.",
-      "publishedAt": "2026-04-08T03:01:58.000Z"
+      "publishedAt": "2026-04-08T13:56:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Holland: Man Utd eyeing more than just UCL spot",
+      "link": "https://www.espn.com/soccer/story/_/id/48427512/man-united-eyeing-more-just-champions-league-spot-season",
+      "summary": "Manchester United assistant manager Steve Holland has insisted the club have their eyes on more than just Champions League qualification going into the final few weeks of the season.",
+      "publishedAt": "2026-04-08T13:56:48.000Z"
     },
     {
       "type": "rss",
@@ -32,40 +32,249 @@
       "title": "Havertz says Arsenal are ready to 'win big titles'",
       "link": "https://www.espn.com/soccer/story/_/id/48423396/kai-havertz-arsenal-ready-win-big-titles",
       "summary": "Kai Havertz scored in stoppage time to give Arsenal a 1-0 win in the first leg of its Champions League quarterfinal against Sporting Lisbon on Tuesday.",
-      "publishedAt": "2026-04-08T03:01:58.000Z"
+      "publishedAt": "2026-04-08T13:56:48.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Díaz: Liverpool-Bayern switch was 'right choice'",
+      "link": "https://www.espn.com/soccer/story/_/id/48427326/luis-diaz-made-right-choice-swapping-liverpool-bayern-munich",
+      "summary": "Luis Díaz believes he made the right decision to join Bayern Munich from Liverpool last summer.",
+      "publishedAt": "2026-04-08T13:56:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Overzicht: de Eredivisie-trainers van het seizoen 2026/27",
+      "link": "https://www.vi.nl/nieuws/overzicht-de-eredivisie-trainers-van-het-seizoen-2026-27",
+      "summary": "Vier van de achttien Eredivisie-clubs moeten op zoek naar een nieuwe trainer. VI zet het trainersoverzicht voor volgend seizoen vast op een rijtje.",
+      "publishedAt": "2026-04-08T13:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Zieke Lukas (12) ontwerpt shirt FC Utrecht",
+      "link": "https://www.vi.nl/nieuws/zieke-lukas-12-ontwerpt-shirt-fc-utrecht",
+      "summary": "FC Utrecht speelt op 11 april tegen Telstar in een bijzonder shirt: het ontwerp is gemaakt door de twaalfjarige Lukas, die patiënt is (geweest) in het Wilhelmina Kinderziekenhuis.",
+      "publishedAt": "2026-04-08T12:50:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'De Bruyne-constructie misschien wel de oplossing voor Kees Smit'",
+      "link": "https://www.vi.nl/video/de-bruyne-constructie-misschien-wel-de-oplossing-voor-kees-smit",
+      "summary": "Waar ligt de toekomst van Kees Smit? Als het aan voormalig topverdediger Rio Ferdinand ligt bij Manchester United. Tim Tempelaars en Jarno Verweij bespreken de uitlatingen van de voormalige speler van onder meer United en de Engelse nationale ploeg.",
+      "publishedAt": "2026-04-08T12:36:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
       "country": "ES",
       "flag": "🌍",
-      "title": "Madrid grateful as Mbappé keeps Bayern tie 'alive'",
-      "link": "https://www.espn.com/soccer/story/_/id/48423458/kylian-mbappe-goal-real-madrid-bayern-munich-champions-league",
-      "summary": "Coach Álvaro Arbeloa said Real Madrid's chances of progressing in the Champions League are \"still alive\" after Kylian Mbappé's second-half goal saw Madrid beaten 2-1 by Bayern Munich in their quarterfinal first leg.",
-      "publishedAt": "2026-04-08T03:01:58.000Z"
+      "title": "Vergeet MSN en MNM: het nieuwe supertrio speelt bij Bayern München",
+      "link": "https://www.vi.nl/nieuws/vergeet-msn-en-mnm-het-nieuwe-supertrio-speelt-bij-bayern-m-nchen",
+      "summary": "Er was eens een droomvoorhoede, bestaande uit Lionel Messi, Luis Suárez en Neymar. Of BBC bij Real Madrid, met Karim Benzema, Gareth Bale en Cristiano Ronaldo. Later was er het roemruchte Lionel Messi, Neymar en Kylian Mbappé. De nieuwste editie bestaat uit Harry Kane, Michael Olise en Luis Díaz. Het supertrio van Bayern München was ook in het Champions League-duel met Real Madrid niet te stoppen.",
+      "publishedAt": "2026-04-08T12:14:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "‘Absolute disgrace’: FA’s plan to restructure Women’s National League criticised",
+      "link": "https://www.theguardian.com/football/2026/apr/08/fa-restructure-women-national-league-criticised",
+      "summary": "WSL academy teams would play in third tier Previous FA expansion plan was withdrawn last year Plans to include four Women’s Super League academy sides in the third tier of pyramid from 2027 have been criticised as an idea based around “repackaged B teams” and has received a mixed reaction from club staff and supporters. The changes to the Women’s National League, put forward by the Football Association, would also introduce a mid-season split similar to that used in Scotland, as well as a potential investment package of about £1m and enhancements to legal and medical support in the loan system. They have not yet been formally ratified, but consultations are continuing. Continue reading...",
+      "publishedAt": "2026-04-08T12:07:13.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Nog geen teken van De Jong in aanloop naar belangrijke week voor Barça",
+      "link": "https://www.vi.nl/nieuws/nog-geen-teken-van-de-jong-in-aanloop-naar-belangrijke-week-voor-bar-a",
+      "summary": "Frenkie de Jong moet het Champions League-duel met Atlético Madrid aan zich voorbij laten gaan. Het heenduel in de kwartfinale komt te vroeg voor de 28-jarige middenvelder, die nog niet is hersteld van een hamstringblessure.",
+      "publishedAt": "2026-04-08T11:44:00.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Southampton drop Wrexham from top 6 in rout",
-      "link": "https://www.espn.com/soccer/report/_/gameId/745085",
-      "summary": "FA Cup semifinalists Southampton continued their Championship charge as they thrashed Wrexham 5-1 at Stok Cae Ras to replace the Welsh side in the playoff places.",
-      "publishedAt": "2026-04-08T03:01:57.000Z"
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Pochettino's to-do list: What the USMNT must figure out before World Cup",
+      "link": "https://www.espn.com/soccer/story/_/id/48412597/mauricio-pochettino-do-list-usmnt-figure-2026-fifa-world-cup",
+      "summary": "There are no more friendlies or camps before the U.S. names its World Cup roster, so what does coach Mauricio Pochettino need to do before then?",
+      "publishedAt": "2026-04-08T11:22:46.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "If Arsenal are going to win a title, it'll be within fine margins",
-      "link": "https://www.espn.com/soccer/story/_/id/48423856/fine-margins-define-arsenals-title-hopes-season",
-      "summary": "Arsenal won it late against Sporting CP in their UCL match, continuing a pattern for the Gunners.",
-      "publishedAt": "2026-04-08T03:01:53.000Z"
+      "title": "McInnes happy to play Hearts' title deciders in a car park",
+      "link": "https://www.bbc.com/sport/football/articles/cg4030nvww1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Heart of Midlothian head coach Derek McInnes would be happy to \"play them in a car park\" as he responds to complaints from some fans about the fixtures for the final five games of the Scottish Premiership season.",
+      "publishedAt": "2026-04-08T11:03:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Dropping Fernandez - a sign of Rosenior's authority or a big risk?",
+      "link": "https://www.bbc.com/sport/football/articles/cwywk1yx772o?at_medium=RSS&at_campaign=rss",
+      "summary": "Enzo Fernandez has given Chelsea boss Liam Rosenior the first major internal disciplinary issue of his brief tenure at Stamford Bridge - BBC Sport analyses the situation.",
+      "publishedAt": "2026-04-08T11:01:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Nike’s high-tech 2026 World Cup jerseys have a shoulder problem",
+      "link": "https://www.theguardian.com/football/2026/apr/08/nike-world-cup-jerseys-shoulder-problem",
+      "summary": "The sportswear giant says it’s aware of the strange seam on some of the new shirts, and is looking into how to address it When Nike rolled out its collection of World Cup kits in late March, fans and pundits alike largely approved. The US men’s national team got arguably their most distinctive pair of shirts in decades, while other federations – France, England, Canada and Uruguay among them – earned strong reviews. Over the last international break, when players took the field in the kits for the first time, many fans couldn’t help but become fixated on one singular detail of the new shirts: a somewhat unsightly bulge along the shoulder seam. Continue reading...",
+      "publishedAt": "2026-04-08T11:00:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Which team has gone furthest in Europe while being relegated in the same season? | The Knowledge",
+      "link": "https://www.theguardian.com/football/2026/apr/08/european-run-relegation-unbeaten-losing-teams-the-knowledge",
+      "summary": "Plus: teams who went out of Europe without losing a game, and rare competitive meetings Mail us with your questions and answers “What’s the furthest a team has gone in Europe while being relegated in the same season?” wonders Matt Reilly. This question was probably asked in reference to Tottenham, who were still in the Champions League at the time, but it’s still relevant to some of this year’s quarter-finalists. Nottingham Forest are three points above the relegation places in the Premier League; Fiorentina only have a five-point cushion in Serie A. Real Zaragoza 2001-02, first round; 2007-08, first round Alaves 2002-03, second round Celta Vigo 2006-07, last 16 Real Zaragoza 2007-08, first round Real Betis 2013-14, last 16 Espanyol 2019-20, last 32 Blackburn Rovers 1998-99, Uefa Cup first round Bradford City 2000-01, Intertoto semi-final Ipswich Town 2001-02, Uefa Cup third round Ruda Hvezda Brno 1960-61, Cup Winners’ Cup Dynamo Zilina 1961-62, Cup Winners’ Cup Espanyol 1961-62. Inter-Cities Fairs Cup Napoli 1962-63, Cup Winners’ Cup Bayern Munich 1962-63, Inter-Cities Fairs Cup 1. FC Magdeburg 1965-66, Cup Winners’ Cup Lyn 1968-69, Cup Winners’ Cup Beroe Stara Zagora 1973-74, Cup Winners’ Cup Real Betis 1977-78, Cup Winners’ Cup Bologna 1990-91, Uefa Cup First round Artmedia Bratislavia (2-2 away, 3-1 home) Group stage Sparta Prague (2-0 away), Zulte Waregem (6-2 home), Ajax (2-0 away), Austria Wien (1-0 home) Last 32 Livorno (2-1 away, 2-0 home) Last 16 Maccabi Haifa (0-0 away, 4-0 home) Quarter-final Benfica (3-2 home, 0-0 away) Semi-final Werder Bremen (3-0 home, 2-1 away) Final Sevilla 2-2 (1-3 pens) Continue reading...",
+      "publishedAt": "2026-04-08T07:00:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un Diable Rouge pour remplacer Simon Mignolet ? Une condition serait nécessaire",
+      "link": "https://www.walfoot.be/news/2026-04-08/un-diable-rouge-pour-remplacer-simon-mignolet--une-condition-serait-necessaire",
+      "summary": "Simon Mignolet va ranger les gants au terme de la saison en cours. Remplacer un tel monument ne sera pas une mince affaire.",
+      "publishedAt": "2026-04-08T01:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Vanhaezebrouck niet onder de indruk van titelkandidaat: \"Gewoon zwak\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-08/vanhaezebrouck-niet-onder-de-indruk-van-titelkandidaat-gewoon-zwak",
+      "summary": "Union SG won op speeldag 1 in de Champions' Play-offs van STVV. Het deed zo een goede zaak met oog op minstens de top-2 in de eindstrijd om de titel. Maar er is natuurlijk maar één plek die van tel is.",
+      "publishedAt": "2026-04-08T01:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Passé par Neerpede et désormais retraité, il se reconvertit... sur Netflix",
+      "link": "https://www.walfoot.be/news/2026-04-08/passe-par-neerpede-et-desormais-retraite-il-se-reconvertit-sur-netflix",
+      "summary": "Rurik Gislason, ex-international islandais désormais retraité et âgé de 38 ans, a entamé une reconversion surprenante. Il est en effet à l'affiche d'une nouvelle production Netflix.",
+      "publishedAt": "2026-04-08T01:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Ex-speler Club Brugge en Zulte Waregem bezorgt Wrexham én Clement koude douche",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-08/ex-speler-club-brugge-en-zulte-waregem-bezorgt-wrexham-en-clement-koude-douche",
+      "summary": "Het voetbalsprookje van Wrexham heeft op dinsdagavond een ferme knauw gekregen. En dat is ook absoluut geen goed nieuws voor het Norwich City van Philippe Clement. De kloof richting promotieplaatsen is groter geworden.",
+      "publishedAt": "2026-04-08T01:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Qui est le meilleur entraîneur du moment, et pourquoi s'appelle-t-il Vincent Kompany ?",
+      "link": "https://www.walfoot.be/news/2026-04-08/-qui-est-le-meilleur-entraneur-du-moment-et-pourquoi-sappelle-t-il-vincent-kompany",
+      "summary": "Qu'est-ce qui peut arrêter ce Bayern Munich de Vincent Kompany ? Rien, a-t-on presque envie de répondre. Alors qu'il fêtera son 40e anniversaire ce 10 avril, Vince the Prince peut aisément être considéré comme l'un des meilleurs entraîneurs du moment... si pas le meilleur, tout simplement.",
+      "publishedAt": "2026-04-08T00:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Rode Duivel als opvolger van Simon Mignolet? Onder deze voorwaarde kan het plots wél",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-08/rode-duivel-als-opvolger-van-simon-mignolet-onder-deze-voorwaarde-kan-het-plots-wel",
+      "summary": "De voorbije maanden vielen de namen van Koen Casteels en Matz Sels meermalig als mogelijke nieuwe doelman bij Club Brugge. Nu duidelijk is dat Simon Mignolet stopt bij blauw-zwart na dit seizoen worden bepaalde geruchten steeds hardnekkiger.",
+      "publishedAt": "2026-04-08T00:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Encore une mauvaise nouvelle pour Anderlecht avant la réception de La Gantoise",
+      "link": "https://www.walfoot.be/news/2026-04-08/encore-une-mauvaise-nouvelle-pour-anderlecht-avant-la-reception-de-la-gantoise",
+      "summary": "Certains joueurs étaient à la peine dimanche à Bruges, et on peut donc s'attendre à ce que Jérémy Taravel fasse des changements. Mais il n'aura pas un noyau complet à disposition.",
+      "publishedAt": "2026-04-08T00:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Romelu Lukaku n'est pas le seul sur le départ à Naples",
+      "link": "https://www.walfoot.be/news/2026-04-08/romelu-lukaku-nest-pas-le-seul-sur-le-depart-a-naples",
+      "summary": "Sauf surprise, Romelu Lukaku ne sera plus un joueur du Napoli la saison prochaine. Mais c'est toute une page qui devrait se tourner car Antonio Conte pourrait également partir.",
+      "publishedAt": "2026-04-08T00:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Kompany kan lachen na clash met Real: \"Jullie gaan me problemen bezorgen met Thibaut Courtois\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-08/kompany-kan-lachen-na-clash-met-real-jullie-gaan-me-problemen-bezorgen-met-thibaut-courtois",
+      "summary": "Vincent Kompany was in de wolken na de 1-2-zege van Bayern München op bezoek bij Real Madrid. Hij kwam daarbij ook terug op de sterke prestatie van Manuel Neuer, die op 40-jarige leeftijd indruk blijft maken voor de Duitsers.",
+      "publishedAt": "2026-04-08T00:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Zagen we de kampioen aan het werk? Filip Joos heeft er dit over te zeggen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-08/zagen-we-de-kampioen-aan-het-werk-filip-joos-heeft-er-dit-over-te-zeggen",
+      "summary": "RSC Anderlecht ging met de billen bloot bij Club Brugge. En zo lijkt het nu al een Champions' Play-offs op twee snelheden te gaan worden. Hoeveel punten laten Union en Club Brugge dit seizoen liggen tegen de rest? En wat met paars-wit?",
+      "publishedAt": "2026-04-07T23:30:00.000Z"
     },
     {
       "type": "rss",
@@ -95,65 +304,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arteta admits Arsenal had point to prove after ‘big moment in season’ with win at Sporting",
-      "link": "https://www.theguardian.com/football/2026/apr/07/mikel-arteta-arsenal-sporting-champions-league",
-      "summary": "Havertz goal offers response after back-to-back defeats Arteta praises ‘extraordinary’ Raya for crucial saves Mikel Arteta acknowledged that Arsenal had a point to prove against Sporting after losing their last two matches and believes that Kai Havertz’s late winner could prove to be a “big moment” in their season. Arsenal had David Raya to thank for making three superb saves that kept the scores level before Havertz came off the bench to seal a priceless away victory. It was a huge relief for Arteta, who had urged his players to rediscover their identity after they suffered back-to-back defeats for the first time this season against Manchester City in the Carabao Cup final and Championship side Southampton in the FA Cup. Continue reading...",
-      "publishedAt": "2026-04-07T22:43:45.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Rüdiger looft uitblinkende Neuer (40): 'Hij was de beste speler bij Bayern'",
-      "link": "https://www.vi.nl/nieuws/r-diger-looft-uitblinkende-neuer-40-hij-was-de-beste-speler-bij-bayern",
-      "summary": "Dat Bayern München dinsdagavond een 1-2-overwinning over de streep trok tegen Real Madrid, had het mede te danken aan het weergaloze optreden van Manuel Neuer. De veertigjarige sluitpost, die zich in de herfst van zijn carrière bevindt, werd verkozen tot matchwinner in Estadio Santiago Bernabéu. Real-verdediger Antonio Rüdiger had na afloop lovende woorden voor zijn landgenoot.",
-      "publishedAt": "2026-04-07T22:03:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Spurs want Trafford as Vicario replacement - Wednesday's gossip",
-      "link": "https://www.bbc.com/sport/football/articles/c4gv3zre8m5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Tottenham choose Guglielmo Vicario replacement, Liverpool monitor Italy defender, Manchester United set to miss out on England midfielder.",
-      "publishedAt": "2026-04-07T22:00:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Southampton leapfrog Wrexham after thrashing to climb into playoff spots",
-      "link": "https://www.theguardian.com/football/2026/apr/07/southampton-thrash-wrexham-to-leapfrog-opponents-and-climb-into-playoff-spots",
-      "summary": "Southampton continued their Championship charge as they thrashed Wrexham 5-1 to replace the Welsh side in the playoff places. Fuelled by their stunning weekend FA Cup quarter-final triumph over Arsenal, Tonda Eckert’s in-form side flew out of the traps at Stōk Cae Ras with early goals from Kuryu Matsuki and Flynn Downes, having already hit the woodwork twice. Continue reading...",
-      "publishedAt": "2026-04-07T21:44:33.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Arsenal breekt CL-record met invallersgoal van Havertz",
-      "link": "https://www.vi.nl/nieuws/arsenal-breekt-cl-record-met-invallersgoal-van-havertz",
-      "summary": "Het was de dag van de eerste kwartfinales in de Champions League. Lees in onderstaande Live terug hoe het verliep bij Real Madrid - Bayern München en Sporting Portugal - Arsenal.",
-      "publishedAt": "2026-04-07T21:41:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Feyenoord-flop Larin heeft de smaak helemaal te pakken bij Southampton",
-      "link": "https://www.vi.nl/nieuws/feyenoord-flop-larin-heeft-de-smaak-helemaal-te-pakken-bij-southampton",
-      "summary": "Bij Feyenoord flopte hij volledig, maar Cyle Larin zou Southampton zomaar de play-offs om promotie naar de Premier League kunnen schieten. De Canadese spits maakte tegen Wrexham zijn vierde goal in tien wedstrijden.",
-      "publishedAt": "2026-04-07T21:32:00.000Z"
+      "title": "Restored David Raya makes the difference to help Arsenal shake off their angst | Jacob Steinberg",
+      "link": "https://www.theguardian.com/football/2026/apr/07/restored-david-raya-makes-the-difference-to-help-arsenal-shake-off-their-angst",
+      "summary": "Mikel Arteta discovered that playing your best goalkeeper can be a good idea as his side recovered from cup exits with late win in Lisbon There was a temptation to fixate on the moment when Arsenal won this game with a goal that could change their season. Mikel Arteta had urged his players not to panic, not to sink away with hopes of a quadruple long gone, and Kai Havertz got the memo. Gabriel Martinelli crossed from the left and, as the ball dropped, Havertz caught the Sporting defence napping at last, controlled with a feathery touch, took a breath and rolled a finish past Rui Silva to give Arsenal victory in the first leg of their Champions League quarter-final. It had been a slog at Estádio José Alvalade. Arsenal attempted 488 passes and it was not until the first of two added minutes that they made one really count. Before then it was a grind. Arsenal were often constipated in open play. Although they controlled the game, at least until allowing it to become ragged during a fraught finale, there were long spells when the best the Premier League leaders offered was set-piece wrestling. Noni Madueke, mostly ineffective as he deputised for Bukayo Saka on the right wing, curled an early corner against the bar. Viktor Gyökeres was recorded as being on the pitch. Leandro Trossard tried to score from 40 yards. Leandro Trossard did not score from 40 yards. Continue reading...",
+      "publishedAt": "2026-04-07T22:48:01.000Z"
     },
     {
       "type": "rss",
@@ -168,28 +322,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal zet in extra tijd grote stap naar halve finale door goal Havertz",
-      "link": "https://www.vi.nl/nieuws/arsenal-zet-in-extra-tijd-grote-stap-naar-halve-finale-door-goal-havertz",
-      "summary": "Arsenal heeft dinsdagavond met pijn en moeite een grote stap gezet richting de halve finale van de Champions League. Het duel met Sporting Portugal leek lang op een gelijkspel uit te draaien, totdat invaller Kai Havertz in de blessuretijd te hulp schoot.",
-      "publishedAt": "2026-04-07T21:10:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League secures fifth Champions League spot",
-      "link": "https://www.bbc.com/sport/football/articles/c9vl1y7g1mjo?at_medium=RSS&at_campaign=rss",
-      "summary": "The Premier League will have at least five teams in the Champions League next season after securing a European Performance Spot for the second straight year.",
-      "publishedAt": "2026-04-07T20:55:57.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -198,138 +330,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c8jkrlgr1w2o?at_medium=RSS&at_campaign=rss",
       "summary": "Arne Slot says Liverpool have no chance against Paris St-Germain unless his side turns up for 90 minutes - after disagreeing with Virgil Van Dijk's comments about the team giving up.",
       "publishedAt": "2026-04-07T19:23:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Mircea Lucescu, former Romania football captain and coach, dies aged 80",
-      "link": "https://www.theguardian.com/football/2026/apr/07/mircea-lucescu-former-international-and-two-time-coach-of-romania-dies-aged-80",
-      "summary": "Bucharest hospital confirms his death after heart attack Coach led team to Euro 84 and won multiple club titles Mircea Lucescu, the Romanian football great who was a serial trophy winner as a player and a coach, has died aged 80. Lucescu’s death was confirmed by Bucharest university emergency hospital on Tuesday. He had been taken to hospital after reportedly having a heart attack on Friday morning. Continue reading...",
-      "publishedAt": "2026-04-07T18:55:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Women’s Super League academy teams to play in third tier under new FA proposals",
-      "link": "https://www.theguardian.com/football/2026/apr/07/wsl-academy-teams-to-play-in-third-tier-fa-plans-womens-national-league",
-      "summary": "Four youth sides picked could not be promoted Plans involve mid-season split and up to £1m investment Major structural changes to the Women’s National League, including four Women’s Super League academy sides entering tier three of the pyramid from 2027 and the introduction of a mid-season split similar to that used in Scotland, have been proposed by the Football Association, the Guardian can reveal. The plans come alongside a potential investment package of about £1m, enhancements to legal and medical support in the loan system, and a hope of attracting more fans and media attention to the league. Continue reading...",
-      "publishedAt": "2026-04-07T18:06:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "🎥 Un message à l'Europe : le Bayern maîtrise le Real, Arsenal s'en sort bien à Lisbonne",
-      "link": "https://www.walfoot.be/news/2026-04-07/-un-message-a-leurope--le-bayern-matrise-le-real-arsenal-sen-sort-bien-a-lisbonne",
-      "summary": "Les quarts de finale de Ligue des Champions ont débuté ce soir avec deux belles affiches au programme. En voici les résumés.",
-      "publishedAt": "2026-04-07T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Avondje Champions League: deze twee ploegen doen de beste zaak op weg naar halve finales",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/avondje-champions-league-deze-twee-ploegen-doen-de-beste-zaak-op-weg-naar-halve-finales",
-      "summary": "In de Champions League zitten we stilaan in de fase van de waarheid. Op dinsdag stonden twee topduels op het programma. Daarin zagen we toch wel wat mooie resultaten die ook beloven voor de terugwedstrijden.",
-      "publishedAt": "2026-04-07T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Moet La Louvière zich nog zorgen maken in de degradatiestrijd? \"Dit was een stevige tik\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/moet-la-louviere-zich-nog-zorgen-maken-in-de-degradatiestrijd-dit-was-een-stevige-tik",
-      "summary": "La Louvière zal nog even moeten wachten om het behoud in de Jupiler Pro League te vieren. De Wolven bleven zondag gefrustreerd achter na hun thuiswedstrijd tegen rode lantaarn Dender, dat met het kleinste verschil won dankzij een strafschop.",
-      "publishedAt": "2026-04-07T08:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"On s'est senti humiliés\" : Anderlecht panse ses plaies après le Topper, mais \"ne veut pas être un spectateur\"",
-      "link": "https://www.walfoot.be/news/2026-04-07/on-sest-senti-humilies--anderlecht-panse-ses-plaies-apres-le-topper-mais-ne-veut-pas-etre-un-spectateur",
-      "summary": "Enric Llansana ne s'est pas caché après la défaite d'Anderlecht au Jan Breydel. Le milieu de terrain qualifiait la première période de &quot;catastrophique&quot;, mais assurait que les Mauves ont montré leurs qualités après la pause.",
-      "publishedAt": "2026-04-07T08:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Club Brugge geeft Tzolis 'privileges' na mislopen Gouden Schoen en met transfer op komst",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/-club-brugge-geeft-tzolis-privileges-na-mislopen-gouden-schoen-en-met-transfer-op-komst",
-      "summary": "Christos Tzolis is helemaal terug van uiteraard nooit weggeweest. De winger van Club Brugge speelt de pannen van het dak, maar er zijn natuurlijk ook een paar 'negatieve' kantjes op te merken aan de Griek.",
-      "publishedAt": "2026-04-07T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Pas de penalty contre l'Union ? Jonathan Lardot nuance la charge de Kevin Mac Allister",
-      "link": "https://www.walfoot.be/news/2026-04-07/pas-de-penalty-contre-lunion--jonathan-lardot-nuance-la-charge-de-kevin-mac-allister",
-      "summary": "La fin de match entre l'Union et Saint-Trond a été marquée par la charge de Kevin Mac Allister sur Kaito Matsuzawa. Jonathan Lardot est revenu sur cette phase contestée.",
-      "publishedAt": "2026-04-07T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Mario Kohnen spreekt voor het eerst als nieuwe Charleroi-trainer",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/mario-kohnen-spreekt-voor-het-eerst-als-nieuwe-charleroi-trainer",
-      "summary": "Mario Kohnen staat tot het einde van het seizoen aan het roer bij Charleroi. Zelf wil hij voortbouwen op het werk van Hans Cornelis.",
-      "publishedAt": "2026-04-07T08:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Les sifflets ont afflué : un ancien de Charleroi surpris en train de s'ambiancer avec les supporters adverses",
-      "link": "https://www.walfoot.be/news/2026-04-07/-les-sifflets-ont-afflue--un-ancien-de-charleroi-surpris-en-train-de-sambiancer-avec-les-supporters-adverses",
-      "summary": "Chris Bedia est redevenu l'un des hommes en vue du championnat suisse cette saison. Pour le meilleur et pour le pire.",
-      "publishedAt": "2026-04-07T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Ex-speler Charleroi, Genk en OH Leuven neemt drastische beslissing",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-07/ex-speler-charleroi-genk-en-oh-leuven-neemt-drastische-beslissing",
-      "summary": "Sébastien Dewaest hangt op het einde van het seizoen zijn voetbalschoenen aan de haak. Francs Borains heeft dat nieuws officieel aangekondigd. De verdediger kwam sowieso al een paar maanden niet meer in de plannen van het team voor.",
-      "publishedAt": "2026-04-07T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Deux Rouches et deux résurrections pascales : découvrez notre onze du week-end",
-      "link": "https://www.walfoot.be/news/2026-04-07/deux-rouches-et-deux-resurrections-pascales--decouvrez-notre-onze-du-week-end",
-      "summary": "La première journée des Playoffs a déjà été riche en rebondissements. En voici notre équipe type, avec six clubs représentés.",
-      "publishedAt": "2026-04-07T07:40:00.000Z"
     }
   ]
 }
