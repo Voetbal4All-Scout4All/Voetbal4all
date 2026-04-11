@@ -1,17 +1,6 @@
 {
-  "generatedAt": "2026-04-10T23:39:19.508Z",
+  "generatedAt": "2026-04-11T02:36:38.993Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Toney hints Saudi refs want Ronaldo to win title",
-      "link": "https://www.espn.com/soccer/story/_/id/48445567/ivan-toney-rages-referees-amid-title-race-cristiano-ronaldo-al-nassr",
-      "summary": "Ivan Toney has questioned the integrity of officiating in the Saudi Pro League amid a title race with Cristiano Ronaldo's Al Nassr.",
-      "publishedAt": "2026-04-11T00:09:20.000Z"
-    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -21,7 +10,7 @@
       "title": "Madrid slam Mbappé penalty denial in costly draw",
       "link": "https://www.espn.com/soccer/story/_/id/48451376/real-madrid-kylian-mbappe-penalty-girona-laliga",
       "summary": "Álvaro Arbeloa said Real Madrid should have been awarded what might have been a decisive penalty in their 1-1 draw with Girona",
-      "publishedAt": "2026-04-11T00:09:20.000Z"
+      "publishedAt": "2026-04-11T00:38:10.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +21,7 @@
       "title": "West Ham take 'big step' to put Spurs in drop zone",
       "link": "https://www.espn.com/soccer/story/_/id/48451578/west-ham-wolves-premier-league-tottenham-relegation-zone",
       "summary": "West Ham United coach Nuno Espirito Santo said his side took a \"big step\" toward Premier League survival after dropping Spurs into the Premier League relegation zone.",
-      "publishedAt": "2026-04-11T00:09:20.000Z"
+      "publishedAt": "2026-04-11T00:38:10.000Z"
     },
     {
       "type": "rss",
@@ -43,7 +32,18 @@
       "title": "Balogun equals Neymar goal streak; Pogba returns",
       "link": "https://www.espn.com/soccer/story/_/id/48450416/folarin-balogun-neymar-goal-monaco-paul-pogba-return-paris-fc",
       "summary": "Folarin Balogun scored for a seventh successive Ligue 1 game and Paul Pogba returned from injury but AS Monaco was blown out 4-1 by Paris FC on Friday.",
-      "publishedAt": "2026-04-11T00:09:20.000Z"
+      "publishedAt": "2026-04-11T00:38:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Inter dealt blow as Martínez suffers injury relapse",
+      "link": "https://www.espn.com/soccer/story/_/id/48451887/inter-milan-star-lautaro-martinez-sidelined-injury-relapse",
+      "summary": "Inter Milan have confirmed that star striker Lautaro Martínez suffered a recurring muscle injury just days after his return from a seven-week spell on the sidelines.",
+      "publishedAt": "2026-04-11T00:38:10.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +54,7 @@
       "title": "Chelsea's Rosenior: Enzo sorry, but still out vs. City",
       "link": "https://www.espn.com/soccer/story/_/id/48446876/enzo-fernandez-apologised-chelsea-vs-man-city-chelsea-liam-rosenior",
       "summary": "Chelsea boss Liam Rosenior has confirmed that Enzo Fernández has apologised for his comments about a move to Real Madrid.",
-      "publishedAt": "2026-04-11T00:09:19.000Z"
+      "publishedAt": "2026-04-11T00:38:10.000Z"
     },
     {
       "type": "rss",
@@ -223,113 +223,58 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un but et un assist pour Bernier, Scheidler fort seul : les notes de Charleroi contre l'Antwerp",
-      "link": "https://www.walfoot.be/news/2026-04-10/match-analyse-un-but-et-un-assist-pour-bernier-scheidler-fort-seul--les-notes-de-charleroi-contre-lantwerp",
-      "summary": "Charleroi a renoué avec la victoire en s'offrant l'Antwerp (2-1). Voici les notes des joueurs pour leur prestation.",
-      "publishedAt": "2026-04-10T09:21:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Voici qui remplacera Gennaro Gattuso à la tête de l'Italie lors des matchs amicaux de juin",
-      "link": "https://www.walfoot.be/news/2026-04-10/voici-qui-remplacera-gennaro-gattuso-a-la-tete-de-litalie-lors-des-matchs-amicaux-de-juin",
-      "summary": "Après le fiasco de Zenica, Gennaro Gattuso a été démis de ses fonctions à la tête de la sélection italienne, sans surprise. Son remplaçant n'a pas encore été déterminé.",
-      "publishedAt": "2026-04-10T09:00:00.000Z"
+      "title": "The fall and rise of Coventry City: Back on the cusp of the Premier League after 25 years away",
+      "link": "https://www.skysports.com/football/news/12040/13529274/coventry-city-back-on-the-cusp-of-the-premier-league-after-25-years-away",
+      "summary": "Coventry are almost there. Nearly back in the Premier League after 25 years away, and a lot has happened since.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Plots toch weer heel goed nieuws over Rode Duivel Thibaut Courtois",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-10/plots-toch-weer-heel-goed-nieuws-over-rode-duivel-thibaut-courtois",
-      "summary": "Er valt goed nieuws te melden bij Real Madrid over Thibaut Courtois. De doelman staat dicht bij een terugkeer.",
-      "publishedAt": "2026-04-10T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "La victoire de retour au Mambourg ! Le Charleroi à la sauce Kohnen se remet la tête à l'endroit",
-      "link": "https://www.walfoot.be/news/2026-04-10/la-victoire-de-retour-au-mambourg--le-charleroi-a-la-sauce-kohnen-se-remet-la-tete-a-lendroit",
-      "summary": "Charleroi a enfin renoué avec la victoire en disposant de l'Antwerp (2-1). Des débuts de rêve pour Mario Kohnen comme T1.",
-      "publishedAt": "2026-04-10T08:48:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Antwerp vindt de remedie maar niet en gaat ook in het Zwarte Land onderuit ondanks late penalty",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-10/antwerp-vindt-de-remedie-maar-niet-en-gaat-ook-in-het-zwarte-land-onderuit-ondanks-late-penalty",
-      "summary": "Waar gaat dit eindigen voor Antwerp? Het kon zich al niet plaatsen voor Play-off 1 en nu lijkt ook Play-off 2 een lijdensweg te worden. In Charleroi werden er alvast geen punten geraapt door de ploeg van coach Joseph Oosting.",
-      "publishedAt": "2026-04-10T08:44:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "On connaît le deuxième club promu en D1A... grâce à l'AS Eupen !",
-      "link": "https://www.walfoot.be/news/2026-04-10/on-connat-le-deuxieme-club-promu-en-d1a-grace-a-las-eupen-",
-      "summary": "Alors qu'il ne jouait pas ce vendredi soir, le KV Courtrai est mathématiquement assuré de la deuxième place et donc de monter en D1A.",
-      "publishedAt": "2026-04-10T08:23:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Philippe Clément et Norwich City veulent encore enfoncer le clou dans un match très attendu",
-      "link": "https://www.walfoot.be/news/2026-04-10/philippe-clement-et-norwich-city-veulent-encore-enfoncer-le-clou-dans-un-match-tres-attendu",
-      "summary": "Philippe Clement va vivre son premier match face à Ipswich City, grand rival de Norwich City. Et le hasard veut que les deux équipes soient les plus en forme du moment.",
-      "publishedAt": "2026-04-10T08:00:00.000Z"
+      "title": "Coburn misses sitter as Millwall settle for draw at West Brom",
+      "link": "https://www.skysports.com/football/west-bromwich-albion-vs-millwall/report/534822",
+      "summary": "Josh Coburn will rue missing his first-half sitter as Millwall were forced to settle for a goalless draw at an impressive West Brom who themselves took a major stride towards Championship survival.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "CPL: Beslissing valt in de strijd voor tweede promotieplek na rollercoaster van Beerschot aan de Kehrweg",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-10/cpl-beslissing-valt-in-de-strijd-voor-tweede-promotieplek-na-rollercoaster-van-beerschot-aan-de-kehrweg",
-      "summary": "In de Challenger Pro League waren vele ogen vanavond gericht op Beerschot. Als het de tweede plek van Kortrijk nog wilde bedreigen, was een zege in Eupen aangewezen. In de schaduw van deze affiche stond ook nog Lokeren - Seraing op het programma.",
-      "publishedAt": "2026-04-10T08:00:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'MINDBOGGLING!' | 15-year-old Sooryavanshi smashes 78 off 26 balls in IPL!",
+      "link": "https://www.skysports.com/watch/video/13530220/ipl-15-year-old-wonderkid-vaibhav-sooryavanshi-smashes-78-off-26-balls",
+      "summary": "15-year-old superstar Vaibhav Sooryavanshi smashed 78 off only 26 balls as the Rajasthan Royals faced the Royal Challengers Bengaluru.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Anderlecht deelt nieuw contract uit en dit moet aantonen dat Neerpede nog rondloopt vol talent",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-10/anderlecht-deelt-nieuw-contract-uit-en-dit-moet-aantonen-dat-neerpede-nog-rondloopt-vol-talent",
-      "summary": "Anderlecht kan nog eens de ondertekening van een contract aankondigen. Het mikt met Neerpede-talent Hidde Sysmans op een mooie toekomst.",
-      "publishedAt": "2026-04-10T07:40:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Mavropanos and Taty score twice in crucial win for West Ham",
+      "link": "https://www.skysports.com/watch/video/13530299/west-ham-4-0-wolves-premier-league-highlights",
+      "summary": "Highlights from the match between West Ham and Wolves in the Premier League.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "🎥 Vincent Kompany viert mijlpaal op het hoogtepunt van trainerscarrière: bij Bayern zijn ze hem niet vergeten",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-10/-vincent-kompany-viert-mijlpaal-op-het-hoogtepunt-van-trainerscarriere-bij-bayern-zijn-ze-hem-niet-vergeten",
-      "summary": "Vincent Kompany moet zich heerlijk in zijn vel voelen. Hij heeft van Bayern München een echte machine gemaakt en kan mede hierdoor een hele fijne veertigste verjaardag vieren.",
-      "publishedAt": "2026-04-10T07:20:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Grand National tips! Kevin Blake's 1-2-3-4 prediction",
+      "link": "https://www.skysports.com/racing/news/12040/13530165/grand-national-tips-kevin-blakes-1-2-3-4-prediction-for-aintree-feature-plus-two-handicap-best-bets",
+      "summary": "Grand National day is here! Kevin Blake predicts his top four finishers for the famous Aintree race, plus two best bets elsewhere on the card.",
+      "publishedAt": null
     }
   ]
 }
