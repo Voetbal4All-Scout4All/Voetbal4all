@@ -1261,6 +1261,7 @@
       fd.append('signupDeadline', signupDeadline || '');
       fd.append('premiumEndDate', premiumEndDate || '');
       fd.append('premiumEnabled', premiumEnabled ? 'true' : 'false');
+      fd.append('is_premium', premiumEnabled ? 'true' : 'false');
       fd.append('premiumPlan', premiumPlan || '');
       fd.append('premiumPlanLabel', premiumPlanLabel || '');
       fd.append('premiumTotalEur', premiumPrice || '');
