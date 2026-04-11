@@ -26,19 +26,22 @@
 
     /* Logo that blends into page background */
     .thanks-logo-crop{
-      width:min(2480px, 100vw);
+      width:min(760px, 96vw);
       border-radius:22px;
       position:relative;
       margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
 
       /* Blend with page (no visible "tile" behind the logo) */
       background: transparent;
       border:none;
       box-shadow:none;
 
-      /* Give the drop-shadow room so it never gets clipped */
-      padding:28px 30px 22px;
-      overflow:visible;
+      /* Crop the transparent margin so the visible mark reads larger */
+      padding:0;
+      overflow:hidden;
       isolation:isolate;
       -webkit-backdrop-filter: blur(0px);
       backdrop-filter: blur(0px);
@@ -54,7 +57,8 @@
 
       /* Premium depth without hard edges */
       filter: drop-shadow(0 18px 48px rgba(0,0,0,.45));
-      transform: translateZ(0);
+      transform: translateZ(0) scale(1.9);
+      transform-origin:center center;
       -webkit-font-smoothing: antialiased;
     }
 
