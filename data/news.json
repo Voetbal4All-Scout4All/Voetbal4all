@@ -1,38 +1,27 @@
 {
-  "generatedAt": "2026-04-11T02:36:38.993Z",
+  "generatedAt": "2026-04-11T23:38:50.117Z",
   "items": [
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Bayern Munich smash Bundesliga scoring record",
+      "link": "https://www.espn.com/soccer/story/_/id/48452102/bayern-munich-bundesliga-goal-record-st-pauli-leon-goretzka",
+      "summary": "Bayern Munich have set a new Bundesliga record with their 102nd league goal of the season against St. Pauli on Saturday.",
+      "publishedAt": "2026-04-12T00:32:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
       "country": "ES",
       "flag": "🌍",
-      "title": "Madrid slam Mbappé penalty denial in costly draw",
-      "link": "https://www.espn.com/soccer/story/_/id/48451376/real-madrid-kylian-mbappe-penalty-girona-laliga",
-      "summary": "Álvaro Arbeloa said Real Madrid should have been awarded what might have been a decisive penalty in their 1-1 draw with Girona",
-      "publishedAt": "2026-04-11T00:38:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "West Ham take 'big step' to put Spurs in drop zone",
-      "link": "https://www.espn.com/soccer/story/_/id/48451578/west-ham-wolves-premier-league-tottenham-relegation-zone",
-      "summary": "West Ham United coach Nuno Espirito Santo said his side took a \"big step\" toward Premier League survival after dropping Spurs into the Premier League relegation zone.",
-      "publishedAt": "2026-04-11T00:38:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Balogun equals Neymar goal streak; Pogba returns",
-      "link": "https://www.espn.com/soccer/story/_/id/48450416/folarin-balogun-neymar-goal-monaco-paul-pogba-return-paris-fc",
-      "summary": "Folarin Balogun scored for a seventh successive Ligue 1 game and Paul Pogba returned from injury but AS Monaco was blown out 4-1 by Paris FC on Friday.",
-      "publishedAt": "2026-04-11T00:38:10.000Z"
+      "title": "Barça go 9 points clear but insist title not won yet",
+      "link": "https://www.espn.com/soccer/story/_/id/48459159/barcelona-real-madird-laliga-title-hansi-flick-espanyol",
+      "summary": "Hansi Flick says the LaLiga title is not won yet despite seeing his Barcelona team thump Espanyol 4-1 on Saturday to move nine points clear of Real Madrid with just seven games to play.",
+      "publishedAt": "2026-04-12T00:32:41.000Z"
     },
     {
       "type": "rss",
@@ -40,21 +29,32 @@
       "sourceSlug": "espn-soccer",
       "country": "IT",
       "flag": "🌍",
-      "title": "Inter dealt blow as Martínez suffers injury relapse",
-      "link": "https://www.espn.com/soccer/story/_/id/48451887/inter-milan-star-lautaro-martinez-sidelined-injury-relapse",
-      "summary": "Inter Milan have confirmed that star striker Lautaro Martínez suffered a recurring muscle injury just days after his return from a seven-week spell on the sidelines.",
-      "publishedAt": "2026-04-11T00:38:10.000Z"
+      "title": "Pulisic's Milan jeered off after shock Udinese loss",
+      "link": "https://www.espn.com/soccer/report/_/gameId/737096",
+      "summary": "After falling out of the Serie A title race, AC Milan is looking nervously at the teams behind it following a shock 3-0 loss at home to Udinese on Saturday.",
+      "publishedAt": "2026-04-12T00:32:41.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Chelsea's Rosenior: Enzo sorry, but still out vs. City",
-      "link": "https://www.espn.com/soccer/story/_/id/48446876/enzo-fernandez-apologised-chelsea-vs-man-city-chelsea-liam-rosenior",
-      "summary": "Chelsea boss Liam Rosenior has confirmed that Enzo Fernández has apologised for his comments about a move to Real Madrid.",
-      "publishedAt": "2026-04-11T00:38:10.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arteta: Arsenal defeat is a 'big punch in the face'",
+      "link": "https://www.espn.com/soccer/story/_/id/48456788/arsenal-mikel-arteta-bournemouth-defeat-big-punch-face-strange-man-city-premier-league-title",
+      "summary": "Mikel Arteta lamented his Arsenal side's \"strange\" performance in their 2-1 defeat to Bournemouth on Saturday, saying the result was a \"big punch in the face.\"",
+      "publishedAt": "2026-04-12T00:32:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Follow live: United States takes on Japan in friendly match",
+      "link": "https://www.espn.com/soccer/match/_/gameId/401857906/japan-united-states",
+      "summary": "null",
+      "publishedAt": "2026-04-12T00:31:53.000Z"
     },
     {
       "type": "rss",
@@ -62,21 +62,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "West Ham have fresh hope - but Spurs now in uncharted territory",
-      "link": "https://www.bbc.com/sport/football/articles/cr71jvrpp5ro?at_medium=RSS&at_campaign=rss",
-      "summary": "West Ham's thumping win over Wolves not only boosts their own Premier League survival hopes, but plunges Tottenham into the drop zone - and to new depths.",
-      "publishedAt": "2026-04-10T23:23:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "European football: Real Madrid held at home by Girona to extend winless run",
-      "link": "https://www.theguardian.com/football/2026/apr/10/european-football-real-madrid-girona-marseille-monaco-paris-fc-roma",
-      "summary": "Fans jeer as draw follows losses to Mallorca and Bayern Marseille go third in Ligue 1 as Paris FC stun Monaco Real Madrid had to settle for a 1-1 draw against mid-table Girona in La Liga on Friday, extending the hosts’ winless run to three games in all competitions and giving leaders Barcelona the chance to stretch their advantage at the top. Federico Valverde put Madrid ahead six minutes after half-time but Girona levelled in the 62nd minute through Thomas Lemar. Álvaro Arbeloa’s side are six points behind with league leaders Barça, who have a game in hand against Espanyol on Saturday and could move nine clear with seven games to play. Continue reading...",
-      "publishedAt": "2026-04-10T22:35:46.000Z"
+      "title": "Bayern interest in Newcastle's Gordon - Sunday's gossip",
+      "link": "https://www.bbc.com/sport/football/articles/cz0epykxp89o?at_medium=RSS&at_campaign=rss",
+      "summary": "Bayern Munich express interest in Anthony Gordon, Manchester United hope to beat their rivals to Elliot Anderson, Liverpool consider Brighton's Yankuba Minteh, plus more.",
+      "publishedAt": "2026-04-11T22:08:50.000Z"
     },
     {
       "type": "rss",
@@ -84,65 +73,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Kampioen ADO Den Haag traint gewoon na feestje: 'We kunnen in een keer door'",
-      "link": "https://www.vi.nl/nieuws/kampioen-ado-den-haag-traint-gewoon-na-feestje-we-kunnen-in-een-keer-door",
-      "summary": "ADO Den Haag vierde vrijdagavond de titel in de Keuken Kampioen Divisie , maar zaterdag staat er 'gewoon' een training gepland, zo kondigde trainer Robin Peter aan.",
-      "publishedAt": "2026-04-10T21:35:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League news: Fernández ‘hurdles to overcome’ at Chelsea; Arteta rallies Arsenal for run-in",
-      "link": "https://www.theguardian.com/football/2026/apr/10/premier-league-news-enzo-fernandez-chelsea-future-arsenal-manchester-city",
-      "summary": "Guardiola says City must win every game, Howe ‘aligned’ with chief executive and Pereira wants fixture help Continue reading...",
-      "publishedAt": "2026-04-10T21:32:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "De Zerbi 'not surprised' by reaction to Greenwood comments",
-      "link": "https://www.bbc.com/sport/football/articles/cdxde1g4dvqo?at_medium=RSS&at_campaign=rss",
-      "summary": "Tottenham manager Roberto de Zerbi says he was \"not surprised\" by the reaction from supporters over comments he made about Mason Greenwood.",
-      "publishedAt": "2026-04-10T21:30:38.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Roberto De Zerbi targets ‘Ange-ball’ revival to save Spurs from relegation",
-      "link": "https://www.theguardian.com/football/2026/apr/10/roberto-de-zerbi-ange-postecoglou-tottenham-premier-league-relegation",
-      "summary": "De Zerbi wants to replicate former manager’s style ‘I want to see the Spurs I watched with Postecoglou’ Roberto De Zerbi intends to bring back “Ange-ball” as he attempts to prevent Tottenham’s first relegation in 49 years. De Zerbi has only seven games in which to impart his complex football philosophy to his players and wants to replicate the rampant, marauding style of the former manager Ange Postecoglou, who won Tottenham’s first trophy in 17 years but was dismissed after finishing 17th in the Premier League last season. Continue reading...",
-      "publishedAt": "2026-04-10T21:30:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arne Slot insists he is ‘aligned’ with Liverpool board and fans as squad is rebuilt",
-      "link": "https://www.theguardian.com/football/2026/apr/10/arne-slot-insists-he-is-aligned-with-liverpool-board-and-fans-as-squad-is-rebuilt",
-      "summary": "Last year’s title ‘postponed’ overhaul says manager Slot insists he ‘can feel that support’ from fanbase Arne Slot has said last season’s title triumph “postponed” the end of an era at Liverpool but that the club were under no illusions a rebuild was required when appointing him as Jürgen Klopp’s successor. Two more links to the Klopp era will be removed this summer when Andy Robertson and Mohamed Salah leave on free transfers. Virgil van Dijk, Alisson and Joe Gomez, the remaining players from the squad that delivered Premier League and Champions League success to Anfield under Klopp, will then enter the final years of their contracts. Continue reading...",
-      "publishedAt": "2026-04-10T21:30:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "West Ham double up twice to thrash Wolves and put Spurs in relegation zone",
-      "link": "https://www.theguardian.com/football/2026/apr/10/west-ham-wolves-premier-league-match-report",
-      "summary": "The moment when West Ham really felt their survival bid pick up pace was when the jab from Taty Castellanos rolled beyond the reach of José Sá and crawled towards the Wolves goal. Two-nil up in a must-win game, Nuno Espírito Santo’s side looked unrecognisable from the doomed bunch who dropped seven points off 17th place in early January. This is a different West Ham. This is a West Ham with a punch in attack and, if this daring escape act does end with Premier League football secured for another season, a key part of the story will be how Nuno strengthened his squad in January . Continue reading...",
-      "publishedAt": "2026-04-10T21:07:43.000Z"
+      "title": "Bosz heeft schoon genoeg van Veerman-discussie: 'Joey is het ook helemaal zat'",
+      "link": "https://www.vi.nl/video/bosz-heeft-schoon-genoeg-van-veerman-discussie-joey-is-het-ook-helemaal-zat",
+      "summary": "Peter Bosz vindt het wel mooi geweest met de discussie rond Joey Veerman. De trainer van PSV gaat zich niet mengen tussen bondscoach Ronald Koeman en zijn speler.",
+      "publishedAt": "2026-04-11T21:59:32.000Z"
     },
     {
       "type": "rss",
@@ -150,32 +84,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "West Ham verpulvert Wolves bij rentree Summerville en duwt Spurs onder 'de streep'",
-      "link": "https://www.vi.nl/nieuws/west-ham-verpulvert-wolves-bij-rentree-summerville-en-duwt-spurs-onder-de-streep",
-      "summary": "In deze VI Live volgden we onder meer de Eredivisie-wedstrijd tussen FC Twente en FC Volendam. In de Keuken Kampioen Divisie werd ADO Den Haag, zonder zelf te spelen, kampioen. Lees hier alle hoogtepunten terug van een mooie voetbalvrijdagavond in binnen- en buitenland.",
-      "publishedAt": "2026-04-10T21:05:06.000Z"
+      "title": "Vaessen keepte in tenue uit fanshop: 'Complimenten aan materiaalman Bert'",
+      "link": "https://www.vi.nl/nieuws/vaessen-keepte-in-tenue-uit-fanshop-complimenten-aan-materiaalman-bert",
+      "summary": "Bij FC Groningen - Go Ahead Eagles vond het hoogtepunt van de wedstrijd niet na, maar vóór het eerste fluitsignaal plaats. Doelman Etienne Vaessen kreeg voor de aftrap te horen dat zijn tenue te veel op dat van Go Ahead Eagles leek. Zodoende haastte de materiaalman zich naar de fanshop om een nieuw vers bedrukt tenue te halen.",
+      "publishedAt": "2026-04-11T21:58:15.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Nieuwe uitglijder Real in Spaanse titelstrijd: Girona snoept Koninklijke punten af",
-      "link": "https://www.vi.nl/nieuws/nieuwe-uitglijder-real-in-spaanse-titelstrijd-girona-snoept-koninklijke-punten-af",
-      "summary": "Real Madrid heeft vrijdagavond weer punten verspeeld in de Spaanse titelstrijd. Girona hield een punt over aan het bezoekje aan de Spaanse hoofdstad, waar de fans van De Koninklijke de eigen spelers op een fluitconcert trakteerden. Voor Real kan de blik op de return tegen Bayern München in de kwartfinale van de Champions League.",
-      "publishedAt": "2026-04-10T20:56:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Hattrickheld Malen neemt AS Roma wéér bij de hand",
-      "link": "https://www.vi.nl/nieuws/hattrickheld-malen-neemt-as-roma-w-r-bij-de-hand",
-      "summary": "Donyell Malen heeft maar weer eens zijn visitekaartje afgegeven aan bondscoach Ronald Koeman om de eerste spits te worden het op WK in de komende zomer. De spits hielp AS Roma met een hattrick hoogstpersoonlijk aan de zege op hekkensluiter Pisa.",
-      "publishedAt": "2026-04-10T20:41:00.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sporting wint generale repetitie voor Arsenal-uit",
+      "link": "https://www.vi.nl/nieuws/sporting-wint-generale-repetitie-voor-arsenal-uit",
+      "summary": "Deze zaterdag was een bomvolle voetbaldag. Blik met VI Live terug op onder meer al het moois uit de grote Europese competities.",
+      "publishedAt": "2026-04-11T21:55:47.000Z"
     },
     {
       "type": "rss",
@@ -183,21 +106,76 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Mark Wotte over de grote aspiraties van ADO Den Haag: 'Dit is pas het begin'",
-      "link": "https://www.vi.nl/pro/mark-wotte-over-de-grote-aspiraties-van-ado-den-haag",
-      "summary": "Na een imponerend seizoen met goed voetbal is ADO Den Haag als kampioen na vijf jaar weer terug in de Eredivisie. Dat is de eerste stap volgens technisch directeur Mark Wotte (65). De ambities van De Trots van de Hofstad zijn namelijk groot. ‘In het eerste seizoen mikken we op de middenmoot in de Eredivisie.’",
-      "publishedAt": "2026-04-10T20:30:00.000Z"
+      "title": "Óscar García gaat in op invulling 'vrije week' vanwege bekerfinale",
+      "link": "https://www.vi.nl/nieuws/scar-garc-a-gaat-in-op-invulling-vrije-week-vanwege-bekerfinale",
+      "summary": "Ajax ging zaterdagavond op bezoek bij Heracles Almelo. Volg de nasleep in deze VI Live.",
+      "publishedAt": "2026-04-11T21:54:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Koeman belde met Til: 'Er valt nog voor het WK te spelen'",
+      "link": "https://www.vi.nl/video/koeman-belde-met-til-er-valt-nog-voor-het-wk-te-spelen",
+      "summary": "De droom van Guus Til om komende zomer op het WK rond te lopen, is springlevend. De aanvallende middenvelder van PSV had onlangs contact met bondscoach Ronald Koeman daarover.",
+      "publishedAt": "2026-04-11T21:50:45.000Z"
     },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
-      "country": "INT",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Fortune favours the brave - will Slot start Ngumoha against PSG?",
+      "link": "https://www.bbc.com/sport/football/articles/cddqgqgyerjo?at_medium=RSS&at_campaign=rss",
+      "summary": "Liverpool's 17-year-old star Rio Ngumoha stole the show against Fulham - will Arne Slot now start him against PSG?",
+      "publishedAt": "2026-04-11T20:52:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Are these the 30 minutes that saved Hearts' title bid?",
+      "link": "https://www.bbc.com/sport/football/articles/cx2ew8q0g7go?at_medium=RSS&at_campaign=rss",
+      "summary": "As Heart of Midlothian fight back to beat Motherwell, it could prove to be the 30 minutes that saved their Scottish title chances.",
+      "publishedAt": "2026-04-11T20:40:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "DE",
       "flag": "🌍",
-      "title": "Nike investigating issue with World Cup kits",
-      "link": "https://www.bbc.com/sport/football/articles/c2evp8283wgo?at_medium=RSS&at_campaign=rss",
-      "summary": "Sportswear giant Nike is investigating a design issue with the shirts set to be worn by several teams - including England - at this summer's World Cup.",
-      "publishedAt": "2026-04-10T18:40:21.000Z"
+      "title": "European football: Bayern break Bundesliga goals record and close on title",
+      "link": "https://www.theguardian.com/football/2026/apr/11/european-football-bayern-munich-barcelona-milan-juventus",
+      "summary": "Goretzka hits leaders’ 102nd goal in 5-0 win at St Pauli Ferran Torres double helps Barcelona beat Espanyol 4-1 Bayern Munich crushed hosts St Pauli 5-0 in the Bundesliga to set an all-time season scoring record while also extending their lead at the top to 12 points with five games left to play. The Bavarian club, who host Real Madrid on Wednesday in their Champions League quarter-final second leg after their 2-1 win in Spain, are within touching distance of the league title on 76 points, with second-placed Borussia Dortmund stuck on 64 after their 1-0 home loss to Bayer Leverkusen. Continue reading...",
+      "publishedAt": "2026-04-11T19:08:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Real talk: Chelsea punished Enzo Fernández for exposing project’s fatal flaw | Jonathan Wilson",
+      "link": "https://www.theguardian.com/football/2026/apr/11/real-talk-chelsea-punished-enzo-fernandez-for-exposing-projects-fatal-flaw",
+      "summary": "Manchester City can brush off Rodri’s comments but Chelsea’s existential angst helps explain suspension of midfielder Enzo Fernández and Rodri would quite like to move to Madrid; many people would. They both said as much in the international break, those special parts of the season when players join up with their national teams and give interviews while apparently unaware that media are global these days: a whisper on Luzo TV can soon become a hurricane in London. But Rodri will line up for Manchester City at Chelsea on Sunday, while Fernández will not, suspended by the club for “crossing a line”. It’s worth, perhaps, looking at exactly what was said. Fernández expressed disappointment at Enzo Maresca’s departure on New Year’s Day. “It … hurt a lot,” he told Luzo, “because we had a lot of identity, he gave us order, but it’s the way that football is, sometimes it’s good, sometimes it’s bad. But we always had a clear identity when it came to training, playing and obviously his departure hurt us especially in the middle of the season – it cuts everything short.” Sadness that a manager has gone surely isn’t a crime; it could even be supportive of Liam Rosenior and the difficulty of taking over a club mid-season. Continue reading...",
+      "publishedAt": "2026-04-11T19:00:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Rio Ngumoha sparks Liverpool win over wasteful Fulham with first Anfield goal",
+      "link": "https://www.theguardian.com/football/2026/apr/11/liverpool-fulham-premier-league-match-report",
+      "summary": "At the end of a stormy week for Arne Slot there was respite in the form of a morale-boosting display from Rio Ngumoha. Liverpool’s 17-year-old winger marked his second Premier League start with an exquisite goal and a key role in the second from Mohamed Salah as the troubled champions celebrated a first league win since February. Liverpool seemed vulnerable after painful cup quarter-final defeats at Manchester City and Paris Saint-Germain had intensified the pressure on Slot. The ingredients were in place for Anfield to turn toxic. Fulham never put that fragility to the test. Marco Silva’s team were passive and limited in front of goal while Liverpool, re-energised by the virtuosity of Ngumoha, found the clinical touch and resolve to reach the landmark of 1,500 league wins at Anfield. It was only their second win in six games following a Champions League away trip this season and should restore some confidence before the daunting assignment against PSG on Tuesday. Ngumoha pressed his claims for inclusion from the start. Continue reading...",
+      "publishedAt": "2026-04-11T18:34:32.000Z"
     },
     {
       "type": "rss",
@@ -205,10 +183,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Fernandez sorry but will miss Man City - Rosenior",
-      "link": "https://www.bbc.com/sport/football/articles/c70drp00yyqo?at_medium=RSS&at_campaign=rss",
-      "summary": "Chelsea midfielder Enzo Fernandez is still unavailable for the upcoming home match against Manchester City despite a recent apology, head coach Liam Rosenior says.",
-      "publishedAt": "2026-04-10T14:14:46.000Z"
+      "title": "No Semenyo, no problem? How Bournemouth continue to defy the odds",
+      "link": "https://www.bbc.com/sport/football/articles/cwyv1wxjd45o?at_medium=RSS&at_campaign=rss",
+      "summary": "Bournemouth have not lost a game since star forward Antoine Semenyo left for Manchester City in January - how have they done it?",
+      "publishedAt": "2026-04-11T17:10:48.000Z"
     },
     {
       "type": "rss",
@@ -216,10 +194,87 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Is Fernandes' own goal the worst of all time?",
-      "link": "https://www.bbc.com/sport/football/articles/ckg9k8vn79zo?at_medium=RSS&at_campaign=rss",
-      "summary": "Porto's Martim Fernandes scored a bizarre own goal for Porto against Nottingham Forest on Thursday, but how does it compare to the worst of all-time?",
-      "publishedAt": "2026-04-10T12:00:59.000Z"
+      "title": "'Big punch in the face' - could Arsenal really blow title from here?",
+      "link": "https://www.bbc.com/sport/football/articles/c4g5v6552l2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Nine points clear with six games to play - could Arsenal still really blow the Premier League title from that position?",
+      "publishedAt": "2026-04-11T16:50:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Dewsbury-Hall strikes late for Everton to deny Brentford after Igor Thiago double",
+      "link": "https://www.theguardian.com/football/2026/apr/11/brentford-everton-premier-league-match-report",
+      "summary": "Two more Igor Thiago goals, yet another solitary Brentford point and a shared dream of European football that remains alive for both clubs. If a game can simultaneously prove drab and pulsating, this was somehow it – all bluster and endeavour forming a peculiar blend of incohesion in the hope of securing a rare continental prize. A draw was, perhaps, a fair outcome, for all of Keith Andrews’ understandable disappointment at his side conceding Kiernan Dewsbury-Hall’s injury-time equaliser. Brentford have lost just one of their last nine Premier League matches, but the past four have, frustratingly, been drawn. Continue reading...",
+      "publishedAt": "2026-04-11T16:13:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bournemouth expose Schrödinger’s Arsenal, a team that could be either dead or alive | Paul MacInnes",
+      "link": "https://www.theguardian.com/football/2026/apr/11/bournemouth-expose-schrodingers-arsenal-a-team-that-could-be-either-dead-or-alive",
+      "summary": "Mikel Arteta urged fans to bring ‘your lunch, bring your dinner’ but when the set pieces fail to fire his side are short of a full plate It was another one of those games where Arsenal had found it necessary to rouse the troops beforehand. Mikel Arteta, in his occasional, unusual jokey mode, had urged Arsenal fans to “bring your lunch, bring your dinner” and make this 12.30 kick-off an occasion. The players, meanwhile, had been training under the eye of a big screen broadcasting footage of Arsenal in happy, successful moments, presumably to encourage the creation of more. “Every game, we have to be there,” Arteta said. So were they? Continue reading...",
+      "publishedAt": "2026-04-11T16:03:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Club haalt het na bewogen avond: Leko over één iets kwaad, Vanaken vindt niet dat blauw-zwart goed wegkomt",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-11/match-reactie--club-haalt-het-na-bewogen-avond-leko-over-een-iets-kwaad-vanaken-vindt-niet-dat-blauw-zwart-goed-wegkomt",
+      "summary": "Ze moeten bij Club Brugge toch beseffen dat het niet van een leien dakje liep in Sint-Truiden. Dan is het wel knap om de zaken nog om te keren, dat mag zeker benadrukt worden. Dat neemt niet weg dat het ook anders had kunnen aflopen.",
+      "publishedAt": "2026-04-11T09:53:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Issame Charaï ziet Westerlo voor straffe primeur zorgen: \"Dat is een record voor ons\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-11/issame-chara-ziet-westerlo-voor-straffe-primeur-zorgen-dat-is-een-record-voor-ons",
+      "summary": "KVC Westerlo heeft de volle buit gepakt bij Standard. De Kemphanen springen daardoor voorlopig over KRC Genk in de stand. Issame Charaï was tevreden achteraf.",
+      "publishedAt": "2026-04-11T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge herpakt zich na matige eerste helft en springt met zege bij STVV over Union naar de leiding",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-11/club-brugge-herpakt-zich-na-matige-eerste-helft-en-springt-met-zege-bij-stvv-over-union-naar-de-leiding",
+      "summary": "Zou Club Brugge zonder de geblesseerde Mignolet eindelijk nog eens kunnen winnen op Stayen? De Bruggelingen wisten dat een zege een voorlopige leidersplaats zou opleveren. Die is er ook gekomen, al was het niet zonder slag of stoot.",
+      "publishedAt": "2026-04-11T08:46:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Vincent Euvrard ziet schlemiel bij Standard, maar ...: \"Hij is al van grote waarde geweest\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-11/vincent-euvrard-ziet-schlemiel-bij-standard-maar--hij-is-al-van-grote-waarde-geweest",
+      "summary": "Standard verloor vandaag met 1-2 van Westerlo. Al had de wedstrijd er anders uit kunnen zien als Rafiki Saïd zijn kansen had benut.",
+      "publishedAt": "2026-04-11T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Union-sterkhouder doet boekje open over zijn seizoen: \"Dat heeft veel indruk op mij gemaakt\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-11/union-sterkhouder-doet-boekje-open-over-zijn-seizoen-dat-heeft-veel-indruk-op-mij-gemaakt",
+      "summary": "Union wil opnieuw kampioen worden. Daarvoor rekent het onder meer op Adem Zorgane. De Algerijn spreekt over zijn seizoen tot nu toe.",
+      "publishedAt": "2026-04-11T08:00:00.000Z"
     },
     {
       "type": "rss",
@@ -227,9 +282,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "The fall and rise of Coventry City: Back on the cusp of the Premier League after 25 years away",
-      "link": "https://www.skysports.com/football/news/12040/13529274/coventry-city-back-on-the-cusp-of-the-premier-league-after-25-years-away",
-      "summary": "Coventry are almost there. Nearly back in the Premier League after 25 years away, and a lot has happened since.",
+      "title": "Fury returns to beat Makhmudov as AJ mega-fight looms",
+      "link": "https://www.skysports.com/boxing/news/12040/13530719/tyson-fury-returns-to-boxing-to-beat-arslanbek-makhmudov-as-mega-fight-with-anthony-joshua-looms-later-this-year",
+      "summary": "Tyson Fury returned to boxing to beat Arslanbek Makmudov at the Tottenham Hotspur Stadium in London.",
       "publishedAt": null
     },
     {
@@ -238,9 +293,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Coburn misses sitter as Millwall settle for draw at West Brom",
-      "link": "https://www.skysports.com/football/west-bromwich-albion-vs-millwall/report/534822",
-      "summary": "Josh Coburn will rue missing his first-half sitter as Millwall were forced to settle for a goalless draw at an impressive West Brom who themselves took a major stride towards Championship survival.",
+      "title": "Fury sets up potential AJ clash with dominant win over Makhmudov",
+      "link": "https://www.skysports.com/watch/video/13530824/tyson-fury-v-arslanbek-makhmudov-highlights-fury-sets-up-potential-aj-clash-with-dominant-win",
+      "summary": "Highlights of Tyson Fury vs Arslanbek Makhmudov. Video courtesy of Netflix and The Ring. Tyson Fury v Arslanbek Makhmudov is now available to watch globally only on Netflix.",
       "publishedAt": null
     },
     {
@@ -249,9 +304,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'MINDBOGGLING!' | 15-year-old Sooryavanshi smashes 78 off 26 balls in IPL!",
-      "link": "https://www.skysports.com/watch/video/13530220/ipl-15-year-old-wonderkid-vaibhav-sooryavanshi-smashes-78-off-26-balls",
-      "summary": "15-year-old superstar Vaibhav Sooryavanshi smashed 78 off only 26 balls as the Rajasthan Royals faced the Royal Challengers Bengaluru.",
+      "title": "Papers: Rogers sale could yield a world record sell-on fee for Boro",
+      "link": "https://www.skysports.com/football/news/12040/13530809/morgan-rogers-potential-transfer-could-yield-a-world-record-sell-on-fee-for-middlesbrough-paper-talk-and-football-transfer-gossip",
+      "summary": "The top stories and transfer rumours from Sunday's newspapers...",
       "publishedAt": null
     },
     {
@@ -260,9 +315,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Mavropanos and Taty score twice in crucial win for West Ham",
-      "link": "https://www.skysports.com/watch/video/13530299/west-ham-4-0-wolves-premier-league-highlights",
-      "summary": "Highlights from the match between West Ham and Wolves in the Premier League.",
+      "title": "Kent trail to Northants as Crawley continues to struggle",
+      "link": "https://www.skysports.com/cricket/news/12040/13530779/county-championship-zak-crawleys-struggles-continue-as-kent-collapse-in-response-to-northants",
+      "summary": "Zak Crawley made his third successive sub-30 County Championship score for Kent after Northamptonshire ran up a record 684 for two declared at Canterbury.",
       "publishedAt": null
     },
     {
@@ -271,9 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Grand National tips! Kevin Blake's 1-2-3-4 prediction",
-      "link": "https://www.skysports.com/racing/news/12040/13530165/grand-national-tips-kevin-blakes-1-2-3-4-prediction-for-aintree-feature-plus-two-handicap-best-bets",
-      "summary": "Grand National day is here! Kevin Blake predicts his top four finishers for the famous Aintree race, plus two best bets elsewhere on the card.",
+      "title": "'Do you accept MY CHALLENGE?' | Fury attempts to force AJ fight next!",
+      "link": "https://www.skysports.com/watch/video/13530831/do-you-accept-my-challenge-fury-attempts-to-force-aj-fight-next",
+      "summary": "Tyson Fury grabbed the mic and bellowed a challenge for Anthony Joshua to fight him next, but failed to get a clear answer from his rival.",
       "publishedAt": null
     }
   ]
