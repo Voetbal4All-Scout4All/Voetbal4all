@@ -910,6 +910,86 @@
       const normalizedType = type || ((id || slug) ? "event" : "");
       return { type: normalizedType, slug, id };
     }
+
+    const SUPPORTERSCLUB_API_URLS = [
+      `${API_BASE}/api/published/supportersclubs`,
+      `${API_BASE}/api/published/supportersclub`,
+      `${API_BASE}/api/published/supportersclub-submission`
+    ];
+
+    function supportersclubSlugPart(value){
+      return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function supportersclubDetailId(item){
+      const directCandidates = [
+        item?.id,
+        item?._id,
+        item?.uuid,
+        item?.sid,
+        item?.submission_id,
+        item?.slug
+      ];
+
+      for (const candidate of directCandidates) {
+        const value = String(candidate || "").trim();
+        if (value) return value;
+      }
+
+      const fallback = [
+        supportersclubSlugPart(item?.name),
+        supportersclubSlugPart(item?.supported_team || item?.team),
+        supportersclubSlugPart(item?.city),
+        supportersclubSlugPart(item?.country)
+      ].filter(Boolean).join("--");
+
+      return fallback ? `sc-${fallback}` : "";
+    }
+
+    function normalizeSupportersclubsPayload(payload){
+      if (Array.isArray(payload)) return payload;
+      if (payload && Array.isArray(payload.items)) return payload.items;
+      if (payload && payload.item && typeof payload.item === "object") return [payload.item];
+      return [];
+    }
+
+    async function fetchSupportersclubItem(detailId){
+      const wantedId = String(detailId || "").trim();
+      if (!wantedId) throw new Error("Missing supportersclub id");
+
+      let hadSuccessfulPayload = false;
+      for (const baseUrl of SUPPORTERSCLUB_API_URLS) {
+        try {
+          const joiner = baseUrl.includes("?") ? "&" : "?";
+          const res = await fetch(`${baseUrl}${joiner}nocache=1`);
+          if (!res.ok) continue;
+
+          const payload = await res.json().catch(() => null);
+          const items = normalizeSupportersclubsPayload(payload);
+          if (!Array.isArray(items)) continue;
+
+          hadSuccessfulPayload = true;
+          const match = items.find((entry) => supportersclubDetailId(entry) === wantedId);
+          if (match) {
+            return { ok: true, item: match };
+          }
+        } catch (e) {
+          // Try the next published endpoint.
+        }
+      }
+
+      if (hadSuccessfulPayload) {
+        throw new Error("Supportersclub not found");
+      }
+      throw new Error("Supportersclub detail unavailable");
+    }
+
     function isYouTubeUrl(u){
       const s = String(u || "").trim();
       if (!s) return false;
@@ -1205,6 +1285,12 @@
         backHref = "clubvacatures.html";
         backText = "← Terug naar clubvacatures";
         shareType = "clubvacature";
+      } else if (t === "supportersclub") {
+        pill = "Supportersclubs";
+        caption = "Supportersclub detail";
+        backHref = "sportief-supportersclubs.html";
+        backText = "← Terug naar supportersclubs";
+        shareType = "supportersclub";
       } else if (t === "speler") {
         apiPath = "/api/player-profiles/";
         pill = "Spelers";
@@ -1255,6 +1341,8 @@
             const resId = await fetch(`${API_BASE}/api/events/${encodeURIComponent(key)}?nocache=1`);
             data = await resId.json();
           }
+        } else if (t === "supportersclub") {
+          data = await fetchSupportersclubItem(id);
         } else {
           // Shared detail types require id
           if (!id) throw new Error("Missing id");
@@ -1330,12 +1418,13 @@
           if (t === "clubvacature") clubText = item.club || "";
           if (t === "speler") clubText = item.position || "";
           if (t === "trainer") clubText = item.role || "";
+          if (t === "supportersclub") clubText = item.supported_team || item.team || "";
           if (isEvent) clubText = item.club || item.organizer_name || "";
 
           if (clubText) {
             clubEl.style.display = "inline";
             clubEl.className = "ev-meta-chip";
-            const ico = (t === "speler") ? "⚽" : (t === "trainer") ? "🧑‍🏫" : "🏟️";
+            const ico = (t === "speler") ? "⚽" : (t === "trainer") ? "🧑‍🏫" : (t === "supportersclub") ? "🎟️" : "🏟️";
             clubEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${ico}</span><span>${escapeHtml(clubText)}</span>`;
           } else {
             clubEl.style.display = "none";
@@ -1374,6 +1463,28 @@
             pushFact("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
           }
           narrativeHtml = parsed.narrative ? formatTextAsParagraphs(parsed.narrative) : "";
+        } else if (t === "supportersclub") {
+          if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
+          pushFact("Supportersclub", escapeHtml(item.name || ""));
+          pushFact("Steunt", escapeHtml(item.supported_team || item.team || ""));
+          pushFact("Plaats", escapeHtml(item.city || ""));
+          const countryLabelText = String(item.country || "").trim().toUpperCase();
+          if (countryLabelText === "BE") pushFact("Land", "België");
+          else if (countryLabelText === "NL") pushFact("Land", "Nederland");
+          else if (countryLabelText === "INT") pushFact("Land", "Internationaal");
+          else pushFact("Land", escapeHtml(item.country || ""));
+          if (item.website) {
+            const safeWebsite = escapeHtml(item.website);
+            pushFact("Website", `<a href="${safeWebsite}" target="_blank" rel="noopener noreferrer">${safeWebsite}</a>`);
+          }
+          if (item.social) {
+            const safeSocial = escapeHtml(item.social);
+            pushFact("Social", `<a href="${safeSocial}" target="_blank" rel="noopener noreferrer">${safeSocial}</a>`);
+          }
+          if (item.email) {
+            const safeEmail = escapeHtml(item.email);
+            pushFact("Contact", `<a href="mailto:${safeEmail}">${safeEmail}</a>`);
+          }
         } else {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
           pushFact("Regio", escapeHtml(item.region || ""));
@@ -1513,6 +1624,8 @@
             if (typeof item.photos === "string" && item.photos.trim()) {
               media.push(...item.photos.split(",").map(s => s.trim()).filter(Boolean));
             }
+          } else if (t === "supportersclub") {
+            [item.photo, item.photo_url, item.image_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
           } else {
             // Shared types: common image fields
             [item.image_url, item.photo_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
