@@ -24,12 +24,20 @@
   <script src="assets/js/interaction-feedback.js"></script>
 <style>
   /* === Events.html shared UI (layout parity) === */
+  .btn-ghost-sm,
+  .btn-ghost-sm:visited,
+  button.btn-ghost-sm{color:#ffffff;}
+  .btn-ghost-sm svg,
+  button.btn-ghost-sm svg{stroke:currentColor;fill:none;}
+  .btn-ghost-sm .fill,
+  button.btn-ghost-sm .fill{fill:currentColor;stroke:none;}
+
   .events-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   @media (max-width:900px){.events-grid-2{grid-template-columns:1fr}}
 
   .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
   .event-thumbbox{width:140px;height:96px;flex:0 0 140px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);overflow:hidden;position:relative;}
-  .event-thumbbox::after{content:"Profiel";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+  .event-thumbbox::after{content:"Flyer";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
   .event-thumbbox.has-img::after{display:none}
   .event-thumbbox .thumbbg{
     position:absolute;inset:0;background-position:center;background-size:contain;background-repeat:no-repeat;
@@ -45,6 +53,9 @@
   .premium-block .premium-shell::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.45;}
 
   .premium-grid .premium-card{position:relative;border-radius:16px;overflow:hidden;outline:none !important;border:1px solid rgba(255,255,255,.18) !important;background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.02) 35%,rgba(255,255,255,.08) 65%,rgba(255,255,255,.03)),linear-gradient(180deg,rgba(180,190,210,.12),rgba(10,12,20,.08)) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 10px 26px rgba(0,0,0,.38) !important;}
+  .premium-grid .premium-card:hover,
+  .premium-grid .premium-card:focus,
+  .premium-grid .premium-card:focus-within{border-color:rgba(255,255,255,.26) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 12px 30px rgba(0,0,0,.42) !important;transform:none !important;}
   .premium-grid .premium-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.55;}
   .premium-grid .premium-card::after{display:none !important;}
   .premium-grid .premium-card .v4a-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
@@ -59,6 +70,7 @@
   }
   .premium-grid .v4a-card-title{-webkit-line-clamp:2;}
   .premium-grid .v4a-card-body{-webkit-line-clamp:3;}
+  .premium-grid .premium-card .event-thumbbox::after{display:none !important;}
 
   .premium-grid .premium-card .event-thumbbox{position:relative;}
   .premium-grid .premium-card .premium-ribbon{position:absolute;top:10px;right:-44px;width:160px;text-align:center;padding:6px 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.95);transform:rotate(30deg);z-index:3;background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));border:1px solid rgba(255,255,255,.22);box-shadow:0 8px 20px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.18);}
@@ -345,7 +357,7 @@
               <div class="v4-filterbar__inner">
 
                 <!-- regel 1: zoeken -->
-                <div class="v4-filterrow v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-search" style="display:flex;gap:12px;align-items:flex-end;">
                   <div class="v4-filtergroup" style="flex:1 1 auto;min-width:0;">
                     <div class="v4-filterlabel">Zoeken</div>
                     <input id="player-search-text" type="search" class="v4-input" placeholder="Zoek (bv. keeper, U17, middenvelder…)" />
@@ -353,7 +365,7 @@
                 </div>
 
                 <!-- regel 2: filters -->
-                <div class="v4-filterrow v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
+                <div class="v4-filterrow v4-filterrow--events v4-filterrow--events-selects" style="display:flex;gap:12px;row-gap:10px;align-items:flex-end;flex-wrap:wrap;overflow:visible;">
                   <div class="v4-filtergroup" style="flex:1 1 160px;min-width:160px;">
                     <div class="v4-filterlabel">Land</div>
                     <select id="player-filter-country" class="v4-select">
@@ -411,49 +423,42 @@
                     <div class="card-header">
                       <div>
                         <div class="card-caption">Premium</div>
-                        <div class="card-title premium-title-lg">Premium spelersprofielen</div>
+                        <div class="card-title premium-title-lg">Premium spelersprofielen die bijna verlopen!</div>
                       </div>
                     </div>
 
                     <div id="premium-grid-30" class="events-grid-2 premium-grid">
-                      <article class="v4a-card premium-card" id="premium-player-1" data-gender="BOTH">
+                      <article class="v4a-card premium-card premium-card--placeholder" id="premium-player-1" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
                             <div class="v4a-card-header" style="margin:0;"><div>
-                              <div class="v4a-card-title">Anonieme speler</div>
-                              <div class="v4a-card-meta">🇧🇪 België · Regio Kempen</div>
-                              <div class="v4a-card-meta">17 jaar · Middenvelder</div>
+                              <div class="v4a-card-title">Jouw premium profiel hier?</div>
+                              <div class="v4a-card-meta">Premium slot</div>
+                              <div class="v4a-card-meta"></div>
                             </div></div>
                             <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                              <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
-                              <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+                              <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
                             </div>
                           </div>
                         </div>
                       </article>
 
-                      <article class="v4a-card premium-card" id="premium-player-2" data-gender="BOTH">
+                      <article class="v4a-card premium-card premium-card--placeholder" id="premium-player-2" data-gender="BOTH">
                         <div class="event-row">
                           <div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div>
                           <div class="event-main">
                             <div class="v4a-card-header" style="margin:0;"><div>
-                              <div class="v4a-card-title">Anonieme speler</div>
-                              <div class="v4a-card-meta">🇳🇱 Nederland · Eindhoven</div>
-                              <div class="v4a-card-meta">20 jaar · Keeper</div>
+                              <div class="v4a-card-title">Meer zichtbaarheid voor jouw profiel</div>
+                              <div class="v4a-card-meta">Premium slot</div>
+                              <div class="v4a-card-meta"></div>
                             </div></div>
                             <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                              <a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
-                              <a class="btn-ghost-sm" href="adverteren.html">Premium</a>
+                              <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
                             </div>
                           </div>
                         </div>
                       </article>
-
-                      <article class="v4a-card premium-card" id="premium-player-3" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇧🇪 België · Antwerpen</div><div class="v4a-card-meta">16 jaar · Aanvaller</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
-                      <article class="v4a-card premium-card" id="premium-player-4" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇳🇱 Nederland · Limburg</div><div class="v4a-card-meta">19 jaar · Verdediger</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
-                      <article class="v4a-card premium-card" id="premium-player-5" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇧🇪 België · Oost-Vlaanderen</div><div class="v4a-card-meta">18 jaar · Middenvelder</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
-                      <article class="v4a-card premium-card" id="premium-player-6" data-gender="BOTH"><div class="event-row"><div class="event-thumbbox"><div class="premium-ribbon">Premium</div></div><div class="event-main"><div class="v4a-card-header" style="margin:0;"><div><div class="v4a-card-title">Anonieme speler</div><div class="v4a-card-meta">🇳🇱 Nederland · Utrecht</div><div class="v4a-card-meta">15 jaar · Flankspeler</div></div></div><div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a><a class="btn-ghost-sm" href="adverteren.html">Premium</a></div></div></div></article>
                     </div>
                   </div>
                 </div>
@@ -654,6 +659,20 @@
     return parts.join(" · ") || "—";
   }
 
+  function compactLocationMeta(p) {
+    const country = String(p.country || "").toUpperCase();
+    const region = String(p.region || p.city || "").trim();
+    const flag = flagForCountry(country);
+    if (region) return `${flag} · ${region}`;
+    if (country === "BE") return `${flag} · België`;
+    if (country === "NL") return `${flag} · Nederland`;
+    return flag || "—";
+  }
+
+  function normalizePlayerThumb(raw) {
+    return String(raw || "").trim();
+  }
+
   function toGender(p) {
     const g = String(p.gender || "BOTH").trim().toUpperCase();
     return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
@@ -674,19 +693,30 @@
     const rawId = String(p.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
     const country = String(p.country || "").toUpperCase();
-    const region = escHtml(p.region || p.city || "");
-    const locText = escHtml(formatLocation(p));
-    const flag = flagForCountry(country);
+    const compactLocation = escHtml(compactLocationMeta(p));
     const gender = toGender(p);
+    const thumbUrl = normalizePlayerThumb(
+      p.image_url || p.image || p.photo_url || p.photo || p.avatar_url || p.avatar || ""
+    );
+    const thumb = thumbUrl
+      ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
+      : "";
 
-    const metaLine = `${flag} · ${locText}`;
+    const premiumActionHref = detailHref || url;
+    const normalActions = [];
+    if (detailHref) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>`);
+    } else if (url) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a>`);
+    }
+    normalActions.push(`<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>`);
+    normalActions.push(`<a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`);
 
     const actions = isPremium
-      ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
-         <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `${url ? `<a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a>` : ""}
-         <button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
-         <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
+      ? premiumActionHref
+        ? `<a class="btn-ghost-sm" href="${escHtml(premiumActionHref)}"${detailHref ? "" : ' target="_blank" rel="noopener noreferrer"'}>Bekijk profiel</a>`
+        : `<a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>`
+      : normalActions.join("");
 
     // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
     return `
@@ -695,13 +725,14 @@
         data-country="${escHtml(country)}"
         data-gender="${escHtml(gender)}">
         <div class="event-row">
-          <div class="event-thumbbox" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}</div>
+          <div class="event-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}${thumb}</div>
           <div class="event-main">
             <div class="v4a-card-header" style="margin:0;">
               <div>
                 <div class="v4a-card-title">${detailHref ? `<a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${name}</a>` : name}</div>
-                <div class="v4a-card-meta">${metaLine}${region ? "" : ""}</div>
+                <div class="v4a-card-meta">${compactLocation}</div>
                 <div class="v4a-card-meta">${pos}</div>
+                ${!isPremium ? `<div class="v4a-card-meta">Spelersprofiel</div>` : ""}
               </div>
             </div>
             ${bio ? `<div class="v4a-card-body" style="margin-top:8px;">${bio}</div>` : ""}
@@ -978,17 +1009,23 @@
     const el = document.getElementById('sidebar-premium-later');
     if (!el) return;
     const MIN_SLOTS = 10;
+    const placeholders = [
+      { title: "Jouw premium profiel hier?", place: "—", type: "Premium", date: "" },
+      { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
+      { title: "Bereik meer clubs", place: "—", type: "Premium", date: "" }
+    ];
     el.innerHTML = '';
     for (let i=0;i<MIN_SLOTS;i++){
+      const ph = placeholders[i % placeholders.length];
       el.insertAdjacentHTML('beforeend', `
         <div class="sidebar-premium-card">
           <div class="sidebar-premium-top">
             <div class="sidebar-premium-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
             <div style="min-width:0;">
-              <div class="sidebar-premium-title">Jouw premium profiel hier?</div>
-              <div class="sidebar-premium-meta">—</div>
-              <div class="sidebar-premium-meta">Binnenkort</div>
-              <div class="sidebar-premium-meta">Premium</div>
+              <div class="sidebar-premium-title">${ph.title}</div>
+              <div class="sidebar-premium-meta">${ph.place}</div>
+              <div class="sidebar-premium-meta">${ph.date}</div>
+              <div class="sidebar-premium-meta">${ph.type}</div>
             </div>
           </div>
           <div class="sidebar-premium-actions"></div>
@@ -998,7 +1035,7 @@
     el.insertAdjacentHTML('beforeend', `
       <div class="sidebar-premium-card sidebar-premium-card--cta">
         <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
-        <div class="sidebar-premium-meta">Bovenaan en in de sidebar.</div>
+        <div class="sidebar-premium-meta">Promoot je profiel ruim op voorhand, bovenaan elke pagina.</div>
         <div class="sidebar-premium-actions">
           <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
         </div>
