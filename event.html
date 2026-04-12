@@ -128,6 +128,9 @@
       display:grid;
       gap:12px;
     }
+    .ev-media--hero{
+      margin-bottom:22px;
+    }
     #ev-media-label{
       margin:0;
       font-size:11px;
@@ -201,6 +204,7 @@
     }
     .ev-detail-grid{
       display:grid;
+      grid-template-columns:minmax(0, 1.45fr) minmax(280px, 0.82fr);
       gap:18px;
       align-items:start;
     }
@@ -208,6 +212,12 @@
       min-width:0;
       display:grid;
       gap:18px;
+    }
+    .ev-col-side{
+      min-width:0;
+      display:grid;
+      gap:18px;
+      align-self:start;
     }
     .ev-body-card,
     .ev-side-panel,
@@ -421,6 +431,7 @@
     }
     @media (max-width: 980px){
       #ev-title{ max-width:16ch; }
+      .ev-detail-grid{ grid-template-columns:minmax(0,1fr); }
     }
     @media (max-width: 720px){
       .ev-detail-card{
@@ -571,9 +582,31 @@
       </div>
     </section>
 
+    <!-- AdSense: HEADER advertentie ONDER de live banner -->
+    <section class="section-main home-header-ad" style="padding-top:10px;padding-bottom:10px;">
+      <div class="shell">
+        <div class="ad-slot ad-slot-header sticky-ad-header">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="5968416978"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"></ins>
+          <script>
+            try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+          </script>
+        </div>
+      </div>
+    </section>
+
     <main>
       <section class="section-main" style="padding-top:10px;">
         <div class="shell">
+
+          <div class="ev-media ev-media--hero" id="ev-media" style="display:none;">
+            <div class="note" id="ev-media-label">Flyer / foto's</div>
+            <div class="ev-media-grid" id="ev-media-grid"></div>
+          </div>
 
           <div class="card ev-detail-card">
             <div class="card-header ev-detail-header">
@@ -609,6 +642,10 @@
                   <div id="ev-extra"></div>
                 </div>
 
+                <p id="ev-status" class="note" style="display:none;"></p>
+              </div>
+
+              <div class="ev-col-side">
                 <aside class="ev-side-panel">
                   <div class="ev-primary-actions">
                     <a href="events.html" class="btn-ghost-sm" id="back-link">← Terug naar events</a>
@@ -668,13 +705,6 @@
                     Locatiegegevens ontbreken om een kaart te tonen.
                   </div>
                 </div>
-
-                <div class="ev-media" id="ev-media" style="display:none;">
-                  <div class="note" id="ev-media-label">Flyer / foto's</div>
-                  <div class="ev-media-grid" id="ev-media-grid"></div>
-                </div>
-
-                <p id="ev-status" class="note" style="display:none;"></p>
               </div>
             </div>
           </div>
