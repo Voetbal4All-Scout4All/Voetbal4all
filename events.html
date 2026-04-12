@@ -644,7 +644,6 @@
                       <div class="card-caption">Overzicht</div>
                       <div class="card-title">Sportieve events</div>
                     </div>
-                    <span class="pill-small">Onder elkaar</span>
                   </div>
 
                   <p class="note">
@@ -1028,6 +1027,40 @@
       return Number.isFinite(ts) ? ts : Number.MAX_SAFE_INTEGER;
     }
 
+    function premiumDateMs(value){
+      const ts = new Date(value || "").getTime();
+      return Number.isFinite(ts) ? ts : NaN;
+    }
+
+    function isPaidPremiumEvent(ev){
+      if (!ev || ev.is_premium !== true) return false;
+      const premiumStatus = String(ev.premium_status || ev.premiumStatus || "").toLowerCase();
+      const paymentStatus = String(ev.payment_status || ev.paymentStatus || "").toLowerCase();
+      return premiumStatus === "paid" && paymentStatus === "paid";
+    }
+
+    function premiumActivatedMs(ev){
+      return premiumDateMs(ev?.premium_activated_at || ev?.premiumActivatedAt);
+    }
+
+    function premiumExpiresMs(ev){
+      return premiumDateMs(ev?.premium_expires_at || ev?.premiumExpiresAt);
+    }
+
+    function isActivePremiumEvent(ev, nowTs = Date.now()){
+      if (!isPaidPremiumEvent(ev)) return false;
+      const activatedAt = premiumActivatedMs(ev);
+      const expiresAt = premiumExpiresMs(ev);
+      return Number.isFinite(activatedAt) && activatedAt <= nowTs &&
+             Number.isFinite(expiresAt) && expiresAt > nowTs;
+    }
+
+    function isPaidPremiumPendingActivation(ev, nowTs = Date.now()){
+      if (!isPaidPremiumEvent(ev)) return false;
+      const activatedAt = premiumActivatedMs(ev);
+      return Number.isFinite(activatedAt) && activatedAt > nowTs;
+    }
+
     function normalizeGenderValue(g){
       const v = String(g || "").toUpperCase().trim();
       if (!v || v === "ALL") return "BOTH";
@@ -1142,26 +1175,36 @@
 
         ALL_EVENTS_SORTED = itemsSorted;
 
-        // Premium buckets
-        const now = new Date();
-        const in60 = new Date(now.getTime() + 60*24*60*60*1000);
+        // Premium buckets:
+        // - main grid: only premium items whose premium period is active now
+        // - sidebar: paid premium items whose premium period starts in the future
+        const nowTs = Date.now();
+        const premiumByKey = new Map();
+        const premiumSources = [
+          ...((premiumData && premiumData.ok && Array.isArray(premiumData.items)) ? premiumData.items : []),
+          ...itemsSorted,
+        ];
 
-        // Premium <= 60 days comes from backend (paid-only) + hide deleted/non-published
-        PINNED_PREMIUM_30 = (premiumData && premiumData.ok && Array.isArray(premiumData.items))
-          ? premiumData.items.filter(isVisibleEvent)
-          : [];
-
-        // Premium later than 60 days (paid-only) derived from the main list for now
-        const premiumAllPaid = itemsSorted.filter(ev => {
-          const paid = String(ev.premium_status || "").toLowerCase() === "paid" ||
-                       String(ev.payment_status || "").toLowerCase() === "paid";
-          return !!ev.is_premium && paid;
+        premiumSources.forEach((ev) => {
+          if (!isVisibleEvent(ev) || !isUpcomingListEvent(ev)) return;
+          const key = String(ev?.slug || ev?.id || "").trim();
+          if (!key) return;
+          premiumByKey.set(key, { ...(premiumByKey.get(key) || {}), ...ev });
         });
 
-        const premiumLater = premiumAllPaid.filter(ev => {
-          const d = new Date(ev.start_at);
-          return !isNaN(d.getTime()) && d > in60;
-        });
+        const premiumCandidates = Array.from(premiumByKey.values());
+
+        PINNED_PREMIUM_30 = premiumCandidates
+          .filter((ev) => isActivePremiumEvent(ev, nowTs))
+          .sort((a, b) => eventSortTime(a) - eventSortTime(b));
+
+        const premiumLater = premiumCandidates
+          .filter((ev) => isPaidPremiumPendingActivation(ev, nowTs))
+          .sort((a, b) => {
+            const activationDiff = premiumActivatedMs(a) - premiumActivatedMs(b);
+            if (Number.isFinite(activationDiff) && activationDiff !== 0) return activationDiff;
+            return eventSortTime(a) - eventSortTime(b);
+          });
 
         // Main list keeps all visible events, including premium items shown above.
         OTHER_EVENTS = itemsSorted;
