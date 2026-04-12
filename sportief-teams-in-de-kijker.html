@@ -515,11 +515,18 @@
       const country = (item.country || '').toUpperCase();
       const desc  = item.description || item.body || '';
       const date  = item.created_at ? item.created_at.slice(0, 10) : '';
+      const itemId = item.id || '';
 
       const meta = [type, club, city].filter(Boolean).join(' · ');
+      const anchorId = itemId ? 'spotlight-' + esc(itemId) : '';
+      const anchorHref = anchorId ? 'sportief-teams-in-de-kijker.html#' + anchorId : '';
+      const titleHtml = anchorHref
+        ? '<a href="' + esc(anchorHref) + '" style="color:inherit;text-decoration:none;">' + esc(title) + '</a>'
+        : esc(title);
 
       return ''
         + '<article class="card v4a-card"'
+        + (anchorId ? ' id="' + anchorId + '"' : '')
         + ' data-country="' + esc(country) + '"'
         + ' data-type="' + esc(type) + '"'
         + ' data-club="' + esc(club.toLowerCase()) + '"'
@@ -531,7 +538,7 @@
         +   '<div class="event-main">'
         +     '<div class="card-header v4a-card-header">'
         +       '<div>'
-        +         '<div class="card-title v4a-card-title">' + esc(title) + '</div>'
+        +         '<div class="card-title v4a-card-title">' + titleHtml + '</div>'
         +         (meta ? '<div class="card-caption v4a-card-meta">' + esc(meta) + '</div>' : '')
         +       '</div>'
         +     '</div>'
@@ -543,14 +550,20 @@
 
     async function load(){
       try {
-        let res = await fetch(PRIMARY);
-        if (!res.ok) res = await fetch(FALLBACK);
-        const json = await res.json();
-
-        // Accept { ok, items: [...] } or a raw array
-        const items = Array.isArray(json) ? json
-                    : (json && Array.isArray(json.items)) ? json.items
-                    : [];
+        let items = null;
+        let lastValid = null;
+        for (const url of [PRIMARY, FALLBACK]) {
+          try {
+            const res = await fetch(url);
+            if (!res.ok) continue;
+            const json = await res.json();
+            const arr = Array.isArray(json) ? json : (json && Array.isArray(json.items)) ? json.items : null;
+            if (!arr) continue;
+            lastValid = arr;
+            if (arr.length > 0) { items = arr; break; }
+          } catch (_) { continue; }
+        }
+        if (!items) items = lastValid || [];
 
         if (items.length === 0){
           listEl.innerHTML = '<p class="note" style="opacity:.6;grid-column:1/-1;">Momenteel geen items in de kijker.</p>';

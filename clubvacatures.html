@@ -1230,20 +1230,25 @@
     ];
 
     try {
-      let j = null;
+      let items_raw = null;
+      let lastValid = null;
       for (const url of urls) {
         try {
           const r = await fetch(url, { credentials: "omit" });
           if (!r.ok) continue;
-          j = await r.json();
-          if (j) break;
+          const j = await r.json();
+          const arr = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
+          if (!arr) continue;
+          lastValid = arr;
+          if (arr.length > 0) { items_raw = arr; break; }
         } catch (_) { continue; }
       }
-      if (!j) throw new Error("All endpoints failed");
-      const items_raw = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
-      if (!items_raw) throw new Error("Bad JSON");
+      if (!items_raw) items_raw = lastValid;
+      if (!items_raw) throw new Error("All endpoints failed");
 
-      const items = items_raw.filter((item) => !isPublicTestVacancy(item));
+      // Filter test items, but keep them if filtering would leave 0 results
+      const filtered = items_raw.filter((item) => !isPublicTestVacancy(item));
+      const items = filtered.length > 0 ? filtered : items_raw;
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
       // Premium grid: render up to 6 premium items, otherwise restore placeholders
