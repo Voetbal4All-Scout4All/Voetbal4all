@@ -32,7 +32,7 @@
       padding-bottom: 12px;
     }
 
-    /* Spotlight cards: 2 per row + stretch (responsive) */
+    /* Spotlight cards: keep the same list rhythm as events.html */
     #spotlight-list{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -42,42 +42,74 @@
     @media (max-width: 980px){
       #spotlight-list{ grid-template-columns: 1fr; }
     }
-    #spotlight-list .card{
+    #spotlight-list .card,
+    #spotlight-list .v4a-card{
       height: 100%;
       display: flex;
       flex-direction: column;
     }
-    #spotlight-list .card-header{
+    #spotlight-list .event-row{
+      display:flex;
+      gap:12px;
       align-items:flex-start;
-      margin-bottom:6px;
+      min-width:0;
     }
-    #spotlight-list .card-title{
+    #spotlight-list .event-thumbbox{
+      width:140px;
+      height:96px;
+      flex:0 0 140px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+      position:relative;
+    }
+    #spotlight-list .event-main{
+      flex:1 1 auto;
+      min-width:0;
+      padding-top:2px;
+    }
+    #spotlight-list .card-header,
+    #spotlight-list .v4a-card-header{
+      align-items:flex-start;
+      margin-bottom:0;
+    }
+    #spotlight-list .card-title,
+    #spotlight-list .v4a-card-title{
       font-size:15px;
       font-weight:700;
       line-height:1.22;
       letter-spacing:-0.01em;
       margin-bottom:4px;
     }
-    #spotlight-list .card-caption{
-      font-size:11px;
-      line-height:1.2;
-      opacity:.72;
-    }
     #spotlight-list .card-body,
+    #spotlight-list .v4a-card-body,
     #spotlight-list .note,
     #spotlight-list p{
       font-size:12.5px;
       line-height:1.42;
       color:rgba(255,255,255,.84);
-      margin-top:6px;
+      margin-top:6px !important;
+    }
+    #spotlight-list .card-caption,
+    #spotlight-list .v4a-card-meta{
+      font-size:12px;
+      line-height:1.25;
+      opacity:.82;
+      margin-top:2px;
+    }
+    #spotlight-list .v4a-card-actions{
+      margin-top:8px !important;
     }
     #spotlight-list .pill-small{
-      font-size:11px;
+      font-size:10px;
       line-height:1.2;
     }
     @media (max-width: 980px){
-      #spotlight-list .card-title{ font-size:14px; }
+      #spotlight-list .card-title,
+      #spotlight-list .v4a-card-title{ font-size:14px; }
       #spotlight-list .card-body,
+      #spotlight-list .v4a-card-body,
       #spotlight-list .note,
       #spotlight-list p{ font-size:12px; }
     }
@@ -560,7 +592,7 @@
       const ft = norm(typeEl.value);
       const fm = norm(monthEl.value);
 
-      const cards = Array.from(listEl.querySelectorAll('.card'));
+      const cards = Array.from(listEl.querySelectorAll('.card, .v4a-card'));
       let shown = 0;
 
       cards.forEach(card => {
@@ -610,13 +642,13 @@
     if (!listEl) return;
 
     function applyAnchors(){
-      const cards = Array.from(listEl.querySelectorAll('.card'));
+      const cards = Array.from(listEl.querySelectorAll('.card, .v4a-card'));
       cards.forEach((card, idx) => {
         const anchorId = `spotlight-${idx + 1}`;
         if (!card.id) card.id = anchorId;
 
         // Make the title clickable to the anchor (no extra buttons)
-        const titleEl = card.querySelector('.card-title');
+        const titleEl = card.querySelector('.card-title, .v4a-card-title');
         if (!titleEl) return;
 
         // If already linked, leave as-is

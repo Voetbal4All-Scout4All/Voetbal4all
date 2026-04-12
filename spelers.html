@@ -29,7 +29,7 @@
 
   .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
   .event-thumbbox{width:140px;height:96px;flex:0 0 140px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);overflow:hidden;position:relative;}
-  .event-thumbbox::after{content:"Pro";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+  .event-thumbbox::after{content:"Profiel";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
   .event-thumbbox.has-img::after{display:none}
   .event-thumbbox .thumbbg{
     position:absolute;inset:0;background-position:center;background-size:contain;background-repeat:no-repeat;
@@ -684,7 +684,8 @@
     const actions = isPremium
       ? `<a class="btn-ghost-sm" href="aanmelden.html">Profiel aanmelden</a>
          <a class="btn-ghost-sm" href="adverteren.html">Premium</a>`
-      : `<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
+      : `${url ? `<a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a>` : ""}
+         <button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>
          <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`;
 
     // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
@@ -704,7 +705,6 @@
               </div>
             </div>
             ${bio ? `<div class="v4a-card-body" style="margin-top:8px;">${bio}</div>` : ""}
-            ${url ? `<div class="v4a-card-actions" style="margin-top:8px;"><a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a></div>` : ""}
             <div class="v4a-card-actions event-actions" style="margin-top:10px;">${actions}</div>
           </div>
         </div>
