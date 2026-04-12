@@ -1151,10 +1151,6 @@
           ? premiumData.items.filter(isVisibleEvent)
           : [];
 
-        const pinnedIds = new Set(
-          PINNED_PREMIUM_30.map(ev => String(ev.slug || ev.id))
-        );
-
         // Premium later than 60 days (paid-only) derived from the main list for now
         const premiumAllPaid = itemsSorted.filter(ev => {
           const paid = String(ev.premium_status || "").toLowerCase() === "paid" ||
@@ -1167,11 +1163,8 @@
           return !isNaN(d.getTime()) && d > in60;
         });
 
-        // Other list below (everything except the pinned premium <=60d from backend)
-        OTHER_EVENTS = itemsSorted.filter(ev => {
-          const key = String(ev.slug || ev.id);
-          return !pinnedIds.has(key);
-        });
+        // Main list keeps all visible events, including premium items shown above.
+        OTHER_EVENTS = itemsSorted;
 
         function cardHtml(ev){
           const slug = ev.slug || ev.id;

@@ -683,9 +683,8 @@
       if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
 
       const items = j.items;
-      // split premium active vs rest
+      // Split out the premium items for the promo grid.
       const premium = items.filter(isPremiumActive).slice(0, 6);
-      const rest = items.filter((x) => !isPremiumActive(x));
 
       // Premium grid: render up to 6 premium items, otherwise restore placeholders
       if (premiumGrid) {
@@ -694,14 +693,14 @@
           : PREMIUM_PLACEHOLDER_HTML;
       }
 
-      // Render main list (non-premium)
-      listEl.innerHTML = rest.map((p, i) => playerCardHtml(p, i, false)).join("");
+      // Render main list with all visible profiles, including premium items shown above.
+      listEl.innerHTML = items.map((p, i) => playerCardHtml(p, i, false)).join("");
 
       // Status
       if (statusEl) {
         statusEl.style.display = "";
         statusEl.textContent = items.length
-          ? `${items.length} speler(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          ? `${items.length} speler(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
           : "Nog geen spelersprofielen.";
       }
 

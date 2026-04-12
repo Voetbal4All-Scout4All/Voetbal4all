@@ -757,7 +757,6 @@
 
       const items = j.items.filter((item) => !isPublicTestTrainer(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
-      const rest = items.filter((x) => !isPremiumActive(x));
 
       if (premiumGrid) {
         premiumGrid.innerHTML = premium.length
@@ -765,12 +764,12 @@
           : PREMIUM_PLACEHOLDER_HTML;
       }
 
-      listEl.innerHTML = rest.map((p, i) => trainerCardHtml(p, i, false)).join("");
+      listEl.innerHTML = items.map((p, i) => trainerCardHtml(p, i, false)).join("");
 
       if (statusEl) {
         statusEl.style.display = "";
         statusEl.textContent = items.length
-          ? `${items.length} trainer(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          ? `${items.length} trainer(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
           : "Nog geen trainersprofielen.";
       }
 
