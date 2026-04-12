@@ -743,9 +743,48 @@
       return escapeHtml(code || 'Onbekend');
     }
 
+    function slugPart(value) {
+      return String(value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function supportersclubDetailId(sc) {
+      const directCandidates = [
+        sc?.id,
+        sc?._id,
+        sc?.uuid,
+        sc?.sid,
+        sc?.submission_id,
+        sc?.slug
+      ];
+
+      for (const candidate of directCandidates) {
+        const value = String(candidate || '').trim();
+        if (value) return value;
+      }
+
+      const fallback = [
+        slugPart(sc?.name),
+        slugPart(sc?.supported_team || sc?.team),
+        slugPart(sc?.city),
+        slugPart(sc?.country)
+      ].filter(Boolean).join('--');
+
+      return fallback ? `sc-${fallback}` : '';
+    }
+
     function supportersclubCardHtml(sc, idx) {
       const anchorId = `sc-${idx + 1}`;
-      const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
+      const detailId = supportersclubDetailId(sc);
+      const detailHref = detailId ? `event.html?type=supportersclub&id=${encodeURIComponent(detailId)}` : `#${anchorId}`;
+      const shareUrl = detailId
+        ? `https://www.voetbal4all.eu/event.html?type=supportersclub&id=${encodeURIComponent(detailId)}`
+        : `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
       const name = escapeHtml(sc.name || '');
       const team = escapeHtml(sc.supported_team || '');
       const city = escapeHtml(sc.city || '');
@@ -757,9 +796,10 @@
 
       const safePhoto = escapeHtml(photo);
       const actions = [
+        detailId ? `<a class="btn-ghost-sm" href="${escapeHtml(detailHref)}">Bekijk supportersclub</a>` : '',
         website ? `<a class="btn-ghost-sm" href="${escapeHtml(website)}" target="_blank" rel="noopener">Website</a>` : '',
         social ? `<a class="btn-ghost-sm" href="${escapeHtml(social)}" target="_blank" rel="noopener">Social</a>` : '',
-        sc.share !== false ? `<button type="button" class="btn-ghost-sm" data-share-url="${shareUrl}" title="Deel deze supportersclub">Delen</button>` : ''
+        sc.share !== false ? `<button type="button" class="btn-ghost-sm" data-share-url="${escapeHtml(shareUrl)}" title="Deel deze supportersclub">Delen</button>` : ''
       ].filter(Boolean).join('');
 
       return `<article class="v4a-card" id="${anchorId}" data-country="${country}" data-team="${team}" data-city="${city}">
@@ -770,7 +810,7 @@
           <div class="event-main">
             <div class="v4a-card-header" style="margin:0;">
               <div>
-                <div class="v4a-card-title"><a href="#${anchorId}" style="color:inherit;text-decoration:none;">${name}</a></div>
+                <div class="v4a-card-title"><a href="${escapeHtml(detailHref)}" style="color:inherit;text-decoration:none;">${name}</a></div>
                 <div class="v4a-card-meta">${countryLabel(country)}${city ? ' · ' + city : ''}</div>
                 ${team ? `<div class="v4a-card-meta">Steunt: ${team}</div>` : ``}
               </div>
@@ -835,14 +875,12 @@
 
     // --- Share link updater: ensures share links use correct anchor ---
     function updateShareLinks() {
-      // For each card, update its share link to use the correct anchor
       const cards = Array.from(listEl.querySelectorAll('.v4a-card'));
-      cards.forEach((card, idx) => {
-        const anchorId = `sc-${idx + 1}`;
-        const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
+      cards.forEach((card) => {
         const shareEl = card.querySelector('[data-share-url]');
         if (shareEl) {
-          shareEl.setAttribute('data-share-url', shareUrl);
+          const shareUrl = String(shareEl.getAttribute('data-share-url') || '').trim();
+          if (!shareUrl) return;
           shareEl.onclick = async function() {
             if (window.navigator.share) {
               try {
