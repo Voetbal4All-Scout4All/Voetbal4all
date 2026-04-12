@@ -847,24 +847,29 @@
 
     const genderQs = `gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
     const urls = [
+      `${API_BASE}/api/staff-profiles?limit=200&${genderQs}`,
       `${API_BASE}/api/trainer-profiles?limit=200&${genderQs}`,
-      `${API_BASE}/api/trainers?limit=200&${genderQs}`,
-      `${API_BASE}/api/staff-profiles?limit=200&${genderQs}`
+      `${API_BASE}/api/trainers?limit=200&${genderQs}`
     ];
 
     try {
-      let j = null;
+      let items_raw = null;
+      // Try each endpoint; prefer the first one that returns actual items.
+      // If none has items, accept the last valid (empty) response.
+      let lastValid = null;
       for (const url of urls) {
         try {
           const r = await fetch(url, { credentials: "omit" });
           if (!r.ok) continue;
-          j = await r.json();
-          if (j) break;
+          const j = await r.json();
+          const arr = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
+          if (!arr) continue;
+          lastValid = arr;
+          if (arr.length > 0) { items_raw = arr; break; }
         } catch (_) { continue; }
       }
-      if (!j) throw new Error("All endpoints failed");
-      const items_raw = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
-      if (!items_raw) throw new Error("Bad JSON");
+      if (!items_raw) items_raw = lastValid;
+      if (!items_raw) throw new Error("All endpoints failed");
 
       const items = items_raw.filter((item) => !isPublicTestTrainer(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
