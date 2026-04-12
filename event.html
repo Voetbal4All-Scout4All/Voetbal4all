@@ -1062,6 +1062,48 @@
         .join("");
     }
 
+    function renderFactsList(items){
+      const rows = (items || [])
+        .filter((item) => item && item.label && item.value)
+        .map((item) => `
+          <div class="ev-fact">
+            <dt class="ev-fact-label">${escapeHtml(item.label)}</dt>
+            <dd class="ev-fact-value">${item.value}</dd>
+          </div>
+        `)
+        .join("");
+      return rows ? `<dl class="ev-facts">${rows}</dl>` : "";
+    }
+
+    function parseStructuredEventText(text){
+      const raw = String(text || "").trim();
+      if (!raw) return { facts: [], narrative: "" };
+
+      const facts = [];
+      const narrativeLines = [];
+      const lines = raw
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean);
+
+      for (const line of lines) {
+        const match = line.match(/^([^:]{2,40}):\s*(.+)$/);
+        if (match) {
+          facts.push({
+            label: match[1].trim(),
+            value: escapeHtml(match[2].trim())
+          });
+          continue;
+        }
+        narrativeLines.push(line);
+      }
+
+      return {
+        facts,
+        narrative: narrativeLines.join("\n").trim()
+      };
+    }
+
     function renderMedia(mediaUrls){
       const placeholder = (window.V4A_PLACEHOLDER ? window.V4A_PLACEHOLDER() : "assets/img/placeholder.svg");
       if (mediaLabel) mediaLabel.textContent = "Flyer / foto's";
@@ -1306,43 +1348,52 @@
         // Description/Bio
         const rawText = (isEvent ? (item.description || "") : (item.description || item.bio || ""));
         const safeText = isEvent ? sanitizeEventText(rawText) : String(rawText || "").trim();
-        const safeHtml = safeText ? formatTextAsParagraphs(safeText) : "";
-        if (safeHtml) {
+
+        // Extras / facts
+        const factRows = [];
+        const seenFacts = new Set();
+        const pushFact = (label, value) => {
+          const safeLabel = String(label || "").trim();
+          const safeValue = String(value || "").trim();
+          if (!safeLabel || !safeValue) return;
+          const key = `${safeLabel.toLowerCase()}::${safeValue.toLowerCase()}`;
+          if (seenFacts.has(key)) return;
+          seenFacts.add(key);
+          factRows.push({ label: safeLabel, value: safeValue });
+        };
+
+        let narrativeHtml = "";
+        if (isEvent) {
+          const parsed = parseStructuredEventText(safeText);
+          for (const fact of parsed.facts) pushFact(fact.label, fact.value);
+          pushFact("Locatie", escapeHtml(item.location_name || ""));
+          pushFact("Adres", escapeHtml(item.address || ""));
+          pushFact("Organisator", escapeHtml(item.organizer_name || ""));
+          if (item.organizer_url) {
+            const safeUrl = escapeHtml(item.organizer_url);
+            pushFact("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
+          }
+          narrativeHtml = parsed.narrative ? formatTextAsParagraphs(parsed.narrative) : "";
+        } else {
+          if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
+          pushFact("Regio", escapeHtml(item.region || ""));
+          pushFact("Plaats", escapeHtml(item.city || ""));
+          if (item.url && !isYouTubeUrl(item.url)) {
+            const safeUrl = escapeHtml(item.url);
+            pushFact("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
+          }
+        }
+
+        const factsHtml = renderFactsList(factRows);
+        if (factsHtml || narrativeHtml) {
           descEl.style.display = "block";
-          descEl.innerHTML = safeHtml;
+          descEl.innerHTML = [factsHtml, narrativeHtml].filter(Boolean).join("");
         } else {
           descEl.style.display = "none";
           descEl.innerHTML = "";
         }
 
-        // Extras
-        const extras = [];
-        const factItem = (label, value) => {
-          if (!value) return;
-          extras.push(`
-            <div class="ev-fact">
-              <dt class="ev-fact-label">${escapeHtml(label)}</dt>
-              <dd class="ev-fact-value">${value}</dd>
-            </div>
-          `);
-        };
-        if (isEvent) {
-          factItem("Locatie", escapeHtml(item.location_name || ""));
-          factItem("Adres", escapeHtml(item.address || ""));
-          factItem("Organisator", escapeHtml(item.organizer_name || ""));
-          if (item.organizer_url) {
-            const safeUrl = escapeHtml(item.organizer_url);
-            factItem("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
-          }
-        } else {
-          factItem("Regio", escapeHtml(item.region || ""));
-          factItem("Plaats", escapeHtml(item.city || ""));
-          if (item.url && !isYouTubeUrl(item.url)) {
-            const safeUrl = escapeHtml(item.url);
-            factItem("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
-          }
-        }
-        extraEl.innerHTML = extras.length ? `<dl class="ev-facts">${extras.join("")}</dl>` : "";
+        extraEl.innerHTML = "";
 
         // Map (events only)
         if (isEvent) {
