@@ -197,6 +197,37 @@
   .sidebar-premium-title{font-weight:800;font-size:13px;line-height:1.25;margin-bottom:2px}
   .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
   .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
+
+  /* Regular overview cards: calmer typography, aligned with events overview */
+  #vacancy-list .event-main{
+    padding-top:2px;
+  }
+  #vacancy-list .v4a-card-title{
+    font-size:15px;
+    font-weight:700;
+    line-height:1.22;
+    letter-spacing:-0.01em;
+    margin-bottom:4px;
+  }
+  #vacancy-list .v4a-card-meta{
+    font-size:12px;
+    line-height:1.25;
+    opacity:.82;
+    margin-top:2px;
+  }
+  #vacancy-list .v4a-card-body{
+    font-size:12.5px;
+    line-height:1.42;
+    color:rgba(255,255,255,.84);
+    margin-top:6px !important;
+  }
+  #vacancy-list .v4a-card-actions{
+    margin-top:8px !important;
+  }
+  @media (max-width:900px){
+    #vacancy-list .v4a-card-title{font-size:14px}
+    #vacancy-list .v4a-card-body{font-size:12px}
+  }
 </style>
   <style>
         /* AdSense: reduce height of full-width banner ads (match index.html) */
