@@ -2574,8 +2574,6 @@
         const d = (li.getAttribute("data-image") || "").trim();
         const dn = normalizeMediaSrc(d);
         if (dn) return dn;
-        const innerImg = li.querySelector("img");
-        if (innerImg && innerImg.getAttribute("src")) return innerImg.getAttribute("src");
         return "";
       }
 
