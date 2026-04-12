@@ -265,29 +265,36 @@
     }
     .ev-facts{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:8px;
+      gap:0;
     }
     .ev-fact{
       display:grid;
-      gap:4px;
-      padding:12px 13px;
-      border-radius:14px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.07);
+      grid-template-columns:minmax(108px, 132px) minmax(0, 1fr);
+      gap:16px;
+      align-items:start;
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,0.07);
+    }
+    .ev-fact:first-child{ padding-top:0; }
+    .ev-fact:last-child{
+      padding-bottom:0;
+      border-bottom:0;
     }
     .ev-fact-label{
-      font-size:11px;
+      margin:0;
+      font-size:13px;
       font-weight:700;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      color:rgba(191,206,238,0.7);
+      line-height:1.5;
+      color:rgba(237,241,250,0.92);
     }
     .ev-fact-value{
+      margin:0;
       font-size:14px;
       line-height:1.5;
-      color:rgba(244,246,252,0.94);
+      font-weight:400;
+      color:rgba(214,222,241,0.92);
       word-break:break-word;
+      text-align:left;
     }
     .ev-fact-value a{
       color:#8fd8ff;
@@ -450,7 +457,11 @@
         height:96px;
       }
       .ev-facts{
-        grid-template-columns:1fr;
+        gap:0;
+      }
+      .ev-fact{
+        grid-template-columns:minmax(96px, 118px) minmax(0, 1fr);
+        gap:12px;
       }
       .ev-map-wrap{
         padding:16px;
@@ -1310,8 +1321,8 @@
           if (!value) return;
           extras.push(`
             <div class="ev-fact">
-              <div class="ev-fact-label">${escapeHtml(label)}</div>
-              <div class="ev-fact-value">${value}</div>
+              <dt class="ev-fact-label">${escapeHtml(label)}</dt>
+              <dd class="ev-fact-value">${value}</dd>
             </div>
           `);
         };
@@ -1331,7 +1342,7 @@
             factItem("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
           }
         }
-        extraEl.innerHTML = extras.length ? `<div class="ev-facts">${extras.join("")}</div>` : "";
+        extraEl.innerHTML = extras.length ? `<dl class="ev-facts">${extras.join("")}</dl>` : "";
 
         // Map (events only)
         if (isEvent) {
