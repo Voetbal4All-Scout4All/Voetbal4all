@@ -62,6 +62,37 @@
   .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
   .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
 
+  /* Regular overview cards: calmer typography, aligned with events overview */
+  #trainer-list .event-main{
+    padding-top:2px;
+  }
+  #trainer-list .v4a-card-title{
+    font-size:15px;
+    font-weight:700;
+    line-height:1.22;
+    letter-spacing:-0.01em;
+    margin-bottom:4px;
+  }
+  #trainer-list .v4a-card-meta{
+    font-size:12px;
+    line-height:1.25;
+    opacity:.82;
+    margin-top:2px;
+  }
+  #trainer-list .v4a-card-body{
+    font-size:12.5px;
+    line-height:1.42;
+    color:rgba(255,255,255,.84);
+    margin-top:6px !important;
+  }
+  #trainer-list .v4a-card-actions{
+    margin-top:8px !important;
+  }
+  @media (max-width:900px){
+    #trainer-list .v4a-card-title{font-size:14px}
+    #trainer-list .v4a-card-body{font-size:12px}
+  }
+
   /* === Filterbar action buttons: ensure text contrast (match spelers.html) === */
   .v4-filterbar .btn-ghost-sm{
     color: rgba(255,255,255,.92) !important;

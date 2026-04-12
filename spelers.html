@@ -61,6 +61,37 @@
   .sidebar-premium-meta{font-size:12px;opacity:.84;line-height:1.25;margin-top:2px}
   .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
 
+  /* Regular overview cards: calmer typography, aligned with events overview */
+  #player-list .event-main{
+    padding-top:2px;
+  }
+  #player-list .v4a-card-title{
+    font-size:15px;
+    font-weight:700;
+    line-height:1.22;
+    letter-spacing:-0.01em;
+    margin-bottom:4px;
+  }
+  #player-list .v4a-card-meta{
+    font-size:12px;
+    line-height:1.25;
+    opacity:.82;
+    margin-top:2px;
+  }
+  #player-list .v4a-card-body{
+    font-size:12.5px;
+    line-height:1.42;
+    color:rgba(255,255,255,.84);
+    margin-top:6px !important;
+  }
+  #player-list .v4a-card-actions{
+    margin-top:8px !important;
+  }
+  @media (max-width:900px){
+    #player-list .v4a-card-title{font-size:14px}
+    #player-list .v4a-card-body{font-size:12px}
+  }
+
   /* Pagination (optional parity) */
   .events-pagination{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:14px}
   .events-pagination .page-btn{appearance:none;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:rgba(255,255,255,.92);border-radius:999px;padding:8px 12px;font-family:inherit;font-weight:600;cursor:pointer;transition:transform .12s ease,filter .12s ease,background .12s ease;}

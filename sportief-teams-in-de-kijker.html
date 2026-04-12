@@ -47,6 +47,38 @@
       display: flex;
       flex-direction: column;
     }
+    #spotlight-list .card-header{
+      align-items:flex-start;
+    }
+    #spotlight-list .card-title{
+      font-size:15px;
+      font-weight:700;
+      line-height:1.22;
+      letter-spacing:-0.01em;
+      margin-bottom:4px;
+    }
+    #spotlight-list .card-caption{
+      font-size:11px;
+      line-height:1.2;
+      opacity:.72;
+    }
+    #spotlight-list .card-body,
+    #spotlight-list .note,
+    #spotlight-list p{
+      font-size:12.5px;
+      line-height:1.42;
+      color:rgba(255,255,255,.84);
+    }
+    #spotlight-list .pill-small{
+      font-size:11px;
+      line-height:1.2;
+    }
+    @media (max-width: 980px){
+      #spotlight-list .card-title{ font-size:14px; }
+      #spotlight-list .card-body,
+      #spotlight-list .note,
+      #spotlight-list p{ font-size:12px; }
+    }
   </style>
 </head>
 

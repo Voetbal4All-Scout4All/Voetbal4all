@@ -70,6 +70,56 @@
       display: flex;
       flex-direction: column;
     }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-title{
+      font-size:15px;
+      font-weight:700;
+      line-height:1.22;
+      letter-spacing:-0.01em;
+      margin-bottom:4px;
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-caption{
+      font-size:11px;
+      line-height:1.2;
+      opacity:.72;
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-body{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      font-size:12.5px;
+      line-height:1.42;
+      color:rgba(255,255,255,.84);
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-meta{
+      font-size:12px;
+      line-height:1.25;
+      opacity:.82;
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-desc{
+      font-size:12.5px;
+      line-height:1.42;
+      color:rgba(255,255,255,.84);
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:2px;
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-share{
+      margin-top:2px;
+      font-size:12px;
+      line-height:1.25;
+    }
+    @media (max-width: 980px){
+      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-title{
+        font-size:14px;
+      }
+      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-body,
+      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-desc{
+        font-size:12px;
+      }
+    }
 
     /* Search controls (filters) */
     #supportersSearch{
