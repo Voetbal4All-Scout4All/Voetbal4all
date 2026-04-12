@@ -904,13 +904,18 @@
     }
 
     function typeToUiLabel(eventType){
-      const t = String(eventType || "").toLowerCase();
-      if (t === "tournament" || t === "tornooi") return "Tornooi";
-      if (t === "friendly" || t === "vriendschappelijk") return "Vriendschappelijk";
-      if (t === "stage") return "Stage";
-      if (t === "camp" || t === "voetbalkamp") return "Voetbalkamp";
+      const raw = String(eventType || "").trim();
+      if (!raw) return "";
+
+      const parts = raw.split("·").map((part) => part.trim()).filter(Boolean);
+      const core = (parts.length ? parts[parts.length - 1] : raw).toLowerCase();
+
+      if (core === "tournament" || core === "tornooi") return "Tornooi";
+      if (core === "friendly" || core === "vriendschappelijk" || core === "vriendschappelijke wedstrijd") return "Vriendschappelijk";
+      if (core === "stage") return "Stage";
+      if (core === "camp" || core === "voetbalkamp") return "Voetbalkamp";
       // fallback: keep existing value if it matches one of the UI options
-      return eventType || "";
+      return raw;
     }
 
     function countryToLabel(cc){
@@ -1122,6 +1127,18 @@
       return d >= today;
     }
 
+    function isSportiveEvent(ev){
+      if (!ev) return false;
+
+      const category = String(ev.category || "").trim().toLowerCase();
+      if (category) return category === "sportief";
+
+      const rawType = String(ev.event_type || "").trim().toLowerCase();
+      if (rawType.startsWith("club & fun")) return false;
+
+      return ["Tornooi", "Vriendschappelijk", "Stage", "Voetbalkamp"].includes(typeToUiLabel(ev.event_type));
+    }
+
     function buildEventSearchHaystack(ev){
       const country = String(ev?.country || "").toUpperCase();
       const province = getEventProvince(ev);
@@ -1208,6 +1225,7 @@
         // Sort by start date (soonest first) and hide deleted/non-published
         const itemsSorted = [...data.items]
           .filter(isVisibleEvent)
+          .filter(isSportiveEvent)
           .sort((a,b) => eventSortTime(a) - eventSortTime(b));
 
         ALL_EVENTS_SORTED = itemsSorted;
@@ -1223,7 +1241,7 @@
         ];
 
         premiumSources.forEach((ev) => {
-          if (!isVisibleEvent(ev) || !isUpcomingListEvent(ev)) return;
+          if (!isVisibleEvent(ev) || !isSportiveEvent(ev) || !isUpcomingListEvent(ev)) return;
           const key = String(ev?.slug || ev?.id || "").trim();
           if (!key) return;
           premiumByKey.set(key, { ...(premiumByKey.get(key) || {}), ...ev });

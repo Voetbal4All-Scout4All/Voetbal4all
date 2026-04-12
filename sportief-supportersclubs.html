@@ -43,7 +43,7 @@
     .supporters-grid{
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 12px;
       align-items: stretch;
     }
     @media (max-width: 980px){
@@ -89,11 +89,13 @@
       font-size:12.5px;
       line-height:1.42;
       color:rgba(255,255,255,.84);
+      margin-top:6px;
     }
     :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-meta{
       font-size:12px;
       line-height:1.25;
       opacity:.82;
+      margin-top:2px;
     }
     :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-desc{
       font-size:12.5px;
@@ -104,10 +106,11 @@
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:2px;
+      margin-top:8px;
+      align-items:center;
     }
     :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-share{
-      margin-top:2px;
+      margin-top:8px;
       font-size:12px;
       line-height:1.25;
     }

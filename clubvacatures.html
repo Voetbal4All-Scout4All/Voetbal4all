@@ -199,6 +199,11 @@
   .sidebar-premium-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px;position:relative;z-index:1}
 
   /* Regular overview cards: calmer typography, aligned with events overview */
+  #vacancy-list .event-thumbbox .thumbbg{
+    background-size:contain;
+    background-color:rgba(255,255,255,0.04);
+    filter:none;
+  }
   #vacancy-list .event-main{
     padding-top:2px;
   }
@@ -220,10 +225,15 @@
     line-height:1.42;
     color:rgba(255,255,255,.84);
     margin-top:6px !important;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
   }
   #vacancy-list .v4a-card-actions{
     margin-top:8px !important;
   }
+  #vacancy-list .v4-share{display:none !important;}
   @media (max-width:900px){
     #vacancy-list .v4a-card-title{font-size:14px}
     #vacancy-list .v4a-card-body{font-size:12px}
