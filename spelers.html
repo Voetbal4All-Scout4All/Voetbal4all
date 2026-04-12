@@ -751,9 +751,9 @@
 
   function playerCardHtml(p, idx, isPremium) {
     const id = escHtml(String(p.id || idx + 1));
-    const name = escHtml(p.name || "Anonieme speler");
-    const pos = escHtml(p.position || "Speler");
-    const bio = escHtml(p.bio || "");
+    const name = escHtml(p.name || p.full_name || p.title || "Anonieme speler");
+    const pos = escHtml(p.position || p.role || p.type || "Speler");
+    const bio = escHtml(p.bio || p.description || p.body || "");
     const rawId = String(p.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
     const country = String(p.country || "").toUpperCase();
@@ -833,15 +833,27 @@
     const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
-    const url = `${API_BASE}/api/player-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+    const genderQs = `gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+    const urls = [
+      `${API_BASE}/api/player-profiles?limit=200&${genderQs}`,
+      `${API_BASE}/api/players?limit=200&${genderQs}`
+    ];
 
     try {
-      const r = await fetch(url, { credentials: "omit" });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const j = await r.json();
-      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+      let j = null;
+      for (const url of urls) {
+        try {
+          const r = await fetch(url, { credentials: "omit" });
+          if (!r.ok) continue;
+          j = await r.json();
+          if (j) break;
+        } catch (_) { continue; }
+      }
+      if (!j) throw new Error("All endpoints failed");
+      const items_raw = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
+      if (!items_raw) throw new Error("Bad JSON");
 
-      const items = j.items;
+      const items = items_raw;
       // Split out the premium items for the promo grid.
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
