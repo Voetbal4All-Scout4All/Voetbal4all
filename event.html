@@ -144,47 +144,79 @@
       gap:14px;
       width:100%;
       overflow:visible;
+      justify-items:center;
+    }
+    .ev-media-shell{
+      width:min(100%, 980px);
+      margin-inline:auto;
+      display:grid;
+      gap:12px;
+    }
+    .ev-media-frame,
+    .ev-media-thumb-frame{
+      appearance:none;
+      font:inherit;
+      color:inherit;
+      text-align:inherit;
+      width:100%;
+      display:grid;
+      place-items:center;
+      margin:0;
+      box-shadow:
+        0 20px 46px rgba(0,0,0,0.38),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+      overflow:hidden;
+      transition:transform .18s ease, border-color .18s ease, background .18s ease;
     }
     .ev-media-gallery{
       display:grid;
       gap:12px;
+      width:100%;
     }
     .ev-media-thumbs{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(112px, 1fr));
+      grid-template-columns:repeat(auto-fit, minmax(112px, 132px));
+      justify-content:center;
       gap:10px;
     }
-    .ev-media-hero{
-      width:100%;
-      height:auto;
-      object-fit:contain;
-      object-position:center;
-      max-height:min(78vh, 860px);
-      padding:clamp(10px, 1.5vw, 18px);
+    .ev-media-frame{
+      padding:clamp(12px, 1.8vw, 20px);
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,0.10);
       background:
         radial-gradient(circle at top, rgba(255,255,255,0.10), transparent 55%),
         linear-gradient(180deg, rgba(8,12,24,0.92), rgba(5,8,18,0.96));
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,0.10);
-      box-shadow:
-        0 20px 46px rgba(0,0,0,0.38),
-        inset 0 1px 0 rgba(255,255,255,0.05);
       cursor:zoom-in;
+    }
+    #ev-media .ev-media-hero{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      object-fit:contain;
+      object-position:center;
+      max-height:min(74vh, 740px);
+      margin-inline:auto;
       display:block;
     }
-    .ev-media-thumb{
-      width:100%;
-      height:112px;
+    .ev-media-thumb-frame{
+      min-height:112px;
       padding:8px;
-      object-fit:contain;
       border-radius:16px;
       border:1px solid rgba(255,255,255,0.08);
       background:rgba(255,255,255,0.04);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,0.04);
       cursor:zoom-in;
-      transition:transform .18s ease, border-color .18s ease, background .18s ease;
     }
-    .ev-media-thumb:hover{
+    #ev-media .ev-media-thumb{
+      width:auto;
+      max-width:100%;
+      height:auto;
+      max-height:112px;
+      object-fit:contain;
+      display:block;
+      margin-inline:auto;
+    }
+    .ev-media-frame:hover,
+    .ev-media-thumb-frame:hover{
       transform:translateY(-1px);
       border-color:rgba(24,160,251,0.24);
       background:rgba(255,255,255,0.06);
@@ -306,7 +338,7 @@
     .lightbox { position:fixed; inset:0; background:rgba(0,0,0,0.8); display:none; z-index:9999; }
     .lightbox.is-open { display:flex; align-items:center; justify-content:center; padding:20px; }
     .lightbox-inner { max-width:1100px; width:100%; }
-    .lightbox-img { width:100%; height:auto; border-radius:12px; display:block; }
+    .lightbox-img { width:auto; max-width:100%; max-height:86vh; height:auto; object-fit:contain; border-radius:12px; display:block; margin:0 auto; }
     .lightbox-actions { display:flex; justify-content:flex-end; margin-bottom:10px; }
     .lightbox-close {
       background:#16a34a; color:#fff; border:0; border-radius:10px; padding:10px 14px;
@@ -453,8 +485,17 @@
       .ev-media{
         margin-bottom:20px;
       }
-      .ev-media-thumb{
-        height:96px;
+      #ev-media .ev-media-hero{
+        max-height:52vh;
+      }
+      .ev-media-thumbs{
+        grid-template-columns:repeat(auto-fit, minmax(92px, 1fr));
+      }
+      .ev-media-thumb-frame{
+        min-height:96px;
+      }
+      #ev-media .ev-media-thumb{
+        max-height:80px;
       }
       .ev-facts{
         gap:0;
@@ -1151,17 +1192,19 @@
       if (mediaLabel) mediaLabel.textContent = "Video";
       mediaWrap.style.display = "block";
       mediaGrid.innerHTML = `
-        <div class="ev-embed-frame">
-          <iframe
-            title="YouTube video"
-            width="100%"
-            height="100%"
-            style="border:0; display:block;"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            src="https://www.youtube-nocookie.com/embed/${vid}">
-          </iframe>
+        <div class="ev-media-shell">
+          <div class="ev-embed-frame">
+            <iframe
+              title="YouTube video"
+              width="100%"
+              height="100%"
+              style="border:0; display:block;"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              src="https://www.youtube-nocookie.com/embed/${vid}">
+            </iframe>
+          </div>
         </div>
       `;
       return true;
@@ -1339,34 +1382,44 @@
         const u = String(resolvedUrls[0]);
         const safeResolved = u.replaceAll('"','&quot;');
         mediaGrid.innerHTML = `
-          <img
-            class="ev-media-hero"
-            src="${safeResolved}"
-            alt="Flyer / foto"
-            data-media-src="${safeResolved}"
-            loading="lazy"
-            onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');"
-          />
+          <div class="ev-media-shell">
+            <button type="button" class="ev-media-frame" data-media-src="${safeResolved}" aria-label="Open flyer of foto">
+              <img
+                class="ev-media-hero"
+                src="${safeResolved}"
+                alt="Flyer / foto"
+                loading="lazy"
+                onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');"
+              />
+            </button>
+          </div>
         `;
       } else {
         const [primary, ...secondary] = resolvedUrls;
         const safePrimary = String(primary).replaceAll('"','&quot;');
         const thumbs = secondary.map((u, idx) => {
           const safeResolved = String(u).replaceAll('"','&quot;');
-          return `<img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx + 2}" data-media-src="${safeResolved}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');" />`;
+          return `
+            <button type="button" class="ev-media-thumb-frame" data-media-src="${safeResolved}" aria-label="Open flyer of foto ${idx + 2}">
+              <img class="ev-media-thumb" src="${safeResolved}" alt="Flyer/foto ${idx + 2}" loading="lazy" onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');" />
+            </button>
+          `;
         }).join("");
 
         mediaGrid.innerHTML = `
-          <div class="ev-media-gallery">
-            <img
-              class="ev-media-hero"
-              src="${safePrimary}"
-              alt="Flyer / foto"
-              data-media-src="${safePrimary}"
-              loading="lazy"
-              onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');"
-            />
-            <div class="ev-media-thumbs">${thumbs}</div>
+          <div class="ev-media-shell">
+            <div class="ev-media-gallery">
+              <button type="button" class="ev-media-frame" data-media-src="${safePrimary}" aria-label="Open flyer of foto">
+                <img
+                  class="ev-media-hero"
+                  src="${safePrimary}"
+                  alt="Flyer / foto"
+                  loading="lazy"
+                  onerror="this.onerror=null;this.src=(window.V4A_PLACEHOLDER?normalizeThumbUrl(window.V4A_PLACEHOLDER()):'assets/img/placeholder.svg');"
+                />
+              </button>
+              <div class="ev-media-thumbs">${thumbs}</div>
+            </div>
           </div>
         `;
       }
