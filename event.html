@@ -124,7 +124,7 @@
 
     /* Media gallery */
     .ev-media{
-      margin:0 0 28px 0;
+      margin:0;
       display:grid;
       gap:12px;
     }
@@ -201,15 +201,11 @@
     }
     .ev-detail-grid{
       display:grid;
-      grid-template-columns:minmax(0, 1.5fr) minmax(280px, .72fr);
-      gap:22px;
+      gap:18px;
       align-items:start;
     }
-    .ev-col-info,
-    .ev-col-media{
-      min-width:0;
-    }
     .ev-col-info{
+      min-width:0;
       display:grid;
       gap:18px;
     }
@@ -296,31 +292,9 @@
     }
 
     .ev-side-panel{
-      position:sticky;
-      top:94px;
       padding:18px;
       display:grid;
       gap:16px;
-    }
-    .ev-side-kicker{
-      font-size:11px;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:rgba(191,206,238,0.66);
-    }
-    .ev-side-title{
-      font-size:20px;
-      font-weight:700;
-      line-height:1.15;
-      margin:4px 0 0 0;
-      color:rgba(244,246,252,0.98);
-    }
-    .ev-side-note{
-      margin:0;
-      font-size:13px;
-      line-height:1.65;
-      color:rgba(191,206,238,0.84);
     }
     .ev-primary-actions{
       display:grid;
@@ -392,12 +366,6 @@
       margin:0;
       letter-spacing:-0.01em;
     }
-    .ev-map-sub{
-      margin:0;
-      font-size:13px;
-      line-height:1.6;
-      color:rgba(191,206,238,0.78);
-    }
     #ev-map {
       width:100%;
       height:320px;
@@ -451,23 +419,8 @@
       background:rgba(255,255,255,0.03);
       opacity:.86;
     }
-    .ev-detail-ad-label{
-      margin:0 0 10px 0;
-      font-size:10px;
-      font-weight:700;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:rgba(191,206,238,0.64);
-    }
-    .ev-detail-ad-note{
-      margin:10px 0 0 0;
-      font-size:12px;
-      color:rgba(191,206,238,0.74);
-    }
     @media (max-width: 980px){
       #ev-title{ max-width:16ch; }
-      .ev-detail-grid{ grid-template-columns:1fr; }
-      .ev-side-panel{ position:static; top:auto; }
     }
     @media (max-width: 720px){
       .ev-detail-card{
@@ -649,11 +602,6 @@
               </div>
             </div>
 
-            <div class="ev-media" id="ev-media" style="display:none;">
-              <div class="note" id="ev-media-label">Flyer / foto's</div>
-              <div class="ev-media-grid" id="ev-media-grid"></div>
-            </div>
-
             <div class="ev-detail-grid">
               <div class="ev-col-info">
                 <div class="v4a-card-body ev-body-card">
@@ -661,33 +609,7 @@
                   <div id="ev-extra"></div>
                 </div>
 
-                <div class="ev-map-wrap" id="ev-map-wrap" style="display:none;">
-                  <div>
-                    <div class="ev-map-title">Locatie op kaart</div>
-                    <p class="ev-map-sub">De kaart staat bewust lager in de flow, zodat de kerninfo eerst alle aandacht krijgt.</p>
-                  </div>
-                  <div id="ev-map"></div>
-
-                  <div class="ev-map-links" id="ev-map-links" style="display:none;">
-                    <a class="btn-ghost-sm" id="ev-map-google" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
-                  </div>
-
-                  <div class="ev-map-fallback" id="ev-map-fallback" style="display:none;">
-                    Locatiegegevens ontbreken om een kaart te tonen.
-                  </div>
-                </div>
-
-                <p id="ev-status" class="note" style="display:none;"></p>
-              </div>
-
-              <div class="ev-col-media">
                 <aside class="ev-side-panel">
-                  <div>
-                    <div class="ev-side-kicker">Snel verder</div>
-                    <div class="ev-side-title">Alles rond dit item op één rustige plek</div>
-                    <p class="ev-side-note">Acties en delen zitten gegroepeerd in de zijrail, zodat de hoofdcontent centraal blijft staan.</p>
-                  </div>
-
                   <div class="ev-primary-actions">
                     <a href="events.html" class="btn-ghost-sm" id="back-link">← Terug naar events</a>
                     <button type="button" class="btn-ghost-sm" id="ev-contact">Inschrijven / contact</button>
@@ -733,6 +655,26 @@
                     </div>
                   </div>
                 </aside>
+
+                <div class="ev-map-wrap" id="ev-map-wrap" style="display:none;">
+                  <div class="ev-map-title">Locatie op kaart</div>
+                  <div id="ev-map"></div>
+
+                  <div class="ev-map-links" id="ev-map-links" style="display:none;">
+                    <a class="btn-ghost-sm" id="ev-map-google" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                  </div>
+
+                  <div class="ev-map-fallback" id="ev-map-fallback" style="display:none;">
+                    Locatiegegevens ontbreken om een kaart te tonen.
+                  </div>
+                </div>
+
+                <div class="ev-media" id="ev-media" style="display:none;">
+                  <div class="note" id="ev-media-label">Flyer / foto's</div>
+                  <div class="ev-media-grid" id="ev-media-grid"></div>
+                </div>
+
+                <p id="ev-status" class="note" style="display:none;"></p>
               </div>
             </div>
           </div>
@@ -747,7 +689,6 @@
     <section class="section-main ev-detail-ad-band">
       <div class="shell">
         <div class="footer-ad ev-detail-ad">
-          <p class="ev-detail-ad-label">Partnerblok</p>
           <ins class="adsbygoogle"
                style="display:block"
                data-ad-client="ca-pub-4062633211824348"
@@ -757,7 +698,6 @@
           <script>
             try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
           </script>
-          <p class="ev-detail-ad-note">Advertenties blijven aanwezig, maar pas na de kerncontent zodat de leesflow intact blijft.</p>
         </div>
       </div>
     </section>
