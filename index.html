@@ -2137,18 +2137,48 @@
         return "";
       }
 
+      function firstPhotoUrl(raw){
+        if (Array.isArray(raw)) {
+          for (const entry of raw) {
+            const normalized = normalizeImageUrl(entry);
+            if (normalized) return normalized;
+          }
+          return "";
+        }
+
+        const value = String(raw || "").trim();
+        if (!value) return "";
+
+        const parts = value.split(",").map((part) => part.trim()).filter(Boolean);
+        for (const part of parts) {
+          const normalized = normalizeImageUrl(part);
+          if (normalized) return normalized;
+        }
+        return "";
+      }
+
       function pickImage(it){
-        const cand = (
-          it?.image ||
-          it?.image_url ||
-          it?.imageUrl ||
-          it?.photo ||
-          it?.photo_url ||
-          it?.avatar ||
-          it?.avatar_url ||
-          ""
-        );
-        return normalizeImageUrl(cand);
+        const candidates = [
+          it?.cover_image_url,
+          it?.flyer_image_url,
+          it?.thumbnail_url,
+          it?.thumb_url,
+          it?.image,
+          it?.image_url,
+          it?.imageUrl,
+          it?.photo,
+          it?.photo_url,
+          it?.avatar,
+          it?.avatar_url,
+          firstPhotoUrl(it?.photo_urls),
+        ];
+
+        for (const candidate of candidates) {
+          const normalized = normalizeImageUrl(candidate);
+          if (normalized) return normalized;
+        }
+
+        return "";
       }
 
       const lists = {
