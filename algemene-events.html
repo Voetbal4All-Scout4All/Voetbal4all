@@ -1131,6 +1131,21 @@
     const descOneLine = omschrijving.replace(/\s+/g, " ").trim();
     const desc = descOneLine.length > 260 ? (descOneLine.slice(0, 260) + "…") : descOneLine;
 
+    const bodyParts = [];
+    const locName = ev.location_name ? String(ev.location_name).trim() : "";
+    const addr = ev.address ? String(ev.address).trim() : "";
+    const city = ev.city ? String(ev.city).trim() : "";
+    const pc = ev.postal_code ? String(ev.postal_code).trim() : "";
+
+    if (locName) bodyParts.push(`<strong>Locatie:</strong> ${locName}`);
+    if (addr) bodyParts.push(addr);
+    if (pc || city) bodyParts.push([pc, city].filter(Boolean).join(" "));
+
+    const mapsQuery = (addr || locName || city)
+      ? encodeURIComponent([addr || locName, pc, city, country].filter(Boolean).join(", "))
+      : "";
+    const bodyTop = bodyParts.length ? (bodyParts.join(" · ") + "<br/>") : "";
+
     // club/organizer line (best-effort)
     const club = ev.club_name || ev.club || ev.clubName || ev.clubname || ev.organizer_name || "";
 
@@ -1166,8 +1181,14 @@
             </div>
 
             <div class="v4a-card-body" style="margin-top:8px;">
+              ${bodyTop}
               ${desc}
             </div>
+            ${mapsQuery ? `
+              <div class="v4a-card-meta" style="margin-top:8px;opacity:.9;">
+                <strong>Locatie:</strong> ${[locName, addr, [pc, city].filter(Boolean).join(' ')].filter(Boolean).join(' · ')}
+              </div>
+            ` : ``}
 
             <div class="v4a-card-actions event-actions" style="margin-top:10px;">
               <a class="btn-ghost-sm" href="event.html?slug=${encodeURIComponent(slug)}">Bekijk event</a>

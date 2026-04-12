@@ -32,7 +32,16 @@
       .v4-two-col{ grid-template-columns: 1fr; }
     }
 
-    /* Published items grid: 2 per row, stretch, responsive */
+    /* Published items grid: match the events.html overview cards */
+    .events-grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+    }
+    @media (max-width: 980px){
+      .events-grid-2{ grid-template-columns:1fr; }
+    }
+
     #supportersclubsList,
     #supportersclubList,
     #supporters-list,
@@ -58,68 +67,73 @@
         grid-template-columns: 1fr;
       }
     }
-    #supportersclubsList .card,
-    #supportersclubList .card,
-    #supporters-list .card,
-    #supportersclubs-list .card,
-    #supportersclubsGrid .card,
-    #supporters-grid .card,
-    .supporters-list .card,
-    .supporters-grid .card{
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+
+    .event-row{display:flex;gap:12px;align-items:flex-start;min-width:0}
+    .event-thumbbox{
+      width:140px;
+      height:96px;
+      flex:0 0 140px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.04);
+      overflow:hidden;
+      position:relative;
     }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-title{
+    .event-thumbbox::after{content:"Logo";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
+    .event-thumbbox.has-img::after{display:none}
+    .event-thumbbox .thumbbg{
+      position:absolute;
+      inset:0;
+      background-size:contain;
+      background-position:center;
+      background-repeat:no-repeat;
+      background-color:rgba(255,255,255,0.04);
+      filter:none;
+    }
+    .event-main{flex:1 1 auto;min-width:0;padding-top:2px}
+    .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+    #supportersclubsList .v4a-card,
+    #supportersclubList .v4a-card,
+    #supporters-list .v4a-card,
+    #supportersclubs-list .v4a-card,
+    #supportersclubsGrid .v4a-card,
+    #supporters-grid .v4a-card,
+    .supporters-list .v4a-card,
+    .supporters-grid .v4a-card{
+      height: 100%;
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .v4a-card-title{
       font-size:15px;
       font-weight:700;
       line-height:1.22;
       letter-spacing:-0.01em;
       margin-bottom:4px;
     }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-caption{
-      font-size:11px;
-      line-height:1.2;
-      opacity:.72;
-    }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-body{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      font-size:12.5px;
-      line-height:1.42;
-      color:rgba(255,255,255,.84);
-      margin-top:6px;
-    }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-meta{
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .v4a-card-meta{
       font-size:12px;
       line-height:1.25;
       opacity:.82;
       margin-top:2px;
     }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-desc{
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .v4a-card-body{
       font-size:12.5px;
       line-height:1.42;
       color:rgba(255,255,255,.84);
+      margin-top:6px !important;
+      display:-webkit-box;
+      -webkit-box-orient:vertical;
+      -webkit-line-clamp:2;
+      overflow:hidden;
     }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-links{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:8px;
-      align-items:center;
-    }
-    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-share{
-      margin-top:8px;
-      font-size:12px;
-      line-height:1.25;
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .v4a-card-actions{
+      margin-top:8px !important;
     }
     @media (max-width: 980px){
-      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-title{
+      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .v4a-card-title{
         font-size:14px;
       }
-      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-body,
-      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .card-desc{
+      :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .v4a-card-body{
         font-size:12px;
       }
     }
@@ -423,7 +437,7 @@
       </div>
     </article>
 
-    <div id="supportersclubsList" aria-live="polite"></div>
+    <div id="supportersclubsList" class="events-grid-2" aria-live="polite"></div>
 
     <aside class="sidebar">
 
@@ -721,12 +735,17 @@
       });
     }
 
+    function countryLabel(code) {
+      const c = String(code || '').trim().toUpperCase();
+      if (c === 'BE') return '🇧🇪 België';
+      if (c === 'NL') return '🇳🇱 Nederland';
+      if (c === 'INT') return '🌍 Internationaal';
+      return escapeHtml(code || 'Onbekend');
+    }
+
     function supportersclubCardHtml(sc, idx) {
-      // Compose anchor id for this card
       const anchorId = `sc-${idx + 1}`;
-      // Compose share URL (absolute, with anchor)
       const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
-      // Card fields
       const name = escapeHtml(sc.name || '');
       const team = escapeHtml(sc.supported_team || '');
       const city = escapeHtml(sc.city || '');
@@ -735,47 +754,30 @@
       const website = sc.website ? String(sc.website) : '';
       const social = sc.social ? String(sc.social) : '';
       const photo = sc.photo ? String(sc.photo) : '';
-      // Share link if present
-      // We only render a share button if the original card had one (simulate presence for patch)
-      // For this patch, let's assume a share button is present if sc.share is true or always render if needed.
 
-      let shareHtml = '';
-      if (sc.share !== false) {
-        shareHtml = `<a href="#" class="card-share" data-share-url="${shareUrl}" title="Deel deze supportersclub">Delen</a>`;
-      }
+      const safePhoto = escapeHtml(photo);
+      const actions = [
+        website ? `<a class="btn-ghost-sm" href="${escapeHtml(website)}" target="_blank" rel="noopener">Website</a>` : '',
+        social ? `<a class="btn-ghost-sm" href="${escapeHtml(social)}" target="_blank" rel="noopener">Social</a>` : '',
+        sc.share !== false ? `<button type="button" class="btn-ghost-sm" data-share-url="${shareUrl}" title="Deel deze supportersclub">Delen</button>` : ''
+      ].filter(Boolean).join('');
 
-      // Compose logo/photo if present
-      let photoHtml = '';
-      if (photo) {
-        photoHtml = `<div class="card-photo"><img src="${escapeHtml(photo)}" alt="Logo van ${name}" loading="lazy" /></div>`;
-      }
-
-      // Compose website/social links
-      let linksHtml = '';
-      if (website || social) {
-        linksHtml = '<div class="card-links">';
-        if (website) linksHtml += `<a href="${escapeHtml(website)}" target="_blank" rel="noopener">Website</a>`;
-        if (social) linksHtml += `<a href="${escapeHtml(social)}" target="_blank" rel="noopener">Social</a>`;
-        linksHtml += '</div>';
-      }
-
-      // Compose card
-      return `<article class="card" id="${anchorId}" data-country="${country}" data-team="${team}" data-city="${city}">
-        <div class="card-header">
-          <div>
-            <div class="card-caption">${team ? 'Steunt: ' + team : ''}</div>
-            <div class="card-title"><a href="#${anchorId}" style="color:inherit;text-decoration:none;">${name}</a></div>
+      return `<article class="v4a-card" id="${anchorId}" data-country="${country}" data-team="${team}" data-city="${city}">
+        <div class="event-row">
+          <div class="event-thumbbox ${photo ? 'has-img' : ''}" aria-label="Supportersclub logo">
+            ${photo ? `<div class="thumbbg" style="background-image:url('${safePhoto}')"></div>` : ``}
           </div>
-          <span class="pill-small">${country}</span>
-        </div>
-        ${photoHtml}
-        <div class="card-body">
-          <div class="card-desc">${desc}</div>
-          <div class="card-meta">
-            <span>${city}</span>
+          <div class="event-main">
+            <div class="v4a-card-header" style="margin:0;">
+              <div>
+                <div class="v4a-card-title"><a href="#${anchorId}" style="color:inherit;text-decoration:none;">${name}</a></div>
+                <div class="v4a-card-meta">${countryLabel(country)}${city ? ' · ' + city : ''}</div>
+                ${team ? `<div class="v4a-card-meta">Steunt: ${team}</div>` : ``}
+              </div>
+            </div>
+            ${desc ? `<div class="v4a-card-body" style="margin-top:8px;">${desc}</div>` : ``}
+            ${actions ? `<div class="v4a-card-actions event-actions" style="margin-top:10px;">${actions}</div>` : ``}
           </div>
-          ${linksHtml}
-          ${shareHtml}
         </div>
       </article>`;
     }
@@ -788,21 +790,17 @@
 
     function renderEmptyState() {
       listEl.innerHTML = `
-        <article class="card" data-empty-state="1" style="grid-column:1 / -1;">
-          <div class="card-body">
-            <p class="note">Er zijn momenteel nog geen supportersclubs beschikbaar.</p>
-          </div>
-        </article>
+        <div class="v4-state-card v4-state-card--empty" data-empty-state="1" style="grid-column:1 / -1;">
+          <p>Er zijn momenteel nog geen supportersclubs beschikbaar.</p>
+        </div>
       `;
     }
 
     function renderUnavailableState() {
       listEl.innerHTML = `
-        <article class="card" data-empty-state="1" style="grid-column:1 / -1;">
-          <div class="card-body">
-            <p class="note">Supportersclubs konden tijdelijk niet geladen worden. Probeer later opnieuw.</p>
-          </div>
-        </article>
+        <div class="v4-state-card v4-state-card--error" data-empty-state="1" style="grid-column:1 / -1;">
+          <p>Supportersclubs konden tijdelijk niet geladen worden. Probeer later opnieuw.</p>
+        </div>
       `;
     }
 
@@ -838,18 +836,17 @@
     // --- Share link updater: ensures share links use correct anchor ---
     function updateShareLinks() {
       // For each card, update its share link to use the correct anchor
-      const cards = Array.from(listEl.querySelectorAll('.card'));
+      const cards = Array.from(listEl.querySelectorAll('.v4a-card'));
       cards.forEach((card, idx) => {
         const anchorId = `sc-${idx + 1}`;
         const shareUrl = `https://www.voetbal4all.eu/sportief-supportersclubs.html#${anchorId}`;
-        // Update any share links in this card
-        const shareEl = card.querySelector('.card-share');
+        const shareEl = card.querySelector('[data-share-url]');
         if (shareEl) {
           shareEl.setAttribute('data-share-url', shareUrl);
           shareEl.onclick = async function() {
             if (window.navigator.share) {
               try {
-                await window.navigator.share({ url: shareUrl, title: card.querySelector('.card-title').innerText.trim() });
+                await window.navigator.share({ url: shareUrl, title: card.querySelector('.v4a-card-title').innerText.trim() });
               } catch (_) {}
               return false;
             } else {
@@ -898,7 +895,7 @@
       const ft = norm(teamEl.value);
       const fcity = norm(cityEl.value);
 
-      const cards = Array.from(listEl.querySelectorAll('.card:not([data-empty-state="1"])'));
+      const cards = Array.from(listEl.querySelectorAll('.v4a-card:not([data-empty-state="1"])'));
       let shown = 0;
 
       cards.forEach(card => {
