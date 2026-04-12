@@ -752,9 +752,9 @@
   }
 
   function isPublicTestTrainer(p) {
-    const name = String(p?.name || "").trim().toLowerCase();
-    const role = String(p?.role || "").trim().toLowerCase();
-    const bio = String(p?.bio || "").trim().toLowerCase();
+    const name = String(p?.name || p?.full_name || p?.title || "").trim().toLowerCase();
+    const role = String(p?.role || p?.position || p?.type || "").trim().toLowerCase();
+    const bio = String(p?.bio || p?.description || p?.body || "").trim().toLowerCase();
 
     return name.startsWith("test ")
       || name.startsWith("demo ")
@@ -768,9 +768,9 @@
   }
 
   function trainerCardHtml(p, idx, isPremium) {
-    const name = escHtml(p.name || "Anonieme trainer");
-    const role = escHtml(p.role || "Trainer");
-    const bio = escHtml(p.bio || "");
+    const name = escHtml(p.name || p.full_name || p.title || "Anonieme trainer");
+    const role = escHtml(p.role || p.position || p.type || "Trainer");
+    const bio = escHtml(p.bio || p.description || p.body || "");
     const detailHref = `event.html?type=trainer&id=${encodeURIComponent(String(p.id || "").trim())}`;
     const country = String(p.country || "").toUpperCase();
     const compactLocation = escHtml(compactLocationMeta(p));
@@ -845,15 +845,28 @@
     const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
-    const url = `${API_BASE}/api/staff-profiles?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+    const genderQs = `gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+    const urls = [
+      `${API_BASE}/api/trainer-profiles?limit=200&${genderQs}`,
+      `${API_BASE}/api/trainers?limit=200&${genderQs}`,
+      `${API_BASE}/api/staff-profiles?limit=200&${genderQs}`
+    ];
 
     try {
-      const r = await fetch(url, { credentials: "omit" });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const j = await r.json();
-      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+      let j = null;
+      for (const url of urls) {
+        try {
+          const r = await fetch(url, { credentials: "omit" });
+          if (!r.ok) continue;
+          j = await r.json();
+          if (j) break;
+        } catch (_) { continue; }
+      }
+      if (!j) throw new Error("All endpoints failed");
+      const items_raw = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
+      if (!items_raw) throw new Error("Bad JSON");
 
-      const items = j.items.filter((item) => !isPublicTestTrainer(item));
+      const items = items_raw.filter((item) => !isPublicTestTrainer(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
       if (premiumGrid) {

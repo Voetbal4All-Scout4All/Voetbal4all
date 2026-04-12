@@ -1036,8 +1036,8 @@
   }
 
   function isPublicTestVacancy(v) {
-    const title = String(v?.title || "").trim().toLowerCase();
-    const description = String(v?.description || "").trim().toLowerCase();
+    const title = String(v?.title || v?.name || "").trim().toLowerCase();
+    const description = String(v?.description || v?.body || v?.bio || "").trim().toLowerCase();
 
     return title.startsWith("test ")
       || title.startsWith("demo ")
@@ -1128,9 +1128,9 @@
   }
 
   function vacancyCardHtml(v, idx, isPremium) {
-    const title = escHtml(v.title || "Vacature");
-    const club = escHtml(v.club || "Club");
-    const desc = escHtml(v.description || "");
+    const title = escHtml(v.title || v.name || "Vacature");
+    const club = escHtml(v.club || v.organization || v.club_name || "Club");
+    const desc = escHtml(v.description || v.body || v.bio || "");
     const rawId = String(v.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
 
@@ -1142,8 +1142,8 @@
 
     const gender = toGender(v);
 
-    const cType = String(v?.meta?.type || "");
-    const cLevel = String(v?.meta?.level || "");
+    const cType = String(v?.meta?.type || v?.type || "");
+    const cLevel = String(v?.meta?.level || v?.level || "");
     const detailBits = [cType, cLevel].filter(Boolean);
 
     const thumbUrl = normalizeVacancyThumb(v.image_url || v.image || "");
@@ -1223,15 +1223,27 @@
     const g = String(genderSel?.value || "BOTH").trim().toUpperCase();
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
-    const url = `${API_BASE}/api/club-vacancies?limit=200&gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+    const genderQs = `gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
+    const urls = [
+      `${API_BASE}/api/club-vacancies?limit=200&${genderQs}`,
+      `${API_BASE}/api/clubvacatures?limit=200&${genderQs}`
+    ];
 
     try {
-      const r = await fetch(url, { credentials: "omit" });
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const j = await r.json();
-      if (!j || j.ok !== true || !Array.isArray(j.items)) throw new Error("Bad JSON");
+      let j = null;
+      for (const url of urls) {
+        try {
+          const r = await fetch(url, { credentials: "omit" });
+          if (!r.ok) continue;
+          j = await r.json();
+          if (j) break;
+        } catch (_) { continue; }
+      }
+      if (!j) throw new Error("All endpoints failed");
+      const items_raw = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
+      if (!items_raw) throw new Error("Bad JSON");
 
-      const items = j.items.filter((item) => !isPublicTestVacancy(item));
+      const items = items_raw.filter((item) => !isPublicTestVacancy(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
       // Premium grid: render up to 6 premium items, otherwise restore placeholders

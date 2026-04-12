@@ -490,6 +490,83 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  /* ── Load & render published spotlight items from backend ── */
+  (function loadSpotlightItems(){
+    const listEl = document.getElementById('spotlight-list');
+    if (!listEl) return;
+
+    const API_BASE = 'https://voetbal4all-backend-database.onrender.com';
+    const PRIMARY   = API_BASE + '/api/team-in-de-kijker?limit=20';
+    const FALLBACK  = API_BASE + '/api/spotlight?limit=20';
+
+    function esc(s){ const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    function thumb(item){
+      const src = item.photo_url || item.image_url || '';
+      if (!src) return '<div class="event-thumbbox" style="display:flex;align-items:center;justify-content:center;font-size:28px;">⚽</div>';
+      return '<div class="event-thumbbox"><img src="' + esc(src) + '" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy"></div>';
+    }
+
+    function cardHtml(item){
+      const title = item.title || item.name || 'Zonder titel';
+      const type  = item.type || '';
+      const club  = item.club || item.organization || '';
+      const city  = item.city || '';
+      const country = (item.country || '').toUpperCase();
+      const desc  = item.description || item.body || '';
+      const date  = item.created_at ? item.created_at.slice(0, 10) : '';
+
+      const meta = [type, club, city].filter(Boolean).join(' · ');
+
+      return ''
+        + '<article class="card v4a-card"'
+        + ' data-country="' + esc(country) + '"'
+        + ' data-type="' + esc(type) + '"'
+        + ' data-club="' + esc(club.toLowerCase()) + '"'
+        + ' data-city="' + esc(city.toLowerCase()) + '"'
+        + ' data-date="' + esc(date) + '"'
+        + '>'
+        + '<div class="event-row">'
+        +   thumb(item)
+        +   '<div class="event-main">'
+        +     '<div class="card-header v4a-card-header">'
+        +       '<div>'
+        +         '<div class="card-title v4a-card-title">' + esc(title) + '</div>'
+        +         (meta ? '<div class="card-caption v4a-card-meta">' + esc(meta) + '</div>' : '')
+        +       '</div>'
+        +     '</div>'
+        +     (desc ? '<p class="note" style="margin-top:6px;">' + esc(desc.length > 180 ? desc.slice(0, 180) + '…' : desc) + '</p>' : '')
+        +   '</div>'
+        + '</div>'
+        + '</article>';
+    }
+
+    async function load(){
+      try {
+        let res = await fetch(PRIMARY);
+        if (!res.ok) res = await fetch(FALLBACK);
+        const json = await res.json();
+
+        // Accept { ok, items: [...] } or a raw array
+        const items = Array.isArray(json) ? json
+                    : (json && Array.isArray(json.items)) ? json.items
+                    : [];
+
+        if (items.length === 0){
+          listEl.innerHTML = '<p class="note" style="opacity:.6;grid-column:1/-1;">Momenteel geen items in de kijker.</p>';
+          return;
+        }
+
+        listEl.innerHTML = items.map(cardHtml).join('');
+      } catch(err){
+        console.error('[spotlight] laden mislukt:', err);
+        listEl.innerHTML = '<p class="note" style="opacity:.6;grid-column:1/-1;">Laden mislukt. Probeer later opnieuw.</p>';
+      }
+    }
+
+    load();
+  })();
+
   (function initSpotlightForm(){
     const form = document.getElementById('spotlightForm');
     if (!form) return;
