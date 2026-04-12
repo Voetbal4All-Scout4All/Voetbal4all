@@ -581,32 +581,51 @@
       return s === "1" || s === "true" || s === "yes" || s === "ok";
     }
 
+    function normalizeStatusKey(v) {
+      const s = String(v || '').toLowerCase().trim();
+      if (!s) return '';
+      if (['pending', 'awaiting_confirmation', 'awaiting-confirmation', 'to_confirm', 'unconfirmed', 'not_confirmed', 'te_bevestigen'].includes(s)) return 'pending';
+      if (['confirmed', 'bevestigd'].includes(s)) return 'confirmed';
+      if (['published', 'gepubliceerd', 'live'].includes(s)) return 'published';
+      if (['deleted', 'verwijderd', 'already_deleted'].includes(s)) return 'deleted';
+      if (['error', 'failed', 'failure', 'mislukt', 'invalid'].includes(s)) return 'error';
+      if (['cancelled', 'canceled', 'geannuleerd', 'cancel'].includes(s)) return 'cancelled';
+      if (['paid', 'betaald', 'payment_succeeded', 'success'].includes(s)) return 'paid';
+      if (['received', 'ontvangen', 'submitted', 'created'].includes(s)) return 'received';
+      return s;
+    }
+
     function resolveFlow(params) {
       const sid = pickFirst(params, ["sid", "session_id", "stripe_session_id"]);
       const eventId = pickFirst(params, ["eventId", "event_id", "id", "eid"]);
       const submissionId = pickFirst(params, ["submissionId", "submission_id"]);
+      const rawStatus = pickFirst(params, ["status"]);
+      const statusKey = normalizeStatusKey(rawStatus);
 
       const paid = asBool(pickFirst(params, ["paid", "success"]));
-      const cancelled = asBool(pickFirst(params, ["cancelled", "canceled", "cancel"]));
+      const cancelled = asBool(pickFirst(params, ["cancelled", "canceled", "cancel"])) || statusKey === "cancelled";
       const error = pickFirst(params, ["error", "err", "reason", "message"]);
-
-      const confirmed = asBool(pickFirst(params, ["confirmed", "confirm", "published"]));
-      const deleted = asBool(pickFirst(params, ["deleted", "remove"]));
+      const published = asBool(pickFirst(params, ["published"])) || statusKey === "published";
+      const confirmed = asBool(pickFirst(params, ["confirmed", "confirm"])) || statusKey === "confirmed" || published;
+      const deleted = asBool(pickFirst(params, ["deleted", "remove"])) || statusKey === "deleted";
+      const paidResolved = paid || statusKey === "paid";
 
       const premiumStart = pickFirst(params, ["premiumStart", "premium_from", "premium_activated_at", "premiumActivatedAt", "premium_start"]);
       const premiumEnd = pickFirst(params, ["premiumEnd", "premium_to", "premium_expires_at", "premiumExpiresAt", "premium_end"]);
       const packageCode = pickFirst(params, ["package_code", "packageCode", "package", "pkg"]);
       const quantity = pickFirst(params, ["quantity", "qty", "q"]);
 
-      if (error && !asBool(error)) {
-        return { kind: "error", sid, eventId, submissionId, error, premiumStart, premiumEnd, packageCode, quantity };
+      if ((error && !asBool(error)) || statusKey === "error") {
+        return { kind: "error", sid, eventId, submissionId, error, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
       }
-      if (deleted) return { kind: "nonpremium_deleted", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
-      if (confirmed) return { kind: "nonpremium_confirmed", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
-      if (cancelled) return { kind: "premium_cancel", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
-      if (paid && sid) return { kind: "premium_success", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
-      if (paid && !sid) return { kind: "error", sid: "", eventId, submissionId, error: "paid=1 maar geen sid/session_id", premiumStart, premiumEnd, packageCode, quantity };
-      return { kind: "unknown", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity };
+      if (deleted) return { kind: "nonpremium_deleted", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (cancelled) return { kind: "premium_cancel", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (paidResolved && sid) return { kind: "premium_success", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (paidResolved && !sid) return { kind: "error", sid: "", eventId, submissionId, error: "paid=1 maar geen sid/session_id", premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (confirmed) return { kind: "nonpremium_confirmed", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (statusKey === "pending") return { kind: "pending", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (statusKey === "received") return { kind: "received", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      return { kind: "unknown", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
     }
 
     const flow = resolveFlow(qs); 
@@ -616,12 +635,14 @@
     const source = (qs.get('source') || '').trim();
     // Normalize source/kind so premium profiles & vacatures render premium window
     const kind = (qs.get('kind') || source || '').trim();
-    const isNonEventPremium = (kind === 'vacature' || kind === 'profile' || kind === 'trainer' || kind === 'speler');
+    const sourceKey = source.toLowerCase();
+    const kindKey = kind.toLowerCase();
+    const isNonEventPremium = (kindKey === 'vacature' || kindKey === 'profile' || kindKey === 'trainer' || kindKey === 'speler');
+    const isEventLikeFlow = !!((flow && flow.sid) ? String(flow.sid).trim() : '') || sourceKey === 'event' || kindKey === 'event' || isNonEventPremium;
 
     // Primary params used by the event flow
     const sid = (flow.sid || '').trim();
     const paid = flow.kind === 'premium_success';
-    const isCancelledFlow = flow.kind === 'premium_cancel';
 
     // Premium window (optional): provided by backend after payment/confirmation
     // Supported param names (robust): premiumStart/premiumEnd OR premium_from/premium_to
@@ -1010,29 +1031,71 @@
     const id = (sid || flow.eventId || flow.submissionId || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
 
     // Status (optional)
-    let status = (qs.get('status') || 'Ontvangen').trim();
+    const statusParam = (qs.get('status') || '').trim();
+    const statusKey = normalizeStatusKey(statusParam || flow.statusKey || '');
+    let status = statusParam || 'Ontvangen';
     const deletion = (qs.get('deletion') || '').trim();
 
     const isDeleted =
       flow.kind === 'nonpremium_deleted' ||
       ['deleted','already_deleted'].includes(String(deletion).toLowerCase()) ||
-      String(status).toLowerCase() === 'deleted';
+      statusKey === 'deleted';
 
     const isError =
       flow.kind === 'error' ||
       errorFlag === '1' ||
-      ['error','failed','mislukt'].includes(String(status).toLowerCase());
+      statusKey === 'error';
+
+    const isCancelled = flow.kind === 'premium_cancel' || statusKey === 'cancelled';
+    const isPublishedState = !!flow.published || statusKey === 'published';
+    const isConfirmedState = flow.kind === 'nonpremium_confirmed' || statusKey === 'confirmed' || isPublishedState;
+    const isPendingState =
+      !isError &&
+      !isDeleted &&
+      !isCancelled &&
+      !paid &&
+      !isConfirmedState &&
+      (flow.kind === 'pending' || statusKey === 'pending');
+    const isNeutralReceivedState =
+      !isError &&
+      !isDeleted &&
+      !isCancelled &&
+      !paid &&
+      !isConfirmedState &&
+      !isPendingState &&
+      (flow.kind === 'received' || statusKey === 'received' || (isEventLikeFlow && !!sourceKey && !!sid));
+
+    let displayState = 'default';
+    if (isError) displayState = 'error';
+    else if (isDeleted) displayState = 'deleted';
+    else if (isCancelled) displayState = 'cancelled';
+    else if (paid) displayState = 'paid';
+    else if (isPublishedState) displayState = 'published';
+    else if (isConfirmedState) displayState = 'confirmed';
+    else if (isPendingState) displayState = 'pending';
+    else if (isNeutralReceivedState) displayState = 'received';
+
+    const statusLabel = (state, fallback) => {
+      const cleanedFallback = String(fallback || '').replace(/\s+/g, ' ').trim();
+      switch (state) {
+        case 'error': return 'Niet verwerkt';
+        case 'deleted': return 'Verwijderd';
+        case 'cancelled': return 'Betaling niet afgerond';
+        case 'paid': return 'Premium geslaagd';
+        case 'published': return 'Gepubliceerd';
+        case 'confirmed': return 'Bevestigd';
+        case 'pending': return 'Nog te bevestigen';
+        case 'received': return 'Ontvangen';
+        default: return cleanedFallback || 'Ontvangen';
+      }
+    };
+
+    const supportIdLabel = isNonEventPremium ? 'referentie-ID' : 'Event-ID';
 
     // NOTE: `hasPremiumWindow` is declared later (after backend lookup).
     // Do NOT mark as paid just because dates exist: non-premium events may still have
     // computed windows (e.g. signupDeadline logic). Only Stripe success = paid.
-    const hasPremiumWindowNow = !!String(premiumStartRaw || '').trim() && !!String(premiumEndRaw || '').trim();
-    if (paid) status = 'Betaald';
-    if (flow.kind === 'premium_cancel') status = 'Geannuleerd';
-    if (flow.kind === 'nonpremium_confirmed') status = 'Bevestigd';
-    if (flow.kind === 'nonpremium_deleted') status = 'Verwijderd';
-
-    const statusLower = String(status).toLowerCase();
+    status = statusLabel(displayState, status);
 
     // Success checkmark animation: show only on success (hide on error)
     const iconWrap = document.getElementById('thanksIcon');
@@ -1054,7 +1117,7 @@
     const confirmUrl = (qs.get('confirmUrl') || '').trim();
 
     const pendingNotice = document.getElementById('pendingNotice');
-    if (pendingNotice && !isError && statusLower === 'pending') {
+    if (pendingNotice && displayState === 'pending') {
       pendingNotice.style.display = '';
 
       const fmt = (iso) => {
@@ -1072,22 +1135,47 @@
       // Optional CTA if a confirmUrl is provided
       const ctaWrap = document.getElementById('confirmCtaWrap');
       const cta = document.getElementById('confirmCta');
+      if (ctaWrap) ctaWrap.style.display = 'none';
       if (confirmUrl && ctaWrap && cta) {
         ctaWrap.style.display = '';
         cta.href = confirmUrl;
       }
+    } else if (pendingNotice) {
+      pendingNotice.style.display = 'none';
     }
 
     // Show the primary guidance notice after a form submit
     const emailKeepNotice = document.getElementById('emailKeepNotice');
     if (emailKeepNotice) {
-      // Show for event submissions; for premium (paid=1) we still recommend keeping the email,
-      // but the “bevestigen” step applies to non-premium.
-      const isEventFlow = !!sid || source === 'event' || isNonEventPremium;
-      if (isEventFlow && !isError && !isDeleted) {
+      const emailKeepList = emailKeepNotice.querySelector('ul');
+      if (isEventLikeFlow && !isError && !isDeleted && !isCancelled) {
         emailKeepNotice.style.display = '';
-        if (paid) {
-          emailKeepNotice.querySelectorAll('li')[0].innerHTML = 'Bewaar de e-mail met uw <strong>Event-ID</strong> tot na het event.';
+        if (emailKeepList) {
+          if (displayState === 'pending') {
+            emailKeepList.innerHTML = `
+              <li>U heeft de e-mail nodig om uw aanvraag nog <strong>te bevestigen</strong>.</li>
+              <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
+              <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
+            `;
+          } else if (displayState === 'paid') {
+            emailKeepList.innerHTML = `
+              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> tot na het event.</li>
+              <li>Gebruik die e-mail voor opvolging van uw <strong>Premium-aanvraag</strong>.</li>
+              <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
+            `;
+          } else if (displayState === 'confirmed' || displayState === 'published') {
+            emailKeepList.innerHTML = `
+              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> tot na het event.</li>
+              <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
+              <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
+            `;
+          } else {
+            emailKeepList.innerHTML = `
+              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> tot na het event.</li>
+              <li>Verdere opvolging en beheeropties worden via die e-mail gedeeld.</li>
+              <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
+            `;
+          }
         }
       } else {
         emailKeepNotice.style.display = 'none';
@@ -1095,10 +1183,23 @@
     }
 
     // Show error notice when the submission was rejected/failed
+    const errorNotice = document.getElementById('errorNotice');
+    const errorReasonText = document.getElementById('errorReasonText');
+    if (errorNotice) {
+      if (displayState === 'error') {
+        errorNotice.style.display = '';
+        if (errorReasonText) {
+          errorReasonText.textContent = String(reason || '').replace(/\s+/g, ' ').trim() || 'Er ging iets mis bij het verwerken van uw aanvraag.';
+        }
+      } else {
+        errorNotice.style.display = 'none';
+      }
+    }
+
     // Show cancel notice when Stripe checkout was cancelled
     const cancelNotice = document.getElementById('cancelNotice');
     if (cancelNotice) {
-      if (!isError && !isDeleted && isCancelledFlow) {
+      if (displayState === 'cancelled') {
         cancelNotice.style.display = '';
         if (pendingNotice) pendingNotice.style.display = 'none';
         const emailKeepNotice2 = document.getElementById('emailKeepNotice');
@@ -1287,43 +1388,41 @@
     const titleEl = document.getElementById('thanksTitle');
     const subEl = document.getElementById('thanksSubtitle');
     if (titleEl && subEl){
-      const isEventFlow = !!sid || source === 'event';
-
-      if (isError) {
-        titleEl.textContent = 'Uw aanvraag kon niet verwerkt worden';
-        subEl.textContent = 'Controleer uw gegevens en probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
-        return;
-      }
-
-      if (isDeleted) {
-        titleEl.textContent = 'Uw event werd verwijderd';
-        subEl.textContent = 'Uw event is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
-        // In delete state: no pending/keep-email guidance
-        if (pendingNotice) pendingNotice.style.display = 'none';
-        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
-        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
-        return;
-      }
-
-      if (isCancelledFlow) {
-        titleEl.textContent = 'Betaling geannuleerd';
-        subEl.textContent = 'Uw Premium betaling werd geannuleerd. Uw event werd niet gepubliceerd. U kan opnieuw proberen of een niet-premium aanvraag indienen.';
-        if (pendingNotice) pendingNotice.style.display = 'none';
-        const emailKeepNotice2 = document.getElementById('emailKeepNotice');
-        if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
-        return;
-      }
-
+      titleEl.textContent = 'Bedankt';
+      subEl.textContent = 'We hebben je aanvraag goed ontvangen. Hieronder vind je een overzicht.';
       if (source === 'contact'){
         titleEl.textContent = 'Bedankt voor je bericht';
         subEl.textContent = 'We hebben je bericht goed ontvangen. Hieronder vind je een overzicht van je aanvraag.';
-      } else if (isEventFlow){
-        if (paid){
-          titleEl.textContent = 'Bedankt. Uw Premium event is succesvol aangemeld.';
-          subEl.textContent = 'Uw event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+      } else if (isEventLikeFlow){
+        if (displayState === 'error') {
+          titleEl.textContent = 'Uw aanvraag kon niet verwerkt worden';
+          subEl.textContent = 'Controleer de link of probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
+        } else if (displayState === 'deleted') {
+          titleEl.textContent = 'Uw event werd verwijderd';
+          subEl.textContent = 'Uw event is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
+        } else if (displayState === 'cancelled') {
+          titleEl.textContent = 'Betaling niet afgerond';
+          subEl.textContent = 'Uw Premium betaling werd niet afgerond. Uw event werd niet gepubliceerd.';
+        } else if (displayState === 'paid') {
+          titleEl.textContent = isNonEventPremium ? 'Uw Premium aanvraag is geslaagd' : 'Uw Premium event is succesvol aangemeld';
+          subEl.textContent = isNonEventPremium
+            ? 'Uw Premium zichtbaarheid is geactiveerd. Bewaar de bevestigingsmail met uw referentie-ID.'
+            : 'Uw Premium event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+        } else if (displayState === 'published') {
+          titleEl.textContent = 'Uw event is gepubliceerd';
+          subEl.textContent = 'Uw event staat live op Voetbal4All. Bewaar de e-mail met uw Event-ID voor later beheer.';
+        } else if (displayState === 'confirmed') {
+          titleEl.textContent = 'Uw event is bevestigd';
+          subEl.textContent = 'Uw bevestiging is goed ontvangen. Uw event wordt verder verwerkt zonder bijkomende bevestigingsstap.';
+        } else if (displayState === 'pending') {
+          titleEl.textContent = 'Uw event is ontvangen, maar nog niet bevestigd';
+          subEl.textContent = 'Bevestig uw aanvraag via de e-mail die u ontving. Zonder bevestiging wordt dit event niet gepubliceerd.';
+        } else if (displayState === 'received') {
+          titleEl.textContent = 'Uw aanvraag is goed ontvangen';
+          subEl.textContent = 'We hebben uw aanvraag ontvangen. Verdere opvolging verloopt via e-mail.';
         } else {
           titleEl.textContent = 'Uw aanvraag is goed ontvangen';
-          subEl.textContent = 'U ontvangt een e-mail met verdere instructies om uw aanvraag te bevestigen. Bewaar die e-mail tot na het event.';
+          subEl.textContent = 'We hebben uw aanvraag goed ontvangen. Hieronder vindt u een overzicht.';
         }
       } else if (source === 'vacature'){
         titleEl.textContent = 'Bedankt voor je aanvraag';
@@ -1338,11 +1437,16 @@
     const badgeEl = document.getElementById('thanksBadge');
     if (badgeEl){
       const parts = [];
-      const isEventFlow = !!sid || source === 'event' || isNonEventPremium;
-      if (isEventFlow) {
-        if (isError) parts.push('EVENT · NIET VERWERKT');
-        else if (isDeleted) parts.push('EVENT · VERWIJDERD');
-        else parts.push(paid ? 'EVENT · PREMIUM' : 'EVENT');
+      if (isEventLikeFlow) {
+        if (displayState === 'error') parts.push('EVENT · NIET VERWERKT');
+        else if (displayState === 'deleted') parts.push('EVENT · VERWIJDERD');
+        else if (displayState === 'cancelled') parts.push('BETALING · NIET AFGEROND');
+        else if (displayState === 'paid') parts.push('EVENT · PREMIUM');
+        else if (displayState === 'published') parts.push('EVENT · GEPUBLICEERD');
+        else if (displayState === 'confirmed') parts.push('EVENT · BEVESTIGD');
+        else if (displayState === 'pending') parts.push('EVENT · NOG TE BEVESTIGEN');
+        else if (displayState === 'received') parts.push('EVENT · ONTVANGEN');
+        else parts.push('EVENT');
       } else if (source) {
         parts.push(source.toUpperCase());
       }
@@ -1354,13 +1458,12 @@
     }
 
     // Summary values
-    const isEventFlow2 = !!sid || source === 'event' || isNonEventPremium;
-    const whatResolved = what || (isEventFlow2 ? 'Event-aanmelding' : (source ? ('Aanvraag: ' + source) : ''));
+    const whatResolved = what || (isEventLikeFlow ? 'Event-aanmelding' : (source ? ('Aanvraag: ' + source) : ''));
     setText('orderWhat', whatResolved, 'Aanvraag ontvangen');
     setText('orderId', id, '—');
     setText('orderName', name, name ? name : (email ? '—' : '—'));
     setText('orderEmail', email, '—');
-    setText('orderStatus', isError ? 'Niet verwerkt' : (isDeleted ? 'Verwijderd' : status), 'Ontvangen');
+    setText('orderStatus', status, 'Ontvangen');
     // Render fields now (URL params), then re-render after backend lookup (for paid flow where only SID exists)
     renderFormFields();
 
@@ -1470,17 +1573,6 @@
         pwWrap.appendChild(chip);
       }
 
-      // Also enhance next steps copy when paid=1
-      if (paid && nextIntro && nextTip) {
-        recomputePremiumTexts();
-        if (isNonEventPremium) {
-          nextIntro.textContent = 'Uw Premium zichtbaarheid is geactiveerd en loopt gedurende uw gekozen Premium-periode.';
-          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '.';
-        } else {
-          nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All tijdens uw Premium-periode.';
-          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '. Bewaar de e-mail met uw Event-ID tot na het event.';
-        }
-      }
     } else {
       if (premiumBlock) premiumBlock.style.display = 'none';
       if (pwWrap) pwWrap.style.display = 'none';
@@ -1488,8 +1580,7 @@
       if (pwLabel) pwLabel.style.display = 'none';
       if (pwValue) pwValue.style.display = 'none';
       // Premium upsell for non-premium pending events
-      const statusIsPending = String(status).toLowerCase() === 'pending';
-      if (statusIsPending && !paid && premiumBlock) {
+      if (displayState === 'pending' && !paid && premiumBlock) {
         premiumBlock.style.display = '';
         if (pwWrap) {
           pwWrap.style.display = '';
@@ -1505,31 +1596,46 @@
     }
 
     // (nextIntro/nextTip already resolved above)
-    const isEventFlow3 = !!sid || source === 'event' || isNonEventPremium;
-    if (isEventFlow3 && nextIntro && nextTip){
-      if (isError) {
+    if (isEventLikeFlow && nextIntro && nextTip){
+      if (displayState === 'error') {
         nextIntro.textContent = 'Uw aanvraag kon niet verwerkt worden.';
-        nextTip.textContent = 'Voor meer info, contacteer ons via het contactformulier.';
-        return;
-      }
-      if (isDeleted) {
+        nextTip.textContent = 'Controleer de link of contacteer ons via het contactformulier.';
+      } else if (displayState === 'deleted') {
         nextIntro.textContent = 'Uw event werd verwijderd en is niet langer zichtbaar op Voetbal4All.';
         nextTip.textContent = 'In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
-        return;
-      }
-      if (paid){
-        // If Premium window is already rendered above (green chip), do not overwrite the copy.
-        // Otherwise show a clean Premium message here.
+      } else if (displayState === 'paid') {
         if (!hasPremiumWindow) {
-          nextIntro.textContent = 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt (publicatie wordt automatisch bevestigd).';
-          nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
+          nextIntro.textContent = isNonEventPremium
+            ? 'Uw Premium zichtbaarheid is geactiveerd.'
+            : 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt.';
+          nextTip.textContent = isNonEventPremium
+            ? 'Bewaar de bevestigingsmail met uw referentie-ID voor verdere opvolging.'
+            : 'Bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
+        } else if (isNonEventPremium) {
+          nextIntro.textContent = 'Uw Premium zichtbaarheid is geactiveerd en loopt gedurende uw gekozen Premium-periode.';
+          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '.';
+        } else {
+          nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All tijdens uw Premium-periode.';
+          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '. Bewaar de e-mail met uw Event-ID tot na het event.';
         }
-      } else if (isCancelledFlow) {
-        nextIntro.textContent = 'De betaling werd geannuleerd. Uw event werd niet gepubliceerd.';
+      } else if (displayState === 'cancelled') {
+        nextIntro.textContent = 'De betaling werd niet afgerond. Uw event werd niet gepubliceerd.';
         nextTip.textContent = 'U kan opnieuw proberen via Event aanmelden.';
+      } else if (displayState === 'published') {
+        nextIntro.textContent = 'Uw event is gepubliceerd op Voetbal4All.';
+        nextTip.textContent = 'Bewaar de e-mail met uw Event-ID voor later beheer of contact.';
+      } else if (displayState === 'confirmed') {
+        nextIntro.textContent = 'Uw bevestiging is verwerkt. Er is geen bijkomende bevestigingsstap meer nodig.';
+        nextTip.textContent = 'Bewaar de e-mail met uw Event-ID voor beheer, verwijdering of contact.';
+      } else if (displayState === 'pending') {
+        nextIntro.textContent = 'Uw aanvraag wacht nog op bevestiging. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
+        nextTip.textContent = 'Gebruik de e-mail met uw Event-ID om te bevestigen, te verwijderen of contact op te nemen.';
+      } else if (displayState === 'received') {
+        nextIntro.textContent = 'Uw aanvraag is ontvangen.';
+        nextTip.textContent = 'Verdere opvolging verloopt via e-mail. Bewaar de e-mail met uw Event-ID goed.';
       } else {
-        nextIntro.textContent = 'U ontvangt een e-mail met een bevestigingsstap. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
-        nextTip.textContent = 'Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer (bevestigen, verwijderen, contact) verloopt via die e-mail.';
+        nextIntro.textContent = 'Uw aanvraag is goed ontvangen. U ontvangt verdere informatie via e-mail.';
+        nextTip.textContent = 'Bewaar de e-mail met uw Event-ID tot na het event. Beheer verloopt via die e-mail.';
       }
     }
 
