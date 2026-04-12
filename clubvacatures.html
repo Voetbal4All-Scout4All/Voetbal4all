@@ -1059,11 +1059,78 @@
     return value;
   }
 
+  function actionUrlValue(raw) {
+    if (!raw) return "";
+    if (typeof raw === "string") return raw.trim();
+    if (typeof raw === "object") {
+      const candidate = raw.url || raw.publicUrl || raw.public_url || raw.publicPath || raw.public_path || raw.path || raw.href;
+      return typeof candidate === "string" ? candidate.trim() : "";
+    }
+    return "";
+  }
+
+  function absolutizeActionUrl(raw) {
+    const value = actionUrlValue(raw);
+    if (!value) return "";
+    if (/^https?:\/\//i.test(value)) return value;
+    if (value.startsWith("//")) return `https:${value}`;
+    if (value.startsWith("/")) return `${API_BASE}${value}`;
+    if (/^(uploads|images)\//i.test(value)) return `${API_BASE}/${value}`;
+    return value;
+  }
+
+  function isDocumentUrl(url) {
+    return /\.(pdf|doc|docx|odt|rtf|txt)(?:[?#].*)?$/i.test(String(url || "").trim());
+  }
+
+  function firstResolvedLink(entries, options) {
+    const opts = options || {};
+    for (const entry of entries) {
+      const href = absolutizeActionUrl(entry?.value);
+      if (!href) continue;
+      if (opts.documentOnly && !isDocumentUrl(href)) continue;
+      if (opts.excludeDocuments && isDocumentUrl(href)) continue;
+      return { href, label: entry?.label || "Meer info" };
+    }
+    return { href: "", label: "" };
+  }
+
+  function resolveVacancyLinks(v) {
+    const cv = firstResolvedLink([
+      { value: v.cv_url, label: "Bekijk cv" },
+      { value: v.cv, label: "Bekijk cv" },
+      { value: v.resume_url, label: "Bekijk cv" },
+      { value: v.resume, label: "Bekijk cv" },
+      { value: v.attachment_url, label: "Bekijk cv" },
+      { value: v.attachment, label: "Bekijk cv" },
+      { value: v.document_url, label: "Bekijk cv" },
+      { value: v.document, label: "Bekijk cv" },
+      { value: v.file_url, label: "Bekijk cv" },
+      { value: v.file, label: "Bekijk cv" },
+      { value: v.media_url, label: "Bekijk cv" }
+    ], { documentOnly: true });
+
+    const external = firstResolvedLink([
+      { value: v.vacancy_url, label: "Vacaturelink" },
+      { value: v.vacature_url, label: "Vacaturelink" },
+      { value: v.application_url, label: "Meer info" },
+      { value: v.club_website, label: "Website" },
+      { value: v.club_url, label: "Website" },
+      { value: v.website, label: "Website" },
+      { value: v.website_url, label: "Website" },
+      { value: v.profile_url, label: "Profiel / medialink" },
+      { value: v.social, label: "Profiel / medialink" },
+      { value: v.media_url, label: "Meer info" },
+      { value: v.url, label: "Meer info" }
+    ], { excludeDocuments: true });
+
+    return { external, cv };
+  }
+
   function vacancyCardHtml(v, idx, isPremium) {
     const title = escHtml(v.title || "Vacature");
     const club = escHtml(v.club || "Club");
     const desc = escHtml(v.description || "");
-    const url = String(v.url || "").trim();
     const rawId = String(v.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
 
@@ -1086,14 +1153,20 @@
 
     const displayTitle = isPremium ? title : (title || club);
     const displayMeta2 = isPremium ? club : (club || "Clubvacature");
+    const links = resolveVacancyLinks(v);
 
-    const premiumActionHref = detailHref || url;
-    const normalActionHref = detailHref || url;
+    const premiumActionHref = detailHref || links.external.href || links.cv.href;
     const normalActions = [];
-    if (normalActionHref) {
-      normalActions.push(
-        `<a class="btn-ghost-sm" href="${escHtml(normalActionHref)}"${detailHref ? "" : ' target="_blank" rel="noopener noreferrer"'}>${detailHref ? "Bekijk vacature" : "Meer info"}</a>`
-      );
+    if (detailHref) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk vacature</a>`);
+    } else if (links.external.href) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.external.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.external.label)}</a>`);
+    }
+    if (detailHref && links.external.href) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.external.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.external.label)}</a>`);
+    }
+    if (links.cv.href) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.cv.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.cv.label)}</a>`);
     }
     normalActions.push(`<button type="button" class="btn-ghost-sm" data-reply-vacancy="${escHtml(String(idx + 1))}">Reageer</button>`);
     normalActions.push(`<a href="#" class="btn-ghost-sm btn-share" data-share-vacancy="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`);

@@ -673,6 +673,71 @@
     return String(raw || "").trim();
   }
 
+  function actionUrlValue(raw) {
+    if (!raw) return "";
+    if (typeof raw === "string") return raw.trim();
+    if (typeof raw === "object") {
+      const candidate = raw.url || raw.publicUrl || raw.public_url || raw.publicPath || raw.public_path || raw.path || raw.href;
+      return typeof candidate === "string" ? candidate.trim() : "";
+    }
+    return "";
+  }
+
+  function absolutizeActionUrl(raw) {
+    const value = actionUrlValue(raw);
+    if (!value) return "";
+    if (/^https?:\/\//i.test(value)) return value;
+    if (value.startsWith("//")) return `https:${value}`;
+    if (value.startsWith("/")) return `${API_BASE}${value}`;
+    if (/^(uploads|images)\//i.test(value)) return `${API_BASE}/${value}`;
+    return value;
+  }
+
+  function isDocumentUrl(url) {
+    return /\.(pdf|doc|docx|odt|rtf|txt)(?:[?#].*)?$/i.test(String(url || "").trim());
+  }
+
+  function firstResolvedLink(entries, options) {
+    const opts = options || {};
+    for (const entry of entries) {
+      const href = absolutizeActionUrl(entry?.value);
+      if (!href) continue;
+      if (opts.documentOnly && !isDocumentUrl(href)) continue;
+      if (opts.excludeDocuments && isDocumentUrl(href)) continue;
+      return { href, label: entry?.label || "Meer info" };
+    }
+    return { href: "", label: "" };
+  }
+
+  function resolvePlayerLinks(p) {
+    const cv = firstResolvedLink([
+      { value: p.cv_url, label: "Bekijk cv" },
+      { value: p.cv, label: "Bekijk cv" },
+      { value: p.resume_url, label: "Bekijk cv" },
+      { value: p.resume, label: "Bekijk cv" },
+      { value: p.attachment_url, label: "Bekijk cv" },
+      { value: p.attachment, label: "Bekijk cv" },
+      { value: p.document_url, label: "Bekijk cv" },
+      { value: p.document, label: "Bekijk cv" },
+      { value: p.file_url, label: "Bekijk cv" },
+      { value: p.file, label: "Bekijk cv" },
+      { value: p.media_url, label: "Bekijk cv" }
+    ], { documentOnly: true });
+
+    const external = firstResolvedLink([
+      { value: p.profile_url, label: "Profiel / medialink" },
+      { value: p.website, label: "Website" },
+      { value: p.website_url, label: "Website" },
+      { value: p.social, label: "Profiel / medialink" },
+      { value: p.social_url, label: "Profiel / medialink" },
+      { value: p.linkedin, label: "Profiel / medialink" },
+      { value: p.media_url, label: "Profiel / medialink" },
+      { value: p.url, label: "Meer info" }
+    ], { excludeDocuments: true });
+
+    return { external, cv };
+  }
+
   function toGender(p) {
     const g = String(p.gender || "BOTH").trim().toUpperCase();
     return (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
@@ -689,12 +754,12 @@
     const name = escHtml(p.name || "Anonieme speler");
     const pos = escHtml(p.position || "Speler");
     const bio = escHtml(p.bio || "");
-    const url = String(p.url || "").trim();
     const rawId = String(p.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
     const country = String(p.country || "").toUpperCase();
     const compactLocation = escHtml(compactLocationMeta(p));
     const gender = toGender(p);
+    const links = resolvePlayerLinks(p);
     const thumbUrl = normalizePlayerThumb(
       p.image_url || p.image || p.photo_url || p.photo || p.avatar_url || p.avatar || ""
     );
@@ -702,12 +767,18 @@
       ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
       : "";
 
-    const premiumActionHref = detailHref || url;
+    const premiumActionHref = detailHref || links.external.href || links.cv.href;
     const normalActions = [];
     if (detailHref) {
       normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>`);
-    } else if (url) {
-      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(url)}" target="_blank" rel="noopener noreferrer">Meer info</a>`);
+    } else if (links.external.href) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.external.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.external.label)}</a>`);
+    }
+    if (detailHref && links.external.href) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.external.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.external.label)}</a>`);
+    }
+    if (links.cv.href) {
+      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.cv.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.cv.label)}</a>`);
     }
     normalActions.push(`<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>`);
     normalActions.push(`<a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`);
