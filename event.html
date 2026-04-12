@@ -413,18 +413,11 @@
     .share-socials .live-social-link:active{transform:translateY(0)}
     .share-socials [data-share-channel="ig"] svg{transform:scale(1.28);transform-origin:50% 50%}
 
-    /* Keep any footer ad on this detail page limited to a slim banner. */
-    .ad-slot-header,
-    .ad-slot-footer{
+    /* Keep only the dedicated footer banner slim on this detail page. */
+    .ev-footer-ad-slot{
       max-height:120px;
       min-height:0 !important;
       overflow:hidden;
-    }
-    .ev-detail-ad-band,
-    .ev-detail-ad,
-    .ev-detail-ad-label,
-    .ev-detail-ad-note{
-      display:none !important;
     }
 
     /* Event map */
@@ -783,6 +776,24 @@
       </section>
 
     </main>
+
+    <!-- Footer banner: subtle horizontal slot only -->
+    <section class="section-main" style="padding-top:0;padding-bottom:10px;">
+      <div class="shell">
+        <div class="ad-slot ad-slot-footer ev-footer-ad-slot">
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4062633211824348"
+            data-ad-slot="5386990710"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"></ins>
+          <script>
+            try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+          </script>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer" id="footer-contact">
       <div class="shell">
         <div class="footer-grid">
