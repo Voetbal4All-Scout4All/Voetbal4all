@@ -911,83 +911,119 @@
       return { type: normalizedType, slug, id };
     }
 
-    const SUPPORTERSCLUB_API_URLS = [
-      `${API_BASE}/api/published/supportersclubs`,
-      `${API_BASE}/api/published/supportersclub`,
-      `${API_BASE}/api/published/supportersclub-submission`
-    ];
-
-    function supportersclubSlugPart(value){
-      return String(value || "")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
+    function supportersclubText(value){
+      return String(value || "").trim();
     }
 
-    function supportersclubDetailId(item){
-      const directCandidates = [
-        item?.id,
-        item?._id,
-        item?.uuid,
-        item?.sid,
-        item?.submission_id,
-        item?.slug
-      ];
-
-      for (const candidate of directCandidates) {
-        const value = String(candidate || "").trim();
-        if (value) return value;
+    function supportersclubFirstNonEmpty(){
+      for (const value of arguments) {
+        const text = supportersclubText(value);
+        if (text) return text;
       }
-
-      const fallback = [
-        supportersclubSlugPart(item?.name),
-        supportersclubSlugPart(item?.supported_team || item?.team),
-        supportersclubSlugPart(item?.city),
-        supportersclubSlugPart(item?.country)
-      ].filter(Boolean).join("--");
-
-      return fallback ? `sc-${fallback}` : "";
+      return "";
     }
 
-    function normalizeSupportersclubsPayload(payload){
-      if (Array.isArray(payload)) return payload;
-      if (payload && Array.isArray(payload.items)) return payload.items;
-      if (payload && payload.item && typeof payload.item === "object") return [payload.item];
-      return [];
+    function absolutizeSupportersclubAssetUrl(value){
+      const raw = supportersclubText(value);
+      if (!raw) return "";
+      if (/^https?:\/\//i.test(raw)) return raw;
+      if (raw.startsWith("//")) return `https:${raw}`;
+      if (raw.startsWith("/")) return `${API_BASE}${raw}`;
+      if (/^(images|uploads)\//i.test(raw)) return `${API_BASE}/${raw}`;
+      return raw;
+    }
+
+    function normalizeSupportersclubItem(item){
+      const supportedTeam = supportersclubFirstNonEmpty(
+        item?.supported_team,
+        item?.team,
+        item?.club,
+        item?.supportedClub,
+        item?.supported_team_name
+      );
+      const photoUrl = absolutizeSupportersclubAssetUrl(
+        supportersclubFirstNonEmpty(
+          item?.photo_url,
+          item?.photo,
+          item?.logo_url,
+          item?.logo,
+          item?.image_url,
+          item?.image,
+          item?.thumbnail_url,
+          item?.thumb_url
+        )
+      );
+
+      return {
+        ...item,
+        id: supportersclubFirstNonEmpty(item?.id, item?._id, item?.uuid, item?.sid, item?.submission_id, item?.slug),
+        name: supportersclubFirstNonEmpty(item?.name, item?.naam_supportersclub, item?.title),
+        supported_team: supportedTeam,
+        team: supportedTeam || supportersclubText(item?.team),
+        city: supportersclubFirstNonEmpty(item?.city, item?.stad, item?.region, item?.regio),
+        country: supportersclubFirstNonEmpty(item?.country, item?.land, item?.country_code).toUpperCase(),
+        website: supportersclubFirstNonEmpty(item?.website, item?.website_url, item?.url),
+        social: supportersclubFirstNonEmpty(
+          item?.social,
+          item?.facebook,
+          item?.facebook_url,
+          item?.instagram,
+          item?.instagram_url
+        ),
+        photo_url: photoUrl,
+        photo: photoUrl,
+        status: supportersclubFirstNonEmpty(item?.status, item?.state, item?.review_status),
+        created_at: supportersclubFirstNonEmpty(item?.created_at, item?.createdAt, item?.published_at, item?.updated_at),
+        description: supportersclubFirstNonEmpty(item?.description, item?.beschrijving, item?.summary, item?.body)
+      };
+    }
+
+    function normalizeSupportersclubDetailPayload(payload){
+      if (payload && payload.ok === true && payload.item && typeof payload.item === "object") {
+        return payload.item;
+      }
+      return null;
+    }
+
+    function createSupportersclubDetailError(message, status){
+      const error = new Error(message);
+      error.httpStatus = status;
+      error.isSupportersclubDetailError = true;
+      return error;
     }
 
     async function fetchSupportersclubItem(detailId){
       const wantedId = String(detailId || "").trim();
-      if (!wantedId) throw new Error("Missing supportersclub id");
-
-      let hadSuccessfulPayload = false;
-      for (const baseUrl of SUPPORTERSCLUB_API_URLS) {
-        try {
-          const joiner = baseUrl.includes("?") ? "&" : "?";
-          const res = await fetch(`${baseUrl}${joiner}nocache=1`);
-          if (!res.ok) continue;
-
-          const payload = await res.json().catch(() => null);
-          const items = normalizeSupportersclubsPayload(payload);
-          if (!Array.isArray(items)) continue;
-
-          hadSuccessfulPayload = true;
-          const match = items.find((entry) => supportersclubDetailId(entry) === wantedId);
-          if (match) {
-            return { ok: true, item: match };
-          }
-        } catch (e) {
-          // Try the next published endpoint.
-        }
+      if (!wantedId) {
+        throw createSupportersclubDetailError("Ongeldige supportersclub-link.", 400);
       }
 
-      if (hadSuccessfulPayload) {
-        throw new Error("Supportersclub not found");
+      const res = await fetch(`${API_BASE}/api/supportersclubs/${encodeURIComponent(wantedId)}?nocache=1`, {
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.status === 400) {
+        throw createSupportersclubDetailError("Ongeldige supportersclub-link.", 400);
       }
-      throw new Error("Supportersclub detail unavailable");
+
+      if (res.status === 404) {
+        throw createSupportersclubDetailError("Supportersclub niet gevonden.", 404);
+      }
+
+      if (!res.ok) {
+        throw createSupportersclubDetailError("Supportersclub detail kon tijdelijk niet geladen worden.", res.status);
+      }
+
+      const payload = res.status === 204
+        ? null
+        : await res.json().catch(() => null);
+      const item = normalizeSupportersclubDetailPayload(payload);
+
+      if (!item) {
+        throw createSupportersclubDetailError("Supportersclub detail kon tijdelijk niet geladen worden.", res.status || 500);
+      }
+
+      return { ok: true, item: normalizeSupportersclubItem(item) };
     }
 
     function isYouTubeUrl(u){
@@ -1625,7 +1661,7 @@
               media.push(...item.photos.split(",").map(s => s.trim()).filter(Boolean));
             }
           } else if (t === "supportersclub") {
-            [item.photo, item.photo_url, item.image_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
+            [item.photo_url, item.photo, item.image_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
           } else {
             // Shared types: common image fields
             [item.image_url, item.photo_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
@@ -1658,7 +1694,9 @@
       } catch (e) {
         console.error("[DETAIL] load failed", e);
         statusEl.style.display = "block";
-        statusEl.textContent = "Detail kon niet geladen worden.";
+        statusEl.textContent = (t === "supportersclub" && e && e.isSupportersclubDetailError)
+          ? e.message
+          : "Detail kon niet geladen worden.";
       }
     }
 
