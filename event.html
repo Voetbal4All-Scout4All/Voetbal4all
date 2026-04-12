@@ -1352,6 +1352,33 @@
       return url;
     }
 
+    function normalizeMediaDedupeUrl(u, options){
+      const opts = options || {};
+      let url = String(u || "").trim();
+      if (!url) return "";
+
+      if (opts.supportersclub) {
+        url = absolutizeSupportersclubAssetUrl(url);
+      }
+
+      if (window.V4AImage && typeof window.V4AImage.resolve === "function") {
+        url = String(window.V4AImage.resolve(url) || url);
+      }
+
+      url = normalizeThumbUrl(url);
+      if (!url) return "";
+
+      try {
+        const parsed = new URL(url, window.location.origin);
+        parsed.hash = "";
+        parsed.search = "";
+        parsed.hostname = parsed.hostname.toLowerCase();
+        return parsed.toString().replace(/\/$/, "");
+      } catch (e) {
+        return url.replace(/[?#].*$/, "").replace(/\/$/, "");
+      }
+    }
+
     function formatTextAsParagraphs(text){
       const raw = String(text || "").trim();
       if (!raw) return "";
@@ -1837,16 +1864,31 @@
         } else {
           // Event: keep existing multi-field media extraction
           const media = [];
+          const seenMedia = new Set();
           function pushMedia(val){
             if (!val) return;
+            const shouldDedupe = (t === "supportersclub");
             if (typeof val === "string") {
               const s = val.trim();
-              if (s) media.push(s);
+              if (!s) return;
+              if (shouldDedupe) {
+                const normalized = normalizeMediaDedupeUrl(s, { supportersclub: true });
+                if (!normalized || seenMedia.has(normalized)) return;
+                seenMedia.add(normalized);
+              }
+              media.push(s);
               return;
             }
             if (typeof val === "object") {
               const u = val.url || val.publicUrl || val.public_url || val.publicPath || val.public_path || val.path;
-              if (typeof u === "string" && u.trim()) media.push(u.trim());
+              if (typeof u !== "string" || !u.trim()) return;
+              const trimmed = u.trim();
+              if (shouldDedupe) {
+                const normalized = normalizeMediaDedupeUrl(trimmed, { supportersclub: true });
+                if (!normalized || seenMedia.has(normalized)) return;
+                seenMedia.add(normalized);
+              }
+              media.push(trimmed);
             }
           }
 
