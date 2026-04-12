@@ -56,7 +56,10 @@
   }
   .event-thumbbox::after{content:"Flyer";position:absolute;left:10px;top:8px;font-size:12px;opacity:.55}
   .event-thumbbox.has-img::after{display:none}
-  .event-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+  .event-thumbbox .thumbbg{
+    position:absolute;inset:0;background-position:center;background-size:contain;background-repeat:no-repeat;
+    background-color:rgba(255,255,255,0.04);filter:none;
+  }
   .event-main{flex:1 1 auto;min-width:0}
   .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
@@ -125,6 +128,15 @@
 
   /* Premium: hide body text for clean tiles */
   .premium-grid .premium-card .v4a-card-body{display:none !important;}
+  .premium-grid .v4a-card{overflow:hidden;}
+  .premium-grid .v4a-card-title,
+  .premium-grid .v4a-card-body{
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+  .premium-grid .v4a-card-title{-webkit-line-clamp:2;}
+  .premium-grid .v4a-card-body{-webkit-line-clamp:3;}
 
   /* Premium: no 'Flyer' label */
   .premium-grid .premium-card .event-thumbbox::after{display:none !important;}
@@ -175,7 +187,10 @@
     border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);
     overflow:hidden;position:relative;
   }
-  .sidebar-premium-thumbbox .thumbbg{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(1.05)}
+  .sidebar-premium-thumbbox .thumbbg{
+    position:absolute;inset:0;background-position:center;background-size:contain;background-repeat:no-repeat;
+    background-color:rgba(255,255,255,0.04);filter:none;
+  }
   .sidebar-premium-thumbbox .premium-ribbon{
     position:absolute;
     top:8px;
