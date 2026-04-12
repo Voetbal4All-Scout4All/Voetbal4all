@@ -604,7 +604,8 @@
 
       const paid = asBool(pickFirst(params, ["paid", "success"]));
       const cancelled = asBool(pickFirst(params, ["cancelled", "canceled", "cancel"])) || statusKey === "cancelled";
-      const error = pickFirst(params, ["error", "err", "reason", "message"]);
+      const errorRaw = pickFirst(params, ["error", "err"]);
+      const errorReason = pickFirst(params, ["reason", "message"]) || (errorRaw && !asBool(errorRaw) ? errorRaw : "");
       const published = asBool(pickFirst(params, ["published"])) || statusKey === "published";
       const confirmed = asBool(pickFirst(params, ["confirmed", "confirm"])) || statusKey === "confirmed" || published;
       const deleted = asBool(pickFirst(params, ["deleted", "remove"])) || statusKey === "deleted";
@@ -615,8 +616,8 @@
       const packageCode = pickFirst(params, ["package_code", "packageCode", "package", "pkg"]);
       const quantity = pickFirst(params, ["quantity", "qty", "q"]);
 
-      if ((error && !asBool(error)) || statusKey === "error") {
-        return { kind: "error", sid, eventId, submissionId, error, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (statusKey === "error") {
+        return { kind: "error", sid, eventId, submissionId, error: errorReason || errorRaw, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
       }
       if (deleted) return { kind: "nonpremium_deleted", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
       if (cancelled) return { kind: "premium_cancel", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
@@ -625,6 +626,9 @@
       if (confirmed) return { kind: "nonpremium_confirmed", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
       if (statusKey === "pending") return { kind: "pending", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
       if (statusKey === "received") return { kind: "received", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      if (errorRaw) {
+        return { kind: "error", sid, eventId, submissionId, error: errorReason || errorRaw, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
+      }
       return { kind: "unknown", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
     }
 
@@ -1019,7 +1023,7 @@
     }
 
     // Error/failure params (for rejected submissions)
-    const errorFlag = flow.kind === 'error' ? '1' : (qs.get('error') || '').trim();
+    const explicitErrorParam = (qs.get('error') || qs.get('err') || '').trim();
     const reason = (flow.kind === 'error' ? (flow.error || '') : (qs.get('reason') || qs.get('message') || '')).trim();
 
     // Who
@@ -1041,14 +1045,24 @@
       ['deleted','already_deleted'].includes(String(deletion).toLowerCase()) ||
       statusKey === 'deleted';
 
-    const isError =
-      flow.kind === 'error' ||
-      errorFlag === '1' ||
-      statusKey === 'error';
-
     const isCancelled = flow.kind === 'premium_cancel' || statusKey === 'cancelled';
     const isPublishedState = !!flow.published || statusKey === 'published';
     const isConfirmedState = flow.kind === 'nonpremium_confirmed' || statusKey === 'confirmed' || isPublishedState;
+    const hasResolvedNonErrorState =
+      isDeleted ||
+      isCancelled ||
+      paid ||
+      isPublishedState ||
+      isConfirmedState ||
+      flow.kind === 'pending' ||
+      flow.kind === 'received' ||
+      statusKey === 'pending' ||
+      statusKey === 'received';
+    const hasExplicitErrorSignal = !!explicitErrorParam && !hasResolvedNonErrorState;
+    const isError =
+      flow.kind === 'error' ||
+      statusKey === 'error' ||
+      hasExplicitErrorSignal;
     const isPendingState =
       !isError &&
       !isDeleted &&
@@ -1665,7 +1679,6 @@
         if (!qs.get('email') && p.email) setText('orderEmail', p.email);
         if (!qs.get('what') && p.what) setText('orderWhat', p.what);
         if (!qs.get('id') && p.id) setText('orderId', p.id);
-        if (!qs.get('status') && p.status) setText('orderStatus', p.status);
         if (p.message || p.subject){
           const msgWrap2 = document.getElementById('msgWrap');
           const msgPreview2 = document.getElementById('msgPreview');
