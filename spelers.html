@@ -857,6 +857,17 @@
       if (!items_raw) throw new Error("All endpoints failed");
 
       const items = items_raw;
+
+      // If API returned 0 items, show placeholders for UX
+      if (items.length === 0) {
+        fillPlayerPlaceholders();
+        if (statusEl) {
+          statusEl.style.display = "";
+          statusEl.textContent = "Nog geen spelersprofielen. Hieronder staan voorbeeldprofielen.";
+        }
+        return true;
+      }
+
       // Split out the premium items for the promo grid.
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
