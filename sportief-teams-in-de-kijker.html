@@ -519,9 +519,9 @@
 
       const meta = [type, club, city].filter(Boolean).join(' · ');
       const anchorId = itemId ? 'spotlight-' + esc(itemId) : '';
-      const anchorHref = anchorId ? 'sportief-teams-in-de-kijker.html#' + anchorId : '';
-      const titleHtml = anchorHref
-        ? '<a href="' + esc(anchorHref) + '" style="color:inherit;text-decoration:none;">' + esc(title) + '</a>'
+      const detailHref = itemId ? 'event.html?type=spotlight&id=' + encodeURIComponent(itemId) : '';
+      const titleHtml = detailHref
+        ? '<a href="' + esc(detailHref) + '" style="color:inherit;text-decoration:none;">' + esc(title) + '</a>'
         : esc(title);
 
       return ''
