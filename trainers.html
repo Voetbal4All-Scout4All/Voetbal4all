@@ -846,29 +846,48 @@
     const gender = (g === "HEREN" || g === "DAMES" || g === "BOTH") ? g : "BOTH";
 
     const genderQs = `gender=${encodeURIComponent(gender)}&nocache=${Date.now()}`;
-    const urls = [
-      `${API_BASE}/api/staff-profiles?limit=200&${genderQs}`,
-      `${API_BASE}/api/trainer-profiles?limit=200&${genderQs}`,
-      `${API_BASE}/api/trainers?limit=200&${genderQs}`
+
+    // Primary source: trainer-profiles. Fallbacks: staff-profiles, trainers.
+    // Fetch all in parallel, merge with trainer-profiles taking priority.
+    const endpointDefs = [
+      { url: `${API_BASE}/api/trainer-profiles?limit=200&${genderQs}`, primary: true },
+      { url: `${API_BASE}/api/staff-profiles?limit=200&${genderQs}`, primary: false },
+      { url: `${API_BASE}/api/trainers?limit=200&${genderQs}`, primary: false }
     ];
 
+    async function safeFetch(url) {
+      try {
+        const r = await fetch(url, { credentials: "omit" });
+        if (!r.ok) return [];
+        const j = await r.json();
+        return Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : [];
+      } catch (_) { return []; }
+    }
+
     try {
-      let items_raw = null;
-      // Try each endpoint; prefer the first one that returns actual items.
-      // If none has items, accept the last valid (empty) response.
-      let lastValid = null;
-      for (const url of urls) {
-        try {
-          const r = await fetch(url, { credentials: "omit" });
-          if (!r.ok) continue;
-          const j = await r.json();
-          const arr = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : null;
-          if (!arr) continue;
-          lastValid = arr;
-          if (arr.length > 0) { items_raw = arr; break; }
-        } catch (_) { continue; }
+      const results = await Promise.all(endpointDefs.map(d => safeFetch(d.url)));
+
+      // Merge: trainer-profiles first, then append unique items from fallbacks
+      const seen = new Set();
+      const merged = [];
+      // Primary source first (trainer-profiles)
+      for (const item of results[0]) {
+        const key = String(item.id || "").trim();
+        if (key && seen.has(key)) continue;
+        if (key) seen.add(key);
+        merged.push(item);
       }
-      if (!items_raw) items_raw = lastValid;
+      // Fallback sources: only add items not already present
+      for (let i = 1; i < results.length; i++) {
+        for (const item of results[i]) {
+          const key = String(item.id || "").trim();
+          if (key && seen.has(key)) continue;
+          if (key) seen.add(key);
+          merged.push(item);
+        }
+      }
+
+      const items_raw = merged.length > 0 ? merged : null;
       if (!items_raw) throw new Error("All endpoints failed");
 
       // Filter test items, but keep them if filtering would leave 0 results
