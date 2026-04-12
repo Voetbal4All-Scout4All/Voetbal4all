@@ -2106,7 +2106,14 @@
     function premiumMetaWithFlag(it, meta) {
       const metaText = String(meta || "").trim();
       const countryCode = getPremiumCountryCode(it);
-      if (!countryCode) return escapePremiumMetaText(metaText);
+      const titleText = String(it?.title || it?.name || "").trim();
+      const isPlaceholderLike =
+        !metaText ||
+        /^regio$/i.test(metaText) ||
+        /premium zichtbaarheid/i.test(metaText) ||
+        /jouw advertentie hier/i.test(titleText);
+
+      if (!countryCode || isPlaceholderLike) return escapePremiumMetaText(metaText);
 
       const flag = premiumFlagHtml(countryCode);
       return metaText ? `${flag} ${escapePremiumMetaText(metaText)}` : flag;
@@ -2278,20 +2285,22 @@
           if (img) li.setAttribute("data-image", img);
 
           const title = it?.title || it?.name || (kind === "cv" ? "Clubvacature" : "Event");
-          // --- safer meta computation ---
-          const metaParts = [];
-          if (it?.city) metaParts.push(it.city);
-          if (it?.region) metaParts.push(it.region);
-          if (!metaParts.length && typeof it?.location === "string") metaParts.push(it.location);
-          if (!metaParts.length && it?.location && typeof it.location === "object") {
-            if (it.location.city) metaParts.push(it.location.city);
-            if (it.location.region) metaParts.push(it.location.region);
-            if (!metaParts.length && it.location.name) metaParts.push(it.location.name);
+          const locationParts = [];
+          if (it?.city) locationParts.push(it.city);
+          if (it?.region) locationParts.push(it.region);
+          if (!locationParts.length && typeof it?.location === "string") locationParts.push(it.location);
+          if (!locationParts.length && it?.location && typeof it.location === "object") {
+            if (it.location.city) locationParts.push(it.location.city);
+            if (it.location.region) locationParts.push(it.location.region);
+            if (!locationParts.length && it.location.name) locationParts.push(it.location.name);
           }
-          if (!metaParts.length && typeof it?.subtitle === "string") metaParts.push(it.subtitle);
-          if (!metaParts.length && typeof it?.type === "string") metaParts.push(it.type);
 
-          const meta = metaParts.filter(Boolean).join(" · ");
+          const locationMeta = locationParts.filter(Boolean).join(" · ");
+          const fallbackMeta =
+            (typeof it?.subtitle === "string" && it.subtitle) ||
+            (typeof it?.type === "string" && it.type) ||
+            "";
+          const meta = locationMeta || fallbackMeta;
           const metaHtml = premiumMetaWithFlag(it, meta);
           const detailHref = kind === "cv"
             ? getClubVacancyDetailHref(it)
@@ -2445,12 +2454,14 @@
             const titleHtml = detailHref
               ? `<a href="${esc(detailHref)}" style="color:inherit;text-decoration:none;">${esc(it?.title || it?.name || "Trainer")}</a>`
               : esc(it?.title || it?.name || "Trainer");
-            const metaHtml = premiumMetaWithFlag(
-              it,
+            const locationMeta =
               (typeof it?.region === "string" && it.region) ||
               (typeof it?.city === "string" && it.city) ||
               (typeof it?.location === "string" && it.location) ||
-              "Regio"
+              "";
+            const metaHtml = premiumMetaWithFlag(
+              it,
+              locationMeta || "Regio"
             );
 
             li.innerHTML = `
@@ -2483,12 +2494,14 @@
             const titleHtml = detailHref
               ? `<a href="${esc(detailHref)}" style="color:inherit;text-decoration:none;">${esc(it?.title || it?.name || "Speler")}</a>`
               : esc(it?.title || it?.name || "Speler");
-            const metaHtml = premiumMetaWithFlag(
-              it,
+            const locationMeta =
               (typeof it?.region === "string" && it.region) ||
               (typeof it?.city === "string" && it.city) ||
               (typeof it?.location === "string" && it.location) ||
-              "Regio"
+              "";
+            const metaHtml = premiumMetaWithFlag(
+              it,
+              locationMeta || "Regio"
             );
 
             li.innerHTML = `
