@@ -90,8 +90,28 @@
       background-color:rgba(255,255,255,0.04);
       filter:none;
     }
+    .event-thumbbox .supportersclub-thumb{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:10px;
+      background:transparent;
+    }
     .event-main{flex:1 1 auto;min-width:0;padding-top:2px}
     .event-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .event-actions .btn-ghost-sm{
+      color:rgba(244,246,252,0.94) !important;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      font-weight:700;
+    }
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .event-actions .btn-ghost-sm:hover,
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .event-actions .btn-ghost-sm:focus,
+    :is(#supportersclubsList, #supportersclubList, #supporters-list, #supportersclubs-list, #supportersclubsGrid, #supporters-grid, .supporters-list, .supporters-grid) .event-actions .btn-ghost-sm:visited{
+      color:#fff !important;
+    }
 
     #supportersclubsList .v4a-card,
     #supportersclubList .v4a-card,
@@ -766,14 +786,64 @@
       return '';
     }
 
+    function assetText(value) {
+      if (!value) return '';
+      if (typeof value === 'string') return cleanText(value);
+      if (Array.isArray(value)) {
+        for (const entry of value) {
+          const candidate = assetText(entry);
+          if (candidate) return candidate;
+        }
+        return '';
+      }
+      if (typeof value === 'object') {
+        const candidates = [
+          value.url,
+          value.publicUrl,
+          value.public_url,
+          value.publicPath,
+          value.public_path,
+          value.image_url,
+          value.imageUrl,
+          value.image_path,
+          value.imagePath,
+          value.photo_url,
+          value.photoUrl,
+          value.photo_path,
+          value.photoPath,
+          value.logo_url,
+          value.logoUrl,
+          value.logo_path,
+          value.logoPath,
+          value.src,
+          value.href,
+          value.path
+        ];
+        for (const candidate of candidates) {
+          const text = assetText(candidate);
+          if (text) return text;
+        }
+        return '';
+      }
+      return '';
+    }
+
     function absolutizeAssetUrl(value) {
-      const raw = cleanText(value);
+      const raw = assetText(value);
       if (!raw) return '';
       if (/^https?:\/\//i.test(raw)) return raw;
       if (raw.startsWith('//')) return `https:${raw}`;
       if (raw.startsWith('/')) return `${API_BASE}${raw}`;
       if (/^(images|uploads)\//i.test(raw)) return `${API_BASE}/${raw}`;
       return raw;
+    }
+
+    function firstAssetUrl(...values) {
+      for (const value of values) {
+        const url = absolutizeAssetUrl(value);
+        if (url) return url;
+      }
+      return '';
     }
 
     function supportersclubDetailId(sc) {
@@ -820,17 +890,25 @@
         entry?.supported_team_name
       );
       const countryCode = firstNonEmpty(entry?.country, entry?.land, entry?.country_code).toUpperCase();
-      const photoUrl = absolutizeAssetUrl(
-        firstNonEmpty(
-          entry?.photo_url,
-          entry?.photo,
-          entry?.logo_url,
-          entry?.logo,
-          entry?.image_url,
-          entry?.image,
-          entry?.flyer_url,
-          entry?.cover_image_url
-        )
+      const photoUrl = firstAssetUrl(
+        entry?.photo_url,
+        entry?.photo,
+        entry?.logo_url,
+        entry?.logo,
+        entry?.image_url,
+        entry?.image,
+        entry?.thumbnail_url,
+        entry?.thumb_url,
+        entry?.flyer_url,
+        entry?.cover_image_url,
+        entry?.image_path,
+        entry?.imagePath,
+        entry?.photo_path,
+        entry?.photoPath,
+        entry?.logo_path,
+        entry?.logoPath,
+        entry?.media,
+        entry?.assets
       );
 
       return {
@@ -884,7 +962,7 @@
       return `<article class="v4a-card" id="${anchorId}" data-country="${country}" data-team="${team}" data-city="${city}">
         <div class="event-row">
           <div class="event-thumbbox ${photo ? 'has-img' : ''}" aria-label="Supportersclub logo">
-            ${photo ? `<div class="thumbbg" style="background-image:url('${safePhoto}')"></div>` : ``}
+            ${photo ? `<img class="supportersclub-thumb" src="${safePhoto}" alt="Logo van ${name || 'deze supportersclub'}" loading="lazy" onerror="this.parentNode.classList.remove('has-img');this.remove();">` : ``}
           </div>
           <div class="event-main">
             <div class="v4a-card-header" style="margin:0;">

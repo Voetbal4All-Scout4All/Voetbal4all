@@ -959,6 +959,44 @@
     }
 
     function supportersclubText(value){
+      if (!value) return "";
+      if (typeof value === "string") return value.trim();
+      if (Array.isArray(value)) {
+        for (const entry of value) {
+          const candidate = supportersclubText(entry);
+          if (candidate) return candidate;
+        }
+        return "";
+      }
+      if (typeof value === "object") {
+        const candidates = [
+          value.url,
+          value.publicUrl,
+          value.public_url,
+          value.publicPath,
+          value.public_path,
+          value.image_url,
+          value.imageUrl,
+          value.image_path,
+          value.imagePath,
+          value.photo_url,
+          value.photoUrl,
+          value.photo_path,
+          value.photoPath,
+          value.logo_url,
+          value.logoUrl,
+          value.logo_path,
+          value.logoPath,
+          value.src,
+          value.href,
+          value.path
+        ];
+        for (const candidate of candidates) {
+          const text = supportersclubText(candidate);
+          if (text) return text;
+        }
+        return "";
+      }
       return String(value || "").trim();
     }
 
@@ -978,6 +1016,14 @@
       if (raw.startsWith("/")) return `${API_BASE}${raw}`;
       if (/^(images|uploads)\//i.test(raw)) return `${API_BASE}/${raw}`;
       return raw;
+    }
+
+    function firstSupportersclubAssetUrl(){
+      for (const value of arguments) {
+        const url = absolutizeSupportersclubAssetUrl(value);
+        if (url) return url;
+      }
+      return "";
     }
 
     function actionText(value) {
@@ -1071,17 +1117,24 @@
         item?.supportedClub,
         item?.supported_team_name
       );
-      const photoUrl = absolutizeSupportersclubAssetUrl(
-        supportersclubFirstNonEmpty(
-          item?.photo_url,
-          item?.photo,
-          item?.logo_url,
-          item?.logo,
-          item?.image_url,
-          item?.image,
-          item?.thumbnail_url,
-          item?.thumb_url
-        )
+      const photoUrl = firstSupportersclubAssetUrl(
+        item?.photo_url,
+        item?.photo,
+        item?.logo_url,
+        item?.logo,
+        item?.image_url,
+        item?.image,
+        item?.thumbnail_url,
+        item?.thumb_url,
+        item?.cover_image_url,
+        item?.image_path,
+        item?.imagePath,
+        item?.photo_path,
+        item?.photoPath,
+        item?.logo_path,
+        item?.logoPath,
+        item?.media,
+        item?.assets
       );
 
       return {
@@ -1821,7 +1874,23 @@
               media.push(...item.photos.split(",").map(s => s.trim()).filter(Boolean));
             }
           } else if (t === "supportersclub") {
-            [item.photo_url, item.photo, item.image_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
+            [
+              item.photo_url,
+              item.photo,
+              item.logo_url,
+              item.logo,
+              item.image_url,
+              item.image,
+              item.thumbnail_url,
+              item.thumb_url,
+              item.cover_image_url,
+              item.image_path,
+              item.imagePath,
+              item.photo_path,
+              item.photoPath,
+              item.logo_path,
+              item.logoPath
+            ].forEach(pushMedia);
           } else {
             // Shared types: common image fields
             [item.image_url, item.photo_url, item.thumbnail_url, item.thumb_url].forEach(pushMedia);
