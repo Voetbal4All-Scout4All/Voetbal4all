@@ -1176,7 +1176,6 @@
 
       const items = j.items.filter((item) => !isPublicTestVacancy(item));
       const premium = items.filter(isPremiumActive).slice(0, 6);
-      const rest = items.filter((x) => !isPremiumActive(x));
 
       // Premium grid: render up to 6 premium items, otherwise restore placeholders
       if (premiumGrid) {
@@ -1185,13 +1184,13 @@
           : PREMIUM_PLACEHOLDER_HTML;
       }
 
-      // Replace main list with non-premium vacancies.
-      listEl.innerHTML = rest.map((v, i) => vacancyCardHtml(v, i, false)).join("");
+      // Keep premium vacancies in the main overview as well.
+      listEl.innerHTML = items.map((v, i) => vacancyCardHtml(v, i, false)).join("");
 
       if (statusEl) {
         statusEl.style.display = "";
         statusEl.textContent = items.length
-          ? `${items.length} vacature(s) geladen (premium: ${premium.length}, overige: ${rest.length}).`
+          ? `${items.length} vacature(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
           : "Nog geen clubvacatures.";
       }
 
