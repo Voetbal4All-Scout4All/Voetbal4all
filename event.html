@@ -1563,6 +1563,13 @@
         backHref = "trainers.html";
         backText = "← Terug naar trainers";
         shareType = "trainer";
+      } else if (t === "spotlight") {
+        apiPath = "/api/spotlight/";
+        pill = "In de kijker";
+        caption = "Team / Medewerker in de kijker";
+        backHref = "sportief-teams-in-de-kijker.html";
+        backText = "← Terug naar in de kijker";
+        shareType = "spotlight";
       }
 
       // Apply header labels
@@ -1613,7 +1620,7 @@
         }
 
         const item = data.item;
-        const actionLinks = !isEvent && t !== "supportersclub" ? resolveSharedTypeLinks(item, t) : { external: { href: "", label: "" }, cv: { href: "", label: "" } };
+        const actionLinks = !isEvent && t !== "supportersclub" && t !== "spotlight" ? resolveSharedTypeLinks(item, t) : { external: { href: "", label: "" }, cv: { href: "", label: "" } };
 
         // Title
         const pageTitle = (item.title || item.name || "Detail") + " – Voetbal4All";
@@ -1678,12 +1685,13 @@
           if (t === "speler") clubText = item.position || "";
           if (t === "trainer") clubText = item.role || "";
           if (t === "supportersclub") clubText = item.supported_team || item.team || "";
+          if (t === "spotlight") clubText = item.club || item.organization || "";
           if (isEvent) clubText = item.club || item.organizer_name || "";
 
           if (clubText) {
             clubEl.style.display = "inline";
             clubEl.className = "ev-meta-chip";
-            const ico = (t === "speler") ? "⚽" : (t === "trainer") ? "🧑‍🏫" : (t === "supportersclub") ? "🎟️" : "🏟️";
+            const ico = (t === "speler") ? "⚽" : (t === "trainer") ? "🧑‍🏫" : (t === "supportersclub") ? "🎟️" : (t === "spotlight") ? "🌟" : "🏟️";
             clubEl.innerHTML = `<span class="ev-ico" aria-hidden="true">${ico}</span><span>${escapeHtml(clubText)}</span>`;
           } else {
             clubEl.style.display = "none";
@@ -1744,6 +1752,16 @@
             const safeEmail = escapeHtml(item.email);
             pushFact("Contact", `<a href="mailto:${safeEmail}">${safeEmail}</a>`);
           }
+        } else if (t === "spotlight") {
+          if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
+          pushFact("Type", escapeHtml(item.type || ""));
+          pushFact("Club / Organisatie", escapeHtml(item.club || item.organization || ""));
+          pushFact("Plaats", escapeHtml(item.city || ""));
+          const countryLabelText = String(item.country || "").trim().toUpperCase();
+          if (countryLabelText === "BE") pushFact("Land", "België");
+          else if (countryLabelText === "NL") pushFact("Land", "Nederland");
+          else if (countryLabelText === "INT") pushFact("Land", "Internationaal");
+          else pushFact("Land", escapeHtml(item.country || ""));
         } else {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
           pushFact("Regio", escapeHtml(item.region || ""));
