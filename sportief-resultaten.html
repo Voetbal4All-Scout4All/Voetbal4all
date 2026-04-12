@@ -43,12 +43,6 @@
     .v4-mini-results th:nth-child(4), .v4-mini-results td:nth-child(4){ width:94px; }
     .v4-mini-results th:nth-child(3), .v4-mini-results td:nth-child(3){ width:calc(40% - 20px); }
     .v4-mini-results th:nth-child(5), .v4-mini-results td:nth-child(5){ width:40%; }
-    /* Slim horizontal AdSense placeholder (visible even on no-fill/adblock) */
-    .v4-ad-slim{ position:relative; min-height:72px; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.03); }
-    .v4-ad-slim__ph{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; font-size:12px; opacity:.55; letter-spacing:.06em; text-transform:uppercase; }
-    .v4-ad-slim__ph::before{ content:""; width:8px; height:8px; border-radius:999px; background:rgba(255,255,255,0.35); }
-    .v4-ad-slim ins.adsbygoogle{ position:relative; z-index:2; }
-
     /* Fix: "Toon resultaten" button text was not readable on dark background */
     .v4-filterbar .btn-ghost-sm{
       color: rgba(255,255,255,0.95) !important;
@@ -195,21 +189,6 @@
   </div>
 </section>
 
-<!-- ================= HEADER AD ================= -->
-<section class="section-main" style="padding:10px 0;">
-  <div class="shell">
-    <div class="ad-slot ad-slot-header">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-4062633211824348"
-        data-ad-slot="7209663682"
-        data-ad-format="horizontal"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
-  </div>
-</section>
-
 <!-- ================= CONTENT ================= -->
 <main>
 <section class="section-main">
@@ -257,18 +236,6 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- 1x AD (FULL-WIDTH) TUSSEN STANDINGS EN RESULTATEN -->
-      <div class="v4-ad-slim" style="margin:12px 0;">
-        <div class="v4-ad-slim__ph">Wil jij hier adverteren? <a href="adverteren.html">Ontdek de mogelijkheden →</a></div>
-        <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-4062633211824348"
-          data-ad-slot="7209663682"
-          data-ad-format="horizontal"
-          data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
 
       <!-- RIJ 2: RESULTATEN + AANKOMENDE (2 kolommen) -->
@@ -381,21 +348,6 @@
           </div>
         </div>
 
-      <!-- AD SLOT BOVEN RESULTATEN -->
-      <div class="card" style="margin-bottom:12px;">
-        <div class="card-body">
-          <div class="ad-slot">
-            <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-4062633211824348"
-              data-ad-slot="7209663682"
-              data-ad-format="horizontal"
-              data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-          </div>
-        </div>
-      </div>
-
       <!-- RESULTATEN -->
       <div class="card" id="results-card">
         <div class="card-header">
@@ -432,21 +384,6 @@
         </div>
         <div class="card-body" id="standings-body">
           <p class="note">Selecteer een competitie en klik op "Toon resultaten".</p>
-        </div>
-      </div>
-
-      <!-- AD SLOT ONDER RESULTATEN -->
-      <div class="card" style="margin-top:12px;">
-        <div class="card-body">
-          <div class="ad-slot">
-            <ins class="adsbygoogle"
-              style="display:block"
-              data-ad-client="ca-pub-4062633211824348"
-              data-ad-slot="7209663682"
-              data-ad-format="horizontal"
-              data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-          </div>
         </div>
       </div>
 
