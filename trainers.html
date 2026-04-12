@@ -871,7 +871,9 @@
       if (!items_raw) items_raw = lastValid;
       if (!items_raw) throw new Error("All endpoints failed");
 
-      const items = items_raw.filter((item) => !isPublicTestTrainer(item));
+      // Filter test items, but keep them if filtering would leave 0 results
+      const filtered = items_raw.filter((item) => !isPublicTestTrainer(item));
+      const items = filtered.length > 0 ? filtered : items_raw;
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
       if (premiumGrid) {
