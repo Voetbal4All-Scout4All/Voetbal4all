@@ -726,12 +726,13 @@
     if (!listEl || !countryEl || !teamEl || !cityEl) return;
 
     // --- BEGIN: Fetch and render supportersclubs ---
-    // We'll fetch published supportersclubs from the backend and render them.
-    const API_URLS = [
-      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclubs",
-      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclub",
-      "https://voetbal4all-backend-database.onrender.com/api/published/supportersclub-submission"
-    ];
+    // Read supportersclubs from the dedicated resource endpoint and treat that contract as leading.
+    const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+
+    function buildSupportersclubsApiUrl() {
+      const nocache = Date.now();
+      return `${API_BASE}/api/supportersclubs?limit=200&nocache=${nocache}`;
+    }
 
     function escapeHtml(s) {
       return String(s || '').replace(/[&<>"']/g, function (c) {
@@ -753,39 +754,107 @@
       return escapeHtml(code || 'Onbekend');
     }
 
-    function slugPart(value) {
-      return String(value || '')
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .toLowerCase()
-        .trim()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '');
+    function cleanText(value) {
+      return String(value || '').trim();
+    }
+
+    function firstNonEmpty(...values) {
+      for (const value of values) {
+        const text = cleanText(value);
+        if (text) return text;
+      }
+      return '';
+    }
+
+    function absolutizeAssetUrl(value) {
+      const raw = cleanText(value);
+      if (!raw) return '';
+      if (/^https?:\/\//i.test(raw)) return raw;
+      if (raw.startsWith('//')) return `https:${raw}`;
+      if (raw.startsWith('/')) return `${API_BASE}${raw}`;
+      if (/^(images|uploads)\//i.test(raw)) return `${API_BASE}/${raw}`;
+      return raw;
     }
 
     function supportersclubDetailId(sc) {
-      const directCandidates = [
+      return firstNonEmpty(
         sc?.id,
         sc?._id,
         sc?.uuid,
         sc?.sid,
         sc?.submission_id,
         sc?.slug
-      ];
+      );
+    }
 
-      for (const candidate of directCandidates) {
-        const value = String(candidate || '').trim();
-        if (value) return value;
+    function looksLikeSupportersclubRecord(entry) {
+      if (!entry || typeof entry !== 'object') return false;
+      return Boolean(
+        cleanText(entry.name)
+        || cleanText(entry.naam_supportersclub)
+        || cleanText(entry.title)
+        || cleanText(entry.supported_team)
+        || cleanText(entry.team)
+        || cleanText(entry.club)
+        || cleanText(entry.description)
+        || cleanText(entry.beschrijving)
+      );
+    }
+
+    function isVisibleSupportersclub(entry) {
+      if (!looksLikeSupportersclubRecord(entry)) return false;
+      const status = cleanText(entry.status || entry.state || entry.review_status).toLowerCase();
+      if (status && !['published', 'ready', 'ok', 'live', 'approved', 'active'].includes(status)) {
+        return false;
       }
+      if (entry.deleted === true || entry.is_deleted === true) return false;
+      return true;
+    }
 
-      const fallback = [
-        slugPart(sc?.name),
-        slugPart(sc?.supported_team || sc?.team),
-        slugPart(sc?.city),
-        slugPart(sc?.country)
-      ].filter(Boolean).join('--');
+    function normalizeSupportersclub(entry) {
+      const supportedTeam = firstNonEmpty(
+        entry?.supported_team,
+        entry?.team,
+        entry?.club,
+        entry?.supportedClub,
+        entry?.supported_team_name
+      );
+      const countryCode = firstNonEmpty(entry?.country, entry?.land, entry?.country_code).toUpperCase();
+      const photoUrl = absolutizeAssetUrl(
+        firstNonEmpty(
+          entry?.photo_url,
+          entry?.photo,
+          entry?.logo_url,
+          entry?.logo,
+          entry?.image_url,
+          entry?.image,
+          entry?.flyer_url,
+          entry?.cover_image_url
+        )
+      );
 
-      return fallback ? `sc-${fallback}` : '';
+      return {
+        ...entry,
+        id: firstNonEmpty(entry?.id, entry?._id, entry?.uuid, entry?.sid, entry?.submission_id, entry?.slug),
+        name: firstNonEmpty(entry?.name, entry?.naam_supportersclub, entry?.title),
+        supported_team: supportedTeam,
+        team: supportedTeam || cleanText(entry?.team),
+        city: firstNonEmpty(entry?.city, entry?.stad, entry?.region, entry?.regio),
+        country: countryCode,
+        description: firstNonEmpty(entry?.description, entry?.beschrijving, entry?.summary, entry?.body),
+        website: firstNonEmpty(entry?.website, entry?.website_url, entry?.url),
+        social: firstNonEmpty(
+          entry?.social,
+          entry?.facebook,
+          entry?.facebook_url,
+          entry?.instagram,
+          entry?.instagram_url
+        ),
+        photo_url: photoUrl,
+        photo: photoUrl,
+        status: firstNonEmpty(entry?.status, entry?.state, entry?.review_status),
+        created_at: firstNonEmpty(entry?.created_at, entry?.createdAt, entry?.published_at, entry?.updated_at)
+      };
     }
 
     function supportersclubCardHtml(sc, idx) {
@@ -802,7 +871,7 @@
       const desc = escapeHtml(sc.description || '');
       const website = sc.website ? String(sc.website) : '';
       const social = sc.social ? String(sc.social) : '';
-      const photo = sc.photo ? String(sc.photo) : '';
+      const photo = sc.photo_url ? String(sc.photo_url) : (sc.photo ? String(sc.photo) : '');
 
       const safePhoto = escapeHtml(photo);
       const actions = [
@@ -833,9 +902,8 @@
     }
 
     function normalizeSupportersclubsPayload(payload) {
-      if (Array.isArray(payload)) return payload;
-      if (payload && Array.isArray(payload.items)) return payload.items;
-      return [];
+      if (payload && payload.ok === true && Array.isArray(payload.items)) return payload.items;
+      return null;
     }
 
     function renderEmptyState() {
@@ -854,33 +922,48 @@
       `;
     }
 
-    async function fetchAndRenderSupportersclubs() {
-      let data = [];
-      let hadSuccessfulPayload = false;
-      for (const url of API_URLS) {
-        try {
-          const r = await fetch(url);
-          if (!r.ok) continue;
-          const payload = await r.json().catch(() => null);
-          const arr = normalizeSupportersclubsPayload(payload);
-          if (!Array.isArray(arr)) continue;
-          hadSuccessfulPayload = true;
-          data = arr;
-          if (arr.length > 0) break;
-        } catch (e) { /* try next */ }
+    async function fetchSupportersclubs() {
+      const response = await fetch(buildSupportersclubsApiUrl(), {
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (!response.ok) {
+        throw new Error(`Supportersclubs list request failed with ${response.status}`);
       }
 
-      if (!data.length) {
-        if (hadSuccessfulPayload) renderEmptyState();
-        else renderUnavailableState();
+      const payload = response.status === 204
+        ? { ok: true, items: [], count: 0 }
+        : await response.json().catch(() => null);
+
+      const items = normalizeSupportersclubsPayload(payload);
+      if (!items) {
+        throw new Error('Supportersclubs list payload did not match the expected contract');
+      }
+
+      return items
+        .filter(isVisibleSupportersclub)
+        .map(normalizeSupportersclub)
+        .filter((entry) => cleanText(entry.name));
+    }
+
+    async function fetchAndRenderSupportersclubs() {
+      try {
+        const data = await fetchSupportersclubs();
+
+        if (!data.length) {
+          renderEmptyState();
+          updateShareLinks();
+          return;
+        }
+
+        listEl.innerHTML = data.map((sc, idx) => supportersclubCardHtml(sc, idx)).join('');
+        updateShareLinks();
+      } catch (error) {
+        console.warn('Supportersclubs endpoint failed', error);
+        renderUnavailableState();
         updateShareLinks();
         return;
       }
-
-      // Render
-      listEl.innerHTML = data.map((sc, idx) => supportersclubCardHtml(sc, idx)).join('');
-      // After rendering, update share links if needed (see below)
-      updateShareLinks();
     }
 
     // --- Share link updater: ensures share links use correct anchor ---
