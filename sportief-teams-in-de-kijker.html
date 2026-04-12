@@ -543,6 +543,7 @@
         +       '</div>'
         +     '</div>'
         +     (desc ? '<p class="note" style="margin-top:6px;">' + esc(desc.length > 180 ? desc.slice(0, 180) + '…' : desc) + '</p>' : '')
+        +     (detailHref ? '<div class="v4a-card-actions event-actions" style="margin-top:10px;"><a class="btn-ghost-sm" href="' + esc(detailHref) + '">Bekijk detail</a></div>' : '')
         +   '</div>'
         + '</div>'
         + '</article>';
