@@ -412,6 +412,21 @@
     }
     .share-socials .live-social-link:active{transform:translateY(0)}
     .share-socials [data-share-channel="ig"] svg{transform:scale(1.28);transform-origin:50% 50%}
+
+    /* Keep any footer ad on this detail page limited to a slim banner. */
+    .ad-slot-header,
+    .ad-slot-footer{
+      max-height:120px;
+      min-height:0 !important;
+      overflow:hidden;
+    }
+    .ev-detail-ad-band,
+    .ev-detail-ad,
+    .ev-detail-ad-label,
+    .ev-detail-ad-note{
+      display:none !important;
+    }
+
     /* Event map */
     .ev-map-wrap {
       margin-top:0;
