@@ -2147,6 +2147,27 @@
         return ["premium", "paid", "betalend", "true", "1"].includes(s);
       }
 
+      function premiumDateMs(value) {
+        const ts = new Date(value || "").getTime();
+        return Number.isFinite(ts) ? ts : NaN;
+      }
+
+      function isActivePremiumEvent(it, nowTs = Date.now()) {
+        if (!it || (it?.is_premium !== true && it?.isPremium !== true)) return false;
+
+        const premiumStatus = String(it?.premium_status ?? it?.premiumStatus ?? "").toLowerCase();
+        const paymentStatus = String(it?.payment_status ?? it?.paymentStatus ?? "").toLowerCase();
+        if (premiumStatus !== "paid" || paymentStatus !== "paid") return false;
+
+        const activatedAt = premiumDateMs(it?.premium_activated_at ?? it?.premiumActivatedAt);
+        const expiresAt = premiumDateMs(it?.premium_expires_at ?? it?.premiumExpiresAt);
+
+        return Number.isFinite(activatedAt) &&
+          activatedAt <= nowTs &&
+          Number.isFinite(expiresAt) &&
+          expiresAt > nowTs;
+      }
+
       function esc(s){
         return String(s || "")
           .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
@@ -2273,7 +2294,7 @@
         : (Array.isArray(evData?.items) ? evData.items : (Array.isArray(evData) ? evData : []));
 
       const cvPrem = cvItemsRaw.filter(isPremium).slice(0, 6);
-      const evPrem = evItemsRaw.slice(0, 6);
+      const evPrem = evItemsRaw.filter((it) => isActivePremiumEvent(it)).slice(0, 6);
 
       function renderTo(ul, items, kind){
         ul.innerHTML = "";
