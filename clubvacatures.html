@@ -526,7 +526,7 @@
                   </div>
                 </div>
 
-                <p class="note">Premium vacatures staan bovenaan. Vacatures die verlopen zijn, worden later automatisch verborgen.</p>
+                <p class="note">Premium vacatures krijgen extra zichtbaarheid in de bovenste secties. Vacatures die verlopen zijn, worden later automatisch verborgen.</p>
 
                 <!-- PREMIUM (zelfde plaats als events.html): 6 kaarten -->
                 <div id="premium-30-wrap" class="premium-block" style="display:block;">
@@ -534,7 +534,7 @@
                     <div class="card-header">
                       <div>
                         <div class="card-caption">Premium</div>
-                        <div class="card-title premium-title-lg">Premium clubvacatures in de kijker</div>
+                        <div class="card-title premium-title-lg">Premium vacatures</div>
                       </div>
                     </div>
                     <div id="premium-grid-30" class="events-grid-2 premium-grid">
@@ -891,7 +891,7 @@
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Premium</div>
-                    <div class="card-title">Uitgelicht</div>
+                    <div class="card-title">Meer premium vacatures in de kijker</div>
                   </div>
                 </div>
                 <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
@@ -1254,6 +1254,96 @@
     `;
   }
 
+  function vacancySidebarCardHtml(v, idx) {
+    const title = escHtml(cleanVacancyTitle(v.title || v.name || "Vacature"));
+    const rawId = String(v.id || "").trim();
+    const detailHref = isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
+    const country = String(v.country || "").toUpperCase();
+    const regionRaw = String(v.region || v.city || v.province || "").trim();
+    const flag = flagForCountry(country);
+    const locationMeta = regionRaw ? `${flag} · ${escHtml(regionRaw)}` : `${flag} · ${escHtml(countryLabel(country))}`;
+    const club = escHtml(v.club || v.organization || v.club_name || "");
+    const cType = escHtml(String(v?.meta?.type || v?.type || ""));
+    const cLevel = escHtml(String(v?.meta?.level || v?.level || ""));
+    const detailLine = [cType, cLevel].filter(Boolean).join(" · ");
+    const thumbUrl = normalizeVacancyThumb(v.image_url || v.image || "");
+    const thumb = thumbUrl
+      ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
+      : "";
+    const links = resolveVacancyLinks(v);
+    const actionHref = detailHref || links.external.href || links.cv.href;
+    const actionAttrs = detailHref ? "" : ' target="_blank" rel="noopener noreferrer"';
+    const actionLabel = actionHref ? "Bekijk vacature" : "Plaats premium vacature";
+
+    return `
+      <div class="sidebar-premium-card" id="sidebar-premium-vacancy-${escHtml(String(idx + 1))}">
+        <div class="sidebar-premium-top">
+          <div class="sidebar-premium-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">
+            <div class="premium-ribbon">Premium</div>
+            ${thumb}
+          </div>
+          <div style="min-width:0;">
+            <div class="sidebar-premium-title">${title || "Vacature"}</div>
+            <div class="sidebar-premium-meta">${locationMeta}</div>
+            ${club ? `<div class="sidebar-premium-meta">${club}</div>` : ""}
+            ${detailLine ? `<div class="sidebar-premium-meta">${detailLine}</div>` : ""}
+          </div>
+        </div>
+        <div class="sidebar-premium-actions">
+          <a class="btn-ghost-sm" href="${escHtml(actionHref || "adverteren.html")}"${actionHref ? actionAttrs : ""}>${actionLabel}</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderSidebarPremiumVacancies(premiumItems) {
+    const el = document.getElementById("sidebar-premium-later");
+    if (!el) return;
+
+    const items = Array.isArray(premiumItems) ? premiumItems.filter(Boolean) : [];
+    el.innerHTML = "";
+
+    if (items.length) {
+      el.innerHTML = items.map((item, idx) => vacancySidebarCardHtml(item, idx)).join("");
+    } else {
+      const MIN_SLOTS = 3;
+      const placeholders = [
+        { title: "Jouw premium vacature hier?", place: "—", type: "Premium", date: "" },
+        { title: "Extra zichtbaarheid voor vacatures", place: "—", type: "Premium", date: "" },
+        { title: "Bereik meer clubs", place: "—", type: "Premium", date: "" }
+      ];
+      for (let i = 0; i < MIN_SLOTS; i++) {
+        const ph = placeholders[i % placeholders.length];
+        el.insertAdjacentHTML("beforeend", `
+          <div class="sidebar-premium-card">
+            <div class="sidebar-premium-top">
+              <div class="sidebar-premium-thumbbox" aria-label="Thumbnail">
+                <div class="premium-ribbon">Premium</div>
+              </div>
+              <div style="min-width:0;">
+                <div class="sidebar-premium-title">${ph.title}</div>
+                <div class="sidebar-premium-meta">${ph.place}</div>
+                <div class="sidebar-premium-meta">${ph.date}</div>
+                <div class="sidebar-premium-meta">${ph.type}</div>
+              </div>
+            </div>
+            <div class="sidebar-premium-actions"></div>
+          </div>
+        `);
+      }
+    }
+
+    el.insertAdjacentHTML("beforeend", `
+      <div class="sidebar-premium-card sidebar-premium-card--cta">
+        <div class="sidebar-premium-title">Plaats jouw premium vacature</div>
+        <div class="sidebar-premium-meta">Promoot je vacature extra in de bovenste premiumsecties.</div>
+        <div class="sidebar-premium-actions">
+          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium vacature</a>
+        </div>
+      </div>
+    `);
+  }
+
   async function loadVacanciesFromBackend() {
     const listEl = document.getElementById("vacancy-list");
     const premiumGrid = document.getElementById("premium-grid-30");
@@ -1263,6 +1353,7 @@
     // Reset UI immediately to avoid showing stale results between gender switches
     listEl.innerHTML = "";
     if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    renderSidebarPremiumVacancies([]);
     if (statusEl) {
       statusEl.style.display = "";
       statusEl.textContent = "Vacatures laden…";
@@ -1298,14 +1389,20 @@
       // Filter test items, but keep them if filtering would leave 0 results
       const filtered = items_raw.filter((item) => !isPublicTestVacancy(item));
       const items = filtered.length > 0 ? filtered : items_raw;
-      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const premium = items.filter(isPremiumActive);
+      const primaryPremium = premium.slice(0, 6);
+      const sidebarPremium = premium.length > primaryPremium.length
+        ? premium.slice(primaryPremium.length, primaryPremium.length + 10)
+        : premium.slice(0, Math.min(premium.length, 3));
 
       // Premium grid: render up to 6 premium items, otherwise restore placeholders
       if (premiumGrid) {
-        premiumGrid.innerHTML = premium.length
-          ? premium.map((v, i) => vacancyCardHtml(v, i, true)).join("")
+        premiumGrid.innerHTML = primaryPremium.length
+          ? primaryPremium.map((v, i) => vacancyCardHtml(v, i, true)).join("")
           : PREMIUM_PLACEHOLDER_HTML;
       }
+
+      renderSidebarPremiumVacancies(sidebarPremium);
 
       // Keep premium vacancies in the main overview as well.
       listEl.innerHTML = items.map((v, i) => vacancyCardHtml(v, i, false)).join("");
@@ -1313,7 +1410,7 @@
       if (statusEl) {
         statusEl.style.display = "";
         statusEl.textContent = items.length
-          ? `${items.length} vacature(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
+          ? `${items.length} vacature(s) geladen (premium: ${premium.length}, overzicht: ${items.length}).`
           : "Nog geen clubvacatures.";
       }
 
@@ -1468,46 +1565,6 @@
   })();
   // --- end gender filter ---
 
-  // Fill sidebar premium block with placeholders (layout parity with events.html)
-  (function fillSidebarPremiumLater(){
-    const el = document.getElementById('sidebar-premium-later');
-    if (!el) return;
-    const MIN_SLOTS = 10;
-    const placeholders = [
-      { title: "Jouw premium vacature hier?", place: "—", type: "Premium", date: "" },
-      { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
-      { title: "Bereik meer clubs", place: "—", type: "Premium", date: "" }
-    ];
-    el.innerHTML = '';
-    for (let i=0;i<MIN_SLOTS;i++){
-      const ph = placeholders[i % placeholders.length];
-      el.insertAdjacentHTML('beforeend', `
-        <div class="sidebar-premium-card">
-          <div class="sidebar-premium-top">
-            <div class="sidebar-premium-thumbbox" aria-label="Thumbnail">
-              <div class="premium-ribbon">Premium</div>
-            </div>
-            <div style="min-width:0;">
-              <div class="sidebar-premium-title">${ph.title}</div>
-              <div class="sidebar-premium-meta">${ph.place}</div>
-              <div class="sidebar-premium-meta">${ph.date}</div>
-              <div class="sidebar-premium-meta">${ph.type}</div>
-            </div>
-          </div>
-          <div class="sidebar-premium-actions"></div>
-        </div>
-      `);
-    }
-    el.insertAdjacentHTML('beforeend', `
-      <div class="sidebar-premium-card sidebar-premium-card--cta">
-        <div class="sidebar-premium-title">Plaats jouw premium vacature</div>
-        <div class="sidebar-premium-meta">Promoot je vacature ruim op voorhand, bovenaan elke pagina.</div>
-        <div class="sidebar-premium-actions">
-          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium vacature</a>
-        </div>
-      </div>
-    `);
-  })();
 </script>
 
   <script src="assets/js/nav-active.js" defer></script>

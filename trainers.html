@@ -496,11 +496,11 @@
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
               </div>
 
-              <article id="sidebar-premium-card" class="card" style="margin-top:12px; display:none;">
+              <article id="sidebar-premium-card" class="card" style="margin-top:12px;">
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Premium</div>
-                    <div class="card-title">Uitgelicht</div>
+                    <div class="card-title">Meer premium trainers in de kijker</div>
                   </div>
                 </div>
                 <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
@@ -748,19 +748,98 @@
     `;
   }
 
+  function trainerSidebarCardHtml(p, idx) {
+    const rawId = String(p.id || "").trim();
+    const detailHref = rawId ? `event.html?type=trainer&id=${encodeURIComponent(rawId)}` : "";
+    const role = escHtml(p.role || p.position || p.type || "Trainer");
+    const thumbUrl = normalizeTrainerThumb(
+      p.image_url || p.image || p.photo_url || p.photo || p.avatar_url || p.avatar || ""
+    );
+    const thumb = thumbUrl
+      ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
+      : "";
+    const links = resolveTrainerLinks(p);
+    const actionHref = detailHref || links.external.href || links.cv.href;
+    const actionAttrs = detailHref ? "" : ' target="_blank" rel="noopener noreferrer"';
+
+    return `
+      <div class="sidebar-premium-card" id="sidebar-premium-trainer-${escHtml(String(idx + 1))}">
+        <div class="sidebar-premium-top">
+          <div class="sidebar-premium-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">
+            <div class="premium-ribbon">Premium</div>
+            ${thumb}
+          </div>
+          <div style="min-width:0;">
+            <div class="sidebar-premium-title">${escHtml(trainerDisplayName(p) || "Trainer")}</div>
+            <div class="sidebar-premium-meta">${escHtml(compactLocationMeta(p))}</div>
+            <div class="sidebar-premium-meta">${role}</div>
+          </div>
+        </div>
+        <div class="sidebar-premium-actions">
+          <a class="btn-ghost-sm" href="${escHtml(actionHref || "adverteren.html")}"${actionHref ? actionAttrs : ""}>${actionHref ? "Bekijk profiel" : "Plaats premium profiel"}</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderSidebarPremiumTrainers(premiumItems) {
+    const el = document.getElementById("sidebar-premium-later");
+    if (!el) return;
+
+    const items = Array.isArray(premiumItems) ? premiumItems.filter(Boolean) : [];
+    el.innerHTML = "";
+
+    if (items.length) {
+      el.innerHTML = items.map((item, idx) => trainerSidebarCardHtml(item, idx)).join("");
+    } else {
+      const MIN_SLOTS = 3;
+      const placeholders = [
+        { title: "Jouw premium profiel hier?", place: "—", type: "Premium", date: "" },
+        { title: "Extra zichtbaarheid voor trainers", place: "—", type: "Premium", date: "" },
+        { title: "Val sneller op bij clubs", place: "—", type: "Premium", date: "" }
+      ];
+      for (let i = 0; i < MIN_SLOTS; i++) {
+        const ph = placeholders[i % placeholders.length];
+        el.insertAdjacentHTML("beforeend", `
+          <div class="sidebar-premium-card">
+            <div class="sidebar-premium-top">
+              <div class="sidebar-premium-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
+              <div style="min-width:0;">
+                <div class="sidebar-premium-title">${ph.title}</div>
+                <div class="sidebar-premium-meta">${ph.place}</div>
+                <div class="sidebar-premium-meta">${ph.date}</div>
+                <div class="sidebar-premium-meta">${ph.type}</div>
+              </div>
+            </div>
+            <div class="sidebar-premium-actions"></div>
+          </div>
+        `);
+      }
+    }
+
+    el.insertAdjacentHTML("beforeend", `
+      <div class="sidebar-premium-card sidebar-premium-card--cta">
+        <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
+        <div class="sidebar-premium-meta">Promoot je trainersprofiel extra in de bovenste premiumsecties.</div>
+        <div class="sidebar-premium-actions">
+          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
+        </div>
+      </div>
+    `);
+  }
+
   async function loadTrainersFromBackend() {
     const listEl = document.getElementById("trainer-list");
     const premiumGrid = document.getElementById("premium-grid-30");
     const premiumWrap = document.getElementById("premium-30-wrap");
     const statusEl = document.getElementById("trainer-status");
-    const sidebarPremiumEl = document.getElementById("sidebar-premium-later");
     if (!listEl) return false;
 
     // Reset UI immediately to avoid showing stale results between gender switches
     listEl.innerHTML = "";
     if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
     if (premiumWrap) premiumWrap.style.display = "block";
-    if (sidebarPremiumEl) sidebarPremiumEl.innerHTML = "";
+    renderSidebarPremiumTrainers([]);
     if (statusEl) {
       statusEl.style.display = "";
       statusEl.textContent = "Trainers laden…";
@@ -820,6 +899,7 @@
         listEl.innerHTML = "";
         if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
         if (premiumWrap) premiumWrap.style.display = "block";
+        renderSidebarPremiumTrainers([]);
         if (statusEl) {
           statusEl.style.display = "";
           statusEl.textContent = "Nog geen trainersprofielen beschikbaar.";
@@ -827,21 +907,26 @@
         return true;
       }
 
-      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const premium = items.filter(isPremiumActive);
+      const primaryPremium = premium.slice(0, 6);
+      const sidebarPremium = premium.length > primaryPremium.length
+        ? premium.slice(primaryPremium.length, primaryPremium.length + 10)
+        : premium.slice(0, Math.min(premium.length, 3));
 
       if (premiumGrid) {
-        premiumGrid.innerHTML = premium.length
-          ? premium.map((p, i) => trainerCardHtml(p, i, true)).join("")
+        premiumGrid.innerHTML = primaryPremium.length
+          ? primaryPremium.map((p, i) => trainerCardHtml(p, i, true)).join("")
           : PREMIUM_PLACEHOLDER_HTML;
       }
       if (premiumWrap) premiumWrap.style.display = "block";
+      renderSidebarPremiumTrainers(sidebarPremium);
 
       listEl.innerHTML = items.map((p, i) => trainerCardHtml(p, i, false)).join("");
 
       if (statusEl) {
         statusEl.style.display = "";
         statusEl.textContent = items.length
-          ? `${items.length} trainer(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
+          ? `${items.length} trainer(s) geladen (premium: ${premium.length}, overzicht: ${items.length}).`
           : "Nog geen trainersprofielen beschikbaar.";
       }
 
