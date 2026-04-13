@@ -1239,6 +1239,17 @@
       const SUBMIT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/forms/event-submission';
       const CHECKOUT_ENDPOINT = 'https://voetbal4all-backend-database.onrender.com/api/payments/stripe/checkout';
       const THANKYOU_URL = `${FRONTEND_BASE_URL}/bedankt.html`;
+
+      // Build error redirect URL with context params when available
+      function buildErrorRedirect(reason, sidValue) {
+        const u = new URL(THANKYOU_URL);
+        u.searchParams.set('error', '1');
+        u.searchParams.set('source', 'event');
+        if (reason) u.searchParams.set('reason', String(reason).replace(/\s+/g, ' ').trim());
+        if (sidValue) u.searchParams.set('sid', sidValue);
+        return u.toString();
+      }
+
       const fd = new FormData();
       if (flyerFile) fd.append('flyer', flyerFile);
       fd.append('subject', subject);
@@ -1307,14 +1318,14 @@
             || 'Uw aanvraag kon niet verwerkt worden (bijvoorbeeld: er bestaat al een gelijkaardig event op dezelfde datum).';
 
           // Redirect to thank-you page that shows the reason + contact option (no technical jargon)
-          window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
+          window.location.href = buildErrorRedirect(reason);
           return;
         }
 
         const sid = (json && (json.id || json.submissionId)) ? String(json.id || json.submissionId) : '';
         if (!sid) {
           const reason = 'Uw aanvraag is ontvangen, maar kon niet correct verwerkt worden. Probeer opnieuw of contacteer ons via het contactformulier.';
-          window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
+          window.location.href = buildErrorRedirect(reason);
           return;
         }
 
@@ -1377,7 +1388,7 @@
           const packageCode = mapPremiumPlanToPackageCode(premiumPlan);
           if (!packageCode) {
             const reason = 'Ongeldige Premium-periode gekozen. Kies opnieuw.';
-            window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
+            window.location.href = buildErrorRedirect(reason, sid);
             return;
           }
 
@@ -1519,7 +1530,7 @@
               .trim()
               || 'De betaling kon niet gestart worden. Probeer opnieuw of contacteer ons via het contactformulier.';
 
-            window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
+            window.location.href = buildErrorRedirect(reason, sid);
             return;
           }
 
@@ -1558,7 +1569,9 @@
       } catch (err) {
         const msg = (err && err.message) ? String(err.message) : 'Verzenden is momenteel niet beschikbaar.';
         const reason = (msg || '').replace(/\s+/g, ' ').trim() || 'Verzenden is momenteel niet beschikbaar.';
-        window.location.href = `${THANKYOU_URL}?error=1&reason=${encodeURIComponent(reason)}`;
+        // sid may or may not be available depending on where the error occurred
+        const sidFallback = (typeof sid !== 'undefined' && sid) ? sid : '';
+        window.location.href = buildErrorRedirect(reason, sidFallback);
         return;
       }
     });
