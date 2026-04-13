@@ -549,10 +549,8 @@
     __earlySet('orderName', __earlyName);
     __earlySet('orderEmail', __earlyEmail);
 
-    // Read stored payload (event-aanmelden.html stores it before redirecting to Stripe)
-    function loadStoredPayload(sid) {
-      if (!sid) return null;
-      const key = `v4_event_payload_${sid}`;
+    function loadJsonFromStorage(key) {
+      if (!key) return null;
       try {
         const s1 = sessionStorage.getItem(key);
         if (s1) return JSON.parse(s1);
@@ -562,6 +560,32 @@
         if (s2) return JSON.parse(s2);
       } catch (_) {}
       return null;
+    }
+
+    function loadStoredPayload(sid, sourceValue, kindValue) {
+      if (!sid) return null;
+      const keys = [];
+      const sourceKey = String(sourceValue || '').trim().toLowerCase();
+      const kindKey = String(kindValue || '').trim().toLowerCase();
+      if (kindKey) keys.push(`v4_thanks_payload_${kindKey}_${sid}`);
+      if (sourceKey && sourceKey !== kindKey) keys.push(`v4_thanks_payload_${sourceKey}_${sid}`);
+      keys.push(`v4_thanks_payload_${sid}`);
+      keys.push(`v4_event_payload_${sid}`);
+
+      for (const key of keys) {
+        const payload = loadJsonFromStorage(key);
+        if (payload) return payload;
+      }
+      return null;
+    }
+
+    function loadLegacyThanksPayload(expectedId) {
+      const id = String(expectedId || '').trim();
+      if (!id) return null;
+      const payload = loadJsonFromStorage('v4_thanks_payload');
+      if (!payload) return null;
+      const payloadId = String(payload.id || payload.sid || '').trim();
+      return payloadId && payloadId === id ? payload : null;
     }
 
    // ------------------------------
@@ -632,20 +656,93 @@
       return { kind: "unknown", sid, eventId, submissionId, premiumStart, premiumEnd, packageCode, quantity, statusKey, published };
     }
 
-    const flow = resolveFlow(qs); 
-    storedEventPayload = loadStoredPayload((flow && flow.sid) ? String(flow.sid).trim() : '');
+    function normalizeFlowType(sourceValue, kindValue) {
+      const sourceKey = String(sourceValue || '').trim().toLowerCase();
+      const kindKey = String(kindValue || '').trim().toLowerCase();
 
-    // Source/type (e.g. contact, event, vacature, premium, betaling)
-    const source = (qs.get('source') || '').trim();
-    // Normalize source/kind so premium profiles & vacatures render premium window
-    const kind = (qs.get('kind') || source || '').trim();
+      if (kindKey === 'event' || sourceKey === 'event') return 'event';
+      if (kindKey === 'vacature' || sourceKey === 'vacature' || sourceKey === 'clubvacature') return 'clubvacature';
+      if (kindKey === 'trainer' || sourceKey === 'trainer') return 'trainer';
+      if (kindKey === 'speler' || sourceKey === 'speler' || kindKey === 'profile' || sourceKey === 'profile') return 'speler';
+      if (kindKey === 'team-in-de-kijker' || sourceKey === 'team-in-de-kijker' || kindKey === 'spotlight' || sourceKey === 'spotlight') return 'team-in-de-kijker';
+      if (kindKey === 'supportersclub' || sourceKey === 'supportersclub') return 'supportersclub';
+      if (sourceKey === 'contact' || kindKey === 'contact') return 'contact';
+      return kindKey || sourceKey || '';
+    }
+
+    const flow = resolveFlow(qs);
+    const sid = (flow.sid || '').trim();
+    const storageLookupId = (
+      sid ||
+      flow.eventId ||
+      flow.submissionId ||
+      qs.get('id') ||
+      qs.get('orderId') ||
+      qs.get('eventId') ||
+      qs.get('submissionId') ||
+      ''
+    ).trim();
+    const rawQuerySource = (qs.get('source') || '').trim();
+    const rawQueryKind = (qs.get('kind') || '').trim();
+    storedEventPayload = loadStoredPayload(storageLookupId, rawQuerySource, rawQueryKind) || loadLegacyThanksPayload(storageLookupId);
+
+    const source = rawQuerySource
+      || (storedEventPayload && storedEventPayload.source ? String(storedEventPayload.source).trim() : '');
+    const kind = rawQueryKind
+      || (storedEventPayload && storedEventPayload.kind ? String(storedEventPayload.kind).trim() : '')
+      || source;
     const sourceKey = source.toLowerCase();
     const kindKey = kind.toLowerCase();
-    const isNonEventPremium = (kindKey === 'vacature' || kindKey === 'profile' || kindKey === 'trainer' || kindKey === 'speler');
-    const isEventLikeFlow = !!((flow && flow.sid) ? String(flow.sid).trim() : '') || sourceKey === 'event' || kindKey === 'event' || isNonEventPremium;
+    const flowType = normalizeFlowType(source, kind);
+    const isEventFlow = flowType === 'event';
+    const isProfileFlow = flowType === 'clubvacature' || flowType === 'trainer' || flowType === 'speler';
+    const isManagedSubmissionFlow =
+      isEventFlow ||
+      isProfileFlow ||
+      flowType === 'team-in-de-kijker' ||
+      flowType === 'supportersclub';
 
-    // Primary params used by the event flow
-    const sid = (flow.sid || '').trim();
+    const FLOW_META = {
+      event: {
+        noun: 'event',
+        summary: 'Event-aanmelding',
+        badge: 'EVENT',
+        idLabel: 'Event-ID'
+      },
+      clubvacature: {
+        noun: 'clubvacature',
+        summary: 'Clubvacature',
+        badge: 'CLUBVACATURE',
+        idLabel: 'referentie-ID'
+      },
+      trainer: {
+        noun: 'trainersprofiel',
+        summary: 'Trainersprofiel',
+        badge: 'TRAINER',
+        idLabel: 'referentie-ID'
+      },
+      speler: {
+        noun: 'spelersprofiel',
+        summary: 'Spelersprofiel',
+        badge: 'SPELER',
+        idLabel: 'referentie-ID'
+      },
+      'team-in-de-kijker': {
+        noun: 'team in de kijker',
+        summary: 'Team in de kijker',
+        badge: 'TEAM IN DE KIJKER',
+        idLabel: 'referentie-ID'
+      },
+      supportersclub: {
+        noun: 'supportersclub',
+        summary: 'Supportersclub',
+        badge: 'SUPPORTERSCLUB',
+        idLabel: 'referentie-ID'
+      }
+    };
+    const flowMeta = FLOW_META[flowType] || null;
+    const managedNoun = flowMeta ? flowMeta.noun : 'aanvraag';
+
     const paid = flow.kind === 'premium_success';
 
     // Premium window (optional): provided by backend after payment/confirmation
@@ -867,6 +964,8 @@
       const extIdIsUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(extIdRaw);
       const extId = extIdIsUuid ? extIdRaw : '';
 
+      if (!isEventFlow) return;
+
       // Nothing to query with.
       if (!extId && !eventId) return;
 
@@ -895,20 +994,6 @@
       // 2b) Some deployments expose event by id via query
       if (eventId && /^\d+$/.test(eventId)) {
         candidates.push(`${BACKEND_BASE}/api/events?id=${encodeURIComponent(eventId)}&limit=1&nocache=1`);
-      }
-
-      // 3) Non-event endpoints: for vacatures/profiles, also check their specific APIs
-      if (isNonEventPremium && extId) {
-        if (kindKey === 'vacature') {
-          candidates.push(`${BACKEND_BASE}/api/club-vacancies?nocache=1`);
-          candidates.push(`${BACKEND_BASE}/api/clubvacatures?nocache=1`);
-        } else if (kindKey === 'trainer') {
-          candidates.push(`${BACKEND_BASE}/api/trainer-profiles?nocache=1`);
-          candidates.push(`${BACKEND_BASE}/api/trainers?nocache=1`);
-        } else if (kindKey === 'speler' || kindKey === 'profile') {
-          candidates.push(`${BACKEND_BASE}/api/player-profiles?nocache=1`);
-          candidates.push(`${BACKEND_BASE}/api/players?nocache=1`);
-        }
       }
 
       // 4) Fallbacks: some deployments don't expose /api/events/:id publicly.
@@ -1091,7 +1176,7 @@
       !paid &&
       !isConfirmedState &&
       !isPendingState &&
-      (flow.kind === 'received' || statusKey === 'received' || (isEventLikeFlow && !!sourceKey && !!sid));
+      (flow.kind === 'received' || statusKey === 'received' || (isManagedSubmissionFlow && !!sourceKey && !!sid));
 
     let displayState = 'default';
     if (isError) displayState = 'error';
@@ -1118,7 +1203,7 @@
       }
     };
 
-    const supportIdLabel = isNonEventPremium ? 'referentie-ID' : 'Event-ID';
+    const supportIdLabel = flowMeta ? flowMeta.idLabel : 'referentie-ID';
 
     // NOTE: `hasPremiumWindow` is declared later (after backend lookup).
     // Do NOT mark as paid just because dates exist: non-premium events may still have
@@ -1176,30 +1261,30 @@
     const emailKeepNotice = document.getElementById('emailKeepNotice');
     if (emailKeepNotice) {
       const emailKeepList = emailKeepNotice.querySelector('ul');
-      if (isEventLikeFlow && !isError && !isDeleted && !isCancelled) {
+      if (isManagedSubmissionFlow && !isError && !isDeleted && !isCancelled) {
         emailKeepNotice.style.display = '';
         if (emailKeepList) {
           if (displayState === 'pending') {
             emailKeepList.innerHTML = `
               <li>U heeft de e-mail nodig om uw aanvraag nog <strong>te bevestigen</strong>.</li>
-              <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
+              <li>Gebruik de e-mail later voor beheer of opvolging van uw <strong>${managedNoun}</strong>.</li>
               <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
             `;
           } else if (displayState === 'paid') {
             emailKeepList.innerHTML = `
-              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> tot na het event.</li>
+              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> goed.</li>
               <li>Gebruik die e-mail voor opvolging van uw <strong>Premium-aanvraag</strong>.</li>
               <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
             `;
           } else if (displayState === 'confirmed' || displayState === 'published') {
             emailKeepList.innerHTML = `
-              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> tot na het event.</li>
-              <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
+              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> goed.</li>
+              <li>Gebruik die e-mail voor later beheer of opvolging van uw <strong>${managedNoun}</strong>.</li>
               <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
             `;
           } else {
             emailKeepList.innerHTML = `
-              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> tot na het event.</li>
+              <li>Bewaar de e-mail met uw <strong>${supportIdLabel}</strong> goed.</li>
               <li>Verdere opvolging en beheeropties worden via die e-mail gedeeld.</li>
               <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>${supportIdLabel}</strong>.</li>
             `;
@@ -1421,57 +1506,39 @@
       if (source === 'contact'){
         titleEl.textContent = 'Bedankt voor je bericht';
         subEl.textContent = 'We hebben je bericht goed ontvangen. Hieronder vind je een overzicht van je aanvraag.';
-      } else if (isEventLikeFlow){
-        // Kind-specific noun for titles/subtitles
-        const kindNoun = (() => {
-          const k = kindKey;
-          if (k === 'vacature') return 'vacature';
-          if (k === 'trainer') return 'trainersprofiel';
-          if (k === 'speler') return 'spelersprofiel';
-          if (k === 'profile') return 'profiel';
-          return 'event';
-        })();
-        const kindNounUc = kindNoun.charAt(0).toUpperCase() + kindNoun.slice(1);
-        const isEventKind = (!isNonEventPremium);
-
+      } else if (isManagedSubmissionFlow){
         if (displayState === 'error') {
           titleEl.textContent = 'Uw aanvraag kon niet verwerkt worden';
           subEl.textContent = 'Controleer de link of probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
         } else if (displayState === 'deleted') {
-          titleEl.textContent = isEventKind ? 'Uw event werd verwijderd' : ('Uw ' + kindNoun + ' werd verwijderd');
+          titleEl.textContent = 'Uw ' + managedNoun + ' werd verwijderd';
           subEl.textContent = 'Dit item is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
         } else if (displayState === 'cancelled') {
           titleEl.textContent = 'Betaling niet afgerond';
-          subEl.textContent = isEventKind
-            ? 'Uw Premium betaling werd niet afgerond. Uw event werd niet gepubliceerd.'
-            : ('Uw Premium betaling werd niet afgerond. Uw ' + kindNoun + ' werd niet gepubliceerd.');
+          subEl.textContent = 'Uw Premium betaling werd niet afgerond. Uw ' + managedNoun + ' werd niet gepubliceerd.';
         } else if (displayState === 'paid') {
-          if (isNonEventPremium) {
-            titleEl.textContent = 'Uw Premium ' + kindNoun + ' is geslaagd';
+          if (isProfileFlow) {
+            titleEl.textContent = 'Uw Premium ' + managedNoun + ' is geslaagd';
             subEl.textContent = 'Uw Premium zichtbaarheid is geactiveerd. Bewaar de bevestigingsmail met uw referentie-ID.';
           } else {
-            titleEl.textContent = 'Uw Premium event is succesvol aangemeld';
-            subEl.textContent = 'Uw Premium event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+            titleEl.textContent = 'Uw Premium aanvraag is succesvol verwerkt';
+            subEl.textContent = 'Uw Premium zichtbaarheid wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw referentie-ID.';
           }
         } else if (displayState === 'published') {
-          titleEl.textContent = isEventKind ? 'Uw event is gepubliceerd' : ('Uw ' + kindNoun + ' is gepubliceerd');
-          subEl.textContent = isEventKind
-            ? 'Uw event staat live op Voetbal4All. Bewaar de e-mail met uw Event-ID voor later beheer.'
-            : ('Uw ' + kindNoun + ' staat live op Voetbal4All. Bewaar de e-mail met uw referentie-ID.');
+          titleEl.textContent = 'Uw ' + managedNoun + ' is gepubliceerd';
+          subEl.textContent = 'Uw ' + managedNoun + ' staat live op Voetbal4All. Bewaar de e-mail met uw referentie-ID voor later beheer.';
         } else if (displayState === 'confirmed') {
-          titleEl.textContent = isEventKind ? 'Uw event is bevestigd' : ('Uw ' + kindNoun + ' is bevestigd');
+          titleEl.textContent = 'Uw ' + managedNoun + ' is bevestigd';
           subEl.textContent = 'Uw bevestiging is goed ontvangen. Verdere verwerking gebeurt zonder bijkomende bevestigingsstap.';
         } else if (displayState === 'pending') {
-          titleEl.textContent = isEventKind
-            ? 'Uw event is ontvangen, maar nog niet bevestigd'
-            : ('Uw ' + kindNoun + ' is ontvangen, maar nog niet bevestigd');
-          subEl.textContent = 'Bevestig uw aanvraag via de e-mail die u ontving. Zonder bevestiging wordt dit niet gepubliceerd.';
+          titleEl.textContent = 'Uw aanvraag is ontvangen, maar nog niet bevestigd';
+          subEl.textContent = 'Bevestig uw aanvraag voor ' + managedNoun + ' via de e-mail die u ontving. Zonder bevestiging wordt dit niet gepubliceerd.';
         } else if (displayState === 'received') {
           titleEl.textContent = 'Uw aanvraag is goed ontvangen';
-          subEl.textContent = 'We hebben uw aanvraag ontvangen. Verdere opvolging verloopt via e-mail.';
+          subEl.textContent = 'We hebben uw aanvraag voor ' + managedNoun + ' ontvangen. Verdere opvolging verloopt via e-mail.';
         } else {
           titleEl.textContent = 'Uw aanvraag is goed ontvangen';
-          subEl.textContent = 'We hebben uw aanvraag goed ontvangen. Hieronder vindt u een overzicht.';
+          subEl.textContent = 'We hebben uw aanvraag voor ' + managedNoun + ' goed ontvangen. Hieronder vindt u een overzicht.';
         }
       } else if (source === 'vacature'){
         titleEl.textContent = 'Bedankt voor je aanvraag';
@@ -1486,17 +1553,9 @@
     const badgeEl = document.getElementById('thanksBadge');
     if (badgeEl){
       const parts = [];
-      // Determine badge prefix based on kind
-      const badgePrefix = (() => {
-        const k = kindKey;
-        if (k === 'vacature') return 'VACATURE';
-        if (k === 'trainer') return 'TRAINER';
-        if (k === 'speler') return 'SPELER';
-        if (k === 'profile') return 'PROFIEL';
-        return 'EVENT';
-      })();
+      const badgePrefix = flowMeta ? flowMeta.badge : 'AANVRAAG';
 
-      if (isEventLikeFlow) {
+      if (isManagedSubmissionFlow) {
         if (displayState === 'error') parts.push(badgePrefix + ' · NIET VERWERKT');
         else if (displayState === 'deleted') parts.push(badgePrefix + ' · VERWIJDERD');
         else if (displayState === 'cancelled') parts.push('BETALING · NIET AFGEROND');
@@ -1518,12 +1577,7 @@
 
     // Summary values — use kind-appropriate fallback labels
     const whatFallback = (() => {
-      const k = kindKey;
-      if (k === 'vacature') return 'Vacature';
-      if (k === 'trainer') return 'Trainersprofiel';
-      if (k === 'speler') return 'Spelersprofiel';
-      if (k === 'profile') return 'Profiel';
-      if (isEventLikeFlow) return 'Event-aanmelding';
+      if (flowMeta) return flowMeta.summary;
       if (source) return 'Aanvraag: ' + source;
       return '';
     })();
@@ -1576,11 +1630,11 @@
       recomputePremiumTexts();
     }
 
-    if (!isError && !isDeleted && paid && (hasPremiumWindow || isNonEventPremium)) {
+    if (!isError && !isDeleted && paid && (hasPremiumWindow || isProfileFlow)) {
       if (premiumBlock) premiumBlock.style.display = '';
       // Fallback label for non-event premium (profiles/vacatures)
       // Non-event premium (profiles/vacatures): if premium window is still missing, derive from package + quantity.
-      if (!hasPremiumWindow && isNonEventPremium) {
+      if (!hasPremiumWindow && isProfileFlow) {
         const pkgRaw2 = getParamAny(['package_code','packageCode','pkg']);
         const qtyRaw2 = getParamAny(['quantity','qty','q']) || '1';
         const pkg2 = normalizePkg(pkgRaw2);
@@ -1649,7 +1703,7 @@
       if (pwLabel) pwLabel.style.display = 'none';
       if (pwValue) pwValue.style.display = 'none';
       // Premium upsell for non-premium pending events
-      if (displayState === 'pending' && !paid && premiumBlock) {
+      if (displayState === 'pending' && !paid && premiumBlock && isEventFlow) {
         premiumBlock.style.display = '';
         if (pwWrap) {
           pwWrap.style.display = '';
@@ -1665,46 +1719,46 @@
     }
 
     // (nextIntro/nextTip already resolved above)
-    if (isEventLikeFlow && nextIntro && nextTip){
+    if (isManagedSubmissionFlow && nextIntro && nextTip){
       if (displayState === 'error') {
         nextIntro.textContent = 'Uw aanvraag kon niet verwerkt worden.';
         nextTip.textContent = 'Controleer de link of contacteer ons via het contactformulier.';
       } else if (displayState === 'deleted') {
-        nextIntro.textContent = 'Uw event werd verwijderd en is niet langer zichtbaar op Voetbal4All.';
+        nextIntro.textContent = 'Uw ' + managedNoun + ' werd verwijderd en is niet langer zichtbaar op Voetbal4All.';
         nextTip.textContent = 'In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
       } else if (displayState === 'paid') {
         if (!hasPremiumWindow) {
-          nextIntro.textContent = isNonEventPremium
+          nextIntro.textContent = isProfileFlow
             ? 'Uw Premium zichtbaarheid is geactiveerd.'
-            : 'Uw Premium betaling is ontvangen. Uw event wordt nu definitief verwerkt.';
-          nextTip.textContent = isNonEventPremium
+            : 'Uw Premium betaling is ontvangen. Uw aanvraag wordt nu definitief verwerkt.';
+          nextTip.textContent = isProfileFlow
             ? 'Bewaar de bevestigingsmail met uw referentie-ID voor verdere opvolging.'
-            : 'Bewaar de e-mail met uw Event-ID tot na het event. Dit helpt ons u sneller te ondersteunen indien nodig.';
-        } else if (isNonEventPremium) {
+            : 'Bewaar de e-mail met uw referentie-ID goed. Dit helpt ons u sneller te ondersteunen indien nodig.';
+        } else if (isProfileFlow) {
           nextIntro.textContent = 'Uw Premium zichtbaarheid is geactiveerd en loopt gedurende uw gekozen Premium-periode.';
           nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '.';
         } else {
-          nextIntro.textContent = 'Uw Premium event wordt verwerkt en verschijnt op Voetbal4All tijdens uw Premium-periode.';
-          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '. Bewaar de e-mail met uw Event-ID tot na het event.';
+          nextIntro.textContent = 'Uw Premium zichtbaarheid wordt verwerkt en verschijnt op Voetbal4All tijdens uw Premium-periode.';
+          nextTip.textContent = 'Premium-periode: ' + premiumStartTxt + ' tot en met ' + premiumEndTxt + '. Bewaar de e-mail met uw referentie-ID goed.';
         }
       } else if (displayState === 'cancelled') {
-        nextIntro.textContent = 'De betaling werd niet afgerond. Uw event werd niet gepubliceerd.';
-        nextTip.textContent = 'U kan opnieuw proberen via Event aanmelden.';
+        nextIntro.textContent = 'De betaling werd niet afgerond. Uw ' + managedNoun + ' werd niet gepubliceerd.';
+        nextTip.textContent = 'U kan de aanvraag opnieuw proberen vanuit het juiste formulier.';
       } else if (displayState === 'published') {
-        nextIntro.textContent = 'Uw event is gepubliceerd op Voetbal4All.';
-        nextTip.textContent = 'Bewaar de e-mail met uw Event-ID voor later beheer of contact.';
+        nextIntro.textContent = 'Uw ' + managedNoun + ' is gepubliceerd op Voetbal4All.';
+        nextTip.textContent = 'Bewaar de e-mail met uw ' + supportIdLabel + ' voor later beheer of contact.';
       } else if (displayState === 'confirmed') {
-        nextIntro.textContent = 'Uw bevestiging is verwerkt. Er is geen bijkomende bevestigingsstap meer nodig.';
-        nextTip.textContent = 'Bewaar de e-mail met uw Event-ID voor beheer, verwijdering of contact.';
+        nextIntro.textContent = 'Uw bevestiging voor ' + managedNoun + ' is verwerkt. Er is geen bijkomende bevestigingsstap meer nodig.';
+        nextTip.textContent = 'Bewaar de e-mail met uw ' + supportIdLabel + ' voor beheer of contact.';
       } else if (displayState === 'pending') {
-        nextIntro.textContent = 'Uw aanvraag wacht nog op bevestiging. Zonder bevestiging wordt een niet-premium aanvraag niet gepubliceerd.';
-        nextTip.textContent = 'Gebruik de e-mail met uw Event-ID om te bevestigen, te verwijderen of contact op te nemen.';
+        nextIntro.textContent = 'Uw aanvraag voor ' + managedNoun + ' wacht nog op bevestiging. Zonder bevestiging wordt dit niet gepubliceerd.';
+        nextTip.textContent = 'Gebruik de e-mail met uw ' + supportIdLabel + ' om te bevestigen of contact op te nemen.';
       } else if (displayState === 'received') {
-        nextIntro.textContent = 'Uw aanvraag is ontvangen.';
-        nextTip.textContent = 'Verdere opvolging verloopt via e-mail. Bewaar de e-mail met uw Event-ID goed.';
+        nextIntro.textContent = 'Uw aanvraag voor ' + managedNoun + ' is ontvangen.';
+        nextTip.textContent = 'Verdere opvolging verloopt via e-mail. Bewaar de e-mail met uw ' + supportIdLabel + ' goed.';
       } else {
         nextIntro.textContent = 'Uw aanvraag is goed ontvangen. U ontvangt verdere informatie via e-mail.';
-        nextTip.textContent = 'Bewaar de e-mail met uw Event-ID tot na het event. Beheer verloopt via die e-mail.';
+        nextTip.textContent = 'Bewaar de e-mail met uw ' + supportIdLabel + ' goed. Beheer verloopt via die e-mail.';
       }
     }
 
@@ -1725,33 +1779,6 @@
       }
     }
 
-    // Optional: allow reading from sessionStorage if forms set it
-    try {
-      const stored = sessionStorage.getItem('v4_thanks_payload');
-      if (stored){
-        const p = JSON.parse(stored);
-        if (!qs.get('name') && p.name) setText('orderName', p.name);
-        if (!qs.get('email') && p.email) setText('orderEmail', p.email);
-        if (!qs.get('what') && p.what) setText('orderWhat', p.what);
-        if (!qs.get('id') && p.id) setText('orderId', p.id);
-        if (p.message || p.subject){
-          const msgWrap2 = document.getElementById('msgWrap');
-          const msgPreview2 = document.getElementById('msgPreview');
-          if (msgWrap2 && msgPreview2){
-            const lines2 = [];
-            if (p.subject) lines2.push('Onderwerp: ' + p.subject);
-            if (p.name) lines2.push('Naam: ' + p.name);
-            if (p.email) lines2.push('E-mail: ' + p.email);
-            if (lines2.length && p.message) lines2.push('');
-            if (p.message) lines2.push(p.message);
-            if (lines2.length){
-              msgWrap2.style.display = '';
-              msgPreview2.textContent = lines2.join('\n');
-            }
-          }
-        }
-      }
-    } catch(e) {}
   })();
 </script>
 <script src="assets/js/nav-active.js" defer></script>

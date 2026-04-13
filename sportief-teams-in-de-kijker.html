@@ -639,6 +639,21 @@
         }
 
         const sid = j.id || j.sid || '';
+        try {
+          const thanksPayload = {
+            id: sid,
+            sid,
+            source: 'team-in-de-kijker',
+            kind: 'team-in-de-kijker',
+            name: '',
+            email: (document.getElementById('spotlightEmail')?.value || '').trim(),
+            what: (document.getElementById('spotlightTitle')?.value || '').trim() || 'Team in de kijker',
+            status: 'Ontvangen'
+          };
+          const thanksKey = `v4_thanks_payload_team-in-de-kijker_${sid}`;
+          sessionStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
+          localStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
+        } catch (_) {}
         setStatus('Aanvraag ontvangen. Controleer je e-mail om te bevestigen.', false);
 
         // Redirect to bedankt page (consistent UX)
