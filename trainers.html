@@ -409,7 +409,7 @@
                 <p class="note">Premium profielen staan bovenaan. Daaronder staat het volledige overzicht.</p>
 
                 <!-- PREMIUM: 6 kaarten -->
-                <div id="premium-30-wrap" class="premium-block" style="display:none;">
+                <div id="premium-30-wrap" class="premium-block" style="display:block;">
                   <div class="card premium-shell" style="margin-bottom:12px;">
                     <div class="card-header">
                       <div>
@@ -418,7 +418,37 @@
                       </div>
                     </div>
                     <div id="premium-grid-30" class="events-grid-2 premium-grid">
-                      <!-- gevuld via backend -->
+                      <article class="v4a-card premium-card premium-card--placeholder" id="premium-trainer-slot-1" data-gender="BOTH">
+                        <div class="event-row">
+                          <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
+                          <div class="event-main">
+                            <div class="v4a-card-header" style="margin:0;"><div>
+                              <div class="v4a-card-title">Jouw premium profiel hier?</div>
+                              <div class="v4a-card-meta">Premium slot</div>
+                              <div class="v4a-card-meta">Extra zichtbaarheid voor trainers</div>
+                            </div></div>
+                            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                              <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
+
+                      <article class="v4a-card premium-card premium-card--placeholder" id="premium-trainer-slot-2" data-gender="BOTH">
+                        <div class="event-row">
+                          <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
+                          <div class="event-main">
+                            <div class="v4a-card-header" style="margin:0;"><div>
+                              <div class="v4a-card-title">Meer zichtbaarheid voor jouw profiel</div>
+                              <div class="v4a-card-meta">Premium slot</div>
+                              <div class="v4a-card-meta">Bovenaan zichtbaar op trainers.html</div>
+                            </div></div>
+                            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
+                              <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
+                            </div>
+                          </div>
+                        </div>
+                      </article>
                     </div>
                   </div>
                 </div>
@@ -517,6 +547,10 @@
   const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
   // --- Backend wiring: fetch trainer profiles ---
+  const PREMIUM_PLACEHOLDER_HTML = (function(){
+    const el = document.getElementById('premium-grid-30');
+    return el ? el.innerHTML : '';
+  })();
   function escHtml(s) {
     return String(s ?? "")
       .replaceAll("&", "&amp;")
@@ -727,8 +761,8 @@
 
     // Reset UI immediately to avoid showing stale results between gender switches
     listEl.innerHTML = "";
-    if (premiumGrid) premiumGrid.innerHTML = "";
-    if (premiumWrap) premiumWrap.style.display = "none";
+    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (premiumWrap) premiumWrap.style.display = "block";
     if (sidebarPremiumEl) sidebarPremiumEl.innerHTML = "";
     if (statusEl) {
       statusEl.style.display = "";
@@ -787,8 +821,8 @@
       const items = merged.filter((item) => !isPublicTestTrainer(item));
       if (items.length === 0) {
         listEl.innerHTML = "";
-        if (premiumGrid) premiumGrid.innerHTML = "";
-        if (premiumWrap) premiumWrap.style.display = "none";
+        if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+        if (premiumWrap) premiumWrap.style.display = "block";
         if (statusEl) {
           statusEl.style.display = "";
           statusEl.textContent = "Nog geen trainersprofielen beschikbaar.";
@@ -801,9 +835,9 @@
       if (premiumGrid) {
         premiumGrid.innerHTML = premium.length
           ? premium.map((p, i) => trainerCardHtml(p, i, true)).join("")
-          : "";
+          : PREMIUM_PLACEHOLDER_HTML;
       }
-      if (premiumWrap) premiumWrap.style.display = premium.length ? "block" : "none";
+      if (premiumWrap) premiumWrap.style.display = "block";
 
       listEl.innerHTML = items.map((p, i) => trainerCardHtml(p, i, false)).join("");
 
