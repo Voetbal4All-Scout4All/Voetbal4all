@@ -409,7 +409,7 @@
                 <p class="note">Premium profielen staan bovenaan. Daaronder staat het volledige overzicht.</p>
 
                 <!-- PREMIUM: 6 kaarten -->
-                <div id="premium-30-wrap" class="premium-block" style="display:block;">
+                <div id="premium-30-wrap" class="premium-block" style="display:none;">
                   <div class="card premium-shell" style="margin-bottom:12px;">
                     <div class="card-header">
                       <div>
@@ -418,37 +418,7 @@
                       </div>
                     </div>
                     <div id="premium-grid-30" class="events-grid-2 premium-grid">
-                      <article class="v4a-card premium-card premium-card--placeholder" id="premium-trainer-1" data-gender="BOTH">
-                        <div class="event-row">
-                          <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
-                          <div class="event-main">
-                            <div class="v4a-card-header" style="margin:0;"><div>
-                              <div class="v4a-card-title">Jouw premium profiel hier?</div>
-                              <div class="v4a-card-meta">Premium slot</div>
-                              <div class="v4a-card-meta"></div>
-                            </div></div>
-                            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                              <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
-
-                      <article class="v4a-card premium-card premium-card--placeholder" id="premium-trainer-2" data-gender="BOTH">
-                        <div class="event-row">
-                          <div class="event-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
-                          <div class="event-main">
-                            <div class="v4a-card-header" style="margin:0;"><div>
-                              <div class="v4a-card-title">Meer zichtbaarheid voor jouw profiel</div>
-                              <div class="v4a-card-meta">Premium slot</div>
-                              <div class="v4a-card-meta"></div>
-                            </div></div>
-                            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                              <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
-                            </div>
-                          </div>
-                        </div>
-                      </article>
+                      <!-- gevuld via backend -->
                     </div>
                   </div>
                 </div>
@@ -499,7 +469,7 @@
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
               </div>
 
-              <article class="card" style="margin-top:12px;">
+              <article id="sidebar-premium-card" class="card" style="margin-top:12px; display:none;">
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Premium</div>
@@ -547,11 +517,6 @@
   const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
   // --- Backend wiring: fetch trainer profiles ---
-  // Keep a copy of the original premium placeholders so we can restore them
-  const PREMIUM_PLACEHOLDER_HTML = (function(){
-    const el = document.getElementById('premium-grid-30');
-    return el ? el.innerHTML : '';
-  })();
   function escHtml(s) {
     return String(s ?? "")
       .replaceAll("&", "&amp;")
@@ -589,6 +554,10 @@
 
   function normalizeTrainerThumb(raw) {
     return String(raw || "").trim();
+  }
+
+  function trainerDisplayName(p) {
+    return String(p?.name || p?.full_name || p?.title || "").trim();
   }
 
   function actionUrlValue(raw) {
@@ -667,23 +636,29 @@
   }
 
   function isPublicTestTrainer(p) {
-    const name = String(p?.name || p?.full_name || p?.title || "").trim().toLowerCase();
+    const name = trainerDisplayName(p).toLowerCase();
     const role = String(p?.role || p?.position || p?.type || "").trim().toLowerCase();
     const bio = String(p?.bio || p?.description || p?.body || "").trim().toLowerCase();
 
-    return name.startsWith("test ")
+    return !name
+      || name === "anonieme trainer"
+      || name === "anonymous trainer"
+      || name.includes("placeholder")
+      || name.startsWith("test ")
       || name.startsWith("demo ")
       || name.includes("testprofiel")
       || name.includes("test profiel")
+      || role.includes("placeholder")
       || role.includes("testprofiel")
       || role.includes("test profiel")
+      || bio.includes("placeholder")
       || bio.includes("testprofiel")
       || bio.includes("test profiel")
       || bio.includes("demo profiel");
   }
 
   function trainerCardHtml(p, idx, isPremium) {
-    const name = escHtml(p.name || p.full_name || p.title || "Anonieme trainer");
+    const name = escHtml(trainerDisplayName(p));
     const role = escHtml(p.role || p.position || p.type || "Trainer");
     const bio = escHtml(p.bio || p.description || p.body || "");
     const detailHref = `event.html?type=trainer&id=${encodeURIComponent(String(p.id || "").trim())}`;
@@ -745,12 +720,16 @@
   async function loadTrainersFromBackend() {
     const listEl = document.getElementById("trainer-list");
     const premiumGrid = document.getElementById("premium-grid-30");
+    const premiumWrap = document.getElementById("premium-30-wrap");
     const statusEl = document.getElementById("trainer-status");
+    const sidebarPremiumEl = document.getElementById("sidebar-premium-later");
     if (!listEl) return false;
 
     // Reset UI immediately to avoid showing stale results between gender switches
     listEl.innerHTML = "";
-    if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    if (premiumGrid) premiumGrid.innerHTML = "";
+    if (premiumWrap) premiumWrap.style.display = "none";
+    if (sidebarPremiumEl) sidebarPremiumEl.innerHTML = "";
     if (statusEl) {
       statusEl.style.display = "";
       statusEl.textContent = "Trainers laden…";
@@ -773,20 +752,23 @@
     async function safeFetch(url) {
       try {
         const r = await fetch(url, { credentials: "omit" });
-        if (!r.ok) return [];
+        if (!r.ok) return { ok: false, items: [] };
         const j = await r.json();
-        return Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : [];
-      } catch (_) { return []; }
+        const items = Array.isArray(j) ? j : (j && Array.isArray(j.items)) ? j.items : [];
+        return { ok: true, items };
+      } catch (_) { return { ok: false, items: [] }; }
     }
 
     try {
       const results = await Promise.all(endpointDefs.map(d => safeFetch(d.url)));
+      const anySuccess = results.some((result) => result.ok);
+      if (!anySuccess) throw new Error("All endpoints failed");
 
       // Merge: trainer-profiles first, then append unique items from fallbacks
       const seen = new Set();
       const merged = [];
       // Primary source first (trainer-profiles)
-      for (const item of results[0]) {
+      for (const item of results[0].items) {
         const key = String(item.id || "").trim();
         if (key && seen.has(key)) continue;
         if (key) seen.add(key);
@@ -794,7 +776,7 @@
       }
       // Fallback sources: only add items not already present
       for (let i = 1; i < results.length; i++) {
-        for (const item of results[i]) {
+        for (const item of results[i].items) {
           const key = String(item.id || "").trim();
           if (key && seen.has(key)) continue;
           if (key) seen.add(key);
@@ -802,19 +784,26 @@
         }
       }
 
-      const items_raw = merged.length > 0 ? merged : null;
-      if (!items_raw) throw new Error("All endpoints failed");
+      const items = merged.filter((item) => !isPublicTestTrainer(item));
+      if (items.length === 0) {
+        listEl.innerHTML = "";
+        if (premiumGrid) premiumGrid.innerHTML = "";
+        if (premiumWrap) premiumWrap.style.display = "none";
+        if (statusEl) {
+          statusEl.style.display = "";
+          statusEl.textContent = "Nog geen trainersprofielen beschikbaar.";
+        }
+        return true;
+      }
 
-      // Filter test items, but keep them if filtering would leave 0 results
-      const filtered = items_raw.filter((item) => !isPublicTestTrainer(item));
-      const items = filtered.length > 0 ? filtered : items_raw;
       const premium = items.filter(isPremiumActive).slice(0, 6);
 
       if (premiumGrid) {
         premiumGrid.innerHTML = premium.length
           ? premium.map((p, i) => trainerCardHtml(p, i, true)).join("")
-          : PREMIUM_PLACEHOLDER_HTML;
+          : "";
       }
+      if (premiumWrap) premiumWrap.style.display = premium.length ? "block" : "none";
 
       listEl.innerHTML = items.map((p, i) => trainerCardHtml(p, i, false)).join("");
 
@@ -822,7 +811,7 @@
         statusEl.style.display = "";
         statusEl.textContent = items.length
           ? `${items.length} trainer(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
-          : "Nog geen trainersprofielen.";
+          : "Nog geen trainersprofielen beschikbaar.";
       }
 
       // Re-apply the active UI filters (country/region/search) on the newly rendered cards
@@ -997,46 +986,6 @@
     }
   });
 
-  // Fill sidebar premium block with placeholders (layout parity with events.html)
-  (function fillSidebarPremiumLater(){
-    const el = document.getElementById('sidebar-premium-later');
-    if (!el) return;
-    const MIN_SLOTS = 10;
-    const placeholders = [
-      { title: "Jouw premium profiel hier?", place: "—", type: "Premium", date: "" },
-      { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
-      { title: "Bereik meer clubs", place: "—", type: "Premium", date: "" }
-    ];
-    el.innerHTML = '';
-    for (let i=0;i<MIN_SLOTS;i++){
-      const ph = placeholders[i % placeholders.length];
-      el.insertAdjacentHTML('beforeend', `
-        <div class="sidebar-premium-card">
-          <div class="sidebar-premium-top">
-            <div class="sidebar-premium-thumbbox" aria-label="Thumbnail">
-              <div class="premium-ribbon">Premium</div>
-            </div>
-            <div style="min-width:0;">
-              <div class="sidebar-premium-title">${ph.title}</div>
-              <div class="sidebar-premium-meta">${ph.place}</div>
-              <div class="sidebar-premium-meta">${ph.date}</div>
-              <div class="sidebar-premium-meta">${ph.type}</div>
-            </div>
-          </div>
-          <div class="sidebar-premium-actions"></div>
-        </div>
-      `);
-    }
-    el.insertAdjacentHTML('beforeend', `
-      <div class="sidebar-premium-card sidebar-premium-card--cta">
-        <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
-        <div class="sidebar-premium-meta">Promoot je profiel ruim op voorhand, bovenaan elke pagina.</div>
-        <div class="sidebar-premium-actions">
-          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
-        </div>
-      </div>
-    `);
-  })();
 </script>
 <script src="assets/js/nav-active.js" defer></script>
 <script src="assets/js/nav-mobile.js" defer></script>
