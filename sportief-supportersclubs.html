@@ -732,6 +732,21 @@
         }
 
         const sid = String(okJson.id);
+        try {
+          const thanksPayload = {
+            id: sid,
+            sid,
+            source: "supportersclub",
+            kind: "supportersclub",
+            name,
+            email,
+            what: name || "Supportersclub",
+            status: "Ontvangen"
+          };
+          const thanksKey = `v4_thanks_payload_supportersclub_${sid}`;
+          sessionStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
+          localStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
+        } catch (_) {}
         window.location.href = `${THANKYOU}?source=supportersclub&sid=${encodeURIComponent(sid)}`;
       } catch (err) {
         setStatus("Er is een fout opgetreden. Probeer opnieuw.", true);

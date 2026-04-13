@@ -1504,6 +1504,22 @@
 
         const sid = (json && (json.id || json.submissionId)) ? String(json.id || json.submissionId) : '';
         if (sid) {
+          try {
+            const thanksPayload = {
+              id: sid,
+              sid,
+              source: 'aanmelden',
+              kind: mode,
+              name: name || '',
+              email: email || '',
+              what: mode === 'vacature' ? (v('jobTitle') || 'Vacature') : (v('profileRole') || 'Profiel'),
+              status: 'Ontvangen'
+            };
+            const thanksKey = `v4_thanks_payload_${mode}_${sid}`;
+            sessionStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
+            localStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
+          } catch (_) {}
+
           // Premium: redirect to Stripe Checkout
           if (premiumChecked) {
             const packageCode = mapPremiumPlanToPackageCode(premiumPlan);
