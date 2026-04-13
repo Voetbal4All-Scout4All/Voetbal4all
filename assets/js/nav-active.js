@@ -9,12 +9,20 @@
  const last = (p.split("/").filter(Boolean).pop() || "");
  return last || "index.html";
  }
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
  const nav = document.querySelector(".nav-links");
  if (!nav) return;
  const links = Array.from(nav.querySelectorAll("a.nav-link"));
- if (!links.length) return;
- links.forEach(a => a.classList.remove("nav-link--active"));
+ const dropdownButtons = Array.from(nav.querySelectorAll(".nav-item--dropdown > .nav-link--dropdown"));
+ const topLevelLinks = [...links, ...dropdownButtons];
+ if (!topLevelLinks.length) return;
+ topLevelLinks.forEach((link) => {
+ link.classList.remove("nav-link--active");
+ if (link.classList.contains("nav-link--dropdown")) {
+ link.style.removeProperty("color");
+ link.style.removeProperty("border-color");
+ }
+ });
  const cur = currentFile();
  let hit = null;
  for (const a of links) {
@@ -27,7 +35,27 @@
  if (!hit && (cur === "" || cur === "index.html")) {
  hit = links.find(a => normPath(a.getAttribute("href") || "").endsWith("index.html")) || null;
  }
- if (hit) hit.classList.add("nav-link--active");
+ if (!hit) {
+ for (const btn of dropdownButtons) {
+ const item = btn.closest(".nav-item--dropdown");
+ if (!item) continue;
+ const matches = Array.from(item.querySelectorAll(".nav-dropdown-link")).some((a) => {
+ const href = normPath(a.getAttribute("href") || "");
+ const file = (href.split("/").filter(Boolean).pop() || "");
+ return !!file && file === cur;
+ });
+ if (!matches) continue;
+ hit = btn;
+ break;
+ }
+ }
+ if (hit) {
+ hit.classList.add("nav-link--active");
+ if (hit.classList.contains("nav-link--dropdown")) {
+ hit.style.color = "var(--text)";
+ hit.style.borderColor = "var(--accent)";
+ }
+ }
  });
 })();
 (function () {
