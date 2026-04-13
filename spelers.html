@@ -432,7 +432,7 @@
                 </div>
 
                 <p class="note">
-                  Premium profielen staan bovenaan. Je kan een advertentie delen en clubs reageren via Voetbal4All.
+                  Premium profielen krijgen extra zichtbaarheid in de bovenste secties. Je kan een advertentie delen en clubs reageren via Voetbal4All.
                 </p>
 
                 <!-- PREMIUM: 6 kaarten -->
@@ -552,7 +552,7 @@
                 <div class="card-header">
                   <div>
                     <div class="card-caption">Premium</div>
-                    <div class="card-title">Uitgelicht</div>
+                    <div class="card-title">Meer premium spelers in de kijker</div>
                   </div>
                 </div>
                 <div id="sidebar-premium-later" class="sidebar-premium-stack"></div>
@@ -922,6 +922,89 @@
     `;
   }
 
+  function playerSidebarCardHtml(p, idx) {
+    const rawId = String(p.id || "").trim();
+    const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
+    const thumbUrl = normalizePlayerThumb(
+      p.image_url || p.image || p.photo_url || p.photo || p.avatar_url || p.avatar || ""
+    );
+    const thumb = thumbUrl
+      ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
+      : "";
+    const links = resolvePlayerLinks(p);
+    const actionHref = detailHref || links.external.href || links.cv.href;
+    const actionAttrs = detailHref ? "" : ' target="_blank" rel="noopener noreferrer"';
+    const metaLines = [playerCardLevel(p), playerCardAge(p)]
+      .filter(Boolean)
+      .map(line => `<div class="sidebar-premium-meta">${escHtml(line)}</div>`)
+      .join("");
+
+    return `
+      <div class="sidebar-premium-card" id="sidebar-premium-player-${escHtml(String(idx + 1))}">
+        <div class="sidebar-premium-top">
+          <div class="sidebar-premium-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">
+            <div class="premium-ribbon">Premium</div>
+            ${thumb}
+          </div>
+          <div style="min-width:0;">
+            <div class="sidebar-premium-title">${escHtml(playerCardTitleText(p))}</div>
+            <div class="sidebar-premium-meta">${escHtml(compactLocationMeta(p))}</div>
+            ${metaLines}
+          </div>
+        </div>
+        <div class="sidebar-premium-actions">
+          <a class="btn-ghost-sm" href="${escHtml(actionHref || "adverteren.html")}"${actionHref ? actionAttrs : ""}>${actionHref ? "Bekijk profiel" : "Plaats premium profiel"}</a>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderSidebarPremiumPlayers(premiumItems) {
+    const el = document.getElementById("sidebar-premium-later");
+    if (!el) return;
+
+    const items = Array.isArray(premiumItems) ? premiumItems.filter(Boolean) : [];
+    el.innerHTML = "";
+
+    if (items.length) {
+      el.innerHTML = items.map((item, idx) => playerSidebarCardHtml(item, idx)).join("");
+    } else {
+      const MIN_SLOTS = 3;
+      const placeholders = [
+        { title: "Jouw premium profiel hier?", place: "—", type: "Premium", date: "" },
+        { title: "Extra zichtbaarheid voor spelers", place: "—", type: "Premium", date: "" },
+        { title: "Val sneller op bij clubs", place: "—", type: "Premium", date: "" }
+      ];
+      for (let i = 0; i < MIN_SLOTS; i++) {
+        const ph = placeholders[i % placeholders.length];
+        el.insertAdjacentHTML("beforeend", `
+          <div class="sidebar-premium-card">
+            <div class="sidebar-premium-top">
+              <div class="sidebar-premium-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
+              <div style="min-width:0;">
+                <div class="sidebar-premium-title">${ph.title}</div>
+                <div class="sidebar-premium-meta">${ph.place}</div>
+                <div class="sidebar-premium-meta">${ph.date}</div>
+                <div class="sidebar-premium-meta">${ph.type}</div>
+              </div>
+            </div>
+            <div class="sidebar-premium-actions"></div>
+          </div>
+        `);
+      }
+    }
+
+    el.insertAdjacentHTML("beforeend", `
+      <div class="sidebar-premium-card sidebar-premium-card--cta">
+        <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
+        <div class="sidebar-premium-meta">Promoot je spelersprofiel extra in de bovenste premiumsecties.</div>
+        <div class="sidebar-premium-actions">
+          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
+        </div>
+      </div>
+    `);
+  }
+
   async function loadPlayersFromBackend() {
     const listEl = document.getElementById("player-list");
     const premiumGrid = document.getElementById("premium-grid-30");
@@ -931,6 +1014,7 @@
     // Reset UI immediately to avoid showing stale results between gender switches
     listEl.innerHTML = "";
     if (premiumGrid) premiumGrid.innerHTML = PREMIUM_PLACEHOLDER_HTML;
+    renderSidebarPremiumPlayers([]);
     if (statusEl) {
       statusEl.style.display = "";
       statusEl.textContent = "Spelers laden…";
@@ -977,14 +1061,20 @@
       }
 
       // Split out the premium items for the promo grid.
-      const premium = items.filter(isPremiumActive).slice(0, 6);
+      const premium = items.filter(isPremiumActive);
+      const primaryPremium = premium.slice(0, 6);
+      const sidebarPremium = premium.length > primaryPremium.length
+        ? premium.slice(primaryPremium.length, primaryPremium.length + 10)
+        : premium.slice(0, Math.min(premium.length, 3));
 
       // Premium grid: render up to 6 premium items, otherwise restore placeholders
       if (premiumGrid) {
-        premiumGrid.innerHTML = premium.length
-          ? premium.map((p, i) => playerCardHtml(p, i, true)).join("")
+        premiumGrid.innerHTML = primaryPremium.length
+          ? primaryPremium.map((p, i) => playerCardHtml(p, i, true)).join("")
           : PREMIUM_PLACEHOLDER_HTML;
       }
+
+      renderSidebarPremiumPlayers(sidebarPremium);
 
       // Render main list with all visible profiles, including premium items shown above.
       listEl.innerHTML = items.map((p, i) => playerCardHtml(p, i, false)).join("");
@@ -993,7 +1083,7 @@
       if (statusEl) {
         statusEl.style.display = "";
         statusEl.textContent = items.length
-          ? `${items.length} speler(s) geladen (premiumblok: ${premium.length}, overzicht: ${items.length}).`
+          ? `${items.length} speler(s) geladen (premium: ${premium.length}, overzicht: ${items.length}).`
           : "Nog geen spelersprofielen.";
       }
 
@@ -1168,44 +1258,6 @@
 
   initPlayersPage();
 
-  // Fill sidebar premium block with placeholders (layout parity with events.html)
-  (function fillSidebarPremiumLater(){
-    const el = document.getElementById('sidebar-premium-later');
-    if (!el) return;
-    const MIN_SLOTS = 10;
-    const placeholders = [
-      { title: "Jouw premium profiel hier?", place: "—", type: "Premium", date: "" },
-      { title: "Premium zichtbaarheid", place: "—", type: "Premium", date: "" },
-      { title: "Bereik meer clubs", place: "—", type: "Premium", date: "" }
-    ];
-    el.innerHTML = '';
-    for (let i=0;i<MIN_SLOTS;i++){
-      const ph = placeholders[i % placeholders.length];
-      el.insertAdjacentHTML('beforeend', `
-        <div class="sidebar-premium-card">
-          <div class="sidebar-premium-top">
-            <div class="sidebar-premium-thumbbox" aria-label="Thumbnail"><div class="premium-ribbon">Premium</div></div>
-            <div style="min-width:0;">
-              <div class="sidebar-premium-title">${ph.title}</div>
-              <div class="sidebar-premium-meta">${ph.place}</div>
-              <div class="sidebar-premium-meta">${ph.date}</div>
-              <div class="sidebar-premium-meta">${ph.type}</div>
-            </div>
-          </div>
-          <div class="sidebar-premium-actions"></div>
-        </div>
-      `);
-    }
-    el.insertAdjacentHTML('beforeend', `
-      <div class="sidebar-premium-card sidebar-premium-card--cta">
-        <div class="sidebar-premium-title">Plaats jouw premium profiel</div>
-        <div class="sidebar-premium-meta">Promoot je profiel ruim op voorhand, bovenaan elke pagina.</div>
-        <div class="sidebar-premium-actions">
-          <a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>
-        </div>
-      </div>
-    `);
-  })();
 </script>
 
 <script src="assets/js/nav-active.js" defer></script>
