@@ -1066,6 +1066,18 @@
     return txt;
   }
 
+  function cleanVacancyTitle(raw) {
+    var t = String(raw || "").trim();
+    if (!t) return t;
+    t = t.replace(/^\[.*?\]\s*/g, "").trim();
+    t = t.replace(/^CLUBVACATURE\s+AANMELDING\s*[-—–:]\s*(VOETBAL4ALL\s*[-—–:]?\s*)?/i, "").trim();
+    t = t.replace(/^VACATURE\s+AANMELDING\s*[-—–:]\s*(VOETBAL4ALL\s*[-—–:]?\s*)?/i, "").trim();
+    t = t.replace(/^VACATURE\s+AANMELDEN\s*[-—–:]\s*(VOETBAL4ALL\s*[-—–:]?\s*)?/i, "").trim();
+    t = t.replace(/^VOETBAL4ALL\s*[-—–:]\s*/i, "").trim();
+    t = t.replace(/\s*[-—–]\s*VOETBAL4ALL\s*$/i, "").trim();
+    return t || String(raw || "").trim();
+  }
+
   function isPublicTestVacancy(v) {
     const title = String(v?.title || v?.name || "").trim().toLowerCase();
     const description = String(v?.description || v?.body || v?.bio || "").trim().toLowerCase();
@@ -1159,8 +1171,8 @@
   }
 
   function vacancyCardHtml(v, idx, isPremium) {
-    const title = escHtml(v.title || v.name || "Vacature");
-    const club = escHtml(v.club || v.organization || v.club_name || "Club");
+    const title = escHtml(cleanVacancyTitle(v.title || v.name || "Vacature"));
+    const club = escHtml(v.club || v.organization || v.club_name || "");
     const desc = escHtml(sanitizeVacancyText(v.description || v.body || v.bio || ""));
     const rawId = String(v.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
@@ -1182,8 +1194,8 @@
       ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
       : "";
 
-    const displayTitle = isPremium ? title : (title || club);
-    const displayMeta2 = isPremium ? club : (club || "Clubvacature");
+    const displayTitle = title || club || "Vacature";
+    const displayMeta2 = club || "";
     const links = resolveVacancyLinks(v);
 
     const premiumActionHref = detailHref || links.external.href || links.cv.href;
@@ -1224,7 +1236,7 @@
               <div>
                 <div class="v4a-card-title">${detailHref ? `<a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${displayTitle}</a>` : displayTitle}</div>
                 <div class="v4a-card-meta">${locationMeta}</div>
-                <div class="v4a-card-meta">${displayMeta2}</div>
+                ${displayMeta2 ? `<div class="v4a-card-meta">${displayMeta2}</div>` : ""}
                 ${detailBits.length && !isPremium ? `<div class="v4a-card-meta">${escHtml(detailBits.join(" · "))}</div>` : ""}
               </div>
             </div>

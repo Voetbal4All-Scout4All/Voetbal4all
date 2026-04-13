@@ -948,6 +948,18 @@
       return cleanedLines.join("\n").trim();
     }
 
+    function cleanVacancyTitle(raw) {
+      var t = String(raw || "").trim();
+      if (!t) return t;
+      t = t.replace(/^\[.*?\]\s*/g, "").trim();
+      t = t.replace(/^CLUBVACATURE\s+AANMELDING\s*[-—–:]\s*(VOETBAL4ALL\s*[-—–:]?\s*)?/i, "").trim();
+      t = t.replace(/^VACATURE\s+AANMELDING\s*[-—–:]\s*(VOETBAL4ALL\s*[-—–:]?\s*)?/i, "").trim();
+      t = t.replace(/^VACATURE\s+AANMELDEN\s*[-—–:]\s*(VOETBAL4ALL\s*[-—–:]?\s*)?/i, "").trim();
+      t = t.replace(/^VOETBAL4ALL\s*[-—–:]\s*/i, "").trim();
+      t = t.replace(/\s*[-—–]\s*VOETBAL4ALL\s*$/i, "").trim();
+      return t || String(raw || "").trim();
+    }
+
     function getEventParams(){
       const params = new URLSearchParams(location.search);
       const type = (params.get("type") || "").trim().toLowerCase();
@@ -1623,9 +1635,10 @@
         const actionLinks = !isEvent && t !== "supportersclub" && t !== "spotlight" ? resolveSharedTypeLinks(item, t) : { external: { href: "", label: "" }, cv: { href: "", label: "" } };
 
         // Title
-        const pageTitle = (item.title || item.name || "Detail") + " – Voetbal4All";
-        document.title = pageTitle;
-        titleEl.textContent = (item.title || item.name || "Detail");
+        const rawTitle = item.title || item.name || "Detail";
+        const displayTitle = (t === "clubvacature") ? cleanVacancyTitle(rawTitle) : rawTitle;
+        document.title = displayTitle + " – Voetbal4All";
+        titleEl.textContent = displayTitle;
 
         // Meta chips
         // Date chip: only for events
@@ -1763,6 +1776,20 @@
           else if (countryLabelText === "NL") pushFact("Land", "Nederland");
           else if (countryLabelText === "INT") pushFact("Land", "Internationaal");
           else pushFact("Land", escapeHtml(item.country || ""));
+        } else if (t === "clubvacature") {
+          if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
+          pushFact("Club / Organisatie", escapeHtml(item.club || ""));
+          pushFact("Regio", escapeHtml(item.region || ""));
+          pushFact("Plaats", escapeHtml(item.city || ""));
+          const countryLabelCv = String(item.country || "").trim().toUpperCase();
+          if (countryLabelCv === "BE") pushFact("Land", "België");
+          else if (countryLabelCv === "NL") pushFact("Land", "Nederland");
+          else if (countryLabelCv === "INT") pushFact("Land", "Internationaal");
+          else if (countryLabelCv) pushFact("Land", escapeHtml(item.country));
+          if (item.url) {
+            const safeUrl = escapeHtml(item.url);
+            pushFact("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
+          }
         } else {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
           pushFact("Regio", escapeHtml(item.region || ""));
