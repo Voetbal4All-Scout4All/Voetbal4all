@@ -791,9 +791,6 @@
         idLabel: 'referentie-ID'
       }
     };
-    const flowMeta = FLOW_META[flowType] || null;
-    const managedNoun = flowMeta ? flowMeta.noun : 'aanvraag';
-
     const paid = flow.kind === 'premium_success';
 
     // Premium window (optional): provided by backend after payment/confirmation
@@ -1185,6 +1182,8 @@
     const sourceKey = source.toLowerCase();
     const kindKey = kind.toLowerCase();
     const flowType = normalizeFlowType(source, kind);
+    const flowMeta = FLOW_META[flowType] || null;
+    const managedNoun = flowMeta ? flowMeta.noun : 'aanvraag';
     const isEventFlow = flowType === 'event';
     const isProfileFlow = flowType === 'clubvacature' || flowType === 'trainer' || flowType === 'speler';
     const isManagedSubmissionFlow =
