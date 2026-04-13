@@ -603,22 +603,25 @@
       try {
         setStatus('Bezig met verzenden…', false);
 
-        const fd = new FormData();
-        fd.append('subject', (document.getElementById('spotlightTitle')?.value || '').trim());
-        fd.append('body', (document.getElementById('spotlightBody')?.value || '').trim());
-        fd.append('type', (document.getElementById('spotlightType')?.value || '').trim());
-        fd.append('club', (document.getElementById('spotlightClub')?.value || '').trim());
-        fd.append('country', (document.getElementById('spotlightCountry')?.value || '').trim());
-        fd.append('city', (document.getElementById('spotlightCity')?.value || '').trim());
-        fd.append('email', (document.getElementById('spotlightEmail')?.value || '').trim());
-        fd.append('phone', (document.getElementById('spotlightPhone')?.value || '').trim());
-        fd.append('link', (document.getElementById('spotlightLink')?.value || '').trim());
+        const submission = {
+          subject: (document.getElementById('spotlightTitle')?.value || '').trim(),
+          body: (document.getElementById('spotlightBody')?.value || '').trim(),
+          type: (document.getElementById('spotlightType')?.value || '').trim(),
+          club: (document.getElementById('spotlightClub')?.value || '').trim(),
+          country: (document.getElementById('spotlightCountry')?.value || '').trim(),
+          city: (document.getElementById('spotlightCity')?.value || '').trim(),
+          email: (document.getElementById('spotlightEmail')?.value || '').trim(),
+          phone: (document.getElementById('spotlightPhone')?.value || '').trim(),
+          link: (document.getElementById('spotlightLink')?.value || '').trim()
+        };
 
-        const photo = document.getElementById('spotlightPhoto')?.files?.[0];
-        if (photo) fd.append('photo', photo, photo.name);
+        const fd = new FormData(form);
+        Object.entries(submission).forEach(([key, value]) => {
+          fd.set(key, value);
+        });
 
         // backend uses route-specific kind; keep a stable marker in payload fields
-        fd.append('form_kind', 'team-in-de-kijker');
+        fd.set('form_kind', 'team-in-de-kijker');
 
         // Try primary endpoint first, then fallback if the backend returns a classic Express “Cannot POST …” (404).
         let r = await fetch(ENDPOINT_PRIMARY, { method: 'POST', body: fd });
@@ -638,24 +641,20 @@
           return;
         }
 
-        const sid = j.id || j.sid || '';
+        const sid = String((j && (j.id || j.sid)) || '');
         try {
-          const submittedSubject = (document.getElementById('spotlightTitle')?.value || '').trim();
-          const submittedBody = (document.getElementById('spotlightBody')?.value || '').trim();
-          const submittedClub = (document.getElementById('spotlightClub')?.value || '').trim();
-          const submittedEmail = (document.getElementById('spotlightEmail')?.value || '').trim();
           const thanksPayload = {
             id: sid,
             sid,
             source: 'team-in-de-kijker',
             kind: 'team-in-de-kijker',
-            name: submittedClub || submittedSubject || '',
-            email: submittedEmail,
-            what: submittedSubject || 'Team in de kijker',
-            subject: submittedSubject,
-            message: submittedBody,
-            body: submittedBody,
-            club: submittedClub,
+            name: submission.club || submission.subject || '',
+            email: submission.email,
+            what: submission.subject || 'Team in de kijker',
+            subject: submission.subject,
+            message: submission.body,
+            body: submission.body,
+            club: submission.club,
             status: 'Ontvangen'
           };
           const thanksKey = `v4_thanks_payload_team-in-de-kijker_${sid}`;
@@ -671,9 +670,9 @@
           u.searchParams.set('kind', 'team-in-de-kijker');
           u.searchParams.set('sid', sid);
           u.searchParams.set('status', 'Ontvangen');
-          u.searchParams.set('name', submittedClub || submittedSubject || '');
-          u.searchParams.set('email', submittedEmail || '');
-          u.searchParams.set('what', submittedSubject || 'Team in de kijker');
+          u.searchParams.set('name', submission.club || submission.subject || '');
+          u.searchParams.set('email', submission.email || '');
+          u.searchParams.set('what', submission.subject || 'Team in de kijker');
           window.location.href = u.toString();
         }
       } catch (err) {

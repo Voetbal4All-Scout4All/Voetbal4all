@@ -562,12 +562,57 @@
       return null;
     }
 
+    function normalizeFlowHint(value) {
+      const raw = String(value || '').trim().toLowerCase();
+      if (!raw) return '';
+
+      const compact = raw.replace(/[_\s]+/g, '-');
+      const squeezed = compact.replace(/-/g, '');
+
+      if (compact === 'event' || compact.includes('event')) return 'event';
+      if (compact === 'contact' || compact.includes('contact')) return 'contact';
+      if (
+        compact === 'clubvacature' ||
+        compact === 'club-vacature' ||
+        compact === 'vacature' ||
+        compact.includes('clubvacature') ||
+        compact.includes('club-vacature')
+      ) return 'clubvacature';
+      if (compact === 'trainer' || compact.includes('trainer')) return 'trainer';
+      if (
+        compact === 'speler' ||
+        compact === 'player' ||
+        compact.includes('speler') ||
+        compact.includes('player')
+      ) return 'speler';
+      if (
+        compact === 'supportersclub' ||
+        compact === 'supportersclubs' ||
+        compact.includes('supportersclub')
+      ) return 'supportersclub';
+      if (
+        compact === 'team-in-de-kijker' ||
+        compact === 'spotlight' ||
+        compact.includes('spotlight') ||
+        squeezed.includes('teamindekijker')
+      ) return 'team-in-de-kijker';
+      if (
+        compact === 'profile' ||
+        compact === 'profiel' ||
+        compact.includes('profile') ||
+        compact.includes('profiel')
+      ) return 'profile';
+      if (compact === 'aanmelden') return 'aanmelden';
+
+      return compact;
+    }
+
     function loadStoredPayload(sid, sourceValue, kindValue) {
       if (!sid) return null;
       const keys = [];
       const seen = new Set();
-      const sourceKey = String(sourceValue || '').trim().toLowerCase();
-      const kindKey = String(kindValue || '').trim().toLowerCase();
+      const sourceKey = normalizeFlowHint(sourceValue);
+      const kindKey = normalizeFlowHint(kindValue);
 
       const pushKey = (key) => {
         const value = String(key || '').trim();
@@ -745,8 +790,8 @@
     }
 
     function normalizeFlowType(sourceValue, kindValue) {
-      const sourceKey = String(sourceValue || '').trim().toLowerCase();
-      const kindKey = String(kindValue || '').trim().toLowerCase();
+      const sourceKey = normalizeFlowHint(sourceValue);
+      const kindKey = normalizeFlowHint(kindValue);
 
       if (kindKey === 'event' || sourceKey === 'event') return 'event';
       if (kindKey === 'vacature' || sourceKey === 'vacature' || sourceKey === 'clubvacature') return 'clubvacature';
@@ -770,8 +815,8 @@
       qs.get('submissionId') ||
       ''
     ).trim();
-    const rawQuerySource = (qs.get('source') || '').trim();
-    const rawQueryKind = (qs.get('kind') || '').trim();
+    const rawQuerySource = normalizeFlowHint(qs.get('source'));
+    const rawQueryKind = normalizeFlowHint(qs.get('kind'));
     const allowLegacyPayload =
       !rawQuerySource ||
       rawQuerySource.toLowerCase() === 'event' ||
@@ -795,9 +840,9 @@
     }
 
     const hintedSource = rawQuerySource
-      || (storedEventPayload && storedEventPayload.source ? String(storedEventPayload.source).trim() : '');
+      || normalizeFlowHint(storedEventPayload && storedEventPayload.source);
     const hintedKind = rawQueryKind
-      || (storedEventPayload && storedEventPayload.kind ? String(storedEventPayload.kind).trim() : '')
+      || normalizeFlowHint(storedEventPayload && storedEventPayload.kind)
       || hintedSource;
     const hintedFlowType = normalizeFlowType(hintedSource, hintedKind);
     const hasExplicitNonEventHint = !!hintedFlowType && hintedFlowType !== 'event';
@@ -1237,10 +1282,10 @@
 
     const inferredFetchedSource = looksLikeEventRecord(fetchedEventItem) ? 'event' : '';
     const source = rawQuerySource
-      || (storedEventPayload && storedEventPayload.source ? String(storedEventPayload.source).trim() : '')
+      || normalizeFlowHint(storedEventPayload && storedEventPayload.source)
       || inferredFetchedSource;
     const kind = rawQueryKind
-      || (storedEventPayload && storedEventPayload.kind ? String(storedEventPayload.kind).trim() : '')
+      || normalizeFlowHint(storedEventPayload && storedEventPayload.kind)
       || inferredFetchedSource
       || source;
     const sourceKey = source.toLowerCase();
