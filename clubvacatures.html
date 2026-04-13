@@ -1035,6 +1035,37 @@
     return Number.isFinite(pu) && pu > Date.now();
   }
 
+  function sanitizeVacancyText(raw) {
+    var txt = String(raw || "");
+    if (!txt.trim()) return "";
+    var markers = ["FACTUURGEGEVENS","FACTUUR","FACTURATIE","FACTURATIEGEGEVENS","INVOICE","BILLING","PREMIUM-DUUR","PREMIUM-TOTAAL","PREMIUM-PERIODE","PREMIUM LOOPT","PREMIUM:","PREMIUM -"];
+    for (var i = 0; i < markers.length; i++) {
+      var idx = txt.toUpperCase().indexOf(markers[i]);
+      if (idx >= 0) txt = txt.slice(0, idx).trim();
+    }
+    txt = txt.split(/\r?\n/).filter(function(line) {
+      var l = line.trim();
+      if (!l) return true;
+      if (/\b(btw|vat)\b/i.test(l)) return false;
+      if (/\biban\b/i.test(l)) return false;
+      if (/\b(bic|swift)\b/i.test(l)) return false;
+      if (/\b(kvk|ondernemingsnummer)\b/i.test(l)) return false;
+      if (/\b(factuur|facturatie|invoice|billing)\b/i.test(l)) return false;
+      if (/\b(rekening|bank)\b/i.test(l)) return false;
+      if (/\b(contact\s*e-?mail|e-?mail\s*:\s*\S+@)\b/i.test(l)) return false;
+      if (/\b(telefoon|gsm|mobiel)\b\s*:/i.test(l)) return false;
+      if (/^\s*premium\b/i.test(l)) return false;
+      if (/\bpremium\s*[-:]\s*/i.test(l)) return false;
+      if (/\bpremium\s*(duur|totaal|periode|loopt|start|actief)\b/i.test(l)) return false;
+      if (/\b(adres|straat|postcode|huisnummer)\b\s*:/i.test(l)) return false;
+      if (/\b(referentie|po\s*nummer|bestelnummer)\b\s*:/i.test(l)) return false;
+      return true;
+    }).join("\n").trim();
+    // Truncate to ~300 chars for card snippets
+    if (txt.length > 300) txt = txt.slice(0, 297) + "…";
+    return txt;
+  }
+
   function isPublicTestVacancy(v) {
     const title = String(v?.title || v?.name || "").trim().toLowerCase();
     const description = String(v?.description || v?.body || v?.bio || "").trim().toLowerCase();
@@ -1130,7 +1161,7 @@
   function vacancyCardHtml(v, idx, isPremium) {
     const title = escHtml(v.title || v.name || "Vacature");
     const club = escHtml(v.club || v.organization || v.club_name || "Club");
-    const desc = escHtml(v.description || v.body || v.bio || "");
+    const desc = escHtml(sanitizeVacancyText(v.description || v.body || v.bio || ""));
     const rawId = String(v.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=clubvacature&id=${encodeURIComponent(rawId)}` : "";
 
