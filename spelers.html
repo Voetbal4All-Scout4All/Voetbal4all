@@ -696,6 +696,30 @@
     return "";
   }
 
+  function playerDumpText(p) {
+    return [
+      p.bio,
+      p.description,
+      p.body,
+      p.snippet
+    ].map(value => String(value ?? "").trim()).filter(Boolean).join(" ");
+  }
+
+  function extractLabeledValue(text, labels) {
+    const source = String(text || "").replace(/\s+/g, " ").trim();
+    if (!source) return "";
+
+    for (const label of labels) {
+      const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const regex = new RegExp(`${escaped}\\s*:\\s*(.+?)(?=(?:\\s+[A-ZÀ-ÖØ-Ý][^:]{0,40}:)|$)`, "i");
+      const match = source.match(regex);
+      if (!match) continue;
+      const value = String(match[1] || "").trim();
+      if (value && value !== "—") return value;
+    }
+    return "";
+  }
+
   function playerCardTitleText(p) {
     const name = firstFilled([p.name, p.full_name, p.title]) || "Anonieme speler";
     const position = firstFilled([
@@ -704,7 +728,8 @@
       p.position_label,
       p.primary_position,
       p.primary_position_code,
-      p.player_position
+      p.player_position,
+      extractLabeledValue(playerDumpText(p), ["Positie (speler)", "Positie"])
     ]);
     return position ? `${name} — ${position}` : name;
   }
@@ -719,7 +744,8 @@
       p.desired_level,
       p.desiredLevel,
       p.level,
-      p.level_label
+      p.level_label,
+      extractLabeledValue(playerDumpText(p), ["Gewenst niveau"])
     ]);
   }
 
@@ -729,7 +755,8 @@
       p.age_label,
       p.age,
       p.birth_year_label,
-      p.birthYear
+      p.birthYear,
+      extractLabeledValue(playerDumpText(p), ["Leeftijd/geboortejaar", "Leeftijd", "Geboortejaar"])
     ]);
     if (explicitAge) return explicitAge;
 
