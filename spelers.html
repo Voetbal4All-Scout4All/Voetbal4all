@@ -58,8 +58,9 @@
   .premium-grid .premium-card:focus-within{border-color:rgba(255,255,255,.26) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 12px 30px rgba(0,0,0,.42) !important;transform:none !important;}
   .premium-grid .premium-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,rgba(255,255,255,.14),rgba(255,255,255,0) 35%,rgba(255,255,255,.10) 60%,rgba(255,255,255,0));opacity:.55;}
   .premium-grid .premium-card::after{display:none !important;}
-  .premium-grid .premium-card .v4a-card-title{font-size:14px;font-weight:800;line-height:1.25;margin-bottom:2px}
-  .premium-grid .premium-card .v4a-card-meta{font-size:12px;opacity:.86;line-height:1.25}
+  .premium-grid .premium-card .event-main{padding-top:2px}
+  .premium-grid .premium-card .v4a-card-title{font-size:16px;font-weight:800;line-height:1.2;letter-spacing:-0.01em;margin-bottom:0}
+  .premium-grid .premium-card .v4a-card-meta{font-size:12px;opacity:.84;line-height:1.24;margin-top:0}
   .premium-grid .premium-card .v4a-card-body{display:none !important;}
   .premium-grid .v4a-card{overflow:hidden;}
   .premium-grid .v4a-card-title,
@@ -71,6 +72,7 @@
   .premium-grid .v4a-card-title{-webkit-line-clamp:2;}
   .premium-grid .v4a-card-body{-webkit-line-clamp:3;}
   .premium-grid .premium-card .event-thumbbox::after{display:none !important;}
+  .premium-grid .premium-card .player-card-copy{display:flex;flex-direction:column;gap:3px;margin-top:4px}
 
   .premium-grid .premium-card .event-thumbbox{position:relative;}
   .premium-grid .premium-card .premium-ribbon{position:absolute;top:10px;right:-44px;width:160px;text-align:center;padding:6px 0;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.95);transform:rotate(30deg);z-index:3;background:linear-gradient(135deg,rgba(240,240,240,.30),rgba(180,180,180,.10) 35%,rgba(255,255,255,.22) 65%,rgba(120,120,120,.12));border:1px solid rgba(255,255,255,.22);box-shadow:0 8px 20px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.18);}
@@ -95,21 +97,28 @@
     background-color:rgba(255,255,255,0.04);
     filter:none;
   }
+  #player-list .event-thumbbox::after{display:none}
   #player-list .event-main{
     padding-top:2px;
   }
   #player-list .v4a-card-title{
-    font-size:15px;
-    font-weight:700;
-    line-height:1.22;
+    font-size:16px;
+    font-weight:800;
+    line-height:1.2;
     letter-spacing:-0.01em;
-    margin-bottom:4px;
+    margin-bottom:0;
   }
   #player-list .v4a-card-meta{
     font-size:12px;
-    line-height:1.25;
+    line-height:1.24;
     opacity:.82;
-    margin-top:2px;
+    margin-top:0;
+  }
+  #player-list .player-card-copy{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    margin-top:4px;
   }
   #player-list .v4a-card-body{
     font-size:12.5px;
@@ -132,7 +141,7 @@
   }
   #player-list .v4-share{display:none !important;}
   @media (max-width:900px){
-    #player-list .v4a-card-title{font-size:14px}
+    #player-list .v4a-card-title{font-size:15px}
     #player-list .v4a-card-body{font-size:12px}
   }
 
@@ -679,6 +688,81 @@
     return String(raw || "").trim();
   }
 
+  function firstFilled(values) {
+    for (const value of values) {
+      const text = String(value ?? "").trim();
+      if (text) return text;
+    }
+    return "";
+  }
+
+  function playerCardTitleText(p) {
+    const name = firstFilled([p.name, p.full_name, p.title]) || "Anonieme speler";
+    const position = firstFilled([
+      p.profilePos,
+      p.position,
+      p.position_label,
+      p.primary_position,
+      p.primary_position_code,
+      p.player_position
+    ]);
+    return position ? `${name} — ${position}` : name;
+  }
+
+  function playerCardCity(p) {
+    return firstFilled([p.city, p.location_city, p.town]);
+  }
+
+  function playerCardLevel(p) {
+    return firstFilled([
+      p.profileLevel,
+      p.desired_level,
+      p.desiredLevel,
+      p.level,
+      p.level_label
+    ]);
+  }
+
+  function playerCardAge(p) {
+    const explicitAge = firstFilled([
+      p.profileAge,
+      p.age_label,
+      p.age,
+      p.birth_year_label,
+      p.birthYear
+    ]);
+    if (explicitAge) return explicitAge;
+
+    const dobRaw = firstFilled([p.date_of_birth, p.birthdate]);
+    if (!dobRaw) return "";
+
+    const dob = new Date(dobRaw);
+    if (!Number.isFinite(dob.getTime())) return "";
+
+    const years = Math.floor((Date.now() - dob.getTime()) / 31557600000);
+    return years > 0 ? `${years} jaar` : "";
+  }
+
+  function playerCardLines(p) {
+    return [
+      playerCardCity(p),
+      playerCardLevel(p),
+      playerCardAge(p)
+    ].filter(Boolean);
+  }
+
+  function playerCardSearchText(p) {
+    return [
+      firstFilled([p.name, p.full_name, p.title]),
+      firstFilled([p.profilePos, p.position, p.position_label, p.primary_position, p.primary_position_code, p.player_position]),
+      playerCardCity(p),
+      firstFilled([p.region]),
+      playerCardLevel(p),
+      playerCardAge(p),
+      firstFilled([p.bio, p.description, p.body])
+    ].filter(Boolean).join(" ");
+  }
+
   function actionUrlValue(raw) {
     if (!raw) return "";
     if (typeof raw === "string") return raw.trim();
@@ -756,16 +840,16 @@
   }
 
   function playerCardHtml(p, idx, isPremium) {
-    const id = escHtml(String(p.id || idx + 1));
-    const name = escHtml(p.name || p.full_name || p.title || "Anonieme speler");
-    const pos = escHtml(p.position || p.role || p.type || "Speler");
-    const bio = escHtml(p.bio || p.description || p.body || "");
     const rawId = String(p.id || "").trim();
     const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
     const country = String(p.country || "").toUpperCase();
-    const compactLocation = escHtml(compactLocationMeta(p));
+    const region = firstFilled([p.region, p.city]);
     const gender = toGender(p);
     const links = resolvePlayerLinks(p);
+    const titleText = escHtml(playerCardTitleText(p));
+    const titleHref = detailHref || links.external.href || links.cv.href;
+    const metaLines = playerCardLines(p).map(line => `<div class="v4a-card-meta">${escHtml(line)}</div>`).join("");
+    const searchText = escHtml(playerCardSearchText(p));
     const thumbUrl = normalizePlayerThumb(
       p.image_url || p.image || p.photo_url || p.photo || p.avatar_url || p.avatar || ""
     );
@@ -773,47 +857,23 @@
       ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
       : "";
 
-    const premiumActionHref = detailHref || links.external.href || links.cv.href;
-    const normalActions = [];
-    if (detailHref) {
-      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>`);
-    } else if (links.external.href) {
-      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.external.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.external.label)}</a>`);
-    }
-    if (detailHref && links.external.href) {
-      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.external.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.external.label)}</a>`);
-    }
-    if (links.cv.href) {
-      normalActions.push(`<a class="btn-ghost-sm" href="${escHtml(links.cv.href)}" target="_blank" rel="noopener noreferrer">${escHtml(links.cv.label)}</a>`);
-    }
-    normalActions.push(`<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(String(idx + 1))}">Reageer op speler</button>`);
-    normalActions.push(`<a href="#" class="btn-ghost-sm btn-share" data-share-ad="${escHtml(String(idx + 1))}" data-detail-href="${escHtml(detailHref)}">Delen</a>`);
-
-    const actions = isPremium
-      ? premiumActionHref
-        ? `<a class="btn-ghost-sm" href="${escHtml(premiumActionHref)}"${detailHref ? "" : ' target="_blank" rel="noopener noreferrer"'}>Bekijk profiel</a>`
-        : `<a class="btn-ghost-sm" href="adverteren.html">Plaats premium profiel</a>`
-      : normalActions.join("");
-
     // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
     return `
       <article class="v4a-card${isPremium ? " premium-card" : ""}" id="player-ad-${escHtml(String(idx + 1))}"
         data-ad-id="${escHtml(String(idx + 1))}"
         data-country="${escHtml(country)}"
+        data-region="${escHtml(region)}"
+        data-search="${searchText}"
         data-gender="${escHtml(gender)}">
         <div class="event-row">
           <div class="event-thumbbox ${thumbUrl ? "has-img" : ""}" aria-label="Thumbnail">${isPremium ? '<div class="premium-ribbon">Premium</div>' : ""}${thumb}</div>
           <div class="event-main">
             <div class="v4a-card-header" style="margin:0;">
               <div>
-                <div class="v4a-card-title">${detailHref ? `<a href="${escHtml(detailHref)}" style="color:inherit;text-decoration:none;">${name}</a>` : name}</div>
-                <div class="v4a-card-meta">${compactLocation}</div>
-                <div class="v4a-card-meta">${pos}</div>
-                ${!isPremium ? `<div class="v4a-card-meta">Spelersprofiel</div>` : ""}
+                <div class="v4a-card-title">${titleHref ? `<a href="${escHtml(titleHref)}" style="color:inherit;text-decoration:none;"${detailHref ? "" : ' target="_blank" rel="noopener noreferrer"'}>${titleText}</a>` : titleText}</div>
+                ${metaLines ? `<div class="player-card-copy">${metaLines}</div>` : ""}
               </div>
             </div>
-            ${bio ? `<div class="v4a-card-body" style="margin-top:8px;">${bio}</div>` : ""}
-            <div class="v4a-card-actions event-actions" style="margin-top:10px;">${actions}</div>
           </div>
         </div>
       </article>
@@ -973,6 +1033,8 @@
     }
 
     function detectRegionFromCard(card) {
+      const ds = String(card?.dataset?.region || "").trim();
+      if (ds) return ds;
       // Prefer the country/regio meta if present
       const meta = card.querySelector(".v4a-card-meta")?.textContent || "";
       // Common pattern: "België · Regio Kempen" or "Nederland · Regio ..."
@@ -986,7 +1048,7 @@
     }
 
     function cardText(card) {
-      return normalize(card.textContent);
+      return normalize([card?.dataset?.search || "", card?.textContent || ""].join(" "));
     }
 
     function applyFilters() {
