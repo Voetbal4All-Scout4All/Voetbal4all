@@ -1790,6 +1790,13 @@
             const safeUrl = escapeHtml(item.url);
             pushFact("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
           }
+          // Public contact fields (never show billing/invoice data)
+          const contactName = String(item.contact_person || item.contact_name || "").trim();
+          if (contactName) pushFact("Contactpersoon", escapeHtml(contactName));
+          const contactEmail = String(item.contact_email || item.email || "").trim();
+          if (contactEmail) pushFact("E-mail", `<a href="mailto:${escapeHtml(contactEmail)}">${escapeHtml(contactEmail)}</a>`);
+          const contactPhone = String(item.contact_phone || item.phone || item.telefoon || "").trim();
+          if (contactPhone) pushFact("Telefoon", escapeHtml(contactPhone));
         } else {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
           pushFact("Regio", escapeHtml(item.region || ""));
@@ -1896,7 +1903,7 @@
         } else {
           shareUrl = shareUrl + `?type=${encodeURIComponent(shareType)}&id=${encodeURIComponent(id)}`;
         }
-        setShareLinks(shareUrl, pageTitle);
+        setShareLinks(shareUrl, displayTitle);
 
         // Media (YouTube has priority for shared types)
         // For non-events: if url is YouTube -> embed, else use images fields
