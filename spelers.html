@@ -128,7 +128,7 @@
     display:flex;flex-wrap:wrap;gap:6px;
   }
   .v4a-card-actions.event-actions .btn-ghost-sm{
-    flex:1 1 0%;min-width:0;text-align:center;white-space:nowrap;
+    flex:1 1 auto;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
   #player-list .v4-share{display:none !important;}
   @media (max-width:900px){
@@ -864,12 +864,12 @@
 
       const items = items_raw;
 
-      // If API returned 0 items, show placeholders for UX
+      // If API returned 0 items, show empty state
       if (items.length === 0) {
-        fillPlayerPlaceholders();
+        listEl.innerHTML = "";
         if (statusEl) {
           statusEl.style.display = "";
-          statusEl.textContent = "Nog geen spelersprofielen. Hieronder staan voorbeeldprofielen.";
+          statusEl.textContent = "Nog geen spelersprofielen beschikbaar.";
         }
         return true;
       }
@@ -905,11 +905,11 @@
 
       return true;
     } catch (e) {
-      // keep fallback behavior; do not throw
       console.warn("[spelers] backend load failed:", e?.message || e);
+      listEl.innerHTML = "";
       if (statusEl) {
         statusEl.style.display = "";
-        statusEl.textContent = "Kon spelers niet laden. We tonen tijdelijk placeholders.";
+        statusEl.textContent = "Kon spelersprofielen niet laden. Probeer het later opnieuw.";
       }
       return false;
     }
@@ -1054,51 +1054,8 @@
     // Initial run is handled after the first backend load (or fallback)
   })();
 
-  // Fill main list with placeholders if backend is not wired yet (layout parity)
-  function fillPlayerPlaceholders(){
-    const el = document.getElementById('player-list');
-    if (!el) return;
-    if (el.querySelector('.v4a-card')) return;
-
-    const items = [
-      {flag:'🇧🇪', place:'België · Regio Kempen', meta:'17 jaar · Middenvelder, Aanvaller', body:'Technische middenvelder met goed overzicht, zoekt ambitieuze opleidingsclub met focus op jeugd.'},
-      {flag:'🇳🇱', place:'Nederland · Eindhoven', meta:'20 jaar · Keeper', body:'Keeper met wedstrijdritme, zoekt club met duidelijke structuur en doelstellingen.'},
-      {flag:'🇧🇪', place:'België · Antwerpen', meta:'16 jaar · Aanvaller', body:'Snelle flankaanvaller, sterk in 1v1 en diepgang. Zoekt stap hoger in jeugdopleiding.'},
-      {flag:'🇳🇱', place:'Nederland · Limburg', meta:'19 jaar · Verdediger', body:'Centrale verdediger met leiderschap. Open voor eerste elftal of belofteploeg.'},
-      {flag:'🇧🇪', place:'België · Oost-Vlaanderen', meta:'18 jaar · Middenvelder', body:'Box-to-box middenvelder, veel loopvermogen en passing. Ambitieus traject.'},
-      {flag:'🇳🇱', place:'Nederland · Utrecht', meta:'15 jaar · Flankspeler', body:'Flankspeler met techniek en dribbel. Wil groeien in een opleidingsomgeving.'}
-    ];
-
-    el.innerHTML = items.map((s, idx) => `
-      <article class="v4a-card" id="player-ad-${idx+1}" data-ad-id="${idx+1}" data-gender="BOTH">
-        <div class="event-row">
-          <div class="event-thumbbox" aria-label="Thumbnail"></div>
-          <div class="event-main">
-            <div class="v4a-card-header" style="margin:0;">
-              <div>
-                <div class="v4a-card-title">Anonieme speler</div>
-                <div class="v4a-card-meta">${s.flag} · ${s.place}</div>
-                <div class="v4a-card-meta">${s.meta}</div>
-              </div>
-            </div>
-            <div class="v4a-card-body" style="margin-top:8px;">${s.body}</div>
-            <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-              <button type="button" class="btn-ghost-sm" data-reply-ad="${idx+1}">Reageer op speler</button>
-              <a href="#" class="btn-ghost-sm btn-share" data-share-ad="${idx+1}">Delen</a>
-            </div>
-          </div>
-        </div>
-      </article>
-    `).join('');
-
-    try { updateShareLinks(); } catch(_) {}
-  }
-
   async function initPlayersPage() {
-    const ok = await loadPlayersFromBackend();
-    if (!ok) {
-      fillPlayerPlaceholders();
-    }
+    await loadPlayersFromBackend();
 
     if (typeof window.__applyPlayerFilters === 'function') {
       window.__applyPlayerFilters();
