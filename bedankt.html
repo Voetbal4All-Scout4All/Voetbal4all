@@ -376,7 +376,7 @@
         <!-- Non-premium confirmation notice (shown only when status=pending) -->
         <div id="pendingNotice" class="notice notice-warning" style="display:none;">
           <strong>Bevestiging vereist binnen 12 uur</strong><br>
-          Je event is ontvangen maar is nog <b>niet bevestigd</b>. Bevestig binnen <b>12 uur</b>, anders wordt deze aanvraag verwijderd.
+          Je aanvraag is ontvangen maar is nog <b>niet bevestigd</b>. Bevestig binnen <b>12 uur</b>, anders wordt deze aanvraag verwijderd.
           <div style="height:8px"></div>
           <span style="opacity:.9;">Na <b>24 uur</b> zonder bevestiging wordt de aanvraag automatisch definitief verwijderd.</span>
           <dl class="notice-meta" aria-label="Deadlines">
@@ -385,7 +385,7 @@
           </dl>
           <div id="confirmCtaWrap" style="margin-top:10px; display:none;">
             <a id="confirmCta" class="nav-cta" href="#" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
-              <span>Bevestig je event</span>
+              <span id="confirmCtaText">Bevestig je aanvraag</span>
               <span style="font-weight:800;opacity:.9;">(12u)</span>
             </a>
           </div>
@@ -393,13 +393,13 @@
 
         <!-- Email keep notice (primary guidance after submit) -->
         <div id="emailKeepNotice" class="notice" style="display:none;">
-          <strong>Belangrijk: bewaar de e-mail met uw Event-ID tot na het event</strong><br>
+          <strong id="emailKeepNoticeTitle">Belangrijk: bewaar de e-mail met uw referentie-ID goed</strong><br>
           Verdere instructies en beheeropties worden uitsluitend via die e-mail gecommuniceerd.
           <div style="height:10px"></div>
           <ul style="margin:0;padding-left:18px;line-height:1.7;">
-            <li>U heeft de e-mail nodig om uw aanvraag te <strong>bevestigen</strong> (niet-premium).</li>
-            <li>U heeft de e-mail nodig om het event later <strong>te verwijderen</strong>.</li>
-            <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw <strong>Event-ID</strong>.</li>
+            <li>Bewaar de e-mail met uw referentie-ID goed.</li>
+            <li>Verdere opvolging en beheeropties worden via die e-mail gedeeld.</li>
+            <li>Indien u contact opneemt met Voetbal4All, vermeld dan steeds uw referentie-ID.</li>
           </ul>
         </div>
 
@@ -419,12 +419,12 @@
         <!-- Cancel notice (shown when payment was cancelled) -->
         <div id="cancelNotice" class="notice notice-warning" style="display:none;">
           <strong>Betaling geannuleerd</strong><br>
-          Uw Premium betaling werd geannuleerd. Uw event werd <b>niet</b> gepubliceerd.
+          <span id="cancelNoticeText">Uw Premium betaling werd geannuleerd. Uw aanvraag werd <b>niet</b> gepubliceerd.</span>
           <div style="height:10px"></div>
           <span style="opacity:.9;">U kan opnieuw proberen of een niet-premium aanvraag indienen.</span>
           <div style="height:10px"></div>
-          <a class="nav-cta" href="event-aanmelden.html" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
-            <span>Event aanmelden</span>
+          <a id="cancelNoticeCta" class="nav-cta" href="event-aanmelden.html" style="display:inline-flex; gap:10px; align-items:center; padding:10px 14px; border-radius:999px;">
+            <span id="cancelNoticeCtaText">Aanvraag opnieuw</span>
             <span style="font-weight:800;opacity:.9;">Opnieuw</span>
           </a>
         </div>
@@ -471,7 +471,7 @@
             </p>
             <div style="height:10px"></div>
             <p class="note" style="margin:0;opacity:.85;" id="nextStepsTip">
-              Tip: bewaar de e-mail met uw Event-ID tot na het event. Beheer verloopt via die e-mail.
+              Tip: bewaar de e-mail met uw referentie-ID goed. Verdere opvolging verloopt via die e-mail.
             </p>
           </aside>
         </div>
@@ -570,7 +570,9 @@
       if (kindKey) keys.push(`v4_thanks_payload_${kindKey}_${sid}`);
       if (sourceKey && sourceKey !== kindKey) keys.push(`v4_thanks_payload_${sourceKey}_${sid}`);
       keys.push(`v4_thanks_payload_${sid}`);
-      keys.push(`v4_event_payload_${sid}`);
+      if (kindKey === 'event' || sourceKey === 'event' || (!kindKey && !sourceKey)) {
+        keys.push(`v4_event_payload_${sid}`);
+      }
 
       for (const key of keys) {
         const payload = loadJsonFromStorage(key);
@@ -586,6 +588,42 @@
       if (!payload) return null;
       const payloadId = String(payload.id || payload.sid || '').trim();
       return payloadId && payloadId === id ? payload : null;
+    }
+
+    function firstFilled(values) {
+      for (const value of values) {
+        const text = String(value == null ? '' : value).trim();
+        if (text) return text;
+      }
+      return '';
+    }
+
+    function extractContactFromText(text) {
+      const result = { name: '', email: '' };
+      const lines = String(text || '').split(/\r?\n/);
+
+      for (const rawLine of lines) {
+        const line = String(rawLine || '').trim();
+        if (!line) continue;
+
+        const match = line.match(/^([^:]+):\s*(.+)$/);
+        if (!match) continue;
+
+        const label = String(match[1] || '').toLowerCase().trim();
+        const value = String(match[2] || '').trim();
+        if (!value || value === '—') continue;
+
+        if (!result.name && ['naam', 'club/organisatie', 'naam supportersclub', 'club', 'organisatie'].includes(label)) {
+          result.name = value;
+          continue;
+        }
+
+        if (!result.email && ['e-mail', 'email', 'contact e-mail', 'contact email', 'e-mail organisator'].includes(label)) {
+          result.email = value;
+        }
+      }
+
+      return result;
     }
 
    // ------------------------------
@@ -684,7 +722,13 @@
     ).trim();
     const rawQuerySource = (qs.get('source') || '').trim();
     const rawQueryKind = (qs.get('kind') || '').trim();
-    storedEventPayload = loadStoredPayload(storageLookupId, rawQuerySource, rawQueryKind) || loadLegacyThanksPayload(storageLookupId);
+    const allowLegacyPayload =
+      !rawQuerySource ||
+      rawQuerySource.toLowerCase() === 'event' ||
+      rawQueryKind.toLowerCase() === 'event';
+    storedEventPayload =
+      loadStoredPayload(storageLookupId, rawQuerySource, rawQueryKind)
+      || (allowLegacyPayload ? loadLegacyThanksPayload(storageLookupId) : null);
 
     const source = rawQuerySource
       || (storedEventPayload && storedEventPayload.source ? String(storedEventPayload.source).trim() : '');
@@ -1125,10 +1169,43 @@
     const explicitErrorParam = (qs.get('error') || qs.get('err') || '').trim();
     const reason = (flow.kind === 'error' ? (flow.error || '') : (qs.get('reason') || qs.get('message') || '')).trim();
 
+    const subject = firstFilled([
+      qs.get('subject'),
+      storedEventPayload && storedEventPayload.subject
+    ]);
+    const message = firstFilled([
+      qs.get('message'),
+      qs.get('msg'),
+      storedEventPayload && storedEventPayload.message,
+      storedEventPayload && storedEventPayload.body
+    ]);
+    const extractedContact = extractContactFromText(message);
+
     // Who
-    const name = ((qs.get('name') || '').trim()) || (storedEventPayload && storedEventPayload.name ? String(storedEventPayload.name).trim() : '');
-    const email = ((qs.get('email') || '').trim()) || (storedEventPayload && storedEventPayload.email ? String(storedEventPayload.email).trim() : '');
-    const what = ((qs.get('what') || qs.get('product') || qs.get('type') || '').trim()) || (storedEventPayload && storedEventPayload.what ? String(storedEventPayload.what).trim() : '');
+    const name = firstFilled([
+      qs.get('name'),
+      storedEventPayload && storedEventPayload.name,
+      storedEventPayload && storedEventPayload.club,
+      storedEventPayload && storedEventPayload.organization,
+      storedEventPayload && storedEventPayload.organizer_name,
+      storedEventPayload && storedEventPayload.supported_team,
+      extractedContact.name
+    ]);
+    const email = firstFilled([
+      qs.get('email'),
+      storedEventPayload && storedEventPayload.email,
+      storedEventPayload && storedEventPayload.organizer_email,
+      storedEventPayload && storedEventPayload.invoice_email,
+      extractedContact.email
+    ]);
+    const what = firstFilled([
+      qs.get('what'),
+      qs.get('product'),
+      qs.get('type'),
+      storedEventPayload && storedEventPayload.what,
+      storedEventPayload && storedEventPayload.title,
+      storedEventPayload && storedEventPayload.subject
+    ]);
 
     // IDs (support multiple conventions)
     const id = (sid || flow.eventId || flow.submissionId || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
@@ -1242,8 +1319,12 @@
 
       const confirmByEl = document.getElementById('confirmByText');
       const deleteAfterEl = document.getElementById('deleteAfterText');
+      const confirmCtaText = document.getElementById('confirmCtaText');
       if (confirmByEl) confirmByEl.textContent = fmt(confirmBy);
       if (deleteAfterEl) deleteAfterEl.textContent = fmt(deleteAfter);
+      if (confirmCtaText) {
+        confirmCtaText.textContent = isEventFlow ? 'Bevestig je event' : 'Bevestig je aanvraag';
+      }
 
       // Optional CTA if a confirmUrl is provided
       const ctaWrap = document.getElementById('confirmCtaWrap');
@@ -1260,9 +1341,15 @@
     // Show the primary guidance notice after a form submit
     const emailKeepNotice = document.getElementById('emailKeepNotice');
     if (emailKeepNotice) {
+      const emailKeepTitle = document.getElementById('emailKeepNoticeTitle');
       const emailKeepList = emailKeepNotice.querySelector('ul');
       if (isManagedSubmissionFlow && !isError && !isDeleted && !isCancelled) {
         emailKeepNotice.style.display = '';
+        if (emailKeepTitle) {
+          emailKeepTitle.textContent = isEventFlow
+            ? 'Belangrijk: bewaar de e-mail met uw Event-ID tot na het event'
+            : `Belangrijk: bewaar de e-mail met uw ${supportIdLabel} goed`;
+        }
         if (emailKeepList) {
           if (displayState === 'pending') {
             emailKeepList.innerHTML = `
@@ -1313,7 +1400,23 @@
     const cancelNotice = document.getElementById('cancelNotice');
     if (cancelNotice) {
       if (displayState === 'cancelled') {
+        const cancelNoticeText = document.getElementById('cancelNoticeText');
+        const cancelNoticeCta = document.getElementById('cancelNoticeCta');
+        const cancelNoticeCtaText = document.getElementById('cancelNoticeCtaText');
         cancelNotice.style.display = '';
+        if (cancelNoticeText) {
+          cancelNoticeText.innerHTML = `Uw Premium betaling werd geannuleerd. Uw ${managedNoun} werd <b>niet</b> gepubliceerd.`;
+        }
+        if (cancelNoticeCta && cancelNoticeCtaText) {
+          const retryHref = (() => {
+            if (isEventFlow) return 'event-aanmelden.html';
+            if (flowType === 'supportersclub') return 'sportief-supportersclubs.html';
+            if (flowType === 'team-in-de-kijker') return 'sportief-teams-in-de-kijker.html';
+            return 'aanmelden.html';
+          })();
+          cancelNoticeCta.href = retryHref;
+          cancelNoticeCtaText.textContent = isEventFlow ? 'Event aanmelden' : 'Aanvraag opnieuw';
+        }
         if (pendingNotice) pendingNotice.style.display = 'none';
         const emailKeepNotice2 = document.getElementById('emailKeepNotice');
         if (emailKeepNotice2) emailKeepNotice2.style.display = 'none';
@@ -1321,10 +1424,6 @@
         cancelNotice.style.display = 'none';
       }
     }
-
-    // Message preview (for contact forms)
-    const subject = (qs.get('subject') || '').trim();
-    const message = (qs.get('message') || qs.get('msg') || '').trim();
 
     // Helpers
     const safeText = (v) => {

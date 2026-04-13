@@ -640,14 +640,22 @@
 
         const sid = j.id || j.sid || '';
         try {
+          const submittedSubject = (document.getElementById('spotlightTitle')?.value || '').trim();
+          const submittedBody = (document.getElementById('spotlightBody')?.value || '').trim();
+          const submittedClub = (document.getElementById('spotlightClub')?.value || '').trim();
+          const submittedEmail = (document.getElementById('spotlightEmail')?.value || '').trim();
           const thanksPayload = {
             id: sid,
             sid,
             source: 'team-in-de-kijker',
             kind: 'team-in-de-kijker',
-            name: '',
-            email: (document.getElementById('spotlightEmail')?.value || '').trim(),
-            what: (document.getElementById('spotlightTitle')?.value || '').trim() || 'Team in de kijker',
+            name: submittedClub || submittedSubject || '',
+            email: submittedEmail,
+            what: submittedSubject || 'Team in de kijker',
+            subject: submittedSubject,
+            message: submittedBody,
+            body: submittedBody,
+            club: submittedClub,
             status: 'Ontvangen'
           };
           const thanksKey = `v4_thanks_payload_team-in-de-kijker_${sid}`;
