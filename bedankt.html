@@ -613,7 +613,7 @@
         const value = String(match[2] || '').trim();
         if (!value || value === '—') continue;
 
-        if (!result.name && ['naam', 'club/organisatie', 'naam supportersclub', 'club', 'organisatie'].includes(label)) {
+        if (!result.name && ['naam', 'club/organisatie', 'club / organisatie', 'organisatie/club', 'organisatie / club', 'naam supportersclub', 'club', 'organisatie'].includes(label)) {
           result.name = value;
           continue;
         }
@@ -730,21 +730,28 @@
       loadStoredPayload(storageLookupId, rawQuerySource, rawQueryKind)
       || (allowLegacyPayload ? loadLegacyThanksPayload(storageLookupId) : null);
 
-    const source = rawQuerySource
+    function looksLikeEventRecord(item) {
+      if (!item || typeof item !== 'object') return false;
+      return !!(
+        item.start_at ||
+        item.end_at ||
+        item.event_type ||
+        item.category ||
+        item.external_id ||
+        item.cover_image_url ||
+        item.signup_deadline ||
+        item.last_signup_day
+      );
+    }
+
+    const hintedSource = rawQuerySource
       || (storedEventPayload && storedEventPayload.source ? String(storedEventPayload.source).trim() : '');
-    const kind = rawQueryKind
+    const hintedKind = rawQueryKind
       || (storedEventPayload && storedEventPayload.kind ? String(storedEventPayload.kind).trim() : '')
-      || source;
-    const sourceKey = source.toLowerCase();
-    const kindKey = kind.toLowerCase();
-    const flowType = normalizeFlowType(source, kind);
-    const isEventFlow = flowType === 'event';
-    const isProfileFlow = flowType === 'clubvacature' || flowType === 'trainer' || flowType === 'speler';
-    const isManagedSubmissionFlow =
-      isEventFlow ||
-      isProfileFlow ||
-      flowType === 'team-in-de-kijker' ||
-      flowType === 'supportersclub';
+      || hintedSource;
+    const hintedFlowType = normalizeFlowType(hintedSource, hintedKind);
+    const hasExplicitNonEventHint = !!hintedFlowType && hintedFlowType !== 'event';
+    const shouldAttemptEventLookup = !hasExplicitNonEventHint && !!storageLookupId;
 
     const FLOW_META = {
       event: {
@@ -1008,7 +1015,7 @@
       const extIdIsUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(extIdRaw);
       const extId = extIdIsUuid ? extIdRaw : '';
 
-      if (!isEventFlow) return;
+      if (!shouldAttemptEventLookup) return;
 
       // Nothing to query with.
       if (!extId && !eventId) return;
@@ -1165,13 +1172,35 @@
       }
     }
 
+    await tryFetchPremiumWindowFromEvent();
+
+    const inferredFetchedSource = looksLikeEventRecord(fetchedEventItem) ? 'event' : '';
+    const source = rawQuerySource
+      || (storedEventPayload && storedEventPayload.source ? String(storedEventPayload.source).trim() : '')
+      || inferredFetchedSource;
+    const kind = rawQueryKind
+      || (storedEventPayload && storedEventPayload.kind ? String(storedEventPayload.kind).trim() : '')
+      || inferredFetchedSource
+      || source;
+    const sourceKey = source.toLowerCase();
+    const kindKey = kind.toLowerCase();
+    const flowType = normalizeFlowType(source, kind);
+    const isEventFlow = flowType === 'event';
+    const isProfileFlow = flowType === 'clubvacature' || flowType === 'trainer' || flowType === 'speler';
+    const isManagedSubmissionFlow =
+      isEventFlow ||
+      isProfileFlow ||
+      flowType === 'team-in-de-kijker' ||
+      flowType === 'supportersclub';
+
     // Error/failure params (for rejected submissions)
     const explicitErrorParam = (qs.get('error') || qs.get('err') || '').trim();
     const reason = (flow.kind === 'error' ? (flow.error || '') : (qs.get('reason') || qs.get('message') || '')).trim();
 
     const subject = firstFilled([
       qs.get('subject'),
-      storedEventPayload && storedEventPayload.subject
+      storedEventPayload && storedEventPayload.subject,
+      fetchedEventItem && fetchedEventItem.title
     ]);
     const message = firstFilled([
       qs.get('message'),
@@ -1180,6 +1209,10 @@
       storedEventPayload && storedEventPayload.body
     ]);
     const extractedContact = extractContactFromText(message);
+    const extractedFetchedContact = extractContactFromText(firstFilled([
+      fetchedEventItem && fetchedEventItem.description,
+      fetchedEventItem && fetchedEventItem.body
+    ]));
 
     // Who
     const name = firstFilled([
@@ -1189,14 +1222,21 @@
       storedEventPayload && storedEventPayload.organization,
       storedEventPayload && storedEventPayload.organizer_name,
       storedEventPayload && storedEventPayload.supported_team,
-      extractedContact.name
+      fetchedEventItem && fetchedEventItem.organizer_name,
+      fetchedEventItem && fetchedEventItem.club_name,
+      fetchedEventItem && fetchedEventItem.club,
+      extractedContact.name,
+      extractedFetchedContact.name
     ]);
     const email = firstFilled([
       qs.get('email'),
       storedEventPayload && storedEventPayload.email,
       storedEventPayload && storedEventPayload.organizer_email,
       storedEventPayload && storedEventPayload.invoice_email,
-      extractedContact.email
+      fetchedEventItem && fetchedEventItem.organizer_email,
+      fetchedEventItem && fetchedEventItem.contact_email,
+      extractedContact.email,
+      extractedFetchedContact.email
     ]);
     const what = firstFilled([
       qs.get('what'),
@@ -1204,14 +1244,20 @@
       qs.get('type'),
       storedEventPayload && storedEventPayload.what,
       storedEventPayload && storedEventPayload.title,
-      storedEventPayload && storedEventPayload.subject
+      storedEventPayload && storedEventPayload.subject,
+      fetchedEventItem && fetchedEventItem.event_type,
+      fetchedEventItem && fetchedEventItem.category,
+      fetchedEventItem && fetchedEventItem.title
     ]);
 
     // IDs (support multiple conventions)
     const id = (sid || flow.eventId || flow.submissionId || qs.get('id') || qs.get('orderId') || qs.get('eventId') || qs.get('submissionId') || '').trim();
 
     // Status (optional)
-    const statusParam = (qs.get('status') || '').trim();
+    const statusParam = firstFilled([
+      qs.get('status'),
+      fetchedEventItem && fetchedEventItem.status
+    ]);
     const statusKey = normalizeStatusKey(statusParam || flow.statusKey || '');
     let status = statusParam || 'Ontvangen';
     const deletion = (qs.get('deletion') || '').trim();
@@ -1701,9 +1747,6 @@
     const premiumBlock = document.getElementById('premiumBlock');
     const pwRow = document.getElementById('premiumWindowRow');
 
-    // If links don't carry premium params, fetch them from backend using eventId (if present)
-    // NOTE: this is safe to run even if eventId is missing.
-    await tryFetchPremiumWindowFromEvent();
     // Re-render form fields once we have the backend event payload
     renderFormFields();
 
