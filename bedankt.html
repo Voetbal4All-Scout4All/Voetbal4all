@@ -897,7 +897,21 @@
         candidates.push(`${BACKEND_BASE}/api/events?id=${encodeURIComponent(eventId)}&limit=1&nocache=1`);
       }
 
-      // 3) Fallbacks: some deployments don't expose /api/events/:id publicly.
+      // 3) Non-event endpoints: for vacatures/profiles, also check their specific APIs
+      if (isNonEventPremium && extId) {
+        if (kindKey === 'vacature') {
+          candidates.push(`${BACKEND_BASE}/api/club-vacancies?nocache=1`);
+          candidates.push(`${BACKEND_BASE}/api/clubvacatures?nocache=1`);
+        } else if (kindKey === 'trainer') {
+          candidates.push(`${BACKEND_BASE}/api/trainer-profiles?nocache=1`);
+          candidates.push(`${BACKEND_BASE}/api/trainers?nocache=1`);
+        } else if (kindKey === 'speler' || kindKey === 'profile') {
+          candidates.push(`${BACKEND_BASE}/api/player-profiles?nocache=1`);
+          candidates.push(`${BACKEND_BASE}/api/players?nocache=1`);
+        }
+      }
+
+      // 4) Fallbacks: some deployments don't expose /api/events/:id publicly.
       // Fetch lists and pick the matching item by id/external_id (safe: we never take items[0]).
       candidates.push(`${BACKEND_BASE}/api/events/premium?days=365&limit=200&nocache=1`);
       candidates.push(`${BACKEND_BASE}/api/events?limit=200&nocache=1`);
@@ -1408,29 +1422,50 @@
         titleEl.textContent = 'Bedankt voor je bericht';
         subEl.textContent = 'We hebben je bericht goed ontvangen. Hieronder vind je een overzicht van je aanvraag.';
       } else if (isEventLikeFlow){
+        // Kind-specific noun for titles/subtitles
+        const kindNoun = (() => {
+          const k = kindKey;
+          if (k === 'vacature') return 'vacature';
+          if (k === 'trainer') return 'trainersprofiel';
+          if (k === 'speler') return 'spelersprofiel';
+          if (k === 'profile') return 'profiel';
+          return 'event';
+        })();
+        const kindNounUc = kindNoun.charAt(0).toUpperCase() + kindNoun.slice(1);
+        const isEventKind = (!isNonEventPremium);
+
         if (displayState === 'error') {
           titleEl.textContent = 'Uw aanvraag kon niet verwerkt worden';
           subEl.textContent = 'Controleer de link of probeer opnieuw. Voor meer info kan u ons contacteren via het contactformulier.';
         } else if (displayState === 'deleted') {
-          titleEl.textContent = 'Uw event werd verwijderd';
-          subEl.textContent = 'Uw event is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
+          titleEl.textContent = isEventKind ? 'Uw event werd verwijderd' : ('Uw ' + kindNoun + ' werd verwijderd');
+          subEl.textContent = 'Dit item is niet langer zichtbaar op Voetbal4All. In uitzonderlijke gevallen kan het enkele minuten duren voor dit overal is bijgewerkt.';
         } else if (displayState === 'cancelled') {
           titleEl.textContent = 'Betaling niet afgerond';
-          subEl.textContent = 'Uw Premium betaling werd niet afgerond. Uw event werd niet gepubliceerd.';
+          subEl.textContent = isEventKind
+            ? 'Uw Premium betaling werd niet afgerond. Uw event werd niet gepubliceerd.'
+            : ('Uw Premium betaling werd niet afgerond. Uw ' + kindNoun + ' werd niet gepubliceerd.');
         } else if (displayState === 'paid') {
-          titleEl.textContent = isNonEventPremium ? 'Uw Premium aanvraag is geslaagd' : 'Uw Premium event is succesvol aangemeld';
-          subEl.textContent = isNonEventPremium
-            ? 'Uw Premium zichtbaarheid is geactiveerd. Bewaar de bevestigingsmail met uw referentie-ID.'
-            : 'Uw Premium event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+          if (isNonEventPremium) {
+            titleEl.textContent = 'Uw Premium ' + kindNoun + ' is geslaagd';
+            subEl.textContent = 'Uw Premium zichtbaarheid is geactiveerd. Bewaar de bevestigingsmail met uw referentie-ID.';
+          } else {
+            titleEl.textContent = 'Uw Premium event is succesvol aangemeld';
+            subEl.textContent = 'Uw Premium event wordt verwerkt volgens de Premium-voorwaarden. Bewaar de e-mail met uw Event-ID tot na het event.';
+          }
         } else if (displayState === 'published') {
-          titleEl.textContent = 'Uw event is gepubliceerd';
-          subEl.textContent = 'Uw event staat live op Voetbal4All. Bewaar de e-mail met uw Event-ID voor later beheer.';
+          titleEl.textContent = isEventKind ? 'Uw event is gepubliceerd' : ('Uw ' + kindNoun + ' is gepubliceerd');
+          subEl.textContent = isEventKind
+            ? 'Uw event staat live op Voetbal4All. Bewaar de e-mail met uw Event-ID voor later beheer.'
+            : ('Uw ' + kindNoun + ' staat live op Voetbal4All. Bewaar de e-mail met uw referentie-ID.');
         } else if (displayState === 'confirmed') {
-          titleEl.textContent = 'Uw event is bevestigd';
-          subEl.textContent = 'Uw bevestiging is goed ontvangen. Uw event wordt verder verwerkt zonder bijkomende bevestigingsstap.';
+          titleEl.textContent = isEventKind ? 'Uw event is bevestigd' : ('Uw ' + kindNoun + ' is bevestigd');
+          subEl.textContent = 'Uw bevestiging is goed ontvangen. Verdere verwerking gebeurt zonder bijkomende bevestigingsstap.';
         } else if (displayState === 'pending') {
-          titleEl.textContent = 'Uw event is ontvangen, maar nog niet bevestigd';
-          subEl.textContent = 'Bevestig uw aanvraag via de e-mail die u ontving. Zonder bevestiging wordt dit event niet gepubliceerd.';
+          titleEl.textContent = isEventKind
+            ? 'Uw event is ontvangen, maar nog niet bevestigd'
+            : ('Uw ' + kindNoun + ' is ontvangen, maar nog niet bevestigd');
+          subEl.textContent = 'Bevestig uw aanvraag via de e-mail die u ontving. Zonder bevestiging wordt dit niet gepubliceerd.';
         } else if (displayState === 'received') {
           titleEl.textContent = 'Uw aanvraag is goed ontvangen';
           subEl.textContent = 'We hebben uw aanvraag ontvangen. Verdere opvolging verloopt via e-mail.';
@@ -1447,20 +1482,30 @@
       }
     }
 
-    // Badge
+    // Badge — use kind-specific labels instead of always "EVENT"
     const badgeEl = document.getElementById('thanksBadge');
     if (badgeEl){
       const parts = [];
+      // Determine badge prefix based on kind
+      const badgePrefix = (() => {
+        const k = kindKey;
+        if (k === 'vacature') return 'VACATURE';
+        if (k === 'trainer') return 'TRAINER';
+        if (k === 'speler') return 'SPELER';
+        if (k === 'profile') return 'PROFIEL';
+        return 'EVENT';
+      })();
+
       if (isEventLikeFlow) {
-        if (displayState === 'error') parts.push('EVENT · NIET VERWERKT');
-        else if (displayState === 'deleted') parts.push('EVENT · VERWIJDERD');
+        if (displayState === 'error') parts.push(badgePrefix + ' · NIET VERWERKT');
+        else if (displayState === 'deleted') parts.push(badgePrefix + ' · VERWIJDERD');
         else if (displayState === 'cancelled') parts.push('BETALING · NIET AFGEROND');
-        else if (displayState === 'paid') parts.push('EVENT · PREMIUM');
-        else if (displayState === 'published') parts.push('EVENT · GEPUBLICEERD');
-        else if (displayState === 'confirmed') parts.push('EVENT · BEVESTIGD');
-        else if (displayState === 'pending') parts.push('EVENT · NOG TE BEVESTIGEN');
-        else if (displayState === 'received') parts.push('EVENT · ONTVANGEN');
-        else parts.push('EVENT');
+        else if (displayState === 'paid') parts.push(badgePrefix + ' · PREMIUM');
+        else if (displayState === 'published') parts.push(badgePrefix + ' · GEPUBLICEERD');
+        else if (displayState === 'confirmed') parts.push(badgePrefix + ' · BEVESTIGD');
+        else if (displayState === 'pending') parts.push(badgePrefix + ' · NOG TE BEVESTIGEN');
+        else if (displayState === 'received') parts.push(badgePrefix + ' · ONTVANGEN');
+        else parts.push(badgePrefix);
       } else if (source) {
         parts.push(source.toUpperCase());
       }
@@ -1471,8 +1516,18 @@
       }
     }
 
-    // Summary values
-    const whatResolved = what || (isEventLikeFlow ? 'Event-aanmelding' : (source ? ('Aanvraag: ' + source) : ''));
+    // Summary values — use kind-appropriate fallback labels
+    const whatFallback = (() => {
+      const k = kindKey;
+      if (k === 'vacature') return 'Vacature';
+      if (k === 'trainer') return 'Trainersprofiel';
+      if (k === 'speler') return 'Spelersprofiel';
+      if (k === 'profile') return 'Profiel';
+      if (isEventLikeFlow) return 'Event-aanmelding';
+      if (source) return 'Aanvraag: ' + source;
+      return '';
+    })();
+    const whatResolved = what || whatFallback;
     setText('orderWhat', whatResolved, 'Aanvraag ontvangen');
     setText('orderId', id, '—');
     setText('orderName', name, name ? name : (email ? '—' : '—'));

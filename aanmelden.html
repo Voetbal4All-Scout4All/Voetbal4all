@@ -1521,7 +1521,7 @@
               package_code: packageCode,
               quantity: qty,
               price_eur: Number(premiumPrice),
-              kind: mode === 'vacature' ? 'vacature' : 'profile',
+              kind: mode,  // 'vacature', 'trainer', or 'speler' — backend maps to profile for webhook
               invoice: {
                 name: invName || '',
                 vat: invVat || '',

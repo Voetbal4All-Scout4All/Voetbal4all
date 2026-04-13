@@ -1426,7 +1426,8 @@
 
       const pinnedIds = new Set(PINNED_PREMIUM_60.map(ev => String(ev.slug || ev.id)));
 
-      OTHER_EVENTS = ALL_EVENTS_SORTED.filter(ev => !pinnedIds.has(String(ev.slug || ev.id)));
+      // Keep premium events in the general list (same approach as events.html)
+      OTHER_EVENTS = ALL_EVENTS_SORTED;
 
       // premium later (>60 days) derived from main list (paid-only)
       const now = new Date();
