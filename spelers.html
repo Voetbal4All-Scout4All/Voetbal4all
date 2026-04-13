@@ -137,12 +137,15 @@
     display:flex;flex-wrap:wrap;gap:6px;
   }
   .v4a-card-actions.event-actions .btn-ghost-sm{
-    flex:1 1 auto;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    flex:1 1 calc(50% - 3px);min-width:0;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
   #player-list .v4-share{display:none !important;}
   @media (max-width:900px){
     #player-list .v4a-card-title{font-size:15px}
     #player-list .v4a-card-body{font-size:12px}
+  }
+  @media (max-width:560px){
+    .v4a-card-actions.event-actions .btn-ghost-sm{flex-basis:100%;}
   }
 
   /* Pagination (optional parity) */
@@ -868,13 +871,13 @@
 
   function playerCardHtml(p, idx, isPremium) {
     const rawId = String(p.id || "").trim();
+    const cardId = String(idx + 1).trim();
     const detailHref = isUuid(rawId) ? `event.html?type=speler&id=${encodeURIComponent(rawId)}` : "";
     const country = String(p.country || "").toUpperCase();
     const region = firstFilled([p.region, p.city]);
     const gender = toGender(p);
-    const links = resolvePlayerLinks(p);
     const titleText = escHtml(playerCardTitleText(p));
-    const titleHref = detailHref || links.external.href || links.cv.href;
+    const titleHref = detailHref;
     const metaLines = playerCardLines(p).map(line => `<div class="v4a-card-meta">${escHtml(line)}</div>`).join("");
     const searchText = escHtml(playerCardSearchText(p));
     const thumbUrl = normalizePlayerThumb(
@@ -883,11 +886,22 @@
     const thumb = thumbUrl
       ? `<div class="thumbbg" style="background-image:url('${escHtml(thumbUrl)}')"></div>`
       : "";
+    const actions = [];
+
+    if (detailHref) {
+      actions.push(`<a class="btn-ghost-sm" href="${escHtml(detailHref)}">Bekijk profiel</a>`);
+    }
+    if (cardId) {
+      actions.push(`<button type="button" class="btn-ghost-sm" data-reply-ad="${escHtml(cardId)}">Contacteer</button>`);
+    }
+    const actionsHtml = actions.length
+      ? `<div class="v4a-card-actions event-actions" style="margin-top:10px;">${actions.join("")}</div>`
+      : "";
 
     // NOTE: we never render emails/phones; backend is sanitized and we only use safe fields.
     return `
-      <article class="v4a-card${isPremium ? " premium-card" : ""}" id="player-ad-${escHtml(String(idx + 1))}"
-        data-ad-id="${escHtml(String(idx + 1))}"
+      <article class="v4a-card${isPremium ? " premium-card" : ""}" id="player-ad-${escHtml(cardId)}"
+        data-ad-id="${escHtml(cardId)}"
         data-country="${escHtml(country)}"
         data-region="${escHtml(region)}"
         data-search="${searchText}"
@@ -901,6 +915,7 @@
                 ${metaLines ? `<div class="player-card-copy">${metaLines}</div>` : ""}
               </div>
             </div>
+            ${actionsHtml}
           </div>
         </div>
       </article>
