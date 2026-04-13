@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
  try {
  const path = (window.location.pathname || '').toLowerCase();
  if (!path.endsWith('/bedankt.html') && !path.endsWith('bedankt.html')) return;
+ const body = document.body;
+ if (body && body.dataset && body.dataset.thanksRender === 'inline') return;
  const qs = new URLSearchParams(window.location.search);
  const source = (qs.get('source') || '').trim();
  const sid = (qs.get('sid') || '').trim();

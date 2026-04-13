@@ -648,7 +648,7 @@
             sid,
             source: 'team-in-de-kijker',
             kind: 'team-in-de-kijker',
-            name: submission.club || submission.subject || '',
+            name: submission.subject || submission.club || '',
             email: submission.email,
             what: submission.subject || 'Team in de kijker',
             subject: submission.subject,
@@ -670,7 +670,7 @@
           u.searchParams.set('kind', 'team-in-de-kijker');
           u.searchParams.set('sid', sid);
           u.searchParams.set('status', 'Ontvangen');
-          u.searchParams.set('name', submission.club || submission.subject || '');
+          u.searchParams.set('name', submission.subject || submission.club || '');
           u.searchParams.set('email', submission.email || '');
           u.searchParams.set('what', submission.subject || 'Team in de kijker');
           window.location.href = u.toString();
