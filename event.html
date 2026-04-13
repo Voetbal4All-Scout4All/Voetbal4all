@@ -1703,7 +1703,8 @@
 
         // Description/Bio
         const rawText = (isEvent ? (item.description || "") : (item.description || item.bio || ""));
-        const safeText = isEvent ? sanitizeEventText(rawText) : String(rawText || "").trim();
+        // Sanitize sensitive data for all content types (events, clubvacatures, profiles, etc.)
+        const safeText = sanitizeEventText(rawText);
 
         // Extras / facts
         const factRows = [];
