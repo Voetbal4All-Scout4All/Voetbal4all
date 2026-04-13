@@ -2343,11 +2343,19 @@
         });
       }
 
-      // Split into 2 cards per type (3 + 3)
-      renderTo(lists.cv1, cvPrem.slice(0, 3), "cv");
-      renderTo(lists.cv2, cvPrem.slice(3, 6), "cv");
-      renderTo(lists.ev1, evPrem.slice(0, 3), "ev");
-      renderTo(lists.ev2, evPrem.slice(3, 6), "ev");
+      // Distribute items across 2 cards per type (balanced split)
+      // With 2 items: 1 per card. With 4: 2 per card. With 1: card 1 only.
+      function splitBalanced(arr) {
+        if (arr.length <= 1) return [arr, []];
+        const mid = Math.ceil(arr.length / 2);
+        return [arr.slice(0, mid), arr.slice(mid)];
+      }
+      const [cv1Items, cv2Items] = splitBalanced(cvPrem);
+      const [ev1Items, ev2Items] = splitBalanced(evPrem);
+      renderTo(lists.cv1, cv1Items, "cv");
+      renderTo(lists.cv2, cv2Items, "cv");
+      renderTo(lists.ev1, ev1Items, "ev");
+      renderTo(lists.ev2, ev2Items, "ev");
 
       // Always show the premium row, even if there is no premium content
       const allCount = cvPrem.length + evPrem.length;
@@ -2454,7 +2462,10 @@
       if (!trainersList || !playersList) return;
 
       // Probeer gangbare endpoints. Als ze nog niet bestaan: niets stukmaken.
-      const tData = await fetchJson(`${API_BASE}/api/staff-profiles?limit=50`);
+      // Primary: trainer-profiles (where publishProfileSubmissionToDb writes for trainers)
+      // Fallback: staff-profiles (legacy table, may still hold older entries)
+      const tData = await fetchJson(`${API_BASE}/api/trainer-profiles?limit=50`)
+                 || await fetchJson(`${API_BASE}/api/staff-profiles?limit=50`);
       const pData = await fetchJson(`${API_BASE}/api/player-profiles?limit=50`);
 
       const tItems = Array.isArray(tData?.items) ? tData.items : (Array.isArray(tData) ? tData : null);
