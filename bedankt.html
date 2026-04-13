@@ -565,13 +565,38 @@
     function loadStoredPayload(sid, sourceValue, kindValue) {
       if (!sid) return null;
       const keys = [];
+      const seen = new Set();
       const sourceKey = String(sourceValue || '').trim().toLowerCase();
       const kindKey = String(kindValue || '').trim().toLowerCase();
-      if (kindKey) keys.push(`v4_thanks_payload_${kindKey}_${sid}`);
-      if (sourceKey && sourceKey !== kindKey) keys.push(`v4_thanks_payload_${sourceKey}_${sid}`);
-      keys.push(`v4_thanks_payload_${sid}`);
+
+      const pushKey = (key) => {
+        const value = String(key || '').trim();
+        if (!value || seen.has(value)) return;
+        seen.add(value);
+        keys.push(value);
+      };
+
+      if (kindKey) pushKey(`v4_thanks_payload_${kindKey}_${sid}`);
+      if (sourceKey && sourceKey !== kindKey) pushKey(`v4_thanks_payload_${sourceKey}_${sid}`);
+
+      if (!kindKey && !sourceKey) {
+        [
+          'vacature',
+          'clubvacature',
+          'trainer',
+          'speler',
+          'team-in-de-kijker',
+          'supportersclub',
+          'event'
+        ].forEach((typeKey) => {
+          pushKey(`v4_thanks_payload_${typeKey}_${sid}`);
+        });
+      }
+
+      pushKey(`v4_thanks_payload_${sid}`);
+
       if (kindKey === 'event' || sourceKey === 'event' || (!kindKey && !sourceKey)) {
-        keys.push(`v4_event_payload_${sid}`);
+        pushKey(`v4_event_payload_${sid}`);
       }
 
       for (const key of keys) {
@@ -613,12 +638,37 @@
         const value = String(match[2] || '').trim();
         if (!value || value === '—') continue;
 
-        if (!result.name && ['naam', 'club/organisatie', 'club / organisatie', 'organisatie/club', 'organisatie / club', 'naam supportersclub', 'club', 'organisatie'].includes(label)) {
+        if (!result.name && [
+          'naam',
+          'club/organisatie',
+          'club / organisatie',
+          'organisatie/club',
+          'organisatie / club',
+          'organisatie/clubnaam',
+          'organisatie / clubnaam',
+          'organisator',
+          'naam organisator',
+          'naam supportersclub',
+          'club',
+          'organisatie',
+          'factuur op naam van'
+        ].includes(label)) {
           result.name = value;
           continue;
         }
 
-        if (!result.email && ['e-mail', 'email', 'contact e-mail', 'contact email', 'e-mail organisator'].includes(label)) {
+        if (!result.email && [
+          'e-mail',
+          'email',
+          'e-mailadres',
+          'emailadres',
+          'contact e-mail',
+          'contact email',
+          'contactemail',
+          'e-mail organisator',
+          'facturatie e-mail',
+          'factuur e-mail'
+        ].includes(label)) {
           result.email = value;
         }
       }
@@ -994,28 +1044,45 @@
       // We may still want to fetch the event even if the premium window exists,
       // because we use the event payload to render the submitted fields.
 
-      // Prefer the SID from the flow. This can be either:
-      // - forms external_id (UUID)
-      // - a numeric event id (some success redirects pass sid=<eventId>)
-      // - a Stripe session id (session_id)
-      const extIdRaw = String((flow && flow.sid) || '').trim();
+      const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      const collectUniqueValues = (values) => {
+        const out = [];
+        const seen = new Set();
+        for (const value of values) {
+          const text = String(value || '').trim();
+          if (!text || seen.has(text)) continue;
+          seen.add(text);
+          out.push(text);
+        }
+        return out;
+      };
 
-      const eventIdRaw = getParamAny(['eventId', 'event_id', 'event', 'eid', 'id']);
-      let eventId = String(eventIdRaw || '').trim();
+      // Confirm links from e-mail are not stable:
+      // they may carry sid, submissionId, or a UUID inside the generic id param.
+      const extIds = collectUniqueValues([
+        flow && flow.sid,
+        flow && flow.submissionId,
+        getParamAny(['submissionId', 'submission_id']),
+        flow && flow.eventId,
+        qs.get('id'),
+        storageLookupId
+      ]).filter((value) => uuidPattern.test(value));
 
-      // If sid is numeric and eventId is missing, treat sid as the event id.
-      if (!eventId && extIdRaw && /^\d+$/.test(extIdRaw)) {
-        eventId = extIdRaw;
-      }
-
-      // Only treat extId as an external UUID if it looks like a UUID.
-      const extIdIsUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(extIdRaw);
-      const extId = extIdIsUuid ? extIdRaw : '';
+      // Only trust numeric event ids when the URL/storage already hints this is an event flow.
+      const eventHinted = hintedFlowType === 'event';
+      const eventIds = eventHinted
+        ? collectUniqueValues([
+            getParamAny(['eventId', 'event_id', 'event', 'eid']),
+            flow && flow.eventId,
+            flow && flow.sid,
+            storageLookupId
+          ]).filter((value) => /^\d+$/.test(value))
+        : [];
 
       if (!shouldAttemptEventLookup) return;
 
       // Nothing to query with.
-      if (!extId && !eventId) return;
+      if (!extIds.length && !eventIds.length) return;
 
       // Backend base (prod). Keep it explicit to avoid relying on relative origins.
       const BACKEND_BASE = 'https://voetbal4all-backend-database.onrender.com';
@@ -1025,7 +1092,7 @@
       const candidates = [];
 
       // 1) External-id lookup endpoints (UUID)
-      if (extId) {
+      for (const extId of extIds) {
         candidates.push(`${BACKEND_BASE}/api/events/by-external-id/${encodeURIComponent(extId)}?nocache=1`);
         candidates.push(`${BACKEND_BASE}/api/events/by-external/${encodeURIComponent(extId)}?nocache=1`);
         candidates.push(`${BACKEND_BASE}/api/events/lookup?external_id=${encodeURIComponent(extId)}&nocache=1`);
@@ -1035,12 +1102,8 @@
       }
 
       // 2) Numeric ID endpoint
-      if (eventId && /^\d+$/.test(eventId)) {
+      for (const eventId of eventIds) {
         candidates.push(`${BACKEND_BASE}/api/events/${encodeURIComponent(eventId)}?nocache=1`);
-      }
-
-      // 2b) Some deployments expose event by id via query
-      if (eventId && /^\d+$/.test(eventId)) {
         candidates.push(`${BACKEND_BASE}/api/events?id=${encodeURIComponent(eventId)}&limit=1&nocache=1`);
       }
 
@@ -1054,18 +1117,19 @@
         if (!item) return false;
 
         // If we have a numeric ID, accept only that ID
-        if (eventId && /^\d+$/.test(eventId)) {
-          if (String(item.id || '').trim() === String(eventId).trim()) return true;
+        if (eventIds.length) {
+          const itemId = String(item.id || '').trim();
+          if (itemId && eventIds.includes(itemId)) return true;
         }
 
         // If we have an external UUID (forms submission SID), accept only matching external_id
-        if (extId) {
+        if (extIds.length) {
           const ext = String(item.external_id || item.externalId || item.sid || '').trim();
-          if (ext && ext === extId) return true;
+          if (ext && extIds.includes(ext)) return true;
 
           // Some payloads may encode it in source (rare, but safe)
           const src = String(item.source || '').trim();
-          if (src && src.includes(extId)) return true;
+          if (src && extIds.some((extId) => src.includes(extId))) return true;
         }
 
         return false;
