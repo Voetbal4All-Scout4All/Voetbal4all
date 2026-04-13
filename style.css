@@ -632,7 +632,6 @@ body .sidebar-premium-actions .btn-ghost-sm{
 }
 
 body .sidebar-premium-card--cta{
-  border-style:dashed !important;
   text-align:center;
   background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02));
 }
@@ -643,7 +642,6 @@ body .sidebar-premium-card--cta .sidebar-premium-actions{
 
 body .v4a-card[data-placeholder="1"],
 body .premium-card--placeholder{
-  border-style:dashed !important;
   border-color:rgba(255,255,255,0.16) !important;
   background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02)) !important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 8px 20px rgba(0,0,0,0.2) !important;
