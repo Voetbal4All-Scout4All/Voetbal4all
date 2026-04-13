@@ -128,7 +128,7 @@
     display:flex;flex-wrap:wrap;gap:6px;
   }
   .v4a-card-actions.event-actions .btn-ghost-sm{
-    flex:1 1 0%;min-width:0;text-align:center;white-space:nowrap;
+    flex:1 1 auto;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   }
   #trainer-list .v4-share{display:none !important;}
   @media (max-width:900px){
@@ -461,100 +461,9 @@
                   </div>
                 </section>
 
-                <!-- TRAINERS GRID: 6 placeholders -->
+                <!-- TRAINERS GRID -->
                 <div id="trainer-list" class="events-grid-2">
-                  <article class="v4a-card" id="trainer-ad-1" data-placeholder="1" data-gender="BOTH">
-                    <div class="event-row">
-                      <div class="event-thumbbox" aria-label="Thumbnail"></div>
-                      <div class="event-main">
-                        <div class="v4a-card-header" style="margin:0;"><div>
-                          <div class="v4a-card-title">UEFA B · Jeugd</div>
-                          <div class="v4a-card-meta">🇧🇪 België · Kempen</div>
-                          <div class="v4a-card-meta">Beschikbaar: onmiddellijk</div>
-                        </div></div>
-                        <div class="v4a-card-body" style="margin-top:8px;">Ervaring met U13–U17. Sterk in structuur, communicatie en ontwikkeling.</div>
-                        <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                          <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                          <button type="button" class="btn-ghost-sm" data-share-trainer="1">Delen</button>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="v4a-card" id="trainer-ad-2" data-placeholder="1" data-gender="BOTH">
-                    <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
-                      <div class="v4a-card-header" style="margin:0;"><div>
-                        <div class="v4a-card-title">UEFA A · Senior</div>
-                        <div class="v4a-card-meta">🇳🇱 Nederland · Eindhoven</div>
-                        <div class="v4a-card-meta">Beschikbaar: zomer 2026</div>
-                      </div></div>
-                      <div class="v4a-card-body" style="margin-top:8px;">Tactisch sterk, focus op prestatiecultuur en teamcohesie.</div>
-                      <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                        <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <button type="button" class="btn-ghost-sm" data-share-trainer="2">Delen</button>
-                      </div>
-                    </div></div>
-                  </article>
-
-                  <article class="v4a-card" id="trainer-ad-3" data-placeholder="1" data-gender="BOTH">
-                    <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
-                      <div class="v4a-card-header" style="margin:0;"><div>
-                        <div class="v4a-card-title">T2 / Assistent · U19</div>
-                        <div class="v4a-card-meta">🇧🇪 België · Antwerpen</div>
-                        <div class="v4a-card-meta">Beschikbaar: bespreekbaar</div>
-                      </div></div>
-                      <div class="v4a-card-body" style="margin-top:8px;">Assistent rol, videoanalyse, voorbereiding en individuele begeleiding.</div>
-                      <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                        <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <button type="button" class="btn-ghost-sm" data-share-trainer="3">Delen</button>
-                      </div>
-                    </div></div>
-                  </article>
-
-                  <article class="v4a-card" id="trainer-ad-4" data-placeholder="1" data-gender="BOTH">
-                    <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
-                      <div class="v4a-card-header" style="margin:0;"><div>
-                        <div class="v4a-card-title">Keepertrainer</div>
-                        <div class="v4a-card-meta">🇳🇱 Nederland · Limburg</div>
-                        <div class="v4a-card-meta">Beschikbaar: onmiddellijk</div>
-                      </div></div>
-                      <div class="v4a-card-body" style="margin-top:8px;">Keepersopleiding, opbouw trainingsplannen en evaluatie.</div>
-                      <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                        <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <button type="button" class="btn-ghost-sm" data-share-trainer="4">Delen</button>
-                      </div>
-                    </div></div>
-                  </article>
-
-                  <article class="v4a-card" id="trainer-ad-5" data-placeholder="1" data-gender="BOTH">
-                    <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
-                      <div class="v4a-card-header" style="margin:0;"><div>
-                        <div class="v4a-card-title">Jeugdcoördinator</div>
-                        <div class="v4a-card-meta">🇧🇪 België · Gent</div>
-                        <div class="v4a-card-meta">Beschikbaar: 2026</div>
-                      </div></div>
-                      <div class="v4a-card-body" style="margin-top:8px;">Opleidingsvisie, coach-the-coach en planning bovenbouw.</div>
-                      <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                        <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <button type="button" class="btn-ghost-sm" data-share-trainer="5">Delen</button>
-                      </div>
-                    </div></div>
-                  </article>
-
-                  <article class="v4a-card" id="trainer-ad-6" data-placeholder="1" data-gender="BOTH">
-                    <div class="event-row"><div class="event-thumbbox" aria-label="Thumbnail"></div><div class="event-main">
-                      <div class="v4a-card-header" style="margin:0;"><div>
-                        <div class="v4a-card-title">Jeugd · 8v8 / 11v11</div>
-                        <div class="v4a-card-meta">🇳🇱 Nederland · Utrecht</div>
-                        <div class="v4a-card-meta">Beschikbaar: bespreekbaar</div>
-                      </div></div>
-                      <div class="v4a-card-body" style="margin-top:8px;">Focus op techniek, spelintelligentie en plezier in ontwikkelen.</div>
-                      <div class="v4a-card-actions event-actions" style="margin-top:10px;">
-                        <a class="btn-ghost-sm" href="aanmelden.html">Reageer via Voetbal4All</a>
-                        <button type="button" class="btn-ghost-sm" data-share-trainer="6">Delen</button>
-                      </div>
-                    </div></div>
-                  </article>
+                  <!-- gevuld via backend -->
                 </div>
 
                 <div id="trainer-pagination" class="events-pagination" aria-label="Paginatie trainers"></div>
@@ -923,9 +832,10 @@
       return true;
     } catch (e) {
       console.warn("[trainers] backend load failed:", e?.message || e);
+      listEl.innerHTML = "";
       if (statusEl) {
         statusEl.style.display = "";
-        statusEl.textContent = "Kon trainers niet laden. We tonen tijdelijk placeholders.";
+        statusEl.textContent = "Kon trainersprofielen niet laden. Probeer het later opnieuw.";
       }
       return false;
     }
