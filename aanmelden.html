@@ -1602,7 +1602,17 @@
           }
 
           // Non-premium
-          window.location.href = `${THANKYOU_URL}?sid=${encodeURIComponent(sid)}&source=aanmelden&kind=${encodeURIComponent(mode)}`;
+          {
+            const u = new URL(THANKYOU_URL);
+            u.searchParams.set('sid', sid);
+            u.searchParams.set('source', 'aanmelden');
+            u.searchParams.set('kind', mode);
+            u.searchParams.set('status', 'Ontvangen');
+            u.searchParams.set('name', name || '');
+            u.searchParams.set('email', email || '');
+            u.searchParams.set('what', mode === 'vacature' ? (v('jobTitle') || 'Vacature') : (v('profileRole') || 'Profiel'));
+            window.location.href = u.toString();
+          }
           return;
         }
 

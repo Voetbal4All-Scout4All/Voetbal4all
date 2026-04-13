@@ -665,8 +665,17 @@
         setStatus('Aanvraag ontvangen. Controleer je e-mail om te bevestigen.', false);
 
         // Redirect to bedankt page (consistent UX)
-        const url = `bedankt.html?source=team-in-de-kijker&sid=${encodeURIComponent(sid)}`;
-        window.location.href = url;
+        {
+          const u = new URL('bedankt.html', window.location.href);
+          u.searchParams.set('source', 'team-in-de-kijker');
+          u.searchParams.set('kind', 'team-in-de-kijker');
+          u.searchParams.set('sid', sid);
+          u.searchParams.set('status', 'Ontvangen');
+          u.searchParams.set('name', submittedClub || submittedSubject || '');
+          u.searchParams.set('email', submittedEmail || '');
+          u.searchParams.set('what', submittedSubject || 'Team in de kijker');
+          window.location.href = u.toString();
+        }
       } catch (err) {
         setStatus('Er ging iets mis bij het verzenden. Probeer opnieuw.', true);
       }

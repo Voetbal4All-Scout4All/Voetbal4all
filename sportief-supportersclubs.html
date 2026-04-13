@@ -751,7 +751,17 @@
           sessionStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
           localStorage.setItem(thanksKey, JSON.stringify(thanksPayload));
         } catch (_) {}
-        window.location.href = `${THANKYOU}?source=supportersclub&sid=${encodeURIComponent(sid)}`;
+        {
+          const u = new URL(THANKYOU, window.location.href);
+          u.searchParams.set('source', 'supportersclub');
+          u.searchParams.set('kind', 'supportersclub');
+          u.searchParams.set('sid', sid);
+          u.searchParams.set('status', 'Ontvangen');
+          u.searchParams.set('name', name || '');
+          u.searchParams.set('email', email || '');
+          u.searchParams.set('what', name || 'Supportersclub');
+          window.location.href = u.toString();
+        }
       } catch (err) {
         setStatus("Er is een fout opgetreden. Probeer opnieuw.", true);
       }
