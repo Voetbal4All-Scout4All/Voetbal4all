@@ -1,27 +1,16 @@
 {
-  "generatedAt": "2026-04-14T22:58:03.081Z",
+  "generatedAt": "2026-04-14T23:53:20.000Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Champions League recap: PSG, Atlético Madrid off to semifinals",
-      "link": "https://www.espn.com/soccer/story/_/id/48475638/champions-league-live-updates-atleti-barca-liverpool-psg",
-      "summary": "Paris Saint-Germain and Atlético Madrid have advanced to the semifinals, following a day of UEFA Champions League quarterfinals action.",
-      "publishedAt": "2026-04-14T23:54:00.000Z"
-    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "ES",
       "flag": "🌍",
-      "title": "Barça out of UCL after rally vs. Atlético falls short",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862892",
-      "summary": "Atlético Madrid held on after an early charge by Barcelona to reach the Champions League semifinals for the first time in nearly a decade on Tuesday.",
-      "publishedAt": "2026-04-14T23:52:04.000Z"
+      "title": "Despite Barça's strong effort, Atléti end their Champions League hopes",
+      "link": "https://www.espn.com/soccer/story/_/id/48488181/despite-lamine-yamals-form-atletico-wash-away-barcelona-champions-league",
+      "summary": "Barcelona looked to stage a huge comeback, but Diego Simeone's Atlético Madrid did enough to prevent the Blaugrana from advancing in the Champions League.",
+      "publishedAt": "2026-04-15T00:30:41.000Z"
     },
     {
       "type": "rss",
@@ -29,21 +18,10 @@
       "sourceSlug": "espn-soccer",
       "country": "FR",
       "flag": "🌍",
-      "title": "Dembélé finishes Liverpool to put PSG in semis",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862889",
-      "summary": "Ousmane Dembélé scored two late goals as Paris Saint-Germain extinguished Liverpool's hopes of a comeback to march into the Champions League semifinals 4-0 on aggregate.",
-      "publishedAt": "2026-04-14T23:52:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Mascherano quits as Inter Miami head coach",
-      "link": "https://www.espn.com/soccer/story/_/id/48485147/javier-mascherano-inter-miami-coach-quits-mls",
-      "summary": "Javier Mascherano has quit as Inter Miami head coach, just four months after guiding the club to its first MLS Cup title.",
-      "publishedAt": "2026-04-14T23:52:04.000Z"
+      "title": "Liverpool have star power, but PSG show it takes more than talent to truly sparkle",
+      "link": "https://www.espn.com/soccer/story/_/id/48488176/liverpool-star-power-match-psg-champions-league",
+      "summary": "Liverpool's UCL journey ended with a whimper Tuesday at the hands of a clinical Paris Saint-Germain.",
+      "publishedAt": "2026-04-15T00:30:41.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +32,51 @@
       "title": "Liverpool fear for 'very-bad' looking Ekitike injury",
       "link": "https://www.espn.com/soccer/story/_/id/48486502/hugo-ekitike-liverpool-psg-injury",
       "summary": "Hugo Ekitike has handed a major injury worry to Liverpool and France after he was forced off in the first half of his club's Champions League quarterfinal loss to Paris Saint-Germain.",
-      "publishedAt": "2026-04-14T23:52:04.000Z"
+      "publishedAt": "2026-04-15T00:28:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Fuming Raphinha: Barcelona 'robbed' in UCL exit",
+      "link": "https://www.espn.com/soccer/story/_/id/48488549/raphinha-blasts-refereeing-barcelona-champions-league-robbed",
+      "summary": "Sidelined Barcelona star Raphinha hit out at the officiating following his team Champions League elimination, claiming refereeing errors cost them the tie against Atlético Madrid.",
+      "publishedAt": "2026-04-15T00:28:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "PSG eye rare UCL repeat after ousting Liverpool",
+      "link": "https://www.espn.com/soccer/story/_/id/48488392/psg-eye-champions-league-repeat-liverpool-win",
+      "summary": "Paris Saint-Germain 's grip on the Champions League trophy remains strong after dumping out six-time winners Liverpool.",
+      "publishedAt": "2026-04-15T00:28:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Slot's Isak gamble backfires as Liverpool trophy hopes end",
+      "link": "https://www.bbc.com/sport/football/articles/cvgee4k2en2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Arne Slot's gamble to start Alexander Isak against PSG backfires with his own future also in the balance after a Champions League exit.",
+      "publishedAt": "2026-04-14T23:16:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Shelvey to quit playing and manage UAE minnows",
+      "link": "https://www.bbc.com/sport/football/articles/clyjj2pjdypo?at_medium=RSS&at_campaign=rss",
+      "summary": "Former England midfielder Jonjo Shelvey retires from playing and takes over as manager of UAE third tier side Arabian Falcons FC.",
+      "publishedAt": "2026-04-14T23:01:42.000Z"
     },
     {
       "type": "rss",
@@ -124,17 +146,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Wales must take care of own business - Wilkinson",
-      "link": "https://www.bbc.com/sport/football/articles/cedee5evy93o?at_medium=RSS&at_campaign=rss",
-      "summary": "Rhian Wilkinson says Wales must \"take care of our own business\" before focusing on what looks set to be a key Women's World Cup qualifier against Czech Republic in June.",
-      "publishedAt": "2026-04-14T21:55:12.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
@@ -163,7 +174,7 @@
       "flag": "🌍",
       "title": "Atlético hold off Barcelona comeback after Lookman strike and García red",
       "link": "https://www.theguardian.com/football/2026/apr/14/atletico-madrid-barcelona-champions-league-match-report",
-      "summary": "Defeat never tasted so good. At the end of a battle in which both teams had fought and both had bled too, a huge banner was unfurled at the south end of the Metropolitano and Atlético Madrid’s anthem belted out. “We give everything to win the cup,” it said, and, boy, had they. For the first time, Diego Simeone had seen his team lose a Champions League knockout game at home, but it didn’t matter. As that final whistle went, there was delirium, delight. They had waited a long time for this. Ten years and one day later, Atlético Madrid eliminated Barcelona to reach the semi-finals of the Champions League again. Continue reading...",
+      "summary": "Defeat never tasted so good. At the end of a battle in which both teams had fought and both had bled, in which they had suffered but above all played, a huge banner was unfurled at the Metropolitano. “We give everything to win the cup,” it said, and, boy, had they. For the first time, Diego Simeone had seen his team lose a Champions League knockout game at home, but it didn’t matter: instead there was delirium, the club’s anthem belted out louder than ever before. “Buah! You don’t know how lovely it is to be among the four best teams in Europe,” the coach said. They had waited a long time for this. Ten years and one day later, Atlético Madrid eliminated Barcelona to reach the semi-final of the Champions League again. “This is the third time we’ve done this – against Messi’s Barcelona, against Lamine’s Barcelona – and it isn’t easy,” Simeone said; the other two times, in 2014 and 2016, they reached the final to which they are so desperate to return and exorcise the ghosts from Lisbon and Milan. “I’ve been here 14 years and never stop feeling emotional,” Simeone said. “I told the players: thank you, thank you, thank you. For the things we do, the faith we have.” Continue reading...",
       "publishedAt": "2026-04-14T21:25:19.000Z"
     },
     {
@@ -209,17 +220,6 @@
       "link": "https://www.theguardian.com/football/2026/apr/14/west-brom-could-be-hit-with-points-deduction-and-relegation-after-season-has-ended",
       "summary": "EFL in race against time to hear charges Club alleged to have breached P&S rules West Brom could be given a points deduction that relegates them from the Championship after the season has finished as the club contest charges of breaching the English Football League’s profit and sustainability (P&S) rules. With the Championship league season concluding on 2 May the EFL is running out of time to hear the charges against West Brom, which relate to an alleged breach of the £39m loss limit in the three-year period culminating in the 2024-25 season. EFL sanctioning guidelines state that any punishment for a P&S breach must be applied in the campaign after it took place, which in West Brom’s case means this season, but the rulebook does not give a definitive cutoff point so it is unclear when the season ends. Continue reading...",
       "publishedAt": "2026-04-14T19:03:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Will Iraola's summer exit speed up managerial merry-go-round?",
-      "link": "https://www.bbc.com/sport/football/articles/ckgeerk761mo?at_medium=RSS&at_campaign=rss",
-      "summary": "Andoni Iraola's decision to leave Bournemouth could make it a frantic summer in the Premier League's managerial market, says chief football writer Phil McNulty.",
-      "publishedAt": "2026-04-14T13:05:18.000Z"
     },
     {
       "type": "rss",
