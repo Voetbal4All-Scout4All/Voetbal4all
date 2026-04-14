@@ -1,93 +1,192 @@
 {
-  "generatedAt": "2026-04-14T05:28:03.809Z",
+  "generatedAt": "2026-04-14T11:07:12.942Z",
   "items": [
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Jelle Vossen, stop ou encore ? Il évoque la fin de sa carrière",
-      "link": "https://www.walfoot.be/news/2026-04-14/jelle-vossen-stop-ou-encore--il-evoque-la-fin-de-sa-carriere",
-      "summary": "Jelle Vossen a vécu une saison difficile. Malgré les problèmes sportifs à Zulte Waregem, il a très peu joué. Cela pousse le buteur vétéran - 37 ans désormais - à réfléchir à son avenir.",
-      "publishedAt": "2026-04-14T05:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Vanhaezebrouck geeft Ivan Leko gelijk, maar... \"De afrekening die volgde, vond ik raar\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/vanhaezebrouck-geeft-ivan-leko-gelijk-maar-de-afrekening-die-volgde-vond-ik-raar",
-      "summary": "Analist Hein Vanhaezebrouck heeft na de tweede speeldag van de play-offs zijn analyse gegeven, met in het bijzonder aandacht voor de uitzeges van Club Brugge en Union. Op de vraag welke overwinning het meest indruk maakte, was hij duidelijk: &quot;Die van Club Brugge.&quot;",
-      "publishedAt": "2026-04-14T05:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Schreuder deelt geheim van NEC-succes: 'Je moet de oudere spelers mee krijgen'",
-      "link": "https://www.vi.nl/nieuws/schreuder-deelt-geheim-van-nec-succes-je-moet-de-oudere-spelers-mee-krijgen",
-      "summary": "Het is april en NEC doet volop mee voor een direct Champions League-ticket (plek twee) en staat zondag in de finale van de Eurojackpot KNVB Beker. Het succes valt niet los te zien van trainer Dick Schreuder en zijn tactiek. Hoe heeft de 54-jarige Barnevelder zijn formatie er zo snel en goed ingekregen in Nijmegen?",
-      "publishedAt": "2026-04-14T05:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Stoppen of niet? Jelle Vossen spreekt over het einde van zijn carrière",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/stoppen-of-niet-jelle-vossen-spreekt-over-het-einde-van-zijn-carriere",
-      "summary": "Voor Jelle Vossen is het een moeilijk seizoen. Ondanks de sportieve problemen bij Zulte Waregem kwam hij amper in het stuk voor. Dat doet de goalgetter - 37 ondertussen - nadenken over zijn toekomst.",
-      "publishedAt": "2026-04-14T05:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "PSV-directeur Marcel Brands spreekt: 'Wij zijn de meest stabiele'",
-      "link": "https://www.vi.nl/pro/psv-directeur-marcel-brands-spreekt-wij-zijn-de-meest-stabiele",
-      "summary": "Twee dagen feestvieren en dan weer de blik vooruit: het is al drie kampioenschappen op rij het credo van het directieteam van PSV onder leiding van Marcel Brands. De algemeen directeur vertelt over de topdrie, zijn directieteam, het Philips Stadion, begroten en handelen op Champions League-niveau en de toekomst.",
-      "publishedAt": "2026-04-14T05:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Le coach de l'Ajax mécontent de Dolberg ? \"Il en est tout simplement très insatisfait\"",
-      "link": "https://www.walfoot.be/news/2026-04-14/le-coach-de-lajax-mecontent-de-dolberg--il-en-est-tout-simplement-tres-insatisfait",
-      "summary": "Revenu à l'Ajax Amsterdam par la grande porte l'été passé, Kasper Dolberg vit une saison très compliquée. Le coach ajacide, l'ancien d'OHL Oscar Garcia, n'en serait pas satisfait.",
-      "publishedAt": "2026-04-14T05:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le fils d'un ancien joueur du Club de Bruges et de Lokeren voit grand après ses débuts",
-      "link": "https://www.walfoot.be/news/2026-04-14/le-fils-dun-ancien-joueur-du-club-de-bruges-et-de-lokeren-voit-grand-apres-ses-debuts",
-      "summary": "Dender semble pratiquement condamné aux barrages après sa défaite face à Zulte Waregem. Pour un joueur, c'était en revanche un match inoubliable.",
-      "publishedAt": "2026-04-14T04:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Ploegmaat van Tielemans en Onana ontketent transferoorlog tussen Chelsea en Man United'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/ploegmaat-van-tielemans-en-onana-ontketent-transferoorlog-tussen-chelsea-en-man-united",
-      "summary": "Aston Villa is nog altijd in de running voor de Champions League-tickets in de Premier League. Chelsea hoopt nu een smaakmaker weg te halen uit Birmingham, maar krijgt daarbij stevige concurrentie.",
-      "publishedAt": "2026-04-14T04:30:00.000Z"
+      "title": "Neville's Overlap buys Goldbridge's YouTube channels",
+      "link": "https://www.bbc.com/sport/football/articles/c62jj766py3o?at_medium=RSS&at_campaign=rss",
+      "summary": "Gary Neville's The Overlap buys Manchester United influencer Mark Goldbridge's YouTube channels.",
+      "publishedAt": "2026-04-14T10:43:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Justin Heekeren a presté au meilleur moment : maintenant, Coosemans sait qu'il est \"dispensable\"",
+      "link": "https://www.walfoot.be/news/2026-04-14/justin-heekeren-a-preste-au-meilleur-moment--maintenant-coosemans-sait-quil-est-dispensable",
+      "summary": "Voir votre doublure totalement répondre aux attentes alors que vous êtes en pleines négociations pour un nouveau contrat : voilà qui place Colin Coosemans dans une position un peu moins confortable.",
+      "publishedAt": "2026-04-14T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Dilemma voor Anderlecht: verkopen voor tien miljoen euro (of meer), of eindelijk een kans geven?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/dilemma-voor-anderlecht-verkopen-voor-tien-miljoen-euro-of-meer-of-eindelijk-een-kans-geven",
+      "summary": "Het wordt een drukke transferzomer op Neerpede, zoveel is duidelijk. Om het budget rond te krijgen zullen een paar toppers mogelijk moeten verkocht worden. Daarbij wordt gedacht aan Nathan De Cat, maar ook aan Keisuke Goto.",
+      "publishedAt": "2026-04-14T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "KNVB Beker Quiz: alle doelpuntenmakers in de finale van deze eeuw",
+      "link": "https://www.vi.nl/nieuws/knvb-beker-quiz-alle-doelpuntenmakers-in-de-finale-van-deze-eeuw",
+      "summary": "AZ en NEC leven deze week vol smart toe naar de bekerfinale van aankomende zondag. In aanloop naar de eindstrijd in De Kuip pakt VI traditiegetrouw uit met een quiz.",
+      "publishedAt": "2026-04-14T10:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 \"Reprenez ces p... de joueurs\" : le discours cinglant d'Ivan Leko à la mi-temps de STVV - Bruges",
+      "link": "https://www.walfoot.be/news/2026-04-14/-reprenez-ces-p-de-joueurs--le-discours-cinglant-divan-leko-a-la-mi-temps-de-stvv---bruges",
+      "summary": "Ivan Leko n'y est pas allé de main morte à la mi-temps de la rencontre entre Saint-Trond et le Club de Bruges. L'entraîneur croate a été l'auteur d'un discours cinglant, qui a visiblement changé la donne au Stayen.",
+      "publishedAt": "2026-04-14T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Door Anderlecht uitgeleende topaankoop heeft al geen zin meer om terug te keren",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/door-anderlecht-uitgeleende-topaankoop-heeft-al-geen-zin-meer-om-terug-te-keren",
+      "summary": "Weet u nog dat Anderlecht vorige zomer hemel en aarde bewoog om Cedric Hatenboer los te weken bij Excelsior? Wel, de middenvelder die dit seizoen geen enkele kans kreeg bij paars-wit heeft geen zin om dat nog eens mee te maken.",
+      "publishedAt": "2026-04-14T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Robben lyrisch over Olise: 'Wat hij doet is gewoon briljant'",
+      "link": "https://www.vi.nl/nieuws/robben-lyrisch-over-olise-wat-hij-doet-is-gewoon-briljant",
+      "summary": "Arjen Robben heeft in aanloop naar het thuisduel van Bayern München met Real Madrid in de Champions League zijn bewondering uitgesproken voor Michael Olise. Die volgens de Nederlander een belangrijke rol kan spelen in de return.",
+      "publishedAt": "2026-04-14T10:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Un penalty justifié pour Bruges à Saint-Trond ? L'avis tranché du patron des arbitres, Jonathan Lardot",
+      "link": "https://www.walfoot.be/news/2026-04-14/-un-penalty-justifie-pour-bruges-a-saint-trond--lavis-tranche-du-patron-des-arbitres-jonathan-lardot",
+      "summary": "C'est sur un penalty de Christos Tzolis, provoqué par une tête de Hugo Vetlesen et une déviation du bras de Robert-Jan Vanwesemael, que le Club de Bruges s'est imposé à Saint-Trond. Un penalty justifié, selon le patron des arbitres Jonathan Lardot.",
+      "publishedAt": "2026-04-14T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Oranje-bondscoach Veurink waarschuwt: 'Het gaat een keer de verkeerde kant op'",
+      "link": "https://www.vi.nl/pro/oranje-bondscoach-veurink-waarschuwt-het-gaat-een-keer-de-verkeerde-kant-op",
+      "summary": "De Oranje Leeuwinnen werken deze week twee WK-kwalificatiewedstrijden af tegen Frankrijk en moeten het stellen zonder liefst zeven vaste, ervaren krachten. Wat rest is een op voorhand kansloze missie tegen de groepsfavoriet. Bondscoach Arjan Veurink ondervindt aan den lijve dat bondscoach zijn niet altijd de leukste baan in het trainersvak is.",
+      "publishedAt": "2026-04-14T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Topclub wil deal rond Stankovic gebruiken om nog tweede dossier bij Club Brugge af te werken",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/topclub-wil-deal-rond-stankovic-gebruiken-om-nog-tweede-dossier-bij-club-brugge-af-te-werken",
+      "summary": "Inter kijkt nadrukkelijk naar Club Brugge in zijn zoektocht naar defensieve versterking. Daarbij zou de mogelijke deal rond Aleksandar Stankovic een sleutelrol kunnen spelen om ook een tweede dossier los te weken.",
+      "publishedAt": "2026-04-14T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "David Squires on … the TikTok of the clock as Arsenal’s title charge falters",
+      "link": "https://www.theguardian.com/football/picture/2026/apr/14/david-squires-on-the-tiktok-of-the-clock-as-arsenal-title-charge-falters",
+      "summary": "Our cartoonist on the Gunners’ latest wobble and who could be brought in to get final push back on track Buy a cartoon here | His favourites from 2025 And his latest book, Chaos in the Box: get it now Continue reading...",
+      "publishedAt": "2026-04-14T09:52:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Wiegman prijst pionier Eta na historische aanstelling door Union Berlin",
+      "link": "https://www.vi.nl/nieuws/wiegman-prijst-pionier-eta-na-historische-aanstelling-door-union-berlin",
+      "summary": "In binnen- en buitenland is positief gereageerd op de aanstelling van Marie-Louise Eta als hoofdtrainer van Union Berlin . De Duitse schreef daarmee geschiedenis als eerste vrouwelijke coach in een van de vijf grote Europese competities en zette een nieuwe stap in de ontwikkeling van vrouwen in het mannenvoetbal.",
+      "publishedAt": "2026-04-14T09:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Dilemme à Anderlecht : Taravel sait qui doit remplacer Nathan De Cat, mais la situation complique les choses",
+      "link": "https://www.walfoot.be/news/2026-04-14/-dilemme-a-anderlecht--taravel-sait-qui-doit-remplacer-nathan-de-cat-mais-la-situation-complique-les-choses",
+      "summary": "Nathan De Cat est indisponible pour au moins un mois. Un très mauvais timing pour Anderlecht, qui va devoir se passer du milieu de terrain de 17 ans durant une partie des Champions Play-Offs. Pour le staff technique, le nom de son remplaçant reste un dilemme.",
+      "publishedAt": "2026-04-14T09:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Dilemma bij Anderlecht: Taravel weet wie De Cat moet vervangen, maar... situatie maakt het ingewikkeld",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/dilemma-bij-anderlecht-taravel-weet-wie-de-cat-moet-vervangen-maar-situatie-maakt-het-ingewikkeld",
+      "summary": "Nathan De Cat is minstens een maand buiten strijd. Een heel slecht moment voor Anderlecht om de 17-jarige middenvelder te moeten missen. Er is intussen al veel geschreven over wie hem zou moeten vervangen, maar voor de technische staf wordt het nog een dilemma.",
+      "publishedAt": "2026-04-14T09:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Violent conduct voor aan een knotje trekken: eigenlijk is het onzin'",
+      "link": "https://www.vi.nl/video/violent-conduct-voor-aan-een-knotje-trekken-eigenlijk-is-het-onzin",
+      "summary": "In de nieuwe VI ZSM blikken Tim Tempelaars en Jarno Verweij terug op de wedstrijd van Manchester United tegen Leeds United, met speciale aandacht voor Lisandro Martínez.",
+      "publishedAt": "2026-04-14T09:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Carrick slams 'shocking' Martínez red card in loss",
+      "link": "https://www.espn.com/soccer/story/_/id/48478255/michael-carrick-labels-lisandro-martinez-red-card-decision-one-worst-ever-seen",
+      "summary": "Michael Carrick has labeled the decision to send off Lisandro Martínez in Manchester United's shock 1-2 defeat by Leeds United on Monday night as one of the worst he's ever seen.",
+      "publishedAt": "2026-04-14T08:49:24.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Leeds get 'crunch-time' win amid relegation fight",
+      "link": "https://www.espn.com/soccer/story/_/id/48479122/leeds-get-crunch-win-man-united-amid-relegation-fight",
+      "summary": "Leeds United climbed six points clear of the relegation zone after their second away win of the season and their first in the Premier League at Old Trafford with a 2-1 \"crunch-time\" victory over Manchester United.",
+      "publishedAt": "2026-04-14T08:49:24.000Z"
     },
     {
       "type": "rss",
@@ -98,7 +197,7 @@
       "title": "Yamal inspired by LeBron for UCL comeback",
       "link": "https://www.espn.com/soccer/story/_/id/48475814/lamine-yamal-draws-inspiration-lebron-james-plots-barcelona-comeback",
       "summary": "Lamine Yamal is seeking inspiration from Lebron James as he attempts to lead Barcelona to a Champions League quarterfinal comeback win against Atlético Madrid on Tuesday.",
-      "publishedAt": "2026-04-14T01:08:04.000Z"
+      "publishedAt": "2026-04-14T08:49:24.000Z"
     },
     {
       "type": "rss",
@@ -106,32 +205,21 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Sources: Spurs' Romero out for rest of season",
-      "link": "https://www.espn.com/soccer/story/_/id/48474970/tottenham-defender-cristian-romero-remainder-season-sources",
-      "summary": "Tottenham defender Cristian Romero will be out for the remainder of the season after suffering a knee injury in the 1-0 defeat to Sunderland, ESPN Argentina reports.",
-      "publishedAt": "2026-04-14T01:08:04.000Z"
+      "title": "Jorginho rows back Chappell Roan criticism",
+      "link": "https://www.espn.com/soccer/story/_/id/48481870/jorginho-rows-back-chappell-roan-criticism",
+      "summary": "Former Chelsea and Arsenal midfielder Jorginho has withdrawn his recent criticism of the pop star Chappell Roan and issued a statement saying that he regrets \"the impact that this situation has had\" on the \"Pink Pony Club\" singer.",
+      "publishedAt": "2026-04-14T08:49:24.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Carrick slams 'shocking' Martinez red card in loss",
-      "link": "https://www.espn.com/soccer/story/_/id/48478255/michael-carrick-labels-lisandro-martinez-red-card-decision-one-worst-ever-seen",
-      "summary": "Michael Carrick has labeled the decision to send off Lisandro Martinez in Manchester United's shock 1-2 defeat by Leeds United on Monday night as one of the worst he's ever seen.",
-      "publishedAt": "2026-04-14T01:08:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "DE",
       "flag": "🌍",
-      "title": "Ghana hires Queiroz ahead of World Cup campaign",
-      "link": "https://www.espn.com/soccer/story/_/id/48477241/ghana-hires-carlos-queiroz-world-cup-campaign",
-      "summary": "Ghana have appointed Carlos Queiroz as head coach of the senior national team ahead of their participation in the 2026 World Cup.",
-      "publishedAt": "2026-04-14T01:08:03.000Z"
+      "title": "Sexist abuse of Union Berlin boss 'embarrassing'",
+      "link": "https://www.bbc.com/sport/football/articles/cvgll58grkko?at_medium=RSS&at_campaign=rss",
+      "summary": "Union Berlin director of football Horst Heldt condemns \"insane\" sexist abuse directed at new head coach Marie-Louise Eta.",
+      "publishedAt": "2026-04-14T08:35:24.000Z"
     },
     {
       "type": "rss",
@@ -142,7 +230,29 @@
       "title": "Are Manchester United back? Leeds' performance suggests they're not",
       "link": "https://www.espn.com/soccer/story/_/id/48478868/leeds-show-man-united-route-back-top-simple",
       "summary": "Leeds United's win over Manchester United at Old Trafford has left Michael Carrick's side wondering how much better can they get to finish off the Premier League season.",
-      "publishedAt": "2026-04-14T00:15:44.000Z"
+      "publishedAt": "2026-04-14T08:26:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "How Champions League could decide £100m Alvarez's future",
+      "link": "https://www.bbc.com/sport/football/articles/ckgw8pr23pxo?at_medium=RSS&at_campaign=rss",
+      "summary": "With Julian Alvarez's Atletico Madrid future uncertain, European football expert Guillem Balague looks at how pivotal their Champions League run could prove.",
+      "publishedAt": "2026-04-14T07:30:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Sponsorship revenue for Uefa’s club competitions set to break €1bn barrier",
+      "link": "https://www.theguardian.com/football/2026/apr/14/sponsorship-uefa-club-competitions-1billion-champions-league",
+      "summary": "Sponsorship income due to rise by more than 40% Champions League clubs to benefit from the growth Uefa is poised to bring in more than €1bn (£870m) a year in commercial revenues from club competitions from next year, with two more global sponsorship deals close to being agreed. UC3, the commercial joint venture owned by Uefa and the clubs, is finalising agreements with an official payments provider and technology partner, which would complete their roster of premium global partners and see sponsorship income rise by more than 40%. Six-year deals with AB InBev as Uefa’s official beer partner and Pepsi as soft drinks provider from 2027 to 2033 have already been agreed, while Nike last week entered exclusive negotiations to replace Adidas as Uefa’s match ball provider. Continue reading...",
+      "publishedAt": "2026-04-14T07:01:03.000Z"
     },
     {
       "type": "rss",
@@ -157,58 +267,25 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Jeers and defensive crisis - Carrick facing first big Man Utd test",
-      "link": "https://www.bbc.com/sport/football/articles/c248d021pqeo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United head coach Michael Carrick has problems to solve before his side's crucial trip to Chelsea on Saturday evening.",
-      "publishedAt": "2026-04-13T23:08:29.000Z"
+      "title": "\"Notre petite fille envoyée de notre garçon au paradis\" : le message émouvant de Casper Nielsen",
+      "link": "https://www.walfoot.be/news/2026-04-14/notre-petite-fille-envoyee-de-notre-garcon-au-paradis--le-message-emouvant-de-casper-nielsen",
+      "summary": "Merveilleuse nouvelle pour Casper Nielsen, qui vient de communiquer qu'il allait être papa pour la deuxième fois en été. Le médian danois avait perdu son deuxième enfant, né prématurément, en octobre 2024.",
+      "publishedAt": "2026-04-13T23:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "A monumental night for Leeds - what does it mean in survival scrap?",
-      "link": "https://www.bbc.com/sport/football/articles/c4gxj4dkdpro?at_medium=RSS&at_campaign=rss",
-      "summary": "A monumental victory over Manchester United at Old Trafford has given Leeds United a priceless lifeline in their quest for Premier League survival.",
-      "publishedAt": "2026-04-13T22:31:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Carrick woest over rode kaart Martínez: 'Schokkende beslissing'",
-      "link": "https://www.vi.nl/nieuws/carrick-woest-door-rode-kaart-mart-nez-dit-was-schokkend",
-      "summary": "Michael Carrick heeft weinig begrip voor de rode kaart van zijn verdediger Lisandro Martínez . De Argentijn werd van het veld gestuurd door Paul Tierney nadat hij aan de haren trok van Dominic Calvert-Lewin. Manchester United verloor uiteindelijk van Leeds United .",
-      "publishedAt": "2026-04-13T21:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Okafor fires Leeds to first league win at Old Trafford since 1981",
-      "link": "https://www.bbc.com/sport/football/videos/c62j0yqzn8vo?at_medium=RSS&at_campaign=rss",
-      "summary": "Leeds boost their Premier League survival hopes with a 2-1 win against 10-man Manchester United at Old Trafford.",
-      "publishedAt": "2026-04-13T21:41:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Stunt in de maak bij Vitesse: 'Als je zag waar we zeven maanden geleden stonden…'",
-      "link": "https://www.vi.nl/nieuws/stunt-in-de-maak-bij-vitesse-als-je-zag-waar-we-zeven-maanden-geleden-stonden",
-      "summary": "Vitesse greep maandag met een overtuigende overwinning op Jong FC Utrecht de koppositie in de vierde periode en is daarmee hard op weg naar deelname aan de play-offs. Alexander Büttner en Nino Zonneveld genieten met volle teugen.",
-      "publishedAt": "2026-04-13T21:23:00.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 De grinta van Vetlesen, de klasse-actie van Vanaken voor Diakhon: aftermovie Club Brugge vertelt heel veel",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-14/-de-grinta-van-vetlesen-de-klasse-actie-van-vanaken-voor-diakhon-aftermovie-club-brugge-vertelt-heel-veel",
+      "summary": "Club Brugge heeft 6 op 6 te strikken in de Champions' Play-offs. De wedstrijd op bezoek bij STVV verliep echter niet zonder slag of stoot. Het was wonden likken. Voor Forbs en Sabbe na hun botsing, maar nog meer voor Diakhon. Die lijkt te moeten worden opgelapt.",
+      "publishedAt": "2026-04-13T23:00:00.000Z"
     },
     {
       "type": "rss",
@@ -216,21 +293,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Leeds stun Manchester United after Okafor double and Martínez red card for hair-pull",
-      "link": "https://www.theguardian.com/football/2026/apr/13/manchester-united-leeds-premier-league-match-report",
-      "summary": "Chants of “Daniel Farke, Daniel Farke” rang out from the travelling faithful after this seismic Leeds win lifted them six points clear of Tottenham, whose plight darkens further after the visitors pulled off a first league win at Old Trafford since February 1981. It means Michael Carrick has lost a home game for the first time as Manchester United’s interim manager. His team lacked control throughout, a state not aided by Lisandro Martínez’s silly 56th-minute red card for yanking Dominic Calvert-Lewin’s ponytail, and he is now suspended for three matches, though the club may appeal. Continue reading...",
-      "publishedAt": "2026-04-13T21:16:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Slot gelooft in comeback: 'Dit seizoen heel veel goede topwedstrijden gespeeld'",
-      "link": "https://www.vi.nl/video/slot-gelooft-in-comeback-dit-seizoen-heel-veel-goede-topwedstrijden-gespeeld",
-      "summary": "Arne Slot heeft alle vertrouwen in een goede afloop tijdens de tweede kwartfinale van de Champions League tegen Paris Saint-Germain. Liverpool moet op Anfield een 2-0 nederlaag goedmaken. 'Het is de kampioen van Europa, dus het wordt wel lastig.'",
-      "publishedAt": "2026-04-13T21:10:00.000Z"
+      "title": "‘A shocking decision’: Carrick fumes over Martínez’s red card for hair pulling",
+      "link": "https://www.theguardian.com/football/2026/apr/13/shocking-decision-michael-carrick-fumes-martinez-red-card-hair-pulling-manchester-united",
+      "summary": "‘It is not aggressive, there is no jolt,’ says United coach Daniel Farke hails ‘amazing’ league win at Old Trafford Michael Carrick branded Lisandro Martínez’s red card for pulling Dominic Calvert-Lewin’s hair as “shocking” and said Manchester United may appeal as the defender faces a three-match ban. If the sending off in United’s 2-1 defeat by Leeds at Old Trafford on Monday night stands, Carrick could be without his two first-choice centre-backs for Saturday’s trip to Chelsea as Harry Maguire may be suspended for a second match. Martínez was sent off after 56 minutes when Paul Tierney, after reviewing the incident on the monitor, ruled it a red-card offence, with Leeds 2-0 ahead. Continue reading...",
+      "publishedAt": "2026-04-13T22:43:35.000Z"
     },
     {
       "type": "rss",
@@ -238,7 +304,7 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'One of worst decisions ever' - Martinez sent off for hair-pull",
+      "title": "Carrick says Martinez hair-pull red card 'one of worst decisions I've seen'",
       "link": "https://www.bbc.com/sport/football/articles/c145mdge2gdo?at_medium=RSS&at_campaign=rss",
       "summary": "Manchester United defender Lisandro Martinez is sent off after 56 minutes for pulling the hair of Leeds United striker Dominic Calvert-Lewin at Old Trafford.",
       "publishedAt": "2026-04-13T20:39:35.000Z"
@@ -264,72 +330,6 @@
       "link": "https://www.theguardian.com/football/2026/apr/13/arne-slot-backs-liverpool-to-produce-great-performance-to-beat-psg",
       "summary": "Slot: ‘There is a belief we can do special things’ Luis Enrique tells his players to beware ‘pitfalls’ Arne Slot has said Liverpool do not face an impossible task against Paris Saint-Germain but must produce the perfect performance to overcome the European champions in the quarter-finals of the Champions League. Liverpool require another stirring Anfield comeback in Tuesday’s second leg to salvage their hopes of silverware having lost 2-0 at Parc des Princes last week. PSG were vastly superior in the first leg and should have won more comfortably, although their head coach, Luis Enrique, described such talk as “a trap” and claimed there will be “pitfalls” for his team at Anfield. Continue reading...",
       "publishedAt": "2026-04-13T18:36:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Cristian Romero feared to be out for remainder of season for Spurs",
-      "link": "https://www.theguardian.com/football/2026/apr/13/cristian-romero-feared-out-remainder-season-for-spurs-tottenham",
-      "summary": "Defender thought to have medial knee ligament damage Argentine may still recover in time for World Cup Tottenham’s deepening relegation concerns appear to have been heightened by the loss of their captain, Cristian Romero, for the remainder of the season. Romero was reduced to tears as he left the pitch after 70 minutes of Sunday’s 1-0 loss at Sunderland, following a coming together with the striker Brian Brobbey that led to the Argentinian clattering into his own goalkeeper, Antonin Kinsky. Romero, it is believed, has sustained medial knee ligament damage that will take around eight weeks to heal. Continue reading...",
-      "publishedAt": "2026-04-13T17:43:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Much-changed Spain will still test England in first meeting since Euro 2025 final",
-      "link": "https://www.theguardian.com/football/2026/apr/13/spain-much-changed-but-dna-will-test-england-in-first-clash-since-euro-2025-final",
-      "summary": "Reigning champions have a new coach and some new faces when they face the Lionesses in Women’s World Cup qualifier Eight-and-a-half months after they locked horns in the final of Euro 2025, England and Spain meet again on Tuesday night in front of more than 70,000 at Wembley. This time it is in qualifiers for the Women’s World Cup, another tournament in which they met in the final last time out. Despite the relatively brief period since the game in Basel, Spain have a noticeably fresh look with a new head coach and a crop of emerging young players. They have already won a trophy under Sonia Bermúdez, who led them to the Nations League title after replacing Montse Tomé, and, unlike England, are unbeaten since the Euros with five wins and a draw in six matches. Continue reading...",
-      "publishedAt": "2026-04-13T15:30:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le départ de Vandenbroeck a libéré Jelle Vossen : \"Et ça n'est pas valable que pour moi\"",
-      "link": "https://www.walfoot.be/news/2026-04-13/le-depart-de-vandenbroeck-a-libere-jelle-vossen--et-ca-nest-pas-valable-que-pour-moi",
-      "summary": "Jelle Vossen espérait autre chose pour l'une des dernières saisons de sa carrière. Sous Sven Vandenbroeck, il a très souvent dû se contenter du banc.",
-      "publishedAt": "2026-04-13T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "'Anderlecht ontrolt groot plan om Nathan De Cat fit te krijgen voor bekerfinale'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-13/anderlecht-ontrolt-groot-plan-om-nathan-de-cat-fit-te-krijgen-voor-bekerfinale",
-      "summary": "Anderlecht hield tegen KAA Gent de drie punten thuis, maar liep een stevige kater op door de blessure van Nathan De Cat. Mist de sterkhouder de bekerfinale op 14 mei?",
-      "publishedAt": "2026-04-13T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Encore du changement : l'ACFF annonce une réforme de ses D1, D2 et D3 à partir de 2027-2028",
-      "link": "https://www.walfoot.be/news/2026-04-13/encore-du-changement--lacff-annonce-une-reforme-de-ses-d1-d2-et-d3-a-partir-de-2027-2028",
-      "summary": "L'Association des Clubs Francophones de Football a annoncé une nouvelle réforme de ses divisions, qui entrera en application à partir de la saison 2027-2028. La saison 2026-2027 servira de saison de transition.",
-      "publishedAt": "2026-04-13T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Olivier Deschacht luidt de alarmbel bij Anderlecht: \"Dat is een probleem\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-13/olivier-deschacht-luidt-de-alarmbel-bij-anderlecht-dat-is-een-probleem",
-      "summary": "RSC Anderlecht won op speeldag 2 van de Champions' Play-offs van KAA Gent met 3-1, maar na de wedstrijd ging het toch vooral over de blessure van Nathan De Cat. Olivier Deschacht luidt de alarmbel.",
-      "publishedAt": "2026-04-13T08:30:00.000Z"
     }
   ]
 }
