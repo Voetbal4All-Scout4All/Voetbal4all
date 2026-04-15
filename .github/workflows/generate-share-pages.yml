@@ -2,7 +2,7 @@ name: Generate Share Pages
 
 on:
   schedule:
-    - cron: "0 * * * *"   # every hour
+    - cron: "15 */2 * * *"   # every 2 hours at :15
   workflow_dispatch:          # manual trigger
 
 permissions:
@@ -14,68 +14,247 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch article manifest from backend
+      - name: Fetch all items from backend API
+        env:
+          API: "https://voetbal4all-backend-database.onrender.com"
         run: |
-          curl -sf "https://voetbal4all-backend-database.onrender.com/api/share-articles" \
-            -o /tmp/articles.json
-          echo "Articles fetched: $(cat /tmp/articles.json | python3 -c 'import sys,json; print(json.load(sys.stdin).get("count",0))')"
+          mkdir -p /tmp/share-data
+
+          echo "Fetching articles..."
+          curl -sf "${API}/api/share-articles" -o /tmp/share-data/articles.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/articles.json
+
+          echo "Fetching events..."
+          curl -sf "${API}/api/events?limit=500" -o /tmp/share-data/events.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/events.json
+
+          echo "Fetching club vacancies..."
+          curl -sf "${API}/api/club-vacancies?limit=500" -o /tmp/share-data/vacancies.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/vacancies.json
+
+          echo "Fetching staff profiles (trainers)..."
+          curl -sf "${API}/api/staff-profiles?limit=500" -o /tmp/share-data/trainers.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/trainers.json
+
+          echo "Fetching player profiles..."
+          curl -sf "${API}/api/player-profiles?limit=500" -o /tmp/share-data/players.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/players.json
+
+          echo "Fetching spotlight items..."
+          curl -sf "${API}/api/spotlight?limit=500" -o /tmp/share-data/spotlights.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/spotlights.json
+
+          echo "Fetching supporter clubs..."
+          curl -sf "${API}/api/supportersclubs?limit=500" -o /tmp/share-data/supportersclubs.json || echo '{"ok":true,"items":[]}' > /tmp/share-data/supportersclubs.json
+
+          for f in /tmp/share-data/*.json; do
+            count=$(python3 -c "import json; d=json.load(open('$f')); print(len(d.get('items',d if isinstance(d,list) else [])))" 2>/dev/null || echo 0)
+            echo "  $(basename $f): $count items"
+          done
 
       - name: Generate static share pages
         run: |
           python3 << 'PYEOF'
-          import json, os, html as htmlmod
+          import json, os, html as H, re
+          from datetime import datetime
 
           FRONTEND = "https://www.voetbal4all.eu"
-          BACKEND  = "https://voetbal4all-backend-database.onrender.com"
+          FALLBACK_IMG = FRONTEND + "/assets/img/brand/logo-voetbal4all.png"
 
-          with open("/tmp/articles.json") as f:
-              data = json.load(f)
+          generated = 0
 
-          if not data.get("ok"):
-              print("ERROR: API returned ok=false")
-              exit(1)
+          def esc(s):
+              return H.escape(str(s or ""))
 
-          items = data.get("items", [])
-          print(f"Generating pages for {len(items)} articles...")
+          def clean_description(raw, fallback="Voetbal4All"):
+              if not raw:
+                  return fallback
+              text = str(raw).strip()
+              # Strip form submission headers
+              text = re.sub(r'^(?:EVENT|PROFIEL)\s+AANMELDING\s*[\-—–]\s*VOETBAL4ALL\s*', '', text, flags=re.I)
+              # Try to extract "Omschrijving:" section
+              m = re.search(r'(?:^|\n)\s*(?:Omschrijving|Beschrijving|Description)\s*:\s*\n?([\s\S]+)', text, re.I)
+              if m:
+                  text = m.group(1).strip()
+              else:
+                  # Strip metadata key-value lines
+                  lines = text.split('\n')
+                  cleaned = []
+                  for line in lines:
+                      l = line.strip()
+                      if not l:
+                          continue
+                      if re.match(r'^(Categorie|Type|Titel|Land|Provincie|Regio|Datum|Startuur|Stad|Adres|Organisatie|Club|Contact|Telefoon|Website|Flyer|Premium|Naam|Positie|Rol|Licentie|E-?mail|GSM|Mobiel|Geslacht|Niveau|Geboortejaar)\s*:', l, re.I):
+                          continue
+                      if re.match(r'^https?://', l, re.I):
+                          continue
+                      if re.search(r'\.(jpg|jpeg|png|gif|webp|pdf)$', l, re.I):
+                          continue
+                      cleaned.append(l)
+                  text = ' '.join(cleaned).strip()
+              # Strip remaining URLs
+              text = re.sub(r'https?://\S+', '', text).strip()
+              if not text:
+                  return fallback
+              return text[:157] + '...' if len(text) > 160 else text
 
-          for item in items:
-              aid = item["id"]
-              title = htmlmod.escape(item.get("title") or "Voetbal4All")
-              desc  = htmlmod.escape(item.get("description") or title)
-              image = htmlmod.escape(item.get("image") or f"{BACKEND}/images/default/article-default.png")
-              share_url   = f"{FRONTEND}/share/article/{aid}"
-              artikel_url = f"{FRONTEND}/artikel.html?id={aid}"
+          def fmt_date(iso_str):
+              if not iso_str:
+                  return None
+              try:
+                  dt = datetime.fromisoformat(str(iso_str).replace('Z', '+00:00'))
+                  months = ['januari','februari','maart','april','mei','juni','juli','augustus','september','oktober','november','december']
+                  return f"{dt.day} {months[dt.month-1]} {dt.year}"
+              except:
+                  return None
 
-              page = f"""<!DOCTYPE html>
+          def resolve_image(url):
+              if not url or str(url).strip() in ('', 'None', 'null'):
+                  return FALLBACK_IMG
+              u = str(url).strip()
+              if u.startswith('http://') or u.startswith('https://'):
+                  return u
+              return FRONTEND + '/' + u.lstrip('/')
+
+          def build_page(title, description, image_url, og_url, redirect_url):
+              global generated
+              t = esc(title)
+              d = esc(description)
+              img = esc(image_url)
+              ou = esc(og_url)
+              ru = esc(redirect_url)
+              generated += 1
+              return f"""<!DOCTYPE html>
           <html lang="nl">
           <head>
             <meta charset="utf-8">
-            <title>{title} - Voetbal4All</title>
-            <meta property="og:type" content="article">
-            <meta property="og:title" content="{title}">
-            <meta property="og:description" content="{desc}">
-            <meta property="og:image" content="{image}">
-            <meta property="og:url" content="{share_url}">
+            <title>{t} - Voetbal4All</title>
+            <meta property="og:type" content="website">
+            <meta property="og:title" content="{t}">
+            <meta property="og:description" content="{d}">
+            <meta property="og:image" content="{img}">
+            <meta property="og:url" content="{ou}">
             <meta property="og:site_name" content="Voetbal4All">
             <meta name="twitter:card" content="summary_large_image">
-            <meta name="twitter:title" content="{title}">
-            <meta name="twitter:description" content="{desc}">
-            <meta name="twitter:image" content="{image}">
-            <link rel="canonical" href="{share_url}">
+            <meta name="twitter:title" content="{t}">
+            <meta name="twitter:description" content="{d}">
+            <meta name="twitter:image" content="{img}">
+            <link rel="canonical" href="{ou}">
           </head>
           <body>
-            <p>Je wordt doorgestuurd naar het artikel...</p>
-            <p><a href="{artikel_url}">Klik hier als je niet automatisch wordt doorgestuurd.</a></p>
-            <script>setTimeout(function(){{window.location.replace("{artikel_url}")}},1000);</script>
+            <p>Je wordt doorgestuurd...</p>
+            <p><a href="{ru}">Klik hier als je niet automatisch wordt doorgestuurd.</a></p>
+            <script>window.location.replace("{ru}");</script>
           </body>
           </html>"""
 
-              outdir = f"share/article/{aid}"
-              os.makedirs(outdir, exist_ok=True)
-              with open(f"{outdir}/index.html", "w") as fout:
-                  fout.write(page)
+          def write_page(share_path, html_content):
+              os.makedirs(share_path, exist_ok=True)
+              with open(os.path.join(share_path, "index.html"), "w") as f:
+                  f.write(html_content)
 
-          print(f"Done. Generated {len(items)} share pages.")
+          def load_items(filepath):
+              try:
+                  with open(filepath) as f:
+                      data = json.load(f)
+                  return data.get("items", data if isinstance(data, list) else [])
+              except:
+                  return []
+
+          # ── Articles ──
+          for item in load_items("/tmp/share-data/articles.json"):
+              aid = item.get("id", "")
+              if not aid: continue
+              title = item.get("title") or "Voetbal4All"
+              desc = clean_description(item.get("description"), title)
+              image = resolve_image(item.get("image"))
+              og_url = f"{FRONTEND}/share/article/{aid}/"
+              redirect = f"{FRONTEND}/artikel.html?id={aid}"
+              write_page(f"share/article/{aid}", build_page(title, desc, image, og_url, redirect))
+
+          # ── Events ──
+          for item in load_items("/tmp/share-data/events.json"):
+              eid = item.get("id", "")
+              if not eid: continue
+              title = item.get("title") or "Event"
+              date_str = fmt_date(item.get("start_at"))
+              city = str(item.get("city") or "").strip()
+              fallback_parts = [title]
+              if date_str: fallback_parts.append(f"op {date_str}")
+              if city: fallback_parts.append(f"in {city}")
+              fallback = " ".join(fallback_parts) + " — Voetbal4All"
+              desc = clean_description(item.get("description"), fallback)
+              image = resolve_image(item.get("cover_image_url"))
+              og_url = f"{FRONTEND}/share/event/{eid}/"
+              redirect = f"{FRONTEND}/event.html?id={eid}"
+              write_page(f"share/event/{eid}", build_page(title, desc, image, og_url, redirect))
+
+          # ── Club Vacancies ──
+          for item in load_items("/tmp/share-data/vacancies.json"):
+              vid = item.get("id", "")
+              if not vid: continue
+              title = (item.get("title") or "Clubvacature")
+              club = str(item.get("club") or "").strip()
+              if club: title += f" - {club}"
+              desc = clean_description(item.get("description"), f"{title} — Voetbal4All")
+              image = resolve_image(item.get("image_url") or item.get("image"))
+              og_url = f"{FRONTEND}/share/vacancy/{vid}/"
+              redirect = f"{FRONTEND}/event.html?type=clubvacature&id={vid}"
+              write_page(f"share/vacancy/{vid}", build_page(title, desc, image, og_url, redirect))
+
+          # ── Trainers (staff profiles) ──
+          for item in load_items("/tmp/share-data/trainers.json"):
+              tid = item.get("id", "")
+              if not tid: continue
+              name = item.get("name") or "Trainer"
+              role = str(item.get("role") or "").strip()
+              title = f"{name} — {role}" if role else name
+              desc = clean_description(item.get("bio"), f"{name} — Voetbal4All")
+              image = resolve_image(item.get("photo_url") or item.get("image_url"))
+              og_url = f"{FRONTEND}/share/trainer/{tid}/"
+              redirect = f"{FRONTEND}/event.html?type=trainer&id={tid}"
+              write_page(f"share/trainer/{tid}", build_page(title, desc, image, og_url, redirect))
+
+          # ── Players ──
+          for item in load_items("/tmp/share-data/players.json"):
+              pid = item.get("id", "")
+              if not pid: continue
+              name = item.get("name") or item.get("full_name") or "Speler"
+              position = str(item.get("position") or "").strip()
+              club = str(item.get("club_name") or "").strip()
+              parts = [name]
+              if position: parts.append(position)
+              if club: parts.append(f"bij {club}")
+              title = " — ".join(parts[:2]) if len(parts) > 1 else name
+              desc = clean_description(item.get("bio"), f"{name} — Voetbal4All")
+              image = resolve_image(item.get("photo_url") or item.get("image_url"))
+              og_url = f"{FRONTEND}/share/player/{pid}/"
+              redirect = f"{FRONTEND}/event.html?type=speler&id={pid}"
+              write_page(f"share/player/{pid}", build_page(title, desc, image, og_url, redirect))
+
+          # ── Spotlight ──
+          for item in load_items("/tmp/share-data/spotlights.json"):
+              sid = item.get("id", "")
+              if not sid: continue
+              title = item.get("title") or item.get("name") or "In de Kijker"
+              desc = clean_description(item.get("body") or item.get("description"), f"{title} — Voetbal4All")
+              image = resolve_image(item.get("image_url") or item.get("photo_url"))
+              og_url = f"{FRONTEND}/share/spotlight/{sid}/"
+              redirect = f"{FRONTEND}/event.html?type=spotlight&id={sid}"
+              write_page(f"share/spotlight/{sid}", build_page(title, desc, image, og_url, redirect))
+
+          # ── Supporter Clubs ──
+          for item in load_items("/tmp/share-data/supportersclubs.json"):
+              scid = item.get("id", "")
+              if not scid: continue
+              name = item.get("name") or "Supportersclub"
+              club_for = str(item.get("club_for") or item.get("supported_team") or "").strip()
+              title = f"{name} — {club_for}" if club_for else name
+              parts = ["Supportersclub"]
+              if club_for: parts.append(f"voor {club_for}")
+              city = str(item.get("city") or "").strip()
+              if city: parts.append(f"uit {city}")
+              desc = " ".join(parts) + " op Voetbal4All"
+              image = resolve_image(item.get("image_url") or item.get("photo_url"))
+              og_url = f"{FRONTEND}/share/supportersclub/{scid}/"
+              redirect = f"{FRONTEND}/event.html?type=supportersclub&id={scid}"
+              write_page(f"share/supportersclub/{scid}", build_page(title, desc, image, og_url, redirect))
+
+          print(f"Done. Generated {generated} share pages total.")
           PYEOF
 
       - name: Commit & push if changed
@@ -87,8 +266,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to share pages."
           else
-            git commit -m "chore: update static share pages for OG tags [skip ci]"
+            git commit -m "chore: update static share pages for all categories"
             git push
             echo "Pushed updated share pages."
           fi
-

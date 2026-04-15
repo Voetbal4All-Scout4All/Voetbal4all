@@ -1895,15 +1895,14 @@
           if (mapWrap3) mapWrap3.style.display = "none";
         }
 
-        // Share URL — point to backend share routes so social media crawlers
-        // receive server-rendered HTML with correct OG meta tags.
+        // Share URL — static share pages on own domain with correct OG tags.
         const shareTypeMap = {
           event: "event", clubvacature: "vacancy", trainer: "trainer",
           speler: "player", spotlight: "spotlight", supportersclub: "supportersclub"
         };
         const shareSegment = isEvent ? "event" : (shareTypeMap[shareType] || "event");
         const shareId = id || slug;
-        const shareUrl = API_BASE + "/share/" + shareSegment + "/" + encodeURIComponent(shareId);
+        const shareUrl = "https://www.voetbal4all.eu/share/" + shareSegment + "/" + encodeURIComponent(shareId) + "/";
         setShareLinks(shareUrl, displayTitle);
 
         // Media (YouTube has priority for shared types)

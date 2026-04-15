@@ -1479,9 +1479,9 @@
     
     const shareId = String(article.id || resolvedArticleId || "").trim();
     const shareSlug = String(article.slug || resolvedArticleSlug || "").trim();
-    // Point to backend share route so crawlers receive server-rendered OG tags
+    // Static share pages on own domain with correct OG tags for crawlers
     const articleUrl = shareId
-      ? (API_BASE + "/share/article/" + encodeURIComponent(shareId))
+      ? ("https://www.voetbal4all.eu/share/article/" + encodeURIComponent(shareId) + "/")
       : window.location.href;
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedTitle = encodeURIComponent(title);
