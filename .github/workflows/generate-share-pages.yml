@@ -3,7 +3,16 @@ name: Generate Share Pages
 on:
   schedule:
     - cron: "15 */2 * * *"   # every 2 hours at :15
-  workflow_dispatch:          # manual trigger
+  workflow_dispatch:
+    inputs:
+      entity_type:
+        description: 'Specific entity type to generate (optional)'
+        required: false
+        type: string
+      entity_id:
+        description: 'Specific entity ID to generate (optional)'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -47,6 +56,9 @@ jobs:
           done
 
       - name: Generate static share pages
+        env:
+          INPUT_ENTITY_TYPE: ${{ inputs.entity_type }}
+          INPUT_ENTITY_ID: ${{ inputs.entity_id }}
         run: |
           python3 << 'PYEOF'
           import json, os, html as H, re
@@ -55,6 +67,14 @@ jobs:
           FRONTEND = "https://www.voetbal4all.eu"
           FB_APP_ID = "1613462893224189"
           FALLBACK_IMG = FRONTEND + "/assets/img/brand/logo-voetbal4all.png"
+
+          TARGET_TYPE = os.environ.get('INPUT_ENTITY_TYPE', '').strip()
+          TARGET_ID = os.environ.get('INPUT_ENTITY_ID', '').strip()
+          SPECIFIC_MODE = bool(TARGET_TYPE and TARGET_ID)
+          if SPECIFIC_MODE:
+              print(f"Specific mode: generating only {TARGET_TYPE}/{TARGET_ID}")
+          else:
+              print("Full mode: generating all share pages")
 
           generated = 0
 
@@ -158,9 +178,11 @@ jobs:
                   return []
 
           # ── Articles ──
-          for item in load_items("/tmp/share-data/articles.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'article':
+           for item in load_items("/tmp/share-data/articles.json"):
               aid = item.get("id", "")
               if not aid: continue
+              if SPECIFIC_MODE and str(aid) != TARGET_ID: continue
               title = item.get("title") or "Voetbal4All"
               desc = clean_description(item.get("description"), title)
               image = resolve_image(item.get("image"))
@@ -169,9 +191,11 @@ jobs:
               write_page(f"share/article/{aid}", build_page(title, desc, image, og_url, redirect))
 
           # ── Events ──
-          for item in load_items("/tmp/share-data/events.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'event':
+           for item in load_items("/tmp/share-data/events.json"):
               eid = item.get("id", "")
               if not eid: continue
+              if SPECIFIC_MODE and str(eid) != TARGET_ID: continue
               title = item.get("title") or "Event"
               date_str = fmt_date(item.get("start_at"))
               city = str(item.get("city") or "").strip()
@@ -186,9 +210,11 @@ jobs:
               write_page(f"share/event/{eid}", build_page(title, desc, image, og_url, redirect))
 
           # ── Club Vacancies ──
-          for item in load_items("/tmp/share-data/vacancies.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'vacancy':
+           for item in load_items("/tmp/share-data/vacancies.json"):
               vid = item.get("id", "")
               if not vid: continue
+              if SPECIFIC_MODE and str(vid) != TARGET_ID: continue
               title = (item.get("title") or "Clubvacature")
               club = str(item.get("club") or "").strip()
               if club: title += f" - {club}"
@@ -199,9 +225,11 @@ jobs:
               write_page(f"share/vacancy/{vid}", build_page(title, desc, image, og_url, redirect))
 
           # ── Trainers (staff profiles) ──
-          for item in load_items("/tmp/share-data/trainers.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'trainer':
+           for item in load_items("/tmp/share-data/trainers.json"):
               tid = item.get("id", "")
               if not tid: continue
+              if SPECIFIC_MODE and str(tid) != TARGET_ID: continue
               name = item.get("name") or "Trainer"
               role = str(item.get("role") or "").strip()
               title = f"{name} — {role}" if role else name
@@ -212,9 +240,11 @@ jobs:
               write_page(f"share/trainer/{tid}", build_page(title, desc, image, og_url, redirect))
 
           # ── Players ──
-          for item in load_items("/tmp/share-data/players.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'player':
+           for item in load_items("/tmp/share-data/players.json"):
               pid = item.get("id", "")
               if not pid: continue
+              if SPECIFIC_MODE and str(pid) != TARGET_ID: continue
               name = item.get("name") or item.get("full_name") or "Speler"
               position = str(item.get("position") or "").strip()
               club = str(item.get("club_name") or "").strip()
@@ -229,9 +259,11 @@ jobs:
               write_page(f"share/player/{pid}", build_page(title, desc, image, og_url, redirect))
 
           # ── Spotlight ──
-          for item in load_items("/tmp/share-data/spotlights.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'spotlight':
+           for item in load_items("/tmp/share-data/spotlights.json"):
               sid = item.get("id", "")
               if not sid: continue
+              if SPECIFIC_MODE and str(sid) != TARGET_ID: continue
               title = item.get("title") or item.get("name") or "In de Kijker"
               desc = clean_description(item.get("body") or item.get("description"), f"{title} — Voetbal4All")
               image = resolve_image(item.get("image_url") or item.get("photo_url"))
@@ -240,9 +272,11 @@ jobs:
               write_page(f"share/spotlight/{sid}", build_page(title, desc, image, og_url, redirect))
 
           # ── Supporter Clubs ──
-          for item in load_items("/tmp/share-data/supportersclubs.json"):
+          if not SPECIFIC_MODE or TARGET_TYPE == 'supportersclub':
+           for item in load_items("/tmp/share-data/supportersclubs.json"):
               scid = item.get("id", "")
               if not scid: continue
+              if SPECIFIC_MODE and str(scid) != TARGET_ID: continue
               name = item.get("name") or "Supportersclub"
               club_for = str(item.get("club_for") or item.get("supported_team") or "").strip()
               title = f"{name} — {club_for}" if club_for else name
@@ -260,6 +294,7 @@ jobs:
           PYEOF
 
       - name: Commit & push if changed
+        id: commit
         run: |
           cd "$GITHUB_WORKSPACE"
           git config user.name  "github-actions[bot]"
@@ -267,8 +302,16 @@ jobs:
           git add share/
           if git diff --cached --quiet; then
             echo "No changes to share pages."
+            echo "changes=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: update static share pages for all categories"
             git push
             echo "Pushed updated share pages."
+            echo "changes=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Trigger deploy workflow
+        if: steps.commit.outputs.changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
