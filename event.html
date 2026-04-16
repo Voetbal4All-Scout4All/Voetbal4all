@@ -1301,7 +1301,7 @@
 
       // These open the share dialog on the user's social network;
       // any clicks on the shared post will go to `shareUrl` (voetbal4all.eu).
-      if (shareFb) shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      if (shareFb) shareFb.href = `https://www.facebook.com/dialog/feed?app_id=1613462893224189&display=popup&link=${url}&redirect_uri=${url}`;
       if (shareX)  shareX.href  = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
 
       const canWebShare = !!navigator.share;

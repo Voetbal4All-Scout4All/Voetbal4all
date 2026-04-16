@@ -1485,7 +1485,7 @@
       : window.location.href;
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedTitle = encodeURIComponent(title);
-    const fbUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+    const fbUrl = 'https://www.facebook.com/dialog/feed?app_id=1613462893224189&display=popup&link=' + encodedUrl + '&redirect_uri=' + encodedUrl;
     document.getElementById('share-facebook').href = fbUrl;
 
     const xUrl = 'https://x.com/intent/post?url=' + encodedUrl + '&text=' + encodedTitle;
