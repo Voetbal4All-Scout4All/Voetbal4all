@@ -53,6 +53,7 @@ jobs:
           from datetime import datetime
 
           FRONTEND = "https://www.voetbal4all.eu"
+          FB_APP_ID = "1613462893224189"
           FALLBACK_IMG = FRONTEND + "/assets/img/brand/logo-voetbal4all.png"
 
           generated = 0
@@ -123,6 +124,7 @@ jobs:
           <head>
             <meta charset="utf-8">
             <title>{t} - Voetbal4All</title>
+            <meta property="fb:app_id" content="{FB_APP_ID}">
             <meta property="og:type" content="website">
             <meta property="og:title" content="{t}">
             <meta property="og:description" content="{d}">
