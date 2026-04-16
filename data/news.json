@@ -1,28 +1,6 @@
 {
-  "generatedAt": "2026-04-16T16:25:34.920Z",
+  "generatedAt": "2026-04-16T21:49:31.788Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Ronaldo suffers stomach pains, vomits during game",
-      "link": "https://www.espn.com/soccer/story/_/id/48500933/cristiano-ronaldo-suffers-stomach-pains-vomits-al-nassr-clash",
-      "summary": "Cristiano Ronaldo endured stomach pains while playing 90 minutes of Al Nassr's 1-0 league victory over Al-Ettifaq on Wednesday night.",
-      "publishedAt": "2026-04-16T16:23:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Bernardo Silva confirms Man City summer exit",
-      "link": "https://www.espn.com/soccer/story/_/id/48502266/bernardo-silva-confirms-man-city-exit-end-season",
-      "summary": "Bernardo Silva has announced he will leave Manchester City this summer.",
-      "publishedAt": "2026-04-16T16:23:53.000Z"
-    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -32,62 +10,7 @@
       "title": "Alex Manninger, former Arsenal keeper, dies at 48",
       "link": "https://www.espn.com/soccer/story/_/id/48502984/alex-manninger-former-arsenal-goalkeeper-dies-48",
       "summary": "Former Arsenal goalkeeper Alex Manninger has died at the age of 48.",
-      "publishedAt": "2026-04-16T16:23:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Rondje Buitenland: waarom Atlético Madrid de Champions League kan winnen",
-      "link": "https://www.vi.nl/pro/rondje-buitenland-waarom-atl-tico-madrid-de-champions-league-kan-winnen",
-      "summary": "Veel spektakel en verrassingen in de kwartfinales van de Champions League. Kenner buitenlands voetbal Süleyman Öztürk blikt in een nieuwe aflevering van Rondje Buitenland Extra uitgebreid terug. Natuurlijk komt het voetbalfeest tussen Bayern München en Real Madrid aan bod, maar ook de kracht van Atlético Madrid wordt besproken. Kan de ploeg van Diego Simeone het toernooi daadwerkelijk winnen? En zijn Álvaro Arbeloa en Arne Slot nog zeker van hun baan?",
-      "publishedAt": "2026-04-16T16:03:41.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Live: AZ hoopt op wonder tegen Shakhtar, dat doelpuntenmaker mist",
-      "link": "https://www.vi.nl/nieuws/vi-live-az-hoopt-op-wonder-tegen-shakhtar-dat-doelpuntenmaker-mist",
-      "summary": "AZ hoopt donderdag op een klein wonder tegen Shakhtar Donetsk. De Alkmaarders moeten een 3-0 achterstand recht zien te breien in de kwartfinale van de Conference League. Dat en alle andere duels in de Europa en Conference League volg je in deze VI Live.",
-      "publishedAt": "2026-04-16T15:49:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Chelsea midfielder Caicedo agrees new contract",
-      "link": "https://www.bbc.com/sport/football/articles/c7vqqgqg87do?at_medium=RSS&at_campaign=rss",
-      "summary": "Chelsea midfielder Moises Caicedo agrees a lucrative new contract at Stamford Bridge as the club seeks to reward its high performers.",
-      "publishedAt": "2026-04-16T15:34:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Opstelling AZ: Echteld gooit hele elftal om tegen Shakhtar",
-      "link": "https://www.vi.nl/nieuws/opstelling-az-echteld-gooit-hele-opstelling-om-tegen-shakhtar",
-      "summary": "Leeroy Echteld heeft zijn opstelling voor de return met Shaktar Donetsk in de Conference League bekendgemaakt. Zoals eerder aangekondigd, worden er een aantal grote namen gespaard bij AZ voor de bekerfinale van komende zondag tegen NEC.",
-      "publishedAt": "2026-04-16T15:33:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'I leave as one more of you' - but how do Man City replace departing Silva?",
-      "link": "https://www.bbc.com/sport/football/articles/c78rkm3j047o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City will lose the services of their dependable captain next season as Bernardo Silva announced he will leave the club when his contract expires this summer.",
-      "publishedAt": "2026-04-16T15:32:31.000Z"
+      "publishedAt": "2026-04-16T22:07:51.000Z"
     },
     {
       "type": "rss",
@@ -95,10 +18,21 @@
       "sourceSlug": "espn-soccer",
       "country": "ES",
       "flag": "🌍",
-      "title": "UCL talking points: Bayern favorites after Madrid drama? Slot's bizarre choices",
-      "link": "https://www.espn.com/soccer/story/_/id/48495158/ucl-talking-points-slots-bizarre-choicesbayern-now-favorites",
-      "summary": "Our writers cover the moments that mattered from the UCL quarterfinals.",
-      "publishedAt": "2026-04-16T15:31:06.000Z"
+      "title": "Barcelona file fresh UEFA complaint over UCL refs",
+      "link": "https://www.espn.com/soccer/story/_/id/48504832/barcelona-uefa-complaint-champions-league-referee-atletico-madrid",
+      "summary": "Barcelona have filed a second complaint to UEFA complaining that refereeing standards were not complied with in their Champions League quarterfinal exit to Atlético Madrid.",
+      "publishedAt": "2026-04-16T22:07:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Aaronson: Not true that USMNT players don't care",
+      "link": "https://www.espn.com/soccer/story/_/id/48505863/brenden-aaronson-usa-players-2026-world-cup-leeds-united",
+      "summary": "Brenden Aaronson insisted that that the USMNT is determined to make the country proud, following criticism of its performances ahead of the World Cup.",
+      "publishedAt": "2026-04-16T22:07:51.000Z"
     },
     {
       "type": "rss",
@@ -109,18 +43,18 @@
       "title": "Champions League semifinal predictions: Don't bet against Arsenal despite misfiring attack",
       "link": "https://www.espn.com/soccer/story/_/id/48501872/champions-league-semifinal-preview-predictions-arsenal-bayern-munich-psg-atletico-madrid-bill-connelly",
       "summary": "The UEFA Champions League quarterfinals largely lived up to expectations, with three of four games going down to the wire. Now that the dust has settled, let's break down the semifinals and predict who advances.",
-      "publishedAt": "2026-04-16T15:31:04.000Z"
+      "publishedAt": "2026-04-16T21:58:39.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
       "flag": "🌍",
-      "title": "Trotse papa Kompany (77) verschijnt met Bayern-sjaal in Belgisch parlement",
-      "link": "https://www.vi.nl/nieuws/trotse-papa-kompany-77-verschijnt-met-bayern-sjaal-in-belgisch-parlement",
-      "summary": "Over het algemeen is de Belgische politiek razend interessant en kleurrijk, maar meestal houdt dat geen verband met kledingkeuzes. De volksvertegenwoordigers lopen er doorgaans sober bij, maar donderdag maakte de nestor van het federaal parlement een uitzondering. Hij verscheen op zijn werk getooid in een Bayern München-sjaal.",
-      "publishedAt": "2026-04-16T15:22:36.000Z"
+      "title": "UCL talking points: Bayern favorites after Madrid drama? Slot's bizarre choices",
+      "link": "https://www.espn.com/soccer/story/_/id/48495158/ucl-talking-points-slots-bizarre-choicesbayern-now-favorites",
+      "summary": "Our writers cover the moments that mattered from the UCL quarterfinals.",
+      "publishedAt": "2026-04-16T21:58:39.000Z"
     },
     {
       "type": "rss",
@@ -128,21 +62,142 @@
       "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "Prijzengeld Conference League: dit kan AZ verdienen de rest van het toernooi",
-      "link": "https://www.vi.nl/nieuws/prijzengeld-conference-league-dit-kan-az-verdienen-de-rest-van-het-toernooi",
-      "summary": "AZ is de enige nog overgebleven Nederlandse ploeg in Europa. De Alkmaarders hopen hoge ogen te gooien in de Conference League, maar moeten dan wel hopen op een wonder in de return tegen Shakhtar Donetsk. De prijzenpot in het derde Europese toernooi ligt aanzienlijk lager dan in de Champions en Europa League. Toch strijdt AZ om de nodige miljoenen.",
-      "publishedAt": "2026-04-16T15:20:03.000Z"
+      "title": "Turan prijst AZ en draagt succes Shakhtar op aan Oekraïens volk",
+      "link": "https://www.vi.nl/nieuws/turan-prijst-az-en-draagt-succes-shakhtar-op-aan-oekra-ens-volk",
+      "summary": "Shakhtar Donetsk-trainer Arda Turan sprak donderdagavond na de return tegen AZ in de kwartfinale van de Conference League lovend over de Alkmaarders. De Turk is trots op de prestatie van zijn ploeg en richtte zich op de persconferentie tot de inwoners van Oekraïne die nog altijd in zware omstandigheden leven.",
+      "publishedAt": "2026-04-16T21:33:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Messi blijft verbonden met Barcelona: nieuwe eigenaar vijfdeklasser in Catalonië",
+      "link": "https://www.vi.nl/nieuws/messi-blijft-verbonden-met-barcelona-nieuwe-eigenaar-vijfdeklasser-in-cataloni",
+      "summary": "Lionel Messi is de nieuwe eigenaar van de Spaanse vijfdeklasser UE Cornellà. De achtvoudige Ballon d’Or-winnaar en Barcelona-legende toont daarmee zijn verbondenheid met Catalonië en zijn inzet voor de ontwikkeling van talent in de regio.",
+      "publishedAt": "2026-04-16T21:31:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Van blessure herstelde Emegha voor het eerst in vijf maanden trefzeker",
+      "link": "https://www.vi.nl/nieuws/van-blessure-herstelde-emegha-voor-het-eerst-in-vijf-maanden-trefzeker",
+      "summary": "AZ hoopte donderdag op een klein wonder tegen Shakhtar Donetsk. De Alkmaarders moesten een 3-0 achterstand recht zien te breien in de kwartfinale van de Conference League. Dat en alle andere duels in de Europa en Conference League volgde je in deze VI Live.",
+      "publishedAt": "2026-04-16T21:30:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Dit is het vervolgprogramma van de Europa League en Conference League",
+      "link": "https://www.vi.nl/nieuws/dit-is-het-vervolgprogramma-van-de-europa-league-en-conference-league",
+      "summary": "Na donderdag zijn er nog vier clubs in de race voor de Europa League en de Conference League. Dit is het restprogramma in beide competities.",
+      "publishedAt": "2026-04-16T21:21:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "How 10 Premier League teams could qualify for Europe",
+      "link": "https://www.bbc.com/sport/football/articles/ckg0pjl4vq5o?at_medium=RSS&at_campaign=rss",
+      "summary": "Ten Premier League teams in Europe? It sounds preposterous, but it is not as far fetched as it seems.",
+      "publishedAt": "2026-04-16T21:18:29.000Z"
     },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Crystal Palace hold off Fiorentina to book place in Conference semi-final",
+      "link": "https://www.theguardian.com/football/2026/apr/16/fiorentina-crystal-palace-conference-league-match-report",
+      "summary": "What a time it is to be a Crystal Palace supporter. Twelve months ago, the south London club was still waiting to win their first major trophy and even the most optimistic fan could never have imagined that they would be contesting the semi-final of a European competition. But despite a few anxious moments when a battling Fiorentina side cut the deficit from last week’s 3-0 defeat in first leg at Selhurst Park to just two goals with half an hour still to play, Oliver Glasner’s side showed their growing maturity at this level to progress to a last four showdown with Shakhtar Donetsk. Continue reading...",
+      "publishedAt": "2026-04-16T21:12:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Portugal zet sterk coëfficiëntenseizoen voort ondanks exit van twee clubs",
+      "link": "https://www.vi.nl/nieuws/portugal-zet-sterk-coefficientenseizoen-voort-ondanks-exit-van-porto-en-sporting",
+      "summary": "Voor AZ en Nederland viel het doek in Europa , Portugal houdt als concurrent één ploeg over. Een comeback van Sporting Braga was het volgende bewijs dat de Portugezen een goed coëfficiëntenseizoen draaien.",
+      "publishedAt": "2026-04-16T21:11:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Villa & Forest progress - relive eight iconic all-English European ties",
+      "link": "https://www.bbc.com/sport/football/articles/c8jkvmv2nr8o?at_medium=RSS&at_campaign=rss",
+      "summary": "Here are eight of the most memorable all-English clashes in Europe as Aston Villa and Nottingham Forest set up a Europa League semi-final.",
+      "publishedAt": "2026-04-16T21:05:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Gibbs-White’s early strike decisive as Nottingham Forest edge past 10-man Porto",
+      "link": "https://www.theguardian.com/football/2026/apr/16/nottingham-forest-porto-europa-league-match-report",
+      "summary": "The final whistle brought a second of relief before the celebrations truly kicked in after Nottingham Forest secured a place in the Europa League semi-finals. It should have been easier but nothing is simple at the City Ground as they made hard work of overcoming Porto, who played almost the entire match with 10 men. Morgan Gibbs-White settled the match, to set up an all English clash with Aston Villa for a place in the final. His goal came in the aftermath of Jan Bednarek’s early sending off and should have laid the foundations for more but Forest’s finishing was poor, forcing them to grind out the victory. Continue reading...",
+      "publishedAt": "2026-04-16T21:04:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Watkins breaks record as Aston Villa cruise past Bologna into all-English semi-final",
+      "link": "https://www.theguardian.com/football/2026/apr/16/aston-villa-bologna-europa-league-match-report",
+      "summary": "Ollie Watkins kickstarted Aston Villa’s near-perfect evening as his 100th goal for the club enabled Unai Emery’s side to cruise into a semi-final against Nottingham Forest. The England striker, looking to earn a late recall into Thomas Tuchel’s World Cup squad, tapped home in the 16th minute before goals from Emiliano Buendía and Morgan Rogers followed the latter’s spurned penalty. Ezri Konsa, who had set this emphatic aggregate victory in motion with the first goal in the first leg last week, rounded off the triumph by volleying home late on after Tammy Abraham headed on a corner. Continue reading...",
+      "publishedAt": "2026-04-16T21:04:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "ES",
       "flag": "🌍",
-      "title": "Football Daily | Bayern and Madrid produce a gourmand feast before the tantrums",
-      "link": "https://www.theguardian.com/football/2026/apr/16/football-daily-email-bayern-munich-real-madrid",
-      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! While a church bell clanged intermittently and bits of tumbleweed blew across the pitch at the Emirates Stadium, the Allianz Arena hosted a ding-dong battle that pretty much had it all on Wednesday night. For the second evening in eight days, it was left to Bayern Munich and Real Madrid to pull out all the stops and provide the box-office entertainment as Arsenal once again Arsenaled their way past Sporting in a bore draw to earn their place in Bigger Cup semi-finals. More or less picking up where they’d left off at the end of the first leg, Bayern and Madrid served up a gourmand feast of slapstick goalkeeping, a see-sawing scoreline, much better goalkeeping, near-misses, goals of an at times absurdly high quality, several red cards and no end of post-match salty Spanish tears and recriminations. While Madrid have little or no chance of pipping Barça to this season’s La Liga title, they certainly thrashed them in the ungracious Bigger Cup exit stakes. The image of Fermín López getting the boot from Juan Musso (yesterday’s Football Daily) clearly shows technique learned from English players. Admittedly, López’s head appeared to be at a dangerous level and one might expect an element of risk from crouching like that. As a life-long Hearts fan, I haven’t forgotten the approximation of a tackle attempted by English full-back Jason Talbot, then ‘playing’ for Livingston, on poor young winger Sam Nicholson in 2015. This was one incident in a match which, I believe, carries the accepted term ‘feisty’ (ie five goals, eight yellow cards and one red). And no, this wasn’t the red” – Ken Muir. Re: your almost-spot-on analysis of Southampton’s chances of automatic promotion (yesterday’s News, Bits and Bobs, full email edition), what you and – to be fair – every other publication I’ve read about this in, have omitted to mention is that Ipswich’s game in hand is away to Saints during the week before the last games of the season. Rather pertinent, I’d say” – Stuart Ainsworth. This is an extract from our daily football email … Football Daily. To get the full version, just visit this page and follow the instructions. Continue reading...",
-      "publishedAt": "2026-04-16T14:25:52.000Z"
+      "title": "Barca say refereeing 'errors' cost them Champions League semi-final spot",
+      "link": "https://www.bbc.com/sport/football/articles/c17v2x9ll75o?at_medium=RSS&at_campaign=rss",
+      "summary": "Barcelona say refereeing \"errors\" cost them a place in the semi-finals of the Champions League, and have caused \"significant sporting and financial harm to the club\".",
+      "publishedAt": "2026-04-16T18:59:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Italy made me a manager when England 'discouraged' me - Cole",
+      "link": "https://www.bbc.com/sport/football/articles/c6244xp5lvno?at_medium=RSS&at_campaign=rss",
+      "summary": "Ashley Cole won 107 caps for England, seventh on the all‑time list, but says he was \"discouraged\" by those in the football pyramid from becoming a head coach.",
+      "publishedAt": "2026-04-16T18:01:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Moisés Caicedo to agree lucrative new deal in show of faith for Chelsea project",
+      "link": "https://www.theguardian.com/football/2026/apr/16/moises-caicedo-to-agree-lucrative-new-deal-in-show-of-faith-for-chelsea-project",
+      "summary": "BlueCo ownership can point to commitment of Caicedo Jan Paul van Hecke and Alex Scott are players of interest Moisés Caicedo has handed Chelsea a major boost by verbally agreeing a new deal with the club. The midfielder has been a star performer since his £115m move from Brighton in 2023 and his decision to extend his current deal constitutes a show of faith in the Chelsea project after a turbulent period, with the club rocked by Enzo Fernández and Marc Cucurella using recent interviews to question the direction of travel at Stamford Bridge. Continue reading...",
+      "publishedAt": "2026-04-16T16:11:52.000Z"
     },
     {
       "type": "rss",
@@ -168,58 +223,14 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Declan Rice demands Arsenal improve for title showdown at Manchester City",
-      "link": "https://www.theguardian.com/football/2026/apr/16/declan-rice-demands-arsenal-improve-for-title-showdown-at-man-city",
-      "summary": "‘Etihad is the ultimate test – bring it on,’ says midfielder ‘We have six games to go and we know how big it is’ Declan Rice has insisted Arsenal must be better at Manchester City on Sunday if they are to press their Premier League title claims. The midfielder is conscious of his club’s curious situation: six points clear of City at the top of the table, albeit having played an extra game, and the only English team in the Champions League semi-finals. But the mood is edgy and Rice is aware that the fans have concerns over the style of play. Continue reading...",
-      "publishedAt": "2026-04-16T13:15:33.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "‘Is Spanish dominance in Europe coming to an end?’ – Sid Lowe answered your football questions",
-      "link": "https://www.theguardian.com/football/live/2026/apr/16/your-champions-league-questions-answered-sid-lowe",
-      "summary": "Sid Lowe is our Spanish football correspondent and has been covering an increasingly busy beat for years. He answered your questions on everything from the Champions League to La Liga … and lookalikes trollercoaster asks: Why have so many Spanish clubs competing in the Champions League or European Cup been relegated? It happened with Real Betis and with Villarreal. We have seen leading Spanish clubs fall to the second division and even to lower leagues, see Deportivo. Sid: There are lots of elements at play here, and they are not all the same going back over time, as the structure of Spanish football has changed (collective TV deal, etc), while some clubs had their own specific issues (Depor’s success, built on money they didn’t really have, was what brought their fall, for example). The short-term reason for some teams – look at Athletic this season, for example – is that they don’t always have the resources for both competitions. There’s definitely a financial component to it. Villarreal’s relegation in 2012 was baffling but internally they had overspent – which is unlike them, a stable and financially strong club – although they did learn from that. Look at the second division now and it is full of massive clubs (historically). Zaragoza are the really clear example … Sporting, Málaga, Depor, similar with Oviedo until last summer. Often laden with debt, often unready for the sudden fall off of income, etc … I don’t know … I’m not sure that I feel that the people I bigged up (early) have started suffering better fates … have they? It might not have been that bad before. Or maybe it was, ha. There’s a related issue here, actually, which is part of the daily battle … most pieces are on-demand, so to speak, (the desk asks about an issue or I suggest an issue or whatever), but on Mondays, the regular column linked to the weekend games, I more or less write what I want (over a 38-week season there might be three or four weeks when the desk suggests/wants a certain topic and I’m not totally mad: if it’s clásico weekend then very likely that will be the focus). Which is why you get Leganés or Levante. Continue reading...",
-      "publishedAt": "2026-04-16T13:01:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Bellingham says Camavinga red 'a joke' as Real fury grows",
-      "link": "https://www.bbc.com/sport/football/articles/cvg0zwl4zwko?at_medium=RSS&at_campaign=rss",
-      "summary": "Real Madrid's Jude Bellingham says the decision to send off team-mate Eduardo Camavinga during their 4-3 Champions League loss to Bayern Munich was \"a joke\".",
-      "publishedAt": "2026-04-16T12:14:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Fifa blamed for $100 World Cup trains from New York",
-      "link": "https://www.bbc.com/sport/football/articles/cg73p124k07o?at_medium=RSS&at_campaign=rss",
-      "summary": "New Jersey Governor Mikie Sherrill accuses Fifa of failing to provide funding, which means fans must foot the bill for high transport costs at the World Cup this summer.",
-      "publishedAt": "2026-04-16T11:02:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Ticket to ride? Fifa premium makes this the World Cup that actively hates you | Jonathan Liew",
-      "link": "https://www.theguardian.com/football/2026/apr/16/ticket-to-ride-america-2026-world-cup-actively-hates-you",
-      "summary": "The $95 bus trip to Foxborough highlights a tournament unique in modern times – one that ultimately makes no secret of its disdain for the paying public Like any journalist with an unerring nose for an offbeat feature, my interest was sharply piqued by this week’s announcement of the $95 bus ride. What magnificent accoutrements might conceivably justify the £70 fare for a half-hour journey from south Boston to Foxborough? An at-seat shiatsu? A pool deck? A five-course dining experience? A brief but moving Céline Dion set in the aisles? At the very least, I felt I owed it to my profession to find out for sure. Alas upon closer investigation, the Boston Stadium Express being launched for this summer’s World Cup appears to be an entirely regular bus journey on an entirely regular bus with entirely regular bus seats. Your non-refundable ticket – no child concessions – entitles you simply to be dropped off a 15-minute walk from the ground, and picked up again from the same place. There is, in short, no more complex rationale for the Boston organising committee to charge £70 than the fact that they can, and the World Cup only comes once, and if you don’t want to pay then some other rube will. Continue reading...",
-      "publishedAt": "2026-04-16T07:00:52.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Anderlecht est rassuré, mais... la saison prochaine promet une rude bataille",
+      "link": "https://www.walfoot.be/news/2026-04-16/anderlecht-est-rassure-mais-la-saison-prochaine-promet-une-rude-bataille",
+      "summary": "Anderlecht a été rassuré par les débuts de Justin Heekeren face à La Gantoise et ne devrait plus chercher de gardien. Colin Coosemans devra toutefois faire face à une nouvelle concurrence.",
+      "publishedAt": "2026-04-16T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -227,10 +238,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "KAA Gent bindt aanvaller langer aan zich vast: contract tot 2029",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/kaa-gent-bindt-aanvaller-langer-aan-zich-vast-contract-tot-2029",
-      "summary": "KAA Gent heeft een belangrijk contractdossier afgerond. De Buffalo's belonen Hyllarion Goore met een nieuwe verbintenis.",
-      "publishedAt": "2026-04-16T04:20:00.000Z"
+      "title": "'Hij was enkele seizoenen geleden te duur voor Club Brugge, maar deze Turkse doelman is nu dé prioriteit'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/hij-was-enkele-seizoenen-geleden-te-duur-voor-club-brugge-maar-deze-turkse-doelman-is-nu-de-prioriteit",
+      "summary": "Club Brugge schakelt een versnelling hoger in de zoektocht naar een nieuwe doelman. Ersin Destanoglu was enkele seizoenen geleden geen spek naar blauw-zwarte bek, maar de 25-jarige Turk komt plots in het vizier.",
+      "publishedAt": "2026-04-16T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -238,10 +249,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Benito Raman souligne une nette différence entre les Mauves et l'Union SG : \"Anderlecht est tout simplement meilleur sur ça\"",
-      "link": "https://www.walfoot.be/news/2026-04-16/benito-raman-souligne-une-nette-difference-entre-les-mauves-et-lunion-sg--anderlecht-est-tout-simplement-meilleur-sur-ca",
-      "summary": "Malines veut se relancer après un début compliqué en Champions' Play-offs. Benito Raman voit des opportunités face à Anderlecht, mais sait qu'il en faudra nettement plus dimanche.",
-      "publishedAt": "2026-04-16T04:00:00.000Z"
+      "title": "DJ set, happy hour... le RFC Liège prépare une soirée animée pour fêter sa qualification en play-offs",
+      "link": "https://www.walfoot.be/news/2026-04-16/dj-set-happy-hour-le-rfc-liege-prepare-une-soiree-animee-pour-feter-sa-qualification-en-play-offs",
+      "summary": "À une journée de la fin de la phase classique, le RFC Liège est déjà qualifié pour les Promotion Play-offs. Le club liégeois a annoncé qu'une soirée festive sera au rendez-vous ce vendredi lors du dernier match de championnat.",
+      "publishedAt": "2026-04-16T08:30:00.000Z"
     },
     {
       "type": "rss",
@@ -249,21 +260,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Ex-Antwerp-speler Michel-Ange Balikwisha volledig uit beeld: wat is er aan de hand?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/ex-antwerp-speler-michel-ange-balikwisha-volledig-uit-beeld-wat-is-er-aan-de-hand",
-      "summary": "Michel-Ange Balikwisha is volledig van de radar verdwenen in Schotland. De Congolese linksbuiten, die niet meer aan spelen toekomt, zal deze zomer samen met zijn entourage op zoek gaan naar een oplossing om zijn carrière nieuw leven in te blazen.",
-      "publishedAt": "2026-04-16T04:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Stijn Vreven is opvallend eerlijk over seizoen van Lokeren en wijst op twee grote problemen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/stijn-vreven-is-opvallend-eerlijk-over-seizoen-van-lokeren-en-wijst-op-twee-grote-problemen",
-      "summary": "Lokeren kan dit seizoen niet meer promoveren, maar trainer Stijn Vreven kijkt al verder dan de slotmatch tegen Lierse. De coach maakt een eerlijke balans op en legt de ambitie voor volgend jaar meteen hoger.",
-      "publishedAt": "2026-04-16T03:40:00.000Z"
+      "title": "Hoe ziet Wouter Vrancken zijn toekomst? Coach van STVV legde Frans aanbod naast zich neer en... ook deze Belgische topclub kwam al aankloppen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/hoe-ziet-wouter-vrancken-zijn-toekomst-coach-van-stvv-legde-frans-aanbod-naast-zich-neer-en-ook-deze-begis",
+      "summary": "Wouter Vrancken wordt steeds meer gelinkt aan een vertrek bij STVV. De coach wordt in verband gebracht met een buitenlands avontuur én ging in zee met een nieuw makelaarskantoor. Tussendoor polste ook een Belgische topclub naar zijn beschikbaarheid.",
+      "publishedAt": "2026-04-16T08:30:00.000Z"
     },
     {
       "type": "rss",
@@ -271,43 +271,21 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Un buteur allemand dans le viseur d'Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-04-16/un-buteur-allemand-dans-le-viseur-danderlecht",
-      "summary": "Anderlecht veut frapper fort sur le marché des transferts l'été prochain et cible notamment un renfort offensif. Un nouveau nom figure sur la short-list pour tenter de résoudre le manque d'efficacité devant le but.",
-      "publishedAt": "2026-04-16T03:30:00.000Z"
+      "title": "\"Deux malades qui souffrent du même syndrome\" : Frédéric Waseige livre son analyse avant le choc wallon",
+      "link": "https://www.walfoot.be/news/2026-04-16/deux-malades-qui-souffrent-du-meme-syndrome--frederic-waseige-livre-son-analyse-avant-le-choc-wallon",
+      "summary": "Frédéric Waseige a livré son analyse avant le choc wallon de ce samedi. Le consultant est revenu sur les dynamiques contrastées du Sporting de Charleroi et du Standard.",
+      "publishedAt": "2026-04-16T08:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Joseph Opoku zet alles recht bij Zulte Waregem en droomt nog heel groot",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/joseph-opoku-zet-alles-recht-bij-zulte-waregem-en-droomt-nog-heel-groot",
-      "summary": "Joseph Opoku heeft zich na moeilijke weken helemaal herpakt bij Zulte Waregem. Met twee goals tegen Dender bezorgde hij Essevee niet alleen de zege, maar ook het behoud in 1A.",
-      "publishedAt": "2026-04-16T03:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "DE",
+      "country": "IT",
       "flag": "🌍",
-      "title": "Pourquoi Vincent Kompany incarne parfaitement l'esprit du Bayern : \"Mia san mia\"",
-      "link": "https://www.walfoot.be/news/2026-04-16/avis-pourquoi-vincent-kompany-incarne-parfaitement-lesprit-du-bayern--mia-san-mia",
-      "summary": "&quot;Mia san mia&quot;, disent-ils au FC Bayern Munich. &quot;Nous sommes nous&quot;. Plus qu'un slogan, c'est un véritable état d'esprit. Et rarement cette philosophie n'aura autant collé à un entraîneur qu'à Vincent Kompany.",
-      "publishedAt": "2026-04-16T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Standard krijgt boost voor Waalse clash, maar moet ook zware domper slikken",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/standard-krijgt-boost-voor-waalse-clash-maar-moet-ook-zware-domper-slikken",
-      "summary": "Vincent Euvrard kan voor de verplaatsing naar Sporting Charleroi zaterdag opnieuw rekenen op Matthieu Epolo, Ibrahim Karamoko en Steeven Assengue, en mogelijk ook op Marlon Fossey. Het seizoen van Mohamed El Hankouri zit erop.",
-      "publishedAt": "2026-04-16T03:00:00.000Z"
+      "title": "'Internazionale wil concurrentie aftroeven en drukt gaspedaal in om Rode Duivel naar Milaan te halen'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/internazionale-wil-concurrentie-aftroeven-en-drukt-gaspedaal-in-om-rode-duivel-naar-milaan-te-halen",
+      "summary": "Internazionale FC drukt het gaspedaal in voor Mandela Keita. De Italiaanse topclub is vastberaden om de éénvoudig Rode Duivel komende zomer naar Milaan te halen.",
+      "publishedAt": "2026-04-16T08:00:00.000Z"
     },
     {
       "type": "rss",
@@ -315,10 +293,21 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Hugo Broos fait l'éloge de Vincent Kompany : \"Nous pouvons être très fiers de lui\"",
-      "link": "https://www.walfoot.be/news/2026-04-16/hugo-broos-fait-leloge-de-vincent-kompany--nous-pouvons-etre-tres-fiers-de-lui",
-      "summary": "Vincent Kompany continue d'impressionner et reçoit désormais les éloges d'Hugo Broos, actuel entraîneur de l'Afrique du Sud.",
-      "publishedAt": "2026-04-16T02:30:00.000Z"
+      "title": "Un jeune talent du Club de Bruges rêve de remporter le Ballon d'Or : \"Certains rient quand je dis ça...\"",
+      "link": "https://www.walfoot.be/news/2026-04-16/un-jeune-talent-du-club-de-bruges-reve-de-remporter-le-ballon-dor--certains-rient-quand-je-dis-ca",
+      "summary": "Tian Nai Koren, jeune joueur du Club NXT âgé de 16 ans seulement, est un énorme talent. Le milieu offensif Blauw en Zwart, qui n'est qu'à l'aube de sa carrière, voit grand.",
+      "publishedAt": "2026-04-16T07:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Hallo, Belgische topclubs? 'Vincent Janssen wil contract bij Antwerp niét verlengen en denkt aan stoppen'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/hallo-belgische-topclubs-vincent-janssen-wil-contract-bij-antwerp-niet-verlengen-en-denkt-aan-stoppen",
+      "summary": "Hoe ziet de toekomst van Vincent Janssen eruit? De aanvoerder van Antwerp FC beschikt over een aflopend contract. Kiest hij voor een nieuw avontuur (als huisvader)?",
+      "publishedAt": "2026-04-16T07:40:00.000Z"
     },
     {
       "type": "rss",
@@ -326,10 +315,21 @@
       "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "L'ancien gardien d'Arsenal et de la Juventus, Alexander Manninger, est décédé dans un accident de la route",
-      "link": "https://www.walfoot.be/news/2026-04-16/lancien-gardien-darsenal-et-de-la-juventus-alexander-manninger-est-decede-dans-un-accident-de-la-route",
-      "summary": "L'ancien gardien autrichien, Alex Manninger, a perdu la vie dans un accident de voiture. La terrible nouvelle est tombé ce jeudi.",
-      "publishedAt": "2026-04-16T02:00:00.000Z"
+      "title": "Le FC Barcelone dépose une nouvelle plainte auprès de l'UEFA après son élimination en Ligue des champions",
+      "link": "https://www.walfoot.be/news/2026-04-16/le-fc-barcelone-depose-une-nouvelle-plainte-aupres-de-luefa-apres-son-elimination-en-ligue-des-champions",
+      "summary": "Le FC Barcelone a déposé plainte auprès de l'UEFA après son élimination au stade des quarts de finale de la Ligue des champions. Le club catalan se plaint de l'arbitrage.",
+      "publishedAt": "2026-04-16T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Barcelona richt pijlen op dure vogel die ook héél hoog op de verlanglijst van Liverpool staat'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-16/barcelona-richt-pijlen-op-dure-vogel-die-ook-heel-hoog-op-de-verlanglijst-van-liverpool-staat",
+      "summary": "FC Barcelona gaat zonder noemenswaardige ongelukken de Spaanse landstitel bijschrijven op het palmares. De Champions League-uitschakeling bracht echter aan het licht hoe kwetsbaar de Catalaanse defensie is. En daar wil Joan Laporta iets aan doen.",
+      "publishedAt": "2026-04-16T07:20:00.000Z"
     }
   ]
 }
