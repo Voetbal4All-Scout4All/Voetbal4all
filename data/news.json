@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-04-16T22:46:16.881Z",
+  "generatedAt": "2026-04-17T02:54:01.148Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Sources: NWSL expected to vote on calendar shift",
+      "link": "https://www.espn.com/soccer/story/_/id/48508613/nwsl-expected-vote-calendar-shift-month",
+      "summary": "The NWSL's board of governors is expected to vote later this month on whether to flip the league's calendar to a fall-to-spring season, multiple sources told ESPN.",
+      "publishedAt": "2026-04-17T03:20:46.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,7 +21,7 @@
       "title": "Alex Manninger, former Arsenal keeper, dies at 48",
       "link": "https://www.espn.com/soccer/story/_/id/48502984/alex-manninger-former-arsenal-goalkeeper-dies-48",
       "summary": "Former Arsenal goalkeeper Alex Manninger has died at the age of 48.",
-      "publishedAt": "2026-04-16T22:59:18.000Z"
+      "publishedAt": "2026-04-17T03:12:50.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +32,7 @@
       "title": "Barcelona file fresh UEFA complaint over UCL refs",
       "link": "https://www.espn.com/soccer/story/_/id/48504832/barcelona-uefa-complaint-champions-league-referee-atletico-madrid",
       "summary": "Barcelona have filed a second complaint to UEFA complaining that refereeing standards were not complied with in their Champions League quarterfinal exit to Atlético Madrid.",
-      "publishedAt": "2026-04-16T22:59:18.000Z"
+      "publishedAt": "2026-04-17T03:12:50.000Z"
     },
     {
       "type": "rss",
@@ -32,18 +43,51 @@
       "title": "Aaronson: Not true that USMNT players don't care",
       "link": "https://www.espn.com/soccer/story/_/id/48505863/brenden-aaronson-usa-players-2026-world-cup-leeds-united",
       "summary": "Brenden Aaronson insisted that that the USMNT is determined to make the country proud, following criticism of its performances ahead of the World Cup.",
-      "publishedAt": "2026-04-16T22:59:18.000Z"
+      "publishedAt": "2026-04-17T03:12:50.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Villa breeze past Bologna into UEL semi vs. Forest",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862906",
-      "summary": "Aston Villa blew Bologna away with a trio of first-half goals as they roared into the semifinals of the Europa League with a 4-0 victory, winning 7-1 on aggregate.",
-      "publishedAt": "2026-04-16T22:59:18.000Z"
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Iran footballers granted asylum in Australia vow to continue chasing sporting dream",
+      "link": "https://www.theguardian.com/football/2026/apr/17/iranian-womens-football-team-players-asylum-australia-brisbane-roar-training",
+      "summary": "Former Iranian women’s team players ‘overwhelmed’ by support Ramezanisadeh and Pasandideh have trained with Brisbane Roar The two members of the Iran football team who remained in Australia after the Women’s Asian Cup are beginning their new lives away from the spotlight, even if their dream is to return to elite football. Fatemeh Pasandideh and Atefeh Ramezanisadeh issued a statement on Friday saying they “respectfully ask” for “privacy and space”. Continue reading...",
+      "publishedAt": "2026-04-17T01:04:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spectacular European nights the new normal for Villa under Emery",
+      "link": "https://www.bbc.com/sport/football/articles/c3ex2w04kd0o?at_medium=RSS&at_campaign=rss",
+      "summary": "Ten years ago, Aston Villa were relegated to English football's second tier for the first time since 1987. Now they are in their second European semi-final in three seasons.",
+      "publishedAt": "2026-04-16T23:22:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Premier League: 10 things to look out for this weekend",
+      "link": "https://www.theguardian.com/football/2026/apr/17/premier-league-10-things-to-look-out-for-this-weekend",
+      "summary": "A seismic clash between City and Arsenal, Tottenham need leadership, and could Eddie Howe recall Yoane Wissa? Josh King learned of the difficulties that come with being a Premier League player at Liverpool on Sunday. The 19-year-old was withdrawn at the break after a tough first half at Anfield as Marco Silva wanted to change things when two goals down. It will be interesting to see how King reacts to the half-time hook when he is next called upon, whether he uses it as inspirational fuel or sees it as an undeserved irritation because he was not solely to blame for Fulham being behind. Silva will have a quandary over whether to start the youngster again or leave him stewing on the bench, offering a further reminder of what is required at the top level. King has impressed over the season and, sometimes, at this stage of a player’s development, it is a good idea to see what lessons are learned from a challenging moment. Will Unwin Brentford v Fulham, Saturday 12.30pm (all times BST) Leeds v Wolves, Saturday 3pm Newcastle v Bournemouth, Saturday 3pm Tottenham v Brighton, Saturday 5.30pm Chelsea v Manchester United, Saturday 8pm Continue reading...",
+      "publishedAt": "2026-04-16T23:01:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Why 'sensational' Palace & Conference League are good fit",
+      "link": "https://www.bbc.com/sport/football/articles/cvg4z1pn7g4o?at_medium=RSS&at_campaign=rss",
+      "summary": "After overcoming Fiorentina over two legs to reach the semi-finals, Crystal Palace will now fancy their chances of going all the way in the Conference League and adding a European trophy to their FA Cup success last season.",
+      "publishedAt": "2026-04-16T22:46:02.000Z"
     },
     {
       "type": "rss",
@@ -113,17 +157,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How 10 Premier League teams could still qualify for Europe",
-      "link": "https://www.bbc.com/sport/football/articles/ckg0pjl4vq5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Ten Premier League teams in Europe? It sounds preposterous, but it is not as far fetched as it seems.",
-      "publishedAt": "2026-04-16T21:18:29.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
@@ -152,7 +185,7 @@
       "flag": "🇬🇧",
       "title": "Gibbs-White’s early strike decisive as Nottingham Forest edge past 10-man Porto",
       "link": "https://www.theguardian.com/football/2026/apr/16/nottingham-forest-porto-europa-league-match-report",
-      "summary": "The final whistle brought a second of relief before the celebrations truly kicked in after Nottingham Forest secured a place in the Europa League semi-finals. It should have been easier but nothing is simple at the City Ground as they made hard work of overcoming Porto, who played almost the entire match with 10 men. Morgan Gibbs-White settled the match, to set up an all-English clash with Aston Villa for a place in the final. His goal came in the aftermath of Jan Bednarek’s early sending off and should have laid the foundations for more but Forest’s finishing was poor, forcing them to grind out the victory by surviving Porto hitting the crossbar twice. Even so, the ultimate jubilation was reminiscent of those great nights of the 1980s under Brian Clough when the club last reached this stage. Continue reading...",
+      "summary": "The final whistle brought a second of relief before the celebrations truly kicked in after Nottingham Forest secured a place in the Europa League semi-finals. It should have been easier but nothing is simple at the City Ground as they made hard work of overcoming Porto, who played almost the entire match with 10 men. Morgan Gibbs-White settled the match, to set up an all-English clash with Aston Villa for a place in the final. His goal came in the aftermath of Jan Bednarek’s early sending off and should have laid the foundations for more but Forest’s finishing was poor, forcing them to grind out the victory by surviving Porto hitting the crossbar twice. Even so, the ultimate jubilation was reminiscent of those great nights of the 1980s under Brian Clough when the club last reached this stage in Europe. Continue reading...",
       "publishedAt": "2026-04-16T21:04:42.000Z"
     },
     {
@@ -170,45 +203,12 @@
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barca say refereeing 'errors' cost them Champions League semi-final spot",
-      "link": "https://www.bbc.com/sport/football/articles/c17v2x9ll75o?at_medium=RSS&at_campaign=rss",
-      "summary": "Barcelona say refereeing \"errors\" cost them a place in the semi-finals of the Champions League, and have caused \"significant sporting and financial harm to the club\".",
-      "publishedAt": "2026-04-16T18:59:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Moisés Caicedo to agree lucrative new deal in show of faith for Chelsea project",
-      "link": "https://www.theguardian.com/football/2026/apr/16/moises-caicedo-to-agree-lucrative-new-deal-in-show-of-faith-for-chelsea-project",
-      "summary": "BlueCo ownership can point to commitment of Caicedo Jan Paul van Hecke and Alex Scott are players of interest Moisés Caicedo has handed Chelsea a major boost by verbally agreeing a new deal with the club. The midfielder has been a star performer since his £115m move from Brighton in 2023 and his decision to extend his current deal constitutes a show of faith in the Chelsea project after a turbulent period, with the club rocked by Enzo Fernández and Marc Cucurella using recent interviews to question the direction of travel at Stamford Bridge. Continue reading...",
-      "publishedAt": "2026-04-16T16:11:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Ex-keeper Manninger dies after car hit by train",
-      "link": "https://www.bbc.com/sport/football/articles/c4g84l14e5eo?at_medium=RSS&at_campaign=rss",
-      "summary": "Former Arsenal goalkeeper Alex Manninger dies at the age of 48 after his car is struck by a train.",
-      "publishedAt": "2026-04-16T13:53:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Alex Manninger, former Arsenal goalkeeper, dies aged 48 after road accident",
-      "link": "https://www.theguardian.com/football/2026/apr/16/alex-manninger-former-arsenal-goalkeeper-dies-aged-48-after-road-accident",
-      "summary": "Austrian was capped 33 times for his national team Manninger won Premier League during Arsenal spell Alex Manninger, the former goalkeeper who helped Arsenal win the Double in 1998, has died in a car accident in Austria, aged 48. His first club, Red Bull Salzburg, broke the sad news on Thursday. The Austrian Bundesliga club said in a post on its official X account: “We mourn our former goalkeeper Alexander Manninger, who tragically lost his life in a traffic accident. Our thoughts are with his family and friends. Rest in peace, Alexander.” Continue reading...",
-      "publishedAt": "2026-04-16T13:51:59.000Z"
+      "title": "Sutton's predictions v boxer Molly McCann & the Boo Radleys",
+      "link": "https://www.bbc.com/sport/football/articles/c78lxvzl3d4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Chris Sutton takes on boxer Molly McCann and The Boo Radley's frontman Sice Rowbottom plus the BBC readers and AI with his predictions for this weekend's Premier League fixtures.",
+      "publishedAt": "2026-04-16T17:39:32.000Z"
     },
     {
       "type": "rss",
