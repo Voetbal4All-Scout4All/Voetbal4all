@@ -741,3 +741,13 @@ body .v4-status-note{
     padding:10px 12px;
   }
 }
+
+/* ── Mobile readability: targeted paragraph font-size bump ─────── */
+
+@media (max-width:600px){
+  .hero-card .note,
+  .newsletter-card .note{
+    font-size:14px;
+    line-height:1.55;
+  }
+}
