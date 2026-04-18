@@ -772,3 +772,11 @@ body .v4-status-note{
     display:none !important;
   }
 }
+
+/* ── Mobile content hierarchy: hero video hidden ─────────────── */
+
+@media (max-width:900px){
+  .hero-card .hero-video-col{
+    display:none;
+  }
+}
