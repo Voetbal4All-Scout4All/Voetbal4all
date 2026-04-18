@@ -780,3 +780,11 @@ body .v4-status-note{
     display:none;
   }
 }
+
+/* ── Mobile article-list limit to 4 items ────────────────────── */
+
+@media (max-width:900px){
+  #latest-news-grid > :nth-child(n+5){
+    display:none;
+  }
+}
