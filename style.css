@@ -704,3 +704,50 @@ body .v4-status-note{
     min-height:46px;
   }
 }
+
+/* ── Tap-target minimum 44×44px (WCAG / Apple HIG) ────────────── */
+
+/* Hamburger becomes visible at 900px */
+@media (max-width:900px){
+  .nav-burger{
+    min-width:44px;
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+
+/* Smaller touch elements on phone screens */
+@media (max-width:600px){
+  /* Social icons: visual size stays 28px, tap area grows to 44px */
+  .live-social{
+    padding:8px;
+    box-sizing:content-box;
+  }
+
+  /* Newsletter submit button */
+  .newsletter-form .btn-submit{
+    min-height:44px;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+
+  /* Footer links: pad to 44px touch height */
+  .footer-social-link{
+    min-height:44px;
+    display:inline-flex;
+    align-items:center;
+    padding:10px 12px;
+  }
+}
+
+/* ── Mobile readability: targeted paragraph font-size bump ─────── */
+
+@media (max-width:600px){
+  .hero-card .note,
+  .newsletter-card .note{
+    font-size:14px;
+    line-height:1.55;
+  }
+}

@@ -388,6 +388,20 @@
       margin-left: 6px !important;
     }
 
+    /* Placeholder rows for ranks outside current play-off phase */
+    .home-standings-card .event-item.is-empty{
+      opacity: 0.35;
+      font-style: italic;
+    }
+
+    .standings-footnote{
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      margin: 8px 0 2px;
+      font-style: italic;
+    }
+
     /* HOME: nieuwsbrief signup card (replaces Sponsor & Ads quick-card) */
     .newsletter-card{
       cursor: default;
@@ -3581,8 +3595,7 @@
           if (rows.length < 10) {
             for (let i = rows.length + 1; i <= 10; i++) {
               const li = document.createElement("li");
-              li.className = "event-item";
-              li.style.opacity = "0.55";
+              li.className = "event-item is-empty";
               li.innerHTML = `
                 <div class=\"standings-row\">
                   <div class=\"standings-ranklogo\">
@@ -3593,6 +3606,14 @@
                 </div>
               `;
               listEl.appendChild(li);
+            }
+            // Add footnote explaining play-off context
+            const card = listEl.closest(".home-standings-card");
+            if (card && !card.querySelector(".standings-footnote")) {
+              const fn = document.createElement("p");
+              fn.className = "standings-footnote";
+              fn.textContent = "Championship Play-offs \u00b7 overige play-offs niet getoond";
+              card.appendChild(fn);
             }
           }
 
