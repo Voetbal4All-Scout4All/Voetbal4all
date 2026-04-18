@@ -724,6 +724,7 @@ body .v4-status-note{
   .live-social{
     padding:8px;
     box-sizing:content-box;
+    margin:-8px 0;
   }
 
   /* Newsletter submit button */
