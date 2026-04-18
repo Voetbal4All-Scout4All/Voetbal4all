@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-04-18T21:40:00.171Z",
+  "generatedAt": "2026-04-18T23:39:55.311Z",
   "items": [
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Watch: Match of the Day",
-      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
-      "summary": "Highlights of five Premier League matches, including Manchester United’s trip to Chelsea.",
-      "publishedAt": "2026-04-19T08:00:00.000Z"
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Messi stunner gives Miami's new coach debut win",
+      "link": "https://www.espn.com/soccer/story/_/id/48525587/lionel-messi-goal-inter-miami-colorado-rapids-coach-mls",
+      "summary": "Lionel Messi had two goals, including a stunning 79th-minute winner, to give Inter Miami a victory in new interim coach Guillermo Hoyos' first match in charge on Saturday.",
+      "publishedAt": "2026-04-19T00:20:46.000Z"
     },
     {
       "type": "rss",
@@ -18,54 +18,87 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Parkinson: Wrexham to take promotion 'to the wire'",
-      "link": "https://www.espn.com/soccer/story/_/id/48522975/phil-parkinson-vows-wrexham-take-promotion-push-wire",
-      "summary": "Manager Phil Parkinson underlined Wrexham's determination to take their Championship play-off push \"to the wire\" after beating Stoke got them back on track.",
-      "publishedAt": "2026-04-18T22:02:28.000Z"
+      "title": "Man Utd give Chelsea 'mountain to climb' for UCL",
+      "link": "https://www.espn.com/soccer/story/_/id/48525681/man-united-chelsea-champions-league-premier-liam-rosenior",
+      "summary": "Liam Rosenior said Chelsea have \"a mountain to climb\" to qualify for the Champions League after they lost 1-0 to Manchester United on Saturday.",
+      "publishedAt": "2026-04-19T00:20:45.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "De Zerbi vows Spurs can win last 5 to survive",
-      "link": "https://www.espn.com/soccer/story/_/id/48524455/roberto-de-zerbi-tottenham-win-all-five-remaining-premier-league-games",
-      "summary": "Roberto de Zerbi believes Tottenham can win all five remaining Premier League games to emphatically avoid relegation -- and warned any unhappy players will be turned away from the club's training ground on Monday.",
-      "publishedAt": "2026-04-18T22:02:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man Utd beat sinking Chelsea to close in on UCL",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740922",
-      "summary": "A first-half goal from Matheus Cunha was enough to give Manchester United a 1-0 win at Chelsea on Saturday night.",
-      "publishedAt": "2026-04-18T22:02:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "IT",
+      "country": "ES",
       "flag": "🌍",
-      "title": "Napoli booed as loss puts Inter on verge of title",
-      "link": "https://www.espn.com/soccer/story/_/id/48523382/napoli-boo-lazio-inter-milan-serie-title",
-      "summary": "Napoli was jeered off the field after it lost 2-0 at home to Lazio -- a result that saw Inter Milan take a huge step toward winning the Serie A title.",
-      "publishedAt": "2026-04-18T22:02:27.000Z"
+      "title": "Sociedad upset Atleti on pens to win Copa del Rey",
+      "link": "https://www.espn.com/soccer/report/_/gameId/401859852",
+      "summary": "Real Sociedad upset Atlético Madrid to win their fourth Copa del Rey title after triumphing 4-3 in a penalty shootout following a 2-2 draw after extra time in Seville.",
+      "publishedAt": "2026-04-19T00:20:45.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "DE",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spurs find silver lining vs. Brighton, but not a desperately needed win",
+      "link": "https://www.espn.com/soccer/story/_/id/48524478/tottenham-hotspur-find-silver-lining-vs-brighton-hove-albion-not-desperately-needed-premier-league-win",
+      "summary": "Tottenham still haven't won in the Premier League in 2026, following Saturday's 2-2 draw with Brighton. Nevertheless, there are positives to take.",
+      "publishedAt": "2026-04-19T00:02:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man United close in on UCL return by beating increasingly toxic Chelsea",
+      "link": "https://www.espn.com/soccer/story/_/id/48525757/manchester-united-close-uefa-champions-league-return-beating-increasingly-toxic-chelsea",
+      "summary": "Carrick seems to have the blueprint to get Man United back to Europe's top table after beating Chelsea.",
+      "publishedAt": "2026-04-19T00:02:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Carrick silences doubters as Man Utd close on Champions League",
+      "link": "https://www.bbc.com/sport/football/articles/cly67vpyx1jo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United beat Chelsea to move closer to a Champions League return and silence the growing Michael Carrick doubters.",
+      "publishedAt": "2026-04-18T23:18:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Protests and another costly loss - pressure mounts on Rosenior's Chelsea",
+      "link": "https://www.bbc.com/sport/football/articles/cj0vg341djqo?at_medium=RSS&at_campaign=rss",
+      "summary": "Chelsea head coach Liam Rosenior admits his side face a \"mountain to climb\" as their campaign unravels at a crucial juncture following defeat by Manchester United.",
+      "publishedAt": "2026-04-18T23:05:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Messi wijst Inter Miami de weg in eerste wedstrijd zonder Mascherano",
+      "link": "https://www.vi.nl/nieuws/messi-wijst-inter-miami-de-weg-in-eerste-wedstrijd-zonder-mascherano",
+      "summary": "Lionel Messi heeft Inter Miami zaterdagavond drie belangrijke punten bezorgd. De Argentijnse superster was tweemaal trefzeker op bezoek bij Colorado Rapids en maakte daarmee een knappe comeback van de thuisploeg ongedaan.",
+      "publishedAt": "2026-04-18T22:45:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "ES",
       "flag": "🌍",
-      "title": "Union Berlin's Eta beaten in historic first match",
-      "link": "https://www.espn.com/soccer/story/_/id/48522317/union-berlin-marie-louise-eta-beaten-historic-first-match",
-      "summary": "Marie-Louise Eta's landmark first match as interim head coach of Union Berlin ended in a 2-1 Bundesliga defeat at home to relegation-threatened Wolfsburg.",
-      "publishedAt": "2026-04-18T22:02:27.000Z"
+      "title": "Real Sociedad lift Copa del Rey after Marrero shootout heroics sink Atlético",
+      "link": "https://www.theguardian.com/football/2026/apr/18/atletico-madrid-real-sociedad-copa-del-rey-final-match-report",
+      "summary": "Atlético Madrid 2-2 Real Sociedad (aet: 3-4 on pens) Lookman 19, Alvarez 83; Barrenetxea 1, Oyarzabal 45+1pen History has a pair unexpected heroes. Unai Marrero, a 24-year-old substitute goalkeeper, born in San Sebastián and raised at Real Sociedad, saved two penalties in the shootout to put his boyhood club within a single shot of victory on the what his captain had called the night of their lives. Then he embraced Pablo Marin, the former ballboy who now walked towards him carrying all of their hopes on his shoulders, and asked his teammate to take them over the line. So Marin, 22, and on as a substitute, did just that, stepping up and securing only the fourth Copa del Rey in la Real’s history, defeating Atlético Madrid from the spot after a 2-2 draw. Last time they had won it, in 2021, it took a penalty. This time it took six of them; Mikel Oyarzabal, as he had done then, scored one during the 90 minutes on the way to a 2-2 draw and three more men did in the shootout. Back then, Real Sociedad had won the trophy it in an empty stadium, unable to avoid the feeling that something was missing. Now at last they had done it in front of thousands of fans in Seville – there to see a trophy lifted for the first time in 38 years. Continue reading...",
+      "publishedAt": "2026-04-18T22:30:31.000Z"
     },
     {
       "type": "rss",
@@ -73,43 +106,32 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Man Utd boost Champions League hopes with victory at Chelsea",
-      "link": "https://www.bbc.com/sport/football/videos/ceqwde99q49o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United move closer to booking a place in next seasons Champions League after Matheus Cunha scores the only goal of the game in their 1-0 win over Chelsea at Stamford Bridge.",
-      "publishedAt": "2026-04-18T21:35:16.000Z"
+      "title": "Wild celebrations to verge of tears - time running out for Spurs",
+      "link": "https://www.bbc.com/sport/football/articles/c1l9yyp28peo?at_medium=RSS&at_campaign=rss",
+      "summary": "Scenes of celebration turned to bitter disappointment as Tottenham's hopes of avoiding relegation from the Premier League were dealt a devastating blow against Brighton.",
+      "publishedAt": "2026-04-18T22:14:50.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Rutter scores late equaliser to deny Spurs crucial win",
-      "link": "https://www.bbc.com/sport/football/videos/cr41772xd92o?at_medium=RSS&at_campaign=rss",
-      "summary": "Tottenham remain in the bottom three and are denied their first Premier League victory since December as Georginio Rutter scores a late equaliser for Brighton as the two sides draw 2-2 at the Tottenham Hotspur Stadium.",
-      "publishedAt": "2026-04-18T21:30:38.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Oude liefde doet Griezmann pijn: Sociedad wint Spaanse bekerfinale van Atlético",
+      "link": "https://www.vi.nl/nieuws/oude-liefde-doet-griezmann-pijn-sociedad-wint-spaanse-bekerfinale-van-atl-tico",
+      "summary": "Real Sociedad heeft voor de vierde keer in de clubhistorie de Copa del Rey gewonnen. In Sevilla trokken de Basken een zinderende bekerthriller naar zich toe door Atlético Madrid na strafschoppen te verslaan. Het eerste doelpunt viel al na veertien seconden.",
+      "publishedAt": "2026-04-18T22:00:11.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Leeds move closer to survival with victory over Wolves",
-      "link": "https://www.bbc.com/sport/football/videos/cy81w215ze9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Leeds moved a step closer to securing their Premier League survival as they beat Wolves 3-0 at Elland Road.",
-      "publishedAt": "2026-04-18T21:29:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Bournemouth extend unbeaten run with victory at Newcastle",
-      "link": "https://www.bbc.com/sport/football/videos/c6251dnn9j7o?at_medium=RSS&at_campaign=rss",
-      "summary": "Bournemouth extend their unbeaten run in the Premier League to 13 games after beating Newcastle 2-1 at St. James' Park.",
-      "publishedAt": "2026-04-18T21:29:40.000Z"
+      "title": "Bruno Fernandes schaart zich in rijtje met Fabregas en Salah na nieuw hoogtepunt",
+      "link": "https://www.vi.nl/nieuws/bruno-fernandes-schaart-zich-in-rijtje-met-fabregas-en-salah-na-nieuw-hoogtepunt",
+      "summary": "Zaterdag was er geen Eredivisie-voetbal, maar in het buitenland was er genoeg om je op te verheugen. Zo waren er vijf Premier League-duels, waarbij de ontmoeting tussen Chelsea en Manchester United het meest in het oog sprong. Daarnaast was de finale van de Copa del Rey tussen Atlético Madrid en Real Sociedad. Je miste niets met de VI Live.",
+      "publishedAt": "2026-04-18T21:53:47.000Z"
     },
     {
       "type": "rss",
@@ -121,17 +143,6 @@
       "link": "https://www.vi.nl/nieuws/eerste-goal-in-belgische-dienst-boersma-niets-waard",
       "summary": "Bouke Boersma heeft zijn eerste doelpunt in het shirt van KV Mechelen gemaakt. De twintigjarige Nederlandse spits zette zijn ploeg op voorsprong tegen Anderlecht. Zijn treffer bleek echter niets waard; Mechelen gaf de voorsprong uit handen.",
       "publishedAt": "2026-04-18T21:28:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Oranje slaat aanval Frankrijk af en blijft fier aan kop in strijd om WK-ticket",
-      "link": "https://www.vi.nl/nieuws/oranje-slaat-aanval-frankrijk-af-en-blijft-fier-aan-kop-in-strijd-om-wk-ticket",
-      "summary": "De Oranje Leeuwinnen hebben zich staande gehouden tegen Frankrijk. De ploeg van bondscoach Arjan Veurink had het zwaar, maar door een late gelijkmaker (1-1) blijft het nog altijd fier aan kop gaan in de WK-kwalificatiepoule.",
-      "publishedAt": "2026-04-18T21:19:05.000Z"
     },
     {
       "type": "rss",
@@ -148,17 +159,6 @@
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "VI Live: verlenging in Copa del Rey-finale moet beslissing brengen",
-      "link": "https://www.vi.nl/nieuws/vi-live-verlenging-in-copa-del-rey-finale-moet-beslissing-brengen",
-      "summary": "Zaterdag is er geen Eredivisie-voetbal, maar in het buitenland is er genoeg om je op te verheugen. Zo zijn er vijf Premier League-duels, waarbij de ontmoeting tussen Chelsea en Manchester United het meest in het oog springt. Daarnaast is de finale van de Copa del Rey tussen Atlético Madrid en Real Sociedad. Mis niets met de VI Live.",
-      "publishedAt": "2026-04-18T21:06:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
       "country": "DE",
       "flag": "🌍",
       "title": "Kompany ziet Gnabry wegvallen bij Bayern voor cruciale fase, ook WK in gevaar",
@@ -168,25 +168,25 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Man Utd deelt Chelsea enorme tik uit en kan Champions League ruiken",
-      "link": "https://www.vi.nl/nieuws/man-utd-deelt-chelsea-enorme-tik-uit-en-kan-champions-league-ruiken",
-      "summary": "Manchester United heeft zaterdagavond uitstekende zaken gedaan in de strijd om een Champions League-ticket. De Red Devils versloegen directe concurrent Chelsea op Stamford Bridge. Daardoor is het gat tussen beide ploegen nu tien punten.",
-      "publishedAt": "2026-04-18T20:54:54.000Z"
+      "title": "How Hampton's heroics bailed out Lionesses in win against Iceland",
+      "link": "https://www.bbc.com/sport/football/articles/clyx9zgvr4po?at_medium=RSS&at_campaign=rss",
+      "summary": "Goalkeeper Hannah Hampton says she just \"did my job\" in pulling off three crucial late saves as England held on to beat Iceland 1-0.",
+      "publishedAt": "2026-04-18T20:48:59.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arteta’s desire for complete control may derail Arsenal’s wobbling title drive | Jonathan Wilson",
-      "link": "https://www.theguardian.com/football/2026/apr/18/artetas-desire-for-complete-control-may-derail-arsenals-wobbling-title-drive",
-      "summary": "Now Guardiola has granted his players freedom to improvise, it’s the Gunners’ manager who is the stickler for blueprint over instinct At half-time in the Carabao Cup final, Arsenal’s hopes of a quadruple remained strong. They were unbeaten in 14, 11 of them won. They were drawing 0-0 against Manchester City and it wasn’t unreasonable to think that if the second half carried on as the first half had, they would eventually find a winner – quite possibly from a corner. They had drawn a Championship side in the sixth round of the FA Cup and a Portuguese side in the quarter-finals of the Champions League. They held a nine-point lead in the Premier League. This was shaping up to be the greatest season in Arsenal’s history. Continue reading...",
-      "publishedAt": "2026-04-18T19:00:21.000Z"
+      "title": "Howe's biggest Newcastle challenge yet as questions grow on his future",
+      "link": "https://www.bbc.com/sport/football/articles/c203y3ykv6no?at_medium=RSS&at_campaign=rss",
+      "summary": "Newcastle are languishing in 14th place in the Premier League following defeat by Bournemouth. Will manager Eddie Howe turn it around?",
+      "publishedAt": "2026-04-18T19:43:02.000Z"
     },
     {
       "type": "rss",
@@ -214,12 +214,34 @@
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Eddie Howe claims he retains his self-belief after Newcastle suffer another defeat",
-      "link": "https://www.theguardian.com/football/2026/apr/18/eddie-howe-retains-his-self-belief-after-newcastle-suffer-another-defeat",
-      "summary": "Bournemouth score late winner for 2-1 victory ‘Recently we’ve become too easy to beat’ Eddie Howe insisted his self-belief remained intact and unshakeable after watching Newcastle sustain an eighth defeat in their last 11 Premier League matches. “My belief in myself can’t waiver and it’s not,” said Newcastle’s manager after Bournemouth’s 2-1 win at St James’ Park. It was a fourth straight reverse in all competitions for Howe’s team and arrived after goals from Marcus Tavernier and Adrien Truffert extended the visitors’ unbeaten run to 13 league games. Continue reading...",
-      "publishedAt": "2026-04-18T18:15:10.000Z"
+      "country": "DE",
+      "flag": "🌍",
+      "title": "European football: History-maker Eta’s first Union Berlin game ends in defeat",
+      "link": "https://www.theguardian.com/football/2026/apr/18/european-football-marie-louise-eta-union-berlin-wolfsburg-napoli-lazio-roma-atalanta",
+      "summary": "Female coach’s Bundesliga side lose 2-1 to Wolfsburg Milan’s Allegri not interested in vacant Italy job Marie-Louise Eta’s landmark first match as interim head coach of Union Berlin ended in a 2-1 Bundesliga defeat at home to relegation-threatened Wolfsburg. The 34-year-old Eta made history on Saturday when she became the first woman to take charge of a men’s team in one of the top five European leagues. Union Berlin, who turned to Eta for the rest of the season after sacking Steffen Baumgart last weekend, fell behind to an 11th-minute goal from Patrick Wimmer. Continue reading...",
+      "publishedAt": "2026-04-18T15:49:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Cvetkovic en Bertaccini bezorgen Anderlecht een remontada: \"Het is voor hem iets emotioneel\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/match-reactie-cvetkovic-en-bertaccini-bezorgen-anderlecht-een-remontada-het-is-voor-hem-iets-emotioneel",
+      "summary": "Het is niet lang zoeken naar de spelers die voor Anderlecht de klus klaarden. Cvetkovic en Bertaccini maakten de doelpunten die de uitwedstrijd bij KV Mechelen deden kantelen.",
+      "publishedAt": "2026-04-18T09:51:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Ondanks overwinning en leiderplaats: Racing Genk furieus over één belangrijke fase tegen Westerlo",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/match-reactie-ondanks-overwinning-en-leiderplaats-racing-genk-furieus-over-een-belangrijke-fase-tegen-westerlo",
+      "summary": "Racing Genk pakte de drie punten op het veld van Westerlo maar daar ging wel een prangende slotfase aan vooraf. Een slotfase die misschien niet zo spannend had moeten zijn als het aan Racing Genk lag.",
+      "publishedAt": "2026-04-18T09:40:00.000Z"
     },
     {
       "type": "rss",
@@ -308,28 +330,6 @@
       "link": "https://www.walfoot.be/news/2026-04-18/genk-renverse-westerlo-et-sinstalle-en-tete-des-europe-play-offs",
       "summary": "Genk fait la différence en seconde période et s'impose 2-1 à Westerlo. Un succès important qui permet aux Limbourgeois de prendre la première place des Play-Offs Europe.",
       "publishedAt": "2026-04-18T08:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Joseph Oosting ziet \"heel prettig\" extra pigment aan eerste play-offzege van Antwerp",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/joseph-oosting-ziet-extra-heel-prettig-pigment-aan-eerste-play-offzege-van-antwerp",
-      "summary": "De kop is eraf voor Royal Antwerp FC. Het heeft zijn eerste zege beet in de play-offs. Tegen OH Leuven werd het 2-0. Joseph Oosting zag dat het goed was.",
-      "publishedAt": "2026-04-18T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Hayen haalt opgelucht adem na nieuwe overwinning: \"Dit moet de standaard worden\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/match-reactie-hayen-haalt-opgelucht-adem-na-nieuwe-overwinning-dit-moet-de-standaard-worden",
-      "summary": "Na drie speeldagen is Racing Genk nog de enige ploeg in de Europe Play Offs zonder nederlaag. Door de overwinning op het veld van Westerlo klimmen de Limburgers opnieuw naar de leiding zelfs.",
-      "publishedAt": "2026-04-18T07:55:00.000Z"
     }
   ]
 }
