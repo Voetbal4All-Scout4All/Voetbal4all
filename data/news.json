@@ -1,38 +1,49 @@
 {
-  "generatedAt": "2026-04-16T03:17:52.694Z",
+  "generatedAt": "2026-04-18T08:56:22.220Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Can Arsenal hold off City? Will Atlético win Copa del Rey?",
+      "link": "https://www.espn.com/soccer/story/_/id/48505839/weekend-predictions-premier-league-copa-del-rey-manchester-city-arsenal-chelsea-manchester-united-atletico-madrid",
+      "summary": "Ahead of a huge weekend across Europe, with implications at both ends of various tables -- and silverware up for grabs in Spain -- Julien Laurens previews and predicts.",
+      "publishedAt": "2026-04-18T09:25:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Lampard's Coventry return to Prem after 25 years",
+      "link": "https://www.espn.com/soccer/story/_/id/48493666/frank-lampard-coventry-city-promoted-premier-league-championship",
+      "summary": "Coventry City will return to the Premier League for the first time in 25 years after securing their promotion from the Championship with a draw at Blackburn.",
+      "publishedAt": "2026-04-18T09:25:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "NJ Transit confirms $150 train fares for WC fans",
+      "link": "https://www.espn.com/soccer/story/_/id/48514008/world-cup-fans-metlife-stadium-pay150-dollar-train-fares-nj-transit",
+      "summary": "Sky-high ticket prices won't be the only thing emptying the wallets of soccer fans attending World Cup matches at some U.S. venues this spring.",
+      "publishedAt": "2026-04-18T09:25:08.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
       "country": "US",
       "flag": "🇺🇸",
-      "title": "UCL talking points: Slot's bizarre choices, Bayern now favorites?",
-      "link": "https://www.espn.com/soccer/story/_/id/48495158/ucl-talking-points-slots-bizarre-choicesbayern-now-favorites",
-      "summary": "Arne Slot's decision to start Alexander Isak backfired, badly. ESPN's Julien Laurens, Sam Marsden, Gab Marcotti and Sam Tighe weigh in on that and all the other moments that mattered from the UCL quarterfinal second legs.",
-      "publishedAt": "2026-04-16T03:58:37.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "After Real Madrid's UCL comeback falls short, can their project be salvaged?",
-      "link": "https://www.espn.com/soccer/story/_/id/48496998/after-champions-league-defeat-madrid-project-salvaged",
-      "summary": "Big questions lie ahead for Real Madrid following their defeat to Bayern Munich in an instant UCL classic.",
-      "publishedAt": "2026-04-16T03:58:36.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "'Joke': Madrid fume at costly red card in UCL exit",
-      "link": "https://www.espn.com/soccer/story/_/id/48497483/real-madrid-eduardo-camavinga-red-card-bayern-munich-champions-league",
-      "summary": "Coach Álvaro Arbeloa said it was \"obvious\" that Eduardo Camavinga's red card was crucial in Real Madrid's Champions League quarterfinal elimination by Bayern Munich on Wednesday, while midfielder Jude Bellingham called the decision \"a joke.\"",
-      "publishedAt": "2026-04-16T02:31:57.000Z"
+      "title": "Wesley sparks USWNT to 3-0 victory over Japan",
+      "link": "https://www.espn.com/soccer/report/_/gameId/401857908",
+      "summary": "Kennedy Wesley recorded her first international goal to lead the United States to a 3-0 friendly win over Japan on Friday night in Commerce City, Colorado.",
+      "publishedAt": "2026-04-18T09:25:08.000Z"
     },
     {
       "type": "rss",
@@ -40,21 +51,21 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arteta tells Arsenal fans to enjoy, not criticize",
-      "link": "https://www.espn.com/soccer/story/_/id/48497799/mikel-arteta-arsenal-fans-champions-league-semifinals-sporting",
-      "summary": "Mikel Arteta has urged Arsenal fans to \"enjoy where we are\" after reaching the Champions League semifinals amid criticism of their performances.",
-      "publishedAt": "2026-04-16T02:31:57.000Z"
+      "title": "Slot: Liverpool's UCL exit could help league form",
+      "link": "https://www.espn.com/soccer/story/_/id/48519765/arne-slot-liverpool-use-early-champions-league-exit-premier-league-push",
+      "summary": "Arne Slot said Liverpool's exit from the Champions League could help them in their quest to qualify for the competition again next season.",
+      "publishedAt": "2026-04-18T09:25:08.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Kane hails 'special night' as Bayern oust Madrid",
-      "link": "https://www.espn.com/soccer/story/_/id/48498251/kane-celebrates-special-night-bayern-gets-old-rivals-real-madrid",
-      "summary": "Harry Kane hailed a \"special night\" as late goals powered Bayern Munich to a 4-3 victory, eliminating Real Madrid for the first time since 2012 and securing a ticket to the Champions League semifinals.",
-      "publishedAt": "2026-04-16T02:31:57.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Waarom FC Den Bosch mogelijk beter kan verliezen van ADO Den Haag",
+      "link": "https://www.vi.nl/nieuws/rare-situatie-voor-den-bosch-winst-op-ado-kan-play-offs-kosten",
+      "summary": "FC Den Bosch ging vrijdagavond pijnlijk onderuit in de derby bij TOP Oss. Toch is de kans groot dat de play-offs gehaald worden, al moet er dan wellicht verloren worden van ADO. 'Ik ben niet op voetbal gegaan om te verliezen, dus dan moet je mij niet opstellen.'",
+      "publishedAt": "2026-04-18T08:47:01.000Z"
     },
     {
       "type": "rss",
@@ -62,32 +73,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arteta wanted fire but Arsenal limp to semis - does style matter?",
-      "link": "https://www.bbc.com/sport/football/articles/cq6jp4qzq1po?at_medium=RSS&at_campaign=rss",
-      "summary": "Mikel Arteta wanted \"fire\" from his Arsenal players but instead got a sluggish performance as the Gunners did what was needed to reach the Champions League semi-finals.",
-      "publishedAt": "2026-04-16T00:07:45.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Seven goals, fastest strike & two red cards - Bayern-Real delivers drama",
-      "link": "https://www.bbc.com/sport/football/articles/cz0e27043kpo?at_medium=RSS&at_campaign=rss",
-      "summary": "The quickest strike in this season's Champions League, seven goals, two red cards and the competition's 15-time winners exiting in anger - once again the knockout stages of European club football's elite tournament has delivered drama in spades.",
-      "publishedAt": "2026-04-15T23:28:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Real Madrid set for rare trophyless season - will Arbeloa pay the price?",
-      "link": "https://www.bbc.com/sport/football/articles/c5yve05jrjeo?at_medium=RSS&at_campaign=rss",
-      "summary": "After losing out to Bayern Munich in a thrilling Champions League quarter-final, Real Madrid face the prospect of a trophyless season that could cost Alvaro Arbeloa his job.",
-      "publishedAt": "2026-04-15T23:21:54.000Z"
+      "title": "How Lampard's own revival ended Coventry's 25-year wait",
+      "link": "https://www.bbc.com/sport/football/articles/cm2kj1lv91xo?at_medium=RSS&at_campaign=rss",
+      "summary": "Frank Lampard and Coventry City are back in the big time. This is how the former England international guided the Sky Blues to the Premier League.",
+      "publishedAt": "2026-04-18T08:46:47.000Z"
     },
     {
       "type": "rss",
@@ -95,186 +84,10 @@
       "sourceSlug": "voetbal-international",
       "country": "ES",
       "flag": "🌍",
-      "title": "'Ik hoop dat alle kinderen in Duitsland wat langer op mochten blijven'",
-      "link": "https://www.vi.nl/nieuws/ik-hoop-dat-alle-kinderen-in-duitsland-wat-langer-op-mochten-blijven",
-      "summary": "Ook op het veld werd er intens genoten van de kwartfinale tussen Bayern München en Real Madrid . Joshua Kimmich hoopt dat de kinderen langer op mochten blijven van hun ouders.",
-      "publishedAt": "2026-04-15T21:53:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Spaanse media richten pijlen op arbiter bij Real: 'Neigt naar machtsmisbruik'",
-      "link": "https://www.vi.nl/nieuws/spaanse-media-richten-pijlen-op-arbiter-bij-real-neigt-naar-machtsmisbruik",
-      "summary": "Real Madrid ging woensdagavond onderuit bij Bayern München en daarom lijkt het seizoen erop te zitten voor De Koninklijke . De pijlen werden vooral gericht op de arbitrage, maar Spaanse media vinden wel dat ze bij Real het hoofd omhoog kunnen houden en strijdend ten onder zijn gegaan.",
-      "publishedAt": "2026-04-15T21:39:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Real Madrid loopt voor tweede seizoen op rij halve finale CL mis",
-      "link": "https://www.vi.nl/nieuws/real-madrid-loopt-voor-tweed-seizoen-op-rij-halve-finale-cl-mis",
-      "summary": "Bayern München heeft zich na een knotsgek voetbalgevecht met Real Madrid geplaatst voor de halve finale van de Champions League. Ook Arsenal is ten koste van Sporting Portugal door. Lees de volledige avond terug in onderstaand liveblog!",
-      "publishedAt": "2026-04-15T21:38:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Sneijder hekelt woedende Real-spelers: 'Moet hém erop aanspreken, niet de scheids'",
-      "link": "https://www.vi.nl/nieuws/sneijder-hekelt-woedende-real-spelers-moet-hem-erop-aanspreken-niet-de-scheids",
-      "summary": "De rode kaart van Eduardo Camavinga in de wedstrijd tussen Bayern München en Real Madrid maakte direct na afloop de tongen los. Spelers van Real Madrid waren woest op de scheidsrechter na afloop van de kwartfinale in de Champions League. Analyticus Wesley Sneijder snapt dat niet.",
-      "publishedAt": "2026-04-15T21:20:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Díaz and Olise late show sends Bayern into semi-finals after Real Madrid classic",
-      "link": "https://www.theguardian.com/football/2026/apr/15/bayern-munich-real-madrid-champions-league-quarter-final-second-leg-match-report",
-      "summary": "When the dust kicked up by an utterly scintillating two-legged struggle had settled, Bayern Munich could bathe in the glow of a win for the ages and linger dreamily on the prospect of a semi-final against Paris Saint-Germain. It is the tie most neutrals wanted but the bar for entertainment has been raised sky high now. Real Madrid should curse themselves, and one of their number in particular, for letting things career out of their control at the death; the sadness for those with no skin in the game came from being deprived an additional half-hour of the near ceaseless thrills both teams were serving up here. Continue reading...",
-      "publishedAt": "2026-04-15T21:11:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Edgy Arsenal squeeze past Sporting to set up Atlético Madrid semi-final",
-      "link": "https://www.theguardian.com/football/2026/apr/15/arsenal-sporting-lisbon-champions-league-quarter-final-second-leg-match-report",
-      "summary": "To borrow a line from Mikel Arteta, it is not meant to be easy. And it was anything but on the latest anxiety-ridden, claustrophobic occasion for his Arsenal team. The club’s recent wobble has been pronounced. The loss to Manchester City in the Carabao Cup final. The FA Cup exit at Southampton. The Premier League defeat against Bournemouth that has imperilled their title push. The nerves are pounding like a migraine and this was a night which was always going to be entirely outcome-based. Hold on to the 1-0 lead from the first-leg of this quarter-final and it would be triumph – only a fourth appearance in the semi-finals of the competition. Fall short against a tidy Sporting team and ignominy was guaranteed; a deepening of the existential crisis. It is City next at the Etihad Stadium on Sunday, after all. Continue reading...",
-      "publishedAt": "2026-04-15T21:01:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Alles over links: zo vond Bayern München de ruimte tegen Real Madrid",
-      "link": "https://www.vi.nl/pro/tactische-analyse-waarom-de-rechterflank-van-real-madrid-een-open-zenuw-werd",
-      "summary": "Bayern München is met een spectaculaire zege op Real Madrid doorgestoten naar de halve finale: 4-3. Tactische analyse van een wedstrijd waarin het positiespel van Bayern toch won van de individuele klasse.",
-      "publishedAt": "2026-04-15T20:57:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool’s Hugo Ekitiké ruled out for rest of season and World Cup with France",
-      "link": "https://www.theguardian.com/football/2026/apr/15/liverpools-hugo-ekitike-ruled-out-for-rest-of-season-and-world-cup-with-france",
-      "summary": "Forward could be out until 2027 with suspected achilles tendon rupture Ekitiké is club’s leading goalscorer this season with 17 goals The Liverpool striker Hugo Ekitiké will miss the rest of the season and the World Cup with the injury he sustained against Paris Saint-Germain on Tuesday, Didier Deschamps has confirmed. Ekitiké suffered a suspected achilles tendon rupture in the first half of Liverpool’s Champions League quarter-final second leg defeat and could be sidelined until next year as a result. The full extent of the 23-year-old’s injury has not been confirmed – he underwent scans on Wednesday and Liverpool are expected to provide an update later this week – but the head coach of the France national team has ruled Ekitiké out of his plans for this summer’s World Cup. Continue reading...",
-      "publishedAt": "2026-04-15T19:23:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Ekitike to miss rest of season and World Cup - Deschamps",
-      "link": "https://www.bbc.com/sport/football/articles/c4g443g0l76o?at_medium=RSS&at_campaign=rss",
-      "summary": "France manager Didier Deschamps confirms striker Hugo Ekitike will miss the rest of the season and World Cup after suffering a suspected Achilles injury during Liverpool's Champions League quarter-final defeat by Paris St-Germain on Tuesday.",
-      "publishedAt": "2026-04-15T18:46:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Everton mark 37th anniversary of Hillsborough with tribute to 97 at Hill Dickinson Stadium",
-      "link": "https://www.theguardian.com/football/2026/apr/15/everton-mark-37th-anniversary-of-hillsborough-with-tribute-to-97-at-hill-dickinson-stadium",
-      "summary": "Club unveil plaque outside South Stand at new stadium Representatives of families attend ceremony Everton have marked the 37th ­anniversary of the Hillsborough ­disaster by unveiling a permanent tribute at Hill Dickinson Stadium to the 97 Liverpool supporters who were unlawfully killed. Representatives of the Hillsborough families and Liverpool FC were invited to a ceremony at ­Everton’s new stadium on Wednesday to pay respects to the 97 and unveil a plaque outside the South Stand. Continue reading...",
-      "publishedAt": "2026-04-15T16:30:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Bournemouth in talks with Marco Rose to replace Andoni Iraola as head coach",
-      "link": "https://www.theguardian.com/football/2026/apr/15/bournemouth-in-talks-with-marco-rose-to-replace-andoni-iraola-as-head-coach",
-      "summary": "Iraola leaving at end of the season Rose out of work since March 2025 Bournemouth are in advanced talks with Marco Rose to replace Andoni Iraola as their head coach. The German has emerged as the leading candidate and a deal for him to take over at the end of the season could be agreed by the end of this week. Bournemouth have also given strong consideration to moving for Ipswich’s Kieran McKenna, but Rose is available now and boasts a strong CV. McKenna’s contract contains a buyout clause and no negotiations can be held with him before the end of the Championship season. The Northern Irishman is trying to lead Ipswich back into the Premier League and the club are likely to resist any attempt to take the 39-year-old away from Portman Road. Continue reading...",
-      "publishedAt": "2026-04-15T14:07:32.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "🎥 Quel scénario : Vincent Kompany et le Bayern éliminent le Real Madrid et sont en demi-finale !",
-      "link": "https://www.walfoot.be/news/2026-04-15/-quel-scenario--vincent-kompany-et-le-bayern-eliminent-le-real-madrid-et-sont-en-demi-finale",
-      "summary": "Des buts, des retournements de situation, une carte rouge. Il y aura eu de tout dans ce Bayern Munich - Real Madrid. Les Bavarois ont arraché la victoire dans les derniers instants et rejoignent le Paris Saint-Germain en demi-finale de la Ligue des Champions.",
-      "publishedAt": "2026-04-15T09:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Champions League: dit zijn de laatste twee halvefinalisten na een zinderende voetbalavond",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-15/champions-league-dit-zijn-de-laatste-twee-halvefinalisten-na-een-zinderende-voetbalavond",
-      "summary": "In de Champions League gingen we vanavond op zoek naar de laatste twee halvefinalisten. Deze teams schaarden zich bij de laatste vier.",
-      "publishedAt": "2026-04-15T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Le match aller aura suffi : un premier Diable Rouge qualifié pour les demi-finales de la Ligue des Champions",
-      "link": "https://www.walfoot.be/news/2026-04-15/le-match-aller-aura-suffi--un-premier-diable-rouge-qualifie-pour-les-demi-finales-de-la-ligue-des-champions",
-      "summary": "On a déjà connu bien davantage de joueurs belges dans le dernier carré. Leandro Trossard est le premier Diable Rouge qualifié pour les demi-finales de cette édition 2025-2026 de la Ligue des Champions... en attendant la fin de Bayern Munich - Real Madrid.",
-      "publishedAt": "2026-04-15T08:54:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Radja Nainggolan se paie Anderlecht : \"Ils étaient là, comme s'ils avaient gagné le championnat...\"",
-      "link": "https://www.walfoot.be/news/2026-04-15/radja-nainggolan-se-paie-anderlecht--ils-etaient-la-comme-sils-avaient-gagne-le-championnat",
-      "summary": "Les joueurs d'Anderlecht ont largement fêté leur succès contre La Gantoise, acquis dans les dernières minutes. Des célébrations exagérées, selon Radja Nainggolan, qui s'est lâché dans son nouveau podcast.",
-      "publishedAt": "2026-04-15T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "FC Barcelona is woedend en kondigt nieuwe stappen aan na Champions League-uitschakeling",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-15/fc-barcelona-is-woedend-en-kondigt-nieuwe-stappen-aan-na-champions-league-uitschakeling",
-      "summary": "FC Barcelona zal ook dit seizoen de Champions League niet winnen. De Catalanen werden gisteren in de kwartfinales uitgeschakeld door Atlético Madrid, maar de manier waarop zit hoog bij voorzitter Joan Laporta en co.",
-      "publishedAt": "2026-04-15T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Une légende brésilienne confie : \"Le gardien le plus redoutable que j'aie affronté ? Michel Preud'homme\"",
-      "link": "https://www.walfoot.be/news/2026-04-15/une-legende-bresilienne-confie--le-gardien-le-plus-redoutable-que-jaie-affronte--michel-preudhomme",
-      "summary": "Dans le podcast &quot;Bajo Los Palos&quot;, la légende du football brésilien Romario a été interrogée par Iker Casillas sur le gardien le plus redoutable qu'il ait eu à affronter. Sa réponse a surpris.",
-      "publishedAt": "2026-04-15T08:00:00.000Z"
+      "title": "Klopp getipt bij Real Madrid, Nagelsmann besproken bij United",
+      "link": "https://www.vi.nl/nieuws/waarom-transfer-van-ewijk-naar-vfl-wolfsburg-in-het-water-viel",
+      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-04-18T08:45:10.000Z"
     },
     {
       "type": "rss",
@@ -282,10 +95,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "\"Het zal me misschien niet populair maken ...\": Ivan Leko verklapt hoe Club Brugge de titel kan winnen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-15/-het-zal-me-misschien-niet-populair-maken--ivan-leko-verklapt-hoe-club-brugge-de-titel-kan-winnen",
-      "summary": "Ivan Leko is een voetbalromanticus pur sang. Voor de clash tegen Union geeft hij aan wat volgens hem nodig is om de titel te winnen.",
-      "publishedAt": "2026-04-15T08:00:00.000Z"
+      "title": "LIVE: Anderlecht mist De Cat, maar wil niet opnieuw in Mechelse val trappen: \"Derde plaats blijft ons doel\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/live-anderlecht-mist-de-cat-maar-wil-niet-opnieuw-in-mechelse-val-trappen-derde-plaats-blijft-ons-doel",
+      "summary": "Anderlecht maakt zich op voor de eerste volledige wedstrijd zonder Nathan De Cat sinds hij uitviel tegen Gent. Die komt er uitgerekend in Mechelen, waar paars-wit op de voorlaatste speeldag van de competitie nog onderuit ging.",
+      "publishedAt": "2026-04-18T08:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spurs seek elusive victory, Lionesses in Iceland and Coventry seal Premier League promotion – matchday live",
+      "link": "https://www.theguardian.com/football/live/2026/apr/18/spurs-seek-elusive-victory-lionesses-in-iceland-and-coventry-seal-premier-league-promotion-matchday-live",
+      "summary": "⚽ Today’s games | Latest tables | Premier League top scorers ⚽ Follow us on Bluesky | And you can get in touch via email The Guardian has kicked off a new chapter in puzzles with the launch of its first daily football game, On the ball. It is now live in the app for both iOS and Android … so what are you waiting for? Not something you see everyday, it’s like something from a Hitchcock film: Continue reading...",
+      "publishedAt": "2026-04-18T08:44:27.000Z"
     },
     {
       "type": "rss",
@@ -293,43 +117,219 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Yari Verschaeren, enfant de Neerpede, partira libre après avoir refusé un transfert à 5 millions d'euros",
-      "link": "https://www.walfoot.be/news/2026-04-15/yari-verschaeren-enfant-de-neerpede-partira-libre-apres-avoir-refuse-un-transfert-a-5-millions-deuros",
-      "summary": "En fin de contrat, Yari Verschaeren devrait retrouver une place de titulaire à Anderlecht pendant la blessure de Nathan De Cat. Le médian offensif de 24 ans et enfant de Neerpede partira ensuite gratuitement, malgré une offre de cinq millions d'euros l'été dernier.",
-      "publishedAt": "2026-04-15T07:40:00.000Z"
+      "title": "Herman Van Holsbeeck est passé par la case prison et raconte ce qu'il a vécu",
+      "link": "https://www.walfoot.be/news/2026-04-18/herman-van-holsbeeck-est-passe-par-la-case-prison-et-raconte-ce-quil-a-vecu",
+      "summary": "L'ancien manager général d'Anderlecht, Herman Van Holsbeeck, s'est fait discret depuis son implication dans diverses affaires. Il a récemment accordé une interview à DAZN dans laquelle il est revenu sur son expérience derrière les barreaux.",
+      "publishedAt": "2026-04-18T08:30:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "🎥 Wat doet hij nu?! Neuer schenkt Real Madrid 0-1 in cadeauverpakking",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-15/-wat-doet-hij-nu-neuer-schenkt-real-madrid-0-1-in-cadeauverpakking",
-      "summary": "Bayern München ontvangt vanavond Real Madrid in de Champions League. Manuel Neuer ging in het begin van de wedstrijd stevig in de fout.",
-      "publishedAt": "2026-04-15T07:40:00.000Z"
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Herman Van Holsbeeck belandde in de gevangenis en doet zijn verhaal: \"Het gevangenissysteem op zich...\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/herman-van-holsbeeck-belandde-in-de-gevangenis-en-doet-zijn-verhaal-het-gevangenissysteem-op-zich",
+      "summary": "De voormalige algemeen manager van Anderlecht, Herman Van Holsbeeck, bleef sinds zijn betrokkenheid in verschillende dossiers opvallend op de achtergrond. Onlangs gaf hij een interview aan DAZN, waarin hij terugblikte op zijn periode achter de tralies.",
+      "publishedAt": "2026-04-18T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spurs houdt hoop: 'Maar we zitten vol problemen'",
+      "link": "https://www.vi.nl/video/spurs-houdt-hoop-maar-we-zitten-vol-problemen",
+      "summary": "Voor Tottenham Hotspur breken er cruciale weken aan in de strijd om lijfsbehoud in de Premier League. Dat begint voor Spurs met een thuiswedstrijd tegen Brighton, de oud-club van nieuwe trainer Roberto De Zerbi. De Italiaan houdt hoop, maar is ook realistisch over de toekomst van de Londenaren.",
+      "publishedAt": "2026-04-18T08:12:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un deuxième grand absent côté carolo pour le choc wallon face au Standard",
+      "link": "https://www.walfoot.be/news/2026-04-18/un-deuxieme-grand-absent-cote-carolo-pour-le-choc-wallon-face-au-standard",
+      "summary": "Petite catastrophe pour Mario Kohnen en vue du choc wallon. En plus de Yacine Titraoui, un autre Zèbre et non des moindres manquera le match face au Standard.",
+      "publishedAt": "2026-04-18T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Clubcoryfeeën geven Antwerp raad naar volgend seizoen toe en ze zijn niet mals",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/clubcoryfeeen-geven-antwerp-raad-naar-volgend-seizoen-toe-en-ze-zijn-niet-mals",
+      "summary": "Royal Antwerp FC beleeft woelige weken en staat na twee nederlagen laatste in de Europe Play-offs. Volgens clubiconen Cisse Severeyns en Marc Van Der Linden is de conclusie hard maar duidelijk.",
+      "publishedAt": "2026-04-18T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Terug naar de Oranje-tijd van Bert Maalderink: 'Meest genoten van conflicten'",
+      "link": "https://www.vi.nl/pro/terug-naar-de-oranje-tijd-van-bert-maalderink-meest-genoten-van-conflicten",
+      "summary": "Sportverslaggever Bert Maalderink (62) zwaait af bij de NOS. Door zijn ziekte MS neemt hij wat eerder afscheid dan gepland. Maalderink over zijn avonturen bij Oranje van 2002 tot en met 2018, de kritiek die hij dikwijls ontving en de toekomst.",
+      "publishedAt": "2026-04-18T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "De Jong na zware week: 'Mijn moedertje zou heel trots zijn geweest'",
+      "link": "https://www.vi.nl/nieuws/de-jong-na-zware-week-mijn-moedertje-zou-heel-trots-zijn-geweest",
+      "summary": "Cambuur ging vrijdagavond onderuit op De Vijverberg, maar daar ging het na afloop maar weinig over. Afgelopen week kwam de moeder van Henk de Jong te overlijden en beide clubs staken hem een hart onder de riem.",
+      "publishedAt": "2026-04-18T07:53:24.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Bruges, l'un des meilleurs formateurs d'Europe ? \"Nous rivalisons avec Benfica\"",
+      "link": "https://www.walfoot.be/news/2026-04-18/bruges-lun-des-meilleurs-formateurs-deurope--nous-rivalisons-avec-benfica",
+      "summary": "Le Club NXT est entré dans l'histoire en éliminant Benfica et en se qualifiant pour la finale de la Youth League. Le président brugeois Bart Verhaeghe savourait visiblement cet exploit.",
+      "publishedAt": "2026-04-18T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Staat JPL-club te koop? Eigenaars komen met duidelijk statement en verklaring over geruchten",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/staat-jpl-club-te-koop-eigenaars-komen-met-duidelijk-statement-en-verklaring-over-geruchten",
+      "summary": "De geruchten over een mogelijke verkoop van KVC Westerlo kunnen definitief de prullenmand in. Ondanks berichten uit Turkse media blijft eigenaar Oktay Ercan gewoon aan het roer in de Kempen.",
+      "publishedAt": "2026-04-18T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Premier League shootout arrives with odd twist for feelings guy Guardiola",
+      "link": "https://www.theguardian.com/football/2026/apr/18/manchester-city-arsenal-premier-league-title-race-guardiola-arteta",
+      "summary": "Manchester City v Arsenal is a rare late-season title decider and comes with a set of surprising plotlines OK, so it was all building to this, then. The slow‑burn plotlines. The room‑temperature action sequences. The winter afternoons on the sofa watching men wrestle unhappily, staring out of the window as the frigid wind tousles the clouds, wondering about the death of all things, and also why referees not only have to speak now but speak in the same awkward Yorkshire bingo‑caller voice. All of this. It’s all actually fine. Because it turns out this was just delayed resolution, cinematic build, the sporting equivalent of a really long closeup of a man in a wide-brimmed Mexican hat narrowing his eyes and chewing a cigar. And now we get the payoff. The Etihad on Sunday afternoon. The clink of spurs. The tick of the clocktower. Townsfolk huddled at the saloon-bar shutters. Get ready for an old-school shootout. Continue reading...",
+      "publishedAt": "2026-04-18T07:01:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "No more gimmicks: Coventry’s perilous journey back to the Premier League is finally over",
+      "link": "https://www.theguardian.com/football/2026/apr/18/coventry-city-premier-league-promotion",
+      "summary": "Supporters and club insiders look back at the Sky Blues’ journey, from the depths of text-a-sub ridicule and fan mutinies to promotion To understand the extraordinarily wild ride that Coventry have been on, culminating in the promotion achieved at Blackburn on Friday night, you need only look at the text-a-substitute idea that has become part of football folklore. In less than a decade, the club were relegated from the top flight for the first time after 34 years, lost their stadium and came within half an hour of extinction before being bought by a Mayfair-based hedge fund in 2007. The story goes that, as a way to generate extra revenue, fans would be able to text substitution suggestions to a premium-rate number during a match. It is frequently recalled in local and national newspapers. Fans are still asked about it today. Continue reading...",
+      "publishedAt": "2026-04-18T07:00:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Surprenant : Benito Raman a loupé un transfert... à cause d'un chant homophobe",
+      "link": "https://www.walfoot.be/news/2026-04-18/surprenant--benito-raman-a-loupe-un-transfert-a-cause-dun-chant-homophobe",
+      "summary": "Benito Raman aurait pu signer en MLS à une certaine époque. Il a dévoilé dans un entretien avec Café Constant la raison pour laquelle il n'a finalement pas rejoint les USA.",
+      "publishedAt": "2026-04-18T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Anouar Ait El Hadj mikt op toptransfer: \"Ik voelde me zeker op mijn plaats in de Champions League\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/anouar-ait-el-hadj-mikt-op-toptransfer-ik-voelde-me-zeker-op-mijn-plaats-in-de-champions-league",
+      "summary": "Anouar Ait El Hadj heeft zich bij Union Saint-Gilloise ontpopt tot een vaste waarde en lijkt klaar voor een volgende stap. De middenvelder twijfelt er niet aan dat hij zijn plafond nog niet heeft bereikt.",
+      "publishedAt": "2026-04-18T07:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Are Kompany's Bayern a glimpse at football after Guardiola?",
-      "link": "https://www.bbc.com/sport/football/articles/cn4vvm0pmkjo?at_medium=RSS&at_campaign=rss",
-      "summary": "With Vincent Kompany making an impressive impact at Bayern Munich, BBC Sport's tactics expert Umir Irfan takes a closer look at the manager's unique style.",
-      "publishedAt": "2026-04-15T07:29:37.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "From FA ban to double Euros winners - Lionesses reach 500 games",
+      "link": "https://www.bbc.com/sport/football/articles/ce844m5yzgvo?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport takes a look at 11 defining moments in the history of England women before their milestone 500th official fixture on Saturday.",
+      "publishedAt": "2026-04-18T06:43:43.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "WK-favoriet krijgt stevige klap: topspits moet geblesseerd afzeggen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-15/wk-favoriet-krijgt-stevige-klap-topspits-moet-geblesseerd-afzeggen",
-      "summary": "Hugo Ekitike heeft een achillespeesblessure opgelopen en zal niet deelnemen aan het WK 2026. Didier Deschamps, de bondscoach van Frankrijk, maakte het nieuws zelf bekend.",
-      "publishedAt": "2026-04-15T07:20:00.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Toby Alderweireld n'épargne pas son ancien club: \"Ils ne sont pas assez bons\"",
+      "link": "https://www.walfoot.be/news/2026-04-18/toby-alderweireld-nepargne-pas-son-ancien-club-ils-ne-sont-pas-assez-bons",
+      "summary": "Tottenham vit une saison dramatique et flirte même avec la relégation en Championship. Toby Alderweireld, ancienne icône des Spurs, n'épargne pas son ancien club et pointe surtout du doigt l'effectif.",
+      "publishedAt": "2026-04-18T06:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "How Coventry earned Premier League return after 25 years",
+      "link": "https://www.bbc.com/sport/football/articles/cy814339170o?at_medium=RSS&at_campaign=rss",
+      "summary": "After a quarter of a century out of the Premier League, groundshares and administration, Frank Lampard has led Coventry City back to the top flight.",
+      "publishedAt": "2026-04-17T21:08:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "‘I’ve got no plans to move’: Cole Palmer on being happy at Chelsea and his World Cup ambitions",
+      "link": "https://www.theguardian.com/football/2026/apr/17/cole-palmer-chelsea-premier-league-transfer-speculation-england-world-cup",
+      "summary": "The Blues’ star talks candidly about treatment-room frustrations, transfer talk and how he’s learned to love living down south There are two sides to Cole Palmer. There is the shy character who can fool you into thinking he has nothing much to say for himself. On the other hand there’s the artist with the ball at his feet. The player with the “Ice Cold” celebration copied by kids in playgrounds everywhere. The improviser who makes the price of a ticket worthwhile. “I know what you’re saying,” Palmer replies as, on a sunny afternoon at Chelsea’s training ground, we talk about the contrast between his shy conversational style and his ability to make an impact on people when he steps on the pitch. “I don’t really say too much in general but when I’m on a pitch I try to. I feel like it’s two different personalities. Off the pitch it’s quiet. I find it hard to speak to new people. But when I’m on the pitch I feel it just comes freely.” Continue reading...",
+      "publishedAt": "2026-04-17T19:00:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bournemouth close to appointing Rose",
+      "link": "https://www.bbc.com/sport/football/articles/c5ywz3x4r2eo?at_medium=RSS&at_campaign=rss",
+      "summary": "Bournemouth are close to appointing Marco Rose as Andoni Iraola's replacement as head coach.",
+      "publishedAt": "2026-04-17T17:11:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bournemouth set to appoint Marco Rose as manager for next season",
+      "link": "https://www.theguardian.com/football/2026/apr/17/bournemouth-set-to-appoint-marco-rose-as-manager-for-next-season",
+      "summary": "Talks held with German over replacing Andoni Iraola Rose out of work so can start planning immediately Bournemouth are set to appoint Marco Rose as their new manager after successful talks with the German. Rose has emerged as the favoured candidate to replace Andoni Iraola, who is stepping down when his contract expires this summer, and an agreement in principle is in place for him to take over. Tiago Pinto, Bournemouth’s head of football operations, has moved swiftly since learning that Iraola has decided to seek a fresh challenge. Bournemouth considered a move for Kieran McKenna but the Ipswich manager’s heavy buyout clause presented a significant challenge and made a move for Rose more likely. Continue reading...",
+      "publishedAt": "2026-04-17T16:39:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sutton's predictions v boxer Molly McCann & the Boo Radleys",
+      "link": "https://www.bbc.com/sport/football/articles/c78lxvzl3d4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Chris Sutton takes on boxer Molly McCann and The Boo Radley's frontman Sice Rowbottom plus the BBC readers and AI with his predictions for this weekend's Premier League fixtures.",
+      "publishedAt": "2026-04-16T17:39:32.000Z"
     }
   ]
 }
