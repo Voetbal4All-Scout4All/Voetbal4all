@@ -751,3 +751,11 @@ body .v4-status-note{
     line-height:1.55;
   }
 }
+
+/* ── Mobile header cleanup: hide advertiser CTA ────────────────── */
+
+@media (max-width:900px){
+  .navbar .nav-cta{
+    display:none;
+  }
+}
