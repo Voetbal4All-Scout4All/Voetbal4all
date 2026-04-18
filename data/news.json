@@ -1,60 +1,159 @@
 {
-  "generatedAt": "2026-04-18T15:40:48.225Z",
+  "generatedAt": "2026-04-18T21:40:00.171Z",
   "items": [
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Watch: Match of the Day",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Highlights of five Premier League matches, including Manchester United’s trip to Chelsea.",
+      "publishedAt": "2026-04-19T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "ES",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Parkinson: Wrexham to take promotion 'to the wire'",
+      "link": "https://www.espn.com/soccer/story/_/id/48522975/phil-parkinson-vows-wrexham-take-promotion-push-wire",
+      "summary": "Manager Phil Parkinson underlined Wrexham's determination to take their Championship play-off push \"to the wire\" after beating Stoke got them back on track.",
+      "publishedAt": "2026-04-18T22:02:28.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "De Zerbi vows Spurs can win last 5 to survive",
+      "link": "https://www.espn.com/soccer/story/_/id/48524455/roberto-de-zerbi-tottenham-win-all-five-remaining-premier-league-games",
+      "summary": "Roberto de Zerbi believes Tottenham can win all five remaining Premier League games to emphatically avoid relegation -- and warned any unhappy players will be turned away from the club's training ground on Monday.",
+      "publishedAt": "2026-04-18T22:02:28.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man Utd beat sinking Chelsea to close in on UCL",
+      "link": "https://www.espn.com/soccer/report/_/gameId/740922",
+      "summary": "A first-half goal from Matheus Cunha was enough to give Manchester United a 1-0 win at Chelsea on Saturday night.",
+      "publishedAt": "2026-04-18T22:02:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "IT",
       "flag": "🌍",
-      "title": "From New Jersey to Copa del Rey? Matarazzo reaching new heights for U.S. coaches",
-      "link": "https://www.espn.com/soccer/story/_/id/48455574/pellegrino-matarazzo-reaching-new-heights-us-coaches-europe-real-sociedad",
-      "summary": "If Real Sociedad win Saturday's Copa del Rey final, Pellegrino Matarazzo will be the first U.S.-born coach to win a trophy in one of Europe's top five leagues. It has been quite a journey.",
-      "publishedAt": "2026-04-18T15:43:10.000Z"
+      "title": "Napoli booed as loss puts Inter on verge of title",
+      "link": "https://www.espn.com/soccer/story/_/id/48523382/napoli-boo-lazio-inter-milan-serie-title",
+      "summary": "Napoli was jeered off the field after it lost 2-0 at home to Lazio -- a result that saw Inter Milan take a huge step toward winning the Serie A title.",
+      "publishedAt": "2026-04-18T22:02:27.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Union Berlin's Eta beaten in historic first match",
+      "link": "https://www.espn.com/soccer/story/_/id/48522317/union-berlin-marie-louise-eta-beaten-historic-first-match",
+      "summary": "Marie-Louise Eta's landmark first match as interim head coach of Union Berlin ended in a 2-1 Bundesliga defeat at home to relegation-threatened Wolfsburg.",
+      "publishedAt": "2026-04-18T22:02:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Lampard's Coventry return to Prem after 25 years",
-      "link": "https://www.espn.com/soccer/story/_/id/48493666/frank-lampard-coventry-city-promoted-premier-league-championship",
-      "summary": "Coventry City will return to the Premier League for the first time in 25 years after securing their promotion from the Championship with a draw at Blackburn.",
-      "publishedAt": "2026-04-18T15:43:05.000Z"
+      "title": "Man Utd boost Champions League hopes with victory at Chelsea",
+      "link": "https://www.bbc.com/sport/football/videos/ceqwde99q49o?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United move closer to booking a place in next seasons Champions League after Matheus Cunha scores the only goal of the game in their 1-0 win over Chelsea at Stamford Bridge.",
+      "publishedAt": "2026-04-18T21:35:16.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Slot: Liverpool's UCL exit could help league form",
-      "link": "https://www.espn.com/soccer/story/_/id/48519765/arne-slot-liverpool-use-early-champions-league-exit-premier-league-push",
-      "summary": "Arne Slot said Liverpool's exit from the Champions League could help them in their quest to qualify for the competition again next season.",
-      "publishedAt": "2026-04-18T15:43:05.000Z"
+      "title": "Rutter scores late equaliser to deny Spurs crucial win",
+      "link": "https://www.bbc.com/sport/football/videos/cr41772xd92o?at_medium=RSS&at_campaign=rss",
+      "summary": "Tottenham remain in the bottom three and are denied their first Premier League victory since December as Georginio Rutter scores a late equaliser for Brighton as the two sides draw 2-2 at the Tottenham Hotspur Stadium.",
+      "publishedAt": "2026-04-18T21:30:38.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Leeds move closer to survival with victory over Wolves",
+      "link": "https://www.bbc.com/sport/football/videos/cy81w215ze9o?at_medium=RSS&at_campaign=rss",
+      "summary": "Leeds moved a step closer to securing their Premier League survival as they beat Wolves 3-0 at Elland Road.",
+      "publishedAt": "2026-04-18T21:29:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bournemouth extend unbeaten run with victory at Newcastle",
+      "link": "https://www.bbc.com/sport/football/videos/c6251dnn9j7o?at_medium=RSS&at_campaign=rss",
+      "summary": "Bournemouth extend their unbeaten run in the Premier League to 13 games after beating Newcastle 2-1 at St. James' Park.",
+      "publishedAt": "2026-04-18T21:29:40.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Eerste goal in Belgische dienst Boersma niets waard",
+      "link": "https://www.vi.nl/nieuws/eerste-goal-in-belgische-dienst-boersma-niets-waard",
+      "summary": "Bouke Boersma heeft zijn eerste doelpunt in het shirt van KV Mechelen gemaakt. De twintigjarige Nederlandse spits zette zijn ploeg op voorsprong tegen Anderlecht. Zijn treffer bleek echter niets waard; Mechelen gaf de voorsprong uit handen.",
+      "publishedAt": "2026-04-18T21:28:25.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "NJ Transit confirms $150 train fares for WC fans",
-      "link": "https://www.espn.com/soccer/story/_/id/48514008/world-cup-fans-metlife-stadium-pay150-dollar-train-fares-nj-transit",
-      "summary": "Sky-high ticket prices won't be the only thing emptying the wallets of soccer fans attending World Cup matches at some U.S. venues this spring.",
-      "publishedAt": "2026-04-18T15:43:04.000Z"
+      "title": "Oranje slaat aanval Frankrijk af en blijft fier aan kop in strijd om WK-ticket",
+      "link": "https://www.vi.nl/nieuws/oranje-slaat-aanval-frankrijk-af-en-blijft-fier-aan-kop-in-strijd-om-wk-ticket",
+      "summary": "De Oranje Leeuwinnen hebben zich staande gehouden tegen Frankrijk. De ploeg van bondscoach Arjan Veurink had het zwaar, maar door een late gelijkmaker (1-1) blijft het nog altijd fier aan kop gaan in de WK-kwalificatiepoule.",
+      "publishedAt": "2026-04-18T21:19:05.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Man Utd facing defensive crisis for Chelsea clash",
-      "link": "https://www.espn.com/soccer/story/_/id/48515306/man-united-vs-chelsea-clash-injuries-maguire-martinez-de-ligt-yoro",
-      "summary": "Manchester United are facing a defensive crisis ahead of their trip to Chelsea with only one fit senior centre-back in their travelling squad.",
-      "publishedAt": "2026-04-18T15:43:04.000Z"
+      "title": "Manchester United hold on after Cunha’s cool finish to hand Chelsea latest loss",
+      "link": "https://www.theguardian.com/football/2026/apr/18/chelsea-manchester-united-premier-league-match-report",
+      "summary": "A makeshift Manchester United defence did not even have to resort to hair pulls to keep out a goalshy Chelsea. The unfamiliar pairing of Ayden Heaven and Noussair Mazraoui grew into a tepid game after a shaky start, making the full-time boos inevitable. Stamford Bridge was an unhappy place again, the unrest in the stands growing as a fourth consecutive defeat in the Premier League approached, and the only time the home fans stopped pining for the old Chelsea was when Mason Mount came on to help United protect their 1-0 lead. Think back to Porto in May 2021. Back then, long before anyone in west London had heard of BlueCo, it was Mount who created the winner when Chelsea became kings of Europe for the second time. Five years on, though, this is a club that cannot even be sure that they will be in the Champions League next season. Continue reading...",
+      "publishedAt": "2026-04-18T21:13:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "VI Live: verlenging in Copa del Rey-finale moet beslissing brengen",
+      "link": "https://www.vi.nl/nieuws/vi-live-verlenging-in-copa-del-rey-finale-moet-beslissing-brengen",
+      "summary": "Zaterdag is er geen Eredivisie-voetbal, maar in het buitenland is er genoeg om je op te verheugen. Zo zijn er vijf Premier League-duels, waarbij de ontmoeting tussen Chelsea en Manchester United het meest in het oog springt. Daarnaast is de finale van de Copa del Rey tussen Atlético Madrid en Real Sociedad. Mis niets met de VI Live.",
+      "publishedAt": "2026-04-18T21:06:25.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +161,10 @@
       "sourceSlug": "voetbal-international",
       "country": "DE",
       "flag": "🌍",
-      "title": "Cruciale punten voor Wolfsburg bij debuut Eta, late nederlaag Leverkusen",
-      "link": "https://www.vi.nl/nieuws/cruciale-punten-voor-wolfsburg-bij-debuut-eta-late-nederlaag-leverkusen",
-      "summary": "VfL Wolfsburg heeft zaterdag de hoop op lijfsbehoud in de Bundesliga nieuw leven ingeblazen. De ploeg van trainer Dieter Hecking won op bezoek bij Union Berlin en houdt daarmee uitzicht op – in ieder geval – de nacompetitieplek. Ondertussen mag 1899 Hoffenheim door een knappe zege bij Borussia Dortmund blijven dromen van Champions Leauge-voetbal.",
-      "publishedAt": "2026-04-18T15:35:58.000Z"
+      "title": "Kompany ziet Gnabry wegvallen bij Bayern voor cruciale fase, ook WK in gevaar",
+      "link": "https://www.vi.nl/nieuws/kompany-ziet-gnabry-wegvallen-bij-bayern-voor-cruciale-fase-ook-wk-in-gevaar",
+      "summary": "Bayern München moet Serge Gnabry missen in de laatste, cruciale, fase van het seizoen. De Duitse aanvaller staat 'weken' aan de kant met een liesblessure. Ook zijn deelname aan het wereldkampioenschap deze zomer kan daardoor in gevaar komen.",
+      "publishedAt": "2026-04-18T21:05:50.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +172,10 @@
       "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "VI Live: vijf Nederlanders in de basis bij cruciaal duel Spurs met Brighton",
-      "link": "https://www.vi.nl/nieuws/vi-live-toeleven-naar-degradatiekraker-spurs-en-chelsea-man-utd",
-      "summary": "Zaterdag is er geen Eredivisie-voetbal, maar in het buitenland is er genoeg om je op te verheugen. Zo zijn er vijf Premier League-duels, waarbij de ontmoeting tussen Chelsea en Manchester United het meest in het oog springt. Daarnaast is de finale van de Copa del Rey tussen Atlético Madrid en Real Sociedad. Mis niets met de VI Live.",
-      "publishedAt": "2026-04-18T15:30:16.000Z"
+      "title": "Man Utd deelt Chelsea enorme tik uit en kan Champions League ruiken",
+      "link": "https://www.vi.nl/nieuws/man-utd-deelt-chelsea-enorme-tik-uit-en-kan-champions-league-ruiken",
+      "summary": "Manchester United heeft zaterdagavond uitstekende zaken gedaan in de strijd om een Champions League-ticket. De Red Devils versloegen directe concurrent Chelsea op Stamford Bridge. Daardoor is het gat tussen beide ploegen nu tien punten.",
+      "publishedAt": "2026-04-18T20:54:54.000Z"
     },
     {
       "type": "rss",
@@ -84,43 +183,32 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Leeds v Wolves, Newcastle v Bournemouth: Premier League and more – live",
-      "link": "https://www.theguardian.com/football/live/2026/apr/18/leeds-wolves-newcastle-bournemouth-premier-league-and-more-live",
-      "summary": "⚽️ Follow goal updates and much more on our clockwatch ⚽ Live scores | Latest tables | Top scorers | And mail John From our weekend digest, Louise Taylor’s take on that huge game for Leeds. Leeds are morphing from relegation contenders to reverse kingmakers with a key role to play in determining the identity of the teams that end up descending to the Championship. Thanks to Monday night’s fully merited 2-1 win at Manchester United – their first league victory at Old Trafford since 1981 – Daniel Farke’s 15th-placed side moved six points clear of the relegation zone with six games remaining. A win against rock-bottom Wolves at Elland Road on Saturday would lift Leeds to the virtual sanctuary of 39 points but it is just the first of four impending matches against the bottom four. With Burnley still to visit West Yorkshire and Leeds facing trips to Tottenham and then, on the final day, West Ham, Farke’s FA Cup semi-finalists will likely have a significant say in who finishes where when the top-tier music stops next month. Louise Taylor Continue reading...",
-      "publishedAt": "2026-04-18T15:29:15.000Z"
+      "title": "Arteta’s desire for complete control may derail Arsenal’s wobbling title drive | Jonathan Wilson",
+      "link": "https://www.theguardian.com/football/2026/apr/18/artetas-desire-for-complete-control-may-derail-arsenals-wobbling-title-drive",
+      "summary": "Now Guardiola has granted his players freedom to improvise, it’s the Gunners’ manager who is the stickler for blueprint over instinct At half-time in the Carabao Cup final, Arsenal’s hopes of a quadruple remained strong. They were unbeaten in 14, 11 of them won. They were drawing 0-0 against Manchester City and it wasn’t unreasonable to think that if the second half carried on as the first half had, they would eventually find a winner – quite possibly from a corner. They had drawn a Championship side in the sixth round of the FA Cup and a Portuguese side in the quarter-finals of the Champions League. They held a nine-point lead in the Premier League. This was shaping up to be the greatest season in Arsenal’s history. Continue reading...",
+      "publishedAt": "2026-04-18T19:00:21.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spurs’ survival hopes hit after Rutter rescues dramatic late point for Brighton",
+      "link": "https://www.theguardian.com/football/2026/apr/18/tottenham-brighton-premier-league-match-report",
+      "summary": "Roberto De Zerbi could only watch in stunned silence. The Italian had been a crucible of emotions as Tottenham tried to hold out against his former club after Xavi Simons scored the goal that looked like ending their long wait for a victory. But football is capable of providing the cruellest twists and Georginio Rutter’s late dramatic equaliser must have felt like a dagger to the heart for De Zerbi and the Tottenham fans. The draw leaves Spurs marooned in the relegation zone having failed to win in the league in 2026 and it is 15 games since they last achieved that feat. Fail to beat the bottom side Wolves next week and they will have matched the worst winless run in their history. De Zerbi was right to point to the positives afterwards even if the preposterous prospect of this magnificent stadium hosting Championship football next season is growing by the day. Victory for West Ham against Crystal Palace on Monday night would leave them four points from safety and almost needing a miracle. Continue reading...",
+      "publishedAt": "2026-04-18T18:53:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Argentijnse sterren lanceren eigen WK-menu bij McDonald's",
-      "link": "https://www.vi.nl/nieuws/argentijnse-sterren-lanceren-eigen-wk-menu-bij-mcdonald-s",
-      "summary": "Voor wie trek heeft in een vette hap en iets anders wil proberen dan de standaard cheeseburger of BigMac, moet in Argentinië zijn. Daar heeft fastfoodketen McDonald's drie speciale menu's, geïnspireerd op sterren van het Argentijnse nationale team, gelanceerd in aanloop naar het WK. Fans kunnen vanaf nu de McAllister, McÁlvarez en McFernández uitproberen.",
-      "publishedAt": "2026-04-18T15:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Spits vermomd als linksback: het fenomeen Nico O'Reilly ontleed",
-      "link": "https://www.vi.nl/pro/spits-vermomd-als-linksback-het-fenomeen-nico-o-reilly-ontleed",
-      "summary": "Van de verdedigers in de Europese top scoort alleen Alejandro Grimaldo vaker dan Nico O'Reilly. De linksback van Manchester City dankt zijn productie (9 goals) aan zijn instinct om als extra spits op te duiken in het strafschopgebied. Tijd voor een analyse van de opmerkelijk rol van O'Reilly in het tactische concept van Pep Guardiola.",
-      "publishedAt": "2026-04-18T15:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "AZ-fans maken er een feest van op laatste training voor bekerfinale",
-      "link": "https://www.vi.nl/video/az-fans-maken-er-een-feest-van-op-laatste-training-voor-bekerfinale",
-      "summary": "De spelers van AZ werden op de afsluitende training voor de finale van de Eurojackpot KNVB Beker gesteund door veel fans. Zondag neemt AZ het op tegen NEC. Op de laatste training kon trainer Leeroy Echteld werken met zijn volledige selectie, behoudens de geblesseerde Jizz Hornkamp, die anderhalve week geleden is geopereerd aan zijn enkel.",
-      "publishedAt": "2026-04-18T14:47:27.000Z"
+      "title": "England do just enough as Russo seals Women’s World Cup qualifying win over Iceland",
+      "link": "https://www.theguardian.com/football/2026/apr/18/iceland-england-womens-world-cup-qualifier-match-report",
+      "summary": "Iceland 0-1 England Russo goal and Hampton saves keep Lionesses top of group Snow-capped mountains provided an idyllic backdrop to a less impressive performance, but England’s 1-0 win over Iceland ensured they maintained a three-point gap over Spain in their bid to earn an automatic place at the 2027 World Cup. Only the four League A teams who top their groups will avoid the playoffs and qualify automatically, and with the European and world champions drawn in the same group, one will be left frustrated and with more games required to book their trip to Brazil. Continue reading...",
+      "publishedAt": "2026-04-18T18:35:40.000Z"
     },
     {
       "type": "rss",
@@ -128,87 +216,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Championship roundup: Leicester deeper in trouble as Bowat lifts Portsmouth",
-      "link": "https://www.theguardian.com/football/2026/apr/18/championship-roundup-portsmouth-leicester-oxford-southampton-wrexham-hull",
-      "summary": "Defeat leaves Foxes five points off safety with three games left Oxford stay 22nd after 1-0 loss at Derby; Millwall 2-0 QPR Ibane Bowat’s second-half goal was enough to lead Portsmouth to a vital 1-0 win at home to their relegation rivals Leicester as the Foxes plunged a huge step closer to League One. The substitute Bowat’s scruffy 63rd-minute strike from a corner earned Pompey a third straight win to leave them one win from staying up. It is now one win in 17 for the hapless Foxes, whose demotion to the third tier 10 years after winning the Premier League could be confirmed as soon as Tuesday night, when they host Hull, dependant on any points deduction for West Brom. Continue reading...",
-      "publishedAt": "2026-04-18T14:08:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Leno’s superb late save ensures 0-0 draw as Fulham hit Brentford’s European hopes",
-      "link": "https://www.theguardian.com/football/2026/apr/18/brentford-fulham-premier-league-match-report",
-      "summary": "The grind to Europe continues for Brentford. A goalless west London derby with Fulham made it five league draws in succession for Keith Andrews’ side, the chance to go within touching distance of Liverpool squandered. The saviour for Fulham was Bernd Leno with a staggering reflex save in the final minute of normal time, tipping over Dango Ouattara’s close-range effort. Calvin Bassey, the hulking centre-back, was quick to hug his keeper, recognising the game-saving moment. Continue reading...",
-      "publishedAt": "2026-04-18T13:35:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "If this is Guardiola’s last City season he will be as hard to replace as Ferguson at United | Jamie Jackson",
-      "link": "https://www.theguardian.com/football/2026/apr/18/pep-guardiola-manchester-city-hard-to-replace-alex-ferguson-manchester-united",
-      "summary": "Manager goes into Sunday’s showdown with Arsenal as a subplot bubbles regarding whether this is a farewell title tilt Manchester City versus Arsenal on Sunday is a showdown for the ages. Second hosting first at what is likely to be a febrile Etihad Stadium might well be scripted by a Hollywood studio. Enter Pep Guardiola and the box‑office subplot of whether this could be his swansong season and, as such, a farewell tilt at the championship of an epoch-defining period piloting City. Lose to Arsenal and Guardiola’s hope of a seventh crown will be all but extinguished. He would have “only” the FA Cup left to add to 16 major honours won while in charge at City, the last being last month’s fifth League Cup triumph – over Arsenal. Defeat the visitors, however, and you would not bet against Guardiola leading his team home for a grandstand finish to the campaign – and his tenure. City would be only three points behind Arsenal with an extra match to play. Continue reading...",
-      "publishedAt": "2026-04-18T11:00:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "£111 train tickets will have 'chilling effect' on World Cup - Fifa",
-      "link": "https://www.bbc.com/sport/football/articles/c3r3yj9xgy2o?at_medium=RSS&at_campaign=rss",
-      "summary": "Fifa hits back at criticism from New Jersey Governor Mikie Sherrill, saying vastly inflated train fares at the 2026 World Cup will have a \"chilling effect\".",
-      "publishedAt": "2026-04-18T10:57:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Moyes stirs up rivalry as Everton eye Europe and a derby debut to remember",
-      "link": "https://www.theguardian.com/football/2026/apr/18/david-moyes-merseyside-derby-everton-liverpool",
-      "summary": "Upwardly-mobile hosts are raising expectations heading into the first showdown against Liverpool at Hill Dickinson Stadium David Moyes extended sympathy and support for Arne Slot – which may not be what any Liverpool manager wishes to hear from an Everton counterpart before a Merseyside derby – yet could not resist the temptation to stir up some local rivalry in the same breath. There was a gleam in the eye and a barely suppressed grin on Moyes’s face as he ridiculed one of the reasons Slot has presented for the champions’ decline this season. “Absolutely,” said the Everton manager when asked whether he sympathised with Slot’s predicament, just 12 months after he was on the verge of winning the Premier League title in his debut season. “Arne Slot has done a brilliant job and, I have got to say, he is really good coach. That is from a neutral point of view. Continue reading...",
-      "publishedAt": "2026-04-18T10:01:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How Lampard's own revival ended Coventry's 25-year wait",
-      "link": "https://www.bbc.com/sport/football/articles/cm2kj1lv91xo?at_medium=RSS&at_campaign=rss",
-      "summary": "Frank Lampard and Coventry City are back in the big time. This is how the former England international guided the Sky Blues to the Premier League.",
-      "publishedAt": "2026-04-18T08:46:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "From FA ban to double Euros winners - Lionesses reach 500 games",
-      "link": "https://www.bbc.com/sport/football/articles/ce844m5yzgvo?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport takes a look at 11 defining moments in the history of England women before their milestone 500th official fixture on Saturday.",
-      "publishedAt": "2026-04-18T06:43:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE: Antwerp dan toch op voorsprong - Wat kan OH Leuven nog met negen(!) man?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/live-antwerp-dan-toch-op-voorsprong-wat-kan-oh-leuven-nog-met-negen-man",
-      "summary": "Antwerp en OH Leuven openen de voetbalzaterdag tegen elkaar. Bij de thuisploeg is Gyrano Kerk terug, Tobe Leysen maakt zijn comeback in doel bij OH Leuven. Volg de match hier LIVE en op de voet!",
-      "publishedAt": "2026-04-18T03:36:51.000Z"
+      "title": "Eddie Howe claims he retains his self-belief after Newcastle suffer another defeat",
+      "link": "https://www.theguardian.com/football/2026/apr/18/eddie-howe-retains-his-self-belief-after-newcastle-suffer-another-defeat",
+      "summary": "Bournemouth score late winner for 2-1 victory ‘Recently we’ve become too easy to beat’ Eddie Howe insisted his self-belief remained intact and unshakeable after watching Newcastle sustain an eighth defeat in their last 11 Premier League matches. “My belief in myself can’t waiver and it’s not,” said Newcastle’s manager after Bournemouth’s 2-1 win at St James’ Park. It was a fourth straight reverse in all competitions for Howe’s team and arrived after goals from Marcus Tavernier and Adrien Truffert extended the visitors’ unbeaten run to 13 league games. Continue reading...",
+      "publishedAt": "2026-04-18T18:15:10.000Z"
     },
     {
       "type": "rss",
@@ -216,120 +227,109 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Seulement trois apparitions mais une carte à jouer à Anderlecht ? \"Pas de profils comme lui dans l'équipe\"",
-      "link": "https://www.walfoot.be/news/2026-04-18/seulement-trois-apparitions-mais-une-carte-a-jouer-a-anderlecht--pas-de-profils-comme-lui-dans-lequipe",
-      "summary": "Coba Da Costa est très bien rentré contre La Gantoise. A-t-il une carte à jouer pour cette fin de saison ?",
-      "publishedAt": "2026-04-18T03:30:00.000Z"
+      "title": "D1 ACFF : Virton surprend Mons et relance totalement la course au titre",
+      "link": "https://www.walfoot.be/news/2026-04-18/d1-acff--virton-surprend-mons-et-relance-totalement-la-course-au-titre",
+      "summary": "Virton s'impose face à Mons et relance la course au titre en D1 ACFF. À trois journées de la fin, Mons, Virton et Tubize sont au coude-à-coude.",
+      "publishedAt": "2026-04-18T09:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Trekt Kortrijk zonder zijn doelpuntenmachine naar de JPL? 'Europese interesse in Ambrose neemt toe'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/trekt-kortrijk-zonder-zijn-doelpuntenmachine-naar-de-jpl-europese-interesse-in-ambrose-neemt-toe",
-      "summary": "KV Kortrijk keert terug naar de Jupiler Pro League, maar dreigt daarbij mogelijk een van zijn belangrijkste pionnen kwijt te raken. Thierry Ambrose heeft zich dit seizoen namelijk stevig in de kijker gespeeld.",
-      "publishedAt": "2026-04-18T03:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE : Voici les compositions de Charleroi - Standard",
-      "link": "https://www.walfoot.be/news/2026-04-18/live-voici-les-compositions-de-charleroi-standard",
-      "summary": "Un choc wallon au programme de cette troisième journée des Europe Play-Offs. Charleroi reçoit le Standard, deux équipes qui n'ont déjà plus le droit à l'erreur, ou presque, dans la course à la septième place.",
-      "publishedAt": "2026-04-18T03:16:02.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Officiel : un ancien espoir d'Anderlecht prolonge l'aventure à Mons",
-      "link": "https://www.walfoot.be/news/2026-04-18/officiel--un-ancien-espoir-danderlecht-prolonge-laventure-a-mons",
-      "summary": "Lars Montegnies s'est imposé comme titulaire dans l'entrejeu de Mons. Il sera encore au Tondreau la saison prochaine.",
-      "publishedAt": "2026-04-18T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Anderlecht ziet oude bekende na zes jaar terugkeren van Ajax",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/officieel-anderlecht-ziet-oude-bekende-na-zes-jaar-terugkeren-van-ajax",
-      "summary": "Zes jaar na zijn vertrek keert Wesley Nys terug naar Anderlecht. Een sterk profiel dat de jeugdopleiding van de club opnieuw moet versterken.",
-      "publishedAt": "2026-04-18T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "La bataille du Marien sur la route du titre : le chiffre fou qui marque la différence entre l'Union et le Club",
-      "link": "https://www.walfoot.be/news/2026-04-18/la-bataille-du-marien-sur-la-route-du-titre--le-chiffre-fou-qui-marque-la-difference-entre-lunion-et-le-club",
-      "summary": "Demain soir, le match au sommet du week-end aura lieu au Parc Duden entre l'Union Saint-Gilloise et le Club de Bruges. Une vraie opposition de style en perspective.",
-      "publishedAt": "2026-04-18T02:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Historisch seizoen voor SK Beveren krijgt nu helemaal gouden rand",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/historisch-seizoen-voor-sk-beveren-krijgt-nu-helemaal-gouden-rand",
-      "summary": "SK Beveren heeft zijn droomseizoen op ongeziene wijze afgerond. De kampioen uit de Challenger Pro League bleef ook in de laatste speeldag ongeslagen en schreef zo een uniek hoofdstuk in de clubgeschiedenis.",
-      "publishedAt": "2026-04-18T02:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"J'ai signé des documents que je n'aurais pas dû\" : le procès de la vente d'Anderlecht loin d'être terminé",
-      "link": "https://www.walfoot.be/news/2026-04-18/jai-signe-des-documents-que-je-naurais-pas-du--le-proces-de-la-vente-danderlecht-loin-detre-termine",
-      "summary": "Herman Van Holsbeeck est de retour dans le football amateur. Mais il reste toujours inquiété par la justice dans le cadre de la vente d'Anderlecht à Marc Coucke.",
-      "publishedAt": "2026-04-18T02:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Strijd richting de titel: de opvallende cijfers die het verschil maken tussen Union en Club Brugge",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/strijd-richting-de-titel-de-opvallende-cijfers-die-het-verschil-maken-tussen-union-en-club-brugge",
-      "summary": "Zondagavond staat in het Dudenpark dé topper van het weekend op het programma tussen Union Saint-Gilloise en Club Brugge. Een echte stijlenclash in het vooruitzicht.",
-      "publishedAt": "2026-04-18T02:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Bournemouth close to appointing Rose",
-      "link": "https://www.bbc.com/sport/football/articles/c5ywz3x4r2eo?at_medium=RSS&at_campaign=rss",
-      "summary": "Bournemouth are close to appointing Marco Rose as Andoni Iraola's replacement as head coach.",
-      "publishedAt": "2026-04-17T17:11:56.000Z"
+      "title": "De miserie blijft maar duren: Tottenham geeft zege compléét uit handen tegen Brighton",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/de-miserie-blijft-maar-duren-tottenham-geeft-zege-compleet-uit-handen-tegen-brighton",
+      "summary": "Er komt maar geen beterschap bij Tottenham Hotspur. De Londenaren leken tegen Brighton op weg naar de zege, maar gaven de drie punten in het slot nog helemaal weg.",
+      "publishedAt": "2026-04-18T09:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sutton's predictions v boxer Molly McCann & the Boo Radleys",
-      "link": "https://www.bbc.com/sport/football/articles/c78lxvzl3d4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Chris Sutton takes on boxer Molly McCann and The Boo Radley's frontman Sice Rowbottom plus the BBC readers and AI with his predictions for this weekend's Premier League fixtures.",
-      "publishedAt": "2026-04-16T17:39:32.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La dernière demi-heure aura (encore) suffi : Cvetkovic et Bertaccini réveillent Anderlecht à Malines",
+      "link": "https://www.walfoot.be/news/2026-04-18/la-derniere-demi-heure-aura-encore-suffi--cvetkovic-et-bertaccini-reveillent-anderlecht-a-malines",
+      "summary": "Anderlecht a renversé la situation pour s'imposer 1-2 à Malines. Les rentrées de Mihajlo Cvetković et Adriano Bertaccini ont fait beaucoup de bien au Sporting.",
+      "publishedAt": "2026-04-18T08:51:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Anderlecht wist zwak eerste uur in Mechelen uit dankzij invallers en staat na 6 op 6 stevig op vierde plaats",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/anderlecht-wist-zwak-eerste-uur-in-mechelen-uit-dankzij-invallers-en-staat-na-6-op-6-stevig-op-vierde-plaats",
+      "summary": "Hoe zou Anderlecht het er zonder de geblesseerde De Cat vanaf brengen in de rest van de play-offs? Ze konden al een eerste signaal geven uit bij Mechelen, waar ze in de competitie nog verloren. Dit keer liep het beter af voor Anderlecht, met dank aan invallers Cvetkovic en Bertaccini.",
+      "publishedAt": "2026-04-18T08:51:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Dans ce genre de situation...\" : Felice Mazzu hausse le ton après la défaite d'OHL",
+      "link": "https://www.walfoot.be/news/2026-04-18/dans-ce-genre-de-situation--felice-mazzu-hausse-le-ton-apres-la-defaite-dohl",
+      "summary": "OHL a sombré face à l'Antwerp 2-0, plombé par deux cartons rouges. Felice Mazzu regrette ce manque de maturité...",
+      "publishedAt": "2026-04-18T08:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Trois points, c'est tout ce qu'il y a à retenir pour le Standard : \"Un niveau de jeu pas aussi satisfaisant\"",
+      "link": "https://www.walfoot.be/news/2026-04-18/trois-points-cest-tout-ce-quil-y-a-a-retenir-pour-le-standard--un-niveau-de-jeu-pas-aussi-satisfaisant",
+      "summary": "Vincent Euvrard était satisfait du résultat, mais moins du niveau de jeu affiché par son équipe du Standard en déplacement au Sporting Charleroi. Le T1 des Rouches se réjouit toutefois de la victoire arrachée par Tobias Mohr dans les derniers instants.",
+      "publishedAt": "2026-04-18T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Felice Mazzu zag Antwerp goed wegkomen: \"Zelfs nog een kans op de gelijkmaker ...\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/felize-mazzu-zag-antwerp-goed-wegkomen-zelfs-nog-een-kans-op-de-gelijkmaker",
+      "summary": "OH Leuven leed tegen Antwerp zijn tweede nederlaag van de play-offs. De Leuvenaren maakten het zichzelf moeilijk met twee rode kaarten. Dat zag ook Felice Mazzu.",
+      "publishedAt": "2026-04-18T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Genk renverse Westerlo et s'installe en tête des Europe Play-Offs",
+      "link": "https://www.walfoot.be/news/2026-04-18/genk-renverse-westerlo-et-sinstalle-en-tete-des-europe-play-offs",
+      "summary": "Genk fait la différence en seconde période et s'impose 2-1 à Westerlo. Un succès important qui permet aux Limbourgeois de prendre la première place des Play-Offs Europe.",
+      "publishedAt": "2026-04-18T08:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Joseph Oosting ziet \"heel prettig\" extra pigment aan eerste play-offzege van Antwerp",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/joseph-oosting-ziet-extra-heel-prettig-pigment-aan-eerste-play-offzege-van-antwerp",
+      "summary": "De kop is eraf voor Royal Antwerp FC. Het heeft zijn eerste zege beet in de play-offs. Tegen OH Leuven werd het 2-0. Joseph Oosting zag dat het goed was.",
+      "publishedAt": "2026-04-18T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Hayen haalt opgelucht adem na nieuwe overwinning: \"Dit moet de standaard worden\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-18/match-reactie-hayen-haalt-opgelucht-adem-na-nieuwe-overwinning-dit-moet-de-standaard-worden",
+      "summary": "Na drie speeldagen is Racing Genk nog de enige ploeg in de Europe Play Offs zonder nederlaag. Door de overwinning op het veld van Westerlo klimmen de Limburgers opnieuw naar de leiding zelfs.",
+      "publishedAt": "2026-04-18T07:55:00.000Z"
     }
   ]
 }
