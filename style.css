@@ -760,3 +760,15 @@ body .v4-status-note{
     display:none;
   }
 }
+
+/* ── Mobile ad-height clamp: prevent halfpage dominance ───────── */
+
+@media (max-width:900px){
+  ins.adsbygoogle{
+    max-height:300px !important;
+    overflow:hidden !important;
+  }
+  .ad-vertical{
+    display:none !important;
+  }
+}
