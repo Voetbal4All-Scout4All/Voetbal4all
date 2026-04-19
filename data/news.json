@@ -1,27 +1,16 @@
 {
-  "generatedAt": "2026-04-19T19:45:15.485Z",
+  "generatedAt": "2026-04-19T21:40:10.386Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "At a crucial stage in the season, Man City take control of the title race over Arsenal",
-      "link": "https://www.espn.com/soccer/story/_/id/48533188/manchester-city-win-arsenal-gives-control-title-race",
-      "summary": "Manchester City's 2-1 win over Arsenal becomes a huge confidence boost for Pep Guardiola's side in the Premier League title race.",
-      "publishedAt": "2026-04-19T20:23:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Schreuder trekt simpele conclusie over NEC: 'Dan wordt het lastig'",
-      "link": "https://www.vi.nl/nieuws/schreuder-trekt-simpele-conclusie-over-nec-dan-wordt-het-lastig",
-      "summary": "Dick Schreuder constateerde na de verloren bekerfinale tegen AZ dat zijn ploeg simpelweg niet goed in de wedstrijd zat. De trainer van NEC snapt dat de teleurstelling bij zijn spelers groot is, maar verwacht dat zij de knop woensdag weer hebben omgezet voor de Eredivisie-topper tegen FC Twente in de strijd om Champions League-voetbal. Dat duel is zaterdagavond in Enschede.",
-      "publishedAt": "2026-04-19T19:43:06.000Z"
+      "title": "Watch: Match of the Day",
+      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal travel to Manchester City, and there's a Merseyside derby.",
+      "publishedAt": "2026-04-19T22:46:14.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +21,7 @@
       "title": "Arteta on City 2-1 Arsenal: 'The PL starts again'",
       "link": "https://www.espn.com/soccer/story/_/id/48533137/mikel-arteta-man-city-2-1-arsenal-premier-league-starts-again",
       "summary": "Mikel Arteta has suggested \"the Premier League starts again\" after Arsenal were beaten at Manchester City on Sunday but insisted the Gunners still believe they can win the title.",
-      "publishedAt": "2026-04-19T19:43:02.000Z"
+      "publishedAt": "2026-04-19T22:18:37.000Z"
     },
     {
       "type": "rss",
@@ -43,7 +32,7 @@
       "title": "Kane scores as Bayern retain Bundesliga title",
       "link": "https://www.espn.com/soccer/story/_/id/48482014/bayern-munich-retain-bundesliga-title-stuttgart-thrashing",
       "summary": "Bayern Munich have sealed their defense of the Bundesliga title after thrashing Stuttgart 4-2 on Sunday.",
-      "publishedAt": "2026-04-19T19:43:02.000Z"
+      "publishedAt": "2026-04-19T22:18:37.000Z"
     },
     {
       "type": "rss",
@@ -51,21 +40,43 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Salah keen to end Liverpool career 'the right way'",
-      "link": "https://www.espn.com/soccer/story/_/id/48532230/mohamed-salah-determined-end-liverpool-career-right-way",
-      "summary": "Mohamed Salah has said he wants to end his time at Liverpool \"the right way\" after scoring in the Reds' 2-1 victory over Everton on Sunday.",
-      "publishedAt": "2026-04-19T19:43:02.000Z"
+      "title": "Pep warns City over title battle: 'They are still top'",
+      "link": "https://www.espn.com/soccer/story/_/id/48533218/pep-guardiola-cautions-players-arsenal-win-top",
+      "summary": "Manchester City boss Pep Guardiola has cautioned his players against believing they will march to the Premier League title after beating Arsenal.",
+      "publishedAt": "2026-04-19T22:18:37.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "First 'daylight offside' goal scored in Canada",
-      "link": "https://www.espn.com/soccer/story/_/id/48530936/watch-first-daylight-offside-goal-scored-canadian-premier-league",
-      "summary": "The first goal allowed under the experimental \"daylight\" offiside law was scored in Canada when Alejandro Diaz's strike was permitted by officials.",
-      "publishedAt": "2026-04-19T19:43:02.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "At a crucial stage in the season, Man City take control of the title race over Arsenal",
+      "link": "https://www.espn.com/soccer/story/_/id/48533188/manchester-city-win-arsenal-gives-control-title-race",
+      "summary": "Manchester City's 2-1 win over Arsenal becomes a huge confidence boost for Pep Guardiola's side in the Premier League title race.",
+      "publishedAt": "2026-04-19T21:52:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "VAR review: Should Arsenal's Gabriel have been sent off for headbutt on Haaland?",
+      "link": "https://www.espn.com/soccer/story/_/id/48533873/var-review-arsenals-gabriel-sent-headbutt-erling-haaland",
+      "summary": "Arsenal defender Gabriel got a yellow card following an altercation with Man City's Haaland. What happened?",
+      "publishedAt": "2026-04-19T21:52:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "VI Live: FC Porto overtuigt niet, maar kent geweldige dag in jacht op titel",
+      "link": "https://www.vi.nl/nieuws/vi-live-liverpool-leidt-in-merseyside-derby-flemming-doet-het-voor-burnley",
+      "summary": "In Engeland zijn alle ogen zondag gericht op de kampioenskraker tussen Manchester City en Arsenal. In hun kielzog speelt Liverpool de Merseyside Derby tegen Everton. Ook Bayern München, AC Milan en PSG komen in actie. Volg het allemaal in de VI Live.",
+      "publishedAt": "2026-04-19T21:35:19.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +84,76 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Zonneveld voor tweede jaar op rij gedeeld topscorer KNVB-beker",
-      "link": "https://www.vi.nl/nieuws/zonneveld-voor-tweede-jaar-op-rij-gedeeld-topscorer-knvb-beker",
-      "summary": "Milan Zonneveld en Troy Parrott hebben zich gekroond tot de topscorers van het hoofdtoernooi om de Eurojackpot KNVB Beker 2025/26. De spits van Sparta Rotterdam maakte al zijn doelpunten in dienst van Telstar. AZ-spits Troy Parrott kwam dankzij zijn doelpunt in de bekerfinale tegen NEC op gelijke hoogte.",
-      "publishedAt": "2026-04-19T19:39:00.000Z"
+      "title": "Rampdag voor NEC: vrees voor knieblessure Önal",
+      "link": "https://www.vi.nl/nieuws/rampdag-voor-nec-vrees-voor-knieblessure-nal",
+      "summary": "AZ veegde NEC zondagavond van de vloer in De Kuip en legde daardoor na dertien jaar weer eens beslag op de Eurojackpot KNVB Beker. Hoe verliep de finale? Lees het op je gemak terug in de VI Live.",
+      "publishedAt": "2026-04-19T21:32:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Farioli en Porto profiteren maximaal van misstap Sporting",
+      "link": "https://www.vi.nl/nieuws/farioli-en-porto-profiteren-maximaal-van-misstap-sporting",
+      "summary": "FC Porto heeft een ruime voorsprong genomen aan de kop van de Portugese competitie. Belangrijkste achtervolger Sporting Portugal verloor zondag thuis van Benfica , enkele uren later zag Francesco Farioli zijn ploeg winnen van Tondela.",
+      "publishedAt": "2026-04-19T21:31:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Echteld is de op één na oudste bekerwinnaar ooit",
+      "link": "https://www.vi.nl/nieuws/echteld-is-de-op-n-na-oudste-bekerwinnaar-ooit",
+      "summary": "Leeroy Echteld is de op één na oudste bekerwinnaar in de Nederlandse voetbalgeschiedenis geworden. De interim-trainer won zondag met AZ de finale van NEC . Hij moet alleen Guus Hiddink nog voor zich dulden.",
+      "publishedAt": "2026-04-19T21:15:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Trotse Guardiola wil niet in schoenen Haaland staan: 'Lees liever een boek'",
+      "link": "https://www.vi.nl/video/trotse-guardiola-wil-niet-in-schoenen-haaland-staan-lees-liever-een-boek",
+      "summary": "Pep Guardiola was na de belangrijke zege van Manchester City op Arsenal ( 2-1 ) in de Engelse titelrace trots op zijn ploeg. Dat maakte de Catalaanse manager onder meer duidelijk door te wijzen op de duels die spits Erling Haaland uitvocht met het centrale duo van Arsenal. Ook vond Guardiola de wedstrijd tussen de nummers één en twee van de Premier League van heel hoog niveau.",
+      "publishedAt": "2026-04-19T21:10:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "European football: Bayern Munich win 35th league title by surging past Stuttgart",
+      "link": "https://www.theguardian.com/football/2026/apr/19/european-football-bayern-munich-win-35th-league-title-by-surging-past-stuttgart",
+      "summary": "Bayern bounce back from early concession to win 4-2 Milan beat Verona 1-0 to tighten grip on top-four finish Bayern Munich secured their 35th German league title by beating Stuttgart 4-2 to open up an unassailable lead with four games to play. Sunday’s result sent Bayern 15 points clear of second-placed Borussia Dortmund. The Bavarian side, who face Bayer Leverkusen in the German Cup semi-final next week before taking on Paris Saint-Germain in the first leg of their Champions League semi-final on 28 April, were a goal down before scoring four times to quickly turn the game around. Continue reading...",
+      "publishedAt": "2026-04-19T20:41:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Nico O’Reilly’s fearless quality exposes collapsing Arsenal’s title credentials | Barney Ronay",
+      "link": "https://www.theguardian.com/football/2026/apr/19/nico-oreilly-manchester-city-arsenal-premier-league-title-race",
+      "summary": "Deep lying creator is an excellent Manchester City story and confirmed why he is England’s best left-back It’s not over, not over, not over yet. Although, let’s be honest, it kind of is over. Isn’t it, don’t you think, at the end of a day when Manchester City and Arsenal dished up the one thing nobody was expecting at the Etihad Stadium, a thrillingly open game of attacking football? There were three images at the final whistle that seemed to capture the essence of City’s 2-1 win here, and not just in terms of the game, but the balance of energy, feeling, vibes. Continue reading...",
+      "publishedAt": "2026-04-19T20:11:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arteta must prove he won't be remembered as Arsenal's 'nearly man'",
+      "link": "https://www.bbc.com/sport/football/articles/cg40d145zgeo?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal and manager Mikel Arteta may still have a season of glory - but must prove they are not 'nearly men' after Manchester City loss, says chief football writer Phil McNulty.",
+      "publishedAt": "2026-04-19T20:03:55.000Z"
     },
     {
       "type": "rss",
@@ -91,80 +168,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "VI Live: Penalty missend PSG zwaar in de problemen tegen Lyon",
-      "link": "https://www.vi.nl/nieuws/vi-live-liverpool-leidt-in-merseyside-derby-flemming-doet-het-voor-burnley",
-      "summary": "In Engeland zijn alle ogen zondag gericht op de kampioenskraker tussen Manchester City en Arsenal. In hun kielzog speelt Liverpool de Merseyside Derby tegen Everton. Ook Bayern München, AC Milan en PSG komen in actie. Volg het allemaal in de VI Live.",
-      "publishedAt": "2026-04-19T19:31:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arteta licht psychologisch aspect uit na verliespartij in Manchester",
-      "link": "https://www.vi.nl/video/arteta-licht-psychologisch-aspect-uit-na-verliespartij-in-manchester",
-      "summary": "Mikel Arteta kon zijn spelers weinig verwijten na de nederlaag bij Manchester City . Op de persconferentie na afloop van het duel sprak hij over het psychologische effect van de eerste tegengoal. 'Daar moesten we mee dealen en dat hebben we gedaan.'",
-      "publishedAt": "2026-04-19T19:31:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Bekerfinale Live: NEC vreest voor Önal, Smit en Parrott lossen Van Polen af",
-      "link": "https://www.vi.nl/nieuws/bekerfinale-live-nec-vreest-voor-nal-smit-en-parrott-lossen-van-polen-af",
-      "summary": "Het aftellen is begonnen! AZ en NEC staan om 18.00 uur tegenover elkaar in de finale van de Eurojackpot KNVB Beker. Wie gaat er met de Dennenappel én het Europese ticket vandoor? VI houdt je op de hoogte van de laatste ontwikkelingen.",
-      "publishedAt": "2026-04-19T19:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Premier League highlights: Manchester City 2-1 Arsenal",
-      "link": "https://www.bbc.co.uk/programmes/p0nfcv4q?at_medium=RSS&at_campaign=rss",
-      "summary": "Premier League highlights: Manchester City 2-1 Arsenal",
-      "publishedAt": "2026-04-19T19:09:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Record-breaking Bayern win Bundesliga - now for the Treble",
-      "link": "https://www.bbc.com/sport/football/articles/cq8wpln78eqo?at_medium=RSS&at_campaign=rss",
-      "summary": "Free-scoring Bayern Munich swept to the German title for the 35th time. Now their sights turn towards completing the Treble.",
-      "publishedAt": "2026-04-19T19:05:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "European football: Bayern Munich win 35th league title by surging past Stuttgart",
-      "link": "https://www.theguardian.com/football/2026/apr/19/european-football-bayern-munich-win-35th-league-title-by-surging-past-stuttgart",
-      "summary": "Bayern bounce back from early concession to win 4-2 Harry Kane scores 32nd goal of the season Bayern Munich secured their 35th German league title by beating Stuttgart 4-2 to open up an unassailable lead with four games to play. Sunday’s result sent Bayern 15 points clear of second-placed Borussia Dortmund. The Bavarian side, who face Bayer Leverkusen in the German Cup semi-final next week before taking on Paris Saint-Germain in the first leg of their Champions League semi-final on 28 April, were a goal down before scoring four times to quickly turn the game around. This story will be updated Continue reading...",
-      "publishedAt": "2026-04-19T18:25:38.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Erling Haaland sinks Arsenal to give Manchester City edge in title race",
-      "link": "https://www.theguardian.com/football/2026/apr/19/manchester-city-arsenal-premier-league-match-report",
-      "summary": "The margins were always likely to be tight. In the event, with so much on the line, namely the possible ­destination of the Premier League title, they were excruciatingly so. It was a day when the division’s heavyweights went toe-to-toe and served up a thriller, a contest to absorb the nation and many more around the world; to wildly exceed expectations. When it was over, it was Manchester City who had landed what could prove to be the telling blow. Because once they are ahead on the count in these kind of situations everybody knows how it tends to end. There is no better finisher than Pep Guardiola and the momentum is now with him. A seventh championship in 10 seasons is within the City manager’s grasp. Continue reading...",
-      "publishedAt": "2026-04-19T17:52:08.000Z"
+      "title": "Man City beat Arsenal to close gap in title race",
+      "link": "https://www.bbc.com/sport/football/videos/c203ek521wno?at_medium=RSS&at_campaign=rss",
+      "summary": "Erling Haaland and Rayan Cherki strike as Manchester City beat league leaders Arsenal to close the gap to three points with a game in hand and pile more pressure on Mikel Arteta's side.",
+      "publishedAt": "2026-04-19T19:20:04.000Z"
     },
     {
       "type": "rss",
@@ -176,17 +187,6 @@
       "link": "https://www.theguardian.com/football/2026/apr/19/arne-slot-liverpool-everton-derby",
       "summary": "Liverpool win derby in 100th minute after difficult run ‘Five games in 15 days with mainly the same players’ Arne Slot claimed Liverpool provided the perfect answer to questions over their mentality and character as Virgil van Dijk’s 100th-minute header clinched victory in the first Merseyside derby at Hill Dickinson Stadium. Liverpool opened up a seven-point gap to sixth-placed Chelsea in the race for Champions League qualification with their captain’s dramatic intervention against Everton, who were left to rue another late blow by their local rivals. David Moyes described the outcome as “cruel” and claimed Everton should have had a penalty for a push by Curtis Jones on Kiernan Dewsbury-Hall. Continue reading...",
       "publishedAt": "2026-04-19T17:28:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Why evergreen Forrest is Celtic's enduring influencer",
-      "link": "https://www.bbc.com/sport/football/articles/c5yw6068l05o?at_medium=RSS&at_campaign=rss",
-      "summary": "Veteran winger James Forrest remains Celtic's constant, the great survivor and the enduring influencer, writes Tom English.",
-      "publishedAt": "2026-04-19T17:23:53.000Z"
     },
     {
       "type": "rss",
@@ -218,7 +218,7 @@
       "flag": "🇬🇧",
       "title": "Aston Villa’s Tammy Abraham grabs dramatic victory after Sunderland rally",
       "link": "https://www.theguardian.com/football/2026/apr/19/aston-villa-sunderland-premier-league-match-report",
-      "summary": "The finish was chaotic, brilliant, exhausting but, when the dust settles, this perhaps was the afternoon when Aston Villa made a decisive spurt for the finish line to claim Champions League qualification. As Tammy Abraham touched in the winner three minutes into injury-time, Unai Emery ran on to the pitch in celebration. Yet just a minute earlier Habib Diarra had been set clean through with a chance of his own to win it. Emi Martínez, though, stretched up to save his dink, and the road was cleared for the Villa winner. “We need strikers and goalkeepers,” said Emery. “It was the match -three points for them and no three points for us.” Continue reading...",
+      "summary": "The finish was chaotic, brilliant, exhausting but, when the dust settles, this perhaps was the afternoon when Aston Villa made a decisive spurt for the finish line to claim Champions League qualification. As Tammy Abraham touched in the winner three minutes into injury-time, Unai Emery ran on to the pitch in celebration. Yet just a minute earlier Habib Diarra had been set clean through with a chance of his own to win it. Emi Martínez, though, stretched up to save his dink, and the road was cleared for the Villa winner. “We need strikers and goalkeepers,” said Emery. “It was the match – three points for them and no three points for us.” Continue reading...",
       "publishedAt": "2026-04-19T15:22:29.000Z"
     },
     {
@@ -227,21 +227,32 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Romelu Lukaku repéré à l'aéroport : nouveau tournant dans le bras de fer avec Naples",
-      "link": "https://www.walfoot.be/news/2026-04-19/romelu-lukaku-repere-a-laeroport--nouveau-tournant-dans-le-bras-de-fer-avec-naples",
-      "summary": "Romelu Lukaku rejouera-t-il avec Naples cette saison ?Le Diable Rouge a été aperçu à l'aéroport, marquant un nouveau tournant dans ce dossier.",
-      "publishedAt": "2026-04-19T07:45:00.000Z"
+      "title": "\"L'écart est minime\" : l'Union Saint-Gilloise creuse l'écart, mais refuse de s'enflammer",
+      "link": "https://www.walfoot.be/news/2026-04-19/lecart-est-minime--lunion-saint-gilloise-creuse-lecart-mais-refuse-de-senflammer",
+      "summary": "Après l'annulation du but de Kevin Rodriguez et l'ouverture du score brugeoise, l'Union a renversé le Club de Bruges 2-1.",
+      "publishedAt": "2026-04-19T09:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "'RSC Anderlecht grijpt ernaast: het is Club Brugge menens voor opvolger Tresoldi'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/rsc-anderlecht-grijpt-ernaast-het-is-club-brugge-menens-voor-opvolger-tresoldi",
+      "summary": "Club Brugge ging op bezoek bij Union SG pijnlijk onderuit met 2-1. En zo is er toch nog steeds werk aan de winkel voor de Bruggelingen. Ondertussen wordt wel al gekeken naar de komende transferperiodes.",
+      "publishedAt": "2026-04-19T09:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Khalaili irrésistible, Rodriguez avec trois poumons : les notes de l'Union contre Bruges",
-      "link": "https://www.walfoot.be/news/2026-04-19/khalaili-irresistible-rodriguez-avec-trois-poumons--les-notes-de-lunion-contre-bruges",
-      "summary": "L'Union Saint-Gilloise a sorti un match très méritant pour battre le Club de Bruges. Voici les notes des joueurs pour leurs prestations individuelles.",
-      "publishedAt": "2026-04-19T07:35:00.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Cette fois, Ivan Leko a dû se la jouer profil bas : \"S'il y avait un match à ne pas perdre...\"",
+      "link": "https://www.walfoot.be/news/2026-04-19/match-reaction-cette-fois-ivan-leko-a-du-se-la-jouer-profil-bas--sil-y-avait-un-match-a-ne-pas-perdre",
+      "summary": "Le peu de hauteur de plafond de la salle de presse du Stade Joseph Marien y est pour quelque chose mais n'explique pas tout : Ivan Leko avait la tête basse en conférence de presse. Son Club de Bruges est désormais distancé dans la course au titre.",
+      "publishedAt": "2026-04-19T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -249,65 +260,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Het ziet er niet goed uit voor Hans Vanaken, Ivan Leko heeft geen goed nieuws",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/match-reactie-het-ziet-er-niet-goed-uit-voor-hans-vanaken-ivan-leko-heeft-geen-goed-nieuws",
-      "summary": "Hans Vanaken ontbrak aan de aftrap tegen Union Saint-Gilloise en dat liet zich voelen bij Club Brugge. Het middenveld draaide minder vlot dan gewoonlijk, en dat baart coach Ivan Leko zorgen.",
-      "publishedAt": "2026-04-19T07:28:00.000Z"
+      "title": "Ivan Leko weet wat er is misgelopen tegen Union en duidt het probleem ook aan",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/match-reactie-ivan-leko-weet-wat-er-is-misgelopen-tegen-union-en-duidt-het-probleem-ook-aan",
+      "summary": "Club Brugge moest zich neerleggen bij een nederlaag op het veld van Union Saint-Gilloise. Volgens coach Ivan Leko lag de sleutel duidelijk op het middenveld.",
+      "publishedAt": "2026-04-19T08:45:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Une défaite sans conséquence : la RAAL s'incline face à Zulte Waregem mais reste en D1A",
-      "link": "https://www.walfoot.be/news/2026-04-19/une-defaite-sans-consequence--la-raal-sincline-face-a-zulte-waregem-mais-reste-en-d1a",
-      "summary": "Zulte Waregem était sauvé, La Louvière l'a rejoint après la défaite de Dender. Libérés de la pression, les deux promus pouvaient jouer sans calcul.",
-      "publishedAt": "2026-04-19T07:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Zulte Waregem zet redding kracht bij in duel tussen promovendi",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/zulte-waregem-zet-redding-kracht-bij-in-duel-tussen-promovendi",
-      "summary": "Zulte Waregem was al sinds vorig weekend zeker van een verlengd verblijf in de Jupiler Pro League. Een paar uur geleden mocht ook La Louvière zich daaraan toevoegen door de nederlaag van FCV Dender EH tegen Cercle Brugge. Tijd om bevrijden te voetballen?",
-      "publishedAt": "2026-04-19T07:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Romeo Vermant verbijt ontgoocheling én prikt naar Union SG",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/romeo-vermant-verbijt-ontgoocheling-en-prikt-naar-union-sg",
-      "summary": "Club Brugge verloor met 2-1 op bezoek bij Union SG. Daardoor is de kloof tussen de Brusselaars en de Bruggelingen plots voor punten. En dus is het stilaan alle hens aan dek voor Club Brugge. Dat beseft ook Romeo Vermant, die ook wel kritisch was na de nederlaag bij Union SG.",
-      "publishedAt": "2026-04-19T07:08:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Une nouvelle erreur de la VAR ? L'Union a frôlé le pire face au Club de Bruges",
-      "link": "https://www.walfoot.be/news/2026-04-19/une-nouvelle-erreur-de-la-var--lunion-a-frole-le-pire-face-au-club-de-bruges",
-      "summary": "But annulé pour un hors-jeu très limite : malgré la polémique, l'Union s'impose 2-1 face au Club de Bruges.",
-      "publishedAt": "2026-04-19T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "IT",
+      "country": "DE",
       "flag": "🌍",
-      "title": "'Lukaku gespot op opvallende plek: nieuwe wending in het verhaal rond Napoli en de revalidatie'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/lukaku-gespot-op-opvallende-plek-nieuwe-wending-in-het-verhaal-rond-napoli-en-de-revalidatie",
-      "summary": "Zien we Romelu Lukaku dit seizoen nog in een truitje van Napoli? En wat gaat er met hem gebeuren aankomende zomer? Er zijn nog vele vragen, maar er is wel alvast een nieuwe wending in het verhaal.",
-      "publishedAt": "2026-04-19T07:00:00.000Z"
+      "title": "Vincent Kompany en veut déjà plus : le message fort du coach belge après le titre du Bayern",
+      "link": "https://www.walfoot.be/news/2026-04-19/vincent-kompany-en-veut-deja-plus--le-message-fort-du-coach-belge-apres-le-titre-du-bayern",
+      "summary": "Le Bayern Munich est sacré champion, mais Vincent Kompany ne veut pas s'arrêter là. Le coach belge veut réaliser le triplé.",
+      "publishedAt": "2026-04-19T08:40:00.000Z"
     },
     {
       "type": "rss",
@@ -315,10 +282,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Supporters Club Brugge maken speler af na nederlaag en wijzen ook naar Leko ... en Verhaeghe",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/supporters-club-brugge-maken-speler-af-na-nederlaag-en-wijzen-ook-naar-leko--en-verhaeghe",
-      "summary": "Union SG won de topper van Club Brugge met 2-1. Met dank aan een knap collectief doelpunt van de Brusselaars, afgemaakt door invaller Besfort Zeneli. De supporters van Club Brugge zagen het meteen met lede ogen aan. En er was ook meteen de nodige kritiek.",
-      "publishedAt": "2026-04-19T06:30:00.000Z"
+      "title": "Titelstrijd in beslissende plooi of begin van de Brugse remontada? Uw mening telt eens te meer",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/titelstrijd-in-beslissende-plooi-of-begin-van-de-brugse-remontada-uw-mening-telt-eens-te-meer",
+      "summary": "Union SG heeft een stapje gezet richting titel door in eigen huis met 2-1 te winnen van Club Brugge. Maar er zijn natuurlijk nog zeven speeldagen en dus kan er de komende weken nog veel gebeuren. Te beginnen met de midweekspeeldag die er snel aan zit te komen.",
+      "publishedAt": "2026-04-19T08:30:00.000Z"
     },
     {
       "type": "rss",
@@ -326,10 +293,43 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Un premier tournant dans la course au titre : Bruges dominé, l'Union fait le trou !",
-      "link": "https://www.walfoot.be/news/2026-04-19/un-premier-tournant-dans-la-course-au-titre--bruges-domine-lunion-fait-le-trou",
-      "summary": "L'Union a frappé fort en s'imposant 2-1 contre le Club de Bruges. Une victoire méritée en guise de premier véritable tournant dans la course au titre.",
-      "publishedAt": "2026-04-19T06:27:00.000Z"
+      "title": "\"J'ai pas les mots\" : le Club de Bruges lâche des points au pire moment",
+      "link": "https://www.walfoot.be/news/2026-04-19/jai-pas-les-mots--le-club-de-bruges-lache-des-points-au-pire-moment",
+      "summary": "L'Union Saint-Gilloise bat le Club de Bruges 2-1 et creuse l'écart en tête des Champions' Play-Offs.",
+      "publishedAt": "2026-04-19T08:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Union weer op weg naar de titel? David Hubert verklaart hoe Brusselaars ineens helemaal top zijn",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/match-reactie-union-weer-op-weg-naar-de-titel-david-hubert-verklaart-hoe-brusselaars-ineens-helemaal-top-zijn",
+      "summary": "Union Saint-Gilloise heeft met 2-1 gewonnen van Club Brugge na een bijzonder intense wedstrijd. Van begin tot einde lag het tempo hoog en dat was volgens coach David Hubert geen toeval.",
+      "publishedAt": "2026-04-19T08:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La clé de la victoire de l'Union ? \"Je n'aimerais pas être à la place du coach, mais...\"",
+      "link": "https://www.walfoot.be/news/2026-04-19/match-reaction-la-cle-de-la-victoire-de-lunion--je-naimerais-pas-etre-a-la-place-du-coach-mais",
+      "summary": "Kamiel Van de Perre était encore au four et au moulin pour permettre à l'Union de battre le Club de Bruges. Malgré la débauche d'énergie sur le terrain, il était encore très lucide à l'interview.",
+      "publishedAt": "2026-04-19T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Malaise bij Chelsea blijft duren: supporters hebben het gehad met coach Rosenoir",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-19/malaise-bij-chelsea-blijft-duren-supporters-hebben-het-gehad-met-coach-rosenoir",
+      "summary": "Chelsea verloor zaterdagavond thuis van Manchester United. De teleurstelling te veel voor de supporters van Chelsea.",
+      "publishedAt": "2026-04-19T08:00:00.000Z"
     }
   ]
 }
