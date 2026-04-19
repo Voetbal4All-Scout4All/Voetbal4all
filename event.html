@@ -14,8 +14,20 @@
     crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
-  <title>Voetbal4All - Event</title>
+  <title>Event detail | Voetbal4All</title>
+  <meta name="description" id="page-description" content="Bekijk events, clubvacatures, spelers- en trainersprofielen op Voetbal4All." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" id="page-canonical" href="https://www.voetbal4all.eu/event.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" id="og-url" content="https://www.voetbal4all.eu/event.html" />
+  <meta property="og:title" id="og-title" content="Event detail | Voetbal4All" />
+  <meta property="og:description" id="og-description" content="Bekijk events, clubvacatures, spelers- en trainersprofielen op Voetbal4All." />
+  <meta property="og:image" id="og-image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
+  <meta property="og:site_name" content="Voetbal4All" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitter-title" content="Event detail | Voetbal4All" />
+  <meta name="twitter:description" id="twitter-description" content="Bekijk events, clubvacatures, spelers- en trainersprofielen op Voetbal4All." />
+  <meta name="twitter:image" id="twitter-image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
 
   <!-- Fonts + CSS -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
@@ -671,7 +683,7 @@
             </div>
 
             <div class="ev-intro">
-              <div class="card-title" id="ev-title">Event</div>
+              <h1 class="card-title" id="ev-title" style="margin:0;">Event</h1>
 
               <div class="note" id="ev-meta">
                 <span class="ev-meta-chip">
@@ -946,6 +958,33 @@
         .filter((l) => !dropLine(l));
 
       return cleanedLines.join("\n").trim();
+    }
+
+    function buildMetaDescription(raw, fallback){
+      const text = String(raw || "").replace(/\s+/g, " ").trim();
+      if (!text) return fallback;
+      if (text.length <= 160) return text;
+      return `${text.slice(0, 157).trim()}...`;
+    }
+
+    function setMetaContent(id, value){
+      const el = document.getElementById(id);
+      if (el) el.setAttribute("content", value);
+    }
+
+    function resolveSeoImage(item){
+      return firstSupportersclubAssetUrl(
+        item?.cover_image_url,
+        item?.flyer_image_url,
+        item?.thumbnail_url,
+        item?.thumb_url,
+        item?.image_url,
+        item?.image,
+        item?.photo_url,
+        item?.photo,
+        item?.logo_url,
+        item?.logo
+      ) || "https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png";
     }
 
     function cleanVacancyTitle(raw) {
@@ -1637,8 +1676,35 @@
         // Title
         const rawTitle = item.title || item.name || "Detail";
         const displayTitle = (t === "clubvacature") ? cleanVacancyTitle(rawTitle) : rawTitle;
-        document.title = displayTitle + " – Voetbal4All";
+        const seoTitle = `${displayTitle} | Voetbal4All`;
+        document.title = seoTitle;
         titleEl.textContent = displayTitle;
+
+        const seoRawText = sanitizeEventText(isEvent ? (item.description || item.summary || "") : (item.description || item.bio || item.summary || ""));
+        const seoFallback = isEvent
+          ? "Bekijk dit sportieve event op Voetbal4All."
+          : t === "clubvacature"
+            ? "Bekijk deze clubvacature op Voetbal4All."
+            : t === "speler"
+              ? "Bekijk dit spelersprofiel op Voetbal4All."
+              : t === "trainer"
+                ? "Bekijk dit trainersprofiel op Voetbal4All."
+                : t === "supportersclub"
+                  ? "Bekijk deze supportersclub op Voetbal4All."
+                  : "Bekijk dit profiel op Voetbal4All.";
+        const seoDescription = buildMetaDescription(seoRawText, seoFallback);
+        const canonicalHref = window.location.href;
+        const seoImage = resolveSeoImage(item);
+        const canonicalEl = document.getElementById("page-canonical");
+        if (canonicalEl) canonicalEl.href = canonicalHref;
+        setMetaContent("page-description", seoDescription);
+        setMetaContent("og-url", canonicalHref);
+        setMetaContent("og-title", seoTitle);
+        setMetaContent("og-description", seoDescription);
+        setMetaContent("og-image", seoImage);
+        setMetaContent("twitter-title", seoTitle);
+        setMetaContent("twitter-description", seoDescription);
+        setMetaContent("twitter-image", seoImage);
 
         // Meta chips
         // Date chip: only for events

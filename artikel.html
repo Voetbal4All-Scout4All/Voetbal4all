@@ -14,16 +14,23 @@
     crossorigin="anonymous"></script>
 
   <meta charset="UTF-8" />
-  <title id="page-title">Voetbal4All - Artikel</title>
+  <title id="page-title">Voetbalnieuws artikel | Voetbal4All</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" id="page-description" content="Lees het nieuwste voetbalnieuws op Voetbal4All" />
+  <link rel="canonical" href="https://www.voetbal4all.eu/artikel.html" />
   
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" id="og-title" content="Voetbal4All - Artikel" />
+  <meta property="og:title" id="og-title" content="Voetbalnieuws artikel | Voetbal4All" />
   <meta property="og:description" id="og-description" content="Lees het nieuwste voetbalnieuws" />
-  <meta property="og:image" id="og-image" content="assets/img/placeholder.svg" />
+  <meta property="og:image" id="og-image" content="https://www.voetbal4all.eu/assets/img/placeholder.svg" />
   <meta property="og:type" content="article" />
-    <meta name="robots" content="index, follow">
+  <meta property="og:url" id="og-url" content="https://www.voetbal4all.eu/artikel.html" />
+  <meta property="og:site_name" content="Voetbal4All" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitter-title" content="Voetbalnieuws artikel | Voetbal4All" />
+  <meta name="twitter:description" id="twitter-description" content="Lees het nieuwste voetbalnieuws op Voetbal4All" />
+  <meta name="twitter:image" id="twitter-image" content="https://www.voetbal4all.eu/assets/img/placeholder.svg" />
+  <meta name="robots" content="index, follow">
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
@@ -1303,7 +1310,8 @@
 
     
     const title = article.title || 'Voetbal4All Artikel';
-    document.getElementById('page-title').textContent = title + ' - Voetbal4All';
+    const seoTitle = `${title} | Voetbal4All`;
+    document.getElementById('page-title').textContent = seoTitle;
 
         // Dynamic canonical URL
         let canonicalEl = document.querySelector('link[rel="canonical"]');
@@ -1313,9 +1321,13 @@
           document.head.appendChild(canonicalEl);
         }
         canonicalEl.href = window.location.href;
-    document.getElementById('og-title').setAttribute('content', title);
-    document.getElementById('page-description').setAttribute('content', article.snippet || '');
-    document.getElementById('og-description').setAttribute('content', article.snippet || '');
+    const seoDescription = (article.snippet || '').trim() || 'Lees het nieuwste voetbalnieuws op Voetbal4All';
+    document.getElementById('og-url').setAttribute('content', window.location.href);
+    document.getElementById('og-title').setAttribute('content', seoTitle);
+    document.getElementById('page-description').setAttribute('content', seoDescription);
+    document.getElementById('og-description').setAttribute('content', seoDescription);
+    document.getElementById('twitter-title').setAttribute('content', seoTitle);
+    document.getElementById('twitter-description').setAttribute('content', seoDescription);
     
     const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
     document.getElementById('breadcrumb-title').textContent = shortTitle;
@@ -1358,11 +1370,13 @@
       imageEl.src = imgUrl;
       imageEl.setAttribute("fetchpriority", "high");
       document.getElementById('og-image').setAttribute('content', imgUrl);
+      document.getElementById('twitter-image').setAttribute('content', imgUrl);
     } else {
       imageEl.classList.add('is-empty');
       imageEl.src = fallbackUrl;
       imageEl.removeAttribute("fetchpriority");
       document.getElementById('og-image').setAttribute('content', fallbackUrl);
+      document.getElementById('twitter-image').setAttribute('content', fallbackUrl);
     }
 
     imageEl.onerror = function(){
@@ -1382,6 +1396,7 @@
       this.src = fallbackUrl;
       this.removeAttribute("fetchpriority");
       document.getElementById('og-image').setAttribute('content', fallbackUrl);
+      document.getElementById('twitter-image').setAttribute('content', fallbackUrl);
     };
     imageEl.removeAttribute('data-image-retried');
 
