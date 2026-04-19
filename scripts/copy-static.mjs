@@ -1,6 +1,6 @@
 // scripts/copy-static.mjs
-import { cpSync, mkdirSync, existsSync, readdirSync } from 'fs';
-import { resolve, dirname, extname } from 'path';
+import { cpSync, mkdirSync, readdirSync } from 'fs';
+import { resolve, dirname, basename } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -9,20 +9,62 @@ const dist = resolve(root, 'dist');
 
 mkdirSync(dist, { recursive: true });
 
-// Kopieer alle .html bestanden en mappen uit de root (niet src/, niet dist/)
+// Allowlist: alleen expliciet publieke sitebestanden en -mappen mogen naar dist.
 const entries = readdirSync(root, { withFileTypes: true });
-const skip = new Set(['dist', 'src', 'node_modules', '.git', '.github', 'scripts']);
+const allowedDirectories = new Set([
+  'assets',
+  'data',
+  'scout',
+  'share',
+  'videos',
+]);
+
+const allowedFiles = new Set([
+  'CNAME',
+  '_redirects',
+  'ads.txt',
+  'favicon-16x16.png',
+  'favicon-180x180.png',
+  'favicon-192x192.png',
+  'favicon-32x32.png',
+  'favicon-48x48.png',
+  'favicon-512x512.png',
+  'favicon-96x96.png',
+  'favicon.ico',
+  'favicon.svg',
+  'robots.txt',
+  'site.webmanifest',
+  'sitemap.xml',
+  'style.css',
+]);
+
+function isAllowedEntry(entry) {
+  if (entry.isDirectory()) {
+    return allowedDirectories.has(entry.name);
+  }
+
+  if (entry.isFile()) {
+    return entry.name.endsWith('.html') || allowedFiles.has(entry.name);
+  }
+
+  return false;
+}
+
+function isAllowedCopiedPath(sourcePath) {
+  return !basename(sourcePath).startsWith('.');
+}
 
 for (const entry of entries) {
-    if (skip.has(entry.name)) continue;
-    // Kopieer mappen en bestanden (html, css, png, ico, json, txt, etc.)
+  if (!isAllowedEntry(entry)) continue;
+
   const src = resolve(root, entry.name);
-    const dest = resolve(dist, entry.name);
-    // Sla .md en config bestanden over (niet nodig in dist)
-  const skipExt = new Set(['.md', '.mjs', '.js']);
-    if (!entry.isDirectory() && skipExt.has(extname(entry.name))) continue;
-    cpSync(src, dest, { recursive: true, force: true });
-    console.log(`✓ ${entry.name}`);
+  const dest = resolve(dist, entry.name);
+  cpSync(src, dest, {
+    recursive: true,
+    force: true,
+    filter: isAllowedCopiedPath,
+  });
+  console.log(`✓ ${entry.name}`);
 }
 
 console.log('\n✅ Statische bestanden gekopieerd naar dist/');
