@@ -1418,16 +1418,11 @@
 
       renderSidebarPremiumVacancies(sidebarPremium);
 
-      const overviewItems = items.slice();
-      const seenOverview = new Set(overviewItems.map((item) => vacancyIdentity(item)));
-      for (const item of primaryPremium) {
-        const key = vacancyIdentity(item);
-        if (seenOverview.has(key)) continue;
-        seenOverview.add(key);
-        overviewItems.push(item);
-      }
+      const primaryPremiumKeys = new Set(primaryPremium.map((item) => vacancyIdentity(item)));
+      const remainingOverviewItems = items.filter((item) => !primaryPremiumKeys.has(vacancyIdentity(item)));
+      const overviewItems = [...primaryPremium, ...remainingOverviewItems];
 
-      // Keep premium vacancies in the main overview as well.
+      // Keep premium vacancies in the main overview as real list items as well.
       listEl.innerHTML = overviewItems.map((v, i) => vacancyCardHtml(v, i, false)).join("");
 
       if (statusEl) {
