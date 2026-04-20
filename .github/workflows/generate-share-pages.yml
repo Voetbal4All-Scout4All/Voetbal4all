@@ -1,5 +1,9 @@
 name: Generate Share Pages
 
+concurrency:
+  group: generate-share-pages
+  cancel-in-progress: false
+
 on:
   schedule:
     - cron: "15 */2 * * *"   # every 2 hours at :15
@@ -22,6 +26,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Pull latest main before generating
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
 
       - name: Fetch all items from backend API
         env:
@@ -297,7 +307,7 @@ jobs:
         id: commit
         run: |
           cd "$GITHUB_WORKSPACE"
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add share/
           if git diff --cached --quiet; then
@@ -305,8 +315,29 @@ jobs:
             echo "changes=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "chore: update static share pages for all categories"
-            git push
-            echo "Pushed updated share pages."
+
+            # Retry push with rebase on conflict (max 5 attempts, exponential backoff)
+            MAX_RETRIES=5
+            ATTEMPT=0
+            until git push origin main; do
+              ATTEMPT=$((ATTEMPT + 1))
+              if [ $ATTEMPT -ge $MAX_RETRIES ]; then
+                echo "::error::Push failed after $MAX_RETRIES attempts"
+                exit 1
+              fi
+
+              SLEEP=$((2 ** ATTEMPT))
+              echo "::warning::Push rejected (attempt $ATTEMPT/$MAX_RETRIES), rebasing and retrying in ${SLEEP}s"
+              sleep $SLEEP
+
+              git fetch origin main
+              git pull --rebase origin main || {
+                echo "::error::Rebase failed — manual intervention needed"
+                exit 1
+              }
+            done
+
+            echo "Push successful"
             echo "changes=true" >> "$GITHUB_OUTPUT"
           fi
 
