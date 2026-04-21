@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-04-21T09:47:49.817Z",
+  "generatedAt": "2026-04-21T11:12:31.715Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Bonucci on Italy coach: Pep 'right man for the job'",
+      "link": "https://www.espn.com/soccer/story/_/id/48548795/leonardo-bonucci-dreaming-pep-guardiola-italy-manager-right-man-job",
+      "summary": "Former Italy and Juventus great Leonardo Bonucci wants Pep Guardiola to lead a \"radical change\" in the national team.",
+      "publishedAt": "2026-04-21T11:51:18.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,7 +21,7 @@
       "title": "Wolves relegated from EPL with 5 games to play",
       "link": "https://www.espn.com/soccer/story/_/id/48491722/wolves-relegated-premier-league-west-ham-crystal-palace-draw",
       "summary": "Wolverhampton Wanderers have officially been relegated from the Premier League.",
-      "publishedAt": "2026-04-21T10:21:25.000Z"
+      "publishedAt": "2026-04-21T11:51:18.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +32,7 @@
       "title": "Matarazzo: Sociedad Copa title 'just the beginning'",
       "link": "https://www.espn.com/soccer/story/_/id/48545300/matarazzo-celebrates-real-sociedad-copa-del-rey-title-just-beginning",
       "summary": "More than 100,000 fans gathered in the streets of San Sebastian, Spain, on Monday to celebrate Real Sociedad's Copa del Rey win over the weekend -- a first major trophy for the Basque team since 2021.",
-      "publishedAt": "2026-04-21T10:21:25.000Z"
+      "publishedAt": "2026-04-21T11:51:18.000Z"
     },
     {
       "type": "rss",
@@ -32,18 +43,172 @@
       "title": "Rose to replace Iraola as Bournemouth head coach",
       "link": "https://www.espn.com/soccer/story/_/id/48519539/marco-rose-replace-andoni-iraola-bournemouth-head-coach",
       "summary": "Bournemouth have confirmed Marco Rose will replace the departing Andoni Iraola at the end of the season.",
-      "publishedAt": "2026-04-21T10:21:25.000Z"
+      "publishedAt": "2026-04-21T11:51:18.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Aanvallende back Elijah Dijkstra maakt bij AZ ook defensief stappen",
+      "link": "https://www.vi.nl/pro/video-analyse-aanvallende-back-dijkstra-maakt-bij-az-ook-defensief-stappen",
+      "summary": "Met Sven Mijnans stond er een uitblinker op het veld tijdens de bekerfinale tussen AZ en NEC, maar de rol van Elijah Dijkstra kan ook niet onbesproken blijven na de eindstrijd in De Kuip. Aan de hand van beelden analyseert VI zijn spel tegen NEC.",
+      "publishedAt": "2026-04-21T11:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Cesena's Jonathan Klinsmann breaks neck in game",
-      "link": "https://www.espn.com/soccer/story/_/id/48541604/gk-jonathan-klinsmann-breaks-neck-playing-cesena",
-      "summary": "Goalkeeper Jonathan Klinsmann, the son of former Germany striker Jürgen Klinsmann, is recovering from a broken neck sustained playing for second-tier Italian side Cesena on Saturday.",
-      "publishedAt": "2026-04-21T10:21:25.000Z"
+      "title": "Sutton's predictions - midweek games including Burnley v Man City",
+      "link": "https://www.bbc.com/sport/football/articles/c0q9vv592kyo?at_medium=RSS&at_campaign=rss",
+      "summary": "Chris Sutton, the BBC readers and AI make predictions for this week's Premier League fixtures on Tuesday and Wednesday.",
+      "publishedAt": "2026-04-21T10:50:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Brady steps down as West Ham vice-chair",
+      "link": "https://www.bbc.com/sport/football/articles/cly7ejx9nx5o?at_medium=RSS&at_campaign=rss",
+      "summary": "Baroness Karren Brady steps down as vice-chair of Premier League side West Ham after 16 years.",
+      "publishedAt": "2026-04-21T10:46:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van tragedie naar sprookje: Dos Santos tekent bij FC Metz",
+      "link": "https://www.vi.nl/nieuws/van-tragedie-naar-sprookje-dos-santos-tekent-bij-fc-metz",
+      "summary": "Tahirys Dos Santos heeft zijn eerste profcontract getekend bij FC Metz. Dat nieuws kreeg extra lading door de omstandigheden waarin de negentienjarige verdediger zich de afgelopen maanden bevond.",
+      "publishedAt": "2026-04-21T10:41:02.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Nouveau coup dur pour Jeremy Taravel : Anderlecht perd un joueur clé jusqu'à la fin de la saison",
+      "link": "https://www.walfoot.be/news/2026-04-21/nouveau-coup-dur-pour-jeremy-taravel--anderlecht-perd-un-joueur-cle-jusqua-la-fin-de-la-saison",
+      "summary": "Le Sporting d'Anderlecht subit un nouveau coup dur à l'approche d'un moment crucial de la saison. Après la blessure de Nathan De Cat, Mario Stroeykens est désormais lui aussi forfait.",
+      "publishedAt": "2026-04-21T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "'Na de grote zorgen om Hans Vanaken is er een stevige update over de zaak'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/na-de-grote-zorgen-om-hans-vanaken-is-er-een-stevige-update-over-de-zaak",
+      "summary": "Hoe zou het nog zijn met Hans Vanaken? Los van de nederlaag tegen Union SG baarde ook de fysieke paraatheid van de metronoom en spelmaker de supporters zorgen. Op dinsdag is er echter heel goed nieuws te melden, zo blijkt.",
+      "publishedAt": "2026-04-21T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "El Clásico als potentieel titelduel: zo zeldzaam is dat",
+      "link": "https://www.vi.nl/nieuws/el-cl-sico-mogelijk-titelduel-voor-barcelona",
+      "summary": "El Clásico kan voor een zeldzaam moment zorgen: Barcelona kan in het onderlinge duel met Real Madrid direct kampioen worden. De wedstrijd in Camp Nou, die door La Liga is vastgesteld op zondag 10 mei om 21.00 uur, krijgt daarmee een extra lading.",
+      "publishedAt": "2026-04-21T10:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Strasbourg-fans zijn het zat en eisen uitleg van Emegha",
+      "link": "https://www.vi.nl/nieuws/strasbourg-fans-zijn-het-zat-en-eisen-uitleg-van-emegha",
+      "summary": "Emmanuel Emegha heeft zich moeten verantwoorden bij supporters van Strasbourg. Na de nederlaag tegen Stade Rennes werd de Nederlandse spits staande gehouden.",
+      "publishedAt": "2026-04-21T10:26:42.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Que se passe-t-il à Saint-Trond ? \"Nous avons encore dominé la meilleure équipe de Belgique\"",
+      "link": "https://www.walfoot.be/news/2026-04-21/que-se-passe-t-il-a-saint-trond--nous-avons-encore-domine-la-meilleure-equipe-de-belgique",
+      "summary": "Saint-Trond a commencé les Champions Play-Offs avec l'intention de gêner l'Union et le Club de Bruges dans la course au titre. Un objectif déjà très lointain, après un bilan d'un point sur neuf lors des trois premières journées.",
+      "publishedAt": "2026-04-21T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Transfernieuws en Transfergeruchten 21/04: Yohanna",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/transfernieuws-transfergeruchten",
+      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 21/04 hebben we transfernieuws en transfergeruchten voor u over:",
+      "publishedAt": "2026-04-21T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge heeft versterking voor de flank in het vizier, al gaat het om een 18-jarige",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/club-brugge-heeft-versterking-voor-de-flank-in-het-vizier-al-gaat-het-om-een-18-jarige",
+      "summary": "Club Brugge heeft zijn vizier gericht op een opvallende naam uit Scandinavië. De Belgische topclub toont interesse in de 18-jarige Nigeriaanse winger Zadok Yohanna, die momenteel uitkomt voor het Zweedse AIK Fotboll.",
+      "publishedAt": "2026-04-21T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "David Squires on … Manchester City, Arsenal and an epic clash of the titans",
+      "link": "https://www.theguardian.com/football/picture/2026/apr/21/david-squires-on-manchester-city-arsenal-epic-clash-of-the-titans",
+      "summary": "Our cartoonist looks back at Sunday’s top-of-the-table clash at the Etihad as the title race got even hotter Buy a cartoon | David’s favourite works of 2025 And his latest book, Chaos in the Box: get it now Continue reading...",
+      "publishedAt": "2026-04-21T10:00:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'En de winnaar van de Eurojackpot KNVB Beker is… Eurojackpot!'",
+      "link": "https://www.vi.nl/pro/en-de-winnaar-van-de-eurojackpot-knvb-beker-is-eurojackpot",
+      "summary": "Columnist Frank Heinen wist niet te ontsnappen aan de Eurojackpot KNVB Beker.",
+      "publishedAt": "2026-04-21T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Les larmes, mais la fierté chez les U19 du Club de Bruges : \"Nous ne sommes plus le petit Bruges\"",
+      "link": "https://www.walfoot.be/news/2026-04-21/les-larmes-mais-la-fierte-chez-les-u19-du-club-de-bruges--nous-ne-sommes-plus-le-petit-bruges",
+      "summary": "Le rêve du Club NXT s'est brisé à la toute dernière minute. En finale de la Youth League, les jeunes joueurs du Club de Bruges ont été battus aux tirs au but par le Real Madrid. La déception était immense chez Jonas De Roeck et ses hommes.",
+      "publishedAt": "2026-04-21T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Wat met het Belgisch voetbal op televisie volgend jaar? DAZN neemt deze beslissing",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/wat-met-het-belgisch-voetbal-op-televisie-volgend-jaar-dazn-neemt-deze-beslissing",
+      "summary": "Het Belgisch profvoetbal zal ook volgend seizoen worden uitgezonden door ... DAZN. De rechtenhouder verbindt er zich toe om tot juni 2027 de wedstrijden van het Belgisch profvoetbal uit te gaan zenden.",
+      "publishedAt": "2026-04-21T10:00:00.000Z"
     },
     {
       "type": "rss",
@@ -58,91 +223,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Een jaar geleden ontslagen bij Anderlecht... David Hubert volgt in het rijtje bij Union: toeval of geniaal?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/een-jaar-geleden-ontslagen-bij-anderlecht-david-hubert-volgt-in-het-rijtje-bij-union-toeval-of-geniaal",
-      "summary": "De opmars van David Hubert bij Union Saint-Gilloise voelt opvallend vertrouwd aan. Een jaar na zijn vertrek bij RSC Anderlecht staat hij plots aan de leiding in de Champions' Play-offs. Toeval is dat allerminst.",
-      "publishedAt": "2026-04-21T09:40:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Brady steps down as West Ham vice-chair",
-      "link": "https://www.bbc.com/sport/football/articles/cly7ejx9nx5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Baroness Karren Brady steps down as vice-chair of Premier League side West Ham after 16 years.",
-      "publishedAt": "2026-04-21T09:26:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "DAZN trekt keutel in en blijft voetbal in België uitzenden",
-      "link": "https://www.vi.nl/nieuws/dazn-trekt-keutel-in-en-blijft-voetbal-in-belgi-uitzenden",
-      "summary": "Het gedoe rond de uitzendrechten van het Belgische profvoetbal heeft een nieuwe draai gekregen. Waar eerder nog grote vrees ontstond dat DAZN zou stoppen met het uitzenden van de Pro League, heeft de rechtenhouder toch weer besloten om het Belgische profvoetbal tot medio 2027 op de zender te houden.",
-      "publishedAt": "2026-04-21T09:26:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Hans Cornelis déballe sur Charleroi et Nicolas Frutos : \"On s'est pris pour la meilleure équipe de Belgique\"",
-      "link": "https://www.walfoot.be/news/2026-04-21/hans-cornelis-deballe-sur-charleroi-et-nicolas-frutos--on-sest-pris-pour-la-meilleure-equipe-de-belgique",
-      "summary": "Hans Cornelis ne digère que difficilement la manière avec laquelle il a été limogé du Sporting Charleroi. Deux semaines après les faits, l'ancien intérimaire devenu T1 se livre et balance, notamment sur sa (non) relation avec Nicolas Frutos.",
-      "publishedAt": "2026-04-21T09:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Nog een zware klap: Anderlecht ziet basisspeler uitvallen voor waarschijnlijk rest van seizoen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/nog-een-zware-klap-anderlecht-ziet-basisspeler-uitvallen-voor-waarschijnlijk-rest-van-seizoen",
-      "summary": "RSC Anderlecht krijgt opnieuw een stevige domper in de aanloop naar de cruciale seizoensfase. Na de eerdere blessure van Nathan De Cat is nu ook Mario Stroeykens uitgevallen, met waarschijnlijk zware gevolgen voor het slot van het seizoen.",
-      "publishedAt": "2026-04-21T09:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "\"Nous exprimons notre solidarité\" : Virton sort du silence après le chaos vécu par ses supporters à Mons",
-      "link": "https://www.walfoot.be/news/2026-04-21/nous-exprimons-notre-solidarite--virton-sort-du-silence-apres-le-chaos-vecu-par-ses-supporters-a-mons",
-      "summary": "La situation a dégénéré après la rencontre entre le RAEC Mons et l'Excelsior Virton, samedi soir lors du choc de la septième journée des play-offs de D1 ACFF. Le club gaumais a réagi avec classe dans un communiqué publié ce mardi.",
-      "publishedAt": "2026-04-21T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "\"Tegen zijn 50ste is Vincent Kompany premier van België\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/tegen-zijn-50ste-is-vincent-kompany-premier-van-belgie",
-      "summary": "Vincent Kompany heeft met Bayern München de Bundesliga al binnen, maar daarmee is zijn honger duidelijk niet gestild. In de HLN Voetbalpodcast klinkt het dat de Belgische coach niet alleen sportief indruk maakt, maar ook daarbuiten blijft scoren.",
-      "publishedAt": "2026-04-21T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Vertonghen lonkt naar WK-rol na verlenging bij Belgische bond",
-      "link": "https://www.vi.nl/nieuws/vertonghen-lonkt-naar-wk-rol-na-verlenging-bij-belgische-bond",
-      "summary": "Jan Vertonghen heeft zijn stage bij de Belgische voetbalbond verlengd tot eind mei en lonkt daarmee naar een mogelijke rol tijdens het WK in de Verenigde Staten, Canada en Mexico. De recordinternational blijft zo langer actief binnen de KBVB, waar hij sinds januari meedraait in het kader van zijn UEFA-opleiding.",
-      "publishedAt": "2026-04-21T08:59:15.000Z"
+      "title": "Which Premier League players are out of contract this summer?",
+      "link": "https://www.bbc.com/sport/football/articles/c33l0gxm2ndo?at_medium=RSS&at_campaign=rss",
+      "summary": "With a World Cup summer fast approaching, BBC Sport looks at which Premier League stars may be looking for new clubs.",
+      "publishedAt": "2026-04-21T09:20:51.000Z"
     },
     {
       "type": "rss",
@@ -168,90 +256,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Kompany wijst BBC en ITV de deur: 'Dan heb ik geen familie meer'",
-      "link": "https://www.vi.nl/nieuws/kompany-wijst-bbc-en-itv-de-deur-dan-heb-ik-geen-familie-meer",
-      "summary": "Wie dacht dat Vincent Kompany deze zomer na het behalen van de landstitel met Bayern München nog even zou aanschuiven in een televisiestudio, komt bedrogen uit.",
-      "publishedAt": "2026-04-21T08:46:37.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Pas de match arrêté cette fois : Standard - Antwerp, une rencontre cruciale en Europe Play-Offs (20h30)",
-      "link": "https://www.walfoot.be/news/2026-04-21/pas-de-match-arrete-cette-fois--standard---antwerp-une-rencontre-cruciale-en-europe-play-offs-20h30",
-      "summary": "Le Standard doit rester au contact de Genk et Westerlo, tandis que l'Antwerp jouera sa dernière carte à Sclessin. Voici les enjeux de cette rencontre, à suivre en direct commenté sur Walfoot.be",
-      "publishedAt": "2026-04-21T08:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Jonas De Roeck schetst de rauwe realiteit voor spelers na verloren finale in Youth League",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/jonas-de-roeck-schetst-de-rauwe-realiteit-voor-spelers-na-verloren-finale-in-youth-league",
-      "summary": "De U19 van Club Brugge ging maandag onderuit in de finale van de Youth League. De ploeg van trainer Jonas De Roeck verloor na strafschoppen van Real Madrid.",
-      "publishedAt": "2026-04-21T08:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Het resterende programma van Lens en PSG in Ligue 1",
-      "link": "https://www.vi.nl/nieuws/enorme-stunt-in-de-maak-het-resterende-programma-van-lens-en-psg-in-ligue-1",
-      "summary": "Totaal onverwacht is de titelstrijd in Frankrijk dit seizoen zeer spannend. RC Lens heeft de druk op koploper Paris Saint-Germain flink opgevoerd. Voetbal International zet het resterende programma van beide clubs tegen elkaar af.",
-      "publishedAt": "2026-04-21T08:39:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Lof voor Nederlander: 'Simons de laatste hoop voor Spurs'",
-      "link": "https://www.vi.nl/nieuws/lof-voor-nederlander-simons-de-laatste-hoop-voor-spurs",
-      "summary": "Troy Deeney heeft Xavi Simons en Virgil van Dijk opgenomen in zijn Team van de Week, waarbij hij vooral de Nederlander van Tottenham Hotspur aanwees als mogelijke reddingsboei in de degradatiestrijd. De Engelse oud-spits ziet in Simons een van de weinige spelers die Spurs nog op de been kan houden, ook Van Dijk werd beloond voor zijn beslissende rol bij Liverpool.",
-      "publishedAt": "2026-04-21T08:30:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Après vingt ans, la fin d'une collaboration historique pour le Sporting d'Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-04-21/apres-vingt-ans-la-fin-dune-collaboration-historique-pour-le-sporting-danderlecht",
-      "summary": "Après vingt ans, la collaboration entre l'Institut Saint-Guidon et le RSC Anderlecht prend fin. L'école, où Romelu Lukaku a notamment été diplômé en 2011, ne peut plus offrir les infrastructures nécessaires aux jeunes footballeurs.",
-      "publishedAt": "2026-04-21T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Hans Cornelis haalt uit na ontslag bij Charleroi en kijkt vooral naar... Nicolas Frutos",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/hans-cornelis-haalt-uit-na-ontslag-bij-charleroi-en-kijkt-vooral-naar-nicolas-frutos",
-      "summary": "Twee weken na zijn ontslag bij Sporting Charleroi heeft Hans Cornelis voor het eerst uitgebreid gereageerd bij La DH. Hij verzekert iedereen dat het goed gaat met hem, maar toch heeft het sporen achter gelaten.",
-      "publishedAt": "2026-04-21T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "Premier League clubs unhappy at rising costs of Independent Football Regulator",
       "link": "https://www.theguardian.com/football/2026/apr/21/premier-league-clubs-unhappy-at-rising-costs-of-independent-football-regulator",
-      "summary": "IFR budget has risen from £10m previously projected Levy imposed on clubs will be tiny fraction of revenues Premier League clubs are increasingly unhappy at the Independent Football Regulator’s (IFR’s) rising costs and uncertainty about how much each club will be made to pay. Premier League and EFL clubs have repeatedly asked the IFR for an update on its operating budget, which is believed to have risen significantly from the annual £10m projected by the previous government, and been frustrated by the limited response. Continue reading...",
+      "summary": "IFR budget has risen from £10m previously projected Levy imposed on clubs will be tiny fraction of revenues Premier League clubs are increasingly unhappy at the Independent Football Regulator’s (IFR’s) costs and uncertainty about how much each club will be made to pay. Premier League and EFL clubs have repeatedly asked the IFR for an update on its operating budget, which is believed to have risen significantly from the annual £10m projected by the previous government, and been frustrated by the limited response. Continue reading...",
       "publishedAt": "2026-04-21T07:00:18.000Z"
     },
     {
@@ -278,14 +289,25 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Who has made Troy's Premier League team of the week?",
-      "link": "https://www.bbc.com/sport/football/articles/cq5965dgw5no?at_medium=RSS&at_campaign=rss",
-      "summary": "After every round of Premier League matches this season, Troy Deeney gives us his team of the week. Do you agree with his choices?",
-      "publishedAt": "2026-04-20T22:59:21.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La question du diffuseur est levée : DAZN se réengage envers le football belge !",
+      "link": "https://www.walfoot.be/news/2026-04-21/la-question-du-diffuseur-est-levee--dazn-se-reengage-envers-le-football-belge",
+      "summary": "Le football professionnel belge sera diffusé la saison prochaine sur... DAZN. Le détenteur des droits s'engage à retransmettre les matches du football professionnel belge jusqu'en juin 2027.",
+      "publishedAt": "2026-04-20T23:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "\"Dan trapt mijn familie het af\": Vincent Kompany laat voetbalfans de hoop opbergen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-21/dan-trapt-mijn-familie-het-af-vincent-kompany-laat-voetbalfans-de-hoop-opbergen",
+      "summary": "De Engelse media droomden al volop van Vincent Kompany als 'pundit' tijdens het WK voetbal komende zomer. Maar Vince The Prince heeft nu de hoop doen verstommen: het zal er niet van gaan komen.",
+      "publishedAt": "2026-04-20T23:00:00.000Z"
     },
     {
       "type": "rss",
@@ -308,28 +330,6 @@
       "link": "https://www.theguardian.com/football/2026/apr/20/liam-rosenior-pressure-chelsea-future-wesley-fofana",
       "summary": "Blues have lost four top-flight matches in succession ‘My job is accountable … The buck stops with me’ Liam Rosenior has acknowledged his job will be under threat if he cannot turn around Chelsea’s poor form before the end of the season. Although the head coach recently received public backing from the co-owner Behdad Eghbali, he is aware that retaining long-term support is dependent on results. Chelsea are under growing pressure as four consecutive league defeats have left them seven points off fifth-placed Liverpool with five games to play, and Rosenior was realistic when asked whether his bosses had assured him his future did not hinge on securing Champions League qualification. Continue reading...",
       "publishedAt": "2026-04-20T21:30:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Why Wolves' relegation had been coming after slow decline",
-      "link": "https://www.bbc.com/sport/football/articles/ckg3l2k81x5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Wolves have been relegated from the Premier League after just three wins in their first 33 games of the season.",
-      "publishedAt": "2026-04-20T20:56:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal are despondent, but the Premier League race is far from over | Jonathan Wilson",
-      "link": "https://www.theguardian.com/football/2026/apr/20/premier-league-title-race-is-far-from-over",
-      "summary": "Manchester City eked a win by the slimmest of margins on Sunday, setting up a season finale that will be determined by nerves Sign up for the World Behind The Cup newsletter It was probably Arsenal’s best performance in two months, but that will be scant consolation. Manchester City’s win on Sunday leaves Pep Guardiola’s side in control of the title race; they will go top of the Premier League on goal difference if they beat Burnley at Turf Moor on Wednesday. Both sides will then have five games to play. Sunday’s game was decided by desperately fine margins. What prevented Eberechi Eze’s whipped shot from just outside the box going in? An inch? Half of one? Gabriel also struck the woodwork, while Kai Havertz headed a great chance a fraction over the crossbar in injury time. It was a defeat that has handed City the advantage in the title race, but it could very easily have been a battling draw to preserve Arsenal’s lead and, perhaps more importantly, restore morale. This is an extract from Soccer with Jonathan Wilson, a weekly look from the Guardian US at the game in Europe and beyond. Subscribe for free here. Have a question for Jonathan? Email soccerwithjw@theguardian.com, and he’ll answer the best in a future edition Continue reading...",
-      "publishedAt": "2026-04-20T15:13:08.000Z"
     }
   ]
 }
