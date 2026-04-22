@@ -1,60 +1,16 @@
 {
-  "generatedAt": "2026-04-22T22:59:03.422Z",
+  "generatedAt": "2026-04-22T23:54:23.620Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Pep: City can 'handle' stress of Arsenal title race",
-      "link": "https://www.espn.com/soccer/story/_/id/48564245/pep-man-city-handle-stress-arsenal-title-race",
-      "summary": "Pep Guardiola said he's sure Manchester City can handle the pressure of a tight title race after a nervous night against Burnley.",
-      "publishedAt": "2026-04-22T23:54:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Chelsea sack coach Rosenior amid historic slump",
-      "link": "https://www.espn.com/soccer/story/_/id/48559868/chelsea-sack-liam-rosenior-manager",
-      "summary": "Chelsea have sacked head coach Liam Rosenior after less than four months in charge, the club announced on Wednesday.",
-      "publishedAt": "2026-04-22T23:54:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Yamal injured after scoring penalty for Barcelona",
-      "link": "https://www.espn.com/soccer/story/_/id/48563164/lamine-yamal-injury-penalty-barcelona-celta-vigo",
-      "summary": "Lamine Yamal injured himself taking a penalty in Barcelona's LaLiga match against Celta Vigo on Wednesday at Spotify Camp Nou.",
-      "publishedAt": "2026-04-22T23:54:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Adams: U.S. needs to knock 'off a big boy' at WC",
-      "link": "https://www.espn.com/soccer/story/_/id/48562756/usmnt-captain-adams-says-signature-win-needed-world-cup",
-      "summary": "Tyler Adams said the United States needs a signature win at this summer's World Cup, adding that it had been a while since the Americans had \"knocked off a big boy.\"",
-      "publishedAt": "2026-04-22T23:54:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Rosenior was out of his depth at Chelsea, and it was obvious from the start",
-      "link": "https://www.espn.com/soccer/story/_/id/48562222/liam-rosenior-was-depth-chelsea-was-obvious-start",
-      "summary": "Liam Rosenior never had the aura of a Chelsea manager, but the club hired him anyway. Four months later, the Blues are looking for another new coach.",
-      "publishedAt": "2026-04-22T23:30:28.000Z"
+      "title": "Two down, one to go - who will join Burnley & Wolves?",
+      "link": "https://www.bbc.com/sport/football/articles/cx2wz72v341o?at_medium=RSS&at_campaign=rss",
+      "summary": "With Wolves and Burnley now relegated, BBC Sport looks at which side is most likely to join them in the Championship next season.",
+      "publishedAt": "2026-04-22T23:18:04.000Z"
     },
     {
       "type": "rss",
@@ -212,17 +168,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How are leaders Hearts handling title pressure?",
-      "link": "https://www.bbc.com/sport/football/articles/clyelj6e3l5o?at_medium=RSS&at_campaign=rss",
-      "summary": "With five games to go Hearts are still top of the Scottish Premiership. So how are the unlikely league leaders handling the heat with five games to go?",
-      "publishedAt": "2026-04-22T17:55:30.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -330,6 +275,61 @@
       "link": "https://www.walfoot.be/news/2026-04-22/je-supporterai-lequipe-depuis-la-maison--un-protege-de-vincent-kompany-forfait-pour-la-coupe-du-monde",
       "summary": "Mauvaise nouvelle pour le Bayern et pour la Mannschaft : la saison de Serge Gnabry est terminée. Victime d'une lésion de l'adducteur, l'attaquant allemand sera écarté des terrains pendant trois mois.",
       "publishedAt": "2026-04-22T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Longstaff's late, late show puts Leeds on brink of safety with Bournemouth draw",
+      "link": "https://www.skysports.com/football/bournemouth-vs-leeds-united/report/531460",
+      "summary": "Sean Longstaff's leveller with the final kick of the game put Leeds on the brink of Premier League survival with a valuable point in a 2-2 draw at Bournemouth, which dented the Cherries' European dreams.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bournemouth latest: 'I cannot accept Leeds goal - Iraola fumes at 'massive' dropped points",
+      "link": "https://www.skysports.com/football/live-blog/12040/13279286/bournemouth-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Merse: Arsenal back in title race control despite dropping to second",
+      "link": "https://www.skysports.com/football/news/12040/13534126/premier-league-title-race-if-man-city-dont-thrash-burnley-then-arsenal-are-back-in-control-says-paul-merson",
+      "summary": "In his latest column, Sky Sports' Paul Merson says the Premier League title race could come down to goal difference - especially after Manchester City only beat Burnley 1-0.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City struggle but go top of the Premier League and relegate Burnley",
+      "link": "https://www.skysports.com/football/burnley-vs-manchester-city/report/531462",
+      "summary": "It wasn't spectacular but Manchester City went top of the Premier League table with a 1-0 win at Turf Moor - a result which knocked title-rivals Arsenal off the summit and relegated Burnley back to the Championship.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Football latest: Kane helps Bayern Munich reach the DFB-Pokal final",
+      "link": "https://www.skysports.com/football/live-blog/12040/12507208/football-latest-news-gossip",
+      "summary": "",
+      "publishedAt": null
     }
   ]
 }
