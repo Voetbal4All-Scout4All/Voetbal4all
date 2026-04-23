@@ -1443,6 +1443,71 @@
         .join("");
     }
 
+    function renderProfileLineLink(label, rawValue, href, fallbackText){
+      const safeLabel = escapeHtml(label);
+      const value = String(rawValue || "").trim();
+      if (!value || value === "—" || value === "-") {
+        return `${safeLabel}: ${escapeHtml(value || "—")}`;
+      }
+
+      const safeHref = absolutizeActionUrl(href);
+      if (!safeHref) {
+        return `${safeLabel}: ${escapeHtml(value)}`;
+      }
+
+      const linkText = escapeHtml(String(fallbackText || value).trim() || value);
+      return `${safeLabel}: <a href="${escapeHtml(safeHref)}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+    }
+
+    function renderProfileTextAsParagraphs(text, item, actionLinks){
+      const raw = String(text || "").trim();
+      if (!raw) return "";
+
+      const youtubeHref = firstResolvedAction([
+        { value: item?.youtube_url, label: "YouTube" },
+        { value: item?.youtube, label: "YouTube" },
+        { value: item?.video_url, label: "YouTube" },
+        { value: item?.video, label: "YouTube" },
+        { value: item?.media_url, label: "YouTube" }
+      ]).href;
+
+      return raw
+        .split(/\n{2,}/)
+        .map((block) => block.trim())
+        .filter(Boolean)
+        .map((block) => {
+          const renderedLines = block
+            .split(/\n/)
+            .map((line) => line.trim())
+            .filter(Boolean)
+            .map((line) => {
+              const match = line.match(/^([^:]{2,60}):\s*(.*)$/);
+              if (!match) return escapeHtml(line);
+
+              const label = match[1].trim();
+              const value = match[2].trim();
+              const normalizedLabel = label.toLowerCase();
+
+              if (normalizedLabel === "link (cv/portfolio)") {
+                return renderProfileLineLink(label, value, actionLinks?.external?.href || value);
+              }
+              if (normalizedLabel === "cv/document") {
+                return renderProfileLineLink(label, value, actionLinks?.cv?.href || value, value === "—" ? value : (value || "Bekijk cv"));
+              }
+              if (normalizedLabel === "youtube link") {
+                const href = (value && isYouTubeUrl(value)) ? value : youtubeHref;
+                return renderProfileLineLink(label, value, href);
+              }
+
+              return `${escapeHtml(label)}: ${escapeHtml(value)}`;
+            });
+
+          return renderedLines.length ? `<p>${renderedLines.join("<br>")}</p>` : "";
+        })
+        .filter(Boolean)
+        .join("");
+    }
+
     function renderFactsList(items){
       const rows = (items || [])
         .filter((item) => item && item.label && item.value)
@@ -1866,7 +1931,11 @@
           const contactPhone = String(item.contact_phone || item.phone || item.telefoon || "").trim();
           if (contactPhone) pushFact("Telefoon", escapeHtml(contactPhone));
         } else {
-          if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
+          if (safeText) {
+            narrativeHtml = (t === "speler" || t === "trainer")
+              ? renderProfileTextAsParagraphs(safeText, item, actionLinks)
+              : formatTextAsParagraphs(safeText);
+          }
           pushFact("Regio", escapeHtml(item.region || ""));
           pushFact("Plaats", escapeHtml(item.city || ""));
         }
