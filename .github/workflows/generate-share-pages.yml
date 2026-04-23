@@ -19,6 +19,7 @@ on:
         type: string
 
 permissions:
+  actions: write
   contents: write
 
 jobs:
