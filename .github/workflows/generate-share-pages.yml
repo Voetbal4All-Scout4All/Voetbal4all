@@ -149,6 +149,9 @@ jobs:
               img = esc(image_url)
               ou = esc(og_url)
               ru = esc(redirect_url)
+              # JS-safe: escape backslashes and quotes for use inside a JS string literal.
+              # Do NOT html-escape here — <script> content is raw text in HTML5.
+              ru_js = redirect_url.replace("\\", "\\\\").replace('"', '\\"').replace("<", "\\x3c")
               generated += 1
               return f"""<!DOCTYPE html>
           <html lang="nl">
@@ -171,7 +174,7 @@ jobs:
           <body>
             <p>Je wordt doorgestuurd...</p>
             <p><a href="{ru}">Klik hier als je niet automatisch wordt doorgestuurd.</a></p>
-            <script>window.location.replace("{ru}");</script>
+            <script>window.location.replace("{ru_js}");</script>
           </body>
           </html>"""
 

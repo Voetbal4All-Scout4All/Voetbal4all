@@ -1003,7 +1003,9 @@
       const params = new URLSearchParams(location.search);
       const type = (params.get("type") || "").trim().toLowerCase();
       const slug = (params.get("slug") || "").trim();
-      const id = (params.get("id") || "").trim();
+      // Fallback: older share pages encoded "&" as "&amp;" inside <script>,
+      // which makes the browser see "amp;id" instead of "id".
+      const id = (params.get("id") || params.get("amp;id") || "").trim();
       // Backward compat: if no explicit type but slug/id present, treat as event
       const normalizedType = type || ((id || slug) ? "event" : "");
       return { type: normalizedType, slug, id };
