@@ -1492,7 +1492,7 @@
                 return renderProfileLineLink(label, value, actionLinks?.external?.href || value);
               }
               if (normalizedLabel === "cv/document") {
-                return renderProfileLineLink(label, value, actionLinks?.cv?.href || value, value === "—" ? value : (value || "Bekijk cv"));
+                return renderProfileLineLink(label, value, actionLinks?.cv?.href, value === "—" ? value : (value || "Bekijk cv"));
               }
               if (normalizedLabel === "youtube link") {
                 const href = (value && isYouTubeUrl(value)) ? value : youtubeHref;
