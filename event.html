@@ -1100,7 +1100,10 @@
     }
 
     function isDocumentUrl(url){
-      return /\.(pdf|doc|docx|odt|rtf|txt)(?:[?#].*)?$/i.test(String(url || "").trim());
+      const value = String(url || "").trim();
+      if (!value) return false;
+      if (/\.(pdf|doc|docx|odt|rtf|txt)(?:[?#].*)?$/i.test(value)) return true;
+      return /\/api\/forms\/profile-submission\/[^/?#]+\/cv(?:[?#/]|$)/i.test(value);
     }
 
     function firstResolvedAction(entries, options){
