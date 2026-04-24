@@ -2293,7 +2293,7 @@
             pushFact("Website", renderExternalUrl(item.organizer_url));
           }
           const descriptionHtml = descriptionText ? formatTextAsParagraphs(descriptionText) : "";
-          narrativeHtml = renderDescriptionSection("Beschrijving", descriptionHtml);
+          narrativeHtml = renderDescriptionSection("Omschrijving", descriptionHtml);
         } else if (t === "supportersclub") {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
           pushFact("Supportersclub", escapeHtml(item.name || ""));
