@@ -333,23 +333,29 @@
       padding-top:16px;
       border-top:1px solid rgba(255,255,255,0.08);
     }
+    .event-detail-list,
     .ev-facts{
       display:grid;
       gap:4px;
     }
+    .event-detail-row,
     .ev-fact{
       display:grid;
-      grid-template-columns:minmax(132px, 156px) minmax(0, 1fr);
-      gap:18px;
+      grid-template-columns:minmax(120px, 180px) minmax(0, 1fr);
+      column-gap:24px;
+      row-gap:8px;
       align-items:start;
       padding:14px 0;
       border-bottom:1px solid rgba(255,255,255,0.07);
     }
+    .event-detail-row:first-child,
     .ev-fact:first-child{ padding-top:0; }
+    .event-detail-row:last-child,
     .ev-fact:last-child{
       padding-bottom:0;
       border-bottom:0;
     }
+    .event-detail-label,
     .ev-fact-label{
       margin:0;
       font-size:12px;
@@ -358,16 +364,19 @@
       letter-spacing:.04em;
       color:rgba(191,206,238,0.84);
     }
+    .event-detail-value,
     .ev-fact-value{
       margin:0;
+      min-width:0;
       font-size:14px;
-      line-height:1.7;
+      line-height:1.55;
       font-weight:400;
       color:rgba(214,222,241,0.92);
       overflow-wrap:anywhere;
       word-break:break-word;
       text-align:left;
     }
+    .event-detail-link,
     .ev-fact-value a{
       color:#8fd8ff;
       text-decoration:underline;
@@ -539,9 +548,11 @@
       #ev-media .ev-media-thumb{
         max-height:80px;
       }
+      .event-detail-list,
       .ev-facts{
         gap:0;
       }
+      .event-detail-row,
       .ev-fact{
         grid-template-columns:minmax(0, 1fr);
         gap:4px;
@@ -1545,13 +1556,13 @@
       const rows = (items || [])
         .filter((item) => item && item.label && item.value)
         .map((item) => `
-          <div class="ev-fact">
-            <dt class="ev-fact-label">${escapeHtml(item.label)}</dt>
-            <dd class="ev-fact-value">${item.value}</dd>
+          <div class="event-detail-row">
+            <div class="event-detail-label">${escapeHtml(item.label)}</div>
+            <div class="event-detail-value">${item.value}</div>
           </div>
         `)
         .join("");
-      return rows ? `<dl class="ev-facts">${rows}</dl>` : "";
+      return rows ? `<div class="event-detail-list">${rows}</div>` : "";
     }
 
     function renderDescriptionSection(title, bodyHtml){
@@ -1560,11 +1571,88 @@
       if (!safeTitle || !safeBodyHtml) return "";
 
       return `
-        <section class="ev-copy-section">
-          <h2 class="ev-section-title">${escapeHtml(safeTitle)}</h2>
+        <section class="ev-copy-section event-description-section">
+          <h2 class="ev-section-title event-description-section-title">${escapeHtml(safeTitle)}</h2>
           <div class="ev-copy-body">${safeBodyHtml}</div>
         </section>
       `;
+    }
+
+    function escapeRegExp(value){
+      return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    const EVENT_DESCRIPTION_FIELD_LABELS = [
+      "Categorie",
+      "Type",
+      "Titel",
+      "Land",
+      "Provincie",
+      "Datum",
+      "Startuur",
+      "Stad",
+      "Adres/complex",
+      "Organisatie/Club",
+      "Contact e-mail",
+      "E-mail",
+      "Telefoon",
+      "Website/inschrijvingslink",
+      "Flyer/affiche",
+      "Premium",
+      "Omschrijving",
+      "Beschrijving",
+      "Description",
+      "Opmerking"
+    ];
+
+    function normalizeEventDescriptionSource(description){
+      return String(description || "").replace(/\r\n?/g, "\n");
+    }
+
+    function looksLikeTechnicalEventDump(description){
+      const raw = normalizeEventDescriptionSource(description).trim();
+      if (!raw) return false;
+      if (/event aanmelding/i.test(raw)) return true;
+
+      const matchedLabels = EVENT_DESCRIPTION_FIELD_LABELS.filter((label) => {
+        const rx = new RegExp(`(^|\\n)\\s*${escapeRegExp(label)}\\s*:`, "im");
+        return rx.test(raw);
+      });
+
+      return matchedLabels.length >= 3;
+    }
+
+    function extractEventFieldFromDescription(description, label){
+      const source = normalizeEventDescriptionSource(description);
+      const wantedLabel = String(label || "").trim();
+      if (!source.trim() || !wantedLabel) return null;
+
+      const lines = source.split("\n");
+      const wantedRx = new RegExp(`^\\s*${escapeRegExp(wantedLabel)}\\s*:\\s*(.*)$`, "i");
+      const knownRx = new RegExp(`^\\s*(?:${EVENT_DESCRIPTION_FIELD_LABELS.map(escapeRegExp).join("|")})\\s*:\\s*`, "i");
+
+      let capturing = false;
+      const collected = [];
+
+      for (const rawLine of lines) {
+        const line = String(rawLine || "");
+        if (!capturing) {
+          const match = line.match(wantedRx);
+          if (!match) continue;
+          capturing = true;
+          const inlineValue = String(match[1] || "").trim();
+          if (inlineValue) collected.push(inlineValue);
+          continue;
+        }
+
+        if (knownRx.test(line)) break;
+
+        const trimmed = line.trim();
+        if (trimmed) collected.push(trimmed);
+      }
+
+      const value = collected.join("\n").trim();
+      return value || null;
     }
 
     function normalizeStructuredFactLabel(label){
@@ -1622,6 +1710,7 @@
     function normalizeExternalUrl(value){
       const raw = String(value || "").trim();
       if (!raw || raw === "—" || raw === "-") return null;
+      if (/^(javascript|data|vbscript):/i.test(raw)) return null;
 
       let candidate = raw;
       if (!/^https?:\/\//i.test(candidate)) {
@@ -1645,14 +1734,65 @@
     function renderEmailLink(value){
       const email = String(value || "").trim();
       if (!looksLikeEmail(email)) return escapeHtml(email || "—");
-      return `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`;
+      return `<a class="event-detail-link" href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`;
     }
 
     function renderExternalUrl(value){
       const href = normalizeExternalUrl(value);
       const label = escapeHtml(String(value || "").trim());
       if (!href) return label || "—";
-      return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      return `<a class="event-detail-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    }
+
+    function getCleanEventDescription(event){
+      const cleanDescription = String(event?.clean_description || "").trim();
+      if (cleanDescription) return cleanDescription;
+
+      const rawDescription = normalizeEventDescriptionSource(event?.description);
+      if (!rawDescription.trim()) return null;
+      if (!looksLikeTechnicalEventDump(rawDescription)) return rawDescription.trim();
+
+      const extracted = extractEventFieldFromDescription(rawDescription, "Omschrijving")
+        || extractEventFieldFromDescription(rawDescription, "Beschrijving")
+        || extractEventFieldFromDescription(rawDescription, "Description");
+
+      const trimmed = String(extracted || "").trim();
+      if (!trimmed) return null;
+      if (trimmed === rawDescription.trim()) return null;
+      if (looksLikeTechnicalEventDump(trimmed)) return null;
+      return trimmed;
+    }
+
+    function getEventWebsite(event){
+      const fromFields = [
+        event?.registration_url,
+        event?.organizer_url,
+        event?.website,
+        extractEventFieldFromDescription(event?.description, "Website/inschrijvingslink")
+      ];
+
+      for (const value of fromFields) {
+        const normalized = normalizeExternalUrl(value);
+        if (normalized) return String(value || "").trim();
+      }
+
+      return null;
+    }
+
+    function getEventContactEmail(event){
+      const candidates = [
+        event?.contact_email,
+        event?.organizer_email,
+        extractEventFieldFromDescription(event?.description, "Contact e-mail"),
+        extractEventFieldFromDescription(event?.description, "E-mail")
+      ];
+
+      for (const value of candidates) {
+        const email = String(value || "").trim();
+        if (looksLikeEmail(email)) return email;
+      }
+
+      return null;
     }
 
     function renderEventFactValue(label, value){
@@ -1751,14 +1891,9 @@
 
     function resolveEventContactAction(item, parsed){
       const facts = Array.isArray(parsed?.facts) ? parsed.facts : [];
-
-      const externalHref = [
-        item?.registration_url,
-        item?.organizer_url,
-        getFirstEventFactValue(facts, ["Website/inschrijvingslink", "Website", "Inschrijvingslink", "Registration"])
-      ]
-        .map((value) => normalizeExternalUrl(value))
-        .find(Boolean);
+      const websiteValue = getEventWebsite(item)
+        || getFirstEventFactValue(facts, ["Website/inschrijvingslink", "Website", "Inschrijvingslink", "Registration"]);
+      const externalHref = normalizeExternalUrl(websiteValue);
 
       if (externalHref) {
         return {
@@ -1768,12 +1903,12 @@
         };
       }
 
-      const email = [
-        item?.organizer_email,
-        getFirstEventFactValue(facts, ["Contact e-mail", "E-mail organisator", "Email organisator"])
-      ]
-        .map((value) => String(value || "").trim())
-        .find((value) => looksLikeEmail(value));
+      const email = getEventContactEmail(item)
+        || [
+          getFirstEventFactValue(facts, ["Contact e-mail", "E-mail organisator", "Email organisator"])
+        ]
+          .map((value) => String(value || "").trim())
+          .find((value) => looksLikeEmail(value));
 
       if (email) {
         return {
@@ -2011,7 +2146,9 @@
         document.title = seoTitle;
         titleEl.textContent = displayTitle;
 
-        const seoRawText = sanitizeEventText(isEvent ? (item.description || item.summary || "") : (item.description || item.bio || item.summary || ""));
+        const seoRawText = isEvent
+          ? (getCleanEventDescription(item) || sanitizeEventText(item.description || item.summary || ""))
+          : sanitizeEventText(item.description || item.bio || item.summary || "");
         const seoFallback = isEvent
           ? "Bekijk dit sportieve event op Voetbal4All."
           : t === "clubvacature"
@@ -2113,8 +2250,9 @@
 
         // Description/Bio
         const rawText = (isEvent ? (item.description || "") : (item.description || item.bio || ""));
-        // Sanitize sensitive data for all content types (events, clubvacatures, profiles, etc.)
-        const safeText = sanitizeEventText(rawText);
+        // For events we parse the raw structured dump so we can extract public detail fields generically.
+        // Other detail types still go through the generic sanitizer.
+        const safeText = isEvent ? rawText : sanitizeEventText(rawText);
 
         // Extras / facts
         const factRows = [];
@@ -2133,25 +2271,28 @@
         let parsedEvent = null;
         if (isEvent) {
           parsedEvent = parseStructuredEventText(safeText);
+          const descriptionText = getCleanEventDescription(item);
+          const websiteValue = getEventWebsite(item);
+          const contactEmail = getEventContactEmail(item);
+          const phoneValue = String(item.organizer_phone || extractEventFieldFromDescription(item.description, "Telefoon") || "").trim();
+
           for (const fact of parsedEvent.facts) pushFact(fact.label, renderEventFactValue(fact.label, fact.value));
           pushFact("Locatie", escapeHtml(item.location_name || ""));
           pushFact("Adres", escapeHtml(item.address || ""));
           pushFact("Organisator", escapeHtml(item.organizer_name || ""));
-          if (item.organizer_email) {
-            pushFact("Contact e-mail", renderEmailLink(item.organizer_email));
+          if (contactEmail) {
+            pushFact("Contact e-mail", renderEmailLink(contactEmail));
           }
-          if (item.organizer_phone) {
-            pushFact("Telefoon", escapeHtml(item.organizer_phone));
+          if (phoneValue) {
+            pushFact("Telefoon", escapeHtml(phoneValue));
           }
-          if (item.registration_url) {
-            pushFact("Website/inschrijvingslink", renderExternalUrl(item.registration_url));
+          if (websiteValue) {
+            pushFact("Website/inschrijvingslink", renderExternalUrl(websiteValue));
           }
           if (item.organizer_url) {
             pushFact("Website", renderExternalUrl(item.organizer_url));
           }
-          const descriptionHtml = parsedEvent.description
-            ? formatTextAsParagraphs(parsedEvent.description)
-            : (parsedEvent.narrative ? formatTextAsParagraphs(parsedEvent.narrative) : "");
+          const descriptionHtml = descriptionText ? formatTextAsParagraphs(descriptionText) : "";
           narrativeHtml = renderDescriptionSection("Beschrijving", descriptionHtml);
         } else if (t === "supportersclub") {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
