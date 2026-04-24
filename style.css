@@ -810,3 +810,66 @@ body .v4-status-note{
     display:none;
   }
 }
+
+/* ── AdSense slot normalization: keep sidebar ads in the sidebar and bottom ads compact ── */
+
+.v4a-ad-sidebar{
+  width:100%;
+  max-width:336px;
+  margin:12px 0 0;
+  overflow:hidden;
+  max-height:320px;
+}
+
+.v4a-ad-sidebar ins.adsbygoogle{
+  display:block;
+  width:100% !important;
+  min-height:250px;
+  max-height:320px;
+  overflow:hidden;
+}
+
+.v4a-ad-bottom{
+  width:100%;
+  max-width:970px;
+  margin:24px auto 0;
+  overflow:hidden;
+  min-height:90px;
+  max-height:120px;
+}
+
+.v4a-ad-bottom ins.adsbygoogle{
+  display:block;
+  width:100% !important;
+  min-height:90px;
+  max-height:120px;
+  overflow:hidden;
+}
+
+.v4-sidebar-sticky{
+  min-height:0 !important;
+}
+
+.v4-sidebar .ad-slot,
+.v4-sidebar ins.adsbygoogle{
+  min-height:0 !important;
+}
+
+.v4-sidebar .v4a-ad-sidebar,
+.v4-sidebar .v4a-ad-sidebar ins.adsbygoogle{
+  min-height:250px !important;
+}
+
+@media (max-width:1100px){
+  .v4a-ad-sidebar{
+    display:none !important;
+  }
+}
+
+@media (max-width:768px){
+  .v4a-ad-bottom,
+  .v4a-ad-bottom ins.adsbygoogle{
+    min-height:80px;
+    max-height:100px;
+  }
+}
