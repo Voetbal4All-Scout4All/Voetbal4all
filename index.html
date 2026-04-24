@@ -2169,6 +2169,57 @@
         return Number.isFinite(ts) ? ts : NaN;
       }
 
+      function formatEventDate(it) {
+        const monthNames = [
+          "januari", "februari", "maart", "april", "mei", "juni",
+          "juli", "augustus", "september", "oktober", "november", "december"
+        ];
+
+        const rawDate =
+          it?.start_date ??
+          it?.startDate ??
+          it?.starts_at ??
+          it?.startsAt ??
+          it?.event_date ??
+          it?.eventDate ??
+          it?.date ??
+          it?.start_at ??
+          it?.startAt ??
+          null;
+
+        if (!rawDate) return "";
+
+        const rawText = String(rawDate).trim();
+        let year;
+        let month;
+        let day;
+
+        const dateOnlyMatch = rawText.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (dateOnlyMatch) {
+          year = Number(dateOnlyMatch[1]);
+          month = Number(dateOnlyMatch[2]);
+          day = Number(dateOnlyMatch[3]);
+        } else {
+          const parsed = new Date(rawText);
+          if (isNaN(parsed.getTime())) return "";
+          year = Number(new Intl.DateTimeFormat("en-CA", { year: "numeric", timeZone: "Europe/Brussels" }).format(parsed));
+          month = Number(new Intl.DateTimeFormat("en-CA", { month: "2-digit", timeZone: "Europe/Brussels" }).format(parsed));
+          day = Number(new Intl.DateTimeFormat("en-CA", { day: "2-digit", timeZone: "Europe/Brussels" }).format(parsed));
+        }
+
+        if (!year || !month || !day || month < 1 || month > 12 || day < 1 || day > 31) return "";
+
+        let formatted = `${day} ${monthNames[month - 1]} ${year}`;
+
+        const rawTime = String(it?.start_time ?? it?.startTime ?? "").trim();
+        const timeMatch = rawTime.match(/^(\d{1,2}):(\d{2})/);
+        if (timeMatch) {
+          formatted += ` om ${timeMatch[1].padStart(2, "0")}:${timeMatch[2]}`;
+        }
+
+        return formatted;
+      }
+
       function isActivePremiumEvent(it, nowTs = Date.now()) {
         if (!it || (it?.is_premium !== true && it?.isPremium !== true)) return false;
 
@@ -2338,7 +2389,11 @@
             (typeof it?.subtitle === "string" && it.subtitle) ||
             (typeof it?.type === "string" && it.type) ||
             "";
-          const meta = locationMeta || fallbackMeta;
+          const eventDateMeta = kind === "ev" ? formatEventDate(it) : "";
+          const metaParts = kind === "ev"
+            ? [locationMeta || fallbackMeta, eventDateMeta].filter(Boolean)
+            : [locationMeta || fallbackMeta].filter(Boolean);
+          const meta = metaParts.join(" · ");
           const metaHtml = premiumMetaWithFlag(it, meta);
           const detailHref = kind === "cv"
             ? getClubVacancyDetailHref(it)
