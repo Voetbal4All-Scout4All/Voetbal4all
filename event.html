@@ -278,12 +278,37 @@
       margin-top:0;
       padding:clamp(18px, 1.9vw, 24px);
       display:grid;
-      gap:16px;
+      gap:20px;
       background:
         radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 42%),
         linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
     }
     #ev-desc{
+      display:grid;
+      gap:18px;
+      color:rgba(244,246,252,0.94);
+      font-size:15px;
+      line-height:1.78;
+    }
+    .ev-copy-section{
+      display:grid;
+      gap:10px;
+      min-width:0;
+    }
+    .ev-copy-section + .ev-copy-section{
+      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+    .ev-section-title{
+      margin:0;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(201,214,244,0.72);
+    }
+    .ev-copy-body{
+      min-width:0;
       color:rgba(244,246,252,0.94);
       font-size:15px;
       line-height:1.78;
@@ -298,6 +323,7 @@
       color:#8fd8ff;
       text-decoration:underline;
       text-underline-offset:3px;
+      overflow-wrap:anywhere;
     }
     #ev-extra:empty{
       display:none;
@@ -309,14 +335,14 @@
     }
     .ev-facts{
       display:grid;
-      gap:0;
+      gap:4px;
     }
     .ev-fact{
       display:grid;
-      grid-template-columns:minmax(108px, 132px) minmax(0, 1fr);
-      gap:16px;
+      grid-template-columns:minmax(132px, 156px) minmax(0, 1fr);
+      gap:18px;
       align-items:start;
-      padding:12px 0;
+      padding:14px 0;
       border-bottom:1px solid rgba(255,255,255,0.07);
     }
     .ev-fact:first-child{ padding-top:0; }
@@ -326,17 +352,19 @@
     }
     .ev-fact-label{
       margin:0;
-      font-size:13px;
+      font-size:12px;
       font-weight:700;
-      line-height:1.5;
-      color:rgba(237,241,250,0.92);
+      line-height:1.6;
+      letter-spacing:.04em;
+      color:rgba(191,206,238,0.84);
     }
     .ev-fact-value{
       margin:0;
       font-size:14px;
-      line-height:1.5;
+      line-height:1.7;
       font-weight:400;
       color:rgba(214,222,241,0.92);
+      overflow-wrap:anywhere;
       word-break:break-word;
       text-align:left;
     }
@@ -344,6 +372,7 @@
       color:#8fd8ff;
       text-decoration:underline;
       text-underline-offset:3px;
+      overflow-wrap:anywhere;
     }
 
     /* Lightbox */
@@ -514,8 +543,9 @@
         gap:0;
       }
       .ev-fact{
-        grid-template-columns:minmax(96px, 118px) minmax(0, 1fr);
-        gap:12px;
+        grid-template-columns:minmax(0, 1fr);
+        gap:4px;
+        padding:12px 0;
       }
       .ev-map-wrap{
         padding:16px;
@@ -1524,33 +1554,264 @@
       return rows ? `<dl class="ev-facts">${rows}</dl>` : "";
     }
 
+    function renderDescriptionSection(title, bodyHtml){
+      const safeTitle = String(title || "").trim();
+      const safeBodyHtml = String(bodyHtml || "").trim();
+      if (!safeTitle || !safeBodyHtml) return "";
+
+      return `
+        <section class="ev-copy-section">
+          <h2 class="ev-section-title">${escapeHtml(safeTitle)}</h2>
+          <div class="ev-copy-body">${safeBodyHtml}</div>
+        </section>
+      `;
+    }
+
+    function normalizeStructuredFactLabel(label){
+      return String(label || "")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+    }
+
+    function parseStructuredLine(line){
+      const match = String(line || "").match(/^([^:]{2,80}):\s*(.*)$/);
+      if (!match) return null;
+
+      return {
+        label: match[1].trim(),
+        normalizedLabel: normalizeStructuredFactLabel(match[1]),
+        value: match[2].trim()
+      };
+    }
+
+    function isKnownEventFactLabel(label){
+      return new Set([
+        "categorie",
+        "type",
+        "titel",
+        "land",
+        "provincie",
+        "regio",
+        "datum",
+        "startuur",
+        "stad",
+        "plaats",
+        "locatie",
+        "adres/complex",
+        "adres",
+        "organisatie/club",
+        "organisator",
+        "contact e-mail",
+        "e-mail organisator",
+        "email organisator",
+        "telefoon",
+        "website/inschrijvingslink",
+        "website",
+        "inschrijvingslink",
+        "registration",
+        "flyer/affiche",
+        "premium"
+      ]).has(normalizeStructuredFactLabel(label));
+    }
+
+    function looksLikeEmail(value){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
+    }
+
+    function normalizeExternalUrl(value){
+      const raw = String(value || "").trim();
+      if (!raw || raw === "—" || raw === "-") return null;
+
+      let candidate = raw;
+      if (!/^https?:\/\//i.test(candidate)) {
+        const looksLikeDomain = /^([a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z]{2,}(?:[/?#][^\s]*)?$/i.test(candidate);
+        if (/^www\./i.test(candidate) || looksLikeDomain) {
+          candidate = `https://${candidate}`;
+        } else {
+          return null;
+        }
+      }
+
+      try {
+        const parsed = new URL(candidate);
+        if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return null;
+        return parsed.toString();
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function renderEmailLink(value){
+      const email = String(value || "").trim();
+      if (!looksLikeEmail(email)) return escapeHtml(email || "—");
+      return `<a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>`;
+    }
+
+    function renderExternalUrl(value){
+      const href = normalizeExternalUrl(value);
+      const label = escapeHtml(String(value || "").trim());
+      if (!href) return label || "—";
+      return `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    }
+
+    function renderEventFactValue(label, value){
+      const normalizedLabel = normalizeStructuredFactLabel(label);
+      const rawValue = String(value || "").trim();
+      if (!rawValue) return "";
+
+      if (
+        normalizedLabel === "website/inschrijvingslink" ||
+        normalizedLabel === "website" ||
+        normalizedLabel === "inschrijvingslink" ||
+        normalizedLabel === "registration"
+      ) {
+        return renderExternalUrl(rawValue);
+      }
+
+      if (
+        normalizedLabel === "contact e-mail" ||
+        normalizedLabel === "e-mail organisator" ||
+        normalizedLabel === "email organisator"
+      ) {
+        return renderEmailLink(rawValue);
+      }
+
+      return escapeHtml(rawValue);
+    }
+
+    function getFirstEventFactValue(facts, labels){
+      const wanted = new Set((labels || []).map((label) => normalizeStructuredFactLabel(label)));
+      const match = (facts || []).find((fact) => wanted.has(normalizeStructuredFactLabel(fact?.label)));
+      return String(match?.value || "").trim();
+    }
+
     function parseStructuredEventText(text){
       const raw = String(text || "").trim();
-      if (!raw) return { facts: [], narrative: "" };
+      if (!raw) return { facts: [], narrative: "", description: "" };
 
       const facts = [];
+      const descriptionLines = [];
       const narrativeLines = [];
       const lines = raw
         .split(/\r?\n/)
         .map((line) => line.trim())
         .filter(Boolean);
+      let inDescription = false;
 
       for (const line of lines) {
-        const match = line.match(/^([^:]{2,40}):\s*(.+)$/);
-        if (match) {
+        if (/^event aanmelding/i.test(line)) continue;
+
+        const entry = parseStructuredLine(line);
+        if (entry) {
+          const { label, normalizedLabel, value } = entry;
+
+          if (
+            normalizedLabel === "omschrijving" ||
+            normalizedLabel === "beschrijving" ||
+            normalizedLabel === "description"
+          ) {
+            inDescription = true;
+            if (value) descriptionLines.push(value);
+            continue;
+          }
+
+          if (normalizedLabel === "opmerking" || normalizedLabel === "opmerkingen") {
+            if (inDescription) break;
+            continue;
+          }
+
+          if (inDescription && !isKnownEventFactLabel(label)) {
+            const inline = value ? `${label}: ${value}` : label;
+            descriptionLines.push(inline);
+            continue;
+          }
+
           facts.push({
-            label: match[1].trim(),
-            value: escapeHtml(match[2].trim())
+            label,
+            value
           });
+          inDescription = false;
           continue;
         }
-        narrativeLines.push(line);
+
+        if (inDescription) descriptionLines.push(line);
+        else narrativeLines.push(line);
       }
+
+      const description = descriptionLines.join("\n").trim();
+      const narrative = description || narrativeLines.join("\n").trim();
 
       return {
         facts,
-        narrative: narrativeLines.join("\n").trim()
+        narrative,
+        description
       };
+    }
+
+    function resolveEventContactAction(item, parsed){
+      const facts = Array.isArray(parsed?.facts) ? parsed.facts : [];
+
+      const externalHref = [
+        item?.registration_url,
+        item?.organizer_url,
+        getFirstEventFactValue(facts, ["Website/inschrijvingslink", "Website", "Inschrijvingslink", "Registration"])
+      ]
+        .map((value) => normalizeExternalUrl(value))
+        .find(Boolean);
+
+      if (externalHref) {
+        return {
+          kind: "external",
+          href: externalHref,
+          label: "Inschrijven / contact"
+        };
+      }
+
+      const email = [
+        item?.organizer_email,
+        getFirstEventFactValue(facts, ["Contact e-mail", "E-mail organisator", "Email organisator"])
+      ]
+        .map((value) => String(value || "").trim())
+        .find((value) => looksLikeEmail(value));
+
+      if (email) {
+        return {
+          kind: "mail",
+          href: `mailto:${email}`,
+          label: "Inschrijven / contact"
+        };
+      }
+
+      return null;
+    }
+
+    function applyEventContactAction(button, action){
+      if (!button) return;
+
+      button.onclick = null;
+      button.disabled = false;
+
+      if (!action) {
+        button.style.display = "none";
+        return;
+      }
+
+      button.style.display = "inline-flex";
+      button.textContent = action.label || "Inschrijven / contact";
+
+      if (action.kind === "external") {
+        button.onclick = () => {
+          window.open(action.href, "_blank", "noopener,noreferrer");
+        };
+        return;
+      }
+
+      if (action.kind === "mail") {
+        button.onclick = () => {
+          window.location.href = action.href;
+        };
+      }
     }
 
     function renderMedia(mediaUrls){
@@ -1869,17 +2130,29 @@
         };
 
         let narrativeHtml = "";
+        let parsedEvent = null;
         if (isEvent) {
-          const parsed = parseStructuredEventText(safeText);
-          for (const fact of parsed.facts) pushFact(fact.label, fact.value);
+          parsedEvent = parseStructuredEventText(safeText);
+          for (const fact of parsedEvent.facts) pushFact(fact.label, renderEventFactValue(fact.label, fact.value));
           pushFact("Locatie", escapeHtml(item.location_name || ""));
           pushFact("Adres", escapeHtml(item.address || ""));
           pushFact("Organisator", escapeHtml(item.organizer_name || ""));
-          if (item.organizer_url) {
-            const safeUrl = escapeHtml(item.organizer_url);
-            pushFact("Website", `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${safeUrl}</a>`);
+          if (item.organizer_email) {
+            pushFact("Contact e-mail", renderEmailLink(item.organizer_email));
           }
-          narrativeHtml = parsed.narrative ? formatTextAsParagraphs(parsed.narrative) : "";
+          if (item.organizer_phone) {
+            pushFact("Telefoon", escapeHtml(item.organizer_phone));
+          }
+          if (item.registration_url) {
+            pushFact("Website/inschrijvingslink", renderExternalUrl(item.registration_url));
+          }
+          if (item.organizer_url) {
+            pushFact("Website", renderExternalUrl(item.organizer_url));
+          }
+          const descriptionHtml = parsedEvent.description
+            ? formatTextAsParagraphs(parsedEvent.description)
+            : (parsedEvent.narrative ? formatTextAsParagraphs(parsedEvent.narrative) : "");
+          narrativeHtml = renderDescriptionSection("Beschrijving", descriptionHtml);
         } else if (t === "supportersclub") {
           if (safeText) narrativeHtml = formatTextAsParagraphs(safeText);
           pushFact("Supportersclub", escapeHtml(item.name || ""));
@@ -2135,25 +2408,28 @@
         }
 
         // Contact
-        // Keep current mailto flow, but make subject reflect type
-        contactBtn.onclick = async () => {
-          const email = await window.V4AFeedback.requestEmail({
-            message: "Vul je e-mailadres in zodat Voetbal4All je aanvraag kan verwerken.",
-            description: "Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All."
-          });
-          if (!email) return;
+        if (isEvent) {
+          applyEventContactAction(contactBtn, resolveEventContactAction(item, parsedEvent));
+        } else {
+          contactBtn.onclick = async () => {
+            const email = await window.V4AFeedback.requestEmail({
+              message: "Vul je e-mailadres in zodat Voetbal4All je aanvraag kan verwerken.",
+              description: "Door verder te gaan, ga je akkoord dat jouw e-mailadres gebruikt wordt om te reageren via Voetbal4All."
+            });
+            if (!email) return;
 
-          const subject = encodeURIComponent("Reactie via Voetbal4All – " + (item.title || item.name || "Detail"));
-          const body = encodeURIComponent(
-            "Item: " + (item.title || item.name || "") +
-            "\nType: " + (type || "event") +
-            "\nId: " + (id || slug || "") +
-            "\n\nE-mailadres: " + email +
-            "\n\nBericht:\n(Voeg je bericht toe.)"
-          );
+            const subject = encodeURIComponent("Reactie via Voetbal4All – " + (item.title || item.name || "Detail"));
+            const body = encodeURIComponent(
+              "Item: " + (item.title || item.name || "") +
+              "\nType: " + (type || "event") +
+              "\nId: " + (id || slug || "") +
+              "\n\nE-mailadres: " + email +
+              "\n\nBericht:\n(Voeg je bericht toe.)"
+            );
 
-          location.href = "mailto:voetbal4all@outlook.com?subject=" + subject + "&body=" + body;
-        };
+            location.href = "mailto:voetbal4all@outlook.com?subject=" + subject + "&body=" + body;
+          };
+        }
 
       } catch (e) {
         console.error("[DETAIL] load failed", e);
