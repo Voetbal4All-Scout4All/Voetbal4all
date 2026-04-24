@@ -873,3 +873,27 @@ body .v4-status-note{
     max-height:100px;
   }
 }
+
+/* ── Targeted opt-out for intrusive Google Auto Ads / related-search chips ── */
+
+body.v4-disable-auto-ads .google-aiuf,
+body.v4-disable-auto-ads .google-anno-skip.google-anno-sc,
+body.v4-disable-auto-ads .google-auto-placed{
+  display:none !important;
+}
+
+@supports selector(.ad-slot:has(.google-aiuf)){
+  body.v4-disable-auto-ads .ad-slot:has(.google-aiuf),
+  body.v4-disable-auto-ads .ad-slot-header:has(.google-aiuf),
+  body.v4-disable-auto-ads .ad-infeed:has(.google-aiuf),
+  body.v4-disable-auto-ads .ad-vertical:has(.google-aiuf),
+  body.v4-disable-auto-ads ins.adsbygoogle:has(.google-aiuf){
+    display:none !important;
+    min-height:0 !important;
+    max-height:0 !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
+  }
+}
