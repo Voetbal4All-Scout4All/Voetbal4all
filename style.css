@@ -359,6 +359,7 @@
     align-items:start;
     gap:10px;
     min-height:0;
+    overflow:hidden;
   }
 
   .live-label{
@@ -377,10 +378,18 @@
   .live-text{
     grid-area:rail;
     width:100%;
+    min-width:0;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .live-text-main{
+    min-width:0;
   }
 
   .live-text-ticker{
     min-height:38px;
+    max-width:100%;
     padding-right:0;
   }
 
@@ -393,6 +402,7 @@
   .live-score-item{
     padding:6px 8px;
     gap:7px;
+    max-width:100%;
   }
 
   .live-score-meta{
@@ -405,13 +415,19 @@
   }
 
   .live-score-game{
+    min-width:0;
+    max-width:100%;
     gap:4px;
     font-size:13px;
   }
 
   .live-score-team{
-    flex-basis:13ch;
-    max-width:none;
+    flex:0 1 auto;
+    flex-basis:auto;
+    min-width:0;
+    max-width:min(32vw,12ch);
+    overflow:hidden;
+    text-overflow:ellipsis;
   }
 
   .live-score-status{
@@ -422,8 +438,14 @@
     grid-area:utility;
     justify-self:end;
     align-self:center;
+    min-width:0;
     padding-left:10px;
     gap:8px;
+  }
+
+  .live-socials-icons{
+    min-width:0;
+    gap:6px;
   }
 
   .live-text-ticker::after{
