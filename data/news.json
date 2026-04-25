@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T19:00:51.103Z",
+  "generatedAt": "2026-04-25T19:50:26.794Z",
   "items": [
     {
       "type": "rss",
@@ -7,10 +7,21 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Gonzalez wondergoal sees City into FA Cup final",
+      "title": "Slot unsure if Salah has played last Liverpool game",
+      "link": "https://www.espn.com/soccer/story/_/id/48591369/arne-slot-know-mohamed-salah-final-game-liverpool",
+      "summary": "Arne Slot has said Liverpool must wait to discover whether Mohamed Salah has played his last game for the club after he was forced off with an injury in Saturday's 3-1 victory over Crystal Palace.",
+      "publishedAt": "2026-04-25T20:24:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "González screamer puts Man City in FA Cup final",
       "link": "https://www.espn.com/soccer/report/_/gameId/401867654",
       "summary": "Manchester City produced a dramatic late fightback to reach their fourth successive FA Cup final with a remarkable 2-1 win over Championship Southampton.",
-      "publishedAt": "2026-04-25T19:33:01.000Z"
+      "publishedAt": "2026-04-25T20:24:46.000Z"
     },
     {
       "type": "rss",
@@ -21,18 +32,7 @@
       "title": "Eze downs Newcastle, sends Arsenal top of league",
       "link": "https://www.espn.com/soccer/report/_/gameId/740931",
       "summary": "Arsenal returned to the top of the Premier League after a 1-0 win against Newcastle on Saturday.",
-      "publishedAt": "2026-04-25T19:33:01.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barça boss hails Rashford for 'important' goal",
-      "link": "https://www.espn.com/soccer/story/_/id/48591281/marcus-rashford-hailed-important-barcelona-goal-hansi-flick",
-      "summary": "Barcelona coach Hansi Flick celebrated Marcus Rashford's \"important\" goal as the England forward helped down Getafe on Saturday.",
-      "publishedAt": "2026-04-25T19:33:01.000Z"
+      "publishedAt": "2026-04-25T20:24:46.000Z"
     },
     {
       "type": "rss",
@@ -43,7 +43,7 @@
       "title": "De Zerbi hopes win transforms Spurs mentality",
       "link": "https://www.espn.com/soccer/story/_/id/48591266/roberto-de-zerbi-hopes-win-transforms-tottenham-mentality-more-injuries",
       "summary": "Roberto De Zerbi says Tottenham's 1-0 win at Wolves could be transformative for the club's fortunes despite more injuries.",
-      "publishedAt": "2026-04-25T19:33:00.000Z"
+      "publishedAt": "2026-04-25T20:24:46.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +54,62 @@
       "title": "Kane winner as Bayern Munich win from 3-0 down",
       "link": "https://www.espn.com/soccer/report/_/gameId/746990",
       "summary": "Harry Kane fired a late winner as Bayern Munich hit back from 3-0 down at Mainz to win 4-3 and extend their lead at the top of the table to 18 points.",
-      "publishedAt": "2026-04-25T19:33:00.000Z"
+      "publishedAt": "2026-04-25T20:24:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: NEC uit het niets weer naast Twente",
+      "link": "https://www.vi.nl/nieuws/vi-live-nec-uit-het-niets-weer-naast-twente",
+      "summary": "FC Twente en NEC spelen zaterdagavond een cruciaal duel in de strijd om de Champions League-plekken. Verder wordt er ook volop gevoetbald in de Premier League, de FA Cup, de Bundesliga, La Liga, de Serie A en de Ligue 1. Blijf op de hoogte met de VI Live.",
+      "publishedAt": "2026-04-25T19:38:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: Itakura valt in op voor hem onprettige positie, Holtby terug na beenwond",
+      "link": "https://www.vi.nl/nieuws/vi-live-itakura-valt-in-op-voor-hem-onprettige-positie-holtby-terug-na-beenwond",
+      "summary": "Ajax gaat zaterdagavond om 20.00 uur op bezoek bij NAC Breda. De Amsterdammers mogen geen fout meer maken in de strijd om de tweede plek in de Eredivisie. Aan de andere kant heeft NAC de punten keihard nodig in de strijd tegen degradatie. Volg het duel op de voet in deze VI Live.",
+      "publishedAt": "2026-04-25T19:34:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Lukkien ziet 'kansloos' FC Groningen in De Kuip: 'Onverklaarbaar'",
+      "link": "https://www.vi.nl/nieuws/lukkien-ziet-kansloos-groningen-in-de-kuip-onverklaarbaar",
+      "summary": "Dick Lukkien was na afloop van de nederlaag in De Kuip niet tevreden met zijn ploeg. De trainer van FC Groningen vond dat zijn spelers het Feyenoord wel heel makkelijk maakten.",
+      "publishedAt": "2026-04-25T19:25:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Three goals, eight chaotic minutes - how day of relegation drama unfolded",
+      "link": "https://www.bbc.com/sport/football/articles/c4g4nyjzg9do?at_medium=RSS&at_campaign=rss",
+      "summary": "On a day of twists and turns, Tottenham and West Ham both picked up crucial wins in their fight to avoid relegation.",
+      "publishedAt": "2026-04-25T19:05:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City beat Southampton to reach FA Cup final",
+      "link": "https://www.bbc.com/sport/football/videos/c1kr9l2xy07o?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City score two goals in five minutes to secure a late comeback victory against Southampton and reach their fourth FA Cup final in a row.",
+      "publishedAt": "2026-04-25T19:00:54.000Z"
     },
     {
       "type": "rss",
@@ -63,7 +118,7 @@
       "country": "NL",
       "flag": "🇳🇱",
       "title": "Brugts belangrijk met assist in halve finale Champions League",
-      "link": "https://www.vi.nl/nieuws/nieuwe-coach-psv-twee-eredivisie-hoofdtrainers-worden-assistent",
+      "link": "https://www.vi.nl/nieuws/brugts-belangrijk-met-assist-in-halve-finale-champions-league",
       "summary": "In dit blog volgen we alle ontwikkelingen in het vrouwenvoetbal. We besteden onder meer aandacht aan de Eurojackpot Vrouwen Eredivisie, de Europese toernooien en het Nederlands elftal.",
       "publishedAt": "2026-04-25T18:59:33.000Z"
     },
@@ -80,47 +135,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Godts soleert naar tweede Ajax-treffer, Zlatan-vibes in Breda",
-      "link": "https://www.vi.nl/nieuws/vi-live-godts-soleert-naar-tweede-ajax-treffer-zlatan-vibes-in-breda",
-      "summary": "Ajax gaat zaterdagavond om 20.00 uur op bezoek bij NAC Breda. De Amsterdammers mogen geen fout meer maken in de strijd om de tweede plek in de Eredivisie. Aan de andere kant heeft NAC de punten keihard nodig in de strijd tegen degradatie. Volg het duel op de voet in deze VI Live.",
-      "publishedAt": "2026-04-25T18:44:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Oud-Ajacied Gorter houdt interesse van Qarabag af",
-      "link": "https://www.vi.nl/nieuws/oud-ajacied-gorter-houdt-interesse-van-qarabag-af",
-      "summary": "Jay Gorter (25) staat mogelijk voor een vertrek uit Cyprus. De doelman wordt gevolgd door Qarabag. Dat bevestigen ingewijden.",
-      "publishedAt": "2026-04-25T18:43:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Twente en NEC maken zich op voor Champions League-clash",
-      "link": "https://www.vi.nl/nieuws/vi-live-twente-en-nec-maken-zich-op-voor-champions-league-clash",
-      "summary": "FC Twente en NEC spelen zaterdagavond een cruciaal duel in de strijd om de Champions League-plekken. Verder wordt er ook volop gevoetbald in de Premier League, de FA Cup, de Bundesliga, La Liga, de Serie A en de Ligue 1. Blijf op de hoogte met de VI Live.",
-      "publishedAt": "2026-04-25T18:43:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arsenal 1-0 Newcastle United: Premier League – live",
-      "link": "https://www.theguardian.com/football/live/2026/apr/25/arsenal-v-newcastle-united-premier-league-live",
-      "summary": "⚽ Premier League updates from the 5.30pm BST kick-off ⚽ Live scores | Table | Top scorers | Follow us on Bluesky Mikel Arteta’s pre-match thoughts [On making only one change from the City game] We did a lot of great things, with some connections that we really liked througout the game. [On how long Bukayo Saka might be able to play from the bench] We will see how the game goes. We have alternatives in the front line to change the game; we’ll use them in the right way. Continue reading...",
-      "publishedAt": "2026-04-25T18:41:05.000Z"
+      "title": "Arsenal edge back on top in title race after Eze stunner sees off Newcastle",
+      "link": "https://www.theguardian.com/football/2026/apr/25/arsenal-newcastle-premier-league-match-report",
+      "summary": "It has come down to a straight shootout, similar to five rounds of penalties, the equation plain yet loaded with complications. Score or miss. With Manchester City otherwise engaged in an FA Cup semi-final, it was Arsenal who took first. For them, the metaphorical walk to the spot, the moment of truth, began in the aftermath of last Sunday’s defeat at City. It was long and treacherous, the self-doubt gnawing away, the outside noise at fever pitch. Score or miss. With a draw very much into the latter category. Arsenal scored. Continue reading...",
+      "publishedAt": "2026-04-25T18:51:08.000Z"
     },
     {
       "type": "rss",
@@ -130,19 +152,8 @@
       "flag": "🇬🇧",
       "title": "Manchester City pull off comeback win against Southampton to reach FA Cup final",
       "link": "https://www.theguardian.com/football/2026/apr/25/manchester-city-southampton-fa-cup-semi-final-match-report",
-      "summary": "What a barnstorming finish to this FA Cup semi-final that featured three goals in eight minutes and ended with Nico González as the hero who swept Manchester City to a historic fourth consecutive final. The Spaniard’s winner came in the 87th-minute. Bernardo Silva, only just introduced by Pep Guardiola, tapped to Jérémy Doku, who fed González. From outside Southampton’s area, to the left, the midfielder let go a rising shot that smacked the net and left Tonda Eckert’s team heartbroken, after taking the lead only moments before. Continue reading...",
+      "summary": "What a barnstorming finish to this FA Cup semi-final that featured three goals in eight minutes and ended with Nico González as the hero who swept Manchester City to a historic fourth consecutive final. The Spaniard’s winner came in the 87th minute. Bernardo Silva, only just introduced by Pep Guardiola, tapped to Jérémy Doku, who fed González. From outside Southampton’s area, to the left, the midfielder let go a rising, 30-yard shot that rocketed into the net and left Tonda Eckert’s team heartbroken, having taken the lead only moments before. Continue reading...",
       "publishedAt": "2026-04-25T18:35:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Unstoppable' Gonzalez strike completes Man City comeback",
-      "link": "https://www.bbc.com/sport/football/videos/ckg0veqpwwxo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City's Nico Gonzalez produces a \"magnificent strike\" to put his side 2-1 ahead against Southampton in the FA Cup semi-final.",
-      "publishedAt": "2026-04-25T18:15:41.000Z"
     },
     {
       "type": "rss",
@@ -168,36 +179,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Brighton shock Man City as leaders fail to close in on WSL title",
-      "link": "https://www.bbc.com/sport/football/videos/cgj030w9937o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City are denied the chance to potentially secure their first WSL title since 2016, following a surprise 3-2 away defeat against Brighton & Hove Albion.",
-      "publishedAt": "2026-04-25T16:59:24.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "João Palhinha keeps Spurs’ survival hopes alive with late winner at Wolves",
       "link": "https://www.theguardian.com/football/2026/apr/25/wolves-tottenham-premier-league-match-report",
-      "summary": "Roberto De Zerbi had said he wanted no crying in his camp, after Brighton scored their late equaliser last week. It was just as the Wolves fans had started chanting “You’re going to cry in a minute” that substitute João Palhinha struck the goal that, briefly helping Tottenham climb out of the relegation zone, at least keeps them in the hunt for Premier League survival. West Ham’s late victory over Everton dropped Spurs back into 18th place but, in claiming his first win as Spurs manager, and the club’s first of 2026 in the league, De Zerbi has continued the team’s improvement. This fraught and low-quality victory means they avoided equalling the club record of 16 consecutive league games without a win, set in 1934-35. Continue reading...",
+      "summary": "Roberto De Zerbi had said he wanted no crying in his camp, after Brighton scored their late equaliser last week. It was just as the Wolves fans had started chanting: “You’re going to cry in a minute,” that the substitute João Palhinha struck the goal that, briefly helping Tottenham climb out of the relegation zone, at least keeps them in the hunt for Premier League survival. West Ham’s late victory over Everton dropped Spurs back into 18th place but, in claiming his first win as Spurs manager, and the club’s first of 2026 in the league, De Zerbi has continued the team’s improvement. This fraught and low-quality victory means they avoided equalling the club record of 16 consecutive league games without a win, set in 1934-35. Continue reading...",
       "publishedAt": "2026-04-25T16:22:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Mohamed Salah limps off injured in Liverpool’s win against Crystal Palace",
-      "link": "https://www.theguardian.com/football/2026/apr/25/liverpool-crystal-palace-premier-league-match-report",
-      "summary": "The sun shone, Alexander Isak and Florian Wirtz made an impression on a Liverpool victory, Freddie Woodman seized his moment as third-choice goalkeeper and Arne Slot’s team went fourth by lifting the curse of Crystal Palace. This season being what it is for the champions, though, a dark cloud had to appear. Mohamed Salah limped out of Liverpool’s third consecutive Premier League win and potentially out of his final season at Anfield with a hamstring injury. That was the impression given as the Liverpool great applauded all four sides of the ground before heading straight down the tunnel. Continue reading...",
-      "publishedAt": "2026-04-25T16:22:06.000Z"
     },
     {
       "type": "rss",
@@ -223,6 +212,72 @@
     },
     {
       "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "European football: Kane seals epic Bayern comeback as Barcelona surge towards title",
+      "link": "https://www.theguardian.com/football/2026/apr/25/european-football-bayern-munich-barcelona-psg",
+      "summary": "Bayern stun Mainz with four second-half goals Rashford strikes for Barcelona in win at Getafe Bayern Munich fought back from three goals down to clinch a 4-3 win over Mainz 05 as substitutes Harry Kane and Michael Olise led a second-half comeback for the Bundesliga champions. Dominik Kohr, Paul Nebel and Sheraldo Becker scored for Mainz in the first half while Bayern, who had made eight changes to the starting lineup that beat Bayer Leverkusen in Wednesday’s German Cup semi-final, had no shot on target until the break. The Bayern coach, Vincent Kompany, brought on Kane and Olise after the break and their renewed aggression paid off with Nicolas Jackson scoring in the 53rd minute and Olise finding the net 20 minutes later. Continue reading...",
+      "publishedAt": "2026-04-25T16:04:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Antwerp al na één helft klaar in 't Kuipke",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/live-antwerp-al-na-een-helft-klaar-in-t-kuipke",
+      "summary": "Zolang RC Genk met de punten blijft morsen in de Europe Play Offs, mag Westerlo blijven hopen om ook kans te maken op Europees voetbal volgend seizoen. Profiteren ze thuis tegen Antwerp?",
+      "publishedAt": "2026-04-25T07:49:11.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Casper Nielsen doet bekentenis na doelpunt tegen KRC Genk",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/casper-nielsen-doet-bekentenis-na-doelpunt-tegen-krc-genk",
+      "summary": "KRC Genk was op weg naar de overwinning tegen Standard. Maar dat was zonder Casper Nielsen gerekend die de Rouches in de slotminuut langszij bracht.",
+      "publishedAt": "2026-04-25T07:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "🎥 Le but de la saison ? Un Diable Rouge humilie la défense de Carl Hoefkens d'un slalom complètement fou",
+      "link": "https://www.walfoot.be/news/2026-04-25/-le-but-de-la-saison--un-diable-rouge-humilie-la-defense-de-carl-hoefkens-dun-slalom-completement-fou",
+      "summary": "Mika Godts est décidément comme dans son jardin en Eredivisie. Il l'a encore prouvé ce soir contre le NAC Breda de Carl Hoefkens.",
+      "publishedAt": "2026-04-25T07:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "L'une des plus lourdes défaites de la carrière d'Edward Still : \"Aussi étrange que ça puisse paraître...\"",
+      "link": "https://www.walfoot.be/news/2026-04-25/lune-des-plus-lourdes-defaites-de-la-carriere-dedward-still--aussi-etrange-que-ca-puisse-paratre",
+      "summary": "Watford s'est incliné 5-1 à Middlesbrough. Edward Still déplore surtout la deuxième mi-temps des siens.",
+      "publishedAt": "2026-04-25T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Schandalig, geen greintje eergevoel\": Felice Mazzù woedend na de nederlaag tegen Charleroi",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/schandalig-geen-greintje-eergevoel-felice-mazzu-woedend-na-de-nederlaag-tegen-charleroi",
+      "summary": "OH Leuven heeft een erg bleek optreden neergezet tegen Charleroi. Felice Mazzù spaarde zijn woorden niet in het interview na de match.",
+      "publishedAt": "2026-04-25T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -242,17 +297,6 @@
       "link": "https://www.walfoot.be/news/2026-04-25/cetait-prevu--vincent-kompany-leve-le-voile-sur-la-folle-remontada-du-bayern",
       "summary": "Vincent Kompany est passé par toutes les émotions à Mayence. En conférence de presse, c'est son sourire qui prédominait.",
       "publishedAt": "2026-04-25T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE: Westerlo valt al snel met 10 man tegen Antwerp!",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/live-westerlo-valt-al-snel-met-10-man-tegen-antwerp",
-      "summary": "Zolang RC Genk met de punten blijft morsen in de Europe Play Offs, mag Westerlo blijven hopen om ook kans te maken op Europees voetbal volgend seizoen. Profiteren ze thuis tegen Antwerp?",
-      "publishedAt": "2026-04-25T06:57:54.000Z"
     },
     {
       "type": "rss",
@@ -278,17 +322,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Standard verkoopt dominant Genk uppercut in slotfase: Limburgers lieten te veel kansen liggen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/standard-verkoopt-dominant-genk-uppercut-in-slotfase-limburgers-lieten-te-veel-kansen-liggen",
-      "summary": "Genk leek op winst af te stevenen na een goal van Bibout in de tweede helft, maar Casper Nielsen besliste daar anders over. Hij schonk met een prachtige vrije trap Standard nog een punt. Bij Genk zullen ze zich voor het hoofd slaan over de vele gemiste kansen. Ze verloren ook nog eens Karetsas.",
-      "publishedAt": "2026-04-25T06:13:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "BE",
@@ -297,39 +330,6 @@
       "link": "https://www.walfoot.be/news/2026-04-25/le-standard-de-liege-arrache-un-partage-en-fin-de-match-contre-le-krc-genk",
       "summary": "Le KRC Genk et le Standard de Liège se sont quittés dos à dos ce samedi sur le score de 1-1. Aaron Bibout pensait offrir la victoire aux siens, mais Casper Nielsen a arraché l'égalisation en fin de match.",
       "publishedAt": "2026-04-25T06:12:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "🎥 Liverpool furieux : un ancien de Pro League signe le but polémique de la journée en Premier League",
-      "link": "https://www.walfoot.be/news/2026-04-25/-liverpool-furieux--un-ancien-de-pro-league-signe-le-but-polemique-de-la-journee-en-premier-league",
-      "summary": "Crystal Palace s'est incliné 3-1 à Liverpool. Le seul but des visiteurs a été inscrit par Daniel Muñoz, et il fait polémique outre-Manche.",
-      "publishedAt": "2026-04-25T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "🎥 3-0 achter en toch nog winnen: Vincent Kompany kan het zelf haast niet geloven",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/3-0-achter-en-toch-nog-winnen-vincent-kompany-kan-het-zelf-haast-niet-geloven",
-      "summary": "Vincent Kompany gunde enkele sterkhouders rust tegen Mainz. Dat leverde echter een 3-0-achterstand op aan de rust. Maar Bayern München vocht terug en won uiteindelijk nog na vier goals in de tweede helft.",
-      "publishedAt": "2026-04-25T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un ancien d'Anderlecht n'a pas aimé l'attitude de Keisuke Goto",
-      "link": "https://www.walfoot.be/news/2026-04-25/un-ancien-danderlecht-na-pas-aime-lattitude-de-keisuke-goto",
-      "summary": "STVV a porté un sacré coup à Anderlecht dans la lutte pour la troisième place et un meilleur ticket européen. Les scènes d'après-match ont aussi créé la polémique, mais Olivier Deschacht soutient les Mauves.",
-      "publishedAt": "2026-04-25T05:30:00.000Z"
     }
   ]
 }
