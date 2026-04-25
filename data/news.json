@@ -1,16 +1,60 @@
 {
-  "generatedAt": "2026-04-25T07:23:43.142Z",
+  "generatedAt": "2026-04-25T14:47:36.008Z",
   "items": [
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Mbappé gives injury scare to Real Madrid, France",
+      "link": "https://www.espn.com/soccer/story/_/id/48583230/kylian-mbappe-injury-real-madrid-france-real-betis-world-cup",
+      "summary": "Real Madrid coach Álvaro Arbeloa said Kylian Mbappé felt \"discomfort\" before asking to be substituted during Friday's 1-1 draw at Real Betis.",
+      "publishedAt": "2026-04-25T15:01:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Rodman scores first 2026 goal in Spirit's 4-0 win",
+      "link": "https://www.espn.com/soccer/story/_/id/48586128/trinity-rodman-scores-first-goal-season-spirit-crush-current",
+      "summary": "Trinity Rodman scored for the first time in the 2026 NWSL season in the Washington Spirit's dominant victory over the Kansas City Current on Friday night.",
+      "publishedAt": "2026-04-25T15:01:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "FA Cup semi-final buildup, plus crunch games at both ends of the Premier League – matchday live",
-      "link": "https://www.theguardian.com/football/live/2026/apr/25/matchday-live-fa-cup-semi-final-manchester-city-southampton-premier-league-tottenham-west-ham-arsenal-newcastle",
-      "summary": "⚽ News, discussion and buildup before the day’s action ⚽ Sunderland 0-5 Nottm Forest | Fixtures | Mail us here Hello, good morning and welcome to another Matchday live! We have plenty to look forward to this afternoon, from Premier League fixtures to Championship and EFL match-ups. We also have a WSL game to preview as well as a Women’s Champions League semi-final and an FA Cup semi-final. In the Prem, Fulham host Aston Villa at lunchtime. Everton then travel to face West Ham at the London Stadium, already-relegated Wolves take on Tottenham and Liverpool face Crystal Palace. And in the late fixture, Arsenal will be looking to return to the top of the table with a win over Newcastle. But before we look ahead to those fixtures, let’s recap what happened at the Stadium of Light last night… Continue reading...",
-      "publishedAt": "2026-04-25T07:04:52.000Z"
+      "title": "Carrick praises 'big influence' Bruno Fernandes",
+      "link": "https://www.espn.com/soccer/story/_/id/48587733/man-united-boss-michael-carrick-praises-big-influence-bruno-fernandes",
+      "summary": "Michael Carrick heaped praise on player of the year contender Bruno Fernandes for the influence and quality he has displayed with Manchester United this season.",
+      "publishedAt": "2026-04-25T15:01:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "De Zerbi using YouTube to inspire Spurs players",
+      "link": "https://www.espn.com/soccer/story/_/id/48587649/tottenham-boss-roberto-de-zerbi-using-youtube-highlight-reels-inspire-relegation-threatened-players",
+      "summary": "Roberto De Zerbi has turned to YouTube in an attempt to lift the morale and confidence of his relegation-threatened Tottenham squad.",
+      "publishedAt": "2026-04-25T15:01:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Forest rout adds 'pressure' to Spurs, West Ham",
+      "link": "https://www.espn.com/soccer/story/_/id/48583660/nottingham-forest-premier-league-sunderland-relegation",
+      "summary": "Nottingham Forest took a huge step toward ensuring its Premier League survival in a stunning 5-0 win at Sunderland on Friday.",
+      "publishedAt": "2026-04-25T15:01:16.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +62,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Woede bij Cambuur na Vitesse-vuurwerk: 'In andere landen zie je dit nooit'",
-      "link": "https://www.vi.nl/nieuws/diemers-helemaal-klaar-met-vuurwerk-wees-een-beetje-lief-doe-gewoon-normaal",
-      "summary": "Mark Diemers is het vuurwerkgeweld in het Nederlandse betaalde voetbal zat. De middenvelder van SC Cambuur noemde de gebeurtenissen rond het duel met Vitesse ‘absurd’ en baalde van de staking . 'Wees een beetje lief voor elkaar, doe gewoon normaal.'",
-      "publishedAt": "2026-04-25T07:01:57.000Z"
+      "title": "VI Live: Bos schiet Feyenoord fraai op vroege voorsprong",
+      "link": "https://www.vi.nl/nieuws/vi-live-feyenoord-begonnen-aan-cruciaal-duel-met-fc-groningen",
+      "summary": "Feyenoord neemt het zaterdagmiddag om 16.30 uur op tegen FC Groningen. De Rotterdammers hebben een zege nodig om de tweede plek in de Eredivisie te behouden. Later op de avond staan directe concurrenten NEC en FC Twente immers tegenover elkaar. Mis niets van het duel in deze VI Live.",
+      "publishedAt": "2026-04-25T14:43:51.000Z"
     },
     {
       "type": "rss",
@@ -29,32 +73,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arsenal’s Olivia Smith: ‘Being champions of Europe holds weight, but we believe in ourselves’",
-      "link": "https://www.theguardian.com/football/2026/apr/25/arsenal-olivia-smith-canada-womens-champions-league-lyon",
-      "summary": "Canada forward broke the £1m transfer barrier and now eyes Sunday’s semi-final first leg against Lyon Olivia Smith is tentatively laying down roots but remains alert to the changes that can be produced by football. The 21-year-old Arsenal forward, who has nine goals and three assists in her first season in north London, has lived a nomadic football life, driven by a desire to continuously improve and move up the ladder, rung by rung, without a pause. As the season reaches its climax, a Champions League semi-final against Lyon on Sunday is testament to how far up the ladder Smith has climbed. Now, she is heading towards unknown territory: a second season at the same club for the first time in her senior career. “I do feel quite calm now, knowing that I have set down some roots here, but at the end of the day, football is football and you never know what’s next,” she says. “So I’m always on my toes but, right now, I’m kind of laid-back, just enjoying the time here in the present with Arsenal and looking forward to winning more silverware and growing as a player and a person.” Continue reading...",
-      "publishedAt": "2026-04-25T07:00:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Alsof Zulte Waregem kampioen zou worden: promovendus kan zaterdag landstitel veroveren in Europa",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/alsof-zulte-waregem-kampioen-zou-worden-promovendus-kan-zaterdag-landstitel-veroveren-in-europa",
-      "summary": "Het is misschien wel het zotste verhaal van het seizoen in Europa: in Zwitserland kan een promovendus dit weekend kampioen worden.",
-      "publishedAt": "2026-04-25T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Alors que la relégation se rapproche, l'UR Namur désigne son coach pour la saison prochaine",
-      "link": "https://www.walfoot.be/news/2026-04-25/alors-que-la-relegation-se-rapproche-lur-namur-designe-son-coach-pour-la-saison-prochaine",
-      "summary": "L'UR Namur est toute proche de la relégation en D2 ACFF. Mais le club a décidé de maintenir sa confiance en Gabor Bukran.",
-      "publishedAt": "2026-04-25T07:00:00.000Z"
+      "title": "Wolves v Tottenham, West Ham v Everton, and more: football clockwatch – live",
+      "link": "https://www.theguardian.com/football/live/2026/apr/25/wolves-tottenham-west-ham-everton-and-more-football-clockwatch-live",
+      "summary": "⚽ All the latest updates from a huge day of football action ⚽ Fulham 1-0 Aston Villa | Live scores | Tables | Email Barry Premier League: Ryan Sessegnon scores on the follow-up to put Fulham ahead after Raul Jimenez had his initial effort blocked. Tim de Lisle has the latest … WSL: Well, well. Japanese international Kiko Seike has taken just two minutes of the second half to fire Brighton ahead against Manchester City at the Broadfield Stadium in what could be a major turn-up for the WSL books. Continue reading...",
+      "publishedAt": "2026-04-25T14:39:15.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +84,109 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "De Jong zwaait met rode ogen af: 'Niet Henkie, Jantje of Pietje. Wij allemaal'",
-      "link": "https://www.vi.nl/nieuws/de-jong-zwaait-met-rode-ogen-af-niet-henkie-jantje-of-pietje-wij-allemaal",
-      "summary": "Cambuur heeft vrijdagavond, na afloop van de zege op Vitesse , uitgebreid stilgestaan bij het afzwaaien van Henk de Jong als hoofdtrainer . De Drachtster oefenmeester kreeg een staande ovatie van zowel publiek als spelers en sprak geëmotioneerd het stadion toe.",
-      "publishedAt": "2026-04-25T06:44:13.000Z"
+      "title": "VI Live: Isak en Robertson laten Slot juichen, Barça zonder De Jong tegen Getafe",
+      "link": "https://www.vi.nl/nieuws/vi-live-isak-en-robertson-laten-slot-juichen-bar-a-zonder-de-jong-tegen-getafe",
+      "summary": "FC Twente en NEC spelen zaterdagavond een cruciaal duel in de strijd om de Champions League-plekken. Verder wordt er ook volop gevoetbald in de Premier League, de FA Cup, de Bundesliga, La Liga, de Serie A en de Ligue 1. Blijf op de hoogte met de VI Live.",
+      "publishedAt": "2026-04-25T14:39:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Bayern wordt volledig overrompeld: ook Becker doet kampioen pijn",
+      "link": "https://www.vi.nl/nieuws/bayern-wordt-volledig-overrompeld-ook-becker-doet-kampioen-pijn",
+      "summary": "FSV Mainz 05 is op weg naar een van de meest opzienbarende overwinning van het seizoen in de Bundesliga. De club van Sheraldo Becker heeft in de eerste helft een 3-0 voorsprong opgebouwd tegen kampioen Bayern München, mede dankzij een goal van de Surinaamse aanvaller.",
+      "publishedAt": "2026-04-25T14:31:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Vitesse spreekt na misdragingen van bitter einde en biedt excuses aan",
+      "link": "https://www.vi.nl/nieuws/vitesse-spreekt-na-misdragingen-van-bitter-einde-en-biedt-excuses-aan",
+      "summary": "Vitesse heeft in een statement gereageerd op de vuurwerkincidenten tijdens de uitwedstrijd tegen SC Cambuur . Het duel in Leeuwarden werd vrijdagavond meerdere keren stilgelegd en uiteindelijk definitief gestaakt.",
+      "publishedAt": "2026-04-25T14:26:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van Persie dolblij met basisrentree Trauner: 'Genot om mee samen te werken'",
+      "link": "https://www.vi.nl/nieuws/van-persie-dolblij-met-basisrentree-trauner-genot-om-mee-samen-te-werken",
+      "summary": "Gernot Trauner is weer helemaal terug bij Feyenoord. Tegen FC Groningen begint de Oostenrijkse mandekker voor het eerst in een jaar weer in de basis. En dat is voor insiders helemaal niet gek: op de training is Trauner alweer een poos de beste man bij Feyenoord.",
+      "publishedAt": "2026-04-25T14:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Championship roundup: Middlesbrough romp closes gap on Ipswich and Hull suffer crucial loss",
+      "link": "https://www.theguardian.com/football/2026/apr/25/championship-roundup-ipswich-middlesbrough-hull-charlton-oxford",
+      "summary": "Boro thrash Watford 5-1, West Brom 0-0 Ipswich Charlton’s 2-1 win and Baggies’ point relegates Oxford Middlesbrough’s hopes of winning automatic promotion remain alive after they thrashed Watford 5-1 at the Riverside. With second-placed Ipswich drawing at West Brom, Boro have moved to within a point of the top-two positions with one game to play, although Ipswich still have a game in hand. Boro’s 5-1 victory was their joint-biggest win of the season and came courtesy of doubles from Morgan Whittaker and Tommy Conway plus a goal from David Strelec. Watford’s goal came at the start of the second half from James Abankwah, but while the visitors were a match for their opponents for most of the first period, they were comprehensively outplayed after the break. This story will be updated Continue reading...",
+      "publishedAt": "2026-04-25T14:11:20.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Oxford relegated after two years in Championship",
+      "link": "https://www.bbc.com/sport/football/articles/cm2kr2zn903o?at_medium=RSS&at_campaign=rss",
+      "summary": "Oxford United are relegated with one game of the season remaining after Charlton Athletic beat Hull City.",
+      "publishedAt": "2026-04-25T13:47:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sessegnon sinks lacklustre Aston Villa to keep Fulham’s European hopes alive",
+      "link": "https://www.theguardian.com/football/2026/apr/25/fulham-aston-villa-premier-league-match-report",
+      "summary": "When Unai Emery declared the “Premier League is the priority” despite a looming Europa League semi-final, he could not have envisaged the lifeless display his Aston Villa team would produce here. Perhaps his players disagree with their manager’s preference for domestic affairs or maybe the London spring sunshine proved too much of a distraction from footballing matters. Either way, Villa left with an emptiness fully deserving of their minimal endeavours, having managed one shot on target. Continue reading...",
+      "publishedAt": "2026-04-25T13:35:20.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "York City promoted back to EFL in remarkable finale as 106-point Rochdale face playoffs",
+      "link": "https://www.theguardian.com/football/2026/apr/25/york-city-promoted-back-to-football-league-as-106-point-rochdale-in-playoffs",
+      "summary": "The Minstermen are back in the Football League after a decade away, but only after a scarcely believable finish Football, bloody hell. We may never see the likes of it again after York struck an equaliser in the 103rd minute to secure a dramatic return to the Football League at Rochdale’s expense. The hosts thought they had done it when Mani Dieseruvwe headed a 95th-minute goal that would have sent Dale into League Two. A pitch invasion ensued and after a lengthy delay play restarted. But there was still enough time for Josh Stones to bundle the ball over the line for York’s 114th, and most important, goal of the season to secure the point needed for unparalleled glory. Continue reading...",
+      "publishedAt": "2026-04-25T13:35:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Manchester City’s WSL title charge stalls abruptly after shock against Brighton",
+      "link": "https://www.theguardian.com/football/2026/apr/25/brighton-manchester-city-wsl-match-report",
+      "summary": "Kiko Seike and Madison Haley put Manchester City’s title celebrations on hold as Brighton upset the WSL leaders. Three points at the Broadfield Stadium would have enabled City to take the title as early as Wednesday, if Arsenal were to lose against Leicester. But the race could now go down to the final day, with City still in need of three points. Brighton could have found themselves at least three goals down within 10 minutes after gifting their opponents several chances – the first of which came after 12 seconds when a terrible backpass from Moeka Minami was intercepted by Khadija Shaw. The striker played a short pass across to Aoba Fujino, who fired her attempt wide. Continue reading...",
+      "publishedAt": "2026-04-25T13:07:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "How Newcastle's 'bullies' became too nice",
+      "link": "https://www.bbc.com/sport/football/articles/c4g8j49dgnxo?at_medium=RSS&at_campaign=rss",
+      "summary": "How Eddie Howe's Newcastle have gone from regularly ruffling feathers to losing 15 Premier League games this season.",
+      "publishedAt": "2026-04-25T07:25:21.000Z"
     },
     {
       "type": "rss",
@@ -80,113 +201,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "KV Mechelen komt met leuk nieuws: contract tot 2028 voor ex-talent van Anderlecht",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/kv-mechelen-komt-met-leuk-nieuws-contract-tot-2028-voor-ex-talent-van-anderlecht",
-      "summary": "Wassim Lantaki, die tussen 2013 en 2020 op Neerpede speelde, tekende in 2024 bij KV Mechelen. Daar heeft hij nu zijn eerste profcontract versierd.",
-      "publishedAt": "2026-04-25T06:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Un ancien de Neerpede signe son premier contrat professionnel dans un autre club de D1A",
-      "link": "https://www.walfoot.be/news/2026-04-25/un-ancien-de-neerpede-signe-son-premier-contrat-professionnel-dans-un-autre-club-de-d1a",
-      "summary": "Wassim Lantaki, passé par Neerpede de 2013 à 2020, a signé au KV Malines en 2024. Il y a désormais décroché un premier contrat professionnel.",
-      "publishedAt": "2026-04-25T06:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Kevin De Bruyne reageert na sterke prestatie en komt terug op eerdere kritiek",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/kevin-de-bruyne-reageert-na-sterke-prestatie-en-komt-terug-op-eerdere-kritiek",
-      "summary": "Kevin De Bruyne heeft vrijdag een sterk antwoord gegeven op de kritiek na Napoli-Lazio. Met een doelpunt en een assist tegen Cremonese trok de Rode Duivel zijn ploeg mee over de streep in een duidelijke 4-0-zege.",
-      "publishedAt": "2026-04-25T06:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "VI Live: CL-kraker tussen FC Twente en NEC, Liverpool, Arsenal en Man City spelen",
-      "link": "https://www.vi.nl/nieuws/vi-live-cl-kraker-tussen-fc-twente-en-nec-liverpool-arsenal-en-man-city-spelen",
-      "summary": "FC Twente en NEC spelen zaterdagavond een cruciaal duel in de strijd om de Champions League-plekken. Verder wordt er ook volop gevoetbald in de Premier League, de FA Cup, de Bundesliga, La Liga, de Serie A en de Ligue 1. Blijf op de hoogte met de VI Live.",
-      "publishedAt": "2026-04-25T06:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Romelu Lukaku s'est même mis Antonio Conte à dos : \"Je suis déçu de lui\"",
-      "link": "https://www.walfoot.be/news/2026-04-25/romelu-lukaku-sest-meme-mis-antonio-conte-a-dos--je-suis-decu-de-lui",
-      "summary": "La relation entre Antonio Conte et Romelu Lukaku a souffert de l'attitude du Diable Rouge ces dernières semaines.",
-      "publishedAt": "2026-04-25T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Oosting ziet Antwerp opnieuw dichter bij zijn eigen ideeën komen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/oosting-ziet-antwerp-opnieuw-dichter-bij-zijn-eigen-ideeen-komen",
-      "summary": "Antwerp trekt zaterdagavond met vertrouwen naar Westerlo, na zeges tegen OH Leuven en Standard. Joseph Oosting ziet zijn ploeg groeien en vindt dat die opmars geen toeval meer is.",
-      "publishedAt": "2026-04-25T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Veerman naar WK? 'Ik weet niet of hij goed kan omgaan met een plek op de bank'",
-      "link": "https://www.vi.nl/nieuws/veerman-naar-wk-ik-weet-niet-of-hij-goed-kan-omgaan-met-een-plek-op-de-bank",
-      "summary": "René Eijkelkamp is groot fan van Joey Veerman, maar vraagt zich af of hij hem mee zou nemen naar het WK van 2026. In een eerder stadium vertelde bondscoach Ronald Koeman al dat andere spelers waarschijnlijk de voorkeur krijgen. Eijkelkamp snapt dat.",
-      "publishedAt": "2026-04-25T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Ajax mag geen fout meer maken op bezoek bij NAC Breda",
-      "link": "https://www.vi.nl/nieuws/vi-live-ajax-mag-geen-fout-meer-maken-op-bezoek-bij-nac-breda",
-      "summary": "Ajax gaat zaterdagavond om 20.00 uur op bezoek bij NAC Breda. De Amsterdammers mogen geen fout meer maken in de strijd om de tweede plek in de Eredivisie. Aan de andere kant heeft NAC de punten keihard nodig in de strijd tegen degradatie. Volg het duel op de voet in deze VI Live.",
-      "publishedAt": "2026-04-25T05:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "🎥 Après un match compliqué, Kevin De Bruyne réagit et régale avec le Napoli !",
-      "link": "https://www.walfoot.be/news/2026-04-25/-apres-un-match-complique-kevin-de-bruyne-reagit-et-regale-avec-le-napoli",
-      "summary": "Durant Napoli-Lazio, Kevin De Bruyne était sorti à la mi-temps, et n'avait pas été épargné par les médias italiens. Il a répondu de belle manière ce vendredi soir.",
-      "publishedAt": "2026-04-25T05:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Kevin De Bruyne legt critici het zwijgen op met glansprestatie bij Napoli",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/kevin-de-bruyne-legt-critici-het-zwijgen-op-met-glansprestatie-bij-napoli",
-      "summary": "Kevin De Bruyne werd tegen Lazio al aan de rust naar de kant gehaald en kreeg daarna stevige kritiek van de Italiaanse media. Vrijdagavond heeft hij daar op knappe wijze op gereageerd.",
-      "publishedAt": "2026-04-25T05:40:00.000Z"
+      "title": "Could Spurs fans take solace from a season in the Championship?",
+      "link": "https://www.bbc.com/sport/football/articles/c20377veepro?at_medium=RSS&at_campaign=rss",
+      "summary": "Tottenham Hotspur fans will not want to contemplate relegation - but if the worst should happen, they may take solace from a season in the Championship.",
+      "publishedAt": "2026-04-25T05:54:39.000Z"
     },
     {
       "type": "rss",
@@ -203,133 +225,111 @@
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "IT",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Promis au top en Pro League ? Un joueur de Zulte Waregem répond clairement",
+      "link": "https://www.walfoot.be/news/2026-04-25/promis-au-top-en-pro-league--un-joueur-de-zulte-waregem-repond-clairement",
+      "summary": "Alors qu'il reste encore trois journées à disputer, Zulte Waregem est déjà assuré du maintien. Ils pourront donc aborder le match contre La Louvière sans pression. Néanmoins, du côté de l'Essevee, on veut encore faire le plein de confiance en vue de l'été.",
+      "publishedAt": "2026-04-25T02:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "'Absolute jackpot komt steeds dichterbij voor KRC Genk'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/absolute-jackpot-komt-steeds-dichterbij-voor-krc-genk",
+      "summary": "Bij KRC Genk zou het wel eens een drukke transferzomer kunnen gaan worden. Daarbij wordt ook zeker gekeken naar Kos Karetsas. De jonge Griek zou wel eens voor een transferrecord kunnen gaan zorgen, zoveel is stilaan duidelijk. Steeds meer clubs kloppen op de deur.",
+      "publishedAt": "2026-04-25T02:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un ami proche de Lukaku lui parle souvent d'Anderlecht : \"Il me répond toujours la même chose\"",
+      "link": "https://www.walfoot.be/news/2026-04-25/un-ami-proche-de-lukaku-lui-parle-souvent-danderlecht--il-me-repond-toujours-la-meme-chose",
+      "summary": "Romelu Lukaku reviendra-t-il à Anderlecht ? La question est posée presque tous les deux jours. Nicaise Kudimbana, ami proche du Diable Rouge, n'a pas obtenu de réponse non plus.",
+      "publishedAt": "2026-04-25T02:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Het zal toch geen waar zijn? Geen spoor van Rode Duivel, coach laat zich uit over de zaak",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/het-zal-toch-geen-waar-zijn-geen-spoor-van-rode-duivel-coach-laat-zich-uit-over-de-zaak",
+      "summary": "Geen spoor van Amadou Onana deze zaterdag in de wedstrijd van Aston Villa op het veld van Fulham. Unai Emery verklaarde zijn afwezigheid. Het zou gaan om een lichte blessure, maar de timing is met het WK steeds dichterbij komende wel niet ideaal.",
+      "publishedAt": "2026-04-25T02:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Colassin sur le poteau ! Suivez Louvain - Charleroi en Direct Commenté",
+      "link": "https://www.walfoot.be/news/2026-04-25/match-live-colassin-sur-le-poteau--suivez-louvain---charleroi-en-direct-commente",
+      "summary": "Charleroi se déplace à Louvain pour ce premier match du week-end de Pro League. Les Zèbres retrouveront-ils le chemin de la victoire à Den Dreef ?",
+      "publishedAt": "2026-04-25T01:35:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Club Brugge mikt hoog en wil international voor ettelijke miljoenen losweken bij Ajax'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/club-brugge-mikt-hoog-en-wil-international-voor-ettelijke-miljoenen-losweken-bij-ajax",
+      "summary": "Club Brugge is de markt al volop aan het afspeuren op zoek naar versterkingen. Daarbij zijn ze uitgekomen in de Eredivisie, waar ze een speler van AFC Ajax Amsterdam in huis zouden willen halen.",
+      "publishedAt": "2026-04-25T01:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
       "flag": "🌍",
-      "title": "Ardon Jashari déjà sur le départ à Milan un an après son départ ?",
-      "link": "https://www.walfoot.be/news/2026-04-25/ardon-jashari-deja-sur-le-depart-a-milan-un-an-apres-son-depart-",
-      "summary": "Soulier d'Or en titre, Ardon Jashari a signé jusqu'en 2030 à l'AC Milan. Mais l'ancien brugeois a du mal à s'imposer.",
-      "publishedAt": "2026-04-25T05:20:00.000Z"
+      "title": "Le directeur sportif du Racing Lens réagit à la rumeur Thorgan Hazard",
+      "link": "https://www.walfoot.be/news/2026-04-25/le-directeur-sportif-du-racing-lens-reagit-a-la-rumeur-thorgan-hazard",
+      "summary": "C'était la bombe de ce vendredi matin : Thorgan Hazard aurait signé au Racing Lens. Mais du côté du club nordiste, on temporise.",
+      "publishedAt": "2026-04-25T01:30:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Maanden niet betaald: ex-speler Standard, Genk, Gent en Charleroi terug naar België?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/maanden-niet-betaald-ex-speler-standard-genk-gent-en-charleroi-terug-naar-belgie",
+      "summary": "Dieumerci Ndongala werd enkele weken geleden door zijn Turkse club vrijgegeven. De Congolese international is echter niet van plan om het daarbij te laten. En wat met zijn toekomst? Een terugkeer naar België zou voor sommige clubs leuk kunnen worden.",
+      "publishedAt": "2026-04-25T01:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Ramsey's marathon in memory of 'amazing' young boy",
-      "link": "https://www.bbc.com/sport/football/articles/c20q5990ny9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Aaron Ramsey has only just retired but is running the London Marathon in memory of his friend Ceri's \"amazing\" son Hugh, who died of a rare cancer aged six.",
-      "publishedAt": "2026-04-25T04:47:27.000Z"
+      "title": "Petite alerte pour Amadou Onana avant le match d'Aston Villa",
+      "link": "https://www.walfoot.be/news/2026-04-25/petite-alerte-pour-amadou-onana-avant-le-match-daston-villa",
+      "summary": "Pas trace d'Amadou Onana ce samedi pour le match d'Aston Villa à Fulham. Unai Emery a expliqué son absence par une légère blessure.",
+      "publishedAt": "2026-04-25T01:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "All eyes on Spurs & West Ham? 'Unbelievable' Forest edge towards safety",
-      "link": "https://www.bbc.com/sport/football/articles/c30rgm097vyo?at_medium=RSS&at_campaign=rss",
-      "summary": "After Nottingham Forest's stunning win at Sunderland, is the Premier League relegation battle now a two-horse race?",
-      "publishedAt": "2026-04-24T22:29:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "European football: Betis and Bellerín deny Real Madrid, Eta’s Union lose at Leipzig",
-      "link": "https://www.theguardian.com/football/2026/apr/24/european-football-betis-real-madrid-leipzig-union-berlin-lens-napoli",
-      "summary": "Late leveller is fresh blow to Madrid’s faint title hopes RB Leipzig’s 3-1 win is marred by online sexism row Héctor Bellerín struck deep into stoppage time to earn Real Betis a 1-1 draw against Real Madrid on Friday, dealing another blow to the visitors’ fading title hopes. Álvaro Arbeloa’s side appeared on course for a narrow win after taking the lead in the 17th minute. Federico Valverde let fly from outside the box and the Betis goalkeeper, Álvaro Valles, could only parry the ball into the path of Vinícius Júnior, who reacted swiftly to guide a neat finish just inside the right post. Continue reading...",
-      "publishedAt": "2026-04-24T22:21:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Nottingham Forest soar towards safety as Anderson caps rout of Sunderland",
-      "link": "https://www.theguardian.com/football/2026/apr/24/sunderland-nottingham-forest-premier-league-match-report",
-      "summary": "Vítor Pereira had promised ­Nottingham Forest would approach this assignment with a “Champions League mentality” and his players did not disappoint him. A fabulous attacking performance featuring four different scorers (plus an own goal) and a clean sheet not merely succeeded in denting a shell-shocked Sunderland’s European ambitions but also lifted 16th-placed Forest to 39 points. Continue reading...",
-      "publishedAt": "2026-04-24T21:00:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal second, Spurs facing relegation: is there really panic on the streets of north London?",
-      "link": "https://www.theguardian.com/football/2026/apr/24/arsenal-second-spurs-relegation-zone-panic-streets-north-london-premier-league",
-      "summary": "Fans of both sides are feeling similar levels of stress at different ends of the Premier League table Zadie Smith once wrote that “the square mile around Arsenal’s stadium could be a suitable surrogate for the whole wide world”. Perhaps you only really glimpse this on a match day, when the jerk chicken grills and paella pans fire up and belch delicious smoke across the rows of terraced houses, when the locals in weathered replica shirts brush shoulders with tourists bearing selfie sticks, when a small group of dedicated volunteers at a kiosk by the Ken Friar Bridge accepts non-perishable donations for the Islington food bank. And you shall scoff, and you shall sneer, because there is a north London of the popular imagination, and Islington in particular, which has become a surrogate for something else entirely. A slur, an insult, a byword for privilege and entitlement and metropolitan effeteness, the place of Blair and Corbyn and Starmer and a shrink on every street corner. North London is elite, north London is out of touch, north London looks down on the rest of you while eating plates of £16 pasta. Continue reading...",
-      "publishedAt": "2026-04-24T18:21:56.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Why I stayed at 'struggling' Man Utd and didn't think we'd be third now - Fernandes",
-      "link": "https://www.bbc.com/sport/football/articles/c0rxl475x8jo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United captain Bruno Fernandes speaks to club legend Wayne Rooney in a wide-ranging interview.",
-      "publishedAt": "2026-04-24T17:01:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Itauma now looking to win world title 'as soon as possible'",
-      "link": "https://www.skysports.com/boxing/news/12040/13535580/moses-itauma-now-looking-to-win-heavyweight-world-championship-as-soon-as-possible",
-      "summary": "Moses Itauma will look to win a world heavyweight title \"as soon as possible,\" his trainer Ben Davison says.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Seven Questions and Dyonisos go for Silver Trophy glory",
-      "link": "https://www.skysports.com/racing/news/12040/13535545/today-on-sky-sports-racing-seven-questions-and-dyonisos-contest-silver-trophy-at-ripon",
-      "summary": "Ripon opens its gates for seven races on Silver Trophy day - live on Sky Sports Racing at 4.10pm.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Korda sets 36-hole scoring record to increase Chevron lead",
-      "link": "https://www.skysports.com/golf/news/12040/13536137/chevron-championship-nelly-korda-sets-36-hole-scoring-to-race-six-strokes-clear-in-first-womens-major-of-2026",
-      "summary": "Nelly Korda moved closer to a third major title as the world No 2 set the new 36-hole scoring record at the Chevron Championship to stretch her lead to six strokes heading into the weekend.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Lowry, Koepka miss cut at Zurich Classic with Fitzpatrick brothers in contention",
-      "link": "https://www.skysports.com/golf/news/12040/13536135/zurich-classic-of-new-orleans-shane-lowry-brooks-koepka-miss-cut-as-matt-fitzpatrick-and-brother-alex-surge-up-leaderboard",
-      "summary": "The star-studded pair of Shane Lowry and Brooks Koepka missed the cut by one shot as they exited the Zurich Classic of New Orleans ahead of the weekend.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Norrie beats Machac to advance in Madrid as Boulter beaten by Pegula",
-      "link": "https://www.skysports.com/tennis/news/12040/13536047/madrid-open-cameron-norrie-advances-but-katie-boulter-beaten-by-jessica-pegula-in-second-round",
-      "summary": "Cameron Norrie battled past Tomas Machac in three sets to reach the third round of the Madrid Open, but fellow British hopeful Katie Boulter was beaten by fifth seed Jessica Pegula on Friday.",
-      "publishedAt": null
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Barcelona wil toptalent wegplukken bij Club Brugge: stand van zaken",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-04-25/barcelona-wil-toptalent-wegplukken-bij-club-brugge-stand-van-zaken",
+      "summary": "Zien we Jesse Bisiwu volgend seizoen in de A-kern van Club Brugge zijn kansen krijgen? Of vertrekt hij deze zomer naar het buitenland. Het lijkt alle kanten uit te kunnen, al zou hij zelf niet meteen nee zeggen tegen Barcelona.",
+      "publishedAt": "2026-04-25T00:30:00.000Z"
     }
   ]
 }
