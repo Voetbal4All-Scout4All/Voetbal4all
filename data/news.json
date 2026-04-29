@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-04-28T22:03:04.873Z",
+  "generatedAt": "2026-04-29T03:54:59.504Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "A record-breaking semi-final - the antidote to modern football?",
+      "link": "https://www.bbc.com/sport/football/articles/cp3pd2kgy76o?at_medium=RSS&at_campaign=rss",
+      "summary": "A scintillating semi-final first leg between Paris St-Germain and Bayern Munich left many to wonder if this was the antidote to modern football.",
+      "publishedAt": "2026-04-28T23:33:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Flitsend PSG verslaat Bayern in doelpuntrijk voetbalfeest",
+      "link": "https://www.vi.nl/nieuws/flitsend-psg-verslaat-bayern-in-doelpuntrijk-voetbalfeest",
+      "summary": "Het moest de mooiste wedstrijd van het seizoen worden en de enorme hype voor Paris Saint-Germain tegen Bayern München bleek terecht. In de eerste helft vielen er al vijf doelpunten en na rust gingen beide grootmachten vrolijk verder. De Fransen trokken ondanks een Duitse comeback aan het langste eind in de halve finale van de Champions League.",
+      "publishedAt": "2026-04-28T22:10:39.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -22,17 +44,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cgrpjzxvx4ko?at_medium=RSS&at_campaign=rss",
       "summary": "White House officials preparing for this summer's World Cup urge the Department of Homeland Security to reopen after an attempted assassination of US President Donald Trump.",
       "publishedAt": "2026-04-28T21:55:18.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Flitsend PSG verslaat Bayern in doelpuntrijk voetbalfeest",
-      "link": "https://www.vi.nl/nieuws/flitsend-psg-verslaat-bayern-in-doelpuntrijk-voetbalfeest",
-      "summary": "Het moest de mooiste wedstrijd van het seizoen worden en de enorme hype voor Paris Saint-Germain tegen Bayern München bleek terecht. In de eerste helft vielen er al vijf doelpunten en na rust gingen beide grootmachten vrolijk verder. De Fransen trokken ondanks een Duitse comeback aan het langste eind in de halve finale van de Champions League.",
-      "publishedAt": "2026-04-28T21:49:42.000Z"
     },
     {
       "type": "rss",
@@ -75,7 +86,7 @@
       "flag": "🌍",
       "title": "PSG edge breathless 5-4 classic as Bayern Munich rally after Dembélé’s double",
       "link": "https://www.theguardian.com/football/2026/apr/28/psg-bayern-munich-champions-league-semi-final-first-leg-match-report",
-      "summary": "Has there ever been a game of football quite like this? On a luminous, thrilling, slightly crazed night at the Parc des Princes Paris Saint-Germain and Bayern Munich produced something that felt like a different category of human activity altogether. There were nine goals in Paris, the most ever in a Champions League semi-final first leg, the end result a largely arbitrary 5-4 lead for PSG ahead of next week’s second leg. Most remarkable was the nature of the spectacle itself, which felt like football of the demi-gods, a startling combination of relentless fine point craft, and insatiable attacking thrust. Continue reading...",
+      "summary": "Has there ever been a game of football quite like this? On a luminous, thrilling, slightly crazed night at the Parc des Princes, Paris Saint-Germain and Bayern Munich produced something that felt like a different category of human activity altogether. There were nine goals in Paris, the most ever in a Champions League semi-final first leg. The end result was a largely arbitrary 5-4 lead for PSG going into next week’s return. Most remarkable was the nature of the spectacle itself, which felt like football of the demigods, a startling combination of unceasing fine point craft, and constant attacking thrust. Continue reading...",
       "publishedAt": "2026-04-28T21:07:18.000Z"
     },
     {
@@ -86,7 +97,7 @@
       "flag": "🇬🇧",
       "title": "Clarke earns Ipswich point at Southampton to set up final-day promotion shootout",
       "link": "https://www.theguardian.com/football/2026/apr/28/southampton-ipswich-championship-match-report",
-      "summary": "The Championship’s automatic promotion race will be decided on Saturday. Ipswich’s hopes of killing Millwall’s and Middlesbrough’s chances stone dead were dashed at St Mary’s though this pulsating draw also did for Southampton. A second half of bedlam had Cyle Larin score a goal that looked to have dashed Kieran McKenna’s hopes of completing the job before the weekend. Jack Clarke’s lashing finish from the edge of the Southampton box meant Saints must regroup for the playoffs. Clarke rattled a post in the chase for the goal that would all but elevate Ipswich. Instead, QPR, at Portman Road, will decide Ipswich’s destiny. How much more tension can they stand? Continue reading...",
+      "summary": "The Championship’s automatic promotion race will go down to the final day. Ipswich’s plans of ­reducing Millwall’s hopes to an unlikely mathematical scenario and eliminating Middlesbrough’s altogether were dashed at St Mary’s. A pulsating draw played amid extreme tension and the highest of stakes did for Southampton’s chances of second place. Late bedlam saw Cyle Larin score for Southampton, leaving Kieran McKenna’s hopes of completing the job before Saturday’s finale looking bleak. A rescue mission was now required, and it arrived through Jack Clarke’s lashing late finish. Continue reading...",
       "publishedAt": "2026-04-28T20:56:46.000Z"
     },
     {
@@ -97,7 +108,7 @@
       "flag": "🌍",
       "title": "World Cup 2026 players who cover mouths or leave pitch in protest may be red carded",
       "link": "https://www.theguardian.com/football/2026/apr/28/world-cup-cover-mouths-red-card-rule-ifab",
-      "summary": "Ifab has not mandated the change for other competitions Decision follows Prestianni and Afcon final controversies Any player who covers their mouth when confronting an opponent or who leaves the pitch in protest at a refereeing decision will receive an automatic red card at this summer’s World Cup. In a regulation change approved by the International Football Association Board (Ifab) ahead of Thursday’s Fifa Congress in Vancouver it was confirmed that the new protocols will be in place for the tournament, which begins in June. Continue reading...",
+      "summary": "Ifab has not mandated the change for other competitions Decision follows Prestianni and Afcon final controversies Any player who covers their mouth when confronting an opponent or who leaves the pitch in protest at a refereeing decision could receive a straight red card at this summer’s World Cup. In a regulation change approved by the International Football Association Board (Ifab) ahead of Thursday’s Fifa Congress in Vancouver it was confirmed that the new protocols will be in place for the tournament, which begins in June. Continue reading...",
       "publishedAt": "2026-04-28T20:24:44.000Z"
     },
     {
@@ -154,17 +165,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cm2pn84y1r3o?at_medium=RSS&at_campaign=rss",
       "summary": "Manchester City face a fixture pile-up of four games in 11 days next month after the Premier League confirmed the rescheduled dates for two of their key matches in the race for the title.",
       "publishedAt": "2026-04-28T15:26:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'I lived all my dreams' - Stones to leave Man City",
-      "link": "https://www.bbc.com/sport/football/articles/clypwjeydnjo?at_medium=RSS&at_campaign=rss",
-      "summary": "England defender John Stones says he \"lived all my dreams out\" at Manchester City after confirming he will leave at the end of the season.",
-      "publishedAt": "2026-04-28T13:15:08.000Z"
     },
     {
       "type": "rss",
@@ -291,11 +291,33 @@
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Kane praises 'amazing defending' in nine-goal CL classic - but Rooney disagrees",
+      "link": "https://www.skysports.com/football/news/12040/13537833/psg-and-bayern-munich-champions-league-epic-harry-kane-wayne-rooney-and-jamie-carragher-have-their-say",
+      "summary": "Harry Kane labelled the defending in Bayern Munich's 5-4 Champions League semi-final first leg defeat at PSG as \"amazing\" - but Wayne Rooney disagreed.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Sabalenka knocked out in Madrid as Baptiste saves SIX match points",
+      "link": "https://www.skysports.com/tennis/news/12040/13537784/aryna-sabalenka-hailey-baptiste-stuns-world-no-1-at-madrid-open-after-saving-six-match-points-in-quarter-final-clash",
+      "summary": "World No 1 Aryna Sabalenka suffered a shock 2-6 6-2 7-6 (8-6) defeat to Hailey Baptiste to be knocked of the Madrid Open at the quarter-finals.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "ES",
       "flag": "🌍",
       "title": "Arsenal 'ready to make a statement' in quest for Champions League glory",
       "link": "https://www.skysports.com/football/news/12040/13537670/mikel-arteta-and-martin-odegaard-say-arsenal-are-ready-to-make-history-ahead-of-champions-league-semi-final-with-atletico-madrid",
-      "summary": "\"How can you not enjoy it?\" Martin Odegaard almost seemed affronted when asked if they could find a way to enjoy the pressure of their trophy hunt ahead of their Champions League semi-final against Atletico Madrid.",
+      "summary": "\"How can you not enjoy it?\" Martin Odegaard seemed almost affronted when asked if he and his Arsenal team-mates could find a way to enjoy the pressure of their trophy hunt ahead of their Champions League semi-final against Atletico Madrid.",
       "publishedAt": null
     },
     {
@@ -307,28 +329,6 @@
       "title": "Ipswich comeback sends Southampton to play-offs as automatic race goes to final day",
       "link": "https://www.skysports.com/football/southampton-vs-ipswich-town/report/534796",
       "summary": "Jack Clarke struck a late equaliser for Ipswich to end Southampton's automatic-promotion dream in an enthralling 2-2 draw, which will take the race for the Premier League to the final day.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Nijman wins fifth ranking title of 2026 as Greaves loses in last 16",
-      "link": "https://www.skysports.com/darts/news/12040/13537748/players-championship-12-wessel-nijman-wins-fifth-ranking-title-of-2026-as-beau-greaves-suffers-last-16-exit",
-      "summary": "Wessel Nijman maintained his astonishing start to 2026 by securing his fourth Players Championship - and fifth ranking title - of the year at the latest tournament in Milton Keynes.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'I don't see any issue' - Rose to debut new McLaren clubs in Miami",
-      "link": "https://www.skysports.com/golf/news/12040/13537746/justin-rose-to-debut-new-mclaren-golf-clubs-at-cadillac-championship-in-miami",
-      "summary": "Justin Rose does not believe a change of clubs will affect his game as he prepares to debut his new McLaren Golf clubs at the Cadillac Championship in Miami this week.",
       "publishedAt": null
     }
   ]
