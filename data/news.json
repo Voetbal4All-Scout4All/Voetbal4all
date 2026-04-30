@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-04-29T22:02:38.614Z",
+  "generatedAt": "2026-04-29T23:57:47.379Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Were Arsenal right to be 'fuming' with refereeing after Atletico draw?",
+      "link": "https://www.bbc.com/sport/football/articles/cr5p4335v7qo?at_medium=RSS&at_campaign=rss",
+      "summary": "Mikel Arteta was left \"fuming\" with the officials after Arsenal's draw at Atletico Madrid - what did they get right and wrong?",
+      "publishedAt": "2026-04-29T22:53:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "UEFA Champions League semifinal live updates: Atlé...",
-      "link": "https://www.espn.com/soccer/story/_/id/48610274/uefa-champions-league-semifinal-live-updates-atletico-madrid-arsenal",
-      "summary": "Viktor Gyökeres and Julián Álvarez scored penalties as Atlético Madrid and Arsenal's UEFA Champions League tie will be decided next week in London.",
-      "publishedAt": "2026-04-29T22:47:52.000Z"
+      "title": "Arteta hard na optreden Makkelie: 'Dit is onacceptabel op dit niveau'",
+      "link": "https://www.vi.nl/nieuws/arteta-hard-na-optreden-makkelie-dit-is-onacceptabel-op-dit-niveau",
+      "summary": "Danny Makkelie leidde woensdagavond het heenduel tussen Atlético Madrid en Arsenal in de halve finale van de Champions League, maar beleefde op zijn zachtst gezegd een ongelukkige avond. De Nederlandse arbiter pakte een hoofdrol door de bal drie keer op de stip te leggen, maar werd één keer teruggefloten. Arsenal-manager Mikel Arteta had na afloop weinig goede woorden voor Makkelie. 'Ik ben erg van streek.'",
+      "publishedAt": "2026-04-29T22:23:50.000Z"
     },
     {
       "type": "rss",
@@ -21,51 +32,7 @@
       "title": "Griezmann geniet optimaal van laatste CL-avond in Madrid: 'Finale is mijn droom'",
       "link": "https://www.vi.nl/nieuws/griezmann-geniet-optimaal-van-laatste-cl-avond-in-madrid-finale-is-mijn-droom",
       "summary": "Het gelijkspel met Arsenal was voor Antoine Griezmann de laatste Champions League-wedstrijd in het Estadio Metropolitano en dat wilde de afzwaaiende Fransman ten volste waarderen, zo bleek al vlak voor de aftrap.",
-      "publishedAt": "2026-04-29T22:01:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Police deny motorcade request for FIFA's Infantino...",
-      "link": "https://www.espn.com/soccer/story/_/id/48630108/vancouver-police-deny-motorcade-request-fifa-infantino",
-      "summary": "A request for FIFA president Gianni Infantino to give be given a police escort while in Vancouver, British Columbia, for FIFA meetings has been denied, the Vancouver Police Department confirmed Wednesday.",
-      "publishedAt": "2026-04-29T22:00:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Atlético and Arsenal trade penalties in 1st-leg dr...",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862894",
-      "summary": "Atlético Madrid and Arsenal will head to north London next week with all to play for after a 1-1 draw in Wednesday's Champions League semifinal first leg.",
-      "publishedAt": "2026-04-29T22:00:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Chelsea's Mudryk appeals to CAS over doping ban",
-      "link": "https://www.espn.com/soccer/story/_/id/48628626/chelsea-mykhailo-mudryk-cas-appeal-doping-ban",
-      "summary": "Chelsea forward Mykhailo Mudryk has lodged an appeal at the Court of Arbitration for Sport (CAS) amid reports he has been handed a four-year ban for a breach of anti-doping rules.",
-      "publishedAt": "2026-04-29T22:00:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "PSG's Hakimi to miss Bayern return, out for weeks",
-      "link": "https://www.espn.com/soccer/story/_/id/48628992/psg-achraf-hakimi-injury-bayern-munich-morocco",
-      "summary": "Paris Saint-Germain's thrilling 5-4 Champions League win over Bayern Munich has come at a cost, with the club confirming that key performer Achraf Hakimi will miss several weeks with a hamstring injury.",
-      "publishedAt": "2026-04-29T22:00:19.000Z"
+      "publishedAt": "2026-04-29T22:05:10.000Z"
     },
     {
       "type": "rss",
@@ -102,24 +69,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Makkelie pakt hoofdrol in onbesliste halve finale CL tussen Atlético en Arsenal",
-      "link": "https://www.vi.nl/nieuws/makkelie-pakt-hoofdrol-in-onbesliste-halve-finale-cl-tussen-atl-tico-en-arsenal",
-      "summary": "De strijd om een plek in de finale van de Champions League tussen Atlético Madrid en Arsenal ligt nog helemaal open. Tijdens het heenduel in Madrid kregen beide ploegen genoeg kansen, maar werd er alleen gescoord uit strafschoppen. Danny Makkelie wees in totaal drie keer naar de stip, maar werd één keer teruggefloten.",
-      "publishedAt": "2026-04-29T21:20:10.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
+      "country": "FR",
+      "flag": "🌍",
       "title": "Gyökeres and Alvarez on spot as VAR controversy denies Arsenal at Atlético",
       "link": "https://www.theguardian.com/football/2026/apr/29/atletico-madrid-arsenal-champions-league-semi-final-first-leg-match-report",
-      "summary": "It was a see-saw tie. And if it lacked the beauty of Paris Saint-Germain versus Bayern Munich in the other Champions League semi-final, first-leg from Tuesday night, it still had drama; knife-edge tension. It was a tale of three penalties, two scored, one by either team; the award of the last one rescinded amid wild scenes. That had stood to give Arsenal the opportunity to take a 2-1 lead to London next Tuesday. In the event, the referee, Danny Makkelie went to the pitchside screen and ruled that David Hancko’s contact on the Arsenal substitute, Eberechi Eze, in the 78th minute was not strong enough. Continue reading...",
+      "summary": "It was a see-saw tie, a tale of three penalties; two scored, one by each team and a third given and then taken away, the most dramatic momentum shift inside a couple of minutes towards the end, the incident that stood to redefine the tie suddenly rubbed out. It was a night when the controversy pulsed and if it lacked the beauty of Paris Saint-Germain versus Bayern Munich from the other Champions League semi-final first-leg it still had drama; knife-edge tension. Continue reading...",
       "publishedAt": "2026-04-29T21:07:21.000Z"
     },
     {
@@ -132,6 +88,17 @@
       "link": "https://www.vi.nl/pro/tactische-analyse-atl-tico-madrid-arsenal-openingen-na-rust",
       "summary": "Atlético Madrid heeft zich terug geknokt van een achterstand tegen Arsenal: 1-1. Tactische analyse van een wedstrijd waarin Atlético na rust ruimtes begon te herkennen tegen Arsenal.",
       "publishedAt": "2026-04-29T20:57:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Blackstenius and Holmberg doubles fire Arsenal to 7-0 WSL win over Leicester",
+      "link": "https://www.theguardian.com/football/2026/apr/29/arsenal-leicester-womens-super-league-match-report",
+      "summary": "Arsenal condemned a broken Leicester to a bottom-place finish in the WSL and kept the pressure on Manchester City at the top with a dominant win. Two goals each from Sweden’s Smilla Holmberg and Stina Blackstenius and one apiece from Frida Maanum, Mariona Caldentey and Leah Williamson, helped Arsenal reduce their goal-difference deficit with the league leaders from 13 to six. “I’m so happy,” said the Arsenal head coach, Renée Slegers. “We wanted to win today, we needed to win today, so we did that … What’s most pleasing to see is that we play the Arsenal way and that doesn’t change regardless of who’s on the pitch. Everyone’s contributing.” Continue reading...",
+      "publishedAt": "2026-04-29T20:22:42.000Z"
     },
     {
       "type": "rss",
@@ -187,17 +154,6 @@
       "link": "https://www.bbc.com/sport/football/articles/crlp8npylnpo?at_medium=RSS&at_campaign=rss",
       "summary": "Liverpool expect Mohamed Salah to return from injury before the end of the season after he was forced off against Crystal Palace on Saturday.",
       "publishedAt": "2026-04-29T17:57:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Erling Haaland feels the heat in Norway for ‘tragic’ World Cup beer commercial",
-      "link": "https://www.theguardian.com/football/2026/apr/29/erling-haaland-feels-the-heat-in-norway-for-tragic-world-cup-beer-commercial",
-      "summary": "Campaigners hit out at striker’s role in ‘Let It Pour’ video ‘He is a great hero for many young people’ Erling Haaland’s collaboration with a leading American beer brand has caused a backlash in his native Norway, where alcohol advertising is banned. World Cup sponsors Budweiser’s hiring of the Manchester City and Norway striker to help launch its “Let It Pour” promotional video together with the former Liverpool manager Jürgen Klopp has led to criticism from campaigning groups, who described Haaland’s commercial deal in the buildup to this summer’s tournament as “tragic”. Continue reading...",
-      "publishedAt": "2026-04-29T15:49:07.000Z"
     },
     {
       "type": "rss",
@@ -322,14 +278,58 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "DE",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
       "flag": "🌍",
-      "title": "A record-breaking semi-final - the antidote to modern football?",
-      "link": "https://www.bbc.com/sport/football/articles/cp3pd2kgy76o?at_medium=RSS&at_campaign=rss",
-      "summary": "A scintillating semi-final first leg between Paris St-Germain and Bayern Munich left many to wonder if this was the antidote to modern football.",
-      "publishedAt": "2026-04-28T23:33:30.000Z"
+      "title": "Penalty drama reigns as Arsenal draw with Atletico Madrid",
+      "link": "https://www.skysports.com/football/atletico-madrid-vs-arsenal/report/554947",
+      "summary": "Mikel Arteta was left fuming after Arsenal had a penalty controversially overturned following a VAR check in a pulsating 1-1 draw with Atletico Madrid in their Champions League semi-final first leg.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Completely unacceptable' - Arteta slams Eze penalty decision",
+      "link": "https://www.skysports.com/football/news/12040/13537145/arsenal-mikel-arteta-slams-completely-unacceptable-decision-to-overturn-penalty-awarded-to-eberechi-eze-in-champions-league-semi-final-at-atletico-madrid",
+      "summary": "Mikel Arteta called the decision to overturn a penalty awarded to Eberechi Eze as \"completely unacceptable\" after his Arsenal side were pegged back to draw 1-1 in the first leg of their Champions League semi-final with Atletico Madrid.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "World Snooker Championship scores and schedule",
+      "link": "https://www.skysports.com/snooker/news/12040/13529588/world-snooker-championship-2026-schedule-and-results-with-ronnie-osullivan-judd-trump-zhao-xintong-in-crucible-action",
+      "summary": "The 2026 World Snooker Championship continues in Sheffield, with defending champion Zhao Xintong knocked out by Shaun Murphy.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "The influence of Super League half-backs: Which partnership is on top?",
+      "link": "https://www.skysports.com/rugby-league/news/12040/13537884/the-influence-of-super-league-half-backs-are-jake-connor-and-brodie-croft-the-most-influential-do-mikey-lewis-and-tyrone-may-have-more-to-do",
+      "summary": "When teams are riding high, on a run of form, or 'clicking', there are two players on the field that get looked at more than most - the ones starting at No 6 and No 7.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Golf leaderboards: PGA Tour's Cadillac Championship, LPGA, DP World Tour and more",
+      "link": "https://www.skysports.com/golf/news/12040/12950625/golf-leaderboards-pga-tour-lpga-tour-liv-golf-dp-world-tour-ladies-european-tour-major-championships-and-more",
+      "summary": "All the latest golf scores and results from around the world, including the PGA Tour's Cadillac Championship, LPGA's Riviera Maya Open and DP World Tour's Turkish Airlines Open.",
+      "publishedAt": null
     }
   ]
 }
