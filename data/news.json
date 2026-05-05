@@ -1,61 +1,6 @@
 {
-  "generatedAt": "2026-05-04T23:57:29.990Z",
+  "generatedAt": "2026-05-05T03:39:02.099Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Pep: Premier League out of City's hands after draw...",
-      "link": "https://www.espn.com/soccer/story/_/id/48679116/guardiola-premier-league-city-hands-draw",
-      "summary": "Manchester City coach Pep Guardiola praised the determination of his team after it snatched a dramatic 3-3 draw at Everton, but he knows his squad faces an uphill battle in the Premier League title race.",
-      "publishedAt": "2026-05-05T00:09:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Santos opens probe of alleged assault by Neymar",
-      "link": "https://www.espn.com/soccer/story/_/id/48678626/santos-open-probe-alleged-assault-neymar-robinho-junior",
-      "summary": "Santos have opened an investigation into the \"alleged physical assault\" of Robinho Junior by Neymar during Sunday's training session.",
-      "publishedAt": "2026-05-05T00:09:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Good news' for Arsenal as Ødegaard, Havertz fit",
-      "link": "https://www.espn.com/soccer/story/_/id/48678100/arsenal-good-news-odegaard-havertz-available",
-      "summary": "Arsenal coach Mikel Arteta has confirmed that captain Martin Ødegaard and forward Kai Havertz are both available to play Atlético Madrid in their crunch UEFA Champions League semi final second leg on Tuesday.",
-      "publishedAt": "2026-05-05T00:09:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Forest hand woeful Chelsea 6th straight PL loss",
-      "link": "https://www.espn.com/soccer/report/_/gameId/740940",
-      "summary": "Chelsea fell to their sixth straight defeat in the Premier League at home to Nottingham Forest.",
-      "publishedAt": "2026-05-05T00:09:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The night Man City lost the title? Chaotic draw wi...",
-      "link": "https://www.espn.com/soccer/story/_/id/48679305/everton-draw-spell-doom-man-city-premier-league-title-race",
-      "summary": "Manchester City handed control of the Premier League title race to Arsenal with their dramatic second-half collapse on Merseyside.",
-      "publishedAt": "2026-05-05T00:09:22.000Z"
-    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -330,6 +275,61 @@
       "link": "https://www.walfoot.be/news/2026-05-04/vers-un-retour-de-thibaut-courtois-pour-le-clasico-ce-week-end",
       "summary": "Thibaut Courtois pourrait bien faire son retour dans les cages madrilènes pour le Clásico entre le FC Barcelone et le Real Madrid, ce dimanche, dans le cadre de la 35e journée du championnat espagnol.",
       "publishedAt": "2026-05-04T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wu wins World Snooker Championship after final-frame epic with Murphy",
+      "link": "https://www.skysports.com/snooker/news/12040/13540204/wu-yize-wins-2026-world-snooker-championship-as-he-beats-shaun-murphy-in-final-frame-epic-at-crucible",
+      "summary": "Wu Yize beat Shaun Murphy 18-17 to win the World Snooker Championship after an epic finale at the Crucible that came down to a final-frame decider.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Woods not likely to play at US Open, says USGA chief",
+      "link": "https://www.skysports.com/golf/news/12040/13540225/tiger-woods-not-likely-to-play-at-us-open-or-us-senior-open-says-usga-chief-executive-mike-whan",
+      "summary": "Tiger Woods is not expected to play at either the US Open or US Senior Open as he continues his recovery, according to United States Golf Association chief executive Mike Whan.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hearts move into Scottish Premiership title box seat with win over Rangers",
+      "link": "https://www.skysports.com/watch/video/13540185/hearts-2-1-rangers-scottish-premiership-highlights",
+      "summary": "Highlights of the Scottish Premiership match between Hearts and Rangers.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Carra: If Arsenal beat West Ham, they win the Premier League",
+      "link": "https://www.skysports.com/football/news/12040/13540221/everton-3-3-man-city-if-arsenal-beat-west-ham-on-sunday-they-win-the-premier-league-title-says-jamie-carragher",
+      "summary": "If Arsenal beat West Ham at the London Stadium on Sunday, live on Sky Sports, they will win the Premier League title, says Jamie Carragher.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Title-race twist! Doku saves Man City with dramatic stoppage-time equaliser",
+      "link": "https://www.skysports.com/watch/video/13540239/everton-3-3-man-city-premier-league-highlights",
+      "summary": "FREE TO WATCH: Highlights from Everton’s match against Manchester City in the Premier League.",
+      "publishedAt": null
     }
   ]
 }
