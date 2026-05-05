@@ -1,16 +1,82 @@
 {
-  "generatedAt": "2026-05-04T16:49:33.810Z",
+  "generatedAt": "2026-05-05T03:39:02.099Z",
   "items": [
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Who has made Troy's Premier League team of the week?",
+      "link": "https://www.bbc.com/sport/football/articles/cwy21xwnz10o?at_medium=RSS&at_campaign=rss",
+      "summary": "After every round of Premier League matches this season, Troy Deeney gives us his team of the week. Do you agree with his choices?",
+      "publishedAt": "2026-05-04T23:14:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "A remarkable finale - but will 13 chaotic minutes cost Man City title?",
+      "link": "https://www.bbc.com/sport/football/articles/cedpn81ep1do?at_medium=RSS&at_campaign=rss",
+      "summary": "A chaotic 13-minute spell from Man City in the second half of a six-goal thriller at Everton could prove to be the visitors' undoing in the Premier League title race.",
+      "publishedAt": "2026-05-04T22:58:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City's title hopes dented despite late Doku stunner in six-goal thriller",
+      "link": "https://www.bbc.com/sport/football/videos/c2k2dd79wyxo?at_medium=RSS&at_campaign=rss",
+      "summary": "Jeremy Doku's 97th-minute equaliser salvages a draw for Manchester City in a six-goal thriller at Everton.",
+      "publishedAt": "2026-05-04T21:56:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Als Arsenal zondag wint zijn ze kampioen'",
+      "link": "https://www.vi.nl/nieuws/als-arsenal-zondag-wint-zijn-ze-kampioen",
+      "summary": "Manchester City heeft de rode loper uitgerold voor Arsenal . Thierry Henry en Jamie Carragher kijken uit naar een bloedstollend einde van de Premier League, waarbij eerstgenoemde nog niet durft te juichen voor Arsenal.",
+      "publishedAt": "2026-05-04T21:50:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Alexis Sánchez schiet Sevilla boven de gevreesde degradatiestreep",
+      "link": "https://www.vi.nl/nieuws/alexis-s-nchez-schiet-sevilla-boven-de-gevreesde-degradatiestreep",
+      "summary": "De maandagavond bracht veel spektakel op de internationale velden. Lees in onderstaand liveblog de hoogtepunten terug:",
+      "publishedAt": "2026-05-04T21:27:27.000Z"
+    },
+    {
+      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Hearts v Rangers: Scottish Premiership – live",
-      "link": "https://www.theguardian.com/football/live/2026/may/04/hearts-v-rangers-scottish-premiership-live",
-      "summary": "⚽ Updates from the 5.30pm BST kick-off at Tynecastle ⚽ Live scores | Table | Read Football Daily | Mail John 2 min: Paul Simpson gets in touch: “Back in 64-65 my old man tells me he was at the game against Kilmarnock with his dad and 50000 others (possibly exaggerated). Hearts lost 2-0 and Kilmarnock won the league on goal average, by about 0.04 of a goal. In 85-86 we lived in Australia and woke up to the crushing disappointment of a 2-0 loss to Dundee after an unheard of unbeaten run which allowed Celtic to pip them on goal difference, by three goals. In that season I did see a game against Rangers, an absolute pasting as my 14 year old self remembers, 3-0 to Hearts. I would happily take something similar today, although a lucky draw wouldn’t upset me too much. Come on you Jambos.” 1 min: Hearts get a throw in the Rangers half. Kingsley launches, only to be cleared. And Rangers escape on the counter to great boos. Diomande gets it eventually but can’t do anything with it. Continue reading...",
-      "publishedAt": "2026-05-04T16:38:26.000Z"
+      "title": "Manchester City’s wild draw at Everton hands Arsenal title edge despite late Doku strike",
+      "link": "https://www.theguardian.com/football/2026/may/04/everton-manchester-city-premier-league-match-report",
+      "summary": "At home in north London, a celebrated former Everton midfielder must have been tempted to raise a toast to his old club. Mikel Arteta will know it would have tasted sweeter but for Jérémy Doku’s superb 97th-minute equaliser for Manchester City. He will also know the pendulum has swung Arsenal’s way in the race for the Premier League title. The last kick of a crazy second half salvaged what could prove a precious point for Pep Guardiola’s challengers, but they veered off course against Everton and also in the context of a title race with little margin for error. Continue reading...",
+      "publishedAt": "2026-05-04T21:13:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Roma zet belangrijke stap richting Champions League, weer belangrijke rol Malen",
+      "link": "https://www.vi.nl/nieuws/roma-zet-belangrijke-stap-richting-champions-league-weer-belangrijke-rol-malen",
+      "summary": "AS Roma heeft maandag een belangrijke stap gezet richting Champions League-voetbal. In eigen huis maakte het gehakt van laagvlieger Fiorentina, waarbij er ook weer een rol was weggelegd voor Donyell Malen.",
+      "publishedAt": "2026-05-04T21:13:04.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +84,10 @@
       "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Forest flirt in absurd seizoen nu meer met Champions League dan Championship",
-      "link": "https://www.vi.nl/nieuws/forest-flirt-in-absurd-seizoen-nu-meer-met-champions-league-dan-championship",
-      "summary": "Met een overwinning op Chelsea zette Nottingham Forest maandag een grote stap naar handhaving in de Premier League. De nummer zestien van de Premier League is net op tijd in vorm geraakt en werkt nu vol goede moed toe naar een wellicht wel héél erg bijzonder einde van dit merkwaardige seizoen.",
-      "publishedAt": "2026-05-04T16:36:08.000Z"
+      "title": "Manchester City verslikt zich in Everton en rolt rode loper uit voor Arsenal",
+      "link": "https://www.vi.nl/nieuws/manchester-city-verslikt-zich-in-everton-en-rolt-rode-loper-uit-voor-arsenal",
+      "summary": "Manchester City is de controle in de Engelse titelstrijd kwijtgeraakt. De ploeg van Pep Guardiola verspeelde maandagavond in een uiterst vermakelijk voetbalgevecht punten bij Everton, waardoor Arsenal nu weer zelf de sleutels in handen heeft voor haar eerste kampioenschap sinds 2004.",
+      "publishedAt": "2026-05-04T21:12:33.000Z"
     },
     {
       "type": "rss",
@@ -29,10 +95,32 @@
       "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Kansloos Chelsea lijdt tegen Nottingham zesde (!) nederlaag op rij",
-      "link": "https://www.vi.nl/nieuws/kansloos-chelsea-lijdt-tegen-nottingham-zesde-nederlaag-op-rij",
-      "summary": "Het gaat van kwaad tot erger voor Chelsea: de club leed maandag tegen Nottingham Forest de zesde (!) nederlaag op rij. Het goede nieuws is dat Chelsea eindelijk weer heeft weten te scoren, maar de zorgen zijn dus nog verre van voorbij.",
-      "publishedAt": "2026-05-04T16:25:43.000Z"
+      "title": "Dit is het resterende programma van Arsenal en Manchester City",
+      "link": "https://www.vi.nl/nieuws/arsenal-en-man-city-strijden-om-premier-league-titel-het-resterende-programma",
+      "summary": "Manchester City verspeelde maandagavond punten tegen Everton (3-3) en dat betekent goed nieuws voor Arsenal, dat hard op weg lijkt naar haar eerste titel in 22 jaar tijd. Dit is het resterende programma van de twee Engelse kampioenskandidaten.",
+      "publishedAt": "2026-05-04T21:05:33.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Pure theatre puts Hearts on cusp of title fairytale'",
+      "link": "https://www.bbc.com/sport/football/articles/ckgpxd82203o?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Scotland chief sports writer Tom English sums up the chaos and cacophony of Hearts' win over Rangers at Tynecastle.",
+      "publishedAt": "2026-05-04T20:09:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Mikel Arteta promises fired-up Arsenal will play ‘like beasts’ in Atlético second leg",
+      "link": "https://www.theguardian.com/football/2026/may/04/mikel-arteta-arsenal-atletico-madrid-second-leg",
+      "summary": "Champions League semi-final delicately poised at 1-1 ‘We are so hungry to get the game we want tomorrow’ Mikel Arteta promised that Arsenal’s players will turn into “beasts” as they attempt to reach the Champions League final for the first time since 2006. Arsenal drew 1-1 in the first leg of their semi-final against Atlético Madrid last week and will be confident of overcoming Diego Simeone’s side after winning five of their six matches in this competition at the Emirates Stadium so far this season, conceding only three goals. Viktor Gyökeres scored twice in a 4-0 win over Atlético during the group stage, although Arsenal will be wary of underestimating the team that knocked out Barcelona in the quarter-finals. Continue reading...",
+      "publishedAt": "2026-05-04T19:03:53.000Z"
     },
     {
       "type": "rss",
@@ -40,32 +128,32 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Awoniyi doubles up as much-changed Forest step towards safety and add to Chelsea gloom",
-      "link": "https://www.theguardian.com/football/2026/may/04/chelsea-nottingham-forest-premier-league-match-report",
-      "summary": "A second-string Nottingham Forest served up the shock of the Premier League weekend as they ran through an insipid Chelsea side in west London to keep their dual bid for Premier League safety and European glory alive. After Vítor Pereira announced eight changes from the team that beat Aston Villa in the Europa League semi-final first leg on Thursday night, and with the second leg just three days away, the Forest boss said he had “changed the players but not the spirit” of his team. If there were eyebrows raised when the news came in, Pereira’s appraisal turned out to be entirely correct. His understudies – led by the two-goal Taiwo Awoniyi and the winger Dilane Bakwa – were every inch the match of the many amortised investments that lined up for their opponents. Continue reading...",
-      "publishedAt": "2026-05-04T16:22:56.000Z"
+      "title": "Title-chasing Hearts clear crucial hurdle as Shankland shatters Rangers’ hopes",
+      "link": "https://www.theguardian.com/football/2026/may/04/hearts-rangers-scottish-premiership-match-report",
+      "summary": "A three-horse race has witnessed a faller. This most magical of Hearts seasons has edged closer to delivering the ultimate prize, an outcome that would shake Scottish football to its very foundations. This was a game Rangers and their manager, Danny Röhl, dare not lose. They did, courtesy of a stirring second-half comeback from Hearts. Rangers now trail the Edinburgh club by seven points. The Hearts lead over Celtic has been restored to three with the same number of fixtures to play. Continue reading...",
+      "publishedAt": "2026-05-04T18:40:48.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "VI Live: alle ballen op Schotse topper Hearts - Rangers",
-      "link": "https://www.vi.nl/nieuws/vi-live-chelsea-op-ongebruikelijk-moment-in-actie-tegen-forest",
-      "summary": "In de Premier League vervolgt Manchester City de titeljacht op bezoek bij Everton. Om 16.00 uur al komen Chelsea en Nottingham Forest in actie. In Schotland staat een kraker op de rol met Hearts tegen Rangers. Mis niks van het spektakel via dit liveblog.",
-      "publishedAt": "2026-05-04T16:22:22.000Z"
+      "title": "‘Not acceptable’: McFarlane bemoans Chelsea’s dire start in capitulation to Forest",
+      "link": "https://www.theguardian.com/football/2026/may/04/callum-mcfarlane-chelsea-nottingham-forest",
+      "summary": "Chelsea lose six in a row for first time since 1993 ‘We were nowhere near the level we needed to be’ Chelsea’s interim head coach, Calum McFarlane, admitted the opening 15 minutes of his side’s home defeat by Nottingham Forest were “not acceptable” as Chelsea lost a sixth consecutive Premier League match for the first time since 1993. A second-minute header from Taiwo Awoniyi was followed by an Igor Jesus penalty in the 15th minute to leave Vítor Pereira’s second-string side able to keep their hosts at arm’s length throughout the contest. Awoniyi’s second later in the game ultimately sealed three crucial points for Forest in their battle against relegation. Continue reading...",
+      "publishedAt": "2026-05-04T18:13:45.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Aké nadert vertrek bij City en lijkt op weg naar Serie A",
-      "link": "https://www.vi.nl/nieuws/ak-nadert-vertrek-bij-city-en-lijkt-op-weg-naar-serie-a",
-      "summary": "Nathan Aké (31) staat voor een zomers vertrek bij Manchester City. De verdediger van het Nederlands elftal geniet serieuze interesse uit de top van de Serie A. Dat bevestigen ingewijden.",
-      "publishedAt": "2026-05-04T16:20:00.000Z"
+      "title": "What Champions League failure means for 'broken club' Chelsea",
+      "link": "https://www.bbc.com/sport/football/articles/c86en84x5wlo?at_medium=RSS&at_campaign=rss",
+      "summary": "After a sixth-straight league loss, Chelsea are almost certain to miss out on Champions League qualification - a bitter blow which is likely to have far‑reaching consequences.",
+      "publishedAt": "2026-05-04T17:56:35.000Z"
     },
     {
       "type": "rss",
@@ -75,129 +163,19 @@
       "flag": "🌍",
       "title": "Marcelino returns Villarreal to the Champions League … then walks away | Sid Lowe",
       "link": "https://www.theguardian.com/football/2026/may/04/la-liga-marcelino-returns-villarreal-champions-league-walks-away",
-      "summary": "It took six years and a lot of soul-searching for the coach nicknamed Salvador Milagros to return in 2023. After more miracles, he is off again In the final minutes before Villarreal met Copenhagen in December, they came down the tunnel, marched on to the pitch, lined up before the ballboys holding out that starry tarpaulin like firemen waiting for a leap from a burning building, and listened to the Champions League anthem blasting out. Only there was no die besten that night, no grosse sportliche veranstaltung and no grandes équipes either. No lyrics at all, in fact. Someone somewhere had put on the Europa League tune by mistake, so they shifted their feet and looked awkward instead. Then they went out and got beaten again. But that was then and this was now and this time the DJ played the right record and everyone danced, singing along to the chorus, life good again. That was December, before week six in the Champions League, and Villarreal were soon gone. Without a win, having picked up a single point in eight games, they were the second worst team there and eliminated early: the continent’s premier competition, it seemed, was not their place, some kind of musical metaphor in that mix-up. But this was May, five months on, and they had just beaten Levante 5-1, securing the opportunity to go back and try again. They had done that early too. So at the full-time whistle on Saturday afternoon, week 34 in La Liga, the right anthem did go round the Ceramica, and so did the players, setting off on a lap of honour. Above them, message appeared on the scoreboard. “We are a Champions League team (again),” it said. Continue reading...",
+      "summary": "It took six years and a lot of soul-searching for the coach nicknamed Salvador Milagros to return in 2023. After more miracles, he is off again In the final minutes before Villarreal met Copenhagen in December, they came down the tunnel, marched on to the pitch, lined up before the ballboys holding out that starry tarpaulin like firemen waiting for a leap from a burning building, and listened to the Champions League anthem blasting out. Only there was no die besten that night, no grosse sportliche veranstaltung and no grandes équipes either. No lyrics at all, in fact. Someone somewhere had put on the Europa League tune by mistake, so they shifted their feet and looked awkward instead. Then they went out and got beaten again. But that was then and this was now and this time the DJ played the right record and everyone danced, singing along to the chorus, life good again. That was December, before week six in the Champions League, and Villarreal were soon gone. Without a win, having picked up a single point in eight games, they were the second-worst team there and eliminated early: the continent’s premier competition, it seemed, was not their place, some kind of musical metaphor in that mix-up. But this was May, five months on, and they had just beaten Levante 5-1, securing the opportunity to go back and try again. They had done that early too. So at the full-time whistle on Saturday afternoon, week 34 in La Liga, the right anthem did go round the Cerámica, and so did the players, setting off on a lap of honour. Above them, a message appeared on the scoreboard. “We are a Champions League team (again),” it said. Continue reading...",
       "publishedAt": "2026-05-04T16:18:42.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Waarom Oranje werk maakt van standaardsituaties",
-      "link": "https://www.vi.nl/pro/analyse-waarom-oranje-werk-maakt-van-standaardsituaties",
-      "summary": "Ronald Koeman is overstag: het Nederlands elftal is in Zeist geholpen door een specialist op het gebied van standaardsituaties. De cijfers van Oranje in de WK-kwalificatie tonen aan waarom dat broodnodig is.",
-      "publishedAt": "2026-05-04T16:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How De Zerbi brought life to sinking Spurs",
-      "link": "https://www.bbc.com/sport/football/articles/clypkd5n7ego?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport tactics expert Umir Irfan looks at how Roberto de Zerbi has revived Premier League strugglers Tottenham.",
-      "publishedAt": "2026-05-04T15:18:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Mourinho's Benfica still unbeaten - but miss out on title",
-      "link": "https://www.bbc.com/sport/football/articles/cgmp93nnwyeo?at_medium=RSS&at_campaign=rss",
-      "summary": "Jose Mourinho's Benfica could go an entire season unbeaten - but it will not be enough to deliver the club a 39th Portuguese league title.",
-      "publishedAt": "2026-05-04T15:05:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Hurzeler agrees new long-term deal with Brighton",
-      "link": "https://www.bbc.com/sport/football/articles/cwy2py3yev9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Fabian Hurzeler extends his stay as Brighton boss after agreeing a new long-term contract.",
-      "publishedAt": "2026-05-04T14:39:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Michael Carrick expected to be offered head coach deal by Manchester United",
-      "link": "https://www.theguardian.com/football/2026/may/04/michael-carrick-manchester-united-head-coach-deal",
-      "summary": "Carrick has taken side into Champions League as interim Matheus Cunha feels Carrick has Ferguson-era ‘magic’ Michael Carrick is expected to be offered the chance to continue as Manchester United’s head coach after qualifying for the Champions League. Carrick has not held talks regarding turning his interim role into a permanent one because the executive were intent on waiting to see whether he could lead United into Europe’s top club competition. Continue reading...",
-      "publishedAt": "2026-05-04T12:37:42.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "WSL and WCL talking points: City have a Knaak and is Dumornay the world’s best?",
-      "link": "https://www.theguardian.com/football/2026/may/04/wsl-wcl-talking-points-manchester-city-rebecca-knaak-melchie-dumornay-ol-lyonnes",
-      "summary": "OL Lyonnes ended Arsenal’s Champions League hopes while Rebecca Knaak puts Man City on the brink of WSL title glory Who is the best female player in the world right now? Melchie Dumornay continues to make a strong claim for that accolade after her starring role in OL Lyonnes’ comeback to beat Arsenal in the Champions League semi-finals. The fearless Haiti international won a first-half penalty and provided a superb assist for Jule Brand’s late winner in the second leg, as well as being a constant thorn in Arsenal’s side with her pace, trickery and energy. The attacking midfielder, having missed the first leg through injury, helped the French side come from 2-1 down to win 4-3 on aggregate. Tom Garry Continue reading...",
-      "publishedAt": "2026-05-04T11:25:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Unacceptable season cannot be repeated - Van Dijk",
-      "link": "https://www.bbc.com/sport/football/articles/c2e2xlz7d2vo?at_medium=RSS&at_campaign=rss",
-      "summary": "Liverpool captain Virgil van Dijk says his side's season has been \"unacceptable\" following an 18th defeat in all competitions.",
-      "publishedAt": "2026-05-04T11:05:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Premflix' and tourist fans - future of football predictions",
-      "link": "https://www.bbc.com/sport/football/articles/cn4vpezd2jpo?at_medium=RSS&at_campaign=rss",
-      "summary": "Former broadcasting executive Neil Duncanson and author Alex Fynn, who made remarkably accurate predictions about football's future in 1994, discuss what the game will look like in 10 years' time.",
-      "publishedAt": "2026-05-04T05:37:01.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Plus personne ne rit de Matthieu Epolo : les progrès du gardien du Standard sont épatants",
-      "link": "https://www.walfoot.be/news/2026-05-04/plus-personne-ne-rit-de-matthieu-epolo--les-progres-du-gardien-du-standard-sont-epatants",
-      "summary": "Le Standard l'a emporté 0-5 ce week-end et pourtant, l'homme du match est peut-être Matthieu Epolo : le gardien des Rouches a sauvé ses couleurs avant que la roue tourne. Cette saison, ce n'est pas la première fois.",
-      "publishedAt": "2026-05-04T04:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Het WK komt er snel aan: nieuwe wending in het verhaal van Romelu Lukaku",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/het-wk-komt-er-snel-aan-nieuwe-wending-in-het-verhaal-van-romelu-lukaku",
-      "summary": "Het is stilaan D-day voor Romelu Lukaku. De speler van Napoli en de Rode Duivels staat dichter dan ooit bij een terugkeer. Al is de vraag nog maar of hij nog speelkansen zal krijgen bij zijn Italiaanse ploeg.",
-      "publishedAt": "2026-05-04T04:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Rik De Mil assume sa responsabilité, mais passe aussi un savon à ses joueurs : \"3 ou 4 joueurs au niveau\"",
-      "link": "https://www.walfoot.be/news/2026-05-04/rik-de-mil-assume-sa-responsabilite-mais-passe-aussi-un-savon-a-ses-joueurs--3-ou-4-joueurs-au-niveau",
-      "summary": "Rik De Mil a passé un savon à ses joueurs à la mi-temps du match entre Malines et La Gantoise (1-0). L'entraîneur les a mis face à leurs responsabilités, tout en assumant également sa part.",
-      "publishedAt": "2026-05-04T04:00:00.000Z"
+      "title": "Le parquet de l'Union belge ouvre une enquête sur les propos de Christian Burgess après STVV-Union SG",
+      "link": "https://www.walfoot.be/news/2026-05-04/le-parquet-de-lunion-belge-ouvre-une-enquete-sur-les-propos-de-christian-burgess-apres-stvv-union-sg",
+      "summary": "Le parquet de l'Union belge a ouvert une enquête sur les propos de Christian Burgess envers l'arbitrage après la défaite de l'Union Saint-Gilloise contre Saint-Trond (2-1), samedi soir.",
+      "publishedAt": "2026-05-04T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -205,10 +183,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "\"Ik heb de kwaliteiten om het verschil te maken\": smaakmaker van Westerlo bulkt van het vertrouwen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/ik-heb-de-kwaliteiten-om-het-verschil-te-maken-westelse-smaakmaker-bulkt-van-het-vertrouwen",
-      "summary": "KVC Westerlo leek tegen OH Leuven een duidelijke thuisnederlaag te lijden, maar dankzij een zinderende tweede helft pakte het een punt. Bryan Reynolds deelde twee assists uit en had zo een groot aandeel in de remontada van zijn ploeg.",
-      "publishedAt": "2026-05-04T04:00:00.000Z"
+      "title": "Jonathan Lardot oordeelt over cruciale fases in STVV - Union én reageert op uithaal van Christian Burgess",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/jonathan-lardot-oordeelt-over-cruciale-fases-in-stvv---union-en-reageert-op-uithaal-van-christian-burgess",
+      "summary": "Na de topper tussen STVV en Union SG was er heel wat te doen over de arbitrage. Vooral Christian Burgess stond op de achterste poten. In een reactie laat Jonathan Lardot zijn licht schijnen op de kwestie.",
+      "publishedAt": "2026-05-04T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -216,21 +194,32 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Wie o wie? Vier pertinente vragen met nog vier speeldagen voor de boeg",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/wie-o-wie-vier-pertinente-vragen-met-nog-vier-speeldagen-voor-de-boeg",
-      "summary": "Nog vier speeldagen voor de boeg in de Champions' Play-offs en Europe Play-offs. Tussendoor is er ook nog een bekerfinale en ook in de Relegation Play-offs én de Promotion Play-offs staat er nog wel wat op het spel. Tijd voor vier pertinente vragen met nog vier speeldagen te gaan dus.",
-      "publishedAt": "2026-05-04T03:40:00.000Z"
+      "title": "Philippe Albert windt er géén doekjes om en komt met fikse waarschuwing aan het adres van Anderlecht",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/philippe-albert-windt-er-geen-doekjes-om-en-komt-met-fikse-waarschuwing-aan-het-adres-van-anderlecht",
+      "summary": "Thorgan Hazard verlaat RSC Anderlecht na het huidige seizoen. De Belgische recordkampioen bereikte geen akkoord met de voormalige Rode Duivel over een contractverlenging. Philippe Albert waarschuwt paars-wit voor de gevolgen.",
+      "publishedAt": "2026-05-04T08:30:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEL : Antoine Sibierski est le nouveau directeur sportif d'Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-05-04/officiel--antoine-sibierski-est-le-nouveau-directeur-sportif-danderlecht",
-      "summary": "C'était attendu, mais c'est désormais officiel : Antoine Sibierski est le nouveau directeur sportif du Sporting d'Anderlecht. L'annonce est tombée ce lundi après-midi.",
-      "publishedAt": "2026-05-04T03:30:00.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sir Alex Ferguson hospitalisé : les dernières nouvelles se veulent rassurantes",
+      "link": "https://www.walfoot.be/news/2026-05-04/sir-alex-ferguson-hospitalise--les-dernieres-nouvelles-se-veulent-rassurantes",
+      "summary": "Inquiétude autour d'Alex Ferguson dimanche après-midi à Old Trafford. Le légendaire ancien entraîneur de Manchester United a été emmené à l'hôpital juste avant le choc contre Liverpool FC après s'être senti mal.",
+      "publishedAt": "2026-05-04T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "🎥 De toute beauté : superbe but de Jérémy Doku avec Manchester City",
+      "link": "https://www.walfoot.be/news/2026-05-04/-de-toute-beaute--superbe-but-de-jeremy-doku-avec-manchester-city",
+      "summary": "Jérémy Doku a ouvert le score pour Manchester City contre Everton. Le Diable Rouge a inscrit un superbe but du pied gauche.",
+      "publishedAt": "2026-05-04T08:09:00.000Z"
     },
     {
       "type": "rss",
@@ -238,21 +227,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Anderlecht komt met groot nieuws: \"Zoektocht erg grondig gevoerd\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/anderlecht-komt-met-groot-nieuws-zoektocht-erg-grondig-gevoerd",
-      "summary": "Het hing al een tijdje in de pijplijn, maar nu is het helemaal klaar als een klontje. Antoine Sibierski is de nieuwe Sportief Directeur van RSC Anderlecht. Hij begint ook meteen en wacht dus niet tot het seizoen voorbij is.",
-      "publishedAt": "2026-05-04T03:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Le Bayern de Vincent Kompany peut-il retourner la situation contre le PSG ? Thomas Müller y croit",
-      "link": "https://www.walfoot.be/news/2026-05-04/le-bayern-de-vincent-kompany-peut-il-retourner-la-situation-contre-le-psg--thomas-muller-y-croit",
-      "summary": "Véritable légende du Bayern, Thomas Müller s'est exprimé dans une newsletter avant la demi-finale retour de Ligue des champions entre le club allemand et le PSG. Celui qui évolue désormais du côté des Whitecaps de Vancouver croit en la qualification de son ancienne équipe.",
-      "publishedAt": "2026-05-04T03:00:00.000Z"
+      "title": "Twee Belgische topclubs willen Jeppe Erenbjerg van Zulte Waregem kapen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/twee-belgische-topclubs-willen-jeppe-erenbjerg-van-zulte-waregem-kapen",
+      "summary": "Jeppe Erenbjerg heeft er een uitstekend seizoen bij Zulte Waregem opzitten. De prestaties van de 26-jarige Deen springen in het oog van de Belgische topclubs. Twee van hen tonen concrete interesse.",
+      "publishedAt": "2026-05-04T08:00:00.000Z"
     },
     {
       "type": "rss",
@@ -260,75 +238,97 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "DONE DEAL: vorig jaar nog bij Club Brugge, nu slaat Anderlecht toe met meerjarig contract",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/done-deal-vorig-jaar-nog-bij-club-brugge-nu-slaat-anderlecht-toe-met-meerjarig-contract",
-      "summary": "Daevon Bulembi heeft zijn eerste profcontract getekend bij RSC Anderlecht. De club kondigde het nieuws aan in een persbericht dat maandagnamiddag op de clubwebsite verscheen. Daarmee slaan ze toch wel een leuke slag, zoveel is duidelijk.",
-      "publishedAt": "2026-05-04T03:00:00.000Z"
+      "title": "Dit moet toch als muziek in de oren klinken bij de fans? Dit zijn de eerste woorden van Antoine Sibierski als nieuwe TD van Anderlecht",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/dit-moet-toch-als-muziek-in-de-oren-klinken-bij-de-fans-dit-zijn-de-eerste-woorden-van-antoine-sibierski-als",
+      "summary": "RSC Anderlecht heeft met Antoine Sibierski eindelijk de langverwachte nieuwe technisch directeur voorgesteld aan pers en publiek. De eerste woorden van de nieuwe TD moeten overigens als muziek in de oren klinken bij de paars-witte aanhang.",
+      "publishedAt": "2026-05-04T07:40:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Énorme surprise en Suisse : promu la saison dernière, le FC Thoune est champion",
-      "link": "https://www.walfoot.be/news/2026-05-04/norme-surprise-en-suisse--promu-la-saison-derniere-le-fc-thoune-est-champion",
-      "summary": "Le FC Thoune vient de réaliser l'un des plus grands exploits du football suisse moderne en étant sacré champion de Super League. Promu cette saison, le FC Thoune rejoint les Young Boys, Bâle et Zurich parmi les rares champions suisses des 22 dernières années.",
-      "publishedAt": "2026-05-04T02:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Serrano defends titles on Han vs Holm bill with undercard confirmed",
-      "link": "https://www.skysports.com/boxing/news/12040/13528928/amanda-serrano-to-make-unified-featherweight-title-defence-on-may-30-bill-topped-by-stephanie-han-vs-holly-holm-rematch",
-      "summary": "Amanda Serrano will return to the ring on May 30 at the El Paso County Coliseum in Texas.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Forest boost Premier League survival chances by stunning woeful Chelsea",
-      "link": "https://www.skysports.com/football/chelsea-vs-nottingham-forest/report/531473",
-      "summary": "Nottingham Forest stunned woeful Chelsea 3-1 at Stamford Bridge to go six points clear of the Premier League relegation zone and send a warning shot to Aston Villa ahead of Thursday's Europa League semi-final second leg.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Forest hand Chelsea sixth straight PL defeat and move six clear of drop zone",
-      "link": "https://www.skysports.com/watch/video/13540133/chelsea-1-3-nottingham-forest-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from Chelsea’s match against Nottingham Forest in the Premier League.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "What a goal! Pedro ends Chelsea's PL drought with stunning overhead kick",
-      "link": "https://www.skysports.com/watch/video/13540128/goal-j-pedro-903-chelsea-1-3-nottm-forest",
-      "summary": "Joao Pedro ended Chelsea's nine-hour goal drought with a stunning overhead kick in their Premier League clash with Nottingham Forest.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
       "country": "ES",
       "flag": "🌍",
-      "title": "Arsenal vs Atletico Madrid preview: Odegaard one of three missing training",
-      "link": "https://www.skysports.com/football/arsenal-vs-atletico-madrid/live/554949",
-      "summary": "",
+      "title": "Gros coup dur pour le Real Madrid : un cadre sera absent jusqu'en fin de saison et manquera la Coupe du monde",
+      "link": "https://www.walfoot.be/news/2026-05-04/gros-coup-dur-pour-le-real-madrid--un-cadre-sera-absent-jusquen-fin-de-saison-et-manquera-la-coupe-du-monde",
+      "summary": "Nouveau coup dur pour le Real Madrid : Ferland Mendy souffre d'une blessure au tendon du muscle droit fémoral. C'est ce qu'a annoncé le Real Madrid dans un communiqué ce lundi.",
+      "publishedAt": "2026-05-04T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Robert Lewandowski verlaat Barcelona en heeft een akkoord met Italiaanse grootmacht'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-04/robert-lewandowski-verlaat-barcelona-en-heeft-een-akkoord-met-italiaanse-grootmacht",
+      "summary": "Robert Lewandowski gaat (zo goed als zeker) voor Juventus FC voetballen. De Poolse aanvaller heeft een mondeling akkoord met de Italiaanse topclub. De bevestiging van de transfer zal er pas na het huidige seizoen komen.",
+      "publishedAt": "2026-05-04T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Vers un retour de Thibaut Courtois pour le Clásico ce week-end ?",
+      "link": "https://www.walfoot.be/news/2026-05-04/vers-un-retour-de-thibaut-courtois-pour-le-clasico-ce-week-end",
+      "summary": "Thibaut Courtois pourrait bien faire son retour dans les cages madrilènes pour le Clásico entre le FC Barcelone et le Real Madrid, ce dimanche, dans le cadre de la 35e journée du championnat espagnol.",
+      "publishedAt": "2026-05-04T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wu wins World Snooker Championship after final-frame epic with Murphy",
+      "link": "https://www.skysports.com/snooker/news/12040/13540204/wu-yize-wins-2026-world-snooker-championship-as-he-beats-shaun-murphy-in-final-frame-epic-at-crucible",
+      "summary": "Wu Yize beat Shaun Murphy 18-17 to win the World Snooker Championship after an epic finale at the Crucible that came down to a final-frame decider.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Woods not likely to play at US Open, says USGA chief",
+      "link": "https://www.skysports.com/golf/news/12040/13540225/tiger-woods-not-likely-to-play-at-us-open-or-us-senior-open-says-usga-chief-executive-mike-whan",
+      "summary": "Tiger Woods is not expected to play at either the US Open or US Senior Open as he continues his recovery, according to United States Golf Association chief executive Mike Whan.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hearts move into Scottish Premiership title box seat with win over Rangers",
+      "link": "https://www.skysports.com/watch/video/13540185/hearts-2-1-rangers-scottish-premiership-highlights",
+      "summary": "Highlights of the Scottish Premiership match between Hearts and Rangers.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Carra: If Arsenal beat West Ham, they win the Premier League",
+      "link": "https://www.skysports.com/football/news/12040/13540221/everton-3-3-man-city-if-arsenal-beat-west-ham-on-sunday-they-win-the-premier-league-title-says-jamie-carragher",
+      "summary": "If Arsenal beat West Ham at the London Stadium on Sunday, live on Sky Sports, they will win the Premier League title, says Jamie Carragher.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Title-race twist! Doku saves Man City with dramatic stoppage-time equaliser",
+      "link": "https://www.skysports.com/watch/video/13540239/everton-3-3-man-city-premier-league-highlights",
+      "summary": "FREE TO WATCH: Highlights from Everton’s match against Manchester City in the Premier League.",
       "publishedAt": null
     }
   ]
