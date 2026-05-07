@@ -1,71 +1,82 @@
 {
-  "generatedAt": "2026-05-06T22:00:44.391Z",
+  "generatedAt": "2026-05-07T03:32:31.663Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "‘If you asked me to go and do it all again, I wouldn’t’: Jamie Vardy on his rollercoaster career",
+      "link": "https://www.theguardian.com/football/2026/may/07/jamie-vardy-leicester-premier-league-title-football",
+      "summary": "Striker reflects on the ultimate high with Leicester and the role of the self-titled ‘Inbetweeners’ in his success “I was just a little freak in the works.” Jamie Vardy is reflecting on his career with the usual levels of self-deprecation and pondering whether anyone could possibly board the same rollercoaster. “It’s not the common way of doing things, is it? I don’t think it will probably happen again, but it did happen for me and it was hard work. It really was tough, but all worth it.” Humour has always been a preferred Vardy tool for removing the sting from a serious point. He is speaking to mark a new documentary about his rise, which brought him from warehouse work making walking frames and crutches to scarcely credible levels of Premier League success. Continue reading...",
+      "publishedAt": "2026-05-06T23:01:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "From ego-ridden team to complete package - why PSG pose ultimate test",
+      "link": "https://www.bbc.com/sport/football/articles/cx218q541lvo?at_medium=RSS&at_campaign=rss",
+      "summary": "Luis Enrique's expertise at rebuilding a culture as well as a team means Arsenal will confront the complete package when they meet holders PSG in the Champions League final.",
+      "publishedAt": "2026-05-06T22:58:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Ambition, quality & hunger' key to title triumph - Jeglertz",
+      "link": "https://www.bbc.com/sport/football/articles/clypjqzg0wjo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City manager Andree Jeglertz says he \"had a feeling from the beginning\" that his side would win the Women's Super League title this year, with the club's ambition, quality and hunger the key.",
+      "publishedAt": "2026-05-06T22:21:26.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "FR",
       "flag": "🌍",
-      "title": "Champions League semifinal live updates: Bayern Mu...",
-      "link": "https://www.espn.com/soccer/story/_/id/48678489/uefa-champions-league-semifinal-live-updates-bayern-munich-host-paris-saint-germain",
-      "summary": "Paris Saint-Germain will look to retain their Champions League title in the final against Arsenal after eliminating Bayern Munich, winning 6-5 on aggregate.",
-      "publishedAt": "2026-05-06T22:46:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "PSG holds off Bayern to set up final with Arsenal",
-      "link": "https://www.espn.com/soccer/story/_/id/48695288/psg-holds-bayern-set-ucl-final-arsenal",
-      "summary": "PSG edged a thrilling 5-4 game in the first leg in Paris last week, and the defending champions made the advantage count to progress 6-5 on aggregate to set up a final in Budapest against Arsenal on May 30.",
-      "publishedAt": "2026-05-06T22:18:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FIFA extends Prestianni ban to World Cup matches",
-      "link": "https://www.espn.com/soccer/story/_/id/48692428/fifa-extends-uefa-ban-argentina-gianluca-prestianni-world-cup",
-      "summary": "FIFA confirmed a global ban Wednesday for Gianluca Prestianni that will rule the Benfica winger out of two FIFA World Cup games in the United States if he is selected in Argentina's squad.",
-      "publishedAt": "2026-05-06T22:18:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Mexico: Liga MX players late to camp out of WC",
-      "link": "https://www.espn.com/soccer/story/_/id/48694351/mexico-liga-mx-players-world-cup-team-miss-camp-playoffs",
-      "summary": "Mexico has threatened to leave Liga MX-based players out of contention for the World Cup roster if they are late to a training camp that begins on Wednesday night.",
-      "publishedAt": "2026-05-06T22:18:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FIFA prez: WC tickets priced at U.S. market rate",
-      "link": "https://www.espn.com/soccer/story/_/id/48696372/fifa-president-gianni-infantino-2026-world-cup-ticket-prices-usa",
-      "summary": "FIFA president Gianni Infantino has again defended high ticket prices for this summer's World Cup and brushed off tickets being resold for the final at a cost of more than $2 million.",
-      "publishedAt": "2026-05-06T22:18:56.000Z"
+      "title": "Why resolute Arsenal will believe prolific PSG can be beaten in final",
+      "link": "https://www.bbc.com/sport/football/articles/ckgpxp9q8yno?at_medium=RSS&at_campaign=rss",
+      "summary": "With Paris St-Germain waiting in the Champions League final, will Arsenal withstand the firepower of one of Europe's most formidable attacks and lift the trophy for the first time on 30 May?",
+      "publishedAt": "2026-05-06T22:19:46.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "DE",
+      "country": "FR",
       "flag": "🌍",
-      "title": "Luis Enrique lost met listig plan twee grote problemen op",
-      "link": "https://www.vi.nl/pro/tactische-analyse-bayern-psg-alles-over-links-bij-luis-enrique",
-      "summary": "Paris Saint-Germain heeft Bayern München uitgeschakeld: 1-1. Tactische analyse van een wedstrijd waarin Luis Enrique de oplossing zoekt over links.",
-      "publishedAt": "2026-05-06T21:53:44.000Z"
+      "title": "Franse media zien zeldzaam goed PSG: 'De Champions League is hun thuis'",
+      "link": "https://www.vi.nl/nieuws/franse-media-zien-zeldzaam-goed-psg-de-champions-league-is-hun-thuis",
+      "summary": "De Franse media bejubelen Paris Saint-Germain na het uitschakelen van Bayern München en het bereiken van de finale in de Champions League . De ploeg van Luis Enrique heeft het journaille in eigen land dubbel en dwars overtuigd met het dominante optreden in Beieren, al is niet iedereen even enthousiast.",
+      "publishedAt": "2026-05-06T22:08:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "PSG en Arsenal later deze maand naar Boedapest voor CL-finale",
+      "link": "https://www.vi.nl/nieuws/psg-en-arsenal-later-deze-maand-in-de-finale-in-de-pusk-s-ar-na",
+      "summary": "Het werd geen spektakelstuk zoals een week eerder, maar toch was er genoeg te doen om Bayern München - Paris Saint-Germain ( 1-1 ) vanavond. Ook verraste Almere City met een dik verdiende zege op De Graafschap in de nacompetitie. Lees het allemaal hier terug!",
+      "publishedAt": "2026-05-06T22:08:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Manchester City win WSL title for second time after Arsenal fail to beat Brighton",
+      "link": "https://www.theguardian.com/football/2026/may/06/manchester-city-win-wsl-title-second-time-after-arsenal-fail-to-beat-brighton",
+      "summary": "Arsenal’s 1-1 draw against Brighton hands City title Andrée Jeglertz revels in ‘amazing moment’ Manchester City are Women’s Super League champions for the first time in 10 years after Arsenal were held to a frustrating draw at Brighton. It is not the nicest way to win a league title, but City will not care. Their only previous WSL title was won in 2016 and they have had six runners-up finishes since, including second place in the shortened Spring Series as the competition moved from its previous summer scheduling. Continue reading...",
+      "publishedAt": "2026-05-06T22:07:18.000Z"
     },
     {
       "type": "rss",
@@ -77,6 +88,17 @@
       "link": "https://www.vi.nl/nieuws/bayern-prijst-psg-en-laakt-arbiter-ik-krijg-de-bal-op-mijn-buik-hij-op-z-n-arm",
       "summary": "Bayern München zag zijn Treble-droom in duigen vallen, woensdagavond tegen Paris Saint-Germain. De Franse kampioen was over twee duels nipt te sterk in de halve finales van de Champions League. De Münchenaren likken hun wonden.",
       "publishedAt": "2026-05-06T21:50:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Premier League CEO Masters earned £2.6m including £1.1m bonus in 2024-25",
+      "link": "https://www.theguardian.com/football/2026/may/06/premier-league-ceo-richard-masters-earned-1m-bonus-2024-2025",
+      "summary": "Accounts for year ending July 2025 show improved salary Richard Masters had earned £1.9m the previous year The latest accounts filed by the Premier League show the chief executive, Richard Masters, received £1m in a performance-related bonus. Accounts by the Premier League for the year ending 31 July 2025 were published on Companies House on Tuesday and revealed Masters’ improved salary. Continue reading...",
+      "publishedAt": "2026-05-06T21:32:13.000Z"
     },
     {
       "type": "rss",
@@ -102,24 +124,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "VI Live: PSG en Arsenal later deze maand in de finale in de Puskás Aréna",
-      "link": "https://www.vi.nl/nieuws/vi-live-bayern-en-psg-leven-toe-naar-volgende-voetbalshow",
-      "summary": "Over het spektakelstuk tussen Paris Saint-Germain en Bayern München ( 5-4 ) werd lang nagesproken. Voetballiefhebbers kunnen hun hart ophalen, want beide grootmachten staan woensdag opnieuw tegenover elkaar. De inzet? Een plek in de finale van de Champions League. Mis niets met VI Live!",
-      "publishedAt": "2026-05-06T21:16:02.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "FR",
       "flag": "🌍",
       "title": "Dembélé ends Bayern hopes to send PSG into final showdown with Arsenal",
       "link": "https://www.theguardian.com/football/2026/may/06/bayern-psg-champions-league-semi-final-second-leg-match-report",
-      "summary": "It cannot always be a laugh a minute. Paris Saint-Germain will play Arsenal in the Champions League final and they made sure of that by getting serious, nullifying an off-key Bayern Munich and rarely wobbling after adding to their first-leg lead. Luis Enrique’s team should have won by more in a match that did not, and probably never could, hit the previous week’s heights but their triumph was underpinned by an aptitude for the dirtier work that would serve them well in Budapest. Ousmane Dembélé’s emphatic third-minute finish seemed to have ended this semi-final’s goalfest and the regret for Vincent Kompany will be that Bayern were a yard short of their sharpest all night. It could have been different if one of their openings before the break, Jamal Musiala spurning the best, had gone in but Harry Kane’s added-time goal came far too late. Continue reading...",
+      "summary": "It cannot always be a laugh a minute. This rematch between elite football’s two genuinely enthralling propositions did not veer as wildly as the previous week’s rollercoaster and, in truth, was probably never going to. What it did provide was more proof of Paris Saint-Germain’s all-round brilliance, manifested in an ability to put business and pleasure on equal pegging. They held a largely off-key Bayern Munich at arm’s length for most of the night, only allowing Harry Kane a few seconds to pursue his dream Champions League final when he hammered in near the end. PSG are the ones who will meet Arsenal and the task facing Mikel Arteta was laid bare here. Continue reading...",
       "publishedAt": "2026-05-06T21:09:21.000Z"
     },
     {
@@ -139,28 +150,6 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Saka the hero as Arsenal reach first Champions League final in 20 years",
-      "link": "https://www.bbc.com/sport/football/videos/cy42mxj22jdo?at_medium=RSS&at_campaign=rss",
-      "summary": "Bukayo Saka scores the only goal of the game to send Arsenal back to the Champions League final for the first time since 2006, as Mikel Arteta's side see off Atletico Madrid 1-0 at the Emirates Stadium.",
-      "publishedAt": "2026-05-06T21:00:05.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "All you need to know about the Champions League final",
-      "link": "https://www.bbc.com/sport/articles/cx21p247016o?at_medium=RSS&at_campaign=rss",
-      "summary": "Our Ask Me Anything team tell you all you need to know about the 2026 Champions League final between Arsenal and Paris St-Germain.",
-      "publishedAt": "2026-05-06T20:59:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "Inside Man City's WSL title-winning season",
       "link": "https://www.bbc.com/sport/football/articles/c2lrzd4x02vo?at_medium=RSS&at_campaign=rss",
       "summary": "Manchester City have won a first Women's Super League title in 10 years - but how did they achieve it?",
@@ -172,54 +161,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Manchester City win WSL title for second time after Arsenal fail to beat Brighton",
-      "link": "https://www.theguardian.com/football/2026/may/06/manchester-city-win-wsl-title-second-time-after-arsenal-fail-to-beat-brighton",
-      "summary": "Arsenal’s 1-1 draw against Brighton hands City title Andrée Jeglertz’s side still have chance of Double Manchester City are WSL champions for the first time in 10 years, after Arsenal were held to a frustrated draw at Brighton. It is not the nicest way to win a league title, but City will not care. Their only previous WSL title was won in 2016 and they have had six runners-up finishes since, as well as second place in the shortened Spring Series as the competition moved from its previous summer scheduling. Continue reading...",
-      "publishedAt": "2026-05-06T20:42:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Why was Neves handball against Bayern not a penalty?",
-      "link": "https://www.bbc.com/sport/articles/c4gvmmg0yr8o?at_medium=RSS&at_campaign=rss",
-      "summary": "Bayern Munich players, coaching staff and fans at the Allianz Arena were in disbelief after they were denied a penalty for a handball by Joao Neves in their semi-final second leg against Paris St-Germain.",
-      "publishedAt": "2026-05-06T20:16:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "Arsenal no longer fear falling short and now have clear sight of immortality | David Hytner",
       "link": "https://www.theguardian.com/football/2026/may/06/arsenal-immortality-champions-league",
       "summary": "In the space of a week the mood has changed, with positive energy replacing suffering, and two trophies are suddenly within reach It was a soundbite designed to go viral, the kind the ex-pros in the TV studios are always looking to confect; snappy, heavy on hyperbole, bang in the moment. Thierry Henry made it pop on Tuesday night as he interviewed Bukayo Saka on CBS Sports after Arsenal had beaten Atlético Madrid to advance to the Champions League final. “We were the Invincibles. You will be the Unforgettables,” Henry said. There it was, as laid out by one of the greats, the goalscoring hero of Arsenal’s unbeaten bolt to the 2004 Premier League title, the last one they won. Continue reading...",
       "publishedAt": "2026-05-06T18:00:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal fans plan trips to Champions League final but face £1,500 flights or Bucharest night train",
-      "link": "https://www.theguardian.com/football/2026/may/06/arsenal-fans-champions-league-final-flights-bucharest-night-train-budapest",
-      "summary": "Logistics complicated for 30 May showpiece in Budapest Arsenal to receive only 16,824 official ticket allocation Arsenal have had to find different ways to win this season as they pursue a Premier League and Champions League double. Their fans will now have to show similar dexterity if they hope to make it to Budapest for Uefa’s showpiece final. With direct flights from London costing up to £1,500 and the only available hotel rooms about 20 miles from the Hungarian capital, it could be the most expensive Champions League final to attend in history. But with a bit of luck and logistical flexibility (and the ability to stay awake all night), Gunners supporters can still hope to match Declan Rice’s demand that 200,000 descend upon the Danube at the end of this month. Continue reading...",
-      "publishedAt": "2026-05-06T15:39:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Gianni Infantino says high World Cup ticket prices are justified in US market",
-      "link": "https://www.theguardian.com/football/2026/may/06/gianni-infantino-says-fifas-high-world-cup-ticket-prices-are-justified-in-us-market",
-      "summary": "Fan groups have called prices a ‘monumental betrayal’ Fifa collects 30% cut on resale market Fifa’s president, Gianni Infantino, has defended World Cup ticket prices, insisting that football’s global governing body was obliged to take advantage of US laws that allow tickets to be resold for thousands of dollars above face value. Fifa has faced searing criticism over the cost of World Cup tickets, with the fan organization Football Supporters Europe (FSE) calling the pricing structure “extortionate” and a “monumental betrayal”. FSE filed a lawsuit with the European Commission in March targeting Fifa over “excessive ticket prices” for the tournament. Continue reading...",
-      "publishedAt": "2026-05-06T13:11:33.000Z"
     },
     {
       "type": "rss",
@@ -330,6 +275,61 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-05-06/knopen-doorgehakt-deze-club-wordt-kampioen-ook-duidelijkheid-over-europe-play-offs-promotie-en-bekerfinale",
       "summary": "De ontknoping in de Belgische voetbalcompetitie is aan het naderen. En dus is de vraag wat er gaat gebeuren de komende achttien dagen, want dan is er al de ontknoping op speeldag 10 van de Champions' Play-offs.",
       "publishedAt": "2026-05-06T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Arsenal beware - PSG don't look like giving up their crown...",
+      "link": "https://www.skysports.com/football/news/12040/13540913/psg-vs-arsenal-the-dismantling-of-bayern-munich-by-french-champions-is-a-champions-league-final-warning-for-mikel-arteta",
+      "summary": "Mikel Arteta and the Arsenal squad will have watched Paris Saint-Germain dismantle Bayern Munich and felt a sense of déjà vu from the French side. They've seen it before.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Papers: Arsenal set to hold contract talks with Arteta",
+      "link": "https://www.skysports.com/football/news/12040/13540905/mikel-arteta-contract-arsenal-set-to-hold-talks-with-manager-over-new-deal-this-summer-paper-talk",
+      "summary": "The top stories and transfer rumours from Thursday's newspapers...",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "PSG knock out Bayern to set up Champions League final with Arsenal",
+      "link": "https://www.skysports.com/football/bayern-munich-vs-paris-saint-germain/report/554948",
+      "summary": "Paris Saint-Germain put in a professional and positive display to claim a 1-1 draw away at Bayern Munich and set up a Champions League final with Arsenal on May 30 via a 6-5 aggregate win.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal draw at Brighton to hand Man City WSL title",
+      "link": "https://www.skysports.com/football/brighton-and-hove-albion-women-vs-arsenal-women/report/545695",
+      "summary": "Manchester City were crowned Women’s Super League champions after title rivals Arsenal slumped to a disappointing 1-1 draw at Brighton.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Benvenuto Cellini 9/4 for Derby after power-packed Chester Vase victory",
+      "link": "https://www.skysports.com/racing/news/12040/13540797/chester-may-festival-benvenuto-cellini-9-4-for-derby-at-epsom-after-power-packed-chester-vase-victory",
+      "summary": "Benvenuto Cellini strengthened his position as Derby favourite with a dominant victory in the Boodles Chester Vase.",
+      "publishedAt": null
     }
   ]
 }
