@@ -404,16 +404,16 @@
         </div>
 
         <!-- Mail deliverability warning (Variant A: after submit, non-premium, before confirmation) -->
-        <div id="mailDeliverabilityNotice" class="notice notice-warning" style="display:none;">
-          <strong>✉️ Geen mail ontvangen binnen enkele minuten?</strong><br>
-          <span style="opacity:.92;line-height:1.6;">
-            Check je <b>promoties</b> of <b>spam-folder</b> voor <em>admin@voetbal4all.eu</em>.<br>
+        <div id="mailDeliverabilityNotice" class="notice" style="display:none; background:rgba(245,158,11,0.18); border:1px solid rgba(245,158,11,0.45); border-left:4px solid #f59e0b; padding:16px 20px; margin-top:14px; box-shadow:0 2px 8px rgba(245,158,11,0.15);">
+          <strong style="color:#fbbf24; font-size:15px;">✉️ Geen mail ontvangen binnen enkele minuten?</strong><br>
+          <span style="color:#fef3c7; line-height:1.7;">
+            Check je <b style="color:#fff;">promoties</b> of <b style="color:#fff;">spam-folder</b> voor <em style="color:#fff;">admin@voetbal4all.eu</em>.<br>
             Voeg dit adres toe aan je veilige zenders zodat toekomstige communicatie direct in je inbox aankomt.
           </span>
+          <div style="height:12px"></div>
+          <span style="color:#fef3c7; opacity:.9;">Mail nog steeds niet te vinden? Neem contact met ons op en vermeld je referentie-ID.</span>
           <div style="height:10px"></div>
-          <span style="opacity:.85;">Mail nog steeds niet te vinden? Neem contact met ons op en vermeld je referentie-ID.</span>
-          <div style="height:8px"></div>
-          <a class="nav-cta" href="contact.html" style="display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:999px; font-size:13px;">
+          <a class="nav-cta" href="contact.html" style="display:inline-flex; gap:8px; align-items:center; padding:8px 14px; border-radius:999px; font-size:13px;">
             <span>Contactformulier</span>
           </a>
         </div>
@@ -1575,9 +1575,11 @@
     // Show mail deliverability warning (Variant A only: non-premium, before confirmation)
     const mailDelNotice = document.getElementById('mailDeliverabilityNotice');
     if (mailDelNotice) {
-      const showMailWarning = isManagedSubmissionFlow && !isError && !isDeleted && !isCancelled
-        && displayState === 'pending';
-      mailDelNotice.style.display = showMailWarning ? '' : 'none';
+      const isVariantA = isManagedSubmissionFlow && !isError && !isDeleted && !isCancelled
+        && !paid && !isConfirmedState && !isPublishedState
+        && (displayState === 'pending' || displayState === 'received' || displayState === 'default');
+      console.log('[bedankt] mailDeliverabilityNotice check:', { displayState, isManagedSubmissionFlow, paid, isConfirmedState, isPublishedState, isVariantA });
+      mailDelNotice.style.display = isVariantA ? '' : 'none';
     }
 
     // Show error notice when the submission was rejected/failed
