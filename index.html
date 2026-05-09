@@ -2415,19 +2415,11 @@
         });
       }
 
-      // Distribute items across 2 cards per type (balanced split)
-      // With 2 items: 1 per card. With 4: 2 per card. With 1: card 1 only.
-      function splitBalanced(arr) {
-        if (arr.length <= 1) return [arr, []];
-        const mid = Math.ceil(arr.length / 2);
-        return [arr.slice(0, mid), arr.slice(mid)];
-      }
-      const [cv1Items, cv2Items] = splitBalanced(cvPrem);
-      const [ev1Items, ev2Items] = splitBalanced(evPrem);
-      renderTo(lists.cv1, cv1Items, "cv");
-      renderTo(lists.cv2, cv2Items, "cv");
-      renderTo(lists.ev1, ev1Items, "ev");
-      renderTo(lists.ev2, ev2Items, "ev");
+      // Render full pool into both cards per type — rotation handles index-pair dedup
+      renderTo(lists.cv1, cvPrem, "cv");
+      renderTo(lists.cv2, cvPrem, "cv");
+      renderTo(lists.ev1, evPrem, "ev");
+      renderTo(lists.ev2, evPrem, "ev");
 
       // Always show the premium row, even if there is no premium content
       const allCount = cvPrem.length + evPrem.length;
@@ -2681,31 +2673,93 @@
         return "";
       }
 
-      document.querySelectorAll(".premium-list, #latest-trainers-list, #latest-players-list").forEach(list => {
-        // prevent stacking timers when re-initializing
-        const prevTimer = list.dataset.rotTimer ? Number(list.dataset.rotTimer) : 0;
-        if (prevTimer) {
-          try { clearInterval(prevTimer); } catch (e) {}
-          delete list.dataset.rotTimer;
+      // ── Placeholder HTML used when a card has no real item to show ──
+      const placeholderLi = `
+        <li class="event-item" data-image="assets/img/placeholder.svg">
+          <div class="event-body">
+            <div class="event-title">Jouw advertentie hier?</div>
+            <div class="event-meta">Premium zichtbaarheid voor clubs, events, spelers en trainers.</div>
+          </div>
+        </li>
+      `;
+
+      function clearTimer(list){
+        const prev = list.dataset.rotTimer ? Number(list.dataset.rotTimer) : 0;
+        if (prev) { try { clearInterval(prev); } catch(e){} delete list.dataset.rotTimer; }
+      }
+
+      function showPlaceholder(list){
+        list.innerHTML = placeholderLi;
+        const ph = list.querySelector(".event-item");
+        if (ph) ph.style.display = "";
+        setMedia(list.closest(".card"), getItemImage(ph));
+      }
+
+      // ── Paired premium blocks: cv1+cv2 and ev1+ev2 ──
+      // Shared-tick rotation with +1 offset guarantees dedup by construction.
+      const pairedBlocks = [
+        ["premium-clubvacatures-list", "premium-clubvacatures-list-2"],
+        ["premium-events-list",        "premium-events-list-2"]
+      ];
+      const pairedIds = new Set();
+
+      pairedBlocks.forEach(([id1, id2]) => {
+        const list1 = document.getElementById(id1);
+        const list2 = document.getElementById(id2);
+        if (!list1 || !list2) return;
+        pairedIds.add(id1);
+        pairedIds.add(id2);
+        clearTimer(list1);
+        clearTimer(list2);
+
+        const card1 = list1.closest(".card");
+        const card2 = list2.closest(".card");
+        const items1 = Array.from(list1.children).filter(n => n && n.nodeType === 1);
+        const items2 = Array.from(list2.children).filter(n => n && n.nodeType === 1);
+        const n = items1.length; // items2 has same count (same pool rendered)
+
+        if (n === 0) {
+          showPlaceholder(list1);
+          showPlaceholder(list2);
+          return;
         }
+
+        if (n === 1) {
+          items1[0].style.display = "";
+          setMedia(card1, getItemImage(items1[0]));
+          showPlaceholder(list2);
+          return;
+        }
+
+        // n >= 2: index-pair rotation with +1 offset
+        let tick = 0;
+        function renderPair(){
+          const idx1 = tick % n;
+          const idx2 = (tick + 1) % n;
+          items1.forEach((el, i) => el.style.display = i === idx1 ? "" : "none");
+          items2.forEach((el, i) => el.style.display = i === idx2 ? "" : "none");
+          setMedia(card1, getItemImage(items1[idx1]));
+          setMedia(card2, getItemImage(items2[idx2]));
+          tick++;
+        }
+        renderPair();
+        const t = setInterval(renderPair, 4500);
+        list1.dataset.rotTimer = String(t);
+        list2.dataset.rotTimer = String(t);
+      });
+
+      // ── Generic single-list rotation (trainers, players, etc.) ──
+      // Skips lists already handled by the paired-block logic above.
+      document.querySelectorAll(".premium-list, #latest-trainers-list, #latest-players-list").forEach(list => {
+        if (list.id && pairedIds.has(list.id)) return;
+
+        clearTimer(list);
 
         const items = Array.from(list.children).filter(n => n && n.nodeType === 1);
         const card = list.closest(".card");
 
         if (!items.length) {
-          list.innerHTML = `
-            <li class="event-item" data-image="assets/img/placeholder.svg">
-              <div class="event-body">
-                <div class="event-title">Jouw advertentie hier?</div>
-                <div class="event-meta">Premium zichtbaarheid voor clubs, events, spelers en trainers.</div>
-              </div>
-            </li>
-          `;
-
-          const newItems = Array.from(list.children).filter(n => n && n.nodeType === 1);
-          const cardEl = list.closest(".card");
-          setMedia(cardEl, getItemImage(newItems[0]));
-          newItems[0].style.display = "";
+          showPlaceholder(list);
           return;
         }
 
