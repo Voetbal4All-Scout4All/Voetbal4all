@@ -403,6 +403,21 @@
           </ul>
         </div>
 
+        <!-- Mail deliverability warning (Variant A: after submit, non-premium, before confirmation) -->
+        <div id="mailDeliverabilityNotice" class="notice notice-warning" style="display:none;">
+          <strong>✉️ Geen mail ontvangen binnen enkele minuten?</strong><br>
+          <span style="opacity:.92;line-height:1.6;">
+            Check je <b>promoties</b> of <b>spam-folder</b> voor <em>admin@voetbal4all.eu</em>.<br>
+            Voeg dit adres toe aan je veilige zenders zodat toekomstige communicatie direct in je inbox aankomt.
+          </span>
+          <div style="height:10px"></div>
+          <span style="opacity:.85;">Mail nog steeds niet te vinden? Neem contact met ons op en vermeld je referentie-ID.</span>
+          <div style="height:8px"></div>
+          <a class="nav-cta" href="contact.html" style="display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:999px; font-size:13px;">
+            <span>Contactformulier</span>
+          </a>
+        </div>
+
         <!-- Error notice (shown when an action failed or was rejected) -->
         <div id="errorNotice" class="notice notice-danger" style="display:none;">
           <strong>Uw aanvraag kon niet verwerkt worden</strong><br>
@@ -1555,6 +1570,14 @@
       } else {
         emailKeepNotice.style.display = 'none';
       }
+    }
+
+    // Show mail deliverability warning (Variant A only: non-premium, before confirmation)
+    const mailDelNotice = document.getElementById('mailDeliverabilityNotice');
+    if (mailDelNotice) {
+      const showMailWarning = isManagedSubmissionFlow && !isError && !isDeleted && !isCancelled
+        && displayState === 'pending';
+      mailDelNotice.style.display = showMailWarning ? '' : 'none';
     }
 
     // Show error notice when the submission was rejected/failed
