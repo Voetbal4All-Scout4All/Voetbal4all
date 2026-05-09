@@ -534,6 +534,7 @@
   (async function(){
     const qs = new URLSearchParams(window.location.search);
     let fetchedEventItem = null;
+    let fetchedVacancyItem = null;
     let storedEventPayload = null;
 
     // EARLY FILL: always render name/email from the querystring ASAP.
@@ -1280,6 +1281,23 @@
 
     await tryFetchPremiumWindowFromEvent();
 
+    // Vacancy fetch: if this looks like a clubvacature flow and we have a sid,
+    // fetch the vacancy record so we can show name + email on Variant B (confirmation redirect).
+    if (hintedFlowType === 'clubvacature' && storageLookupId) {
+      const BACKEND_BASE_CV = 'https://voetbal4all-backend-database.onrender.com';
+      try {
+        const cvRes = await fetch(`${BACKEND_BASE_CV}/api/club-vacancies/${encodeURIComponent(storageLookupId)}`, { cache: 'no-store' });
+        if (cvRes.ok) {
+          const ct = cvRes.headers.get('content-type') || '';
+          if (ct.includes('application/json')) {
+            fetchedVacancyItem = await cvRes.json();
+          }
+        }
+      } catch (e) {
+        // silent — name/email will fall back to "—"
+      }
+    }
+
     const inferredFetchedSource = looksLikeEventRecord(fetchedEventItem) ? 'event' : '';
     const source = rawQuerySource
       || normalizeFlowHint(storedEventPayload && storedEventPayload.source)
@@ -1333,6 +1351,8 @@
       fetchedEventItem && fetchedEventItem.organizer_name,
       fetchedEventItem && fetchedEventItem.club_name,
       fetchedEventItem && fetchedEventItem.club,
+      fetchedVacancyItem && fetchedVacancyItem.club,
+      fetchedVacancyItem && fetchedVacancyItem.title,
       extractedContact.name,
       extractedFetchedContact.name
     ]);
@@ -1343,6 +1363,7 @@
       storedEventPayload && storedEventPayload.invoice_email,
       fetchedEventItem && fetchedEventItem.organizer_email,
       fetchedEventItem && fetchedEventItem.contact_email,
+      fetchedVacancyItem && fetchedVacancyItem.contact_email,
       extractedContact.email,
       extractedFetchedContact.email
     ]);
