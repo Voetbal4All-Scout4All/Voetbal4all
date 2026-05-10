@@ -1,0 +1,60 @@
+name: Generate Sitemap
+
+on:
+  schedule:
+    - cron: "30 * * * *"  # Elk uur op :30 (niet :00, om conflict met news.yml te vermijden)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sitemap
+  cancel-in-progress: true
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate sitemap files
+        run: node scripts/generate-sitemap.mjs
+
+      - name: Verify generated files
+        run: |
+          echo "=== Sitemap index ==="
+          head -10 sitemap.xml
+          echo ""
+          echo "=== Article count ==="
+          grep -c '<url>' sitemap-articles.xml || echo "0"
+          echo "=== Event count ==="
+          grep -c '<url>' sitemap-events.xml || echo "0"
+          echo "=== Job count ==="
+          grep -c '<url>' sitemap-jobs.xml || echo "0"
+
+      - name: Commit and push (only if changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add sitemap.xml sitemap-static.xml sitemap-articles.xml sitemap-events.xml sitemap-jobs.xml
+
+          if git diff --staged --quiet; then
+            echo "[sitemap] No changes — skipping commit."
+          else
+            git commit -m "chore(seo): regenerate sitemap [skip ci]"
+            git push origin main
+            echo "[sitemap] Committed and pushed to main."
+            echo "[sitemap] deploy.yml will auto-trigger (push to main) and deploy to gh-pages."
+          fi

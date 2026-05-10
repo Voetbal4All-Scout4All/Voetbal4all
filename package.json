@@ -8,6 +8,7 @@
     "build:scout": "vite build --config vite.config.js",
     "preview:scout": "vite preview --config vite.config.js",
     "copy-static": "node scripts/copy-static.mjs",
+    "sitemap": "node scripts/generate-sitemap.mjs",
     "build": "npm run build:scout && npm run copy-static"
   },
   "dependencies": {

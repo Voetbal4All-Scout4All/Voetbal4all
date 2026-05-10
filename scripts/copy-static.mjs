@@ -35,6 +35,10 @@ const allowedFiles = new Set([
   'robots.txt',
   'site.webmanifest',
   'sitemap.xml',
+  'sitemap-static.xml',
+  'sitemap-articles.xml',
+  'sitemap-events.xml',
+  'sitemap-jobs.xml',
   'style.css',
 ]);
 
