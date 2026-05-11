@@ -1,49 +1,27 @@
 {
-  "generatedAt": "2026-05-11T03:56:09.180Z",
+  "generatedAt": "2026-05-11T07:49:17.447Z",
   "items": [
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barcelona cap off LaLiga title with historic Clási...",
-      "link": "https://www.espn.com/soccer/story/_/id/48735602/barcelona-cap-title-winning-season-historic-clasico-win",
-      "summary": "Barça are LaLiga champions after winning the Clásico, on a night full of contrasts between them and Real Madrid.",
-      "publishedAt": "2026-05-11T03:36:22.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "VAR Review: Were refs right to disallow West Ham e...",
+      "link": "https://www.espn.com/soccer/story/_/id/48732378/var-review-were-refs-right-disallow-west-ham-equalizer-vs-arsenal",
+      "summary": "Arsenal took a massive step toward the Premier League title Sunday, but should West Ham's late equalizer been disallowed?",
+      "publishedAt": "2026-05-11T08:19:16.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "'Tough day:' Flick mourns dad as Barça win LaLiga",
-      "link": "https://www.espn.com/soccer/story/_/id/48735859/hansi-flick-mourns-father-day-barcelona-clinch-laliga",
-      "summary": "Barcelona coach Hansi Flick said it had been a \"tough day\" after guiding his team to the LaLiga title against Real Madrid just hours after learning of the death of his father.",
-      "publishedAt": "2026-05-11T02:20:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Rodman exits Spirit game after on-field treatment",
-      "link": "https://www.espn.com/soccer/story/_/id/48736856/trinity-rodman-exits-spirit-game-treatment",
-      "summary": "Trinity Rodman was substituted early in the second half of the Washington Spirit's game against Seattle Reign FC on Sunday after receiving treatment on the field from the team's medical staff.",
-      "publishedAt": "2026-05-11T02:20:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Magic man? Rashford wants Barça stay if he can",
-      "link": "https://www.espn.com/soccer/story/_/id/48736533/marcus-rashford-goal-laliga-clincher-perfect-ending",
-      "summary": "Marcus Rashford said scoring on the night Barcelona won La Liga by beating arch-rivals Real Madrid was \"the perfect way to end.\"",
-      "publishedAt": "2026-05-11T02:20:03.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal win could catapult them to Premier League ...",
+      "link": "https://www.espn.com/soccer/story/_/id/48733536/arsenal-hold-their-nerve-the-brink-premier-league-title",
+      "summary": "It was a dramatic last few minutes, but Arsenal's late win over West Ham United puts the Gunners five clear.",
+      "publishedAt": "2026-05-11T08:19:16.000Z"
     },
     {
       "type": "rss",
@@ -54,7 +32,29 @@
       "title": "Arteta: 'Brave' VAR call could alter Arsenal histo...",
       "link": "https://www.espn.com/soccer/story/_/id/48733610/arteta-says-brave-var-call-alter-arsenal-history",
       "summary": "Mikel Arteta congratulated the match officials for disallowing West Ham's 94th-minute equalizer -- a decision that he called brave and that leaves Arsenal on course to win the Premier League title.",
-      "publishedAt": "2026-05-11T02:20:03.000Z"
+      "publishedAt": "2026-05-11T08:13:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bowen slams VAR as West Ham stuck in drop zone",
+      "link": "https://www.espn.com/soccer/story/_/id/48733220/west-ham-jarrod-bowen-nuno-slam-arsenal-var-call-pl-physical",
+      "summary": "West Ham captain Jarrod Bowen and manager Nuno Espirito Santo have both hit out at the officials following the late disallowed goal against Arsenal, questioning refereeing consistency.",
+      "publishedAt": "2026-05-11T08:13:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Tough day:' Flick mourns dad as Barça win LaLiga",
+      "link": "https://www.espn.com/soccer/story/_/id/48735859/hansi-flick-mourns-father-day-barcelona-clinch-laliga",
+      "summary": "Barcelona coach Hansi Flick said it had been a \"tough day\" after guiding his team to the LaLiga title against Real Madrid just hours after learning of the death of his father.",
+      "publishedAt": "2026-05-11T08:13:48.000Z"
     },
     {
       "type": "rss",
@@ -62,21 +62,54 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Only his last changes worked' - how Arteta's gambles finally paid off",
-      "link": "https://www.bbc.com/sport/football/articles/c5yek23p30lo?at_medium=RSS&at_campaign=rss",
-      "summary": "Match of the Day pundit Danny Murphy explains why Arsenal manager Mikel Arteta deserves credit after his side beat West Ham to take a huge step towards the Premier League title.",
-      "publishedAt": "2026-05-10T22:34:40.000Z"
+      "title": "West Ham to contact referees' body over disallowed goal",
+      "link": "https://www.bbc.com/sport/football/articles/c5yrxkg6z1eo?at_medium=RSS&at_campaign=rss",
+      "summary": "West Ham will contact referees' body the Professional Game Match Officials (PGMO) over their disallowed equaliser against Arsenal on Sunday.",
+      "publishedAt": "2026-05-11T07:38:40.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Barcelona jubelt na bijzondere kampioenswedstrijd",
-      "link": "https://www.vi.nl/nieuws/barcelona-jubelt-na-bijzondere-kampioenswedstrijd",
-      "summary": "Het was de dag van El Clásico! Barcelona verzekerde zich zondag van de landstitel. Eerder op de dag ontsnapte Arsenal bij West Ham United. Lees de volledige avond en middag terug in deze VI Live!",
-      "publishedAt": "2026-05-10T22:14:14.000Z"
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Rondje Eredivisie: Ajax richting play-offs, seizoen Feyenoord geslaagd?",
+      "link": "https://www.vi.nl/nieuws/rondje-eredivisie-ajax-richting-play-offs-seizoen-feyenoord-geslaagd",
+      "summary": "Met nog een speelronde te gaan in de Eredivisie, wordt steeds meer duidelijk. Feyenoord is zeker van de Champions League en NAC Breda is gedegradeerd, maar de strijd om de derde plaats (voorronde Champions League) ligt nog open. We blikken terug en vooruit in Rondje Eredivisie.",
+      "publishedAt": "2026-05-11T07:33:20.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "📷 Vader van Hansi Flick overleden, vlak voor titelmatch met FC Barcelona",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/vader-van-hansi-flick-overleden-vlak-voor-titelmatch-met-fc-barcelona",
+      "summary": "De voetbalwereld leeft mee met Hansi Flick na het verdrietige nieuws dat zijn vader is overleden, vlak voor een belangrijke wedstrijd van FC Barcelona. Het nieuws kwam hard aan binnen de club en zorgt voor veel emoties in aanloop naar de grote clash tegen Real Madrid.",
+      "publishedAt": "2026-05-11T07:32:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "De eerste WK winnende bondscoach was piepjong",
+      "link": "https://www.vi.nl/nieuws/de-eerste-wk-winnende-bondscoach-was-piepjong",
+      "summary": "In de aanloop naar het WK staan we elke dag stil bij een WK-feitje. Met nog 31 dagen voor de boeg staat Alberto Suppici centraal.",
+      "publishedAt": "2026-05-11T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "\"La saison n'a pas été celle que nous voulions\" : Thibaut Courtois réagit après la défaite du Real Madrid",
+      "link": "https://www.walfoot.be/news/2026-05-11/la-saison-na-pas-ete-celle-que-nous-voulions--thibaut-courtois-reagit-apres-la-defaite-du-real-madrid",
+      "summary": "Thibaut Courtois a fait son retour dans les cages du Real Madrid pour le Clásico de dimanche soir, où les Catalans se sont imposés sur le score de 2-0. Le gardien belge n'a pas su éviter la défaite de son équipe. Il aurait évidemment rêvé d'un meilleur retour sur les terrains.",
+      "publishedAt": "2026-05-11T07:30:00.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +117,32 @@
       "sourceSlug": "voetbal-international",
       "country": "ES",
       "flag": "🌍",
-      "title": "Frenkie de Jong uitbundig: 'Waren duidelijk het beste team van Spanje'",
-      "link": "https://www.vi.nl/nieuws/frenkie-de-jong-uitbundig-waren-duidelijk-het-beste-team-van-spanje",
-      "summary": "Frenkie de Jong vindt dat Barcelona de terechte kampioen van Spanje is. Dat de titel uitgerekend tegen Real Madrid werd binnengehaald, maakte het nog extra bijzonder voor de middenvelder.",
-      "publishedAt": "2026-05-10T22:13:16.000Z"
+      "title": "Succesvolle Flick in prachtig La Liga-lijstje boordevol Nederlanders",
+      "link": "https://www.vi.nl/nieuws/succesvolle-flick-in-prachtig-la-liga-lijstje-boordevol-nederlanders",
+      "summary": "Onder trainer Hansi Flick pakte Barcelona zondagavond zijn tweede landstitel op rij , in het recente verleden kwam het niet bijster vaak voor dat een coach dit lukte. In het rijtje staan veel Nederlandse coaches.",
+      "publishedAt": "2026-05-11T07:23:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Italiaanse media over 'buitengewone' Malen: 'Niemand in Europa is beter dan hij'",
+      "link": "https://www.vi.nl/nieuws/italiaanse-media-over-buitengewone-malen-niemand-in-europa-is-beter-dan-hij",
+      "summary": "Dat AS Roma mag blijven dromen van de eerste Champions League-deelname sinds 2018/19 heeft de club volgens Italiaanse media voor een groot deel te danken aan Donyell Malen. De Nederlander schoot de ploeg van Gian Piero Gasperini zondag in extremis naar een overwinning en heeft een heldenstatus in Rome. Corriere dello Sport vindt de spits momenteel zelfs de beste speler van Europa.",
+      "publishedAt": "2026-05-11T07:22:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "📷 'KRC Genk onderneemt nieuwe poging om verdediger binnen te halen'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/krc-genk-onderneemt-nieuwe-poging-om-verdediger-binnen-te-halen",
+      "summary": "KRC Genk blijft actief speuren naar jong defensief talent. De Limburgers zouden hun oog opnieuw hebben laten vallen op Petar Petrovic, een Servische verdediger van FK Javor Ivanjica. Na een mislukte winterpoging lijkt een nieuwe zomertransfer in de maak.",
+      "publishedAt": "2026-05-11T07:20:00.000Z"
     },
     {
       "type": "rss",
@@ -95,32 +150,120 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Samenvatting: Perisic neemt PSV bij de hand tegen Go Ahead",
-      "link": "https://www.vi.nl/video/samenvatting-perisic-neemt-psv-bij-de-hand-tegen-go-ahead",
-      "summary": "Ivan Perisic speelde zondag andermaal een sleutelrol bij PSV. De 37-jarige Kroatische buitenspeler was goed voor twee doelpunten. PSV won eenvoudig van Go Ahead met 1-4 . Hierboven bekijk je de samenvatting.",
-      "publishedAt": "2026-05-10T21:59:00.000Z"
+      "title": "Ajacied Regeer kan door de grond zakken na cruciale misser",
+      "link": "https://www.vi.nl/video/ajacied-regeer-kan-door-de-grond-zakken-na-cruciale-misser",
+      "summary": "Voor Ajax is de voorronde van de Champions League heel ver weg na de thuisnederlaag tegen FC Utrecht . Youri Regeer baalt waarschijnlijk nog extra van de verliespartij: de middenvelder miste in de eerste helft een enorme kans om de score te openen.",
+      "publishedAt": "2026-05-11T07:15:35.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Samenvatting: Feyenoord pakt ondanks fout Trauner punt tegen AZ",
-      "link": "https://www.vi.nl/video/samenvatting-feyenoord-pakt-ondanks-fout-trauner-punt-tegen-az",
-      "summary": "Feyenoord heeft zich zondag verzekerd van deelname aan de Champions League. Een punt tegen AZ bleek genoeg voor de tweede plek. Gernot Trauner maakte het met een fout nog even spannend. Bekijk hier de samenvatting van het duel.",
-      "publishedAt": "2026-05-10T21:59:00.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Neerpede-boy Ait El Hadj heeft straffe boodschap over bekerfinale voor RSC Anderlecht",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/neerpede-boy-ait-el-hadj-heeft-straffe-boodschap-over-bekerfinale-voor-rsc-anderlecht",
+      "summary": "De bekerfinale tussen Union SG en RSC Anderlecht leeft enorm in Brussel. Voor Anouar Ait El Hadj wordt het een bijzonder duel tegen zijn ex-club. De middenvelder van Union SG stuurde vooraf een duidelijke waarschuwing richting Anderlecht en benadrukte zijn enorme motivatie.",
+      "publishedAt": "2026-05-11T07:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Samenvatting: spectaculaire slotfase dompelt Ajax in rouw tegen FC Utrecht",
-      "link": "https://www.vi.nl/video/samenvatting-spectaculaire-slotfase-dompelt-ajax-in-rouw-tegen-fc-utrecht",
-      "summary": "Ajax en FC Utrecht maakten er zondag een spannende apotheose van . Tien minuten voor tijd openden de bezoekers de score, waarna Ajax snel gelijkmaakte. Diep in de blessuretijd ging FC Utrecht er alsnog met de zege vandoor. Een samenvatting van het duel.",
-      "publishedAt": "2026-05-10T21:59:00.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "\"Je touche un truc et ça rentre\" : Thomas Meunier revient sur le but contre son camp qu'il a provoqué",
+      "link": "https://www.walfoot.be/news/2026-05-11/je-touche-un-truc-et-ca-rentre--thomas-meunier-revient-sur-le-but-contre-son-camp-quil-a-provoque",
+      "summary": "Thomas Meunier s'est exprimé à la presse après la victoire du LOSC contre l'AS Monaco dimanche soir (0-1). Le Diable Rouge s'est évidemment montré satisfait.",
+      "publishedAt": "2026-05-11T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Vreselijk moment bij KRC Genk: seizoen zit er zo goed als zeker op voor twee spelers",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/vreselijk-moment-bij-krc-genk-seizoen-zit-er-zo-goed-als-zeker-op-voor-twee-spelers",
+      "summary": "KRC Genk zag tegen Westerlo twee spelers uitvallen in de eerste helft. Slachtoffers van dienst waren Daan Heymans en Kos Karetsas. De kans dat het tweetal dit seizoen nog in actie komt lijkt zo goed als voorbij.",
+      "publishedAt": "2026-05-11T06:38:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "🎥 Thomas Meunier provoque un but contre son camp ultra-important pour le LOSC en cette fin de saison",
+      "link": "https://www.walfoot.be/news/2026-05-11/-thomas-meunier-provoque-un-but-contre-son-camp-ultra-important-pour-le-losc-en-cette-fin-de-saison",
+      "summary": "Thomas Meunier a provoqué un but contre son camp qui a permis à Lille de s'imposer sur le plus petit des scores face à l'AS Monaco dimanche soir (0-1).",
+      "publishedAt": "2026-05-11T06:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "How Flick's reshaped Barca dominated La Liga again",
+      "link": "https://www.bbc.com/sport/football/articles/cedp2wjepqno?at_medium=RSS&at_campaign=rss",
+      "summary": "Hansi Flick has guided a new style of Barcelona to back-to-back La Liga titles - this is how the German coach did it.",
+      "publishedAt": "2026-05-11T06:16:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "De titelstrijd is beslecht: Marc Degryse zegt of het Club of Union SG wordt",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/de-titelstrijd-is-beslecht-marc-degryse-zegt-of-het-club-of-union-sg-wordt",
+      "summary": "De titelstrijd in de Jupiler Pro League nadert zijn absolute ontknoping. Club Brugge en Union SG blijven nek aan nek strijden om het kampioenschap, maar analist Marc Degryse denkt dat de beslissing zal vallen in het voordeel van Club Brugge.",
+      "publishedAt": "2026-05-11T06:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tottenham hope to exorcise demons just as Kinsky has done after Atlético debacle",
+      "link": "https://www.theguardian.com/football/2026/may/11/antonin-kinsky-roberto-de-zerbi-spurs-premier-league-survival",
+      "summary": "Goalkeeper has begun to rebuild his reputation under Roberto De Zerbi, whose attitude has helped Spurs in fight for Premier League survival When Antonin Kinsky had his Madrid episode, there was an assumption that he would not play again for Tottenham this season. And maybe not the next one, either. The 23-year-old goalkeeper would have to rebuild himself elsewhere, probably on loan. Perhaps, given the scale of the horror against Atlético in the Champions League last 16 first leg on 10 March – and there really is no need to rake over the details – a permanent transfer may have been an option. Kinsky’s comeback has been extraordinary; an inspiration to everybody at the club. With the first-choice selection, Guglielmo Vicario, undergoing hernia surgery towards the end of March, Roberto De Zerbi has counted on the Czech in each of his four matches in charge. The manager has not been let down. Continue reading...",
+      "publishedAt": "2026-05-11T06:09:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Premier League: 10 talking points from the weekend’s action",
+      "link": "https://www.theguardian.com/football/2026/may/11/premier-league-10-talking-points-from-the-weekends-action",
+      "summary": "Jérémy Doku finds the net again, Joshua Zirkzee struggles at Sunderland and Ismaïla Sarr is fulfilling his potential On Friday when Bruno Fernandes became the Football Writers’ Association player of the year, either Declan Rice or David Raya could have been forgiven for feeling a touch aggrieved. Both have been essential to Arsenal’s bid for a Premier League and Champions League double but it is Raya who showed why he may have been more deserving at the London Stadium as his technically pinpoint one-on-one save gave Arsenal the platform they so desperately needed to secure a vital three points late on. Mikel Arteta’s side were on the ropes as Mateus Fernandes exchanged a one-two with Pablo to run in with the goal at his mercy. Surely this was it for Arsenal: the title slipping again. Raya’s nerve held strong, making the most crucial of saves. Arsenal’s dream of winning a first title in 22 years remains in his hands. Graham Searles Match report: West Ham 0-1 Arsenal Barney Ronay: VAR offers up title-deciding moment Match report: Manchester City 3-0 Brentford Match report: Liverpool 1-1 Chelsea Match report: Sunderland 0-0 Manchester United Match report: Nottingham Forest 1-1 Newcastle Match report: Burnley 2-2 Aston Villa Continue reading...",
+      "publishedAt": "2026-05-11T06:09:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un cadre de l'Union Saint-Gilloise intéresserait un grand club italien",
+      "link": "https://www.walfoot.be/news/2026-05-11/un-cadre-de-lunion-saint-gilloise-interesserait-un-grand-club-italien",
+      "summary": "L'Union Saint-Gilloise va-t-elle perdre Anan Khalaili ? Il semblerait que le Napoli s'intéresse au latéral israélien.",
+      "publishedAt": "2026-05-11T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un cadre de l'Union incertain contre Anderlecht ? \"Ce n'était pas de la gestion\"",
+      "link": "https://www.walfoot.be/news/2026-05-11/match-reaction-un-cadre-de-lunion-incertain-contre-anderlecht--ce-netait-pas-de-la-gestion",
+      "summary": "L'Union Saint-Gilloise a fait le boulot en s'imposant 3-0 contre Malines. David Hubert est satisfait de la réaction de son équipe, il fait également le point sur la sortie prématurée de Kévin Rodriguez.",
+      "publishedAt": "2026-05-11T05:30:00.000Z"
     },
     {
       "type": "rss",
@@ -128,10 +271,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arsenal the champions in waiting but doing it the hard way",
-      "link": "https://www.bbc.com/sport/football/articles/c2k2q928zl4o?at_medium=RSS&at_campaign=rss",
-      "summary": "This season hasn't always been easy on the eye, but Arsenal are on the brink of their first Premier League title in 22 years.",
-      "publishedAt": "2026-05-10T21:36:21.000Z"
+      "title": "The summer a golden generation lost its shine",
+      "link": "https://www.bbc.co.uk/sport/extra/60s97qhdbf/the-golden-generation?at_medium=RSS&at_campaign=rss",
+      "summary": "The summer of 2006 was meant to be England's moment. A world-class squad, celebrity partners and confident fans - the hype was huge and the fall was hard.",
+      "publishedAt": "2026-05-11T00:00:00.000Z"
     },
     {
       "type": "rss",
@@ -161,17 +304,6 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "The reasons West Ham face relegation - and why they are unlucky",
-      "link": "https://www.bbc.com/sport/football/articles/c2l2kv57l9lo?at_medium=RSS&at_campaign=rss",
-      "summary": "When the dust settles on the West Ham goal that was ruled out against Arsenal, the cold reality is they are now probably facing relegation.",
-      "publishedAt": "2026-05-10T20:21:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "Biggest VAR call ever? Four chaotic minutes that may define the season",
       "link": "https://www.bbc.com/sport/football/articles/c0m2rkwm87po?at_medium=RSS&at_campaign=rss",
       "summary": "The most consequential decision in the history of VAR in the Premier League is played out over four minutes 11 seconds of drama at London Stadium.",
@@ -183,32 +315,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Why Man City would be foolish to let Shaw leave",
-      "link": "https://www.bbc.com/sport/football/articles/cp3pq94pwepo?at_medium=RSS&at_campaign=rss",
-      "summary": "Khadija Shaw needed just 12 minutes to prove why Manchester City must not let her leave in the summer.",
-      "publishedAt": "2026-05-10T19:31:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Manchester City’s Khadija Shaw sinks Chelsea in dramatic FA Cup semi-final",
-      "link": "https://www.theguardian.com/football/2026/may/10/chelsea-manchester-city-womens-fa-cup-semi-final-match-report",
-      "summary": "Khadija Shaw showed Manchester City what they are giving up and Chelsea what they are potentially getting in emphatic style at Stamford Bridge, scoring an injury-time equaliser and then an extra time winner as City came from two goals behind to earn a place in the FA Cup final against Brighton. Shaw has dominated headlines this week: the Women’s Super League top scorer is set to leave City and Chelsea are leading the chase. Her 91st-minute goal forced extra time before a thumping header in the 103rd minute ensured City’s double ambitions remain alive after the most fraught of encounters. Continue reading...",
-      "publishedAt": "2026-05-10T17:20:28.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "More Championship clubs fear they have been targets of Southampton’s spying",
-      "link": "https://www.theguardian.com/football/2026/may/10/southampton-spygate-middlesbrough-championship-playoffs",
-      "summary": "Middlesbrough apprehended alleged spy last week Saints may claim that the offender was an intern Middlesbrough have been approached by fellow Championship clubs who harbour suspicions that their pre-match training sessions may also have been spied on by Southampton. The English Football League has charged the south-coast club with misconduct after a member of Tonda Eckert’s backroom was allegedly caught breaching regulations by filming and making audio recordings of one of Kim Hellberg’s final practice sessions before his Middlesbrough side faced Eckert’s Southampton in Saturday’s playoff semi-final first leg at the Riverside Stadium. As Hellberg prepares his players for Tuesday’s second leg at St Mary’s Stadium with the score goalless, Championship rivals are understood to be examining any available CCTV training-ground footage from recent weeks. Continue reading...",
-      "publishedAt": "2026-05-10T14:21:09.000Z"
+      "title": "Celtic eye own fairytale as Hearts' story continues to captivate",
+      "link": "https://www.bbc.com/sport/football/articles/cdxpkqrj4qko?at_medium=RSS&at_campaign=rss",
+      "summary": "Celtic have taken care of Rangers and are coming for Hearts. Can Derek McInnes' side hold them off in the final days of a tumultuous campaign?",
+      "publishedAt": "2026-05-10T17:39:50.000Z"
     },
     {
       "type": "rss",
@@ -220,116 +330,6 @@
       "link": "https://www.theguardian.com/football/2026/may/10/fifa-world-cup-terrorism-risk-iran-war",
       "summary": "Experts warn of ‘soft target’ vulnerabilities and intelligence gaps as federal agencies prepare to secure 78 matches across 11 cities Fifa World Cup matches set to be held across the United States face heightened terrorism risks, with experts warning that vulnerabilities are being amplified by the US-Israel conflict with Iran and a depletion of counter-terrorism expertise within federal law enforcement. The biggest threat stems from homegrown violent extremists, often lone actors that may have become radicalized online by extreme political views or jihadists such as the Islamic State (Isis), said four counter-terror experts interviewed. Continue reading...",
       "publishedAt": "2026-05-10T12:00:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Courtois n'a rien pu faire : le Barça remporte aisément le Clasico et est sacré champion d'Espagne",
-      "link": "https://www.walfoot.be/news/2026-05-10/courtois-na-rien-pu-faire--le-barca-remporte-aisement-le-clasico-et-est-sacre-champion-despagne",
-      "summary": "De retour de blessure, Thibaut Courtois a sorti quelques arrêts, mais cela n'a pas suffi pour que le Real Madrid gêne le FC Barcelone. Les Catalans sont sacrés champions d'Espagne.",
-      "publishedAt": "2026-05-10T09:05:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Redt Mourinho Thibaut Courtois en Real Madrid? De Special One doorbreekt de stilte",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-10/redt-mourinho-thibaut-courtois-en-real-madrid-de-special-one-doorbreekt-de-stilte",
-      "summary": "Real Madrid belandt in chaos na het vertrek van Xabi Alonso. José Mourinho heeft de geruchten over een mogelijke terugkeer proberen te temperen.",
-      "publishedAt": "2026-05-10T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Je ne les trouvais pas si bons\" : un Malinois pas impressionné par l'Union malgré la lourde défaite",
-      "link": "https://www.walfoot.be/news/2026-05-10/je-ne-les-trouvais-pas-si-bons--un-malinois-pas-impressionne-par-lunion-malgre-la-lourde-defaite",
-      "summary": "L'Union Saint-Gilloise n'a pas tremblé contre le KV Malines et s'est imposée sans fioritures (3-0).",
-      "publishedAt": "2026-05-10T08:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Na zijn vertrek en ontslag: Edward Still stipt het grote probleem van Anderlecht aan",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-10/na-zijn-vertrek-en-ontslag-edward-still-stipt-het-grote-probleem-van-anderlecht-aan",
-      "summary": "Edward Still beleefde een van de meest turbulente seizoenen uit zijn trainerscarrière. De Belgische coach werkte eerst bij RSC Anderlecht, kreeg nadien een kans in Engeland bij Watford, maar werd daar enkele maanden later alweer ontslagen.",
-      "publishedAt": "2026-05-10T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le \"beau geste\" de Janssen a coûté cher : \"Je ne comprends pas pourquoi Hairemans a tiré\"",
-      "link": "https://www.walfoot.be/news/2026-05-10/le-beau-geste-de-janssen-a-coute-cher--je-ne-comprends-pas-pourquoi-hairemans-a-tire",
-      "summary": "Joseph Oosting n'a pas apprécié que Vincent Janssen &quot;offre&quot; le penalty qui aurait pu offrir un point à l'Antwerp à Geoffry Hairemans. Ce dernier n'était en effet pas sur la liste des tireurs.",
-      "publishedAt": "2026-05-10T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Union 'heeft nog geen woord gesproken over Anderlecht', Vanderbiest lacht Insta-post KVM-speler compleet weg",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-10/match-reactie-union-heeft-nog-geen-woord-gesproken-over-anderlecht-vanderbiest-lacht-insta-post-kvm-speler-compleet-weg",
-      "summary": "Union heeft gedaan wat het moest doen. David Hubert zweert dat Union het nu pas zal hebben over de bekerfinale tegen Anderlecht. Bij KV Mechelen bleek er ook wat te spelen.",
-      "publishedAt": "2026-05-10T08:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "📷 Exit voor Carl Hoefkens? Wedstrijd van vandaag loopt helemaal fout door fans",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-10/exit-voor-carl-hoefkens-wedstrijd-van-vandaag-loopt-helemaal-fout-door-fans",
-      "summary": "NAC Breda is officieel gedegradeerd uit de Eredivisie na een dramatisch seizoen waarin sportieve en juridische problemen elkaar opvolgden. De club probeerde via de rechter nog verandering te brengen in een eerdere uitslag, maar zonder succes. Dat leidde tot grote teleurstelling.",
-      "publishedAt": "2026-05-10T08:04:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Auteur du geste du week-end, Anouar Ait El Hadj prévient Anderlecht : \"Je vais me tuer sur le terrain\"",
-      "link": "https://www.walfoot.be/news/2026-05-10/-auteur-du-geste-du-week-end-anouar-ait-el-hadj-previent-anderlecht--je-vais-me-tuer-sur-le-terrain",
-      "summary": "Avec un but et un assist dans la dernière demi-heure, Anouar Ait El Hadj a aidé l'Union à confirmer sa victoire contre Malines. Il repart avec un goût de trop peu mais le sentiment du devoir accompli malgré tout.",
-      "publishedAt": "2026-05-10T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Buitenkans voor Antwerp of slaat andere topclub uit JPL toe?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-10/buitenkans-voor-antwerp-of-slaat-andere-topclub-uit-jpl-toe",
-      "summary": "Isaac Babadi beleefde geen geslaagde uitleenbeurt bij Royal Antwerp FC. Toch blijft het Nederlandse talent interessant voor clubs uit de Jupiler Pro League. De vraag is nu wat PSV Eindhoven komende zomer met hem van plan is.",
-      "publishedAt": "2026-05-10T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Pas de faux pas de Genk contre Westerlo, le Standard aura une vraie \"finale\" à disputer",
-      "link": "https://www.walfoot.be/news/2026-05-10/pas-de-faux-pas-de-genk-contre-westerlo-le-standard-aura-une-vraie-finale-a-disputer",
-      "summary": "La course au barrage européen sera passionnante jusqu'au bout : alors que Charleroi l'a encore emporté, le KRC Genk a répondu de la même manière contre Westerlo.",
-      "publishedAt": "2026-05-10T07:44:00.000Z"
     }
   ]
 }
