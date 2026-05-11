@@ -1,16 +1,49 @@
 {
-  "generatedAt": "2026-05-11T07:49:17.447Z",
+  "generatedAt": "2026-05-11T11:28:13.652Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Spaanse WK-zorgen om Nico Williams: 'Hij zei dat hij veel pijn had'",
+      "link": "https://www.vi.nl/nieuws/spaanse-wk-zorgen-om-nico-williams-hij-zei-dat-hij-veel-pijn-had",
+      "summary": "In Spanje zijn er zorgen om een nieuwe blessure van Spaans international Nico Williams, die zondag bij het thuisduel van Athletic Bilbao met Valencia na ruim een half uur het veld moest verlaten. Zijn oudere broer Iñaki Williams liet na de wedstrijd weten dat de eerste tekenen niet positief waren.",
+      "publishedAt": "2026-05-11T11:15:56.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "VAR Review: Were refs right to disallow West Ham e...",
-      "link": "https://www.espn.com/soccer/story/_/id/48732378/var-review-were-refs-right-disallow-west-ham-equalizer-vs-arsenal",
-      "summary": "Arsenal took a massive step toward the Premier League title Sunday, but should West Ham's late equalizer been disallowed?",
-      "publishedAt": "2026-05-11T08:19:16.000Z"
+      "title": "West Ham to lodge complaint with referee chiefs over disallowed goal against Arsenal",
+      "link": "https://www.theguardian.com/football/2026/may/11/west-ham-complain-referee-disallowed-goal-arsenal-pgmo",
+      "summary": "Club plan to contact PGMO after Wilson strike ruled out They are angry about what they regard as inconsistency West Ham intend to complain to the referees’ body Professional Game Match Officials over the decision to disallow Callum Wilson’s goal after David Raya was deemed to have been fouled by Pablo Felipe. The drama dealt another blow to their hopes of staying in the Premier League and the club plan to contact PGMO to seek clarity over why Pablo was penalised. Although West Ham accept their complaint is unlikely to get them anywhere they are also expected to ask for the audio between the referee, Chris Kavanagh, and the video assistant referee, Darren England. Kavanagh was advised by England to go the pitchside monitor to review the incident. Continue reading...",
+      "publishedAt": "2026-05-11T11:10:39.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Transfers Feyenoord: directeur Dévy Rigaux gelinkt aan Feyenoord",
+      "link": "https://www.vi.nl/nieuws/transfers-feyenoord-directeur-d-vy-rigaux-gelinkt-aan-feyenoord",
+      "summary": "VI volgt het transfernieuws bij Feyenoord op de voet. De doelwitten van de Rotterdammers, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
+      "publishedAt": "2026-05-11T11:01:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Waarom Feyenoord haast moet maken met de nieuwe leiding",
+      "link": "https://www.vi.nl/pro/waarom-feyenoord-haast-moet-maken-met-de-nieuwe-leiding",
+      "summary": "Volgens Belgische bronnen zal Dévy Rigaux deze week Club Brugge laten weten dat hij de nieuwe technisch directeur van Feyenoord wil worden. Het is voor de club te hopen dat dit snel gebeurt, nu er door het vertrek van algemeen en technisch Dennis te Kloese een machtsvacuüm lijkt te ontstaan.",
+      "publishedAt": "2026-05-11T11:00:00.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +51,153 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arsenal win could catapult them to Premier League ...",
-      "link": "https://www.espn.com/soccer/story/_/id/48733536/arsenal-hold-their-nerve-the-brink-premier-league-title",
-      "summary": "It was a dramatic last few minutes, but Arsenal's late win over West Ham United puts the Gunners five clear.",
-      "publishedAt": "2026-05-11T08:19:16.000Z"
+      "title": "Fans, managers can hate on VAR, but Raya incident ...",
+      "link": "https://www.espn.com/soccer/story/_/id/48739444/fans-managers-hate-var-raya-incident-why-exists",
+      "summary": "Arsenal boss Mikel Arteta is the embodiment of how football wants VAR to work both ways. But Sunday's decision was right, and isn't that what we all want?",
+      "publishedAt": "2026-05-11T10:55:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "VAR Review: Should West Ham equalizer vs. Arsenal ...",
+      "link": "https://www.espn.com/soccer/story/_/id/48732378/var-review-were-refs-right-disallow-west-ham-equalizer-vs-arsenal",
+      "summary": "Arsenal took a big step toward the Premier League title, but was West Ham's late equalizer legitimate?",
+      "publishedAt": "2026-05-11T10:54:59.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Burnley zet uitblinker Flemming met fraaie uitverkiezing in spotlights",
+      "link": "https://www.vi.nl/nieuws/burnley-zet-uitblinker-flemming-met-fraaie-uitverkiezing-in-spotlights",
+      "summary": "Zian Flemming is door de fans van Burnley uitgeroepen tot Speler van het Seizoen bij de degradant uit de Premier League. De Nederlander kende een sterk seizoen bij The Clarets en maakte zondag zijn tiende competitiegoal.",
+      "publishedAt": "2026-05-11T10:46:33.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Komedie en provocatie: Peter Vandenbempt fileert prestatie van Anderlecht tegen KAA Gent",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/komedie-en-provocatie-peter-vandenbempt-fileert-prestatie-van-anderlecht-tegen-kaa-gent",
+      "summary": "De wedstrijd tussen KAA Gent en RSC Anderlecht ontspoorde volledig na de rode kaart van Cvetkovic. Nochtans was paars-wit bezig aan een sterke partij. Toch lijkt het vertrouwen weer wat gegroeid voor de bekerfinale tegen Royal Union SG.",
+      "publishedAt": "2026-05-11T10:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Liverpool deelt foto van monument ter ere van Diogo Jota en André Silva",
+      "link": "https://www.vi.nl/nieuws/liverpool-deelt-foto-van-monument-ter-ere-van-diogo-jota-en-andr-silva",
+      "summary": "De overleden broers Diogo Jota en André Silva krijgen een monument bij het stadion van Liverpool. De club deelde maandag foto's van het eerbetoon, dat op een later moment geplaatst wordt.",
+      "publishedAt": "2026-05-11T10:34:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"C'est typiquement le joueur qu'il manque à Anderlecht\"",
+      "link": "https://www.walfoot.be/news/2026-05-11/cest-typiquement-le-joueur-quil-manque-a-anderlecht",
+      "summary": "Casper Nielsen a planté un magnifique but pour offrir la victoire au Standard de Liège contre OHL vendredi soir (2-1). Un type de joueur qui manque au Sporting d'Anderlecht selon Guillaume Gillet.",
+      "publishedAt": "2026-05-11T10:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge heeft opvolger van Dévy Rigaux al in het vizier: hij werd eerder ook bij Anderlecht genoemd",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/club-brugge-heeft-opvolger-van-devy-rigaux-al-in-het-vizier-hij-werd-eerder-ook-bij-anderlecht-genoemd",
+      "summary": "Bij Club Brugge KV lijken ze zich stilaan voor te bereiden op een mogelijk vertrek van Dévy Rigaux. De sterke man achter het transferbeleid van blauw-zwart staat nadrukkelijk in de belangstelling van Feyenoord en daardoor wordt er achter de schermen al vooruitgekeken.",
+      "publishedAt": "2026-05-11T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Voici comment se passera la préparation du RFC Liège pour la saison prochaine",
+      "link": "https://www.walfoot.be/news/2026-05-11/voici-comment-se-passera-la-preparation-du-rfc-liege-pour-la-saison-prochaine",
+      "summary": "La saison du RFC Liège étant maintenant terminée, le club liégeois a annoncé quand aura lieu la reprise des entraînements.",
+      "publishedAt": "2026-05-11T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Van Brederode houdt zich niet in over nederlaag tegen Union en zijn vervanging",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/van-brederode-houdt-zich-niet-in-over-nederlaag-tegen-union-en-zijn-vervanging",
+      "summary": "KV Mechelen ging stevig onderuit op het veld van Union SG. Na de 3-0-nederlaag spaarde Myron van Brederode zijn ploeg niet. De Nederlandse flankaanvaller reageerde zichtbaar gefrustreerd op de manier van verliezen én op zijn opvallende vervanging in de slotfase.",
+      "publishedAt": "2026-05-11T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Soaring World Cup ticket prices for players’ families and guests leave several FAs stunned",
+      "link": "https://www.theguardian.com/football/2026/may/11/world-cup-2026-ticket-prices-fifa-sport-politics",
+      "summary": "Average cost of one ticket claimed to be $3,000 (£2,200) Fifa insists terms and conditions of sale were made clear Numerous Football Associations have been hit by increased prices when buying World Cup tickets for their players’ family and friends, with teams competing at the tournament affected by Fifa’s dynamic pricing model. While Fifa offered all national associations that have qualified for the World Cup a six-week window to buy tickets at a fixed price after the draw in December, any requests for tickets from the end of January have been subject to what Fifa describes as “adaptive pricing”, with the cost rising for most matches. An executive at one national association said they had requested hundreds of additional tickets in recent weeks and have been surprised at the size of the bill. An executive at another association claimed the average cost of securing attendance at matches for their players’ family and their guests has risen to about $3,000 (£2,200) a ticket after extra purchases, a significant additional cost that will eat into their tournament funding. Fifa sources insisted the average cost of tickets bought by national associations is far lower than $3,000. Continue reading...",
+      "publishedAt": "2026-05-11T09:50:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Une attitude indigne du capitaine d'Anderlecht... ou exactement ce dont Anderlecht a besoin ?",
+      "link": "https://www.walfoot.be/news/2026-05-11/une-attitude-indigne-du-capitaine-danderlecht-ou-exactement-ce-dont-anderlecht-a-besoin-",
+      "summary": "Colin Coosemans a défrayé la chronique ce dimanche pendant et après La Gantoise-Anderlecht. Le capitaine du RSCA a été provocateur, truqueur et a dépassé les limites dans son attitude, mais peut-on le blâmer ?",
+      "publishedAt": "2026-05-11T09:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Een houding die een aanvoerder van Anderlecht onwaardig is... of precies wat er nodig is?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/een-houding-die-een-aanvoerder-van-anderlecht-onwaardig-is-of-precies-wat-er-nodig-is",
+      "summary": "Colin Coosemans zorgde zondag tijdens en na KAA Gent-Anderlecht voor heel wat commotie. De aanvoerder van RSCA was provocerend, hanteerde allerlei trucjes en ging in zijn gedrag over de schreef, maar kan je hem dat kwalijk nemen?",
+      "publishedAt": "2026-05-11T09:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "\"On a vécu tellement de choses avec ma mère\" : Mandela Keita très ému après son premier but en Serie A",
+      "link": "https://www.walfoot.be/news/2026-05-11/on-a-vecu-tellement-de-choses-avec-ma-mere--mandela-keita-tres-emu-apres-son-premier-but-en-serie-a",
+      "summary": "Dimanche soir, jour de la fête des mères en Belgique, Mandela Keita a offert un magnifique cadeau à sa maman en plantant son premier but en Serie A. Une réalisation qui a une signification toute particulière pour le milieu défensif de 24 ans.",
+      "publishedAt": "2026-05-11T09:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "How big is Rohl's Rangers rebuild this summer?",
+      "link": "https://www.bbc.com/sport/football/articles/cy02jv50v74o?at_medium=RSS&at_campaign=rss",
+      "summary": "Manager Danny Rohl has to learn some lessons, and quickly, after falling away to a third-place finish in the Scottish Premiership, writes Kheredine Idessane.",
+      "publishedAt": "2026-05-11T08:37:14.000Z"
     },
     {
       "type": "rss",
@@ -62,142 +238,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "West Ham to contact referees' body over disallowed goal",
+      "title": "West Ham set to contact referees' body over disallowed goal",
       "link": "https://www.bbc.com/sport/football/articles/c5yrxkg6z1eo?at_medium=RSS&at_campaign=rss",
       "summary": "West Ham will contact referees' body the Professional Game Match Officials (PGMO) over their disallowed equaliser against Arsenal on Sunday.",
-      "publishedAt": "2026-05-11T07:38:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Rondje Eredivisie: Ajax richting play-offs, seizoen Feyenoord geslaagd?",
-      "link": "https://www.vi.nl/nieuws/rondje-eredivisie-ajax-richting-play-offs-seizoen-feyenoord-geslaagd",
-      "summary": "Met nog een speelronde te gaan in de Eredivisie, wordt steeds meer duidelijk. Feyenoord is zeker van de Champions League en NAC Breda is gedegradeerd, maar de strijd om de derde plaats (voorronde Champions League) ligt nog open. We blikken terug en vooruit in Rondje Eredivisie.",
-      "publishedAt": "2026-05-11T07:33:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "📷 Vader van Hansi Flick overleden, vlak voor titelmatch met FC Barcelona",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/vader-van-hansi-flick-overleden-vlak-voor-titelmatch-met-fc-barcelona",
-      "summary": "De voetbalwereld leeft mee met Hansi Flick na het verdrietige nieuws dat zijn vader is overleden, vlak voor een belangrijke wedstrijd van FC Barcelona. Het nieuws kwam hard aan binnen de club en zorgt voor veel emoties in aanloop naar de grote clash tegen Real Madrid.",
-      "publishedAt": "2026-05-11T07:32:38.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "De eerste WK winnende bondscoach was piepjong",
-      "link": "https://www.vi.nl/nieuws/de-eerste-wk-winnende-bondscoach-was-piepjong",
-      "summary": "In de aanloop naar het WK staan we elke dag stil bij een WK-feitje. Met nog 31 dagen voor de boeg staat Alberto Suppici centraal.",
-      "publishedAt": "2026-05-11T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "\"La saison n'a pas été celle que nous voulions\" : Thibaut Courtois réagit après la défaite du Real Madrid",
-      "link": "https://www.walfoot.be/news/2026-05-11/la-saison-na-pas-ete-celle-que-nous-voulions--thibaut-courtois-reagit-apres-la-defaite-du-real-madrid",
-      "summary": "Thibaut Courtois a fait son retour dans les cages du Real Madrid pour le Clásico de dimanche soir, où les Catalans se sont imposés sur le score de 2-0. Le gardien belge n'a pas su éviter la défaite de son équipe. Il aurait évidemment rêvé d'un meilleur retour sur les terrains.",
-      "publishedAt": "2026-05-11T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Succesvolle Flick in prachtig La Liga-lijstje boordevol Nederlanders",
-      "link": "https://www.vi.nl/nieuws/succesvolle-flick-in-prachtig-la-liga-lijstje-boordevol-nederlanders",
-      "summary": "Onder trainer Hansi Flick pakte Barcelona zondagavond zijn tweede landstitel op rij , in het recente verleden kwam het niet bijster vaak voor dat een coach dit lukte. In het rijtje staan veel Nederlandse coaches.",
-      "publishedAt": "2026-05-11T07:23:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Italiaanse media over 'buitengewone' Malen: 'Niemand in Europa is beter dan hij'",
-      "link": "https://www.vi.nl/nieuws/italiaanse-media-over-buitengewone-malen-niemand-in-europa-is-beter-dan-hij",
-      "summary": "Dat AS Roma mag blijven dromen van de eerste Champions League-deelname sinds 2018/19 heeft de club volgens Italiaanse media voor een groot deel te danken aan Donyell Malen. De Nederlander schoot de ploeg van Gian Piero Gasperini zondag in extremis naar een overwinning en heeft een heldenstatus in Rome. Corriere dello Sport vindt de spits momenteel zelfs de beste speler van Europa.",
-      "publishedAt": "2026-05-11T07:22:01.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "📷 'KRC Genk onderneemt nieuwe poging om verdediger binnen te halen'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/krc-genk-onderneemt-nieuwe-poging-om-verdediger-binnen-te-halen",
-      "summary": "KRC Genk blijft actief speuren naar jong defensief talent. De Limburgers zouden hun oog opnieuw hebben laten vallen op Petar Petrovic, een Servische verdediger van FK Javor Ivanjica. Na een mislukte winterpoging lijkt een nieuwe zomertransfer in de maak.",
-      "publishedAt": "2026-05-11T07:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ajacied Regeer kan door de grond zakken na cruciale misser",
-      "link": "https://www.vi.nl/video/ajacied-regeer-kan-door-de-grond-zakken-na-cruciale-misser",
-      "summary": "Voor Ajax is de voorronde van de Champions League heel ver weg na de thuisnederlaag tegen FC Utrecht . Youri Regeer baalt waarschijnlijk nog extra van de verliespartij: de middenvelder miste in de eerste helft een enorme kans om de score te openen.",
-      "publishedAt": "2026-05-11T07:15:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Neerpede-boy Ait El Hadj heeft straffe boodschap over bekerfinale voor RSC Anderlecht",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/neerpede-boy-ait-el-hadj-heeft-straffe-boodschap-over-bekerfinale-voor-rsc-anderlecht",
-      "summary": "De bekerfinale tussen Union SG en RSC Anderlecht leeft enorm in Brussel. Voor Anouar Ait El Hadj wordt het een bijzonder duel tegen zijn ex-club. De middenvelder van Union SG stuurde vooraf een duidelijke waarschuwing richting Anderlecht en benadrukte zijn enorme motivatie.",
-      "publishedAt": "2026-05-11T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "\"Je touche un truc et ça rentre\" : Thomas Meunier revient sur le but contre son camp qu'il a provoqué",
-      "link": "https://www.walfoot.be/news/2026-05-11/je-touche-un-truc-et-ca-rentre--thomas-meunier-revient-sur-le-but-contre-son-camp-quil-a-provoque",
-      "summary": "Thomas Meunier s'est exprimé à la presse après la victoire du LOSC contre l'AS Monaco dimanche soir (0-1). Le Diable Rouge s'est évidemment montré satisfait.",
-      "publishedAt": "2026-05-11T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Vreselijk moment bij KRC Genk: seizoen zit er zo goed als zeker op voor twee spelers",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/vreselijk-moment-bij-krc-genk-seizoen-zit-er-zo-goed-als-zeker-op-voor-twee-spelers",
-      "summary": "KRC Genk zag tegen Westerlo twee spelers uitvallen in de eerste helft. Slachtoffers van dienst waren Daan Heymans en Kos Karetsas. De kans dat het tweetal dit seizoen nog in actie komt lijkt zo goed als voorbij.",
-      "publishedAt": "2026-05-11T06:38:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "🎥 Thomas Meunier provoque un but contre son camp ultra-important pour le LOSC en cette fin de saison",
-      "link": "https://www.walfoot.be/news/2026-05-11/-thomas-meunier-provoque-un-but-contre-son-camp-ultra-important-pour-le-losc-en-cette-fin-de-saison",
-      "summary": "Thomas Meunier a provoqué un but contre son camp qui a permis à Lille de s'imposer sur le plus petit des scores face à l'AS Monaco dimanche soir (0-1).",
-      "publishedAt": "2026-05-11T06:30:00.000Z"
+      "publishedAt": "2026-05-11T08:10:56.000Z"
     },
     {
       "type": "rss",
@@ -209,17 +253,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cedp2wjepqno?at_medium=RSS&at_campaign=rss",
       "summary": "Hansi Flick has guided a new style of Barcelona to back-to-back La Liga titles - this is how the German coach did it.",
       "publishedAt": "2026-05-11T06:16:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "De titelstrijd is beslecht: Marc Degryse zegt of het Club of Union SG wordt",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/de-titelstrijd-is-beslecht-marc-degryse-zegt-of-het-club-of-union-sg-wordt",
-      "summary": "De titelstrijd in de Jupiler Pro League nadert zijn absolute ontknoping. Club Brugge en Union SG blijven nek aan nek strijden om het kampioenschap, maar analist Marc Degryse denkt dat de beslissing zal vallen in het voordeel van Club Brugge.",
-      "publishedAt": "2026-05-11T06:15:00.000Z"
     },
     {
       "type": "rss",
@@ -240,30 +273,8 @@
       "flag": "🇬🇧",
       "title": "Premier League: 10 talking points from the weekend’s action",
       "link": "https://www.theguardian.com/football/2026/may/11/premier-league-10-talking-points-from-the-weekends-action",
-      "summary": "Jérémy Doku finds the net again, Joshua Zirkzee struggles at Sunderland and Ismaïla Sarr is fulfilling his potential On Friday when Bruno Fernandes became the Football Writers’ Association player of the year, either Declan Rice or David Raya could have been forgiven for feeling a touch aggrieved. Both have been essential to Arsenal’s bid for a Premier League and Champions League double but it is Raya who showed why he may have been more deserving at the London Stadium as his technically pinpoint one-on-one save gave Arsenal the platform they so desperately needed to secure a vital three points late on. Mikel Arteta’s side were on the ropes as Mateus Fernandes exchanged a one-two with Pablo to run in with the goal at his mercy. Surely this was it for Arsenal: the title slipping again. Raya’s nerve held strong, making the most crucial of saves. Arsenal’s dream of winning a first title in 22 years remains in his hands. Graham Searles Match report: West Ham 0-1 Arsenal Barney Ronay: VAR offers up title-deciding moment Match report: Manchester City 3-0 Brentford Match report: Liverpool 1-1 Chelsea Match report: Sunderland 0-0 Manchester United Match report: Nottingham Forest 1-1 Newcastle Match report: Burnley 2-2 Aston Villa Continue reading...",
+      "summary": "Jérémy Doku finds the net again, Joshua Zirkzee struggles at Sunderland and Ismaïla Sarr is fulfilling his potential When Bruno Fernandes became the Football Writers’ Association player of the year on Friday, Declan Rice and David Raya could have been forgiven for feeling a touch aggrieved. They have been essential to Arsenal’s bid for a Premier League and Champions League double, but Raya who why he may have been more deserving at the London Stadium as his technically pinpoint one-on-one save gave Arsenal the platform they so desperately needed to secure a vital three points late on. Mikel Arteta’s side were on the ropes as Mateus Fernandes exchanged a one-two with Pablo to run in with the goal at his mercy. Surely this was it for Arsenal: the title slipping again. Raya’s nerve held strong, making the most crucial of saves. Arsenal’s dream of winning a first title in 22 years remains in his hands. Graham Searles Match report: West Ham 0-1 Arsenal Barney Ronay: VAR offers up title-deciding moment Match report: Manchester City 3-0 Brentford Match report: Liverpool 1-1 Chelsea Match report: Sunderland 0-0 Manchester United Match report: Nottingham Forest 1-1 Newcastle Match report: Burnley 2-2 Aston Villa Continue reading...",
       "publishedAt": "2026-05-11T06:09:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un cadre de l'Union Saint-Gilloise intéresserait un grand club italien",
-      "link": "https://www.walfoot.be/news/2026-05-11/un-cadre-de-lunion-saint-gilloise-interesserait-un-grand-club-italien",
-      "summary": "L'Union Saint-Gilloise va-t-elle perdre Anan Khalaili ? Il semblerait que le Napoli s'intéresse au latéral israélien.",
-      "publishedAt": "2026-05-11T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un cadre de l'Union incertain contre Anderlecht ? \"Ce n'était pas de la gestion\"",
-      "link": "https://www.walfoot.be/news/2026-05-11/match-reaction-un-cadre-de-lunion-incertain-contre-anderlecht--ce-netait-pas-de-la-gestion",
-      "summary": "L'Union Saint-Gilloise a fait le boulot en s'imposant 3-0 contre Malines. David Hubert est satisfait de la réaction de son équipe, il fait également le point sur la sortie prématurée de Kévin Rodriguez.",
-      "publishedAt": "2026-05-11T05:30:00.000Z"
     },
     {
       "type": "rss",
@@ -278,6 +289,28 @@
     },
     {
       "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Volte-face du FC Bruges, les grands clubs emboîtent le pas : du mouvement concernant la réforme du championnat",
+      "link": "https://www.walfoot.be/news/2026-05-11/volte-face-du-fc-bruges-les-grands-clubs-embotent-le-pas--du-mouvement-concernant-la-reforme-du-championnat",
+      "summary": "La décision concernant les équipes U23 risque de bouleverser le football professionnel belge. En coulisses, le soutien en faveur d'un retour des Play-offs reprend de l'ampleur et, fait marquant, le Club de Bruges serait lui aussi prêt à mettre de l'eau dans son vin.",
+      "publishedAt": "2026-05-10T23:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge keert kar met 180 graden en daar zijn alle topclubs blij om: Belgisch voetbal alweer overhoop",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-11/club-brugge-keert-kar-met-180-graden-en-daar-zijn-alle-topclubs-blij-om-belgisch-voetbal-alweer-overhoop",
+      "summary": "De beslissing rond de beloftenploegen dreigt het Belgische profvoetbal volledig door elkaar te schudden. Achter de schermen groeit namelijk opnieuw de steun voor de terugkeer van de play-offs en opvallend genoeg zou ook Club Brugge KV bereid zijn water bij de wijn te doen.",
+      "publishedAt": "2026-05-10T23:00:00.000Z"
+    },
+    {
+      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "ES",
@@ -289,17 +322,6 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "VAR offers up Arsenal’s title-deciding moment for digital mess generation | Barney Ronay",
-      "link": "https://www.theguardian.com/football/2026/may/10/west-ham-var-offers-up-title-deciding-moment-for-arsenal-and-digital-mess-generation",
-      "summary": "Multibillion stage of title-relegation stagger boils down to a referee in front of a screen decoding a raised forearm There’s a great moment towards the end of the otherwise non-great Rocky III, when Clubber Lang is asked by a straw-hatted, bowtie-twirling US sports reporter for a prediction before his imminent title fight. There’s a pause as Clubber looks down, lets the mask of showmanship drop, and just says the word “pain”. You can say that again. Let’s face it, this was always going to hurt, whichever way the latest note in the conjoined title‑relegation stagger fell. Just as it was always likely the destination of the Premier League title would come down to staring at a referee staring at a screen to decide the minutiae of an arm wrestle at a corner. Continue reading...",
-      "publishedAt": "2026-05-10T20:35:17.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -308,28 +330,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c0m2rkwm87po?at_medium=RSS&at_campaign=rss",
       "summary": "The most consequential decision in the history of VAR in the Premier League is played out over four minutes 11 seconds of drama at London Stadium.",
       "publishedAt": "2026-05-10T20:08:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Celtic eye own fairytale as Hearts' story continues to captivate",
-      "link": "https://www.bbc.com/sport/football/articles/cdxpkqrj4qko?at_medium=RSS&at_campaign=rss",
-      "summary": "Celtic have taken care of Rangers and are coming for Hearts. Can Derek McInnes' side hold them off in the final days of a tumultuous campaign?",
-      "publishedAt": "2026-05-10T17:39:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Fifa World Cup matches face heightened terror risk in US amid Iran conflict",
-      "link": "https://www.theguardian.com/football/2026/may/10/fifa-world-cup-terrorism-risk-iran-war",
-      "summary": "Experts warn of ‘soft target’ vulnerabilities and intelligence gaps as federal agencies prepare to secure 78 matches across 11 cities Fifa World Cup matches set to be held across the United States face heightened terrorism risks, with experts warning that vulnerabilities are being amplified by the US-Israel conflict with Iran and a depletion of counter-terrorism expertise within federal law enforcement. The biggest threat stems from homegrown violent extremists, often lone actors that may have become radicalized online by extreme political views or jihadists such as the Islamic State (Isis), said four counter-terror experts interviewed. Continue reading...",
-      "publishedAt": "2026-05-10T12:00:26.000Z"
     }
   ]
 }
