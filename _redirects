@@ -1,6 +1,4 @@
+# Note: GitHub Pages negeert _redirects (Netlify syntax). Behoud voor toekomstige migratie.
+
 # Netlify rewrite: proxy share endpoint to backend (status 200 = rewrite, not redirect)
 /share/article/*  https://voetbal4all-backend-database.onrender.com/share/article/:splat  200
-
-# 301 redirect: old sitemap URL → new filename (Google parser-cache bypass)
-/sitemap.xml  /sitemap-index.xml  301
-
