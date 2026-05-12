@@ -77,7 +77,7 @@ const jobEntries = data.jobs.map(j => {
 });
 const jobsXml = wrapUrlset(jobEntries);
 
-// ── Generate sitemap-index (sitemap.xml) ──
+// ── Generate sitemap-index (sitemap-index.xml) ──
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
@@ -100,14 +100,14 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 `;
 
 // ── Write files to repo root ──
-writeFileSync(resolve(root, "sitemap.xml"), indexXml);
+writeFileSync(resolve(root, "sitemap-index.xml"), indexXml);
 writeFileSync(resolve(root, "sitemap-static.xml"), staticXml);
 writeFileSync(resolve(root, "sitemap-articles.xml"), articlesXml);
 writeFileSync(resolve(root, "sitemap-events.xml"), eventsXml);
 writeFileSync(resolve(root, "sitemap-jobs.xml"), jobsXml);
 
 console.log(`[sitemap] Generated 5 files:`);
-console.log(`  sitemap.xml (index) — 4 sub-sitemaps`);
+console.log(`  sitemap-index.xml (index) — 4 sub-sitemaps`);
 console.log(`  sitemap-static.xml — ${staticUrls.length} URLs`);
 console.log(`  sitemap-articles.xml — ${articleEntries.length} URLs`);
 console.log(`  sitemap-events.xml — ${eventEntries.length} URLs`);
