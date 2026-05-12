@@ -31,7 +31,14 @@
   <meta name="twitter:description" id="twitter-description" content="Lees het nieuwste voetbalnieuws op Voetbal4All" />
   <meta name="twitter:image" id="twitter-image" content="https://www.voetbal4all.eu/assets/img/placeholder.svg" />
   <meta name="robots" content="index, follow">
-  
+
+  <!-- Article structured data (hydrated client-side after fetch) -->
+  <meta property="article:published_time" id="meta-published" content="" />
+  <meta property="article:modified_time" id="meta-modified" content="" />
+  <meta property="article:section" id="meta-section" content="" />
+  <meta property="article:author" content="Voetbal4All Redactie" />
+  <script id="article-jsonld" type="application/ld+json">{}</script>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
   <script src="assets/js/interaction-feedback.js"></script>
@@ -1328,7 +1335,47 @@
     document.getElementById('og-description').setAttribute('content', seoDescription);
     document.getElementById('twitter-title').setAttribute('content', seoTitle);
     document.getElementById('twitter-description').setAttribute('content', seoDescription);
-    
+
+    // Article meta tags + JSON-LD
+    const publishedIso = article.publishedAt ? new Date(article.publishedAt).toISOString() : '';
+    if (publishedIso) {
+      document.getElementById('meta-published').setAttribute('content', publishedIso);
+      document.getElementById('meta-modified').setAttribute('content', publishedIso);
+    }
+    const articleSection = String(article.country || '').trim().toUpperCase();
+    if (articleSection) {
+      document.getElementById('meta-section').setAttribute('content', articleSection);
+    }
+
+    // JSON-LD NewsArticle
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "mainEntityOfPage": { "@type": "WebPage", "@id": window.location.href },
+      "headline": title.length > 110 ? title.substring(0, 107) + '...' : title,
+      "author": {
+        "@type": "Organization",
+        "name": "Voetbal4All Redactie",
+        "url": "https://www.voetbal4all.eu"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Voetbal4All",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png"
+        }
+      },
+      "description": seoDescription.length > 155 ? seoDescription.substring(0, seoDescription.lastIndexOf(' ', 152)) + '...' : seoDescription,
+      "inLanguage": articleSection === 'BE' ? 'nl-BE' : articleSection === 'NL' ? 'nl-NL' : 'nl'
+    };
+    if (publishedIso) {
+      jsonLd.datePublished = publishedIso;
+      jsonLd.dateModified = publishedIso;
+    }
+    // image added after image resolution below
+    document.getElementById('article-jsonld').textContent = JSON.stringify(jsonLd);
+
     const shortTitle = title.length > 50 ? title.substring(0, 47) + '...' : title;
     document.getElementById('breadcrumb-title').textContent = shortTitle;
     document.getElementById('article-title').textContent = title;
@@ -1371,6 +1418,11 @@
       imageEl.setAttribute("fetchpriority", "high");
       document.getElementById('og-image').setAttribute('content', imgUrl);
       document.getElementById('twitter-image').setAttribute('content', imgUrl);
+      // Add image to JSON-LD if it's a real URL (not data: URI)
+      if (imgUrl.startsWith('http')) {
+        jsonLd.image = [imgUrl];
+        document.getElementById('article-jsonld').textContent = JSON.stringify(jsonLd);
+      }
     } else {
       imageEl.classList.add('is-empty');
       imageEl.src = fallbackUrl;

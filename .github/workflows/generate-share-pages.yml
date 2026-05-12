@@ -142,7 +142,7 @@ jobs:
                   return u
               return FRONTEND + '/' + u.lstrip('/')
 
-          def build_page(title, description, image_url, og_url, redirect_url):
+          def build_page(title, description, image_url, og_url, redirect_url, article_meta=None):
               global generated
               t = esc(title)
               d = esc(description)
@@ -153,13 +153,47 @@ jobs:
               # Do NOT html-escape here — <script> content is raw text in HTML5.
               ru_js = redirect_url.replace("\\", "\\\\").replace('"', '\\"').replace("<", "\\x3c")
               generated += 1
+
+              # Article-specific meta tags + JSON-LD (only for news articles)
+              article_tags = ""
+              jsonld_block = ""
+              if article_meta:
+                  pub_iso = esc(article_meta.get("published", ""))
+                  country = esc(article_meta.get("country", ""))
+                  if pub_iso:
+                      article_tags += f'\n    <meta property="article:published_time" content="{pub_iso}">'
+                      article_tags += f'\n    <meta property="article:modified_time" content="{pub_iso}">'
+                  if country:
+                      article_tags += f'\n    <meta property="article:section" content="{country}">'
+                  article_tags += '\n    <meta property="article:author" content="Voetbal4All Redactie">'
+
+                  lang = "nl-BE" if country == "BE" else ("nl-NL" if country == "NL" else "nl")
+                  headline = title[:107] + "..." if len(title) > 110 else title
+                  ld = {
+                      "@context": "https://schema.org",
+                      "@type": "NewsArticle",
+                      "mainEntityOfPage": {"@type": "WebPage", "@id": og_url},
+                      "headline": headline,
+                      "author": {"@type": "Organization", "name": "Voetbal4All Redactie", "url": FRONTEND},
+                      "publisher": {"@type": "Organization", "name": "Voetbal4All", "logo": {"@type": "ImageObject", "url": FALLBACK_IMG}},
+                      "description": description[:155],
+                      "inLanguage": lang
+                  }
+                  if pub_iso:
+                      ld["datePublished"] = article_meta["published"]
+                      ld["dateModified"] = article_meta["published"]
+                  raw_img = article_meta.get("image_url", "")
+                  if raw_img and raw_img.startswith("http"):
+                      ld["image"] = [raw_img]
+                  jsonld_block = f'\n    <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
+
               return f"""<!DOCTYPE html>
           <html lang="nl">
           <head>
             <meta charset="utf-8">
             <title>{t} - Voetbal4All</title>
             <meta property="fb:app_id" content="{FB_APP_ID}">
-            <meta property="og:type" content="website">
+            <meta property="og:type" content="{'article' if article_meta else 'website'}">
             <meta property="og:title" content="{t}">
             <meta property="og:description" content="{d}">
             <meta property="og:image" content="{img}">
@@ -168,8 +202,8 @@ jobs:
             <meta name="twitter:card" content="summary_large_image">
             <meta name="twitter:title" content="{t}">
             <meta name="twitter:description" content="{d}">
-            <meta name="twitter:image" content="{img}">
-            <link rel="canonical" href="{ou}">
+            <meta name="twitter:image" content="{img}">{article_tags}
+            <link rel="canonical" href="{ou}">{jsonld_block}
           </head>
           <body>
             <p>Je wordt doorgestuurd...</p>
@@ -202,7 +236,10 @@ jobs:
               image = resolve_image(item.get("image"))
               og_url = f"{FRONTEND}/share/article/{aid}/"
               redirect = f"{FRONTEND}/artikel.html?id={aid}"
-              write_page(f"share/article/{aid}", build_page(title, desc, image, og_url, redirect))
+              pub = item.get("publishedAt") or item.get("published_at") or ""
+              country = str(item.get("country") or "").strip().upper()
+              ameta = {"published": pub, "country": country, "image_url": image}
+              write_page(f"share/article/{aid}", build_page(title, desc, image, og_url, redirect, article_meta=ameta))
 
           # ── Events ──
           if not SPECIFIC_MODE or TARGET_TYPE == 'event':
