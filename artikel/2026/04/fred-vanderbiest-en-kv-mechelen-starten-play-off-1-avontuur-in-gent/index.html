@@ -540,12 +540,18 @@ Vanderbiest en zijn team zijn vastberaden om het seizoen op een positieve manier
 <script src="/assets/js/image-utils.js"></script>
 
 <script>
-    // SSG: article content is pre-rendered. Only run non-loader scripts.
+    // SSG: article content is pre-rendered. Show content + init AdSense.
     document.addEventListener("DOMContentLoaded", function() {
       var c = document.getElementById("article-content");
       if (c) c.style.display = "block";
       var n = document.getElementById("article-not-found");
       if (n) n.style.display = "none";
+      // Init all AdSense slots (push() calls were in the removed loader script)
+      var slots = document.querySelectorAll("ins.adsbygoogle");
+      for (var i = 0; i < slots.length; i++) {
+        try { (adsbygoogle = window.adsbygoogle || []).push({}); }
+        catch (e) { /* slot init failed, non-blocking */ }
+      }
     });
     </script></body>
 </html>
