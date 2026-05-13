@@ -104,6 +104,7 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 
 // ── Write files to repo root ──
 writeFileSync(resolve(root, "sitemap-index.xml"), indexXml);
+writeFileSync(resolve(root, "sitemap.xml"), indexXml); // /sitemap.xml = copy of index (Google default path)
 writeFileSync(resolve(root, "sitemap-static.xml"), staticXml);
 writeFileSync(resolve(root, "sitemap-articles.xml"), articlesXml);
 writeFileSync(resolve(root, "sitemap-events.xml"), eventsXml);

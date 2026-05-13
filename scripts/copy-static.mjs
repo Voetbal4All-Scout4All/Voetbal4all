@@ -34,6 +34,7 @@ const allowedFiles = new Set([
   'favicon.svg',
   'robots.txt',
   'site.webmanifest',
+  'sitemap.xml',
   'sitemap-index.xml',
   'sitemap-static.xml',
   'sitemap-articles.xml',
