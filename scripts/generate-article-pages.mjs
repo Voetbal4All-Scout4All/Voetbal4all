@@ -54,6 +54,12 @@ function buildPage(article, canonicalUrl) {
 
   let html = TEMPLATE;
 
+  // ── Strip loader placeholders (SSG content is pre-rendered, these cause visual gaps) ──
+  // Remove "Artikel laden..." loading placeholder
+  html = html.replace(/<div\s+id="loading-state"[^>]*>[\s\S]*?<\/div>\s*<\/div>/i, "");
+  // Remove error-state placeholder (already hidden but wastes DOM space)
+  html = html.replace(/<div\s+id="error-state"[^>]*>[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/i, "");
+
   // ── FIX A: Rewrite relative paths to absolute (SSG pages are 4 levels deep) ──
   // href="style.css" → href="/style.css", src="assets/..." → src="/assets/...", etc.
   html = html.replace(/(href|src)="(?!https?:\/\/|\/\/|\/|#|data:|mailto:|tel:)([^"]+)"/g, '$1="/$2"');
