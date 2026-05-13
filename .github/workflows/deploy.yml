@@ -26,6 +26,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Generate static article pages (SSG)
+        run: node scripts/generate-article-pages.mjs
+        continue-on-error: true
+
       - name: Deploy naar gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
