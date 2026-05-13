@@ -55,10 +55,14 @@ const staticUrls = [
 const staticXml = wrapUrlset(staticUrls.map(u => urlEntry(u, today)));
 
 // ── Generate sitemap-articles.xml ──
-// Only include articles WITH slugs — legacy ?id= URLs are noindex and must not appear in sitemap
-const articleEntries = data.articles
-  .filter(a => a.slug && a.slug_year && a.slug_month)
-  .map(a => {
+// Only include articles WITH slugs AND body content (filter thin-content legacy articles)
+const allWithSlug = data.articles.filter(a => a.slug && a.slug_year && a.slug_month);
+const articlesWithBody = allWithSlug.filter(a => a.has_body !== false);
+const filtered = allWithSlug.length - articlesWithBody.length;
+if (filtered > 0) console.log(`[sitemap] Filtered ${filtered} thin-content articles (body < 50 chars)`);
+console.log(`[sitemap] Articles in sitemap: ${articlesWithBody.length} / ${allWithSlug.length} total`);
+
+const articleEntries = articlesWithBody.map(a => {
     const loc = `${SITE_BASE}/artikel/${a.slug_year}/${String(a.slug_month).padStart(2, "0")}/${encodeURIComponent(a.slug)}`;
     return urlEntry(loc, a.lastmod || today);
   });
