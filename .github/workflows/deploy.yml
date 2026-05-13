@@ -30,6 +30,14 @@ jobs:
         run: node scripts/generate-article-pages.mjs
         continue-on-error: true
 
+      - name: Count SSG output
+        run: |
+          echo "=== dist/artikel file count ==="
+          find dist/artikel -name "index.html" 2>/dev/null | wc -l || echo "0"
+          echo "=== dist/ top-level ==="
+          ls dist/ | head -20
+        continue-on-error: true
+
       - name: Deploy naar gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:

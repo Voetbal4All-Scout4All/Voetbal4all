@@ -58,7 +58,7 @@ function buildPage(article, canonicalUrl) {
   "image":[resolveImage(article.image||article.image_path)],
   "datePublished":pubDate,
   "author":{"@type":"Organization","name":"Voetbal4All"},
-  "publisher":{"@type":"Organization","name":"Voetbal4All","logo":{"@type":"ImageObject","url":"${SITE}/assets/img/brand/logo-voetbal4all.png"}}
+  "publisher":{"@type":"Organization","name":"Voetbal4All","logo":{"@type":"ImageObject","url":SITE+"/assets/img/brand/logo-voetbal4all.png"}}
 })}</script>
 <link rel="stylesheet" href="/style.css"/>
 </head>
@@ -90,15 +90,15 @@ const sitemapData = await sitemapResp.json();
 const slugEntries = sitemapData.articles.filter(a => a.slug && a.slug_year && a.slug_month).slice(0, MAX_ARTICLES);
 console.log(`[SSG] ${slugEntries.length} articles with slugs (cap ${MAX_ARTICLES})`);
 
-// Step 2: fetch content (body/title/image) — API returns max ~500, no working offset
-const contentResp = await fetch(`${BACKEND}/api/news?limit=2000&nocache=${Date.now()}`, { signal: AbortSignal.timeout(60000) });
-if (!contentResp.ok) throw new Error(`News API: HTTP ${contentResp.status}`);
+// Step 2: fetch full content (body/title/image) via SSG-specific endpoint (no dedupe filters)
+const contentResp = await fetch(`${BACKEND}/api/news/all-for-ssg`, { signal: AbortSignal.timeout(60000) });
+if (!contentResp.ok) throw new Error(`SSG API: HTTP ${contentResp.status}`);
 const contentData = await contentResp.json();
 const contentMap = new Map();
 for (const item of (contentData.items || [])) {
   contentMap.set(item.id, item);
 }
-console.log(`[SSG] Content fetched for ${contentMap.size} articles`);
+console.log(`[SSG] Content fetched for ${contentMap.size} articles (via all-for-ssg)`);
 
 // Step 3: generate pages
 let generated = 0, contentHit = 0, titleOnly = 0;
