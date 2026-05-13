@@ -54,6 +54,25 @@ function buildPage(article, canonicalUrl) {
 
   let html = TEMPLATE;
 
+  // ── FIX A: Rewrite relative paths to absolute (SSG pages are 4 levels deep) ──
+  // href="style.css" → href="/style.css", src="assets/..." → src="/assets/...", etc.
+  html = html.replace(/(href|src)="(?!https?:\/\/|\/\/|\/|#|data:|mailto:|tel:)([^"]+)"/g, '$1="/$2"');
+
+  // ── FIX B: Prevent JS article-loader from overwriting static SSG content ──
+  // Remove the entire inline loader script (543→1600+). It fetches article via API
+  // and overwrites the DOM — useless for SSG where content is already in HTML.
+  // Keep small utility scripts (year, nav-mobile, etc.)
+  html = html.replace(/<script>\s*\/\/ Repair truncated[\s\S]*?<\/script>\s*(?=<\/body>)/i,
+    `<script>
+    // SSG: article content is pre-rendered. Only run non-loader scripts.
+    document.addEventListener("DOMContentLoaded", function() {
+      var c = document.getElementById("article-content");
+      if (c) c.style.display = "block";
+      var n = document.getElementById("article-not-found");
+      if (n) n.style.display = "none";
+    });
+    </script>`);
+
   // ── HEAD replacements ──
   // Remove noindex (SSG pages SHOULD be indexed)
   html = html.replace(/<meta\s+name="robots"\s+content="noindex"[^>]*>/gi, "");
