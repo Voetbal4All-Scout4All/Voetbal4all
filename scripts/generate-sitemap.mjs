@@ -56,7 +56,10 @@ const staticXml = wrapUrlset(staticUrls.map(u => urlEntry(u, today)));
 
 // ── Generate sitemap-articles.xml ──
 const articleEntries = data.articles.map(a => {
-  const loc = `${SITE_BASE}/artikel.html?id=${encodeURIComponent(a.id)}`;
+  // Use slug-based URL if available, fallback to ?id= for un-backfilled articles
+  const loc = (a.slug && a.slug_year && a.slug_month)
+    ? `${SITE_BASE}/artikel/${a.slug_year}/${String(a.slug_month).padStart(2, "0")}/${encodeURIComponent(a.slug)}`
+    : `${SITE_BASE}/artikel.html?id=${encodeURIComponent(a.id)}`;
   return urlEntry(loc, a.lastmod || today);
 });
 const articlesXml = wrapUrlset(articleEntries);
