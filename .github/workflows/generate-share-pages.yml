@@ -234,8 +234,16 @@ jobs:
               title = item.get("title") or "Voetbal4All"
               desc = clean_description(item.get("description"), title)
               image = resolve_image(item.get("image"))
-              og_url = f"{FRONTEND}/share/article/{aid}/"
-              redirect = f"{FRONTEND}/artikel.html?id={aid}"
+              # Use slug-based URL if available (SEO migration)
+              slug = item.get("slug") or ""
+              slug_year = item.get("slug_year") or ""
+              slug_month = str(item.get("slug_month") or "").zfill(2) if item.get("slug_month") else ""
+              if slug and slug_year and slug_month:
+                canonical = f"{FRONTEND}/artikel/{slug_year}/{slug_month}/{slug}"
+              else:
+                canonical = f"{FRONTEND}/artikel.html?id={aid}"
+              og_url = canonical
+              redirect = canonical
               pub = item.get("publishedAt") or item.get("published_at") or ""
               country = str(item.get("country") or "").strip().upper()
               ameta = {"published": pub, "country": country, "image_url": image}
