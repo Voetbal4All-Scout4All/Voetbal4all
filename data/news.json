@@ -1,16 +1,159 @@
 {
-  "generatedAt": "2026-05-18T16:27:20.851Z",
+  "generatedAt": "2026-05-18T20:28:09.725Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Sources: Mourinho to return as Real Madrid boss",
+      "link": "https://www.espn.com/soccer/story/_/id/48804070/jose-mourinho-agrees-real-madrid-deal-sources",
+      "summary": "José Mourinho has agreed to a two-year contract to return to Real Madrid, sources have told ESPN Brazil.",
+      "publishedAt": "2026-05-18T21:10:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal owners: 'No standing still' after season",
+      "link": "https://www.espn.com/soccer/story/_/id/48808577/arsenal-owners-standing-season",
+      "summary": "Arsenal co-owners Stan and Josh Kroenke insisted \"there will be no standing still when the season ends\" with the club in striking range of a Premier League and Champions League double.",
+      "publishedAt": "2026-05-18T21:10:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Neymar fumes after wrongly being subbed off",
+      "link": "https://www.espn.com/soccer/story/_/id/48803850/neymar-involved-furious-referee-row-incorrect-substitution",
+      "summary": "Neymar was involved in a heated referee altercation after being mistakenly substituted in Santos' league game against Coritiba.",
+      "publishedAt": "2026-05-18T21:10:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "USMNT's Adams: Iraola transformed Bournemouth",
+      "link": "https://www.espn.com/soccer/story/_/id/48807084/usmnt-tyler-adams-andoni-iraola-taken-bournemouth-new-heights",
+      "summary": "AFC Bournemouth and United States national team midfielder Tyler Adams said he'll miss manager Andoni Iraola when he departs at the end of the Premier League season.",
+      "publishedAt": "2026-05-18T21:10:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Follow live: Havertz heads title-chasing Arsenal i...",
+      "link": "https://www.espn.com/soccer/match/_/gameId/740956/burnley-arsenal",
+      "summary": "null",
+      "publishedAt": "2026-05-18T20:45:45.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Scheidsrechtersbaas erkent: tweede goal Man Utd had nooit mogen tellen'",
-      "link": "https://www.vi.nl/nieuws/scheidsrechtersbaas-erkent-tweede-goal-man-utd-had-nooit-mogen-tellen",
-      "summary": "Het doelpunt dat Matheus Cunha zondag maakte voor Manchester United tegen Nottingham Forest had nooit mogen tellen. Dat heeft scheidsrechtersbaas Howard Webb laten weten aan Nottingham Forest, melden diverse Engelse media. Bryan Mbeumo maakte wel degelijk strafbaar hands.",
-      "publishedAt": "2026-05-18T16:23:16.000Z"
+      "title": "VI Live: Arsenal bibbert, Havertz ontsnapt aan rood",
+      "link": "https://www.vi.nl/nieuws/vi-live-arsenal-staat-voor-cruciaal-duel-geen-timber-wel-flemming",
+      "summary": "In de Eredivisie zit de competitie erop, maar in andere landen staan nog speelrondes op het programma. Arsenal wacht vanavond een cruciaal duel in de strijd om de Premier League-titel. The Gunners ontvangen degradant Burnley in het Emirates Stadium. Kan Arsenal Manchester City weer verder op achterstand zetten of gaat Burnley stunten? Volg het in VI Live!",
+      "publishedAt": "2026-05-18T20:26:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City preparing for Guardiola departure",
+      "link": "https://www.bbc.com/sport/football/articles/c0k28522472o?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City are preparing for manager Pep Guardiola to leave the club at the end of the season after a decade in charge and 17 major trophies.",
+      "publishedAt": "2026-05-18T20:21:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Guardiola hakt knoop door en vertrekt deze zomer bij Man City'",
+      "link": "https://www.vi.nl/nieuws/guardiola-hakt-knoop-door-en-vertrekt-deze-zomer-bij-man-city",
+      "summary": "Pep Guardiola heeft volgens Engelse berichtgeving de knoop doorgehakt. Hij vertrekt naar verluidt komende zomer bij Manchester City. Guardiola is bezig aan zijn tiende seizoen aan het roer van The Citizens .",
+      "publishedAt": "2026-05-18T20:19:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal v Burnley: Premier League – live",
+      "link": "https://www.theguardian.com/football/live/2026/may/18/arsenal-v-burnley-premier-league-live",
+      "summary": "⚽ Updates from the 8pm BST KO at the Emirates Stadium ⚽ Table | Top scorers | Football Daily | Email Taha Arsenal and Burnley emerge to a pyro-party at the Emirates. We’ll get going shortly. Martin Ødegaard’s had a stop-start season with injuries, scoring just once. But he was excellent off the bench against West Ham last time out, showing off his close control in the area before laying off for Leandro Trossard’s winner. The captain starts tonight, his 16th of this league campaign. Continue reading...",
+      "publishedAt": "2026-05-18T20:15:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City's Shaw wins WSL Player of the Season",
+      "link": "https://www.bbc.com/sport/football/articles/c5y7q365q05o?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City striker Khadija Shaw wins the WSL Football's Player of the Season and Golden Boot awards at a ceremony in London.",
+      "publishedAt": "2026-05-18T19:50:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Zenuwachtige Koeman zag zijn zoon scoren: 'Bizar dat het op zo'n moment is'",
+      "link": "https://www.vi.nl/nieuws/zenuwachtige-koeman-zag-zijn-zoon-scoren-bizar-dat-het-op-zo-n-moment-is",
+      "summary": "Bondscoach Ronald Koeman heeft toegegeven dat hij vol zenuwen zat toen zijn zoon Ronald Koeman Jr. een strafschop mocht nemen voor Telstar. Met zijn rake penalty gooide Telstar de degradatiekraker tegen FC Volendam in het slot, waarmee Telstar zich veilig speelde.",
+      "publishedAt": "2026-05-18T19:49:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Koeman heeft begrip voor Veerman: 'Had misschien anders gekund'",
+      "link": "https://www.vi.nl/nieuws/koeman-heeft-begrip-voor-veerman-had-misschien-anders-gekund",
+      "summary": "Ronald Koeman heeft begrip voor de reactie van Joey Veerman. De PSV-middenvelder reageerde onlangs getergd op het nieuws dat hij niet bij de voorselectie van het Nederlands elftal voor het WK zat. De bondscoach van Oranje maakte daarin een nuance.",
+      "publishedAt": "2026-05-18T19:28:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Koeman geeft wisselende medische updates over Memphis, De Jong en Timber",
+      "link": "https://www.vi.nl/nieuws/koeman-geeft-wisselende-medische-updates-over-memphis-de-jong-en-timber",
+      "summary": "Ronald Koeman heeft maandag een medische update gegeven over drie spelers van het Nederlands elftal. Memphis Depay, Frenkie de Jong en Jurriën Timber kampen momenteel met een blessure. Met het oog op het WK van komende zomer worden hun situaties nauwlettend in de gaten gehouden.",
+      "publishedAt": "2026-05-18T19:10:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Mbeumo handball decision was wrong, Howard Webb tells Nottingham Forest",
+      "link": "https://www.theguardian.com/football/2026/may/18/bryan-mbeumo-handball-decision-howard-webb-manchester-united-nottingham-forest-michael-salibsury",
+      "summary": "Matheus Cunha scored after teammate had handled Refereeing chief admits goal should not have stood Howard Webb, the Professional Game Match Officials (PGMO) chief refereeing officer, has admitted to Nottingham Forest that Michael Salisbury was wrong not to disallow Matheus Cunha’s goal owing to Bryan Mbeumo’s handball in Manchester United’s 3-2 win on Sunday at Old Trafford. Salisbury’s decision was judged by Webb as being too lenient with regard to the Premier League’s approach to the handball laws. The competition does allow leeway in terms of players’ natural movements. But in Mbeumo’s case Webb felt Salisbury misjudged the incident as an unintentional handball so when Matt Donohue, the video assistant referee, asked Salisbury to review the 55th-minute incident on the pitchside monitor the decision should have been overturned. Continue reading...",
+      "publishedAt": "2026-05-18T18:47:30.000Z"
     },
     {
       "type": "rss",
@@ -21,29 +164,29 @@
       "title": "PGMO admits handball error on Man Utd goal v Forest",
       "link": "https://www.bbc.com/sport/football/articles/cp3p91xed8go?at_medium=RSS&at_campaign=rss",
       "summary": "Manchester United's second goal in Sunday's Premier League win over Nottingham Forest should have been disallowed for handball, the referees' body has admitted.",
-      "publishedAt": "2026-05-18T16:22:05.000Z"
+      "publishedAt": "2026-05-18T18:23:06.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "PSV hofleverancier VI Elftal van het Jaar, NEC levert twee spelers",
-      "link": "https://www.vi.nl/nieuws/psv-hofleverancier-vi-elftal-van-het-jaar-nec-levert-twee-spelers",
-      "summary": "PSV is als oppermachtige kampioen de hofleverancier voor het Elftal van het Jaar van VI. De Eindhovenaren leveren vier spelers. Verder zijn de posities behoorlijk mooi verdeeld over de andere clubs. Alleen nummer drie NEC is ook met meer dan een speler vertegenwoordigd.",
-      "publishedAt": "2026-05-18T16:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Van 20 miljoen naar 60 miljoen: Bulldozer Brobbey verovert de Premier League",
-      "link": "https://www.vi.nl/pro/van-20-miljoen-naar-60-miljoen-bulldozer-brobbey-verovert-de-premier-league",
-      "summary": "Brian Brobbey wordt door kenner buitenlands voetbal Süleyman Öztürk uitgebreid besproken in de wekelijkse rubriek de Nederlander van de Week. De spits was afgelopen weekend voor de zevende keer trefzeker voor Sunderland. Met een knap doelpunt had hij een belangrijk aandeel in de 1-3 overwinning op Everton.",
-      "publishedAt": "2026-05-18T16:00:00.000Z"
+      "title": "West Ham could have to raise £100m in player sales if they are relegated",
+      "link": "https://www.theguardian.com/football/2026/may/18/west-ham-could-have-to-raise-100m-in-player-sales-if-they-are-relegated",
+      "summary": "Club reported £104.2m loss in last set of accounts Bowen, Fernandes and Summerville would have suitors West Ham will be under pressure to raise more than £100m through player sales if they are relegated. The club reported a loss of £104.2m in their last set of accounts and their financial problems will deepen if they are no longer in the Premier League. They are on the brink of going down after losing 3-1 at Newcastle on Sunday. Their fate will in effect be confirmed if Tottenham draw at ­Chelsea on Tuesday night and sealed if Spurs win. West Ham are realistic enough to know they will probably be in the Championship next season. Continue reading...",
+      "publishedAt": "2026-05-18T17:52:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Clarke's key questions for Scotland World Cup squad",
+      "link": "https://www.bbc.com/sport/football/articles/crmpx8py3y7o?at_medium=RSS&at_campaign=rss",
+      "summary": "Steve Clarke names his Scotland squad for the World Cup on Tuesday and while the head coach has a largely settled group, BBC Sport Scotland takes a look at potential bolters.",
+      "publishedAt": "2026-05-18T17:10:17.000Z"
     },
     {
       "type": "rss",
@@ -53,63 +196,8 @@
       "flag": "🇬🇧",
       "title": "Mohamed Salah’s spiky leaving of Liverpool puts Slot in awkward spot",
       "link": "https://www.theguardian.com/football/2026/may/18/mohamed-salahs-spiky-leaving-of-liverpool-puts-slot-in-awkward-spot",
-      "summary": "Forward was dropped after a previous attempt to undermine coach, but doing so now could spark mutiny We can safely say how Arne Slot would like to respond to Mohamed Salah’s latest attempt to undermine him. The Champions League trip to Inter in December, when Salah was left at home as punishment for his incendiary interview at Leeds three days earlier, provides as clear an indication as any. But should a repeat offence result in a repeat sanction on Sunday? Liverpool and their besieged head coach could do without inflaming a potential mutiny at Anfield. Salah decided to draw up battle lines before his departure, with Saturday’s social media post criticising Liverpool’s direction under Slot. His concerns are widely shared by the Liverpool fanbase and the Liverpool squad, it seems, given the support it received from Curtis Jones, Dominik Szoboszlai, Andy Robertson and several members of last summer’s underwhelming recruitment drive. Arrive at great expense, fail to deliver and fuel the sense that a toxic civil war is erupting behind the scenes: thanks for your efforts lads. It is impossible to say what prompted each individual like but that is the impression the collective has given. Continue reading...",
+      "summary": "Forward was dropped after a previous attempt to undermine coach, but doing so now could spark mutiny We can safely say how Arne Slot would like to respond to Mohamed Salah’s latest attempt to undermine him. The Champions League trip to Inter in December, when Salah was left at home as punishment for his incendiary interview at Leeds three days earlier, provides as clear an indication as any. But should a repeat offence result in a repeat sanction on Sunday? Liverpool and their besieged head coach could do without inflaming a potential mutiny at Anfield. Salah decided to draw up battle lines before his departure, with Saturday’s social media post criticising Liverpool’s direction under Slot. His concerns are widely shared by the Liverpool fanbase and the Liverpool squad, it seems, given the support it received from Curtis Jones, Dominik Szoboszlai, Andy Robertson and several members of last summer’s underwhelming recruitment drive. Arrive at great expense, fail to deliver and fuel the sense that a toxic civil war is erupting behind the scenes: thanks for your efforts lads. It is impossible to say what prompted each individual like on Instagram but that is the impression the collective has given. Continue reading...",
       "publishedAt": "2026-05-18T15:49:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "West Ham relegation may cost London taxpayers £2.5m",
-      "link": "https://www.bbc.com/sport/football/articles/cr7pm71rvkvo?at_medium=RSS&at_campaign=rss",
-      "summary": "London taxpayers may have to pay an extra £2.5m if West Ham are relegated from the Premier League, because of the club's lease agreement for London Stadium.",
-      "publishedAt": "2026-05-18T15:48:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Paris Saint-Germain deelt hoopvolle update blessure Dembélé",
-      "link": "https://www.vi.nl/nieuws/paris-saint-germain-deelt-hoopvolle-update-blessure-demb-l",
-      "summary": "De blessure van Ousmane Dembélé lijkt mee te vallen. De Franse Ballon d’Or-winnaar werd al na een halfuur naar de kant gehaald in het duel met Paris FC, waardoor er even vrees ontstond voor zijn deelname aan de Champions League-finale eind deze maand.",
-      "publishedAt": "2026-05-18T15:39:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Ruben Kluivert uit ziekenhuis ontslagen",
-      "link": "https://www.vi.nl/nieuws/ruben-kluivert-uit-ziekenhuis-ontslagen",
-      "summary": "Olympique Lyon heeft een medische update gegeven over Ruben Kluivert. De 24-jarige centrale verdediger moest zich zondagavond laten wisselen met een klaplong en werd naar het ziekenhuis gebracht. Inmiddels is hij daaruit ontslagen.",
-      "publishedAt": "2026-05-18T15:18:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Football Daily | Celtic, the ‘old man’ and a possible pitch invasion hat-trick",
-      "link": "https://www.theguardian.com/football/2026/may/18/celtic-hearts-scottish-premiership-title-decider-football-daily-newsletter",
-      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! An occasionally contrary but invariably entertaining studio regular on Jim White’s TalkSport show before and between stints at Celtic this season, Martin O’Neill made himself available this morning to discuss his side’s dramatic weekend title heist. It’s not often a game of fitba completely overshadows the FA Cup final but Saturday’s denouement at Celtic Park was the rare exception. O’Neill could scarcely have been more complimentary about his players, his staff and the unprecedented levels of global interest generated in the Scottish Premiership by a completely unexpected Hearts title challenge that came up agonisingly short. For 12 minutes O’Neill traded good-natured barbs with White and Sidekick Simon Jordan while joking about “the two Japanese lads” in the dressing-room openly wondering “who is this old man?” on his first day in interim charge. It was only when the trumpeting of the giant elephant in the studio klaxon reached an ear-splitting crescendo that White asked his special guest about the pitch invasion that greeted Celtic’s third goal and whether it suggested “a lack of class” on Celtic’s part. Gone. Get rid. I’ll tell you why. It’s killing spontaneity in the ground. I’m a season ticket holder at Everton. Killing spontaneity. You can’t celebrate a goal because you think someone somewhere in an industrial unit is going to rule it out. So that’s a bad thing. But No 2, it doesn’t get decisions right. You could put up with it if it then got decisions right, but it doesn’t get the decisions right and it’s not consistent” – Andy Burnham, the Greater Manchester mayor reportedly building a potential bid to become the new prime minister, is asked on the burning issue of the day: the war in Iran, the cost-of-living crisis VAR! I think Michael Lloyd might be on to something with his suggestion for crowd entertainment during VAR reviews (Friday’s letters). Stadium announcers could play songs that match the (alleged) infraction under consideration - maybe Johnny Cash’s ‘I Walk the Line’ for offside reviews, Timbaland’s ‘Hands in the Air’ for when the ball has been leathered against an outstretched digit from incredibly close quarters, or Justin Bieber’s ‘Hold Me’ for set-piece grappling (if it’s one of those scenarios that has to be replayed 17 times, then some or all alternative tracks with the same title by Wilson Phillips, Santana, Alabama Shakes or Tom Waits could also be played). Finally, for dubious decisions made in added time, in games that have a direct impact on the destination of a league title, there is only one possible track: Prince’s ‘Controversy’” – Paul Taverner. Can I be one of 1,057 others to suggest that Andy Burnham would be better to sport an Everton shirt sponsored by NEC if he wanted to curry favour with the Labour Party hierarchy” – Chris Richardson (and no others). This is an extract from our daily football email … Football Daily. To get the full version, just visit this page and follow the instructions. Continue reading...",
-      "publishedAt": "2026-05-18T15:08:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The Premier League title is Arsenal’s to lose. But pressure does strange things to teams | Jonathan Wilson",
-      "link": "https://www.theguardian.com/football/2026/may/18/premier-league-title-race-arsenal-man-city-aston-villa-burnley",
-      "summary": "The Gunners seemingly have the easier end-of-season schedule, but Manchester City are clinging to hope that anything can happen Sign up for the World Behind The Cup newsletter The title race should be done. All logic says it’s already over. Arsenal lead Manchester City by two points which means two wins in their final two games of the season would seal the title – and those two games are tonight against Burnley, who have been relegated, and, on Sunday against Crystal Palace, who will be preparing for the Europa Conference League final three days later. It’s hard, frankly, to imagine a better pair of fixtures for Mikel Arteta’s side to play at this stage of the season. City’s games appear harder. On Tuesday they play away at Bournemouth, who are still fighting for Champions League qualification, whether by claiming fifth above Liverpool, or by taking sixth and hoping Villa win the Europa League but finish fifth. (It makes little sense but, under Uefa regulations, if Villa finish fourth and win the Europa League, there would be no sixth Champions League slot for Premier League clubs.) Man City finish at home against Aston Villa, who will just have returned from Istanbul and a Europa League final. Continue reading...",
-      "publishedAt": "2026-05-18T14:56:42.000Z"
     },
     {
       "type": "rss",
@@ -124,25 +212,113 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Giroud, Azpilicueta and McCarthy join BBC World Cup team",
-      "link": "https://www.bbc.com/sport/football/articles/cx21p8lgde8o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport announces its plans for the 2026 Fifa World Cup next month including coverage of all 104 matches in the United States, Canada and Mexico.",
-      "publishedAt": "2026-05-18T11:02:41.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "'Zulte Waregem mikt hoog: na pion Anderlecht en Club Brugge nieuwe naam op verlanglijst'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/zulte-waregem-mikt-hoog-na-pion-anderlecht-en-club-brugge-nieuwe-naam-op-verlanglijst",
+      "summary": "Krijgen we binnenkort de grote terugkeer van Jonas De Roeck naar ons land? Zijn naam wordt alvast genoemd bij Zulte Waregem, al is hij lang niet de enige mogelijke oefenmeester die bij Essevee kan worden aangesteld.",
+      "publishedAt": "2026-05-18T08:13:31.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "WSL talking points: Shaw gives mixed messages over farewell but era ends for Arsenal",
-      "link": "https://www.theguardian.com/football/2026/may/18/wsl-talking-points-shaw-gives-mixed-messages-over-farewell-but-era-ends-for-arsenal",
-      "summary": "The WSL Golden Boot winner looks to have played her last game for the champions, while there are definite goodbyes at Arsenal and Chelsea The focus was less on the performance and result and more on Khadija Shaw and her future. Manchester City had wrapped up the title after Arsenal dropped points against Brighton 10 days prior, so the game against West Ham was somewhat irrelevant. That Shaw scored two goals in City’s 4-1 win further highlighted what a huge error it would be for the club to let her go, with her contract expiring this summer. Shaw, though, gave hope to City fans so desperate for her to stay they chanted her name over and over at the club’s title party on Sunday. After the match on Saturday, she told Sky Sports: “I’ve always said Manchester is my home, it’s where I want to be, but there’s a lot of things which go on behind the scenes which I won’t talk about now. But I’ve always been proud of all the girls and everything. Manchester is where I would want to be, but ultimately we’ll see.” Suzanne Wrack Continue reading...",
-      "publishedAt": "2026-05-18T11:00:45.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Faris Haroun voert direct ingrijpende veranderingen door in de wedstrijdselectie van Antwerp",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/faris-haroun-voert-direct-ingrijpende-veranderingen-door-in-de-wedstrijdselectie-van-antwerp",
+      "summary": "Nu Europees voetbal definitief buiten bereik ligt, maakt Antwerp duidelijke keuzes richting de toekomst. In de uitwedstrijd tegen KRC Genk wordt al zichtbaar hoe de club het slot van het seizoen wil aanpakken: met het oog op volgend jaar en met spelers die nog onder contract liggen.",
+      "publishedAt": "2026-05-18T08:01:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le RSC Anderlecht aurait-il dû recevoir un penalty ? La réponse de Jonathan Lardot",
+      "link": "https://www.walfoot.be/news/2026-05-18/le-rsc-anderlecht-aurait-il-du-recevoir-un-penalty--la-reponse-de-jonathan-lardot",
+      "summary": "Jonathan Lardot a donné son avis sur plusieurs phases très discutées ce week-end. L'une d'elles concernait Nacho Miras, sorti devant Enric Llansana.",
+      "publishedAt": "2026-05-18T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Anderlecht schakelt deze kolossale en bekende ex-judoka in om veiligheid spelers te garanderen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/anderlecht-schakelt-deze-kolossale-en-bekende-ex-judoka-in-om-veiligheid-spelers-te-garanderen",
+      "summary": "Opvallende verschijning de voorbije weken in het Lotto Park: voormalig topjudoka Toma Nikiforov waakt tegenwoordig over de veiligheid bij Anderlecht. De imposante Brusselaar is sinds kort actief als veiligheidsagent rond de spelerstunnel van paars-wit.",
+      "publishedAt": "2026-05-18T07:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Les trois meilleurs joueurs d'Anderlecht seront convoités cet été... mais s'ils partent, c'est une catastrophe",
+      "link": "https://www.walfoot.be/news/2026-05-18/les-trois-meilleurs-joueurs-danderlecht-seront-convoites-cet-ete-mais-sils-partent-cest-une-catastrophe",
+      "summary": "Anderlecht devra-t-il vendre avant d'acheter cet été ? A priori, le club n'en est plus là. Mais les trois joueurs à la plus haute valeur marchande sont aussi ceux sans lesquels l'équipe ne peut rien espérer la saison prochaine.",
+      "publishedAt": "2026-05-18T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "STVV gaat heel interessante spits in Challenger Pro League halen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/stvv-gaat-heel-interessante-spits-in-challenger-pro-league-halen",
+      "summary": "Frédéric Soelle Soelle, dit seizoen door RWDM uitgeleend aan RFC Luik, zal niet in de Challenger Pro League blijven. Hij zou tekenen bij Sint-Truiden.",
+      "publishedAt": "2026-05-18T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "République démocratique du Congo, Autriche, Cap-Vert... : découvrez les dernières listes pour la Coupe du monde qui sont tombées",
+      "link": "https://www.walfoot.be/news/2026-05-18/republique-democratique-du-congo-autriche-cap-vert-decouvrez-les-dernieres-listes-pour-la-coupe-du-monde-qui-sont-tombees",
+      "summary": "Les listes pour la Coupe du monde tombent les unes après les autres. Retrouvez ci-dessous les listes dévoilées récemment.",
+      "publishedAt": "2026-05-18T07:08:26.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Supporters geloven er in, net als de spelers: Lommel wil nu écht gaan promoveren tegen Dender",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/supporters-geloven-er-in-net-als-de-spelers-lommel-wil-nu-echt-gaan-promoveren-tegen-dender",
+      "summary": "De barrages tussen Lommel en Dender moeten bepalen wie volgend seizoen in de Jupiler Pro League aantreedt. Dender probeert het behoud veilig te stellen, terwijl Lommel na een sterke eindspurt in de Challenger Pro League vol droomt van promotie.",
+      "publishedAt": "2026-05-18T07:07:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Très convaincant avec le FC Liège, un attaquant va rejoindre la Jupiler Pro League",
+      "link": "https://www.walfoot.be/news/2026-05-18/tres-convaincant-avec-le-fc-liege-un-attaquant-va-rejoindre-la-jupiler-pro-league",
+      "summary": "Prêté cette saison au RFC Liège par le RWDM, Frédéric Soelle Soelle ne restera pas en Challenger Pro League. Il devrait s'engager à Saint-Trond.",
+      "publishedAt": "2026-05-18T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Polyvalence et finale européenne : quatre choses à savoir sur Laurens Goemaere, la nouvelle cible du Standard",
+      "link": "https://www.walfoot.be/news/2026-05-18/polyvalence-et-finale-europeenne--quatre-choses-a-savoir-sur-laurens-goemaere-la-nouvelle-cible-du-standard",
+      "summary": "Le Standard pousse pour pouvoir recruter Laurens Goemaere. Portrait de la nouvelle cible de Marc Wilmots.",
+      "publishedAt": "2026-05-18T06:40:00.000Z"
     },
     {
       "type": "rss",
@@ -154,182 +330,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c9q313pjgr0o?at_medium=RSS&at_campaign=rss",
       "summary": "Mohamed Salah should be dropped from Liverpool's season finale for \"selfish\" criticism of the club, says Wayne Rooney.",
       "publishedAt": "2026-05-18T05:11:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Hij liet België links liggen, maar moet nu ook thuis blijven van het WK",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/hij-liet-belgie-links-liggen-maar-moet-nu-ook-thuis-blijven-van-het-wk",
-      "summary": "De WK-selectie van DR Congo heeft voor de nodige wenkbrauwen gezorgd. Niet alleen door de namen die er wél bij zijn, maar vooral door enkele opvallende afwezigen. Eén dossier springt daarbij in het oog: dat van Jorthy Mokio.",
-      "publishedAt": "2026-05-18T04:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEL : Anderlecht offre un contrat professionnel à un jeune 2011",
-      "link": "https://www.walfoot.be/news/2026-05-18/officiel--anderlecht-offre-un-contrat-professionnel-a-un-jeune-2011",
-      "summary": "Anderlecht a offert un premier contrat professionnel à Tiago De Vincentis, jeune talent bruxellois né le 26 avril 2011. Le joueur de 15 ans porte les couleurs du Royal Sporting Club d'Anderlecht depuis 2015.",
-      "publishedAt": "2026-05-18T04:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Mensen feliciteren mij, maar...\": Thomas Meunier reageert op opmerkelijke keuze Rode Duivel",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/mensen-feliciteren-mij-maar-thomas-meunier-reageert-op-opmerkelijke-keuze-rode-duivel",
-      "summary": "Thomas Meunier sprak bij Pickx Sports over de beslissing van Matías Fernández-Pardo om voor België uit te komen. Of hij daar zelf iets mee te maken heeft? Hij krijgt alvast wel een deel van de complimenten.",
-      "publishedAt": "2026-05-18T04:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Anderlecht gelooft volop in de jeugd en heeft beet",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/anderlecht-gelooft-volop-in-de-jeugd-en-heeft-beet",
-      "summary": "Werk aan de winkel voor Antoine Sibierski en RSC Anderlecht komende zomer. Er zal heel wat moeten veranderen om opnieuw een stap te zetten richting de top-2 in dit land Club Brugge en Union SG. Ondertussen maken ze bij paars-wit wel werk van de toekomst.",
-      "publishedAt": "2026-05-18T03:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le Club de Bruges réagit aux saluts nazis aperçus dans les tribunes du Jan Breydel : \"L'homme a été identifié\"",
-      "link": "https://www.walfoot.be/news/2026-05-18/le-club-de-bruges-reagit-aux-saluts-nazis-apercus-dans-les-tribunes-du-jan-breydel--lhomme-a-ete-identifie",
-      "summary": "Le Club de Bruges a publié un communiqué ce lundi après-midi à propos du supporter filmé en train de faire des saluts nazis.",
-      "publishedAt": "2026-05-18T03:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Wie is Jordi Makiese, voor het eerst opgenomen in de selectie van Standard tegen Genk ?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/wie-is-jordi-makiese-voor-het-eerst-opgenomen-in-de-selectie-van-standard-tegen-genk",
-      "summary": "Vincent Euvrard stelde Jordi Makiese voor, die voor het eerst in de selectie van Standard zat voor de wedstrijd tegen Racing Genk. De jonge middenvelder van de lichting 2009 is, samen met anderen, de toekomst van stamnummer 16.",
-      "publishedAt": "2026-05-18T03:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Nicky Hayen annonce un retour important au KRC Genk",
-      "link": "https://www.walfoot.be/news/2026-05-18/nicky-hayen-annonce-un-retour-important-au-krc-genk",
-      "summary": "Nicky Hayen a pris la parole en conférence de presse ce lundi, avant le match du KRC Genk contre l'Antwerp, ce mardi soir.",
-      "publishedAt": "2026-05-18T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Club Brugge komt meteen met vlammend statement na hitlergroet van 'zogenaamde supporter'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-18/club-brugge-komt-meteen-met-vlammend-statement-na-hitlergroet-van-zogenaamde-supporter",
-      "summary": "Club Brugge werd op heel prachtige wijze dé titelfavoriet bij uitstek na een 5-0 overwinning tegen Union SG. Rondom de wedstrijd werd wel een pijnlijk beeld gedeeld van een supporter van Club Brugge die over de schreef ging. Club Brugge heeft meteen gereageerd.",
-      "publishedAt": "2026-05-18T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Pas de calcul pour le Standard à Westerlo : \"Tout en sachant que perdre pourrait nous éliminer\"",
-      "link": "https://www.walfoot.be/news/2026-05-18/pas-de-calcul-pour-le-standard-a-westerlo--tout-en-sachant-que-perdre-pourrait-nous-eliminer",
-      "summary": "Vincent Euvrard pourrait être tenté de suivre d'un œil la rencontre entre Genk et l'Antwerp pendant le déplacement de son Standard à Westerlo. Le T1 des Rouches ne le fera cependant pas, conscient que toute son attention doit être portée sur son groupe et sur le succès à glaner au Kuipje.",
-      "publishedAt": "2026-05-18T02:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"J'ai la moitié du palmarès de l'Union\" : Silvio Proto prend la défense d'Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-05-18/jai-la-moitie-du-palmares-de-lunion--silvio-proto-prend-la-defense-danderlecht",
-      "summary": "L'Union Saint-Gilloise est-elle un plus grand club qu'Anderlecht ? Silvio Proto ne le pense pas et a tenu à défendre clairement sa position.",
-      "publishedAt": "2026-05-18T02:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'I was screaming' - footballer stabbed seven times recalls mass knife attack",
-      "link": "https://www.bbc.com/sport/football/articles/cp8py1n500lo?at_medium=RSS&at_campaign=rss",
-      "summary": "Footballer Jonathan Gjoshe was among the 11 passengers seriously injured in a knife attack on a train as it travelled through Cambridgeshire last November.",
-      "publishedAt": "2026-05-17T23:02:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "What is Horner's most likely route back into F1?",
-      "link": "https://www.skysports.com/f1/news/12040/13545489/christian-horner-what-is-former-red-bull-chiefs-most-likely-route-back-to-f1-with-imminent-return-now-possible",
-      "summary": "Approaching a year on from his shock Red Bull sacking, Christian Horner is free to return to Formula 1, but what is the Brit's most likely route back to the pit wall?",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Cavenagh promises Rangers squad revamp as Rohl backed to win title",
-      "link": "https://www.skysports.com/watch/video/13545091/andrew-cavenagh-rangers-chairman-promises-squad-revamp-as-danny-rohl-backed-to-land-premiership-title-after-frustrating-season",
-      "summary": "Rangers chairman Andrew Cavenagh promises the Ibrox squad will be revamped as head coach Danny Rohl is backed, despite finishing third.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Hull FC prop Aydin handed six-match ban for horror tackle",
-      "link": "https://www.skysports.com/rugby-league/live-blog/12040/13303427/rugby-league-news-transfers-and-rumours-super-league-latest-and-highlights",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Will Sinner feel any pressure at the French Open?",
-      "link": "https://www.skysports.com/tennis/news/12040/13545437/french-open-will-jannik-sinner-feel-the-pressure-at-roland-garros-laura-robson-says-victory-in-paris-feels-inevitable-for-the-world-no-1",
-      "summary": "Will Jannik Sinner feel the pressure heading into the French Open? Laura Robson says victory at Roland-Garros \"feels inevitable\" for the world No 1.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Van Rensburg named in England training camp ahead of Nations Championship",
-      "link": "https://www.skysports.com/rugby-union/news/12040/13545457/england-rugby-benhard-janse-van-rensburg-charlie-bracken-archie-mcparland-called-up-as-george-martin-returns-in-nations-championship-training-squad",
-      "summary": "Benhard Janse van Rensburg, Charlie Bracken and Archie McParland have all been named in England's training camp ahead of the inaugural Nations Championship.",
-      "publishedAt": null
     }
   ]
 }
