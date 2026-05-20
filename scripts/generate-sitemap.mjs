@@ -63,7 +63,7 @@ if (filtered > 0) console.log(`[sitemap] Filtered ${filtered} thin-content artic
 console.log(`[sitemap] Articles in sitemap: ${articlesWithBody.length} / ${allWithSlug.length} total`);
 
 const articleEntries = articlesWithBody.map(a => {
-    const loc = `${SITE_BASE}/artikel/${a.slug_year}/${String(a.slug_month).padStart(2, "0")}/${encodeURIComponent(a.slug)}`;
+    const loc = `${SITE_BASE}/artikel/${a.slug_year}/${String(a.slug_month).padStart(2, "0")}/${encodeURIComponent(a.slug)}/`;
     return urlEntry(loc, a.lastmod || today);
   });
 const articlesXml = wrapUrlset(articleEntries);

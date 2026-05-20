@@ -172,7 +172,7 @@ for (const entry of slugEntries) {
   const mm = String(entry.slug_month).padStart(2, "0");
   const dir = resolve(distDir, "artikel", String(entry.slug_year), mm, entry.slug);
   mkdirSync(dir, { recursive: true });
-  const canonicalUrl = `${SITE}/artikel/${entry.slug_year}/${mm}/${entry.slug}`;
+  const canonicalUrl = `${SITE}/artikel/${entry.slug_year}/${mm}/${entry.slug}/`;
   writeFileSync(resolve(dir, "index.html"), buildPage(article, canonicalUrl));
   generated++;
   if (content) contentHit++; else titleOnly++;
