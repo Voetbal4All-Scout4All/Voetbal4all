@@ -42,8 +42,9 @@
   <meta property="article:author" content="Voetbal4All Redactie" />
   <script id="article-jsonld" type="application/ld+json">{}</script>
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"></noscript>
   <script src="assets/js/interaction-feedback.js"></script>
   
   <style>
@@ -409,7 +410,9 @@
             src="assets/img/placeholder.svg"
             alt=""
             class="article-hero-image is-empty"
+            width="782" height="500"
             loading="eager"
+            fetchpriority="high"
             decoding="async"
             referrerpolicy="no-referrer"
           />

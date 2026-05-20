@@ -109,6 +109,10 @@ function buildPage(article, canonicalUrl) {
   // JSON-LD
   html = html.replace(/<script\s+id="article-jsonld"\s+type="application\/ld\+json">[^<]*<\/script>/i,
     `<script id="article-jsonld" type="application/ld+json">${jsonLd}</script>`);
+  // Hero-image preload hint (early discovery for LCP element)
+  if (image && !image.includes("placeholder.svg")) {
+    html = html.replace("</head>", `  <link rel="preload" as="image" href="${esc(image)}" fetchpriority="high">\n</head>`);
+  }
 
   // ── BODY: inject SSG flag + pre-rendered content ──
   // Add SSG flag so client JS knows content is already rendered
