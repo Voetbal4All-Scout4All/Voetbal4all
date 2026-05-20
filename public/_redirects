@@ -1,0 +1,3 @@
+# Netlify proxy: backend sitemaps under voetbal4all.eu domain (required for GSC)
+/sitemap-news.xml    https://voetbal4all-backend-database.onrender.com/sitemap-news.xml    200!
+/sitemap-images.xml  https://voetbal4all-backend-database.onrender.com/sitemap-images.xml  200!
