@@ -1,38 +1,27 @@
 {
-  "generatedAt": "2026-05-21T16:18:12.677Z",
+  "generatedAt": "2026-05-21T19:00:04.343Z",
   "items": [
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Man Utd-verdediger Maguire niet met Engeland naar het WK",
-      "link": "https://www.vi.nl/nieuws/man-utd-verdediger-maguire-niet-met-engeland-naar-het-wk",
-      "summary": "Harry Maguire heeft bevestigd dat hij niet bij de 26-koppige selectie van Engeland zit. Bondscoach Thomas Tuchel maakt zijn keuzes vrijdag bekend, maar duidelijk is dat de mandekker van Manchester United er niet bij is in Canada, Mexico en de Verenigde Staten.",
-      "publishedAt": "2026-05-21T16:17:01.000Z"
+      "title": "Foden and Palmer to miss out on World Cup squad",
+      "link": "https://www.bbc.com/sport/football/articles/c78ke277pmdo?at_medium=RSS&at_campaign=rss",
+      "summary": "Nottingham Forest's Morgan Gibbs-White is also set to miss out on the squad, though Ivan Toney and Jordan Henderson are expected to be picked.",
+      "publishedAt": "2026-05-21T18:56:03.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Curaçao lanceert drie weken voor start WK nieuw thuistenue",
-      "link": "https://www.vi.nl/nieuws/curacao-lanceert-drie-weken-voor-start-wk-nieuw-thuistenue",
-      "summary": "Curaçao en Adidas hebben donderdag het thuisshirt bekendgemaakt waarin The Blue Wave zal gaan spelen op het aankomende WK. Het shirt is – uiteraard – overwegend blauw, met wat gele accenten.",
-      "publishedAt": "2026-05-21T16:15:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Mogelijk bondscoachschap Guardiola: 'Hij is gek genoeg voor Nederland of Japan'",
-      "link": "https://www.vi.nl/video/mogelijk-bondscoachschap-guardiola-hij-is-gek-genoeg-voor-nederland-of-japan",
-      "summary": "In Rondje Buitenland Extra bespreken Süleyman Öztürk en Matthijs Vegter of Pep Guardiola een interessante optie zou zijn als nieuwe bondscoach van het Nederlands elftal. Wat zouden jullie van Guardiola bij Oranje vinden?",
-      "publishedAt": "2026-05-21T15:45:00.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spygate: Who is Tonda Eckert and can he keep his job?",
+      "link": "https://www.bbc.com/sport/football/articles/cvgz5x9xxxyo?at_medium=RSS&at_campaign=rss",
+      "summary": "Tonda Eckert was a head coach who had the world at his feet. After Spygate, he may be fighting for his job and his future in the game.",
+      "publishedAt": "2026-05-21T18:55:27.000Z"
     },
     {
       "type": "rss",
@@ -40,10 +29,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: Hernes vervangt geschorste Taha bij Groningen, aftellen naar play-offs",
-      "link": "https://www.vi.nl/nieuws/vi-live-hernes-vervangt-geschorste-taha-bij-groningen-aftellen-naar-play-offs",
+      "title": "Schotse bond steunt besluit arbiter na veldbestorming op Celtic Park",
+      "link": "https://www.vi.nl/nieuws/schotse-bond-steunt-besluit-arbiter-na-veldbestorming-op-celtic-park",
+      "summary": "De Schotse voetbalbond (SFA) stelt dat scheidsrechter Don Robertson afgelopen zaterdag de juiste beslissing heeft genomen door de wedstrijd tussen Celtic en Heart of Midlothian vroegtijdig te beëindigen na een veldbestorming op Celtic Park. Nadat Celtic in de extra tijd op 3-1 kwam, werd het veld overspoeld met uitzinnige Celtic-fans die alvast het behalen van de landstitel vierden.",
+      "publishedAt": "2026-05-21T18:45:54.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Ajax laat het wél zien in play-offs en wacht nog één horde voor Conference League",
+      "link": "https://www.vi.nl/nieuws/ajax-laat-het-w-l-zien-in-play-offs-en-wacht-nog-n-horde-voor-conference-league",
+      "summary": "Ajax heeft zich herpakt in de halve finale van de play-offs om Europees voetbal. In het Kras Stadion werd FC Groningen vrij eenvoudig met 2-0 aan de kant gezet, waardoor de Amsterdammers nog één horde verwijderd zijn van de voorronde van de Conference League.",
+      "publishedAt": "2026-05-21T18:45:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: wordt Utrecht of Heerenveen tegenstander van Ajax in finale play-offs?",
+      "link": "https://www.vi.nl/nieuws/vi-live-wordt-utrecht-of-heerenveen-tegenstander-van-ajax-in-finale-play-offs",
       "summary": "In de Eredivisie begint vanavond de strijd om een ticket voor de voorronde van de Conference League: Ajax ontvangt FC Groningen in Volendam en FC Utrecht krijgt SC Heerenveen op bezoek. Wie bereiken de finale? In België kan de titelstrijd beslist worden en in Duitsland strijdt VfL Wolfsburg tegen degradatie. Volg alle hoogtepunten hier via VI Live!",
-      "publishedAt": "2026-05-21T15:42:17.000Z"
+      "publishedAt": "2026-05-21T18:41:13.000Z"
     },
     {
       "type": "rss",
@@ -51,10 +62,65 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Bouwman krijgt tegen FC Groningen eerste basisplaats onder García bij Ajax",
-      "link": "https://www.vi.nl/nieuws/bouwman-krijgt-tegen-fc-groningen-eerste-basisplaats-onder-garc-a-bij-ajax",
-      "summary": "Oscar García kiest tegen FC Groningen voor Aaron Bouwman rechts in het centrum van de defensie. Het is de eerste basisplaats voor de achttienjarige verdediger onder de Spaanse coach.",
-      "publishedAt": "2026-05-21T15:41:14.000Z"
+      "title": "Waarom de zwervende Mika Godts ongrijpbaar was voor Groningen",
+      "link": "https://www.vi.nl/pro/analyse-ajax-fc-groningen-zwervende-mika-godts-cruciaal",
+      "summary": "Ajax dankt de 2-0 zege in de play-offs tegen FC Groningen vooral aan Mika Godts. Hoe de twintigjarige aanvaller keer op keer ruimte vond om zijn creativiteit te etaleren.",
+      "publishedAt": "2026-05-21T18:38:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Phil Foden, Cole Palmer and Harry Maguire left out of England World Cup squad",
+      "link": "https://www.theguardian.com/football/2026/may/21/england-world-cup-squad-harry-maguire-thomas-tuchel",
+      "summary": "Mainoo in but no place for Wharton, Hall or Gibbs-White Ivan Toney in Tuchel’s thoughts and Levi Colwill out Thomas Tuchel has made ruthless calls with his World Cup selection, finding no space for Phil Foden and Cole Palmer in England’s 26-man squad and leaving a “shocked and gutted” Harry Maguire on the outside. Foden and Palmer have had underwhelming seasons for Manchester City and Chelsea respectively and will not be included in the 26-man party for the tournament this summer, which Tuchel will name at Wembley on Friday morning. Continue reading...",
+      "publishedAt": "2026-05-21T18:31:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van Breemen doorstaat medische keuring in Portugal",
+      "link": "https://www.vi.nl/nieuws/otamendi-staat-voor-terugkeer-in-argentinie-roma-informeert-naar-summerville",
+      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-05-21T18:03:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Southampton's Eckert authorised spying, panel says",
+      "link": "https://www.bbc.com/sport/football/articles/cdepxek43gyo?at_medium=RSS&at_campaign=rss",
+      "summary": "Southampton's spying was authorised by head coach Tonda Eckert and was a \"contrived and determined plan from the top down to gain a competitive advantage\", an independent disciplinary panel says.",
+      "publishedAt": "2026-05-21T18:03:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Boro boss relieved 'right thing done' over Spygate",
+      "link": "https://www.bbc.com/sport/football/articles/cvgznxlejlpo?at_medium=RSS&at_campaign=rss",
+      "summary": "Kim Hellberg reflects on a whirlwind of emotions on Middlesbrough's reinstatement for the Championship play-offs following Southampton's expulsion.",
+      "publishedAt": "2026-05-21T17:01:59.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Football Daily | Villa face their toughest test … recovering from their parade in time to face City",
+      "link": "https://www.theguardian.com/football/2026/may/21/aston-villa-europa-league-final-victory-parade-toughest-test",
+      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! With the Arsenal Fun Boat having finally docked at its destination on Tuesday after a 22-year voyage, attention on Wednesday turned to Aston Villa’s Crazy Train as its passengers alighted in Istanbul. Having passed away last summer, Ozzy Osbourne, whose famous anthem serves as Villa’s walk-on music, was not present to see his team lift Bigger Vase but the ease with which they strolled to victory would certainly have met with his approval. In spanking three goals without reply past Freiberg, Unai Emery’s side ended a trophy drought that stretched back 30 years and for their Spanish manager it marked a fifth success in the competition with three different teams. It is a state of affairs rendered all the more remarkable by the weird quirk that each of them has ‘villa’ in their names. Regarding songs to play during VAR decisions (Football Daily letters passim) how about Rise by Public Image Ltd, featuring the oft repeated line: ‘I could be wrong I could be right’?” – Adrian Bradshaw. Why stop with VAR music to fill dead spots in games? Imagine, the next time a player goes down, hearing that memorable opening line from Johnny Cash, “I hear the trainer coming!” What? Oh” – John Nielsen-Gammon. A doff of the cap to the great Unai Emery, who won the Uefa Emery League yet again last night but also achieved a rare, unprecedented double this season as he also got promotion to Primera Federación, the third tier of Spanish football, in April with Real Union, which he has been the owner of since 2021 (his father and grandfather used to play for them)” – Noble Francis Re Steve McClaren and his new role at Rotherham (Football Daily passim, full email edition), do you think he thought it was Rotterdam and he got confused by the accent?” – Dan J Levy. Continue reading...",
+      "publishedAt": "2026-05-21T16:38:54.000Z"
     },
     {
       "type": "rss",
@@ -64,7 +130,7 @@
       "flag": "🇬🇧",
       "title": "Mikel Arteta was ‘in the garden building a fire’ when Arsenal won Premier League title",
       "link": "https://www.theguardian.com/football/2026/may/21/mikel-arteta-was-in-the-garden-building-a-fire-when-arsenal-won-premier-league-title",
-      "summary": "Manager could not bear to watch City’s draw at Bournemouth Arteta cites pre-season meeting around tree as a turning point Mikel Arteta has said he could not bear to watch Manchester City’s draw at Bournemouth and was building a fire in his garden when Arsenal’s first title in 22 years was confirmed. The manager also admitted his relief at being crowned champions after three successive runners-up finishes and revealed he had questioned whether he was good enough to help his team make the final step. Arteta had headed to the training ground to watch the City match with the squad on Tuesday, having previously said he planned to stay at home. But 20 minutes before kick-off he decided he could not bear the tension and went back to be with his family. Continue reading...",
+      "summary": "Manager could not bear to watch City’s draw at Bournemouth Arteta cites pre-season meeting around tree as a turning point Mikel Arteta has said he could not bear to watch Manchester City’s draw at Bournemouth and was building a fire in his garden when Arsenal’s first title in 22 years was confirmed. The manager also admitted his relief at being crowned champions after three successive runners-up finishes and revealed he had questioned whether he was good enough to help his team make the final step. Arteta had gone to the training ground to watch the City match with the squad on Tuesday, having previously said he planned to stay at home. But 20 minutes before kick-off he decided he could not bear the tension and went back to be with his family. Continue reading...",
       "publishedAt": "2026-05-21T15:40:10.000Z"
     },
     {
@@ -75,19 +141,8 @@
       "flag": "🇬🇧",
       "title": "Arteta told of title win by crying son - while having barbecue",
       "link": "https://www.bbc.com/sport/football/articles/cn4p255l5xeo?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal manager Mike Arteta says he could not watch the game that secured the Premier League title, opting to have a barbecue in his garden instead.",
+      "summary": "Arsenal manager Mikel Arteta says he could not watch the game that secured the Premier League title, opting to have a barbecue in his garden instead.",
       "publishedAt": "2026-05-21T14:57:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "FA opens Southampton investigation over Spygate",
-      "link": "https://www.bbc.com/sport/football/articles/crmplprldl8o?at_medium=RSS&at_campaign=rss",
-      "summary": "The Football Association opens an investigation into Southampton's conduct after the club admit to spying on three clubs during the Championship season.",
-      "publishedAt": "2026-05-21T14:10:30.000Z"
     },
     {
       "type": "rss",
@@ -104,17 +159,6 @@
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "UK police sending only three officers to England’s World Cup games after failure to land funding",
-      "link": "https://www.theguardian.com/football/2026/may/21/uk-police-sending-only-three-officers-england-world-cup-games",
-      "summary": "Policing unit ‘not expecting problems’ from England fans Around 15,000 are expected at each group-stage match The UK Football Policing Unit will send only three officers to this summer’s World Cup after a failure to secure extra funding from authorities in the United States. With as many as 15,000 England fans expected at each group fixture, police said their role would be to act as “cultural interpreters” for local law enforcement and they had no concerns over the safety of supporters in the US. Continue reading...",
-      "publishedAt": "2026-05-21T13:32:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "The Canadian musician supersizing Dumbarton FC Women: ‘The players are a megaphone for the team’",
@@ -124,157 +168,113 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League winner on Tuesday, GCSEs on Thursday",
-      "link": "https://www.bbc.com/sport/football/articles/cj3pv6rl1k0o?at_medium=RSS&at_campaign=rss",
-      "summary": "Max Dowman is the youngest player in Premier League history and had to take his GCSE exams just days after sealing the title.",
-      "publishedAt": "2026-05-21T11:25:04.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Anderlecht uit het niets op voorsprong via Sikan!",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/live-anderlecht-uit-het-niets-op-voorsprong-via-sikan",
+      "summary": "Vanavond staat er in het Lotto Park meer op het spel dan alleen de strijd om de punten tegen STVV. Voor Anderlecht wordt het een emotionele avond, want zowel Thorgan Hazard als Yari Verschaeren spelen hun laatste thuiswedstrijd voor paars-wit.",
+      "publishedAt": "2026-05-21T06:54:03.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE : Danylo Sikan ouvre le score ! (1-0)",
+      "link": "https://www.walfoot.be/news/2026-05-21/live-danylo-sikan-ouvre-le-score-1-0",
+      "summary": "C'est le match qui sera certainement le moins suivi ce soir : le RSCA reçoit Saint-Trond, pour ce qui devrait être la dernière de Verschaeren et Hazard à domicile.",
+      "publishedAt": "2026-05-21T06:52:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Club Brugge op voorsprong en dus virtueel kampioen!",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/live-club-brugge-op-voorsprong-en-dus-virtueel-kampioen",
+      "summary": "De aanvalsmachine van Club Brugge deed al 25 keer de netten trillen in de play-offs. Tzolis en Forbs groeiden naar hun topniveau en ook aanvoerder Vanaken staat altijd klaar om de ploeg bij de hand te nemen. Doen de Bruggelingen er donderdag nog wat doelpunten bij, op weg naar de landstitel?",
+      "publishedAt": "2026-05-21T06:49:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Gent mist vroege strafschop tegen Union SG",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/live-gent-mist-vroege-strafschop-tegen-union-sg",
+      "summary": "KAA Gent wist in de heenwedstrijd van de Champions' Play-offs Union SG punten afhandig te maken. Als ze dat ook deze keer opnieuw weten te doen, dan is de titelstrijd meteen beslist. En ook voor KAA Gent staat er nog veel op het spel. Volg het hier LIVE en op de voet!",
+      "publishedAt": "2026-05-21T06:47:17.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Officiel : parti de Charleroi pour près de 7 millions, il est désormais libre",
+      "link": "https://www.walfoot.be/news/2026-05-21/officiel--parti-de-charleroi-pour-pres-de-7-millions-il-est-desormais-libre",
+      "summary": "Après plus de quatre ans à Reims, Maxime Busi vit bel et bien ses derniers jours en Champagne. Son contrat n'a pas été renouvelé, le poussant à chercher un nouveau challenge cet été.",
+      "publishedAt": "2026-05-21T06:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
       "country": "INT",
       "flag": "🌍",
-      "title": "In, or out? The joy and despair of World Cup squad selection",
-      "link": "https://www.bbc.com/sport/football/articles/cq5p0706p4wo?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport football pundits Micah Richards, Joe Hart, Theo Walcott, Stephen Warnock share their stories of what it is like to get a call before a major tournament telling you if you are in or out of the England squad.",
-      "publishedAt": "2026-05-21T11:01:03.000Z"
+      "title": "Met ook dank aan België: hoe Marokko ineens een superpower is geworden in het wereldvoetbal",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/met-ook-dank-aan-belgie-hoe-marokko-ineens-een-superpower-is-geworden-in-het-wereldvoetbal",
+      "summary": "Nog niet zo lang geleden werd Marokko vooral gezien als een sterk voetballand binnen Afrika, maar tegelijk als een nationale ploeg die ver verwijderd stond van de echte wereldtop. Vandaag is dat beeld volledig veranderd. De halve finale op het WK van 2022 betekende veel meer dan een eenmalige stunt.",
+      "publishedAt": "2026-05-21T06:40:00.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Scherpen détourne le penalty de Kanga ! Suivez La Gantoise - Union en Direct Commenté",
+      "link": "https://www.walfoot.be/news/2026-05-21/match-live-scherpen-detourne-le-penalty-de-kanga--suivez-la-gantoise---union-en-direct-commente",
+      "summary": "L'Union Saint-Gilloise se déplace à La Gantoise. Les Bruxellois parviendront-ils à se remettre la tête à l'endroit après la claque subie au Club de Bruges ?",
+      "publishedAt": "2026-05-21T06:33:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un choc qui vaut cher : cinq raisons de croire que Charleroi peut priver le Standard de la première place",
+      "link": "https://www.walfoot.be/news/2026-05-21/un-choc-qui-vaut-cher--cinq-raisons-de-croire-que-charleroi-peut-priver-le-standard-de-la-premiere-place",
+      "summary": "Charleroi terminera sa saison par un déplacement au Standard. Les Zèbres n'ont plus rien à gagner au classement mais se verraient bien jouer un mauvais tour à leur rival régional.",
+      "publishedAt": "2026-05-21T06:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Belgische traditieclub heeft nieuwe Algemeen Manager én nieuwe coach",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/belgische-traditieclub-heeft-nieuwe-algemeen-manager-en-nieuwe-coach",
+      "summary": "Bij Eendracht Aalst gaat het plots snel. Het team promoveert van de Derde Amateurklasse naar de Tweede Amateurklasse, maar ondertussen zijn er ook een paar grote veranderingen op til bij de club. Zo komen er nieuwe sportieve bazen, zo blijkt.",
+      "publishedAt": "2026-05-21T06:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Victorious Villa party hard in Istanbul after ending 30-year trophy wait",
-      "link": "https://www.theguardian.com/football/2026/may/21/aston-villa-party-hard-istanbul-ending-30-year-trophy-wait-europa-league-final",
-      "summary": "Europa League glory kicked off scenes of royal ribbing, ski goggles on the team bus and knee slides with nephews It was 1.43am in Istanbul when Aston Villa’s players began to make tracks for their hotel, over the road from the rubber ring-like Besiktas Park. Matty Cash walked into a windowless basement at the stadium, bottle of Efes in hand, and toasted a Europa League victory that will be etched in history, the club’s first trophy in three decades. “The king set the gameplan out for us,” he said of Unai Emery, who, if he was not there already, now has a god-like status among the fans. Moments earlier, John McGinn joked that Prince William, who joined the players for beers amid the dressing-room celebrations, might “get his credit card out” and stump up for a free bar. Villa’s billionaire co-owners, Nassef Sawiris and Wes Edens, were also in attendance, the former delighted that Emery had delivered on his promise to put another piece of silverware in a trophy cabinet that had been gathering dust. “It means a lot,” Sawiris said, wearing a Villa scarf. “I can’t express myself with words. Amazing. Very special. An eight-year ride and we saw today what hard work can do with Unai’s effort and the whole team.” Asked what’s next, there came a reminder of Villa’s ambition. “The sky’s the limit,” he replied. Continue reading...",
-      "publishedAt": "2026-05-21T11:00:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "The World Cup squad dilemmas facing Tuchel",
-      "link": "https://www.bbc.com/sport/football/articles/cj3pvj3egddo?at_medium=RSS&at_campaign=rss",
-      "summary": "England manager Thomas Tuchel names his World Cup squad on Friday. What are the big decisions he has faced in selecting a final 26?",
-      "publishedAt": "2026-05-21T08:14:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le Lotto Park boudera-t-il les adieux de Yari Verschaeren et Thorgan Hazard ?",
-      "link": "https://www.walfoot.be/news/2026-05-21/le-lotto-park-boudera-t-il-les-adieux-de-yari-verschaeren-et-thorgan-hazard-",
-      "summary": "Ce jeudi soir, Yari Verschaeren et Thorgan Hazard feront leurs adieux au Lotto Park dans un contexte très particulier.",
-      "publishedAt": "2026-05-21T04:16:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Officiel : après Hazard et Verschaeren, Anderlecht annonce un troisième départ",
-      "link": "https://www.walfoot.be/news/2026-05-21/officiel--apres-hazard-et-verschaeren-anderlecht-annonce-un-troisieme-depart",
-      "summary": "La journée est chargée dans le sens des départs à Anderlecht. Cette fois, c'est celui de Mats Rits qui a été confirmé.",
-      "publishedAt": "2026-05-21T04:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Na Hazard en Verschaeren: Anderlecht neemt ook van derde speler afscheid",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/na-hazard-en-verschaeren-anderlecht-neemt-ook-van-derde-speler-afscheid",
-      "summary": "Na Thorgan Hazard kondigt ook Yari Verschaeren zijn vertrek bij Anderlecht aan. De jeugdspeler van Neerpede verlengt zijn contract niet en neemt na zestien jaar afscheid.",
-      "publishedAt": "2026-05-21T04:08:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Frédéric Taquin a décliné la proposition d'un club français",
-      "link": "https://www.walfoot.be/news/2026-05-21/frederic-taquin-a-decline-la-proposition-dun-club-francais",
-      "summary": "Frédéric Taquin n'ira finalement pas au FC Metz, club récemment relégué en Ligue 2. Selon l'expert des transferts Sacha Tavolieri, l'ancien entraîneur de la RAAL La Louvière a décliné la proposition messine.",
-      "publishedAt": "2026-05-21T04:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Ardon Jashari doet Club Brugge-fans dromen met opvallende uitspraak: \"Ik zeg absoluut geen neen\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/ardon-jashari-doet-club-brugge-fans-dromen-met-opvallende-uitspraak-ik-zeg-absoluut-geen-neen",
-      "summary": "Ardon Jashari volgt Club Brugge nog altijd op de voet vanuit Milaan. De Zwitser spreekt met veel lof over Hans Vanaken en sluit een terugkeer naar blauw-zwart later niet uit.",
-      "publishedAt": "2026-05-21T03:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Malines officialise le départ de trois joueurs : \"Ça fait mal\"",
-      "link": "https://www.walfoot.be/news/2026-05-21/malines-officialise-le-depart-de-trois-joueurs--a-fait-mal",
-      "summary": "Malines a officialisé le départ de trois joueurs à l'issue de la saison : Kerim Mrabti, Mory Konaté et Hassane Bandé.",
-      "publishedAt": "2026-05-21T03:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Pakt Club Brugge straks de titel? Frank Boeckx is er duidelijk over",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/pakt-club-brugge-straks-de-titel-frank-boeckx-is-er-duidelijk-over",
-      "summary": "Club Brugge kan donderdagavond kampioen spelen op het veld van KV Mechelen. Frank Boeckx ziet blauw-zwart als duidelijke favoriet, maar denkt ook al aan een mogelijk afscheid van Mignolet.",
-      "publishedAt": "2026-05-21T03:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "📷 Senne Lammens krijgt bijzondere onderscheiding bij Manchester United",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/-senne-lammens-krijgt-bijzondere-onderscheiding-bij-manchester-united",
-      "summary": "Senne Lammens heeft de prijs PFA Community Champion gekregen. Met die prijs beloont de PFA zijn inzet voor de Manchester United Foundation en de bredere gemeenschap rond de club.",
-      "publishedAt": "2026-05-21T03:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le Sporting Hasselt enfin fixé après plusieurs semaines d'incertitude concernant sa licence pour la D1B",
-      "link": "https://www.walfoot.be/news/2026-05-21/le-sporting-hasselt-enfin-fixe-apres-plusieurs-semaines-dincertitude-concernant-sa-licence-pour-la-d1b",
-      "summary": "Le Sporting Hasselt a finalement obtenu sa licence après une procédure d'appel concluante. Le champion de D1 VV pourra donc évoluer en Challenger Pro League la saison prochaine.",
-      "publishedAt": "2026-05-21T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Europees voetbal? Standard-coach Euvrard voelt vuur bij Standard-spelers voor cruciale Waalse clash",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-21/interview-europees-voetbal-standard-coach-euvrard-voelt-vuur-bij-standard-spelers-voor-cruciale-waalse-clash",
-      "summary": "Zich focussen op de wedstrijd zelf, en niet op de inzet ervan, wordt zaterdagavond cruciaal voor Standard tegen Charleroi. De Rouches kunnen daarbij wel rekenen op Vincent Euvrard en zijn staf.",
-      "publishedAt": "2026-05-21T02:50:00.000Z"
+      "title": "Brandon Mechele : un joueur qui mérite autant de lumière que Hans Vanaken à Bruges",
+      "link": "https://www.walfoot.be/news/2026-05-21/brandon-mechele--un-joueur-qui-merite-autant-de-lumiere-que-hans-vanaken-a-bruges",
+      "summary": "Ces derniers jours, l'attention s'est logiquement portée sur Hans Vanaken. Le Brugeois peut décrocher dimanche soir son septième titre de champion et reste le visage de cette génération des Blauw en Zwart. Mais dans le même souffle que Vanaken, il faut évidemment aussi citer Brandon Meche.",
+      "publishedAt": "2026-05-21T06:00:00.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Golf leaderboards: Latest scores from CJ Cup Byron Nelson and more",
-      "link": "https://www.skysports.com/golf/news/12040/12950625/golf-leaderboards-pga-tour-lpga-tour-liv-golf-dp-world-tour-ladies-european-tour-major-championships-and-more",
-      "summary": "Latest golf scores and results from around the world as the PGA Tour heads to Texas, the DP World Tour returns in Belgium and the Ladies European Tour stages its latest event in Morocco.",
+      "title": "Daryz decisive in straightforward Prix Aga Khan IV triumph",
+      "link": "https://www.skysports.com/racing/news/12040/13546765/parislongchamp-daryz-decisive-in-straightforward-prix-aga-khan-iv-triumph",
+      "summary": "Daryz did everything required of him and showed his class once again when cantering home to take the Prix Aga Khan IV at ParisLongchamp.",
       "publishedAt": null
     },
     {
@@ -293,9 +293,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'He tinkers too much' | Does Stokes need more competitive game time?",
-      "link": "https://www.skysports.com/watch/video/13546646/sky-sports-cricket-podcast-does-ben-stokes-need-more-competitive-game-time",
-      "summary": "Michael Atherton and Nasser Hussain discuss whether England captain Ben Stokes needs more competitive game time in the County Championship.",
+      "title": "‘People are trying to retire me’ - Hamilton dismisses rumours by confirming 2027 contract",
+      "link": "https://www.skysports.com/f1/news/12040/13546658/lewis-hamilton-ferrari-driver-says-lots-of-people-are-trying-to-retire-me-as-he-confirms-contract-until-at-least-2027",
+      "summary": "Lewis Hamilton says \"a lot of people are trying to retire me\" and confirmed he has a contract with Ferrari until at least the end of 2027.",
       "publishedAt": null
     },
     {
@@ -304,31 +304,31 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arteta on title win: I asked myself - am I good enough?",
-      "link": "https://www.skysports.com/football/news/12040/13546579/mikel-arteta-arsenal-manager-questioned-whether-he-was-good-enough-to-deliver-a-major-trophy-now-hes-a-premier-league-champion",
-      "summary": "Mikel Arteta has admitted he questioned whether he was good enough to deliver a major trophy for Arsenal - claiming he was \"vulnerable\" before finally winning a Premier League title for the Gunners.",
+      "title": "Premier League Darts LIVE! Price vs Van Veen with Litter, Humphries to come",
+      "link": "https://www.skysports.com/darts/live-blog/12040/13546133/premier-league-darts-in-sheffield-live-scores-results-commentary-with-luke-littler-luke-humphries-gerwyn-price-in-action",
+      "summary": "",
       "publishedAt": null
     },
     {
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "French Open draw: Sinner primed for career Grand Slam as Sabalenka seeks first Paris title",
-      "link": "https://www.skysports.com/tennis/news/12040/13546547/french-open-draw-jannik-sinner-primed-for-career-grand-slam-as-aryna-sabalenka-seeks-first-paris-title",
-      "summary": "Jannik Sinner will face French wild card Clement Tabur in the first round of the French Open, which starts on Sunday May 24, seeking to clinch a career Grand Slam.",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Netball Super League: Round 13 fixtures and free streams",
+      "link": "https://www.skysports.com/live-blog/12040/13509951/netball-super-league-2026-fixtures-results-dates-free-streams-and-podcasts-as-london-pulse-defend-title",
+      "summary": "",
       "publishedAt": null
     },
     {
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "The greatest Champions Cup finals in history ahead of 2026 showpiece",
-      "link": "https://www.skysports.com/rugby-union/news/12040/13546522/champions-cup-the-greatest-finals-in-the-history-of-europes-highest-level-ahead-of-leinster-vs-bordeaux-begles-meeting",
-      "summary": "Ahead of Saturday's Champions Cup final between Leinster and Bordeaux-Begles in Bilbao, we look back at the greatest European Cup finals in history...",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Ocon hits back at 'fabricated' rumours of falling out with Haas boss",
+      "link": "https://www.skysports.com/f1/live-blog/12040/12466779/f1-news-rumours-and-gossip-formula-1-latest-updates-on-teams-driver-transfer-market-and-contracts",
+      "summary": "",
       "publishedAt": null
     }
   ]
