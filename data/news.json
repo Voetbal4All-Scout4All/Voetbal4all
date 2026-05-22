@@ -1,16 +1,71 @@
 {
-  "generatedAt": "2026-05-22T12:23:34.602Z",
+  "generatedAt": "2026-05-22T15:50:14.469Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Guardiola vows to 'rest' after City departure",
+      "link": "https://www.espn.com/soccer/story/_/id/48843477/pep-guardiola-vows-rest-man-city-departure",
+      "summary": "Pep Guardiola said he plans to \"rest\" after announcing his departure from Manchester City and insisted he won't work again \"for a while.\"",
+      "publishedAt": "2026-05-22T16:09:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Giuliani: Congo must isolate or risk WC entry",
+      "link": "https://www.espn.com/soccer/story/_/id/48844229/congo-team-isolate-risk-world-cup-andrew-giuliani",
+      "summary": "The Congo team must isolate for 21 days or risk the ability to enter the U.S. for the World Cup as the country deals with an outbreak of Ebola, Andrew Giuliani told ESPN on Friday.",
+      "publishedAt": "2026-05-22T16:09:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Boss Arbeloa confirms Real Madrid departure",
+      "link": "https://www.espn.com/soccer/story/_/id/48617925/alvaro-arbeloa-confirms-real-madrid-departure-trophyless-season",
+      "summary": "Álvaro Arbeloa has confirmed he will leave Real Madrid at the end of the season.",
+      "publishedAt": "2026-05-22T16:09:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man United appoint Carrick as permanent boss",
+      "link": "https://www.espn.com/soccer/story/_/id/48789147/man-united-michael-carrick-appointed-permanent-head-coach",
+      "summary": "Michael Carrick has been confirmed as Manchester United permanent head coach on a two-year deal.",
+      "publishedAt": "2026-05-22T16:09:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Unselfish' over 'ego' - what do leaks say about Tuchel's England?",
+      "link": "https://www.bbc.com/sport/football/articles/cg4pgve33kyo?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport explores why the whole world knew the England World Cup squad before it was announced, and what Thomas Tuchel's response says about England's culture.",
+      "publishedAt": "2026-05-22T15:39:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Duivenvoorden maakt verwachte promotie en is nieuwe hoofdtrainer De Graafschap",
-      "link": "https://www.vi.nl/nieuws/duivenvoorden-maakt-verwachte-promotie-en-is-nieuwe-hoofdtrainer-de-graafschap",
-      "summary": "Thomas Duivenvoorden is de nieuwe hoofdtrainer van De Graafschap. Hij neemt het stokje over van Marinus Dijkhuizen, van wie hij afgelopen seizoen nog de assistent was.",
-      "publishedAt": "2026-05-22T12:14:54.000Z"
+      "title": "Portugees avontuur De Jong blijft beperkt tot één seizoen",
+      "link": "https://www.vi.nl/nieuws/portugees-avontuur-van-de-jong-blijft-beperkt-tot-n-seizoen",
+      "summary": "Luuk de Jong vertrekt bij FC Porto. Door een kruisbandblessure kwam de 35-jarige spits slechts tot zeven wedstrijden in het shirt van de Portugese landskampioen.",
+      "publishedAt": "2026-05-22T15:33:00.000Z"
     },
     {
       "type": "rss",
@@ -18,21 +73,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "England World Cup squad Q&A; Guardiola confirms exit; Manchester United appoint Carrick: football – live",
+      "title": "England World Cup squad revealed; Guardiola confirms exit; Manchester United appoint Carrick: football – live",
       "link": "https://www.theguardian.com/football/live/2026/may/22/england-world-cup-2026-squad-revealed-thomas-tuchel-football-news-live",
       "summary": "⚽ Spence and Toney in for England, Alexander-Arnold out ⚽ Premier League finale preview | Mail Michael your thoughts Barney Ronay on social media makes a pertinent point: “Harry Maguire: anatomy of how NOT to make a case for being the perfect 7-week back-up squad member. No need for Tuchel to explain now. We all save five mins.” The final man in the 26 is Djed Spence, the Tottenham full back. He can play on both flanks so offers versatility. There is no Trent Alexander-Arnold in the England squad. Continue reading...",
-      "publishedAt": "2026-05-22T12:14:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Real Madrid head coach Arbeloa confirms departure",
-      "link": "https://www.bbc.com/sport/football/articles/cvgz3wgy9vvo?at_medium=RSS&at_campaign=rss",
-      "summary": "Real Madrid head coach Alvaro Arbeloa confirms that he will leave the club at the end of the season.",
-      "publishedAt": "2026-05-22T12:12:59.000Z"
+      "publishedAt": "2026-05-22T15:29:37.000Z"
     },
     {
       "type": "rss",
@@ -40,21 +84,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Spannende tijd voor El Karouani: Ajax, mogelijke WK-deelname en een transfer",
-      "link": "https://www.vi.nl/pro/spannende-tijd-voor-el-karouani-ajax-mogelijke-wk-deelname-en-een-transfer",
-      "summary": "FC Utrecht maakt zich op voor de finale van de play-offs. In Volendam hoopt de ploeg van Ron Jans komende zondag Ajax voor de derde keer dit seizoen over de knie te leggen en Europees voetbal te halen. Een belangrijke rol lijkt weggelegd voor Souffian El Karouani, die zijn laatste wedstrijd voor FC Utrecht speelt.",
-      "publishedAt": "2026-05-22T12:00:00.000Z"
+      "title": "'Iniesta start trainerscarrière bij club van Fer'",
+      "link": "https://www.vi.nl/nieuws/iniesta-start-trainerscarri-re-bij-club-van-fer",
+      "summary": "Andrés Iniesta lijkt de nieuwe trainer te worden van Gulf United in de Verenigde Arabische Emiraten. Voor de Spanjaard zou het zijn eerste trainersklus zijn, nadat hij in 2024 stopte met voetballen.",
+      "publishedAt": "2026-05-22T15:26:34.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Eerbetoon Manchester City: North Stand wordt 'The Pep Guardiola Stand'",
-      "link": "https://www.vi.nl/nieuws/manchester-city-zet-guardiola-extra-in-het-zonnetje-met-the-pep-guardiola-stand",
-      "summary": "Pep Guardiola wordt bij Manchester City blijvend in het zonnetje gezet. De club heeft aangekondigd dat een tribune in het Etihad Stadium naar de vertrekkende Spanjaard wordt vernoemd.",
-      "publishedAt": "2026-05-22T12:00:00.000Z"
+      "title": "De Zerbi defends absent Spurs captain Romero after Hoddle’s ‘selfishness’ jibe",
+      "link": "https://www.theguardian.com/football/2026/may/22/de-zerbi-spurs-captain-cristian-romero-glenn-hoddle-selfishness",
+      "summary": "Tottenham’s injured captain has gone back to Argentina Spurs face Everton needing a point for safety on final day Roberto De Zerbi has defended Cristian Romero’s decision to miss Tottenham’s decisive final game against Everton on Sunday after the Spurs captain flew to Argentina to watch his boyhood club. Romero, who has not played since injuring a knee against Sunderland last month but has a chance of playing at the World Cup, has been criticised for opting to attend Belgrano’s game against River Plate in a league playoff final. But De Zerbi said Romero’s trip had been sanctioned by Tottenham’s medical department and pointed out that the 28-year-old cannot affect the result at home to Everton regardless. Continue reading...",
+      "publishedAt": "2026-05-22T15:09:37.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +106,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Guardiola says 'nothing is eternal' as Man City exit confirmed",
+      "title": "Guardiola says Man City 'need new energy' as exit confirmed",
       "link": "https://www.bbc.com/sport/football/articles/cx21y7023qxo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City confirm that Pep Guardiola will leave at the end of the season after a decade of unparalleled success.",
-      "publishedAt": "2026-05-22T11:56:20.000Z"
+      "summary": "Manchester City confirm Pep Guardiola will leave at the end of the season after a decade of unparalleled success.",
+      "publishedAt": "2026-05-22T15:01:42.000Z"
     },
     {
       "type": "rss",
@@ -73,43 +117,54 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "'Modric verbindt lot aan Allegri'",
-      "link": "https://www.vi.nl/nieuws/modric-verbindt-lot-aan-allegri",
-      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-05-22T11:54:56.000Z"
+      "title": "Kitolano voelt zich schuldig: 'Had Sparta transfersom willen teruggeven'",
+      "link": "https://www.vi.nl/pro/kitolano-heeft-steen-in-zijn-maag-had-sparta-transfersom-willen-teruggeven",
+      "summary": "Na vier jaar Sparta Rotterdam trekt Joshua Kitolano (24) de deur achter zich dicht op Het Kasteel. De Noorse middenvelder werd een publiekslieveling, maar leverde uiteindelijk geen transfersom op. En dat raakt hem.",
+      "publishedAt": "2026-05-22T15:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Rondje Play-Offs: Conference League-voetbal in Amsterdam óf Utrecht?",
-      "link": "https://www.vi.nl/pro/rondje-play-offs-conference-league-voetbal-in-amsterdam-f-utrecht",
-      "summary": "Ajax en FC Utrecht hebben zich geplaatst voor de finale van de play-offs om Europees voetbal, ten koste van respectievelijk FC Groningen en SC Heerenveen. In Rondje Play-Offs blikken clubwatchers Lentin Goodijk en Bart Kruijt met presentatrice Inta Janssen terug én vooruit. Ook nemen ze Wout Weghorst, de ontwikkeling van Dies Janse en de verwachtingen voor komend weekend onder de loep.",
-      "publishedAt": "2026-05-22T11:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Angleterre, Norvège, Allemagne,... : découvrez les dernières listes pour la Coupe du monde qui sont tombées",
-      "link": "https://www.walfoot.be/news/2026-05-22/angleterre-norvege-allemagne-decouvrez-les-dernieres-listes-pour-la-coupe-du-monde-qui-sont-tombees",
-      "summary": "Les listes pour la Coupe du monde 2026 tombent les unes après les autres. Retrouvez ci-dessous les listes dévoilées récemment.",
-      "publishedAt": "2026-05-22T10:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Na winst in Europa League: moet Tielemans stap hogerop zetten?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/na-winst-in-europa-league-moet-tielemans-stap-hogerop-zetten",
-      "summary": "Na zijn sterke prestatie in de Europa League rijst opnieuw de vraag of Youri Tielemans klaar is voor een nieuwe toptransfer. Volgens Premier League-watcher Tim Wielandt is een vertrek bij Aston Villa echter niet vanzelfsprekend.",
-      "publishedAt": "2026-05-22T10:40:00.000Z"
+      "title": "Guardiola prijst tijd bij City: 'Beste ervaring van mijn leven'",
+      "link": "https://www.vi.nl/video/guardiola-prijst-tijd-bij-city-beste-ervaring-van-mijn-leven",
+      "summary": "Pep Guardiola kijkt met een grote glimlach terug op zijn tijd bij Manchester City. Er is nog een duel te gaan voor de Spanjaard bij de Engelse topclub, maar na zijn aangekondigde vertrek, kijkt hij stiekem vast terug op de afgelopen tien jaar.",
+      "publishedAt": "2026-05-22T14:48:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Champions League-winnaar Azpilicueta hangt voetbalschoenen aan de wilgen",
+      "link": "https://www.vi.nl/nieuws/champions-league-winnaar-azpilicueta-hangt-voetbalschoenen-aan-de-wilgen",
+      "summary": "Het seizoen 2025/26 is het laatste jaar als profvoetballer geweest voor César Azpilicueta. De Spaanse verdediger kondigt op zijn eigen sociale kanalen zijn afscheid aan en dat doet hem veel. 'Na zoveel jaar mijn droom geleefd te hebben, is het nu tijd voor een nieuw hoofdstuk in mijn leven.'",
+      "publishedAt": "2026-05-22T14:24:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hull City owner Acun Ilicali: ‘People think I changed coaches because of ego. It was lack of ego’",
+      "link": "https://www.theguardian.com/football/2026/may/22/hull-city-owner-acun-ilicali-championship-playoff-final-middlesbrough",
+      "summary": "The ‘Turkish Simon Cowell’ says sealing promotion to the Premier League via Saturday’s playoff final would ‘finish the miracle’ “I love the city – for me, it’s therapy,” the Hull owner, Acun Ilicali, says of his second home. Running a football club is not particularly therapeutic but after almost four-and-a-half-years at the helm, the Turkish media mogul will have his day at Wembley on Saturday when the Tigers face Middlesbrough for a place in the Premier League. Life is rarely quiet for the globetrotting Ilicali, regarded as Turkey’s answer to Simon Cowell. He produces some of the world’s most popular television shows in numerous countries, having started out as a sports reporter. The entertainment theme has continued at Hull, creating a tumultuous and gripping reality that has featured head coaches coming and going, and playoff and relegation battles. Everything aligned this season, the team securing sixth place on the final day before defeating third-placed Millwall over two legs. Hull have even been victims of Southampton’s removal from the playoff final amid “spygate”. It is never dull in Hull. Continue reading...",
+      "publishedAt": "2026-05-22T14:20:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Premier League, Man City won't be the same after Guardiola",
+      "link": "https://www.espn.com/soccer/story/_/id/48836149/pep-guardiola-manchester-city-enzo-maresca-premier-league-coaching-legacy-rob-dawson",
+      "summary": "It's been suspected for months, but Pep Guardiola has confirmed he is leaving Manchester City after nearly a decade of excellence. The league, and City, will never be the same again.",
+      "publishedAt": "2026-05-22T11:23:38.000Z"
     },
     {
       "type": "rss",
@@ -124,6 +179,17 @@
     },
     {
       "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Pep Guardiola’s perpetual revolutions have changed face of English football | Jonathan Wilson",
+      "link": "https://www.theguardian.com/football/2026/may/22/pep-guardiola-manchester-city-changed-face-of-english-football",
+      "summary": "Departing Manchester City manager has left huge imprint but equally stands alone in his willingness to adapt When Pep Guardiola arrived in English football in the summer of 2016, there was a degree of scepticism. The quality of the football produced by his Barcelona had been extraordinary – and it’s perhaps difficult now, 18 years on, to remember the impact that side had when they first emerged, how incomprehensible the focus on passing and the manipulation of space seemed. But his Bayern Munich had not won the Champions League and it was reasonable enough to ask whether that very precise, technically accomplished style would be as effective amid the hurly-burly of an English winter as it had been in Spain and Germany. Continue reading...",
+      "publishedAt": "2026-05-22T10:30:56.000Z"
+    },
+    {
+      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -135,46 +201,13 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"C'était extrêmement stressant\" : Simon Mignolet revient sur la soirée du titre brugeois",
-      "link": "https://www.walfoot.be/news/2026-05-22/cetait-extremement-stressant--simon-mignolet-revient-sur-la-soiree-du-titre-brugeois",
-      "summary": "Simon Mignolet s'est montré très heureux après le titre remporté par le Club de Bruges. Le gardien est passé à notre micro (Voetbalkrant) après la rencontre.",
-      "publishedAt": "2026-05-22T10:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Antoine Sibierski wil complete cultuuromslag bij Anderlecht: dit zijn de 5 pijlers waar hij op wil bouwen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/antoine-sibierski-wil-complete-cultuuromslag-bij-anderlecht-dit-zijn-de-5-pijlers-waar-hij-op-wil-bouwen",
-      "summary": "De nieuwe sportieve leiding van Anderlecht heeft achter de schermen haar plannen voor de toekomst van de club toegelicht. Het werd duidelijk dat paars-wit een complete cultuurverandering wil doorvoeren.",
-      "publishedAt": "2026-05-22T10:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "‘Nothing is eternal’: Pep Guardiola confirms he is leaving Manchester City after 10 years",
-      "link": "https://www.theguardian.com/football/2026/may/22/pep-guardiola-confirms-leaving-manchester-city",
-      "summary": "Enzo Maresca has agreed deal in principle to take over ‘What a time we have had together,’ Guardiola says Manchester City have confirmed Pep Guardiola is leaving at the end of the season. The manager is to step away after Sunday’s match at home to Aston Villa with one year on his contract, and City have lined up Enzo Maresca to replace him. “What a time we have had together,” Guardiola said. “Don’t ask me the reasons I’m leaving. There is no reason, but deep inside I know it’s my time. Nothing is eternal. If it was, I would be here. Eternal will be the feeling, the people, the memories, the love I have for my Manchester City.” Continue reading...",
-      "publishedAt": "2026-05-22T10:14:48.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "Michael Carrick appointed Manchester United’s new permanent head coach",
       "link": "https://www.theguardian.com/football/2026/may/22/michael-carrick-appointed-manchester-united-permanent-manager",
-      "summary": "Carrick handed job after his successful interim spell 44-year-old says he will target ‘biggest honours’ Michael Carrick has been confirmed as Manchester United’s permanent head coach until 2028, with the 44-year-old promising to “challenge for the biggest honours again”. Since taking over as interim manager from Ruben Amorim in January with United seventh and out of cup competitions, Carrick has proved hugely successful, on and off the field. With morale low after the Portuguese’s disappointing tenure, Carrick restored the spirit of the team and guided United back into the Champions League and a guaranteed third-place finish going into the final day of the league season. Continue reading...",
+      "summary": "Carrick handed job after his successful interim spell 44-year-old says he will target ‘biggest honours’ Michael Carrick has been confirmed as Manchester United’s permanent head coach until 2028, with the 44-year-old promising to “challenge for the biggest honours again”. Since taking over as interim manager from Ruben Amorim in January with United sixth and out of both cup competitions, Carrick has proved hugely successful, on and off the field. With morale low after the Portuguese’s disappointing tenure, Carrick restored the spirit of the team and guided United back into the Champions League and a guaranteed third-place finish going into the final day of the league season. Continue reading...",
       "publishedAt": "2026-05-22T10:01:17.000Z"
     },
     {
@@ -190,14 +223,14 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Bayer Uerdingen’s ‘miracle of Berlin’ bewildered Bayern Munich before slow fade to obscurity",
-      "link": "https://www.theguardian.com/football/2026/may/22/bayer-uerdingen-miracle-berlin-bayern-munich-dfb-pokal",
-      "summary": "How the modest club from Krefeld rocked the holders to win the 1985 DFB-Pokal final – only for their fortunes to fade when funding ran dry When Matthias Herget, flanked by Horst Feilzer and Norbert Brinkmann, lifted der Pott on a sun-dappled evening at Berlin’s Olympic stadium four decades ago, a unique moment passed in the stolid world of German football. A cup shock, the kind of wonderful giant-killing that is fairly routine in the English game but barely translates elsewhere. Looking back now, it remains a seismic inverting of the natural order in a nation more used to an honour roll dominated by a handful of major clubs. Bayer 05 Uerdingen had just beaten Bayern Munich, the holders, 2-1 to win the 1985 German Cup final. As Goethe wrote: “Nothing is worth more than this day.” Continue reading...",
-      "publishedAt": "2026-05-22T07:00:52.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "L'idée Erenbjerg et l'espoir d'un faux pas du Standard : les mots de Nicky Hayen avant le final des Play-Offs",
+      "link": "https://www.walfoot.be/news/2026-05-22/lidee-erenbjerg-et-lespoir-dun-faux-pas-du-standard--les-mots-de-nicky-hayen-avant-le-final-des-play-offs",
+      "summary": "Alors que le Racing Genk se prépare pour une rencontre peut-être décisive face à Louvain, le club limbourgeois se projette déjà en coulisses vers la saison prochaine. Dans ce contexte, le nom de Jeppe Erenbjerg a fait surface ces derniers jours à la Cegeka Arena.",
+      "publishedAt": "2026-05-22T03:30:00.000Z"
     },
     {
       "type": "rss",
@@ -205,21 +238,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Yari Verschaeren heeft nog één boodschap voor de supporters van Anderlecht",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/yari-verschaeren-heeft-nog-een-boodschap-voor-de-supporters-van-anderlecht",
-      "summary": "Een emotioneel afscheid in het Lotto Park donderdagavond. Yari Verschaeren speelde tegen STVV zijn laatste thuiswedstrijd voor RSC Anderlecht en kon na afloop zijn emoties moeilijk verbergen. Na zeventien jaar komt er een einde aan zijn verhaal bij paars-wit.",
-      "publishedAt": "2026-05-22T00:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Adieux rêvés pour le directeur sportif du Club de Bruges : \"Ivan Leko est le moteur de ce titre\"",
-      "link": "https://www.walfoot.be/news/2026-05-22/adieux-reves-pour-le-directeur-sportif-du-club-de-bruges--ivan-leko-est-le-moteur-de-ce-titre",
-      "summary": "Pour Dévy Rigaux, ce vingtième titre de champion fut une soirée aux émotions contrastées. Alors que le Club a été sacré au terme d'un dénouement haletant, le directeur sportif sur le départ a lui aussi vécu son dernier grand moment au sein du club, où il a été actif pendant pas moins de 17 ans.",
-      "publishedAt": "2026-05-22T00:00:00.000Z"
+      "title": "Danylo Sikan scoort eindelijk voor Anderlecht: \"Ik zie het als een verloren seizoen voor mij\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/danylo-sikan-scoort-eindelijk-voor-anderlecht-ik-zie-het-als-een-verloren-seizoen-voor-mij",
+      "summary": "Danylo Sikan heeft dus moeten wachten tot... de voorlaatste speeldag van de competitie om zijn eerste doelpunten voor Anderlecht te maken. De Oekraïner bleef nuchter en was klaar om de verloren tijd goed te maken.",
+      "publishedAt": "2026-05-22T03:30:00.000Z"
     },
     {
       "type": "rss",
@@ -227,10 +249,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Bon vent au \"Kid\" : Yari Verschaeren aurait mérité un trophée avec le RSC Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-05-22/bon-vent-au-kid--yari-verschaeren-aurait-merite-un-trophee-avec-le-rsc-anderlecht",
-      "summary": "Il y avait quelque chose d'un peu triste à la façon dont Yari Verschaeren vivait son départ ce jeudi. Conscient qu'il aurait pu amener plus, résigné quant au fait qu'il n'a pas pu remporter de trophée avec &quot;son&quot; Anderlecht... mais aussi que le moment de partir était venu.",
-      "publishedAt": "2026-05-21T23:30:00.000Z"
+      "title": "\"Ce sera son dernier match ce dimanche\" : l'Union confirme un départ attendu",
+      "link": "https://www.walfoot.be/news/2026-05-22/ce-sera-son-dernier-match-ce-dimanche--lunion-confirme-un-depart-attendu",
+      "summary": "L'Union le confirme : Guillaume François disputera son dernier match, ce dimanche contre le Sporting d'Anderlecht, avant de prendre congé du club bruxellois, après six saisons.",
+      "publishedAt": "2026-05-22T03:00:00.000Z"
     },
     {
       "type": "rss",
@@ -238,98 +260,76 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Zware klap voor topploegen: toekomst beloftenploegen in gevaar, Pro League neemt belangrijke beslissing",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/zware-klap-voor-topploegen-toekomst-beloftenploegen-in-gevaar-pro-league-neemt-belangrijke-beslissing",
-      "summary": "De discussie rond de U23-teams in het Belgische profvoetbal bereikt stilaan een cruciaal punt. Volgende week buigt de Pro League zich opnieuw over het dossier van de beloftenploegen in tweede klasse, en alles wijst erop dat het huidige systeem grondig zal veranderen.",
-      "publishedAt": "2026-05-21T23:24:00.000Z"
+      "title": "Wil hij vertrekken in Genk? \"Ik zit niet in een gemakkelijke situatie",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/wil-hij-vertrekken-in-genk-ik-zit-niet-in-een-gemakkelijke-situatie",
+      "summary": "Het seizoen van Jusef Erabi bij KRC Genk verliep voorlopig niet zoals gehoopt. De Zweedse aanvaller sprak openhartig over zijn moeilijke situatie en twijfels richting volgend seizoen.",
+      "publishedAt": "2026-05-22T03:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "La valse des départs : l'ère Guardiola prend fin à Manchester City, Arbeloa confirme son départ du Real",
-      "link": "https://www.walfoot.be/news/2026-05-22/la-valse-des-departs--lere-guardiola-prend-fin-a-manchester-city-arbeloa-confirme-son-depart-du-real",
-      "summary": "Deux grosses annonces chez les mastodontes européens : Pep Guardiola quittera Manchester City après une décennie remplie de succès, et Alvaro Arbeloa en fera de même au Real Madrid après six mois beaucoup moins fructueux. Leurs remplaçants respectifs semblent déjà connus.",
-      "publishedAt": "2026-05-21T23:01:00.000Z"
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Deux dernières incertitudes au Standard avant le choc décisif contre Charleroi : \"Une situation semblable\"",
+      "link": "https://www.walfoot.be/news/2026-05-22/deux-dernieres-incertitudes-au-standard-avant-le-choc-decisif-contre-charleroi-une-situation-semblable",
+      "summary": "Vincent Euvrard espère pouvoir compter sur Henry Lawrence et Casper Nielsen pour la réception de Charleroi, ce samedi soir. Tous les autres joueurs, à l'exception de Homawoo et El Hankouri, sont disponibles, mais Teddy Teuma n'est pas encore capable de commencer.",
+      "publishedAt": "2026-05-22T02:40:00.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League: 10 things to look out for on the final day of the season",
-      "link": "https://www.theguardian.com/football/2026/may/22/premier-league-10-things-to-look-out-for-on-the-final-day-of-the-season",
-      "summary": "Arsenal’s party heading south, fights for Europe – and survival – and London taxpayers cheering on West Ham Premier League top scorers: the latest standings Last week’s costly defeat at Leeds means Brighton must overcome Manchester United on the final day to ensure they secure a place in Europe for the second time in their history. The good news is that Michael Carrick’s side have nothing to play for and United have a wretched record at the Amex, losing in three of their past four visits in the Premier League including a 4-0 drubbing in 2022. Danny Welbeck could be key against his former club having enjoyed his most prolific season with 13 league goals. The veteran striker still has a chance of finishing as the highest scoring English player in the division if he can find the net on Sunday, with Ollie Watkins leading the way on 14 as it stands. Ed Aarons Brighton v Manchester United (all games Sunday 4pm BST) Burnley v Wolves Crystal Palace v Arsenal Fulham v Newcastle Liverpool v Brentford Continue reading...",
-      "publishedAt": "2026-05-21T23:00:42.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Mes joueurs sont chauds boulette\" : Vincent Euvrard avant la première finale du Standard contre Charleroi",
+      "link": "https://www.walfoot.be/news/2026-05-22/mes-joueurs-sont-chauds-boulette-vincent-euvrard-avant-la-premiere-finale-du-standard-contre-charleroi",
+      "summary": "Se concentrer sur le match et non sur l'enjeu de celui-ci sera l'élément crucial pour le Standard lors de la réception de Charleroi, samedi soir. Les Rouches peuvent toutefois compter sur Vincent Euvrard et son staff pour les aider.",
+      "publishedAt": "2026-05-22T02:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Dernier de D1B, l'Olympic Charleroi obtient en appel sa licence professionnelle... mais pourquoi ?",
+      "link": "https://www.walfoot.be/news/2026-05-22/dernier-de-d1b-lolympic-charleroi-obtient-en-appel-sa-licence-professionnelle-mais-pourquoi",
+      "summary": "Malgré sa relégation sportive, l'Olympic Charleroi a obtenu, en appel, sa licence professionnelle pour la saison 2026-2027. Les Dogues n'ont pas encore totalement perdu espoir.",
+      "publishedAt": "2026-05-22T02:30:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Verrassende WK-selectie van Engeland zorgt meteen voor storm van kritiek",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/verrassende-wk-selectie-van-engeland-zorgt-meteen-voor-storm-van-kritiek",
-      "summary": "Thomas Tuchel heeft zijn WK-selectie voor England bekendgemaakt en die zorgt meteen voor heel wat ophef over Het Kanaal. Vooral het ontbreken van enkele absolute sterrennamen leidt tot stevige kritiek in de Engelse media en bij de supporters.",
-      "publishedAt": "2026-05-21T23:00:00.000Z"
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "KVM oordeelt over handspel Seys en klopt zich op de borst: \"Club terecht kampioen, maar niet met zege bij ons\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/match-reactie-kvm-oordeelt-over-handspel-seys-en-klopt-zich-op-de-borst-club-terecht-kampioen-maar-niet-met-zege-bij-ons",
+      "summary": "Club Brugge is kampioen geworden op het veld van KV Mechelen en er was ook voor Joaquin Seys een hoofdrol weggelegd. Weliswaar niet door te scoren maar door een fase waarbij de bal tegen zijn hand kwam.",
+      "publishedAt": "2026-05-22T02:30:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Weekend Winners: Will Night Raider prove too good in the Temple?",
-      "link": "https://www.skysports.com/racing/news/12040/13546999/haydock-preview-night-raider-could-prove-too-good-in-the-temple-stakes-at-haydock-on-saturday",
-      "summary": "With the clock ticking down to Royal Ascot, the attention of the Weekend Winners team turns to Haydock this Saturday and a quality card ahead.",
-      "publishedAt": null
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "RWDM krijgt geen proflicentie en degradeert alsnog naar Eerste Nationale, reddingsboei voor Club NXT?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/rwdm-krijgt-geen-proflicentie-en-degradeert-alsnog-naar-eerste-nationale-reddingsboei-voor-club-nxt",
+      "summary": "RWDM zal volgend seizoen dan toch niet in de Challenger Pro League uitkomen. Hoewel de Brusselse club twee weken geleden nog gered werd door de Belgische Mededingingsautoriteit, kreeg RWDM uiteindelijk geen proflicentie.",
+      "publishedAt": "2026-05-22T01:49:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Toney? Injured full-backs? Stones? 26 questions about this England squad",
-      "link": "https://www.skysports.com/football/news/12040/13543460/england-world-cup-squad-26-questions-about-thomas-tuchels-selections-for-the-tournament",
-      "summary": "Thomas Tuchel has named his 26-player England squad for the World Cup, with some big calls made by the Three Lions boss.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Emotional Pep confirms Man City departure",
-      "link": "https://www.skysports.com/football/news/12040/13537139/pep-guardiola-to-leave-man-city-spaniard-announces-departure-after-a-decade-of-success-at-premier-league-club",
-      "summary": "Pep Guardiola will leave Manchester City this summer after a trophy-laden decade in charge.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Specialists' and 'a brotherhood' - Tuchel defends shock World Cup squad calls",
-      "link": "https://www.skysports.com/football/news/12040/13546983/england-world-cup-squad-thomas-tuchel-defends-his-specialist-selections-after-cole-palmer-phil-foden-and-harry-maguire-left-out",
-      "summary": "Thomas Tuchel has defended his England World Cup selection by insisting he has \"specialists\" in his squad ready to form a \"brotherhood\" to win the tournament this summer.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Hearn: UK frontrunner for AJ-Fury but don't rule out USA or Saudi Arabia",
-      "link": "https://www.skysports.com/boxing/news/12040/13546945/anthony-joshua-vs-tyson-fury-uk-the-frontrunner-for-fight-but-dont-rule-out-usa-or-saudi-arabia-says-promoter-eddie-hearn",
-      "summary": "A UK stadium is the “frontrunner” to stage the Anthony Joshua vs Tyson Fury mega-fight, says promoter Eddie Hearn.",
-      "publishedAt": null
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Racing Genk bevestigt interesse in Erenbjerg, Hayen gaat er dieper op in (en motiveert ook... Charleroi)",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-22/racing-genk-bevestigt-interesse-in-erenbjerg-hayen-gaat-er-dieper-op-in-en-motiveert-ook-charleroi",
+      "summary": "Terwijl KRC Genk zich opmaakt voor een allesbeslissende wedstrijd tegen OH Leuven, kijkt de club achter de schermen ook al nadrukkelijk richting volgende seizoen. Daarbij is de naam van Jeppe Erenbjerg opgedoken.",
+      "publishedAt": "2026-05-22T01:30:00.000Z"
     }
   ]
 }
