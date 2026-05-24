@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T11:22:57.719Z",
+  "generatedAt": "2026-05-24T15:07:54.450Z",
   "items": [
     {
       "type": "rss",
@@ -7,10 +7,43 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Football Focus",
-      "link": "https://www.bbc.co.uk/iplayer/live/bbcone?at_medium=RSS&at_campaign=rss",
-      "summary": "Alex Scott presents the last Football Focus after 52 years on BBC One.",
-      "publishedAt": "2026-05-24T22:59:00.000Z"
+      "title": "Dowman becomes youngest Premier League starter",
+      "link": "https://www.bbc.com/sport/football/articles/cvgzlj9wdvro?at_medium=RSS&at_campaign=rss",
+      "summary": "Max Dowman becomes the youngest player to start a Premier League game, at the age of 16 years and 144 days.",
+      "publishedAt": "2026-05-24T15:04:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Meest scorende ploeg van Polen degradeert uit Ekstraklasa",
+      "link": "https://www.vi.nl/nieuws/62-goals-toch-eruit-meest-scorende-ploeg-van-polen-degradeert",
+      "summary": "'De aanval is de beste verdediging', zei Johan Cruijff ooit. Voor Lechia Gdansk ging die vlieger niet op, want de meest scorende ploeg van de Poolse competitie degradeerde zaterdag naar het tweede niveau.",
+      "publishedAt": "2026-05-24T15:01:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "WK Paspoort: maak kennis met Schotland",
+      "link": "https://www.vi.nl/pro/wk-paspoort-maak-kennis-met-schotland",
+      "summary": "In de serie WK Paspoort introduceert VI PRO de 48 landen die strijden om de wereldbeker. Aan de hand van de WK-ontdekking (speler die gaat doorbreken bij het grote publiek), de bondscoach, een voorspeltip en een mini-podcast komt elke deelnemer uitgebreid aan bod. Met in deze editie: Schotland.",
+      "publishedAt": "2026-05-24T15:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "VI Live: Spurs begonnen aan cruciaal duel, last dance Salah en Guardiola",
+      "link": "https://www.vi.nl/nieuws/vi-live-spurs-begonnen-aan-cruciaal-duel-last-dance-salah-en-guardiola",
+      "summary": "De 38ste en laatste speelronde van het Premier League-seizoen wordt vanmiddag om 17.00 uur afgetrapt. Dat en ander buitenlands voetbal is te volgen via dit liveblog.",
+      "publishedAt": "2026-05-24T14:59:45.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +54,7 @@
       "title": "Sources: Reyna in as U.S. picks World Cup roster",
       "link": "https://www.espn.com/soccer/story/_/id/48854192/usa-2026-world-cup-roster-gio-reyna-diego-luna-zendejas",
       "summary": "USMNT coach Mauricio Pochettino has selected his 26-man roster for the upcoming World Cup, with Gio Reyna among those included, sources confirmed to ESPN.",
-      "publishedAt": "2026-05-24T11:36:37.000Z"
+      "publishedAt": "2026-05-24T14:58:01.000Z"
     },
     {
       "type": "rss",
@@ -32,7 +65,7 @@
       "title": "Jubilant Hull City promoted to the Premier League",
       "link": "https://www.espn.com/soccer/story/_/id/48852636/hull-city-promoted-premier-league-beating-middlesbrough-championship-playoff-final",
       "summary": "Hull City have been promoted to the Premier League after a 1-0 win in the Championship playoff final against Middlesbrough on Saturday at Wembley Stadium.",
-      "publishedAt": "2026-05-24T11:36:37.000Z"
+      "publishedAt": "2026-05-24T14:58:01.000Z"
     },
     {
       "type": "rss",
@@ -43,7 +76,18 @@
       "title": "Iran says WC camp moved to from U.S to Mexico",
       "link": "https://www.espn.com/soccer/story/_/id/48854770/iran-2026-world-cup-camp-moved-usa-mexico-tijuana",
       "summary": "The president of the governing body of Iranian soccer said Saturday that the nation's World Cup training base has been moved to Mexico from the United States after getting approval from FIFA.",
-      "publishedAt": "2026-05-24T11:36:37.000Z"
+      "publishedAt": "2026-05-24T14:58:01.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Kane hat trick powers Bayern to German Cup title",
+      "link": "https://www.espn.com/soccer/story/_/id/48854785/harry-kane-hat-trick-powers-bayern-munich-german-cup-title",
+      "summary": "Harry Kane had a hat trick, improving his season tally to 61 goals, as Bayern Munich beat Stuttgart 3-0 in the German Cup final to lift the trophy for the 21st time and first since 2020.",
+      "publishedAt": "2026-05-24T14:58:01.000Z"
     },
     {
       "type": "rss",
@@ -51,21 +95,10 @@
       "sourceSlug": "espn-soccer",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Salah has given everything to Liverpool and deserv...",
-      "link": "https://www.espn.com/soccer/story/_/id/48841999/mohamed-salah-given-everything-liverpool-deserves-fitting-finale",
-      "summary": "Mohamed Salah arrived at Liverpool in 2017 under pressure to shake off his \"Chelsea flop\" tag, but nine years later, he leaves as a legend who transcended the sport.",
-      "publishedAt": "2026-05-24T11:36:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League, Man City won't be the same after G...",
-      "link": "https://www.espn.com/soccer/story/_/id/48836149/pep-guardiola-manchester-city-enzo-maresca-premier-league-coaching-legacy-rob-dawson",
-      "summary": "Pep Guardiola has confirmed he is leaving Manchester City after nearly a decade of excellence.",
-      "publishedAt": "2026-05-24T11:36:07.000Z"
+      "title": "Premier League final day live updates: Spurs bid f...",
+      "link": "https://www.espn.com/soccer/story/_/id/48836374/premier-league-final-day-live-updates-liverpool-salah-guardiola-tottenham-hotspur-west-ham-united-relegation",
+      "summary": "Enjoy all the updates from all 10 matches on the final day of the 2025-26 Premier League season.",
+      "publishedAt": "2026-05-24T14:57:54.000Z"
     },
     {
       "type": "rss",
@@ -73,10 +106,21 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: Ajax en Utrecht wisselen niet in de rust",
-      "link": "https://www.vi.nl/nieuws/vi-live-ajax-en-utrecht-wisselen-niet-in-de-rust",
-      "summary": "Ajax en FC Utrecht sluiten het seizoen af met de finale om een ticket voor Conference League-voetbal volgend seizoen. Volg alle verrichtingen via ons liveblog.",
-      "publishedAt": "2026-05-24T11:22:00.000Z"
+      "title": "Transfers Ajax: Weghorst verwacht af te zwaaien",
+      "link": "https://www.vi.nl/nieuws/transfers-ajax-weghorst-verwacht-laatste-duel-te-hebben-gespeeld-voor-ajax",
+      "summary": "VI volgt het transfernieuws bij Ajax op de voet, ook nu de winterse transferwindow gesloten is. De doelwitten van de Amsterdammers, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
+      "publishedAt": "2026-05-24T14:56:38.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Spurs captain Romero back in England for crunch Everton game",
+      "link": "https://www.bbc.com/sport/football/articles/c1k2r04k1r2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Captain Cristian Romero returns to London from Argentina for Tottenham's final match of the Premier League season against Everton.",
+      "publishedAt": "2026-05-24T14:54:51.000Z"
     },
     {
       "type": "rss",
@@ -84,164 +128,65 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Premier League finale with survival on line for Spurs and West Ham – matchday live",
-      "link": "https://www.theguardian.com/football/live/2026/may/24/premier-league-finale-with-survival-on-line-for-spurs-and-west-ham-matchday-live",
-      "summary": "⚽ News, discussion and buildup before the day’s action ⚽ Fans’ verdicts: the season review | And email us here The Premier League may end today. But football never really does as the World Cup looms ever closer. Read Jonathan Wilson’s column on Brazil and Carlo Ancelotti’s selection of Neymar in their World Cup squad. Continue reading...",
-      "publishedAt": "2026-05-24T11:10:15.000Z"
+      "title": "Tottenham v Everton: Premier League final day – live",
+      "link": "https://www.theguardian.com/football/live/2026/may/24/tottenham-v-everton-premier-league-final-day-live",
+      "summary": "⚽ 4pm BST kick-off | Premier League clockwatch – live ⚽ Live scores | Latest table | Top scorers | Email Scott Roberto De Zerbi has been out on the pitch waving his arms about in an extremely exuberant style, exhorting the fans to make the Tottenham Hotspur Stadium a cauldron in terms of atmosphere as well as temperature. It’s 30 degrees out there, with little or no wind. UV level high. Seek shade, wear sunscreen. And stay hydrated! … and at the risk of turning this MBM into some sort of retro-relegation compendium, here’s Gary Naylor. “I was there in 1994,” he writes of Everton’s 1994 scrape with ignominy, requiring to beat Wimbledon on the last day only to go two down after ten minutes. “It was, and is, my favourite game. You’ve got to embrace it. There’ll be Tottenham or West Ham fans feeling the same come 6pm.” Continue reading...",
+      "publishedAt": "2026-05-24T14:50:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "West Ham v Leeds, Champions League battle, Arsenal to lift trophy and Guardiola’s goodbye: Premier League finale – live",
+      "link": "https://www.theguardian.com/football/live/2026/may/24/west-ham-leeds-champions-league-arsenal-trophy-pep-guardiola-goodbye-premier-league-finale-live",
+      "summary": "⚽ 4pm BST kick-offs | Tottenham v Everton – live ⚽ Live scores | Latest table | Top scorers | Email Simon Pep Guardiola has a chat with Sky: I’m good. Trying to focus on the game. It’s not easy, with many things happening around it. Not just me, Bernardo and John and some people from the staff. But yeah, try to enjoy, with my family, and an amount of people that I love. There’s a football game, and we don’t want to make a bad last game. I’d have loved to have the chance today to play against Arsenal, but there are a lot of things around. Now is the time, I’m pretty sure. Once we announced I thought, maybe I was wrong. The past has been really good with us, but the future will be better without me. You have to have a special energy.. Continue reading...",
+      "publishedAt": "2026-05-24T14:44:52.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "FC Groningen aast op Almere City-uitblinker en ziet twee keepers vertrekken",
-      "link": "https://www.vi.nl/nieuws/fc-groningen-aast-op-almere-city-uitblinker-en-ziet-twee-keepers-vertrekken",
-      "summary": "Blijf via dit blog op de hoogte van alle transfers en transfergeruchten bij en rond clubs in de Eredivisie en de Keuken Kampioen Divisie. Bekijk hier ons blog voor de transferperikelen in het buitenland .",
-      "publishedAt": "2026-05-24T11:10:00.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wonderkind Dowman (16) schrijft opnieuw Premier League-geschiedenis",
+      "link": "https://www.vi.nl/nieuws/wonderkind-dowman-16-schrijft-weer-premier-league-geschiedenis-bij-arsenal",
+      "summary": "Max Dowman heeft wederom Premier League-geschiedenis geschreven. Met zijn 16 jaar en 144 dagen is het wonderkind van landskampioen Arsenal de jongste speler ooit die in de basis staat op het hoogste niveau in Engeland.",
+      "publishedAt": "2026-05-24T14:36:52.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Standard, Charleroi, supporters én spelers wachten zware sancties na zwarte avond: dit zijn de gevolgen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/standard-charleroi-supporters-en-spelers-wachten-zware-sancties-na-zwarte-avond-dit-zijn-de-gevolgen",
-      "summary": "De chaos na Standard-Charleroi krijgt ongetwijfeld een zwaar staartje. Politie en bondsparket openen een onderzoek, met mogelijke sancties voor clubs, spelers en supporters.",
-      "publishedAt": "2026-05-24T10:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Rangers aast op Hearts-captain, Man Utd wil doorpakken voor Ederson'",
-      "link": "https://www.vi.nl/nieuws/rangers-aast-op-hearts-captain-man-utd-wil-doorpakken-voor-ederson",
-      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-05-24T10:52:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Iran verhuist WK-basiskamp van VS naar Mexico",
-      "link": "https://www.vi.nl/nieuws/iran-verhuist-wk-basiskamp-van-vs-naar-mexico",
-      "summary": "Iran zal tijdens het WK verblijven in het Mexicaanse Tijuana in plaats van in het Amerikaanse Tucson. Dat heeft bondspreses Mehdi Taj zaterdag aangekondigd.",
-      "publishedAt": "2026-05-24T10:20:55.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barcelona had kop er niet bij: 'Spelers waren al met WK bezig'",
-      "link": "https://www.vi.nl/nieuws/barcelona-had-kop-er-niet-bij-spelers-waren-al-met-wk-bezig",
-      "summary": "Barcelona speelde zaterdagavond nergens meer voor en dat was ook wel een beetje terug te zien. Er werd verloren van Valencia en na afloop ging het vooral over het afscheid van Robert Lewandowski en het komende WK.",
-      "publishedAt": "2026-05-24T10:08:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un héros passé par Neerpede, un vétéran qui empile les buts : Lommel est de retour en D1A",
-      "link": "https://www.walfoot.be/news/2026-05-24/un-heros-passe-par-neerpede-un-veteran-qui-empile-les-buts--lommel-est-de-retour-en-d1a",
-      "summary": "Connaissez-vous les joueurs de Lommel ? Le club limbourgeois fait son retour en D1A, et quelques profils surprenants l'y ont bien aidé.",
-      "publishedAt": "2026-05-24T10:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "STVV heeft nieuwe hoofdtrainer al bijna beet: opvolger van Vrancken snel bekend",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/stvv-heeft-nieuwe-hoofdtrainer-al-bijna-beet-opvolger-van-vrancken-snel-bekend",
-      "summary": "STVV neemt zondag afscheid van Wouter Vrancken na een historisch seizoen. Toch kijkt de club al vooruit: de opvolger wordt snel bekendgemaakt.",
-      "publishedAt": "2026-05-24T10:00:00.000Z"
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bolton promoted to Championship after Rodrigues doubles up in win over Stockport",
+      "link": "https://www.theguardian.com/football/2026/may/24/stockport-bolton-league-one-playoff-final-match-report",
+      "summary": "With Sam Dalby’s second-half overhead kick, Bolton could start to plan their return to the Championship, a division they left in 2019 as a club in turmoil. After administration, last-minute sales, emergency loans, points deductions and a spell in League Two, they have found their way back. Stockport, themselves a club on the rise following financial trouble that took them down to the sixth tier, were game opponents in Bolton’s second League One playoff final in three years but were overpowered at Wembley. With the score level at 1-1 after an hour, Steven Schumacher sent on Sam Dalby and by the 81st minute the substitute had stretched Bolton’s lead to 3-1 with a picture-book goal. Rúben Rodrigues’s late penalty against 10 men added gloss to the scoreline. Continue reading...",
+      "publishedAt": "2026-05-24T14:20:29.000Z"
     },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Iran says World Cup base moved to Mexico from US",
-      "link": "https://www.bbc.com/sport/football/articles/cx21e47e214o?at_medium=RSS&at_campaign=rss",
-      "summary": "Iran says Fifa has approved the country's World Cup training base being switched from the United States to Mexico.",
-      "publishedAt": "2026-05-24T09:51:42.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Shankland set to join Rangers from Hearts",
+      "link": "https://www.bbc.com/sport/football/articles/c8d8lpqjy2go?at_medium=RSS&at_campaign=rss",
+      "summary": "Lawrence Shankland is close to joining Rangers from Hearts with a deal for the Scotland forward near.",
+      "publishedAt": "2026-05-24T13:39:53.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Heeft Antwerp er een nieuw lichtpunt bij? Talent maakt indruk bij debuut op de Bosuil",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/heeft-antwerp-er-een-nieuw-lichtpunt-bij-talent-maakt-indruk-bij-debuut-op-de-bosuil",
-      "summary": "Antwerp sloot een moeilijk seizoen af met een zege tegen Westerlo. Voor doelman Niels Devalckeneer werd het bovendien een avond om nooit te vergeten.",
-      "publishedAt": "2026-05-24T09:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Quand on sera de retour au sommet...\" : Vincent Kompany ne lâche pas le Sporting d'Anderlecht",
-      "link": "https://www.walfoot.be/news/2026-05-24/quand-on-sera-de-retour-au-sommet--vincent-kompany-ne-lache-pas-le-sporting-danderlecht",
-      "summary": "Vincent Kompany a remporté le doublé coupe-championnat avec le Bayern Munich. De quoi encore accentuer les regrets des supporters du Sporting d'Anderlecht.",
-      "publishedAt": "2026-05-24T09:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Hans Vanaken en Simon Mignolet komen met duidelijke oproep richting Club-fans",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/hans-vanaken-en-simon-mignolet-komen-met-duidelijke-oproep-richting-club-fans",
-      "summary": "Club Brugge viert zondag de landstitel op Jan Breydel, maar Hans Vanaken en Simon Mignolet vragen de fans om het feest niet te laten ontsporen: fans mogen het veld niet bestormen na afloop.",
-      "publishedAt": "2026-05-24T08:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Surprenant : quand Pep Guardiola et Jérémy Doku encouragent Lommel avant le match de la montée",
-      "link": "https://www.walfoot.be/news/2026-05-24/surprenant--quand-pep-guardiola-et-jeremy-doku-encouragent-lommel-avant-le-match-de-la-montee",
-      "summary": "Vous ne rêvez pas : Pep Guardiola et Jérémy Doku ont contribué à motiver Lommel avant le match décisif pour la montée en Jupiler Pro League.",
-      "publishedAt": "2026-05-24T08:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Echt gebeurd: video's van Doku en Guardiola himself inspireren Lommel om te promoveren naar de JPL",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/match-reactie-echt-gebeurd--videos-van-doku-en-guardiola-himself-inspireren-lommel-om-te-promoveren-naar-de-jpl",
-      "summary": "Het is echt zo gelopen: Pep Guardiola en Jérémy Doku hebben mee Lommel geïnspireerd om de promotie naar de Jupiler Pro League af te dwingen. Lommel slaagde daar zaterdag in op het veld van Dender.",
-      "publishedAt": "2026-05-24T08:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Un ancien... gardien d'Anderlecht transforme le penalty qui ramène Willem II en Eredivisie",
-      "link": "https://www.walfoot.be/news/2026-05-24/un-ancien-gardien-danderlecht-transforme-le-penalty-qui-ramene-willem-ii-en-eredivisie",
-      "summary": "Willem II remonte en Eredivisie un an après l'avoir quittée. Le club néerlandais a éliminé Volendam aux tirs au but et l'envoi décisif a été transformé par un certain Thomas Didillon.",
-      "publishedAt": "2026-05-24T08:00:00.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Saying goodbye to Football Focus after 52 years",
+      "link": "https://www.bbc.com/sport/football/articles/c4g0jep1z80o?at_medium=RSS&at_campaign=rss",
+      "summary": "After Football Focus broadcasts its final episode after 52 years on the air, former presenters and pundits reminisce about the good times.",
+      "publishedAt": "2026-05-24T12:36:49.000Z"
     },
     {
       "type": "rss",
@@ -256,14 +201,47 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Les sanctions les plus lourdes possibles\" : La Pro League promet de frapper fort le Standard et Charleroi",
+      "link": "https://www.walfoot.be/news/2026-05-24/les-sanctions-les-plus-lourdes-possibles--la-pro-league-promet-de-frapper-fort-le-standard-et-charleroi",
+      "summary": "Le CEO de la Pro League réclame des grosses sanctions et veut bannir plusieurs supporters des stades. De nouvelles mesures sont à l'étude.",
+      "publishedAt": "2026-05-24T03:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Dan ga je echt te ver\": Algemeen directeur van Charleroi verbreekt de stilte na rellen op Sclessin",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/dan-ga-je-echt-te-ver-algemeen-directeur-van-charleroi-verbreekt-de-stilte-na-rellen-op-sclessin",
+      "summary": "De algemeen directeur van Charleroi heeft gereageerd op de incidenten op Sclessin en kondigt sancties aan tegen meerdere betrokken supporters.",
+      "publishedAt": "2026-05-24T03:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Why the stakes are so high for Spurs and West Ham",
-      "link": "https://www.bbc.com/sport/football/articles/cpqpyprner9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Why the stakes could not be higher in Tottenham and West Ham's relegation shootout.",
-      "publishedAt": "2026-05-24T05:15:37.000Z"
+      "title": "De Liverpool au Club de Bruges : les magnifiques hommages à Mignolet pour le dernier match de sa carrière",
+      "link": "https://www.walfoot.be/news/2026-05-24/de-liverpool-au-club-de-bruges--les-magnifiques-hommages-a-mignolet-pour-le-dernier-match-de-sa-carriere",
+      "summary": "Simon Mignolet reçoit de nombreux hommages avant le dernier match de sa carrière ce dimanche. Plusieurs anciens coéquipiers saluent autant le gardien que l'homme qu'il est devenu.",
+      "publishedAt": "2026-05-24T02:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Iran heeft de knoop doorgehakt: tegenstander van Rode Duivels voert grote wijziging door voor WK",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/iran-heeft-de-knoop-doorgehakt-tegenstander-van-rode-duivels-voert-grote-wijziging-door-voor-wk",
+      "summary": "De toekomstige tegenstander van de Rode Duivels heeft zijn plannen gewijzigd voor het WK. Iran zal tijdens het toernooi in Mexico verblijven.",
+      "publishedAt": "2026-05-24T02:30:00.000Z"
     },
     {
       "type": "rss",
@@ -271,32 +249,65 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Il sera à la maison : Matthieu Epolo et la RDC prépareront leur Coupe du Monde à Liège",
-      "link": "https://www.walfoot.be/news/2026-05-24/il-sera-a-la-maison--matthieu-epolo-et-la-rdc-prepareront-leur-coupe-du-monde-a-liege",
-      "summary": "La République Démocratique du Congo vit une préparation de Coupe du Monde perturbée par l'épidémie d'Ebola qui sévit en RDC. Mais le Standard mettra ses installations à la disposition des Léopards.",
-      "publishedAt": "2026-05-23T23:00:00.000Z"
+      "title": "\"Là, on dépasse tout\" : les révélations hallucinantes du directeur général de Charleroi à Sclessin",
+      "link": "https://www.walfoot.be/news/2026-05-24/la-on-depasse-tout--les-revelations-hallucinantes-du-directeur-general-de-charleroi-a-sclessin",
+      "summary": "Le directeur général de Charleroi a pris la parole sur les incidents de Sclessin et annonce des sanctions contre plusieurs supporters impliqués.",
+      "publishedAt": "2026-05-24T02:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Van Liverpool tot Club Brugge: Sturridge, De Ketelaere en co. nemen afscheid van Mignolet met warme woorden",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/van-liverpool-tot-club-brugge-sturridge-de-ketelaere-en-co-nemen-afscheid-van-mignolet-met-warme-woorden",
+      "summary": "Simon Mignolet speelt zondag zijn allerlaatste wedstrijd. Ondertussen lopen de eerbetonen al binnen. Ex-ploegmaats spreken met veel bewondering over de doelman én de mens achter de carrière.",
+      "publishedAt": "2026-05-24T02:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "L'Iran a tranché : le futur adversaire des Diables Rouges prépare un énorme changement avant le Mondial",
+      "link": "https://www.walfoot.be/news/2026-05-24/liran-a-tranche--le-futur-adversaire-des-diables-rouges-prepare-un-enorme-changement-avant-le-mondial",
+      "summary": "Le futur adversaire des Diables Rouges a changé ses plans avant la Coupe du monde. L'Iran séjournera au Mexique pendant le tournoi organisé aux États-Unis, au Canada et au Méxique.",
+      "publishedAt": "2026-05-24T01:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Lommel heeft nog heel grote plannen in de Jupiler Pro League: \"Daar neem ik nu geen genoegen meer mee\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/lommel-heeft-nog-heel-grote-plannen-in-de-jupiler-pro-league-daar-neem-ik-nu-geen-genoegen-meer-mee",
+      "summary": "Lommel SK keert terug naar de Jupiler Pro League en wil daar niet zomaar passeren. CEO Mattijs Manders kondigt meteen een drukke zomer en grote ambities aan.",
+      "publishedAt": "2026-05-24T01:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "DE",
       "flag": "🌍",
-      "title": "European football: Harry Kane hits hat-trick as Bayern Munich complete double",
-      "link": "https://www.theguardian.com/football/2026/may/23/european-football-harry-kane-hits-hat-trick-as-bayern-munich-complete-double",
-      "summary": "Stuttgart beaten 3-0 in DFB-Pokal Cup final Girona and Mallorca relegated from La Liga Harry Kane cut through the smoke of the DFB-Pokal cup final with a hat-trick for Bayern Munich to beat defending champions Stuttgart 3-0 and complete another domestic double on Saturday. Kane’s goals in the second half set off fireworks among the Bayern fans who had joined their Stuttgart rivals in protesting against the German soccer federation (DFB) for a planned increase in security measures. Continue reading...",
-      "publishedAt": "2026-05-23T21:55:08.000Z"
+      "title": "Vincent Kompany entre dans l'histoire du Bayern Munich : \"C'était presque une finale parfaite\"",
+      "link": "https://www.walfoot.be/news/2026-05-24/vincent-kompany-entre-dans-lhistoire-du-bayern-munich--cetait-presque-une-finale-parfaite",
+      "summary": "Harry Kane a offert la Coupe d'Allemagne au Bayern Munich avec un triplé en finale contre Stuttgart (3-0). Vincent Kompany boucle sa deuxième saison en Allemagne avec trois trophées.",
+      "publishedAt": "2026-05-24T01:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Wembley, Vegas, Premier League - jubilant Hull back in the big time",
-      "link": "https://www.bbc.com/sport/football/articles/ckgpe8krnkro?at_medium=RSS&at_campaign=rss",
-      "summary": "Even the most dedicated Hull City fan could not have envisaged their season ending like this, with Wembley glory and a return to the top flight.",
-      "publishedAt": "2026-05-23T20:05:39.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Minister van Binnenlandse Zaken reageert duidelijk op zware incidenten op Sclessin",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-24/minister-van-binnenlandse-zaken-reageert-duidelijk-op-zware-incidenten-op-sclessin",
+      "summary": "De Waalse derby is uitgedraaid op een fiasco, waardoor de regering veel strengere maatregelen aankondigt.",
+      "publishedAt": "2026-05-24T01:00:00.000Z"
     },
     {
       "type": "rss",
@@ -311,25 +322,14 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Hull master the tension to make it an unlikely mission accomplished | Jonathan Wilson",
-      "link": "https://www.theguardian.com/football/2026/may/23/hull-master-the-tension-to-make-it-an-unlikely-mission-accomplished",
-      "summary": "The shadow of spygate hung over the playoff final but Middlesbrough’s defeat averts the possibility of legal action A freezing night in Berlin. Silence. Mist. Breath steams above a gaggle of grey-faced men, collars upturned. An unbearable tension in the air. Binoculars trained across the River Havel from Wannsee to Potsdam. An officer reaches into the pocket of his greatcoat to take a bite of schnapps. Another smokes nervously. Then, at last, a light on the east side of the Glienicke Bridge. The exchange is on. There is almost a sense of relief as the action begins. This is the moment in the spy film after the espionage is over, the mole exposed and the agonising denouement can begin. Continue reading...",
-      "publishedAt": "2026-05-23T18:13:18.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Farewell to Salah, Liverpool's 'Egyptian king'",
-      "link": "https://www.bbc.com/sport/football/articles/cgkp386p60jo?at_medium=RSS&at_campaign=rss",
-      "summary": "As Mohamed Salah's time at Liverpool comes to an end, a look at his legacy with insight from Jurgen Klopp, Ian Rush, Steven Gerrard and more.",
-      "publishedAt": "2026-05-23T18:03:26.000Z"
+      "title": "Sutton's final-day predictions v Sam Tompkins",
+      "link": "https://www.bbc.com/sport/football/articles/c0e2q9e85qeo?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport football expert Chris Sutton takes on singer-songwriter Sam Tompkins, plus the BBC readers and AI with his predictions for Sunday's final round of Premier League fixtures.",
+      "publishedAt": "2026-05-22T10:46:23.000Z"
     }
   ]
 }
