@@ -1,38 +1,93 @@
 {
-  "generatedAt": "2026-05-25T14:11:13.393Z",
+  "generatedAt": "2026-05-25T21:13:50.285Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Tottenham stay in Premier League, but big rebuild ...",
-      "link": "https://www.espn.com/soccer/story/_/id/48869319/tottenham-premier-league-harry-kane-bayern-munich-history-como-champions-league-musings",
-      "summary": "Tottenham will remain in the Premier League for another season, but they'll need to nail a big summer rebuild. Two Italian giants also missed the Champions League, and Harry Kane pushed Bayern to the domestic double.",
-      "publishedAt": "2026-05-25T14:25:50.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How did Tottenham, one of the world's 10 richest c...",
-      "link": "https://www.espn.com/soccer/story/_/id/48712585/how-did-premier-league-giants-tottenham-hotspur-one-worlds-10-richest-clubs-go-brink-relegation",
-      "summary": "Spurs escaped relegation on the final day of the Premier League season. How did it come to this?",
-      "publishedAt": "2026-05-25T14:25:50.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Wolfsburg degradeert voor het eerst in de clubgeschiedenis uit de Bundesliga",
+      "link": "https://www.vi.nl/nieuws/wolfsburg-degradeert-voor-het-eerst-in-de-clubgeschiedenis-uit-de-bundesliga",
+      "summary": "VfL Wolfsburg is maandag voor het eerst ooit gedegradeerd uit de Bundesliga. De club uit deelstaat Niedersachsen leek zich in de play-off in Paderborn te redden na een snel doelpunt, maar een eveneens vroege rode kaart werd Wolfsburg fataal: SC Paderborn won met 2-1 en promoveert naar de hoogste afdeling.",
+      "publishedAt": "2026-05-25T21:11:21.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Hooggespannen verwachtingen voor Eenhoorn: 'Maar wel goed dat hij eerst pauze nam'",
+      "link": "https://www.vi.nl/nieuws/hooggespannen-verwachtingen-voor-eenhoorn-maar-wel-goed-dat-hij-eerst-pauze-nam",
+      "summary": "Met de aanstelling van Robert Eenhoorn heeft Feyenoord uitstekende zaken gedaan, meent Khalid Boulahrouz. De analyticus kwam als speler in aanraking met de nieuwe algemeen directeur in Rotterdam en verwacht dat Eenhoorn hoge ogen zal gooien in De Kuip.",
+      "publishedAt": "2026-05-25T20:54:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Ouaissa duidelijk over Beste Speler: 'Wat hij presteert is niet normaal'",
+      "link": "https://www.vi.nl/video/ouaissa-duidelijk-over-beste-speler-wat-hij-presteert-is-niet-normaal",
+      "summary": "Als Sami Ouaissa het voor het zeggen had, zou Tjaronn Chery de prijs winnen van Beste Speler van de Eredivisie. De smaakmaker is lovend over zijn ervaren teamgenoot in Nijmegen.",
+      "publishedAt": "2026-05-25T20:32:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Fortes trots op zijn Kaapverdië: 'Konden ze m’n paspoort maar vervalsen'",
+      "link": "https://www.vi.nl/nieuws/fortes-trots-op-zijn-kaapverdi-konden-ze-m-n-paspoort-maar-vervalsen",
+      "summary": "Jeffry Fortes speelde 26 interlands voor Kaapverdië en maakte met het land bijzondere avonturen mee. De verdediger van FC Den Bosch vertelde in Balverliefd over zijn bijzondere interlandcarrière én de connectie tussen Rotterdam en Kaapverdië.",
+      "publishedAt": "2026-05-25T20:22:59.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Jans over Eredivisie-uitblinker: 'Als Premier League-trainer zou ik geïnteresseerd zijn'",
+      "link": "https://www.vi.nl/video/jans-over-eredivisie-uitblinker-als-premier-league-trainer-zou-ik-ge-nteresseerd",
+      "summary": "Ron Jans was aanwezig bij de Eredivisie Awards en vertelde wie volgens hem de beste speler van het afgelopen Eredivisie-seizoen was. Ook blikte hij vooruit op het WK, al is zijn enthousiasme beperkt: 'Ik verheug me totaal niet op het WK.'",
+      "publishedAt": "2026-05-25T20:10:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Reorganisatie aanstaande bij Milan, Liverpool aast op Duits toptalent'",
-      "link": "https://www.vi.nl/nieuws/rangers-aast-op-hearts-captain-man-utd-wil-doorpakken-voor-ederson",
-      "summary": "We zitten in een periode tussen twee transferwindows, maar de stroom aan transfernieuws houdt nooit op. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-05-25T14:05:00.000Z"
+      "title": "Neville leaves MLS strugglers Portland Timbers",
+      "link": "https://www.bbc.com/sport/football/articles/c8e886je729o?at_medium=RSS&at_campaign=rss",
+      "summary": "Portland Timbers confirm that they have parted company with head coach Phil Neville by mutual consent.",
+      "publishedAt": "2026-05-25T19:50:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Three ACL injuries later - how Notts County's Jones lit up Wembley final",
+      "link": "https://www.bbc.com/sport/football/articles/c0522n4ev66o?at_medium=RSS&at_campaign=rss",
+      "summary": "Notts County winger Jodi Jones once went five years without starting a league game - now he is man of the match in the League Two play-off final.",
+      "publishedAt": "2026-05-25T19:35:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Shaw signs new Man City deal after contract U-turn",
+      "link": "https://www.bbc.com/sport/football/articles/clypprgrr43o?at_medium=RSS&at_campaign=rss",
+      "summary": "Man City striker Khadija Shaw signs a new four-year contract with the club, just days after it looked like she would be leaving the WSL champions this summer.",
+      "publishedAt": "2026-05-25T19:26:40.000Z"
     },
     {
       "type": "rss",
@@ -40,87 +95,43 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Notts County v Salford: League Two playoff final – live",
-      "link": "https://www.theguardian.com/football/live/2026/may/25/notts-county-v-salford-league-two-playoff-final-live",
-      "summary": "⚽ League Two playoff final at Wembley; kick-off 3pm BST ⚽ Bolton 4-1 Stockport | Follow us on Bluesky | Email Will I did see Notts County beat Harrogate a couple of months back. It was all very easy, so I can’t tell you much except Jatta is a cut above this level as a finisher. Oh, I’ve interviewed him too. Continue reading...",
-      "publishedAt": "2026-05-25T14:00:15.000Z"
+      "title": "The story of the Premier League 2025-26 season in 100 photos",
+      "link": "https://www.theguardian.com/football/2026/may/25/story-of-2025-26-premier-league-season-in-100-photos",
+      "summary": "A century of our favourite images from the season including wild celebrations, protesting fans and goalmouth scrambles Reigning champions Liverpool left it late to beat Bournemouth 4-2 on the opening day of the season in their first league game back at Anfield following the death of Diogo Jota. The Reds also squeaked past Newcastle thanks to Rio Ngumoha and then Arsenal, after Dominik Szoboszlai’s stunning free-kick, which won goal of the month. Meanwhile, Manchester City lost 2-0 at home to Tottenham and 2-1 away at Brighton, Everton christened their new home, Hill Dickinson Stadium, with a win, and Sunderland made a strong start on their return to the top flight with two wins from three. Continue reading...",
+      "publishedAt": "2026-05-25T19:00:33.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "WK Paspoort: maak kennis met Turkije",
-      "link": "https://www.vi.nl/pro/wk-paspoort-maak-kennis-met-turkije",
-      "summary": "In de serie WK Paspoort introduceert VI PRO de 48 landen die strijden om de wereldbeker. Aan de hand van de WK-ontdekking (speler die gaat doorbreken bij het grote publiek), de bondscoach, een voorspeltip en een mini-podcast komt elke deelnemer uitgebreid aan bod. Met in deze editie: Turkije.",
-      "publishedAt": "2026-05-25T14:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Merino vecht zich terug van blessure: 'Het WK was mijn grootste motivatie'",
-      "link": "https://www.vi.nl/nieuws/merino-vecht-zich-terug-van-blessure-het-wk-was-mijn-grootste-motivatie",
-      "summary": "Mikel Merino was lange tijd in onzekerheid of hij opnieuw een eindtoernooi zou moeten missen, maar de middenvelder van Arsenal is op tijd terug voor het WK. De 29-jarige Spanjaard maakte zondag tegen Crystal Palace zijn rentree en behoort bovendien tot de WK-selectie van bondscoach Luis de la Fuente. Ook voor de Champions League-finale is Merino weer beschikbaar.",
-      "publishedAt": "2026-05-25T13:59:47.000Z"
+      "title": "Man Utd captain Fernandes takes on Keane over 'lie'",
+      "link": "https://www.bbc.com/sport/football/articles/cn9ppv3lq4lo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United captain Bruno Fernandes accuses Roy Keane of putting \"words in my mouth\" and says he has asked for the phone number of the club legend to set him straight.",
+      "publishedAt": "2026-05-25T16:26:10.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Overzicht: bekijk alle WK-selecties",
-      "link": "https://www.vi.nl/nieuws/overzicht-bekijk-alle-wk-selecties",
-      "summary": "In dit bericht houden we alle bevestigde WK-selecties bij. De 23ste mondiale eindronde begint op 11 juni.",
-      "publishedAt": "2026-05-25T13:42:52.000Z"
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Notts County cruise into League One with emphatic win over Salford",
+      "link": "https://www.theguardian.com/football/2026/may/25/salford-city-notts-county-league-two-playoff-final-match-report",
+      "summary": "Football’s oldest professional club continued to clamber back up the divisions in the final match of the English domestic season. Alassana Jatta’s injection of higher echelon quality began a Notts County stroll in baking Wembley sunshine. Salford melted away while Lucas Ness’s towering header and Jodi Jones’s second-half goal confirmed County’s return to League One after an 11-year absence. Salford, club of the Class of 92, facing County was celebrity versus tradition. Not that Salford lack football heritage within their ownership, nowadays Gary Neville and Sir David Beckham, with further former Manchester United notables lending helping hands. Beckham, furthering the A-lister trend of club ownership by co-owning two, was in the posh seats, along from Paul Scholes and Nicky Butt. Continue reading...",
+      "publishedAt": "2026-05-25T16:12:13.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "ES",
       "flag": "🌍",
-      "title": "Yamal in Spain World Cup squad, no Madrid players",
-      "link": "https://www.espn.com/soccer/story/_/id/48870392/spain-world-cup-2026-squad-confirmed-lamine-yamal-stars-no-real-madrid-players",
-      "summary": "Spain coach Luis de la Fuente named a 26-man World Cup squad which features Lamine Yamal but is without any Real Madrid players.",
-      "publishedAt": "2026-05-25T13:30:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Messi exit overshadows Miami win, record half",
-      "link": "https://www.espn.com/soccer/story/_/id/48867274/lionel-messi-exit-overshadows-miami-win-record-half",
-      "summary": "Lionel Messi left the field in the 72nd minute of Inter Miami's 6-4 win over the Philadelphia Union at Nu Stadium on Sunday night, heading straight to the locker room after grabbing his left thigh.",
-      "publishedAt": "2026-05-25T13:30:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Guardiola promises to call Man City successor",
-      "link": "https://www.espn.com/soccer/story/_/id/48870381/pep-guardiola-promises-call-man-city-successor",
-      "summary": "Pep Guardiola has promised to call his successor as he prepared to hand over the managerial reins at Manchester City.",
-      "publishedAt": "2026-05-25T13:30:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Koeman verwelkomt zes potentiële WK-gangers in Zeist",
-      "link": "https://www.vi.nl/video/koeman-verwelkomt-zes-potenti-le-wk-gangers-in-zeist",
-      "summary": "Bondscoach Ronald Koeman is maandag met een groep van zes spelers begonnen aan de officieuze voorbereiding op het WK in de Verenigde Staten, Canada en Mexico. Het gaat om potentiële WK-gangers, die afgelopen weekend geen clubverplichtingen meer hadden. Zij proberen de komende dagen een plek in de definitieve WK-selectie te verdienen, die woensdag bekend wordt gemaakt.",
-      "publishedAt": "2026-05-25T13:15:00.000Z"
+      "title": "Zero Real Madrid players in Spain World Cup squad as injured Lamine Yamal makes cut",
+      "link": "https://www.theguardian.com/football/2026/may/25/spain-world-cup-squad-2026-lamine-yamal-injury",
+      "summary": "Luis de la Fuente names 26-man squad for tournament Real Madrid players miss Spain squad for first time Spain will go to the World Cup without a single Real Madrid player for the first time in their history as Luis de la Fuente named his 26-man squad for this summer’s tournament. While Real stars such as Dean Huijsen, Dani Carvajal and Gonzalo García miss out, De la Fuente included Barcelona’s Lamine Yamal, who tore his left hamstring on 22 April and missed the rest of his club’s La Liga campaign. Continue reading...",
+      "publishedAt": "2026-05-25T16:09:10.000Z"
     },
     {
       "type": "rss",
@@ -128,32 +139,21 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Nuno meeting Hammers hierarchy over future",
-      "link": "https://www.bbc.com/sport/football/articles/ce9pp057zneo?at_medium=RSS&at_campaign=rss",
-      "summary": "West Ham manager Nuno Espirito Santo is meeting the club's hierarchy amid rumours he will leave the club following relegation to the Championship.",
-      "publishedAt": "2026-05-25T12:42:13.000Z"
+      "title": "Spurs admit 'football success was not driving decisions'",
+      "link": "https://www.bbc.com/sport/football/articles/c3v22p6nvx5o?at_medium=RSS&at_campaign=rss",
+      "summary": "Tottenham say \"football success had not been driving our decisions\" as non-executive chairman Peter Charrington admitted failings and vowed to rebuild in an open letter to the club's supporters.",
+      "publishedAt": "2026-05-25T15:47:28.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Lamine Yamal in Spain squad but no Real players",
-      "link": "https://www.bbc.com/sport/football/articles/crlpp3dw14lo?at_medium=RSS&at_campaign=rss",
-      "summary": "Injured forward Lamine Yamal is named in Spain's World Cup squad, which does not feature any Real Madrid players.",
-      "publishedAt": "2026-05-25T12:33:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Who made Opta's team of the season?",
-      "link": "https://www.bbc.com/sport/football/articles/c20227e73k0o?at_medium=RSS&at_campaign=rss",
-      "summary": "Data analyst Opta looks at the numbers to provide its own Premier League team of the season.",
-      "publishedAt": "2026-05-25T11:57:08.000Z"
+      "title": "Wealth matters in the Premier League but this season showed wisdom can still elevate a club | Jonathan Wilson",
+      "link": "https://www.theguardian.com/football/2026/may/25/football-premier-league-season-defining-theme",
+      "summary": "Slip-ups are brutally punished in English football’s top flight, but enlightened management can still transform a team’s fortunes Sign up for the World Behind The Cup newsletter The final day of the season, to a modern audience, can seem almost overwhelming: 10 games going on at once, each with their own rhythm and dynamic and storyline. It can be hard to imagine that at one time, before the advent of regular live television coverage, this is how it was every weekend. But from the mass of narratives, one key theme, one that has lurked in the background all season, emerged: that this is a brutally hard, extremely competitive, league in which any slip-up is punished. There have been complaints this season about the style of many games, but then there comes a point towards the end of most seasons when a number of fans pronounce themselves bored and declare it a bad season; that tends to correlate quite strongly with how well their team has done. This is an extract from Soccer with Jonathan Wilson, a weekly look from the Guardian US at the game in Europe and beyond. Subscribe for free here. Have a question for Jonathan? Email soccerwithjw@theguardian.com, and he’ll answer the best in a future edition Continue reading...",
+      "publishedAt": "2026-05-25T14:57:32.000Z"
     },
     {
       "type": "rss",
@@ -163,63 +163,19 @@
       "flag": "🇬🇧",
       "title": "Nuno expected to leave relegated West Ham after being summoned for talks with board",
       "link": "https://www.theguardian.com/football/2026/may/25/nuno-leave-west-ham-talks-relegation",
-      "summary": "Manager’s deal allows for summer parting of ways Scott Parker and Gary O’Neil of interest to West Ham West Ham are expected to part company with Nuno Espírito Santo after their relegation from the Premier League. The manager has been called in for talks with the board and discussions are likely to end with the Portuguese leaving. Nuno refused to talk about his future after West Ham’s descent into the Championship was confirmed on Sunday. The former Nottingham Forest manager’s three-year deal contains a clause that allows West Ham to sack him without paying compensation. Nuno is also free to walk away. Continue reading...",
+      "summary": "Manager’s deal allows for summer parting of ways Scott Parker and Gary O’Neil of interest to West Ham West Ham are expected to part ­company with Nuno Espírito Santo this week after their relegation from the Premier League. The manager has been called in for talks with the board and discussions are likely to end with the Portuguese leaving. Nuno refused to talk about his future after West Ham’s descent into the Championship was confirmed on Sunday. The former Nottingham ­Forest manager’s three-year deal ­contains a clause that allows West Ham to sack him without paying compensation. Nuno is also free to walk away. Continue reading...",
       "publishedAt": "2026-05-25T11:30:06.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "De Zerbi’s arrival at Spurs ‘saved disaster from happening’, admits Maddison",
-      "link": "https://www.theguardian.com/football/2026/may/25/roberto-de-zerbi-spurs-saved-disaster-james-maddison-senesi-robertson",
-      "summary": "Maddison and Gallagher pay tribute to coach’s impact Spurs expected to sign Senesi and Robertson on frees Tottenham would probably have suffered the disaster of relegation from the Premier League if it were not for the decision to bring in Roberto De Zerbi for Igor Tudor, according to James Maddison and Conor Gallagher. Spurs made the managerial change with seven games to go and the team in free fall after a run of one point from six matches under Tudor. De Zerbi rebuilt confidence and guided the club to survival, the 1-0 home win over Everton on Sunday ensuring that they finished above West Ham, who went down. De Zerbi’s record shows three wins, two draws and two defeats. Continue reading...",
-      "publishedAt": "2026-05-25T11:00:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League 2025-26 review: flops of the season",
-      "link": "https://www.theguardian.com/football/2026/may/25/premier-league-2025-26-review-flops-of-the-season",
-      "summary": "From Wissa’s solitary goal for Newcastle to Postecoglou’s brief reign at Forest, it’s been a campaign to forget for some Newcastle’s year-long chase to sign Yoane Wissa from Brentford felt like it would never end until they paid £55m for his services in September. The Democratic Republic of the Congo forward arrived after banging in 19 goals for Brentford last season and was supposed to lead the charge for Eddie Howe in the Premier League and Europe. In reality it has been a whimpering experience. Admittedly, none of Newcastle’s attacking recruitment paid off; Wissa sat on the bench alongside £65m Nick Woltemade and £55m Anthony Elanga in the April defeat away to Crystal Palace where the manager preferred to start Jacob Murphy and Will Osula. Wissa has scored once in 13 league appearances, starting only four times because he does not fit into the system and has not built the level of rapport he had with Bryan Mbeumo. The team as a whole has struggled, finishing 12th, a drop of seven places from last season, meaning they will not be returning to Europe. With Anthony Gordon expected to depart in the coming months, having faith in the reinvestment is not a given. Continue reading...",
-      "publishedAt": "2026-05-25T09:00:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League predictions - how accurate were BBC Sport pundits?",
-      "link": "https://www.bbc.com/sport/football/articles/c1j27y7leelo?at_medium=RSS&at_campaign=rss",
-      "summary": "Last summer, 33 BBC pundits - plus AI and Opta's 'supercomputer' were asked to pick which teams would finish in the Premier League's top four, and in which order. How did they get on?",
-      "publishedAt": "2026-05-25T08:55:21.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Which side were remarkable? Who were a shambles? Phil McNulty's season review",
-      "link": "https://www.bbc.com/sport/football/articles/cx2136mx2m2o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport chief football writer Phil McNulty reviews every team's Premier League - and looks back at his pre-season predictions.",
-      "publishedAt": "2026-05-25T08:10:33.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League 2025-26 review: players of the season",
-      "link": "https://www.theguardian.com/football/2026/may/25/premier-league-2025-26-review-players-of-the-season",
-      "summary": "Two deadly strikers, two creative forces and an all-but unbeatable goalkeeper make up our picks for the season The adulation offers a fine indication of how good the Manchester United captain has been this season. At the start, he was dragging Ruben Amorim’s interpretation of a team through matches and spent the past five months leading Michael Carrick’s unified side. Awards and records keep coming his way; winning the Football Writers’ Association player of the season award was swiftly followed by picking up a record Premier League assist tally of 21 at Brighton on the final day of the season. Considering United were very open to selling Fernandes less than a year ago, one wonders what would have happened at Old Trafford without him. “At one point I was going to leave – I won’t say where – but I would have won many trophies that season. I decided to stay not only for family reasons but because I genuinely like the club,” Fernandes told Canal 11. “But from the club’s side, I felt a bit of: ‘If you go, it’s not really that bad for us.’ That hurts me a little. More than hurting, it makes me sad, because I’m a player they have nothing to criticise me for. I’m always available for every match, I always play, whether well or badly. I give my maximum.” Fernandes brings incredible intelligence and work rate on the pitch, supported by stunning technique that has put him above his United teammates, who all feed off him. It is hard to argue that any other Premier League captain is more influential than Fernandes and United have reaped the awards. Continue reading...",
-      "publishedAt": "2026-05-25T07:00:21.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Pro League-awards op een rijtje: Reynders pakt twee prijzen, Club Brugge grote slokop",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/-pro-league-awards-op-een-rijtje-reynders-pakt-twee-prijzen-club-brugge-grote-slokop",
+      "summary": "Het seizoen zit er op. Hoog tijd dus om de prijzen uit te delen, nadat eerder de titel al werd uitgereikt aan Club Brugge en ook de (meeste) Europese tickets verdeeld zijn? De Pro League-awards doen de rest.",
+      "publishedAt": "2026-05-25T09:00:21.000Z"
     },
     {
       "type": "rss",
@@ -227,32 +183,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Et maintenant, quel avenir pour Mario Kohnen ? \"Trois entraîneurs différents cette saison, c'est un échec\"",
-      "link": "https://www.walfoot.be/news/2026-05-25/et-maintenant-quel-avenir-pour-mario-kohnen-trois-entraneurs-differents-cette-saison-cest-un-echec",
-      "summary": "Mario Kohnen a-t-il déjà officié pour la dernière fois sur le banc du Sporting Charleroi ? Le club carolo devra prendre sa décision dans les prochains jours, mais l'Eupenois a, en tout cas, parfaitement plaidé sa cause.",
-      "publishedAt": "2026-05-25T02:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"De eerste die mij contacteerde\": Vrancken laat warm hart achter bij STVV",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/de-eerste-die-mij-contacteerde-vrancken-laat-warm-hart-achter-bij-stvv",
-      "summary": "Wouter Vrancken neemt afscheid van STVV met een bijzonder gevoel. De coach groeide in korte tijd uit tot een publiekslieveling in Sint-Truiden en hield naast sportief succes vooral sterke menselijke banden over aan zijn passage op Stayen.",
-      "publishedAt": "2026-05-25T02:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Vanaken doet boekje open over vriendschap met Mignolet en denkt al aan eigen afscheid",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/match-reactie-vanaken-doet-boekje-open-over-vriendschap-met-mignolet-en-denkt-al-aan-eigen-afscheid",
-      "summary": "Simon Mignolet werd uitgebreid gevierd en gehuldigd bij Club Brugge en kreeg zo een mooi afscheid van zijn carrière. Hans Vanaken, een goede vriend geworden van Mignolet, had het dan ook moeilijk en dacht al na over zijn eigen afscheid.",
-      "publishedAt": "2026-05-25T01:45:00.000Z"
+      "title": "Officiel : Christos Tzolis joueur de la saison, découvrez tous les lauréats des Pro League Awards",
+      "link": "https://www.walfoot.be/news/2026-05-25/officiel--christos-tzolis-joueur-de-la-saison-decouvrez-tous-les-laureats-des-pro-league-awards",
+      "summary": "Ce soir, la cérémonie des Pro League Awards avait lieu à la Bourse d'Anvers. Un peu plus de 24 heures après la dernière journée de championnat, le gratin du football belge se réunissait pour décerner plusieurs récompenses individuelles.",
+      "publishedAt": "2026-05-25T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -260,10 +194,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Vers un match à huis clos pour le Standard ? \"Durcir les sanctions n’est pas la solution\"",
-      "link": "https://www.walfoot.be/news/2026-05-25/vers-un-match-a-huis-clos-pour-le-standard-durcir-les-sanctions-nest-pas-la-solution",
-      "summary": "Sanctionné d’un match à huis clos avec sursis après le match arrêté contre l’Antwerp, le Standard n’estime pas mériter d’être davantage sanctionné après les incidents de samedi contre Charleroi. Pierre François s’est exprimé à ce sujet ce lundi en conférence de presse.",
-      "publishedAt": "2026-05-25T01:35:00.000Z"
+      "title": "\"Une escalade incontrôlable\" : Marc Wilmots et Mehdi Bayat font front commun après la guérilla de Sclessin",
+      "link": "https://www.walfoot.be/news/2026-05-25/une-escalade-incontrolable-marc-wilmots-et-mehdi-bayat-font-front-commun-apres-la-guerilla-de-sclessin",
+      "summary": "Marc Wilmots était l'invité de La Tribune. Les graves incidents du match face à Charleroi étaient évidemment un point central des discussions.",
+      "publishedAt": "2026-05-25T08:30:00.000Z"
     },
     {
       "type": "rss",
@@ -271,10 +205,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Opvallende afwezigen bij Anderlecht: waar waren Coosemans, Huerta en Augustinsson?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/opvallende-afwezigen-bij-anderlecht-waar-waren-coosemans-huerta-en-augustinsson",
-      "summary": "Bij Anderlecht waren er zondag enkele opvallende afwezigen in de selectie voor de derby tegen Union SG. Daardoor kregen andere spelers onverwacht hun kans, met de 16-jarige Adjani Mujangi Bia als opvallendste naam.",
-      "publishedAt": "2026-05-25T01:30:00.000Z"
+      "title": "Wonderseizoen levert op: Rode Duivel Mika Godts in de voetsporen van Xavi Simons en co",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/wonderseizoen-levert-op-rode-duivel-mika-godts-in-de-voetsporen-van-xavi-simons-en-co",
+      "summary": "In de Belgische competitie is het doek gevallen, maar ook in het buitenland is dat het geval. En dus zijn er ook in andere landen prijsuitreikingen en award-shows. In Nederland was het ook prijs voor Rode Duivel Mika Godts.",
+      "publishedAt": "2026-05-25T08:30:00.000Z"
     },
     {
       "type": "rss",
@@ -282,32 +216,32 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Keeperskwestie opgelost: Vanhaezebrouck zegt wie Club Brugge moet halen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/keeperskwestie-opgelost-vanhaezebrouck-zegt-wie-club-brugge-moet-halen",
-      "summary": "Club Brugge staat deze zomer voor belangrijke keuzes op de transfermarkt. Vooral de situatie bij de doelmannen zorgt voor kopzorgen na het afscheid van Simon Mignolet. Analist Hein Vanhaezebrouck ziet alvast een duidelijke oplossing.",
-      "publishedAt": "2026-05-25T01:15:00.000Z"
+      "title": "Jonathan Lardot maakt het bilan op: \"Dat kan je de twee blunders noemen\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/jonathan-lardot-maakt-het-bilan-op-dat-kan-je-de-twee-blunders-noemen",
+      "summary": "Hoewel er nog één wedstrijd te spelen is met de barragewedstrijd tussen KRC Genk op bezoek bij KAA Gent, is het seizoen voor iedereen praktisch voorbij. En dus is het tijd voor de eerste evaluaties, ook vanuit het perspectief van de scheidsrechters.",
+      "publishedAt": "2026-05-25T08:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "INT",
+      "country": "FR",
       "flag": "🌍",
-      "title": "La Fédération Congolaise rassure la FIFA au sujet du virus Ebola : \"Il n'y a pas d'inquiétude à avoir\"",
-      "link": "https://www.walfoot.be/news/2026-05-25/la-federation-congolaise-rassure-la-fifa-au-sujet-du-virus-ebola--il-ny-a-pas-dinquietude-a-avoir",
-      "summary": "La République démocratique du Congo prépare actuellement sa Coupe du Monde en Belgique. La Fédération s'est récemment exprimée dans un communiqué à propos des craintes de la FIFA concernant le virus Ebola.",
-      "publishedAt": "2026-05-25T01:13:00.000Z"
+      "title": "Officiel : un départ qui aura des conséquences pour plusieurs Diables Rouges",
+      "link": "https://www.walfoot.be/news/2026-05-25/officiel--un-depart-qui-aura-des-consequences-pour-plusieurs-diables-rouges",
+      "summary": "Bruno Génésio n'est plus l'entraîneur de Lille. Les deux parties ont annoncé la fin de la collaboration d'un commun accord.",
+      "publishedAt": "2026-05-25T08:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Les Storm Ultras reviennent sur les incidents du choc wallon : \"Les débordements sont regrettables\"",
-      "link": "https://www.walfoot.be/news/2026-05-25/les-storm-ultras-reviennent-sur-les-incidents-du-choc-wallon--les-debordements-sont-regrettables",
-      "summary": "Les Storm Ultras ont publié un communiqué afin de s'exprimer après les incidents survenus samedi soir.",
-      "publishedAt": "2026-05-25T01:00:00.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Kevin Mac Allister a-t-il joué son dernier match pour l'Union ? Sa réponse aux supporters",
+      "link": "https://www.walfoot.be/news/2026-05-25/match-reaction-kevin-mac-allister-a-t-il-joue-son-dernier-match-pour-lunion-sa-reponse-aux-supporters",
+      "summary": "Kevin Mac Allister a-t-il disputé son dernier match au Parc Duden ? Lui-même n'en sait rien mais n'exclut pas de prolonger encore un peu plus son séjour.",
+      "publishedAt": "2026-05-25T07:40:00.000Z"
     },
     {
       "type": "rss",
@@ -315,10 +249,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "'Anderlecht wil verder samenwerken met Taravel: afwachten wat Fransman kiest'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/anderlecht-wil-verder-samenwerken-met-taravel-afwachten-wat-fransman-kiest",
-      "summary": "Anderlecht sloot het seizoen af met een pijnlijke nederlaag tegen Union SG, maar achter de schermen wordt al vooruitgekeken. De club wil Jérémy Taravel graag behouden, al wordt hij geen hoofdcoach meer.",
-      "publishedAt": "2026-05-25T01:00:00.000Z"
+      "title": "\"Onthoofding\": KRC Genk sakkert om rare kalender, Filip Joos snapt er niks van",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/onthoofding-krc-genk-sakkert-om-rare-kalender-filip-joos-snapt-er-niks-van",
+      "summary": "KRC Genk trekt zondag voor een ultieme wedstrijd in de Jupiler Pro League naar de Planet Group Arena in Gent. Dat gaat het wel moeten doen zonder een aantal van de sterkhouders, die al in de voorbereiding op het WK zullen zijn dan.",
+      "publishedAt": "2026-05-25T07:30:00.000Z"
     },
     {
       "type": "rss",
@@ -326,10 +260,76 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Sibierski peut avoir tous les critères qu'il veut : Anderlecht doit surtout être intransigeant sur la qualité",
-      "link": "https://www.walfoot.be/news/2026-05-25/-sibierski-peut-avoir-tous-les-criteres-quil-veut--anderlecht-doit-surtout-etre-intransigeant-sur-la-qualite",
-      "summary": "On entend beaucoup parler des nouveaux critères de recrutement mis en place par Antoine Sibierski ces dernières semaines. Ils sont nécessaires et prometteurs, mais le Français va aussi devoir être bien plus intransigeant... sur la qualité pure des joueurs.",
-      "publishedAt": "2026-05-25T00:40:00.000Z"
+      "title": "\"Oui, ce sont des boulettes\" : Jonathan Lardot reconnaît deux grosses erreurs arbitrales durant les Playoffs",
+      "link": "https://www.walfoot.be/news/2026-05-25/oui-ce-sont-des-boulettes-jonathan-lardot-reconnat-deux-grosses-erreurs-arbitrales-durant-les-playoffs",
+      "summary": "Même s'il reste encore un match (le barrage pour l'Europe entre Genk et La Gantoise), la saison est pratiquement terminée pour tout le monde. L'heure est aux premiers bilans, y compris du point de vue du département arbitral.",
+      "publishedAt": "2026-05-25T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Union SG blij door resultaten in Europa, STVV iets minder en voor Gent of Genk ...",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-25/union-sg-blij-door-resultaten-in-europa-stvv-iets-minder-en-voor-gent-of-genk",
+      "summary": "Er is deze week alweer veel gebeurd in het voetbal. Zowel in eigen land als in enkele grote competities zitten we alweer een stapje dichter bij de eindwaarheid. En dat heeft ook zijn gevolgen voor de Europese tickets.",
+      "publishedAt": "2026-05-25T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "St Helens icons Cunningham and Rudge to retire from rugby league",
+      "link": "https://www.skysports.com/rugby-league/news/12040/13547993/st-helens-womens-trailblazers-jodie-cunningham-and-emily-rudge-announce-retirement-from-rugby-league",
+      "summary": "St Helens captain Jodie Cunningham and vice-captain Emily Rudge will both retire from rugby league at the end of the 2026 season.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Boulter battles through at French Open but qualifier Samuel bows out",
+      "link": "https://www.skysports.com/tennis/news/12040/13547859/french-open-katie-boulter-joins-fran-jones-in-second-round-at-roland-garros-but-toby-samuels-dream-run-ended",
+      "summary": "Katie Boulter joined Fran Jones in the second round of the French Open at Roland-Garros but qualifier Toby Samuel saw his dream run ended.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Slot, Alisson, Diomande and Konate - Liverpool's big summer analysed",
+      "link": "https://www.skysports.com/football/news/12040/13547979/liverpool-transfer-news-arne-slot-set-to-bring-in-new-assistant-etienne-reijnen-alisson-becker-set-to-stay-and-ibrahima-konates-future-unclear",
+      "summary": "Liverpool are set to have a busy summer transfer window - so what is next for the Anfield club?",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Brighton latest: Mitoma undergoes hamstring surgery",
+      "link": "https://www.skysports.com/football/live-blog/12040/13279295/brighton-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal latest: Kroenke lifts lid on transfer plans",
+      "link": "https://www.skysports.com/football/live-blog/12040/13025486/arsenal-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+      "summary": "",
+      "publishedAt": null
     }
   ]
 }
