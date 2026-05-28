@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-05-27T22:43:39.280Z",
+  "generatedAt": "2026-05-28T05:11:27.262Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Michiel Kramer is uitgevoetbald: 'Veel ging me tegen staan'",
+      "link": "https://www.vi.nl/pro/michiel-kramer-is-uitgevoetbald-veel-ging-me-tegen-staan",
+      "summary": "Michiel Kramer (37) is profvoetballer af. Tijd om terug te kijken op een loopbaan die hem bracht bij NAC Breda, FC Volendam, ADO Den Haag, Feyenoord, FC Utrecht, Sparta Rotterdam, Maccabi Haifa en RKC Waalwijk. Ook in zijn afscheidsinterview is hij uitgesproken als altijd.",
+      "publishedAt": "2026-05-28T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "\"Avec ces deux joueurs toute la saison, on était dans le top 6\" : Marc Wilmots fait le bilan du Strandard",
+      "link": "https://www.walfoot.be/news/2026-05-28/avec-ces-deux-joueurs-toute-la-saison-on-etait-dans-le-top-6--marc-wilmots-fait-le-bilan-du-strandard",
+      "summary": "Marc Wilmots s'apprête à vivre son deuxième mercato estival à la tête du Standard. Son analyse de la saison doit aider le club à faire mieux l'année prochaine, notamment dans son bilan à domicile.",
+      "publishedAt": "2026-05-28T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "If Premier League transfer trend continues, who co...",
+      "link": "https://www.espn.com/soccer/story/_/id/48785161/if-premier-league-transfer-trend-continues-move",
+      "summary": "The summer of 2025 saw a huge increase in transfers between Premier League clubs. Here are some players who could move for big money but will stay in England.",
+      "publishedAt": "2026-05-28T04:48:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal Keep or Dump: Find Ødegaard replacement? M...",
+      "link": "https://www.espn.com/soccer/story/_/id/48876175/arsenal-keep-dump-martin-odegaard-viktor-gyokeres-kai-havertz-gab-marcotti-mark-ogden",
+      "summary": "Champions Arsenal have some big decisions ahead that will affect their finances and their squad.",
+      "publishedAt": "2026-05-28T04:48:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Niet Anderlecht\": Vanhaezebrouck zegt welke JPL-ploeg het hardst teleurstelde",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-05-28/niet-anderlecht-vanhaezebrouck-zegt-welke-jpl-ploeg-het-hardst-teleurstelde",
+      "summary": "Volgens Hein Vanhaezebrouck was niet RSC Anderlecht, maar wel Royal Antwerp FC dé grootste teleurstelling van het voorbije Jupiler Pro League-seizoen. Ook Cercle Brugge en OH Leuven ontsnappen niet aan kritiek.",
+      "publishedAt": "2026-05-28T04:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Thomas Meunier ouvre la porte à un retour en Belgique : \"Je suis prêt, mais eux, le sont-ils ?\"",
+      "link": "https://www.walfoot.be/news/2026-05-28/thomas-meunier-ouvre-la-porte-a-un-retour-en-belgique--je-suis-pret-mais-eux-le-sont-ils",
+      "summary": "Thomas Meunier se retrouve sans club après son départ annoncé de Lille, mais il reste ambitieux. Le Diable Rouge n'exclut pas un retour en Belgique et regarde surtout du côté du Club de Bruges.",
+      "publishedAt": "2026-05-28T04:30:00.000Z"
+    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -10,7 +76,18 @@
       "title": "FIFA subpoenaed over World Cup ticket practices",
       "link": "https://www.espn.com/soccer/story/_/id/48885837/new-jersey-new-york-subpoena-20926-fifa-world-cup-tickets",
       "summary": "New York and New Jersey have subpoenaed FIFA as part of an investigation into its ticketing prices for the 2026 World Cup, citing soaring ticket prices and reports that fans were misled about seat locations.",
-      "publishedAt": "2026-05-27T22:09:18.000Z"
+      "publishedAt": "2026-05-28T02:11:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Glasner: Palace now in UEL 'where they should be'",
+      "link": "https://www.espn.com/soccer/story/_/id/48895081/glasner-palace-europa-league-where-be",
+      "summary": "Oliver Glasner said he is leaving Crystal Palace \"where they should be\" after winning the Conference League in his final game as manager.",
+      "publishedAt": "2026-05-28T02:11:57.000Z"
     },
     {
       "type": "rss",
@@ -18,21 +95,43 @@
       "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Palace beat Rayo to win first European trophy",
-      "link": "https://www.espn.com/soccer/report/_/gameId/401862929",
-      "summary": "Crystal Palace lifted their first European trophy and punched their ticket to the Europa League after Jean-Philippe Mateta's second-half goal proved the difference during their 1-0 Conference League final victory over Rayo Vallecano in Leipzig.",
-      "publishedAt": "2026-05-27T22:09:18.000Z"
+      "title": "Neymar misses first Brazil camp after further test...",
+      "link": "https://www.espn.com/soccer/story/_/id/48894901/neymar-misses-first-brazil-training-camp-further-tests",
+      "summary": "Neymar missed the first World Cup training session for Brazil on Wednesday to undergo \"further medical evaluations\" on his bruised right calf, the Brazilian Football Confederation (CBF) announced.",
+      "publishedAt": "2026-05-28T02:11:57.000Z"
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "'Triple Espresso' reunited in latest USWNT squad",
-      "link": "https://www.espn.com/soccer/story/_/id/48885610/rodman-swanson-wilson-reunited-latest-uswnt-squad",
-      "summary": "Forward Mallory Swanson has been called up for the United States for the first time since giving birth in November. She will join the USWNT for a pair of away games against Brazil on June 6 and June 9.",
-      "publishedAt": "2026-05-27T22:09:18.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tuchel's biggest mistake? Wharton shines after England omission",
+      "link": "https://www.bbc.com/sport/football/articles/cx213ezxpz2o?at_medium=RSS&at_campaign=rss",
+      "summary": "Adam Wharton starred as Crystal Palace won a European trophy but the midfielder will not feature at this summer's World Cup.",
+      "publishedAt": "2026-05-27T23:29:20.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "U-turns, tension & trophies - inside 12 glorious months of Glasner",
+      "link": "https://www.bbc.com/sport/football/articles/c4g5ydnpkqro?at_medium=RSS&at_campaign=rss",
+      "summary": "Crystal Palace's Conference League victory comes at the end of a remarkable 12-month period of success under departing boss Oliver Glasner.",
+      "publishedAt": "2026-05-27T23:02:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "South Korea World Cup 2026 team guide",
+      "link": "https://www.theguardian.com/football/2026/may/28/south-korea-world-cup-2026-team-guide-soccer",
+      "summary": "Doubts over formation and form of key players means hopes of advancing to knockout stages are not high This article is part of the Guardian’s 2026 World Cup Experts’ Network, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June. Continue reading...",
+      "publishedAt": "2026-05-27T23:01:47.000Z"
     },
     {
       "type": "rss",
@@ -75,7 +174,7 @@
       "flag": "🇬🇧",
       "title": "Crystal Palace win Conference League after Mateta strike sinks Rayo Vallecano",
       "link": "https://www.theguardian.com/football/2026/may/27/crystal-palace-rayo-vallecano-conference-league-final-match-report",
-      "summary": "After being denied their rightful place in this season’s Europa League, Crystal Palace finally have their revenge. In Oliver Glasner’s final match in charge, it was fitting that Jean-Philippe Mateta should score what turned out to be the winning goal after his January move to Milan was scuppered by a failed medical. It has been that kind of season in south London. Having rescued them from the brink of extinction only 16 years ago, how Steve Parish must have relished this occasion. The Palace chair found himself sitting next to the Uefa president Aleksander Ceferin for the biggest night in their history and he can now start planning for the Europa League campaign that was denied to them as last year’s FA Cup winners were adjudged to have broken European football’s governing body’s rules on multiclub ownership. Continue reading...",
+      "summary": "After being denied their rightful place in this season’s Europa League, Crystal Palace finally have their revenge. In Oliver Glasner’s final match in charge, it was fitting that Jean-Philippe Mateta should score what turned out to be the winning goal after his January move to Milan was scuppered by a failed medical. It has been that kind of season. Having rescued the south London club from the brink of extinction only 16 years ago, how Steve Parish must have relished this occasion. The Palace chair found himself sitting next to the Uefa president, Aleksander Ceferin, for the biggest night in their history and he can now start planning for the Europa League campaign that was denied to them as last year’s FA Cup winners were adjudged to have broken European football’s governing body’s rules on multi-club ownership. As for Glasner, who performed a full-length dive on the pitch before going up to collect his winners’ medal, it ends any debate over whether he is the greatest manager in Palace’s history. Continue reading...",
       "publishedAt": "2026-05-27T21:05:07.000Z"
     },
     {
@@ -88,39 +187,6 @@
       "link": "https://www.vi.nl/nieuws/robertson-bereikt-principeakkoord-met-tottenham-hotspur",
       "summary": "Andy Robertson heeft een principeakkoord bereikt met Tottenham Hotspur. De transfervrij bij Liverpool vertrekkende linksback werd de afgelopen dagen ook in verband gebracht met Juventus, maar lijkt actief te blijven in de Premier League, zo melden meerdere toonaangevende media.",
       "publishedAt": "2026-05-27T21:01:34.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Crystal Palace bekroont Europees debuutseizoen met Conference League-eindzege",
-      "link": "https://www.vi.nl/nieuws/crystal-palace-bekroont-europees-debuutseizoen-met-conference-league-eindzege",
-      "summary": "De Conference League is dit jaar voor Crystal Palace. In de finale in Leipzig was de ploeg van Oliver Glasner een maatje te groot voor Rayo Vallecano. De Oostenrijker neemt daarmee op een prachtige manier afscheid van de Londense club, die haar Europese debuut bekroont met de hoofdprijs.",
-      "publishedAt": "2026-05-27T21:01:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Why Mourinho's potential Real Madrid return is aff...",
-      "link": "https://www.espn.com/soccer/story/_/id/48888898/why-jose-mourinho-real-madrid-return-affected-laliga-club-presidential-elections-florentino-perez-enrique-riquelme",
-      "summary": "The upcoming elections at Real Madrid have delayed the rehiring of José Mourinho, and they could end up paying much more to appoint him as a result.",
-      "publishedAt": "2026-05-27T20:39:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "LaLiga 2025-26 awards: Yamal, Barcelona reign in S...",
-      "link": "https://www.espn.com/soccer/story/_/id/48872015/laliga-2025-26-awards-lamine-yamal-barcelona-reign-spain-again-graham-hunter",
-      "summary": "With LaLiga over, it's time to hand out awards for best player, coach, signing, goal and more.",
-      "publishedAt": "2026-05-27T20:39:07.000Z"
     },
     {
       "type": "rss",
@@ -139,7 +205,7 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Anthony Gordon to undergo medical at Barça before £69.3m move from Newcastle",
+      "title": "Anthony Gordon to undergo Barcelona medical before £69.3m move from Newcastle",
       "link": "https://www.theguardian.com/football/2026/may/27/barcelona-advanced-talks-signing-anthony-gordon-newcastle",
       "summary": "England winger flying out for medical on Thursday Gordon could double wages to around £300,000 a week Anthony Gordon is due to undergo a medical in Barcelona on Thursday after the La Liga winners agreed a £69.3m transfer with Newcastle on Wednesday night. Should everything proceed to plan the England winger is set to double his wages to around £300,000 a week. Bayern Munich had been favourites to sign the England winger and even saw a late bid rejected on Wednesday but Gordon’s heart was set on Barcelona and a new life at the Camp Nou. Accordingly a player who also interested Liverpool swiftly agreed personal terms before Newcastle and the Catalan club entered more protracted negotiations regarding the structure of the fee. Continue reading...",
       "publishedAt": "2026-05-27T20:10:11.000Z"
@@ -168,17 +234,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Why Putellas to London City would be biggest signing in WSL history",
-      "link": "https://www.bbc.com/sport/football/articles/c072yde8vp5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Barcelona icon Alexia Putellas is moving on this summer, so BBC Sport investigates the impact of a potential switch to London City Lionesses.",
-      "publishedAt": "2026-05-27T17:17:23.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
@@ -190,17 +245,6 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "New York and New Jersey subpoena Fifa over ‘manipulated’ World Cup ticketing",
-      "link": "https://www.theguardian.com/football/2026/may/27/new-york-new-jersey-investigation-fifa-ticketing",
-      "summary": "Joint investigation run by NY and NJ attorneys general Subpoena seeks information on Fifa’s ticket practices Investigation centers on games at MetLife Stadium The attorneys general of New York and New Jersey have launched an investigation into Fifa’s ticketing practices around the 2026 World Cup, focusing specifically on the matches due to take place at MetLife Stadium in East Rutherford, New Jersey. The investigation, announced Wednesday by New York’s Letitia James and New Jersey’s Jennifer Davenport, centers on fans who say they were misled about the location of the seats and on claims that Fifa’s own public messaging around tickets has contributed to the inflated prices seen throughout the tournament. Continue reading...",
-      "publishedAt": "2026-05-27T15:52:19.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -209,17 +253,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cpdp3e75v17o?at_medium=RSS&at_campaign=rss",
       "summary": "Enzo Fernandez wants to leave Chelsea after they failed to qualify for Europe, but any move for the Argentina midfielder would cost about £120m.",
       "publishedAt": "2026-05-27T15:30:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man Utd closing in on £38m Ederson deal",
-      "link": "https://www.bbc.com/sport/football/articles/czd2ev0ggj5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United are in advanced talks to make Atalanta's Brazil midfielder Ederson their first summer signing for a fee of £38m.",
-      "publishedAt": "2026-05-27T14:20:10.000Z"
     },
     {
       "type": "rss",
@@ -278,17 +311,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "C'est signé : un défenseur de la RAAL se relance en D1 FFA",
-      "link": "https://www.walfoot.be/news/2026-05-27/cest-signe--un-defenseur-de-la-raal-se-relance-en-d1-ffa",
-      "summary": "Prêté à Tubize-Braine cette saison, Luka Hoedaert arrive en fin de contrat à la RAAL. Il se relance du côté de l'Union Rochefort, à nouveau en D1 Amateurs.",
-      "publishedAt": "2026-05-27T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -300,17 +322,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Enfin une porte de sortie ? Un candidat sort du bois pour Yari Verschaeren",
-      "link": "https://www.walfoot.be/news/2026-05-27/enfin-une-porte-de-sortie--un-candidat-sort-du-bois-pour-yari-verschaeren",
-      "summary": "Après avoir porté le maillot mauve et blanc pendant pas moins de 17 ans, l'histoire de Yari Verschaeren à Anderlecht est désormais totalement terminée. Le milieu offensif peut quitter le club librement cet été et suscite l'intérêt en Espagne.",
-      "publishedAt": "2026-05-27T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -319,17 +330,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-05-27/na-afscheid-in-mineur-teklak-maakt-balans-op-van-hazard-bij-anderlecht",
       "summary": "Het afscheid van Thorgan Hazard bij RSC Anderlecht dreigt in mineur te eindigen. Na een rode kaart en kritiek van supporters lijkt een transfer naar Lens steeds dichterbij.",
       "publishedAt": "2026-05-27T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "🎥 Deze BV zat zondag in het pak van de mascotte van de Jupiler Pro League",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-05-27/deze-bv-zat-zondag-in-het-pak-van-de-mascotte-van-de-jupiler-pro-league",
-      "summary": "Wie afgelopen zondag aandachtig keek naar de uitreiking van de kampioenentrofee van de Jupiler Pro League aan Club Brugge, stelde zich misschien dezelfde vraag: wie zat er eigenlijk in het pak van mascotte Jup?",
-      "publishedAt": "2026-05-27T07:00:00.000Z"
     }
   ]
 }
