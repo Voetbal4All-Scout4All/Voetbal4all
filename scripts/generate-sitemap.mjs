@@ -68,23 +68,15 @@ const articleEntries = articlesWithBody.map(a => {
   });
 const articlesXml = wrapUrlset(articleEntries);
 
-// ── Generate sitemap-events.xml ──
-const eventEntries = data.events.map(e => {
-  const loc = e.slug
-    ? `${SITE_BASE}/event.html?slug=${encodeURIComponent(e.slug)}`
-    : `${SITE_BASE}/event.html?id=${encodeURIComponent(e.id)}`;
-  return urlEntry(loc, e.lastmod || today);
-});
+// ── Generate sitemap-events.xml (empty — event detail pages removed from frontend) ──
+const eventEntries = [];
 const eventsXml = wrapUrlset(eventEntries);
 
-// ── Generate sitemap-jobs.xml ──
-const jobEntries = data.jobs.map(j => {
-  const loc = `${SITE_BASE}/event.html?type=clubvacature&id=${encodeURIComponent(j.id)}`;
-  return urlEntry(loc, j.lastmod || today);
-});
+// ── Generate sitemap-jobs.xml (empty — event detail pages removed from frontend) ──
+const jobEntries = [];
 const jobsXml = wrapUrlset(jobEntries);
 
-// ── Generate sitemap-index (sitemap-index.xml) ──
+// ── Generate sitemap-index (sitemap-index.xml) — events + jobs removed ──
 const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
@@ -93,14 +85,6 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
   <sitemap>
     <loc>${SITE_BASE}/sitemap-articles.xml</loc>
-    <lastmod>${today}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${SITE_BASE}/sitemap-events.xml</loc>
-    <lastmod>${today}</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>${SITE_BASE}/sitemap-jobs.xml</loc>
     <lastmod>${today}</lastmod>
   </sitemap>
 </sitemapindex>
@@ -115,9 +99,9 @@ writeFileSync(resolve(root, "sitemap-events.xml"), eventsXml);
 writeFileSync(resolve(root, "sitemap-jobs.xml"), jobsXml);
 
 console.log(`[sitemap] Generated 5 files:`);
-console.log(`  sitemap-index.xml (index) — 4 sub-sitemaps`);
+console.log(`  sitemap-index.xml (index) — 2 sub-sitemaps (events+jobs disabled)`);
 console.log(`  sitemap-static.xml — ${staticUrls.length} URLs`);
 console.log(`  sitemap-articles.xml — ${articleEntries.length} URLs`);
-console.log(`  sitemap-events.xml — ${eventEntries.length} URLs`);
-console.log(`  sitemap-jobs.xml — ${jobEntries.length} URLs`);
-console.log(`  Total: ${staticUrls.length + articleEntries.length + eventEntries.length + jobEntries.length} URLs`);
+console.log(`  sitemap-events.xml — 0 URLs (disabled)`);
+console.log(`  sitemap-jobs.xml — 0 URLs (disabled)`);
+console.log(`  Total: ${staticUrls.length + articleEntries.length} URLs`);
