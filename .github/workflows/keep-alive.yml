@@ -2,28 +2,9 @@
 name: Keep Render alive + Social postagent
 
 "on":
-  schedule:
-    # Keep Render awake (UTC)
-    - cron: "*/10 * * * *"
-
-    # Social postagent slots (UTC)
-    # NOTE: GitHub Actions cron runs in UTC (not Europe/Brussels). Adjust if needed for DST.
-    - cron: "0 7 * * *"   # 07:00 FB1
-    - cron: "0 8 * * *"   # 08:00 IG1
-    - cron: "0 9 * * *"   # 09:00 TT1
-    - cron: "0 10 * * *"  # 10:00 FB2
-    - cron: "0 11 * * *"  # 11:00 IG2
-    - cron: "0 12 * * *"  # 12:00 TT2
-    - cron: "0 13 * * *"  # 13:00 FB3
-    - cron: "0 14 * * *"  # 14:00 IG3
-    - cron: "0 15 * * *"  # 15:00 TT3
-    - cron: "0 16 * * *"  # 16:00 FB4
-    - cron: "0 17 * * *"  # 17:00 IG4
-    - cron: "0 18 * * *"  # 18:00 TT4
-    - cron: "0 19 * * *"  # 19:00 FB5
-    - cron: "0 20 * * *"  # 20:00 IG5
-    - cron: "0 21 * * *"  # 21:00 TT5
-
+  # schedule: DISABLED — migrated to Cloudflare Worker Cron (voetbal4all-cron)
+  # See voetbal4all-backend/cloudflare/cron-worker/README.md
+  # Keep workflow_dispatch for manual testing/fallback.
   workflow_dispatch:
     inputs:
       channel:
