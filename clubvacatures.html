@@ -1492,27 +1492,30 @@
   loadVacanciesFromBackend().then(() => {
     // After loading (or falling back), run client-side filters for country/type/level/search.
     applyVacancyFilters();
-    // Populate JobPosting JSON-LD for Google for Jobs
+    // Populate JobPosting JSON-LD from rendered cards (DOM-based, works after cards are in page)
     try {
       var ldEl = document.getElementById("jobpostings-ld");
-      var cards = document.querySelectorAll("[data-vacancy-id]");
+      var cards = document.querySelectorAll("article.v4a-card");
       if (ldEl && cards.length) {
         var jobItems = [];
         cards.forEach(function(card, idx) {
           if (idx >= 50) return;
-          var t = (card.querySelector(".vacancy-title") || {}).textContent || "";
-          var club = (card.querySelector(".vacancy-club") || {}).textContent || "";
-          var city = (card.querySelector(".vacancy-city") || {}).textContent || "";
+          var titleEl = card.querySelector(".v4a-card-title");
+          var t = (titleEl ? (titleEl.textContent || "") : "").trim();
           if (!t) return;
+          var metas = card.querySelectorAll(".v4a-card-meta");
+          var location = metas.length > 0 ? (metas[0].textContent || "").replace(/^[^\s]+\s*·\s*/, "").trim() : "";
+          var club = metas.length > 1 ? (metas[1].textContent || "").trim() : "";
+          var country = card.getAttribute("data-country") || "BE";
           jobItems.push({
             "@type": "ListItem", "position": idx + 1,
-            "item": { "@type": "JobPosting", "title": t.trim(),
-              "description": t.trim() + (club ? " bij " + club.trim() : ""),
+            "item": { "@type": "JobPosting", "title": t,
+              "description": t + (club ? " bij " + club : ""),
               "datePosted": new Date().toISOString().split("T")[0],
               "validThrough": new Date(Date.now() + 30*86400000).toISOString().split("T")[0],
               "employmentType": "VOLUNTEER",
-              "hiringOrganization": { "@type": "Organization", "name": club.trim() || "Voetbalclub" },
-              "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": city.trim() || undefined, "addressCountry": "BE" } }
+              "hiringOrganization": { "@type": "Organization", "name": club || "Voetbalclub" },
+              "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": location || undefined, "addressCountry": country } }
             }
           });
         });
