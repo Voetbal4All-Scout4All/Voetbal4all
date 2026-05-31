@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Trainers zoeken club | Voetbalcoaches BE &amp; NL — Voetbal4All" />
   <meta name="twitter:description" content="Bekijk profielen van trainers en coaches die een club zoeken in België en Nederland. Hoofdtrainer, assistent, jeugdtrainer of keeperstrainer — vind de juiste coach." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
-  <script type="application/ld+json">
+  <script id="trainers-ld" type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -1123,6 +1123,39 @@
     if (typeof window.__applyTrainerFilters === 'function') {
       window.__applyTrainerFilters();
     }
+    var _a = 0;
+    var _p = setInterval(function() {
+      try {
+        var ldEl = document.getElementById("trainers-ld");
+        var cards = document.querySelectorAll("article.v4a-card");
+        if ((!ldEl || cards.length === 0) && ++_a < 20) return;
+        clearInterval(_p);
+        if (!ldEl || cards.length === 0) return;
+        var items = [];
+        cards.forEach(function(card, idx) {
+          if (idx >= 50) return;
+          var titleEl = card.querySelector(".v4a-card-title");
+          var name = (titleEl ? (titleEl.textContent || "") : "").trim();
+          if (!name) return;
+          var metas = card.querySelectorAll(".v4a-card-meta");
+          var location = metas.length > 0 ? (metas[0].textContent || "").trim() : "";
+          var role = metas.length > 1 ? (metas[1].textContent || "").trim() : "";
+          var country = card.getAttribute("data-country") || "BE";
+          items.push({
+            "@type": "ListItem", "position": idx + 1,
+            "item": { "@type": "Person", "name": name, "jobTitle": "Voetbaltrainer" + (role ? " (" + role + ")" : ""),
+              "description": name + (role ? " — " + role : ""),
+              "address": { "@type": "PostalAddress", "addressLocality": location || undefined, "addressCountry": country } }
+          });
+        });
+        if (items.length) {
+          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList",
+            "name": "Trainers en coaches zoeken club in België en Nederland",
+            "url": "https://www.voetbal4all.eu/trainers.html",
+            "numberOfItems": items.length, "itemListElement": items });
+        }
+      } catch(_) { clearInterval(_p); }
+    }, 100);
   });
 
 </script>
