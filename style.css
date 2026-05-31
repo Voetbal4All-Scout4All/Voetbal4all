@@ -899,7 +899,11 @@ body.v4-disable-auto-ads .google-auto-placed{
 }
 
 /* Accessibility: visueel verborgen, leesbaar voor screen readers en SEO */
-.sr-only {
+.sr-only,
+h2.sr-only,
+.section-main h2.sr-only,
+.column-left h2.sr-only,
+.column-right h2.sr-only {
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -907,6 +911,7 @@ body.v4-disable-auto-ads .google-auto-placed{
   margin: -1px !important;
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
   white-space: nowrap !important;
   border: 0 !important;
 }
