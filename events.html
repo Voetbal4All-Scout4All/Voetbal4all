@@ -1060,6 +1060,11 @@
     const PAGE_SIZE = 16;
     let ALL_EVENTS_SORTED = [];
     let PINNED_PREMIUM_30 = [];
+    function getFilteredPremium30() {
+      const t = String(typeEl?.value || "");
+      if (!t) return PINNED_PREMIUM_30;
+      return PINNED_PREMIUM_30.filter(ev => typeToUiLabel(ev.event_type) === t);
+    }
     let OTHER_EVENTS = [];
     let CURRENT_PAGE = 1;
     let rerenderEventList = () => {};
@@ -1431,8 +1436,8 @@
 
         rerenderEventList = (page = 1) => renderPage(page);
 
-        // initial page render
-        startPremium30Grid(PINNED_PREMIUM_30);
+        // initial page render (filter premium grid by active type filter)
+        startPremium30Grid(getFilteredPremium30());
         renderPage(1);
 
         // Sidebar premium later rotator stays
@@ -1734,6 +1739,7 @@ function getEventProvince(ev){
   });
     typeEl?.addEventListener("change", () => {
       CURRENT_PAGE = 1;
+      startPremium30Grid(getFilteredPremium30());
       rerenderEventList(1);
     });
     monthEl?.addEventListener("change", () => {
