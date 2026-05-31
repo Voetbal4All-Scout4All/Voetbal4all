@@ -31,7 +31,7 @@
   <meta name="twitter:description" content="Ontdek spelersprofielen van voetballers die een club zoeken in België en Nederland via Voetbal4All." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
 
-  <script type="application/ld+json">
+  <script id="players-ld" type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -1279,7 +1279,40 @@
     }
   }
 
-  initPlayersPage();
+  initPlayersPage().then(function() {
+    var _a = 0;
+    var _p = setInterval(function() {
+      try {
+        var ldEl = document.getElementById("players-ld");
+        var cards = document.querySelectorAll("article.v4a-card");
+        if ((!ldEl || cards.length === 0) && ++_a < 20) return;
+        clearInterval(_p);
+        if (!ldEl || cards.length === 0) return;
+        var items = [];
+        cards.forEach(function(card, idx) {
+          if (idx >= 50) return;
+          var titleEl = card.querySelector(".v4a-card-title");
+          var name = (titleEl ? (titleEl.textContent || "") : "").trim();
+          if (!name) return;
+          var copy = card.querySelector(".player-card-copy");
+          var desc = copy ? (copy.textContent || "").trim() : "";
+          var country = card.getAttribute("data-country") || "BE";
+          var region = (card.getAttribute("data-region") || "").trim();
+          items.push({
+            "@type": "ListItem", "position": idx + 1,
+            "item": { "@type": "Person", "name": name, "jobTitle": "Voetballer", "description": desc || name,
+              "address": { "@type": "PostalAddress", "addressLocality": region || undefined, "addressCountry": country } }
+          });
+        });
+        if (items.length) {
+          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList",
+            "name": "Voetballers zoeken club in België en Nederland",
+            "url": "https://www.voetbal4all.eu/spelers.html",
+            "numberOfItems": items.length, "itemListElement": items });
+        }
+      } catch(_) { clearInterval(_p); }
+    }, 100);
+  });
 
 </script>
 
