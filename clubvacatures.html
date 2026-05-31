@@ -1492,20 +1492,26 @@
   loadVacanciesFromBackend().then(() => {
     // After loading (or falling back), run client-side filters for country/type/level/search.
     applyVacancyFilters();
-    // Populate JobPosting JSON-LD from rendered cards (DOM-based, works after cards are in page)
-    try {
-      var ldEl = document.getElementById("jobpostings-ld");
-      var cards = document.querySelectorAll("article.v4a-card");
-      if (ldEl && cards.length) {
+    // Populate JobPosting JSON-LD — poll until cards appear in DOM (max 2s)
+    var _ldAttempts = 0;
+    var _ldPoll = setInterval(function() {
+      try {
+        var ldEl = document.getElementById("jobpostings-ld");
+        var cards = document.querySelectorAll("article.v4a-card");
+        if ((!ldEl || cards.length === 0) && ++_ldAttempts < 20) return;
+        clearInterval(_ldPoll);
+        if (!ldEl || cards.length === 0) return;
         var jobItems = [];
         cards.forEach(function(card, idx) {
           if (idx >= 50) return;
           var titleEl = card.querySelector(".v4a-card-title");
           var t = (titleEl ? (titleEl.textContent || "") : "").trim();
           if (!t) return;
+          var province = (card.getAttribute("data-province") || "").trim();
+          var region = (card.getAttribute("data-region") || "").trim();
+          var club = "";
           var metas = card.querySelectorAll(".v4a-card-meta");
-          var location = metas.length > 0 ? (metas[0].textContent || "").replace(/^[^\s]+\s*·\s*/, "").trim() : "";
-          var club = metas.length > 1 ? (metas[1].textContent || "").trim() : "";
+          if (metas.length > 1) club = (metas[1].textContent || "").trim();
           var country = card.getAttribute("data-country") || "BE";
           jobItems.push({
             "@type": "ListItem", "position": idx + 1,
@@ -1515,15 +1521,15 @@
               "validThrough": new Date(Date.now() + 30*86400000).toISOString().split("T")[0],
               "employmentType": "VOLUNTEER",
               "hiringOrganization": { "@type": "Organization", "name": club || "Voetbalclub" },
-              "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": location || undefined, "addressCountry": country } }
+              "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": province || region || undefined, "addressCountry": country } }
             }
           });
         });
         if (jobItems.length) {
           ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList", "name": "Clubvacatures voetbal", "numberOfItems": jobItems.length, "itemListElement": jobItems });
         }
-      }
-    } catch(_) {}
+      } catch(_) { clearInterval(_ldPoll); }
+    }, 100);
   });
 
   function applyVacancyFilters() {
