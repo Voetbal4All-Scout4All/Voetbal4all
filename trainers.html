@@ -1131,29 +1131,31 @@
         if ((!ldEl || cards.length === 0) && ++_a < 20) return;
         clearInterval(_p);
         if (!ldEl || cards.length === 0) return;
+        var ANON = /^(anoniem|anonieme\s+(speler|trainer)|—|-|\s*)$/i;
+        var PLACEHOLDER = /^(jouw premium|meer zichtbaarheid)/i;
         var items = [];
-        cards.forEach(function(card, idx) {
-          if (idx >= 50) return;
+        var pos = 0;
+        cards.forEach(function(card) {
+          if (pos >= 50) return;
           var titleEl = card.querySelector(".v4a-card-title");
           var name = (titleEl ? (titleEl.textContent || "") : "").trim();
-          if (!name) return;
+          if (!name || ANON.test(name) || PLACEHOLDER.test(name)) return;
+          pos++;
           var metas = card.querySelectorAll(".v4a-card-meta");
-          var location = metas.length > 0 ? (metas[0].textContent || "").trim() : "";
-          var role = metas.length > 1 ? (metas[1].textContent || "").trim() : "";
+          var location = metas.length > 0 ? (metas[0].textContent || "").replace(/^[^\s]*\s*·\s*/, "").trim() : "";
+          if (ANON.test(location)) location = "";
           var country = card.getAttribute("data-country") || "BE";
-          items.push({
-            "@type": "ListItem", "position": idx + 1,
-            "item": { "@type": "Person", "name": name, "jobTitle": "Voetbaltrainer" + (role ? " (" + role + ")" : ""),
-              "description": name + (role ? " — " + role : ""),
-              "address": { "@type": "PostalAddress", "addressLocality": location || undefined, "addressCountry": country } }
-          });
+          var thumbEl = card.querySelector(".thumbbg");
+          var imgUrl = thumbEl ? (thumbEl.style.backgroundImage || "").replace(/url\(['"]?|['"]?\)/g, "").trim() : "";
+          var person = { "@type": "Person", "name": name };
+          if (location) person.homeLocation = { "@type": "Place", "name": location };
+          if (imgUrl && imgUrl.startsWith("http")) person.image = imgUrl;
+          items.push({ "@type": "ListItem", "position": pos, "item": person });
         });
-        if (items.length) {
-          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList",
-            "name": "Trainers en coaches zoeken club in België en Nederland",
-            "url": "https://www.voetbal4all.eu/trainers.html",
-            "numberOfItems": items.length, "itemListElement": items });
-        }
+        ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList",
+          "name": "Trainers en coaches zoeken club in België en Nederland",
+          "url": "https://www.voetbal4all.eu/trainers.html",
+          "numberOfItems": items.length, "itemListElement": items });
       } catch(_) { clearInterval(_p); }
     }, 100);
   });
