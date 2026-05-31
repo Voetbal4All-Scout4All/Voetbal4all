@@ -30,6 +30,7 @@
   <meta name="twitter:title" content="Clubvacatures voetbal in België en Nederland | Voetbal4All" />
   <meta name="twitter:description" content="Bekijk clubvacatures voor trainers, spelers, coördinatoren en vrijwilligers in België en Nederland op Voetbal4All." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
+  <script id="jobpostings-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Clubvacatures voetbal","numberOfItems":0,"itemListElement":[]}</script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css" />
@@ -1491,6 +1492,35 @@
   loadVacanciesFromBackend().then(() => {
     // After loading (or falling back), run client-side filters for country/type/level/search.
     applyVacancyFilters();
+    // Populate JobPosting JSON-LD for Google for Jobs
+    try {
+      var ldEl = document.getElementById("jobpostings-ld");
+      var cards = document.querySelectorAll("[data-vacancy-id]");
+      if (ldEl && cards.length) {
+        var jobItems = [];
+        cards.forEach(function(card, idx) {
+          if (idx >= 50) return;
+          var t = (card.querySelector(".vacancy-title") || {}).textContent || "";
+          var club = (card.querySelector(".vacancy-club") || {}).textContent || "";
+          var city = (card.querySelector(".vacancy-city") || {}).textContent || "";
+          if (!t) return;
+          jobItems.push({
+            "@type": "ListItem", "position": idx + 1,
+            "item": { "@type": "JobPosting", "title": t.trim(),
+              "description": t.trim() + (club ? " bij " + club.trim() : ""),
+              "datePosted": new Date().toISOString().split("T")[0],
+              "validThrough": new Date(Date.now() + 30*86400000).toISOString().split("T")[0],
+              "employmentType": "VOLUNTEER",
+              "hiringOrganization": { "@type": "Organization", "name": club.trim() || "Voetbalclub" },
+              "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": city.trim() || undefined, "addressCountry": "BE" } }
+            }
+          });
+        });
+        if (jobItems.length) {
+          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList", "name": "Clubvacatures voetbal", "numberOfItems": jobItems.length, "itemListElement": jobItems });
+        }
+      }
+    } catch(_) {}
   });
 
   function applyVacancyFilters() {
