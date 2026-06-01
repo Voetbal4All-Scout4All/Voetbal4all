@@ -2466,6 +2466,36 @@
         const shareUrl = "https://www.voetbal4all.eu/share/" + shareSegment + "/" + encodeURIComponent(shareId) + "/";
         setShareLinks(shareUrl, displayTitle);
 
+        // JSON-LD: Event schema on detail page (only for sportive events with startDate)
+        if (isEvent && item.start_at && displayTitle) {
+          var prev = document.getElementById("v4-jsonld-event");
+          if (prev) prev.remove();
+          var ld = { "@context": "https://schema.org", "@type": "Event", "name": displayTitle,
+            "startDate": new Date(item.start_at).toISOString(),
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "url": canonicalHref };
+          if (item.end_at) ld.endDate = new Date(item.end_at).toISOString();
+          var city = String(item.city || "").trim();
+          var evCountry = String(item.country || "BE").toUpperCase();
+          if (city || evCountry) {
+            ld.location = { "@type": "Place", "name": city || evCountry,
+              "address": { "@type": "PostalAddress", "addressCountry": evCountry } };
+            if (city) ld.location.address.addressLocality = city;
+          }
+          if (item.organization || item.club) {
+            ld.organizer = { "@type": "Organization", "name": String(item.organization || item.club).trim() };
+          }
+          var rawDesc = String(item.description || item.summary || "").replace(/<[^>]*>/g, "").trim();
+          if (rawDesc) ld.description = rawDesc.length > 300 ? rawDesc.slice(0, 297) + "..." : rawDesc;
+          var flyerId = String(item.external_id || item.sid || "").trim();
+          if (flyerId) ld.image = "https://voetbal4all-backend-database.onrender.com/api/forms/event-submission/" + encodeURIComponent(flyerId) + "/flyer";
+          var s = document.createElement("script");
+          s.type = "application/ld+json"; s.id = "v4-jsonld-event";
+          s.textContent = JSON.stringify(ld);
+          document.head.appendChild(s);
+        }
+
         // Media (YouTube has priority for shared types)
         // For non-events: if url is YouTube -> embed, else use images fields
         if (!isEvent && item.url && isYouTubeUrl(item.url)) {
