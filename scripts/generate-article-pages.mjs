@@ -136,10 +136,11 @@ function buildPage(article, canonicalUrl) {
       `$1${imageEsc}$2${titleEsc}$3$4`
     );
   }
-  // Fill body content (inject after standfirst div)
+  // Fill body content (inject after standfirst div) + related articles
+  const related = buildRelated(article.id || "", country);
   html = html.replace(
     'id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;"></div>',
-    `id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;">${article.snippet ? esc(stripHtml(article.snippet).slice(0, 300)) : ""}</div>\n<div class="article-body-text" id="article-body">${bodyHtml}</div>`
+    `id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;">${article.snippet ? esc(stripHtml(article.snippet).slice(0, 300)) : ""}</div>\n<div class="article-body-text" id="article-body">${bodyHtml}</div>${related}`
   );
 
   // ── Share buttons: fill hrefs statically (the loader script that did this client-side is stripped) ──
@@ -204,6 +205,54 @@ for (const item of (contentData.items || [])) {
   contentMap.set(item.id, item);
 }
 console.log(`[SSG] Content fetched for ${contentMap.size} articles (via all-for-ssg)`);
+
+// Step 2b: build related-articles pool (once, sorted by recency)
+const relatedPool = slugEntries
+  .map(e => {
+    const c = contentMap.get(e.id);
+    if (!c || !c.title) return null;
+    const mm = String(e.slug_month).padStart(2, "0");
+    const pubRaw = c.publishedAt || c.published_at || c.createdAt || c.created_at || "";
+    return {
+      id: e.id,
+      title: c.title,
+      country: String(c.country || c.countryCode || "").toUpperCase(),
+      pubMs: pubRaw ? new Date(pubRaw).getTime() || 0 : 0,
+      image: resolveImage(c.image || c.image_path),
+      url: `${SITE}/artikel/${e.slug_year}/${mm}/${encodeURIComponent(e.slug)}/`,
+    };
+  })
+  .filter(Boolean)
+  .sort((a, b) => b.pubMs - a.pubMs);
+console.log(`[SSG] Related pool: ${relatedPool.length} articles`);
+
+const PLACEHOLDER_THUMB = `${SITE}/assets/img/placeholder.svg`;
+
+function buildRelated(currentId, currentCountry) {
+  try {
+    const candidates = relatedPool.filter(a => a.id !== currentId);
+    if (candidates.length === 0) return "";
+    // Score: same country +10, keep date-desc as tiebreak (stable sort)
+    const scored = candidates.map(a => ({ ...a, _score: (currentCountry && a.country === currentCountry) ? 10 : 0 }));
+    scored.sort((a, b) => b._score - a._score || b.pubMs - a.pubMs);
+    const picks = scored.slice(0, 5);
+    let html = '\n<section id="v4-related-articles" style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">';
+    html += '\n  <h3 style="font-family:Montserrat,sans-serif;font-size:16px;font-weight:700;color:rgba(255,255,255,0.9);margin:0 0 16px;">Lees ook</h3>';
+    for (const a of picks) {
+      const t = esc(a.title);
+      const img = esc(a.image || PLACEHOLDER_THUMB);
+      const href = esc(a.url);
+      html += `\n  <article style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">`;
+      html += `<a href="${href}" style="flex-shrink:0;"><img src="${img}" alt="${t}" width="96" height="64" loading="lazy" decoding="async" referrerpolicy="no-referrer" style="width:96px;height:64px;object-fit:cover;border-radius:10px;" onerror="this.onerror=null;this.src='${esc(PLACEHOLDER_THUMB)}';"></a>`;
+      html += `<a href="${href}" style="color:inherit;text-decoration:none;font-family:Montserrat,sans-serif;font-size:14px;font-weight:600;line-height:1.3;min-width:0;">${t}</a>`;
+      html += `</article>`;
+    }
+    html += '\n</section>';
+    return html;
+  } catch (_) {
+    return "";
+  }
+}
 
 // Step 3: generate pages
 let generated = 0, contentHit = 0, titleOnly = 0;
