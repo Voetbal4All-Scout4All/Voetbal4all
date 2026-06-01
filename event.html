@@ -2467,7 +2467,7 @@
         setShareLinks(shareUrl, displayTitle);
 
         // JSON-LD: Event schema on detail page (only for sportive events with startDate)
-        if (isEvent && item.start_at && displayTitle) {
+        if (isEvent && item.start_at && displayTitle) { (function(){
           var prev = document.getElementById("v4-jsonld-event");
           if (prev) prev.remove();
           var ld = { "@context": "https://schema.org", "@type": "Event", "name": displayTitle,
@@ -2494,7 +2494,7 @@
           s.type = "application/ld+json"; s.id = "v4-jsonld-event";
           s.textContent = JSON.stringify(ld);
           document.head.appendChild(s);
-        }
+        })(); }
 
         // Media (YouTube has priority for shared types)
         // For non-events: if url is YouTube -> embed, else use images fields
