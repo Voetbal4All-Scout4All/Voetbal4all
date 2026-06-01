@@ -1131,31 +1131,26 @@ let lastRenderKey = "";
           v4aInitAdsense(document);
         }
 
-        // FULL: fetch in background with a longer timeout
-        const dataFull = await fetchJsonWithRetry(NEWS_URL_FULL, { timeoutMs: 12000, tries: 5, baseDelayMs: 650, minItems: 20 });
-        const fullItems = enforceDbOnlyWithImages(dedupeById(Array.isArray(dataFull) ? dataFull : (Array.isArray(dataFull?.items) ? dataFull.items : [])));
+        // FULL: fetch in background — NEVER wipe fast-paint on failure
+        try {
+          const dataFull = await fetchJsonWithRetry(NEWS_URL_FULL, { timeoutMs: 15000, tries: 2, baseDelayMs: 1000, minItems: 10 });
+          const fullItems = enforceDbOnlyWithImages(dedupeById(Array.isArray(dataFull) ? dataFull : (Array.isArray(dataFull?.items) ? dataFull.items : [])));
 
-        // Only re-render if data actually changed
-        const prevSig = itemsSignature(allItems);
-        const nextSig = itemsSignature(fullItems);
-
-        writeNewsCache(fullItems);
-
-        if (nextSig !== prevSig) {
-          allItems = fullItems;
-          if (!allItems.length) {
-            articleList.innerHTML = "";
-            newsCountTop.textContent = "0 artikels";
-            newsCountTop2.textContent = "0 artikels";
-            newsStatus.style.display = "block";
-            newsStatus.textContent = "Geen artikels beschikbaar.";
-            return;
+          if (fullItems.length > 0) {
+            const prevSig = itemsSignature(allItems);
+            const nextSig = itemsSignature(fullItems);
+            writeNewsCache(fullItems);
+            if (nextSig !== prevSig) {
+              allItems = fullItems;
+              lastRenderKey = "";
+              applyFilters();
+            }
           }
-          lastRenderKey = ""; // force a single re-render
-          applyFilters();
+        } catch (fullErr) {
+          console.warn("[ARTIKELS] Background full-fetch failed (fast-paint preserved):", fullErr.message);
         }
 
-        v4aInitAdsense(document); // ensure static slots fill even if cache was used
+        v4aInitAdsense(document);
         newsStatus.style.display = "none";
       } catch (e) {
       // If cache already rendered, keep it and just show a subtle warning
