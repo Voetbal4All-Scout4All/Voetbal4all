@@ -764,6 +764,32 @@ function render() {
       render();
     });
   });
+
+  // JSON-LD: SportsTeam ItemList from rendered team cells
+  var cells = tableWrap.querySelectorAll(".v4-team-cell");
+  var prev = document.getElementById("v4-jsonld-teams");
+  if (prev) prev.remove();
+  if (cells.length > 0) {
+    var teams = [];
+    cells.forEach(function(cell, idx) {
+      var nameEl = cell.querySelector(".v4-team-name");
+      var name = nameEl ? (nameEl.textContent || "").trim() : "";
+      if (!name || name === "–") return;
+      var logoEl = cell.querySelector(".v4-team-logo");
+      var logo = logoEl ? logoEl.src : "";
+      var team = { "@type": "SportsTeam", "name": name, "sport": "Soccer" };
+      if (logo && logo.startsWith("http")) team.logo = logo;
+      teams.push({ "@type": "ListItem", "position": teams.length + 1, "item": team });
+    });
+    if (teams.length > 0) {
+      var s = document.createElement("script");
+      s.type = "application/ld+json"; s.id = "v4-jsonld-teams";
+      s.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList",
+        "name": "Voetbalteams — " + (activeLeague ? activeLeague.label : "Rangschikking"),
+        "numberOfItems": teams.length, "itemListElement": teams });
+      document.head.appendChild(s);
+    }
+  }
 }
 
 function renderCell(col, v, row) {
