@@ -418,9 +418,9 @@
     const NEWS_URL_FAST = IMG_BASE + "/api/news?limit=20";   // fast first paint (first page)
 
     // FULL dataset for filters/pagination.
-    // We need enough items to cover many pages (PAGE_SIZE=20). 200 items = 10 pages.
-    // 2000 items = 100 pages.
-    const NEWS_URL_FULL = IMG_BASE + "/api/news?limit=2000";
+    // 200 items = 10 pages of 20. Keeps payload ~300KB vs ~2MB with 2000.
+    // Prevents 13s+ blocking fetch and 503 on cold Render backend.
+    const NEWS_URL_FULL = IMG_BASE + "/api/news?limit=200";
 
     const articleList = document.getElementById("article-list");
     const newsStatus = document.getElementById("news-status");
