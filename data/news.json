@@ -1,16 +1,126 @@
 {
-  "generatedAt": "2026-06-03T18:48:32.250Z",
+  "generatedAt": "2026-06-03T23:47:23.008Z",
   "items": [
     {
       "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Swiss appeal to U.S. embassy for Embolo WC visa",
+      "link": "https://www.espn.com/soccer/story/_/id/48957629/switzerland-breel-embolo-appeals-us-embassy-urgent-world-cup-visa-travel-denied",
+      "summary": "Switzerland forward Breel Embolo applied for an urgent visa at the United States embassy in Bern on Wednesday, one day after he was denied boarding the team's flight to the World Cup because of a criminal conviction.",
+      "publishedAt": "2026-06-03T23:45:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "Dest 'surprised' by pro-U.S. crowd in USMNT win",
+      "link": "https://www.espn.com/soccer/story/_/id/48958053/sergino-dest-world-cup-stadiums-full-usa-fans-special",
+      "summary": "U.S. international Sergiño Dest said he was \"pretty surprised\" at the level of fan support the team received at Sunday's 3-2 friendly win over Senegal.",
+      "publishedAt": "2026-06-03T23:45:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Riquelme: Madrid will sign Haaland if I win electi...",
+      "link": "https://www.espn.com/soccer/story/_/id/48959541/enrique-riquelme-erling-haaland-real-madrid-manchester-city-transfer",
+      "summary": "Real Madrid's rival presidential candidates made their boldest moves yet on Wednesday, as Enrique Riquelme promised to sign Erling Haaland and Rodri if he's elected, and rival Florentino Perez confirmed José Mourinho as his chosen coach.",
+      "publishedAt": "2026-06-03T23:45:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Aaronson gets married amid USMNT WCup camp",
+      "link": "https://www.espn.com/soccer/story/_/id/48956044/brenden-aaronson-world-cup-us-national-team-world-cup",
+      "summary": "Brenden Aaronson said he and his new wife, Milana D'Ambra, were \"freaking out\" when they discovered that their long-planned wedding would clash with the USMNT's World Cup training camp.",
+      "publishedAt": "2026-06-03T23:45:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Nederlaag tegen Algerije vraagt om actie van de bondscoach",
+      "link": "https://www.vi.nl/pro/nederlaag-tegen-algerije-vraagt-om-actie-van-de-bondscoach",
+      "summary": "Het Nederlands elftal heeft een teleurstellend resultaat geboekt in de uitzwaaiwedstrijd van het WK. In de Kuip ging Oranje met 0-1 onderuit door een late treffer van Anis Hadj Moussa. Martijn Krabbendam was namens VI aanwezig in De Kuip en zag een ploeg die richting het toernooi nog de nodige antwoorden moet vinden. Volgens de Feyenoord-watcher is actie van bondscoach Ronald Koeman vereist.",
+      "publishedAt": "2026-06-03T23:11:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Belgium World Cup 2026 team guide",
+      "link": "https://www.theguardian.com/football/2026/jun/04/belgium-world-cup-2026-team-guide",
+      "summary": "Not much of the fabled golden generation remains, but the Red Devils have a winnable group and possess genuine quality in De Bruyne and Doku This article is part of the Guardian’s 2026 World Cup Experts’ Network, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June. Continue reading...",
+      "publishedAt": "2026-06-03T23:01:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City have opening Anderson bid rejected by Forest",
+      "link": "https://www.bbc.com/sport/football/articles/c042w3w601yo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City have an opening transfer bid for midfielder Elliot Anderson rejected by Nottingham Forest.",
+      "publishedAt": "2026-06-03T22:41:17.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "VI Live: Oranje - Algerije is begonnen",
+      "title": "Reijnders met les naar WK: 'Hard werken voor dat ene doel'",
+      "link": "https://www.vi.nl/video/reijnders-met-les-naar-wk-hard-werken-voor-dat-ene-doel",
+      "summary": "Het Nederlands elftal vertrekt met een nederlaag naar het WK in de Verenigde Staten. In de uitzwaaiwedstrijd tegen Algerije was Oranje niet scherp genoeg in de afronding, terwijl Anis Hadj Moussa vlak voor tijd we; het verschil maakte: 0-1. Na afloop sprak verslaggever Maurice Kuipers met Tijjani Reijnders. 'We zullen hard moeten werken voor dat ene doel', aldus de middenvelder van Oranje.",
+      "publishedAt": "2026-06-03T22:25:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Oranje-spelers feliciteerden Dumfries al met transfer naar Real Madrid",
+      "link": "https://www.vi.nl/video/oranje-spelers-feliciteerden-dumfries-al-met-transfer-naar-real-madrid",
+      "summary": "In 2016 speelde Denzel Dumfries nog met Sparta Rotterdam in de Keuken Kampioen Divisie. Tien jaar later lijkt de rechtsback op weg naar een droomtransfer naar Real Madrid. Na de WK-wedstrijd tegen Algerije sprak verslaggever Maurice Kuipers met Tijjani Reijnders over de mogelijke overstap van zijn ploeggenoot. 'We hebben hem gefeliciteerd en zijn blij voor hem na deze mooie stap', vertelt de middenvelder voor de camera van VI.",
+      "publishedAt": "2026-06-03T22:17:33.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "VI Live: Oranje verliest eerste uitzwaaiwedstrijd in 22 jaar",
       "link": "https://www.vi.nl/nieuws/vi-live-nederland-maakt-zich-op-voor-uitzwaaiduel-met-algerije",
-      "summary": "Het Nederlands elftal speelt woensdagavond om 20.45 uur een oefenduel met Algerije. Voor Nederland is het de laatste pot voor het naar de Verenigde Staten vliegt voor de verdere voorbereiding op het WK. Mis niets van het duel in deze VI Live.",
-      "publishedAt": "2026-06-03T18:47:18.000Z"
+      "summary": "Het Nederlands elftal speelde woensdagavond om 20.45 uur een oefenduel met Algerije, dat verloren ging. Voor Nederland was het de laatste pot voor het naar de Verenigde Staten vliegt voor de verdere voorbereiding op het WK. Lees de volledige avond terug in de VI Live.",
+      "publishedAt": "2026-06-03T22:08:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Pérez confirms Mourinho will return to Real Madrid if he is re-elected president",
+      "link": "https://www.theguardian.com/football/2026/jun/03/perez-confirms-mourinho-will-return-to-real-madrid-if-he-is-re-elected-president",
+      "summary": "Rival Enrique Riquelme promises Rodri and Haaland Madrid without major silverware in last two seasons José Mourinho will return to manage Real Madrid if Florentino Pérez wins the club’s presidential election on Sunday, the sitting president confirmed on Wednesday as he campaigns for another term at the helm. Pérez, facing the renewable energy entrepreneur Enrique Riquelme in the club’s first contested election for 20 years, delivered the campaign announcement through his social media channels with a short video featuring Mourinho saying simply: “Yes!” Continue reading...",
+      "publishedAt": "2026-06-03T22:01:30.000Z"
     },
     {
       "type": "rss",
@@ -18,43 +128,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Go Ahead en Boel per direct uit elkaar, Oosting in beeld als opvolger",
-      "link": "https://www.vi.nl/nieuws/roda-jc-wil-speler-van-quick-boys-dat-een-nieuwe-trainer-heeft",
-      "summary": "Blijf via dit blog op de hoogte van alle transfers en transfergeruchten bij en rond clubs in de Eredivisie en de Keuken Kampioen Divisie. Bekijk hier ons blog voor de transferperikelen in het buitenland .",
-      "publishedAt": "2026-06-03T18:39:00.000Z"
+      "title": "Summerville is blij met debuut en benoemt rol De Jong en Van Dijk",
+      "link": "https://www.vi.nl/nieuws/summerville-voelde-zich-snel-thuis-frenkie-en-virgil-hebben-me-veel-geholpen",
+      "summary": "Crysencio Summerville had zich direct thuis gevoeld bij Oranje. De aanvaller van West Ham United maakte tegen Algerije zijn debuut voor het Nederlands elftal en sprak na afloop van een bijzonder moment waar hij lang naartoe had gewerkt.",
+      "publishedAt": "2026-06-03T21:58:02.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Konate reveals depression after deaths of Jota & father",
+      "link": "https://www.bbc.com/sport/football/articles/cwy2081rrr7o?at_medium=RSS&at_campaign=rss",
+      "summary": "Liverpool defender Ibrahima Konate opens up on how the deaths of team-mate Diogo Jota and his father left him battling depression during his final season at the club.",
+      "publishedAt": "2026-06-03T21:36:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "David Beckham eerste voetballer op Walk of Fame in Hollywood",
-      "link": "https://www.vi.nl/nieuws/david-beckham-eerste-voetballer-op-walk-of-fame-in-hollywood",
-      "summary": "David Beckham wordt de eerste voetballer met een ster op de Walk of Fame in Hollywood. Zijn ster, in de categorie Sport Entertainment, wordt volgende week vrijdag onthuld na de start van het WK voetbal in de Verenigde Staten",
-      "publishedAt": "2026-06-03T18:38:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Go Ahead Eagles en Boel per direct uit elkaar",
-      "link": "https://www.vi.nl/nieuws/go-ahead-eagles-en-boel-per-direct-uit-elkaar",
-      "summary": "Go Ahead Eagles neemt per direct afscheid van trainer Melvin Boel. De 39-jarige oefenmeester lag nog twee seizoenen vast in Deventer, maar de relatie tussen Boel en de clubleiding is na de evaluatie van het Eredivisie-seizoen bekoeld geraakt. Boel vertrekt nu per direct bij Go Ahead. Dat melden bronnen aan VI.",
-      "publishedAt": "2026-06-03T18:26:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Excelsior huurt broertje van Jordan Bos uit Bundesliga",
-      "link": "https://www.vi.nl/nieuws/excelsior-huurt-broertje-van-jordan-bos-uit-bundesliga",
-      "summary": "Feyenoord-linksback Jordan Bos komt volgend seizoen zijn broertje tegen op de Eredivisie-velden. Excelsior Rotterdam huurt Kasey Bos (22) voor één seizoen van FSV Mainz 05. Kasey is net als Jordan een linksback.",
-      "publishedAt": "2026-06-03T18:03:00.000Z"
+      "title": "Underdog victories at the World Cup: what were the biggest and best upsets?",
+      "link": "https://www.theguardian.com/football/2026/jun/03/world-cup-underdog-victories-upsets",
+      "summary": "We’ve looked at data from USA 1994 onwards to see how and when classic upsets take place – and what that could mean for this year’s competition This year, the biggest ever World Cup will feature 48 teams, an increase from 32, opening up the tournament to even more upsets, shocks and surprises. The vagaries of the World Cup draw have given rise to classic underdog victories over the years, from an amateur USA team’s shock defeat of the then-favourites England in 1950 onwards. But what does the data tell us about upsets in football’s modern era? Starting from the launch of the Fifa men’s world ranking system in 1993, we have analysed each World Cup match in which an underdog beat a higher-ranked team, along with the ranking disparity between the teams: the bigger the gap, the higher the “upset score”, and the larger the circle in the graphics below. Upsets are marked in red, while matches decided on penalties are represented with a white border. Continue reading...",
+      "publishedAt": "2026-06-03T19:00:14.000Z"
     },
     {
       "type": "rss",
@@ -66,17 +165,6 @@
       "link": "https://www.bbc.com/sport/football/articles/c89348x0x14o?at_medium=RSS&at_campaign=rss",
       "summary": "BBC Sport look at all of the World Cup 2026 squads and answer some of the key questions.",
       "publishedAt": "2026-06-03T18:00:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "‘There are low points’: Ibrahima Konaté reveals struggles in year of personal tragedy",
-      "link": "https://www.theguardian.com/football/2026/jun/03/ibrahima-konate-reveals-struggles-in-year-of-personal-tragedy",
-      "summary": "France defender devasted by deaths of Jota and father ‘Depression is personal; it’s deep inside you’ Ibrahima Konaté has spoken about the struggles he faced in a year of personal tragedy in which the death of his former Liverpool teammate Diogo Jota was followed by that of his father. The France international’s form was affected but it was not until January, when his dad, Hamady, died after a long illness, that it became apparent the personal turmoil the 27-year-old had been dealing with. Continue reading...",
-      "publishedAt": "2026-06-03T17:40:37.000Z"
     },
     {
       "type": "rss",
@@ -113,91 +201,113 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
       "country": "INT",
       "flag": "🌍",
-      "title": "Tunisia World Cup 2026 team guide",
-      "link": "https://www.theguardian.com/football/2026/jun/03/tunisia-world-cup-2026-team-guide",
-      "summary": "Having stormed through African qualifying without conceding a goal, can Sabri Lamouchi lead the Eagles of Carthage out of the group stage for the first time? This article is part of the Guardian’s 2026 World Cup Experts’ Network, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June. Continue reading...",
-      "publishedAt": "2026-06-03T15:00:10.000Z"
+      "title": "How the USMNT went from embarrassment in Italy to ...",
+      "link": "https://www.espn.com/soccer/story/_/id/48893158/how-usmnt-went-italia-90-embarrassment-world-cup-force-1994",
+      "summary": "A World Cup on home soil looms. The last time America hosted, things were very different.",
+      "publishedAt": "2026-06-03T13:10:39.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le Club de Bruges s'attaque à un \"crack\" de 17 ans pour préparer l'après-Vanaken",
+      "link": "https://www.walfoot.be/news/2026-06-03/le-club-de-bruges-sattaque-a-un-crack-de-17-ans-pour-preparer-lapres-vanaken",
+      "summary": "Le Club de Bruges pourrait passer à l'action pour Benjamin Brantlind. Selon Sportbladet, le jeune milieu offensif de l'IFK Göteborg plaît aux Brugeois. Un club français est aussi sur le dossier. Bruges devra sortir de bons arguments pour le convaincre de signer en Venise du Nord.",
+      "publishedAt": "2026-06-03T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Is spying as common in Germany as Southampton boss Eckert claims?",
-      "link": "https://www.bbc.com/sport/football/articles/c87q93jw4w9o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport explores whether spying is as regular an occurrence in Germany as Southampton boss Tonda Eckert claims.",
-      "publishedAt": "2026-06-03T14:10:56.000Z"
+      "title": "Extra miljoenen voor Anderlecht? 'Manchester United klopt aan in het Lotto Park voor Nathan De Cat'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/extra-miljoenen-voor-anderlecht-manchester-united-klopt-aan-in-het-lotto-park-voor-nathan-de-cat",
+      "summary": "De komende weken moeten duidelijk maken waar de toekomst van Nathan De Cat ligt. Een hele resem Europese topclub volgt de evolutie van de 17-jarige middenvelder op de voet. En er is een absolute grootmacht in de rij komen staan.",
+      "publishedAt": "2026-06-03T09:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Scott poised to make England debut in World Cup friendlies",
-      "link": "https://www.bbc.com/sport/football/articles/cy72rnnelpzo?at_medium=RSS&at_campaign=rss",
-      "summary": "Bournemouth midfielder Alex Scott is poised to make his England debut in the forthcoming World Cup warm-up games in the United States.",
-      "publishedAt": "2026-06-03T10:29:07.000Z"
+      "title": "Un nouveau gardien à Chelsea ? Mike Penders pourrait en payer le prix",
+      "link": "https://www.walfoot.be/news/2026-06-03/un-nouveau-gardien-a-chelsea--mike-penders-pourrait-en-payer-le-prix",
+      "summary": "Chelsea veut recruter Mike Maignan cet été. Une arrivée qui pourrait avoir un impact sur l'avenir de notre Diable Rouge Mike Penders.",
+      "publishedAt": "2026-06-03T08:40:00.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Tussen de lijnen door is de frustratie héél duidelijk! Christian Benteke reageert op niet-selectie voor WK",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/tussen-de-lijnen-door-is-de-frustratie-heel-duidelijk-christian-benteke-reageert-op-niet-selectie-voor-wk",
+      "summary": "De Rode Duivels bereiden zich momenteel voor op het WK. Rudi Garcia koos voor onder anderen Romelu Lukaku en Matias Fernandez-Pardo als rasechte spitsen. Christian Benteke werd niét geselecteerd. En daar heeft de aanvaller iets over te zeggen.",
+      "publishedAt": "2026-06-03T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "De la D1B à la Pro League : Saint-Trond s'offre un buteur prometteur",
+      "link": "https://www.walfoot.be/news/2026-06-03/de-la-d1b-a-la-pro-league--saint-trond-soffre-un-buteur-prometteur",
+      "summary": "Saint-Trond s'offre le jeune attaquant Frédéric Soèllé. Un premier renfort indispensable pour reconstruire l'équipe, qui va perdre de nombreux cadres cet été. Le STVV va jouer les barrages d'Europa League.",
+      "publishedAt": "2026-06-03T08:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Volgt de marktwaarde ook? Anderlecht-jeugdproduct maakt debuut in A-ploeg bij het nummer acht van de wereld",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/volgt-de-marktwaarde-ook-anderlecht-jeugdproduct-maakt-debuut-in-a-ploeg-bij-het-nummer-acht-van-de-wereld",
+      "summary": "Ali Maamar mag zich A-international van Marokko noemen. Het jeugdproduct van RSC Anderlecht heeft zijn debuut gemaakt bij het A-elftal van Marokko. En dat ziet alles en iedereen bij paars-wit héél graag gebeuren.",
+      "publishedAt": "2026-06-03T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Les Léopards ont fait rugir Sclessin : le Congo manque le coche dans une ambiance des grands soirs",
+      "link": "https://www.walfoot.be/news/2026-06-03/les-leopards-ont-fait-rugir-sclessin-le-congo-manque-le-coche-dans-une-ambiance-des-grands-soirs",
+      "summary": "C’est dans une superbe ambiance que s’est déroulée la rencontre entre la République démocratique du Congo et le Danemark, ce mercredi soir à Sclessin. Une rencontre au terme de laquelle les deux équipes se sont malheureusement quittées dos à dos, sans inscrire le moindre but.",
+      "publishedAt": "2026-06-03T07:51:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "C'est terminé après 23 ans : une figure historique quitte le KRC Genk",
+      "link": "https://www.walfoot.be/news/2026-06-03/cest-termine-apres-23-ans--une-figure-historique-quitte-le-krc-genk",
+      "summary": "Après 23 ans de fidélité, Michel Ribeiro quitte le KRC Genk. L'entraîneur adjoint a décidé de relever un nouveau défi.",
+      "publishedAt": "2026-06-03T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
       "country": "ES",
       "flag": "🌍",
-      "title": "Marcus Rashford heads to World Cup in limbo despite proving his value to Barcelona",
-      "link": "https://www.theguardian.com/football/2026/jun/03/marcus-rashford-heads-to-world-cup-in-limbo-despite-proving-his-value-to-barcelona",
-      "summary": "Forward has generally thrived at the Camp Nou but Gordon’s arrival plus his salary and United’s transfer demands mean next move is not obvious The next chapter of Marcus Rashford’s dysfunctional relationship with Manchester United may involve a long summer waiting to discover where he plays next season. A state of limbo for a forward expected to start England’s World Cup opener against Croatia on 17 June in Dallas is an unusual predicament. Yet this is the latest juncture in a period of career uncertainty that began when the former United head coach Ruben Amorim excluded Rashford from his first-team plans. That was in December 2024, loans at Aston Villa and Barcelona followed, and Rashford is still looking to put down roots, perhaps in Catalonia, something he may well have expected to transpire after scoring a free-kick against Real Madrid that proved pivotal in Barcelona’s La Liga-clinching clásico victory last month. Continue reading...",
-      "publishedAt": "2026-06-03T09:41:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un grand moment pour Ali Maamar... dont Anderlecht peut aussi se réjouir",
-      "link": "https://www.walfoot.be/news/2026-06-03/un-grand-moment-pour-ali-maamar-dont-anderlecht-peut-aussi-se-rejouir",
-      "summary": "Ali Maamar a fait ses débuts avec l'équipe A du Maroc. Une bonne surprise pour le latéral du RSC Anderlecht.",
-      "publishedAt": "2026-06-03T06:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "De marktwaardes van Transfermarkt onder de loep: dit zijn de vijftien meest waardevolle spelers in België",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/de-marktwaardes-van-transfermarkt-onder-de-loep-dit-zijn-de-vijftien-meest-waardevolle-spelers-in-belgie",
-      "summary": "De start van het WK voetbal staat voor de deur. Voor heel wat spelers is het toernooi hét toneel om zich in de kijker te spelen. Omgekeerd zien ook de clubs de marktwaarde van hun spelers stijgen. En die marktwaardes zijn recentelijk aangepast.",
-      "publishedAt": "2026-06-03T06:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Chelsea richt pijlen op deze doelman... én dat heeft rechtstreekse gevolgen voor Mike Penders",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/chelsea-richt-pijlen-op-deze-doelman-en-dat-heeft-rechtstreekse-gevolgen-voor-mike-penders",
-      "summary": "Chelsea FC wil een nieuwe doelman naar Stamford Bridge halen. De Londense topclub richt de pijlen op Mike Maignan. Een eventuele transfer heeft uiteraard directe gevolgen voor Mike Penders.",
-      "publishedAt": "2026-06-03T06:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Romelu Lukaku va devoir se trouver un nouveau club : Naples a levé l'option d'achat de son concurrent",
-      "link": "https://www.walfoot.be/news/2026-06-03/romelu-lukaku-va-devoir-se-trouver-un-nouveau-club--naples-a-leve-loption-dachat-de-son-concurrent",
-      "summary": "Après une saison en prêt réussie, l'attaquant danois Rasmus Hojlund quitte définitivement Manchester United pour s'engager avec Naples. Le club italien prépare le départ de Romelu Lukaku.",
-      "publishedAt": "2026-06-03T06:11:00.000Z"
+      "title": "'In Napels en Istanboel is geen plaats (meer) voor hem, maar... Noa Lang kan in Barcelona gaan voetballen'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/in-napels-en-istanboel-is-geen-plaats-meer-voor-hem-maar-noa-lang-kan-in-barcelona-gaan-voetballen",
+      "summary": "Waar ligt de toekomst van Noa Lang? Bij SSC Napoli lijkt de Nederlander geen toekomst meer te hebben, terwijl een verlengd verblijf bij Galatasaray SK eveneens uitgesloten is. De oplossing lijkt uit Spanje te komen.",
+      "publishedAt": "2026-06-03T07:30:00.000Z"
     },
     {
       "type": "rss",
@@ -205,32 +315,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Belgische eersteklasser kondigt stadion aan dat groter is dan AFAS Dome én zijn gelijke in België niét kent",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/belgische-eersteklasser-kondigt-stadion-aan-dat-groter-is-dan-afas-dome-en-zijn-gelijke-in-belgie-niet-kent",
-      "summary": "Sporting Charleroi heeft grootse plannen. Mehdi Bayat wil een nieuwe voetbaltempel neerpoten. En het belooft een bouwwerk te worden dat zijn gelijke niét kent in België.",
-      "publishedAt": "2026-06-03T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "'Borussia Dortmund gaat onder deze specifieke voorwaarde akkoord met terugkeer van Duranville naar Anderlecht'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/borussia-dortmund-gaat-onder-deze-specifieke-voorwaarde-akkoord-met-terugkeer-van-duranville-naar-anderlecht",
-      "summary": "Julien Duranville is op zoek naar een nieuwe club. De 20-jarige flankaanvaller heeft geen zicht op (veel) speelminuten bij Borussia Dortmund. Een terugkeer naar RSC Anderlecht behoort tot de mogelijkheden. En paars-wit kent ondertussen een héél belangrijke voorwaarde.",
-      "publishedAt": "2026-06-03T05:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Une belle opportunité pour Anderlecht ? Dortmund prêt à vendre Julien Duranville, mais à une seule condition",
-      "link": "https://www.walfoot.be/news/2026-06-03/une-belle-opportunite-pour-anderlecht--dortmund-pret-a-vendre-julien-duranville-mais-a-une-seule-condition",
-      "summary": "Julien Duranville a retrouvé du temps de jeu en Suisse. Le Borussia Dortmund veut s'en séparer cet été avec une clause de rachat et Anderlecht pourrait en profiter.",
-      "publishedAt": "2026-06-03T05:38:00.000Z"
+      "title": "Thibaut Courtois ziet het zitten met de nieuwe generatie Rode Duivels én legt ook uit waarom",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/thibaut-courtois-ziet-het-zitten-met-de-nieuwe-generatie-rode-duivels-en-legt-ook-uit-waarom",
+      "summary": "Thibaut Courtois hield dinsdagavond de nul in en tegen Kroatië. De doelman schudde enkele knappe reddingen uit de handschoenen. En hij heeft véél zin in het WK.",
+      "publishedAt": "2026-06-03T07:00:00.000Z"
     },
     {
       "type": "rss",
@@ -242,94 +330,6 @@
       "link": "https://www.bbc.com/sport/football/articles/ce3pe9nxe7jo?at_medium=RSS&at_campaign=rss",
       "summary": "A look at the common attributes of World Cup Golden Boot winners and the claims of the leading 2026 candidates examined.",
       "publishedAt": "2026-06-03T05:22:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "De deal is rond, maar om deze reden wordt de komst van Mourinho naar Real Madrid pas komende zondag bevestigd",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-03/de-deal-is-rond-maar-om-deze-reden-wordt-de-komst-van-mourinho-naar-real-madrid-pas-komende-zondag-bevestigd",
-      "summary": "Real Madrid heeft een akkoord met José Mourinho. De Portugees gaat een contract van drie seizoenen ondertekenen bij de Spaanse grootmacht. Al moeten we nog wachten tot zeven juni vooraleer het nieuws ook bevestigd zal worden.",
-      "publishedAt": "2026-06-03T05:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Je suis content qu'il ait rejoué et marqué, mais...\" : l'état de forme d'un Diable Rouge inquiète",
-      "link": "https://www.walfoot.be/news/2026-06-03/je-suis-content-quil-ait-rejoue-et-marque-mais--letat-de-forme-dun-diable-rouge-inquiete",
-      "summary": "Les Diables Rouges ont réussi leur premier test face à la Croatie, mais Hein Vanhaezebrouck retient l'impact des remplaçants.",
-      "publishedAt": "2026-06-03T05:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Martinez lui avait brisé le coeur : Junior Edmilson tient sa revanche et découvrira enfin la Coupe du Monde",
-      "link": "https://www.walfoot.be/news/2026-06-03/martinez-lui-avait-brise-le-coeur-junior-edmilson-tient-sa-revanche-et-decouvrira-enfin-la-coupe-du-monde",
-      "summary": "On parle beaucoup de binationaux ces derniers mois en Belgique. Nombre d'entre eux disputeront la Coupe du Monde sous d'autres couleurs que celles des Diables Rouges : c'est le cas de Junior Edmilson, qui représente désormais le Qatar.",
-      "publishedAt": "2026-06-03T04:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "McIlory to continue to 'pick and choose' PGA Tour schedule",
-      "link": "https://www.skysports.com/golf/news/12040/13550527/rory-mcilroy-will-continue-to-pick-and-choose-his-pga-tour-schedule-as-he-returns-for-memorial-tournament",
-      "summary": "Rory McIlroy joked that he feels like a \"part-timer these days\" as he gets set to play in only his sixth regular PGA Tour event of the year, the world No 2 adding that he will continue to \"pick and choose\" the events he plays.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Scheffler looks to make history with third-straight Memorial title",
-      "link": "https://www.skysports.com/golf/news/12040/13550498/scottie-scheffler-eyes-third-straight-memorial-tournament-title-to-join-list-of-pga-tour-greats-to-three-peat",
-      "summary": "Scottie Scheffler is hoping to match Tiger Woods in securing a third-successive Memorial Tournament title this week as the world No 1 looks to join the list of golfing greats to three-peat on the PGA Tour.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sabalenka: I just 'want to quit tennis' after French Open collapse",
-      "link": "https://www.skysports.com/tennis/news/12040/13550480/french-open-aryna-sabalenka-says-she-wants-to-quit-tennis-after-roland-garros-quarter-final-collapse-vs-diana-shnaider",
-      "summary": "A downbeat Aryna Sabalenka says she feels like she \"wants to quit tennis\" following her shock French Open quarter-final defeat to Diana Shnaider on Wednesday.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Cup of Darts 2026 schedule: Wales kick group-stage off as NI defend crown",
-      "link": "https://www.skysports.com/darts/news/12040/13550475/world-cup-of-darts-2026-schedule-dates-group-stage-draw-as-northern-ireland-defend-crown-in-frankfurt",
-      "summary": "Wales will begin their bid for a third BetVictor World Cup of Darts title on the tournament's opening night, with hosts Germany and former champions Australia also in action as the 40-nation event gets under way on June 11.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sabalenka says she wants to 'quit tennis' after shock defeat",
-      "link": "https://www.skysports.com/watch/video/13550501/aryna-sabalenka-after-french-open-defeat-i-just-want-to-quit-tennis-right-now",
-      "summary": "World number one Aryna Sabalenka said she wants to quit tennis after losing 6-3 5-7 0-6 to Diana Shnaider in the quarter-finals of the French Open.",
-      "publishedAt": null
     }
   ]
 }
