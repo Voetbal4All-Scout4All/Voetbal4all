@@ -47,6 +47,7 @@ const staticUrls = [
   `${SITE_BASE}/trainers.html`,
   `${SITE_BASE}/events.html`,
   `${SITE_BASE}/algemene-events.html`,
+  `${SITE_BASE}/over-ons.html`,
   `${SITE_BASE}/sportief-resultaten.html`,
   `${SITE_BASE}/contact.html`,
   `${SITE_BASE}/aanmelden.html`,
