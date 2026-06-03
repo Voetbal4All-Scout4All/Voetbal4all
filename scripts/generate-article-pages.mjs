@@ -157,7 +157,7 @@ function buildPage(article, canonicalUrl) {
   );
   // Fill sidebar with related articles (Lees ook)
   const sidebarRelated = buildSidebarRelated(article.id || "", country);
-  html = html.replace('id="sidebar-lees-ook">\n            <!-- Filled by SSG with related articles -->\n          </article>', `id="sidebar-lees-ook">${sidebarRelated}</article>`);
+  html = html.replace(/id="sidebar-lees-ook"[^>]*>\s*<!--[^>]*-->\s*<\/article>/, `id="sidebar-lees-ook" style="margin-top:12px;">${sidebarRelated}</article>`);
 
   // ── Share buttons: fill hrefs statically (the loader script that did this client-side is stripped) ──
   const articleId = article.id || "";
