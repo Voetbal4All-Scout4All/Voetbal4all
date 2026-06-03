@@ -38,6 +38,11 @@ jobs:
           ls dist/ | head -20
         continue-on-error: true
 
+      - name: Copy sitemap files to dist
+        run: |
+          cp -v sitemap*.xml dist/ 2>/dev/null || echo "[deploy] No sitemap files to copy"
+          ls -la dist/sitemap*.xml || echo "[deploy] No sitemap in dist after copy"
+
       - name: Deploy naar gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
