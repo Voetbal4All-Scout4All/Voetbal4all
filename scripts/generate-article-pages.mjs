@@ -125,10 +125,24 @@ function buildPage(article, canonicalUrl) {
   html = html.replace('id="article-title">Laden...</h1>', `id="article-title">${titleEsc}</h1>`);
   // Fill breadcrumb
   html = html.replace('id="breadcrumb-title">Artikel</span>', `id="breadcrumb-title">${titleEsc}</span>`);
+  // Fill byline caption (replaces "Voetbal4All · Nieuws")
+  const rawSource = String(article.source || "").trim();
+  const authorByline = rawSource === "opinion-team-4all-ventures" ? "4All Ventures opinieteam" : "Voetbal4All Redactie";
+  const titleLower = String(title).toLowerCase();
+  const categorie = /\bvrouwen\b|\bdames\b|\bvrouw\b/i.test(titleLower) ? "Vrouwenvoetbal"
+    : /\bu1[579]\b|\bjeugd\b|\bbeloften\b/i.test(titleLower) ? "Jeugdvoetbal"
+    : country === "BE" ? "Belgisch voetbal"
+    : country === "NL" ? "Nederlands voetbal"
+    : country === "INT" ? "Internationaal"
+    : "Voetbalnieuws";
+  const bylineHtml = `Door <a href="/over-ons.html" rel="author">${esc(authorByline)}</a>` +
+    (dateFormatted ? ` · ${esc(dateFormatted)}` : "") +
+    ` · ${esc(categorie)}`;
+  html = html.replace('>Voetbal4All · Nieuws</div>', `>${bylineHtml}</div>`);
   // Fill country badge
   if (country) html = html.replace('id="article-country"></span>', `id="article-country">${esc(country)}</span>`);
-  // Fill date
-  if (dateFormatted) html = html.replace('id="article-date"></span>', `id="article-date">${esc(dateFormatted)}</span>`);
+  // Date is now in byline caption — leave article-date empty to avoid duplicate
+  html = html.replace('id="article-date"></span>', 'id="article-date"></span>');
   // Fill image
   if (image && !image.includes("placeholder.svg")) {
     html = html.replace(
