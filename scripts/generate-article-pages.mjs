@@ -150,12 +150,14 @@ function buildPage(article, canonicalUrl) {
       `$1${imageEsc}$2${titleEsc}$3$4`
     );
   }
-  // Fill body content (inject after standfirst div) + related articles
-  const related = buildRelated(article.id || "", country);
+  // Fill body content (inject after standfirst div)
   html = html.replace(
     'id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;"></div>',
-    `id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;">${article.snippet ? esc(stripHtml(article.snippet).slice(0, 300)) : ""}</div>\n<div class="article-body-text" id="article-body">${bodyHtml}</div>${related}`
+    `id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;">${article.snippet ? esc(stripHtml(article.snippet).slice(0, 300)) : ""}</div>\n<div class="article-body-text" id="article-body">${bodyHtml}</div>`
   );
+  // Fill sidebar with related articles (Lees ook)
+  const sidebarRelated = buildSidebarRelated(article.id || "", country);
+  html = html.replace('id="sidebar-lees-ook">\n            <!-- Filled by SSG with related articles -->\n          </article>', `id="sidebar-lees-ook">${sidebarRelated}</article>`);
 
   // ── Share buttons: fill hrefs statically (the loader script that did this client-side is stripped) ──
   const articleId = article.id || "";
@@ -262,6 +264,29 @@ function buildRelated(currentId, currentCountry) {
       html += `</article>`;
     }
     html += '\n</section>';
+    return html;
+  } catch (_) {
+    return "";
+  }
+}
+
+function buildSidebarRelated(currentId, currentCountry) {
+  try {
+    const candidates = relatedPool.filter(a => a.id !== currentId);
+    if (candidates.length === 0) return "";
+    const scored = candidates.map(a => ({ ...a, _score: (currentCountry && a.country === currentCountry) ? 10 : 0 }));
+    scored.sort((a, b) => b._score - a._score || b.pubMs - a.pubMs);
+    const picks = scored.slice(0, 5);
+    let html = '\n<h3>Lees ook</h3>';
+    for (const a of picks) {
+      const t = esc(a.title);
+      const img = esc(a.image || PLACEHOLDER_THUMB);
+      const href = esc(a.url);
+      html += `\n<a href="${href}" class="lees-ook-item">`;
+      html += `<img src="${img}" alt="${t}" width="64" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${esc(PLACEHOLDER_THUMB)}';">`;
+      html += `<span class="lees-ook-item-title">${t}</span>`;
+      html += `</a>`;
+    }
     return html;
   } catch (_) {
     return "";
