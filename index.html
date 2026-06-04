@@ -127,6 +127,63 @@
       overflow: visible !important;
     }
 
+    /* HOME FAQ accordion card */
+    .home-faq-card{ margin-top: 12px; }
+    .home-faq-list{ display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+    .home-faq-item{
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px 16px;
+      transition: border-color .15s ease;
+    }
+    .home-faq-item[open]{
+      border-color: rgba(24,160,251,0.35);
+    }
+    .home-faq-item summary{
+      font-family: Montserrat,sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.4;
+    }
+    .home-faq-item summary::-webkit-details-marker{ display:none; }
+    .home-faq-item summary::before{
+      content: "+";
+      flex: 0 0 20px;
+      width: 20px; height: 20px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 6px;
+      font-size: 15px; font-weight: 700;
+      color: rgba(24,160,251,0.9);
+      background: rgba(24,160,251,0.08);
+      border: 1px solid rgba(24,160,251,0.18);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .home-faq-item[open] summary::before{
+      content: "\2212";
+      background: rgba(24,160,251,0.14);
+      transform: rotate(0deg);
+    }
+    .home-faq-item summary:hover{ color: #fff; }
+    .home-faq-item summary:hover::before{
+      background: rgba(24,160,251,0.18);
+    }
+    .home-faq-item p{
+      font-family: Montserrat,sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.65;
+      margin: 10px 0 0 30px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
     /* PREMIUM RIJ (Home): metallic grey frame, keep existing layout */
     .premium-row .lower-grid-layout.grid-4 > .card{
       /* keep spacing/layout as-is; only adjust surface + border */
@@ -1685,8 +1742,48 @@
           <a href="events.html" class="event-link" style="margin-top:10px; display:inline-block;">Alle events →</a>
         </article>
 
-        
-        
+        <!-- FAQ -->
+        <article class="card home-events-card home-faq-card">
+          <div class="card-header">
+            <div>
+              <div class="card-caption">Voetbal4All</div>
+              <div class="card-title">Veelgestelde vragen</div>
+            </div>
+          </div>
+
+          <div class="home-faq-list">
+            <details class="home-faq-item">
+              <summary>Hoe plaats ik een clubvacature op Voetbal4All?</summary>
+              <p>Vul het intakeformulier voor clubvacatures in. Je ontvangt daarna automatisch een magic-link in je mailbox: een unieke, persoonlijke link waarmee je je vacature bevestigt en beheert &#8212; zonder account of wachtwoord. E&#233;n klik en je vacature staat direct online. Via diezelfde link kan je later aanpassen of verlengen.</p>
+            </details>
+            <details class="home-faq-item">
+              <summary>Wat kost adverteren op Voetbal4All?</summary>
+              <p>Neem contact op via het contactformulier &#8212; wij werken een interessante formule op maat voor je uit.</p>
+            </details>
+            <details class="home-faq-item">
+              <summary>Hoe blijven mijn gegevens anoniem op een spelersprofiel?</summary>
+              <p>Tijdens aanmelden vink je 'anonimiteit' aan. Naam en woonplaats blijven verborgen; clubs reageren via een anonieme contactlink van Voetbal4All.</p>
+            </details>
+            <details class="home-faq-item">
+              <summary>Welke voetbal events kan ik aankondigen?</summary>
+              <p>Tornooien, voetbalkampen, stages, vriendschappelijke wedstrijden, club events en fun events &#8212; voor alle leeftijden en niveaus, in Belgi&#235; en Nederland.</p>
+            </details>
+            <details class="home-faq-item">
+              <summary>Hoe houdt Voetbal4All voetbalnieuws actueel?</summary>
+              <p>Onze redactie volgt het Belgische, Nederlandse en internationale voetbal op de voet en publiceert dagelijks originele artikels, zodat je altijd up-to-date bent.</p>
+            </details>
+          </div>
+
+          <script id="faq-ld" type="application/ld+json">
+          {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+            {"@type":"Question","name":"Hoe plaats ik een clubvacature op Voetbal4All?","acceptedAnswer":{"@type":"Answer","text":"Vul het intakeformulier voor clubvacatures in. Je ontvangt daarna automatisch een magic-link in je mailbox: een unieke, persoonlijke link waarmee je je vacature bevestigt en beheert — zonder account of wachtwoord. Eén klik en je vacature staat direct online. Via diezelfde link kan je later aanpassen of verlengen."}},
+            {"@type":"Question","name":"Wat kost adverteren op Voetbal4All?","acceptedAnswer":{"@type":"Answer","text":"Neem contact op via het contactformulier — wij werken een interessante formule op maat voor je uit."}},
+            {"@type":"Question","name":"Hoe blijven mijn gegevens anoniem op een spelersprofiel?","acceptedAnswer":{"@type":"Answer","text":"Tijdens aanmelden vink je 'anonimiteit' aan. Naam en woonplaats blijven verborgen; clubs reageren via een anonieme contactlink van Voetbal4All."}},
+            {"@type":"Question","name":"Welke voetbal events kan ik aankondigen?","acceptedAnswer":{"@type":"Answer","text":"Tornooien, voetbalkampen, stages, vriendschappelijke wedstrijden, club events en fun events — voor alle leeftijden en niveaus, in België en Nederland."}},
+            {"@type":"Question","name":"Hoe houdt Voetbal4All voetbalnieuws actueel?","acceptedAnswer":{"@type":"Answer","text":"Onze redactie volgt het Belgische, Nederlandse en internationale voetbal op de voet en publiceert dagelijks originele artikels, zodat je altijd up-to-date bent."}}
+          ]}
+          </script>
+        </article>
 
       </section>
 
@@ -1763,40 +1860,6 @@
       
       
     </main>
-
-    <!-- FAQ Section -->
-    <section class="shell" style="max-width:800px; margin:40px auto; padding:0 16px 40px;">
-      <h2 style="font-family:Montserrat,sans-serif; font-size:20px; font-weight:700; color:#fff; margin-bottom:16px;">Veelgestelde vragen</h2>
-      <details style="margin-bottom:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:14px 16px;">
-        <summary style="font-family:Montserrat,sans-serif; font-size:15px; font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;">Hoe plaats ik een clubvacature op Voetbal4All?</summary>
-        <p style="font-family:Montserrat,sans-serif; font-size:14px; color:rgba(255,255,255,0.7); margin:10px 0 0; line-height:1.6;">Vul het intakeformulier voor clubvacatures in. Je ontvangt daarna automatisch een magic-link in je mailbox: een unieke, persoonlijke link waarmee je je vacature bevestigt en beheert &#8212; zonder account of wachtwoord. E&#233;n klik en je vacature staat direct online. Via diezelfde link kan je later aanpassen of verlengen.</p>
-      </details>
-      <details style="margin-bottom:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:14px 16px;">
-        <summary style="font-family:Montserrat,sans-serif; font-size:15px; font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;">Wat kost adverteren op Voetbal4All?</summary>
-        <p style="font-family:Montserrat,sans-serif; font-size:14px; color:rgba(255,255,255,0.7); margin:10px 0 0; line-height:1.6;">Neem contact op via het contactformulier &#8212; wij werken een interessante formule op maat voor je uit.</p>
-      </details>
-      <details style="margin-bottom:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:14px 16px;">
-        <summary style="font-family:Montserrat,sans-serif; font-size:15px; font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;">Hoe blijven mijn gegevens anoniem op een spelersprofiel?</summary>
-        <p style="font-family:Montserrat,sans-serif; font-size:14px; color:rgba(255,255,255,0.7); margin:10px 0 0; line-height:1.6;">Tijdens aanmelden vink je 'anonimiteit' aan. Naam en woonplaats blijven verborgen; clubs reageren via een anonieme contactlink van Voetbal4All.</p>
-      </details>
-      <details style="margin-bottom:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:14px 16px;">
-        <summary style="font-family:Montserrat,sans-serif; font-size:15px; font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;">Welke voetbal events kan ik aankondigen?</summary>
-        <p style="font-family:Montserrat,sans-serif; font-size:14px; color:rgba(255,255,255,0.7); margin:10px 0 0; line-height:1.6;">Tornooien, voetbalkampen, stages, vriendschappelijke wedstrijden, club events en fun events &#8212; voor alle leeftijden en niveaus, in Belgi&#235; en Nederland.</p>
-      </details>
-      <details style="margin-bottom:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:14px 16px;">
-        <summary style="font-family:Montserrat,sans-serif; font-size:15px; font-weight:600; color:rgba(255,255,255,0.9); cursor:pointer;">Hoe houdt Voetbal4All voetbalnieuws actueel?</summary>
-        <p style="font-family:Montserrat,sans-serif; font-size:14px; color:rgba(255,255,255,0.7); margin:10px 0 0; line-height:1.6;">Onze redactie volgt het Belgische, Nederlandse en internationale voetbal op de voet en publiceert dagelijks originele artikels, zodat je altijd up-to-date bent.</p>
-      </details>
-    </section>
-    <script id="faq-ld" type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Hoe plaats ik een clubvacature op Voetbal4All?","acceptedAnswer":{"@type":"Answer","text":"Vul het intakeformulier voor clubvacatures in. Je ontvangt daarna automatisch een magic-link in je mailbox: een unieke, persoonlijke link waarmee je je vacature bevestigt en beheert — zonder account of wachtwoord. Eén klik en je vacature staat direct online. Via diezelfde link kan je later aanpassen of verlengen."}},
-      {"@type":"Question","name":"Wat kost adverteren op Voetbal4All?","acceptedAnswer":{"@type":"Answer","text":"Neem contact op via het contactformulier — wij werken een interessante formule op maat voor je uit."}},
-      {"@type":"Question","name":"Hoe blijven mijn gegevens anoniem op een spelersprofiel?","acceptedAnswer":{"@type":"Answer","text":"Tijdens aanmelden vink je 'anonimiteit' aan. Naam en woonplaats blijven verborgen; clubs reageren via een anonieme contactlink van Voetbal4All."}},
-      {"@type":"Question","name":"Welke voetbal events kan ik aankondigen?","acceptedAnswer":{"@type":"Answer","text":"Tornooien, voetbalkampen, stages, vriendschappelijke wedstrijden, club events en fun events — voor alle leeftijden en niveaus, in België en Nederland."}},
-      {"@type":"Question","name":"Hoe houdt Voetbal4All voetbalnieuws actueel?","acceptedAnswer":{"@type":"Answer","text":"Onze redactie volgt het Belgische, Nederlandse en internationale voetbal op de voet en publiceert dagelijks originele artikels, zodat je altijd up-to-date bent."}}
-    ]}
-    </script>
 
     <!-- FOOTER -->
     <footer class="footer" id="footer-contact">
