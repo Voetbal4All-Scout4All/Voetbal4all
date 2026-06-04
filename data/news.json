@@ -1,6 +1,94 @@
 {
-  "generatedAt": "2026-06-04T20:59:43.508Z",
+  "generatedAt": "2026-06-04T22:40:18.100Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Liverpool name Iraola head coach, replacing Slot",
+      "link": "https://www.espn.com/soccer/story/_/id/48945214/liverpool-appoint-andoni-iraola-arne-slot-successor",
+      "summary": "Liverpool have confirmed the appointment of Andoni Iraola as their new head coach.",
+      "publishedAt": "2026-06-04T23:34:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Yamal-less Spain held by Iraq in WC sendoff",
+      "link": "https://www.espn.com/soccer/report/_/gameId/401871471",
+      "summary": "Spain were left frustrated in their first World Cup warm-up match as they laboured to a 1-1 draw with Iraq at the Estadio de Riazor in La Coruña.",
+      "publishedAt": "2026-06-04T23:34:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Japan ditches pre-WC training site over poor pitch...",
+      "link": "https://www.espn.com/soccer/story/_/id/48968591/japan-world-cup-training-pitch-monterrey-mexico-tigres",
+      "summary": "Japan has changed practice venues in Monterrey ahead of the World Cup after players encountered an uneven pitch marred by patches of dirt at their original training ground.",
+      "publishedAt": "2026-06-04T23:34:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Madrid's Pérez vows $174M Galactico bid if elected...",
+      "link": "https://www.espn.com/soccer/story/_/id/48969398/real-madrid-perez-vows-174m-galactico-bid-reelected",
+      "summary": "Florentino Pérez promised to bid for a $174 million (€150 million) \"Galáctico\" player this summer as he tries to win Sunday's presidential elections at Real Madrid.",
+      "publishedAt": "2026-06-04T23:34:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Doski stunner earns Iraq draw against understrength Spain in World Cup warm-up",
+      "link": "https://www.theguardian.com/football/2026/jun/04/spain-iraq-friendly-international-match-report",
+      "summary": "Spain will depart from Santiago de Compostela at 10am on Friday morning bound for Chattanooga, via Nashville, but seven of the eight men who made their debuts in the final preparation game before the World Cup will not be on board with them. Nor will the seleccion be flying west with a victory after they bid adios with a 1-1 draw against Iraq at Estadio Riazor. Which may not sound very good – and it really was not very good either, a 22-minute cameo from Mikel Merino about the best thing about it – but is no cause for alarm. Luis de la Fuente’s side will still be among the favourites in the US, Canada and Mexico and rightly so; this was not really his side, at least not recognisably so. Continue reading...",
+      "publishedAt": "2026-06-04T22:04:33.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Pérez: 'Real Madrid gaat de duurste speler uit de clubhistorie kopen'",
+      "link": "https://www.vi.nl/nieuws/real-madrid-president-perez-halen-speler-uit-categorie-figo-ronaldo-en-kaka",
+      "summary": "Florentino Pérez (79) heeft donderdagavond een inkijkje gegeven in zijn plannen met Real Madrid. Dinsdag kan de voorzitter herkozen worden, waarna hij de club weer om de grootste hoofdprijzen mee wil laten spelen. Daarbij deed hij een flinke belofte.",
+      "publishedAt": "2026-06-04T21:46:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "NI's record side show grit beyond their years",
+      "link": "https://www.bbc.com/sport/football/articles/c7v9ve8415mo?at_medium=RSS&at_campaign=rss",
+      "summary": "Northern Ireland, fielding a record youthful side, showed resilience beyond their years in a 1-0 friendly win over Guinea in Spain.",
+      "publishedAt": "2026-06-04T21:18:17.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Fransen zien 'verkeerde' Doué schitteren in onverwachte oefennederlaag",
+      "link": "https://www.vi.nl/nieuws/fransen-zien-verkeerde-doue-schitteren-in-onverwachte-oefennederlaag",
+      "summary": "Ivoorkust heeft Frankrijk donderdagavond op een onverwachte oefennederlaag getrakteerd. In Nantes werd het 1-2, met een verrassende Doué als hoofdrolspeler.",
+      "publishedAt": "2026-06-04T21:11:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -29,6 +117,17 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
+      "title": "Celtic fan groups state opposition to Keane",
+      "link": "https://www.bbc.com/sport/football/articles/c33234zxvl8o?at_medium=RSS&at_campaign=rss",
+      "summary": "Several Celtic supporters clubs put their names to a statement opposing the potential appointment of Robbie Keane as manager because of the Irishman's previous role as Maccabi Tel Aviv head coach.",
+      "publishedAt": "2026-06-04T20:53:13.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
       "title": "Liverpool step up Diomande pursuit - Friday's gossip",
       "link": "https://www.bbc.com/sport/football/articles/cz727jjzyvqo?at_medium=RSS&at_campaign=rss",
       "summary": "Liverpool make contact with RB Leipzig over a move for Yan Diomande, Arsenal face competition from PSG for two players, Cologne winger Said El Mala not keen on Brentford move, plus more.",
@@ -44,39 +143,6 @@
       "link": "https://www.vi.nl/nieuws/spanning-voor-advocaat-en-curacao-over-eventuele-schorsing-locadia",
       "summary": "De bond van Curaçao heeft nog geen duidelijkheid over de schorsing die Jürgen Locadia boven het hoofd hangt na zijn rode kaart in de oefenwedstrijd tegen Schotland. Dit meldde bondscoach Dick Advocaat donderdagavond op een persmoment.",
       "publishedAt": "2026-06-04T20:34:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Curaçao voelt geen druk: 'Druk is een alleenstaande moeder met vijf kinderen'",
-      "link": "https://www.vi.nl/nieuws/curacao-voelt-geen-druk-druk-is-een-alleenstaande-moeder-met-vijf-kinderen",
-      "summary": "De WK-selectie van Curaçao keerde terug op het eiland om zich voor te bereiden op de reis naar het eindtoernooi in Canada, Mexico en de Verenigde Staten, Tahith Chong schoof samen met bondscoach Dick Advocaat aan om te praten over het WK en de oefenwedstrijd die afgewerkt werd tegen Schotland. De doelpuntenmaker in dat duel had de mooiste uitspraak op het persmoment te pakken.",
-      "publishedAt": "2026-06-04T20:21:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool valt voor Iraola van zowel de buitenkant als de binnenkant niet tegen",
-      "link": "https://www.vi.nl/nieuws/liverpool-valt-voor-iraola-van-zowel-de-buitenkant-als-de-binnenkant-niet-tegen",
-      "summary": "Als coach van Bournemouth keek Andoni Iraola soms al likkebaardend naar het elftal en de ambiance rondom Liverpool, nu maakt de Spanjaard het van binnenuit mee. Hij werd donderdag aangesteld als opvolger van Arne Slot .",
-      "publishedAt": "2026-06-04T19:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Iraola will make Liverpool fans excited again - Murphy",
-      "link": "https://www.bbc.com/sport/football/articles/c62dpn93n9mo?at_medium=RSS&at_campaign=rss",
-      "summary": "Andoni Iraola is the new Liverpool head coach on a two-year contract - but what is the feeling around the city to his impending arrival?",
-      "publishedAt": "2026-06-04T18:35:16.000Z"
     },
     {
       "type": "rss",
@@ -102,17 +168,6 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "‘We’d like him to stay’: Manchester United’s Berrada hints at Bruno Fernandes doubts",
-      "link": "https://www.theguardian.com/football/2026/jun/04/wed-like-him-to-stay-manchester-uniteds-berrada-hints-at-bruno-fernandes-doubts",
-      "summary": "CEO praises ‘great leader’ who knows club’s values Captain’s mixed messages have raised doubts on future Omar Berrada has not ruled out Bruno Fernandes leaving Manchester United in the summer, though the chief executive is adamant the club wants the captain to stay. The 31-year-old Fernandes was voted the Football Writers’ Footballer of the Year after making a record-breaking 21 assists in the Premier League but has offered mixed messages about his future. Continue reading...",
-      "publishedAt": "2026-06-04T18:25:02.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -135,6 +190,17 @@
     },
     {
       "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "World Cup sticker shock: The ugly cost of the beautiful game's grand event",
+      "link": "https://www.espn.com/soccer/story/_/id/48947095/2026-fifa-world-cup-sticker-shock-ugly-cost-beautiful-game-grand-event",
+      "summary": "On FIFA's resale marketplace, World Cup ticket prices have soared into four to six figures. By pricing out ordinary fans, soccer's organizing body risks hurting the image of the tournament.",
+      "publishedAt": "2026-06-04T14:01:57.000Z"
+    },
+    {
+      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -143,6 +209,39 @@
       "link": "https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory",
       "summary": "Click your way through the group stage and the knockouts to crown champion Continue reading...",
       "publishedAt": "2026-06-04T10:00:48.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 04/06: De Bruyne - Lukaku - Terho",
+      "link": "https://www.walfoot.be/news/2026-06-04/actu-transferts-rumeurs-de-transferts",
+      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
+      "publishedAt": "2026-06-04T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le président de Naples ne gardera pas ses Belges à tout prix",
+      "link": "https://www.walfoot.be/news/2026-06-04/le-president-de-naples-ne-gardera-pas-ses-belges-a-tout-prix",
+      "summary": "Kevin De Bruyne et Romelu Lukaku ensemble sous le maillot de Naples, une image rarement vue cette saison, mais qu'on ne verra peut-être pas plus la saison prochaine. En tout cas, le président De Laurentiis ne fera pas tout ce qui est en son pouvoir pour garder les deux Diables rouges.",
+      "publishedAt": "2026-06-04T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Maakt Antwerp FC of een andere Belgische club dan toch kans? 'Dit is de droombestemming van Vincent Janssen'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/maakt-antwerp-fc-of-een-andere-belgische-club-dan-toch-kans-dit-is-de-droombestemming-van-vincent-janssen",
+      "summary": "Vincent Janssen heeft zijn laatste wedstrijd voor Antwerp FC gespeeld. De Nederlander heeft een duidelijke voorkeur over waar hij zijn carrière wil voortzetten. Maar ook het voetbalpensioen blijft een mogelijkheid.",
+      "publishedAt": "2026-06-04T09:00:00.000Z"
     },
     {
       "type": "rss",
@@ -157,69 +256,80 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man City consider legal action over Real candidate's promise to sign Haaland",
-      "link": "https://www.bbc.com/sport/football/articles/c3r2g5zgl0vo?at_medium=RSS&at_campaign=rss",
-      "summary": "After a candidate in Real Madrid's presidential election unveils an Erling Haaland shirt on live TV, Manchester City dismiss the suggestion their striker will move to Spain.",
-      "publishedAt": "2026-06-04T08:27:35.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Héél mooie bestemmingen, toch? 'Openda heeft voorstel op zak van deze drie traditieclubs'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/heel-mooie-bestemmingen-toch-openda-heeft-voorstel-op-zak-van-deze-drie-traditieclubs",
+      "summary": "Waar ligt de toekomst van Loïs Openda? De 26-jarige aanvaller heeft een seizoen om héél snel te vergeten achter de rug. Al zorgt dat er niet voor dat de clubs zijn prestaties uit het verleden zijn vergeten. Momenteel liggen er drie concrete voorstellen op tafel voor onze landgenoot.",
+      "publishedAt": "2026-06-04T08:30:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Hamilton, Alonso join milestone McLaren photo",
-      "link": "https://www.skysports.com/f1/live-blog/12040/13549880/f1-monaco-gp-live-build-up-and-friday-practice-updates-results-stream-highlights-from-monte-carlo-race-weekend",
-      "summary": "",
-      "publishedAt": null
+      "title": "Auxerre se sépare officiellement de son entraîneur, Will Still va lui succéder",
+      "link": "https://www.walfoot.be/news/2026-06-04/auxerre-se-separe-officiellement-de-son-entraneur-will-still-va-lui-succeder",
+      "summary": "La fin de l'histoire d'amour entre l'AJ Auxerre et Christophe Pelissier a été actée ce jeudi. Sauf retournement de situation, Will Still sera le nouvel entraîneur des Bourguignons.",
+      "publishedAt": "2026-06-04T08:30:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Celtic fan groups sign letter opposing Keane appointment",
-      "link": "https://www.skysports.com/football/news/12040/13550904/robbie-keane-to-celtic-fan-groups-sign-letter-opposing-appointment-due-to-maccabi-tel-aviv-links",
-      "summary": "Dozens of Celtic supporters clubs have put their names to a statement opposing the potential appointment of Robbie Keane as manager over his previous role with Maccabi Tel Aviv.",
-      "publishedAt": null
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le score des matchs des Diables... dans le ciel ? La ville de Seattle prépare quelque chose d'inédit",
+      "link": "https://www.walfoot.be/news/2026-06-04/le-score-des-matchs-des-diables-dans-le-ciel-la-ville-de-seattle-prepare-quelque-chose-dinedit",
+      "summary": "Les villes-hôtes de la Coupe du Monde 2026 préparent la compétition, et au-delà des polémiques, certaines promettent une grande fête. C'est le cas de Seattle.",
+      "publishedAt": "2026-06-04T08:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Korda off the pace as Kim takes early lead in US Women's Open",
-      "link": "https://www.skysports.com/golf/news/12040/13550867/us-womens-open-nelly-korda-admits-it-wasnt-a-great-day-as-sei-young-kim-sets-early-pace-in-first-round-at-riviera-country-club",
-      "summary": "Nelly Korda admitted she was surprised how poorly she had played as she began her US Women's Open challenge with a two-over 73.",
-      "publishedAt": null
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge, Valencia of zelfs... Lille? Meunier zit in zetel én bevestigt dat ook Lille met hem door wil",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/club-brugge-valencia-of-zelfs-lille-meunier-zit-in-zetel-en-bevestigt-dat-ook-lille-met-hem-door-wil",
+      "summary": "Thomas Meunier bereidt zich momenteel voor op het WK met de Rode Duivels. De flankverdediger wil zich op het toernooi eveneens tonen aan geïnteresseerde clubs. Al zit de Luxemburger in een ongeziene luxepositie.",
+      "publishedAt": "2026-06-04T08:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "McIlroy overcomes early Muirfield setback as Fleetwood starts strongly",
-      "link": "https://www.skysports.com/golf/news/12040/13550799/memorial-tournament-rory-mcilroy-content-with-muirfield-start-after-early-setback-as-tommy-fleetwood-impresses-in-first-round",
-      "summary": "Rory McIlroy was pleased with the way he overcame an early setback to remain in contention after the first round of the Memorial Tournament at Muirfield Village Golf Club in Ohio.",
-      "publishedAt": null
+      "title": "Au milieu des doutes, l'Iran s'envolera pour le Mexique sur une ultime victoire",
+      "link": "https://www.walfoot.be/news/2026-06-04/au-milieu-des-doutes-liran-senvolera-pour-le-mexique-sur-une-ultime-victoire",
+      "summary": "Le deuxième adversaire des Diables Rouges lors de la Coupe du Monde 2026, l'Iran, a réussi sa préparation. La Team Melli a gagné son match amical face au Mali.",
+      "publishedAt": "2026-06-04T07:40:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool announce Iraola as head coach",
-      "link": "https://www.skysports.com/football/news/12040/13550174/andoni-iraola-liverpool-appoint-former-bournemouth-boss-as-arne-slots-successor-on-two-year-deal",
-      "summary": "Liverpool have appointed Andoni Iraola as their new head coach.",
-      "publishedAt": null
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Real Madrid haalt jeugdproduct met marktwaarde van tachtig miljoen euro (!) terug naar de bakermat'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/real-madrid-haalt-jeugdproduct-met-marktwaarde-van-tachtig-miljoen-euro-terug-naar-de-bakermat",
+      "summary": "Real Madrid wil shoppen bij Como 1907. De Spaanse grootmacht wil Nico Paz terughalen naar het Estadio Santiago Bernabeu. En het wordt een koopje. Al kunnen we ons voorstellen dat het overmaken van de transfersom Florentino Perez eveneens zal doen gruwelen.",
+      "publishedAt": "2026-06-04T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "De marktwaardes van Transfermarkt onder de loep: dit zijn de vijftien meest waardevolle spelers ter wereld",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/de-marktwaardes-van-transfermarkt-onder-de-loep-dit-zijn-de-vijftien-meest-waardevolle-spelers-ter-wereld",
+      "summary": "De start van het WK voetbal staat voor de deur. Voor heel wat spelers is het toernooi hét toneel om zich in de kijker te spelen. Omgekeerd zien ook de clubs de marktwaarde van hun spelers stijgen. En die marktwaardes zijn recentelijk aangepast.",
+      "publishedAt": "2026-06-04T07:00:00.000Z"
     }
   ]
 }
