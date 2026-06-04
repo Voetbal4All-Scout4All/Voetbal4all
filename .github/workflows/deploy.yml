@@ -44,10 +44,22 @@ jobs:
           ls dist/ | head -20
         continue-on-error: true
 
+      - name: Generate sitemaps + pre-render listing JSON-LD
+        run: node scripts/generate-sitemap.mjs
+
       - name: Copy sitemap files to dist
         run: |
           cp -v sitemap*.xml dist/ 2>/dev/null || echo "[deploy] No sitemap files to copy"
           ls -la dist/sitemap*.xml || echo "[deploy] No sitemap in dist after copy"
+
+      - name: Assert sitemap-index has 3 children
+        run: |
+          COUNT=$(grep -c '<sitemap>' dist/sitemap-index.xml)
+          echo "sitemap-index.xml children: $COUNT"
+          if [ "$COUNT" -ne 3 ]; then
+            echo "::error::sitemap-index.xml has $COUNT <sitemap> entries, expected 3 (static, articles, news)"
+            exit 1
+          fi
 
       - name: Deploy naar gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
