@@ -47,9 +47,20 @@ function buildPage(article, canonicalUrl) {
     "image": [image],
     "datePublished": pubDate,
     "dateModified": pubDate,
-    "author": { "@type": "Organization", "name": "Voetbal4All" },
-    "publisher": { "@type": "Organization", "name": "Voetbal4All",
-      "logo": { "@type": "ImageObject", "url": publisherLogo } },
+    "author": {
+      "@type": "Organization",
+      "name": "Voetbal4All Redactie",
+      "url": `${SITE}/over-ons.html`,
+      "logo": { "@type": "ImageObject", "url": publisherLogo, "width": 256, "height": 256 },
+      "sameAs": ["https://www.facebook.com/voetbal4all", "https://www.instagram.com/voetbal4all.eu", "https://www.threads.com/@voetbal4all.eu", "https://www.tiktok.com/@voetbal4all"],
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Voetbal4All Redactie",
+      "url": `${SITE}/over-ons.html`,
+      "logo": { "@type": "ImageObject", "url": publisherLogo, "width": 256, "height": 256 },
+      "sameAs": ["https://www.facebook.com/voetbal4all", "https://www.instagram.com/voetbal4all.eu", "https://www.threads.com/@voetbal4all.eu", "https://www.tiktok.com/@voetbal4all"],
+    },
   });
 
   let html = TEMPLATE;
