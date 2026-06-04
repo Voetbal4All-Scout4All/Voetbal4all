@@ -442,7 +442,7 @@
                                   </style>
   <script id="breadcrumb-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.voetbal4all.eu/"},{"@type":"ListItem","position":2,"name":"Sportieve events","item":"https://www.voetbal4all.eu/events.html"}]}</script>
   <!-- TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering. -->
-  <script id="events-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>
+  <script id="events-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SportsEvent","name":"Jumbo Binnendijk Toernooi vvNunspeet","startDate":"2026-06-13","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Nunspeet","address":{"@type":"PostalAddress","addressCountry":"NL"}},"url":"https://www.voetbal4all.eu/event.html?slug=19"},{"@type":"SportsEvent","name":"De 3de Editie Bloemerdcup(LAV editie) RCL","startDate":"2026-06-13","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Leiderdorp","address":{"@type":"PostalAddress","addressCountry":"NL"}},"url":"https://www.voetbal4all.eu/event.html?slug=3"},{"@type":"SportsEvent","name":"Ladies Day VV Zeewolde","startDate":"2026-06-20","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Zeewolde","address":{"@type":"PostalAddress","addressCountry":"NL"}},"url":"https://www.voetbal4all.eu/event.html?slug=18"},{"@type":"SportsEvent","name":"HENKTUINMAN TOERNOOI 2026 – BOVENBOUW","startDate":"2026-06-27","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Rotterdam","address":{"@type":"PostalAddress","addressCountry":"NL"}},"url":"https://www.voetbal4all.eu/event.html?slug=12"},{"@type":"SportsEvent","name":"Fit2play","startDate":"2026-07-06","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Herselt","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=11"},{"@type":"SportsEvent","name":"Learn To Play The LIVERPOOL Way In België!","startDate":"2026-07-26","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Geel","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=2"},{"@type":"SportsEvent","name":"Gezocht: Oefenwedstrijden voor VC Moldavo U20","startDate":"2026-08-01","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Mol (Olmen)","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=14"},{"@type":"SportsEvent","name":"Jeugdtornooi","startDate":"2026-08-08","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Lovendegem","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=13"},{"@type":"SportsEvent","name":"6e SKE Girls Cup","startDate":"2026-08-15","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Eergenem","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=10"},{"@type":"SportsEvent","name":"Jeugdtornooi 'Kevin Slachmuylders' K.VV Duffel 2026","startDate":"2026-08-21","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Duffel","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=21"},{"@type":"SportsEvent","name":"Memorial Jean-Pierre D'Hondt","startDate":"2026-08-21","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Ronse","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=17"},{"@type":"SportsEvent","name":"Zomertornooi EMO Van De Velde Jeugdcup","startDate":"2026-08-22","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Opwijk","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=16"},{"@type":"SportsEvent","name":"Langeberg Toernooien 2026","startDate":"2026-08-28","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Brunsum","address":{"@type":"PostalAddress","addressCountry":"NL"}},"url":"https://www.voetbal4all.eu/event.html?slug=20"}]}</script>
 </head>
 
 <!-- Live banner NIET op mobiel voor niet-home pagina’s -->
@@ -841,6 +841,7 @@
   </div>
 
   <script src="assets/js/image-utils.js"></script>
+  <script src="assets/js/schema-builders.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -1868,50 +1869,17 @@ function getEventProvince(ev){
 
     // Load events from backend
     loadEvents().then(function() {
-      // Populate SportsEvent @graph JSON-LD after cards render
-      // TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
-      var _ea = 0;
-      var _ep = setInterval(function() {
-        try {
-          var ldEl = document.getElementById("events-ld");
-          var cards = document.querySelectorAll("article.v4a-card");
-          if ((!ldEl || cards.length === 0) && ++_ea < 20) return;
-          clearInterval(_ep);
-          if (!ldEl || cards.length === 0) return;
-          // Strip styled-unicode (mathematical bold/italic/script) → plain ASCII
-          function plainText(s) {
-            try { return String(s || "").normalize("NFKC").trim(); }
-            catch(e) { return String(s || "").trim(); }
-          }
-          var graph = [];
-          var pos = 0;
-          cards.forEach(function(card) {
-            if (pos >= 50) return;
-            var title = plainText(card.getAttribute("data-title"));
-            var dateStr = (card.getAttribute("data-date") || "").trim();
-            if (!title || !dateStr) return;
-            var slug = card.getAttribute("data-slug") || "";
-            var country = card.getAttribute("data-country") || "BE";
-            var cityEl = card.querySelector(".v4a-card-meta");
-            var city = cityEl ? plainText(cityEl.textContent).replace(/^[^\s]*\s*·\s*/, "") : "";
-            pos++;
-            var node = {
-              "@type": "SportsEvent",
-              "name": title,
-              "startDate": dateStr,
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": { "@type": "Place", "name": city || country,
-                "address": { "@type": "PostalAddress", "addressCountry": country } },
-              "url": "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug)
-            };
-            graph.push(node);
-          });
-          if (graph.length) {
-            ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
-          }
-        } catch(_) { clearInterval(_ep); }
-      }, 100);
+      // Populate SportsEvent @graph JSON-LD from API data via shared builder
+      // Build-time pre-render may already have seeded this; client-side overwrites with live data.
+      try {
+        var ldEl = document.getElementById("events-ld");
+        if (!ldEl || !ALL_EVENTS_SORTED.length) return;
+        var items = ALL_EVENTS_SORTED.filter(function(ev) { return ev.title && ev.start_at; }).map(function(ev) {
+          return { title: ev.title, startDate: isoDateOnly(ev.start_at), slug: ev.slug || ev.id, country: String(ev.country || "BE").toUpperCase(), city: ev.city || "" };
+        });
+        var ld = window.V4ASchema.buildSportsEventGraph(items);
+        if (ld["@graph"].length) ldEl.textContent = JSON.stringify(ld);
+      } catch(_) {}
     });
   </script>
 

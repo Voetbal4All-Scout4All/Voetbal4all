@@ -42,6 +42,7 @@ const allowedFiles = new Set([
   'sitemap-index.xml',
   'sitemap-static.xml',
   'sitemap-articles.xml',
+  'sitemap-news.xml',
   'sitemap-events.xml',
   'sitemap-jobs.xml',
   'style.css',

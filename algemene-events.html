@@ -33,7 +33,7 @@
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
 
   <!-- TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering. -->
-  <script id="clubfun-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>
+  <script id="clubfun-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SocialEvent","name":"Persvoorstelling met BBQ","startDate":"2026-06-14","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Lille","address":{"@type":"PostalAddress","addressCountry":"BE"}},"url":"https://www.voetbal4all.eu/event.html?slug=15"}]}</script>
   <script id="breadcrumb-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.voetbal4all.eu/"},{"@type":"ListItem","position":2,"name":"Club & fun events","item":"https://www.voetbal4all.eu/algemene-events.html"}]}</script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
@@ -760,6 +760,7 @@
 </div>
 
 <script src="assets/js/image-utils.js"></script>
+<script src="assets/js/schema-builders.js"></script>
 <script src="assets/js/nav-active.js" defer></script>
   <script src="assets/js/nav-mobile.js"></script>
 <script src="assets/js/live-banner.js"></script>
@@ -1544,67 +1545,18 @@
     initTypeFromUrl();
     setProvinceOptions(countryEl?.value);
     loadEvents().then(function() {
-      // Populate SocialEvent @graph JSON-LD after cards render
-      // TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
-      var _ea = 0;
-      var _ep = setInterval(function() {
-        try {
-          var ldEl = document.getElementById("clubfun-ld");
-          var cards = document.querySelectorAll("article.v4a-card");
-          if ((!ldEl || cards.length === 0) && ++_ea < 20) return;
-          clearInterval(_ep);
-          if (!ldEl || cards.length === 0) return;
-          // Strip styled-unicode (mathematical bold/italic/script) → plain ASCII
-          function plainText(s) {
-            try { return String(s || "").normalize("NFKC").trim(); }
-            catch(e) { return String(s || "").trim(); }
-          }
-          // Card metas: [0]=flag+city, [1]=club (conditional!), then date, type.
-          // When club is absent, metas[1] is the date line (contains digits).
-          function extractClub(card) {
-            var metas = card.querySelectorAll(".v4a-card-meta");
-            // Minimum metas without club: flag+city, date, type = 3
-            // With club: flag+city, club, date, type = 4+
-            if (metas.length < 4) return "";
-            var candidate = plainText(metas[1].textContent);
-            // Reject if it looks like a date (contains digits)
-            if (/\d/.test(candidate)) return "";
-            return candidate;
-          }
-          var graph = [];
-          var pos = 0;
-          cards.forEach(function(card) {
-            if (pos >= 50) return;
-            var title = plainText(card.getAttribute("data-title"));
-            var dateStr = (card.getAttribute("data-date") || "").trim();
-            if (!title || !dateStr) return;
-            var slug = card.getAttribute("data-slug") || "";
-            var country = card.getAttribute("data-country") || "BE";
-            var cityEl = card.querySelector(".v4a-card-meta");
-            var city = cityEl ? plainText(cityEl.textContent).replace(/^[^\s]*\s*·\s*/, "") : "";
-            var club = extractClub(card);
-            pos++;
-            var node = {
-              "@type": "SocialEvent",
-              "name": title,
-              "startDate": dateStr,
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "location": { "@type": "Place", "name": city || country,
-                "address": { "@type": "PostalAddress", "addressCountry": country } },
-              "url": "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug)
-            };
-            // Only add organizer when a real club/organizer name is available
-            if (club) {
-              node.organizer = { "@type": "Organization", "name": club };
-            }
-            graph.push(node);
-          });
-          if (graph.length) {
-            ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
-          }
-        } catch(_) { clearInterval(_ep); }
-      }, 100);
+      // Populate SocialEvent @graph JSON-LD from API data via shared builder
+      try {
+        var ldEl = document.getElementById("clubfun-ld");
+        if (!ldEl || !ALL_EVENTS_SORTED.length) return;
+        var items = ALL_EVENTS_SORTED.filter(function(ev) { return ev.title && ev.start_at; }).map(function(ev) {
+          return { title: ev.title, startDate: isoDateOnly(ev.start_at), slug: ev.slug || ev.id,
+            country: String(ev.country || "BE").toUpperCase(), city: ev.city || "",
+            club: ev.club_name || ev.club || ev.clubName || ev.organizer_name || "" };
+        });
+        var ld = window.V4ASchema.buildSocialEventGraph(items);
+        if (ld["@graph"].length) ldEl.textContent = JSON.stringify(ld);
+      } catch(_) {}
     });
   });
 })();
