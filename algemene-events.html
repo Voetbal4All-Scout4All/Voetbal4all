@@ -1554,22 +1554,37 @@
           if ((!ldEl || cards.length === 0) && ++_ea < 20) return;
           clearInterval(_ep);
           if (!ldEl || cards.length === 0) return;
+          // Strip styled-unicode (mathematical bold/italic/script) → plain ASCII
+          function plainText(s) {
+            try { return String(s || "").normalize("NFKC").trim(); }
+            catch(e) { return String(s || "").trim(); }
+          }
+          // Card metas: [0]=flag+city, [1]=club (conditional!), then date, type.
+          // When club is absent, metas[1] is the date line (contains digits).
+          function extractClub(card) {
+            var metas = card.querySelectorAll(".v4a-card-meta");
+            // Minimum metas without club: flag+city, date, type = 3
+            // With club: flag+city, club, date, type = 4+
+            if (metas.length < 4) return "";
+            var candidate = plainText(metas[1].textContent);
+            // Reject if it looks like a date (contains digits)
+            if (/\d/.test(candidate)) return "";
+            return candidate;
+          }
           var graph = [];
           var pos = 0;
           cards.forEach(function(card) {
             if (pos >= 50) return;
-            var title = (card.getAttribute("data-title") || "").trim();
+            var title = plainText(card.getAttribute("data-title"));
             var dateStr = (card.getAttribute("data-date") || "").trim();
             if (!title || !dateStr) return;
             var slug = card.getAttribute("data-slug") || "";
             var country = card.getAttribute("data-country") || "BE";
             var cityEl = card.querySelector(".v4a-card-meta");
-            var city = cityEl ? (cityEl.textContent || "").replace(/^[^\s]*\s*·\s*/, "").trim() : "";
-            var club = "";
-            var metas = card.querySelectorAll(".v4a-card-meta");
-            if (metas.length > 1) club = (metas[1].textContent || "").trim();
+            var city = cityEl ? plainText(cityEl.textContent).replace(/^[^\s]*\s*·\s*/, "") : "";
+            var club = extractClub(card);
             pos++;
-            graph.push({
+            var node = {
               "@type": "SocialEvent",
               "name": title,
               "startDate": dateStr,
@@ -1577,9 +1592,13 @@
               "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
               "location": { "@type": "Place", "name": city || country,
                 "address": { "@type": "PostalAddress", "addressCountry": country } },
-              "organizer": { "@type": "Organization", "name": club || "Voetbal4All", "url": "https://www.voetbal4all.eu" },
               "url": "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug)
-            });
+            };
+            // Only add organizer when a real club/organizer name is available
+            if (club) {
+              node.organizer = { "@type": "Organization", "name": club };
+            }
+            graph.push(node);
           });
           if (graph.length) {
             ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });

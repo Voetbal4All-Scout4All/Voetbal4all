@@ -1878,19 +1878,24 @@ function getEventProvince(ev){
           if ((!ldEl || cards.length === 0) && ++_ea < 20) return;
           clearInterval(_ep);
           if (!ldEl || cards.length === 0) return;
+          // Strip styled-unicode (mathematical bold/italic/script) → plain ASCII
+          function plainText(s) {
+            try { return String(s || "").normalize("NFKC").trim(); }
+            catch(e) { return String(s || "").trim(); }
+          }
           var graph = [];
           var pos = 0;
           cards.forEach(function(card) {
             if (pos >= 50) return;
-            var title = (card.getAttribute("data-title") || "").trim();
+            var title = plainText(card.getAttribute("data-title"));
             var dateStr = (card.getAttribute("data-date") || "").trim();
             if (!title || !dateStr) return;
             var slug = card.getAttribute("data-slug") || "";
             var country = card.getAttribute("data-country") || "BE";
             var cityEl = card.querySelector(".v4a-card-meta");
-            var city = cityEl ? (cityEl.textContent || "").replace(/^[^\s]*\s*·\s*/, "").trim() : "";
+            var city = cityEl ? plainText(cityEl.textContent).replace(/^[^\s]*\s*·\s*/, "") : "";
             pos++;
-            graph.push({
+            var node = {
               "@type": "SportsEvent",
               "name": title,
               "startDate": dateStr,
@@ -1898,9 +1903,9 @@ function getEventProvince(ev){
               "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
               "location": { "@type": "Place", "name": city || country,
                 "address": { "@type": "PostalAddress", "addressCountry": country } },
-              "organizer": { "@type": "Organization", "name": "Voetbal4All", "url": "https://www.voetbal4all.eu" },
               "url": "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug)
-            });
+            };
+            graph.push(node);
           });
           if (graph.length) {
             ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
