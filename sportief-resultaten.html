@@ -30,6 +30,10 @@
   <meta name="twitter:description" content="Bekijk voetbal resultaten, aankomende wedstrijden en rangschikkingen uit België en Nederland op Voetbal4All." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
 
+  <!-- TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering. -->
+  <script id="results-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>
+  <script id="breadcrumb-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.voetbal4all.eu/"},{"@type":"ListItem","position":2,"name":"Resultaten","item":"https://www.voetbal4all.eu/sportief-resultaten.html"}]}</script>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css?v=20260601a" />
 
@@ -958,7 +962,58 @@ async function loadLeague(league) {
 
 loadBtn.addEventListener("click", async () => {
   await loadLeague(leagueSelect.value);
+  populateResultsJsonLd();
 });
+
+// Populate SportsEvent @graph JSON-LD from results table rows
+// TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
+function populateResultsJsonLd() {
+  var ldEl = document.getElementById("results-ld");
+  if (!ldEl) return;
+  var _ra = 0;
+  var _rp = setInterval(function() {
+    try {
+      var tbody = document.querySelector("#results-body .v4-mini-results tbody");
+      if ((!tbody || !tbody.rows.length) && ++_ra < 20) return;
+      clearInterval(_rp);
+      if (!tbody || !tbody.rows.length) return;
+      var graph = [];
+      var rows = tbody.rows;
+      for (var i = 0; i < rows.length && i < 50; i++) {
+        var cells = rows[i].cells;
+        if (cells.length < 5) continue;
+        var dateText = (cells[0].textContent || "").trim();
+        var homeText = (cells[2].textContent || "").trim();
+        var scoreText = (cells[3].textContent || "").trim();
+        var awayText = (cells[4].textContent || "").trim();
+        if (!homeText || !awayText) continue;
+        var node = {
+          "@type": "SportsEvent",
+          "name": homeText + " vs " + awayText,
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "homeTeam": { "@type": "SportsTeam", "name": homeText },
+          "awayTeam": { "@type": "SportsTeam", "name": awayText }
+        };
+        if (scoreText && scoreText !== "-") {
+          node.description = homeText + " " + scoreText + " " + awayText;
+        }
+        if (dateText) {
+          // dateText is dd/mm format; build a best-effort ISO date
+          var parts = dateText.split("/");
+          if (parts.length === 2) {
+            var year = new Date().getFullYear();
+            node.startDate = year + "-" + parts[1].padStart(2,"0") + "-" + parts[0].padStart(2,"0");
+          }
+        }
+        graph.push(node);
+      }
+      if (graph.length) {
+        ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+      }
+    } catch(_) { clearInterval(_rp); }
+  }, 100);
+}
 
 // init
 ensureLeaguesLoaded().then(async () => {
@@ -967,6 +1022,7 @@ ensureLeaguesLoaded().then(async () => {
     await loadLeague(initialLeague);
   }
   await loadTopCompetitions();
+  populateResultsJsonLd();
 });
 </script>
 <script src="assets/js/nav-active.js" defer></script>
