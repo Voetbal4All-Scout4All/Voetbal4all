@@ -439,6 +439,7 @@
 </section>
 </main>
 
+<script src="assets/js/schema-builders.js"></script>
 <script>
 const API_BASE = "https://voetbal4all-backend-database.onrender.com";
 
@@ -965,11 +966,10 @@ loadBtn.addEventListener("click", async () => {
   populateResultsJsonLd();
 });
 
-// Populate SportsEvent @graph JSON-LD from results table rows
-// TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
+// Populate SportsEvent @graph JSON-LD from results table rows via shared builder
 function populateResultsJsonLd() {
   var ldEl = document.getElementById("results-ld");
-  if (!ldEl) return;
+  if (!ldEl || !window.V4ASchema) return;
   var _ra = 0;
   var _rp = setInterval(function() {
     try {
@@ -977,40 +977,14 @@ function populateResultsJsonLd() {
       if ((!tbody || !tbody.rows.length) && ++_ra < 20) return;
       clearInterval(_rp);
       if (!tbody || !tbody.rows.length) return;
-      var graph = [];
-      var rows = tbody.rows;
-      for (var i = 0; i < rows.length && i < 50; i++) {
-        var cells = rows[i].cells;
+      var items = [];
+      for (var i = 0; i < tbody.rows.length; i++) {
+        var cells = tbody.rows[i].cells;
         if (cells.length < 5) continue;
-        var dateText = (cells[0].textContent || "").trim();
-        var homeText = (cells[2].textContent || "").trim();
-        var scoreText = (cells[3].textContent || "").trim();
-        var awayText = (cells[4].textContent || "").trim();
-        if (!homeText || !awayText) continue;
-        var node = {
-          "@type": "SportsEvent",
-          "name": homeText + " vs " + awayText,
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "homeTeam": { "@type": "SportsTeam", "name": homeText },
-          "awayTeam": { "@type": "SportsTeam", "name": awayText }
-        };
-        if (scoreText && scoreText !== "-") {
-          node.description = homeText + " " + scoreText + " " + awayText;
-        }
-        if (dateText) {
-          // dateText is dd/mm format; build a best-effort ISO date
-          var parts = dateText.split("/");
-          if (parts.length === 2) {
-            var year = new Date().getFullYear();
-            node.startDate = year + "-" + parts[1].padStart(2,"0") + "-" + parts[0].padStart(2,"0");
-          }
-        }
-        graph.push(node);
+        items.push({ date: (cells[0].textContent||"").trim(), home: (cells[2].textContent||"").trim(), score: (cells[3].textContent||"").trim(), away: (cells[4].textContent||"").trim() });
       }
-      if (graph.length) {
-        ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
-      }
+      var ld = window.V4ASchema.buildResultsSportsEventGraph(items);
+      if (ld["@graph"].length) ldEl.textContent = JSON.stringify(ld);
     } catch(_) { clearInterval(_rp); }
   }, 100);
 }

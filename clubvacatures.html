@@ -36,11 +36,12 @@
   <meta name="twitter:description" content="Bekijk clubvacatures voor trainers, spelers, coördinatoren en vrijwilligers in België en Nederland op Voetbal4All." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
   <!-- TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering. -->
-  <script id="jobpostings-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>
+  <script id="jobpostings-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"JobPosting","title":"Sportverzorg(st)er","description":"Sportverzorg(st)er bij Zwaluwen Olmen","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"Zwaluwen Olmen"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Antwerpen","addressCountry":"BE"}}},{"@type":"JobPosting","title":"Voetbalanimator Spanje","description":"Voetbalanimator Spanje bij Acti Vak","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"Acti Vak"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressCountry":"IN"}}},{"@type":"JobPosting","title":"Jeugdtrainer JO17","description":"Jeugdtrainer JO17 bij Sportclub Rekken","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"Sportclub Rekken"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Gelderland","addressCountry":"NL"}}},{"@type":"JobPosting","title":"Jeugdopleid(st)ers","description":"Jeugdopleid(st)ers bij VC Houtem","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"VC Houtem"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"West-Vlaanderen","addressCountry":"BE"}}},{"@type":"JobPosting","title":"Jeugdtrainers","description":"Jeugdtrainers bij FC Duffel","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"FC Duffel"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Antwerpen","addressCountry":"BE"}}},{"@type":"JobPosting","title":"Teammanager","description":"Teammanager bij FC Eindhoven","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"FC Eindhoven"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Noord-Brabant","addressCountry":"NL"}}},{"@type":"JobPosting","title":"Spelers","description":"Spelers bij Pelt United","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"Pelt United"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Limburg","addressCountry":"BE"}}},{"@type":"JobPosting","title":"TVJO (Technisch Verantwoordelijke Jeugdopleiding)","description":"TVJO (Technisch Verantwoordelijke Jeugdopleiding) bij FC Duffel","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"FC Duffel"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Antwerpen","addressCountry":"BE"}}},{"@type":"JobPosting","title":"Speelsters en keeper","description":"Speelsters en keeper bij S.V. DWO","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"S.V. DWO"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Zuid-Holland","addressCountry":"NL"}}},{"@type":"JobPosting","title":"Trainer U15 en U17 Gewestelijk","description":"Trainer U15 en U17 Gewestelijk bij KVC Lille United","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"KVC Lille United"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Antwerpen","addressCountry":"BE"}}},{"@type":"JobPosting","title":"Jeugdtrainers","description":"Jeugdtrainers bij KFC Eendracht Hooglede","datePosted":"2026-06-04","validThrough":"2026-07-04","employmentType":"VOLUNTEER","hiringOrganization":{"@type":"Organization","name":"KFC Eendracht Hooglede"},"jobLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"West-Vlaanderen","addressCountry":"BE"}}}]}</script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css?v=20260601a" />
   <script src="assets/js/interaction-feedback.js"></script>
+  <script src="assets/js/schema-builders.js"></script>
 <style>
   /* === Events.html shared UI (layout parity) === */
 
@@ -959,6 +960,7 @@
 
   // Backend API base
   const API_BASE = "https://voetbal4all-backend-database.onrender.com";
+  let _V4A_LOADED_VACANCIES = []; // stored for schema-builders
 
 
   document.addEventListener("click", async function (e) {
@@ -1445,6 +1447,7 @@
 
       // Keep premium vacancies in the main overview as real list items as well.
       listEl.innerHTML = overviewItems.map((v, i) => vacancyCardHtml(v, i, false)).join("");
+      _V4A_LOADED_VACANCIES = overviewItems;
 
       if (statusEl) {
         statusEl.style.display = "";
@@ -1500,44 +1503,17 @@
   loadVacanciesFromBackend().then(() => {
     // After loading (or falling back), run client-side filters for country/type/level/search.
     applyVacancyFilters();
-    // Populate JobPosting @graph JSON-LD — poll until cards appear in DOM (max 2s)
-    // TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
-    var _ldAttempts = 0;
-    var _ldPoll = setInterval(function() {
-      try {
-        var ldEl = document.getElementById("jobpostings-ld");
-        var cards = document.querySelectorAll("article.v4a-card");
-        if ((!ldEl || cards.length === 0) && ++_ldAttempts < 20) return;
-        clearInterval(_ldPoll);
-        if (!ldEl || cards.length === 0) return;
-        var graph = [];
-        cards.forEach(function(card, idx) {
-          if (idx >= 50) return;
-          var titleEl = card.querySelector(".v4a-card-title");
-          var t = (titleEl ? (titleEl.textContent || "") : "").trim();
-          if (!t) return;
-          var province = (card.getAttribute("data-province") || "").trim();
-          var region = (card.getAttribute("data-region") || "").trim();
-          var club = "";
-          var metas = card.querySelectorAll(".v4a-card-meta");
-          if (metas.length > 1) club = (metas[1].textContent || "").trim();
-          var country = card.getAttribute("data-country") || "BE";
-          graph.push({
-            "@type": "JobPosting",
-            "title": t,
-            "description": t + (club ? " bij " + club : ""),
-            "datePosted": new Date().toISOString().split("T")[0],
-            "validThrough": new Date(Date.now() + 30*86400000).toISOString().split("T")[0],
-            "employmentType": "VOLUNTEER",
-            "hiringOrganization": { "@type": "Organization", "name": club || "Voetbalclub" },
-            "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": province || region || undefined, "addressCountry": country } }
-          });
+    // Populate JobPosting @graph JSON-LD from API data via shared builder
+    try {
+      var ldEl = document.getElementById("jobpostings-ld");
+      if (ldEl && _V4A_LOADED_VACANCIES.length && window.V4ASchema) {
+        var items = _V4A_LOADED_VACANCIES.map(function(v) {
+          return { title: v.title || v.function_title || "", club: v.club_name || v.club || v.clubName || "", province: v.province || v.region || v.provincie || "", country: String(v.country || "BE").toUpperCase() };
         });
-        if (graph.length) {
-          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
-        }
-      } catch(_) { clearInterval(_ldPoll); }
-    }, 100);
+        var ld = window.V4ASchema.buildJobPostingGraph(items);
+        if (ld["@graph"].length) ldEl.textContent = JSON.stringify(ld);
+      }
+    } catch(_) {}
   });
 
   function applyVacancyFilters() {
