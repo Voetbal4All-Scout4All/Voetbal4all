@@ -2,9 +2,8 @@
 // Usage: node scripts/generate-sitemap.mjs
 // Requires Node 18+ (native fetch)
 import { writeFileSync, readFileSync, existsSync } from "fs";
-import { resolve, dirname, basename } from "path";
+import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
-import { execSync } from "child_process";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 
@@ -47,37 +46,22 @@ function wrapUrlset(entries) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
 }
 
-// ── Deel B: git-based lastmod for static pages ──
-function gitLastmod(filePath) {
-  try {
-    const abs = resolve(root, filePath);
-    if (!existsSync(abs)) return today;
-    const out = execSync(`git log -1 --format=%aI -- "${filePath}"`, { cwd: root, encoding: "utf8" }).trim();
-    return out ? out.split("T")[0] : today;
-  } catch (_) {
-    return today;
-  }
-}
-
-// Map static URLs to their source files for git-based lastmod
-const staticPages = [
-  { url: `${SITE_BASE}/`, file: "index.html" },
-  { url: `${SITE_BASE}/artikels.html`, file: "artikels.html" },
-  { url: `${SITE_BASE}/clubvacatures.html`, file: "clubvacatures.html" },
-  { url: `${SITE_BASE}/spelers.html`, file: "spelers.html" },
-  { url: `${SITE_BASE}/trainers.html`, file: "trainers.html" },
-  { url: `${SITE_BASE}/events.html`, file: "events.html" },
-  { url: `${SITE_BASE}/algemene-events.html`, file: "algemene-events.html" },
-  { url: `${SITE_BASE}/over-ons.html`, file: "over-ons.html" },
-  { url: `${SITE_BASE}/sportief-resultaten.html`, file: "sportief-resultaten.html" },
-  { url: `${SITE_BASE}/contact.html`, file: "contact.html" },
-  { url: `${SITE_BASE}/aanmelden.html`, file: "aanmelden.html" },
-  { url: `${SITE_BASE}/event-aanmelden.html`, file: "event-aanmelden.html" },
+// ── Generate sitemap-static.xml ──
+const staticUrls = [
+  `${SITE_BASE}/`,
+  `${SITE_BASE}/artikels.html`,
+  `${SITE_BASE}/clubvacatures.html`,
+  `${SITE_BASE}/spelers.html`,
+  `${SITE_BASE}/trainers.html`,
+  `${SITE_BASE}/events.html`,
+  `${SITE_BASE}/algemene-events.html`,
+  `${SITE_BASE}/over-ons.html`,
+  `${SITE_BASE}/sportief-resultaten.html`,
+  `${SITE_BASE}/contact.html`,
+  `${SITE_BASE}/aanmelden.html`,
+  `${SITE_BASE}/event-aanmelden.html`,
 ];
-
-// ── Generate sitemap-static.xml (with git-based lastmod) ──
-const staticEntries = staticPages.map(p => urlEntry(p.url, gitLastmod(p.file)));
-const staticXml = wrapUrlset(staticEntries);
+const staticXml = wrapUrlset(staticUrls.map(u => urlEntry(u, today)));
 
 // ── Generate sitemap-articles.xml ──
 // Only include articles WITH slugs AND body content (filter thin-content legacy articles)
@@ -154,6 +138,13 @@ const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
   </sitemap>
 </sitemapindex>
 `;
+
+// ── Assert: sitemap-index must have exactly 3 children ──
+const sitemapCount = (indexXml.match(/<sitemap>/g) || []).length;
+if (sitemapCount !== 3) {
+  throw new Error(`[sitemap] FATAL: sitemap-index.xml has ${sitemapCount} <sitemap> entries, expected 3 (static, articles, news)`);
+}
+console.log(`[sitemap] ✓ sitemap-index.xml has ${sitemapCount} children (static, articles, news)`);
 
 // ── Deel D: Build-time pre-render listing JSON-LD ──
 // Fetch live event + vacancy data and inject @graph into HTML files
@@ -266,9 +257,9 @@ writeFileSync(resolve(root, "sitemap-jobs.xml"), jobsXml);
 
 console.log(`[sitemap] Generated 7 files:`);
 console.log(`  sitemap-index.xml (index) — 3 sub-sitemaps`);
-console.log(`  sitemap-static.xml — ${staticPages.length} URLs (git-based lastmod)`);
+console.log(`  sitemap-static.xml — ${staticUrls.length} URLs`);
 console.log(`  sitemap-articles.xml — ${articleEntries.length} URLs`);
 console.log(`  sitemap-news.xml — ${recentArticles.length} URLs (last 48h, max ${NEWS_MAX})`);
 console.log(`  sitemap-events.xml — 0 URLs (disabled)`);
 console.log(`  sitemap-jobs.xml — 0 URLs (disabled)`);
-console.log(`  Total: ${staticPages.length + articleEntries.length + recentArticles.length} URLs`);
+console.log(`  Total: ${staticUrls.length + articleEntries.length + recentArticles.length} URLs`);
