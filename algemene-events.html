@@ -32,6 +32,10 @@
   <meta name="twitter:description" content="Vind club- en funevents zoals eetdagen, fuiven, sponsoravonden en acties bij voetbalclubs op Voetbal4All." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
 
+  <!-- TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering. -->
+  <script id="clubfun-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>
+  <script id="breadcrumb-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.voetbal4all.eu/"},{"@type":"ListItem","position":2,"name":"Club & fun events","item":"https://www.voetbal4all.eu/algemene-events.html"}]}</script>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css?v=20260601a" />
   <script src="assets/js/interaction-feedback.js"></script>
@@ -1539,7 +1543,50 @@
   document.addEventListener('DOMContentLoaded', () => {
     initTypeFromUrl();
     setProvinceOptions(countryEl?.value);
-    loadEvents();
+    loadEvents().then(function() {
+      // Populate SocialEvent @graph JSON-LD after cards render
+      // TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
+      var _ea = 0;
+      var _ep = setInterval(function() {
+        try {
+          var ldEl = document.getElementById("clubfun-ld");
+          var cards = document.querySelectorAll("article.v4a-card");
+          if ((!ldEl || cards.length === 0) && ++_ea < 20) return;
+          clearInterval(_ep);
+          if (!ldEl || cards.length === 0) return;
+          var graph = [];
+          var pos = 0;
+          cards.forEach(function(card) {
+            if (pos >= 50) return;
+            var title = (card.getAttribute("data-title") || "").trim();
+            var dateStr = (card.getAttribute("data-date") || "").trim();
+            if (!title || !dateStr) return;
+            var slug = card.getAttribute("data-slug") || "";
+            var country = card.getAttribute("data-country") || "BE";
+            var cityEl = card.querySelector(".v4a-card-meta");
+            var city = cityEl ? (cityEl.textContent || "").replace(/^[^\s]*\s*·\s*/, "").trim() : "";
+            var club = "";
+            var metas = card.querySelectorAll(".v4a-card-meta");
+            if (metas.length > 1) club = (metas[1].textContent || "").trim();
+            pos++;
+            graph.push({
+              "@type": "SocialEvent",
+              "name": title,
+              "startDate": dateStr,
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "location": { "@type": "Place", "name": city || country,
+                "address": { "@type": "PostalAddress", "addressCountry": country } },
+              "organizer": { "@type": "Organization", "name": club || "Voetbal4All", "url": "https://www.voetbal4all.eu" },
+              "url": "https://www.voetbal4all.eu/event.html?slug=" + encodeURIComponent(slug)
+            });
+          });
+          if (graph.length) {
+            ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+          }
+        } catch(_) { clearInterval(_ep); }
+      }, 100);
+    });
   });
 })();
 </script>

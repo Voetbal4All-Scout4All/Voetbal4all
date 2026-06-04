@@ -35,7 +35,8 @@
   <meta name="twitter:title" content="Clubvacatures voetbal in België en Nederland | Voetbal4All" />
   <meta name="twitter:description" content="Bekijk clubvacatures voor trainers, spelers, coördinatoren en vrijwilligers in België en Nederland op Voetbal4All." />
   <meta name="twitter:image" content="https://www.voetbal4all.eu/assets/img/brand/logo-voetbal4all.png" />
-  <script id="jobpostings-ld" type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Clubvacatures voetbal","numberOfItems":0,"itemListElement":[]}</script>
+  <!-- TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering. -->
+  <script id="jobpostings-ld" type="application/ld+json">{"@context":"https://schema.org","@graph":[]}</script>
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css?v=20260601a" />
@@ -1499,7 +1500,8 @@
   loadVacanciesFromBackend().then(() => {
     // After loading (or falling back), run client-side filters for country/type/level/search.
     applyVacancyFilters();
-    // Populate JobPosting JSON-LD — poll until cards appear in DOM (max 2s)
+    // Populate JobPosting @graph JSON-LD — poll until cards appear in DOM (max 2s)
+    // TODO: Fase 2: JSON-LD ook server-side/SSG emitten voor betrouwbaardere indexering.
     var _ldAttempts = 0;
     var _ldPoll = setInterval(function() {
       try {
@@ -1508,7 +1510,7 @@
         if ((!ldEl || cards.length === 0) && ++_ldAttempts < 20) return;
         clearInterval(_ldPoll);
         if (!ldEl || cards.length === 0) return;
-        var jobItems = [];
+        var graph = [];
         cards.forEach(function(card, idx) {
           if (idx >= 50) return;
           var titleEl = card.querySelector(".v4a-card-title");
@@ -1520,20 +1522,19 @@
           var metas = card.querySelectorAll(".v4a-card-meta");
           if (metas.length > 1) club = (metas[1].textContent || "").trim();
           var country = card.getAttribute("data-country") || "BE";
-          jobItems.push({
-            "@type": "ListItem", "position": idx + 1,
-            "item": { "@type": "JobPosting", "title": t,
-              "description": t + (club ? " bij " + club : ""),
-              "datePosted": new Date().toISOString().split("T")[0],
-              "validThrough": new Date(Date.now() + 30*86400000).toISOString().split("T")[0],
-              "employmentType": "VOLUNTEER",
-              "hiringOrganization": { "@type": "Organization", "name": club || "Voetbalclub" },
-              "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": province || region || undefined, "addressCountry": country } }
-            }
+          graph.push({
+            "@type": "JobPosting",
+            "title": t,
+            "description": t + (club ? " bij " + club : ""),
+            "datePosted": new Date().toISOString().split("T")[0],
+            "validThrough": new Date(Date.now() + 30*86400000).toISOString().split("T")[0],
+            "employmentType": "VOLUNTEER",
+            "hiringOrganization": { "@type": "Organization", "name": club || "Voetbalclub" },
+            "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": province || region || undefined, "addressCountry": country } }
           });
         });
-        if (jobItems.length) {
-          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList", "name": "Clubvacatures voetbal", "numberOfItems": jobItems.length, "itemListElement": jobItems });
+        if (graph.length) {
+          ldEl.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
         }
       } catch(_) { clearInterval(_ldPoll); }
     }, 100);
