@@ -5,6 +5,9 @@ User-agent: *
 Allow: /
 Disallow: /admin-artikel.html
 Disallow: /tiktok-demo.html
+Disallow: /admin/
+Disallow: /api/
+Disallow: /share/
 
 # AI training & answer engines (welkom voor visibility)
 User-agent: GPTBot
