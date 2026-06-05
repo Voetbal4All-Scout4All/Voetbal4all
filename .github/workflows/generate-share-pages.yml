@@ -88,6 +88,9 @@ jobs:
               print("Full mode: generating all share pages")
 
           generated = 0
+          ARTICLE_IMAGE_OVERRIDES = {
+              "ni-news-BE-a4847c0e89": FRONTEND + "/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png",
+          }
 
           def esc(s):
               return H.escape(str(s or ""))
@@ -233,7 +236,7 @@ jobs:
               if SPECIFIC_MODE and str(aid) != TARGET_ID: continue
               title = item.get("title") or "Voetbal4All"
               desc = clean_description(item.get("description"), title)
-              image = resolve_image(item.get("image"))
+              image = ARTICLE_IMAGE_OVERRIDES.get(str(aid), resolve_image(item.get("image")))
               # Use slug-based URL if available (SEO migration)
               slug = item.get("slug") or ""
               slug_year = item.get("slug_year") or ""

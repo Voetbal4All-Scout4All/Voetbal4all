@@ -13,6 +13,9 @@ const distDir = resolve(root, "dist");
 const BACKEND = process.env.SITEMAP_BACKEND_URL || "https://voetbal4all-backend-database.onrender.com";
 const SITE = "https://www.voetbal4all.eu";
 const MAX_ARTICLES = 3000;
+const ARTICLE_IMAGE_OVERRIDES = new Map([
+  ["ni-news-BE-a4847c0e89", `${SITE}/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png`],
+]);
 
 function esc(s) { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 function truncate(s, max) { const t = String(s || "").replace(/\s+/g, " ").trim(); return t.length <= max ? t : t.slice(0, max - 3) + "..."; }
@@ -30,7 +33,7 @@ function buildPage(article, canonicalUrl) {
   const title = article.title || "Voetbalnieuws";
   const titleEsc = esc(title);
   const desc = esc(truncate(stripHtml(article.snippet || article.body), 160));
-  const image = resolveImage(article.image || article.image_path);
+  const image = ARTICLE_IMAGE_OVERRIDES.get(String(article.id || "")) || resolveImage(article.image || article.image_path);
   const imageEsc = esc(image);
   const pubDate = article.publishedAt || article.published_at || article.createdAt || article.created_at || "";
   const bodyHtml = article.body || article.snippet || `<p>${titleEsc}</p>`;
