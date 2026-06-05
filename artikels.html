@@ -442,6 +442,22 @@
     const NEWS_CACHE_KEY = "v4_news_cache_v2";
     const NEWS_CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 let lastRenderKey = "";
+    const ARTICLE_IMAGE_OVERRIDES = new Map([
+      ['ni-news-BE-a4847c0e89', 'https://www.voetbal4all.eu/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png?v=20260605b'],
+      ['onze-insider-over-wk-tegenstander-iran-er-is-beslist-dat-we-zeker-zullen-meedoen-anders-wordt-dat', 'https://www.voetbal4all.eu/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png?v=20260605b'],
+    ]);
+
+    function getArticleImageOverride(article) {
+      if (!article || typeof article !== "object") return null;
+      const keys = [article.id, article.slug];
+      for (const key of keys) {
+        const normalized = String(key || "").trim();
+        if (normalized && ARTICLE_IMAGE_OVERRIDES.has(normalized)) {
+          return ARTICLE_IMAGE_OVERRIDES.get(normalized);
+        }
+      }
+      return null;
+    }
 
     const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     let newsInFlight = false;
@@ -856,9 +872,9 @@ let lastRenderKey = "";
         snippetClean = firstTwoSentences(snippetClean); // ✅ max 2 zinnen
         snippetClean = escapeHtml(snippetClean);
 
-      // Backend is single source of truth for image URLs (absolute or relative).
-      // Accept multiple shapes/fields and resolve them to a usable URL.
+      // Prefer article-specific frontend overrides, then accept backend image fields.
       const rawImageVal =
+        getArticleImageOverride(a) ||
         a?.image_path ||
         a?.imagePath ||
         a?.publicPath ||
