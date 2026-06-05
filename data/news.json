@@ -1,17 +1,6 @@
 {
-  "generatedAt": "2026-06-04T22:40:18.100Z",
+  "generatedAt": "2026-06-05T05:21:29.356Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool name Iraola head coach, replacing Slot",
-      "link": "https://www.espn.com/soccer/story/_/id/48945214/liverpool-appoint-andoni-iraola-arne-slot-successor",
-      "summary": "Liverpool have confirmed the appointment of Andoni Iraola as their new head coach.",
-      "publishedAt": "2026-06-04T23:34:07.000Z"
-    },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
@@ -21,7 +10,18 @@
       "title": "Yamal-less Spain held by Iraq in WC sendoff",
       "link": "https://www.espn.com/soccer/report/_/gameId/401871471",
       "summary": "Spain were left frustrated in their first World Cup warm-up match as they laboured to a 1-1 draw with Iraq at the Estadio de Riazor in La Coruña.",
-      "publishedAt": "2026-06-04T23:34:07.000Z"
+      "publishedAt": "2026-06-05T05:54:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Liverpool name Iraola head coach, replacing Slot",
+      "link": "https://www.espn.com/soccer/story/_/id/48945214/liverpool-appoint-andoni-iraola-arne-slot-successor",
+      "summary": "Liverpool have confirmed the appointment of Andoni Iraola as their new head coach.",
+      "publishedAt": "2026-06-05T05:54:07.000Z"
     },
     {
       "type": "rss",
@@ -32,18 +32,128 @@
       "title": "Japan ditches pre-WC training site over poor pitch...",
       "link": "https://www.espn.com/soccer/story/_/id/48968591/japan-world-cup-training-pitch-monterrey-mexico-tigres",
       "summary": "Japan has changed practice venues in Monterrey ahead of the World Cup after players encountered an uneven pitch marred by patches of dirt at their original training ground.",
-      "publishedAt": "2026-06-04T23:34:07.000Z"
+      "publishedAt": "2026-06-05T05:54:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Barcelona wil grip houden op Fati: transfer naar Monaco loopt vertraging op'",
+      "link": "https://www.vi.nl/nieuws/barcelona-wil-grip-houden-op-fati-transfer-naar-monaco-loopt-vertraging-op",
+      "summary": "De definitieve overstap van Ansu Fati naar AS Monaco laat langer op zich wachten. Volgens meerdere Spaanse media, waaronder Mundo Deportivo , is er weliswaar een akkoord tussen de betrokken partijen, maar probeert Barcelona aanvullende voorwaarden in de deal op te nemen om invloed te houden op de aanvaller.",
+      "publishedAt": "2026-06-05T05:20:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Klopp roert zich: speelt Union SG zijn coach opnieuw kwijt?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-05/klopp-roert-zich-speelt-union-sg-zijn-coach-opnieuw-kwijt",
+      "summary": "Opvallend nieuws uit Oostenrijk: Jürgen Klopp, de sportieve grote baas van Red Bull en zijn clubs, zou eraan denken om David Hubert aan te stellen als hoofdcoach van RB Salzburg.",
+      "publishedAt": "2026-06-05T05:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "FIFA voert opvallende wijziging door: wisselspelers op veld tijdens volksliederen",
+      "link": "https://www.vi.nl/nieuws/fifa-kondigt-aan-ook-wisselspelers-op-het-veld-tijdens-volksliederen",
+      "summary": "Het publiek krijgt tijdens het WK in Canada, de Verenigde Staten en Mexico een ander beeld voorgeschoteld voorafgaand aan de wedstrijden. De FIFA heeft een nieuwe ceremonie aangekondigd waarbij niet alleen de basisspelers, maar ook alle wisselspelers het veld betreden voor het spelen van de volksliederen.",
+      "publishedAt": "2026-06-05T05:17:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Rotterdammer Lopes Cabral al na een half jaar weg bij Benfica",
+      "link": "https://www.vi.nl/nieuws/rotterdammer-lopes-cabral-al-na-een-half-jaar-weg-bij-benfica",
+      "summary": "Sidny Lopes Cabral vervolgt zijn loopbaan bij Trabzonspor. Benfica maakte bekend dat het een akkoord heeft bereikt met de Turkse club over een definitieve transfer van de 23-jarige Rotterdammer.",
+      "publishedAt": "2026-06-05T05:16:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Only Denmark\", sortie par la porte arrière : pourquoi les médias belges ont été déçus après RDC - Danemark",
+      "link": "https://www.walfoot.be/news/2026-06-05/edito-only-denmark-sortie-par-la-porte-arriere-pourquoi-les-medias-belges-ont-ete-decus-apres-rdc-danemark",
+      "summary": "À notre grand dam, il était impossible pour un média belge de réaliser la moindre interview après la rencontre amicale entre la RD Congo et le Danemark, ce mercredi soir à Sclessin. Il y avait pourtant de quoi faire au vu du nombre de joueurs passés par la Pro League présents sur la pelouse.",
+      "publishedAt": "2026-06-05T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Meer details gekend over investering van Thibaut Courtois, KRC Genk droomt van... zestig miljoen euro",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-05/meer-details-gekend-over-investering-van-thibaut-courtois-krc-genk-droomt-van-zestig-miljoen-euro",
+      "summary": "Thibaut Courtois is opnieuw een deel van KRC Genk. De Rode Duivel investeerde via NXTPLAY in zijn jeugdclub én zetelt binnenkort in de Raad van Bestuur van de Limburgse club. Ondertussen weten we ook hoeveel geld Genk wil ophalen met via externe investeerders.",
+      "publishedAt": "2026-06-05T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La Coupe du Monde 2026, \"pire\" Mondial de l'histoire ? Il y a une sacrée concurrence",
+      "link": "https://www.walfoot.be/news/2026-06-05/la-coupe-du-monde-2026-pire-mondial-de-lhistoire-il-y-a-une-sacree-concurrence",
+      "summary": "Guerre entre les USA et l'Iran, prix délirants, public local peu concerné, craintes de débordements sur place, gouvernement très critiqué : les polémiques concernant la Coupe du Monde 2026 sont nombreuses et légitimes. Mais sera-ce pour autant le pire Mondial de l'histoire ?",
+      "publishedAt": "2026-06-05T04:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"David Hubert est son choix prioritaire\" : et si l'Union Saint-Gilloise perdait son entraîneur ?",
+      "link": "https://www.walfoot.be/news/2026-06-05/david-hubert-est-son-choix-prioritaire-et-si-lunion-saint-gilloise-perdait-son-entraneur-",
+      "summary": "C'est une information surprenante qui nous vient d'Autriche : Jürgen Klopp, le grand patron sportif de Red Bull et de ses clubs, penserait à David Hubert pour prendre la tête du RB Salzbourg.",
+      "publishedAt": "2026-06-05T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hoe Virgil van Dijk de knop omzette na zijn zwaarste seizoen ooit",
+      "link": "https://www.vi.nl/pro/hoe-virgil-van-dijk-de-knop-omzette-na-zijn-zwaarste-seizoen-ooit",
+      "summary": "Na de emotionele rollercoaster in Liverpool heeft Virgil van Dijk zijn zinnen gezet op WK-succes. In gesprek met de captain van Oranje over groepsdynamiek, zijn eigen rol en lessen uit het verleden. 'Op een eindtoernooi heb je veel meer nodig dan goede spelers.'",
+      "publishedAt": "2026-06-05T04:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "ESPN - Soccer",
       "sourceSlug": "espn-soccer",
-      "country": "ES",
+      "country": "INT",
       "flag": "🌍",
-      "title": "Madrid's Pérez vows $174M Galactico bid if elected...",
-      "link": "https://www.espn.com/soccer/story/_/id/48969398/real-madrid-perez-vows-174m-galactico-bid-reelected",
-      "summary": "Florentino Pérez promised to bid for a $174 million (€150 million) \"Galáctico\" player this summer as he tries to win Sunday's presidential elections at Real Madrid.",
-      "publishedAt": "2026-06-04T23:34:07.000Z"
+      "title": "Get ready for the biggest World Cup ever! What you...",
+      "link": "https://www.espn.com/soccer/story/_/id/48871263/world-cup-2026-key-players-facts-expectations-fixtures-odds-all-48-teams",
+      "summary": "The wait is almost over ... the 2026 FIFA World Cup is about to begin! ESPN's experts are here with what you need to know at a glance about all 48 teams.",
+      "publishedAt": "2026-06-05T02:56:49.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Which World Cup records are most likely to be brok...",
+      "link": "https://www.espn.com/soccer/story/_/id/48891969/which-world-cup-records-most-likely-broken-2026",
+      "summary": "This summer's expanded tournament in North America could be one to rewrite the record books.",
+      "publishedAt": "2026-06-05T02:56:49.000Z"
     },
     {
       "type": "rss",
@@ -51,10 +161,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Doski stunner earns Iraq draw against understrength Spain in World Cup warm-up",
-      "link": "https://www.theguardian.com/football/2026/jun/04/spain-iraq-friendly-international-match-report",
-      "summary": "Spain will depart from Santiago de Compostela at 10am on Friday morning bound for Chattanooga, via Nashville, but seven of the eight men who made their debuts in the final preparation game before the World Cup will not be on board with them. Nor will the seleccion be flying west with a victory after they bid adios with a 1-1 draw against Iraq at Estadio Riazor. Which may not sound very good – and it really was not very good either, a 22-minute cameo from Mikel Merino about the best thing about it – but is no cause for alarm. Luis de la Fuente’s side will still be among the favourites in the US, Canada and Mexico and rightly so; this was not really his side, at least not recognisably so. Continue reading...",
-      "publishedAt": "2026-06-04T22:04:33.000Z"
+      "title": "New Zealand World Cup 2026 team guide",
+      "link": "https://www.theguardian.com/football/2026/jun/05/new-zealand-world-cup-2026-team-guide",
+      "summary": "Despite being the lowest-ranked team at the tournament, All Whites are hoping Chris Wood can help fire them to a first appearance in the knockout rounds This article is part of the Guardian’s 2026 World Cup Experts’ Network, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June. Continue reading...",
+      "publishedAt": "2026-06-04T23:01:18.000Z"
     },
     {
       "type": "rss",
@@ -80,39 +190,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Fransen zien 'verkeerde' Doué schitteren in onverwachte oefennederlaag",
-      "link": "https://www.vi.nl/nieuws/fransen-zien-verkeerde-doue-schitteren-in-onverwachte-oefennederlaag",
-      "summary": "Ivoorkust heeft Frankrijk donderdagavond op een onverwachte oefennederlaag getrakteerd. In Nantes werd het 1-2, met een verrassende Doué als hoofdrolspeler.",
-      "publishedAt": "2026-06-04T21:11:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Pover Spanje snakt naar afwezige Lamine Yamal en komt niet langs Irak",
-      "link": "https://www.vi.nl/nieuws/pover-spanje-snakt-naar-afwezige-lamine-yamal-en-komt-niet-langs-irak",
-      "summary": "Spanje heeft donderdagavond teleurgesteld in een oefenduel met Irak. Ter voorbereiding op het WK kwam de Europees kampioen niet verder dan een gelijkspel. Daardoor is er werk aan de winkel, al was Lamine Yamal nog niet van de partij.",
-      "publishedAt": "2026-06-04T20:54:41.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Potter neemt zorgen rondom Elanga weg: 'Gewoon een tik op de knie'",
-      "link": "https://www.vi.nl/nieuws/zorgen-bij-oranje-opponent-zweden-topspeler-loopt-blessure-op-na-oefenduel",
-      "summary": "In Zweden is er nog weinig hoop op succes op het WK. De tegenstander van het Nederlands elftal in de groepsfase kon tijdens de uitzwaaiwedstrijd niet winnen van Griekenland (2-2) . Tot overmaat van ramp leek het ook nog eens Anthony Elanga te verliezen.",
-      "publishedAt": "2026-06-04T20:54:14.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -132,17 +209,6 @@
       "link": "https://www.bbc.com/sport/football/articles/cz727jjzyvqo?at_medium=RSS&at_campaign=rss",
       "summary": "Liverpool make contact with RB Leipzig over a move for Yan Diomande, Arsenal face competition from PSG for two players, Cologne winger Said El Mala not keen on Brentford move, plus more.",
       "publishedAt": "2026-06-04T20:47:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Spanning voor Advocaat en Curaçao over eventuele schorsing Locadia",
-      "link": "https://www.vi.nl/nieuws/spanning-voor-advocaat-en-curacao-over-eventuele-schorsing-locadia",
-      "summary": "De bond van Curaçao heeft nog geen duidelijkheid over de schorsing die Jürgen Locadia boven het hoofd hangt na zijn rode kaart in de oefenwedstrijd tegen Schotland. Dit meldde bondscoach Dick Advocaat donderdagavond op een persmoment.",
-      "publishedAt": "2026-06-04T20:34:00.000Z"
     },
     {
       "type": "rss",
@@ -187,17 +253,6 @@
       "link": "https://www.theguardian.com/football/2026/jun/04/iran-world-cup-2026-team-guide",
       "summary": "All eyes will be on Team Melli amid the ongoing conflict with the US and Israel, making their campaign one of the most unusual and unpredictable of recent times This article is part of the Guardian’s 2026 World Cup Experts’ Network, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June. Continue reading...",
       "publishedAt": "2026-06-04T15:00:09.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Cup sticker shock: The ugly cost of the beautiful game's grand event",
-      "link": "https://www.espn.com/soccer/story/_/id/48947095/2026-fifa-world-cup-sticker-shock-ugly-cost-beautiful-game-grand-event",
-      "summary": "On FIFA's resale marketplace, World Cup ticket prices have soared into four to six figures. By pricing out ordinary fans, soccer's organizing body risks hurting the image of the tournament.",
-      "publishedAt": "2026-06-04T14:01:57.000Z"
     },
     {
       "type": "rss",
@@ -267,28 +322,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Auxerre se sépare officiellement de son entraîneur, Will Still va lui succéder",
-      "link": "https://www.walfoot.be/news/2026-06-04/auxerre-se-separe-officiellement-de-son-entraneur-will-still-va-lui-succeder",
-      "summary": "La fin de l'histoire d'amour entre l'AJ Auxerre et Christophe Pelissier a été actée ce jeudi. Sauf retournement de situation, Will Still sera le nouvel entraîneur des Bourguignons.",
-      "publishedAt": "2026-06-04T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le score des matchs des Diables... dans le ciel ? La ville de Seattle prépare quelque chose d'inédit",
-      "link": "https://www.walfoot.be/news/2026-06-04/le-score-des-matchs-des-diables-dans-le-ciel-la-ville-de-seattle-prepare-quelque-chose-dinedit",
-      "summary": "Les villes-hôtes de la Coupe du Monde 2026 préparent la compétition, et au-delà des polémiques, certaines promettent une grande fête. C'est le cas de Seattle.",
-      "publishedAt": "2026-06-04T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -297,39 +330,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/club-brugge-valencia-of-zelfs-lille-meunier-zit-in-zetel-en-bevestigt-dat-ook-lille-met-hem-door-wil",
       "summary": "Thomas Meunier bereidt zich momenteel voor op het WK met de Rode Duivels. De flankverdediger wil zich op het toernooi eveneens tonen aan geïnteresseerde clubs. Al zit de Luxemburger in een ongeziene luxepositie.",
       "publishedAt": "2026-06-04T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Au milieu des doutes, l'Iran s'envolera pour le Mexique sur une ultime victoire",
-      "link": "https://www.walfoot.be/news/2026-06-04/au-milieu-des-doutes-liran-senvolera-pour-le-mexique-sur-une-ultime-victoire",
-      "summary": "Le deuxième adversaire des Diables Rouges lors de la Coupe du Monde 2026, l'Iran, a réussi sa préparation. La Team Melli a gagné son match amical face au Mali.",
-      "publishedAt": "2026-06-04T07:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "'Real Madrid haalt jeugdproduct met marktwaarde van tachtig miljoen euro (!) terug naar de bakermat'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/real-madrid-haalt-jeugdproduct-met-marktwaarde-van-tachtig-miljoen-euro-terug-naar-de-bakermat",
-      "summary": "Real Madrid wil shoppen bij Como 1907. De Spaanse grootmacht wil Nico Paz terughalen naar het Estadio Santiago Bernabeu. En het wordt een koopje. Al kunnen we ons voorstellen dat het overmaken van de transfersom Florentino Perez eveneens zal doen gruwelen.",
-      "publishedAt": "2026-06-04T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "De marktwaardes van Transfermarkt onder de loep: dit zijn de vijftien meest waardevolle spelers ter wereld",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-04/de-marktwaardes-van-transfermarkt-onder-de-loep-dit-zijn-de-vijftien-meest-waardevolle-spelers-ter-wereld",
-      "summary": "De start van het WK voetbal staat voor de deur. Voor heel wat spelers is het toernooi hét toneel om zich in de kijker te spelen. Omgekeerd zien ook de clubs de marktwaarde van hun spelers stijgen. En die marktwaardes zijn recentelijk aangepast.",
-      "publishedAt": "2026-06-04T07:00:00.000Z"
     }
   ]
 }
