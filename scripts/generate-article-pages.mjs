@@ -33,6 +33,7 @@ function buildPage(article, canonicalUrl) {
   const image = resolveImage(article.image || article.image_path);
   const imageEsc = esc(image);
   const pubDate = article.publishedAt || article.published_at || article.createdAt || article.created_at || "";
+  const modDate = article.updatedAt || article.updated_at || pubDate; // dateModified = updated_at als beschikbaar
   const bodyHtml = article.body || article.snippet || `<p>${titleEsc}</p>`;
   const country = String(article.country || article.countryCode || "").toUpperCase();
   const publisherLogo = `${SITE}/assets/img/brand/logo-voetbal4all.png`;
@@ -46,7 +47,7 @@ function buildPage(article, canonicalUrl) {
     "description": stripHtml(article.snippet || "").slice(0, 160),
     "image": [image],
     "datePublished": pubDate,
-    "dateModified": pubDate,
+    "dateModified": modDate,
     "author": {
       "@type": "Organization",
       "name": "Voetbal4All Redactie",
@@ -126,7 +127,7 @@ function buildPage(article, canonicalUrl) {
   html = html.replace(/(<meta\s+name="twitter:image"\s+id="twitter-image"\s+content=")[^"]*(")/i, `$1${imageEsc}$2`);
   // Article dates
   html = html.replace(/(<meta\s+property="article:published_time"\s+id="meta-published"\s+content=")[^"]*(")/i, `$1${esc(pubDate)}$2`);
-  html = html.replace(/(<meta\s+property="article:modified_time"\s+id="meta-modified"\s+content=")[^"]*(")/i, `$1${esc(pubDate)}$2`);
+  html = html.replace(/(<meta\s+property="article:modified_time"\s+id="meta-modified"\s+content=")[^"]*(")/i, `$1${esc(modDate)}$2`);
   // JSON-LD
   html = html.replace(/<script\s+id="article-jsonld"\s+type="application\/ld\+json">[^<]*<\/script>/i,
     `<script id="article-jsonld" type="application/ld+json">${jsonLd}</script>\n  <script id="breadcrumb-ld" type="application/ld+json">${breadcrumbLd}</script>`);
