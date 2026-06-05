@@ -89,7 +89,7 @@ jobs:
 
           generated = 0
           ARTICLE_IMAGE_OVERRIDES = {
-              "ni-news-BE-a4847c0e89": FRONTEND + "/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png",
+              "ni-news-BE-a4847c0e89": FRONTEND + "/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png?v=20260605b",
           }
 
           def esc(s):

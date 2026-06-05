@@ -14,7 +14,7 @@ const BACKEND = process.env.SITEMAP_BACKEND_URL || "https://voetbal4all-backend-
 const SITE = "https://www.voetbal4all.eu";
 const MAX_ARTICLES = 3000;
 const ARTICLE_IMAGE_OVERRIDES = new Map([
-  ["ni-news-BE-a4847c0e89", `${SITE}/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png`],
+  ["ni-news-BE-a4847c0e89", `${SITE}/assets/img/articles/wk-2026-belgie-egypte-iran-nieuw-zeeland.png?v=20260605b`],
 ]);
 
 function esc(s) { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
