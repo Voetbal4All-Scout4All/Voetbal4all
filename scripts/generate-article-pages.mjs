@@ -63,6 +63,16 @@ function buildPage(article, canonicalUrl) {
     },
   });
 
+  // BreadcrumbList JSON-LD (helps Google understand site hierarchy for articles)
+  const breadcrumbLd = JSON.stringify({
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE}/` },
+      { "@type": "ListItem", "position": 2, "name": "Artikels", "item": `${SITE}/artikels.html` },
+      { "@type": "ListItem", "position": 3, "name": title, "item": canonicalUrl },
+    ],
+  });
+
   let html = TEMPLATE;
 
   // ── Strip loader placeholders (SSG content is pre-rendered, these cause visual gaps) ──
@@ -119,7 +129,7 @@ function buildPage(article, canonicalUrl) {
   html = html.replace(/(<meta\s+property="article:modified_time"\s+id="meta-modified"\s+content=")[^"]*(")/i, `$1${esc(pubDate)}$2`);
   // JSON-LD
   html = html.replace(/<script\s+id="article-jsonld"\s+type="application\/ld\+json">[^<]*<\/script>/i,
-    `<script id="article-jsonld" type="application/ld+json">${jsonLd}</script>`);
+    `<script id="article-jsonld" type="application/ld+json">${jsonLd}</script>\n  <script id="breadcrumb-ld" type="application/ld+json">${breadcrumbLd}</script>`);
   // Hero-image preload hint (early discovery for LCP element)
   if (image && !image.includes("placeholder.svg")) {
     html = html.replace("</head>", `  <link rel="preload" as="image" href="${esc(image)}" fetchpriority="high">\n</head>`);
