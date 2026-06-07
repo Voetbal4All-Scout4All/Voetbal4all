@@ -835,7 +835,13 @@ let lastRenderKey = "";
       console.warn("[ARTIKELS] Missing title for article, skipping card:", id);
       return "";
     }
-    const url = "artikel.html?id=" + encodeURIComponent(id);
+    // Pretty URL als slug beschikbaar (zelfde formaat als SSG), anders fallback
+    const slug = String(a.slug || "").trim();
+    const slugYear = a.slug_year || a.slugYear;
+    const slugMonth = a.slug_month || a.slugMonth;
+    const url = (slug && slugYear && slugMonth)
+      ? "/artikel/" + slugYear + "/" + String(slugMonth).padStart(2, "0") + "/" + encodeURIComponent(slug) + "/"
+      : "artikel.html?id=" + encodeURIComponent(id);
 
         const cc = countryCodeFromBackend(a);
 
