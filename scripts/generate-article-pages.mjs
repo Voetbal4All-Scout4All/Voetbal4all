@@ -20,7 +20,7 @@ function esc(s) { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&
 function truncate(s, max) { const t = String(s || "").replace(/\s+/g, " ").trim(); return t.length <= max ? t : t.slice(0, max - 3) + "..."; }
 function stripHtml(html) { return String(html || "").replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim(); }
 function resolveImage(img) {
-  if (!img) return `${SITE}/assets/img/placeholder.svg`;
+  if (!img) return `${SITE}/assets/img/brand/og-default.png`;
   const s = String(img).trim();
   return s.startsWith("http") ? s : `${BACKEND}${s.startsWith("/") ? s : "/" + s}`;
 }
