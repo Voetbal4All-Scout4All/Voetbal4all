@@ -242,7 +242,7 @@ jobs:
               slug_year = item.get("slug_year") or ""
               slug_month = str(item.get("slug_month") or "").zfill(2) if item.get("slug_month") else ""
               if slug and slug_year and slug_month:
-                canonical = f"{FRONTEND}/artikel/{slug_year}/{slug_month}/{slug}"
+                canonical = f"{FRONTEND}/artikel/{slug_year}/{slug_month}/{slug}/"
               else:
                 canonical = f"{FRONTEND}/artikel.html?id={aid}"
               og_url = canonical
