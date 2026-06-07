@@ -3240,8 +3240,16 @@
 
 
       function buildArticleUrl(article) {
-        const id = String(article?.id || article?.articleId || article?.newsId || "").trim();
         const slug = String(article?.slug || article?.articleSlug || "").trim();
+        const slugYear = article?.slug_year || article?.slugYear;
+        const slugMonth = article?.slug_month || article?.slugMonth;
+        // Pretty URL als slug + year + month beschikbaar (zelfde formaat als SSG)
+        if (slug && slugYear && slugMonth) {
+          const mm = String(slugMonth).padStart(2, "0");
+          return "/artikel/" + slugYear + "/" + mm + "/" + encodeURIComponent(slug) + "/";
+        }
+        // Fallback: oude SPA URL (voor edge-cases zonder slug)
+        const id = String(article?.id || article?.articleId || article?.newsId || "").trim();
         const link = String(article?.link || article?.href || "").trim();
         if (id) return "artikel.html?id=" + encodeURIComponent(id);
         if (slug) return "artikel.html?slug=" + encodeURIComponent(slug);
