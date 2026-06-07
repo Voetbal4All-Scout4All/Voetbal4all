@@ -173,13 +173,24 @@ function buildPage(article, canonicalUrl) {
       `$1${imageEsc}$2${titleEsc}$3$4`
     );
   }
+  // Fill sidebar with related articles (Lees ook) — compute first so we can dedup in-body links
+  const sidebarRelated = buildSidebarRelated(article.id || "", country);
+  const sidebarIds = new Set(
+    relatedPool.filter(a => a.id !== (article.id || ""))
+      .map(a => ({ ...a, _score: (country && a.country === country) ? 10 : 0 }))
+      .sort((a, b) => b._score - a._score || b.pubMs - a.pubMs)
+      .slice(0, 5).map(a => a.id)
+  );
+
+  // Inject in-body contextlinks (1-2 relevant links between paragraphs)
+  const bodyWithLinks = injectBodyContextLinks(bodyHtml, article.id || "", country, sidebarIds);
+
   // Fill body content (inject after standfirst div)
   html = html.replace(
     'id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;"></div>',
-    `id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;">${article.snippet ? esc(stripHtml(article.snippet).slice(0, 300)) : ""}</div>\n<div class="article-body-text" id="article-body">${bodyHtml}</div>`
+    `id="article-standfirst" style="font-size:18px; font-weight:500; line-height:1.6; margin-bottom:24px;">${article.snippet ? esc(stripHtml(article.snippet).slice(0, 300)) : ""}</div>\n<div class="article-body-text" id="article-body">${bodyWithLinks}</div>`
   );
-  // Fill sidebar with related articles (Lees ook)
-  const sidebarRelated = buildSidebarRelated(article.id || "", country);
+  // Fill sidebar
   html = html.replace(/id="sidebar-lees-ook"[^>]*>\s*<!--[^>]*-->\s*<\/article>/, `id="sidebar-lees-ook" style="margin-top:12px;">${sidebarRelated}</article>`);
 
   // ── Share buttons: fill hrefs statically (the loader script that did this client-side is stripped) ──
@@ -290,6 +301,96 @@ function buildRelated(currentId, currentCountry) {
     return html;
   } catch (_) {
     return "";
+  }
+}
+
+/** Extract proper noun entities from text (capitalized word sequences, not sentence-start). */
+const ENTITY_STOP = new Set(["de","het","een","van","in","op","met","voor","naar","door","uit","aan","bij","om","dat","dit","die","deze","hij","zij","ook","nog","dan","maar","niet","wel","als","tot","over","na","speler","spelers","trainer","trainers","coach","club","clubs","team","seizoen","competitie","wedstrijd","transfer","contract","jaar","maand","week","periode","tijd"]);
+function extractEntities(text) {
+  const entities = new Set();
+  const sentences = text.split(/[.!?]\s+/);
+  for (const sent of sentences) {
+    const words = sent.split(/\s+/);
+    for (let i = 1; i < words.length; i++) { // skip first word (sentence-start)
+      const w = words[i].replace(/[.,;:!?()"']/g, "");
+      if (!w || w.length < 2 || w[0] !== w[0].toUpperCase() || w === w.toLowerCase()) continue;
+      if (ENTITY_STOP.has(w.toLowerCase())) continue;
+      // Collect multi-word entity (max 4 words)
+      let entity = w;
+      for (let j = i + 1; j < words.length && j < i + 4; j++) {
+        const nw = words[j].replace(/[.,;:!?()"']/g, "");
+        if (!nw || nw[0] !== nw[0].toUpperCase() || nw === nw.toLowerCase() || ENTITY_STOP.has(nw.toLowerCase())) break;
+        entity += " " + nw;
+        i = j;
+      }
+      entities.add(entity.toLowerCase()); // normalize for matching
+    }
+  }
+  return entities;
+}
+
+/**
+ * Inject 1-2 in-body contextlinks naar relevante artikels.
+ * Matching: ENTITEIT-overlap (eigennamen: clubs, spelers, coaches) als harde vereiste.
+ * Deterministisch (zelfde input → zelfde output, geen stapeling).
+ */
+function injectBodyContextLinks(bodyHtml, currentId, currentCountry, sidebarIds) {
+  try {
+    if (!bodyHtml || relatedPool.length < 10) return bodyHtml;
+
+    // Extract entities (proper nouns) from body: sequences of capitalized words (not sentence-start)
+    const bodyPlain = stripHtml(bodyHtml);
+    const bodyEntities = extractEntities(bodyPlain);
+    if (bodyEntities.size < 2) return bodyHtml; // too few entities to match on
+
+    // Score candidates: require at least 1 shared entity (proper noun)
+    const candidates = relatedPool
+      .filter(a => a.id !== currentId && !sidebarIds.has(a.id))
+      .map(a => {
+        const titleEntities = extractEntities(a.title);
+        // Count shared entities between body and candidate title
+        let sharedEntities = 0;
+        const matched = [];
+        for (const entity of titleEntities) {
+          if (bodyEntities.has(entity)) { sharedEntities++; matched.push(entity); }
+        }
+        return { ...a, _relevance: sharedEntities, _matched: matched };
+      })
+      .filter(a => a._relevance >= 2) // HARD: minstens 2 gedeelde entiteiten (eigennamen)
+      .sort((a, b) => b._relevance - a._relevance || b.pubMs - a.pubMs);
+
+    if (!candidates.length) return bodyHtml;
+
+    // Pick max 2
+    const picks = candidates.slice(0, 2);
+
+    // Find insertion points: after </p> tags (natural paragraph breaks)
+    const paragraphs = bodyHtml.split(/<\/p>/i);
+    if (paragraphs.length < 4) return bodyHtml; // too short, don't inject
+
+    // Insert after ~40% and ~70% of paragraphs
+    const insertPoints = [
+      Math.max(1, Math.floor(paragraphs.length * 0.4)),
+      Math.max(2, Math.floor(paragraphs.length * 0.7)),
+    ];
+
+    let result = "";
+    for (let i = 0; i < paragraphs.length; i++) {
+      result += paragraphs[i];
+      if (i < paragraphs.length - 1) result += "</p>"; // restore the split tag
+
+      const pickIdx = insertPoints.indexOf(i);
+      if (pickIdx !== -1 && pickIdx < picks.length) {
+        const pick = picks[pickIdx];
+        const href = esc(pick.url);
+        const anchor = esc(pick.title);
+        result += `\n<p class="v4-context-link" style="margin:16px 0;font-size:14px;"><a href="${href}" style="color:rgba(24,160,251,0.9);text-decoration:underline;font-weight:500;">${anchor}</a></p>`;
+      }
+    }
+
+    return result;
+  } catch (_) {
+    return bodyHtml;
   }
 }
 
