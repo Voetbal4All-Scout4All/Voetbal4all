@@ -364,27 +364,56 @@ function injectBodyContextLinks(bodyHtml, currentId, currentCountry, sidebarIds)
     // Pick max 2
     const picks = candidates.slice(0, 2);
 
-    // Find insertion points: after </p> tags (natural paragraph breaks)
-    const paragraphs = bodyHtml.split(/<\/p>/i);
-    if (paragraphs.length < 4) return bodyHtml; // too short, don't inject
+    // Split body into segments (handles all real formats):
+    //   - </p> tags (HTML paragraphs)
+    //   - \r\n\r\n or \n\n (manual articles)
+    //   - sentence boundaries (plain text without any separators)
+    let segments, separator, isPlainText = false;
 
-    // Insert after ~40% and ~70% of paragraphs
+    if (/<\/p>/i.test(bodyHtml)) {
+      segments = bodyHtml.split(/<\/p>/i);
+      separator = "</p>";
+    } else if (/\r?\n\r?\n/.test(bodyHtml)) {
+      segments = bodyHtml.split(/\r?\n\r?\n/);
+      separator = "\n\n";
+    } else {
+      // Plain text: split on sentence boundaries (". " followed by uppercase)
+      isPlainText = true;
+      const sentenceSplits = bodyHtml.split(/(?<=\.)\s+(?=[A-Z])/);
+      // Group sentences into ~4-sentence chunks to form "paragraphs"
+      segments = [];
+      for (let i = 0; i < sentenceSplits.length; i += 4) {
+        segments.push(sentenceSplits.slice(i, i + 4).join(" "));
+      }
+      separator = " ";
+    }
+
+    if (segments.length < 3) return bodyHtml; // too short, don't inject
+
+    // Insert after ~40% and ~70% of segments
     const insertPoints = [
-      Math.max(1, Math.floor(paragraphs.length * 0.4)),
-      Math.max(2, Math.floor(paragraphs.length * 0.7)),
+      Math.max(1, Math.floor(segments.length * 0.4)),
+      Math.max(2, Math.floor(segments.length * 0.7)),
     ];
 
+    const linkTag = (pick) => {
+      const href = esc(pick.url);
+      const anchor = esc(pick.title);
+      if (isPlainText) {
+        // For plain text bodies: wrap in <p> so it renders as a distinct block
+        return `\n<p class="v4-context-link" style="margin:16px 0;font-size:14px;"><a href="${href}" style="color:rgba(24,160,251,0.9);text-decoration:underline;font-weight:500;">${anchor}</a></p>\n`;
+      }
+      return `\n<p class="v4-context-link" style="margin:16px 0;font-size:14px;"><a href="${href}" style="color:rgba(24,160,251,0.9);text-decoration:underline;font-weight:500;">${anchor}</a></p>`;
+    };
+
     let result = "";
-    for (let i = 0; i < paragraphs.length; i++) {
-      result += paragraphs[i];
-      if (i < paragraphs.length - 1) result += "</p>"; // restore the split tag
+    for (let i = 0; i < segments.length; i++) {
+      result += segments[i];
+      if (i < segments.length - 1) result += separator;
 
       const pickIdx = insertPoints.indexOf(i);
       if (pickIdx !== -1 && pickIdx < picks.length) {
-        const pick = picks[pickIdx];
-        const href = esc(pick.url);
-        const anchor = esc(pick.title);
-        result += `\n<p class="v4-context-link" style="margin:16px 0;font-size:14px;"><a href="${href}" style="color:rgba(24,160,251,0.9);text-decoration:underline;font-weight:500;">${anchor}</a></p>`;
+        result += linkTag(picks[pickIdx]);
       }
     }
 
