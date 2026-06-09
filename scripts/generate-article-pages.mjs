@@ -201,13 +201,24 @@ function buildPage(article, canonicalUrl) {
   html = html.replace(/(<a\s+href=")[^"]*("\s+id="share-x")/i, `$1https://x.com/intent/post?url=${encUrl}&amp;text=${encTitle}$2`);
   html = html.replace(/(<a\s+href=")[^"]*("\s+id="share-whatsapp")/i, `$1https://wa.me/?text=${encTitle}%20${encUrl}$2`);
   html = html.replace(/(<a\s+href=")[^"]*("\s+id="share-linkedin")/i, `$1https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}$2`);
+  html = html.replace(/(<a\s+href=")[^"]*("\s+id="share-threads")/i, `$1https://www.threads.net/intent/post?text=${encTitle}%20${encUrl}$2`);
 
-  // ── Inject small share-utility script (clipboard + Instagram) — separate from the stripped loader ──
+  // ── Inject share-utility script (clipboard + Instagram + Threads + TikTok) ──
   html = html.replace("</body>",
     `<script>
-// SSG share utilities (clipboard + Instagram)
+// SSG share utilities
 (function(){
   var url = ${JSON.stringify(shareUrl)};
+  var title = ${JSON.stringify(title)};
+  var encUrl = encodeURIComponent(url);
+  var encTitle = encodeURIComponent(title);
+  function copyShare(btn, label) {
+    if (navigator.share) { navigator.share({title:title,url:url}).catch(function(){}); return; }
+    navigator.clipboard.writeText(url).then(function(){
+      var orig = btn.innerHTML; btn.textContent = "Link gekopieerd!";
+      setTimeout(function(){ btn.innerHTML = orig; }, 2000);
+    });
+  }
   var copyBtn = document.getElementById("share-copy");
   var copyText = document.getElementById("copy-text");
   if (copyBtn && copyText) {
@@ -215,18 +226,15 @@ function buildPage(article, canonicalUrl) {
       navigator.clipboard.writeText(url).then(function(){
         copyText.textContent = "\\u2713 Gekopieerd!";
         setTimeout(function(){ copyText.textContent = "Kopieer link"; }, 2000);
-      }).catch(function(){ if(window.V4AFeedback) window.V4AFeedback.toast("Kon link niet kopi\\u00EBren.", {tone:"warning"}); });
+      }).catch(function(){});
     });
   }
   var igBtn = document.getElementById("share-instagram");
-  if (igBtn) {
-    igBtn.addEventListener("click", function(){
-      navigator.clipboard.writeText(url).then(function(){
-        igBtn.textContent = "Link gekopieerd!";
-        setTimeout(function(){ igBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram'; }, 2000);
-      });
-    });
-  }
+  if (igBtn) igBtn.addEventListener("click", function(){ copyShare(igBtn); });
+  var ttBtn = document.getElementById("share-tiktok");
+  if (ttBtn) ttBtn.addEventListener("click", function(){ copyShare(ttBtn); });
+  var thBtn = document.getElementById("share-threads");
+  if (thBtn) thBtn.href = "https://www.threads.net/intent/post?text=" + encTitle + "%20" + encUrl;
 })();
 </script>\n</body>`);
 
