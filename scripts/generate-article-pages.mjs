@@ -193,11 +193,8 @@ function buildPage(article, canonicalUrl) {
   // Fill sidebar
   html = html.replace(/id="sidebar-lees-ook"[^>]*>\s*<!--[^>]*-->\s*<\/article>/, `id="sidebar-lees-ook" style="margin-top:12px;">${sidebarRelated}</article>`);
 
-  // ── Share buttons: fill hrefs statically (the loader script that did this client-side is stripped) ──
-  const articleId = article.id || "";
-  const shareUrl = articleId
-    ? `https://www.voetbal4all.eu/share/article/${encodeURIComponent(articleId)}/`
-    : canonicalUrl;
+  // ── Share buttons: use canonical pretty-URL (mét trailing slash) ──
+  const shareUrl = canonicalUrl;
   const encUrl = encodeURIComponent(shareUrl);
   const encTitle = encodeURIComponent(title);
   html = html.replace(/(<a\s+href=")[^"]*("\s+id="share-facebook")/i, `$1https://www.facebook.com/dialog/feed?app_id=1613462893224189&amp;display=popup&amp;link=${encUrl}&amp;redirect_uri=${encUrl}$2`);
