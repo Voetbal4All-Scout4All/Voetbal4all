@@ -30,6 +30,7 @@
   <meta property="og:title" id="og-title" content="Voetbalnieuws artikel | Voetbal4All" />
   <meta property="og:description" id="og-description" content="Lees het nieuwste voetbalnieuws" />
   <meta property="og:image" id="og-image" content="https://www.voetbal4all.eu/assets/img/brand/og-default.png" />
+  <meta property="fb:app_id" content="1613462893224189" />
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="nl_BE" />
   <meta property="og:url" id="og-url" content="https://www.voetbal4all.eu/artikel.html" />
@@ -1583,10 +1584,14 @@
     
     const shareId = String(article.id || resolvedArticleId || "").trim();
     const shareSlug = String(article.slug || resolvedArticleSlug || "").trim();
-    // Static share pages on own domain with correct OG tags for crawlers
-    const articleUrl = shareId
-      ? ("https://www.voetbal4all.eu/share/article/" + encodeURIComponent(shareId) + "/")
-      : window.location.href;
+    // Canonical pretty-URL (mét trailing slash) — consolideert social-signalen
+    const shareSlugYear = article.slug_year || article.slugYear;
+    const shareSlugMonth = article.slug_month || article.slugMonth;
+    const articleUrl = (shareSlug && shareSlugYear && shareSlugMonth)
+      ? ("https://www.voetbal4all.eu/artikel/" + shareSlugYear + "/" + String(shareSlugMonth).padStart(2, "0") + "/" + encodeURIComponent(shareSlug) + "/")
+      : shareId
+        ? ("https://www.voetbal4all.eu/share/article/" + encodeURIComponent(shareId) + "/")
+        : window.location.href;
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedTitle = encodeURIComponent(title);
     const fbUrl = 'https://www.facebook.com/dialog/feed?app_id=1613462893224189&display=popup&link=' + encodedUrl + '&redirect_uri=' + encodedUrl;
