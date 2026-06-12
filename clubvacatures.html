@@ -1509,7 +1509,9 @@
       var ldEl = document.getElementById("jobpostings-ld");
       if (ldEl && _V4A_LOADED_VACANCIES.length && window.V4ASchema) {
         var items = _V4A_LOADED_VACANCIES.map(function(v) {
-          return { title: v.title || v.function_title || "", club: v.club_name || v.club || v.clubName || "", province: v.province || v.region || v.provincie || "", country: String(v.country || "BE").toUpperCase() };
+          return { title: v.title || v.function_title || "", club: v.club_name || v.club || v.clubName || "",
+            city: v.city || "", province: v.province || v.region || v.provincie || "",
+            country: String(v.country || "BE").toUpperCase(), description: v.description || "" };
         });
         var ld = window.V4ASchema.buildJobPostingGraph(items);
         if (ld["@graph"].length) ldEl.textContent = JSON.stringify(ld);

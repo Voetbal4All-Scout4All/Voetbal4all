@@ -193,23 +193,39 @@ async function preRenderListingSchemas() {
     } catch (_) {}
   }
 
-  // Build schemas via shared module
+  // Build schemas via shared module — pass all available fields for rich results
+  const BACKEND_IMG = "https://voetbal4all-backend-database.onrender.com";
+  function resolveEventImage(ev) {
+    const img = ev.cover_image_url || ev.flyer_image_url || "";
+    if (!img) return "";
+    return img.startsWith("http") ? img : `${BACKEND_IMG}${img.startsWith("/") ? img : "/" + img}`;
+  }
+
   const sportsItems = sportieveEvents.filter(ev => ev.title && ev.start_at).map(ev => ({
     title: ev.title, startDate: isoDateOnly(ev.start_at), slug: ev.slug || ev.id,
-    country: String(ev.country || "BE").toUpperCase(), city: ev.city || ""
+    country: String(ev.country || "BE").toUpperCase(), city: ev.city || "",
+    endDate: ev.end_at ? isoDateOnly(ev.end_at) : "",
+    organizer: ev.organizer_name || ev.club_name || ev.club || "",
+    image: resolveEventImage(ev),
+    description: ev.description || "",
   }));
   const sportsLd = V4ASchema.buildSportsEventGraph(sportsItems);
 
   const clubFunItems = clubFunEvents.filter(ev => ev.title && ev.start_at).map(ev => ({
     title: ev.title, startDate: isoDateOnly(ev.start_at), slug: ev.slug || ev.id,
     country: String(ev.country || "BE").toUpperCase(), city: ev.city || "",
-    club: ev.club_name || ev.club || ev.organizer_name || ""
+    club: ev.club_name || ev.club || ev.organizer_name || "",
+    endDate: ev.end_at ? isoDateOnly(ev.end_at) : "",
+    image: resolveEventImage(ev),
+    description: ev.description || "",
   }));
   const clubFunLd = V4ASchema.buildSocialEventGraph(clubFunItems);
 
   const vacItems = vacancies.filter(v => v.title || v.function_title).map(v => ({
     title: v.title || v.function_title || "", club: v.club_name || v.club || "",
-    province: v.province || v.region || "", country: String(v.country || "BE").toUpperCase()
+    city: v.city || "", province: v.province || v.region || "",
+    country: String(v.country || "BE").toUpperCase(),
+    description: v.description || "",
   }));
   const vacLd = V4ASchema.buildJobPostingGraph(vacItems);
 

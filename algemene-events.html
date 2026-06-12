@@ -1553,7 +1553,9 @@
         var items = ALL_EVENTS_SORTED.filter(function(ev) { return ev.title && ev.start_at; }).map(function(ev) {
           return { title: ev.title, startDate: isoDateOnly(ev.start_at), slug: ev.slug || ev.id,
             country: String(ev.country || "BE").toUpperCase(), city: ev.city || "",
-            club: ev.club_name || ev.club || ev.clubName || ev.organizer_name || "" };
+            club: ev.club_name || ev.club || ev.clubName || ev.organizer_name || "",
+            endDate: ev.end_at ? isoDateOnly(ev.end_at) : "",
+            image: ev.cover_image_url || ev.flyer_image_url || "", description: ev.description || "" };
         });
         var ld = window.V4ASchema.buildSocialEventGraph(items);
         if (ld["@graph"].length) ldEl.textContent = JSON.stringify(ld);
