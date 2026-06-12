@@ -23,7 +23,7 @@
   }
 
   // ── JobPosting (clubvacatures) ──────────────────────────────────────
-  // item: { title, club, province, country }
+  // item: { title, club, province, city, country, description }
   function buildJobPostingGraph(items, max) {
     max = max || 50;
     var graph = [];
@@ -32,22 +32,28 @@
       var t = plainText(it.title);
       if (!t) continue;
       var club = plainText(it.club);
+      var city = plainText(it.city);
+      var region = plainText(it.province);
+      var desc = plainText(it.description);
+      var address = { "@type": "PostalAddress", "addressCountry": it.country || "BE" };
+      if (city) address.addressLocality = city;
+      if (region) address.addressRegion = region;
       graph.push({
         "@type": "JobPosting",
         "title": t,
-        "description": t + (club ? " bij " + club : ""),
+        "description": desc || (t + (club ? " bij " + club : "")),
         "datePosted": new Date().toISOString().split("T")[0],
         "validThrough": new Date(Date.now() + 30 * 86400000).toISOString().split("T")[0],
         "employmentType": "VOLUNTEER",
         "hiringOrganization": { "@type": "Organization", "name": club || "Voetbalclub" },
-        "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": plainText(it.province) || undefined, "addressCountry": it.country || "BE" } }
+        "jobLocation": { "@type": "Place", "address": address }
       });
     }
     return wrap(graph);
   }
 
   // ── SportsEvent (events.html — sportieve events) ───────────────────
-  // item: { title, startDate, slug, country, city }
+  // item: { title, startDate, endDate, slug, country, city, organizer, image, description }
   function buildSportsEventGraph(items, max) {
     max = max || 50;
     var graph = [];
@@ -56,7 +62,7 @@
       var t = plainText(it.title);
       var d = (it.startDate || "").trim();
       if (!t || !d) continue;
-      graph.push({
+      var node = {
         "@type": "SportsEvent",
         "name": t,
         "startDate": d,
@@ -65,13 +71,18 @@
         "location": { "@type": "Place", "name": plainText(it.city) || it.country || "BE",
           "address": { "@type": "PostalAddress", "addressCountry": it.country || "BE" } },
         "url": SITE + "/event.html?slug=" + encodeURIComponent(it.slug || "")
-      });
+      };
+      if (it.endDate) node.endDate = it.endDate;
+      if (it.organizer) node.organizer = { "@type": "Organization", "name": plainText(it.organizer) };
+      if (it.image) node.image = it.image;
+      if (it.description) node.description = plainText(it.description).slice(0, 300);
+      graph.push(node);
     }
     return wrap(graph);
   }
 
   // ── SocialEvent (algemene-events.html — club & fun) ────────────────
-  // item: { title, startDate, slug, country, city, club }
+  // item: { title, startDate, endDate, slug, country, city, club, image, description }
   function buildSocialEventGraph(items, max) {
     max = max || 50;
     var graph = [];
@@ -91,10 +102,10 @@
           "address": { "@type": "PostalAddress", "addressCountry": it.country || "BE" } },
         "url": SITE + "/event.html?slug=" + encodeURIComponent(it.slug || "")
       };
-      // Only add organizer when a real club name is available
-      if (club) {
-        node.organizer = { "@type": "Organization", "name": club };
-      }
+      if (club) node.organizer = { "@type": "Organization", "name": club };
+      if (it.endDate) node.endDate = it.endDate;
+      if (it.image) node.image = it.image;
+      if (it.description) node.description = plainText(it.description).slice(0, 300);
       graph.push(node);
     }
     return wrap(graph);
