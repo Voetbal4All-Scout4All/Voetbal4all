@@ -1,16 +1,49 @@
 {
-  "generatedAt": "2026-06-11T23:26:52.273Z",
+  "generatedAt": "2026-06-12T04:19:51.570Z",
   "items": [
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE Coupe du monde 12/6",
+      "link": "https://www.walfoot.be/news/2026-06-12/live-coupe-du-monde-12-6",
+      "summary": "Dans ce live, retrouvez toute l'actualité de la Coupe du monde, les coulisses du tournoi, les infos sur les Diables Rouges et bien plus encore. Chaque jour, nous vous tiendrons informés des principales nouvelles du jour.",
+      "publishedAt": "2026-06-12T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
       "country": "INT",
       "flag": "🌍",
-      "title": "Three red cards - are referees getting tough at this World Cup?",
-      "link": "https://www.bbc.com/sport/football/articles/cjwglq2gzd6o?at_medium=RSS&at_campaign=rss",
-      "summary": "Three players were sent off in the World Cup opener as Mexico beat South Africa 2-0. Are we about to see a World Cup littered with red cards?",
-      "publishedAt": "2026-06-11T23:13:18.000Z"
+      "title": "WK-LIVE 12/6",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-12/wk-live-12-6",
+      "summary": "Het WK nadert met rasse schreden. En dus is het ook tijd om een en ander te bundelen in ons WK-nieuws van de dag. Elke dag zitten we er namelijk erg kort op, zodat u op de hoogte blijft van al het reilen en zeilen in de selecties over de hele wereld.",
+      "publishedAt": "2026-06-12T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "US",
+      "flag": "🇺🇸",
+      "title": "South Korea score two unanswered goals to take dow...",
+      "link": "https://www.espn.com/soccer/match/_/gameId/760414/czechia-south-korea",
+      "summary": "null",
+      "publishedAt": "2026-06-12T05:00:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Mexico opens WC with win after record 3 red cards",
+      "link": "https://www.espn.com/soccer/story/_/id/49033183/mexico-south-africa-2026-world-cup-azetca-opening-game",
+      "summary": "Co-hosts Mexico got off to a victorious start, beating South Africa 2-0 as the largest World Cup in history kicked off Thursday at Mexico City's famed Estadio Azteca.",
+      "publishedAt": "2026-06-12T04:35:13.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +51,175 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "World Cup kicks off in Mexico with Shakira, vibrant fans, and protests",
+      "title": "'There's a World Cup happening?' Are Americans excited about the tournament?",
+      "link": "https://www.bbc.com/sport/football/articles/cg74rzx582ko?at_medium=RSS&at_campaign=rss",
+      "summary": "With the World Cup under way, how excited are people across the United States - and do they even know it's on?",
+      "publishedAt": "2026-06-12T04:11:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "South Korea 2-1 Czechia: World Cup 2026 – live reaction",
+      "link": "https://www.theguardian.com/football/live/2026/jun/12/fifa-world-cup-2026-live-south-korea-v-czechia-updates-kor-vs-cze-group-a-match-score-latest",
+      "summary": "⚽️ Kick-off time: 8pm local/12pm AEST/3am BST/10pm EDT ⚽️ Player guide | Bracketology | Golden Boot | Mail Jonathan Czechia will also line up in a 3-4-3 with Alexandr Sojka handed a competitive debut alongside star man Tomáš Souček in midfield. The 23 year old was only called up for the first time for the pre-tournament friendlies. 1 Matěj Kovář; 6 Štěpán Chaloupek, 4 Robin Hranáč, 7 Ladislav Krejčí; 5 Vladimir Coufal, 22 Tomáš Souček, 24 Alexandr Sojka 20 Jaroslav Zelený; 17 Lukáš Provod, 15 Pavel Šulc, 10 Patrik Schick. Continue reading...",
+      "publishedAt": "2026-06-12T04:04:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Zuid-Korea wanhoopt duidelijk niet na een 1-0 achterstand",
+      "link": "https://www.vi.nl/nieuws/zuid-korea-wanhoopt-duidelijk-niet-na-een-1-0-achterstand",
+      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor Zuid-Korea tegen Tsjechië. In aanloop naar en vanaf de aftrap om 04.00 uur werd je volledig op de hoogte gehouden van dit duel.",
+      "publishedAt": "2026-06-12T04:02:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "The Joy of Six: forgotten World Cup goals",
+      "link": "https://www.theguardian.com/sport/2026/jun/12/the-joy-of-six-forgotten-world-cup-goals",
+      "summary": "From Ogris’s Florentine charge to Quagliarella’s Ellis Park chip, half a dozen World Cup classics that deserve to be better remembered The first six or seven World Cups certainly are not without their charms, but they are noticeably light on the kind of viscerally spectacular goals that we take for granted in the modern game. Hardly surprising when you contemplate what teams of the era had to endure: quagmire-like pitches, boots comprising 50% leather and 50% landfill, and balls so heavy that they basically constituted gym equipment. Continue reading...",
+      "publishedAt": "2026-06-12T04:00:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Surréaliste d'être assis à côté de Courtois dans le vestiaire\" : Max Anchor raconte son expérience unique",
+      "link": "https://www.walfoot.be/news/2026-06-12/surrealiste-detre-assis-a-cote-de-courtois-dans-le-vestiaire-max-anchor-raconte-son-experience-unique",
+      "summary": "C'était l'invité surprise à l'entraînement des Diables Rouges cette semaine. Max Anchor, jeune gardien des Seattle Sounders, a fait office de quatrième gardien, aux côtés d'un Thibaut Courtois qui fait bien sûr partie de ses références.",
+      "publishedAt": "2026-06-12T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "En ineens stond deze Max Anchor te trainen met Thibaut Courtois: \"Surrealistisch, ik zag ze als kind spelen\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-12/interview-en-ineens-stond-deze-max-anchor-te-trainen-met-thibaut-courtois-surrealistisch-ik-zag-ze-als-kind-spelen",
+      "summary": "Hij was de verrassingsgast op de training van de Rode Duivels deze week. Max Anchor, een jonge doelman van de Seattle Sounders, fungeerde als vierde keeper, naast Thibaut Courtois, die natuurlijk een van zijn grote voorbeelden is.",
+      "publishedAt": "2026-06-12T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Nieuw transfersysteem: clubs halen opgelucht adem",
+      "link": "https://www.vi.nl/pro/nieuw-transfersysteem-clubs-halen-opgelucht-adem",
+      "summary": "Aan de vooravond van het WK kwam de FIFA met een vernieuwd transfersysteem. Wat betekent dit voor de Nederlandse clubs en spelers?",
+      "publishedAt": "2026-06-12T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Feyenoorder Hwang bezorgt Zuid-Korea zwaarbevochten zege op Tsjechië",
+      "link": "https://www.vi.nl/nieuws/feyenoorder-hwang-bezorgt-zuid-korea-zwaarbevochten-zege-op-tsjechie",
+      "summary": "In-Beom Hwang heeft Zuid-Korea naar de overwinning geleid tijdens de eerste wedstrijd op het WK. Met een doelpunt en een assist was de Feyenoord-middenvelder goud waard tegen Tsjechië, dat nog wel op voorsprong kwam.",
+      "publishedAt": "2026-06-12T03:56:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Poch: 'Too late' for motivational speeches for U.S...",
+      "link": "https://www.espn.com/soccer/story/_/id/49035215/mauricio-pochettino-usa-world-cup-speech-paraguay-lineup",
+      "summary": "USMNT coach Mauricio Pochettino said that the time for fiery speeches is over and that his side is ready for Friday's World Cup opener against Paraguay.",
+      "publishedAt": "2026-06-12T03:10:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Real Madrid name Mourinho coach for 2nd time",
+      "link": "https://www.espn.com/soccer/story/_/id/48814292/jose-mourinho-real-madrid-coach-alvaro-arbeloa",
+      "summary": "Real Madrid have confirmed the appointment of José Mourinho for a second spell as the club's coach after ratifying the departure of Álvaro Arbeloa.",
+      "publishedAt": "2026-06-12T03:10:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "ESPN - Soccer",
+      "sourceSlug": "espn-soccer",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Mexico's Aguirre says Jiménez earned 'perfect day'...",
+      "link": "https://www.espn.com/soccer/story/_/id/49035727/aguirre-jimenez-perfect-day-mexico-goal",
+      "summary": "Raúl Jiménez finally has his star moment in a FIFA World Cup for Mexico, with his manager Javier Aguirre calling it a \"perfect day\" for the 35-year-old striker.",
+      "publishedAt": "2026-06-12T03:10:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Courtois n'est pas Romelu Lukaku : les Diables ne sont plus sa priorité, mais il peut réussir ses adieux",
+      "link": "https://www.walfoot.be/news/2026-06-12/avis-courtois-nest-pas-romelu-lukaku-les-diables-ne-sont-plus-sa-priorite-mais-il-peut-reussir-ses-adieux",
+      "summary": "Thibaut Courtois a laissé planer le doute en conférence de presse concernant son avenir chez les Diables Rouges. En réalité, le doute n'est plus vraiment permis : la Coupe du Monde 2026 sera son dernier grand tournoi avec la sélection.",
+      "publishedAt": "2026-06-12T03:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Triumph at the Azteca offers respite from strife on Mexico City’s streets | Pablo Iglesias Maurer",
+      "link": "https://www.theguardian.com/football/2026/jun/11/mexico-south-africa-world-cup-2026",
+      "summary": "One of football’s great arenas roared as El Tri eased past South Africa, offering fans a fleeting escape from the tensions gripping the capital The walk to Estadio Ciudad de México – most fans know it as the Azteca – on Thursday did a pretty good job of laying out the two sides of Mexico as the World Cup kicked off. Flanked by volunteers and channeled towards the stadium by steel barriers, the lucky few to have scored a ticket to the tournament’s opener between Mexico and South Africa chanted, waved the country’s tricolor flag and cracked beers in the middle of the street. The path was flanked with performers, the sound of traditional banda music providing a festive atmosphere. Continue reading...",
+      "publishedAt": "2026-06-12T01:23:37.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "From near death to World Cup hero - Jimenez's tears for Mexico",
+      "link": "https://www.bbc.com/sport/football/articles/cm2dl67rljvo?at_medium=RSS&at_campaign=rss",
+      "summary": "From nearly dying on the pitch to scoring for Mexico at the World Cup - Raul Jimenez has completed a remarkable comeback.",
+      "publishedAt": "2026-06-12T00:02:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "World Cup kicks off in Mexico with Shakira, dancing, and protests",
       "link": "https://www.bbc.com/news/articles/c2ly928xz8go?at_medium=RSS&at_campaign=rss",
-      "summary": "There was a star-studded opening ceremony, and some sporadic clashes between police and protesters at points around the Azteca stadium.",
-      "publishedAt": "2026-06-11T23:08:31.000Z"
+      "summary": "There was a star-studded opening ceremony, and some sporadic clashes between police and protesters around the Azteca stadium.",
+      "publishedAt": "2026-06-11T23:41:14.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "McTominay travels separately in Boston as precaution",
+      "link": "https://www.bbc.com/sport/football/articles/c78y50pmd2go?at_medium=RSS&at_campaign=rss",
+      "summary": "Key midfielder Scott McTominay travelled with a doctor as a precaution prior to Scotland's World Cup opener.",
+      "publishedAt": "2026-06-11T23:39:32.000Z"
     },
     {
       "type": "rss",
@@ -47,28 +245,6 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "ITV delivers feisty start to World Cup coverage – and taunts BBC from glitzy studio",
-      "link": "https://www.theguardian.com/football/2026/jun/11/itv-delivers-feisty-start-to-coverage-and-taunts-bbc-from-glitzy-studio",
-      "summary": "Mark Pougatch acknowledged the controversies surrounding the tournament, while capturing the excitement of football fans Don’t mention the war. Mark Pougatch mentioned it, right at the start of ITV’s World Cup coverage, but I think he got away with it. He also, to his credit, highlighted the outrageous ticket prices, as well as the disgraceful treatment of the teams, fans and officials who now find themselves persona non grata in the US. Even Donald J Trump, the first (and quite possibly last) holder of the Fifa Peace Prize, got a mention. Pougatch also gave a visibly emotional Ian Wright the chance to suggest that the US has “no idea of the spirit of the game”. All unexpectedly and encouragingly feisty. Of course, it was no Gary Lineker, railing against the hosts’ human rights record while launching the BBC’s coverage of Qatar 2022. But Lineker is a corporation ghost now – no longer at the Beeb but podcasting for Netflix. The BBC have, on the grounds of cost, opted to present this World Cup from an austerity bunker in Salford. The Telegraph derided this as a “work from home” operation. ITV are already having some fun with it too. Continue reading...",
-      "publishedAt": "2026-06-11T22:25:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Het 'nachtbraak-WK': de tijdsverschillen van de speelsteden met Nederland",
-      "link": "https://www.vi.nl/nieuws/het-nachtbraak-wk-de-tijdsverschillen-van-de-speelsteden-met-nederland",
-      "summary": "Wie alle WK-wedstrijden wil volgen, zal moeten nachtbraken. In dit bericht zet VI de tijdsverschillen van Nederland ten opzichte van de zestien speelsteden op een rijtje.",
-      "publishedAt": "2026-06-11T22:15:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -80,58 +256,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Live: Hwang met Zuid-Korea tegen het Tsjechië van Kovár",
-      "link": "https://www.vi.nl/nieuws/vi-live-hwang-met-zuid-korea-tegen-het-tsjechie-van-kovar",
-      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor Zuid-Korea tegen Tsjechië. In aanloop naar en vanaf de aftrap om 04.00 uur blijf je volledig op de hoogte van dit duel.",
-      "publishedAt": "2026-06-11T21:51:01.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Wereldpers bedrukt na openingsduel: 'Grijze overwinning' versus 'nachtmerrie'",
-      "link": "https://www.vi.nl/nieuws/wereldpers-bedrukt-na-openingsduel-grijze-overwinning-versus-nachtmerrie",
-      "summary": "De wereldpers is niet onder de indruk van de wedstrijd tussen Mexico en Zuid-Afrika. In het winnende gastland wordt benadrukt dat 2-0 nog mager was, de Zuid-Afrikanen zitten in zak en as. Ook in de rest van de wereld beklijfde de openingswedstrijd van het WK 2026 niet zo.",
-      "publishedAt": "2026-06-11T21:50:21.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Raúl Jiménez seals Mexico’s win against nine-man South Africa in World Cup opener",
-      "link": "https://www.theguardian.com/football/2026/jun/11/mexico-south-africa-world-cup-2026-group-a-match-report",
-      "summary": "Was that it, then? Was Sphephelo Sithole being caught in possession nine minutes into the opening game, Julián Quiñones running on to lash the ball through Ronwen Williams’s legs, was that when the football took over, the moment when concerns over the aggression of the major co-host faded away and the world got on with celebrating the great festival of humanity the World Cup ought to be? It seems unlikely. Donald Trump’s war with Iran goes on, as do the outrages of his immigration forces. But it’s not just that. Gianni Infantino has opted to run this tournament, uniquely in the modern age, without a local organising committee. That may not explain the shambolic organisation at the Azteca – the chaotic traffic, the non-existent signage, the absence of wifi, the general lack of order – but it does make it harder to fix. Not that Mexican fans cared much. Continue reading...",
-      "publishedAt": "2026-06-11T21:17:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Real Madrid bring back Mourinho on three-year deal",
-      "link": "https://www.bbc.com/sport/football/articles/cvg4ne1pv4jo?at_medium=RSS&at_campaign=rss",
-      "summary": "Real Madrid have confirmed the re-appointment of Jose Mourinho as head coach.",
-      "publishedAt": "2026-06-11T19:11:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Real Madrid confirm José Mourinho’s return as manager after 13 years away",
-      "link": "https://www.theguardian.com/football/2026/jun/11/real-madrid-confirm-jose-mourinho-manager",
-      "summary": "63-year-old leaves Benfica to move back to the Bernabéu Marco Silva agrees deal to replace him at Portuguese club José Mourinho’s blockbuster return as Real Madrid manager has been confirmed. The 63-year-old, who was in the dugout at the Bernabéu from 2010 until 2013, joins the 15-times European champions from Benfica on a three-year contract. Mourinho’s appointment comes after a torrid season at Real Madrid, with Xabi Alonso sacked in January amid player unrest. Álvaro Arbeloa came in as interim head coach, but failed to turn around the campaign as Real exited the Champions League to Bayern Munich at the quarter-final stage and Barcelona cantered to the La Liga title. Disharmony within the squad also continued, with Fede Valverde taken to hospital to have stitches after a confrontation with his teammate Aurélien Tchouaméni. Continue reading...",
-      "publishedAt": "2026-06-11T18:29:53.000Z"
+      "title": "McTominay should be fit for Scotland’s World Cup opener despite stomach bug",
+      "link": "https://www.theguardian.com/football/2026/jun/11/scott-mctominay-scotland-world-cup-opener-stomach-bug",
+      "summary": "Midfielder missed final training session before Haiti game ‘Hopefully that doesn’t spread,’ said Kenny McLean Scotland are confident Scott McTominay will be fit to face Haiti on Saturday despite the midfielder sitting out training on Thursday due to a stomach complaint. McTominay, widely considered Scotland’s most influential player, was a notable absentee as Steve Clarke put his players through their paces for a final time in North Carolina before departing for Boston. There, Scotland will play their first World Cup match in 28 years. Continue reading...",
+      "publishedAt": "2026-06-11T18:37:51.000Z"
     },
     {
       "type": "rss",
@@ -139,32 +271,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "‘They are adults’: Tuchel grants England players day off with few strings attached",
-      "link": "https://www.theguardian.com/football/2026/jun/11/they-are-adults-tuchel-grants-england-players-day-off-with-few-strings-attached",
-      "summary": "Manager says team must ‘live up to the trust’ on rest days German suggests Bellingham may play as a ‘free role’ No 9 Thomas Tuchel is confident that his England players will not abuse his trust, as he granted them time off with few strings attached at the end of their pre-World Cup training camp in Florida. The manager said he was happy for them to do whatever they wanted – as long as it did not involve air travel – before they fly on Saturday to Kansas City, their base for the tournament. Tuchel oversaw a training game against the amateur club Miami United in Palm Beach Gardens on Thursday before giving the players the rest of the day and Friday off. Continue reading...",
+      "title": "Elliot Anderson on the rise as face of England amid Manchester City transfer talk",
+      "link": "https://www.theguardian.com/football/2026/jun/11/elliot-anderson-england-2026-world-cup-thomas-tuchel-nottingham-forest-manchester-city-transfer",
+      "summary": "Midfielder’s meteoric climb could enter different stratosphere if he inspires World Cup glory and seals record move The numbers around Elliot Anderson are rising fast – to extraordinary levels. A little like the player himself. At the beginning of last week, when he flew to Florida with the England squad for their pre-World Cup camp, he was the Nottingham Forest midfielder who had finished a gruelling club season, which featured four managers, on the right side of the relegation line. The 23-year-old had established himself as a first choice in Thomas Tuchel’s England team over the course of the campaign, albeit he remained in single digits for caps. There was a lot of noise about Anderson on the transfer market. The richness of the promise was there for all to see. Continue reading...",
       "publishedAt": "2026-06-11T18:00:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Fatigue? The World Cup players who have had toughest seasons",
-      "link": "https://www.bbc.com/sport/football/articles/c05yz1yr08mo?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport examines which World Cup teams and players have played the most minutes since last summer, when the Club World Cup was kicking off in the United States.",
-      "publishedAt": "2026-06-11T13:55:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Welcome to Trump’s World Cup, a depressingly angry version of football uniting the planet | Barney Ronay",
-      "link": "https://www.theguardian.com/football/2026/jun/11/donald-trump-world-cup-ted-lasso-usa",
-      "summary": "Ted Lasso will deliver a message of hope before the USA’s first game, in an America that is not a fit or desirable host right now Shortly before 6pm local time on Friday night at the Los Angeles Stadium, the actor who plays Ted Lasso – the fictional manager of a fake team in a falsely heartwarming version of football – will tell hundreds of millions of TV viewers tuning in to watch the start of the American leg of the Fifa World Cup that football unites the world. In an interesting twist, the actor Jason Sudeikis will do this at a time when the World Cup host is simultaneously bombing the second-ranked country in Group G, having recently murdered its head of state. The message of unity is one likely to be heard by the US president, Donald Trump, who has initiated six military conflicts in his second term, and whose brutally divisive immigration policies have now led to the barring of Omar Artan, the reigning African referee of the year. Continue reading...",
-      "publishedAt": "2026-06-11T12:44:08.000Z"
     },
     {
       "type": "rss",
@@ -220,116 +330,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-06-11/geen-kans-voor-anderlecht-en-vrancken-weigert-bulgaarse-topclub-want-deze-nederlandse-topclub-wacht",
       "summary": "Wouter Vrancken is volgend seizoen niet langer de coach van STVV. De succescoach wil nieuwe lucht opsnuiven. En het moet gezegd: de clubs staan ondertussen in de rij.",
       "publishedAt": "2026-06-11T08:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Relégué dans le noyau B dès la reprise : un ancien du Standard dans de sales draps",
-      "link": "https://www.walfoot.be/news/2026-06-11/relegue-dans-le-noyau-b-des-la-reprise-un-ancien-du-standard-dans-de-sales-draps",
-      "summary": "Parti du Standard il y a deux ans, Gilles Dewaele entre dans sa dernière année de contrat à Courtrai. Mais il pourrait bien devoir aller voir ailleurs avant la fin de son bail.",
-      "publishedAt": "2026-06-11T08:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"J'ai senti la moutarde me monter au nez\" : Anthony Moris pas tendre avec un entraîneur belge",
-      "link": "https://www.walfoot.be/news/2026-06-11/jai-senti-la-moutarde-me-monter-au-nez-anthony-moris-pas-tendre-avec-un-entraneur-belge",
-      "summary": "Anthony Moris en a vu des vertes et des pas mûres durant sa carrière. L'ancien gardien de l'Union a collaboré avec beaucoup d'entraîneurs différents, il garde un souvenir assez amer de Yannick Ferrera.",
-      "publishedAt": "2026-06-11T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Deze Belg is de nieuwe sportief directeur bij de Israëlische recordkampioen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-11/officieel-deze-belg-is-de-nieuwe-sportief-directeur-bij-de-israelische-recordkampioen",
-      "summary": "Steven Vanharen is de nieuwe sportief directeur van Maccabi Tel Aviv. Op die manier staat een Belg aan de sportieve leiding van één van de grootste clubs van Israël.",
-      "publishedAt": "2026-06-11T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Un expatrié se prépare à écrire un nouveau chapitre de sa carrière : \"Je n'exclus pas un retour en Belgique\"",
-      "link": "https://www.walfoot.be/news/2026-06-11/un-expatrie-se-prepare-a-ecrire-un-nouveau-chapitre-de-sa-carriere-je-nexclus-pas-un-retour-en-belgique",
-      "summary": "Benjamin Van Durmen arrive à la fin de son contrat dans le championnat roumain. De quoi le lancer vers un retour au pays ?",
-      "publishedAt": "2026-06-11T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Rudi Garcia vecht de komende weken ook voor eigen toekomst: \"Het WK is een stresstest voor de bondscoach\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-11/rudi-garcia-vecht-de-komende-weken-ook-voor-eigen-toekomst-het-wk-is-een-stresstest-voor-de-bondscoach",
-      "summary": "De Rode Duivels zetten momenteel in Seattle de laatste puntjes op de i richting hun openingswedstrijd. De hele voetbalnatie kijkt naar de spelers en… naar Rudi Garcia. Ook de bondscoach speelt de komende weken voor zijn eigen toekomst.",
-      "publishedAt": "2026-06-11T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Cup of Darts: Wales' Clayton and Kenny get off to winning start in group stages",
-      "link": "https://www.skysports.com/darts/news/12040/13552971/world-cup-of-darts-wales-jonny-clayton-and-nick-kenny-get-off-to-winning-ways-as-germany-ireland-also-win",
-      "summary": "Jonny Clayton, alongside new partner Nick Kenny, got their World Cup of Darts campaign under way with a 4-1 victory over Lithuania’s Darius Labanauskas and Mindaugas Barauskas in Group C.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Cup of Darts 2026 schedule: Wales kick group-stage off with win",
-      "link": "https://www.skysports.com/darts/news/12040/13550475/world-cup-of-darts-2026-schedule-dates-group-stage-draw-as-northern-ireland-defend-crown-in-frankfurt",
-      "summary": "Wales started their bid for a third BetVictor World Cup of Darts title on the tournament's opening night with a 4-1 win over Lithuania.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Williams pays tribute to Mboko after 'special' doubles campaign ends",
-      "link": "https://www.skysports.com/tennis/news/12040/13553171/queens-club-serena-williams-pays-tribute-to-partner-victoria-mboko-after-injury-ended-special-doubles-campaign",
-      "summary": "Serena Williams offered condolences to her doubles partner Victoria Mboko after an injury forced the 19-year-old to withdraw from the Queen's Club doubles tournament.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Mourinho returns! Real Madrid confirm Jose's re-appointment",
-      "link": "https://www.skysports.com/football/news/12040/13553162/jose-mourinho-to-real-madrid-former-chelsea-and-man-utd-boss-bernabeu-return-confirmed-by-spanish-giants",
-      "summary": "Real Madrid have confirmed the re-appointment of Jose Mourinho as first team coach.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "'Cannot last forever' - Russell feels 'everything is going against me'",
-      "link": "https://www.skysports.com/f1/news/12040/13552953/george-russell-mercedes-driver-says-misfortune-cannot-last-forever-ahead-of-barcelona-catalunya-grand-prix",
-      "summary": "George Russell says his misfortune \"cannot last forever\" and is hoping for \"neutral luck\" at this weekend's Barcelona-Catalunya Grand Prix.",
-      "publishedAt": null
     }
   ]
 }
