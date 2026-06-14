@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+#
+# Keep 4allfootball.com (Render free tier) alive during Belgian daytime.
+# Runs on the PUBLIC V4A repo → Actions are free/unlimited.
+#
+# Schedule: every 10 min, UTC 04:00–21:59 = 06:00–23:59 CEST (zomertijd).
+# DST note: in wintertijd (CET, nov–mrt) wordt dit 05:00–22:59 lokaal.
+#   Pas dan de uren aan naar '5-22' voor exact 06:00–23:59 CET.
+#
+name: Keep 4AF Render Alive
+
+"on":
+  schedule:
+    - cron: '*/10 4-21 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: keep-alive-4af
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Ping 4allfootball.com (prevents Render free-tier spin-down)
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 30 https://4allfootball.com/)
+          echo "HTTP $code @ $(date -u)"
+          if [ "$code" -lt 200 ] || [ "$code" -ge 500 ]; then
+            echo "::warning::4AF returned HTTP $code"
+          fi
