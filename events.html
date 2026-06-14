@@ -1259,8 +1259,8 @@
         ALL_EVENTS_SORTED = itemsSorted;
 
         // Premium buckets:
-        // - main grid: only premium items whose premium period is active now
-        // - sidebar: paid premium items whose premium period starts in the future
+        // - main grid: premium items whose premium period is active now
+        // - sidebar: all unexpired paid premium items, so active premium events also appear there
         const nowTs = Date.now();
         const premiumByKey = new Map();
         const premiumSources = [
@@ -1288,6 +1288,14 @@
             if (Number.isFinite(activationDiff) && activationDiff !== 0) return activationDiff;
             return eventSortTime(a) - eventSortTime(b);
           });
+
+        const sidebarPremium = premiumCandidates
+          .filter((ev) => {
+            if (!isPaidPremiumEvent(ev)) return false;
+            const expiresAt = premiumExpiresMs(ev);
+            return Number.isFinite(expiresAt) && expiresAt > nowTs;
+          })
+          .sort((a, b) => eventSortTime(a) - eventSortTime(b));
 
         // Main list keeps all visible events, including premium items shown above.
         OTHER_EVENTS = itemsSorted;
@@ -1451,8 +1459,8 @@
         startPremium30Grid(getFilteredPremium30());
         renderPage(1);
 
-        // Sidebar premium later rotator stays
-        startSidebarPremiumLater(premiumLater);
+        // Sidebar uses every unexpired premium event; fall back to pending-only if needed.
+        startSidebarPremiumLater(sidebarPremium.length ? sidebarPremium : premiumLater);
 
       } catch (e) {
         console.error("[EVENTS] load failed", e);
@@ -1597,10 +1605,11 @@
       const source = (premiumLater && premiumLater.length)
         ? premiumLater
         : [];
+      const slotCount = source.length ? Math.max(MIN_SLOTS, source.length) : MIN_SLOTS;
 
       el.innerHTML = '';
 
-      for (let i = 0; i < MIN_SLOTS; i++) {
+      for (let i = 0; i < slotCount; i++) {
         const ev = source.length ? source[i % source.length] : null;
         const ph = placeholders[i % placeholders.length];
 

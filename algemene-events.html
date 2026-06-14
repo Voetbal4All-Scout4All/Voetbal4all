@@ -1349,10 +1349,11 @@
     ];
 
     const source = (items && items.length) ? items : [];
+    const slotCount = source.length ? Math.max(MIN_SLOTS, source.length) : MIN_SLOTS;
 
     sidebarPremiumLater.innerHTML = '';
 
-    for (let i = 0; i < MIN_SLOTS; i++) {
+    for (let i = 0; i < slotCount; i++) {
       const ev = source.length ? source[i % source.length] : null;
       const ph = placeholders[i % placeholders.length];
 
@@ -1448,16 +1449,22 @@
       // Keep premium events in the general list (same approach as events.html)
       OTHER_EVENTS = ALL_EVENTS_SORTED;
 
-      // premium later (>60 days) derived from main list (paid-only)
-      const now = new Date();
-      const in60 = new Date(now.getTime() + 60*24*60*60*1000);
-      PREMIUM_LATER = ALL_EVENTS_SORTED.filter(ev => {
-        const paid = String(ev.premium_status || '').toLowerCase() === 'paid' ||
-                     String(ev.payment_status || '').toLowerCase() === 'paid';
-        if (!ev.is_premium || !paid) return false;
-        const d = new Date(ev.start_at);
-        return !isNaN(d.getTime()) && d > in60;
+      // Sidebar uses every unexpired paid premium event, not only items >60 days away.
+      const nowTs = Date.now();
+      const sidebarPremiumByKey = new Map();
+      [...premiumItems, ...ALL_EVENTS_SORTED].forEach((ev) => {
+        const paid = String(ev?.premium_status || '').toLowerCase() === 'paid' &&
+                     String(ev?.payment_status || '').toLowerCase() === 'paid';
+        const expiresAt = new Date(ev?.premium_expires_at || '').getTime();
+        if (!ev?.is_premium || !paid || !Number.isFinite(expiresAt) || expiresAt <= nowTs) return;
+        if (!isVisibleEvent(ev) || !isClubFun(ev)) return;
+        const key = String(ev?.slug || ev?.id || '').trim();
+        if (!key) return;
+        sidebarPremiumByKey.set(key, { ...(sidebarPremiumByKey.get(key) || {}), ...ev });
       });
+
+      PREMIUM_LATER = Array.from(sidebarPremiumByKey.values())
+        .sort((a,b) => eventSortTime(a) - eventSortTime(b));
 
       startPremium60Grid(PINNED_PREMIUM_60);
       startSidebarPremiumLater(PREMIUM_LATER);
