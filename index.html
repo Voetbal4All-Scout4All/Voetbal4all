@@ -60,7 +60,7 @@
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4062633211824348"
     crossorigin="anonymous"></script>
 
-  <!-- Meta Pixel — consent-gated: fires only after ad_storage === 'granted' -->
+  <!-- Meta Pixel — consent-gated via TCF API (Funding Choices) -->
   <script>
   (function(){
     var pixelId = '2928646514146449';
@@ -76,24 +76,23 @@
       fbq('init', pixelId);
       fbq('track', 'PageView');
     }
-    function getConsentState() {
-      var dl = window.dataLayer || [];
-      for (var i = dl.length - 1; i >= 0; i--) {
-        var e = dl[i];
-        if (e && e[0] === 'consent' && e[1] === 'update' && e[2] && e[2].ad_storage === 'granted') return 'granted';
-      }
-      return 'denied';
+    function hasAdConsent(tcData) {
+      if (!tcData || !tcData.purpose || !tcData.purpose.consents) return false;
+      return tcData.purpose.consents[1] === true && tcData.purpose.consents[4] === true;
     }
-    if (getConsentState() === 'granted') { initPixel(); return; }
-    var dl = window.dataLayer || [];
-    var origPush = Array.prototype.push;
-    dl.push = function() {
-      origPush.apply(this, arguments);
-      for (var i = 0; i < arguments.length; i++) {
-        var e = arguments[i];
-        if (e && e[0] === 'consent' && e[1] === 'update' && e[2] && e[2].ad_storage === 'granted') initPixel();
-      }
-    };
+    function checkTcf() {
+      if (typeof window.__tcfapi !== 'function') { setTimeout(checkTcf, 500); return; }
+      window.__tcfapi('addEventListener', 2, function(tcData, success) {
+        if (!success) return;
+        if (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete') {
+          if (hasAdConsent(tcData)) initPixel();
+          if (tcData.listenerId) {
+            try { window.__tcfapi('removeEventListener', 2, function(){}, tcData.listenerId); } catch(e){}
+          }
+        }
+      });
+    }
+    checkTcf();
   })();
   </script>
 
