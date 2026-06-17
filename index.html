@@ -76,17 +76,22 @@
       fbq('init', pixelId);
       fbq('track', 'PageView');
     }
+    // Purpose 1: Store/access on device. Purpose 4: Show personalized ads.
     function hasAdConsent(tcData) {
       if (!tcData || !tcData.purpose || !tcData.purpose.consents) return false;
       return tcData.purpose.consents[1] === true && tcData.purpose.consents[4] === true;
     }
+    var retries = 0;
     function checkTcf() {
-      if (typeof window.__tcfapi !== 'function') { setTimeout(checkTcf, 500); return; }
+      if (typeof window.__tcfapi !== 'function') {
+        if (++retries > 20) return;
+        setTimeout(checkTcf, 500); return;
+      }
       window.__tcfapi('addEventListener', 2, function(tcData, success) {
         if (!success) return;
         if (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete') {
           if (hasAdConsent(tcData)) initPixel();
-          if (tcData.listenerId) {
+          if (tcData.eventStatus === 'useractioncomplete') {
             try { window.__tcfapi('removeEventListener', 2, function(){}, tcData.listenerId); } catch(e){}
           }
         }
