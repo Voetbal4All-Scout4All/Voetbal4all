@@ -36,6 +36,15 @@ jobs:
         run: node scripts/generate-article-pages.mjs
         continue-on-error: true
 
+      - name: Copy static share pages to dist
+        run: |
+          if [ -d share ]; then
+            mkdir -p dist/share
+            cp -R share/. dist/share/
+          else
+            echo "[deploy] No share directory to copy"
+          fi
+
       - name: Count SSG output
         run: |
           echo "=== dist/artikel file count ==="
