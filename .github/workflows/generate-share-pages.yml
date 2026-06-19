@@ -194,6 +194,7 @@ jobs:
           <html lang="nl">
           <head>
             <meta charset="utf-8">
+            <meta name="robots" content="noindex">
             <title>{t} - Voetbal4All</title>
             <meta property="fb:app_id" content="{FB_APP_ID}">
             <meta property="og:type" content="{'article' if article_meta else 'website'}">
