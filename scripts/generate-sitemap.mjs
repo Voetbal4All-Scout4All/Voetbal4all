@@ -71,6 +71,9 @@ function articleUrl(a) {
   return `${SITE_BASE}/artikel/${a.slug_year}/${String(a.slug_month).padStart(2, "0")}/${encodeURIComponent(a.slug)}/`;
 }
 
+// Top-level: needed by both sitemap-articles (else branch) and sitemap-news
+const articlesWithBody = data.articles.filter(a => a.slug && a.slug_year && a.slug_month && a.has_body !== false);
+
 const distArtikelDir = resolve(root, "dist", "artikel");
 let articleEntries;
 
@@ -108,7 +111,6 @@ if (existsSync(distArtikelDir)) {
 } else {
   // Fallback: API-based (for standalone sitemap.yml runs without SSG)
   const allWithSlug = data.articles.filter(a => a.slug && a.slug_year && a.slug_month);
-  const articlesWithBody = allWithSlug.filter(a => a.has_body !== false);
   const filtered = allWithSlug.length - articlesWithBody.length;
   if (filtered > 0) console.log(`[sitemap] Filtered ${filtered} thin-content articles (body < 50 chars)`);
   articleEntries = articlesWithBody.map(a => urlEntry(articleUrl(a), a.lastmod || today));
