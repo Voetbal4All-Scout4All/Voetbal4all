@@ -60,6 +60,7 @@ const staticUrls = [
   `${SITE_BASE}/contact.html`,
   `${SITE_BASE}/aanmelden.html`,
   `${SITE_BASE}/event-aanmelden.html`,
+  `${SITE_BASE}/artikel-archief/`,
 ];
 const staticXml = wrapUrlset(staticUrls.map(u => urlEntry(u, today)));
 

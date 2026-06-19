@@ -193,6 +193,11 @@ function buildPage(article, canonicalUrl) {
   // Fill sidebar
   html = html.replace(/id="sidebar-lees-ook"[^>]*>\s*<!--[^>]*-->\s*<\/article>/, `id="sidebar-lees-ook" style="margin-top:12px;">${sidebarRelated}</article>`);
 
+  // ── Archive link (crawlable, reduces orphan pages) ──
+  const archiveLink = `\n<p style="margin-top:24px;font-size:13px;"><a href="/artikel-archief/" style="color:rgba(24,160,251,0.8);text-decoration:none;">Alle artikels →</a></p>`;
+  // Inject before closing </main> or after the body text
+  html = html.replace('</main>', `${archiveLink}\n</main>`);
+
   // ── Share buttons: use canonical pretty-URL (mét trailing slash) ──
   const shareUrl = canonicalUrl;
   const encUrl = encodeURIComponent(shareUrl);
@@ -470,3 +475,81 @@ for (const entry of slugEntries) {
 }
 
 console.log(`[SSG] Done: ${generated} pages (${contentHit} with full content, ${titleOnly} title-only)`);
+
+// ── Step 4: Generate static archive index (orphan-fix) ──
+// One page linking to ALL articles → every article ≤1 click from a crawlable page.
+try {
+  const archiveDir = resolve(distDir, "artikel-archief");
+  mkdirSync(archiveDir, { recursive: true });
+
+  // Group by year-month, sorted newest first
+  const byMonth = new Map();
+  for (const e of slugEntries) {
+    const c = contentMap.get(e.id);
+    const title = c?.title || e.slug.replace(/-/g, " ");
+    const mm = String(e.slug_month).padStart(2, "0");
+    const key = `${e.slug_year}-${mm}`;
+    if (!byMonth.has(key)) byMonth.set(key, []);
+    byMonth.get(key).push({ title, url: `${SITE}/artikel/${e.slug_year}/${mm}/${e.slug}/` });
+  }
+  const sortedMonths = [...byMonth.keys()].sort().reverse();
+
+  const MONTHS_NL = ["","januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
+
+  let archiveHtml = `<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Artikelarchief | Voetbal4All</title>
+  <meta name="description" content="Compleet archief van alle Voetbal4All-artikels, gesorteerd per maand.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="${SITE}/artikel-archief/">
+  <link rel="stylesheet" href="/style.css?v=20260601a">
+  <style>
+    .archive-month { margin-bottom: 32px; }
+    .archive-month h2 { font-family: Montserrat, sans-serif; font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .archive-list { list-style: none; padding: 0; margin: 0; }
+    .archive-list li { padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .archive-list a { color: rgba(24,160,251,0.9); text-decoration: none; font-size: 14px; line-height: 1.5; }
+    .archive-list a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="page">
+  <main class="shell" style="max-width:900px; margin:40px auto; padding:0 20px 60px;">
+    <h1 style="font-family:Montserrat,sans-serif; font-size:28px; font-weight:800; color:#fff; margin-bottom:24px;">Artikelarchief</h1>
+    <p style="font-family:Montserrat,sans-serif; font-size:15px; color:rgba(255,255,255,0.7); margin-bottom:32px;">
+      Alle ${generated} artikels van de Voetbal4All Redactie, gesorteerd per maand.
+    </p>
+`;
+
+  for (const key of sortedMonths) {
+    const [y, m] = key.split("-");
+    const monthName = MONTHS_NL[parseInt(m, 10)] || m;
+    const articles = byMonth.get(key);
+    archiveHtml += `    <section class="archive-month">
+      <h2>${monthName} ${y}</h2>
+      <ul class="archive-list">
+`;
+    for (const a of articles) {
+      archiveHtml += `        <li><a href="${esc(a.url)}">${esc(a.title)}</a></li>\n`;
+    }
+    archiveHtml += `      </ul>
+    </section>
+`;
+  }
+
+  archiveHtml += `  </main>
+</div>
+<script>
+  var y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+</body>
+</html>`;
+
+  writeFileSync(resolve(archiveDir, "index.html"), archiveHtml);
+  console.log(`[SSG] Archive index: ${sortedMonths.length} months, ${generated} article links → dist/artikel-archief/index.html`);
+} catch (archiveErr) {
+  console.warn(`[SSG] Archive generation failed (non-fatal): ${archiveErr.message}`);
+}
