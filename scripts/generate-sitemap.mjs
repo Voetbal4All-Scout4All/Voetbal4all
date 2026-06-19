@@ -64,18 +64,56 @@ const staticUrls = [
 const staticXml = wrapUrlset(staticUrls.map(u => urlEntry(u, today)));
 
 // ── Generate sitemap-articles.xml ──
-// Only include articles WITH slugs AND body content (filter thin-content legacy articles)
-const allWithSlug = data.articles.filter(a => a.slug && a.slug_year && a.slug_month);
-const articlesWithBody = allWithSlug.filter(a => a.has_body !== false);
-const filtered = allWithSlug.length - articlesWithBody.length;
-if (filtered > 0) console.log(`[sitemap] Filtered ${filtered} thin-content articles (body < 50 chars)`);
-console.log(`[sitemap] Articles in sitemap: ${articlesWithBody.length} / ${allWithSlug.length} total`);
-
+// Strategy: if dist/artikel/ exists (SSG ran before sitemap), walk it to get the REAL set.
+// Otherwise fall back to API data (standalone sitemap.yml runs without SSG).
 function articleUrl(a) {
   return `${SITE_BASE}/artikel/${a.slug_year}/${String(a.slug_month).padStart(2, "0")}/${encodeURIComponent(a.slug)}/`;
 }
 
-const articleEntries = articlesWithBody.map(a => urlEntry(articleUrl(a), a.lastmod || today));
+const distArtikelDir = resolve(root, "dist", "artikel");
+let articleEntries;
+
+if (existsSync(distArtikelDir)) {
+  // Walk dist/artikel/{year}/{month}/{slug}/index.html → derive sitemap entries
+  const { readdirSync } = await import("fs");
+  const ssgArticles = [];
+  try {
+    for (const year of readdirSync(distArtikelDir)) {
+      const yearDir = resolve(distArtikelDir, year);
+      if (!existsSync(resolve(yearDir)) || !/^\d{4}$/.test(year)) continue;
+      for (const month of readdirSync(yearDir)) {
+        const monthDir = resolve(yearDir, month);
+        if (!existsSync(monthDir) || !/^\d{2}$/.test(month)) continue;
+        for (const slug of readdirSync(monthDir)) {
+          if (existsSync(resolve(monthDir, slug, "index.html"))) {
+            ssgArticles.push({ slug_year: year, slug_month: month, slug });
+          }
+        }
+      }
+    }
+  } catch (e) { console.warn(`[sitemap] dist walk failed: ${e.message}`); }
+
+  // Match with API data for lastmod (optional enrichment)
+  const apiLookup = new Map();
+  for (const a of data.articles) {
+    if (a.slug) apiLookup.set(`${a.slug_year}/${String(a.slug_month).padStart(2,"0")}/${a.slug}`, a.lastmod);
+  }
+
+  articleEntries = ssgArticles.map(a => {
+    const key = `${a.slug_year}/${a.slug_month}/${a.slug}`;
+    return urlEntry(articleUrl(a), apiLookup.get(key) || today);
+  });
+  console.log(`[sitemap] Articles in sitemap: ${articleEntries.length} (from dist/artikel/ walk, guaranteed 200)`);
+} else {
+  // Fallback: API-based (for standalone sitemap.yml runs without SSG)
+  const allWithSlug = data.articles.filter(a => a.slug && a.slug_year && a.slug_month);
+  const articlesWithBody = allWithSlug.filter(a => a.has_body !== false);
+  const filtered = allWithSlug.length - articlesWithBody.length;
+  if (filtered > 0) console.log(`[sitemap] Filtered ${filtered} thin-content articles (body < 50 chars)`);
+  articleEntries = articlesWithBody.map(a => urlEntry(articleUrl(a), a.lastmod || today));
+  console.log(`[sitemap] Articles in sitemap: ${articleEntries.length} / ${allWithSlug.length} total (API fallback, dist not found)`);
+}
+
 const articlesXml = wrapUrlset(articleEntries);
 
 // ── Deel A: Generate sitemap-news.xml (last 48h, max 1000 URLs) ──
