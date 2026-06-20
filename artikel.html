@@ -1596,10 +1596,13 @@
     // Canonical pretty-URL (mét trailing slash) — consolideert social-signalen
     const shareSlugYear = article.slug_year || article.slugYear;
     const shareSlugMonth = article.slug_month || article.slugMonth;
+    const backendShareUrl = shareId
+      ? ("https://voetbal4all-backend-database.onrender.com/share/article/" + encodeURIComponent(shareId))
+      : "";
     const articleUrl = (shareSlug && shareSlugYear && shareSlugMonth)
       ? ("https://www.voetbal4all.eu/artikel/" + shareSlugYear + "/" + String(shareSlugMonth).padStart(2, "0") + "/" + encodeURIComponent(shareSlug) + "/")
       : shareId
-        ? ("https://www.voetbal4all.eu/share/article/" + encodeURIComponent(shareId) + "/")
+        ? backendShareUrl
         : window.location.href;
     const encodedUrl = encodeURIComponent(articleUrl);
     const encodedTitle = encodeURIComponent(title);
