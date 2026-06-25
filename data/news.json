@@ -1,60 +1,16 @@
 {
-  "generatedAt": "2026-06-25T21:48:00.630Z",
+  "generatedAt": "2026-06-25T23:22:09.746Z",
   "items": [
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Follow live: Gonzalo Plata's clutch goal grants Ec...",
-      "link": "https://www.espn.com/soccer/story/_/id/49172255/world-cup-daily-live-neymar-inspired-lewis-hamilton-brazil-return-usmnt-action",
-      "summary": "null",
-      "publishedAt": "2026-06-25T22:42:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sources: Man Utd near new loan deal for Onana",
-      "link": "https://www.espn.com/soccer/story/_/id/49177076/man-united-new-loan-deal-trabzonspor-andre-onana-sources",
-      "summary": "Manchester United are close to agreeing a fresh loan with Trabzonspor for André Onana, sources have told ESPN.",
-      "publishedAt": "2026-06-25T22:10:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "IT",
       "flag": "🌍",
-      "title": "FIFA: Rainbow flags allowed at Egypt-Iran match",
-      "link": "https://www.espn.com/soccer/story/_/id/49179384/fifa-not-prohibit-rainbow-flags-egypt-iran-match",
-      "summary": "FIFA on Thursday reiterated fans will not be prohibited from brining rainbow flags inside of Seattle's Lumen Field for Friday's decisive Group G World Cup match between Egypt and Iran, despite objections from each countries' respective federations.",
-      "publishedAt": "2026-06-25T22:10:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "US",
-      "flag": "🇺🇸",
-      "title": "Pochettino won't 'risk' USMNT players on yellows",
-      "link": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows",
-      "summary": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-      "publishedAt": "2026-06-25T22:10:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Sources: Putellas reaches deal with Lionesses",
-      "link": "https://www.espn.com/soccer/story/_/id/49176078/alexia-putellas-reaches-agreement-london-city-lionesses-sources",
-      "summary": "Ballon d'Or winner Alexia Putellas has reached an agreement with London City Lionesses, multiple sources confirmed to ESPN, after leaving Barcelona following a 14-year spell.",
-      "publishedAt": "2026-06-25T22:10:08.000Z"
+      "title": "WK-LIVE 25/6: Broos stunt met Zuid-Afrika, Raskin heeft niks met Bologna",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-06-26/wk-live-25-6-broos-stunt-met-zuid-afrika-vijf-speeldagen-schorsing-uitgedeeld-door-fifa",
+      "summary": "Het WK is volop bezig. En dus is het ook tijd om een en ander te bundelen in ons WK-nieuws van de dag. Elke dag zitten we er namelijk erg kort op, zodat u op de hoogte blijft van al het reilen en zeilen in de selecties over de hele wereld.",
+      "publishedAt": "2026-06-26T10:42:06.000Z"
     },
     {
       "type": "rss",
@@ -62,76 +18,10 @@
       "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "VI Live: vier wijzigingen bij Tunesië, nog altijd vrees voor uitstel duel Oranje",
-      "link": "https://www.vi.nl/nieuws/vi-live-oranje-leeft-toe-naar-tunesie-ook-kansas-weet-nu-wie-snollebollekes-is",
-      "summary": "Voor het Nederlands elftal staat in de nacht van donderdag op vrijdag om 01.00 uur de laatste groepswedstrijd op het WK 2026 gepland. Tunesië is de tegenstander. Daarnaast nemen Japan en Zweden het tegen elkaar op in de andere wedstrijd van poule F. Mis niks van deze wedstrijden in deze VI Live.",
-      "publishedAt": "2026-06-25T21:47:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man City agree record fee with Forest for Anderson",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cn8qx30q4xqo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City agree a deal with Nottingham Forest worth up to a British record £130m to sign England midfielder Elliot Anderson.",
-      "publishedAt": "2026-06-25T21:43:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Koeman kiest tegen Tunesië voor Aké en Brobbey",
-      "link": "https://www.vi.nl/nieuws/koeman-kiest-tegen-tunesie-voor-ake-en-brobbey",
-      "summary": "Bondscoach Ronald Koeman heeft de opstellling bekendgemaakt voor het derde WK-duel van Oranje met Tunesië. Brian Brobbey begint opnieuw in de punt van de aanval. Micky van de Ven staat op scherp en zal vervangen worden door Nathan Aké.",
-      "publishedAt": "2026-06-25T21:41:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Live: Ivoorkust deelt genadeklap uit, Ecuador virtueel door naar KO-fase",
-      "link": "https://www.vi.nl/nieuws/vi-live-curacao-incasseert-snelle-dreun-ecuador-komt-met-snel-antwoord",
-      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor de ontknoping in Groep E met Curaçao tegen Ivoorkust en Ecuador tegen Duitsland. In aanloop naar en vanaf de aftrap om 22.00 uur blijf je volledig op de hoogte van deze duels.",
-      "publishedAt": "2026-06-25T21:39:13.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Curaçao v Côte d’Ivoire: World Cup 2026 – live",
-      "link": "https://www.theguardian.com/football/live/2026/jun/25/curacao-v-cote-divoire-world-cup-2026-live",
-      "summary": "⚽️ World Cup kick-off: 4pm EDT/9pm BST/6am AEST ⚽️ Third-place table | Player guide | And email Sarah This will be the guide to keep your eye on as the games continue: What has been your best moment of the tournament so far? All of the shock results and historic moments are moments I enjoy, including Curaçao’s first World Cup point. Email me and let me know yours. Continue reading...",
-      "publishedAt": "2026-06-25T21:32:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Ecuador v Germany: World Cup 2026 – live",
-      "link": "https://www.theguardian.com/football/live/2026/jun/25/germany-v-ecuador-world-cup-2026-live",
-      "summary": "⚽️ World Cup kick-off: 4pm EDT/9pm BST/6am AEST ⚽️ Third-place table | Player guide | And email Scott Pre-match postbag. “Writing from Ecuador, I can say people are understandably disappointed with how the World Cup has gone so far. After finishing second in qualifying, there was a feeling that this group could achieve something, but we were ignoring the unequal distribution of talent in the team: in the back, you have Pacho, who has won two Champions League titles, and Hincapie, who won the Bundesliga and the Premier League, and in the middle, you have Moises Caicedo. Up front, we still have 36-year-old Enner Valencia, who couldn’t really do it at Everton 10 years ago. There’s an exciting generation of Ecuadorian strikers, including the 16-year-old twins currently at Arsenal, but they’re not yet ready. The country was hoping Germany would field their second string of players for this match; turns out they didn’t. On another note, many attribute Ecuador’s success in qualifying to Quito’s altitude, but this overlooks the fact that most of Ecuador’s players come from abroad, so they also have to adjust to the altitude. Also, under the current coach, Ecuador started playing home games in Guayaquil, which is at sea level” – Matthew Carpenter-Arevalo “As well as some underdogs have performed this World Cup there hasn’t really been a big upset victory. Maybe today will be the day for that and if it happens, there would be no better occasion than Ecuador in front of a crowd which is likely to be majority Ecuadorean due to the huge population living in New York and surrounding region” – John in New York Continue reading...",
-      "publishedAt": "2026-06-25T21:30:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Tchouaméni wil Noorwegen verslaan voor Deschamps en vreest niet voor Haaland",
-      "link": "https://www.vi.nl/nieuws/tchouameni-wil-noorwegen-verslaan-voor-deschamps-en-vreest-niet-voor-haaland",
-      "summary": "Frankrijk speelt vrijdagavond de beslissende wedstrijd in de poulefase, maar Aurélien Tchouaméni is met zijn hoofd niet alleen maar bezig met het treffen met Noorwegen. De gedachten bij het Franse kamp gaan uit naar Didier Deschamps, die momenteel ontbreekt vanwege het overlijden van zijn moeder .",
-      "publishedAt": "2026-06-25T21:29:38.000Z"
+      "title": "Advocaat kijkt terug op geweldig WK met Curaçao: 'Dat zijn wereldploegen, hè!'",
+      "link": "https://www.vi.nl/nieuws/advocaat-kijkt-vol-trots-terug-op-het-wk-met-curacao-en-gaat-kort-in-op-toekomst",
+      "summary": "Dick Advocaat kijkt met trots terug op het WK dat hij met Curaçao heeft beleefd. De bondscoach van The Blue Wave wilde na afloop van het duel met Ivoorkust nog niet volledig ingaan op zijn toekomst.",
+      "publishedAt": "2026-06-25T23:20:00.000Z"
     },
     {
       "type": "rss",
@@ -141,8 +31,30 @@
       "flag": "🌍",
       "title": "Japan v Sweden: World Cup 2026 – live",
       "link": "https://www.theguardian.com/football/live/2026/jun/25/japan-v-sweden-world-cup-2026-live",
-      "summary": "⚽️ Kick-off time: 6pm local/7pm EDT/12am BST/9am AEST ⚽️ Third-place table | Player guide | Bracketology | Tables Sweden have had quite the rollercoaster ride, with a 5-1 win over Tunisia and a 5-1 defeat to the Netherlands. I think they’re the first team since Denmark in 1986 to score and concede at least five in separate games at the same World Cup. I don’t know much about that Denmark team but they sound like fun. What happens next The winners of Group F will meet Morocco in Guadalupe on Monday. The runners-up will play Brazil in Houston, also on Monday. If the third-placed team qualify, they will play one of France, Norway, Germany, Mexico and Switzerland. Continue reading...",
-      "publishedAt": "2026-06-25T21:27:24.000Z"
+      "summary": "⚽️ Kick-off time: 6pm local/7pm EDT/12am BST/9am AEST ⚽️ Third-place table | Player guide | Bracketology | Tables ⚽️ Follow live updates from Tunisia v Netherlands “If I have my permutations correct,” begins James Humphries, “Japan battering Sweden would mean Scotland are not quite out yet; but as this occurred to me I was reminded of a mate many years ago, at about six in the morning at a party, going: ‘At a certain point, you’re just running from the comedown’. “‘Running from the comedown’ should incidentally be the title of the Official Authorised SFA Book about this campaign, but it bloody won’t be.” Continue reading...",
+      "publishedAt": "2026-06-25T23:18:44.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Tunisia v Netherlands: World Cup 2026 – live",
+      "link": "https://www.theguardian.com/football/live/2026/jun/25/tunisia-v-netherlands-world-cup-2026-live",
+      "summary": "⚽️ Kick-off time: 6pm local/7pm EDT/12am BST/9am AEST ⚽️ Third-place table | Player guide | Tables | Mail Bryan ⚽️ Follow live updates from Japan v Sweden 1 min And off we go! The Netherlands kick off and they will attack from right to left in orange shirts and black shorts, while Tunisia are attacking from left to right in their all-white strips. The Dutch fans have taken their positions inside Arrowhead … er, Kansas City Stadium. The players should be making their way through the tunnel for the national anthem any minute now. Continue reading...",
+      "publishedAt": "2026-06-25T23:18:32.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "VI Live: opnieuw een heerlijk begin voor Oranje met vroege goals tegen Tunesië",
+      "link": "https://www.vi.nl/nieuws/vi-live-oranje-leeft-toe-naar-tunesie-ook-kansas-weet-nu-wie-snollebollekes-is",
+      "summary": "Voor het Nederlands elftal staat in de nacht van donderdag op vrijdag om 01.00 uur de laatste groepswedstrijd op het WK 2026 gepland. Tunesië is de tegenstander. Daarnaast nemen Japan en Zweden het tegen elkaar op in de andere wedstrijd van poule F. Mis niks van deze wedstrijden in deze VI Live.",
+      "publishedAt": "2026-06-25T23:08:21.000Z"
     },
     {
       "type": "rss",
@@ -150,21 +62,98 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Germany goal should have been ruled out for 'endangering opponent'",
-      "link": "https://www.bbc.co.uk/sport/football/videos/cqx1wqx9n27o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport World Cup pundits Joe Hart, Ellen White and Lucas Leiva explain why Alexander Pavlovic's high boot in the build-up to Leroy Sane's goal was an example of \"endangering the opponent\" and should have been classed as a foul in the FIFA World Cup Group E match at New York New Jersey Stadium.",
-      "publishedAt": "2026-06-25T21:24:19.000Z"
+      "title": "Ecuador stun Germany to qualify for knockout stages",
+      "link": "https://www.bbc.co.uk/sport/football/videos/c0qyzg4zje4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Goals from Nilson Angulo and Gonzalo Plata help Ecuador come from behind to beat Germany 2-1 to qualify for the knockout stages of the FIFA World Cup, as one of the top eight third-placed teams.",
+      "publishedAt": "2026-06-25T22:57:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Koeman evenaart Van Gaal bij Oranje, Gakpo en Memphis op recordjacht",
+      "link": "https://www.vi.nl/nieuws/koeman-evenaart-van-gaal-bij-oranje-gakpo-en-memphis-op-recordjacht",
+      "summary": "Het Nederlands elftal speelt in de nacht van donderdag op vrijdag tegen Tunesië. Het is de laatste groepswedstrijd voor Oranje op dit WK. Geheel traditiegetrouw blikt Voetbal International vooruit op de volgende interland aan de hand van statistieken.",
+      "publishedAt": "2026-06-25T22:50:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Koeman verklaart Oranje-wijzigingen en hoopt dat Malen het verschil kan maken",
+      "link": "https://www.vi.nl/nieuws/koeman-verklaart-oranje-wijzigingen-en-hoopt-dat-malen-het-verschil-kan-maken",
+      "summary": "Ronald Koeman hoopt dat Donyell Malen tegen Tunesië het verschil kan maken. De bondscoach legde voorafgaand aan het laatste groepsduel van Oranje op het WK ook uit waarom Micky van de Ven en Crysencio Summerville niet in actie komen.",
+      "publishedAt": "2026-06-25T22:32:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Plata’s golden touch against Germany sends Ecuador into World Cup last 32",
+      "link": "https://www.theguardian.com/football/2026/jun/25/ecuador-germany-world-cup-match-report",
+      "summary": "Sí, se puede – yes, we can – was the chant that rang out from the sea of 55,000 yellow shirts as Ecuador’s final group match kicked off. Despite a flat start to their World Cup campaign, there was a genuine belief that an upset against a full-strength Germany was possible. They had no other choice: having been shut out by Eloy Room’s heroics for Curaçao, Sebastián Beccacece’s side had to win to progress. Gonzalo Plata’s 77th-minute strike sparked wild and emotional celebrations, assuring their place in the last 32 as a best third-placed team – and a first knockout match since 2006. Continue reading...",
+      "publishedAt": "2026-06-25T22:28:28.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Manchester City en Nottingham Forest sluiten recorddeal over Anderson'",
-      "link": "https://www.vi.nl/nieuws/manchester-city-en-nottingham-forest-sluiten-recorddeal-over-anderson",
-      "summary": "Manchester City gaat Elliot Anderson overnemen van Nottingham Forest, zo melden alle toonaangevende media in Engeland. Met de transfer is een dusdanig hoog bedrag gemoeid dat de Engelse middenvelder de duurste speler ooit in de Premier League wordt.",
-      "publishedAt": "2026-06-25T21:20:43.000Z"
+      "title": "Anderson's journey to England star and potential record signing",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c1eyjvzeg8qo?at_medium=RSS&at_campaign=rss",
+      "summary": "Elliot Anderson has emerged as a key part of Thomas Tuchel's England side and is now on the brink of a big money move to Manchester City.",
+      "publishedAt": "2026-06-25T22:26:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "What each team need to reach World Cup knockouts",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cgmdz4ww81vo?at_medium=RSS&at_campaign=rss",
+      "summary": "With the final round of group fixtures under way the path to the World Cup final on 19 July is starting to take shape.",
+      "publishedAt": "2026-06-25T22:25:14.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City agree record fee with Forest for Anderson",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cn8qx30q4xqo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City agree a club record deal with Nottingham Forest to sign England midfielder Elliot Anderson.",
+      "publishedAt": "2026-06-25T22:23:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Côte d’Ivoire into World Cup knockouts for first time as Pépé finishes off Curaçao",
+      "link": "https://www.theguardian.com/football/2026/jun/25/pepe-at-the-double-as-cote-divoire-beat-curacao-and-claim-place-in-last-32",
+      "summary": "Côte d’Ivoire surviving the World Cup group stage for the first time, in the year of our football gods 2026, is one of those tidbits that sounds like it should not be true, and yet here we are. An underwhelming 2-0 victory, courtesy of Nicolas Pépé’s double, put the Ivorians through to the last 32 as group runners-up. But it was an imprecise contest here in Philadelphia, the cradle of American democracy – such as it is. All the same, a spirited Curaçao leave their first World Cup. Continue reading...",
+      "publishedAt": "2026-06-25T22:20:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "VI Live: Advocaat gaat met 'laatste kunstje' strijdend ten onder",
+      "link": "https://www.vi.nl/nieuws/vi-live-advocaat-gaat-met-laatste-kunstje-strijdend-ten-onder",
+      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor de ontknoping in Groep E met Curaçao tegen Ivoorkust en Ecuador tegen Duitsland. In aanloop naar en vanaf de aftrap om 22.00 uur blijf je volledig op de hoogte van deze duels.",
+      "publishedAt": "2026-06-25T21:58:49.000Z"
     },
     {
       "type": "rss",
@@ -183,32 +172,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Tunisia v Netherlands: World Cup 2026 – live",
-      "link": "https://www.theguardian.com/football/live/2026/jun/25/tunisia-v-netherlands-world-cup-2026-live",
-      "summary": "⚽️ Kick-off time: 6pm local/7pm EDT/12am BST/9am AEST ⚽️ Third-place table | Player guide | Bracketology | Mail us Bryan will be here shortly. In the meantime, here’s the briefing from Graham Ruthven’s daily guide on what to know about this Group F matchup: Continue reading...",
-      "publishedAt": "2026-06-25T21:00:01.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "Playing at a World Cup is unforgettable but it requires every ounce of your dedication | Rodrygo",
       "link": "https://www.theguardian.com/football/2026/jun/25/world-cup-rodrygo-brazil-schedule-dedication",
       "summary": "I savour the memory of playing for Brazil at the 2022 tournament – but it was a privilege that took effort For a player the World Cup day begins with everyone gathering in the restaurant for breakfast at the scheduled time. Buffet options are determined by the nutritionist, who specifies which food and in what quantities each player can consume. The morning also includes on-field training, usually within the team’s accommodation complex. After that, lunch is likewise personalised, based on each athlete’s body composition and physiological needs. The afternoon is then dedicated to gym sessions and, when necessary, recovery massages, as well as meetings for strategic guidance from the coaching staff and video analysis of the upcoming opponent. Dinner, attended by the whole squad, allows for more relaxed conversation and games such as cards, pool, or dominoes. A final snack wraps up the schedule before the night’s sleep recharges energy levels to repeat the process the next day. And the next. And the next. Continue reading...",
       "publishedAt": "2026-06-25T17:15:54.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "The games that show the flaws in a 48-team World Cup",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cgev2vdzjvvo?at_medium=RSS&at_campaign=rss",
-      "summary": "Two matches in the final round of group games present the chance for two teams to simply play out a draw to qualify.",
-      "publishedAt": "2026-06-25T13:38:00.000Z"
     },
     {
       "type": "rss",
@@ -242,17 +209,6 @@
       "link": "https://www.walfoot.be/news/2026-06-25/trois-criteres-essentiels-antoine-sibierski-devoile-les-coulisses-de-larrivee-de-vitor-bruno",
       "summary": "Vitor Bruno a officiellement été présenté à la presse par Anderlecht. Kenneth Bornauw et Antoine Sibierski sont fiers de leur coup.",
       "publishedAt": "2026-06-25T08:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "WK-LIVE 25/6: Broos stunt met Zuid-Afrika, vijf speeldagen schorsing uitgedeeld door FIFA",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-06-25/wk-live-25-6-broos-stunt-met-zuid-afrika-vijf-speeldagen-schorsing-uitgedeeld-door-fifa",
-      "summary": "Het WK is volop bezig. En dus is het ook tijd om een en ander te bundelen in ons WK-nieuws van de dag. Elke dag zitten we er namelijk erg kort op, zodat u op de hoogte blijft van al het reilen en zeilen in de selecties over de hele wereld.",
-      "publishedAt": "2026-06-25T08:35:39.000Z"
     },
     {
       "type": "rss",
@@ -322,14 +278,58 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Netherlands double lead over Tunisia early on with Japan-Sweden level LIVE!",
+      "link": "https://www.skysports.com/football/japan-vs-sweden/live/549824",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "English stars and Scheffler start well at Travelers as Clark checked by triple bogey",
+      "link": "https://www.skysports.com/golf/news/12040/13557871/travelers-championship-scottie-scheffler-matthew-fitzpatrick-start-well-as-us-open-champion-wyndham-clark-suffers-triple-bogey",
+      "summary": "England's Matthew Fitzpatrick, Aaron Rai and Justin Rose and world No 1 Scottie Scheffler made strong starts to the PGA Tour's Travelers Championship as US Open champion Wyndham Clark's progress was curbed by a triple bogey.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Pepe double vs Curacao sends Ivory Coast through",
+      "link": "https://www.skysports.com/football/curacao-vs-ivory-coast/report/549822",
+      "summary": "Former Arsenal forward Nicolas Pepe scored twice as Ivory Coast secured second-place in Group E with a comfortable 2-0 win over Curacao.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Injury-hit Warrington edge Catalans to move level on points with Leeds",
+      "link": "https://www.skysports.com/rugby-league/news/12040/13557731/super-league-warrington-wolves-cope-with-injuries-to-edge-catalans-dragons-18-16-and-move-level-on-points-with-leaders-leeds-rhinos",
+      "summary": "​​​​​​Injury-hit Warrington Wolves moved level on points with Super League table toppers Leeds Rhinos after eking out a narrow 18-16 victory over Catalans Dragons.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "What each team need to reach World Cup knockouts",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cgmdz4ww81vo?at_medium=RSS&at_campaign=rss",
-      "summary": "With the final round of group fixtures under way the path to the World Cup final on 19 July is starting to take shape.",
-      "publishedAt": "2026-06-25T00:11:51.000Z"
+      "title": "Ecuador stun Germany to reach knockouts",
+      "link": "https://www.skysports.com/football/ecuador-vs-germany/report/549823",
+      "summary": "Ecuador stunned already-qualified Germany with a 2-1 comeback win in New Jersey to reach the World Cup knockout stages and dent Scotland’s hopes of reaching the round of 32.",
+      "publishedAt": null
     }
   ]
 }
