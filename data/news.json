@@ -1,71 +1,126 @@
 {
-  "generatedAt": "2026-07-06T16:24:15.880Z",
+  "generatedAt": "2026-07-06T18:58:57.340Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "VI Live: Spanje ongewijzigd, Portugal met Félix",
+      "link": "https://www.vi.nl/nieuws/volg-alles-over-portugal-spanje",
+      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor Portugal en Spanje. In aanloop naar en vanaf de aftrap om 21.00 uur blijf je volledig op de hoogte van dit duel.",
+      "publishedAt": "2026-07-06T18:55:24.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Braziliaanse bond peinst na mislukt WK niet over ontslag Ancelotti",
+      "link": "https://www.vi.nl/nieuws/braziliaanse-bond-peinst-na-mislukt-wk-niet-over-ontslag-ancelotti",
+      "summary": "Het teleurstellend verlopen WK van Brazilië, dat zondag in de achtste finales werd uitgeschakeld door Noorwegen, heeft geen gevolgen voor de baan van Carlo Ancelotti. Technisch directeur Rodrigo Caetano van de Braziliaanse voetbalbond CBF maakt duidelijk dat de bondscoach niet hoeft te vrezen voor een ontslag.",
+      "publishedAt": "2026-07-06T18:53:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Portugal v Spain: World Cup 2026 last 16 – live",
+      "link": "https://www.theguardian.com/football/live/2026/jul/06/portugal-v-spain-world-cup-2026-last-16-live",
+      "summary": "⚽️ Kick-off time: 2pm local, 3pm EDT, 8pm BST, 5am AEST ⚽️ Player guide | Bracketology| Golden Boot | Email Scott The great pennant showdown. Spain have managed to pull off a feat previously considered almost impossible, by producing a pennant with an even more boring design than England’s. Not sure what we’ll do should the two teams meet in the final. Maybe just quietly drop this feature. Probably for the best all round. Portugal’s is rather nice, though! This isn’t the one Ronaldo will be handing over to Rodri today, they didn’t take a photo of that, but you get the gist. One of the great recognisable crests. A couple of points docked for lack of edge-cushioning tassels; a sudden gust of wind at the coin toss and you could have someone’s eye out with that. Continue reading...",
+      "publishedAt": "2026-07-06T18:43:20.000Z"
+    },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "World Cup 2026: Trump admits lobbying Fifa over Balogun red card; Starmer intervened on England kick-off time – live",
+      "title": "World Cup 2026: Trump admits lobbying Fifa over Balogun red; Mbappé hits out at Paraguayan senator; Starmer’s intervention– live",
       "link": "https://www.theguardian.com/football/live/2026/jul/06/world-cup-2026-england-set-up-norway-quarter-final-after-mexico-thriller-trump-lobbied-for-balogun-red-card-reversal-live",
       "summary": "⚽️ World Cup news and reaction as the last 16 continues ⚽️ Uefa accuses Fifa of ‘crossing red line’ over Balogun ⚽️ Mexico 2-3 England | Player guide | And email us We haven’t even mentioned Balogun-gate yet. The Belgian FA, and you can assume a large proportion of the football world, has been left “astonished” by Fifa’s decision after lobbying by Donald Trump to reverse the suspension given to the striker for his red card in the team’s win over Bosnia and Herzegovina. He is now free to play in the last-16 game against Belgium. Sources have told the Guardian that Trump made three calls to Fifa, starting from Wednesday, to ensure that the change was made. Continue reading...",
-      "publishedAt": "2026-07-06T16:22:51.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Trump: I asked Infantino to 'review' Balogun red",
-      "link": "https://www.espn.com/soccer/story/_/id/49286603/us-president-donald-trump-confirms-asked-fifa-review-balogun-red-card",
-      "summary": "President Donald Trump said Monday he called FIFA president Gianni Infantino to review the red card given to USMNT striker Folarin Balogun in the team's match against Bosnia-Herzegovina, calling it a \"horrible\" call.",
-      "publishedAt": "2026-07-06T16:22:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Belgium want FIFA to explain Balogun reversal",
-      "link": "https://www.espn.com/soccer/story/_/id/49286007/belgium-ask-fifa-explain-balogun-reversal-challenge-usmnt-strikers-eligibility",
-      "summary": "The Belgian soccer federation wants an explanation from FIFA about a decision to let United States forward Folarin Balogun play at the World Cup despite getting a red card in his previous game.",
-      "publishedAt": "2026-07-06T16:22:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "UEFA: FIFA crossed 'red line' on Balogun ban",
-      "link": "https://www.espn.com/soccer/story/_/id/49284889/uefa-fifa-folarin-balogun-red-card-ban-overturned-usmnt",
-      "summary": "UEFA have strongly criticized FIFA's decision to suspend USMNT striker Folarin Balogun's red card, thus allowing the United States striker to be available for the World Cup round-of-16 match against Belgium.",
-      "publishedAt": "2026-07-06T16:22:16.000Z"
+      "publishedAt": "2026-07-06T18:41:11.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "PSG bezorgt AC Milan déjà vu en strikt doelman (18) transfervrij",
-      "link": "https://www.vi.nl/nieuws/psg-bezorgt-ac-milan-deja-vu-en-strikt-doelman-18-transfervrij",
-      "summary": "De meeste transferwindows zijn geopend en dus neemt het transfernieuws weer toe. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-07-06T16:10:25.000Z"
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Mbappé en Franse bond reageren fel op racistische post van Paraguayaanse politica",
+      "link": "https://www.vi.nl/nieuws/mbappe-en-franse-bond-reageren-fel-op-racistische-post-van-paraguayaanse-politica",
+      "summary": "Kylian Mbappé heeft vol afschuw gereageerd op de aan hem gerichte uitspraken van Celeste Amarilla. De Paraguayaanse politica richtte zich na het duel tussen Frankrijk en Paraguay tot de Franse aanvoerder met racistische teksten. De Franse bond FFF overweegt zelfs juridische stappen te ondernemen.",
+      "publishedAt": "2026-07-06T18:37:05.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Bij AZ vertrokken Westerveld duikt op in Spanje",
+      "link": "https://www.vi.nl/nieuws/bij-az-vertrokken-westerveld-duikt-op-in-spanje",
+      "summary": "Sem Westerveld (23) heeft na zijn vertrek bij AZ onderdak gevonden in Spanje. Niet bij Athletic Club, wat een paar maanden geleden werd gesuggereerd, maar bij Real Zaragoza. De keeper wordt op de officiële clubsite alvast voorgesteld.",
+      "publishedAt": "2026-07-06T18:22:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Peersman gaat na vertrek uit Groningen aan de slag bij Telstar",
+      "link": "https://www.vi.nl/nieuws/peersman-gaat-na-vertrek-uit-groningen-aan-de-slag-bij-telstar",
+      "summary": "Marvin Peersman (35) blijft actief in de Eredivisie. De verdediger vertrok transfervrij bij FC Groningen en heeft nu een contract getekend bij Telstar.",
+      "publishedAt": "2026-07-06T18:10:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Infantino reageert op ophef: 'Onafhankelijkheid FIFA moet worden gerespecteerd'",
-      "link": "https://www.vi.nl/nieuws/infantino-reageert-op-ophef-onafhankelijkheid-fifa-moet-worden-gerespecteerd",
-      "summary": "FIFA-voorzitter Gianni Infantino heeft gereageerd op de ophef rond de voorwaardelijke schorsing van de Amerikaanse spits Folarin Balogun. De aanvaller kreeg in de zestiende finale een rode kaart, maar de onafhankelijke tuchtcommissie van de FIFA besloot de automatische schorsing om te zetten in een voorwaardelijke straf.",
-      "publishedAt": "2026-07-06T16:07:52.000Z"
+      "title": "Tuchel claims World Cup refereeing ‘not good enough’ but says England have belief to go all the way",
+      "link": "https://www.theguardian.com/football/2026/jul/06/thomas-tuchel-england-mexico-norway-world-cup-2026",
+      "summary": "Tuchel critical of ‘unreliable’ officiating against Mexico Victory at the Azteca ‘fuels our belief we are here to stay’ Thomas Tuchel called the standard of refereeing at the World Cup unreliable and erratic as he insisted England are capable of going all the way following their dramatic 3-2 victory against Mexico. Tuchel fumed after his side held on with 10 men at the Azteca stadium on Sunday night, saying that officials across the board have not been up to scratch at the finals tournament. The German, who was unhappy with Jarell Quansah being sent off for a bad tackle after a review following a recommendation by the video assistant referee, claimed that players do not know what to expect during games and he warned that teams are at risk of being knocked out because of poor refereeing decisions. Continue reading...",
+      "publishedAt": "2026-07-06T18:00:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "James expected to return for Norway quarter-final",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cx2xxl6772no?at_medium=RSS&at_campaign=rss",
+      "summary": "England manager Thomas Tuchel expects Reece James to be available for the World Cup quarter-final against Norway on Saturday.",
+      "publishedAt": "2026-07-06T17:37:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Starmer intervened in row over Mexico-England kick-off time",
+      "link": "https://www.bbc.co.uk/news/articles/cjwgggp28dlo?at_medium=RSS&at_campaign=rss",
+      "summary": "Fifa had been set to bring the match forward by six hours, due to a forecast of thunderstorms.",
+      "publishedAt": "2026-07-06T17:12:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "‘These guys are losers’: Brazil berated back home after defeat by Norway",
+      "link": "https://www.theguardian.com/football/2026/jul/06/brazil-players-shameful-defeat-norway-world-cup-carlo-ancelotti-embarrassing",
+      "summary": "Carlo Ancelotti and his players have been lambasted for their ‘shameful’ and ‘embarrassing’ World Cup exit The wait for the hexa – the record-extending sixth World Cup – continues. Brazil’s 2-1 loss to Norway in the last 16 of the World Cup on Sunday means they have gone six tournaments in a row without being crowned champions. Some in Brazil are calling it the reverse hexa. As you would expect, the reaction back home has been scathing. Neto, the former international who is now a pundit on Radio Bandeirantes, laid into the current crop of players. “It’s a generation that won fuck all,” he said. “There are six players who won one Copa América and that’s it. It was embarrassing from the beginning and everything that happened before that game. It was a shameful campaign and these guys are losers. It’s a generation of lies.” Continue reading...",
+      "publishedAt": "2026-07-06T16:22:15.000Z"
     },
     {
       "type": "rss",
@@ -75,30 +130,8 @@
       "flag": "🌍",
       "title": "Uefa has put European football on war footing with Fifa over Balogun decision | Matt Hughes",
       "link": "https://www.theguardian.com/football/2026/jul/06/uefa-fifa-folarin-balogun-controversy-decision-usa-belgium-gianni-infantino-aleksander-ceferin",
-      "summary": "European governing body’s dramatic move could have major implications for the future of the sport Perhaps the only globally renowned figure who has been more conspicuous by his absence at this World Cup than Donald Trump is the Uefa president, Aleksander Ceferin, although both men have more than made up for their silence over the last 24 hours. By endorsing a statement in which Uefa accused Fifa of crossing “a red line” in making the “incomprehensible and unjustifiable” decision to lift the USA striker Folarin Balogun’s suspension for Monday’s last-16 tie with Belgium, Ceferin has effectively put European football on a war footing with the world governing body, a dramatic move that could have major implications for the future of the sport. Continue reading...",
+      "summary": "European governing body’s dramatic move could have major implications for the future of the sport Perhaps the only globally renowned figure who has been more conspicuous by his absence at this World Cup tournament than Donald Trump is the Uefa president, Aleksander Ceferin, although both men have more than made up for their silence over the past 24 hours. By endorsing a statement in which Uefa accused Fifa of crossing “a red line” in making the “incomprehensible and unjustifiable” decision to lift the USA striker Folarin Balogun’s suspension for the last-16 tie with Belgium on Monday, Ceferin has effectively put European football on a war footing with the world governing body, a dramatic move that could have major implications for the future of the sport. Continue reading...",
       "publishedAt": "2026-07-06T15:54:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "ADO Den Haag bindt groeibriljant langer",
-      "link": "https://www.vi.nl/nieuws/ado-den-haag-bindt-jonge-spits-langer",
-      "summary": "Blijf via dit blog op de hoogte van alle transfers en transfergeruchten bij en rond clubs in de Eredivisie en de Keuken Kampioen Divisie. Bekijk hier ons blog voor de transferperikelen in het buitenland .",
-      "publishedAt": "2026-07-06T15:39:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Dit doet Feyenoord anders dan vorig seizoen",
-      "link": "https://www.vi.nl/video/dit-doet-feyenoord-anders-dan-vorig-seizoen",
-      "summary": "Pieter Zwart en Freek Jansen bespreken met Sjoerd Keizer wat Feyenoord in de voorbereiding anders doet dan vorig seizoen. De Rotterdammers hebben in Giovanni van Bronckhorst een nieuwe trainer en wonnen het eerste oefenduel met 6-0 van FC Dordrecht.",
-      "publishedAt": "2026-07-06T15:30:00.000Z"
     },
     {
       "type": "rss",
@@ -113,50 +146,6 @@
     },
     {
       "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Why FIFA's Balogun reversal is an uncomfortable de...",
-      "link": "https://www.espn.com/soccer/story/_/id/49283694/two-things-true-baloguns-world-cup-reprieve",
-      "summary": "For USMNT fans, seeing Folarin Balogun play against Belgium after FIFA rescinded his suspension will feel a bit odd -- a jumble of joy tinged with a heavy slice of unease.",
-      "publishedAt": "2026-07-06T15:27:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Nobody benefits from FIFA letting Balogun off the ...",
-      "link": "https://www.espn.com/soccer/story/_/id/49278521/nobody-benefits-fifa-letting-balogun-hook-not-even-usmnt",
-      "summary": "The U.S. will be buzzing to have Folarin Balogun available vs. Belgium on Monday.",
-      "publishedAt": "2026-07-06T15:27:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Henderson expected to have surgery on injured wrist",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cvgmmm5923yo?at_medium=RSS&at_campaign=rss",
-      "summary": "Jordan Henderson is expected to have surgery on the wrist injury he sustained while celebrating England's win over Mexico on Monday.",
-      "publishedAt": "2026-07-06T15:22:38.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Henderson wacht operatie na knullige val en mist rest van WK met Engeland'",
-      "link": "https://www.vi.nl/nieuws/henderson-wacht-operatie-na-knullige-val-en-mist-rest-van-wk-met-engeland",
-      "summary": "Jordan Henderson komt dit WK niet meer in actie voor Engeland, zo weten Engelse media. De 36-jarige middenvelder liep op knullige wijze een blessure op aan zijn pols, waaraan hij geopereerd moet worden.",
-      "publishedAt": "2026-07-06T15:02:26.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
@@ -165,17 +154,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cqx113327eyo?at_medium=RSS&at_campaign=rss",
       "summary": "The tactical breakdown of how Thomas Tuchel's 10-man England pulled off a remarkable World Cup win in a hostile Mexico City.",
       "publishedAt": "2026-07-06T11:57:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sandro Tonali seals £92.5m move to Tottenham on back of ‘magic’ sales pitch",
-      "link": "https://www.theguardian.com/football/2026/jul/06/sandro-tonali-seals-move-to-tottenham-newcastle-transfer-window",
-      "summary": "Club record signing wowed by Roberto De Zerbi’s plans Wages could rise to £275,000-a-week over six-year deal Sandro Tonali has completed a record-breaking transfer to Tottenham from Newcastle for an initial £92.5m, the Italian claiming he was powerless to resist Roberto De Zerbi’s “magic” sales pitch. “I spoke to the head coach [De Zerbi] for close to two hours about the club, the fans, the stadium and our football. It was like magic because I knew immediately I had to sign for Tottenham. I can’t wait to start the season,” said Tonali, whose fee could potentially rise to £100m should Spurs achieve serial Champions League qualifications, something that would also see the midfielder’s wages rise to around £275,000-a-week over a six year contract. Continue reading...",
-      "publishedAt": "2026-07-06T11:46:21.000Z"
     },
     {
       "type": "rss",
@@ -190,47 +168,36 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "England rise to Azteca occasion and see off ghosts, time and Mexico | Barney Ronay",
-      "link": "https://www.theguardian.com/football/2026/jul/06/england-azteca-mexico-world-cup",
-      "summary": "This was the most extraordinary night of football as an experience of the mind, body, bones, guts and blood “Enn-JOYYY this unforrrgGEDDABLE Fifa Worrrld Cup … expPERRIENCE!!” the strangely guileless American-accented public address had commanded, with 40 minutes still to run before the delayed kick-off in Mexico City. Er. OK then. Looking out over the mist-shrouded cliff face of the Estadio Azteca, drenched to the inner seams in generational rain, throbbing through the chest from the endless waves of noise, the word enjoy just didn’t seem to capture the basic sensory experience. Continue reading...",
-      "publishedAt": "2026-07-06T06:10:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "An incredible night when England heroes were made",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cjrgg07p8dlo?at_medium=RSS&at_campaign=rss",
-      "summary": "On a spine-tingling night of drama, emotion and pure theatre in one of sport's most atmospheric arenas, England delivered one of their greatest performances.",
-      "publishedAt": "2026-07-06T05:51:10.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "'Charleroi gaat strijd aan voor gewilde middenvelder van 1 miljoen'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/charleroi-gaat-strijd-aan-voor-gewilde-middenvelder-van-1-miljoen",
-      "summary": "Sporting Charleroi hoopt volgend seizoen goed voor de dag te komen. Met Nicolas Frutos als sportief directeur willen de Carolo's een woordje meespreken en daarom wordt er nu al druk gewerkt op de zomermercato. De Henegouwers zouden nu interesse hebben in een Ghanese middenvelder.",
-      "publishedAt": "2026-07-06T04:20:00.000Z"
+      "title": "Komt de eerste steen héél dichtbij of alweer vertraging? Deze week is cruciaal voor Brugs stadiondossier",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/komt-de-eerste-steen-heel-dichtbij-of-alweer-vertraging-deze-week-is-cruciaal-voor-brugs-stadiondossier",
+      "summary": "Club Brugge wacht nog steeds op groen licht om te starten aan de bouw van een gloednieuwe voetbaltempel. Het beroep van buurtbewoners en andere oppositiepartijen lijkt nog maar eens voor extra vertraging te zorgen.",
+      "publishedAt": "2026-07-06T06:40:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "INT",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Mbappé, Olise, Haaland, Messi... La Coupe du monde va-t-elle décider du Ballon d'Or ?",
+      "link": "https://www.walfoot.be/news/2026-07-06/mbappe-olise-haaland-messi-la-coupe-du-monde-va-t-elle-decider-du-ballon-dor",
+      "summary": "Le Ballon d'Or 2026 pourrait se jouer pendant cette Coupe du monde aux États-Unis, au Canada et au Mexique. Mbappé, Messi, Haaland et d'autres candidats brillent, mais tout dépendra de la suite.",
+      "publishedAt": "2026-07-06T06:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "ES",
       "flag": "🌍",
-      "title": "La Belgique victorieuse sur tapis vert grâce à Balogun ? Le TAS pourrait tout changer !",
-      "link": "https://www.walfoot.be/news/2026-07-06/la-belgique-victorieuse-sur-tapis-vert-grace-a-balogun-le-tas-pourrait-tout-changer-",
-      "summary": "La planète football est sans dessus dessous avec l'affaire Folarin Balogun. Les relations presque incestueuses entre la Maison Blanche et la FIFA pourraient avoir des conséquences bien plus lourdes que celles s'appliquant au seul match de ce soir face aux Diables Rouges.",
-      "publishedAt": "2026-07-06T04:20:00.000Z"
+      "title": "'FC Barcelona wil Harry Kane én krijgt meteen een antwoord van de sterspeler'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/fc-barcelona-wil-harry-kane-en-krijgt-meteen-een-antwoord-van-de-sterspeler",
+      "summary": "FC Barcelona heeft een poging gedaan om een onmogelijke transfer te realiseren. De Catalaanse grootmacht polste bij Harry Kane naar zijn interesse om in Camp Nou te komen voetballen. Het antwoord van de Engelse aanvaller was héél duidelijk.",
+      "publishedAt": "2026-07-06T06:20:00.000Z"
     },
     {
       "type": "rss",
@@ -238,10 +205,54 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "LIVE: Heksenketel van 66.000 fans wacht Rode Duivels: Balogun zorgde voor extra motivatie",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/live-heksenketel-van-66000-fans-wacht-rode-duivels-balogun-zorgde-voor-extra-motivatie",
+      "title": "OFFICIEEL: Club Brugge begint aan marathon en rondt eerste uitgaande miljoenentransfer af",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/officieel-club-brugge-begint-aan-marathon-en-rondt-eerste-uitgaande-miljoenentransfer-af",
+      "summary": "Zaid Romero verlaat Club Brugge definitief. Getafe CF haalt de 26-jarige Argentijn definitief naar Spanje. De Belgische landskampioen recupereert uiteindelijk nog vier miljoen euro.",
+      "publishedAt": "2026-07-06T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Officiel : un jeune milieu de terrain du Standard prolonge l'aventure à Sclessin",
+      "link": "https://www.walfoot.be/news/2026-07-06/officiel-un-jeune-milieu-de-terrain-du-standard-prolonge-laventure-a-sclessin",
+      "summary": "Tarik Kilic veut s'inscrire dana la durée au Standard. Le jeune milieu de terrain a prolongé son contrat, il sera l'un des nouveaux visages du SL 16.",
+      "publishedAt": "2026-07-06T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Le départ de Nathan De Cat divise les supporters... mais c'est peut-être le bon moment",
+      "link": "https://www.walfoot.be/news/2026-07-06/le-depart-de-nathan-de-cat-divise-les-supporters-mais-cest-peut-etre-le-bon-moment",
+      "summary": "Nathan De Cat se rapproche de plus en plus d'Hoffenheim. Malgré les regrets des supporters d'Anderlecht, un transfert en Bundesliga cet été pourrait être la meilleure décision pour sa progression.",
+      "publishedAt": "2026-07-06T05:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Een enorm Amerikaans risico met een als-factor: TAS kan Rode Duivels in ieder scenario aan overwinning helpen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/een-enorm-amerikaans-risico-met-een-als-factor-tas-kan-rode-duivels-in-ieder-scenario-aan-overwinning-helpen",
+      "summary": "De voetbalwereld staat op zijn kop door de affaire rond Folarin Balogun. De héél vreemde verhoudingen tussenHhet Witte Huis en wereldvoetbalbond FIFA zouden veel zwaardere gevolgen kunnen hebben voor de Verenigde Staten dan enkel voor de match van vanavond tegen de Rode Duivels.",
+      "publishedAt": "2026-07-06T05:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Zelfs sommige USA-supporters zijn het er niet mee eens: \"A disgrace\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/match-live-live-zelfs-sommige-usa-supporters-zijn-het-er-niet-mee-eens-a-disgrace",
       "summary": "De Rode Duivels staan maandagavond (lokale tijd) voor een bijzonder pittige opdracht. In Seattle wacht een duel met de Verenigde Staten, dat niet alleen kan rekenen op het thuisvoordeel, maar ook op een kolkend stadion met zo'n 66.000 supporters die massaal achter de Stars and Stripes zullen staan.",
-      "publishedAt": "2026-07-06T04:15:00.000Z"
+      "publishedAt": "2026-07-06T05:29:00.000Z"
     },
     {
       "type": "rss",
@@ -249,21 +260,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Il n'en rate pas une : Donald Trump confirme au monde entier ses agissements en coulisse",
-      "link": "https://www.walfoot.be/news/2026-07-06/il-nen-rate-pas-une-donald-trump-confirme-au-monde-entier-ses-agissements-en-coulisse",
-      "summary": "A quelques heures du hutième de finale entre les Etats-Unis et la Belgique, le dossier Folarin Balogun fait plus que jamais parler, des deux côtés de l'Atlantique. D'autant qu'on peut toujours compter sur Donald Trump pour verser de l'huile sur le feu.",
-      "publishedAt": "2026-07-06T04:01:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "WK-LIVE 6/7: Spanje is op zijn hoede voor \"geprikkelde\" Ronaldo",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/wk-live-6-7-spanje-is-op-zijn-hoede-voor-geprikkelde-ronaldo",
-      "summary": "Het WK is volop bezig. En dus is het ook tijd om een en ander te bundelen in ons WK-nieuws van de dag. Elke dag zitten we er namelijk erg kort op, zodat u op de hoogte blijft van al het reilen en zeilen in de selecties over de hele wereld.",
-      "publishedAt": "2026-07-06T03:55:00.000Z"
+      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 06/07: Caprasse - Pocognoli - Servais",
+      "link": "https://www.walfoot.be/news/2026-07-06/actu-transferts-rumeurs-de-transferts",
+      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
+      "publishedAt": "2026-07-06T05:20:00.000Z"
     },
     {
       "type": "rss",
@@ -271,65 +271,65 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "L’ambassadeur américain Bill White réagit au dossier Balogun : \"Trump ne s’immiscerait jamais dans ça\"",
-      "link": "https://www.walfoot.be/news/2026-07-06/lambassadeur-americain-bill-white-reagit-au-dossier-balogun-trump-ne-simmiscerait-jamais-dans-ca",
-      "summary": "Bill White, l’ambassadeur des États-Unis en Belgique, a réagi au dossier Folarin Balogun et ne crie, sans surprise, pas au scandale.",
-      "publishedAt": "2026-07-06T03:30:00.000Z"
+      "title": "Un entraîneur bien connu en terres liégeoises est le nouvel entraîneur de l’Olympic Charleroi",
+      "link": "https://www.walfoot.be/news/2026-07-06/un-entraneur-bien-connu-en-terres-liegeoises-est-le-nouvel-entraneur-de-lolympic-charleroi",
+      "summary": "L’Olympic Charleroi a annoncé ce lundi en début d’après-midi, via une publication sur ses réseaux sociaux, la signature de Kevin Caprasse, ancien coach du RFC Seraing.",
+      "publishedAt": "2026-07-06T05:20:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Donald Trump geeft contact met FIFA-voorzitter toe: \"Infantino is een slimme man\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/donald-trump-geeft-contact-met-fifa-voorzitter-toe-infantino-is-een-slimme-man",
-      "summary": "Het is aftellen naar de wedstrijd tussen de Verenigde Staten en België in de achtste finales van het WK. Wie op een rustige aanloop gehoopt had, komt bedrogen uit. De zaak rond VS-spits Folarin Balogun houdt iedereen in zijn greep. Donald Trump reageerde intussen nog eens.",
-      "publishedAt": "2026-07-06T03:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Un Diable Rouge absent du Mondial vers un transfert à 30 millions d'euros en Premier League ?",
-      "link": "https://www.walfoot.be/news/2026-07-06/un-diable-rouge-absent-du-mondial-vers-un-transfert-a-30-millions-deuros-en-premier-league-",
-      "summary": "Mandela Keita n’a pas été retenu pour la Coupe du monde, malgré une saison convaincante avec Parme en Serie A. Le milieu belge pourrait toutefois se consoler avec un beau transfert, puisque Leeds serait intéressé par son profil.",
-      "publishedAt": "2026-07-06T03:00:00.000Z"
+      "title": "Fury vs AJ could be at Wembley with later start time",
+      "link": "https://www.skysports.com/boxing/news/12040/13561091/tyson-fury-vs-anthony-joshua-fight-can-take-place-at-wembley-stadium-if-authorities-agree-to-later-start-time-says-turki-alalshikh",
+      "summary": "The blockbuster heavyweight clash between Tyson Fury and Anthony Joshua could still be held at Wembley Stadium, but only if local authorities agree to stage the fight at a later time than usual.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Braziliaanse voetballegende onverbiddelijk: \"Ancelotti is door het ijs gezakt\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-06/braziliaanse-voetballegende-onverbiddelijk-ancelotti-is-door-het-ijs-gezakt",
-      "summary": "Voor Brazilië zit het WK erop. De Goddelijke Kanaries verloren gisteren met 1-2 van een sterk Noorwegen - of Erling Haaland - en zullen ook in 2026 geen zesde ster mogen bijschrijven. Voormalig topspits Ronaldo Nazário duidt bondscoach Carlo Ancelotti aan als schuldige.",
-      "publishedAt": "2026-07-06T03:00:00.000Z"
+      "title": "Joyce misses out on heavyweight title shot as Gassiev opponent confirmed",
+      "link": "https://www.skysports.com/boxing/news/12040/13561073/joe-joyce-misses-out-on-wba-heavyweight-title-shot-as-murat-gassiev-gets-new-opponent-for-first-defence",
+      "summary": "Murat Gassiev's first defence of his WBA heavyweight title will go ahead on Saturday after a replacement opponent was found for the Russian.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Les Diables Rouges sur leurs gardes : faut-il craindre un arbitrage en faveur des États-Unis ?",
-      "link": "https://www.walfoot.be/news/2026-07-06/les-diables-rouges-sur-leurs-gardes--faut-il-craindre-un-arbitrage-en-faveur-des-tats-unis",
-      "summary": "Faut-il craindre un arbitrage favorable aux États-Unis face à la Belgique en seizièmes de finale ? La décision controversée de la FIFA concernant Folarin Balogun et plusieurs précédents dans l'histoire de la Coupe du monde alimentent les inquiétudes des supporters belges.",
-      "publishedAt": "2026-07-06T02:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Erling Haaland hails ‘one of the sickest days’ in Norway’s history after beating Brazil",
-      "link": "https://www.theguardian.com/football/2026/jul/06/erling-haaland-one-of-the-sickest-days-norway-history-beating-brazil-world-cup",
-      "summary": "Coach calls it ‘greatest day’ in country’s football history Neymar appears to announce Brazil retirement Ståle Solbakken called it “the greatest day in Norwegian football history” while Erling Haaland labelled it one of “the sickest”. One thing is for certain, however: Norway are through to the quarter-finals of the World Cup for the first time after deservedly beating Brazil. A late double from Haaland decided the contest, with the final score 2-1, and immediately caused chaos back home. Tens of thousands took to the streets of Oslo in the early hours to celebrate, including an impromptu gathering at the royal palace, where fans were greeted by Crown Prince ‌Haakon, who was wearing a Norway scarf. Continue reading...",
-      "publishedAt": "2026-07-06T00:44:14.000Z"
+      "title": "Wimbledon order of play: Gauff, Djokovic, Sinner and Osaka all in action Tuesday",
+      "link": "https://www.skysports.com/tennis/news/12040/13557578/wimbledon-2026-order-of-play-and-match-schedule-for-centre-court-no-1-court-no-2-court-and-more",
+      "summary": "Take a look at Tuesday's singles Order of Play in the Wimbledon Championships at the All England Club.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Portugal vs Spain LIVE!",
+      "link": "https://www.skysports.com/football/portugal-vs-spain/live/549858",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Eleven players fined by Wimbledon - but Kyrgios isn't one of them!",
+      "link": "https://www.skysports.com/tennis/live-blog/12040/13556471/wimbledon-build-up-live-news-updates-with-emma-raducanu-jack-draper-jannik-sinner-aryna-sabalenka-serena-williams-preparing-for-grand-slam",
+      "summary": "",
+      "publishedAt": null
     }
   ]
 }
