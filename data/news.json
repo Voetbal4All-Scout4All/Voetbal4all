@@ -1,82 +1,27 @@
 {
-  "generatedAt": "2026-07-10T14:35:17.609Z",
+  "generatedAt": "2026-07-10T16:59:19.644Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool face upheaval, CEO Edwards quits FSG",
-      "link": "https://www.espn.com/soccer/story/_/id/49323819/michael-edwards-leaves-liverpool-ownership-role",
-      "summary": "Liverpool are facing a period of significant behind-the-scenes upheaval following the departure of Michael Edwards, the chief executive officer of football for owners Fenway Sports Group (FSG).",
-      "publishedAt": "2026-07-10T15:18:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Monaco chief casts doubt on Paul Pogba's future",
-      "link": "https://www.espn.com/soccer/story/_/id/49323727/monaco-chief-casts-doubt-paul-pogba-future",
-      "summary": "null",
-      "publishedAt": "2026-07-10T15:18:12.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Mbappé allays WC injury concern: 'I'm all good'",
-      "link": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco",
-      "summary": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
-      "publishedAt": "2026-07-10T15:18:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Klopp: Mbappé, Liverpool had talks on private jet",
-      "link": "https://www.espn.com/soccer/story/_/id/49322019/jurgen-klopp-kylian-mbappe-liverpool-talks-private-jet-psg-transfer",
-      "summary": "Jürgen Klopp has revealed the lengths Liverpool went to in an attempt to sign Kylian Mbappé in 2017, citing talks on a private jet in the \"most expensive non-transfer\" the club were involved in.",
-      "publishedAt": "2026-07-10T15:18:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "ESPN - Soccer",
-      "sourceSlug": "espn-soccer",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "USMNT's Pulisic flopped at this World Cup, but does he deserve the blame?",
-      "link": "https://www.espn.com/soccer/story/_/id/49317008/instead-being-usmnt-biggest-world-cup-star-pulisic-was-biggest-mystery",
-      "summary": "In his prime at a World Cup on home soil, this summer was Christian Pulisic's moment, but for a number of reasons, he failed to meet it.",
-      "publishedAt": "2026-07-10T14:43:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Live: vermoedelijke opstellingen België en Spanje voor kwartfinale",
-      "link": "https://www.vi.nl/nieuws/vi-live-spanje-en-belgie-strijden-om-plek-in-de-halve-finale",
-      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor Spanje en België. In aanloop naar en vanaf de aftrap om 21.00 uur blijf je volledig op de hoogte van dit duel.",
-      "publishedAt": "2026-07-10T14:33:52.000Z"
-    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "RKC na proefperiode niet in zee met Van Duinen",
-      "link": "https://www.vi.nl/nieuws/rkc-na-proefperiode-niet-in-zee-met-van-duinen",
-      "summary": "Blijf via dit blog op de hoogte van alle transfers en transfergeruchten bij en rond clubs in de Eredivisie en de Keuken Kampioen Divisie. Bekijk hier ons blog voor de transferperikelen in het buitenland .",
-      "publishedAt": "2026-07-10T14:33:00.000Z"
+      "title": "Transferrumoer bij NEC: dit is de club van plan",
+      "link": "https://www.vi.nl/video/transferrumoer-bij-nec-dit-is-de-club-van-plan",
+      "summary": "NEC beleeft een drukke transferzomer. Na het vertrek van Önal en de miljoenen die daarmee binnenkomen, wordt er volop gewerkt aan de selectie voor komend seizoen. Welke spelers zijn in beeld, hoe zit het met Kaplan en Emre Mor, en waarom wil NEC deze zomer sneller toeslaan op de transfermarkt? Clubwatcher Sander Janssen bespreekt het aan tafel bij presentator Kalum van Oudheusden.",
+      "publishedAt": "2026-07-10T16:55:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Oyarzabal hoort bij de vijf beste spitsen ter wereld'",
+      "link": "https://www.vi.nl/video/oyarzabal-hoort-bij-de-vijf-beste-spitsen-ter-wereld",
+      "summary": "Mikel Oyarzabal hoort bij de vijf beste spitsen ter wereld, aldus Luis de la Fuente. De Spaanse bondscoach vindt dat zijn aanvalsleider 'van wereldklasse' is. Met Oyarzabal werkt La Roja toe naar de kwartfinale van het WK tegen België.",
+      "publishedAt": "2026-07-10T16:45:00.000Z"
     },
     {
       "type": "rss",
@@ -84,10 +29,32 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "World Cup 2026: ‘violent disorder’ in London after France’s win over Morocco; Jesus takes Portugal job – live",
+      "title": "World Cup 2026: ‘violent disorder’ in London after France’s win over Morocco; Spain v Belgium buildup; Jesus takes Portugal job – live",
       "link": "https://www.theguardian.com/football/live/2026/jul/10/world-cup-2026-france-power-on-quansah-ban-fallout-spain-v-belgium-buildup-live",
       "summary": "⚽ All the latest news as the quarter-finals continue ⚽ Player guide | Bracketology| Golden Boot | Email us A 17-year-old girl fell off a truck and died while celebrating France’s World Cup quarter final win over Morocco, emergency services said Friday. Celebrations erupted across France after the 2-0 win in the United States with hundreds dancing in the streets of Paris, watched by thousands of police on security duties. Continue reading...",
-      "publishedAt": "2026-07-10T14:22:16.000Z"
+      "publishedAt": "2026-07-10T16:39:06.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sportief directeur die Salah, Mané en Slot haalde, vertrekt bij Liverpool",
+      "link": "https://www.vi.nl/nieuws/sportief-directeur-die-salah-mane-en-slot-haalde-vertrekt-bij-liverpool",
+      "summary": "Michael Edwards staat voor een vertrek bij Liverpool. De Engelsman stond jarenlang aan het roer bij The Reds en haalde grote namen naar de club. Daarmee hielp hij Liverpool terug aan de Engelse en Europese top.",
+      "publishedAt": "2026-07-10T16:25:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Ajax-doelwit Ceballos sprak al met Real Betis",
+      "link": "https://www.vi.nl/nieuws/ajax-doelwit-ceballos-sprak-al-met-real-betis",
+      "summary": "Dani Ceballos is momenteel in Sevilla. Het doelwit van Ajax zegt daar op familiebezoek te zijn, maar heeft inmiddels ook met Real Betis gesproken.",
+      "publishedAt": "2026-07-10T16:19:00.000Z"
     },
     {
       "type": "rss",
@@ -95,32 +62,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "De Graafschap strikt transfervrije Leemans",
-      "link": "https://www.vi.nl/nieuws/de-graafschap-strikt-transfervrije-leemans",
-      "summary": "Clint Leemans (30) vervolgt zijn carrière bij De Graafschap. De middenvelder leek op weg naar een nieuw contract bij NAC Breda, maar dat ging plots niet door. Nu gaat hij aan de slag bij De Superboeren .",
-      "publishedAt": "2026-07-10T14:11:00.000Z"
+      "title": "Waarom Ajax wil meewerken aan een vertrek van Dolberg",
+      "link": "https://www.vi.nl/video/waarom-ajax-wil-meewerken-aan-een-vertrek-van-dolberg",
+      "summary": "Kasper Dolberg mag vertrekken als er een goed bod op tafel komt. Is dat logisch? Clubwatcher Lentin Goodijk legt uit waarom Ajax openstaat voor een transfer en waarom de Deense spits uiteindelijk niet heeft gebracht wat ervan werd verwacht.",
+      "publishedAt": "2026-07-10T15:55:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Non-EU-salaris stijgt opnieuw naar recordhoogte",
-      "link": "https://www.vi.nl/nieuws/non-eu-salaris-stijgt-opnieuw-naar-recordhoogte",
-      "summary": "Spelers van buiten de Europese Unie zijn dit seizoen nog duurder geworden voor Nederlandse clubs. De salariseis voor spelers zonder EU-paspoort is opnieuw naar recordhoogte gestegen. Een non-EU-speler moet dit seizoen 630 duizend euro per jaar verdienen.",
-      "publishedAt": "2026-07-10T13:55:00.000Z"
+      "title": "Jesus reunites with Ronaldo as new Portugal head coach",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c3eyl9pvxj1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Jorge Jesus is named Portugal's new head coach on a four-year contract to run through to the 2030 World Cup.",
+      "publishedAt": "2026-07-10T15:41:59.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Portugese bond pakt door na WK-exit en strikt opvolger Martínez",
-      "link": "https://www.vi.nl/nieuws/portugese-bond-pakt-door-na-wk-exit-en-strikt-opvolger-martinez",
-      "summary": "Portugal laat er geen gras over groeien na de uitschakeling op het WK. Enkele dagen nadat bekend werd dat Roberto Martínez vertrekt als bondscoach, is er al een opvolger: Jorge Jesus is aangesteld als opvolger van de Spanjaard.",
-      "publishedAt": "2026-07-10T13:35:24.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Edwards leaves football chief role with Liverpool owners FSG",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cpd3gqz6qleo?at_medium=RSS&at_campaign=rss",
+      "summary": "Liverpool owners Fenway Sports Group announce the departure of Michael Edwards, the company's chief executive of football.",
+      "publishedAt": "2026-07-10T14:42:49.000Z"
     },
     {
       "type": "rss",
@@ -141,7 +108,7 @@
       "flag": "🇬🇧",
       "title": "How do England stop Norway - and Haaland?",
       "link": "https://www.bbc.co.uk/sport/football/articles/c621jyxkvzko?at_medium=RSS&at_campaign=rss",
-      "summary": "As England prepare to face Norway in a World Cup quarter-final on Saturday how do Thomas Tuchel's side prepare for their main threat - star striker Erling Haaland?",
+      "summary": "As England prepare to face Norway in a World Cup quarter-final on Saturday, how can Thomas Tuchel's side handle the main threat - star striker Erling Haaland?",
       "publishedAt": "2026-07-10T12:39:21.000Z"
     },
     {
@@ -150,7 +117,7 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "'What old timers can do' - the evolution of Belgium's golden generation",
+      "title": "'What old-timers can do' - the evolution of Belgium's golden generation",
       "link": "https://www.bbc.co.uk/sport/football/articles/c5yz0g0mg4no?at_medium=RSS&at_campaign=rss",
       "summary": "BBC Sport explores what is behind Belgium's progress to the last eight of the World Cup, and whether they were too easily discounted among the contenders.",
       "publishedAt": "2026-07-10T11:38:58.000Z"
@@ -181,17 +148,6 @@
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "How De la Fuente's Spain are closing in on greatness",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cwyez8r7ve8o?at_medium=RSS&at_campaign=rss",
-      "summary": "Before Spain's World Cup quarter-final against Belgium, Guillem Balague talks to Spain boss Luis de la Fuente about their identity and Lamine Yamal.",
-      "publishedAt": "2026-07-10T06:47:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
       "title": "Mexico boss' explicit heckle a bit of fun - Gordon",
@@ -201,47 +157,36 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How good is Monga and what role could he play at Man City?",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cdr4vvlp7d0o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City appear to have struck an early blow on Arsenal by agreeing a deal to sign teenage starlet Jeremy Monga from Leicester City.",
-      "publishedAt": "2026-07-10T06:06:42.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "\"Le futur du Maroc sera beau\" : Mohamed Ouahbi optimiste pour l’avenir de la sélection marocaine",
-      "link": "https://www.walfoot.be/news/2026-07-10/le-futur-du-maroc-sera-beau-mohamed-ouahbi-optimiste-pour-lavenir-de-la-selection-marocaine",
-      "summary": "L’entraîneur belgo-marocain de la sélection marocaine, Mohamed Ouahbi, était évidemment déçu ce jeudi après l’élimination du Maroc en quarts de finale de la Coupe du monde face à la France. Après la rencontre, il a livré une analyse lucide et évoqué l’avenir du football marocain.",
-      "publishedAt": "2026-07-10T02:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Contract is getekend: 'Club Brugge betaalt 9 miljoen euro voor nieuwe middenvelder'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/contract-is-getekend-club-brugge-betaalt-9-miljoen-euro-voor-nieuwe-middenvelder",
-      "summary": "Club Brugge is de (inkomende) transferperiode gestart. De Belgische landskampioen is volop bezig met de laatste details van de transfer van Cheveyo Tsawa.",
-      "publishedAt": "2026-07-10T02:27:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 10/07: Moreira - Smets - Ambros",
+      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 10/07: Dendoncker - Khalaili - Smets",
       "link": "https://www.walfoot.be/news/2026-07-10/actu-transferts-rumeurs-de-transferts",
       "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
-      "publishedAt": "2026-07-10T02:00:00.000Z"
+      "publishedAt": "2026-07-10T04:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Transfernieuws en Transfergeruchten 10/07: Trouillet - Kechta - Ambros - Dendoncker - Coucke",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/transfernieuws-transfergeruchten",
+      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 10/07 hebben we transfernieuws en transfergeruchten voor u over:",
+      "publishedAt": "2026-07-10T04:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Akkoord bereikt: Franse middenvelder op weg naar Standard",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/akkoord-bereikt-franse-middenvelder-op-weg-naar-standard",
+      "summary": "Standard zou binnenkort de middenvelder van Rodez, Alexis Trouillet, verwelkomen. Transferspecialist Sacha Tavolieri onthult dat er een akkoord is bereikt tussen beide clubs én met de speler.",
+      "publishedAt": "2026-07-10T04:30:00.000Z"
     },
     {
       "type": "rss",
@@ -249,10 +194,21 @@
       "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Le contrat est déjà prêt : Diego Moreira très proche d'un transfert après la Coupe du monde",
-      "link": "https://www.walfoot.be/news/2026-07-10/le-contrat-est-deja-pret-diego-moreira-tres-proche-dun-transfert-apres-la-coupe-du-monde",
-      "summary": "Diego Moreira a marqué des points lors de son entrée au jeu contre le Sénégal. Prolongera-t-il cette saison référence avec un transfert ?",
-      "publishedAt": "2026-07-10T02:00:00.000Z"
+      "title": "Libre de tout contrat, Leander Dendoncker suscite de l’intérêt en Europe et en MLS",
+      "link": "https://www.walfoot.be/news/2026-07-10/libre-de-tout-contrat-leander-dendoncker-suscite-de-linteret-en-europe-et-en-mls",
+      "summary": "Actuellement libre de tout contrat après la fin de son aventure au Real Oviedo, Leander Dendoncker suscite de l’intérêt en Italie, en Espagne, en France, en Belgique, mais aussi en MLS.",
+      "publishedAt": "2026-07-10T04:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Paul Van Himst gelooft in stunt, Defour heeft duidelijke boodschap voor Duivels",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/paul-van-himst-gelooft-in-stunt-defour-heeft-duidelijke-boodschap-voor-duivels",
+      "summary": "De Rode Duivels staan vrijdag voor hun zwaarste opdracht van het WK. Spanje begint als favoriet, maar Paul Van Himst en Steven Defour weigeren België bij voorbaat af te schrijven. Beiden geloven dat er kansen liggen, al verschillen ze duidelijk in de manier waarop de match moet worden aangepakt.",
+      "publishedAt": "2026-07-10T04:20:00.000Z"
     },
     {
       "type": "rss",
@@ -260,21 +216,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Transfernieuws en Transfergeruchten 10/07: Ambros - Dendoncker - Coucke",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/transfernieuws-transfergeruchten",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 10/07 hebben we transfernieuws en transfergeruchten voor u over:",
-      "publishedAt": "2026-07-10T01:56:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Anderlecht reageert meteen op vertrek De Cat met nieuwe middenvelder",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/officieel-anderlecht-reageert-meteen-op-vertrek-de-cat-met-nieuwe-middenvelder",
-      "summary": "Anderlecht heeft op dezelfde dag afscheid genomen van een van zijn grootste talenten en meteen een nieuwe middenvelder voorgesteld. Nathan De Cat trok eerder op vrijdag officieel naar Hoffenheim, niet veel later maakte paars-wit de komst van Lukas Ambros bekend.",
-      "publishedAt": "2026-07-10T01:56:00.000Z"
+      "title": "OFFICIEEL: KV Kortrijk strikt verdediger van Chelsea",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/officieel-kv-kortrijk-strikt-verdediger-van-chelsea",
+      "summary": "KV Kortrijk heeft opnieuw toegeslagen op de transfermarkt. De Kerels huren Harrison Murray-Campbell voor één seizoen van Chelsea. De 19-jarige Engelsman moet extra concurrentie en fysieke kracht brengen in het centrum van de verdediging.",
+      "publishedAt": "2026-07-10T04:04:00.000Z"
     },
     {
       "type": "rss",
@@ -282,21 +227,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "OFFICIEL : Matte Smets prolonge son contrat avec le KRC Genk",
-      "link": "https://www.walfoot.be/news/2026-07-10/officiel-matte-smets-prolonge-son-contrat-avec-le-krc-genk",
-      "summary": "Le KRC Genk a annoncé, ce vendredi après-midi, la prolongation du contrat de Matte Smets jusqu’en 2030. Le défenseur central de 22 ans s’est imposé comme une valeur sûre en terre limbourgeoise.",
-      "publishedAt": "2026-07-10T01:36:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Na alle onrust komt Genk met bijzonder belangrijk nieuws",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/na-alle-onrust-komt-genk-met-bijzonder-belangrijk-nieuws",
-      "summary": "KRC Genk heeft in een woelige voorbereiding voor belangrijk goed nieuws gezorgd. Matte Smets verlengt zijn contract tot 2030 en spreekt meteen zijn ambitie uit. De verdediger wil uitgroeien tot leider en met de Limburgers eindelijk een prijs pakken.",
-      "publishedAt": "2026-07-10T01:30:00.000Z"
+      "title": "Saint-Trond proche de recruter un joueur japonais : le successeur de Ryotaro Ito ?",
+      "link": "https://www.walfoot.be/news/2026-07-10/saint-trond-proche-de-recruter-un-joueur-japonais-le-successeur-de-ryotaro-ito-",
+      "summary": "Un joueur japonais se rapproche d’un transfert à Saint-Trond. Ryotaro Araki, un milieu offensif de 24 ans évoluant aux Kashima Antlers, est tout proche de signer avec les Trudonnaires, selon le Belang van Limburg.",
+      "publishedAt": "2026-07-10T04:00:00.000Z"
     },
     {
       "type": "rss",
@@ -304,10 +238,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "OFFICIEL : Anderlecht annonce la signature d'un nouveau milieu offensif",
-      "link": "https://www.walfoot.be/news/2026-07-10/officiel-anderlecht-annonce-la-signature-dun-nouveau-milieu-offensif",
-      "summary": "Anderlecht a officialisé ce vendredi après-midi la signature de Lukas Ambros, milieu offensif tchèque qui arrive en provenance du club polonais du Górnik Zabrze.",
-      "publishedAt": "2026-07-10T01:13:00.000Z"
+      "title": "LIVE : Suivez Espagne-Belgique en direct commenté (21h)",
+      "link": "https://www.walfoot.be/news/2026-07-10/match-live-live-suivez-espagne-belgique-en-direct-commente-21h",
+      "summary": "Les Diables Rouges défient l'Espagne ce vendredi sur le coup de 21h. La Belgique peut-elle accéder aux demi-finales, comme en 2018 et 1986 ?",
+      "publishedAt": "2026-07-10T03:41:00.000Z"
     },
     {
       "type": "rss",
@@ -315,10 +249,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Leander Dendoncker werkt aan opvallende nieuwe stap",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/leander-dendoncker-werkt-aan-opvallende-nieuwe-stap",
-      "summary": "Leander Dendoncker staat op een kruispunt in zijn carrière. De 31-jarige middenvelder onderhandelt over een nieuwe club en bekijkt meerdere opties. Na een moeilijker seizoen bij Real Oviedo lijkt vooral een nieuw avontuur in Europa mogelijk.",
-      "publishedAt": "2026-07-10T01:02:00.000Z"
+      "title": "Anderlecht bevestigt slecht nieuws",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-10/anderlecht-bevestigt-slechts-nieuws",
+      "summary": "Anderlecht krijgt vlak voor de start van het Europese avontuur af te rekenen met een nieuwe blessure. Killian Sardella is maandag geopereerd aan een spierscheur in de quadriceps en zal meerdere weken niet inzetbaar zijn.",
+      "publishedAt": "2026-07-10T03:33:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Présenté par Mons, il rejoint finalement Charleroi : \"Un manque de respect\"",
+      "link": "https://www.walfoot.be/news/2026-07-10/presente-par-mons-il-rejoint-finalement-charleroi-un-manque-de-respect",
+      "summary": "Présenté ce mercredi soir devant les supporters comme nouveau préparateur physique du RAEC Mons, Philip Garvo a finalement décidé de démissionner pour rejoindre le Sporting de Charleroi. Une décision qui surprend les Dragons.",
+      "publishedAt": "2026-07-10T03:30:00.000Z"
     },
     {
       "type": "rss",
@@ -330,6 +275,61 @@
       "link": "https://www.theguardian.com/football/2026/jul/10/france-morocco-world-cup-attacking-evolution-didier-deschamps-analysis",
       "summary": "With the head coach having released the handbrake, his side were far superior compared with four years ago in Qatar against the same opponents The scorelines may have been exactly the same, but the stylistic gulf in France’s two World Cup knockout performances against Morocco could not have been greater. In the space of just a single tournament cycle, Didier Deschamps has embraced a vastly different style, one based on a freeform attacking line. As a one-two punch from Kylian Mbappé and Ousmane Dembélé sent the team into this year’s semi-finals, the 57-year-old’s tactical reinvention was once again vindicated. Continue reading...",
       "publishedAt": "2026-07-10T00:10:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "England's Woad storms into Evian Championship lead as Korda misses cut",
+      "link": "https://www.skysports.com/golf/news/12040/13562237/evian-championship-lottie-woad-storms-into-halfway-lead-of-major-charley-hull-also-in-contention-but-nelly-korda-misses-cut",
+      "summary": "England's Lottie Woad shot a seven-under-par 64 to claim the halfway lead at the Amundi Evian Championship as she seeks her first major victory.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City sign Charles from Chelsea",
+      "link": "https://www.skysports.com/football/news/12040/13562248/man-city-transfer-news-niamh-charles-signs-from-wsl-rivals-chelsea-on-three-year-contract",
+      "summary": "Manchester City have signed Niamh Charles from Chelsea on a three-year deal.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Woad takes Evian Championship lead following final-hole birdie",
+      "link": "https://www.skysports.com/watch/video/13562344/lottie-woad-birdies-final-hole-to-take-lead-at-evian-championship",
+      "summary": "Lottie Woad birdies her final hole of the second round of the Amundi Evian Championship to take the lead, as she shoots a seven-under-par 64.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wimbledon women's final build-up: Muchova vs Noskova in all-Czech final on Saturday",
+      "link": "https://www.skysports.com/tennis/live-blog/12040/13562247/wimbledon-womens-final-live-scores-updates-news-results-with-karolina-muchova-and-linda-noskova-playing",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Bruno, Manzambi and a new transfer policy - inside Newcastle's summer of change",
+      "link": "https://www.skysports.com/football/news/12040/13562252/newcastle-transfer-news-latest-updates-on-bruno-guimaraes-johan-manzambi-and-player-exits-as-eddie-howe-prepares-for-new-season",
+      "summary": "This is a transformative summer for Newcastle in terms of transfers ahead of a big season for the club - with lots of new faces.",
+      "publishedAt": null
     }
   ]
 }
