@@ -1,16 +1,38 @@
 {
-  "generatedAt": "2026-07-14T14:56:01.490Z",
+  "generatedAt": "2026-07-14T20:16:22.070Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "France v Spain: World Cup 2026 semi-final – live",
+      "link": "https://www.theguardian.com/football/live/2026/jul/14/france-v-spain-world-cup-2026-semi-final-live",
+      "summary": "⚽ Kick-off time: 2pm local/3pm EST/8pm BST/5am AEST ⚽ Player guide | Golden Boot | Football Daily | Mail Scott France and Spain have only met once before at the World Cup. That was 20 years ago, back in the day when Les Bleus very much had La Roja’s number (the Euro 84 final, the Euro 2000 quarters, all that). Spain have had the better of the tournament football since. Wins in the Euro 2012 quarters and the Euro 2024 semis, plus an absurd 5-4 victory in last year’s Nations League semis. France did win the 2021 Nations League final, though. Continue reading...",
+      "publishedAt": "2026-07-14T19:57:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Allegri gaat in op Napoli-toekomst van Lang, De Bruyne, Lukaku en McTominay",
+      "link": "https://www.vi.nl/video/allegri-gaat-in-op-napoli-toekomst-van-lang-de-bruyne-lukaku-en-mctominay",
+      "summary": "Over de toekomst van Noa Lang, Scott McTominay, Romelu Lukaku en Kevin De Bruyne is veel te doen bij Napoli. Op de eventuele transferzaken wil de nieuwe trainer Massimiliano Allegri in ieder geval nog niet vooruitlopen, want hij heeft ooit van een oud-coach geleerd dat hij al zijn spelers eerst wil bekijken.",
+      "publishedAt": "2026-07-14T19:47:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "De zege en vloek van Balogun dit WK: 'Ik was in shock'",
-      "link": "https://www.vi.nl/nieuws/de-zege-en-vloek-van-balogun-dit-wk-ik-was-in-shock",
-      "summary": "Voor Folarin Balogun werd het een bewogen WK. De spits van de Verenigde Staten boekte successen met zijn land, maar in de knock-outfase kwamen de spotlights vooral op hem te staan. Nu doet Balogun voor het eerst zijn verhaal over de rode kaart en de controversiële beslissing om zijn schorsing ongedaan te maken.",
-      "publishedAt": "2026-07-14T14:53:50.000Z"
+      "title": "VI Live: Deschamps grijpt in bij Frankrijk, dat tegen achterstand aankijkt",
+      "link": "https://www.vi.nl/nieuws/vi-live-spanje-op-rozen-door-rake-penalty-oyarzabal",
+      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor de halve finale tussen Frankrijk en Spanje. In aanloop naar en vanaf de aftrap om 21.00 uur blijf je volledig op de hoogte van dit duel.",
+      "publishedAt": "2026-07-14T19:33:38.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +40,87 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "'Barcelona vreest voor maandenlange afwezigheid Frenkie de Jong'",
-      "link": "https://www.vi.nl/nieuws/barcelona-vreest-voor-maandenlange-afwezigheid-frenkie-de-jong",
-      "summary": "Slecht nieuws voor Frenkie de Jong. Volgens Marca is de Oranje-international met een serieuze knieblessure teruggekeerd van het WK. Hoewel een definitieve diagnose nog een ontbreekt, vreest Barcelona voor een afwezigheid van tot wel vier maanden.",
-      "publishedAt": "2026-07-14T14:48:22.000Z"
+      "title": "Zomertransfers Eredivisie seizoen 2026/27: alle clubs op een rij",
+      "link": "https://www.vi.nl/nieuws/zomertransfers-eredivisie-seizoen-2026-27-alle-clubs-op-een-rij",
+      "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde zomertransfers van de achttien Eredivisie-clubs. Transfers komen pas in dit overzicht als ze zijn bevestigd door de betreffende clubs.",
+      "publishedAt": "2026-07-14T19:26:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Telstar pikt opnieuw speler met FC Groningen-verleden op",
+      "link": "https://www.vi.nl/nieuws/telstar-pikt-opnieuw-speler-met-fc-groningen-verleden-op",
+      "summary": "Telstar heeft zijn vijfde zomerversterking binnen. De Witte Leeuwen hebben met Rui Mendes opnieuw een speler met een verleden bij FC Groningen opgepikt.",
+      "publishedAt": "2026-07-14T19:20:17.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Voorbereiding Eredivisie: NEC wint eerste oefenduel",
+      "link": "https://www.vi.nl/nieuws/voorbereiding-eredivisie-nec-wint-eerste-oefenduel",
+      "summary": "In dit overzicht zetten we de oefenprogramma's van de Eredivisie-clubs op een rijtje. Het nieuwe seizoen in de Eredivisie begint op 7 augustus met de wedstrijd SC Cambuur - Excelsior.",
+      "publishedAt": "2026-07-14T19:00:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man Utd sign Tielemans for £35m from Aston Villa",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c9929gzdl2go?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United complete the signing of Youri Tielemans from Aston Villa on a five-year deal.",
+      "publishedAt": "2026-07-14T18:45:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Villa warned over sportswashing after Visit Rwanda deal",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cm20211g25lo?at_medium=RSS&at_campaign=rss",
+      "summary": "Aston Villa are warned their new £20m-a-year sponsorship deal with Visit Rwanda will be used by the nation to sportswash its human rights record.",
+      "publishedAt": "2026-07-14T18:44:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Youri Tielemans targets ‘biggest trophies’ after joining Manchester United",
+      "link": "https://www.theguardian.com/football/2026/jul/14/youri-tielemans-signs-manchester-united-aston-villa",
+      "summary": "Midfielder signs from Aston Villa for about £35m Villa to have Visit Rwanda as front-of-shirt sponsor Manchester United have confirmed the signing of Youri Tielemans for about £35m on a five-year deal, with the midfielder stating he wants to help “push for the biggest trophies”. The 29-year-old will join from Aston Villa and follows United’s recruitment of another midfielder, Andrey Santos, who is 22, from Chelsea for £48m plus a possible £2m in add-ons on Monday. Continue reading...",
+      "publishedAt": "2026-07-14T18:20:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Manchester United close to agreeing club-record sale of Melvine Malard to Chelsea",
+      "link": "https://www.theguardian.com/football/2026/jul/14/manchester-united-close-to-agreeing-club-record-sale-of-melvine-malard-to-chelsea",
+      "summary": "Fee for forward could be as high as £850,000 The 26-year-old has one year remaining on contract Chelsea are closing in on a deal to sign the France forward Melvine Malard from Manchester United for a fee that would be a club-record sale. It is understood the transfer fee could be as high as approximately £850,000, although some sources have suggested the deal will be closer to £750,000. The discussions are understood to be at the final stage and the move is expected to go through. Continue reading...",
+      "publishedAt": "2026-07-14T17:02:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Balogun expected controversy after World Cup ban waived",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cx262x3rmx2o?at_medium=RSS&at_campaign=rss",
+      "summary": "United States striker Folarin Balogun knew the decision by Fifa to suspend his one-game ban at the World Cup was going to bring \"a lot of controversy\" and said it brought \"nerves\" on his team-mates.",
+      "publishedAt": "2026-07-14T17:02:17.000Z"
     },
     {
       "type": "rss",
@@ -29,32 +128,21 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "World Cup 2026: France v Spain semi-final buildup; Atlanta police step up security for England v Argentina – live",
-      "link": "https://www.theguardian.com/football/live/2026/jul/14/world-cup-2026-france-spain-buildup-england-argentina-news-live",
-      "summary": "⚽️ Latest news before first of the semi-finals in Dallas ⚽️ Player guide | Golden Boot | Football Daily | Email us Atlanta police are increasing staffing and resources for Wednesday’s World Cup semi-final between England and Argentina. The department says additional officers will be deployed around the stadium and across the city’s entertainment and high-traffic areas, with large crowds expected before and after the match: As Atlanta prepares to host an upcoming World Cup semi-final match and welcomes increased numbers of residents and visitors, the Atlanta Police Department has enhanced its citywide public safety and security posture. Additional personnel and resources are already deployed and will continue to be strategically assigned in and around the event venues, entertainment districts, and other high-traffic areas to help ensure a safe and enjoyable experience for everyone. These proactive measures are designed to protect the public, deter criminal activity, and ensure residents and visitors can safely enjoy this historic event.” Continue reading...",
-      "publishedAt": "2026-07-14T14:35:25.000Z"
+      "title": "‘For Diego’: spectre of Maradona looms over Argentina ahead of England clash",
+      "link": "https://www.theguardian.com/football/2026/jul/14/diego-maradona-argentina-world-cup",
+      "summary": "The image of the national icon has been ever present through this World Cup, in banners and songs and memory. It adds a fresh layer to Wednesday’s semi-final Not two minutes after his side’s dramatic, extra-time quarter-final victory over Switzerland on Saturday, the Argentina head coach, Lionel Scaloni, was already getting asked about the semi-final. Looming on the horizon was a match against bitter rivals England. “This won’t just be a special game from a footballing standpoint,” the reporter asked in Spanish, “but also in an emotional sense. How do you imagine you and the players will come out for this game and what message would you give to all of us Argentines that are …” Continue reading...",
+      "publishedAt": "2026-07-14T15:08:25.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Doekhi rondt transfer naar Lazio af",
-      "link": "https://www.vi.nl/nieuws/doekhi-rondt-transfer-naar-lazio-af",
-      "summary": "Danilho Doekhi (28) gaat zijn carrière vervolgen bij Lazio. De verdediger arriveerde maandag in Rome om zijn transfer naar Italië af te ronden. De international van Suriname komt transfervrij over, nadat zijn contract bij 1. FC Union Berlin afliep.",
-      "publishedAt": "2026-07-14T14:30:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "VI Live: Frankrijk lijkt voor Barcola te kiezen tegen Spanje",
-      "link": "https://www.vi.nl/nieuws/vi-live-heerlijke-halve-finale-van-het-wk-tussen-frankrijk-en-spanje-op-komst",
-      "summary": "Tijdens het WK 2026 in Canada, Mexico en de Verenigde Staten volgt Voetbal International alle 104 duels in een eigen VI Live. In deze editie alle aandacht voor de halve finale tussen Frankrijk en Spanje. In aanloop naar en vanaf de aftrap om 21.00 uur blijf je volledig op de hoogte van dit duel.",
-      "publishedAt": "2026-07-14T14:18:40.000Z"
+      "title": "Lionel Messi’s first meeting with England will be a contest of will and aura",
+      "link": "https://www.theguardian.com/football/2026/jul/14/lionel-messis-first-meeting-with-england-will-be-a-contest-of-will-and-aura",
+      "summary": "The Messi arc reaches a decisive point in Atlanta – passage to a third final or an exit to test the limits of Argentina’s love for their unassuming athlete-genius Wednesday night, Atlanta Stadium, 101 games down, three left to play, and finally it makes sense. Bring on The Countdown, that moment just before kick-off in every one of those quietly fascinating World Cup matches where suddenly the world’s most excited man is bellowing over the PA system in a state of outraged, crowing transport, like the last voice you’ll ever hear before the American century explodes in a ball of inanity, fried chicken and porn. “NAYYYN!! EEEIGHYYT!! SEEEVEERRN!! …” the world’s most excited man shouts, prelude to some cautious rolling possession, maybe an early back-pass, and an agreeable reminder that the game itself will not be stage managed. You want quiet bathos? This World Cup will deliver the greatest goddam quiet bathos the galaxy has ever seen. Continue reading...",
+      "publishedAt": "2026-07-14T15:00:29.000Z"
     },
     {
       "type": "rss",
@@ -64,30 +152,8 @@
       "flag": "🇬🇧",
       "title": "Arsenal agree fee for Trossard move to Besiktas",
       "link": "https://www.bbc.co.uk/sport/football/articles/cddldzme6g1o?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal have agreed a transfer fee to sell Belgium forward Leandro Trossard to Beskitas.",
+      "summary": "Arsenal agree a transfer fee of about £17m (20m euros) to sell Belgium forward Leandro Trossard to Beskitas.",
       "publishedAt": "2026-07-14T14:11:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Feyenoord-doelwit Tjark Ernst: talentvolle reflexkeeper, sobere meevoetballer",
-      "link": "https://www.vi.nl/pro/analyse-tjark-ernst-feyenoord-haalt-doelman-met-reflexen",
-      "summary": "Feyenoord wil de ene Duitse keeper onder de lat vervangen met een andere. Tjark Ernst (23) oogt, na drie jaar het doel van Hertha BSC te hebben verdedigd in de Tweede Bundesliga, klaar voor een flinke stap hogerop. Analyse van een sterke lijnkeeper met niet al te 'Nederlandse' trekjes qua speelwijze.",
-      "publishedAt": "2026-07-14T14:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man Utd seek another midfielder as Tielemans has medical",
-      "link": "https://www.bbc.co.uk/sport/football/articles/ckg4gqj5kk5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United are still in the market for another midfielder despite the signing of Andrey Santos and impending arrival of Youri Tielemans.",
-      "publishedAt": "2026-07-14T11:52:08.000Z"
     },
     {
       "type": "rss",
@@ -102,69 +168,14 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "World Cup and Ballon d’Or in reach as Harry Kane enters defining week of his career",
-      "link": "https://www.theguardian.com/football/2026/jul/14/world-cup-and-ballon-dor-england-harry-kane",
-      "summary": "The striker is driven by a sense of destiny but to be remembered as an all-time great outside England requires big-game performances Five days to win the Ballon d’Or. The way to do it: outshine Lionel Messi in Atlanta, then see off Kylian Mbappé or Lamine Yamal on Sunday. For Harry Kane, nothing will come without a fight. The England captain was doubted when he was a kid, back when the youth coaches at Tottenham wondered if it was worth keeping him, and he faces another seismic battle against Argentina on Wednesday. This could be the crowning moment of Kane’s career. The Bayern Munich striker has enjoyed the season of his life, with more domestic trophies in the bag and 73 goals in 64 appearances for club and country. There are more steps to take, though. The chance to lead England into a first World Cup final abroad is within reach. All Kane has to do to is outperform the greatest footballer of all time. Continue reading...",
-      "publishedAt": "2026-07-14T10:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "David Squires on … England’s high-wire act continuing to the World Cup semis",
-      "link": "https://www.theguardian.com/football/picture/2026/jul/14/david-squires-england-high-wire-act-world-cup-semis-cartoon",
-      "summary": "Our cartoonist sets the scene before the semi-finals, with Thomas Tuchel’s team taking on old rivals Argentina Buy David’s cartoons | Some of his favourite works And his latest book, Chaos in the Box: get it now Continue reading...",
-      "publishedAt": "2026-07-14T10:01:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "‘Spain’s superstar fan’: Lamine Yamal’s little brother takes World Cup by storm",
-      "link": "https://www.theguardian.com/football/2026/jul/14/spain-superstar-fan-lamine-yamal-little-brother-takes-world-cup-by-storm",
-      "summary": "The Spain winger says three-year-old Keyne ‘means everything to me’ – and fans have taken him to their hearts He’s become a social media staple; captured on camera blowing kisses, joyfully cheering on his team and careening through the stands of stadiums. Standing at just a few feet tall, the tiny toddler has become the unexpected breakout star of Spain’s World Cup run. “This time around, the biggest sensation of the competition isn’t an athlete, the goals, or even the trophy itself,” was how Hola! – Spain’s version of Hello! magazine – summed it up. “It’s Keyne, Lamine Yamal’s three-year-old brother, who’s taking the tournament by storm with his hilarious moments.” Continue reading...",
-      "publishedAt": "2026-07-14T07:00:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Who will win the World Cup? The view from the semi-finalists",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cjrgew3wv4xo?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport speaks to journalists and fans from the World Cup's four semi-finalists to see who they think will win the tournament.",
-      "publishedAt": "2026-07-14T05:43:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Lamine Yamal v Mbappe: La Liga stars set for World Cup showdown",
-      "link": "https://www.bbc.co.uk/sport/football/articles/clywep30z7jo?at_medium=RSS&at_campaign=rss",
-      "summary": "France face Spain for a place in the World Cup final on Tuesday, meaning a showdown between Kylian Mbappe and Lamine Yamal. Who comes out on top?",
-      "publishedAt": "2026-07-14T05:13:23.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "DONE DEAL: Club Brugge 'wins' en legt ex-Genkie langer vast",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/done-deal-club-brugge-wins-en-legt-ex-genkie-langer-vast",
-      "summary": "Axl Wins (18) heeft zijn contract bij Club NXT verlengd tot 2029. De centrale verdediger kwam in 2023 over van de jeugdopleiding van KRC Genk naar blauw-zwart en ontwikkelde zich verder binnen Club NXT. Daarmee slaan de Bruggelingen opnieuw een stevige slag, zoveel is duidelijk.",
-      "publishedAt": "2026-07-14T02:30:00.000Z"
+      "title": "'Dit bedrag gaat Toby Alderweireld in Antwerp investeren'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/dit-bedrag-gaat-toby-alderweireld-in-antwerp-investeren",
+      "summary": "Royal Antwerp lijkt eindelijk dichter bij duidelijkheid te komen naast het veld. De Great Old zit al een hele voorbereiding in een bijzonder vreemde situatie. Er is nog altijd geen nieuwe hoofdtrainer, Faris Haroun moet voorlopig de honneurs waarnemen.",
+      "publishedAt": "2026-07-14T08:02:00.000Z"
     },
     {
       "type": "rss",
@@ -172,10 +183,21 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 14/07: Santos - Tielemans - Trossard",
+      "title": "Prêté avec succès, un Mauve ne fait plus partie des plans d'Anderlecht pour cette saison",
+      "link": "https://www.walfoot.be/news/2026-07-14/prete-avec-succes-un-mauve-ne-fait-plus-partie-des-plans-danderlecht-pour-cette-saison",
+      "summary": "Le RSC Anderlecht est loin d'en avoir fini sur le marché des transferts. Les Bruxellois veulent encore finaliser plusieurs arrivées dans les semaines à venir et, pour cela, il faudra aussi faire de la place dans le noyau. Moussa N'Diaye ne semble plus faire partie des plans.",
+      "publishedAt": "2026-07-14T08:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 14/07: Pavlovic - Skoras - Tielemans",
       "link": "https://www.walfoot.be/news/2026-07-14/actu-transferts-rumeurs-de-transferts",
       "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
-      "publishedAt": "2026-07-14T02:20:00.000Z"
+      "publishedAt": "2026-07-14T07:40:00.000Z"
     },
     {
       "type": "rss",
@@ -183,32 +205,43 @@
       "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Manchester United officialise la signature d’un futur coéquipier de Youri Tielemans au milieu de terrain",
-      "link": "https://www.walfoot.be/news/2026-07-14/manchester-united-officialise-la-signature-dun-futur-coequipier-de-youri-tielemans-au-milieu-de-terrain",
-      "summary": "Alors que Youri Tielemans s’apprête à rejoindre Manchester United, le club anglais a officialisé la signature d’un autre milieu de terrain, Andrey Santos. Le Brésilien arrive en provenance de Chelsea pour 56,3 millions d’euros. Il est la première recrue estivale du club anglais.",
-      "publishedAt": "2026-07-14T02:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE Coupe du monde 14/7 : deux changements attendus dans le onze de la France face à l’Espagne",
-      "link": "https://www.walfoot.be/news/2026-07-14/live-coupe-du-monde-14-7-deux-changements-attendus-dans-le-onze-de-la-france-face-a-lespagne",
-      "summary": "Dans ce live, retrouvez toute l'actualité de la Coupe du monde, les coulisses du tournoi, les infos sur les Diables Rouges et bien plus encore. Chaque jour, nous vous tiendrons informés des principales nouvelles du jour.",
-      "publishedAt": "2026-07-14T02:14:31.000Z"
+      "title": "La RAAL laisse filer un grand talent, qui signe son premier contrat pro à l'étranger",
+      "link": "https://www.walfoot.be/news/2026-07-14/la-raal-laisse-filer-un-grand-talent-qui-signe-son-premier-contrat-pro-a-letranger",
+      "summary": "La Louvière espère pouvoir, à l'avenir, aligner de jeunes talents issus de son centre de formation en équipe A. Mais l'un des jeunes les plus prometteurs de ses équipes d'âge a quitté la meute.",
+      "publishedAt": "2026-07-14T07:40:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "IT",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Thorup liet Genk in 2020 zitten na 5 wedstrijden: dit heeft hij er nu over te zeggen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/thorup-liet-genk-in-2020-zitten-na-5-wedstrijden-dit-heeft-hij-er-nu-over-te-zeggen",
+      "summary": "Jess Thorup is terug bij KRC Genk, maar zijn aanstelling ligt gevoelig. De Deen moet de Limburgers na een moeilijke voorbereiding en een teleurstellend seizoen opnieuw richting rust duwen, al hangt zijn plotse vertrek uit 2020 nog altijd boven zijn terugkeer.",
+      "publishedAt": "2026-07-14T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
       "flag": "🌍",
-      "title": "Gekocht voor 40 miljoen, nu staat Rode Duivel voor exit van amper 4 miljoen euro",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/gekocht-voor-40-miljoen-nu-staat-rode-duivel-voor-exit-van-amper-4-miljoen-euro",
-      "summary": "De toekomst van Loïs Openda ligt niet bij Juventus. Na amper één seizoen in Turijn zou de Belgische spits alweer mogen vertrekken. Meer zelfs: de Italiaanse topclub is bereid om genoegen te nemen met een beperkte transfersom of zelfs een uitleenbeurt om een oplossing te vinden.",
-      "publishedAt": "2026-07-14T02:00:00.000Z"
+      "title": "Un ancien talent du Standard passe un beau cap dans sa carrière",
+      "link": "https://www.walfoot.be/news/2026-07-14/un-ancien-talent-du-standard-passe-un-beau-cap-dans-sa-carriere",
+      "summary": "Damjan Pavlovic, formé au Standard, revient en Europe occidentale. Après avoir percé en Lituanie où il a remporté un titre de champion avec le Zalgiris Kaunas, il s'est engagé à Rodez, en Ligue 2.",
+      "publishedAt": "2026-07-14T07:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Transferdossier van Arthur Theate komt in stroomversnelling",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/transferdossier-van-arthur-theate-komt-in-stroomversnelling",
+      "summary": "Arthur Theate zou deze zomer Frankfurt wel eens kunnen verlaten. Volgens transferspecialist Sacha Tavolieri toont Besiktas interesse in de 26-jarige centrale verdediger. De eerste contacten zouden al hebben plaatsgevonden.",
+      "publishedAt": "2026-07-14T07:20:00.000Z"
     },
     {
       "type": "rss",
@@ -216,65 +249,76 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Anderlecht a désormais une priorité absolue : voici ce que recherche Antoine Sibierski",
-      "link": "https://www.walfoot.be/news/2026-07-14/anderlecht-a-desormais-une-priorite-absolue-voici-ce-que-recherche-antoine-sibierski",
-      "summary": "Anderlecht est encore loin d'avoir bouclé son mercato. Plusieurs renforts sont encore attendus, mais Antoine Sibierski a une priorité absolue : recruter un arrière droit, idéalement dès cette semaine.",
-      "publishedAt": "2026-07-14T01:40:00.000Z"
+      "title": "L'affaire Balogun n'est pas terminée : une plainte a été déposée auprès d'un prestigieux comité",
+      "link": "https://www.walfoot.be/news/2026-07-14/laffaire-balogun-nest-pas-terminee-une-plainte-a-ete-deposee-aupres-dun-prestigieux-comite",
+      "summary": "Une semaine après la large victoire des Diables Rouges face aux États-Unis, l'affaire Folarin Balogun n'en a pas fini de faire parler. C'est désormais le CIO qui a été saisi.",
+      "publishedAt": "2026-07-14T07:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Transfernieuws en Transfergeruchten 14/07: Oularé - Drammeh",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/transfernieuws-transfergeruchten",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 14/07 hebben we transfernieuws en transfergeruchten voor u over:",
-      "publishedAt": "2026-07-14T01:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Wel heel verrassende transfer: Obbi Oulare is weer voetballer",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/wel-heel-verrassende-transfer-obbi-oulare-is-weer-voetballer",
-      "summary": "Het Belgische voetbal krijgt een opvallende comeback. Obbi Oulare heeft na een jaar zonder club een nieuwe uitdaging gevonden. De voormalige spits van Club Brugge en Standard trekt naar KSK Heist, dat uitkomt in Eerste Nationale.",
-      "publishedAt": "2026-07-14T01:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Leandro Trossard est attendu ce soir à Istanbul",
-      "link": "https://www.walfoot.be/news/2026-07-14/leandro-trossard-est-attendu-ce-soir-a-istanbul",
-      "summary": "Leandro Trossard entre dans sa dernière année de contrat à Arsenal. Les Gunners ont donc tout intérêt à collaborer à une vente, le transfert vers Besiktas entre dans sa dernière ligne droite.",
-      "publishedAt": "2026-07-14T01:23:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Leandro Trossard maakt plaats voor Tzolis",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/officieel-leandro-trossard-maakt-plaats-voor-tzolis",
-      "summary": "Het is nu ook officieel: Leandro Trossard is geen speler van Arsenal meer. De Rode Duivel trekt voor ongeveer 20 miljoen euro naar het Turkse Besiktas en dat zou wel eens uitstekend nieuws kunnen zijn voor Club Brugge. De weg voor een recordtransfer van Christos Tzolis ligt namelijk helemaal open.",
-      "publishedAt": "2026-07-14T01:07:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "France ready to get ‘revenge for the Euros’ in World Cup semi-final against Spain",
-      "link": "https://www.theguardian.com/football/2026/jul/14/france-team-news-spain-world-cup-semi-final-euro-revenge",
-      "summary": "Zaïre-Emery confident Les Bleus will deliver in Dallas Deschamps to bring Tchouaméni into lineup if fit The France midfielder Warren Zaïre-Emery says his team want to exact revenge on Spain and banish painful memories of their exit in the Euro 2024 semi-final. France and Spain meet again on Tuesday in search of a place in the World Cup final, an even more glittering prize than the one Luis de la Fuente’s team grabbed two years ago. Back then Spain were worthy winners in Munich but a revitalised France have turned their fortunes around, blazing a trail to the last four with some scintillating attacking football. Continue reading...",
-      "publishedAt": "2026-07-13T23:45:26.000Z"
+      "title": "'Keizer' Infantino wankelt: opvallende coalitie wil FIFA-baas ten val brengen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/keizer-infantino-wankelt-opvallende-coalitie-wil-fifa-baas-ten-val-brengen",
+      "summary": "Jarenlang leek Gianni Infantino onaantastbaar aan de top van de FIFA. De Zwitser leidde de wereldvoetbalbond sinds 2016 en slaagde erin zijn macht steeds verder uit te bouwen. Maar daar lijkt stilaan verandering in te komen.",
+      "publishedAt": "2026-07-14T06:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Balogun doorbreekt eindelijk de stilte na veelbesproken WK-rel",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-14/balogun-doorbreekt-eindelijk-de-stilte-na-veelbesproken-wk-rel",
+      "summary": "Een week na de gebeurtenissen rond VS-België en zijn schorsing voor de achtste finales na die rode kaart, heeft Folarin Balogun voor het eerst gereageerd in de studio van CBS.",
+      "publishedAt": "2026-07-14T06:35:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "What is in next England Test coach's in-tray?",
+      "link": "https://www.skysports.com/cricket/news/12040/13563501/england-test-cricket-coach-in-tray-brendon-mccullums-replacement-needs-to-find-a-captain-replace-ben-stokes-and-cut-the-boozing-escapades",
+      "summary": "As England work out who they want as their new Test coach following Brendon McCullum’s sacking, we look at the jobs on the next red-ball supremo's to-do list…",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Barca won't give up on Arsenal target Alvarez",
+      "link": "https://www.skysports.com/football/news/12040/13563502/julian-alvarez-barcelona-refuse-to-give-up-on-argentina-world-cup-star-and-arsenal-and-paris-saint-germain-target",
+      "summary": "Barcelona are not giving up on signing Arsenal target Julian Alvarez from Atletico Madrid and could raise their offer after the World Cup.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'I don't care!' - McIlroy, Scheffler dismiss legacy interest ahead of The Open",
+      "link": "https://www.skysports.com/golf/news/12040/13563424/the-open-rory-mcilroy-and-scottie-scheffler-involved-in-bizarre-exchanges-about-future-legacy-ahead-of-royal-birkdale",
+      "summary": "Scottie Scheffler and Rory McIlroy have both dismissed concerns about how their future legacy is perceived ahead of their latest bid for more major success at The Open.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Highlights: India ease to victory over England in opening ODI",
+      "link": "https://www.skysports.com/watch/video/13563492/england-vs-india-1st-odi-highlights",
+      "summary": "Highlights of the first ODI at Edgbaston as India beat England by six wickets to take a 1-0 lead in the three-match series.",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -282,53 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "England World Cup semi-final and final? A reminder of where and when!",
-      "link": "https://www.skysports.com/watch/video/13563368/world-cup-semi-final-and-final-a-reminder-of-where-and-when",
-      "summary": "A reminder of where and when England's semi-final against Argentina takes place and, if they get that far, when to make a note in your diary for the final.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Forest latest: Glasner says 'no button to press' to make Forest competitive",
-      "link": "https://www.skysports.com/football/live-blog/12040/13279316/nottingham-forest-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal confirm Trossard is moving to Besiktas",
-      "link": "https://www.skysports.com/football/news/12040/13563271/leandro-trossard-arsenal-confirm-winger-joining-besiktas-in-17m-deal",
-      "summary": "Arsenal have confirmed Leandro Trossard is moving to Besiktas.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Football news: Slot a candidate for Netherlands job",
-      "link": "https://www.skysports.com/football/live-blog/12040/12507208/football-latest-news-gossip",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man City interested in Morocco wonderkid Bouaddi",
-      "link": "https://www.skysports.com/football/news/12040/13563315/ayyoub-bouaddi-manchester-city-interested-in-morocco-and-lille-wonderkid-after-impressive-world-cup",
-      "summary": "Manchester City are showing interest in Lille midfielder Ayyoub Bouaddi.",
+      "title": "Balogun: I knew Trump intervention 'would cause a lot of controversy'",
+      "link": "https://www.skysports.com/football/news/12040/13563434/president-donald-trumps-fifa-intervention-over-world-cup-suspension-was-bound-to-cause-a-lot-of-controversy-says-usa-striker-folarin-balogun",
+      "summary": "USA striker Folarin Balogun predicted President Trump's involvement in overturning his World Cup suspension would \"cause a lot of controversy\".",
       "publishedAt": null
     }
   ]
