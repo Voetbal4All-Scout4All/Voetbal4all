@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-07-15T22:05:17.639Z",
+  "generatedAt": "2026-07-16T00:01:42.596Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'That's why he's the king' - Messi sets up third World Cup final",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c8jnl9zdzn2o?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport looks at Lionel Messi's masterclass on the right wing to knock England out of the World Cup.",
+      "publishedAt": "2026-07-15T23:42:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Lionel Messi’s inevitable gravity bends another occasion in Argentina’s favour | Barney Ronay",
+      "link": "https://www.theguardian.com/football/2026/jul/16/lionel-messi-england-argentina-world-cup",
+      "summary": "While England shrank away in Atlanta, Argentina’s No 10 was not finished making his mark on the biggest stage To strive, to seek, to find, and not to yield. Well, not to this lot anyway. On a day of ceaseless rolling noise under Atlanta’s vast refrigerated dome, England reached the end of the road, the end of their own capacities at this World Cup, the end of the gears within this team. Mainly they ran into Lionel Messi, who wasn’t ready to be done just yet. Not like this anyway. With 55 minutes gone England were actually winning this game, 1-0 up thanks to Anthony Gordon’s goal, the only real moment of clarity they produced all match. At which point they simply disappeared as an animate entity from the stage. Continue reading...",
+      "publishedAt": "2026-07-15T23:07:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Argentina face fine for displaying Falklands banner after semi-final",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c935pgr4dklo?at_medium=RSS&at_campaign=rss",
+      "summary": "Argentina face the prospect of a Fifa fine after their players celebrate the World Cup semi-final win against England with a banner in support of their country's claims to the Falkland Islands.",
+      "publishedAt": "2026-07-15T22:49:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'No regrets' - Tuchel on England's defeat by Argentina",
+      "link": "https://www.bbc.co.uk/sport/football/videos/c62v3q3qp99o?at_medium=RSS&at_campaign=rss",
+      "summary": "England manager Thomas Tuchel believes his team \"got too passive\" after scoring first in the World Cup semi-final against Argentina, which they lost 2-1 at Atlanta Stadium.",
+      "publishedAt": "2026-07-15T22:40:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Argentina shatter England's World Cup dreams in semi-final",
+      "link": "https://www.bbc.co.uk/sport/football/videos/cwy059qwdg4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Argentina shatter England's World Cup dreams, scoring two late goals to come from behind and knock out Thomas Tuchel's side, in a dramatic semi-final in Atlanta.",
+      "publishedAt": "2026-07-15T22:05:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "‘Malvinas are Argentinian’: World Cup holders celebrate win over England with Falklands banner",
+      "link": "https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate-win-over-england-with-banner",
+      "summary": "Banner refers to Falkland Islands conflict in 1982 Players celebrate on the pitch with the message The Argentina players celebrated their World Cup win over England with a banner saying “Las Malvinas son Argentinas”, making reference to the 1982 Falklands war. Argentina were 1-0 down with five minutes to go of the semi-final in Atlanta but rallied and scored twice in quick succession to reach a second straight World Cup final, where they will face Spain in New Jersey on Sunday. Continue reading...",
+      "publishedAt": "2026-07-15T22:03:19.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -9,7 +75,7 @@
       "flag": "🌍",
       "title": "Scaloni bejubelt zijn WK-strijders: 'Deze groep laat me versteld staan'",
       "link": "https://www.vi.nl/nieuws/scaloni-bejubelt-zijn-wk-strijders-deze-groep-laat-me-versteld-staan",
-      "summary": "Lionel Scaloni gaf na de gewonnen wedstrijd tegen Engeland aan trots te zijn op de spelers van Argentinië. Hij is ervan overtuigd dat ze het zondag in de WK-finale tegen Spanje weer kunnen laten zien.",
+      "summary": "Lionel Scaloni gaf na de gewonnen wedstrijd tegen Engeland aan trots te zijn op de spelers van Argentinië. De bondscoach is ervan overtuigd dat ze het zondag in de WK-finale tegen Spanje weer kunnen laten zien.",
       "publishedAt": "2026-07-15T22:00:00.000Z"
     },
     {
@@ -22,39 +88,6 @@
       "link": "https://www.vi.nl/nieuws/tuchel-heeft-geen-spijt-van-tactische-omzettingen-waren-te-passief",
       "summary": "In plaats van door te drukken koos Engeland er woensdagavond voor om na de openingstreffer tegen Argentinië de bus te parkeren. Dat bleek een ongelukkige zet van Thomas Tuchel, aangezien de titelverdediger in de slotfase een remontada voltooide. De Duitse bondscoach kreeg na afloop van de verloren halve finale veel kritiek, maar heeft geen spijt van zijn tactische omzettingen. 'Ik neem de verantwoordelijkheid.'",
       "publishedAt": "2026-07-15T21:59:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "England 1-2 Argentina: World Cup 2026 semi-final – live reaction",
-      "link": "https://www.theguardian.com/football/live/2026/jul/15/england-v-argentina-world-cup-2026-semi-final-live",
-      "summary": "⚽ Dramatic late goals set up World Cup final with Spain ⚽ The semi-final – in pictures | Golden Boot | Player guide England’s defenders will face an extreme challenge when they come up against Lionel Messi in their World Cup semi-final. It is not just that he is the greatest player of all time but the almost unique way in which he plays. The 39-year-old is renowned for ambling around for much of a game, saving his energy for when truly required. It makes him incredibly difficult to defend against. Messi finds pockets of space that appear harmless when the ball is not in his orbit, but he springs to life when an opportunity to produce presents itself. Continue reading...",
-      "publishedAt": "2026-07-15T21:53:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Argentina celebrate progressing to World Cup final",
-      "link": "https://www.bbc.co.uk/sport/football/videos/c9w0jlx451go?at_medium=RSS&at_campaign=rss",
-      "summary": "Defending champions Argentina celebrate at full time, after beating England 2-1 to make it through to their second successive World Cup final.",
-      "publishedAt": "2026-07-15T21:53:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "England 1-2 Argentina: World Cup semi-final player ratings",
-      "link": "https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-player-ratings",
-      "summary": "Lionel Messi was at his effervescent best while Harry Kane struggled to make an impact Jordan Pickford Had little chance with either goal. Pulled off a sensational save from González but that will be forgotten now. 7 Continue reading...",
-      "publishedAt": "2026-07-15T21:44:17.000Z"
     },
     {
       "type": "rss",
@@ -80,14 +113,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Final two World Cup matches to be shown live on BBC",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cp8xn7178x1o?at_medium=RSS&at_campaign=rss",
-      "summary": "Saturday's World Cup third-place play-off between England and France and Sunday's World Cup final will both be live on BBC TV.",
-      "publishedAt": "2026-07-15T21:16:12.000Z"
+      "title": "Argentina’s late double breaks England hearts in dramatic World Cup semi-final",
+      "link": "https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report",
+      "summary": "England hearts broken after turnaround in Atlanta In pictures: our pick of the best big-match images England’s destiny is tournament heartbreak. The only question concerns when it comes and how the fates will contrive to make it as painful as possible. This was an implausibly brutal new low. Thomas Tuchel’s team had fought fire with fire on an occasion that was overloaded with shredded nerves. The first half was a physical fight; it was gripping all the same. And the possibilities seemed endless for England when Anthony Gordon put them in front shortly after half-time. A first appearance in the World Cup final since 1966 looked on. Continue reading...",
+      "publishedAt": "2026-07-15T21:19:52.000Z"
     },
     {
       "type": "rss",
@@ -117,17 +150,6 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Kylian Mbappé feels sands of time shifting as France suffer fresh World Cup angst",
-      "link": "https://www.theguardian.com/football/2026/jul/15/kylian-mbappe-next-chapter-world-cup-angst",
-      "summary": "France’s captain has played with a sense of unfinished business but he will be 31 when the next World Cup begins It was only last month that Kylian Mbappé suggested all roads may lead to Florida. He was in sufficiently mischievous mood to reveal David Beckham had been chewing his ear off about a move to Major League Soccer, dangling the prospect of a reunion with Lionel Messi at Inter Miami. “We will see, I don’t know,” he said. “The American culture is different. There are no limits to ambitions, I like it.” Continue reading...",
-      "publishedAt": "2026-07-15T19:31:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
       "title": "ITV and BBC to screen full World Cup final half-time show despite time concerns",
       "link": "https://www.theguardian.com/football/2026/jul/15/itv-bbc-world-cup-final-half-time-show",
       "summary": "Broadcasters expect to have time to analyse the game Channels planning for break to last 25 to 30 minutes ITV and BBC are planning to screen in full Fifa’s controversial half-time show from the final at the New York New Jersey Stadium on Sunday, but the broadcasters remain in the dark over how long it will last. The Guardian revealed last month that there were concerns among broadcasters at the length of the half-time spectacle, which has been curated by Coldplay’s Chris Martin and will feature Madonna, Justin Bieber, Shakira and the K‑pop boyband BTS. They are planning for the interval to last between 25 and 30 minutes. Continue reading...",
@@ -137,34 +159,12 @@
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "ES",
+      "country": "INT",
       "flag": "🌍",
-      "title": "In this star-powered World Cup, Spain show value of collective and control | Sid Lowe",
-      "link": "https://www.theguardian.com/football/2026/jul/15/in-this-star-powered-world-cup-spain-show-the-value-of-the-collective-and-control",
-      "summary": "Luis de la Fuente’s final-bound team have been fuelled by togetherness and a commitment to each other that goes back a long way On the way out of the dressing room in Arlington, Luis de la Fuente gathered his “family” and delivered one last message before the World Cup semi-final against France. He had long known what he was going to say, if not exactly how – it’s what he has been saying for 50 days and more. “I’ll tell them that this is a unique stage, the kind of moment that may never be repeated again, and that we have to be ourselves,” he had suggested 18 hours earlier; now that idea crystallised in a line. “We’re facing one of the best lineups in the world,” the Spain coach told them, “but we’re the best team in the world.” By the time they made their way back in again, a voice was heard above the shouts, another line to encapsulate it all, to define this. It belonged to Marc Cucurella and it said: “What a fucking recital!” A call came in to De la Fuente, King Felipe on the phone saying pretty much the same thing, if a little more politely. On went the music, Jamaican (Bam Bam) blasting out, pizza was passed around, and they bounced about. Some did, anyway. Some just sat there taking in what they had done. “It was written: we started in Atlanta and we end in New York,” Dani Olmo said, but a semi-final is not supposed to be like this. Continue reading...",
-      "publishedAt": "2026-07-15T18:03:07.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal forward Trossard joins Besiktas for £15.3m",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cddldzme6g1o?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal forward Leandro Trossard joins Besiktas on a three-year deal.",
-      "publishedAt": "2026-07-15T17:50:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Sunderland sign Belgium World Cup defender Meunier",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cgjxjqpgq4xo?at_medium=RSS&at_campaign=rss",
-      "summary": "Experienced Belgian defender Thomas Meunier signs for Sunderland after his contract with Lille comes to an end.",
-      "publishedAt": "2026-07-15T09:44:49.000Z"
+      "title": "Fifa hit by injunction in Germany over World Cup ticket resale prices",
+      "link": "https://www.theguardian.com/football/2026/jul/15/fifa-injunction-germany-world-cup-ticket-resale-prices",
+      "summary": "Governing body did not appear before court in Frankfurt Fifa gets 15% commission from both buyer and seller Fifa has been hit with an injunction by a German court ordering it to stop “manipulative processes” in the sale of World Cup tickets. The Frankfurt regional court has granted a request for a preliminary injunction from Ticombo, an online ticket resale site based in Germany, which has instructed Fifa to be more transparent regarding its secondary ticketing sales by disclosing the identity and address of any commercial sellers. The court has ordered Fifa “to cease facilitating ticket sales without informing buyers of the seller’s identity and address [specifically for sellers acting in a commercial capacity] in a timely manner prior to the buyer completing their purchase”. Continue reading...",
+      "publishedAt": "2026-07-15T15:04:55.000Z"
     },
     {
       "type": "rss",
@@ -280,6 +280,39 @@
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "England beaten - Your views on Tuchel's tactics and his future",
+      "link": "https://www.skysports.com/football/england-vs-argentina/live/549867",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Kane: Holding on was not enough against Argentina",
+      "link": "https://www.skysports.com/football/news/12040/13563844/england-out-of-world-cup-harry-kane-says-holding-on-was-not-enough-against-argentina",
+      "summary": "England captain Harry Kane admitted trying to hold on to a 1-0 lead backfired as their World Cup hopes were ended by Argentina's late show in a 2-1 semi-final defeat.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "How England unravelled as Tuchel's changes spectacularly backfired",
+      "link": "https://www.skysports.com/football/news/12040/13563777/thomas-tuchel-how-england-unravelled-after-ezri-konsa-substitution-as-familiar-failings-rob-three-lions-of-world-cup-final-place",
+      "summary": "Thomas Tuchel was England's gambler. A squad few others would have picked. A backs-to-the-wall win over Mexico. Starting Morgan Rogers based on \"a feeling from the coach\".",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
       "title": "85, 90+2! Argentina's late show breaks England hearts to end World Cup dream",
@@ -296,39 +329,6 @@
       "title": "England player ratings: Spence shines but Bellingham, Rice and Kane fail to deliver",
       "link": "https://www.skysports.com/football/news/12040/13562938/england-vs-argentina-player-ratings-djed-spence-shines-for-three-lions-but-jude-bellingham-declan-rice-and-harry-kane-fail-to-deliver",
       "summary": "England are out of the World Cup after losing their semi-final 2-1 to Argentina in Atlanta. Here are the England player ratings on a disappointing night for the Three Lions...",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "England beaten by Argentina - Did Tuchel get it wrong? LIVE!",
-      "link": "https://www.skysports.com/football/england-vs-argentina/live/549867",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Benn vs Garcia set for September 12 in Las Vegas",
-      "link": "https://www.skysports.com/boxing/news/12040/13561973/conor-benn-vs-ryan-garcia-wbc-welterweight-title-fight-announced-in-las-vegas-on-september-12",
-      "summary": "Conor Benn will challenge Ryan Garcia for the WBC welterweight title in Las Vegas on September 12.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "World Cup-winner Stiles' death linked to heading footballs, coroner rules",
-      "link": "https://www.skysports.com/football/news/12040/13563741/nobby-stiles-former-man-utd-midfielder-and-england-world-cup-winners-death-linked-to-heading-footballs-coroner-rules",
-      "summary": "England 1966 World Cup winner Nobby Stiles died with a brain condition caused by repeatedly heading a football, a coroner has ruled.",
       "publishedAt": null
     }
   ]
