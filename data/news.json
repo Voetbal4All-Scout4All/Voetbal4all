@@ -1,60 +1,93 @@
 {
-  "generatedAt": "2026-07-20T20:24:15.132Z",
+  "generatedAt": "2026-07-20T22:03:33.514Z",
   "items": [
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Gallery: Spain celebrate World Cup triumph in Madrid",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cgje79d6q64o?at_medium=RSS&at_campaign=rss",
+      "summary": "Thousands of fans take to the streets of Madrid as the Spain squad enjoy a bus parade after winning the World Cup.",
+      "publishedAt": "2026-07-20T21:50:12.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Modric (40) gaat langer door, Man Utd praat over WK-uitblinker'",
+      "link": "https://www.vi.nl/nieuws/modric-40-gaat-langer-door-manchester-united-praat-over-wk-uitblinker",
+      "summary": "De meeste transferwindows zijn geopend en dus neemt het transfernieuws weer toe. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-07-20T21:44:23.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "DJ Borja Iglesias steelt show, Spaanse spelers drijven spot met Paredes",
+      "link": "https://www.vi.nl/nieuws/dj-borja-iglesias-steelt-show-spaanse-spelers-drijven-spot-met-paredes",
+      "summary": "38 dagen en 104 wedstrijden lang volgde VI het WK in de Verenigde Staten, Canada en Mexico, met als afsluiter een nagelbijter van een finale tussen Spanje en Argentini ë . De wereldkampioen werd onttroond en Spanje won zijn tweede eindtoernooi op rij. Maandag werd de ploeg van Luis de la Fuente gehuldigd in Madrid. Lees hier alles terug.",
+      "publishedAt": "2026-07-20T21:35:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "FIFA met supporters op zoek naar Doelpunt van het WK",
+      "link": "https://www.vi.nl/nieuws/fifa-met-supporters-op-zoek-naar-doelpunt-van-het-wk",
+      "summary": "De FIFA heeft de stembussen geopend voor de zoektocht naar het mooiste doelpunt van het WK. Tussen de genomineerden staat geen Nederlandse treffer.",
+      "publishedAt": "2026-07-20T21:29:36.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Bijna twee miljoen (!) Spanjaarden vieren wereldtitel in Madrid",
+      "link": "https://www.vi.nl/nieuws/bijna-twee-miljoen-spanjaarden-vieren-wereldtitel-in-madrid",
+      "summary": "De spelers van Spanje lieten een dag na de gewonnen WK-finale tegen Argentinië al de wereldbeker zien aan het eigen volk. Volgens de Spaanse regering vierden ruim 1,8 miljoen mensen feest in Madrid.",
+      "publishedAt": "2026-07-20T21:10:00.000Z"
+    },
+    {
+      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Hwang vertrokken bij Feyenoord: 'Het was een voorrecht'",
-      "link": "https://www.vi.nl/nieuws/hwang-vertrokken-bij-feyenoord-het-was-een-voorrecht",
-      "summary": "Feyenoord heeft het vertrek van Inbeom Hwang officieel gemaakt. De Zuid-Koreaanse middenvelder is, zoals VI eerder deze maandag al meldde , verkocht aan FC Porto. Feyenoord houdt maximaal vijf miljoen euro over aan de deal.",
-      "publishedAt": "2026-07-20T20:16:37.000Z"
+      "title": "Gakpo's emotionele doelpunt werd hét Oranje-moment van het WK",
+      "link": "https://www.vi.nl/video/gakpo-s-emotionele-doelpunt-werd-het-oranje-moment-van-het-wk",
+      "summary": "Spanje is de nieuwe wereldkampioen. In de WK-finale werd titelhouder Argentinië na verlenging met 1-0 verslagen. In de laatste aflevering van Rondje WK blikken Pieter Zwart en Freek Jansen bij presentator Kalum van Oudheusden terug op het toernooi.",
+      "publishedAt": "2026-07-20T21:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Argentina players face bans as Fifa opens investigation into World Cup final brawls",
+      "link": "https://www.theguardian.com/football/2026/jul/20/argentina-players-face-bans-as-fifa-opens-investigation-into-world-cup-final-brawls",
+      "summary": "Leandro Paredes was shown red card after final whistle Fifa looking into Falklands banner at England game Fifa has opened an investigation into the violent scenes that followed Spain’s World Cup final win on Sunday, with several Argentina players facing bans. Nahuel Molina appeared to strike Spain’s captain Rodri in the stomach as he ran on to the pitch following the final whistle, while there was also a large melee on the halfway line, where Leandro Paredes appeared to grab Eric García by the throat before throwing Gavi to the ground. Continue reading...",
+      "publishedAt": "2026-07-20T20:42:33.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Benfica heeft peperdure spits binnen",
-      "link": "https://www.vi.nl/nieuws/benfica-heeft-peperdure-spits-binnen",
-      "summary": "Jhon Durán keert per direct terug naar Europa. De Colombiaanse spits wordt door Benfica een jaar gehuurd van Al-Nassr. De Portugezen kunnen Durán volgens A Bola aan het einde van het seizoen voor 30 miljoen euro definitief overnemen.",
-      "publishedAt": "2026-07-20T20:15:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Zomertransfers Eredivisie seizoen 2026/27: alle clubs op een rij",
-      "link": "https://www.vi.nl/nieuws/zomertransfers-eredivisie-seizoen-2026-27-alle-clubs-op-een-rij",
-      "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde zomertransfers van de achttien Eredivisie-clubs. Transfers komen pas in dit overzicht als ze zijn bevestigd door de betreffende clubs.",
-      "publishedAt": "2026-07-20T20:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FIFA onderzoekt clash tussen Spaanse en Argentijnse spelers na WK-finale",
-      "link": "https://www.vi.nl/nieuws/fifa-onderzoekt-clash-tussen-spaanse-en-argentijnse-spelers-na-wk-finale",
-      "summary": "De confrontatie tussen Argentijnse en Spaanse spelers, na afloop van de WK-finale, krijgt - zoals verwacht kon worden - nog wel een staartje. De FIFA heeft maandagavond bevestigd dat er een onderzoek naar het gedrag van de spelers wordt gestart.",
-      "publishedAt": "2026-07-20T20:03:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Live: Spanjaarden spotten met Paredes, Cucurella verzorgt baby wereldbeker",
-      "link": "https://www.vi.nl/nieuws/vi-live-spaanse-spelers-spotten-met-paredes-dj-borja-iglesias",
-      "summary": "38 dagen en 104 wedstrijden lang volgde VI het WK in de Verenigde Staten, Canada en Mexico, met als afsluiter een nagelbijter van een finale tussen Spanje en Argentini ë . De wereldkampioen werd onttroond en Spanje won zijn tweede eindtoernooi op rij. Maandag wordt de ploeg van Luis de la Fuente gehuldigd in Madrid. Via VI Live mist u niets.",
-      "publishedAt": "2026-07-20T19:55:06.000Z"
+      "title": "Nearly two million people join Spain’s World Cup celebrations in Madrid",
+      "link": "https://www.theguardian.com/football/2026/jul/20/spain-world-cup-celebration-madrid",
+      "summary": "Squad arrived home at 2.30pm local time on Monday Victory festivities to centre around the Plaza de Cibeles Almost two million Spaniards, many still bleary-eyed and feeling a little delicate after the country’s historic World Cup victory against Argentina, descended on central Madrid on Monday night to welcome the triumphant national team home. La Roja, who beat Argentina 1-0 in the final in New Jersey on Sunday night, were afforded the first of many heroes’ welcomes when they touched down at Madrid’s Barajas airport at 2.30pm local time on Monday. Continue reading...",
+      "publishedAt": "2026-07-20T20:01:25.000Z"
     },
     {
       "type": "rss",
@@ -113,14 +146,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Uefa president boycotts World Cup final in protest against Fifa",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cr59mg77ep2o?at_medium=RSS&at_campaign=rss",
-      "summary": "Uefa president Aleksander Ceferin did not attend the World Cup final between Argentina and Spain in protest against Fifa.",
-      "publishedAt": "2026-07-20T16:44:02.000Z"
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "A pioneer and a superstar, Kevin Keegan’s achievements were extraordinary",
+      "link": "https://www.theguardian.com/football/2026/jul/20/kevin-keegan-tribute-pioneer-superstar-liverpool-newcastle-hamburg-england",
+      "summary": "The former England manager may be remembered by many for his ‘I’d love it’ rant in 1996, but that should not obscure the remarkable nature of his football career Kevin Keegan, who has died aged 75, is the only British player to win the Ballon d’Or twice, was the star of Liverpool’s first European Cup-winning team, a messianic figure at Newcastle United as a player and coach, forging a team so memorable that Fifa’s president wrote to commend him, and was the captain and then manager of the England men’s national team. And yet, as Keegan would ruefully reflect, he will principally be remembered by many for an emotional outburst that precipitated Newcastle’s historic failure in a Premier League title race, a TV interview which presaged the coming era of the modern game. Keegan’s “I’d love it” rant of April 1996, directed at Alex Ferguson, became a meme before the modern meaning of the word and social media even existed, repeatedly played on Sky Sports and becoming indelibly marked in the minds of multiple generations, many not even born when it occurred. It frequently tops polls as the most memorable moment in Premier League history and foreshadowed an era where digital clips and personality narratives would dominate football coverage. Continue reading...",
+      "publishedAt": "2026-07-20T15:02:51.000Z"
     },
     {
       "type": "rss",
@@ -135,25 +168,58 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Kevin Keegan, Liverpool legend and former Newcastle manager, dies aged 75",
-      "link": "https://www.theguardian.com/football/2026/jul/20/kevin-keegan-liverpool-legend-and-former-newcastle-manager-dies-aged-75",
-      "summary": "Keegan revealed in June 2026 he had stage four cancer Starred for Liverpool, Hamburg, Newcastle and England Kevin Keegan, the former England and Newcastle manager who was twice named European Footballer of the Year, has died aged 75. As a player, Keegan illuminated ­countless matches and in the 1970s proved a stalwart member of ­Liverpool’s serial domestic and European ­trophy ­winning team. Keegan’s family announced in ­January that he had cancer and, seven weeks ago, he himself revealed that it was stage four, the most advanced form of the disease. “A double ­Ballon d’Or winner, Kevin was a much loved husband, father and grandfather,” read a statement. “The family would like to thank Kevin’s incredible medical team for all their support. This is a hugely difficult time and they are requesting space and privacy.” Continue reading...",
-      "publishedAt": "2026-07-20T14:28:43.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 20/07: Kuavita - Ferraro - Bassette",
+      "link": "https://www.walfoot.be/news/2026-07-20/actu-transferts-rumeurs-de-transferts",
+      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
+      "publishedAt": "2026-07-20T09:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "OFFICIEL : Léandre Kuavita a trouvé un nouveau club en Belgique",
+      "link": "https://www.walfoot.be/news/2026-07-20/officiel-leandre-kuavita-a-trouve-un-nouveau-club-en-belgique",
+      "summary": "Sans club depuis la fin de son contrat au Standard de Liège cet été, Léandre Kuavita a déjà trouvé un nouveau défi. Le milieu verviétois rejoint le SK Beveren, où il a paraphé un contrat jusqu'en 2028. Le matricule 4068 a annoncé la nouvelle dans un communiqué publié ce lundi.",
+      "publishedAt": "2026-07-20T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "IT",
       "flag": "🌍",
-      "title": "Tuchel is clinging to an outdated English style – he must let players take risks | Jacob Steinberg",
-      "link": "https://www.theguardian.com/football/2026/jul/20/thomas-tuchel-football-assocation-fa-england-world-cup-2026-head-coach",
-      "summary": "Head coach should ditch a physical approach that has rarely worked and embrace England’s gifted ball players Only England can claim the bronze medal at the World Cup by beating France in a 10-goal thriller and end up even more annoyed with the manager. Yet emotions are still running high after the collapse against Argentina last week and it is going to take more than winning a game low on jeopardy for the criticism of Thomas Tuchel to die down. Hiring Tuchel was centred around the promise that he would make the difference in the big games. When that fell down, all that was left was anger. It exposed the core emptiness of the appointment, of a rich federation covering up the flaws in its coaching development by trying to game the system by throwing money at an expensive outsider. Continue reading...",
-      "publishedAt": "2026-07-20T13:55:15.000Z"
+      "title": "Komt er dan toch een transfer? 'Amerikaanse topclub wil Europese ster en denkt aan... Romelu Lukaku'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-20/komt-er-dan-toch-een-transfer-amerikaanse-topclub-wil-europese-ster-en-denkt-aan-romelu-lukaku",
+      "summary": "Romelu Lukaku staat voor enkele cruciale weken. Dient de Rode Duivel zijn contract uit bij SSC Napoli of maakt hij een transfer? Ondertussen heeft zich een Amerikaanse club gemeld voor de aanvaller.",
+      "publishedAt": "2026-07-20T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un ancien de Charleroi va rejoindre un club de D1A : accord trouvé",
+      "link": "https://www.walfoot.be/news/2026-07-20/un-ancien-de-charleroi-va-rejoindre-un-club-de-d1a-accord-trouve",
+      "summary": "Le KVC Westerlo poursuit une importante reconstruction et vient à nouveau de frapper sur le marché des transferts. Fabio Ferraro va quitter le club pour rejoindre les Campinois. Selon Sacha Tavolieri, les deux clubs ont trouvé un accord pour un montant de 700 000 euros, auquel s’ajouteront des bonus",
+      "publishedAt": "2026-07-20T08:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Einde van een huwelijk dat nooit liefde heeft gekend? 'Club Brugge is verlost van overbodige aanvaller'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-20/einde-van-een-huwelijk-dat-nooit-liefde-heeft-gekend-club-brugge-is-verlost-van-overbodige-aanvaller",
+      "summary": "Het huwelijk tussen Club Brugge en Gustaf Nilsson is bijna voorbij. De 29-jarige Zweed krijgt een reddingsboei toegeworpen uit de Duitse tweede klasse. De kans is héél groot dat de transfer zal gerealiseerd worden.",
+      "publishedAt": "2026-07-20T08:30:00.000Z"
     },
     {
       "type": "rss",
@@ -176,17 +242,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-07-20/nathan-de-cat-verhuist-niet-alleen-naar-duitsland-dat-is-niet-vol-te-houden",
       "summary": "Nathan De Cat is bezig aan de voorbereiding als speler van TSG 1899 Hoffenheim. De 18-jarige middenvelder staat voor een enorme uitdaging, maar hij gaat het avontuur niét alleen aan. In Sinsheim heeft hij alvast het nodige gezelschap én ondersteuning om van zijn nieuw avontuur een succes te maken.",
       "publishedAt": "2026-07-20T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 20/07: Bassette - De Bruyne - Cuypers",
-      "link": "https://www.walfoot.be/news/2026-07-20/actu-transferts-rumeurs-de-transferts",
-      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
-      "publishedAt": "2026-07-20T07:30:00.000Z"
     },
     {
       "type": "rss",
@@ -223,58 +278,36 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "64 équipes lors du prochain Mondial ? Alejandro Domínguez, président de la CONMEBOL, se montre affirmatif",
-      "link": "https://www.walfoot.be/news/2026-07-20/64-equipes-lors-du-prochain-mondial-alejandro-domnguez-president-de-la-conmebol-se-montre-affirmatif",
-      "summary": "Alejandro Domínguez, président de la CONMEBOL, affirme que la Coupe du monde 2030 réunira encore plus d'équipes qu'en 2026, passant de 48 à 64 équipes. C'est dans un simple message publié sur son compte X que le président de la Confédération sud-américaine de football s'est exprimé à ce sujet.",
-      "publishedAt": "2026-07-20T07:00:00.000Z"
+      "title": "Menzies shocks world No 2 Humphries in World Matchplay thriller",
+      "link": "https://www.skysports.com/darts/news/12040/13565323/world-matchplay-darts-luke-humphries-shocked-by-cameron-menzies-in-first-round-at-the-winter-gardens-in-blackpool",
+      "summary": "Cameron Menzies produced a massive upset to defeat 2024 champion Luke Humphries 10-7 at the World Matchplay on Monday night.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Transfernieuws en Transfergeruchten 20/07: Scherpen - Ferraro - Lawrence",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-20/transfernieuws-transfergeruchten",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 20/07 hebben we transfernieuws en transfergeruchten voor u over:",
-      "publishedAt": "2026-07-20T06:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "'Union SG ziet sterkhouder naar Premier League vertrekken en moét (snel) op zoek naar een vervanger'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-20/union-sg-ziet-sterkhouder-naar-premier-league-vertrekken-en-moet-snel-op-zoek-naar-een-vervanger",
-      "summary": "De transfer van Kjell Scherpen naar de Premier League komt dichterbij. De Nederlandse doelman kan rekenen op concrete interesse van twee clubs. Union SG moet op zoek naar een vervanger.",
-      "publishedAt": "2026-07-20T06:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Charles De Ketelaere annonce une grande nouvelle dans sa vie privée",
-      "link": "https://www.walfoot.be/news/2026-07-20/charles-de-ketelaere-annonce-une-grande-nouvelle-dans-sa-vie-privee",
-      "summary": "Charles De Ketelaere a demandé sa compagne, Jozefien Van de Velde, en mariage. Les deux tourtereaux ont publié trois clichés de ce moment particulier sur leurs comptes Instagram respectifs, dans une publication en collaboration.",
-      "publishedAt": "2026-07-20T06:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Hits, misses and Muppets: the star-studded World Cup half-time show nobody asked for",
-      "link": "https://www.theguardian.com/football/2026/jul/19/hits-misses-and-muppets-the-star-studded-world-cup-half-time-show-nobody-asked-for",
-      "summary": "It zipped along, cramming in Shakira, Madonna and Coldplay, but football fans may not be convinced of need for this mid-match spectacle Like hydration breaks and Donald Trump’s ability to get refereeing decisions overturned by simply phoning up the president of Fifa and complaining, the final half-time show is an innovation of the 2026 World Cup that comes with a degree of controversy attached. For one thing, its existence automatically means the World Cup final breaks the International Football Association’s 15-minute half-time mandate. For another, its obvious antecedent lies in the NFL’s Super Bowl, where the half-time entertainment has mushroomed over the decades from a few marching bands to one of the big pop events of the year. To its detractors, it smacks of America not so much embracing the World Cup as imposing itself upon it. Continue reading...",
-      "publishedAt": "2026-07-19T22:11:12.000Z"
+      "title": "England latest: Latest FIFA rankings published - where do Three Lions sit?",
+      "link": "https://www.skysports.com/football/live-blog/12040/13427059/england-football-news-live-updates-schedule-and-analysis-of-thomas-tuchels-three-lions",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Palace seek £55m-plus for Lacroix as talks with Chelsea begin",
+      "link": "https://www.skysports.com/football/news/12040/13565423/maxence-lacroix-transfer-news-chelsea",
+      "summary": "Chelsea are in talks with Crystal Palace over the signing of defender Maxence Lacroix.",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -293,42 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "World Matchplay Darts LIVE! Humphries vs Menzies after Price wins thriller",
+      "title": "World Matchplay Darts LIVE! Noppert vs Cross after Humphries is knocked out",
       "link": "https://www.skysports.com/darts/live-blog/12040/13565333/world-matchplay-2026-updates-video-commentary-scores-analysis-results-as-luke-humphries-and-gerwyn-price-feature-in-blackpool",
       "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "F1 2026 team-mate head-to-heads after Belgian GP",
-      "link": "https://www.skysports.com/f1/news/12040/13516662/f1-team-mate-2026-head-to-head-qualifying-race-sprint-latest-scores-results-from-formula-1-season",
-      "summary": "The 2026 Formula 1 head-to-heads with all of the latest Qualifying, Sprint and Grand Prix scores in each of the 11 teams.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Brundle: The Hamilton-Russell penalty call and Antonelli's class of one",
-      "link": "https://www.skysports.com/f1/news/12040/13565321/belgian-gp-martin-brundle-on-george-russells-problems-and-lewis-hamilton-clash-kimi-antonellis-win-in-spa-race-verdict",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'He's got to get an answer!' - Russell 'knocked down' by mystery car problems",
-      "link": "https://www.skysports.com/f1/news/12040/13565252/george-russell-mercedes-driver-knocked-down-but-vows-to-fight-on-for-f1-title-as-team-work-to-resolve-mystery-car-problems",
-      "summary": "George Russell says he has been \"knocked down\" but will \"get back up\" after the latest setbacks to his world championship challenge at the Belgian Grand Prix",
       "publishedAt": null
     }
   ]
