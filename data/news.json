@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T22:08:41.033Z",
+  "generatedAt": "2026-07-25T00:07:57.502Z",
   "items": [
     {
       "type": "rss",
@@ -80,6 +80,17 @@
     },
     {
       "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "West Ham winger Summerville joins Al-Hilal",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cevmx0y88vwo?at_medium=RSS&at_campaign=rss",
+      "summary": "West Ham confirm the sale of Netherlands winger Crysencio Summerville to Saudi club Al-Hilal.",
+      "publishedAt": "2026-07-24T19:29:18.000Z"
+    },
+    {
+      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
@@ -154,17 +165,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cd7len4lvy9o?at_medium=RSS&at_campaign=rss",
       "summary": "Former Manchester City manager Pep Guardiola turns down the chance to coach Italy.",
       "publishedAt": "2026-07-24T09:47:25.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Messiah or papering over cracks? Klopp must sway doubters in Germany rebuild",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cn8k8llpz2mo?at_medium=RSS&at_campaign=rss",
-      "summary": "Jurgen Klopp is a legend at his former clubs, but he will need to convince his critics if he is to succeed in his toughest managerial challenge yet.",
-      "publishedAt": "2026-07-24T09:33:22.000Z"
     },
     {
       "type": "rss",
@@ -282,7 +282,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "World Matchplay Darts LIVE! Van Veen wins Wade thriller to book Price semi-final date",
+      "title": "Van Veen on Winter Garden boos: That 118 finish was for you!",
       "link": "https://www.skysports.com/darts/live-blog/12040/13566495/world-matchplay-darts-live-updates-video-analysis-scores-commentary-with-gerwyn-price-gian-van-veen-and-james-wade-in-action",
       "summary": "",
       "publishedAt": null
@@ -304,7 +304,7 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "French stars as Wigan add to Saints' disarray",
+      "title": "French stars as Wigan add to Saints' disarray | 12-player Wakefield rout Tigers",
       "link": "https://www.skysports.com/rugby-league/wigan-vs-st-helens/report/63290",
       "summary": "Bevan French proved the star of the show on his return as Wigan Warriors eventually ripped St Helens apart 38-16 in Friday's Super League, compounding Saints' woes.",
       "publishedAt": null
