@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-07-25T23:05:16.226Z",
+  "generatedAt": "2026-07-26T03:19:52.097Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Liverpool start Iraola era in style to beat Sunderland but Gomez injury deepens defensive worries",
+      "link": "https://www.theguardian.com/football/2026/jul/26/liverpool-start-iraola-era-in-style-to-beat-sunderland-but-gomez-injury-puts-spotlight-on-defence",
+      "summary": "Liverpool defeat Sunderland 4-2 in friendly in Nashville When Gomez went down, central defence formed by two teenagers The Andoni Iraola era at Liverpool opened with a victory over Sunderland in Nashville – and a deepening of concerns over the defensive options at his disposal. The sight of Joe Gomez hobbling off after 10 minutes of the new head coach’s first game and two teenagers forming a raw central defence partnership in his absence intensified the spotlight on a department in need of work. Liverpool had few issues at the other end of the pitch against Regis Le Bris’s side, resplendent in pink in Tennessee, where second half finishes from Dominik Szoboszlai, Federico Chiesa and Lewis Koumas delivered an ultimately comfortable win. Continue reading...",
+      "publishedAt": "2026-07-26T00:49:24.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -110,17 +121,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cpd7e8jw9qqo?at_medium=RSS&at_campaign=rss",
       "summary": "Mason Mount has been outstanding alongside new arrival Andrey Santos for Manchester United in their first two pre-season games.",
       "publishedAt": "2026-07-25T11:01:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Missing a major football tournament? Fear not, Wafcon 2026 is about to start",
-      "link": "https://www.theguardian.com/football/2026/jul/25/wafcon-2026-womens-africa-cup-nations-guide",
-      "summary": "The Women’s Africa Cup of Nations starts in Morocco on Sunday, with Cape Verde and Egypt looking to continue feelgood factor from the men’s World Cup and Nigeria going for an 11th title The men’s World Cup may have finished but do not worry, the Women’s Africa Cup of Nations (Wafcon) is ready to pick up where Spain and Argentina left off. The 34-match event will take place between 26 July and 16 August, which sandwiches it between football’s global showpiece and the start of the league season in Europe. Here’s your guide to one of the most underrated but interesting events on the sporting calendar. Continue reading...",
-      "publishedAt": "2026-07-25T11:00:40.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,31 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
+      "title": "Sheeraz escapes with narrow points win as he sets his sights on Canelo",
+      "link": "https://www.skysports.com/boxing/news/12040/13567019/hamzah-sheeraz-escapes-with-narrow-points-win-while-josh-kelly-overcomes-horror-gash-to-his-nose-in-saudi-arabia",
+      "summary": "Hamzah Sheeraz escaped with a narrow points win, while Josh Kelly overcame a horror gash to his nose on the Anthony Joshua vs Kristian Prenga undercard in Saudi Arabia on Saturday.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
       "title": "In-form Leigh close in on top four of Super League",
       "link": "https://www.skysports.com/rugby-league/news/12040/13566959/super-league-in-form-leigh-close-in-on-top-four-with-victory-against-warrington-as-huddersfield-end-12-game-wait-for-win",
       "summary": "In-form Leigh saw off Warrington 28-12 to close in on the top four in the Betfred Super League.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Joshua devotes win to late friends as 'lovely treat' of Fury fight looms",
+      "link": "https://www.skysports.com/boxing/news/12040/13567030/anthony-joshua-remembers-late-friends-after-win-over-kristian-prenga-sets-up-tyson-fury-fight-and-lovely-treat-for-fans",
+      "summary": "An emotional Anthony Joshua remembered his late friends as he staved off a seismic shock against Kristian Prenga to rubberstamp a fight with Tyson Fury that he says will be a \"lovely treat\" for fans.",
       "publishedAt": null
     },
     {
@@ -304,31 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Joshua-Fury moves closer as AJ KOs Prenga in Jeddah after huge scare",
-      "link": "https://www.skysports.com/other-sports/news/12040/13566890/anthony-joshua-knocks-out-kristian-prenga-after-huge-scare-to-move-closer-to-blockbuster-showdown-with-tyson-fury",
+      "title": "Joshua-Fury moves closer as AJ KOs Prenga after being knocked down twice",
+      "link": "https://www.skysports.com/boxing/news/12040/13566890/anthony-joshua-knocks-out-kristian-prenga-after-huge-scare-to-move-closer-to-blockbuster-showdown-with-tyson-fury",
       "summary": "Anthony Joshua remains on course for a showdown with British heavyweight rival Tyson Fury later this year after recovering from being knocked down inside 20 seconds to secure a second-round knockout of Kristian Prenga in a wild clash in Jeddah.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Norris in 'new man's land' as 'frustrated' Hamilton plots penalty fightback",
-      "link": "https://www.skysports.com/f1/news/12040/13566877/hungarian-gp-lando-norris-jokes-mclaren-are-in-new-mans-land-as-lewis-hamilton-kimi-antonelli-plot-fightbacks",
-      "summary": "Lando Norris quipped McLaren were in \"new man's land\" ahead of starting from the head of a Grand Prix grid for the first time this year, as Lewis Hamilton maintained hope that he could fight back from his qualifying penalty in the Hungarian Grand Prix.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "England women ramp up Rugby League World Cup preparations with win in France",
-      "link": "https://www.skysports.com/rugby-league/news/12040/13566994/england-women-ramp-up-preparations-for-rugby-league-world-cup-with-win-against-france-in-toulouse",
-      "summary": "England women ramped up preparations for the Rugby League World Cup in their mid-season international against France on Saturday, with a dominant performance in Toulouse.",
       "publishedAt": null
     }
   ]
