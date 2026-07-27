@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-07-27T03:30:05.652Z",
+  "generatedAt": "2026-07-27T07:36:44.584Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Megatransfer in de maak: Real Madrid dicht bij akkoord Diomande'",
+      "link": "https://www.vi.nl/nieuws/megatransfer-in-de-maak-real-madrid-dichtbij-akkoord-diomande",
+      "summary": "Real Madrid lijkt de strijd om Yan Diomandé (19) te gaan winnen. Waar er nog geen definitief akkoord is met RB Leipzig, heeft de negentienjarige aanvaller een persoonlijk akkoord bereikt en naderen de clubs elkaar.",
+      "publishedAt": "2026-07-27T07:33:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 27/07: Barry - Caicedo Mina",
+      "link": "https://www.walfoot.be/news/2026-07-27/actu-transferts-rumeurs-de-transferts",
+      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
+      "publishedAt": "2026-07-27T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un autre défenseur sur le départ : l'Union Saint-Gilloise discute avec un club saoudien",
+      "link": "https://www.walfoot.be/news/2026-07-27/un-autre-defenseur-sur-le-depart--lunion-saint-gilloise-discute-avec-un-club-saoudien",
+      "summary": "Peu utilisé depuis son arrivée à l'Union Saint-Gilloise, Mamadou Thierno Barry pourrait rebondir en Arabie saoudite cet été. Son dossier avance dans le bon sens.",
+      "publishedAt": "2026-07-27T07:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Chaos dreigt bij Italië: Pirlo lijkt naast job als bondscoach te grijpen en ook Maldini dreigt op te stappen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-27/chaos-dreigt-bij-italie-pirlo-lijkt-naast-job-als-bondscoach-te-grijpen-en-ook-maldini-dreigt-op-te-stappen",
+      "summary": "De soap rond de zoektocht naar een nieuwe Italiaanse bondscoach neemt almaar grotere proporties aan. Waar Andrea Pirlo enkele dagen geleden nog de topfavoriet leek om de nieuwe keuzeheer van de Squadra Azzurra te worden, is zijn aanstelling volgens Italiaanse media plots bijzonder onzeker.",
+      "publishedAt": "2026-07-27T07:29:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -10,7 +54,7 @@
       "title": "Zomertransfers Eredivisie seizoen 2026/27: alle clubs op een rij",
       "link": "https://www.vi.nl/nieuws/zomertransfers-eredivisie-seizoen-2026-27-alle-clubs-op-een-rij",
       "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde zomertransfers van de achttien Eredivisie-clubs. Transfers komen pas in dit overzicht als ze zijn bevestigd door de betreffende clubs.",
-      "publishedAt": "2026-07-26T22:06:59.000Z"
+      "publishedAt": "2026-07-27T07:23:10.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +62,153 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Pirlo in lastiger parket in Italië: voorzitter United FC spreekt advocaten tegen",
-      "link": "https://www.vi.nl/nieuws/pirlo-in-lastiger-parket-in-italie-voorzitter-united-fc-spreekt-advocaten-tegen",
-      "summary": "De positie van Andrea Pirlo in de strijd om het bondscoachschap van Italië lijkt verder verslechterd. Sergej Lomakin, voorzitter van United FC uit Dubai, heeft in alle toonaarden ontkend dat zijn club banden heeft met het Russische gokbedrijf Fonbet. Daarmee spreekt hij de beweringen van de advocaten van Pirlo tegen.",
-      "publishedAt": "2026-07-26T21:57:12.000Z"
+      "title": "Miguel Rodríguez vertrekt naar Alavés en levert FC Utrecht fraai bedrag op",
+      "link": "https://www.vi.nl/nieuws/miguel-rodriguez-vertrekt-naar-alaves-en-levert-fc-utrecht-fraai-bedrag-op",
+      "summary": "FC Utrecht heeft Miguel Rodríguez een jaar na zijn komst alweer verkocht. Alavés was bereid om meerdere miljoenen neer te leggen voor de Spaanse vleugelaanvaller.",
+      "publishedAt": "2026-07-27T07:17:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Nog meer chaos door Pirlo-affaire: Maldini denkt aan aftreden'",
+      "link": "https://www.vi.nl/nieuws/nog-meer-chaos-door-pirlo-affaire-maldini-denkt-aan-aftreden",
+      "summary": "Andrea Pirlo heeft gereageerd op de kritiek rond zijn betrokkenheid bij een Russisch gokbedrijf. Pirlo was topkandidaat om de nieuwe bondscoach van Italië te worden, maar de geruchten hebben zijn aanstelling flink bemoeilijkt. Als het niet rondkomt, denkt technisch directeur Paolo Maldini aan opstappen.",
+      "publishedAt": "2026-07-27T07:11:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Football Weekly’s summer mailbag: World Cup 2026, the off-season and more: part one – podcast",
+      "link": "https://www.theguardian.com/football/audio/2026/jul/27/football-weekly-summer-mailbag-part-one-podcast",
+      "summary": "Max Rushden is joined by Barry Glendenning, John Brewin and Jonathan Wilson to answer your questions from the mailbag Rate, review, share on Apple Podcasts and join the conversation on email. On the podcast today we hear what the panel think about how the tournament was officiated, how they unwind when there is no football on, which celebrity do they look like, and Barry’s old-school note-taking. Continue reading...",
+      "publishedAt": "2026-07-27T07:10:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Record Spurs spend shows new ambition - Van de Ven",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c4gw34l26xzo?at_medium=RSS&at_campaign=rss",
+      "summary": "Micky van de Ven says Tottenham's record spending highlights a \"new ambition\" after an \"unacceptable\" season.",
+      "publishedAt": "2026-07-27T07:00:41.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "PEC meet zich met de Griekse kampioen, toch baalt de trainer",
+      "link": "https://www.vi.nl/pro/pec-meet-zich-met-de-griekse-kampioen-toch-baalt-de-trainer",
+      "summary": "PEC Zwolle ligt met de competitiestart in het verschiet aardig op schema. Trainer Henry van der Vegt zag zijn ploeg zondag prima voor de dag komen tegen de Griekse kampioen AEK Athene, maar slikte wel een nederlaag (2-3). Na de wedstrijd legde de oefenmeester uit waarom hij er de pee in had. 'We krijgen het deksel op de neus.'",
+      "publishedAt": "2026-07-27T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Le dégraissage continue à Anderlecht : un nouveau départ se profile",
+      "link": "https://www.walfoot.be/news/2026-07-27/le-degraissage-continue-a-anderlecht--un-nouveau-depart-se-profile",
+      "summary": "Anderlecht pourrait bientôt enregistrer un nouveau départ. Le SC Heerenveen s'intéresse à Cédric Hatenboer.",
+      "publishedAt": "2026-07-27T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Liverpool, Bayern en Arsenal weten waar ze aan toe zijn: 120 miljoen voor absolute topper",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-27/liverpool-bayern-en-arsenal-weten-waar-ze-aan-toe-zijn-120-miljoen-voor-absolute-topper",
+      "summary": "Bradley Barcola zou deze zomer weleens een van de absolute topdossiers op de transfermarkt kunnen worden. Volgens L'Équipe heeft Paris Saint-Germain een duidelijke prijs bepaald voor de Franse international: wie de wonger wil losweken uit Parijs, zal maar liefst 120 miljoen euro moeten betalen.",
+      "publishedAt": "2026-07-27T07:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Retournement de situation en Italie : la nomination du futur sélectionneur se complique",
+      "link": "https://www.walfoot.be/news/2026-07-27/retournement-de-situation-en-italie--la-nomination-du-futur-selectionneur-se-complique",
+      "summary": "Andrea Pirlo était proche de devenir le nouveau sélectionneur de l'Italie. Mais un partenariat commercial fait hésiter la Fédération italienne de football, qui n'a pas pris sa décision. L'ancien champion du monde devra convaincre et attendre.",
+      "publishedAt": "2026-07-27T06:32:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Transfergoeroes vliegen elkaar openlijk in de haren: Fabrizio Romano en Florian Plettenberg sparen elkaar niet",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-27/transfergoeroes-vliegen-elkaar-openlijk-in-de-haren-fabrizio-romano-en-florian-plettenberg-sparen-elkaar-niet",
+      "summary": "Het is zelden dat twee van de grootste transferjournalisten ter wereld elkaar publiekelijk aanvallen, maar precies dat gebeurde zaterdag op sociale media. Fabrizio Romano en Florian Plettenberg gingen frontaal in de aanval, met beschuldigingen over fake news en het kopiëren van nieuws.",
+      "publishedAt": "2026-07-27T06:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Rogers and Palmer can play together - Alonso",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cre4qpq5j4wo?at_medium=RSS&at_campaign=rss",
+      "summary": "Chelsea manager Xabi Alonso says he has a \"plan\" to play club record £117m signing Morgan Rogers alongside Cole Palmer.",
+      "publishedAt": "2026-07-27T06:10:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le pire scénario pour le Club de Bruges ? Un contretemps menace un transfert important",
+      "link": "https://www.walfoot.be/news/2026-07-27/le-pire-scenario-pour-le-club-de-bruges--un-contretemps-menace-un-transfert-important",
+      "summary": "Le transfert de Joel Ordoñez pourrait prendre du retard. Blessé avec l'Équateur, le défenseur du Club de Bruges doit convaincre les médecins avant de pouvoir envisager un départ.",
+      "publishedAt": "2026-07-27T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Transfernieuws en Transfergeruchten 27/07: Virginius",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-27/transfernieuws-transfergeruchten",
+      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 27/07 hebben we transfernieuws en transfergeruchten voor u over:",
+      "publishedAt": "2026-07-27T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Onhaalbaar? Antoine Sibierski mikt hoog voor nieuwe winger bij Anderlecht",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-27/onhaalbaar-antoine-sibierski-mikt-hoog-voor-nieuwe-winger-bij-anderlecht",
+      "summary": "Anderlecht blijft de transfermarkt afspeuren naar extra aanvallende versterking, maar niet elk dossier lijkt haalbaar. Volgens het Franse L'Équipe behoort Alan Virginius tot de spelers die op het verlanglijstje van paars-wit staan, al lijkt een transfer momenteel financieel onrealistisch.",
+      "publishedAt": "2026-07-27T06:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Diomande agrees Real Madrid terms as PSG step away",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cqx74lpprd7o?at_medium=RSS&at_campaign=rss",
+      "summary": "RB Leipzig winger Yan Diomande agrees personal terms with Real Madrid after Paris St-Germain withdraw their interest.",
+      "publishedAt": "2026-07-27T05:46:37.000Z"
     },
     {
       "type": "rss",
@@ -38,67 +225,12 @@
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "PSG want £145m for Barcola - Monday's gossip",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cly5189yjgdo?at_medium=RSS&at_campaign=rss",
-      "summary": "Paris St-Germain want £145m for Bradley Barcola, Real Madrid set Vinicius Jr price and Arsenal to accelerate Bruno Guimaraes talks, plus more.",
-      "publishedAt": "2026-07-26T21:06:05.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "Japan legend Miura, 59, scores first goal since 2022",
       "link": "https://www.bbc.co.uk/sport/football/articles/c3r087181ndo?at_medium=RSS&at_campaign=rss",
       "summary": "Kazuyoshi Miura, the world's oldest professional footballer, scores his first goal in nearly four years at the age of 59 for Japanese third-tier side Fukushima United.",
       "publishedAt": "2026-07-26T20:57:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Catwalk 2026/27: Como lanceert shirt waarmee het de Champions League ingaat",
-      "link": "https://www.vi.nl/nieuws/vi-catwalk-alle-tenues-van-de-europese-topclubs-voor-het-seizoen-2026-27",
-      "summary": "Nu het WK alweer even achter de rug is, maken we ons op voor een nieuw seizoen clubvoetbal. Daar horen ook de nieuwe tenues voor de topclubs in het buitenland bij. In de VI Catwalk zetten we de shirts van de grootste teams uit de grootste competities van Europa op een rijtje. Dit artikel wordt aangevuld als meer clubs hun tenues bekendmaken voor het seizoen 2026/27.",
-      "publishedAt": "2026-07-26T20:53:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "McInnes teases Rangers signing within 48 hours",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cly9w1eez14o?at_medium=RSS&at_campaign=rss",
-      "summary": "Rangers hope to announce another signing within 48 hours, with manager Derek McInnes teasing a second by the time his side open their season away to Dundee United on Friday.",
-      "publishedAt": "2026-07-26T20:43:41.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "'PSG voelt zich belazerd door tussenpersonen: Diomande tekent snel bij Real'",
-      "link": "https://www.vi.nl/nieuws/psg-voelt-zich-belazerd-door-tussenpersonen-diomande-tekent-snel-bij-real",
-      "summary": "De meeste transferwindows zijn geopend en dus neemt het transfernieuws weer toe. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-07-26T20:14:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Malen gaat vrolijk verder en is ook in eerste oefenduel AS Roma trefzeker",
-      "link": "https://www.vi.nl/nieuws/malen-gaat-vrolijk-verder-en-is-ook-in-eerste-oefenduel-as-roma-trefzeker",
-      "summary": "Donyell Malen is bij AS Roma vrolijk verdergegaan waar hij was gebleven: scoren. De Oranje-international maakte in het eerste oefenduel van de Romeinen een van de drie treffers tegen het Franse Cannes.",
-      "publishedAt": "2026-07-26T20:07:00.000Z"
     },
     {
       "type": "rss",
@@ -110,17 +242,6 @@
       "link": "https://www.theguardian.com/football/2026/jul/26/teamwork-tactics-and-data-behind-the-scenes-at-wigans-pre-season-training",
       "summary": "Gary Caldwell, who returned to the League One club in February to keep them up, faces a new season with meticulous plans and bright hopes “This is the only rule I’m going to have for yous all season: ‘team first’,” says Gary Caldwell. The Wigan head coach’s Scottish accent booms over the gentle hum of a projector in a darkened classroom at the club’s Christopher Park training ground. “That is the one thing that we cannot ever go against,” he says, pointing to a slide on screen. “The team is the most important aspect of everything we do.” Three rows of professional athletes listen intently, keen to learn not only what the day holds, but about the 10 months ahead. Continue reading...",
       "publishedAt": "2026-07-26T18:00:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Régis Le Bris says Chelsea’s pursuit of Sunderland captain Xhaka is ‘closed’",
-      "link": "https://www.theguardian.com/football/2026/jul/26/regis-le-bris-says-chelseas-pursuit-of-sunderland-captain-xhaka-is-closed",
-      "summary": "Le Bris: ‘Granit wants to stay in Sunderland’ Xabi Alonso managed midfielder at Leverkusen Régis Le Bris has declared Chelsea’s pursuit of Granit Xhaka “closed” and insisted there is no prospect of Sunderland selling their influential captain this summer. Xhaka played a major role in Sunderland qualifying for the Europa League on their return to the Premier League last season, prompting Chelsea to make an £8m bid for the 33-year-old this month. Xabi Alonso, the new Chelsea manager, is keen to be reunited with his former midfielder at Bayer Leverkusen. Continue reading...",
-      "publishedAt": "2026-07-26T16:06:34.000Z"
     },
     {
       "type": "rss",
@@ -150,131 +271,54 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Inter enter talks with Tottenham over signing captain Cristian Romero",
-      "link": "https://www.theguardian.com/football/2026/jul/26/inter-enter-talks-with-tottenham-over-signing-captain-cristian-romero-transfer-window",
-      "summary": "Inter sporting director confirms attempt to sign Romero Spurs captain helped Argentina reach World Cup final Inter have entered talks with Tottenham over the potential signing of Cristian Romero. The Spurs captain helped Argentina reach a second straight World Cup final this month, but could leave this summer for a significant fee after an eventful five-year spell. The centre-back has made 156 appearances since he joined Tottenham in 2021 and guided the club to Europa League success last year, but served four separate suspensions during a difficult 2025-26 campaign. Continue reading...",
-      "publishedAt": "2026-07-26T11:34:40.000Z"
+      "title": "How the death of Jayden Adams shook a community: ‘Being on the pitch was his happy place’",
+      "link": "https://www.theguardian.com/football/2026/jul/26/jayden-adams-death-south-africa-world-cup",
+      "summary": "Those who knew the South African, who died aged 25 not long after playing at the World Cup, describe a humble and hard-working man who cared about friends and family For Jayden Adams, the South Africa midfielder who died this month at the age of 25, football was a “safe space”. Those words, used by Adams’s junior coach Steve Barker at his memorial service 10 days ago, tell you everything you need to know about his life beyond the pitch. Adams’s battles were bestowed on him almost from birth. Though he was born into newly democratic South Africa, by the early 2000s the revolution was well on its way to being betrayed. The vote was extended to all, but few could make full use of the freedoms available to them because socioeconomic circumstances in the country had barely changed. Stellenbosch, where the Adams family were based, is a perfect example. Continue reading...",
+      "publishedAt": "2026-07-26T07:00:05.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Transfernieuws en Transfergeruchten 26/07: Vazquez - Barry - Takaoka - ter Stegen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-26/transfernieuws-transfergeruchten",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen! Op 26/07 hebben we transfernieuws en transfergeruchten voor u over:",
-      "publishedAt": "2026-07-26T09:00:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Real to hold further talks over Vinicius Jr's future this week amid Arsenal interest",
+      "link": "https://www.skysports.com/football/news/12040/13567300/vinicius-jr-transfer-news-real-madrid-to-hold-further-talks-over-brazil-internationals-future-this-week-amid-arsenal-interest",
+      "summary": "Real Madrid will hold further talks with Vincius Junior's representatives about his future this week.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Wat doet Anderlecht? Vazquez weet wat hij wil, maar transfer blijft moeilijk",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-26/wat-doet-anderlecht-vazquez-weet-wat-hij-wil-maar-transfer-blijft-moeilijk",
-      "summary": "Luis Vázquez is terug bij Anderlecht, maar zou graag bij Getafe willen blijven. De Spaanse club toont nog steeds interesse, maar moet eerst Anderlecht overtuigen. De Brusselaars proberen namelijk hun investering uit 2023 zoveel mogelijk te recupereren.",
-      "publishedAt": "2026-07-26T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Speler weet wat hij wil: Zulte Waregem aast op Engelse flankaanvaller met opvallend parcours",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-26/speler-weet-wat-hij-wil-zulte-waregem-aast-op-engelse-flankaanvaller-met-opvallend-parcours",
-      "summary": "Zulte Waregem blijft werk maken van de komst van Sylvester Jasper. Essevee is op zoek naar versterking voor de terugkeer naar de Jupiler Pro League en heeft de Engelse-Bulgaarse flankaanvaller op de radar staan.",
-      "publishedAt": "2026-07-26T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Nicky Hayen reste positif malgré des débuts inquiétants à Burnley",
-      "link": "https://www.walfoot.be/news/2026-07-26/nicky-hayen-reste-positif-malgre-des-debuts-inquietants-a-burnley",
-      "summary": "Deuxième rencontre amicale, et deuxième défaite pour le Burnley de Nicky Hayen, qui a cependant montré de bonnes choses sur la pelouse de l'Ajax Amsterdam. Une prestation encourageante qui satisfait l'entraîneur limbourgeois.",
-      "publishedAt": "2026-07-26T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Nicky Hayen kan opnieuw niet winnen met Burnley: dit heeft hij erover te zeggen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-26/nicky-hayen-kan-opnieuw-niet-winnen-met-burnley-dit-heeft-hij-erover-te-zeggen",
-      "summary": "Tweede oefenwedstrijd en tweede nederlaag voor Burnley onder Nicky Hayen. Toch liet de Engelse club goede dingen zien op bezoek bij Ajax. Een bemoedigende prestatie waar de Limburgse trainer tevreden over is.",
-      "publishedAt": "2026-07-26T08:06:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Les dernières rumeurs, les officialisations : suivez le mercato en direct ! 26/07: Vazquez - Thiem - Scherpen",
-      "link": "https://www.walfoot.be/news/2026-07-26/actu-transferts-rumeurs-de-transferts",
-      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
-      "publishedAt": "2026-07-26T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Anderlecht tente de sauver les meubles : le dossier Luis Vazquez reste ouvert",
-      "link": "https://www.walfoot.be/news/2026-07-26/anderlecht-tente-de-sauver-les-meubles-le-dossier-luis-vazquez-reste-ouvert",
-      "summary": "De retour au Sporting d'Anderlecht, Luis Vazquez aimerait rester à Getafe, qui le veut toujours. Reste cependant à convaincre le Sporting d'Anderlecht, qui tente d'amortir son investissement réalisé en 2023.",
-      "publishedAt": "2026-07-26T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "KRC Genk laat verdediger gratis vertrekken, maar kan later nog profiteren",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-26/krc-genk-laat-verdediger-gratis-vertrekken-maar-kan-later-nog-profiteren",
-      "summary": "KRC Genk ziet opnieuw een speler vertrekken die de voorbije jaren vooral zijn minuten maakte bij Jong Genk. Alfred Caicedo verlaat de Limburgse club definitief en trekt naar Portugal, waar hij zijn loopbaan verderzet bij FC Vizela.",
-      "publishedAt": "2026-07-26T07:36:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "L'ancien tennisman Dominic Thiem se reconvertit dans le football",
-      "link": "https://www.walfoot.be/news/2026-07-26/lancien-tennisman-dominic-thiem-se-reconvertit-dans-le-football",
-      "summary": "Troisième meilleur joueur du monde et vainqueur de l'US Open en 2020, Dominic Thiem a arrêté sa carrière professionnelle dans le tennis il y a deux ans. Victime d'une blessure au poignet droit, l'Autrichien se reconvertit... dans le football.",
-      "publishedAt": "2026-07-26T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Accord trouvé : un cadre de l'Union va signer en Premier League !",
-      "link": "https://www.walfoot.be/news/2026-07-26/accord-trouve-un-cadre-de-lunion-va-signer-en-premier-league-",
-      "summary": "Kjell Scherpen va bientôt quitter l'Union Saint-Gilloise. Les discussions avec Ipswich Town ont avancé et un accord entre les deux clubs a été trouvé. Le gardien néerlandais retourne donc en Premier League.",
-      "publishedAt": "2026-07-26T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Gomez injury overshadows winning start for Iraola",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cm2genrg72do?at_medium=RSS&at_campaign=rss",
-      "summary": "Liverpool start life under Andoni Iraola with a 4-2 win over Sunderland thanks to goals from Kieran Morrison, Dominik Szoboszlai, Federico Chiesa and Lewis Koumas.",
-      "publishedAt": "2026-07-26T06:25:17.000Z"
+      "title": "Chelsea latest: Alonso says 'impact' player Rogers and Palmer will line-up together",
+      "link": "https://www.skysports.com/football/live-blog/12040/13025497/chelsea-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Nelson: Fury vs AJ excites me more than ever and Fury has the edge",
+      "link": "https://www.skysports.com/boxing/news/12040/13567094/tyson-fury-vs-anthony-joshua-excites-me-more-than-ever-and-fury-has-the-edge-says-johnny-nelson",
+      "summary": "This fight excites me more than it ever has, and I think Tyson Fury has the edge.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Amazonian Dream looks to go back-to-back at Windsor",
+      "link": "https://www.skysports.com/racing/news/12040/13567076/today-on-sky-sports-racing-ripon-southwell-and-windsor",
+      "summary": "We have a busy day’s racing on Monday with flat action from Ripon, Southwell and Windsor, live on Sky Sports Racing...",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -285,50 +329,6 @@
       "title": "Rising star Koivun holds off Scheffler to win on third PGA Tour start as a pro",
       "link": "https://www.skysports.com/golf/news/12040/13567261/3m-open-jackson-koivun-21-holds-off-scottie-scheffler-to-secure-victory-on-just-third-pga-tour-start-as-a-professional",
       "summary": "Jackson Koivun held off a charge from world No 1 Scottie Scheffler to win his first PGA Tour title in just his third start as a professional as he triumphed by three strokes at the 3M Open in Minnesota.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Pogacar secures record-equalling fifth Tour de France title",
-      "link": "https://www.skysports.com/cycling/news/12040/13567235/tour-de-france-2026-tadej-pogacar-wins-record-equalling-fifth-title-and-third-in-a-row-after-race-completed-in-paris",
-      "summary": "Slovenia's Tadej Pogacar earned a record-equalling fifth ‌Tour de France title and third in a row after safely navigating the shortened final stage into Paris.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Craig Overton wins battle with brother Jamie in entertaining Hundred finish",
-      "link": "https://www.skysports.com/cricket/news/12040/13567244/the-hundred-craig-overton-hits-winning-runs-off-twin-brother-jamie-while-jos-buttler-hammers-90-from-50-balls",
-      "summary": "Craig Overton won his one-on-one battle with twin brother Jamie as Trent Rockets beat London Spirit by four wickets with two balls to spare in The Hundred.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "In-form Herbert breaks LIV Golf record with win in UK",
-      "link": "https://www.skysports.com/golf/news/12040/13567252/liv-golf-uk-lucas-herbert-wins-with-record-score-of-30-under-par-as-he-follows-impressive-open-display-with-title",
-      "summary": "Australia's Lucas Herbert followed an impressive showing at last week's Open at Royal Birkdale with a record-setting victory at the LIV Golf UK event in Staffordshire.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Mayo win first All-Ireland title in 75 years as 'curse lifted'",
-      "link": "https://www.skysports.com/gaelic-football/news/12040/13567219/mayo-win-first-all-ireland-senior-football-title-in-75-years-as-curse-lifted-with-thrilling-victory-over-kerry-at-croke-park",
-      "summary": "Mayo claimed a first All-Ireland Senior Football title for 75 years as they beat defending champions Kerry in a thrilling final at Croke Park.",
       "publishedAt": null
     }
   ]
