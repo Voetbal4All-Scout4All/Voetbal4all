@@ -1,16 +1,137 @@
 {
-  "generatedAt": "2026-07-30T15:13:55.055Z",
+  "generatedAt": "2026-07-30T17:39:17.940Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Elliott ready to take 'second chance' at Liverpool",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cp30lp0z4qpo?at_medium=RSS&at_campaign=rss",
+      "summary": "Harvey Elliott discusses his \"tough\" loan spell at Aston Villa and why he's determined to enjoy his football again at Liverpool.",
+      "publishedAt": "2026-07-30T17:32:01.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "DE",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Newcastle-aanvoerder op weg naar Arsenal, PSG vindt nieuwe aanwinst bij Monaco'",
+      "link": "https://www.vi.nl/nieuws/rashford-zwaait-barcelona-officieel-uit",
+      "summary": "De meeste transferwindows zijn geopend en dus neemt het transfernieuws weer toe. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-07-30T17:22:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Opstelling FC Twente: Van den Brom wijzigt niks in Boedapest",
+      "link": "https://www.vi.nl/nieuws/opstelling-fc-twente-van-den-brom-wijzigt-niks-in-boedapest",
+      "summary": "FC Twente begint donderdagavond met dezelfde elf als vorige week aan de return tegen Ferencváros. In Hongarije wil de ploeg uit Enschede de 1-2 nederlaag van vorige week wegpoetsen om zo de derde voorronde van de Europa League te bereiken.",
+      "publishedAt": "2026-07-30T17:17:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: opstellingen Ajax en FK Vojvodina bekend, nieuwe trainer debuteert",
+      "link": "https://www.vi.nl/nieuws/vi-live-opstellingen-ajax-en-fk-vojvodina-bekend-nieuwe-trainer-debuteert",
+      "summary": "Ajax en FC Twente spelen donderdagavond een Europese return. De Amsterdammers verdedigen een 1-4 voorsprong in de eigen Johan Cruijff Arena tegen FK Vojvodina, terwijl De Tukkers alle zeilen bij moeten zetten in Hongarije. Een week geleden won Ferencváros namelijk met 1-2 in de Grolsch Veste. Via deze VI Live blijf je op de hoogte van alle ontwikkelingen.",
+      "publishedAt": "2026-07-30T17:16:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Voorspeltips: verrassingen en meer tips voor jouw Eredivisie-team",
+      "link": "https://www.vi.nl/pro/vi-voorspeltips-verrassingen-en-meer-tips-voor-jouw-eredivisie-team",
+      "summary": "Het aftellen naar de start van het Eredivisie-seizoen is in volle gang en dat betekent dat de start van populaire spellen als ESPN Fantasy, Topcoach van Scorito en Coach van het Jaar dichtbij komt. Op vrijdagavond 7 augustus moet de eerste puzzel zijn gelegd. VI PRO schiet jou graag te hulp bij het samenstellen van een selectie.",
+      "publishedAt": "2026-07-30T17:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "KNVB-voorzitter Paauw: 'Er moet nu eindelijk leiderschap getoond worden'",
+      "link": "https://www.vi.nl/nieuws/knvb-voorzitter-paauw-er-moet-nu-eindelijk-leiderschap-getoond-worden",
+      "summary": "Frank Paauw, bondsvoorzitter van de KNVB, was donderdag samen met Gijs de Jong aanwezig bij het spoedoverleg van de UEFA. Na het conclaaf gaf Paauw een eerste reactie bij ESPN.",
+      "publishedAt": "2026-07-30T16:47:58.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
       "flag": "🌍",
-      "title": "Nieuw ticketrecord in het Duitse voetbal",
-      "link": "https://www.vi.nl/nieuws/nieuw-ticketrecord-in-het-duitse-voetbal",
-      "summary": "De Bundesliga heeft donderdag de cijfers uit het jaarlijkse toeschouwersrapport bekendgemaakt. De 36 clubs uit de twee hoogste competities van Duitsland verkochten gezamenlijk nog nooit zoveel kaartjes.",
-      "publishedAt": "2026-07-30T15:10:27.000Z"
+      "title": "Uefa to boycott World Cups if Fifa plans approved",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c5y67zrrdddo?at_medium=RSS&at_campaign=rss",
+      "summary": "Uefa's 55 member associations vote to boycott the World Cup if Fifa proceeds with its plan to sell stakes in its competitions.",
+      "publishedAt": "2026-07-30T16:47:40.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "FA raises minimum ban for racism and other forms of discrimination to 10 matches",
+      "link": "https://www.theguardian.com/football/2026/jul/30/fa-raise-minimum-ban-for-discrimination-to-10-matches",
+      "summary": "Discrimination ‘continues to be challenge’ Current minimum ban is six matches The FA is to increase the minimum punishment for discriminatory behaviour to 10 matches, in an attempt to counteract behaviour it says “continues to be a challenge across the game”. The changes will come into force at the start of the new season and will apply to players and other football participants who are found guilty of an “aggravated breach” of the FA’s disciplinary rules on improper conduct, effectively actions that included discriminatory behaviour against any protected characteristics. Currently the minimum suspension for such a breach is six matches. Continue reading...",
+      "publishedAt": "2026-07-30T16:34:53.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Tonali 'took 10 minutes' to decide to join Spurs",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cz7dlyq1qnwo?at_medium=RSS&at_campaign=rss",
+      "summary": "Club-record £100m signing Sandro Tonali took \"10 minutes\" to decide to join Tottenham after meeting manager Roberto de Zerbi.",
+      "publishedAt": "2026-07-30T16:01:58.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Uefa agrees to boycott Fifa competitions if World Cup sell-off plans proceed",
+      "link": "https://www.theguardian.com/football/2026/jul/30/uefa-agrees-to-boycott-fifa-competitions-if-world-cup-sell-off-plans-proceed",
+      "summary": "Uefa vote passes 55-0 at emergency meeting on Thursday Boycott would begin with Under-20 Women’s World Cup European countries have agreed to boycott all Fifa competitions if Gianni Infantino pushes forward with his proposals to sell chunks of the World Cup to US-based private investment. In an extraordinary development all 55 Uefa members resolved not to participate in future World Cups or other Fifa-run events, saying in a statement that they “unanimously and unequivocally reject” the proposals. An emergency meeting that lasted just short of two hours ended with a united front despite earlier fears that smaller countries, attracted by the money on offer through Infantino’s scheme, would be swayed in favour. Continue reading...",
+      "publishedAt": "2026-07-30T15:35:09.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Football Daily | Thought leader Eddie Howe runs out of time and ideas at Newcastle",
+      "link": "https://www.theguardian.com/football/2026/jul/30/eddie-howe-newcastle-football-daily-newsletter",
+      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! That a vote of confidence isn’t worth the paper it’s written on has long been a footballing cliche. But not until this day did we know that this even applies to a vote of confidence that comes from Jonjo Shelvey – a man so devoted to the righteously upstanding that he once accused Alex Ferguson of grassing, following a high tackle committed in front of 45,000 fans, a worldwide television audience of millions and in full view of the referee. Re: Marc Cucurella’s tattoo (Wednesday’s full email edition). So you’re saying he got a champ stamp? I’ll see myself out” – Andy Beller. Hats off to the Brazil Superior Court of Sports Justice for banning Victor Gabriel for however long it takes his injured opponent to recover (Wednesday’s news). Building on this initiative, perhaps we should record the amount of time players waste rolling around on the floor feigning injury, and hand out bans of equivalent duration at the start of the next match” – John Collins (not that one). Far be it for me to offer a conspiracy theory, but Joshua Kushner is the brother of real estate developer Jared Kushner, who is the son-in-law of … Donald Trump. I think we know where Fifa’s money-making idea may have come from” – JJ Zucal. I agree that Jürgen Klinsmann reshaped the Premier League (Wednesday’s Memory Lane). He certainly introduced to me the concept of a talented sportsman using his skills to game the ref or gain an advantage rather than play the bloody game. For all his self-deprecating humour and quirky bloody car, he showed his soul on the pitch. As for that car, the cabriolet lacked stability and would flop about at random – an appropriate choice for the man” – Jon Millard. This is an extract from our daily football email … Football Daily. To get the full version, just visit this page and follow the instructions. Continue reading...",
+      "publishedAt": "2026-07-30T15:29:57.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Challenging times ahead for Newcastle - Shearer",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cd0xvpmny55o?at_medium=RSS&at_campaign=rss",
+      "summary": "MOTD pundit and Newcastle United legend Alan Shearer explains why he is worried about what will happen next at his old club after the departure of manager Eddie Howe.",
+      "publishedAt": "2026-07-30T15:10:54.000Z"
     },
     {
       "type": "rss",
@@ -20,107 +141,8 @@
       "flag": "🇬🇧",
       "title": "Harvey Elliott revels in ‘second chance’ at Liverpool and has no regrets over Aston Villa loan",
       "link": "https://www.theguardian.com/football/2026/jul/30/harvey-elliott-liverpool-second-chance-aston-villa-loan",
-      "summary": "Midfielder grateful to be back with boyhood club Hardly played at Villa but won the Europa League Harvey Elliott believes he has been given “a second chance” at Liverpool and denied his ill-fated loan to Aston Villa was a lost year in his career. Elliott joined Villa on a season-long loan last September with an obligation for them to buy the midfielder for £35m once he made 10 appearances for the club. However, Elliott featured only nine times, playing 277 minutes in total, with Unai Emery and Villa unconvinced over completing the deal. Having made an 89th-minute substitute appearance for Liverpool at Newcastle in August, the 23-year-old was unable to sign for a third club. Continue reading...",
+      "summary": "Midfielder grateful to be back with boyhood club Hardly played at Villa but won the Europa League Harvey Elliott believes he has been given “a second chance” at Liverpool and denied his ill-fated loan to Aston Villa was a lost year in his career. Elliott joined Villa on a season-long loan last September with an obligation for them to buy the midfielder for £35m once he made 10 appearances for the club. However, Elliott featured only nine times, playing 277 minutes in total, with Unai Emery and Villa unconvinced over completing the deal. Having made an 89th-minute substitute appearance for Liverpool at Newcastle in August, the 23-year-old was unable to sign for a third club in a single season. Continue reading...",
       "publishedAt": "2026-07-30T15:00:18.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Premier League clubs agree EFL funding proposal",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cx2r015jjl0o?at_medium=RSS&at_campaign=rss",
-      "summary": "Premier League clubs agreed a funding proposal that they will put to the EFL over the next few days.",
-      "publishedAt": "2026-07-30T14:41:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Newcastle captain Guimaraes expected to join Arsenal",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cgewqpp5e57o?at_medium=RSS&at_campaign=rss",
-      "summary": "There is a growing expectation that Newcastle captain Bruno Guimaraes will join Arsenal this summer in a deal worth up to £80m.",
-      "publishedAt": "2026-07-30T14:39:37.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "'Jones nog altijd bovenaan verlanglijstje Inter', Rashford bedankt Barcelona",
-      "link": "https://www.vi.nl/nieuws/rashford-zwaait-barcelona-officieel-uit",
-      "summary": "De meeste transferwindows zijn geopend en dus neemt het transfernieuws weer toe. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-07-30T14:35:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "'Spaanse bond stelt onderzoek in naar Barcelona vanwege Álvarez-zaak'",
-      "link": "https://www.vi.nl/nieuws/spaanse-bond-stelt-onderzoek-in-naar-barcelona-vanwege-alvarez-zaak",
-      "summary": "De Spaanse voetbalbond RFEF gaat onderzoek doen naar de (vooralsnog) vergeefse pogingen van Barcelona om Julián Álvarez over te nemen van Atlético Madrid, zo melden diverse Spaanse kranten donderdagmiddag. De club uit de hoofdstad had vorige maand al gevraagd om de handelswijze van de Catalanen te onderzoeken.",
-      "publishedAt": "2026-07-30T14:31:52.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Fifa’s sales pitch revealed: more tournaments, more debt … but no mention of women’s game",
-      "link": "https://www.theguardian.com/football/2026/jul/30/fifa-sales-pitch-revealed-more-tournaments-debt-womens-game-omitted",
-      "summary": "Fifa’s 25-page sales deck produced by JP Morgan Reference made to doubling global tournaments Fifa’s sales pitch to persuade members to approve the sale of the World Cup’s commercial rights clearly states that their plans for financial growth will be achieved by staging more tournaments, having higher ticket prices and debt financing. A 25-page sales deck titled “Fifa Forward Enterprise Member Materials”, which has been seen by the Guardian, makes the case for the creation of a new company to run Fifa’s commercial operations, 20% of which would be sold to Joshua Kushner, a US investor who is the brother of Donald Trump’s son-in-law, Jared Kushner. Continue reading...",
-      "publishedAt": "2026-07-30T14:19:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Ajax en FC Twente maken zich op voor Europese returns in voorronde",
-      "link": "https://www.vi.nl/nieuws/vi-live-volg-alles-rondom-ajax-fk-vojvodina-en-ferencvaros-fc-twente",
-      "summary": "Ajax en FC Twente spelen donderdagavond een Europese return. De Amsterdammers verdedigen een 1-4 voorsprong in de eigen Johan Cruijff Arena tegen FK Vojvodina, terwijl De Tukkers alle zeilen bij moeten zetten in Hongarije. Een week geleden won Ferencváros namelijk met 1-2 in de Grolsch Veste. Via deze VI Live blijf je op de hoogte van alle ontwikkelingen.",
-      "publishedAt": "2026-07-30T14:17:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Afrikaanse bond roept lidstaten op WK-plannen FIFA te overwegen",
-      "link": "https://www.vi.nl/nieuws/afrikaanse-bond-roept-lidstaten-op-wk-plannen-fifa-te-overwegen",
-      "summary": "Waar de UEFA, CONCACAF en AFC uiterst kritisch waren op de nu al omstreden WK-plannen van de FIFA, is de toon in Afrika een stuk milder. De Afrikaanse voetbalbond CAF roept zijn lidstaten op het voorstel van Gianni Infantino in overweging te nemen.",
-      "publishedAt": "2026-07-30T13:59:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Scottish Premiership returns with McInnes adding new twist to Old Firm rivalry",
-      "link": "https://www.theguardian.com/football/2026/jul/30/scottish-premiership-celtic-rangers-old-firm-motherwell-hearts",
-      "summary": "Derek McInnes has a score to settle with Celtic after swapping Hearts for Rangers, while Motherwell could impress again Only residents of cloud cuckoo land can hold the firm belief of Scottish football emerging promptly from a summer of discontent. The onset of a new domestic season, ordinarily a cause for excitement, instead gives reason to ponder the grim realities of what came before. That it is unsurprising there has been no detailed explanation or plan from the Scottish Football Association following a lamentable World Cup does not prevent the scenario from being so deflating. Mike Mulraney, the president, was last seen peeking out from the crowd behind Gianni Infantino and the US president at Trump Tower. Ian Maxwell, the Scottish FA’s chief executive, bemoaned “hysterical commentary” around his country’s World Cup performance during a brief media appearance after Steve Clarke had resigned. These executives had all-but spurted with laughter when it was suggested handing Clarke a four-year contract immediately before Scotland set sail for the United States was perhaps a needless dalliance with risk. Continue reading...",
-      "publishedAt": "2026-07-30T13:00:15.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Howe to leave Newcastle with Jaissle expected to replace him",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c5yd23l95vgo?at_medium=RSS&at_campaign=rss",
-      "summary": "Newcastle manager Eddie Howe is set to leave the club with immediate effect, sources tell BBC Sport.",
-      "publishedAt": "2026-07-30T12:51:32.000Z"
     },
     {
       "type": "rss",
@@ -141,30 +163,19 @@
       "flag": "🇬🇧",
       "title": "France defender Maxence Lacroix joins ‘beautiful club’ Chelsea from Crystal Palace",
       "link": "https://www.theguardian.com/football/2026/jul/30/chelsea-crystal-palace-maxence-lacroix-transfer-roundup",
-      "summary": "Centre-back signs six-year deal with Xabi Alonso’s side Lacroix: ‘I’m really happy to be part of this beautiful club’ Maxence Lacroix has joined Chelsea from Crystal Palace to become the club’s fifth signing of the summer so far. The France international, who won the FA Cup and Conference League with Palace, has been the Blues’ main defensive target of the window. Lacroix, 26, signs a six-year deal with Xabi Alonso’s side. “I am really happy to be part of this beautiful club,” said Lacroix, who played three times for France at the World Cup, including in their 6-4 bronze medal match defeat to England. Continue reading...",
+      "summary": "Centre-back signs six-year deal after £52m transfer Lacroix: ‘I’m really happy to be part of this beautiful club’ Maxence Lacroix has joined Chelsea from Crystal Palace to become the club’s fifth signing of the summer so far. The France international, who won the FA Cup and Conference League with Palace, has been the Blues’ main defensive target of the window. Lacroix, 26, signs a six-year deal with Xabi Alonso’s side. “I am really happy to be part of this beautiful club,” said Lacroix, who played three times for France at the World Cup, including in their 6-4 bronze medal match defeat to England. Continue reading...",
       "publishedAt": "2026-07-30T11:48:02.000Z"
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The winner who played for Tuchel - potential Newcastle boss Jaissle",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cy8eglx37gdo?at_medium=RSS&at_campaign=rss",
-      "summary": "German Matthias Jaissle is the favourite to replace Eddie Howe at Newcastle - and has a reputation for attacking football and winning trophies.",
-      "publishedAt": "2026-07-30T10:56:32.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Eddie Howe leaves Newcastle United with Matthias Jaissle set to replace him",
-      "link": "https://www.theguardian.com/football/2026/jul/30/eddie-howe-leaves-newcastle-united-premier-league",
-      "summary": "Howe leaves after five years in charge at St James’ Park Al-Ahli’s German coach in line to take over Eddie Howe has left Newcastle after losing control of transfers and is set to be replaced by the German coach Matthias Jaissle, who is in charge of the Saudi Arabian club Al-Ahli. Although the timing of Howe’s abrupt departure following almost five years in charge at St James’ Park is unexpected, his position had been uncertain for some time. He is understood to have told Newcastle’s Saudi Arabian owners he wanted to leave more than a fortnight ago and the parting is said to be “amicable”. Continue reading...",
-      "publishedAt": "2026-07-30T08:26:06.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Ambros titulaire : suivez Anderlecht - Hammarby en Direct Commenté !",
+      "link": "https://www.walfoot.be/news/2026-07-30/match-live-ambros-titulaire-suivez-anderlecht-hammarby-en-direct-commente-",
+      "summary": "Anderlecht retrouve Hammarby après le 1-1 de l'aller en Suède. Comme prévu, Lukáš Ambros remplace Nathan Saliba, suspendu après son exclusion.",
+      "publishedAt": "2026-07-30T05:29:00.000Z"
     },
     {
       "type": "rss",
@@ -172,21 +183,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Een floptransfer minder: Standard laat loonmassa zakken",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/een-floptransfer-minder-standard-laat-loonmassa-zakken",
-      "summary": "Grejohn Kyei is geen speler van Standard meer. De Franse spits kon nooit potten breken bij de Rouches en daar hebben ze nu ook de beslissing genomen om zijn contract te verbreken. Dat is ook goed nieuws voor de clubkassa.",
-      "publishedAt": "2026-07-30T03:00:00.000Z"
+      "title": "LIVE Transfernieuws 30/7: Offensieve versterking voor Cercle",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/live-transfernieuws-30-7-offensieve-versterking-voor-cercle",
+      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
+      "publishedAt": "2026-07-30T05:20:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Les premiers mots de David Hubert après l'agression de son attaquant",
-      "link": "https://www.walfoot.be/news/2026-07-30/les-premiers-mots-de-david-hubert-apres-lagression-de-son-attaquant",
-      "summary": "Après la violente agression dont il a été victime à Bruxelles, Mohammed Fuseini va bien. L'attaquant de l'Union a repris l'entraînement lundi et David Hubert s'est exprimé sur son état avant la Supercoupe de Belgique.",
-      "publishedAt": "2026-07-30T03:00:00.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "LIVE: Eén wijziging bij Anderlecht: Ambros komt in de ploeg",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/match-live-live-een-wijziging-bij-anderlecht-ambros-komt-in-de-ploeg",
+      "summary": "Voor Anderlecht staat donderdagavond al een wedstrijd met grote belangen op het programma. In een uitverkocht Lotto Park ontvangt paars-wit het Zweedse Hammarby in de terugwedstrijd van de tweede voorronde van de Europa League. Na de 1-1 uit de heenmatch ligt alles nog volledig open.",
+      "publishedAt": "2026-07-30T05:19:00.000Z"
     },
     {
       "type": "rss",
@@ -194,10 +205,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Mercedes-Benz, Anderlecht... le RWDM Brussels traîne une dette de près de 20 millions d'euros",
-      "link": "https://www.walfoot.be/news/2026-07-30/mercedes-benz-anderlecht-le-rwdm-brussels-trane-une-dette-de-pres-de-20-millions-deuros",
-      "summary": "Le RWDM est dans une situation très délicate. Selon Het Nieuwsblad, le club bruxellois doit près de 20 millions d'euros à 230 créanciers. Une réorganisation judiciaire est en cours pour tenter d'éviter la faillite et trouver un repreneur.",
-      "publishedAt": "2026-07-30T02:30:00.000Z"
+      "title": "Le Club de Bruges recalé : un talent du Mondial préfère un cador européen",
+      "link": "https://www.walfoot.be/news/2026-07-30/le-club-de-bruges-recale-un-talent-du-mondial-prefere-un-cador-europeen",
+      "summary": "Le Club de Bruges pourrait voir l'une de ses pistes lui échapper. Selon O Jogo, l'international australien Nestory Irankunda a refusé une offre brugeoise et privilégie le Sporting Portugal.",
+      "publishedAt": "2026-07-30T05:10:00.000Z"
     },
     {
       "type": "rss",
@@ -205,32 +216,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Opvallende wending rond Club Brugge-target: ondanks miljoenenbod moet hij gewoon nog aan de bak",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/opvallende-wending-rond-club-brugge-target-ondanks-miljoenenbod-moet-hij-gewoon-nog-aan-de-bak",
-      "summary": "Club Brugge blijft stevig doorduwen voor Lee Han-beom, maar voorlopig is een transfer nog niet afgerond. Dat blijkt ook uit een opvallende beslissing van FC Midtjylland, dat de Zuid-Koreaanse verdediger gewoon heeft opgenomen in de wedstrijdselectie voor het Europa League-duel tegen Beşiktas.",
-      "publishedAt": "2026-07-30T02:30:00.000Z"
+      "title": "Club Brugge vangt bot: WK-sensatie kiest resoluut voor andere Europese topclub",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/club-brugge-vangt-bot-wk-sensatie-kiest-resoluut-voor-andere-europese-topclub",
+      "summary": "Club Brugge lijkt naast een opvallend transferdoel te grijpen. Volgens de Portugese krant O Jogo heeft Nestory Irankunda een aanbieding van blauw-zwart afgewezen. De Australische international wil zijn carrière enkel voortzetten bij Sporting CP.",
+      "publishedAt": "2026-07-30T05:00:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "DE",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "INT",
       "flag": "🌍",
-      "title": "Duidelijk signaal van Vincent Kompany: Bayern zet drie sterspelers zonder pardon op de transferlijst",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/duidelijk-signaal-van-vincent-kompany-bayern-zet-drie-sterspelers-zonder-pardon-op-de-transferlijst",
-      "summary": "Vincent Kompany en Bayern München hebben een duidelijke keuze gemaakt in de samenstelling van hun spelerskern. Drie spelers hoeven zich geen illusies meer te maken over hun toekomst in de Allianz Arena. Sacha Boey, Bryan Zaragoza en João Palhinha mogen deze zomer vertrekken.",
-      "publishedAt": "2026-07-30T02:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Charleroi se frotte les mains : un nouveau club vient concurrencer l'Olympiakos",
-      "link": "https://www.walfoot.be/news/2026-07-30/charleroi-se-frotte-les-mains--un-nouveau-club-vient-concurrencer-lolympiakos",
-      "summary": "Le dossier Yacine Titraoui prend une nouvelle tournure. Selon Foot Mercato, le RC Lens s'intéresse de près au milieu de terrain du Sportings Charleroi et a déjà entamé des discussions. L'Olympiakos reste en lice pour recruter l'international algérien.",
-      "publishedAt": "2026-07-30T01:40:00.000Z"
+      "title": "La FIFA dos au mur : l'UEFA, en front commun, boycotte la prochaine Coupe du monde !",
+      "link": "https://www.walfoot.be/news/2026-07-30/la-fifa-dos-au-mur-luefa-en-front-commun-boycotte-la-prochaine-coupe-du-monde-",
+      "summary": "Communiqué historique de l'UEFA et de ses 55 fédérations membres, qui décident de boycotter les événements organisés par la FIFA jusqu'à nouvel ordre. La position du président Gianni Infantino semble de plus en plus fragilisée.",
+      "publishedAt": "2026-07-30T04:45:00.000Z"
     },
     {
       "type": "rss",
@@ -238,10 +238,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Achter Nga Kana en Onia-Seke wacht een 16-jarig toptalent van Anderlecht: zien we hem vanavond aan het werk?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/achter-nga-kana-en-onia-seke-wacht-een-16-jarigtoptalent-van-anderlecht-zien-we-hem-vanavond-aan-het-werk",
-      "summary": "Terwijl de aandacht bij Anderlecht de voorbije weken vooral uitging naar transfers als Oliver Antman en de doorbraak van verschillende jongeren, klopt in Neerpede alweer een nieuw toptalent nadrukkelijk op de deur. Noa Ojea staat steeds dichter bij zijn debuut dan iedereen denkt.",
-      "publishedAt": "2026-07-30T01:30:00.000Z"
+      "title": "Opvallende nieuwe regel geldt al vanaf volgende week in de JPL",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/opvallende-nieuwe-regel-geldt-al-vanaf-volgende-week-in-de-jpl",
+      "summary": "De Jupiler Pro League begint volgende week met een opvallende nieuwe spelregel. Die moet tijdrekken tegengaan en heeft dit keer ook gevolgen voor doelmannen. De wijziging kan wedstrijden voortaan op een verrassende manier beïnvloeden.",
+      "publishedAt": "2026-07-30T04:30:00.000Z"
     },
     {
       "type": "rss",
@@ -249,21 +249,10 @@
       "sourceSlug": "walfoot",
       "country": "DE",
       "flag": "🌍",
-      "title": "\"J'avais un goût d'inachevé\" : les confidences de Dimitri Lavalée sur son retour au Standard",
-      "link": "https://www.walfoot.be/news/2026-07-30/javais-un-gout-dinacheve-les-confidences-de-dimitri-lavalee-sur-son-retour-au-standard",
-      "summary": "Après Bruny Nsimba la semaine dernière, c'était au tour de Dimitri Lavalée d'être présenté à la presse, ce jeudi. Le Soumagnard est de retour à la maison après son départ pour Mainz en 2020 et évoque ses discussions avec Marc Wilmots et Vincent Euvrard, son rôle ainsi que les objectifs des Rouches.",
-      "publishedAt": "2026-07-30T01:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Politie moest al tussenkomen: opstootjes tussen Anderlecht- en Hammarby-fans in Brussel",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/politie-moest-al-tussenkomen-opstootjes-tussen-anderlecht-en-hammarby-fans-in-brussel",
-      "summary": "De terugwedstrijd tussen Anderlecht en Hammarby staat donderdagavond niet alleen sportief bol van de spanning. Al voor de aftrap kwam het in het centrum van Brussel al tot ongeregeldheden tussen supporters van beide clubs. De politie moest ingrijpen om verdere escalatie te voorkomen.",
-      "publishedAt": "2026-07-30T01:20:00.000Z"
+      "title": "Vincent Kompany fait le ménage au Bayern : trois joueurs poussés vers la sortie",
+      "link": "https://www.walfoot.be/news/2026-07-30/vincent-kompany-fait-le-menage-au-bayern--trois-joueurs-pousses-vers-la-sortie",
+      "summary": "Vincent Kompany a tranché. Le Bayern Munich ne compte plus sur Sacha Boey, Bryan Zaragoza et João Palhinha, invités à se trouver un nouveau club cet été.",
+      "publishedAt": "2026-07-30T04:20:00.000Z"
     },
     {
       "type": "rss",
@@ -271,10 +260,21 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Affrontements la veille du match : des supporters d'Anderlecht et d'Hammarby en viennent aux mains",
-      "link": "https://www.walfoot.be/news/2026-07-30/affrontements-la-veille-du-match--des-supporters-danderlecht-et-dhammarby-en-viennent-aux-mains",
-      "summary": "Des incidents ont éclaté dans le centre de Bruxelles dans la nuit de mercredi à jeudi, à la veille du match retour entre Anderlecht et Hammarby. Trois policiers ont été légèrement blessés lors de l'intervention des forces de l'ordre.",
-      "publishedAt": "2026-07-30T01:00:00.000Z"
+      "title": "Les gardiens vont devoir s'adapter : une nouvelle règle débarque en Belgique",
+      "link": "https://www.walfoot.be/news/2026-07-30/les-gardiens-vont-devoir-sadapter--une-nouvelle-regle-debarque-en-belgique",
+      "summary": "Les gardiens de but devront composer avec une nouvelle règle cette saison. Inspirée de la Coupe du monde 2026, elle vise à limiter les pertes de temps et sera appliquée dès le début du championnat.",
+      "publishedAt": "2026-07-30T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Alle 55 Europese bonden keren zich tegen FIFA: dreigt een WK-boycot?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-07-30/alle-55-europese-bonden-keren-zich-tegen-fifa-dreigt-een-wk-boycot",
+      "summary": "De spanningen tussen UEFA en FIFA bereiken een nieuw hoogtepunt. Alle 55 nationale bonden van UEFA scharen zich achter een gezamenlijke verklaring waarin ze de plannen van FIFA scherp veroordelen. De discussie dreigt het wereldvoetbal grondig te veranderen.",
+      "publishedAt": "2026-07-30T03:50:00.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,20 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "AIG Women's Open: Full R2 groupings and Royal Lytham tee times",
-      "link": "https://www.skysports.com/golf/news/12040/13568349/aig-womens-open-2026-tee-times-full-r2-groupings-and-start-times-for-second-round-at-royal-lytham-st-annes",
-      "summary": "Groupings and tee times for the second round of the 50th AIG Women's Open, held at Royal Lytham & St Annes Golf Club in Lancashire.",
+      "title": "Diamond Necklace sparkles in Nassau Stakes",
+      "link": "https://www.skysports.com/racing/news/12040/13568537/diamond-necklace-sparkles-in-nassau-stakes",
+      "summary": "Diamond Necklace lived up to her billing when extending her unbeaten record with a dominant display in the Qatar Nassau Stakes at Goodwood.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Q&A: Why are UEFA boycotting FIFA tournaments and can it stop Infantino?",
+      "link": "https://www.skysports.com/football/news/12040/13568527/uefa-to-boycott-fifa-tournaments-qa-why-they-are-doing-can-it-stop-gianni-infantino-and-where-do-other-confederations-stand",
+      "summary": "UEFA announced on Thursday that it will boycott FIFA tournaments until plans from president Gianni Infantino to sell off stakes in the World Cup are ended.",
       "publishedAt": null
     },
     {
@@ -293,9 +304,20 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Carra: Liverpool don't need Barcola - they need to replace Salah!",
-      "link": "https://www.skysports.com/football/news/12040/13568493/bradley-barcola-transfer-news-jamie-carragher-says-liverpool-do-not-need-psg-winger-as-much-as-they-need-a-mohamed-salah-replacement",
-      "summary": "Jamie Carragher believes Liverpool do not need to buy Bradley Barcola from Paris Saint-Germain - urging his former club to focus on securing a replacement for Mohamed Salah on the right wing.",
+      "title": "Doyle: Raider can blitz King George rivals",
+      "link": "https://www.skysports.com/racing/news/12040/13568542/hollie-doyle-night-raider-has-the-speed-for-king-george-test",
+      "summary": "Sky Sports Racing’s ambassador Hollie Doyle previews the best of the action on Day Four of the Goodwood Festival with the Group Two King George Qatar Stakes headlining the action.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "UEFA to boycott FIFA tournaments if World Cup sell-off goes ahead",
+      "link": "https://www.skysports.com/football/news/12040/13568511/uefa-will-boycott-fifa-tournaments-if-gianni-infantino-continues-with-plans-to-sell-off-stake-in-world-cup",
+      "summary": "UEFA will boycott FIFA tournaments if Gianni Infantino goes ahead with his proposal to sell off a stake in the World Cup.",
       "publishedAt": null
     },
     {
@@ -304,31 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Britain's Allen becomes first female fighter to sign with Zuffa Boxing",
-      "link": "https://www.skysports.com/boxing/news/12040/13568313/kayla-allen-decorated-british-amateur-becomes-first-female-fighter-to-sign-with-zuffa-boxing-ahead-of-september-pro-debut",
-      "summary": "Decorated British amateur Kayla Allen will make her professional debut in London in September after becoming the first female fighter to sign with Zuffa Boxing.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Dream come true' - Makhanya seals Rangers move from MLS",
-      "link": "https://www.skysports.com/football/news/12040/13568464/rangers-transfer-news-olwethu-makhanya-joins-in-3m-deal-from-mls-side-philadelphia-union",
-      "summary": "Rangers have completed the signing of centre-back Olwethu Makhanya from Philadelphia Union in a deal worth around £3m.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Scottish Rugby chief sacked following investigation into conduct",
-      "link": "https://www.skysports.com/rugby-union/news/12040/13568470/scottish-rugby-chief-executive-alex-williamson-sacked-following-independent-investigation-into-his-conduct",
-      "summary": "Scottish Rugby has sacked chief executive Alex Williamson following an independent investigation into his conduct.",
+      "title": "Eubank Jr's negotiations for Nigeria ring return 'coming along nicely'",
+      "link": "https://www.skysports.com/boxing/news/12040/13568430/chris-eubank-jr-nigeria-ring-return-negotiations-coming-along-nicely",
+      "summary": "Chris Eubank Jr's negotiations to fight in Nigeria this December are \"coming along nicely,\" according to Balmoral Promotions founder Ezekiel Adamu.",
       "publishedAt": null
     }
   ]
