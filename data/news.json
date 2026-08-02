@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-01T22:03:11.054Z",
+  "generatedAt": "2026-08-02T00:00:13.505Z",
   "items": [
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "DE",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
       "flag": "🌍",
-      "title": "'Leverkusen betaalt 30 miljoen voor nieuwe linksback'",
-      "link": "https://www.vi.nl/nieuws/rb-leipzig-oefent-zonder-door-real-madrid-begeerde-diomande",
-      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-08-01T21:42:00.000Z"
+      "title": "A bruising 24 hours - what next for Fifa and under-pressure Infantino?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c9w0djx2g92o?at_medium=RSS&at_campaign=rss",
+      "summary": "The pressure is building on Gianni Infantino. Can he survive as Fifa president?",
+      "publishedAt": "2026-08-01T22:23:20.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +21,18 @@
       "title": "Farioli en FC Porto slepen Portugese Super Cup in de wacht",
       "link": "https://www.vi.nl/nieuws/farioli-en-fc-porto-slepen-portugese-super-cup-in-de-wacht",
       "summary": "FC Porto heeft zaterdag de eerste prijs van het nieuwe seizoen veroverd. De landskampioen won in de strijd om de Supertaça Cândido de Oliveira, de Portugese Super Cup, met 1-0 van bekerwinnaar Torreense. Pablo Rosario begon daarbij in de basis.",
-      "publishedAt": "2026-08-01T21:24:22.000Z"
+      "publishedAt": "2026-08-01T22:04:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "'Leverkusen betaalt 30 miljoen voor nieuwe linksback'",
+      "link": "https://www.vi.nl/nieuws/rb-leipzig-oefent-zonder-door-real-madrid-begeerde-diomande",
+      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-08-01T21:42:00.000Z"
     },
     {
       "type": "rss",
@@ -157,23 +168,12 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "The five dramatic days that shook Infantino and world football",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c8rny2p6144o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport's Simon Stone reflects on the unravelling of Gianni Infantino's plans to sell off stakes in Fifa competitions.",
-      "publishedAt": "2026-08-01T12:42:23.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "OFFICIEL: un deuxième joueur de Manchester City débarque en Challenger Pro League",
-      "link": "https://www.walfoot.be/news/2026-08-01/officiel-un-deuxieme-joueur-de-manchester-city-debarque-en-challenger-pro-league",
+      "title": "OFFICIEL: un deuxième joueur de Manchester City débarque en Pro League",
+      "link": "https://www.walfoot.be/news/2026-08-01/officiel-un-deuxieme-joueur-de-manchester-city-debarque-en-pro-league",
       "summary": "Lommel poursuit sa collaboration avec Manchester City et accueille Isaiah Dada-Mascoll. Le milieu anglais de 20 ans est prêté pour une saison.",
       "publishedAt": "2026-08-01T09:00:00.000Z"
     },
