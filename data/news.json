@@ -1,6 +1,28 @@
 {
-  "generatedAt": "2026-08-08T22:32:56.686Z",
+  "generatedAt": "2026-08-08T23:32:21.702Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Jaissle starts with win but not planning to 'smash locker room'",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c3049pl53yyo?at_medium=RSS&at_campaign=rss",
+      "summary": "It was a night which ended with Newcastle United lifting a trophy, but there was certainly no danger of head coach Matthias Jaissle getting carried away.",
+      "publishedAt": "2026-08-08T23:23:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Fifa launches new attack on media over alleged ‘concerted effort’ to undermine Gianni Infantino",
+      "link": "https://www.theguardian.com/football/2026/aug/08/fifa-launches-new-attack-on-media-over-alleged-concerted-effort-to-undermine-gianni-infantino",
+      "summary": "Fifa issues statement defending under-fire president ‘Insinuation should not be presented as fact’ Fifa has issued a new statement alleging there is a “concerted and ongoing effort by some to undermine Fifa and its president” as pressure increases on Gianni Infantino. The governing body issued the statement in response to Uefa confirming on Saturday that a “departure payment” was made to a female employee who is alleged to have been in a relationship with Infantino while he was the organisation’s general secretary – allegations Fifa dismissed as “categorically untrue”. Continue reading...",
+      "publishedAt": "2026-08-08T22:17:25.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -146,17 +168,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal sign Guimaraes from Newcastle in £75m deal",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c1719r079rjo?at_medium=RSS&at_campaign=rss",
-      "summary": "Premier League champions Arsenal sign Brazil midfielder Bruno Guimaraes from Newcastle United for £75m.",
-      "publishedAt": "2026-08-08T11:00:08.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "UK",
@@ -187,17 +198,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/match-reactie-blessure-van-toptalent-zorgt-meteen-voor-discussie-bij-lommel",
       "summary": "Lommel hield aan zijn terugkeer naar eerste klasse meteen een punt over op Stayen, maar verloor onderweg mogelijk een belangrijke pion. Sverre Nypan moest kort na de rust geblesseerd afhaken, waarna coach Lee Johnson opvallend hard uithaalde naar het kunstgras.",
       "publishedAt": "2026-08-08T09:29:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Fifa president Gianni Infantino denies claims Uefa paid off alleged ‘lover’",
-      "link": "https://www.theguardian.com/football/2026/aug/08/fifa-gianni-infantino-uefa-employee-departure-payment-allegations-denial",
-      "summary": "Infantino was Uefa general secretary from 2009 to 2016 ‘These allegations … are categorically untrue,’ says Fifa Uefa has confirmed a “departure payment” was made to a female employee who is alleged to have been in a relationship with Gianni Infantino while he was the organisation’s general secretary, allegations Fifa has dismissed as “categorically untrue”. The Daily Telegraph reported on Friday night that the woman received a six-figure sum following the alleged relationship with Infantino. In a statement, Uefa confirmed a payment was made along with covering the fees for an MBA course, which it said was “in line” with regulations at the time. Continue reading...",
-      "publishedAt": "2026-08-08T09:27:46.000Z"
     },
     {
       "type": "rss",
@@ -282,6 +282,17 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
+      "title": "Papers: Romero open to joining Arsenal but Spurs resist",
+      "link": "https://www.skysports.com/football/news/12040/13571259/cristian-romero-open-to-joining-arsenal-but-tottenham-adamant-their-defender-will-not-cross-the-north-london-divide-paper-talk",
+      "summary": "The top stories and transfer rumours from Sunday's newspapers...",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
       "title": "Wissa double gives Newcastle boss Jaissle winning start at 10-man Valencia",
       "link": "https://www.skysports.com/football/news/12040/13571236/valencia-1-2-newcastle-yoane-wissas-double-gives-matthias-jaissle-winning-start-as-anthony-elanga-stretchered-off",
       "summary": "Substitute Yoane Wissa scored twice to give Matthias Jaissle a winning start as Newcastle boss with a 2-1 comeback pre-season win at 10-man Valencia.",
@@ -291,11 +302,22 @@
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wolves overwhelm Bradford in emphatic away victory",
+      "link": "https://www.skysports.com/watch/video/13571231/bradford-bulls-4-42-warrington-wolves-super-league-highlights",
+      "summary": "Highlights of the Super League clash between Bradford Bulls and Warrington Wolves as Matty Ashton scored twice in a dominant 42-4 victory for the visitors.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "FR",
       "flag": "🌍",
-      "title": "'Good signs' for Man Utd as Mbeumo scores in encouraging draw with PSG",
-      "link": "https://www.skysports.com/football/paris-saint-germain-vs-manchester-united/report/555766",
-      "summary": "Bryan Mbeumo earned Man Utd a 1-1 draw with Paris St-Germain in Gothenburg, a pre-season friendly which left boss Michael Carrick encouraged by the \"good signs\" from his side.",
+      "title": "Wigan overpower Toulouse to close gap on leaders",
+      "link": "https://www.skysports.com/watch/video/13571216/wigan-warriors-48-18-toulouse-olympique-super-league-highlights",
+      "summary": "Highlights of the Super League clash between Wigan Warriors and Toulouse Olympique.",
       "publishedAt": null
     },
     {
@@ -304,31 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'That is another crunching finish!' | Hickey lands DEVASTATING knockout",
-      "link": "https://www.skysports.com/watch/video/13571226/zuffa-boxing-10-sam-hickey-lands-devastating-knockout-vs-brad-axe",
-      "summary": "Sam Hickey's huge right hand knocked out Brad Axe in the seventh round of their contest.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "St Mirren 1-0 St Johnstone",
-      "link": "https://www.skysports.com/watch/video/13571233/st-mirren-1-0-st-johnstone-scottish-premiership-highlights",
-      "summary": "Highlights from the Scottish Premiership match between St Mirren and St Johnstone",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Walsh battles through cuts and knockdown to drop Denny and take victory",
-      "link": "https://www.skysports.com/boxing/news/12040/13571055/callum-walsh-comes-through-cuts-and-knockdown-to-drop-denny-and-take-battling-decision-victory-in-dublin-contest",
-      "summary": "Callum Walsh maintained his unbeaten record and top contender status with a unanimous decision victory over Tyler Denny.",
+      "title": "McKenna wins world title in Ireland homecoming fight!",
+      "link": "https://www.skysports.com/watch/video/13571266/aaron-mckenna-vs-etinosa-oliha-fight-highlights",
+      "summary": "Highlights of Aaron McKenna's IBF middleweight world title fight against Etinosa Oliha.",
       "publishedAt": null
     }
   ]
