@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-08-07T21:42:25.973Z",
+  "generatedAt": "2026-08-08T03:36:57.471Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Nieuwkomer verovert meteen de harten van Club-fans, maar Leko weet wanneer het pas echt goed zit",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/match-reactie-nieuwkomer-verovert-meteen-de-harten-van-club-fans-maar-leko-weet-wanneer-het-pas-echt-goed-zit",
+      "summary": "Het was een aangename kennismaking. Hanbeom Lee werd door Ivan Leko meteen in de basis gedropt voor de competitieopener van Club Brugge en de Zuid-Koreaanse debutant gaf meteen zijn visitekaartje af.",
+      "publishedAt": "2026-08-08T10:31:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Liverpool close to signing Barcelona's Araujo on loan",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c4gxvvxldewo?at_medium=RSS&at_campaign=rss",
+      "summary": "Liverpool are close to signing Uruguay defender Ronald Araujo on a season-long loan from Barcelona, with an option to purchase.",
+      "publishedAt": "2026-08-07T22:54:13.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Infantino denies claims Uefa paid off alleged 'lover'",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cx2vw5z0q7no?at_medium=RSS&at_campaign=rss",
+      "summary": "Gianni Infantino's alleged lover was given a severance payment over the affair by Uefa while he was its general secretary, according to a Daily Telegraph investigation.",
+      "publishedAt": "2026-08-07T22:50:58.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Koploper Excelsior in de zevende hemel: 'Dan tel je je zegeningen'",
+      "link": "https://www.vi.nl/nieuws/koploper-excelsior-in-de-zevende-hemel-dan-tel-je-je-zegeningen",
+      "summary": "Excelsior sluit de eerste dag van het nieuwe Eredivisie-seizoen af als trotse koploper. Na de ruime zege op Cambuur was er dan ook alle reden om in een jubelstemming te verkeren.",
+      "publishedAt": "2026-08-07T21:49:52.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -29,9 +73,9 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Will Lankshear starts off in style to see Middlesborough past Wrexham",
+      "title": "Will Lankshear starts off in style to see Middlesbrough past Wrexham",
       "link": "https://www.theguardian.com/football/2026/aug/07/middlesbrough-wrexham-carabao-cup-match-report",
-      "summary": "£10m signing from Spurs scores fine volley on debut for new club Boro go one better than last year and advance to second round Will Lankshear’s debut strike ensured Middlesbrough made a winning start to the season as they beat Wrexham 1-0 in the Carabao Cup first round. Lankshear, a £10m summer signing from Tottenham, scored the only goal of the game in the 61st minute as he hooked home an excellent first-time volley. Middlesbrough almost claimed a seventh-minute opener, but while Adilson Malanda prodded Sebastian Berhalter’s cross goalwards from close range, Danny Ward kept the ball out with a superb point-blank save. Continue reading...",
+      "summary": "Will Lankshear’s debut strike ensured Middlesbrough made a winning start to the season as they beat Wrexham 1-0 in the Carabao Cup first round. Lankshear, a £10m summer signing from Tottenham, scored the only goal of the game in the 61st minute as he hooked home an excellent first-time volley. Middlesbrough almost claimed a seventh-minute opener but when Adilson Malanda prodded Sebastian Berhalter’s cross goalwards from close range, Danny Ward kept the ball out with a superb point-blank save. Continue reading...",
       "publishedAt": "2026-08-07T21:20:40.000Z"
     },
     {
@@ -55,17 +99,6 @@
       "link": "https://www.vi.nl/nieuws/forbs-scoort-bij-foutloze-seizoenstart-club-brugge-clean-sheet-voor-sommer",
       "summary": "Club Brugge is vrijdagavond overtuigend begonnen aan het nieuwe seizoen in België. De landskampioen won afgetekend van promovendus KV Kortrijk. Oud-Ajacied Carlos Forbs kwam tot scoren voor Club.",
       "publishedAt": "2026-08-07T20:40:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Liverpool tast diep in de buidel voor Barcola, Rulli op weg naar Manchester'",
-      "link": "https://www.vi.nl/nieuws/liverpool-tast-diep-in-de-buidel-voor-barcola-rulli-op-weg-naar-manchester",
-      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-08-07T20:11:40.000Z"
     },
     {
       "type": "rss",
@@ -99,28 +132,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cx2rp0n9pydo?at_medium=RSS&at_campaign=rss",
       "summary": "Fifa president Gianni Infantino appears to be trying to return to business as usual after the failed World Cup private investment plan - but it may not be that easy.",
       "publishedAt": "2026-08-07T17:45:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Euro navel gazing & early troubles for Scottish title hopefuls",
-      "link": "https://www.bbc.co.uk/sport/football/articles/ce8kr3y5xp4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Already it is looking like the Scottish title might be won again by the best of a bad bunch, but what can we look forward to this weekend?",
-      "publishedAt": "2026-08-07T17:34:26.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "France set to take part in U20 Women's World Cup despite Uefa boycott threat",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c87nrpwg20vo?at_medium=RSS&at_campaign=rss",
-      "summary": "France say they are still planning to compete in the Under-20 Women's World Cup next month despite a threat from Uefa to boycott Fifa competitions.",
-      "publishedAt": "2026-08-07T15:35:22.000Z"
     },
     {
       "type": "rss",
@@ -159,12 +170,12 @@
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Tottenham and Atlético in talks over Romero with Van de Ven set to sign new deal",
-      "link": "https://www.theguardian.com/football/2026/aug/07/tottenham-and-atletico-in-talks-over-romero-with-van-de-ven-set-to-sign-new-deal",
-      "summary": "Simeone keen on move for Spurs defender Van de Ven expected to pen five-year extension Tottenham are in talks with Atlético Madrid over the sale of Cristian Romero after categorically rejecting Arsenal’s approach for the Argentina defender and are expected to agree a new five-year deal with Micky van de Ven. Romero has made no secret of his desire to leave Spurs despite signing a new four-year contract at the start of last season and had looked set to join Inter for a fee of around £35m. But Atlético are long-term suitors of the 28-year-old and are thought to be his preferred destination, with Diego Simeone’s side understood to be prepared to match Inter’s bid. Continue reading...",
-      "publishedAt": "2026-08-07T10:37:43.000Z"
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Lucy Bronze backs Uefa’s stance on boycotting Fifa for ‘good of the game’",
+      "link": "https://www.theguardian.com/football/2026/aug/07/lucy-bronze-uefa-boycott-fifa-for-good-of-the-game-womens-football",
+      "summary": "Chelsea defender speaking in Auckland before friendly September’s Under-20 Women’s World Cup under threat Lucy Bronze has backed Uefa’s stance on boycotting all Fifa competitions for the “good of the game” and to safeguard football for future generations. On Thursday Europe’s governing body doubled down on its threat – including next summer’s Women’s World Cup – amid the furore surrounding the Fifa president Gianni Infantino and his shelved plan for a privately funded Fifa Forward Enterprise scheme. Continue reading...",
+      "publishedAt": "2026-08-07T11:05:38.000Z"
     },
     {
       "type": "rss",
@@ -223,17 +234,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Vincent Mannaert onthult waarom Rudi Garcia moest vertrekken",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-07/vincent-mannaert-onthult-waarom-rudi-garcia-moest-vertrekken",
-      "summary": "Vincent Mannaert heeft voor het eerst uitgebreid uitleg gegeven over het afscheid van Rudi Garcia als bondscoach van de Rode Duivels. Volgens de technisch directeur was de beslissing geen verrassing, maar maakte de KBVB na het WK bewust de keuze voor een ander profiel.",
-      "publishedAt": "2026-08-07T08:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
       "country": "BE",
@@ -282,6 +282,39 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
+      "title": "Araujo set for surprise Liverpool loan move",
+      "link": "https://www.skysports.com/football/news/12040/13570871/ronald-araujo-transfer-news-liverpool-agree-loan-deal-for-barcelona-defender-to-add-depth-at-centre-back",
+      "summary": "Liverpool have agreed a surprise deal for Barcelona defender Ronald Araujo to join on loan for the season.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Papers: Arsenal could hijack Liverpool's move for Barcola",
+      "link": "https://www.skysports.com/football/news/12040/13570879/bradley-barcola-transfer-news-arsenal-could-hijack-liverpools-move-for-psg-winger-paper-talk",
+      "summary": "The top stories and transfer rumours from Saturday's newspapers...",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Late winner sees Leeds edge Wakefield",
+      "link": "https://www.skysports.com/watch/video/13570851/wakefield-trinity-22-24-leeds-rhinos-super-league-highlights",
+      "summary": "Highlights of Wakefield Trinity against Leeds Rhinos from the Super League.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
       "title": "Debut Lankshear goal sees Boro past Wrexham as Wolves & Stevenage progress",
       "link": "https://www.skysports.com/football/news/12040/13570859/carabao-cup-will-lankshear-strike-sees-middlesbrough-past-wrexham-as-wolves-beat-port-vale-and-stevenage-edge-wycombe",
       "summary": "Will Lankshear's debut strike ensured Middlesbrough made a winning start to the season as they beat Wrexham 1-0 in the Carabao Cup first round.",
@@ -296,39 +329,6 @@
       "title": "New Zealand begin South Africa tour with flattering win over Stormers",
       "link": "https://www.skysports.com/rugby-union/news/12040/13570742/new-zealands-tour-of-south-africa-all-blacks-pull-away-late-on-in-flattering-38-21-win-over-stormers",
       "summary": "New Zealand's first full-scale tour of South Africa in 30 years began with an underwhelming 38-21 win over the Stormers.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Coventry latest: Ghana midfielder Yirenkyi joins in £26m deal",
-      "link": "https://www.skysports.com/football/live-blog/12040/13541482/coventry-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "West Ham latest: Sullivan likely to attend games despite advice",
-      "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Flintoff steps down as England Lions head coach",
-      "link": "https://www.skysports.com/cricket/news/12040/13570774/andrew-flintoff-steps-down-as-england-lions-head-coach",
-      "summary": "Andrew Flintoff has stepped down as head coach of the England Lions.",
       "publishedAt": null
     }
   ]
