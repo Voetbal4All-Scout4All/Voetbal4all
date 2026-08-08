@@ -1,17 +1,6 @@
 {
-  "generatedAt": "2026-08-08T12:54:39.513Z",
+  "generatedAt": "2026-08-08T15:33:53.951Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: Veltman debuteert in wedstrijdselectie West Ham",
-      "link": "https://www.vi.nl/nieuws/vi-live-nec-ontvangt-telstar-az-opent-tegen-promovendus",
-      "summary": "Zaterdagavond staan er vier Eredivisie-duels op ons te wachten. Het duel van PSV volgen we in een apart liveblog, maar de duels van NEC, Go Ahead Eagles en AZ zijn hier live te volgen. Mis niets in deze VI Live.",
-      "publishedAt": "2026-08-08T12:48:25.000Z"
-    },
     {
       "type": "rss",
       "source": "The Guardian Football",
@@ -20,8 +9,19 @@
       "flag": "🇬🇧",
       "title": "West Ham v Portsmouth, Burnley v Notts County: Carabao Cup first round – live",
       "link": "https://www.theguardian.com/football/live/2026/aug/08/west-ham-v-portsmouth-burnley-v-notts-county-carabao-cup-first-round-live",
-      "summary": "⚽ Football updates from Saturday’s 3pm BST kick-offs ⚽ Live scoreboard | Sign up for Football Daily | Mail Scott The 2026-27 Football League season hasn’t started yet … but it’s started! The League Cup is already up and running, see, and here’s today’s Super 3pm Saturday Clockwatch Card … AFC Wimbledon v Newport Barnsley v Wigan Bradford v Rochdale Bristol Rovers v Peterborough Bromley v Reading Burnley v Notts County Burton v Blackburn Cambridge v Barnet (1pm) Cardiff v Swindon Crewe v Accrington Derby v Lincoln Fleetwood v Chesterfield Gillingham v Luton Grimsby v Blackpool Leicester v Northampton Leyton Orient v Oxford Norwich v MK Dons Preston v Huddersfield QPR v Millwall (2pm) Salford v Shrewsbury Sheff Wed v Bolton Stockport v Doncaster Stoke v Oldham Swansea v Birmingham Watford v Crawley West Ham v Portsmouth Continue reading...",
-      "publishedAt": "2026-08-08T12:45:46.000Z"
+      "summary": "⚽ Football updates from Saturday’s 3pm BST kick-offs ⚽ Live scoreboard | Sign up for Football Daily | Mail Scott QPR 0-0 Millwall. There’s not a lot going on at Loftus Road in today’s only 2pm kick-off. Rangers have had most of the ball, Millwall have just had their first (off-target) shot at goal, and that’s it. Pre-main-flurry-of-matches postbag. “How is there football already?” splutters Kári Tulinius. “Doesn’t it ever stop? Someone should campaign to stop football.” An admirable idea, though if we’re heading down that road, wouldn’t there first need to be a campaign to re-start the Fiver? And nobody’s going to agitate for that, are they. Continue reading...",
+      "publishedAt": "2026-08-08T15:27:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "'Geboycot Rusland heeft nog altijd stemrecht binnen FIFA-vergaderingen'",
+      "link": "https://www.vi.nl/nieuws/geboycot-rusland-heeft-nog-altijd-stemrecht-binnen-fifa-vergaderingen",
+      "summary": "Sinds de invasie van Oekraïne gelden er zeer uitgebreide sancties vanuit Europa tegen Rusland, maar de FIFA trekt zich daar niet zoveel van aan. Uit onderzoek van The Athletic blijkt dat de Russische voetbalbond nog altijd stemrecht heeft binnen de wereldvoetbalbond. En dus mogen ze ook meebeslissen over de volgende president van de FIFA.",
+      "publishedAt": "2026-08-08T15:19:01.000Z"
     },
     {
       "type": "rss",
@@ -29,10 +29,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "'Jorge Messi (68), de vader van Lionel, overleden'",
-      "link": "https://www.vi.nl/nieuws/jorge-messi-68-de-vader-van-lionel-overleden",
-      "summary": "Jorge Messi is overleden. Dat melden meerdere internationale media. De vader van Lionel Messi is 68 jaar oud geworden.",
-      "publishedAt": "2026-08-08T12:38:33.000Z"
+      "title": "VI Live: Telstar brengt NEC in verlegenheid bij Eredivisie-start",
+      "link": "https://www.vi.nl/nieuws/vi-live-nec-dieper-in-de-problemen-na-tweede-goal-telstar",
+      "summary": "Zaterdagavond staan er vier Eredivisie-duels op ons te wachten. Het duel van PSV volgen we in een apart liveblog, maar de duels van NEC, Go Ahead Eagles en AZ zijn hier live te volgen. Mis niets in deze VI Live.",
+      "publishedAt": "2026-08-08T15:17:00.000Z"
     },
     {
       "type": "rss",
@@ -40,32 +40,65 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "NEC krijgt recordbedrag van PSV voor Sano: 'We zijn trots'",
-      "link": "https://www.vi.nl/nieuws/nec-krijgt-recordbedrag-van-psv-voor-sano-we-zijn-trots",
-      "summary": "NEC heeft voor de tweede keer deze transferwindow het transferrecord verbroken. Kodai Sano werd voor een bedrag van ongeveer vijftien miljoen euro verkocht aan PSV.",
-      "publishedAt": "2026-08-08T12:16:58.000Z"
+      "title": "Welkom in de Eredivisie: bikkelharde ontgroening voor SC Cambuur",
+      "link": "https://www.vi.nl/pro/welkom-in-de-eredivisie-bikkelharde-ontgroening-voor-sc-cambuur",
+      "summary": "Wat een feestelijke terugkeer in de Eredivisie had moeten worden, eindigde voor SC Cambuur in een ontnuchterende avond. De piepjonge ploeg van Johan Plat ging in eigen huis met 0-4 hard onderuit tegen Excelsior. Daar had werkelijk helemaal niemand in Leeuwarden rekening mee gehouden. Een reportage.",
+      "publishedAt": "2026-08-08T15:01:44.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Feyenoord bombardeert Valente tot nieuwe aanvoerder",
-      "link": "https://www.vi.nl/nieuws/feyenoord-bombardeert-valente-tot-nieuwe-aanvoerder",
-      "summary": "Luciano Valente is de nieuwe aanvoerder van Feyenoord, zo communiceert de club. De 22-jarige middenvelder neemt de band over van de vertrokken Timon Wellenreuther.",
-      "publishedAt": "2026-08-08T12:15:14.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Newcastle United verklaart verkoop Bruno Guimarães",
+      "link": "https://www.vi.nl/nieuws/newcastle-united-verklaart-verkoop-bruno-guimaraes",
+      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-08-08T14:58:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Jorge Messi, father and agent of Argentina great, dies aged 68",
+      "link": "https://www.theguardian.com/football/2026/aug/08/jorge-messi-dies-father-agent-lionel-messi-argentina-inter-miami",
+      "summary": "Messi family report death at medical clinic in Rosario Inter Miami are due to play Monterrey on Saturday night Lionel Messi’s father and agent, Jorge, has died aged 68 at a medical clinic in the ⁠Argentinian city of ⁠Rosario after ​a long illness, the family have announced. Jorge Messi spent his final months ⁠alternating between a medical centre in Rosario and his home, accompanied by his wife, Celia, and his ⁠children Rodrigo, Matías and María Sol. Lionel Messi ​spent time with his ‌father after the World ‌Cup before rejoining his club, Inter Miami, for whom he ‌returned to action a week ago. Inter Miami are due to play Monterrey on Saturday at home in the 2026 Leagues Cup, but the MLS club have yet to announce whether he will feature. Continue reading...",
+      "publishedAt": "2026-08-08T14:49:29.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sullivan attends West Ham game despite advice not to",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c07rx4r40ngo?at_medium=RSS&at_campaign=rss",
+      "summary": "Former West Ham co-chairman David Sullivan attends their Carabao Cup match against Portsmouth despite being advised he should stay away.",
+      "publishedAt": "2026-08-08T14:23:56.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Transfers PSV: Stewart legt uit wat PSV in Sano ziet",
-      "link": "https://www.vi.nl/nieuws/transfers-psv-fans-al-op-de-foto-met-kostic",
-      "summary": "VI volgt het transfernieuws bij PSV op de voet. De doelwitten van de Eindhovenaren, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
-      "publishedAt": "2026-08-08T12:04:24.000Z"
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Hato boekt met Chelsea ruime oefenzege op AC Milan, Inter verslaat Juventus",
+      "link": "https://www.vi.nl/nieuws/hato-boekt-met-chelsea-ruime-oefenzege-op-ac-milan-inter-verslaat-juventus",
+      "summary": "Chelsea heeft zaterdag een ruime oefenzege geboekt op AC Milan. João Pedro en Moisés Caicedo waren de uitblinkers bij de ploeg waar Jorrel Hato tachtig minuten meedeed. Internazionale versloeg op zijn beurt competitiegenoot Juventus.",
+      "publishedAt": "2026-08-08T14:23:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Wolves legend Parkes dies aged 79",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c5y3d1l0236o?at_medium=RSS&at_campaign=rss",
+      "summary": "Former Wolverhampton Wanderers goalkeeper Phil Parkes dies at the age of 79.",
+      "publishedAt": "2026-08-08T12:28:38.000Z"
     },
     {
       "type": "rss",
@@ -86,7 +119,7 @@
       "flag": "🇬🇧",
       "title": "Bruno Guimarães completes £75m Arsenal move: ‘I needed a new challenge’",
       "link": "https://www.theguardian.com/football/2026/aug/08/arsenal-transfer-bruno-guimaraes-newcastle-football",
-      "summary": "Player seals four-year deal after Newcastle’s reluctant sale ‘I want to win trophies and I’m in the right place to do it’ Bruno Guimarães says he “needed a new challenge in my life” after joining Arsenal from Newcastle for £75m and has targeted trophies in north London. Guimarães is understood to have signed a four-year contract at the Emirates that contains a further one-year option after Newcastle reluctantly agreed to sell their captain. Continue reading...",
+      "summary": "Four-year deal signed after Newcastle’s reluctant sale ‘I want to win trophies and I’m in the right place to do it’ Bruno Guimarães says he “needed a new challenge in my life” after joining Arsenal from Newcastle for £75m and has targeted winning trophies. Guimarães is understood to have signed a four-year contract that contains a further one-year option after Newcastle reluctantly agreed to sell their captain. The 29-year-old, who captained Newcastle to their first trophy since 1955 when they won the Carabao Cup last year, had made it clear that he wanted to join the Premier League champions after meeting the club’s new manager, Matthias Jaissle, this week. Continue reading...",
       "publishedAt": "2026-08-08T11:00:48.000Z"
     },
     {
@@ -113,17 +146,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Énorme surprise : Liverpool va se faire prêter un cadre du Barça",
-      "link": "https://www.walfoot.be/news/2026-08-08/norme-surprise--liverpool-va-se-faire-preter-un-cadre-du-barca",
-      "summary": "Ronald Araújo se rapproche de Liverpool. Le défenseur du FC Barcelone devrait rejoindre les Reds pour une saison en prêt, avec une option d'achat prévue dans l'accord.",
-      "publishedAt": "2026-08-08T10:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -135,47 +157,14 @@
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Why Super Furry Animals joined music’s dash to cross over football’s vinyl frontier | Emma John",
-      "link": "https://www.theguardian.com/football/2026/aug/08/super-furry-animals-mogwai-football-cwmbran-celtic",
-      "summary": "The sponsorship deal between Cwmbran Celtic and the Welsh indie-rockers is part of a trend to monetise ‘adjacent audiences’ as much as it is a nostalgia trip As someone born on the cusp of the gen X-millennial divide, I am the perfect target for today’s 90s nostalgia. I played my modest, teenage part in the Battle of Britpop (verbal skirmisher, Blur division); I fervently sang – and, God help me, believed – that Things Can Only Get Better. Super Furry Animals were a band I knew only distantly, via the transgressive thrill of that song they had with all the swearing in. And yet the news they’ll be shirt sponsor for a Welsh football club this season has managed to whisk me straight back to a time when things seemed simpler, kinder and more hopeful. Nearly three decades have passed since Super Furry Animals last had their logo on a football kit. Back in 1999, their frontman Gruff Rhys and bassist Guto Pryce, both Cardiff City fans, persuaded their Bangor-born bandmates to lay down their north Wales allegiances for the duration of the Bluebirds’ Welsh Cup run – which was, incidentally, all they could afford. The cup shirts cost them £2,000 and were, according to Rhys, knock-offs made for ice hockey. This year’s beneficiaries are a more modest outfit: Cwmbran Celtic, just relegated from Wales’s second tier. Cwmbran is the town where the band send their stage props for repair, and given the props in question are giant inflatable bears, you wonder whether they could get one installed in goal. Continue reading...",
-      "publishedAt": "2026-08-08T07:00:39.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man City agree deal to sign Marseille keeper Rulli",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cwye10q7e92o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City agree a deal to sign Argentina goalkeeper Geronimo Rulli from Marseille.",
-      "publishedAt": "2026-08-08T06:00:37.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Inside Newcastle 2.0 - how the project is changing",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cd7lzdpjlg2o?at_medium=RSS&at_campaign=rss",
-      "summary": "Matthias Jaissle will take charge of his first friendly as Newcastle United head coach against Valencia as a new era begins.",
-      "publishedAt": "2026-08-08T05:50:20.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Une cible d'Anderlecht va-t-elle rejoindre Orel Mangala à Getafe ?",
-      "link": "https://www.walfoot.be/news/2026-08-08/une-cible-danderlecht-va-t-elle-rejoindre-orel-mangala-a-getafe-",
-      "summary": "Le nom de Pierre Ekwah, milieu de terrain de Saint-Étienne, a été cité il y a quelques semaines comme possible renfort pour Anderlecht. Finalement, il pourrait prendre le chemin de la Liga et poser ses valises à Getafe.",
-      "publishedAt": "2026-08-08T00:40:00.000Z"
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le Standard a manqué de fonds pour attirer l'un des transferts anderlechtois de l'été",
+      "link": "https://www.walfoot.be/news/2026-08-08/le-standard-a-manque-de-fonds-pour-attirer-lun-des-transferts-anderlechtois-de-lete",
+      "summary": "Dans les colonnes de &quot;Sudinfo&quot;, Marc Wilmots a raconté que Lukas Ambros aurait pu être un joueur du Standard. Aujourd'hui, il fait le bonheur de l'éternel rival : Anderlecht.",
+      "publishedAt": "2026-08-08T03:30:00.000Z"
     },
     {
       "type": "rss",
@@ -183,10 +172,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "DONE DEAL: RSC Anderlecht haalt hard uit met jeugdproduct Standard",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/done-deal-rsc-anderlecht-haalt-hard-uit-met-jeugdproduct-standard",
-      "summary": "RSC Anderlecht heeft goud in handen. En dat goud zijn ze nu ook aan het kapitaliseren. Noa Ojea heeft een nieuw contract getekend bij paars-wit en blijft op die manier tot juni 2029 bij de club spelen. Daarmee doet Anderlecht een prima zaak met oog op de toekomst.",
-      "publishedAt": "2026-08-08T00:30:00.000Z"
+      "title": "Domper voor Anderlecht-fans: Romelu Lukaku lijkt nieuwe ploeg gevonden te hebben",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/domper-voor-anderlecht-fans-romelu-lukaku-lijkt-nieuwe-ploeg-gevonden-te-hebben",
+      "summary": "Romelu Lukaku zijn onmiddellijke toekomst lijkt momenteel geregeld te worden. De Belgische topspits wordt nadrukkelijk gelinkt aan een transfer naar Turkije, waar Fenerbahçe volop werk maakt van zijn komst. Volgens La Gazzetta dello Sport zijn de onderhandelingen met Napoli in een beslissende fase.",
+      "publishedAt": "2026-08-08T03:30:00.000Z"
     },
     {
       "type": "rss",
@@ -194,10 +183,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Le Cercle à Sclessin, un mauvais souvenir à évacuer d'entrée pour le Standard, qui lance sa saison ce samedi",
-      "link": "https://www.walfoot.be/news/2026-08-08/le-cercle-a-sclessin-un-mauvais-souvenir-a-evacuer-dentree-pour-le-standard-qui-lance-sa-saison-ce-samedi",
+      "title": "LIVE : Voici les compositions de Standard - Cercle",
+      "link": "https://www.walfoot.be/news/2026-08-08/live-voici-les-compositions-de-standard-cercle",
       "summary": "C'est la rentrée des classes ce week-end en Jupiler Pro League, et ce samedi débute par une rencontre entre le Standard et le Cercle de Bruges, dont le coup d'envoi est programmé à 18h15. Suivez le live de cette partie, retrouvez le résumé et toutes les réactions sur Walfoot.be.",
-      "publishedAt": "2026-08-08T00:20:00.000Z"
+      "publishedAt": "2026-08-08T03:21:07.000Z"
     },
     {
       "type": "rss",
@@ -205,10 +194,32 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Live. Transfernieuws 8/8: KV Mechelen is nog niet klaar, Club Brugge haalt uit",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/live-transfernieuws-8-8-kv-mechelen-is-nog-niet-klaar-club-brugge-haalt-uit",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
-      "publishedAt": "2026-08-08T00:15:00.000Z"
+      "title": "LIVE: Ontdek hier de opstellingen in Standard-Cercle Brugge",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/match-live-live-ontdek-hier-de-opstellingen-in-standard-cercle-brugge",
+      "summary": "Dit weekend is het weer tijd voor de start van de Jupiler Pro League. Deze zaterdag wordt afgetrapt met een duel tussen Standard en Cercle Brugge, waarvan de aftrap gepland staat om 18.15 uur. Volg hier de liveverslaggeving van deze wedstrijd en ontdek het verslag en alle reacties na afloop.",
+      "publishedAt": "2026-08-08T03:10:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Minzame ex-speler KAA Gent en KV Mechelen heeft opvallende nieuwe job beet",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/minzame-ex-speler-kaa-gent-en-kv-mechelen-heeft-opvallende-nieuwe-job-beet",
+      "summary": "Kent u Nana Asare nog? De gewezen speler van KAA Gent maakte grote sier in zijn jaren bij de Buffalo's en was er bij toen ze de titel pakten. Ook Bij KV Mechelen liet hij mooie dingen zien, nu gaat hij aan de slag bij Geraardsbergen.",
+      "publishedAt": "2026-08-08T03:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Lionel Messi endeuillé",
+      "link": "https://www.walfoot.be/news/2026-08-08/lionel-messi-endeuille",
+      "summary": "Les médias argentins annoncent le décès du père de Lionel Messi, Jorge, à l'âge de 68 ans. Son mauvais état de santé avait déjà évoqué lors de la dernière Coupe du monde. C'est surtout un homme important de sa vie que perd la légende de l'Argentine.",
+      "publishedAt": "2026-08-08T03:00:00.000Z"
     },
     {
       "type": "rss",
@@ -216,10 +227,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Un concurrent turc de plus pour Anderlecht dans le feuilleton Lukaku ?",
-      "link": "https://www.walfoot.be/news/2026-08-08/un-concurrent-turc-de-plus-pour-anderlecht-dans-le-feuilleton-lukaku-",
-      "summary": "Romelu Lukaku ne restera pas au Napoli, c'est une certitude. Le Diable Rouge n'était pas présent à la reprise des entraînements et peut se trouver un nouveau club. Pour aller où ? C'est toute la question. La MLS ne le tente pas. Anderlecht, de son côté, se renseigne...",
-      "publishedAt": "2026-08-08T00:00:00.000Z"
+      "title": "Genk va s'offrir un international passé par la RAAL",
+      "link": "https://www.walfoot.be/news/2026-08-08/genk-va-soffrir-un-international-passe-par-la-raal",
+      "summary": "Après Jeppe Erenbjerg, Genk pourrait s'offrir un deuxième transfert estival qui évoluait en Pro League la saison dernière. Cette fois, il s'agit de l'international Jerry Afriyie qui défendait les couleurs de la RAAL, mais appartient à un club saoudien.",
+      "publishedAt": "2026-08-08T02:30:00.000Z"
     },
     {
       "type": "rss",
@@ -227,10 +238,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "LIVE - Speeldag 1 JPL: Essevee is klaar voor Genk: \"Supporters gelukkig naar huis sturen\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/live-speeldag-1-jpl-essevee-is-klaar-voor-genk-supporters-gelukkig-naar-huis-sturen",
-      "summary": "De competitie begint vrijdagavond met een duel tussen Club Brugge en KV Kortrijk. Daarmee lijkt het meteen alle hens aan dek voor de landskampioen in een West-Vlaamse derby. Maar het hele weekend lang staat er veel op het programma. Hier kan u al het nieuws gebundeld vinden en lezen.",
-      "publishedAt": "2026-08-08T00:00:00.000Z"
+      "title": "Snel opnieuw grote veranderingen aan competitieformat? \"Voor 2030 ...\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/snel-opnieuw-grote-veranderingen-aan-competitieformat-voor-2030-",
+      "summary": "DAZN heeft een akkoord gevonden tot (minstens) 2030. En zo is er eindelijk opnieuw wat rust in de tent na een turbulent seizoen op alle vlakken. Dit seizoen wordt ook gespeeld zonder play-offs, al is de vraag of dat nog wel lang zo zal zijn.",
+      "publishedAt": "2026-08-08T02:30:00.000Z"
     },
     {
       "type": "rss",
@@ -238,32 +249,21 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Un ancien joueur de Pro League se rapproche du PSG",
-      "link": "https://www.walfoot.be/news/2026-08-08/un-ancien-joueur-de-pro-league-se-rapproche-du-psg",
-      "summary": "Après William Pacho, le champion d'Europe pourrait compter dans ses rangs un autre ancien joueur passé par la Pro League. En effet, Zion Suzuki, passé par le STVV se rapproche du club de la capitale française.",
-      "publishedAt": "2026-08-07T23:30:00.000Z"
+      "title": "Encore une recrue pour le RWDM qui s'offre un milieu offensif",
+      "link": "https://www.walfoot.be/news/2026-08-08/encore-une-recrue-pour-le-rwdm-qui-soffre-un-milieu-offensif",
+      "summary": "Depuis l'annonce du retour de Thierry Dailly à la tête du club bruxellois, les nouvelles recrues s'enchaînent. Ce samedi, c'est l'arrivée d'un milieu offensif qui a été officialisée.",
+      "publishedAt": "2026-08-08T02:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Club Brugge boezemt angst in: \"Dat is toch de schrik van alle andere clubs?\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/club-brugge-boezemt-angst-in-dat-is-toch-de-schrik-van-alle-andere-clubs",
-      "summary": "Club Brugge is heel goed bezig. De voorbije elf jaar pakten ze zeven titels en daarmee komt er niemand in hun buurt. Ook dit seizoen zijn ze de grote titelfavoriet en het seizoen werd ook al begonnen met een droge en propere 3-0 overwinning. En dan moet het stadion nog gebouwd worden ...",
-      "publishedAt": "2026-08-07T23:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "KRC Genk ziet sterkhouders vertrekken en klopt op tafel: drie profielen op komst",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/krc-genk-ziet-sterkhouders-vertrekken-en-klopt-op-tafel-drie-profielen-op-komst",
-      "summary": "KRC Genk begint zijn toernooi met een uitwedstrijd op bezoek bij Zulte Waregem. Dat wordt meteen een pittig duel, beseffen ze bij de Limburgers maar al te goed. Er is sowieso ook nog heel wat werk aan de winkel op de transfermarkt.",
-      "publishedAt": "2026-08-07T23:00:00.000Z"
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Opvallend plan van Brusselse traditieclub slaat aan: al meer dan 125.000 euro in de clubkas",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-08/opvallend-plan-van-brusselse-traditieclub-slaat-aan-al-meer-dan-125000-euro-in-de-clubkas",
+      "summary": "RWDM is gered, leve RWDM! De Brusselse traditieclub maakte vorig weekend bekend dat Thierry Dailly de aandelen opnieuw overneemt en opnieuw de enige eigenaar wordt van de traditieclub. Ondertussen zijn er grootse plannen en de fans doen ook een flinke duit in het zakje - letterlijk.",
+      "publishedAt": "2026-08-08T02:00:00.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'I'm your warrior' - Guimaraes moves to Arsenal from Newcastle for £75m",
-      "link": "https://www.skysports.com/football/news/12040/13570096/bruno-guimaraes-arsenal-sign-midfielder-in-75m-transfer-as-newcastle-surpass-240m-in-player-sales-this-summer",
-      "summary": "Arsenal have signed midfielder Bruno Guimaraes from Newcastle in a £75m transfer.",
+      "title": "Huddersfield Giants to leave home for Dewsbury amid major investment",
+      "link": "https://www.skysports.com/rugby-league/news/12040/13570935/huddersfield-giants-moving-to-dewsbury-super-league-side-switching-home-from-2027-season-onwards",
+      "summary": "Betfred Super League side Huddersfield Giants have announced they are to leave the town and move to Dewsbury for the 2027 season onwards.",
       "publishedAt": null
     },
     {
@@ -293,9 +293,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Bruno Guimaraes' FIERY clashes against Rice and Arsenal!",
-      "link": "https://www.skysports.com/watch/video/13561965/bruno-guimaraes-when-arsenal-target-took-on-gunners-in-fiery-clash",
-      "summary": "A look back at when Arsenal target Bruno Guimaraes took on the Gunners in a fiery clash at St James' Park in 2023.",
+      "title": "Nicholls pays tribute as Big Buck's dies aged 23",
+      "link": "https://www.skysports.com/racing/news/12040/13570985/big-bucks-paul-nicholls-pays-tribute-as-legendary-stayer-dies-aged-23",
+      "summary": "Big Buck’s, one of the greatest staying hurdlers of all time, has died at the age of 23.",
       "publishedAt": null
     },
     {
@@ -304,9 +304,20 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Guimaraes reveals hilarious Rice and Gabriel messages!",
-      "link": "https://www.skysports.com/watch/video/13570945/bruno-guimaraes-reveals-hilarious-declan-rice-and-gabriel-messages-no-fights-now-were-friends",
-      "summary": "Bruno Guimaraes reveals hilarious Declan Rice and Gabriel messages before signing for Arsenal. Credit: Arsenal.",
+      "title": "Australia survive late Japan rally as new coach Kiss makes winning start",
+      "link": "https://www.skysports.com/rugby-union/news/12040/13570951/australia-edge-japan-35-32-to-give-les-kiss-winning-start-in-first-match-as-head-coach",
+      "summary": "Australia held on for a tight 35-32 victory over Japan, despite a first-half red card for Miles Amatosero, as they made a winning start in head coach Les Kiss' first match in charge.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Joao Pedro nets double as Chelsea bounce back to beat Milan",
+      "link": "https://www.skysports.com/football/news/12040/13570780/chelsea-3-0-ac-milan-joao-pedro-nets-double-as-much-improved-blues-bounce-back-to-beat-ruben-amorims-side",
+      "summary": "Chelsea bounced back from back-to-back pre-season defeats with their best performance under Xabi Alonso so far as Joao Pedro's double helped them to a convincing 3-0 win over AC Milan in Jakarta.",
       "publishedAt": null
     },
     {
@@ -315,20 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Joao Pedro heads Chelsea in front vs Milan LIVE!",
-      "link": "https://www.skysports.com/football/live-blog/12040/13570761/chelsea-vs-ac-milan-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog-from-jakarta",
+      "title": "Mount injured after Liverpool target Mbaye scores for PSG LIVE!",
+      "link": "https://www.skysports.com/football/paris-saint-germain-vs-manchester-united/live/555766",
       "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'I'd rather fight Aaron for world title' - Walsh dismisses Stevie McKenna call-out",
-      "link": "https://www.skysports.com/boxing/news/12040/13570679/callum-walsh-aaron-mckenna-world-title-fight-makes-sense-fighting-stephen-mckenna-doesnt",
-      "summary": "Callum Walsh would entertain a fight against Aaron McKenna over Stephen McKenna, insisting all-Irish clashes only make sense with the world title on the line.",
       "publishedAt": null
     }
   ]
