@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-08-08T21:34:05.520Z",
+  "generatedAt": "2026-08-08T22:32:56.686Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Fifa criticises campaign to oust president Infantino",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cj03drn965do?at_medium=RSS&at_campaign=rss",
+      "summary": "Fifa strongly criticises what it calls a \"concerted and ongoing effort\" to \"undermine\" the organisation and its president Gianni Infantino.",
+      "publishedAt": "2026-08-08T22:06:44.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barcelona moet tijdens bijzonder oefentoernooi meerdere erkennen in Udinese",
-      "link": "https://www.vi.nl/nieuws/barcelona-moet-tijdens-bijzonder-oefentoernooi-meerdere-erkennen-in-udinese",
-      "summary": "Barcelona is zaterdagavond tweede geworden in een opmerkelijk vriendschappelijk toernooi. Na drie wedstrijden van een helft, allemaal gespeeld in een tijdbestek van minder dan drie uur, bleek Udinese te sterk voor de Catalanen én voor Nottingham Forest.",
-      "publishedAt": "2026-08-08T21:31:42.000Z"
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Sporting blijft steken op gelijkspel tegen club van Van Hooijdonk",
+      "link": "https://www.vi.nl/nieuws/sporting-blijft-steken-op-gelijkspel-tegen-club-van-van-hooijdonk",
+      "summary": "Zaterdagavond stonden er vier Eredivisie-duels op de rol. Het duel van PSV met Fortuna Sittard volgden we in een apart liveblog , maar lees hieronder terug hoe duels van NEC - Telstar, Go Ahead Eagles - Willem II en AZ - ADO Den Haag zich ontvouwden. Van een stunt in Nijmegen tot vijf doelpunten in Deventer, hieronder vind je alles terug.",
+      "publishedAt": "2026-08-08T21:52:00.000Z"
     },
     {
       "type": "rss",
@@ -21,7 +32,7 @@
       "title": "Strijdlustige FIFA slaat terug en komt op voor Infantino",
       "link": "https://www.vi.nl/nieuws/strijdlustige-fifa-slaat-terug-en-komt-op-voor-infantino",
       "summary": "De FIFA heeft in een lang statement fel gereageerd op criticasters van preses Gianni Infantino. De bond kondigt aan onjuiste of misleidende berichtgeving krachtig aan te vechten.",
-      "publishedAt": "2026-08-08T21:24:36.000Z"
+      "publishedAt": "2026-08-08T21:44:56.000Z"
     },
     {
       "type": "rss",
@@ -29,10 +40,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Bosz laat pijnlijke stilte vallen en bekritiseert Fernandez voor rol bij gelijkmaker",
-      "link": "https://www.vi.nl/video/bosz-laat-pijnlijke-stilte-vallen-en-bekritiseert-fernandez-voor-rol-bij-gelijkmak",
-      "summary": "Waren er nog positieve dingen waarneembaar bij PSV in het optreden tegen Fortuna Sittard? De pijnlijke stilte die Peter Bosz op de persconferentie liet vallen, sprak boekdelen. Zelfs toen de afronding van de achttienjarige Noah Fernandez bij de tweede PSV-goal werd geopperd, was Bosz uiterst kritisch. Want wat deed Fernandez bij de late gelijkmaker van Fortuna?",
-      "publishedAt": "2026-08-08T21:17:38.000Z"
+      "title": "Uitblinker Stengs op naar negentig minuten: 'Soms vervelend dat mensen twijfelen'",
+      "link": "https://www.vi.nl/nieuws/uitblinker-stengs-op-naar-negentig-minuten-soms-vervelend-dat-mensen-twijfelen",
+      "summary": "Calvin Stengs liet zaterdag bij zijn rentree voor eigen publiek meteen zien wat hij waard is aan de AZ-fans. Na afloop van de gewonnen wedstrijd tegen ADO Den Haag verscheen de doelpuntenmaker met een brede glimlach voor de camera. De boodschap was duidelijk: Stengs moet weer als voetballer bekeken worden, niet als patiënt.",
+      "publishedAt": "2026-08-08T21:42:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Bosz voor derde keer in zwaar weer bij PSV: 'Je hebt nul garanties'",
+      "link": "https://www.vi.nl/video/bosz-voor-derde-keer-in-zwaar-weer-bij-psv-je-hebt-nul-garanties",
+      "summary": "PSV is de afgelopen jaren de beste ploeg van de Eredivisie geweest. Toch hebben de Eindhovenaren elk seizoen een mindere periode. Dat lijkt dit seizoen voor PSV al meteen in het begin te zijn. Peter Bosz hoopt dat zijn ploeg de draad daarna weer kan oppakken, al weet hij dat er 'nul garanties' zijn.",
+      "publishedAt": "2026-08-08T21:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Shane Kluivert en Barça grijpen naast zege in bijzonder oefentoernooi",
+      "link": "https://www.vi.nl/nieuws/barcelona-moet-tijdens-bijzonder-oefentoernooi-meerdere-erkennen-in-udinese",
+      "summary": "Barcelona is zaterdagavond tweede geworden in een opmerkelijk vriendschappelijk toernooi. Na drie wedstrijden van een helft, allemaal gespeeld in een tijdbestek van minder dan drie uur, bleek Udinese te sterk voor de Catalanen én voor Nottingham Forest.",
+      "publishedAt": "2026-08-08T21:31:42.000Z"
     },
     {
       "type": "rss",
@@ -44,39 +77,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/c4gk75keg1lo?at_medium=RSS&at_campaign=rss",
       "summary": "Newcastle United forward Yoane Wissa scores twice in a 2-1 win against Valencia in Matthias Jaissle's first game in charge - but how did the Magpies players perform?",
       "publishedAt": "2026-08-08T21:11:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Getergde Bosz ondanks domper overtuigd van nieuw systeem: 'Was misschien gewaagd'",
-      "link": "https://www.vi.nl/nieuws/getergde-bosz-ondanks-domper-overtuigd-van-nieuw-systeem-was-misschien-gewaagd",
-      "summary": "Peter Bosz wil na afloop van het teleurstellende gelijkspel tegen Fortuna Sittard niets weten van een mislukte systeemwissel. PSV verscheen zaterdag in een 3-4-3-formatie, maar het gewenste resultaat bleef uit.",
-      "publishedAt": "2026-08-08T21:06:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Invalheld Stengs helpt AZ langs dapper Haags strijdplan",
-      "link": "https://www.vi.nl/pro/analyse-az-ado",
-      "summary": "Waar concurrenten NEC en PSV het seizoen openen met chaotisch puntenverlies, trekt AZ juist de stabiele vorm door. Tegen een competent ogend ADO breekt het duel open wanneer Lee-Roy Echteld kort na rust Calvin Stengs inbrengt (2-0). Analyse van een duel waar beide ploegen effectief druk weten te genereren.",
-      "publishedAt": "2026-08-08T21:06:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barca make second bid for Rodri - Sunday's gossip",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c05qvj0yj46o?at_medium=RSS&at_campaign=rss",
-      "summary": "Barcelona increase their Rodri bid, Cristian Romero wants to join Arsenal, Forest are set to sign Ousmane Diomande, plus more.",
-      "publishedAt": "2026-08-08T20:37:28.000Z"
     },
     {
       "type": "rss",
@@ -154,6 +154,17 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/c1719r079rjo?at_medium=RSS&at_campaign=rss",
       "summary": "Premier League champions Arsenal sign Brazil midfielder Bruno Guimaraes from Newcastle United for £75m.",
       "publishedAt": "2026-08-08T11:00:08.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Roméo Lavia franchit enfin un cap important à Chelsea, Xabi Alonso souligne son importance",
+      "link": "https://www.walfoot.be/news/2026-08-08/romeo-lavia-franchit-enfin-un-cap-important-a-chelsea-xabi-alonso-souligne-son-importance",
+      "summary": "Roméo Lavia a disputé contre l’AC Milan son premier match complet sous le maillot du grand club londonien. Le nouvel entraîneur Xabi Alonso a insisté pour que le Belge aille au bout des 90 minutes.",
+      "publishedAt": "2026-08-08T09:50:00.000Z"
     },
     {
       "type": "rss",
@@ -267,14 +278,14 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Clement et Hayen poursuivent leur parcours en League Cup, non sans difficultés",
-      "link": "https://www.walfoot.be/news/2026-08-08/clement-et-hayen-poursuivent-leur-parcours-en-league-cup-non-sans-difficultes",
-      "summary": "Deux entraîneurs belges occupent désormais des bancs de Championship cette saison. Mais avant la reprise du championnat, leurs clubs respectifs avaient des obligations en League Cup. Elles ont été accomplies, mais pas toujours avec la manière.",
-      "publishedAt": "2026-08-08T07:50:00.000Z"
+      "title": "Wissa double gives Newcastle boss Jaissle winning start at 10-man Valencia",
+      "link": "https://www.skysports.com/football/news/12040/13571236/valencia-1-2-newcastle-yoane-wissas-double-gives-matthias-jaissle-winning-start-as-anthony-elanga-stretchered-off",
+      "summary": "Substitute Yoane Wissa scored twice to give Matthias Jaissle a winning start as Newcastle boss with a 2-1 comeback pre-season win at 10-man Valencia.",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -315,20 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Wissa's double gives Newcastle's Jaissle winning start at 10-man Valencia LIVE!",
-      "link": "https://www.skysports.com/football/valencia-vs-newcastle-united/live/568647",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Ward rescues career with valiant Kasparian win",
-      "link": "https://www.skysports.com/boxing/news/12040/13571046/joe-ward-rescues-career-with-valiant-artjom-kasparian-win-as-stevie-mckenna-and-sam-hickey-take-stunning-one-punch-finishes",
-      "summary": "Joe Ward staved off disaster, beating Artjom Kasparian on a unanimous decision after 10 ferocious rounds at the 3Arena in Dublin.",
+      "title": "Walsh battles through cuts and knockdown to drop Denny and take victory",
+      "link": "https://www.skysports.com/boxing/news/12040/13571055/callum-walsh-comes-through-cuts-and-knockdown-to-drop-denny-and-take-battling-decision-victory-in-dublin-contest",
+      "summary": "Callum Walsh maintained his unbeaten record and top contender status with a unanimous decision victory over Tyler Denny.",
       "publishedAt": null
     }
   ]
