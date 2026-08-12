@@ -1,16 +1,60 @@
 {
-  "generatedAt": "2026-08-12T11:50:36.678Z",
+  "generatedAt": "2026-08-12T13:16:53.218Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "South Korea crisis deepens over sexual favours for referees scandal",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cpw9px9z5wgo?at_medium=RSS&at_campaign=rss",
+      "summary": "The South Korean FA apologises amid a series of controversies and a police raid on its headquarters.",
+      "publishedAt": "2026-08-12T13:11:07.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "La Liga to inspect Celta Vigo's pitch after fungus outbreak",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cdx7pqwwyp1o?at_medium=RSS&at_campaign=rss",
+      "summary": "La Liga officials are set to inspect the pitch at Celta Vigo's Estadio de Balaidos over a suspected fungus outbreak.",
+      "publishedAt": "2026-08-12T13:01:06.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "FR",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "NEC leeft de Champions League-droom",
+      "link": "https://www.vi.nl/pro/nec-leeft-de-champions-league-droom",
+      "summary": "De Champions League-droom van NEC duurt voort. De ploeg van Dick Schreuder zorgde voor een stunt door Olympiakos Piraeus in de derde voorronde uit te schakelen. Een reportage van enkele bewogen dagen in Nijmegen, waar NEC nu Bodø/Glimt treft in de play-offs.",
+      "publishedAt": "2026-08-12T13:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "'Porto droomt naast Giménez ook van Quinten Timber'",
+      "link": "https://www.vi.nl/nieuws/porto-droomt-naast-gimenez-ook-van-quinten-timber",
+      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-08-12T12:57:52.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
       "flag": "🌍",
-      "title": "VI Live: PSG in UEFA Super Cup tegen Europa League-winnaar Aston Villa",
-      "link": "https://www.vi.nl/nieuws/vi-live-psg-in-uefa-super-cup-tegen-europa-league-winnaar-aston-villa",
-      "summary": "Champions League-winnaar Paris Saint-Germain neemt het woensdag in de UEFA Super Cup op tegen Europa League-winnaar Aston Villa. De Franse en Engelse club staan om 21.00 uur tegenover elkaar. Blijf op de hoogte van dit duel in de VI Live.",
-      "publishedAt": "2026-08-12T11:30:00.000Z"
+      "title": "VI Catwalk 2026/27: Real Madrid én Barcelona presenteren derde tenue",
+      "link": "https://www.vi.nl/nieuws/vi-catwalk-2026-27-real-madrid-en-barcelona-presenteren-derde-tenue",
+      "summary": "Nu het WK alweer even achter de rug is, maken we ons op voor een nieuw seizoen clubvoetbal. Daar horen ook de nieuwe tenues voor de topclubs in het buitenland bij. In de VI Catwalk zetten we de shirts van de grootste teams uit de grootste competities van Europa op een rijtje. Dit artikel wordt aangevuld als meer clubs hun tenues bekendmaken voor het seizoen 2026/27.",
+      "publishedAt": "2026-08-12T12:18:15.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +62,21 @@
       "sourceSlug": "voetbal-international",
       "country": "FR",
       "flag": "🌍",
-      "title": "CL-winnaar Pacho bespreekt 'donkere periode': 'Een wond die nooit heelt'",
-      "link": "https://www.vi.nl/nieuws/cl-winnaar-pacho-bespreekt-donkere-periode-een-wond-die-nooit-heelt",
-      "summary": "Willian Pacho heeft in aanloop naar de strijd om Europese Super Cup tussen Paris Saint-Germain en Aston Villa teruggeblikt op een emotionele periode in zijn leven. Waar het leven hem nu vooral toelacht, met onder andere de Champions League-winst in mei, daar kende de Ecuadoriaan op jonge leeftijd donkere dagen na het overlijden van zijn moeder.",
-      "publishedAt": "2026-08-12T11:22:34.000Z"
+      "title": "VI Live: basisplaats Bizot lonkt bij Villa in UEFA Super Cup tegen PSG",
+      "link": "https://www.vi.nl/nieuws/vi-live-psg-in-uefa-super-cup-tegen-europa-league-winnaar-aston-villa",
+      "summary": "Champions League-winnaar Paris Saint-Germain neemt het woensdag in de UEFA Super Cup op tegen Europa League-winnaar Aston Villa. De Franse en Engelse club staan om 21.00 uur tegenover elkaar. Blijf op de hoogte van dit duel in de VI Live.",
+      "publishedAt": "2026-08-12T12:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "De Schreuder-illusie: waarom Darko Nejasmic geweldig lijkt",
+      "link": "https://www.vi.nl/pro/analyse-de-magie-van-dick-schreuder",
+      "summary": "NEC verbrak deze transferzomer al tweemaal het transferrecord. In Nijmegen ontwikkelen talenten zich spectaculair en beleven dertigers hun tweede jeugd. Dat is het effect van een goede trainer met een onderscheidende stijl: alle spelers ogen geweldig.",
+      "publishedAt": "2026-08-12T12:00:00.000Z"
     },
     {
       "type": "rss",
@@ -42,7 +97,7 @@
       "flag": "🇬🇧",
       "title": "‘It is just smelling football’: Tielemans says adjusting to life at United has come naturally",
       "link": "https://www.theguardian.com/football/2026/aug/12/youri-tielemans-manchester-united-smelling-football",
-      "summary": "Midfielder says experience has helped him settle in ‘It’s what I’ve been doing from when I was young’ Youri Tielemans has stated that adjusting to Michael Carrick’s vision for Manchester United has been as easy as “smelling football” for the vastly experienced £35m midfield signing. The 29-year-old, who joined from Aston Villa last month, made his debut for Anderlecht at the age of 16. He has been integrating with the United squad during the past 10 days of the club’s pre-season tour, making his first appearance in Saturday’s 1-1 draw with Paris Saint-Germain in Gothenburg. Continue reading...",
+      "summary": "Midfielder says experience has helped him settle in ‘It’s what I’ve been doing from when I was young’ Youri Tielemans has stated that adjusting to Michael Carrick’s vision for Manchester United has been as easy as “smelling football” for the vastly experienced £35m midfield signing. The 29-year-old, who joined from Aston Villa last month, made his debut for Anderlecht at the age of 16. He has been integrating with the United squad during the past 10 days of the club’s pre-season tour, making his first appearance in the 1-1 draw with Paris Saint-Germain in Gothenburg on Saturday. Continue reading...",
       "publishedAt": "2026-08-12T11:00:26.000Z"
     },
     {
@@ -64,7 +119,7 @@
       "flag": "🇬🇧",
       "title": "Barcelona make improved £51m bid for Rodri as Manchester City target Fernández",
       "link": "https://www.theguardian.com/football/2026/aug/12/manchester-city-chelsea-enzo-fernandez",
-      "summary": "Latest offer close to City’s valuation for Spain midfielder Chelsea’s £120m price for Fernández may be too high Barcelona have made an improved bid to Manchester City of around €60m (£51m) for Rodri. This follows Barça’s initial offer of €45m that was rejected out of hand by City. The Spanish club’s new offer – which may include add-ons – is close to City’s valuation for the 30-year-old who captained Spain to the World Cup and won the Ballon d’Or in 2024. As the midfielder has declared a preference for Barcelona it seems it is inevitable he will leave. In preparation City are targeting Chelsea’s Enzo Fernández as a potential signing though the west London club’s valuation of around £120m may be too high. Continue reading...",
+      "summary": "Latest offer close to City’s valuation for Spain midfielder Chelsea’s £120m price for Fernández may be too high Barcelona have made an improved bid to Manchester City of around €60m (£51m) for Rodri. This follows Barça’s initial offer of €45m that was rejected out of hand by City. The Spanish club’s new offer – which may include add-ons – is close to City’s valuation for the 30-year-old who captained Spain to the World Cup and won the Ballon d’Or in 2024. Continue reading...",
       "publishedAt": "2026-08-12T10:57:58.000Z"
     },
     {
@@ -75,107 +130,8 @@
       "flag": "🇬🇧",
       "title": "‘It’s a nice hobby’: Manchester United’s Janina Leitzig on goalkeeping and gardening",
       "link": "https://www.theguardian.com/football/2026/aug/12/manchester-united-janina-leitzig-interview-on-goalkeeping-and-gardening",
-      "summary": "Former Leicester player’s focus has moved from runner beans to running drills as the season approaches With some parts of England gearing up for a fifth heatwave of 2026, the new Manchester United goalkeeper Janina Leitzig, a keen gardener, is sympathetic to the precarious health of this reporter’s tomato plants. “You’re not used to so little rain, are you?” she observes. For the time being, after her summer move to Manchester, the former Germany youth international does not have a garden of her own, but she reveals that, during her three-and-a-half-year spell at her former club Leicester, homegrown vegetables were her pride and joy. “I love to do some gardening. Back home, everyone has their own vegetables and it’s just better, it tastes better,” she tells the Guardian. “Being away from home and away from family, of course you have your football friends, but still it can be quite lonely sometimes if you come home from training, so it was really nice to have a garden and to spend time outside. It’s not too much effort, it’s just a nice hobby.” Continue reading...",
+      "summary": "The former Leicester player’s focus has moved from runner beans to running drills as the season approaches With some parts of England gearing up for a fifth heatwave of 2026 the new Manchester United goalkeeper Janina Leitzig, a keen gardener, is sympathetic to the precarious health of this reporter’s tomato plants. “You’re not used to so little rain, are you?” she observes. For the time being, after her summer move to Manchester, the former Germany youth international does not have a garden of her own but she reveals that, during her three-and-a-half-year spell at her former club Leicester, homegrown vegetables were her pride and joy. “I love to do some gardening. Back home, everyone has their own vegetables and it’s just better, it tastes better,” she tells the Guardian. “Being away from home and away from family, of course you have your football friends, but still it can be quite lonely sometimes if you come home from training, so it was really nice to have a garden and to spend time outside. It’s not too much effort, it’s just a nice hobby.” This is an extract from our free email about women’s football, Moving the Goalposts. To get the full edition, visit this page and follow the instructions. Moving the Goalposts will be sent out once a week, on Wednesdays, in the close season but will be back on Tuesdays and Thursdays from September. Continue reading...",
       "publishedAt": "2026-08-12T10:50:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Zomertransfers Eredivisie seizoen 2026/27: alle clubs op een rij",
-      "link": "https://www.vi.nl/nieuws/zomertransfers-eredivisie-seizoen-2026-27-alle-clubs-op-een-rij",
-      "summary": "De transferperiode is weer losgebarsten. In dit overzicht van VI vind je alle afgeronde zomertransfers van de achttien Eredivisie-clubs. Transfers komen pas in dit overzicht als ze zijn bevestigd door de betreffende clubs.",
-      "publishedAt": "2026-08-12T10:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "OFFICIEL : un jeune talent débarque à Malines en provenance d’un club de Premier League",
-      "link": "https://www.walfoot.be/news/2026-08-12/officiel-un-jeune-talent-debarque-a-malines-en-provenance-dun-club-de-premier-league",
-      "summary": "Leo Hjelde va poursuivre sa carrière au KV Malines. Le club belge a trouvé un accord avec Sunderland pour le transfert du défenseur norvégien de 22 ans.",
-      "publishedAt": "2026-08-12T10:46:04.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "AS Roma presenteert WK-finalist als alternatief voor Read",
-      "link": "https://www.vi.nl/nieuws/roma-schakelt-door-na-geklapte-read-deal-en-pikt-molina-op-bij-atletico",
-      "summary": "AS Roma heeft de transfer van Nahuel Molina wereldkundig gemaakt. De Argentijnse rechtsback komt over van Atlético Madrid, dat volgens Spaanse media een bedrag van negentien miljoen euro inclusief bonussen ontvangt. De 28-jarige verdediger heeft voor vier jaar getekend in Rome.",
-      "publishedAt": "2026-08-12T10:36:44.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Un joueur du Club de Bruges en route vers un transfert en Italie ? Il pourrait évoluer aux côtés de Yari Verschaeren",
-      "link": "https://www.walfoot.be/news/2026-08-12/un-joueur-du-club-de-bruges-en-route-vers-un-transfert-en-italie-il-pourrait-evoluer-aux-cotes-de-yari-verschaeren",
-      "summary": "Le dossier Yari Verschaeren a pris une nouvelle tournure. Malgré ses premières hésitations, l'ancien joueur d'Anderlecht aurait donné son feu vert pour rejoindre Jesper Fredberg à la Sampdoria.",
-      "publishedAt": "2026-08-12T10:30:57.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Cercle Brugge troeft Club Brugge af voor winger",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/officieel-cercle-brugge-troeft-club-brugge-af-voor-winger",
-      "summary": "Het is een bijzondere week geworden in en rond Jan Breydel. Club Brugge toonde verregaande interesse in Abdoulie Manneh, maar Cercle Brugge handelde sneller en wist op die manier de winger nu ook in huis te halen. Daarmee doet De Vereniging een prima zaak en heeft blauw-zwart maar één optie over.",
-      "publishedAt": "2026-08-12T10:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man City sign goalkeeper Rulli from Marseille",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cvgwz829l04o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester City complete the signing of Argentina goalkeeper Geronimo Rulli from Marseille.",
-      "publishedAt": "2026-08-12T10:27:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "KNVB denkt mee met NEC: Eredivisie-duel met Excelsior krijgt nieuwe datum",
-      "link": "https://www.vi.nl/nieuws/knvb-denkt-mee-met-nec-eredivisie-duel-met-excelsior-krijgt-nieuwe-datum",
-      "summary": "De Eredivisie-wedstrijd tussen NEC en Excelsior is officieel verplaatst. De Nijmegenaren krijgen daardoor meer rust rond de dubbele ontmoeting met Bodø/Glimt in de play-offs van de Champions League.",
-      "publishedAt": "2026-08-12T10:17:36.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Une dernière grosse vente et puis c'est tout : cinq joueurs interdits de partir par le Club de Bruges",
-      "link": "https://www.walfoot.be/news/2026-08-12/une-derniere-grosse-vente-et-puis-cest-tout-cinq-joueurs-interdits-de-partir-par-le-club-de-bruges",
-      "summary": "Avec Christos Tzolis, Aleksandar Stankovic, Raphael Onyedika, Zaid Romero, Shandre Campbell et Cissé Sandra, le Club de Bruges a déjà vendu pour près de 80 M€ dans ce mercato estival. C'est assez pour les Blauw & Zwart, qui ferment désormais la porte à d'autres départs majeurs.",
-      "publishedAt": "2026-08-12T10:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEL : un joueur de Tottenham rejoint Westerlo",
-      "link": "https://www.walfoot.be/news/2026-08-12/officiel-un-joueur-de-tottenham-rejoint-westerlo",
-      "summary": "Westerlo réagit après la grosse défaite contre l'Union. Les Campinois vont accueillir Yang Min-hyeok, jeune ailier sud-coréen de 20 ans appartenant à Tottenham.",
-      "publishedAt": "2026-08-12T09:30:00.000Z"
     },
     {
       "type": "rss",
@@ -183,21 +139,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Saudi Pro League tries to move on from era of ageing megastar but big names still loom",
+      "title": "Saudi Pro League tries to move on from era of ageing megastar but big names still loom | John Duerden",
       "link": "https://www.theguardian.com/football/2026/aug/12/saudi-pro-league-ageing-overseas-stars-local-talent-investment",
-      "summary": "As Ronaldo heads towards 1,000 career-goals, league plans to lift standard of Saudi Arabian football, not just the clubs There’s no Mohamed Salah in the new Saudi Pro League season that kicks off on Thursday and while the age of the ageing megastar is ending, there is still the strong chance that the next few months will be dominated by Cristiano Ronaldo. The 41-year-old is 24 shy of 1,000 career goals and with the five-time Ballon d’Or winner having scored 102 in 107 league games for Al-Nassr so far, the milestone could – should – be reached this season. Huge as that will be, just how it fits into the plans of the league is unclear. This is the fourth season since the spending started with $957m (£710m) splashed out in that summer of 2023. It delivered thousands of articles, dozens of international broadcasting deals and untold numbers of people worldwide sporting the yellow CR7 Al-Nassr shirt. Now, though, the focus is on getting a little more value for money and lifting not just the clubs but the standard of Saudi Arabian football in general. Continue reading...",
+      "summary": "As Ronaldo heads towards 1,000 career goals, the league plans to lift the standard of Saudi Arabian football, not just the clubs There is no Mohamed Salah in the new Saudi Pro League season that kicks off on Thursday and while the era of the ageing megastar is ending, there is still the strong chance that the next few months will be dominated by Cristiano Ronaldo. The 41-year-old is 24 shy of 1,000 career goals and, with the five-time Ballon d’Or winner having scored 102 in 107 league games for Al-Nassr so far, the milestone could – should – be reached this season. Huge as that will be, just how it fits into the plans of the league is unclear. This is the fourth season since the spending started with $957m (£710m) splashed out in that summer of 2023. It delivered thousands of articles, dozens of international broadcasting deals and untold numbers of people worldwide sporting the yellow CR7 Al-Nassr shirt. Now, though, the focus is on getting a little more value for money and lifting not just the clubs but the standard of Saudi Arabian football in general. Continue reading...",
       "publishedAt": "2026-08-12T09:05:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The late-bloomer left-back joining Chelsea for £16m",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cvg0rw84xk9o?at_medium=RSS&at_campaign=rss",
-      "summary": "Pep Chavarria joins Chelsea on a five-year deal, having played in the Spanish lower leagues until he was 24.",
-      "publishedAt": "2026-08-12T08:29:22.000Z"
     },
     {
       "type": "rss",
@@ -227,10 +172,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Berchem Sport staat dicht bij komst van Patro-aanvaller",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/berchem-sport-staat-dicht-bij-komst-van-patro-aanvaller",
-      "summary": "Junior Mbaku staat dicht bij een overstap van Patro Eisden Maasmechelen naar Berchem Sport. De 18-jarige spits kan zo komend seizoen meer minuten maken. De deal is momenteel nog niet volledig afgerond, maar de verwachting is dat beide partijen tot een akkoord zullen komen.",
-      "publishedAt": "2026-08-11T23:45:00.000Z"
+      "title": "Meervoudige opsteker voor RSC Anderlecht én (mogelijke) tegenstander is bekend",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/meervoudige-opsteker-voor-rsc-anderlecht-en-mogelijke-tegenstander-is-bekend",
+      "summary": "RSC Anderlecht neemt het donderdagavond op tegen PAOK Saloniki in de strijd om de play-offs van de Europa League. Coach Vitor Bruno ontving positief nieuws en ondertussen weet paars-wit dat de volgende tegenstander Kairat Almaty zou kunnen worden.",
+      "publishedAt": "2026-08-12T01:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "OFFICIEL : un joueur d’un club de Premier League, qui connaît bien le football belge, rejoint La Gantoise",
+      "link": "https://www.walfoot.be/news/2026-08-12/officiel-un-joueur-dun-club-de-premier-league-qui-connat-bien-le-football-belge-rejoint-la-gantoise",
+      "summary": "La Gantoise a officialisé ce mardi l’arrivée d’Abdul Aziz Ouedraogo en provenance de Crystal Palace. Le défenseur ivoirien de 20 ans, qui connaît déjà le football belge après deux saisons au SK Beveren, évoluera dans un premier temps avec le Jong Gent.",
+      "publishedAt": "2026-08-12T01:00:00.000Z"
     },
     {
       "type": "rss",
@@ -241,7 +197,18 @@
       "title": "Live Transfernieuws 12/8: Ivanovic (ex-Union) onder zeil, nieuws over Torres én Torrents",
       "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/live-transfernieuws-12-8-ivanovic-ex-union-onder-zeil-nieuws-over-torres-en-torrents",
       "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
-      "publishedAt": "2026-08-11T23:45:00.000Z"
+      "publishedAt": "2026-08-12T00:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Deux légers pépins, la réaction de Nkada : le point de Vincent Euvrard au Standard, quatre jours avant Malines",
+      "link": "https://www.walfoot.be/news/2026-08-12/deux-legers-pepins-la-reaction-de-nkada-le-point-de-vincent-euvrard-au-standard-quatre-jours-avant-malines",
+      "summary": "Quatre jours avant le déplacement à Malines, Vincent Euvrard a fait le point sur les forces en présence au Standard, en revenant notamment sur les cas de Dimitri Lavalée et Laurens Goemaere, mais aussi sur celui de Timothé Nkada, qui a bien réagi après les critiques de la semaine dernière.",
+      "publishedAt": "2026-08-12T00:40:00.000Z"
     },
     {
       "type": "rss",
@@ -249,10 +216,54 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Sterkhouder KAA Gent ontbreekt op laatste training, ook opvallende aanwezige",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/sterkhouder-kaa-gent-ontbreekt-op-laatste-training-ook-opvallende-aanwezige",
-      "summary": "KAA Gent won in eigen huis van KV Mechelen met 2-0. Een vierde clean sheet op rij voor Davy Roef op die manier. Alleen maar goed nieuws dus vanuit de Planet Group Arena? Niet helemaal, want er waren toch wat zorgen over defensieve sterkhouder Christian Burgess.",
-      "publishedAt": "2026-08-11T23:30:00.000Z"
+      "title": "Wat staat er te gebeuren met Arthur Vermeeren (ex-Antwerp)?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/wat-staat-er-te-gebeuren-met-arthur-vermeeren-ex-antwerp",
+      "summary": "Wat gaat er gebeuren met de toekomst van Arthur Vermeeren? De nog steeds jonge ex-speler van Royal Antwerp FC kwam als een komeet, maar kon het in het buitenland tot op heden nog niet waarmaken. En dus wenkt mogelijk een nieuwe deal.",
+      "publishedAt": "2026-08-12T00:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Accord conclu : après Yari Verschaeren, la Sampdoria s'apprête à recruter un joueur du Club Bruges",
+      "link": "https://www.walfoot.be/news/2026-08-12/accord-conclu-apres-yari-verschaeren-la-sampdoria-sapprete-a-recruter-un-joueur-du-club-bruges",
+      "summary": "Le dossier Yari Verschaeren a pris une nouvelle tournure. Malgré ses premières hésitations, l'ancien joueur d'Anderlecht aurait donné son feu vert pour rejoindre Jesper Fredberg à la Sampdoria.",
+      "publishedAt": "2026-08-12T00:24:15.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Christian Burgess absent de l’entraînement de Gand avant un match important : l’ancien Unioniste est incertain",
+      "link": "https://www.walfoot.be/news/2026-08-12/christian-burgess-absent-de-lentranement-de-gand-avant-un-match-important-lancien-unioniste-est-incertain",
+      "summary": "La Gantoise affrontera-t-elle l'IFK Göteborg sans Christian Burgess ? La réponse n'est pas connue, mais le défenseur central anglais était absent du dernier entraînement des Buffalos avant le match retour du troisième tour préliminaire de la Conference League face au club suédois.",
+      "publishedAt": "2026-08-12T00:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Transfers en het Europees stadion: Union-CEO Bormans geeft duidelijkheid over gevolgen van uitschakeling",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/transfers-en-het-europees-stadion-union-ceo-bormans-geeft-duidelijkheid-over-gevolgen-van-uitschakeling",
+      "summary": "Dinsdagavond, rond 22 uur, op de luchthaven van Bodø. Iets meer dan een uur eerder maakte Philippe Bormans zich nog op voor mogelijke strafschoppen, tot Bodø/Glimt voor de derde keer op de avond op voorsprong kwam. Dit keer was het er eentje te veel.",
+      "publishedAt": "2026-08-12T00:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Berchem Sport staat dicht bij komst van Patro-aanvaller",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/berchem-sport-staat-dicht-bij-komst-van-patro-aanvaller",
+      "summary": "Junior Mbaku staat dicht bij een overstap van Patro Eisden Maasmechelen naar Berchem Sport. De 18-jarige spits kan zo komend seizoen meer minuten maken. De deal is momenteel nog niet volledig afgerond, maar de verwachting is dat beide partijen tot een akkoord zullen komen.",
+      "publishedAt": "2026-08-11T23:45:00.000Z"
     },
     {
       "type": "rss",
@@ -267,14 +278,25 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "BREAKING: Fredberg haalt na Verschaeren nu ook pion Club Brugge",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/breaking-fredberg-haalt-na-verschaeren-nu-ook-pion-club-brugge",
-      "summary": "Club Brugge heeft de deur op een kier gezet voor een aantal spelers, die bij een afdoende bod mogen vertrekken op Jan Breydel. Eentje daarvan is Bjorn Meijer en voor hem is er ondertussen al meteen een gegadigde komen aankloppen. Trekt de Nederlander binnenkort naar Italië? Het ziet er naar uit.",
-      "publishedAt": "2026-08-11T23:00:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Fery feels 'no added pressure' despite being British No 1 as he returns",
+      "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
+      "summary": "Arthur Fery insists he feels “no added pressure” as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Draper in line to meet Djokovic at Cincinnati Open",
+      "link": "https://www.skysports.com/tennis/live-blog/12040/13523297/jack-draper-tennis-results-next-match-news-ranking-video-and-how-to-watch-on-sky-sports-tennis",
+      "summary": "",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -307,28 +329,6 @@
       "title": "Championship play-off changes, new managers & star players - the EFL is BACK!",
       "link": "https://www.skysports.com/football/news/12040/13571934/efl-2026-27-season-preview-championship-play-off-changes-new-managers-and-star-players",
       "summary": "The 2026/27 EFL season is here!",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sky Sports agrees deal to show Laver Cup from London's O2 in September",
-      "link": "https://www.skysports.com/tennis/news/12040/13571896/laver-cup-sky-sports-to-show-europe-vs-rest-of-the-world-from-londons-o2-in-september",
-      "summary": "Sky Sports has agreed a deal with Trident8 to show all three days of the Laver Cup from London's O2 arena this September, as 12 of the world's best men's players compete in the annual Europe vs 'Rest of the World' showdown.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Jodar on course for tennis history as Rybakina fights past Osaka",
-      "link": "https://www.skysports.com/tennis/news/12040/13572099/canadian-open-rafael-jodar-on-course-for-mens-tennis-history-as-elena-rybakina-fights-back-to-beat-naomi-osaka",
-      "summary": "Spanish teenager Rafael Jodar is on course to break the record for the fastest rise into the top 10 of men's tennis after beating Arthur Filis in the quarter-finals of the Canadian Open.",
       "publishedAt": null
     }
   ]
