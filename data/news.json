@@ -1,16 +1,49 @@
 {
-  "generatedAt": "2026-08-12T16:06:25.148Z",
+  "generatedAt": "2026-08-12T17:59:33.884Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "VI Live: Bizot en Maatsen in de basis tegen PSG",
+      "link": "https://www.vi.nl/nieuws/vi-live-psg-in-uefa-super-cup-tegen-europa-league-winnaar-aston-villa",
+      "summary": "Champions League-winnaar Paris Saint-Germain neemt het woensdag in de UEFA Super Cup op tegen Europa League-winnaar Aston Villa. De Franse en Engelse club staan om 21.00 uur tegenover elkaar. Blijf op de hoogte van dit duel in de VI Live.",
+      "publishedAt": "2026-08-12T17:47:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Can Mourinho restore Real Madrid to former glory?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cddjpz6q3d6o?at_medium=RSS&at_campaign=rss",
+      "summary": "Jose Mourinho is back at Real Madrid 13 years after leaving the club. But can the 63-year-old recapture the success of his first spell and deliver trophies at the Bernabeu? BBC Sport speaks to those who know Mourinho and Real Madrid best to assess whether his second stint can be a success.",
+      "publishedAt": "2026-08-12T17:44:45.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "IT",
       "flag": "🌍",
-      "title": "Fenerbahçe gaat vol voor succes en presenteert Lukaku",
-      "link": "https://www.vi.nl/nieuws/de-volgende-grote-naam-komt-eraan-fenerbahce-en-napoli-rond-over-lukaku",
-      "summary": "Fenerbahçe en Napoli hebben een deal voor de transfer van Romelu Lukaku (33). De Italiaanse club krijgt daar ongeveer zes miljoen euro plus bonussen voor. Lukaku werd woensdag gepresenteerd.",
-      "publishedAt": "2026-08-12T15:53:00.000Z"
+      "title": "Gattuso over Giménez: 'Ik ga geen spelers overtuigen om hierheen te komen'",
+      "link": "https://www.vi.nl/nieuws/gattuso-over-gimenez-ik-ga-geen-spelers-overtuigen-om-hierheen-te-komen",
+      "summary": "Santiago Giménez staat voor een aantal belangrijke weken. De spits van AC Milan mag weg, maar de kans lijkt klein dat Lazio zijn nieuwe club wordt.",
+      "publishedAt": "2026-08-12T17:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "European Super Cup: Paris Saint-Germain v Aston Villa – live",
+      "link": "https://www.theguardian.com/football/live/2026/aug/12/european-super-cup-paris-saint-germain-v-aston-villa-live",
+      "summary": "Live Super Cup updates from 8pm BST Email Scott | Premier League previews: Aston Villa Aston Villa already have the Super Cup on their roll of honour, of course. Gather round, dear children, and hear tell of a time in which FC Barcelona were less renowned for their Cruyffian devotion to the beautiful game, more interested in toe-punting whoever so much as looked at them all around the shop with great vim and vigour. The modern-day artistes of Paris Saint-Germain are unlikely to resort to such base hoodlummery this evening. That said, they’ve already thrown a toddler’s tanty over the size of their dressing room, so let’s rule nothing out. Will the European champions put Villa to the sword, just as they did Spurs this time last year? Or will Unai Emery fill an odd gap on his personal resumé, finally converting Europa League glory into Super Cup success at the nth time of asking? We find out soon! Kick-off in Salzburg is at 8pm BST. It’s on! Continue reading...",
+      "publishedAt": "2026-08-12T17:30:34.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +51,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Succesbondscoach Kroatië duikt op in de Emiraten",
-      "link": "https://www.vi.nl/nieuws/succesbondscoach-kroatie-duikt-op-in-de-emiraten",
-      "summary": "Zlatko Dalic is de nieuwe bondscoach van de Verenigde Arabische Emiraten. Het is niet voor het eerst dat de 59-jarige Kroaat in het Midden-Oosten gaat werken.",
-      "publishedAt": "2026-08-12T15:32:00.000Z"
+      "title": "Besiktas kondigt komst Vlahovic aan",
+      "link": "https://www.vi.nl/nieuws/besiktas-kondigt-komst-vlahovic-aan",
+      "summary": "Besiktas gaat aan de haal met Dusan Vlahovic. De Turkse topclub heeft officieel bevestigd dat de Servische spits in Istanbul is geland om zijn transfer af te ronden. Vlahovic maakt transfervrij de overstap naar de Süper Lig.",
+      "publishedAt": "2026-08-12T17:23:22.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "PSV haalt achttienjarige aanvaller van Eintracht Frankfurt voor beloftenploeg",
+      "link": "https://www.vi.nl/nieuws/psv-haalt-achttienjarige-aanvaller-van-eintracht-frankfurt-voor-beloftenploeg",
+      "summary": "PSV heeft Keziah Oteng-Mensah overgenomen van Eintracht Frankfurt. De achttienjarige aanvaller sluit aan bij Jong PSV. Hij heeft een contract tot medio 2029 getekend in Eindhoven.",
+      "publishedAt": "2026-08-12T17:01:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Heimwee naar The Entertainers",
+      "link": "https://www.vi.nl/pro/heimwee-naar-the-entertainers",
+      "summary": "Zelden vertoonde beelden als duizenden fans de overname van Newcastle United vieren. Waar in de rest van Europa de wenkbrauwen fronsen bij het nieuws dat de volksclub in handen valt van Saoedi-Arabië, schiet de hoop in Tyne en Wear subiet naar recordhoogte. Real, PSG, Bayern, here we come! Bijna vijf jaar later is daar ondanks een aantal topaankopen echter niks van terechtgekomen en ook na drie decennia zijn The Entertainers bij lange na nog niet vergeten.",
+      "publishedAt": "2026-08-12T17:00:00.000Z"
     },
     {
       "type": "rss",
@@ -29,64 +84,20 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arsenal reignite interest in Aston Villa's Konsa",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cx2v175j40zo?at_medium=RSS&at_campaign=rss",
-      "summary": "Aston Villa's central defender Ezri Konsa is thought to be Arsenal's preferred option in their search for a new central defender.",
-      "publishedAt": "2026-08-12T15:21:59.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ajax neemt Berghuis vanwege privéomstandigheden niet mee naar Ierland",
-      "link": "https://www.vi.nl/nieuws/ajax-neemt-berghuis-vanwege-priveomstandigheden-niet-mee-naar-ierland",
-      "summary": "Ajax neemt 23 spelers mee naar Ierland, waar donderdag de return tegen Shelbourne FC op het programma staat. Steven Berghuis is achtergebleven in Amsterdam.",
-      "publishedAt": "2026-08-12T15:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "FC Twente verwelkomt Hilgers weer",
-      "link": "https://www.vi.nl/nieuws/fc-twente-verwelkomt-hilgers-weer",
-      "summary": "Mees Hilgers is weer welkom bij FC Twente. De 25-jarige verdediger hervat per direct de groepstraining. Dat is het gevolg van een overleg tussen Hilgers en zijn werkgever.",
-      "publishedAt": "2026-08-12T14:54:28.000Z"
+      "title": "What's happening with Lewis-Skelly's Arsenal future?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/clyxpgjx4mjo?at_medium=RSS&at_campaign=rss",
+      "summary": "Myles Lewis-Skelly's long-term future at Arsenal has been debated since he slipped down the pecking order last season - will he stay with the Gunners with interest reportedly shown elsewhere?",
+      "publishedAt": "2026-08-12T16:49:46.000Z"
     },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Football Daily | Newcastle’s ‘rock star’ plays the hits but will he find it hard to stay in Toon?",
-      "link": "https://www.theguardian.com/football/2026/aug/12/newcastle-matthias-jaissle-football-daily-newsletter",
-      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! As rallying cries for the dawn of a golden era go, “I am quite optimistic” is not “ask not what your country can do for you, ask what you can do for your country”. It did not fit the “I think I am a special one” template set 22 years ago by Netflix’s latest documentary subject. Nor did Matthias Jaissle’s unveiling as Newcastle manager meet the pre-match billing of “fire” and “a rock star” that the club’s chief suit had promised the journalists in attendance. Though, considering the summer of tumult on Tyneside, it was a sensible path to take. Expectations among the Toon Army have certainly lowered since Geordies sunk Tin and donned tea-towel headdresses in celebration of Mike Ashley’s departure and the arrival of a consortium underpinned by the petrodollars of Saudi Arabia’s Public Investment Fund. As it turned out, Lionel Messi neither ended up mowing the pitch nor selling the pies. Bob Cushion (yesterday’s letters), your football club was caught cheating. Your club deserves everything it gets. Oh and no, I’m not a Pompey fan” – Darren Dodd. As a Wolves fan may I express gratitude to Wrexham and Southampton for preventing us from starting the season in last place. Although still in the relegation zone I remain moderately optimistic” – Rob Taylor Reading Big Website’s League One preview I was reminded that Stockport County have replaced the legendary Dave Challinor with one Jimmy McNulty. Does that mean the Hatters’ promotion challenge will once again go down to The Wire? (with excuses if this has been mentioned previously)” – Duncan Roberts. Continue reading...",
-      "publishedAt": "2026-08-12T14:52:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Transfers PSV: clausules Veerman en Dest naderen einde",
-      "link": "https://www.vi.nl/nieuws/transfers-psv-clausules-veerman-en-dest-naderen-einde",
-      "summary": "VI volgt het transfernieuws bij PSV op de voet. De doelwitten van de Eindhovenaren, duiding van de clubwatcher, of aandacht in buitenlandse media. We verzamelen alles hier.",
-      "publishedAt": "2026-08-12T14:42:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
+      "country": "INT",
+      "flag": "🌍",
       "title": "Lionel Messi has ‘quite a few doubts’ about football future after death of his father",
       "link": "https://www.theguardian.com/football/2026/aug/12/lionel-messi-doubts-football-future-death-of-his-father-jorge",
-      "summary": "Messi’s father, ⁠Jorge, died last week at age of 68 Argentinian suggests he may not play on much longer Lionel Messi said on Wednesday that he is having doubts about continuing his career following the death of his father last week. Messi’s father, ⁠Jorge, died last week aged 68 at a medical clinic in the Argentinian city of Rosario after a long illness. In a tribute on Instagram, Messi wrote: “I don’t know what I’m going to ⁠do without you. I ⁠don’t know how ​to move forward. I only played football and now I have quite a few doubts about whether I’m going to keep doing it for much ⁠longer. Continue reading...",
+      "summary": "Messi’s father, ⁠Jorge, died last week at age of 68 Argentinian suggests he may not play on much longer Lionel Messi has hinted that the end of his career may be near after ­admitting to “quite a few doubts” about his football future following the death of his father. Jorge Messi died last week at the age of 68 in Rosario, Argentina, after a long illness, with his health during this summer’s World Cup appearing to take a toll on Argentina’s 39-year-old captain. Continue reading...",
       "publishedAt": "2026-08-12T14:16:12.000Z"
     },
     {
@@ -110,17 +121,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cvgxz9xd95zo?at_medium=RSS&at_campaign=rss",
       "summary": "Inter Milan are in advanced talks to sign Tottenham and England full-back Djed Spence in a deal worth a minimum of £25.6m.",
       "publishedAt": "2026-08-12T13:43:30.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "South Korea crisis deepens over sexual favours for referees scandal",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cpw9px9z5wgo?at_medium=RSS&at_campaign=rss",
-      "summary": "The South Korean FA apologises amid a series of controversies and a police raid on its headquarters.",
-      "publishedAt": "2026-08-12T13:11:07.000Z"
     },
     {
       "type": "rss",
@@ -172,10 +172,87 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Du rire aux larmes : en immersion complète avec la délégation de l'Union dans le Grand Nord",
-      "link": "https://www.walfoot.be/news/2026-08-12/du-rire-aux-larmes-en-immersion-complete-avec-la-delegation-de-lunion-dans-le-grand-nord",
-      "summary": "La Ligue des Champions est déjà terminée pour l'Union Saint-Gilloise. Mais avant même de rejoindre l'Europa League, cette double confrontation contre Bodø/Glimt aura déjà fait vivre des sensations fortes à toute la délégation. Récit de deux journées intenses au nord du cercle polaire acrtique.",
-      "publishedAt": "2026-08-12T04:00:00.000Z"
+      "title": "Romelu Lukaku aperçu à Neerpede avant son départ : Vitor Bruno interrogé sur le Diable Rouge",
+      "link": "https://www.walfoot.be/news/2026-08-12/romelu-lukaku-apercu-a-neerpede-avant-son-depart--vitor-bruno-interroge-sur-le-diable-rouge",
+      "summary": "Fenerbahçe a bouclé l'arrivée de Romelu Lukaku. Le Belge, aperçu à Neerpede cette semaine, est attendu en Turquie et a envoyé un premier message aux supporters.",
+      "publishedAt": "2026-08-12T05:33:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Zware balans na uitschakeling CL: speelt Union SG sterkhouders kwijt?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/zware-balans-na-uitschakeling-cl-speelt-union-sg-sterkhouders-kwijt",
+      "summary": "Union SG heeft een bittere pil moeten slikken tegen Bodo/Glimt. Na verlengingen werd het uitgeschakeld en zo missen de Brusselaars de kans om de Champions League te spelen. En dus is de vraag wat er nu binnen de spelerskern gaat gebeuren.",
+      "publishedAt": "2026-08-12T05:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "OFFICIEL : Romelu Lukaku à Fenerbahçe, c'est parti !",
+      "link": "https://www.walfoot.be/news/2026-08-12/officiel-romelu-lukaku-a-fenerbahce-cest-parti-",
+      "summary": "Le transfert de Romelu Lukaku à Fenerbahçe est dans sa dernière ligne droite. Selon le journaliste spécialisé dans les transferts Nicolò Schira, un accord de principe a été trouvé pour un contrat jusqu’en 2028, avec également une option pour une année supplémentaire.",
+      "publishedAt": "2026-08-12T05:16:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Bruges et l’Union SG encore grands favoris pour le titre ? Les statistiques parlent d’elles-mêmes",
+      "link": "https://www.walfoot.be/news/2026-08-12/bruges-et-lunion-sg-encore-grands-favoris-pour-le-titre-les-statistiques-parlent-delles-memes",
+      "summary": "Le Club de Bruges et l’Union sont les deux grands favoris pour le titre cette saison. Derrière eux, les chances de sacre sont très faibles pour Genk, Anderlecht et les autres formations de Pro League. Du moins, si l’on en croit les statistiques.",
+      "publishedAt": "2026-08-12T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Bruno spreekt: Lukaku gespot op Neerpede, deal ondertussen officieel",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/bruno-spreekt-lukaku-gespot-op-neerpede-deal-ondertussen-officieel",
+      "summary": "De deal is officieel: Fenerbahçe heeft Romelu Lukaku beet. De speler zal straks landen op de luchthaven in Turkije en daarmee is de deal rond. De speler was deze week nog te vinden op Neerpede en heeft ondertussen al gesproken tegen de fans van zijn team.",
+      "publishedAt": "2026-08-12T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "La Challenger Pro League est bientôt de retour : voici cinq joueurs à suivre cette saison en D1B !",
+      "link": "https://www.walfoot.be/news/2026-08-12/la-challenger-pro-league-est-bientot-de-retour-voici-cinq-joueurs-a-suivre-cette-saison-en-d1b-",
+      "summary": "Ce vendredi, la Challenger Pro League fait son retour. L'antichambre de l'élite accueille deux nouvelles équipes, le Sporting Hasselt et l'Excelsior Virton, et comptera de nombreux talents à suivre. Nous avons décidé de vous en présenter cinq : une liste non-exhaustive !",
+      "publishedAt": "2026-08-12T04:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Max Dean traint gewoon mee bij KAA Gent: De Mil legt uit",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/max-dean-traint-gewoon-mee-bij-kaa-gent-de-mil-legt-uit",
+      "summary": "KAA Gent won in eigen huis met 2-0 van KV Mechelen. Opvallende afwezige op het wedstrijdblad bij de Buffalo's was Max Dean. De spits aast op een vertrek en zal vermoedelijk ook donderdag niet in actie komen tegen Göteborg in afwachting van een deal.",
+      "publishedAt": "2026-08-12T04:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"J’ai réussi à montrer ce que j’aime bien faire\" : Loïs Openda satisfait de ses premiers pas à l’OL",
+      "link": "https://www.walfoot.be/news/2026-08-12/jai-reussi-a-montrer-ce-que-jaime-bien-faire-los-openda-satisfait-de-ses-premiers-pas-a-lol",
+      "summary": "Loïs Openda a une nouvelle fois montré un visage positif avec l’OL face au Sparta Prague. Bien qu’il n’ait pas marqué, le joueur belge a réalisé une bonne prestation et a notamment provoqué un carton rouge. Il s’est exprimé en zone mixte après la rencontre.",
+      "publishedAt": "2026-08-12T04:20:00.000Z"
     },
     {
       "type": "rss",
@@ -190,17 +267,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Il a très bien joué et a beaucoup travaillé pour l’équipe\" : Openda marque des points auprès du coach de l’OL",
-      "link": "https://www.walfoot.be/news/2026-08-12/il-a-tres-bien-joue-et-a-beaucoup-travaille-pour-lequipe-openda-marque-des-points-aupres-du-coach-de-lol",
-      "summary": "Paulo Fonseca s'est évidemment montré ravi après la qualification de l'OL pour les barrages de la Ligue des champions. L'entraîneur des Gones s'est exprimé au micro d'OL Play après la rencontre contre le Sparta Prague (3-0) et a notamment pris la parole sur Loïs Openda.",
-      "publishedAt": "2026-08-12T03:30:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -212,69 +278,14 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Champion de Suède avec le club d’une commune de 1 250 habitants : il rejoint le Cercle de Bruges",
-      "link": "https://www.walfoot.be/news/2026-08-12/champion-de-suede-avec-le-club-dune-commune-de-1-250-habitants-il-rejoint-le-cercle-de-bruges",
-      "summary": "Le Cercle de Bruges a officialisé ce mercredi la signature du Gambien Abdoulie Manneh sous la forme d’un prêt d’une saison en provenance du club suédois de Mjällby AIF. L’ailier gauche de 21 ans espère franchir un cap dans la Venise du Nord.",
-      "publishedAt": "2026-08-12T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Lukaku op weg naar Turkije - wat wil dat zeggen voor de Rode Duivels?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/lukaku-op-weg-naar-turkije-wat-wil-dat-zeggen-voor-de-rode-duivels",
-      "summary": "Romelu Lukaku is onderweg naar Turkije, waar hij zal tekenen voor Fenerbahçe. Woensdagavond zet hij voet op Turkse bodem. En dan kan de boel helemaal losbarsten. Maar wat met de Rode Duivels? Philippe Albert spreekt over de zaak.",
-      "publishedAt": "2026-08-12T03:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "\"Quelqu’un a dû l’informer dans l'oreillette\" : pourquoi Kamiel Van de Perre a été expulsé \"en décalé\" ?",
-      "link": "https://www.walfoot.be/news/2026-08-12/quelquun-a-du-linformer-dans-loreillette-pourquoi-kamiel-van-de-perre-a-ete-expulse-en-decale-",
-      "summary": "Frank Boeckx est revenu sur l’exclusion de Kamiel Van de Perre face à Bodo/Glimt. L’ancien gardien a expliqué pourquoi l’arbitre avait sorti son carton jaune &quot;en décalé&quot;, plusieurs secondes après la faute.",
-      "publishedAt": "2026-08-12T02:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "DONE DEAL: KAA Gent verbaast met ex-speler ... Beveren",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/done-deal-kaa-gent-verbaast-met-ex-speler-beveren",
-      "summary": "KAA Gent is zich volop aan het versterken. Zeker in aanvallend opzicht en op de flanken mag er wel wat bij na het vertrek van Kanga en met het nakende vertrek van Max Dean in het achterhoofd. Ondertussen kijken ze ook naar de toekomst. In die optiek zijn ze uitgekomen bij Abdul Aziz Ouedraogo.",
-      "publishedAt": "2026-08-12T02:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Alexis Trouillet, sa première grande interview au Standard : \"Les mots de Marc Wilmots m'ont de suite touché\"",
-      "link": "https://www.walfoot.be/news/2026-08-12/alexis-trouillet-sa-premiere-grande-interview-au-standard-les-mots-de-marc-wilmots-mont-de-suite-touche",
-      "summary": "Titulaire pour la première en officiel de la saison contre le Cercle de Bruges, Alexis Trouillet a été présenté devant la presse ce mercredi, un mois après son arrivée au Standard. L'aspect humain, notamment porté par les mots de Marc Wilmots, a pesé dans sa décision de signer chez les Rouches.",
-      "publishedAt": "2026-08-12T02:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Anderlecht kent hem, Bob Peeters lyrisch: Beveren toont ambitie met nieuwe spits",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-12/anderlecht-kent-hem-bob-peeters-lyrisch-beveren-toont-ambitie-met-nieuwe-spits",
-      "summary": "SK Beveren begon zijn seizoen met een nederlaag op bezoek bij Royal Antwerp FC. Om dit seizoen in de Jupiler Pro League te blijven, zoekt de promovendus naar interessante versterkingen. Met Elohim Kaboré hebben ze nu opnieuw raak weten te schieten.",
-      "publishedAt": "2026-08-12T02:00:00.000Z"
+      "title": "Birmingham Phoenix win battle to avoid Hundred wooden spoon vs MI London",
+      "link": "https://www.skysports.com/cricket/news/12040/13572320/the-hundred-ellyse-perrys-half-century-sees-birmingham-phoenix-win-battle-to-avoid-wooden-spoon-vs-mi-london",
+      "summary": "Birmingham Phoenix prevailed in the battle to avoid the wooden spoon in The Hundred women's competition as Ellyse Perry's composed half-century condemned MI London to a sixth defeat of a chastening campaign.",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -282,7 +293,18 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Pre-season: Newcastle vs Everton team news LIVE!",
+      "title": "Guimaraes on bench as Arsenal face Como LIVE!",
+      "link": "https://www.skysports.com/football/arsenal-vs-como/live/562442",
+      "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Everton hit three past wide open Newcastle LIVE!",
       "link": "https://www.skysports.com/football/newcastle-united-vs-everton/live/568648",
       "summary": "",
       "publishedAt": null
@@ -304,31 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Cadillac sack team principal Lowdon as Budkowski takes charge",
-      "link": "https://www.skysports.com/f1/news/12040/13572275/cadillac-appoint-marcin-budkowski-as-team-principal-following-f1-2026-newcomers-sudden-sacking-of-graeme-lowdon",
-      "summary": "Cadillac have sacked team principal Graeme Lowdon and replaced him with Marcin Budkowski in what Formula 1's 2026 newcomers claim is a \"planned leadership transition\".",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "Fery feels 'no added pressure' despite being British No 1 as he returns",
       "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
       "summary": "Arthur Fery insists he feels “no added pressure” as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Vikings confirm Murray as starting QB",
-      "link": "https://www.skysports.com/nfl/live-blog/12040/13572233/nfl-news-trades-injuries-and-rumours-latest-updates-and-highlights-from-2026-pre-season-regular-season-playoffs-and-super-bowl",
-      "summary": "",
       "publishedAt": null
     }
   ]
