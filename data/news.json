@@ -1,104 +1,126 @@
 {
-  "generatedAt": "2026-08-13T08:24:07.675Z",
+  "generatedAt": "2026-08-13T10:11:18.272Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Telstar zwaait Tejan uit, spits vertrekt naar Maleisië",
+      "link": "https://www.vi.nl/nieuws/telstar-zwaait-tejan-uit-spits-vertrekt-naar-maleisie",
+      "summary": "Telstar neemt afscheid van Kay Tejan. De Eredivisionist maakt donderdag bekend dat het contract van de 29-jarige spits is ontbonden. Tejan vervolgt zijn carrière in Maleisië.",
+      "publishedAt": "2026-08-13T10:01:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Critical former referees add to culture of fear, says retiring Taylor",
+      "link": "https://www.bbc.co.uk/sport/football/articles/czxq25zejj4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Retiring Premier League referee Anthony Taylor says his decision to quit was partly due to the toxic debate around officials.",
+      "publishedAt": "2026-08-13T10:00:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un joueur du KRC Genk contraint de sortir sur blessure lors d'un match amical",
+      "link": "https://www.walfoot.be/news/2026-08-13/un-joueur-du-krc-genk-contraint-de-sortir-sur-blessure-lors-dun-match-amical",
+      "summary": "Genk a largement dominé le MVV Maastricht en match amical (7-0), mais a perdu Christian Akpan sur blessure. Touché après un duel, le latéral droit a dû quitter le terrain et attend désormais d’en savoir plus sur la gravité de sa blessure.",
+      "publishedAt": "2026-08-13T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "‘KV Mechelen wil verdediger van Union-killer binnenhalen’",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/kv-mechelen-wil-verdediger-van-union-killer-binnenhalen",
+      "summary": "KV Mechelen wil zich deze zomer nog versterken met Villads Nielsen. De 21-jarige Deense centrale verdediger staat onder contract bij Bodø/Glimt, maar is er geen vaste basisspeler. Zijn Europese ervaring maakt hem interessant voor Malinwa.",
+      "publishedAt": "2026-08-13T10:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Simeone krijgt zijn zin: Atlético Madrid in zee met 'Cuti' Romero'",
+      "link": "https://www.vi.nl/nieuws/simeone-krijgt-zijn-zin-atletico-madrid-in-zee-met-cuti-romero",
+      "summary": "Cristian 'Cuti' Romero heeft naar alle waarschijnlijkheid zijn laatste wedstrijd voor Tottenham Hotspur gespeeld. De Argentijnse mannetjesputter rondt een dezer dagen een transfer naar Atlético Madrid af.",
+      "publishedAt": "2026-08-13T09:50:26.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Le RWDM ne s’arrête plus : de nouveaux joueurs débarquent encore à Molenbeek",
+      "link": "https://www.walfoot.be/news/2026-08-13/le-rwdm-ne-sarrete-plus-de-nouveaux-joueurs-debarquent-encore-a-molenbeek",
+      "summary": "Le RWDM continue d'être très actif sur le marché des transferts. Les Bruxellois ont récemment annoncé les signatures de Noa Wyns, Pedro Pinto et Nathan De Raes.",
+      "publishedAt": "2026-08-13T09:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge slaat enorme kloof met Genk, Anderlecht en Union - rest niet op de geldfoto",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/analyse-club-brugge-slaat-enorme-kloof-met-genk-anderlecht-en-union-rest-niet-op-de-geldfoto",
+      "summary": "Nog een paar weken en de zomermercato zit er weer op. En dan is het de vraag welke spelers de Belgische teams zullen hebben zien vertrekken en welke ze in huis hebben gehaald. Club Brugge lijkt zowat alles en iedereen momenteel af te troeven en staat zo op eenzame hoogte.",
+      "publishedAt": "2026-08-13T09:40:00.000Z"
+    },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Football transfer rumours: Galatasaray to spend £38m on Arsenal’s Martinelli?",
-      "link": "https://www.theguardian.com/football/2026/aug/13/football-transfer-rumour-mill-galatasaray-38m-arsenal-gabriel-martinelli",
-      "summary": "Today’s fluff preferred Bonnie Tyler’s version Curtis Jones’s future has been the subject of much gossipmongering this summer, especially with Inter plonking him in the middle of their radar. The Italians have sniffed around the midfielder for quite a while and may ramp up their interest very soon with a bid of £30m to test Liverpool’s resolve. Ipswich are not willing to stop their summer spending and a return for Julio Enciso looks nailed on. The Paraguay international had an injury-plagued loan spell at Portman Road in 2025 but is back to lead their battle for Premier League survival after a permanent deal was agreed with Strasbourg. Also making the move from the French club is right-back Abdoul Ouattara. Continue reading...",
-      "publishedAt": "2026-08-13T08:14:07.000Z"
+      "title": "Chelsea set Friday deadline for Fernández suitors as City reject new £51m Barça bid for Rodri",
+      "link": "https://www.theguardian.com/football/2026/aug/13/manchester-city-barcelona-rodri-chelsea-enzo-fernandez",
+      "summary": "Manchester City want around £65m for Spain midfielder Al-Qadsiah closing on move for City’s Tijjani Reijnders Manchester City have rejected Barcelona’s second bid of around €60m (£51m) for Rodri, while Chelsea have set a 5pm (BST) Friday deadline for the club to bid £120m for the midfielder’s potential replacement, Enzo Fernández. On Tuesday Barça improved on their initial offer of €45m but this has been turned down. City, it is thought, want between £60m and £65m for Rodri, who captained Spain to victory at the World Cup and is a former Ballon d’Or winner. Continue reading...",
+      "publishedAt": "2026-08-13T09:26:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Fulham leave pitch as Malaga take penalty into empty net",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cz052j8x9x1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Fulham's pre-season friendly against Malaga ends in chaotic fashion as the Premier League side leave the pitch before a penalty shootout.",
+      "publishedAt": "2026-08-13T09:17:34.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Drommel op doel, geen Weghorst: FC Twente laat vijftal thuis voor return tegen DAC",
-      "link": "https://www.vi.nl/nieuws/drommel-op-doel-geen-weghorst-fc-twente-laat-vijftal-thuis-voor-return-tegen-dac",
-      "summary": "FC Twente treedt in de return tegen DAC 1904 niet op volle oorlogssterkte aan. Trainer John van den Brom laat vanwege de goede uitgangspositie de nodige spelers achter in Enschede.",
-      "publishedAt": "2026-08-13T08:13:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "KRC Genk haalt uit met 7-0 in oefenpot, maar ziet ook speler geblesseerd uitvallen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/krc-genk-haalt-uit-met-7-0-in-oefenpot-maar-ziet-ook-speler-geblesseerd-uitvallen",
-      "summary": "KRC Genk won maandag achter gesloten deuren met zware 7-0-cijfers van MVV. Toch was er ook een domper: rechtsachter Christian Akpan moest al vroeg geblesseerd naar de kant. De ernst van zijn blessure is voorlopig onduidelijk.",
-      "publishedAt": "2026-08-13T08:10:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "NEC heeft met Brás langverwachte verdediger binnen",
-      "link": "https://www.vi.nl/nieuws/nec-heeft-met-bras-langverwachte-verdediger-binnen",
-      "summary": "NEC-trainer Dick Schreuder kan zijn hart ophalen: zijn gewenste defensieve versterking is binnen. Donderdagochtend maakten de Nijmegenaren bekend dat Gabriel Brás overkomt van FC Porto. De Portugees wordt allereerst gehuurd, maar er is ook een optie tot koop opgenomen in de huurovereenkomst.",
-      "publishedAt": "2026-08-13T08:06:36.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEL : l'ancien joueur de l'Union SG Franjo Ivanović rejoint un club de Ligue 1",
-      "link": "https://www.walfoot.be/news/2026-08-13/officiel-lancien-joueur-de-lunion-sg-franjo-ivanovic-rejoint-un-club-de-ligue-1",
-      "summary": "La première saison de Franjo Ivanović au Portugal pourrait être la dernière. À 22 ans, l'ancien buteur de l'Union Saint-Gilloise est suivi par la Lazio et le RC Lens, qui aimeraient profiter de sa situation à Benfica pour le recruter cet été.",
-      "publishedAt": "2026-08-13T08:05:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE: Trekt Anderlecht Europese voorsprong over de streep tegen pittig PAOK?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/live-trekt-anderlecht-europese-voorsprong-over-de-streep-tegen-pittig-paok",
-      "summary": "Eén wedstrijd staat tussen Anderlecht en zekerheid van een Europese League Phase. Wordt het in de Europa League? Dan moeten ze vanavond voorbij het Griekse PAOK.",
-      "publishedAt": "2026-08-13T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'De Eredivisie verveelt nooit'",
-      "link": "https://www.vi.nl/pro/de-eredivisie-verveelt-nooit",
-      "summary": "Nick Viergever (37) is de oude rot in de jonge en talentvolle selectie van PEC Zwolle. De verdediger is begonnen aan zijn zesde avontuur in de Eredivisie en weet voorlopig nog niet van ophouden. Viergever vertelt over de veranderende voetbalwereld, ouder worden en natuurlijk leiderschap. ‘Ik heb nog evenveel plezier als in het begin.’",
-      "publishedAt": "2026-08-13T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
+      "country": "ES",
       "flag": "🌍",
-      "title": "Enrique nadert Guardiola en Ancelotti en treedt met PSG in de voetsporen van Ajax",
-      "link": "https://www.vi.nl/nieuws/enrique-nadert-guardiola-en-ancelotti-en-treedt-met-psg-in-de-voetsporen-van-ajax",
-      "summary": "Met zijn zesde Europese titel is Luis Enrique sinds woensdag de op twee na succesvolste trainer in Europese clubcompetities. Ook trad hij met Paris Saint-Germain in de voetsporen van onder meer Ajax.",
-      "publishedAt": "2026-08-13T07:49:12.000Z"
+      "title": "'Spanning tussen Barça en Man City loopt op: tweede Rodri-bod ook geweigerd'",
+      "link": "https://www.vi.nl/nieuws/spanning-tussen-barca-en-man-city-loopt-op-tweede-rodri-bod-ook-geweigerd",
+      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
+      "publishedAt": "2026-08-13T09:15:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "‘Dortmund wil opnieuw toeslaan in JPL, maar Club Brugge weigert (voorlopig) mee te werken’",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/dortmund-wil-opnieuw-toeslaan-in-jpl-maar-club-brugge-weigert-voorlopig-mee-te-werken",
-      "summary": "Borussia Dortmund heeft Carlos Forbs op de radar. De 22-jarige flankaanvaller van Club Brugge kende een sterk seizoen en wordt inmiddels ook gevolgd door Bayer Leverkusen en Atlético Madrid. Blauw-zwart wil hem voorlopig niet laten gaan.",
-      "publishedAt": "2026-08-13T07:45:00.000Z"
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Vitor Bruno verklapt maar een deeltje over geheime Anderlecht-trainingen",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/vitor-bruno-verklapt-maar-een-deeltje-over-geheime-anderlecht-trainingen",
+      "summary": "Anderlecht probeert zich zo goed mogelijk voor te bereiden op een Europese kwalificatie tegen PAOK die op strafschoppen kan uitdraaien. Volgens Vitor Bruno wordt er regelmatig geoefend op de elfmetertrappen, al blijft de manier waarop een goed bewaard geheim.",
+      "publishedAt": "2026-08-13T09:10:00.000Z"
     },
     {
       "type": "rss",
@@ -106,43 +128,76 @@
       "sourceSlug": "walfoot",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Zinédine Zidane dévoile son staff : plusieurs grands noms à ses côtés",
-      "link": "https://www.walfoot.be/news/2026-08-13/zinedine-zidane-devoile-son-staff-plusieurs-grands-noms-a-ses-cotes",
-      "summary": "C'était plus que jamais attendu, mais c'est désormais officiel : Zinédine Zidane succède à Didier Deschamps au poste de sélectionneur de l'équipe de France. La nouvelle a été annoncée par la Fédération française de football (FFF) ce mardi en fin de matinée.",
-      "publishedAt": "2026-08-13T07:42:30.000Z"
+      "title": "\"Il fait partie des bons joueurs de ce monde\" : Luis Enrique répond à une question sur Mika Godts",
+      "link": "https://www.walfoot.be/news/2026-08-13/il-fait-partie-des-bons-joueurs-de-ce-monde-luis-enrique-repond-a-une-question-sur-mika-godts",
+      "summary": "Alors que Mika Godts se rapproche d'un transfert au PSG, l'entraîneur parisien, Luis Enrique, a été interrogé à son propos après le succès du PSG en finale de la Supercoupe d'Europe contre Aston Villa (2-1). L'entraîneur espagnol n'a pas voulu en dire trop, mais a tout de même glissé un message.",
+      "publishedAt": "2026-08-13T09:10:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Al-Qadsiah bijna akkoord met Man City over transfersom Reijnders'",
-      "link": "https://www.vi.nl/nieuws/al-qadsiah-bijna-akkoord-met-man-city-over-transfersom-reijnders",
-      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-08-13T07:34:00.000Z"
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Chelsea stelt ultimatum: Manchester City krijgt twee dagen om Fernández te halen'",
+      "link": "https://www.vi.nl/nieuws/chelsea-stelt-ultimatum-manchester-city-krijgt-twee-dagen-om-fernandez-te-halen",
+      "summary": "Chelsea heeft Manchester City een ultimatum gesteld. Indien de Citizens zich deze zomer willen versterken met Enzo Fernández, moet er uiterlijk vrijdagmiddag een bod binnenkomen dat voldoet aan de eisen van Chelsea.",
+      "publishedAt": "2026-08-13T09:06:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Al-Qadsiah bijna akkoord met Manchester City over transfersom Reijnders'",
+      "link": "https://www.vi.nl/nieuws/al-qadsiah-bijna-akkoord-met-manchester-city-over-transfersom-reijnders",
+      "summary": "Tijjani Reijnders heeft er een extra optie bij. Volgens internationale media is Al-Qadsiah zo goed als rond met Manchester City over de transfer van de Oranje-international. Dan is het vervolgens aan Reijnders zelf om te bepalen of hij de overstap ook ziet zitten.",
+      "publishedAt": "2026-08-13T09:01:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "KAA Gent heeft maar één opdracht tegen Zweden, wat met de twee hamvragen?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/kaa-gent-heeft-maar-een-opdracht-tegen-zweden-wat-met-de-twee-hamvragen",
+      "summary": "Er komt een belangrijke donderdag aan voor het Belgisch voetbal. Zowel KAA Gent als RSC Anderlecht kunnen een nieuwe stap zetten richting een Europese herfst. De Buffalo's verdedigen een krappe voorsprong na een 0-1 zege in Göteborg.",
+      "publishedAt": "2026-08-13T08:55:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Manchester United montre toute sa confiance envers Senne Lammens avec une décision symbolique",
+      "link": "https://www.walfoot.be/news/2026-08-13/manchester-united-montre-toute-sa-confiance-envers-senne-lammens-avec-une-decision-symbolique",
+      "summary": "Senne Lammens portera désormais le mythique numéro 1 à Manchester United. Suite au départ d'Altay Bayindir en prêt au Celta Vigo, le Diable Rouge récupère ce chiffre. Précédemment, il portait le numéro 31, qui lui avait été attribué lors de son arrivée chez les Red Devils.",
+      "publishedAt": "2026-08-13T08:50:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "L’Union SG face à un problème inattendu pour la Coupe d’Europe",
-      "link": "https://www.walfoot.be/news/2026-08-13/lunion-sg-face-a-un-probleme-inattendu-pour-la-coupe-deurope",
-      "summary": "L’Union doit composer avec une contrainte inattendue pour faire sa liste européenne. En raison des règles de l’UEFA concernant les joueurs formés localement, les Bruxellois ne peuvent inscrire que 21 joueurs. Fedde Leysen ne peut même pas être comptabilisé dans ce quota malgré sa nationalité belge.",
-      "publishedAt": "2026-08-13T07:30:00.000Z"
+      "title": "‘Cercle Brugge toont interesse in ex-speler van RWDM’",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/cercle-brugge-toont-interesse-in-ex-speler-van-rwdm",
+      "summary": "Cercle Brugge wil zich nog versterken en heeft zijn oog laten vallen op Tayo Adaramola. De 22-jarige Ierse linksachter staat onder contract bij Crystal Palace en zou na een reeks uitleenbeurten een nieuwe kans kunnen krijgen in België.",
+      "publishedAt": "2026-08-13T08:40:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Inquiétude à l’Antwerp : le verdict est tombé pour ce joueur sorti en larmes",
-      "link": "https://www.walfoot.be/news/2026-08-13/inquietude-a-lantwerp-le-verdict-est-tombe-pour-ce-joueur-sorti-en-larmes",
-      "summary": "L’Antwerp a débuté sa nouvelle saison dimanche soir avec une rencontre à domicile face à Beveren. Pour plusieurs joueurs, il s’agissait immédiatement de leur première apparition officielle au Bosuil, parmi lesquels Carlos Meija.",
-      "publishedAt": "2026-08-13T07:30:00.000Z"
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Ferran Torres se rapproche d’un transfert au PSG : voici où en est le dossier",
+      "link": "https://www.walfoot.be/news/2026-08-13/ferran-torres-se-rapproche-dun-transfert-au-psg-voici-ou-en-est-le-dossier",
+      "summary": "Luis Enrique pourrait accueillir du renfort en attaque. Le PSG avance sur plusieurs dossiers, avec Ferran Torres en tête de liste et Charles De Ketelaere parmi les solutions envisagées.",
+      "publishedAt": "2026-08-13T08:36:32.000Z"
     },
     {
       "type": "rss",
@@ -154,17 +209,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cz9722y1ee7o?at_medium=RSS&at_campaign=rss",
       "summary": "Lionel Messi makes a substitute appearance for Inter Miami on Wednesday following the death of his father and hinting he may retire.",
       "publishedAt": "2026-08-13T07:19:46.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "In tranen van het veld: update over blessure van Antwerpspeler",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/in-tranen-van-het-veld-update-over-blessure-van-antwerpspeler",
-      "summary": "Antwerp begon zondagavond aan zijn nieuwe seizoen met een thuiswedstrijd tegen SK Beveren. Voor verschillende spelers was het meteen hun eerste officiële optreden op de Bosuil. Ook de 19-jarige Carlos Mejia kreeg die kans, maar zijn avond eindigde bijzonder zuur.",
-      "publishedAt": "2026-08-13T07:15:00.000Z"
     },
     {
       "type": "rss",
@@ -201,39 +245,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Youri Tielemans se met des supporters d'Aston Villa à dos : \"Il existe des clubs au-dessus de Villa\"",
-      "link": "https://www.walfoot.be/news/2026-08-13/youri-tielemans-se-met-des-supporters-daston-villa-a-dos-il-existe-des-clubs-au-dessus-de-villa",
-      "summary": "Youri Tielemans s'est récemment exprimé pour la première fois dans une longue interview depuis son arrivée à Manchester United. Le Diable Rouge a notamment évoqué ses ambitions. Une déclaration concernant Aston Villa est également mal passée auprès de nombreux fans des Villains...",
-      "publishedAt": "2026-08-13T07:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "📷 Familiaal drama bij gezin van jongere broer van Lommel-spits Ralf Seuntjens",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-13/de-derde-helft-familiaal-drama-bij-gezin-van-jongere-broer-van-lommel-spits-ralf-seuntjens",
-      "summary": "De familie Seuntjens is getroffen door een onbeschrijfelijk verlies. Mats Seuntjens, middenvelder van NAC Breda en jongere broer van Lommel-spits Ralf, verloor samen met zijn partner Elba hun pasgeboren dochtertje Celine Inaya.",
-      "publishedAt": "2026-08-13T06:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Can Sunderland defy the Premier League doubters again?",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cn8ndw25yjeo?at_medium=RSS&at_campaign=rss",
-      "summary": "Sunderland were one of the stories of the 2025-26 Premier League season - but can they do it again this time around, with added European commitments?",
-      "publishedAt": "2026-08-13T05:52:23.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
@@ -267,14 +278,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Fernandes the centre of attention - but what next for Man Utd captain?",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cvgwzegz9ggo?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United skipper Bruno Fernandes is attracting attention on and off the pitch.",
-      "publishedAt": "2026-08-12T21:40:45.000Z"
+      "title": "Leeds Rhinos sign Lodge from NRL's Cowboys",
+      "link": "https://www.skysports.com/rugby-league/live-blog/12040/13303427/rugby-league-news-transfers-and-rumours-super-league-latest-and-highlights",
+      "summary": "",
+      "publishedAt": null
     },
     {
       "type": "rss",
@@ -313,22 +324,11 @@
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Today on Sky Sports Racing: Windsor and Lingfield feature on Thursday",
-      "link": "https://www.skysports.com/racing/news/12040/13571992/today-on-sky-sports-racing-windsor-and-lingfield-feature-live-on-thursday",
-      "summary": "Windsor and Lingfield play host to Thursday evening's action - live on Sky Sports Racing.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Where would Antonelli rank among surprise F1 title winners?",
-      "link": "https://www.skysports.com/f1/news/12040/13571878/kimi-antonelli-where-would-mercedes-driver-rank-among-surprise-f1-title-winners-in-recent-history",
-      "summary": "Kimi Antonelli is on course to become Formula 1’s youngest-ever world champion, but where would the Mercedes driver’s triumph rank among the sport’s biggest surprise title wins in recent history?",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Man City reject fresh Barcelona bid for Rodri",
+      "link": "https://www.skysports.com/football/news/12040/13567985/rodri-transfer-news-man-city-reject-55m-bid-from-barcelona-for-world-cup-winning-midfielder",
+      "summary": "Manchester City have rejected a new £55m bid from Barcelona for Rodri.",
       "publishedAt": null
     }
   ]
