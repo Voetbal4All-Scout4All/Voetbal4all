@@ -1,6 +1,50 @@
 {
-  "generatedAt": "2026-08-15T11:24:01.024Z",
+  "generatedAt": "2026-08-15T12:43:04.386Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Kitolano loopt blessure op bij Bodø in aanloop naar CL-tweeluik met NEC",
+      "link": "https://www.vi.nl/nieuws/kitolano-loopt-blessure-op-bij-bodo-in-aanloop-naar-cl-tweeluik-met-nec",
+      "summary": "Joshua Kitolano heeft een ogenschijnlijke knieblessure opgelopen bij Bodø/Glimt. Het is onduidelijk of de voormalige middenvelder van Sparta Rotterdam in actie kan komen tijdens het tweeluik met NEC in de play-offs van de Champions League.",
+      "publishedAt": "2026-08-15T12:29:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Kaplan alsnog van Ajax naar NEC",
+      "link": "https://www.vi.nl/nieuws/kaplan-alsnog-van-ajax-naar-nec",
+      "summary": "Ahmetcan Kaplan (23) maakt alsnog de transfer naar NEC. De verdediger van Ajax had in Amsterdam nog een contract tot medio 2027.",
+      "publishedAt": "2026-08-15T12:26:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "'Bayern München kan kapitaalinjectie van 250 miljoen verwachten'",
+      "link": "https://www.vi.nl/nieuws/bayern-munchen-kan-kapitaalinjectie-van-250-miljoen-verwachten",
+      "summary": "Bayern München kan op korte termijn 250 miljoen euro ontvangen. Der Rekordmeister is voornemens om de laatste vijf procent van de aandelen verkopen, zo melden Duitse media.",
+      "publishedAt": "2026-08-15T12:05:45.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hull sign Gelhardt and Gourna-Douath",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cvg8qgg7qg1o?at_medium=RSS&at_campaign=rss",
+      "summary": "Hull City sign English forward Joe Gelhardt from Leeds and French midfielder Lucas Gourna-Douath from Red Bull Salzburg for undisclosed fees.",
+      "publishedAt": "2026-08-15T12:03:16.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -58,39 +102,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Anderlecht moet Club Brugge kietelen en zeker tweede voor Union SG worden\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/anderlecht-moet-club-brugge-kietelen-en-zeker-tweede-voor-union-sg-worden",
-      "summary": "RSC Anderlecht heeft er al een druk begin van het seizoen opzitten. Zondagmiddag trekt het naar promovendus Beveren en gaat het op zoek naar een 6 op 6 in de competitie. Er is veel veranderd op twaalf maanden in de hoofdstad.",
-      "publishedAt": "2026-08-15T10:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE: Veel vragen voor Genk en Westerlo na pijnlijke openingsspeeldag",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/live-veel-vragen-voor-genk-en-westerlo-na-pijnlijke-openingsspeeldag",
-      "summary": "Racing Genk en Westerlo staan zaterdagavond in de Cegeka Arena tegenover elkaar met hetzelfde doel: de eerste tik van het nieuwe seizoen meteen wegspoelen. Beide ploegen begonnen met een voorsprong aan hun openingswedstrijd, maar bleven uiteindelijk met lege handen achter.",
-      "publishedAt": "2026-08-15T10:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "'Iedereen die tegen Infantino stemt, moet zich laten nakijken'",
-      "link": "https://www.vi.nl/nieuws/iedereen-die-tegen-infantino-stemt-moet-zich-laten-nakijken",
-      "summary": "Iedereen die Gianni Infantino niet als voorzitter van de FIFA wil behouden, moet zich laten nakijken. Dat stelt Andrew Giuliani, voormalig uitvoerend directeur van de task force van het Witte Huis voor het WK van 2026. 'Mensen zijn jaloers op mensen die uitzonderlijk goed presteren.'",
-      "publishedAt": "2026-08-15T10:28:47.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "FR",
@@ -99,17 +110,6 @@
       "link": "https://www.theguardian.com/football/2026/aug/15/psg-ferran-torres-barcelona-transfer-window",
       "summary": "Spain World Cup winner signs five-year deal ‘I’m delighted to be beginning a new adventure’ Paris Saint-Germain have signed Spain’s World Cup-winning ⁠forward Ferran Torres from Barcelona on a contract until 2031. Financial ​details were not disclosed, but reports said PSG paid €50m (£42.7m) ⁠for the 26-year-old. “I’m delighted to be beginning a new adventure at such an ambitious ⁠club as Paris Saint-Germain,” Torres said in ​a statement. “I’d like ‌to thank President ‌Nasser al-Khelaifi, Luis Campos [PSG’s football adviser] and coach ‌Luis Enrique for giving me the opportunity to join the team, which I hope to help win as many trophies as possible.” Continue reading...",
       "publishedAt": "2026-08-15T10:23:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "'Rafael Leão krijgt te horen dat hij moet vertrekken'",
-      "link": "https://www.vi.nl/nieuws/leverkusen-wil-tillman-verkopen-reis-verlaat-club-brugge-na-een-seizoen",
-      "summary": "Het is weer de tijd van het jaar waarin het transfers regent. Traditiegetrouw volgt Voetbal International de buitenlandse markt op de voet. Bekijk hier ons blog voor de transferperikelen in Nederland.",
-      "publishedAt": "2026-08-15T10:15:01.000Z"
     },
     {
       "type": "rss",
@@ -124,28 +124,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Boeterad én verwarring op parkeerplaats Roda JC: 'Wisten niet dat ik speler ben'",
-      "link": "https://www.vi.nl/nieuws/boeterad-en-verwarring-op-parkeerplaats-roda-jc-wisten-niet-dat-ik-speler-ben",
-      "summary": "Een opvallende gang van zaken bij Roda JC. Nieuwkomer Jeremiah Mensah kon de parkeerplaats niet op, omdat hij niet als speler werd herkend. Laat parkeerwacht zijn nu net een van de mogelijke straffen zijn op het door de selectie samengestelde boeterad.",
-      "publishedAt": "2026-08-15T10:03:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Is dit het geheime recept van nieuwe Anderlechttrainer Bruno?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/match-reactie-is-dit-het-geheime-recept-van-nieuwe-anderlechttrainer-bruno",
-      "summary": "Er hangt opnieuw, voor het eerst in lange tijd, een positieve sfeer rond het Lotto Park. En dat heeft alles te maken met de nieuwe Portugese wind die waait met aan het hoofd trainer Vito Bruno.",
-      "publishedAt": "2026-08-15T10:00:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "ES",
@@ -157,33 +135,11 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Chambaere confirmé, plusieurs cadres ménagés ? La composition probable de l'Union contre Zulte Waregem",
-      "link": "https://www.walfoot.be/news/2026-08-15/chambaere-confirme-plusieurs-cadres-menages-la-composition-probable-de-lunion-contre-zulte-waregem",
-      "summary": "L'Union Saint-Gilloise retrouve son parc Duden à l'occasion de la réception de Zulte Waregem ce samedi. David Hubert remaniera-t-il ses troupes après le match énergivore de mardi à Bodø/Glimt ?",
-      "publishedAt": "2026-08-15T09:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "C'est officiel : l'Union Saint-Gilloise réalise le plus gros transfert de son histoire",
-      "link": "https://www.walfoot.be/news/2026-08-15/cest-officiel-lunion-saint-gilloise-realise-le-plus-gros-transfert-de-son-histoire",
-      "summary": "L'information est officielle : Anan Khalaili quitte l'Union Saint-Gilloise contre un montant estimé à 24 millions d'euros, hors bonus. Le flanc droit aura disputé 101 rencontres au Parc Duden, remporté quatre trophées et permis au club bruxellois de réaliser une très belle opération financière.",
-      "publishedAt": "2026-08-15T08:54:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "ES",
       "flag": "🌍",
-      "title": "Romero reflects on Spurs stay as Atletico move confirmed",
+      "title": "'I know I wasn't perfect' - Romero joins Atletico from Spurs",
       "link": "https://www.bbc.co.uk/sport/football/articles/c20dyz4vrero?at_medium=RSS&at_campaign=rss",
       "summary": "Cristian Romero says he \"wasn't perfect\" during his five years with Tottenham Hotspur as his move to Atletico Madrid is confirmed.",
       "publishedAt": "2026-08-15T07:44:59.000Z"
@@ -194,7 +150,7 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Premier League clubs looking to EFL for next Semenyo & Eze",
+      "title": "Premier League clubs looking to EFL for next Semenyo and Eze",
       "link": "https://www.bbc.co.uk/sport/football/articles/c5y6w5972lyo?at_medium=RSS&at_campaign=rss",
       "summary": "Premier League clubs are continuing to recruit young players from EFL and Scottish academies for their U21 and B-team squads.",
       "publishedAt": "2026-08-15T07:16:50.000Z"
@@ -227,21 +183,76 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'This is the right one' - Rohl on leaving Rangers for Salzburg",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cj9dpvwl1nmo?at_medium=RSS&at_campaign=rss",
-      "summary": "Danny Rohl explains why he left Rangers for Red Bull Salzburg - where he hopes to win trophies and help develop young players.",
-      "publishedAt": "2026-08-15T06:19:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "No player bigger than a club - is that changing for some fans?",
       "link": "https://www.bbc.co.uk/sport/football/articles/cn8ner50zdno?at_medium=RSS&at_campaign=rss",
       "summary": "From Lionel Messi and Cristiano Ronaldo to Erling Haaland and Jude Bellingham, are star names a bigger draw than clubs for young fans?",
       "publishedAt": "2026-08-15T05:59:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Na Union en Monaco: 'Pocognoli staat op het punt om bondscoach te worden'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/na-union-en-monaco-pocognoli-staat-op-het-punt-om-bondscoach-te-worden",
+      "summary": "Na zijn vertrek bij AS Monaco hoeft Sébastien Pocognoli mogelijk niet lang te wachten op een nieuwe uitdaging. De voormalige kampioenenmaker van Union is in beeld voor een prestigieuze job bij een nationale ploeg en lijkt daar momenteel de beste papieren te hebben.",
+      "publishedAt": "2026-08-15T00:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Un champion du monde rejoint son ancien beau-père à Paris",
+      "link": "https://www.walfoot.be/news/2026-08-15/un-champion-du-monde-rejoint-son-ancien-beau-pere-a-paris",
+      "summary": "L'homme qui a offert le titre mondial à l'Espagne change de crèmerie. Ferran Torres vient officiellement de s'engager au PSG après cinq saisons passées en Liga, du côté du Barça. Dans la Ville Lumière, il retrouvera son ancien beau-père Luis Enrique.",
+      "publishedAt": "2026-08-15T00:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Volgend seizoen de grote terugkeer? \"De natte droom van elke Anderlecht-supporter\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/volgend-seizoen-de-grote-terugkeer-de-natte-droom-van-elke-anderlecht-supporter",
+      "summary": "Romelu Lukaku begint aan een nieuw hoofdstuk in Turkije. De Rode Duivel heeft Napoli verlaten voor Fenerbahçe, dat zes miljoen euro neertelde voor de spits. Lukaku tekende er voor één seizoen, met een optie op nog een extra jaar. Johan Boskamp ziet kansen, maar ook duidelijke risico’s.",
+      "publishedAt": "2026-08-15T00:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Un ancien éphémère anderlechtois sur les tablettes de Benfica",
+      "link": "https://www.walfoot.be/news/2026-08-15/un-ancien-ephemere-anderlechtois-sur-les-tablettes-de-benfica",
+      "summary": "Passé six mois par le Lotto Park entre juillet 2021 et janvier 2022, la carrière de Taylor Harwood-Bellis, prêté par Manchester City, s'est principalement écrite en Championship, l'antichambre de l'élite. Mais un nouveau chapitre pourrait s'écrire au sein d'un grand nom européen.",
+      "publishedAt": "2026-08-14T23:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "LIVE - Transfernieuws 15/8: nieuws over Rodri, Stassin én Balikwisha",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/live-transfernieuws-15-8-nieuws-over-rodri-stassin-en-balikwisha",
+      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
+      "publishedAt": "2026-08-14T23:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Michel-Ange Balikwisha (ex-Antwerp) overbodig bij Celtic: drie opvallende pistes duiken op",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/michel-ange-balikwisha-ex-antwerp-overbodig-bij-celtic-drie-opvallende-pistes-duiken-op",
+      "summary": "Michel-Ange Balikwisha lijkt aan zijn laatste weken bij Celtic bezig. De flankaanvaller verdween de voorbije maanden steeds verder uit beeld en een transfer dringt zich stilaan op. Met AC Monza, FC Basel en Elversberg zijn er alvast drie clubs die zijn situatie van dichtbij volgen.",
+      "publishedAt": "2026-08-14T23:30:00.000Z"
     },
     {
       "type": "rss",
@@ -252,17 +263,6 @@
       "title": "Le Club de Bruges veut anticiper un départ de Joaquin Seys avec un ancien de Pro League",
       "link": "https://www.walfoot.be/news/2026-08-15/le-club-de-bruges-veut-anticiper-un-depart-de-joaquin-seys-avec-un-ancien-de-pro-league",
       "summary": "Alors que Björn Meijer est parti à la Sampdoria et que Joaquin Seys est toujours sur le départ, le Club de Bruges doit anticiper un éventuel vide pour le poste de latéral gauche. La solution pourrait venir d'Écosse avec un ancien de Jupiler Pro League.",
-      "publishedAt": "2026-08-14T23:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "LIVE - Transfernieuws 15/8: strijd om Rodri barst compleet los",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-15/live-transfernieuws-15-8-strijd-om-rodri-barst-compleet-los",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
       "publishedAt": "2026-08-14T23:15:00.000Z"
     },
     {
@@ -282,9 +282,42 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "It's time! Championship, League One and League Two opening day LIVE!",
+      "title": "Bolton lead; Leicester in action - EFL opening day LIVE!",
       "link": "https://www.skysports.com/football/live-blog/12040/13573022/championship-live-scores-match-updates-and-free-highlights-plus-efl-latest-from-league-one-and-league-two",
       "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "‘Would you believe it?!’ | Siem hits incredible slam dunk shot for eagle!",
+      "link": "https://www.skysports.com/watch/video/13573290/danish-golf-championship-marcel-siems-hits-incredible-slam-dunk-shot-for-eagle",
+      "summary": "Marcel Siem hits an incredible slam dunk shot for this eagle at the Danish Golf Championship.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Clayton clinches title in Auckland with HUGE bullseye finish!",
+      "link": "https://www.skysports.com/watch/video/13573254/new-zealand-darts-masters-jonny-clayton-clinches-title-with-huge-bullseye-finish",
+      "summary": "Jonny Clayton clinched the New Zealand Darts Masters with this huge bullseye finish to beat Gerwyn Price!",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Clayton blows Price away in New Zealand Darts Masters final",
+      "link": "https://www.skysports.com/darts/news/12040/13573245/new-zealand-darts-masters-jonny-clayton-thrashes-gerwyn-price-in-all-welsh-final-in-auckland",
+      "summary": "Jonny Clayton beat compatriot Gerwyn Price 8-4 to win the New Zealand Darts Masters in Auckland.",
       "publishedAt": null
     },
     {
@@ -296,39 +329,6 @@
       "title": "Bangladesh edge closer to historic Test win in Australia",
       "link": "https://www.skysports.com/cricket/news/12040/13573228/australia-vs-bangladesh-tourists-edge-closer-to-historic-test-victory-in-darwin-as-top-order-woes-continue-for-hosts",
       "summary": "Bangladesh moved to within sight of one of the biggest wins in their Test history after Australia stumbled to 161-4 at stumps on day three of the first Test in Darwin, still 67 runs behind.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Hole-in-one alert! Schmid makes ace at FedEx St. Jude Championship",
-      "link": "https://www.skysports.com/watch/video/13573246/fedex-st-jude-championship-hole-in-one-alert-matti-schmid-aces-tpc-southwind",
-      "summary": "In the second round of the FedEx St. Jude, Matti Schmid's 173-yard tee shot on the par-3 fourth hole went in for his first career hole-in-one.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Live on Sky: Watford vs Southampton & Burnley vs West Ham",
-      "link": "https://www.skysports.com/football/watford-vs-southampton/live/560508",
-      "summary": "",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The Hundred Finals: All you need to know",
-      "link": "https://www.skysports.com/cricket/news/12040/13572516/the-hundred-teams-venues-timings-for-eliminators-and-finals-with-trent-rockets-waiting-to-find-out-their-opponents",
-      "summary": "The Hundred 2026 is set to reach a dramatic climax with a double-header of Finals this Sunday at Lord's. Here's all you need to know...",
       "publishedAt": null
     }
   ]
