@@ -1,6 +1,39 @@
 {
-  "generatedAt": "2026-08-21T22:28:59.007Z",
+  "generatedAt": "2026-08-21T23:27:11.214Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Lessons learned for Coventry in difficult top-flight return",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cp8e37mpp0eo?at_medium=RSS&at_campaign=rss",
+      "summary": "Twenty-five years, 94 days and countless twists later, Coventry City have started life back in the Premier League, but it was a tough baptism of fire with a 3-0 loss at defending champions Arsenal.",
+      "publishedAt": "2026-08-21T23:13:13.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Women’s Super League 2026-27 preview No 1: Arsenal",
+      "link": "https://www.theguardian.com/football/2026/aug/22/womens-super-league-2026-27-preview-no-1-arsenal",
+      "summary": "After an underwhelming season, Arsenal have made major changes with club legends departing and top talent from all over Europe arriving Guardian writers’ predicted position: 2nd (NB: this is not necessarily Suzanne Wrack’s prediction but the average of our writers’ tips) Last season’s position: 2nd Continue reading...",
+      "publishedAt": "2026-08-21T23:01:47.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Swaggering Arsenal want title attack, not defence",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cpw94evj1q7o?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal started last season as nearly men but their title win has given them a swagger - as Coventry discovered on the Premier League's opening night.",
+      "publishedAt": "2026-08-21T22:55:40.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -80,17 +113,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Inter complete £30m deal for Liverpool's Jones",
-      "link": "https://www.bbc.co.uk/sport/football/articles/czdm9pjd0ero?at_medium=RSS&at_campaign=rss",
-      "summary": "Inter Milan sign midfielder Curtis Jones from Liverpool in a deal worth £30m.",
-      "publishedAt": "2026-08-21T21:23:29.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
@@ -143,28 +165,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cwy452d662ko?at_medium=RSS&at_campaign=rss",
       "summary": "Manchester United agree a fee of up to £70m for Brighton midfielder Carlos Baleba.",
       "publishedAt": "2026-08-21T19:58:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Leandro Paredes receives 10-match ban as Argentina punished for World Cup final brawl",
-      "link": "https://www.theguardian.com/football/2026/aug/21/fifa-leandro-paredes-argentina-spain-world-cup-final-brawl",
-      "summary": "Nahuel Molina, Thiago Almada and Gavi also suspended Fifa issue $321,000 fine for Falkland Islands banner Three Argentina players have been banned for their part in a brawl at the end of last month’s World Cup final against Spain, but they have only been fined for displaying a Falkland Islands banner after the semi-final win over England. Leandro Paredes has been given a 10-match ban and a $90,000 (£66,000) fine by Fifa’s disciplinary committee, while Nahuel Molina was given a seven-match suspension and fined the same amount. Continue reading...",
-      "publishedAt": "2026-08-21T16:14:16.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Hungry to win' - Villa's Konsa joins Arsenal in £55m deal",
-      "link": "https://www.bbc.co.uk/sport/football/articles/ckg97jpkkego?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal complete the £55m signing of England defender Ezri Konsa from Aston Villa.",
-      "publishedAt": "2026-08-21T15:20:45.000Z"
     },
     {
       "type": "rss",
@@ -280,11 +280,33 @@
       "type": "rss",
       "source": "Sky Sports - Football",
       "sourceSlug": "sky-sports-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Papers: Atletico Madrid ready to sell Alvarez to Arsenal",
+      "link": "https://www.skysports.com/football/news/12040/13575656/arsenal-transfer-news-atletico-madrid-finally-shift-julian-alvarez-position-and-now-willing-to-sell-striker-to-the-gunners-paper-talk",
+      "summary": "The top stories and transfer rumours from Saturday's newspapers...",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "Tottenham latest: De Zerbi says Bergvall is '100 per cent' staying at Spurs",
       "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
       "summary": "",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Leopards thrash Bulls to help play-off contention",
+      "link": "https://www.skysports.com/watch/video/13575647/leigh-leopards-62-10-bradford-bulls-rugby-super-league-highlights",
+      "summary": "Highlights of Leigh Leopards against Bradford Bulls in the Rugby Super League.",
       "publishedAt": null
     },
     {
@@ -307,28 +329,6 @@
       "title": "Arsenal kick off title defence with thumping win over Coventry",
       "link": "https://www.skysports.com/football/arsenal-vs-coventry-city/report/559444",
       "summary": "Arsenal made a flying start to their Premier League title defence with a 3-0 thumping of newly-promoted Coventry City in the season opener at the Emirates Stadium.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Wigan top Super League table with win over Wakefield as Leigh rout Bradford",
-      "link": "https://www.skysports.com/rugby-league/news/12040/13575589/super-league-wigan-warriors-ease-to-top-of-table-with-club-record-12th-straight-win-over-wakefield-trinity",
-      "summary": "Wigan eased to the top of the Betfred Super League table with a club-record 12th straight win after seeing off gutsy Wakefield 26-12 at the Brick Community Stadium.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Arsenal cruise to victory over Coventry on Premier League return",
-      "link": "https://www.skysports.com/watch/video/13575642/arsenal-3-0-coventry-premier-league-highlights",
-      "summary": "Highlights from the Premier League match between Arsenal and Coventry.",
       "publishedAt": null
     }
   ]
