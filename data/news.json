@@ -1,16 +1,38 @@
 {
-  "generatedAt": "2026-08-21T14:38:26.673Z",
+  "generatedAt": "2026-08-21T17:32:25.935Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Brighton reject Liverpool's new £60m Minteh bid",
+      "link": "https://www.bbc.co.uk/sport/football/articles/ce97ky3vkx4o?at_medium=RSS&at_campaign=rss",
+      "summary": "Liverpool have an improved bid of £60m for winger Yankuba Minteh rejected by Brighton but talks between the clubs continue.",
+      "publishedAt": "2026-08-21T17:26:49.000Z"
+    },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arsenal v Coventry City: Premier League – live",
+      "link": "https://www.theguardian.com/football/live/2026/aug/21/arsenal-v-coventry-city-premier-league-live",
+      "summary": "First game of new Premier League season, 8pm kick-off Arsenal’s opportunity | Football Daily | Mail Scott … so let’s start at the very beginning. One step before the beginning, in fact. The Guardian presents, for your edification, the Premier League 2026-27 previews for Arsenal and Coventry City. Just in case you missed them. The Premier League is back, and you won’t get too many people making a case for newly promoted Coventry City to get something in tonight’s opening game against champions Arsenal. But then on the first day of the 1993-94 season, Micky Quinn did this … Continue reading...",
+      "publishedAt": "2026-08-21T17:20:14.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "Arsenal complete £51m Konsa deal; Emery says Watkins could leave Villa; Iraola on ‘thin squad’: football – live",
-      "link": "https://www.theguardian.com/football/live/2026/aug/21/premier-league-returns-with-arsenal-v-coventry-transfer-news-and-more-football-live",
-      "summary": "⚽ All the latest football news, comment and previews ⚽ This weekend’s fixtures | Read Football Daily | Mail Tom Nothing like a bit of exclusive news to kick off the shift. Can we keep this momentum going? We shall see! Uefa and Concacaf have begun talks about setting up a combined Nations League tournament featuring all 96 European and North and Central American and Caribbean countries, in another direct challenge to Fifa. Continue reading...",
-      "publishedAt": "2026-08-21T14:34:36.000Z"
+      "title": "Ook Deense bond keert zich tegen Infantino en belooft waardige tegenkandidaat",
+      "link": "https://www.vi.nl/nieuws/ook-deense-bond-keert-zich-tegen-infantino-en-belooft-waardige-tegenkandidaat",
+      "summary": "In navolging van diverse andere voetbalbonden heeft ook die van Denemarken zich uitgesproken tegen FIFA-voorzitter Gianni Infantino. De DBU spreekt van 'een fundamentele vertrouwenscrisis' en belooft dat zij samen met de UEFA een waardige tegenkandidaat naar voren zal schuiven bij de presidentsverkiezingen van volgend jaar.",
+      "publishedAt": "2026-08-21T17:15:00.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +40,32 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Feyenoord-nieuweling López de nieuwe Van Bronckhorst? 'Nu ga je te ver'",
-      "link": "https://www.vi.nl/video/feyenoord-nieuweling-lopez-de-nieuwe-van-bronckhorst-nu-ga-je-te-ver",
-      "summary": "Javí López zit dit weekend bij de wedstrijdselectie van Feyenoord wanneer de Rotterdammers het uit opnemen tegen SC Cambuur. De Spaanse linksback is pas net bij zijn nieuwe club, maar trainer Giovanni van Bronckhorst ziet veel potentie in de nieuweling. Om hem te vergelijken met de speler die Van Bronckhorst vroeger was, gaat echter te ver volgens de goedlachse oefenmeester.",
-      "publishedAt": "2026-08-21T14:32:57.000Z"
+      "title": "Hoe Jahanbakhsh bij Excelsior belandde",
+      "link": "https://www.vi.nl/nieuws/hoe-jahanbakhsh-bij-excelsior-belandde",
+      "summary": "Excelsior stuntte eerder deze maand met de komst van Alireza Jahanbakhsh. De architect achter de transfer is Mark Ruijl, tegenwoordig technisch directeur op Woudestein. 'Mark en ik kennen elkaar goed.'",
+      "publishedAt": "2026-08-21T16:51:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Miljoenenverlies voor Dortmund: 'Maar fundament is solide'",
+      "link": "https://www.vi.nl/nieuws/nieuwe-club-veerman-deelt-miljoenenverlies-maar-fundament-is-solide",
+      "summary": "Borussia Dortmund heeft vrijdag de jaarcijfers over het seizoen 2025/26 bekendgemaakt. De Duitse topclub leed een miljoenenverlies, maar van paniek is desondanks geen sprake bij de nieuwe club van Joey Veerman, die deze zomer weer flink investeerde.",
+      "publishedAt": "2026-08-21T16:21:19.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "AZ heeft goed nieuws over Clasie en Hornkamp",
+      "link": "https://www.vi.nl/nieuws/az-heeft-goed-nieuws-over-clasie-en-hornkamp",
+      "summary": "AZ had vrijdag goed nieuws te melden over Jordy Clasie en Jizz Hornkamp. Het duo zit zaterdag weer bij de wedstrijdselectie voor het duel met Fortuna Sittard. Beide spelers maakten nog geen officiële minuten dit seizoen.",
+      "publishedAt": "2026-08-21T16:05:00.000Z"
     },
     {
       "type": "rss",
@@ -29,32 +73,21 @@
       "sourceSlug": "voetbal-international",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Titelprolongatie Arsenal? 'Hebben een enorme upgrade gehad'",
-      "link": "https://www.vi.nl/video/titelprolongatie-arsenal-hebben-een-enorme-upgrade-gehad",
-      "summary": "Arsenal kroonde zich vorig seizoen als kampioen van de Premier League, maar kan het de titel prolongeren? Zowel Pieter als Bas zetten Arsenal op plek 1 als dé uitgesproken favoriet voor de Premier League-titel. Ze analyseren de tactische stabiliteit van Mikel Arteta, de impact van smaakmakers zoals Bukayo Saka en David Raya, én de opties rondom de vacature in de achterhoede achter William Saliba.",
-      "publishedAt": "2026-08-21T14:31:00.000Z"
+      "title": "Maresca wijst op veranderingen bij Man City: 'Maar dat is geen excuus'",
+      "link": "https://www.vi.nl/video/maresca-wijst-op-veranderingen-bij-man-city-maar-dat-is-geen-excuus",
+      "summary": "Voor Manchester City begon het nieuwe seizoen met een koude douche. Arsenal was te sterk voor de ploeg van Enzo Maresca in het Community Shield en de eerste prijs van het seizoen ging dus mee naar Londen. Daags voor de eerste wedstrijd in de Premier League onder de nieuwe Italiaanse manager, gaat hij in op de veranderingen van de afgelopen tijd bij City.",
+      "publishedAt": "2026-08-21T15:45:57.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Lutsharel Geertruida: een pikant puzzelstuk voor PSV",
-      "link": "https://www.vi.nl/pro/lutsharel-geertruida-een-pikant-puzzelstuk-voor-psv",
-      "summary": "Maanden trok PSV uit om Lutsharel Geertruida te overtuigen van een stap naar de landskampioen, wat nu al de gevoeligste (huur)transfer van deze zomer is. In Eindhoven wordt hij als een broodnodig puzzelstukje gezien in wat de nieuw te formeren kampioensploeg moet zijn.",
-      "publishedAt": "2026-08-21T14:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FIFA deelt megaschorsingen uit aan Paredes en Molina na WK-finale",
-      "link": "https://www.vi.nl/nieuws/fifa-deelt-megaschorsingen-uit-aan-paredes-en-molina-na-wk-finale",
-      "summary": "De FIFA heeft een aantal spelers van Argentinië flink gestraft voor hun gedrag bij de WK-finale tegen Spanje. De Argentijnen raakten betrokken bij een massale vechtpartij. Leandro Paredes komt er met een schorsing van tien duels het slechtst vanaf. Ook Gavi is een duel geschorst.",
-      "publishedAt": "2026-08-21T14:22:00.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "What does Heggebo's deception ban mean for football?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c05q3946r6ro?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport explores the fallout from the decision to ban West Brom striker Aune Heggebo for two matches for \"successfully deceiving a match official\".",
+      "publishedAt": "2026-08-21T15:45:19.000Z"
     },
     {
       "type": "rss",
@@ -65,18 +98,18 @@
       "title": "Argentina's Paredes banned for 10 games after World Cup clashes",
       "link": "https://www.bbc.co.uk/sport/football/articles/c98v7p1pr3eo?at_medium=RSS&at_campaign=rss",
       "summary": "Fifa ban Argentina midfielder Leandro Paredes for 10 matches over his role in clashes with Spanish players after the World Cup final.",
-      "publishedAt": "2026-08-21T14:20:26.000Z"
+      "publishedAt": "2026-08-21T15:26:05.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Van Bronckhorst legt uit waarom Ahmedhodzic vertrekt bij Feyenoord",
-      "link": "https://www.vi.nl/video/van-bronckhorst-legt-uit-waarom-ahmedhodzic-vertrekt-bij-feyenoord",
-      "summary": "Anel Ahmedhodzic trok deze week de deur bij Feyenoord achter zich dicht. Volgens trainer Giovanni van Bronckhorst had dat alles te maken met zijn perspectief op speeltijd.",
-      "publishedAt": "2026-08-21T13:52:14.000Z"
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Hungry to win' - Villa's Konsa joins Arsenal in £55m deal",
+      "link": "https://www.bbc.co.uk/sport/football/articles/ckg97jpkkego?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal complete the £55m signing of England defender Ezri Konsa from Aston Villa.",
+      "publishedAt": "2026-08-21T15:20:45.000Z"
     },
     {
       "type": "rss",
@@ -124,17 +157,6 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "The inside story of how Trabzonspor pulled off Salah deal",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cvg0jgy929do?at_medium=RSS&at_campaign=rss",
-      "summary": "Mohamed Salah was expected to move to Saudi Arabia or the United States after leaving Liverpool, but Turkish side Trabzonspor pulled off one of the coups of the transfer window.",
-      "publishedAt": "2026-08-21T09:41:46.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "INT",
@@ -146,25 +168,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sutton's opening weekend predictions v Courteeners frontman Liam Fray",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cn9nqzny7n7o?at_medium=RSS&at_campaign=rss",
-      "summary": "BBC Sport football expert Chris Sutton takes on Courteeners frontman Liam Fray, plus the BBC readers and AI with his predictions for the fixtures on the opening weekend of the new Premier League season.",
-      "publishedAt": "2026-08-21T06:46:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Spurs agree £75m deal for Savinho who 'wanted to leave' Man City",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cwyl0r8g4lwo?at_medium=RSS&at_campaign=rss",
-      "summary": "Tottenham have agreed a deal to sign Savinho for an initial £75m after the winger asked to leave Manchester City, according to boss Enzo Maresca.",
-      "publishedAt": "2026-08-21T06:30:48.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Des fouilles humiliantes à Malines ? La police locale répond au Standard",
+      "link": "https://www.walfoot.be/news/2026-08-21/des-fouilles-humiliantes-a-malines-la-police-locale-repond-au-standard",
+      "summary": "Les supporters du Standard ne garderont pas un bon souvenir de leur déplacement du week-end dernier à Malines. En raison du partage concédé in extremis par leur équipe, mais surtout à cause des fouilles humiliantes vécues à l'entrée du stade. La police locale leur a répondu.",
+      "publishedAt": "2026-08-21T05:30:00.000Z"
     },
     {
       "type": "rss",
@@ -172,21 +183,32 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "LIVE - Speeldag 3 JPL: KRC Genk krijgt goed nieuws in aanloop naar duel met Antwerp",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/krc-genk-krijgt-goed-nieuws-in-aanloop-naar-duel-met-antwerp",
-      "summary": "De competitie is opnieuw begonnen. Dit weekend staat speeldag 3 al op het programma. Daarmee lijkt het meteen alle hens aan dek voor de JPL-teams. Het hele weekend lang staat er veel op het programma. Hier kan u al het nieuws gebundeld vinden en lezen doorheen de dagen.",
-      "publishedAt": "2026-08-21T02:30:00.000Z"
+      "title": "📷 ‘Eentje om in de gaten te houden: voormalig Anderlechttalent genoemd bij JPL-club’",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/eentje-om-in-de-gaten-te-houden-voormalig-anderlechttalent-genoemd-bij-jpl-club",
+      "summary": "Nail Moutha-Sebtaoui lijkt alweer voor een nieuwe uitdaging te staan. De 20-jarige verdediger, opgeleid bij Anderlecht, staat volgens transferjournalist Sacha Tavolieri op de radar van meerdere clubs. Lommel SK zou een van de geïnteresseerden zijn.",
+      "publishedAt": "2026-08-21T05:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "📷 Ongepaste fouilles van vrouwen op KV Mechelen? Politie reageert duidelijk",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/ongepaste-fouilles-van-vrouwen-op-kv-mechelen-politie-reageert-duidelijk",
+      "summary": "Vrouwelijke Standard-supporters klagen over de manier waarop ze voor de wedstrijd tegen KV Mechelen werden gefouilleerd. De supportersclub spreekt van ongepaste controles. De politie zegt dat alles volgens de regels gebeurde.",
+      "publishedAt": "2026-08-21T05:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "L'Antwerp va toucher le jackpot : un jeune talent va rejoindre un club de Premier League pour plus de 10 M€",
-      "link": "https://www.walfoot.be/news/2026-08-21/lantwerp-va-toucher-le-jackpot-un-jeune-talent-va-rejoindre-un-club-de-premier-league-pour-plus-de-10-m",
-      "summary": "Le jeune milieu offensif de l'Antwerp, Jules Ahoka, va rejoindre Sunderland. Un accord a été trouvé entre les deux clubs, révèle le spécialiste des transferts Fabrizio Romano. Le joueur congolais avait rejoint le Great Old l'été dernier en provenance du club congolais de l'AC Normands.",
-      "publishedAt": "2026-08-21T02:30:00.000Z"
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Officiel : Anderlecht délie encore les cordons de sa bourse pour Tawfik Bentayeb",
+      "link": "https://www.walfoot.be/news/2026-08-21/officiel-anderlecht-delie-encore-les-cordons-de-sa-bourse-pour-tawfik-bentayeb",
+      "summary": "Tawfik Bentayeb a finalement bien rejoint Anderlecht. Annoncé avec insistance depuis plusieurs jours, l'attaquant marocain a signé un contrat de quatre ans. Une option supplémentaire de taille pour Vitor Bruno en pointe.",
+      "publishedAt": "2026-08-21T04:57:54.000Z"
     },
     {
       "type": "rss",
@@ -194,97 +216,75 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Bondscoach Van Bommel nu al onder vuur? Vandenbempt komt met opvallende boodschap",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/bondscoach-van-bommel-nu-al-onder-vuur-vandenbempt-komt-met-opvallende-boodschap",
-      "summary": "Mark van Bommel begint binnenkort aan een nieuwe uitdaging als bondscoach van de Rode Duivels. Toch zijn er twijfels over zijn aanstelling. Peter Vandenbempt vindt die kritiek begrijpelijk, maar waarschuwt vooral om de Nederlander niet op voorhand af te schrijven.",
-      "publishedAt": "2026-08-21T02:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Diego Moreira se confie après son arrivée à l'AC Milan : \"Je sais ce que je veux et où je veux aller\"",
-      "link": "https://www.walfoot.be/news/2026-08-21/diego-moreira-se-confie-apres-son-arrivee-a-lac-milan-je-sais-ce-que-je-veux-et-ou-je-veux-aller",
-      "summary": "Diego Moreira s'est exprimé pour la première fois sous ses nouvelles couleurs dans une interview accordée à son nouveau club, l'AC Milan. Le Belge a abordé de nombreux sujets, de ses ambitions à sa personnalité, en passant par sa famille et ses passions.",
-      "publishedAt": "2026-08-21T02:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Nieuwe klap voor Jeremy Doku: Rode Duivel staat weken aan de kant",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/nieuwe-klap-voor-jeremy-doku-rode-duivel-staat-weken-aan-de-kant",
-      "summary": "Jeremy Doku begint het nieuwe seizoen met een tegenvaller. De Rode Duivel heeft een kuitblessure opgelopen in de Community Shield tegen Arsenal en moet volgens Manchester City-coach Enzo Maresca ongeveer twee tot drie weken toekijken.",
-      "publishedAt": "2026-08-21T01:56:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Davy Roef is andermaal de nuchtere held, maar wat in Edinburgh?",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/match-reactie-davy-roef-is-andermaal-de-nuchtere-held-maar-wat-in-edinburgh",
-      "summary": "Als we nu al een scenario zouden moeten schrijven voor KAA Gent volgende week donderdag in Edinburgh? Dan hebben we wel al een ideetje. Want er zijn nu eenmaal toch nog een paar zekerheden en eentje daarvan heeft te maken met doelman Davy Roef.",
-      "publishedAt": "2026-08-21T01:45:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Live. Transfernieuws 21/8: ‘Ajax heeft knoop doorgehakt over Noa Lang'",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/ajax-heeft-knoop-doorgehakt-over-noa-lang",
+      "title": "Live. Transfernieuws 21/8: OFFICIEEL Nieuwe verdediger voor SK Beveren",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/officieel-nieuwe-verdediger-voor-sk-beveren",
       "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
-      "publishedAt": "2026-08-21T01:30:00.000Z"
+      "publishedAt": "2026-08-21T04:30:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Son faible temps de jeu étonne : Oumar Diouf pourrait quitter Saint-Trond avant la fin du mercato",
-      "link": "https://www.walfoot.be/news/2026-08-21/son-faible-temps-de-jeu-etonne-oumar-diouf-pourrait-quitter-saint-trond-avant-la-fin-du-mercato",
-      "summary": "Oumar Diouf quittera-t-il Saint-Trond avant la fin du mercato estival ? Le Sénégalais est en tout cas étonnamment relégué à un rôle de remplaçant en ce début de saison et n'a, pour l'instant, disputé que dix-sept minutes en match officiel. Quatre clubs, dont deux de l'élite belge, suivent sa situation avec attention et ne se refuseraient pas à passer à l'action.",
-      "publishedAt": "2026-08-21T01:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Que devient Yannick Carrasco ?",
-      "link": "https://www.walfoot.be/news/2026-08-21/que-devient-yannick-carrasco-",
-      "summary": "Vous vous demandez ce que devient Yannick Carrasco ? L'ancien Diable Rouge a récemment débuté une quatrième saison en Arabie saoudite. L'ailier de 32 ans a même déjà inscrit son tout premier but de la saison 2026/2027.",
-      "publishedAt": "2026-08-21T01:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "DE",
-      "flag": "🌍",
-      "title": "Vincent Kompany rassure concernant l'état de l'une de ses stars du Bayern : \"Nous sommes très optimistes\"",
-      "link": "https://www.walfoot.be/news/2026-08-21/vincent-kompany-rassure-concernant-letat-de-lune-de-ses-stars-du-bayern-nous-sommes-tres-optimistes",
-      "summary": "Vincent Kompany a pris la parole en conférence de presse ce vendredi avant la Supercoupe d'Allemagne entre Dortmund et le Bayern, qui se tiendra ce samedi soir à 20h30 au Signal Iduna Park. L'entraîneur belge pourrait ainsi déjà décrocher son premier trophée de la saison, mais le défi ne s'annonce évidemment pas simple, d'autant plus que la rencontre aura lieu à l'extérieur pour les Bavarois. Il s'est notamment exprimé sur le cas Jamal Musiala.",
-      "publishedAt": "2026-08-21T00:42:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
       "country": "FR",
       "flag": "🌍",
-      "title": "Hull KR boss explains decision to drop Lewis: 'It's about standards'",
-      "link": "https://www.skysports.com/rugby-league/news/12040/13575347/mikey-lewis-hull-kr-coach-willie-peters-explains-decision-to-drop-star-half-back-ahead-of-two-match-ban",
-      "summary": "Hull KR head coach Willie Peters said his decision to drop Mikey Lewis for Saturday's game against Toulouse ahead of his two-match ban is about upholding the \"standards\" of the club.",
+      "title": "Julien Duranville déjà sous pression à Lyon : Paulo Fonseca attend encore d'être convaincu",
+      "link": "https://www.walfoot.be/news/2026-08-21/julien-duranville-deja-sous-pression-a-lyon-paulo-fonseca-attend-encore-detre-convaincu",
+      "summary": "Julien Duranville a rejoint l'Olympique Lyonnais cet été avec l'ambition de donner un nouvel élan à sa carrière. Mais le jeune Belge doit encore convaincre l'entraîneur de l'OL, Paulo Fonseca, de lui accorder une place importante dans son équipe.",
+      "publishedAt": "2026-08-21T04:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Une pièce importante de La Gantoise la saison dernière sur le départ ? Cela semble se préciser",
+      "link": "https://www.walfoot.be/news/2026-08-21/une-piece-importante-de-la-gantoise-la-saison-derniere-sur-le-depart-cela-semble-se-preciser",
+      "summary": "Max Dean semble plus que jamais sur le départ à La Gantoise. Courtisé par plusieurs clubs anglais, l'attaquant n'entre plus régulièrement dans les choix de Rik De Mil.",
+      "publishedAt": "2026-08-21T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Verkeerd signaal van Club? Dany Verlinden velt oordeel over komst van Sommer",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/verkeerd-signaal-van-club-dany-verlinden-velt-oordeel-over-komst-van-sommer",
+      "summary": "De komst van Yann Sommer naar Club Brugge roept vragen op over de kansen van jonge doelmannen. Volgens Clubicoon Dany Verlinden hoeft de transfer echter geen verkeerd signaal te zijn. Integendeel: hij ziet vooral een duidelijke langetermijnstrategie.",
+      "publishedAt": "2026-08-21T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Un jeune talent formé à Anderlecht pourrait déjà retrouver la Pro League : un club de D1A intéressé",
+      "link": "https://www.walfoot.be/news/2026-08-21/un-jeune-talent-forme-a-anderlecht-pourrait-deja-retrouver-la-pro-league-un-club-de-d1a-interesse",
+      "summary": "L'arrière gauche de Dender formé à Anderlecht, Nail Moutha-Sebtaoui, devrait quitter le club de Challenger Pro League cet été. Arrivé au sein de la formation de D1B l'été dernier en provenance d'Anderlecht, le latéral attire les convoitises.",
+      "publishedAt": "2026-08-21T03:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "FIFA deelt gigantische straf uit voor wangedrag na WK-finale",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/fifa-deelt-gigantische-straf-uit-voor-wangedrag-na-wk-finale",
+      "summary": "Leandro Paredes moet zwaar boeten voor zijn gedrag na de verloren WK-finale tegen Spanje. De FIFA legt de Argentijn een schorsing van tien interlands op.",
+      "publishedAt": "2026-08-21T03:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Brighton reject £60m Liverpool bid for Minteh",
+      "link": "https://www.skysports.com/football/news/12040/13575558/yankuba-minteh-transfer-news-brighton-reject-liverpool-bid-of-60m-for-winger",
+      "summary": "Brighton have rejected a £60m bid from Liverpool for winger Yankuba Minteh.",
       "publishedAt": null
     },
     {
@@ -293,9 +293,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "How can Spurs afford all these players?",
-      "link": "https://www.skysports.com/watch/video/13575359/explained-how-can-spurs-afford-all-these-players",
-      "summary": "Sky Sports' Michael Bridge re-visits the question that was asked at the start of the transfer window - how can Spurs afford all these players?",
+      "title": "The Premier League is back! Arsenal vs Coventry LIVE on Sky!",
+      "link": "https://www.skysports.com/football/arsenal-vs-coventry-city/live/559444",
+      "summary": "",
       "publishedAt": null
     },
     {
@@ -304,9 +304,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Keep on running!' Fury claims AJ fight in doubt",
-      "link": "https://www.skysports.com/boxing/news/12040/13575393/tyson-fury-claims-anthony-joshua-fight-in-serious-doubt-after-his-british-rival-asked-for-more-money",
-      "summary": "Tyson Fury has claimed his fight against Anthony Joshua is now in serious doubt after his British heavyweight rival asked for 'more money'.",
+      "title": "Bacio blazes a trail to win York's Nunthorpe Stakes",
+      "link": "https://www.skysports.com/racing/news/12040/13575556/york-ebor-festival-bacio-blazes-a-trail-to-win-nunthorpe-stakes-as-arapaho-gold-takes-gimcrack-stakes-honours",
+      "summary": "American raider Bacio blitzed his rivals from the front to provide Wesley Ward with a first victory in the Coolmore City Of Troy Nunthorpe Stakes at York.",
       "publishedAt": null
     },
     {
@@ -315,9 +315,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Weekend Winners: Kate, Sam and Declan have their say on the Ebor",
-      "link": "https://www.skysports.com/racing/news/12040/13575444/super-sprint-tips-kate-sam-and-dec-make-three-different-cases-in-the-york-feature",
-      "summary": "The panel of Kate Tracey, Sam Boswell and Declan Rix paid special attention to York’s feature event, the Sky Bet Ebor Handicap.",
+      "title": "Draper ruled out of US Open as injury absence continues",
+      "link": "https://www.skysports.com/tennis/news/12040/13575532/jack-draper-british-star-ruled-out-of-the-us-open-due-to-ongoing-injury-woes",
+      "summary": "British star Jack Draper has been ruled out of the US Open as he continues to battle a bone bruise in his dominant left arm.",
       "publishedAt": null
     },
     {
@@ -326,9 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Typical of Rory!' - Westwood hits back at McIlroy's LIV Golf comments",
-      "link": "https://www.skysports.com/golf/news/12040/13575381/lee-westwood-hits-back-at-rory-mcilroys-typical-comments-questioning-the-value-of-liv-golf-players-to-pga-tour",
-      "summary": "Lee Westwood hit back at Rory McIlroy questioning the value of LIV golfers and claimed the comments were \"typical\" of the reigning Masters champion.",
+      "title": "Russell claims Dutch GP Sprint pole with Antonelli, Hamilton on back foot",
+      "link": "https://www.skysports.com/f1/news/12040/13575268/dutch-gp-sprint-qualifying-george-russell-claims-pole-position-with-title-rivals-kimi-antonelli-lewis-hamilton-on-back-foot",
+      "summary": "George Russell made the ideal start to his attempt to mount a championship fightback in the second half of the 2026 F1 season by claiming pole position for Saturday's Dutch Grand Prix Sprint as nearest title rivals Kimi Antonelli and Lewis Hamilton qualified outside the top four.",
       "publishedAt": null
     }
   ]
