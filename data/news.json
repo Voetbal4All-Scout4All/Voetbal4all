@@ -1,6 +1,72 @@
 {
-  "generatedAt": "2026-08-22T03:47:02.598Z",
+  "generatedAt": "2026-08-22T05:31:14.926Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "Un Diable à coeur ouvert : \"Pendant la Coupe du Monde, on sentait déjà que Garcia n'allait pas rester\"",
+      "link": "https://www.walfoot.be/news/2026-08-22/un-diable-a-coeur-ouvert-pendant-la-coupe-du-monde-on-sentait-deja-que-garcia-nallait-pas-rester",
+      "summary": "Rudi Garcia a refait d'Axel Witsel un personnage central du groupe des Diables Rouges. Le nouveau milieu de terrain de Nice se confie sur sa relation à l'équipe nationale, des défis futurs à ses impressions durant la dernière Coupe du Monde.",
+      "publishedAt": "2026-08-22T05:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "VI Live: AZ en FC Utrecht in actie, Dortmund speelt tegen Bayern",
+      "link": "https://www.vi.nl/nieuws/vi-live-az-en-fc-utrecht-in-actie-dortmund-speelt-tegen-bayern",
+      "summary": "Zaterdag staan er drie wedstrijden in de Eredivisie op het programma, maar ook in het buitenland wordt weer volop gevoetbald. Zo spelen Manchester United en Tottenham Hotspur in de Premier League, Real Madrid in La Liga en spelen Borussia Dortmund en Bayern München de Duitse Super Cup. Blijf op de hoogte in deze VI Live.",
+      "publishedAt": "2026-08-22T05:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Beerschot en Dender treffen elkaar: nu al een cruciaal promotieduel in Challenger Pro League?",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-22/beerschot-en-dender-treffen-elkaar-nu-al-een-cruciaal-promotieduel-in-challenger-pro-league",
+      "summary": "Niemand wil het hardop zeggen, maar zowel Beerschot als Dender lijkt over voldoende kwaliteiten te beschikken om een gooi te doen naar promotie uit de Challenger Pro League. Zaterdag staan beide teams tegenover elkaar in een duel dat meteen veel kan vertellen.",
+      "publishedAt": "2026-08-22T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "La RAAL frustrée au Standard : \"Ils n'ont pratiquement pas été dangereux en dehors de leurs deux buts\"",
+      "link": "https://www.walfoot.be/news/2026-08-22/la-raal-frustree-au-standard-ils-nont-pratiquement-pas-ete-dangereux-en-dehors-de-leurs-deux-buts",
+      "summary": "Le refrein commence à être connu du côté de La Louvière : l'équipe ne démérite pas mais est toujours à la recherche de son premier point dans ce championnat. Après la défaite d'hier soir au Standard, Shaquil Delos et Marcos Peano restent malgré tout confiant en la capacité du groupe à lancer la machine après ce début de calendrier compliqué.",
+      "publishedAt": "2026-08-22T05:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Pas de championnat ce week-end : à une semaine d'Anderlecht, l'Union en colle six à un autre club de D1A",
+      "link": "https://www.walfoot.be/news/2026-08-22/pas-de-championnat-ce-week-end-a-une-semaine-danderlecht-lunion-en-colle-six-a-un-autre-club-de-d1a",
+      "summary": "L'Union est exemptée de championnat ce week-end. En l'absence de matchs européens durant la semaine, elle s'est tournée vers une autre équipe au repos pour garder la forme. Mission accomplie, avec la manière.",
+      "publishedAt": "2026-08-22T04:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Zeventien jaar geleden schoot Nordin Amrabat als een komeet de hoogte in",
+      "link": "https://www.vi.nl/pro/zeventien-jaar-geleden-schoot-nordin-amrabat-als-een-komeet-de-hoogte-in",
+      "summary": "In de rubriek VI Tijdmachine brengen we met regelmaat nieuwe verhalen over toen, en elke dag van het weekeinde herplaatsen we een artikel uit ons rijke archief. In het licht van de kans die FC Utrecht de inmiddels 39-jarige Nordin Amrabat nu biedt om een contract af te dwingen, reizen we terug naar 2009. Als de aanvaller op komeetsnelheid de nationale top beklimt. In twee jaar tijd van SV Huizen naar Champions League-voetbal met PSV.",
+      "publishedAt": "2026-08-22T04:00:00.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -113,17 +179,6 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Bosz ziet fitte Driouech: 'Die zes weken...'",
-      "link": "https://www.vi.nl/video/bosz-ziet-fitte-driouech-die-zes-weken",
-      "summary": "Couhaib Driouech trainde deze week alles mee bij PSV en zit dit weekend bij de wedstrijdselectie voor het duel met FC Groningen. Eerder ketste een transfer naar Rangers FC af omdat de Schotse club twijfels had over zijn inzetbaarheid. Peter Bosz reageerde daar vrijdag op zijn manier op.",
-      "publishedAt": "2026-08-21T21:10:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
@@ -143,17 +198,6 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/crl7g4e4pdno?at_medium=RSS&at_campaign=rss",
       "summary": "How Arsenal and Coventry's players rated following their Premier League match.",
       "publishedAt": "2026-08-21T20:52:32.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Foutje Van Ewijk leidt eenvoudige Arsenal-zege in bij Premier League-opening",
-      "link": "https://www.vi.nl/nieuws/foutje-van-ewijk-leidt-eenvoudige-arsenal-zege-in-bij-premier-league-opening",
-      "summary": "Arsenal kende vrijdagavond weinig moeite met Coventry City. De kampioen van Engeland opende tegen de promovendus en werd op weg geholpen door Milan van Ewijk. Zo is Arsenal terug op de plek waar het vorig seizoen eindigde.",
-      "publishedAt": "2026-08-21T20:51:00.000Z"
     },
     {
       "type": "rss",
@@ -201,17 +245,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Matthieu Epolo partira-t-il ? Les vérités de Marc Wilmots sur la fin de mercato du Standard",
-      "link": "https://www.walfoot.be/news/2026-08-21/matthieu-epolo-partira-t-il-les-verites-de-marc-wilmots-sur-la-fin-de-mercato-du-standard",
-      "summary": "Quelques minutes avant le coup d'envoi de Standard - La Louvière, Marc Wilmots était de passage au micro de DAZN. Le directeur sportif des Rouches s'est confié sur le mercato liégeois, notamment sur le dossier d'un certain Matthieu Epolo.",
-      "publishedAt": "2026-08-21T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "BE",
@@ -220,17 +253,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/gouden-invaller-zorgt-voor-eerste-driepunter-van-standard-dit-seizoen-la-louviere-blijft-met-0-op-9-achter",
       "summary": "Standard heeft in eigen huis zijn eerste driepunter van het seizoen gepakt. De Rouches wonnen thuis probleemloos met 2-0 van La Louvière. Het was wel wachten tot invaller Drammeh zijn duivels ontbond voor de thuisploeg bij zijn invalbeurt. La Louvière heeft na wedstrijden tegen Anderlecht, KAA Gent en Standard nog steeds geen punten gepakt. Er volgt een lastig seizoen voor hen.",
       "publishedAt": "2026-08-21T08:37:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Salieu Drammeh, changement gagnant : le Standard peine, mais se défait de la RAAL et s'offre un premier succès",
-      "link": "https://www.walfoot.be/news/2026-08-21/salieu-drammeh-changement-gagnant-le-standard-peine-mais-se-defait-de-la-raal-et-soffre-un-premier-succes",
-      "summary": "Contrarié en première période, le Standard aura fait la différence après l'heure de jeu pour s'imposer face à la RAAL La Louvière, ce vendredi soir en ouverture de la troisième journée de Jupiler Pro League. Remplaçant et auteur d'un doublé en moins de quinze minutes, Salieu Drammeh est l'homme du match.",
-      "publishedAt": "2026-08-21T08:36:00.000Z"
     },
     {
       "type": "rss",
@@ -253,28 +275,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/vanavond-in-de-challenger-pro-league-mazzu-onderuit-met-eupen",
       "summary": "De tweede speeldag van de Challenger Pro League heeft vrijdagavond twee wedstrijden opgeleverd. Zowel RSCA Futures als KSC Lokeren kwam in actie. Dit gebeurde er in beide duels.",
       "publishedAt": "2026-08-21T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Première défaite pour Felice Mazzù avec Eupen, Virton piège les RSCA Futures",
-      "link": "https://www.walfoot.be/news/2026-08-21/premiere-defaite-pour-felice-mazzu-avec-eupen-virton-piege-les-rsca-futures",
-      "summary": "Parallèlement au match du Standard contre La Louvière, la deuxième journée de D1B s'ouvrait également ce soir. Compte-rendu de la rencontre entre Lokeren et Eupen, ainsi que de celle entre les RSCA Futures et Virton.",
-      "publishedAt": "2026-08-21T07:58:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Bob Peeters doorbreekt het beeld van Christian Brüls met straffe anekdote van promotiestrijd",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-21/bob-peeters-doorbreekt-het-beeld-van-christian-bruls-met-straffe-anekdote-van-promotiestrijd",
-      "summary": "Christian Brüls heeft bij heel wat voetbalfans het imago van een eigenzinnige speler die het niet altijd even nauw neemt. Bob Peeters kent hem echter door en door en schetst een compleet ander beeld van de ervaren middenvelder.",
-      "publishedAt": "2026-08-21T07:40:00.000Z"
     },
     {
       "type": "rss",
