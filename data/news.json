@@ -1,16 +1,71 @@
 {
-  "generatedAt": "2026-08-23T21:24:54.330Z",
+  "generatedAt": "2026-08-23T23:24:48.851Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "How Hull kept plan to stun Man Utd secret",
+      "link": "https://www.bbc.co.uk/sport/football/articles/ce343r7245no?at_medium=RSS&at_campaign=rss",
+      "summary": "Hull City boss Sergej Jakirovic kept his plan to topple Manchester United on their Premier League return under wraps for weeks, assistant head coach Dean Holden tells Match of the Day.",
+      "publishedAt": "2026-08-23T23:12:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Ceferin brands Infantino’s failed World Cup plan as ‘even worse than the Super League’",
+      "link": "https://www.theguardian.com/football/2026/aug/24/aleksander-ceferin-gianni-infantino-world-cup-fifa-uefa-super-league",
+      "summary": "Fifa president will face opponent if he seeks re-election Ceferin: ‘We stopped another try to steal the sport’ The Uefa president, Aleksander Ceferin, has described Gianni Infantino’s doomed attempt to sell stakes in the World Cup as “even worse than the Super League plan” and warned his embattled Fifa counterpart that he will face an opponent if he runs for re-election next March. Ceferin has led Uefa’s firm collective stance against the Football Forward Enterprise (FFE) scheme, which was shelved amid widespread opposition at the start of August. Uefa are pushing for Infantino to quit, also drawing on support from Concacaf and the Asian Football Confederation, and are yet to drop a threat to boycott Fifa competitions while talks are under way with Concacaf to set up a combined Nations League tournament. Continue reading...",
+      "publishedAt": "2026-08-23T23:01:44.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: Barça op weg naar grote overwinning bij Elche",
-      "link": "https://www.vi.nl/nieuws/vi-live-barca-op-weg-naar-grote-overwinning-bij-elche",
-      "summary": "In de Eredivisie staan er drie duels op de rol, waarvan de wedstrijden van PSV en Feyenoord een apart liveblog hebben. Maar met Go Ahead Eagles tegen ADO Den Haag en duels van onder meer Liverpool, Manchester City, Barcelona, Atlético Madrid, Paris Saint-Germain, AC Milan en Juventus hoeven we ons niet te vervelen. Volg het in de VI Live.",
-      "publishedAt": "2026-08-23T21:05:00.000Z"
+      "title": "Samenvatting: Feyenoord loopt na vuurwerkincident weg bij Cambuur",
+      "link": "https://www.vi.nl/video/samenvatting-feyenoord-loopt-na-vuurwerkincident-weg-bij-cambuur",
+      "summary": "De uitwedstrijd van Feyenoord tegen SC Cambuur werd zondag overschaduwd door een vuurwerkincident. De Rotterdammers boekten uiteindelijk een eenvoudige zege op bezoek bij de promovendus . Bekijk hier de hoogtepunten.",
+      "publishedAt": "2026-08-23T22:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Samenvatting: onnavolgbare Van Bommel gidst PSV langs FC Groningen",
+      "link": "https://www.vi.nl/video/samenvatting-onnavolgbare-van-bommel-gidst-psv-langs-fc-groningen",
+      "summary": "PSV boekte zondag een overtuigende overwinning op FC Groningen . Ruben van Bommel was de grote uitblinker bij de landskampioen, Filip Kostic en Lutsharel Geertruida maakten hun debuut. Bekijk hier de hoogtepunten.",
+      "publishedAt": "2026-08-23T22:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Barça heeft De Jong niet nodig voor doelpuntrijk debutantenfeestje tegen Elche",
+      "link": "https://www.vi.nl/nieuws/barca-heeft-de-jong-niet-nodig-voor-doelpuntrijk-debutantenfeestje-tegen-elche",
+      "summary": "Landskampioen Barcelona heeft zondagavond geen fout gemaakt bij zijn start van het nieuwe seizoen in Spanje. Elche werd op een ruime nederlaag getrakteerd. Het werd een debutantenfeestje, afgesloten met een (kleine) kater.",
+      "publishedAt": "2026-08-23T21:27:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Ferran treedt in de voetsporen van Mboma en Ibrahimovic, Porto wint",
+      "link": "https://www.vi.nl/nieuws/ferran-treedt-in-de-voetsporen-van-mboma-en-ibrahimovic-porto-wint",
+      "summary": "Met buitenlandse duels van Liverpool, Manchester City, Barcelona, Atlético Madrid, Paris Saint-Germain, AC Milan en Juventus hoefden we ons zondag niet te vervelen. Lees hier alles nog eens terug.",
+      "publishedAt": "2026-08-23T21:25:00.000Z"
     },
     {
       "type": "rss",
@@ -36,25 +91,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Valse start PSG: Ferran redt punt, Godts debuteert",
-      "link": "https://www.vi.nl/nieuws/valse-start-psg-ferran-redt-punt-godts-debuteert",
-      "summary": "Paris Saint-Germain heeft het seizoen in de Ligue 1 geopend met een gelijkspel op bezoek bij Stade Rennes. De titelverdediger leek op weg naar een nederlaag, maar hield dankzij debutant Ferran Torres ternauwernood een punt over aan het bezoek aan Rhoazon Park. Ook Mika Godts maakte zijn eerste minuten.",
-      "publishedAt": "2026-08-23T20:37:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Perez draait het om na vuurwerkincident: 'Medelijden met afstekers… Zo'n laag IQ'",
-      "link": "https://www.vi.nl/nieuws/perez-draait-het-om-na-vuurwerkincident-medelijden-met-afstekers-zo-n-laag-iq",
-      "summary": "Analyticus Kenneth Perez heeft geen goed woord over voor de personen die zondag tijdens een duel met SC Cambuur vuurwerk afstaken vanuit het uitvak van Feyenoord .",
-      "publishedAt": "2026-08-23T19:34:00.000Z"
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Newcastle and Liverpool crank up the entertainment for emotional send-off | Sam Dalling",
+      "link": "https://www.theguardian.com/football/2026/aug/23/newcastle-liverpool-entertainment-emotional-kevin-keegan",
+      "summary": "While the teams produced more promise than polish, this thrilling encounter gave an emotional send-off to a legend of both clubs It’s 4.35pm on Tyneside. William Osula sets Anthony Elanga away, slightly right of centre and just short of 50,000 draw collective breaths. Pace is no issue; Elanga has no shortage of that, and Milos Kerkez won’t catch him. But Newcastle fans have seen this clip before and remember the ending. Muscles tighten, cheeks clench, as they brace themselves for it to start again like it carried on before. (Yet) another memeable‑moment inbound. Continue reading...",
+      "publishedAt": "2026-08-23T20:29:59.000Z"
     },
     {
       "type": "rss",
@@ -73,28 +117,6 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Wissa shines as Isak struggles - Newcastle v Liverpool player ratings",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c9q9q2gnxvjo?at_medium=RSS&at_campaign=rss",
-      "summary": "How Newcastle United and Liverpool's players rated in their Premier League match.",
-      "publishedAt": "2026-08-23T19:22:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Ernst bijna geraakt door vuurwerk: 'Ik schrok ervan, beangstigend voor iedereen'",
-      "link": "https://www.vi.nl/video/ernst-bijna-geraakt-door-vuurwerk-ik-schrok-ervan-beangstigend-voor-iedereen",
-      "summary": "Tjark Ernst moest zondag rennen om de vuurpijlen uit het uitvak te ontwijken. De doelman van Feyenoord blikte na de uitzege op SC Cambuur terug op de ongeregeldheden in Leeuwarden.",
-      "publishedAt": "2026-08-23T19:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "'Up front next week?' Maresca's Guehi gamble pays off",
       "link": "https://www.bbc.co.uk/sport/football/articles/cqx7x1wpz20o?at_medium=RSS&at_campaign=rss",
       "summary": "Rather than playing safe in selecting his Manchester City side for the first time in the Premier League, Enzo Maresca made a bold choice in midfield. Ultimately, it paid off.",
@@ -106,32 +128,10 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Late penalty for Liverpool denies Newcastle win",
-      "link": "https://www.bbc.co.uk/sport/football/videos/c36d6lxx36eo?at_medium=RSS&at_campaign=rss",
-      "summary": "Szoboszlai rescues a point for Liverpool, scoring a stoppage-time penalty to deny Newcastle an opening game victory at St James' Park in the Premier League.",
-      "publishedAt": "2026-08-23T19:01:23.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "European football: Mohamed Salah scores first goals in Trabzonspor victory",
-      "link": "https://www.theguardian.com/football/2026/aug/23/european-football-psg-rennes-torino-milan-elche-barcelona-bayern-munich-harry-kane",
-      "summary": "Atlético’s Julián Alvarez booed by fans in draw Harry Kane named player of year in Germany Mohamed Salah scored his first goals for Trabzonspor with a brace in their 2-1 win over Istanbul Basaksehir. The former Liverpool forward joined the Super Lig side on a two-year deal at the start of August and made his debut for the club from the bench in their 1-1 draw at Kasimpasa last week. Continue reading...",
-      "publishedAt": "2026-08-23T18:27:34.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool’s Szoboszlai spot on with late, late leveller to salvage point at Newcastle",
-      "link": "https://www.theguardian.com/football/2026/aug/23/newcastle-liverpool-premier-league-match-report",
-      "summary": "Before kick-off a banner was raised in the Gallowgate End inscribed with a quotation from the late Kevin Keegan. “I want people to dream about their football,” it read. “We should all be dreamers at heart.” Out on the pitch it swiftly became apparent that both Matthias Jaissle, Keegan’s latest successor in the Newcastle dugout, and Liverpool’s new manager Andoni Iraola are on individual missions to create forms of organised chaos capable of subjecting the best opponents to torrid nightmares. Continue reading...",
-      "publishedAt": "2026-08-23T17:43:20.000Z"
+      "title": "Watkins' absence at Brighton a question for him - Emery",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c20j3vjvy48o?at_medium=RSS&at_campaign=rss",
+      "summary": "Ollie Watkins' absence in Aston Villa's thrashing at Brighton is a question for the striker, says boss Unai Emery.",
+      "publishedAt": "2026-08-23T19:07:55.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Liverpool latest: Iraola says Isak expected hostile return at Newcastle",
-      "link": "https://www.skysports.com/football/live-blog/12040/13025501/liverpool-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-      "summary": "",
+      "title": "Is Fils favourite to win US Open? Frenchman beats Tiafoe to win Cincinnati title",
+      "link": "https://www.skysports.com/tennis/news/12040/13576338/cincinnati-open-arthur-fils-defeats-frances-tiafoe-in-historic-atp-masters-1000-final-between-two-black-players",
+      "summary": "Frenchman Arthur Fils may have played himself into contention to win the US Open after sealing the biggest title of his career at the Cincinnati Open on Sunday.",
       "publishedAt": null
     },
     {
@@ -293,9 +293,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Somerset ramp up pressure on leaders Nottinghamshire",
-      "link": "https://www.skysports.com/cricket/news/12040/13576329/rothesay-county-championship-somerset-ramp-up-the-pressure-on-division-one-leaders-nottinghamshire",
-      "summary": "Somerset ramped up the pressure on County Championship Division One leaders Nottinghamshire with an eight-wicket victory at home against Essex.",
+      "title": "Late Clark magic holds off McIlroy and Cantlay in PGA Tour thriller",
+      "link": "https://www.skysports.com/golf/news/12040/13576414/bmw-championship-rory-mcilroy-third-as-wyndham-clark-blows-big-lead-before-closing-out-pga-tour-victory",
+      "summary": "Wyndham Clark overcame blowing a five-shot lead to edge out Rory McIlroy with a dramatic three-shot victory at the PGA Tour's BMW Championship.",
       "publishedAt": null
     },
     {
@@ -304,9 +304,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Hits and misses: Maresca's Man City experiment gets lucky",
-      "link": "https://www.skysports.com/football/news/12040/13576249/enzo-marescas-man-city-experiment-gets-lucky-alexander-isaks-struggles-continue-and-aston-villas-problems-exposed-premier-league-hits-and-misses",
-      "summary": "",
+      "title": "Leeds THRASH York to top Super League",
+      "link": "https://www.skysports.com/watch/video/13576435/york-knights-16-66-leeds-rhinos-super-league-highlights",
+      "summary": "Highlights of the Super League clash between the York Knights and Leeds Rhinos.",
       "publishedAt": null
     },
     {
@@ -315,9 +315,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Late Liverpool pen sees Szoboszlai silence Newcastle in draw",
-      "link": "https://www.skysports.com/watch/video/13576408/newcastle-2-2-liverpool-premier-league-highlights",
-      "summary": "FREE TO WATCH: Highlights from the Premier League match between Newcastle and Liverpool.",
+      "title": "Papers: Palace prepare audacious £50m bid for West Ham captain Bowen",
+      "link": "https://www.skysports.com/football/news/12040/13576453/crystal-palace-transfer-news-eagles-prepare-audacious-50m-bid-to-lure-jarrod-bowen-back-to-premier-league-paper-talk",
+      "summary": "The top stories and transfer rumours from Monday's newspapers...",
       "publishedAt": null
     },
     {
@@ -326,9 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Nev: Wirtz and Isak Liverpool's biggest disappointments - they must improve",
-      "link": "https://www.skysports.com/football/news/12040/13576437/liverpools-alexander-isak-and-florian-wirtz-biggest-disappointments-says-gary-neville-after-pair-underwhelm-in-draw-at-newcastle",
-      "summary": "Gary Neville called on Florian Wirtz and Alexander Isak to improve after a year of \"being kind to\" Liverpool's £200m+ duo, but said he had faith the pair would come good despite being their \"biggest disappointments\" at Newcastle.",
+      "title": "Brilliant Beau wins back-to-back Women's Series titles",
+      "link": "https://www.skysports.com/darts/news/12040/13576331/beau-greaves-beau-and-arrow-defeats-lisa-ashton-and-aileen-de-graaf-to-close-in-on-her-60th-title-on-the-womens-series-circuit",
+      "summary": "Beau Greaves defeated Lisa Ashton and Aileen de Graaf on Sunday to close in on her 60th title on the Women's Series circuit.",
       "publishedAt": null
     }
   ]
