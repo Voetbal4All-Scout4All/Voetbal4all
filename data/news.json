@@ -1,27 +1,16 @@
 {
-  "generatedAt": "2026-08-26T22:54:28.032Z",
+  "generatedAt": "2026-08-27T16:14:58.337Z",
   "items": [
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Mini-Rodri' Gonzalez shown he will be loved at Newcastle",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cwyz3ky2kqdo?at_medium=RSS&at_campaign=rss",
-      "summary": "Nico Gonzalez is given a rapturous welcome before Newcastle's Carabao Cup win against West Brom following the £52m midfielder's arrival from Manchester City.",
-      "publishedAt": "2026-08-26T22:52:36.000Z"
-    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Liverpool – Spurs hoogtepunt in derde ronde League Cup",
-      "link": "https://www.vi.nl/nieuws/liverpool-spurs-hoogtepunt-in-derde-ronde-league-cup",
-      "summary": "Er zijn nog twee wedstrijden te gaan in de tweede ronde van de League Cup, maar er werd woensdagavond wel alvast geloot voor de derde ronde. Liverpool – Tottenham Hotspur belooft het klapstuk te worden.",
-      "publishedAt": "2026-08-26T21:47:46.000Z"
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Van den Brom baalt van Nijstad-nieuws op wedstrijddag: 'Hij is soms wat onzeker'",
+      "link": "https://www.vi.nl/nieuws/van-den-brom-baalt-van-nijstad-nieuws-op-wedstrijddag-hij-is-soms-wat-onzeker",
+      "summary": "Ruud Nijstad staat donderdagavond in de basis bij FC Twente tijdens de return tegen FK Qarabag. Eerder op de dag meldde VI dat Barcelona zich bij de Tukkers heeft gemeld voor de achttienjarige verdediger. Trainer John van den Brom kan daar niet veel mee en gaat bij ESPN ook in op zijn opstelling in Azerbeidzjan.",
+      "publishedAt": "2026-08-27T16:13:46.000Z"
     },
     {
       "type": "rss",
@@ -29,10 +18,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "De mogelijke Champions League-tegenstanders en potindeling PSV en Feyenoord",
-      "link": "https://www.vi.nl/nieuws/de-mogelijke-champions-league-tegenstanders-en-potindeling-psv-en-feyenoord",
-      "summary": "PSV en Feyenoord plaatsten zich door hun respectievelijke eerste en tweede plekken in de Eredivisie voor de Champions League. Het deelnemersveld is inmiddels bekend. In dit artikel alles over de mogelijke opponenten, de potindeling en de belangrijkste datums.",
-      "publishedAt": "2026-08-26T21:35:00.000Z"
+      "title": "VI Live: ceremonie begonnen, maar loting met PSV en Feyenoord duurt nog even",
+      "link": "https://www.vi.nl/nieuws/vi-live-psv-en-feyenoord-in-de-koker-tijdens-champions-league-loting",
+      "summary": "Donderdagavond wordt er in Monaco geloot voor de competitiefase van de Champions League. 36 teams, waaronder PSV en Feyenoord, horen met welke acht ploegen de degens gekruist worden. Mis niets van de loting in deze VI Live!",
+      "publishedAt": "2026-08-27T16:07:38.000Z"
     },
     {
       "type": "rss",
@@ -40,21 +29,54 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Liverpool to face Tottenham in EFL Cup third round",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c62mr6pv65zo?at_medium=RSS&at_campaign=rss",
-      "summary": "Liverpool face Tottenham in the third round of the EFL Cup, Manchester United play Brighton and Manchester City draw Norwich.",
-      "publishedAt": "2026-08-26T21:33:31.000Z"
+      "title": "Sutton's predictions v Royal Blood drummer Ben Thatcher",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c204dj7vng2o?at_medium=RSS&at_campaign=rss",
+      "summary": "BBC Sport football expert Chris Sutton takes on Royal Blood drummer Ben Thatcher, plus the BBC readers and AI with his predictions for this weekend's Premier League fixtures.",
+      "publishedAt": "2026-08-27T16:04:56.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
-      "country": "INT",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "VI Live: aftrap Twente uitgesteld vanwege onweer, Ajax later in actie",
+      "link": "https://www.vi.nl/nieuws/vi-live-volg-hier-qarabag-fk-fc-twente-en-ajax-fc-sion-in-conference-league",
+      "summary": "Voor FC Twente en Ajax valt donderdag de beslissing over deelname aan het hoofdtoernooi van de Conference League. FC Twente moet op bezoek bij Qarabag FK om 18.00 uur een 1-0 achterstand goedmaken, terwijl Ajax om 20.00 uur thuis tegen FC Sion een 4-2 voorsprong verdedigt. Mis niets van beide duels in deze VI Live.",
+      "publishedAt": "2026-08-27T16:04:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Aftrap Qarabag – Twente kwartiertje later door noodweer",
+      "link": "https://www.vi.nl/nieuws/aftrap-qarabag-twente-kwartiertje-later-door-noodweer",
+      "summary": "Qarabag en FC Twente zouden normaliter om 18.00 uur Nederlandse tijd beginnen aan hun returnwedstrijd om een plekje in de hoofdfase van de Conference League. Noodweer boven Baku verhindert dat: het duel gaat om 18.15 uur van start.",
+      "publishedAt": "2026-08-27T16:02:05.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "FR",
       "flag": "🌍",
-      "title": "Yaya Touré en Slovan vervolledigen deelnemersveld Champions League",
-      "link": "https://www.vi.nl/nieuws/yaya-toure-en-slovan-vervolledigen-deelnemersveld-champions-league",
-      "summary": "Het laatste plekje op het bal is voor Slovan Bratislava. De Slowaken, onder leiding van Yaya Touré, wonnen woensdagavond na verlenging met 1-2 bij NK Celje en grepen zodoende het enige overgebleven startbewijs voor de Champions League.",
-      "publishedAt": "2026-08-26T21:31:30.000Z"
+      "title": "Uefa Champions League 2026-27: league phase draw – live",
+      "link": "https://www.theguardian.com/football/live/2026/aug/27/uefa-champions-league-2026-27-league-phase-draw-live",
+      "summary": "Draw starts at 5pm BST (6pm CET) Get in touch: email John and follow us on BlueSky What’s the dream draw here for the Premier League teams? Inter and Atlético from pot one perhaps? Club Brugge and Betis from two, Lille and Feyenoord from three? Lask and Viking from four? And the nightmare? PSG, Barcelona, Dortmund, Sporting, Napoli, Galatasaray, Como, Lens maybe? To be fair, the pots do seem to be well structured – so there’s not a huge range between the best- and worst-case scenarios. And given English teams snagged five of the top eight places last year, it’s not unreasonable to suggest that the Premier League quintet are the ones the rest will want to avoid. The draw is pretty straightforward. Each team is allocated eight opponents, with four home games and four away games. Two opponents are taken from each seeding pot and teams cannot meet a team from their own country. Continue reading...",
+      "publishedAt": "2026-08-27T15:53:03.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Villa sign Goretzka - what went wrong at Bayern and what will he bring?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c20vm630grxo?at_medium=RSS&at_campaign=rss",
+      "summary": "Aston Villa complete the signing of former Bayern Munich midfielder Leon Goretzka on a free transfer.",
+      "publishedAt": "2026-08-27T15:39:49.000Z"
     },
     {
       "type": "rss",
@@ -62,10 +84,32 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Chelsea in talks with Martínez’s camp as Aston Villa close on striker Jackson",
-      "link": "https://www.theguardian.com/football/2026/aug/26/chelsea-emiliano-martinez-aston-villa-goalkeeper",
-      "summary": "Blues consider making offer for Argentina goalkeeper Villa agree £65m Jackson deal as Watkins nears £50m exit Manchester City expected to make bid for Fernández Chelsea have been offered Emiliano Martínez and are considering a bid for the goalkeeper. The club are in talks with Martínez’s camp, and are also braced for a bid from Manchester City for the World Cup winner’s Argentina teammate Enzo Fernández. Martínez has told Aston Villa he wants to leave but a move to Juventus collapsed last week after Villa had signed his replacement, Zion Suzuki, from Parma for £30m. Continue reading...",
-      "publishedAt": "2026-08-26T21:30:42.000Z"
+      "title": "Spurs still paying price for a punishing World Cup and pre-season trip to Australia",
+      "link": "https://www.theguardian.com/football/2026/aug/27/spurs-squad-pre-season-charlton-carabao-cup-newcastle",
+      "summary": "Too many players are off the pace and although Tottenham brushed aside Charlton, Newcastle will be a tougher challenge Jan Paul van Hecke was among those given an unwanted name-check by Roberto De Zerbi after Tottenham’s 3-0 defeat at Brentford on Saturday. Not at the right level physically, was the gist of the manager’s comments. De Zerbi also mentioned Marcos Senesi and Sandro Tonali, two of the club’s other new signings. Their condition had to come as no surprise. It certainly did not to De Zerbi. Take the case of Van Hecke, for whom the summer months have been a whirlwind. A few bullet-points from his timeline are worth noting. 18 June: joins Spurs from Brighton for £52m; 30 June: knocked out of World Cup with the Netherlands after last-32 penalty shootout defeat to Morocco; 23 July: boards team flight with Spurs for pre-season tour to New Zealand and Australia. “It was a really short break, to be honest,” Van Hecke says. “But I didn’t want to miss anything in the pre-season. My first days [as a Spurs player] were in New Zealand and Australia.” Continue reading...",
+      "publishedAt": "2026-08-27T15:27:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "WK-ganger Providence verlaat Almere City voor buitenlands avontuur",
+      "link": "https://www.vi.nl/nieuws/wk-ganger-providence-verlaat-almere-city-voor-buitenlands-avontuur",
+      "summary": "Ruben Providence heeft Almere City verlaten. De Haïtiaanse WK-ganger heeft zijn gewilde transfer naar het Turkse FK Bodrum te pakken.",
+      "publishedAt": "2026-08-27T15:24:46.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Football Daily | Why the transfer window is actually a large collection of different windows",
+      "link": "https://www.theguardian.com/football/2026/aug/27/why-transfer-window-large-collection-different-windows-football-daily",
+      "summary": "Sign up now! Sign up now! Sign up now? Sign up now! The transfer window isn’t an actual window, of course. In reality, it’s a large collection of different windows, with each club having one of their own, through which they peer longingly, occasionally flinging large quantities of cash money out of them like half-cut sailors on a ship coming into dock, and they’re all in various states of disrepair. For example, Tottenham have only recently prised theirs open – the previous occupant, Mr Levy, had deliberately painted over the seals – and all summer it’s been flapping in the breeze like the screen door of a haunted house. Manchester City meanwhile have removed the glass from their frames altogether, allowing the free movement of large expensive items safely through it in both directions. There are some officious-looking gentlemen with clipboards currently double-checking the structural integrity of that one. They say they’ll get back to us. I see that after disappointing at Man City, Savinho changed his name to Sávio, and then scored on his debut for Spurs. In the hope that the same trick works for me, in terms of improving my strike rate in getting letters to Football Daily published, I’m changing my name to Noble Francis” – Phil Taverner. One of my very favourite things in modern football is to see players for billion-dollar teams in billion-dollar stadiums ‘giving it large’ after scoring against lower-league opposition, following a humiliating loss in a derby game (yes, I know it’s Brentford, but it still counts as a derby) – Noble Francis. This is an extract from our daily football email … Football Daily. To get the full version, just visit this page and follow the instructions. Continue reading...",
+      "publishedAt": "2026-08-27T14:50:59.000Z"
     },
     {
       "type": "rss",
@@ -73,76 +117,21 @@
       "sourceSlug": "bbc-sport-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Uefa to push to remove Infantino after dropping boycott",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cdj4emmmn9vo?at_medium=RSS&at_campaign=rss",
-      "summary": "Uefa dropped their plans to boycott Fifa tournaments on Wednesday, but will still move forward with efforts to remove Gianni Infantino.",
-      "publishedAt": "2026-08-26T21:04:22.000Z"
+      "title": "Uefa preparing criminal legal action against Infantino",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cx2zl5kwlxjo?at_medium=RSS&at_campaign=rss",
+      "summary": "Uefa is pursuing criminal proceedings against Fifa president Gianni Infantino over the scrapped plan to sell off stakes in the World Cup.",
+      "publishedAt": "2026-08-27T14:42:09.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "Aké en Fenerbahçe halen na achttien jaar weer CL, Viking schrijft historie",
-      "link": "https://www.vi.nl/nieuws/ake-en-fenerbahce-halen-cl-in-lyon-viking-schrijft-historie",
-      "summary": "Fenerbahçe heeft zich woensdagavond gekwalificeerd voor de hoofdfase van de Champions League. De grootmacht uit Istanbul maakte indruk op bezoek bij Olympique Lyon en greep een startbewijs voor het miljardenbal. Dat lukte ook Viking FK en AEK Athene.",
-      "publishedAt": "2026-08-26T21:03:37.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
       "country": "ES",
       "flag": "🌍",
-      "title": "Hattrick Mbappé tijdens Bernabéu-debuut Dumfries: Real wint ook van Sociedad",
-      "link": "https://www.vi.nl/nieuws/hattrick-mbappe-tijdens-bernabeu-debuut-dumfries-real-wint-ook-van-sociedad",
-      "summary": "Kylian Mbappé heeft zijn eerste competitiegoals van het seizoen te pakken voor Real Madrid. De ploeg van José Mourinho, die Denzel Dumfries zijn eerste officiële minuten in Estadio Santiago Bernabéu als speler van De Koninklijke liet maken, won met 4-1 van Real Sociedad.",
-      "publishedAt": "2026-08-26T20:59:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Sávio savours debut goal as Spurs coast to emphatic Carabao Cup win over Charlton",
-      "link": "https://www.theguardian.com/football/2026/aug/26/tottenham-charlton-carabao-cup-match-report",
-      "summary": "A new season at the snazziest modern stadium in England and something extremely welcome for Tottenham. A home win over domestic opposition. There were only four of them last time out; three in the Premier League with the final one – over Everton on the last day – helping them to avoid relegation. Had they lost that, this Carabao Cup fixture against Charlton would also have been played in the Championship. Spurs needed this tonic for another reason – to begin the clean-up operation after Saturday’s awful 3-0 defeat at Brentford. Continue reading...",
-      "publishedAt": "2026-08-26T20:58:36.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Thierno Barry fires hat-trick as ruthless Everton sweep Preston aside",
-      "link": "https://www.theguardian.com/football/2026/aug/26/preston-everton-carabao-cup-match-report",
-      "summary": "Thierno Barry resembled a striker reborn, and the goalscorer David Moyes desperately needs, as the first hat-trick of his Everton career plus an assist for new signing Brennan Johnson delivered a resounding win for the Scot on his competitive return to Preston. The France under-21 international scored eight times in a difficult debut season in England but has half that amount two games into this fledgling campaign. Barry followed up his header against Crystal Palace with a poacher’s hat-trick to give Moyes a convincing victory back at the club where he made his name before leaving for Everton in 2002. Continue reading...",
-      "publishedAt": "2026-08-26T20:55:10.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Barnes settles stormer to hand Jaissle first Newcastle win against West Brom",
-      "link": "https://www.theguardian.com/football/2026/aug/26/newcastle-west-brom-carabao-cup-match-report",
-      "summary": "Around this time last week Matthias Jaissle wore a sorrowful look as he spoke of his “disappointment” at the “negativity” surrounding a transitional young Newcastle side. Fast forward seven days and a team slightly unlucky to have been held to a draw at home by Liverpool last Sunday have now provided Jaissle with his first competitive win since replacing Eddie Howe as head coach. It is safe to say the doubters are being confounded. Continue reading...",
-      "publishedAt": "2026-08-26T20:54:31.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Vrancken's side come of age as Hearts bid goodnight Vienna",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c7v468zj6r5o?at_medium=RSS&at_campaign=rss",
-      "summary": "After some early season setbacks, \"proud\" Wouter Vrancken believes Hearts are getting their rewards by securing Conference League progress.",
-      "publishedAt": "2026-08-26T20:54:28.000Z"
+      "title": "Arsenal only likely exit for Alvarez as striker skips training",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c980e1d2vpgo?at_medium=RSS&at_campaign=rss",
+      "summary": "Julian Alvarez has not attended Atletico Madrid training since being told privately that the club would not sell him to Barcelona.",
+      "publishedAt": "2026-08-27T14:18:57.000Z"
     },
     {
       "type": "rss",
@@ -150,10 +139,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "INT",
       "flag": "🌍",
-      "title": "Ten-man Hearts stun Rapid Vienna in shootout to reach Conference League",
-      "link": "https://www.theguardian.com/football/2026/aug/26/conference-league-rapid-vienna-hearts-qualifying-playoff-match-report",
-      "summary": "Playoff second leg: Rapid 2-2 Hearts (aet, 3-4 on pens) Kara 34, Cvetkovic 119; Kabore 79, Miller 100 Beau Reus made two penalty saves as heroic Hearts overcame Tomas Magnusson’s red card to pull off a stunning shootout victory away to Rapid Vienna, and book themselves a return to the Conference League’s main phase. Following a 2-2 draw in the first leg at Tynecastle, the Jambos’ European journey looked to be fizzling out when they were reduced to 10 men in the 75th minute of the playoff round second leg, while already trailing to Ercan Kara’s first-half goal. Continue reading...",
-      "publishedAt": "2026-08-26T20:16:04.000Z"
+      "title": "Uefa preparing to bring criminal claims against Gianni Infantino over World Cup sale",
+      "link": "https://www.theguardian.com/football/2026/aug/27/uefa-preparing-to-bring-criminal-claims-against-gianni-infantino-over-world-cup-sale",
+      "summary": "Uefa says claims will be made in Switzerland It says claims relate to alleged criminal mismanagement Uefa is preparing to make a criminal complaint against Gianni Infantino for alleged “criminal mismanagement” in connection with his failed Fifa Forward Enterprise plan and has applied for the release of documents related to its conception. In an explosive escalation of the war engulfing football’s governing bodies, Uefa has made separate applications in the United States for information, including from Fifa and the investment firm Thrive Capital. Continue reading...",
+      "publishedAt": "2026-08-27T14:06:37.000Z"
     },
     {
       "type": "rss",
@@ -161,32 +150,21 @@
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Villa close to £65m move for Chelsea's Jackson",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cge4y57ygvdo?at_medium=RSS&at_campaign=rss",
-      "summary": "The striker is nearing a move to Villa Park after three years at Chelsea.",
-      "publishedAt": "2026-08-26T19:46:01.000Z"
+      "title": "Carragher facing bankruptcy petition over unpaid tax claim",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cr4vl0lw4qwo?at_medium=RSS&at_campaign=rss",
+      "summary": "Former Liverpool and England player turned pundit Jamie Carragher faces being declared bankrupt over an unpaid tax bill.",
+      "publishedAt": "2026-08-27T13:05:37.000Z"
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Wouter Vrancken en Hearts overleven knotsgekke avond met tien man en penalty’s",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-26/wouter-vrancken-en-hearts-overleven-knotsgekke-avond-met-tien-man-en-penaltys",
-      "summary": "Wouter Vrancken heeft met Hearts alsnog zijn Europese seizoen gered. Na eerdere uitschakelingen in de voorrondes van zowel de Champions League als de Europa League hing alles af van de play-offs van de Conference League. Ook daar werd het woensdagavond een zenuwslopende avond tegen Rapid Wien.",
-      "publishedAt": "2026-08-26T09:11:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "FR",
       "flag": "🌍",
-      "title": "🎥 Lyon éliminé de la Ligue des Champions malgré un bijou de Malick Fofana, un ancien du Standard buteur",
-      "link": "https://www.walfoot.be/news/2026-08-26/-lyon-elimine-de-la-ligue-des-champions-malgre-un-bijou-de-malick-fofana-un-ancien-du-standard-buteur",
-      "summary": "Les barrages de Ligue des Champions connaissaient leur épilogue ce soir. Petit tour d'horizon des terrains européens, avec forcément une attention particulière sur Lyon et ses deux Belges face au Fenerbahçe de Romelu Lukaku.",
-      "publishedAt": "2026-08-26T09:09:00.000Z"
+      "title": "Liverpool agree £120m deal for Bradley Barcola after breakthrough talks with PSG",
+      "link": "https://www.theguardian.com/football/2026/aug/27/liverpool-bradley-barcola-psg-transfer-window",
+      "summary": "Liverpool would pay £100m plus £2om in add-ons Andoni Iraola hints at exit for Cody Gakpo in this window Liverpool are closing in on a £120m deal for Bradley Barcola after a breakthrough in talks with Paris Saint-Germain and will attempt to “improve other areas” according to head coach, Andoni Iraola. Barcola has been Liverpool’s main transfer target all summer only for PSG’s £145m valuation to prove a significant hurdle. However, further negotiations on Wednesday night ended in an outline agreement being reached over a compromise fee. Liverpool have agreed to pay a guaranteed sum of just over £100m for the France international, with add-ons based on individual and team success, taking the overall package to about £120m. Continue reading...",
+      "publishedAt": "2026-08-27T08:26:17.000Z"
     },
     {
       "type": "rss",
@@ -194,21 +172,10 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Transferitis? Opvallende beslissing rond Raskin zet transfergeruchten op scherp",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-26/transferitis-opvallende-beslissing-rond-raskin-zet-transfergeruchten-op-scherp",
-      "summary": "Nicolas Raskin lijkt plots een stuk dichter bij een vertrek bij Rangers te staan. De Rode Duivel blijft thuis voor de Europese verplaatsing naar Jablonec, terwijl zijn trainer openlijk bevestigde dat er rond zijn toekomst beweging is en de interesse de voorbije dagen is toegenomen.",
-      "publishedAt": "2026-08-26T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Il y a clairement une opportunité pour lui et pour le club\" : le départ de Nicolas Raskin se précise !",
-      "link": "https://www.walfoot.be/news/2026-08-26/il-y-a-clairement-une-opportunite-pour-lui-et-pour-le-club-le-depart-de-nicolas-raskin-se-precise-",
-      "summary": "Les Rangers se déplacent chez les Tchèques de Jabonec demain soir. Un match pour lequel Nicolas Raskin a été laissé à la maison. Le Liégeois est en instance de départ. L'entraîneur Derek McInnes s'est d'ailleurs montré assez transparent en conférence de presse.",
-      "publishedAt": "2026-08-26T08:40:00.000Z"
+      "title": "LIVE: Twee wijzigingen bij STVV voor cruciale Europa League-wedstrijd",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-27/match-live-live-twee-wijzigingen-bij-stvv-voor-cruciale-europa-league-wedstrijd",
+      "summary": "STVV speelt donderdag de cruciale terugwedstrijd tegen Omonia Nicosia met een ticket voor de Europa League als inzet. Coach Frédéric De Meyer voert twee wijzigingen door: Soelle Soelle gaat uit de basis voor Bazdar terwijl ook Muja mag starten ten kosten van Matsuzawa.",
+      "publishedAt": "2026-08-27T04:06:00.000Z"
     },
     {
       "type": "rss",
@@ -216,65 +183,98 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Goed nieuws voor KAA Gent, maar Rik De Mil laat ook één speler thuis: \"Niet genoeg scherpte\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-26/goed-nieuws-voor-kaa-gent-maar-rik-de-mil-laat-ook-een-speler-thuis-niet-genoeg-scherpte",
-      "summary": "KAA Gent staat donderdagavond voor een Europese wedstrijd waarin weinig ruimte is voor fouten. Na de 0-0 uit de heenwedstrijd tegen Hibernian ligt alles nog open. De Buffalo’s moeten in Schotland dus zelf het verschil maken om de leaguefase van de Conference League te bereiken.",
-      "publishedAt": "2026-08-26T08:30:00.000Z"
+      "title": "‘Dender ziet buitenkans bij concurrent Beerschot’",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-27/dender-ziet-buitenkans-bij-concurrent-beerschot",
+      "summary": "Nick Shinton lijkt deze zomer op weg naar de uitgang bij Beerschot. De doelman geniet interesse van Dender, dat nog een ervaren keeper zoekt. Een transfer is echter nog lang niet beklonken, want ook Beerschot moet akkoord gaan.",
+      "publishedAt": "2026-08-27T04:00:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"C’est un rêve depuis que je suis enfant\" : de la Pro League à la Ligue des champions à seulement 17 ans",
-      "link": "https://www.walfoot.be/news/2026-08-26/cest-un-reve-depuis-que-je-suis-enfant-de-la-pro-league-a-la-ligue-des-champions-a-seulement-17-ans",
-      "summary": "C'est désormais officiel depuis ce mardi, Moncef Zekri est un joueur du Sporting Portugal. Le natif de Bruxelles est ravi de se lancer dans ce nouveau défi, qui lui permet de franchir un cap dans sa carrière. Il a exprimé ses premiers mots sous ses nouvelles couleurs.",
-      "publishedAt": "2026-08-26T08:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le RWDM revit, Mons cale, panne d'électricité à Charleroi : les résumés de la reprise de D1 FFA",
-      "link": "https://www.walfoot.be/news/2026-08-26/le-rwdm-revit-mons-cale-panne-delectricite-a-charleroi-les-resumes-de-la-reprise-de-d1-ffa",
-      "summary": "La D1 FFA a repris ses droits ce weekend. Avec des entrées en matière pas forcément évidentes pour les favoris. Petit tour d'horizon de ce qu'il s'est passé sur nos terrains, d'Habay à Charleroi, en passant pas Mons, Tubize et Bruxelles.",
-      "publishedAt": "2026-08-26T08:01:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Huerta komt aan in Mexico en maakt meteen iets heel duidelijk over Anderlecht",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-26/huerta-komt-aan-in-mexico-en-maakt-meteen-iets-heel-duidelijk-over-anderlecht",
-      "summary": "César Huerta staat op het punt Anderlecht na anderhalf jaar alweer te verlaten. De Mexicaanse flankaanvaller is inmiddels aangekomen in Mexico, waar hij zijn terugkeer naar UNAM Pumas moet afronden. Bij zijn aankomst werd meteen duidelijk dat hij daar nog altijd op veel steun kan rekenen.",
-      "publishedAt": "2026-08-26T08:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Exclusif : bientôt un gardien belge comme coéquipier pour Konstantinos Laifis",
-      "link": "https://www.walfoot.be/news/2026-08-26/exclusif-bientot-un-gardien-belge-comme-coequipier-pour-konstantinos-laifis",
-      "summary": "Thomas Kaminski n'a pas repris la saison dans le but de Charlton, dont il défendait le but la saison dernière. Le gardien belge va quitter l'Angleterre et s'engager à l'APOEL Nicosie.",
-      "publishedAt": "2026-08-26T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Grote persoonlijke overwinning voor Jérémy Doku: \"Het is een eer\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-08-26/grote-persoonlijke-overwinning-voor-jeremy-doku-het-is-een-eer",
-      "summary": "Jérémy Doku heeft zijn toekomst bij Manchester City voor lange tijd vastgelegd. De Rode Duivel tekende een nieuw contract tot 2031 en reageerde zichtbaar trots. Voor hem voelt de verlenging ook als een bevestiging van wat hij sinds zijn komst uit Rennes heeft proberen te bewijzen.",
-      "publishedAt": "2026-08-26T07:30:00.000Z"
+      "title": "Le premier grand entretien de Ryan Fosso au Standard : \"Samuel Bastien m'a trop bien parlé du club\"",
+      "link": "https://www.walfoot.be/news/2026-08-27/le-premier-grand-entretien-de-ryan-fosso-au-standard-samuel-bastien-ma-trop-bien-parle-du-club",
+      "summary": "Arrivé cet été en provenance du Sturm Graz, Ryan Fosso a été présenté devant la presse, ce jeudi, deux jours avant le déplacement du Standard à Louvain. Le médian défensif camerounais s'est exprimé sur son arrivée et les attentes qui l'entourent, son penalty concédé à Malines, son choix de porter les couleurs de la sélection du Cameroun, son numéro 80 et sur bien d'autres choses.",
+      "publishedAt": "2026-08-27T04:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Vitor Bruno a dit qu'il ne ferait pas \"tourner\" : qu'en sera-t-il ?",
+      "link": "https://www.walfoot.be/news/2026-08-27/vitor-bruno-a-dit-quil-ne-ferait-pas-tourner-quen-sera-t-il-",
+      "summary": "Vitor Bruno a été très clair : pas question de &quot;faire tourner&quot; ou de mettre une équipe B ce jeudi contre le Kairat Almaty. Ca ne veut pas pour autant dire qu'il alignera le onze qui démarrera dimanche à l'Union.",
+      "publishedAt": "2026-08-27T03:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Marko Ilic trekt duidelijke conclusie na dramatische start van KV Kortrijk",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-27/marko-ilic-trekt-duidelijke-conclusie-na-dramatische-start-van-kv-kortrijk",
+      "summary": "KV Kortrijk keerde met hoge verwachtingen terug naar het hoogste niveau, maar begon met een 0 op 6. Doelman Marko Ilic blijft opvallend rustig en gelooft dat één overwinning de hele dynamiek kan veranderen.",
+      "publishedAt": "2026-08-27T03:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "OFFICIEL : un joueur formé à Anderlecht fait son retour en Pro League après un passage à l'étranger",
+      "link": "https://www.walfoot.be/news/2026-08-27/officiel-un-joueur-forme-a-anderlecht-fait-son-retour-en-pro-league-apres-un-passage-a-letranger",
+      "summary": "Après un passage en République tchèque au Slavia Prague et en prêt au Sigma Olomouc, Simion Michez fait son retour en Belgique. Le natif de Charleroi, formé à Anderlecht, a signé un contrat jusqu'au 30 juin 2029 avec le KV Malines, comme l'a annoncé le club ce jeudi.",
+      "publishedAt": "2026-08-27T03:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Rik De Mil krijgt opvallend verdict van Sam Baro",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-27/rik-de-mil-krijgt-opvallend-verdict-van-sam-baro",
+      "summary": "KAA Gent is onder Rik De Mil nog volop in ontwikkeling, maar voorzitter Sam Baro is opvallend lovend over zijn coach. Volgens hem heeft De Mil niet alleen de spelersgroep sterker gemaakt, maar ook voor rust en structuur binnen de club gezorgd.",
+      "publishedAt": "2026-08-27T03:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Live mercato (27/08) : Omar Marmoush est un joueur de Tottenham, le KRC Genk a refusé deux offres pour Zakaria El Ouahdi",
+      "link": "https://www.walfoot.be/news/2026-08-27/live-mercato-27-08-omar-marmoush-est-un-joueur-de-tottenham-le-krc-genk-a-refuse-deux-offres-pour-zakaria-el-ouahdi",
+      "summary": "Toutes les rumeurs de transfert, toutes les officialisations regroupées en un seul article. On vous dit tout sur le mercato en Jupiler Pro League, en Challenger Pro League et sur celui des Diables Rouges... en direct !",
+      "publishedAt": "2026-08-27T02:41:21.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Jusqu'où peut aller le Club de Bruges en Ligue des champions cette saison ?",
+      "link": "https://www.walfoot.be/news/2026-08-27/jusquou-peut-aller-le-club-de-bruges-en-ligue-des-champions-cette-saison-",
+      "summary": "Après avoir atteint le top 24 lors des deux précédentes éditions de la Ligue des champions, le Club de Bruges espère rééditer cette performance cette saison. Malgré ses récents résultats sur la scène européenne, les Blauw en Zwart ne figurent pas parmi les favoris sur le papier. Jusqu'où les Brugeois peuvent-ils aller cette saison ?",
+      "publishedAt": "2026-08-27T02:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "“Belangrijke factor”: ex-speler waarschuwt Beerschot",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-08-27/belangrijke-factor-ex-speler-waarschuwt-beerschot",
+      "summary": "Mats Rits keert na vijftien jaar terug naar Beerschot. De 33-jarige middenvelder moet met zijn ervaring helpen in de promotiestrijd, maar ex-ploegmaat Joren Dom ziet ook een belangrijk aandachtspunt.",
+      "publishedAt": "2026-08-27T02:30:00.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Savio steals show on debut as Spurs thrash Charlton",
-      "link": "https://www.skysports.com/football/tottenham-hotspur-vs-charlton-athletic/report/577440",
-      "summary": "Savio grabbed a goal and assist on a dream debut as Tottenham thrashed Charlton to progress into the third round of the Carabao Cup.",
+      "title": "Jablonec vs Rangers LIVE!",
+      "link": "https://www.skysports.com/football/fk-jablonec-vs-rangers/live/577512",
+      "summary": "",
       "publishedAt": null
     },
     {
@@ -293,9 +293,20 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Bradford beat Burnley on pens to reach third round",
-      "link": "https://www.skysports.com/football/bradford-city-vs-burnley/report/577424",
-      "summary": "Bradford extended Burnley's uncomfortable start to the season with a 4-2 penalty shoot-out win after their second-round Carabao Cup tie had finished goalless at Valley Parade.",
+      "title": "Tottenham sign Marmoush on loan with obligation to buy",
+      "link": "https://www.skysports.com/football/news/12040/13577796/omar-marmoush-transfer-news-tottenham-sign-man-city-forward-on-loan-with-60m-obligation-to-buy",
+      "summary": "Tottenham have confirmed the signing of Manchester City forward Omar Marmoush on an initial loan.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Kim joins Rangers in £8.5m deal",
+      "link": "https://www.skysports.com/football/news/12040/13576566/rangers-transfer-news-minsu-kim-joins-from-girona160as-ibrox-clubs-12th-summer-signing",
+      "summary": "Rangers have signed winger Minsu Kim in an £8.5m deal from Spanish side Girona.",
       "publishedAt": null
     },
     {
@@ -304,9 +315,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Barry hat-trick helps Everton saunter past Preston",
-      "link": "https://www.skysports.com/football/preston-north-end-vs-everton/report/577434",
-      "summary": "Thierno Barry scored three goals and set up the other as Everton sauntered into the third round of the Carabao Cup by way of a 4-0 win over Preston at Deepdale.",
+      "title": "Hungarian Darts Trophy draw revealed as Humphries returns to action",
+      "link": "https://www.skysports.com/darts/news/12040/13577801/hungarian-darts-trophy-draw-schedule-results-from-euro-tour-event-with-luke-humphries-michael-van-gerwen-gian-van-veen-in-action",
+      "summary": "World No 2 Luke Humphries could face World Matchplay semi-finalist Dirk van Duijvenbode in the first round of the Hungarian Darts Trophy.",
       "publishedAt": null
     },
     {
@@ -315,20 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Barnes double fires Newcastle past West Brom",
-      "link": "https://www.skysports.com/football/newcastle-united-vs-west-bromwich-albion/report/577432",
-      "summary": "Harvey Barnes struck twice for Newcastle as they survived a scare against West Brom to win 3-2 and reach the third round of the Carabao Cup.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Police investigating alleged assault in connection with Carse nightclub incident",
-      "link": "https://www.skysports.com/cricket/news/12040/13577567/brydon-carse-police-investigating-alleged-assault-in-connection-with-nightclub-incident-involving-england-bowler",
-      "summary": "Derbyshire Police are looking into \"allegations of assault\" following the incident that saw England bowler Brydon Carse handcuffed outside a nightspot over the weekend.",
+      "title": "FREE STREAM: Mayer vs Cameron press conference ahead of world title fight",
+      "link": "https://www.skysports.com/boxing/news/12040/13576981/mayer-vs-cameron-free-live-stream-of-press-conference-ahead-of-saturday-fight-night-in-birmingham",
+      "summary": "",
       "publishedAt": null
     }
   ]
