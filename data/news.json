@@ -1,16 +1,126 @@
 {
-  "generatedAt": "2026-09-25T18:21:33.211Z",
+  "generatedAt": "2026-09-25T22:05:26.776Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Mika Godts avait reçu un message clair de Van Bommel : \"Ca fait beaucoup de bien\"",
+      "link": "https://www.walfoot.be/news/2026-09-26/match-interview-mika-godts-avait-recu-un-message-clair-de-van-bommel-ca-fait-beaucoup-de-bien",
+      "summary": "Mika Godts jouait peut-être gros en l'absence de Jérémy Doku et de Leandro Trossard ce vendredi : il devait prouver qu'il était capable d'endosser le rôle de moteur offensif des Diables Rouges. Mark Van Bommel lui avait confié les clefs du jeu, et le néo-parisien s'en est servi pour ouvrir la défense italienne.",
+      "publishedAt": "2026-09-26T10:04:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Rodri believes in Man City's 'innocence'",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cmkgwwze9r28o?at_medium=RSS&at_campaign=rss",
+      "summary": "Former Manchester City midfielder Rodri believes the club are innocent of any financial wrongdoing and will trust them unless they are proved otherwise.",
+      "publishedAt": "2026-09-25T21:56:35.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Frankrijk zonder Mbappé tegen België van Van Bommel",
+      "link": "https://www.vi.nl/nieuws/frankrijk-zonder-mbappe-tegen-belgie-van-van-bommel",
+      "summary": "Bondscoach Zinedine Zidane van Frankrijk heeft bevestigd dat Kylian Mbappé het Franse kamp verlaat met een knieblessure. Dit deed hij na zijn gewonnen debuutwedstrijd tegen Turkije .",
+      "publishedAt": "2026-09-25T21:48:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "INT",
       "flag": "🌍",
-      "title": "Pover Jong Oranje heeft EK-deelname niet meer in eigen hand",
-      "link": "https://www.vi.nl/nieuws/pover-jong-oranje-heeft-ek-deelname-niet-meer-in-eigen-hand",
-      "summary": "Nederland Onder-21 heeft vrijdagavond geen goede zaken gedaan in de strijd om EK-kwalificatie. De mannen van Michael Reiziger kwamen in Deventer pover voor de dag en speelde met 0-0 gelijk tegen de Noorse leeftijdsgenoten.",
-      "publishedAt": "2026-09-25T18:18:26.000Z"
+      "title": "Godts over mislopen WK: 'Maakte me hongeriger om er nu wél bij te zijn'",
+      "link": "https://www.vi.nl/nieuws/godts-over-mislopen-wk-maakte-me-hongeriger-om-er-nu-wel-bij-te-zijn",
+      "summary": "Mika Godts heeft zijn visitekaartje vrijdagavond serieus afgegeven bij de nationale ploeg van België. De aanvaller opende de score in Italië, won met zijn ploeg met 0-2 en werd na afloop veelvuldig bevraagd.",
+      "publishedAt": "2026-09-25T21:42:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Nations League: Kylian Mbappé injured after scoring France winner in Turkey",
+      "link": "https://www.theguardian.com/football/2026/sep/25/nations-league-roundup-turkey-france-kylian-mbappe-italy-belgium",
+      "summary": "France beat 10-man Turkey 1-0 to start Zidane era Italy 0-2 Belgium, Georgia 0-1 Northern Ireland Kylian Mbappé limped off with an apparent knee injury, moments after scoring France’s winner against Turkey in the Nations League on Friday. The Real Madrid striker rifled in a low shot in the 55th minute after he was set up by Michael Olise. Soon after his record-extending 67th France goal, Mbappé sat on the ground and grimaced as he rubbed the area around his left knee. Continue reading...",
+      "publishedAt": "2026-09-25T21:35:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Rode Duivels schrijven historie: eerste officiële uitzege ooit op Italië",
+      "link": "https://www.vi.nl/nieuws/rode-duivels-schrijven-historie-eerste-officiele-uitzege-ooit-op-italie",
+      "summary": "In Groep 1 van Divisie A in de Nations League stond Italië vrijdagavond tegenover België en ontving Turkije de nationale ploeg van Frankrijk. Ook in andere divisies werd gespeeld en Jong Oranje kwam in actie. Lees alles op uw gemak terug in deze VI Live.",
+      "publishedAt": "2026-09-25T21:19:58.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Marokko wint bij debuut Ouazane, Hadj Moussa gaat vrolijk door met scoren",
+      "link": "https://www.vi.nl/nieuws/marokko-wint-bij-debuut-ouazane-hadj-moussa-gaat-vrolijk-door-met-scoren",
+      "summary": "Landen als Marokko en Algerije zijn goed begonnen aan het kwalificatietoernooi voor de Afrika Cup in 2027, terwijl Kaapverdië een sterk WK geen goed vervolg kon geven. Bij Marokko en Algerije waren bekenden betrokken bij de goals.",
+      "publishedAt": "2026-09-25T21:10:14.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Almere City verzuimt koppositie te pakken ondanks blunder Dordrecht-keeper",
+      "link": "https://www.vi.nl/nieuws/almere-city-verzuimt-koppositie-te-pakken-ondanks-blunder-dordrecht-keeper",
+      "summary": "Almere City heeft vrijdagavond een pijnlijke nederlaag geslikt. De club uit Flevoland had (voor even) de koppositie in de Keuken Kampioen Divisie kunnen grijpen. In plaats daarvan stond het de zege af aan FC Dordrecht.",
+      "publishedAt": "2026-09-25T20:51:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Relegation? Titles stripped? Appeals? What next for Man City",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cx30540044q0o?at_medium=RSS&at_campaign=rss",
+      "summary": "It has taken more than two years, but a judgement finally appears to have been made on the 115 charges levelled against Man City. Here's what it means.",
+      "publishedAt": "2026-09-25T20:48:18.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Man City fans face up to reality of guilty verdict",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cwy7zzdmn4v7o?at_medium=RSS&at_campaign=rss",
+      "summary": "How Manchester City fans have reacted to news that the club have been found guilty of a majority of the financial rule breaches they were accused of.",
+      "publishedAt": "2026-09-25T20:30:40.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Clubs seek legal advice over Man City charges compensation",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cr89jjwy4nqpo?at_medium=RSS&at_campaign=rss",
+      "summary": "Premier League clubs are seeking legal advice as to whether they would have a compensation claim over the Manchester City 115 charges case.",
+      "publishedAt": "2026-09-25T20:13:53.000Z"
     },
     {
       "type": "rss",
@@ -18,21 +128,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Turkey v France, Italy v Belgium, and more: Nations League clockwatch – live",
-      "link": "https://www.theguardian.com/football/live/2026/sep/25/turkey-v-france-italy-v-belgium-and-more-nations-league-clockwatch-live",
-      "summary": "⚽ Updates from Friday evening’s Nations League games ⚽ Live scoreboard | Read Football Daily | Mail Michael Let’s unpack those teams a little. Turkey are missing one of their star players, Kenan Yildiz, who is sidelined with a long-term injury. Yildiz normally operates on the left wing for Juventus, but with him out of action, Montella has leaned into this wing-back system, which seems to lean heavily on Kadioglu on the left. The 24-year-old won Brighton’s player of season last year and has quietly turned into one of the best left backs in the Premier League. Much rests of Arda Güler, in the No 10 position. Expect Turkey to have five at the back against France, when they are out of possession. Zinedine Zidane’s first France XI throws no huge surprises, although notable additions include Bournemouth’s Adrien Truffert, who earns his second cap, four years after making his international debut. Interesting that Zidane also favours Lacroix as the replacement for the injured Saliba at centre-back. Jacquet and Yoro have to make do on the bench. Cherki gets the nod in midfield, alongside Rabiot and Manu Koné, who has been in sublime form for Roma at the start of this season. There is no room for Tchouameni or Kanté in this new-look squad, even if the XI is mostly unchanged. Jean-Phillipe Mateta (Crystal Palace), Marcus Thuram (Inter Milan) also miss out. Continue reading...",
-      "publishedAt": "2026-09-25T18:10:01.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "VI Live: slotfase in aankomst voor ondermaats Jong Oranje",
-      "link": "https://www.vi.nl/nieuws/vi-live-slotfase-in-aankomst-voor-ondermaats-jong-oranje",
-      "summary": "In Groep 1 van Divisie A in de Nations League staat vrijdagavond Italië tegenover België en ontvangt Turkije de nationale ploeg van Frankrijk. Ook in andere divisies wordt gespeeld en Jong Oranje komt in actie. Blijf op de hoogte van het interlandvoetbal in deze VI Live.",
-      "publishedAt": "2026-09-25T18:04:38.000Z"
+      "title": "The age of asterisk: Manchester City’s glittering era of success is tainted now | Barney Ronay",
+      "link": "https://www.theguardian.com/football/2026/sep/25/manchester-city-era-success-all-tainted-now-premier-league-charges",
+      "summary": "Friday’s verdict against Manchester City will change everything we understood about their Premier League title triumphs Welcome, then, to the age of asterisk. Whatever punishment Manchester City and their owners receive at the end of this process, the fact remains, everything is tainted now. Overturn the tables, scatter the gold coins. Throw your medals in the bin. You cheated to win them. Whatever that thing was, it’s done. Stolen glory, stolen income, stolen joy. Every chant, every “we won the lot”, every awkward documentary scene about the deep, throbbing heart of this empire of love. It all looks odd, sinister, cold, sloppy, but also, and this is always the best response, utterly absurd. Continue reading...",
+      "publishedAt": "2026-09-25T18:36:58.000Z"
     },
     {
       "type": "rss",
@@ -58,90 +157,13 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "FC Emmen heeft Nederlandse doelman (34) op proef, die nooit in Nederland speelde",
-      "link": "https://www.vi.nl/nieuws/fc-emmen-heeft-nederlandse-doelman-34-op-proef-die-nooit-in-nederland-speelde",
-      "summary": "Kelle Roos traint mee bij FC Emmen. De 34-jarige doelman heeft een schat aan ervaring en probeert een contract af te dwingen bij de nummer negen van de Keuken Kampioen Divisie.",
-      "publishedAt": "2026-09-25T17:49:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Na Xhaka ook Embolo uit Zwitserse selectie gezet voor vervalste certificaten",
-      "link": "https://www.vi.nl/nieuws/na-xhaka-ook-embolo-uit-zwitserse-selectie-gezet-voor-vervalste-certificaten",
-      "summary": "De problemen bij de Zwitserse nationale ploeg stapelen zich op. In navolging van Granit Xhaka is ook Breel Embolo uit de selectie gezet wegens een schandaal rondom vervalste COVID-19-certificaten. Zo mist bondscoach Murat Yakin zaterdag twee van zijn sleutelspelers tegen Noord-Macedonië.",
-      "publishedAt": "2026-09-25T17:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Geen Suriname, maar Heracles: Van der Kust wil draad snel weer oppakken",
-      "link": "https://www.vi.nl/pro/geen-suriname-maar-heracles-van-der-kust-wil-draad-snel-weer-oppakken",
-      "summary": "Djevencio van der Kust (25) leed met Heracles Almelo de eerste nederlaag van het seizoen. De koploper in de Keuken Kampioen Divisie ging met 1-0 onderuit bij achtervolger Almere City. Surinaams international Van der Kust is tegenwoordig een box-to-box-speler. Hij zag zijn ploeg voor het eerst dit seizoen niet scoren.",
-      "publishedAt": "2026-09-25T17:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Man City and the 115 charges - key questions answered",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cx30540044q0o?at_medium=RSS&at_campaign=rss",
-      "summary": "It has taken more than two years, but a judgement finally appears to have been made on the 115 charges levelled against Man City. Here's what it means.",
-      "publishedAt": "2026-09-25T16:03:43.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Manchester City v Premier League: how the legal teams lined up",
-      "link": "https://www.theguardian.com/football/2026/sep/25/manchester-city-v-premier-league-how-the-legal-teams-lined-up",
-      "summary": "David Pannick may not earn as much as Erling Haaland but the club spared no expense to defend themselves against more than 100 charges The result is finally in from a highly anticipated Premier League match-up: the legal battle which pitted the league against Manchester City, the team that have dominated the competition in recent years. As befitting such a heavyweight clash, both sides fielded an impressive team of lawyers, which lined up as follows: Continue reading...",
-      "publishedAt": "2026-09-25T15:56:11.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Who is hacker whose revelations led to Man City charges?",
-      "link": "https://www.bbc.co.uk/sport/football/videos/cmj644284k18o?at_medium=RSS&at_campaign=rss",
-      "summary": "Rui Pinto is the convicted computer hacker whose revelations led to Manchester City facing Premier League charges of alleged financial rule breaches. But who is he?",
-      "publishedAt": "2026-09-25T15:55:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Palmer misses too many opportunities to play for England - Tuchel",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cm9dww15527lo?at_medium=RSS&at_campaign=rss",
-      "summary": "Thomas Tuchel has said that Cole Palmer \"misses too many opportunities\" to play for England after the Chelsea forward pulled out of the latest squad.",
-      "publishedAt": "2026-09-25T15:54:03.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "Manchester City found guilty of breaking Premier League’s financial fair play rules",
       "link": "https://www.theguardian.com/football/2026/sep/25/manchester-city-found-guilty-of-breaking-premier-leagues-financial-fair-play-rules",
-      "summary": "City face sanctions after more than 100 rule breaches Club insists it is innocent and is expected to appeal Manchester City have been found guilty of the vast majority of more than a hundred charges related to breaches of the Premier League’s financial rules, throwing English football into turmoil. The serial champions now face the possibility of being relegated from the Premier League, or expelled from the competition altogether, after a verdict in the biggest disciplinary case in the history of the sport was finally delivered. Continue reading...",
+      "summary": "City face sanctions after more than 100 rule breaches Club insist on innocence and are expected to appeal Manchester City have been found guilty of the vast majority of more than a hundred charges related to breaches of the Premier League’s financial rules, throwing English football into turmoil. The serial champions now face the possibility of being relegated from the Premier League, or expelled from the competition altogether, after a verdict in the biggest disciplinary case in the history of the sport was finally delivered. Continue reading...",
       "publishedAt": "2026-09-25T15:35:49.000Z"
     },
     {
@@ -157,14 +179,14 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Israel game should not go ahead - Republic of Ireland's Knight",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cm750g0zx9weo?at_medium=RSS&at_campaign=rss",
-      "summary": "Jason Knight has become the first Republic of Ireland player to publicly voice his opposition to playing Israel on Sunday.",
-      "publishedAt": "2026-09-25T10:59:44.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Grande première pour l'Anderlechtois Ali Maamar",
+      "link": "https://www.walfoot.be/news/2026-09-25/-grande-premiere-pour-landerlechtois-ali-maamar",
+      "summary": "Après la Coupe du Monde, le Maroc retrouvait la scène continentale et lançait sa campagne de qualifications pour la prochaine CAN en accueillant les Panthères du Gabon à Rabat.",
+      "publishedAt": "2026-09-25T09:30:00.000Z"
     },
     {
       "type": "rss",
@@ -172,10 +194,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Un joueur courtisé par Anderlecht l'été dernier cartonne : il est désormais dans les papiers du FC Barcelone",
-      "link": "https://www.walfoot.be/news/2026-09-25/un-joueur-courtise-par-anderlecht-lete-dernier-cartonne-il-est-desormais-dans-les-papiers-du-fc-barcelone",
-      "summary": "Anderlecht avait tenté de l'enroler l'été dernier mais le Norvégien de 22 ans a choisi de rester dans son club de Djurgårdens IF. Depuis, sa valeur a continué à grimper au vu de ses performances.",
-      "publishedAt": "2026-09-25T06:05:00.000Z"
+      "title": "Un homme du match clair, des latéraux en souffrance : les notes des Diables face à l'Italie",
+      "link": "https://www.walfoot.be/news/2026-09-25/un-homme-du-match-clair-des-lateraux-en-souffrance-les-notes-des-diables-face-a-litalie",
+      "summary": "Quelle belle première mi-temps de nos Diables qui retrouvaient la compétition trois mois après la déception du Mondial. Et l'homme du match était même l'un des grands déçus de Rudi Garcia : Mika Godts, absent aux USA, a rappelé ses qualités, voire les a présentées à ceux qui ne le connaissaient pas vraiment. D'autres, par contre, ont déçu.",
+      "publishedAt": "2026-09-25T09:10:00.000Z"
     },
     {
       "type": "rss",
@@ -183,76 +205,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Tuur Dierckx doet frustrerende momenten uit de doeken: \"Dan moest je mij niet aanspreken\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/de-derde-helft-tuur-dierckx-doet-frustrerende-momenten-uit-de-doeken-dan-moest-je-mij-niet-aanspreken",
-      "summary": "Het lange wachten is voorbij voor de echte fans. EA FC 27 is vanaf vandaag te koop. Ook voetballer Tuur Dierckx (Sporting Hasselt) heeft uitgekeken naar de release. Op een launch-event van Red Bull mocht hij het spel al eens testen.",
-      "publishedAt": "2026-09-25T05:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE: Mark Van Bommel debuteert met deze Rode Duivels tegen Italië",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/match-live-live-mark-van-bommel-debuteert-met-deze-rode-duivels-tegen-italie",
-      "summary": "De Rode Duivels nemen het vrijdagavond op tegen Italië in de Nations League. Mark Van Bommel kiest voor Kevin De Bruyne, Mika Godts, Diego Moreira en Charles De Ketelaere. Maxim De Cuyper krijgt de voorkeur op Joaquin Seys.",
-      "publishedAt": "2026-09-25T05:49:00.000Z"
+      "title": "Frankrijk wint van Turkije, maar slikt stevige opdoffer voor duel tegen Rode Duivels",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/frankrijk-wint-van-turkije-maar-slikt-stevige-opdoffer-voor-duel-tegen-rode-duivels",
+      "summary": "Terwijl de Rode Duivels vrijdagavond Italië versloegen, ging Frankrijk met 0-1 winnen op het veld van Turkije. Kylian Mbappé toverde bondscoach Zinedine Zidane een glimlach op het gezicht, maar bezorgde hem ook kopzorgen.",
+      "publishedAt": "2026-09-25T09:10:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Amando Lapage ouvert à un retour à Anderlecht ? \"Ce serait très difficile de dire non\"",
-      "link": "https://www.walfoot.be/news/2026-09-25/amando-lapage-ouvert-a-un-retour-a-anderlecht-ce-serait-tres-difficile-de-dire-non",
-      "summary": "Le défenseur formé dans le club de la capitale avait fait ses valises et mis le cap sur la Campine afin de poursuivre sa carrière et trouver du temps de jeu en JPL du côté de Westerlo.",
-      "publishedAt": "2026-09-25T05:46:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "LIVE : le onze des Diables est connu (direct 20h45)",
-      "link": "https://www.walfoot.be/news/2026-09-25/live-le-onze-des-diables-est-connu-direct-20h45",
-      "summary": "Ce vendredi soir, l'ère Van Bommel commence officiellement : la Belgique défie l'Italie au Stadio Olimpico de Rome. Un choc face à l'Italie, qui prend de son côté un nouveau départ après avoir manqué la Coupe du Monde 2026.",
-      "publishedAt": "2026-09-25T05:45:24.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Il est là : le premier onze de Mark Van Bommel, avec quelques choix forts",
-      "link": "https://www.walfoot.be/news/2026-09-25/il-est-la-le-premier-onze-de-mark-van-bommel-avec-quelques-choix-forts",
-      "summary": "Le premier onze de Mark Van Bommel, pour le déplacement de la Belgique en Italie, est tombé. Certains choix étaient attendus, d'autres donnent déjà des indications fortes.",
-      "publishedAt": "2026-09-25T05:36:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
       "country": "INT",
       "flag": "🌍",
-      "title": "Ronald Koeman en familie schrijven emotioneel dankwoord op Instagram: \"Diep geraakt\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/ronald-koeman-en-familie-schrijven-emotioneel-dankwoord-op-instagram-diep-geraakt",
-      "summary": "Alle gedachten van de Oranje-fans waren donderdagavond bij Ronald Koeman en zijn familie. Voor de Nations League-wedstrijd tegen Duitsland werd stilgestaan bij het recente overlijden van Bartina Koeman, de vrouw van de voormalige Nederlandse bondscoach. Koeman en zijn familie drukken op Instagram hun dank uit voor alle steunbetuigingen die ze de afgelopen tijd hebben ontvangen.",
-      "publishedAt": "2026-09-25T05:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Manchester City dans des sales draps : le club de Jérémy Doku visé par plusieurs accusations",
-      "link": "https://www.walfoot.be/news/2026-09-25/manchester-city-dans-des-sales-draps-le-club-de-jeremy-doku-vise-par-plusieurs-accusations",
-      "summary": "Sous l’appellation de Fair Play Financier, les finances des clubs de football sont désormais contrôlées de près par l'UEFA et par les différents championnats, et ne peuvent plus dépenser comme bon leur semble, ni vivre au-dessus de leurs moyens. En théorie.",
-      "publishedAt": "2026-09-25T05:14:00.000Z"
+      "title": "🎥 Nations League : la France rejoint la Belgique en tête du groupe, première victoire de l'ère Zidane",
+      "link": "https://www.walfoot.be/news/2026-09-25/-nations-league-la-france-rejoint-la-belgique-en-tete-du-groupe-premiere-victoire-de-lere-zidane",
+      "summary": "Pendant que les Diables Rouges prenaient Rome d'assaut, les deux autres équipe du groupe 1 se rencontraient à Izmit à l'occasion de la première journée de la Ligue des Nations.",
+      "publishedAt": "2026-09-25T08:57:00.000Z"
     },
     {
       "type": "rss",
@@ -260,21 +227,54 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Iedereen unisono na zware straf: \"Ruben Van Gucht gedroeg zich als een verwende kleuter\"",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/de-derde-helft-iedereen-unisono-na-zware-straf-ruben-van-gucht-gedroeg-zich-als-een-verwende-kleuter",
-      "summary": "Zondagavond krijgen we aflevering vier van het nieuwe seizoen van De Verraders op ons bord. Vorige week was er de aflevering waarin Ruben Van Gucht zijn (langverwachte) diskwalificatie te horen kreeg. En daar waren ook heel wat meningen over te vinden tijdens en na het programma.",
-      "publishedAt": "2026-09-25T05:00:00.000Z"
+      "title": "Anderlecht zal het graag zien: smaakmaker aan het kanon in Nations League",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/anderlecht-zal-het-graag-zien-smaakmaker-aan-het-kanon-in-nations-league",
+      "summary": "Danylo Sikan is goed aan het seizoen begonnen bij RSC Anderlecht. De Oekraïner is een basisspeler onder Vitor Bruno en lijkt klaar voor een seizoen met veel goals. Dat bewees hij ook bij de nationale ploeg van Oekraïne, waar Sikan aan het kanon stond in de wedstrijd tegen Hongarije. Hij scoorde de enige treffer: 0-1.",
+      "publishedAt": "2026-09-25T08:55:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Brillante puis cynique contre une faible Italie, la Belgique de Van Bommel réussit ses débuts",
+      "link": "https://www.walfoot.be/news/2026-09-25/brillante-puis-cynique-contre-une-faible-italie-la-belgique-de-van-bommel-reussit-ses-debuts",
+      "summary": "On pensait qu'on se dirigeait vers une promenade de santé tant la Belgique dominait clairement les débats en première période. Mais les Diables Rouges mouture Van Bommel ont loupé leur seconde mi-temps, se sont faits peur... avant de tout de même faire le break. Une rencontre à deux visages.",
+      "publishedAt": "2026-09-25T08:39:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "FR",
+      "country": "IT",
       "flag": "🌍",
-      "title": "Live. Transfernieuws 25/9: Mika Godts staat al meteen onder druk in Parijs",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/live-transfernieuws-25-9-mika-godts-staat-al-meteen-onder-druk-in-parijs",
-      "summary": "De transfergeruchten, het laatste transfernieuws en officiële transfers vliegen ons om de oren. Bij Voetbalkrant zetten wij alles voor u op een rijtje zodat u tijdens deze mercato niets hoeft te missen!",
-      "publishedAt": "2026-09-25T04:30:00.000Z"
+      "title": "Rode Duivels maken statement in Italië en bezorgen Van Bommel perfecte start",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/rode-duivels-maken-statement-in-italie-en-bezorgen-van-bommel-perfecte-start",
+      "summary": "Mark Van Bommel heeft zijn eerste wedstrijd als bondscoach van België gewonnen. In Rome werd het 0-2 tegen een opvallend zwak Italië. De wedstrijd werd vooral gekleurd door een fantastische eerste helft van de Rode Duivels en een klasseflits van Dodi Lukebakio na de rust.",
+      "publishedAt": "2026-09-25T08:39:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Meer details bekend: 'Zeer opvallende terugkeer in de maak bij Club Brugge?'",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/meer-details-bekend-zeer-opvallende-terugkeer-in-de-maak-bij-club-brugge",
+      "summary": "Bij Club Brugge was het deze zomer een héél pittige transferzomer. Onder meer Aleksander Stankovic werd voor heel wat miljoenen verkocht aan Internazionale. Daar heeft hij het nu moeilijk. En dus wenkt mogelijk een terugkeer, al wordt dat niet meteen makkelijk.",
+      "publishedAt": "2026-09-25T08:35:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Ex-speler van OHL en KV Kortrijk praat openlijk over donkere periode: \"Ik had het mentaal zwaar\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-09-25/ex-speler-van-ohl-en-kv-kortrijk-praat-openlijk-over-donkere-periode-ik-had-het-mentaal-zwaar",
+      "summary": "Hoe zou het nog met Kristiyan Malinov zijn? De Bulgaar was in een niet zo ver verleden een smaakmaker bij OH Leuven, maar zit momenteel zonder club. Na enkele tegenvallende avonturen in het buitenland hoopt hij nu een club te vinden in België, terwijl hij zijn conditie onderhoudt bij een speler van KV Kortrijk.",
+      "publishedAt": "2026-09-25T08:15:00.000Z"
     },
     {
       "type": "rss",
@@ -282,9 +282,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "EFL latest: Edwards would be prepared to take charge at Saints",
-      "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
-      "summary": "",
+      "title": "Man City charges - what happens now?",
+      "link": "https://www.skysports.com/football/news/12040/13591930/man-city-premier-league-charges-what-does-the-appeals-process-look-like-and-what-happens-now",
+      "summary": "Reports claim that an independent tribunal has reached decisions in Manchester City's 115 charges case. Sky Sports analyses what could happen next in the inquiry...",
       "publishedAt": null
     },
     {
@@ -293,9 +293,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Fury: AJ is 'stepping stone' to Usyk trilogy",
-      "link": "https://www.skysports.com/boxing/news/12040/13591876/tyson-fury-anthony-joshua-fight-is-stepping-stone-to-oleksandr-usyk-trilogy-ill-knock-him-out-inside-seven-rounds",
-      "summary": "Tyson Fury says Anthony Joshua is a \"stepping stone\" towards a trilogy fight with Oleksandr Usyk and vowed to knock out his British rival \"inside seven rounds\".",
+      "title": "Lankshear scores on debut as England U21s beat Kazakhstan",
+      "link": "https://www.skysports.com/football/england-u21-vs-kazakhstan-u21/report/527088",
+      "summary": "England came from behind to beat Kazakhstan 4-2 in an entertaining affair at Molineux to all but book their place at the European U21 Championship next year.",
       "publishedAt": null
     },
     {
@@ -304,9 +304,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Brentford hold Schade contract talks as Arsenal, Liverpool track Germany winger",
-      "link": "https://www.skysports.com/football/news/12040/13591878/transfer-news-brentford-hold-kevin-schade-contract-talks-as-arsenal-liverpool-track-germany-winger",
-      "summary": "Brentford have held initial talks with Kevin Schade about a new long-term contract in the wake of his excellent start to the campaign and increasing interest from bigger clubs including Arsenal and Liverpool.",
+      "title": "Warrington reach Grand Final after penalty drama and Leeds' last-kick miss",
+      "link": "https://www.skysports.com/rugby-league/news/12040/13591907/warrington-wolves-through-to-super-league-grand-final-after-controversial-penalty-with-14-12-win-over-leeds-rhinos",
+      "summary": "Warrington Wolves made it through to the Super League Grand Final with a 14-12 victory over Leeds Rhinos, a controversial penalty proving the difference at Headingley Stadium.",
       "publishedAt": null
     },
     {
@@ -315,9 +315,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Buttler ruled out of England's third ODI vs Sri Lanka",
-      "link": "https://www.skysports.com/cricket/news/12040/13591864/jos-buttler-ruled-out-of-englands-third-odi-vs-sri-lanka-with-injury-as-surreys-dan-lawrence-called-into-squad",
-      "summary": "Jos Buttler has been ruled out of England's third ODI against Sri Lanka, with Surrey's Dan Lawrence called into the squad.",
+      "title": "White promoting Fury-AJ: 'Who's going to stop me?'",
+      "link": "https://www.skysports.com/boxing/news/12040/13591927/fury-vs-joshua-dana-white-says-who-is-going-to-stop-me-in-response-to-questions-about-his-involvement-in-mega-fight",
+      "summary": "Dana White, one of the most powerful figures in combat sport, has reaffirmed his involvement in staging the Tyson Fury vs Anthony Joshua mega-fight",
       "publishedAt": null
     },
     {
@@ -326,9 +326,9 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Billam-Smith to fight Clarke on November 7 live on Sky Sports",
-      "link": "https://www.skysports.com/boxing/news/12040/13591784/chris-billam-smith-will-fight-cheavon-clarke-on-november-7-at-the-copper-box-arena-in-london-live-on-sky-sports",
-      "summary": "Chris Billam-Smith will fight Clarke on November 7, live on Sky Sports.",
+      "title": "Tuchel questions whether Palmer is desperate to play for England",
+      "link": "https://www.skysports.com/football/news/12040/13591915/cole-palmer-england-boss-thomas-tuchel-questions-how-desperate-chelsea-forward-is-to-play-for-three-lions",
+      "summary": "Thomas Tuchel is unsure how desperate Cole Palmer is to play for England.",
       "publishedAt": null
     }
   ]
