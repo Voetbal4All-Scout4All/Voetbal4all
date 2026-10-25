@@ -1,49 +1,93 @@
 {
-  "generatedAt": "2026-10-24T20:37:30.565Z",
+  "generatedAt": "2026-10-25T01:02:51.302Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Dream come true!' - Britain's Palmowski becomes 2026 F1 Academy champion",
+      "link": "https://www.skysports.com/f1/news/12040/13603359/f1-academy-alisha-palmowski-becomes-2026-champion-with-three-races-of-season-to-spare-in-austin",
+      "summary": "Britain's Alisha Palmowski became the 2026 F1 Academy champion with three races to spare after building an unassailable lead in Austin.",
+      "publishedAt": "2026-10-25T01:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Watch Match of the Day on iPlayer",
+      "link": "https://www.bbc.co.uk/iplayer/episode/m0033jlx?at_medium=RSS&at_campaign=rss",
+      "summary": "With Chelsea v Spurs, Arsenal v Everton, Villa v Man City and Coventry v Fulham",
+      "publishedAt": "2026-10-24T22:40:55.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "ADO beloont zichzelf te weinig tegen Heerenveen: 'Deze doet pijn, hoor'",
+      "link": "https://www.vi.nl/nieuws/ado-beloont-zichzelf-te-weinig-tegen-heerenveen-deze-doet-pijn-hoor",
+      "summary": "Waar er afgelopen week een hoop euforie was na de knappe zege op PSV, was er zaterdag een heel andere stemming bij ADO Den Haag. Trainer Robin Peter was 'boos, teleurgesteld en verdrietig' na de nederlaag tegen Heerenveen . 'Als we gelijk hadden gespeeld of hadden gewonnen, dan had niemand dat volledig onterecht gevonden.'",
+      "publishedAt": "2026-10-24T21:45:00.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "IT",
       "flag": "🌍",
-      "title": "VI Live: doelpuntrijk duel in Den Haag,, Taylor scoort voor Lazio",
-      "link": "https://www.vi.nl/nieuws/vi-live-city-op-volle-oorlogssterkte-tegen-villa-basisplek-voor-maatsen",
-      "summary": "Op zaterdag staan er drie duels op de rol in de Eredivisie, terwijl FC Dordrecht en VVV-Venlo het tegen elkaar opnemen in de Keuken Kampioen Divisie. Ook in het buitenland wordt er volop gevoetbald. Zo kruisen Tottenham Hotspur en Chelsea de degens in een Londense derby en gaat Donyell Malen met AS Roma op bezoek bij Napoli. Mis niets in deze VI Live.",
-      "publishedAt": "2026-10-24T20:30:56.000Z"
+      "title": "Eerste competitiegoal Álvarez bezorgt Atlético nipte zege",
+      "link": "https://www.vi.nl/nieuws/eerste-competitiegoal-alvarez-bezorgt-atletico-nipte-zege",
+      "summary": "Op zaterdag stonden er drie duels op de rol in de Eredivisie, terwijl FC Dordrecht en VVV-Venlo het tegen elkaar opnamen in de Keuken Kampioen Divisie. Ook in het buitenland werd er volop gevoetbald. Zo kruisten Tottenham Hotspur en Chelsea de degens in een Londense derby en ging Donyell Malen met AS Roma op bezoek bij Napoli. Lees alles van deze bomvolle voetbalzaterdag terug in deze VI Live.",
+      "publishedAt": "2026-10-24T21:35:08.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "FC Porto na negen duels nog altijd foutloos in Portugal",
+      "link": "https://www.vi.nl/nieuws/fc-porto-na-negen-duels-nog-altijd-foutloos-in-portugal",
+      "summary": "FC Porto heeft zich gerevancheerd van de nederlaag tegen PSV in de Champions League. Het elftal van Francesco Farioli pakte in de competitie ook tegen Gil Vicente drie punten en is nog altijd foutloos.",
+      "publishedAt": "2026-10-24T21:27:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Hoofdrol Trenskow in Haags noodweer: Heerenveen pakt volle buit",
+      "link": "https://www.vi.nl/nieuws/hoofdrol-trenskow-in-haags-noodweer-heerenveen-pakt-volle-buit",
+      "summary": "SC Heerenveen heeft vrijdag de derde overwinning in vier wedstrijden geboekt. In een nat en winderig Den Haag werd ADO Den Haag verslagen, mede dankzij twee goals van Jacob Trenskow.",
+      "publishedAt": "2026-10-24T20:52:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Trefzekere Taylor helpt Lazio aan koppositie in Serie A",
+      "link": "https://www.vi.nl/nieuws/trefzekere-taylor-helpt-lazio-aan-koppositie-in-serie-a",
+      "summary": "Lazio heeft zaterdagavond in eigen huis afgerekend met Parma. Kenneth Taylor opende de score en hielp de Romeinen daarmee aan de koppositie in de Serie A.",
+      "publishedAt": "2026-10-24T20:42:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Britse media hard voor Chelsea: 'Slechtste wedstrijd in Alonso-tijdperk'",
-      "link": "https://www.vi.nl/nieuws/britse-media-hard-voor-chelsea-slechtste-wedstrijd-in-alonso-tijdperk",
-      "summary": "Xabi Alonso heeft huiswerk te doen na de nederlaag van Chelsea tegen Tottenham Hotspur zaterdagavond. Vooral de tactische keuzes van de trainer, de aanvallende onmacht en de rode kaart voor Cole Palmer staan ter discussie. Volgens The Guardian behoorde het optreden tot de slechtste wedstrijden van Chelsea sinds de aanstelling van de Spaanse trainer.",
-      "publishedAt": "2026-10-24T20:09:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Rentree Koster valt volledig in het water: 'Ik had dit niet verwacht'",
-      "link": "https://www.vi.nl/nieuws/debuut-koster-valt-volledig-in-het-water-ik-had-dit-niet-verwacht",
-      "summary": "Adrie Koster (71) had zich een totaal andere rentree als hoofdtrainer van Willem ll voorgesteld. Zijn ploeg ging voor eigen publiek keihard onderuit tegen SC Cambuur.",
-      "publishedAt": "2026-10-24T19:55:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Cambuur evenaart grootste Eredivisie-zege ooit tijdens recordavond in Tilburg",
-      "link": "https://www.vi.nl/nieuws/cambuur-evenaart-grootste-eredivisie-zege-ooit-tijdens-recordavond-in-tilburg",
-      "summary": "SC Cambuur heeft zaterdagavond geschiedenis geschreven. De ploeg van Johan Plat vernederde hekkensluiter Willem II met 1-6, een evenaring van de grootste Eredivisie-zege van de Friezen ooit. Bovendien werden er ook genoeg clubrecords gebroken door de Leeuwardense promovendus. 'We moesten de storm snel temmen en dat is fantastisch gelukt.'",
-      "publishedAt": "2026-10-24T19:38:00.000Z"
+      "title": "Alonso urges Cole Palmer ‘to learn’ from red card in Chelsea’s defeat to Spurs",
+      "link": "https://www.theguardian.com/football/2026/oct/24/xabia-alonso-urges-cole-palmer-to-learn-from-red-card-in-chelseas-defeat-to-tottenham",
+      "summary": "Forward sent off after 80 minutes for second yellow card ‘We need to have maturity to deal with difficult moments’ Xabi Alonso said that Cole Palmer must learn from his red card during Chelsea’s shock 2-0 defeat to Tottenham, who claimed their first win at Stamford Bridge since 2018 thanks to an own goal from Mike Penders and a late effort from Mathys Tel. Spurs, who had won on one of their previous 34 trips to west London, were already 1-0 up when Palmer earned a second yellow card for catching Conor Gallagher with a late tackle. The playmaker could have been sent off earlier – his first booking came during a clash with Mateus Fernandes – and Alonso agreed that this could be an important lesson for the 24-year-old. Continue reading...",
+      "publishedAt": "2026-10-24T20:19:17.000Z"
     },
     {
       "type": "rss",
@@ -55,17 +99,6 @@
       "link": "https://www.bbc.co.uk/sport/football/videos/ckly0dnqz0r7o?at_medium=RSS&at_campaign=rss",
       "summary": "Tottenham claim just their second victory over Chelsea at Stamford Bridge in 36 years, winning 2-0 as the hosts finish with 10 men after a red card for Cole Palmer.",
       "publishedAt": "2026-10-24T19:17:06.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Allegri kookt van woede na rode kaart: 'De volgende keer niet meer bewegen'",
-      "link": "https://www.vi.nl/nieuws/allegri-kookt-van-woede-na-rode-kaart-de-volgende-keer-niet-meer-bewegen",
-      "summary": "Massimiliano Allegri was na het spectaculaire gelijkspel tussen Napoli en AS Roma woedend. De trainer van Napoli kreeg in de slotfase een rode kaart nadat hij protesteerde bij de arbitrage. Vooral de late gelijkmaker van Leonardo Balerdi zat hem dwars, omdat Napoli in de aanloop naar de treffer een overtreding op Sam Beukema meende te zien.",
-      "publishedAt": "2026-10-24T19:16:27.000Z"
     },
     {
       "type": "rss",
@@ -99,28 +132,6 @@
       "link": "https://www.bbc.co.uk/sport/football/videos/cx7vpmrzr04do?at_medium=RSS&at_campaign=rss",
       "summary": "Fulham's Oscar Bobb scores in the 80th minute against Coventry to earn back-to-back victories in the Premier League.",
       "publishedAt": "2026-10-24T18:59:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Tottenham stun Chelsea for second league win in a week as Cole Palmer is sent off",
-      "link": "https://www.theguardian.com/football/2026/oct/24/chelsea-tottenham-premier-league-match-report",
-      "summary": "There are days when Tottenham go into these big games and find ways to beat themselves. This time, though, they held their nerve at a ground where they have mostly only known doom. Spurs played with control, stayed patient and won at Stamford Bridge for the first time since 2018 after waiting for Chelsea to press the self-destruct button during a calamitous and comical ending to a cagey game. Chelsea were meant to have grown. Xabi Alonso had even praised his side’s emotional control and ability to manage awkward spells during the buildup, but perhaps that was asking for trouble. Chelsea, short of poise on and off the pitch, deserved to be beaten at home for the first time this season and there was plenty of blame to go around after Alonso got his tactics wrong, Mike Penders scored a ridiculous own-goal and Cole Palmer saw red after a lunge on Conor Gallagher when he was already on a booking. Continue reading...",
-      "publishedAt": "2026-10-24T18:32:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "From Chelsea reject to Watkins 'upgrade' - Jackson makes fast Villa start",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c6p9gkdzzpnro?at_medium=RSS&at_campaign=rss",
-      "summary": "Nicolas Jackson continues an excellent start to his Aston Villa career with a match-winning double against Manchester City.",
-      "publishedAt": "2026-10-24T16:58:27.000Z"
     },
     {
       "type": "rss",
@@ -172,6 +183,61 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
+      "title": "Folie absolue lors de Westerlo-Beveren : un score final de 4-4 et un doublé de Norman Bassette",
+      "link": "https://www.walfoot.be/news/2026-10-24/folie-absolue-lors-de-westerlo-beveren-un-score-final-de-4-4-et-un-double-de-norman-bassette",
+      "summary": "Westerlo et Beveren ont offert un spectacle totalement fou au Kuipje, ce samedi soir. À plusieurs reprises, les locaux ont semblé en route vers une cinquième victoire consécutive, mais Beveren a refusé de baisser les bras.",
+      "publishedAt": "2026-10-24T09:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "FR",
+      "flag": "🌍",
+      "title": "🎥 Thorgan Hazard marque son premier but en Ligue 1 (et donne aussi un assist) et offre la victoire à Lens",
+      "link": "https://www.walfoot.be/news/2026-10-24/-thorgan-hazard-marque-son-premier-but-en-ligue-1-et-donne-aussi-un-assist-et-offre-la-victoire-a-lens",
+      "summary": "Plutôt critiqué depuis son retour à l'ombre des terrils du Nord où il avait effectué la dernière partie de sa formation, Thorgan Hazard a marqué contre le Paris FC son premier but de la saison et a offert une victoire précieuse à Lens quelques jours après son lourd revers contre le Club de Bruges en Ligue des Champions.",
+      "publishedAt": "2026-10-24T09:15:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Absolute waanzin in Westerlo-Beveren: niemand gelooft wat er nog gebeurt",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-10-24/absolute-waanzin-in-westerlo-beveren-niemand-gelooft-wat-er-nog-gebeurt",
+      "summary": "KVC Westerlo en SK Beveren hebben zaterdagavond voor een absoluut spektakelstuk gezorgd in 't Kuipje. De thuisploeg leek meermaals op weg naar een vijfde opeenvolgende overwinning, maar Beveren weigerde zich gewonnen te geven. Na acht doelpunten, twee strafschoppen en een rode kaart eindigde een bijzonder bewogen wedstrijd uiteindelijk op 4-4. Vooral de krankzinnige slotfase zal nog lang blijven nazinderen.",
+      "publishedAt": "2026-10-24T09:01:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La RAAL l'emporte largement face à Zulte Waregem et effectue la bonne opération",
+      "link": "https://www.walfoot.be/news/2026-10-24/la-raal-lemporte-largement-face-a-zulte-waregem-et-effectue-la-bonne-operation",
+      "summary": "La RAAL devait l'emporter face à Zulte Waregem. C'est chose faite, grâce notamment à un doublé de Nolan Gillot. Les protégés d'Edward Still remontent à la 14e place.",
+      "publishedAt": "2026-10-24T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "La Louvière haalt stevig uit en bezorgt Zulte Waregem flinke kater",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-10-24/la-louviere-haalt-stevig-uit-en-bezorgt-zulte-waregem-flinke-kater",
+      "summary": "Zulte Waregem heeft zaterdagavond een pijnlijke nederlaag geleden op het veld van La Louvière. Essevee begon nog behoorlijk aan de wedstrijd, maar zag de thuisploeg gaandeweg het initiatief overnemen. Met Nolan Gillot als grote uitblinker boekte La Louvière uiteindelijk een overtuigende 3-0-overwinning.",
+      "publishedAt": "2026-10-24T08:43:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
       "title": "🎥 L'effet Drazen Brncic à Mons : les Dragons s'offrent le RWDM au Stade Machtens",
       "link": "https://www.walfoot.be/news/2026-10-24/-leffet-drazen-brncic-a-mons-les-dragons-soffrent-le-rwdm-au-stade-machtens",
       "summary": "Le RWDM a été battu pour la deuxième fois consécutive, cette fois par le RAEC Mons qui lance le règne de Drazen Brncic de la meilleure des manières. C'est Mayron De Almeida qui marqué les deux buts des Dragons.",
@@ -212,17 +278,6 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Un match fou, mais Kevin De Bruyne et Naples perdent de nouveaux des plumes",
-      "link": "https://www.walfoot.be/news/2026-10-24/un-match-fou-mais-kevin-de-bruyne-et-naples-perdent-de-nouveaux-des-plumes",
-      "summary": "Naples a mené 2-0 puis 3-2 avant de finalement voir l'AS Roma recoller au score. Malgré ce mauvais résultat qui éloigne encore un peu plus les &quot;Partenopei&quot; du haut du classement, on retiendra la bonne prestation d'ensemble de Kevin De Bruyne, de nouveau aligné comme milieu défensif dans un système en triangle avec une pointe basse.",
-      "publishedAt": "2026-10-24T07:45:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
       "country": "ES",
@@ -234,57 +289,35 @@
     },
     {
       "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Nouveau coup dur pour Zeno Debast : l’entraîneur du Sporting confirme la mauvaise nouvelle",
-      "link": "https://www.walfoot.be/news/2026-10-24/nouveau-coup-dur-pour-zeno-debast-lentraneur-du-sporting-confirme-la-mauvaise-nouvelle",
-      "summary": "Zeno Debast doit une nouvelle fois reporter son retour à la compétition avec le Sporting Lisbonne. Alors que le Diable rouge semblait progressivement prêt à retrouver sa place dans l’équipe, l’entraîneur Rui Borges a confirmé samedi que l’ancien défenseur d’Anderlecht manquerait encore au moins deux rencontres.",
-      "publishedAt": "2026-10-24T07:30:00.000Z"
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "‘Night and day different’ – why did Ferrari's pace evaporate again?",
+      "link": "https://www.skysports.com/f1/news/12040/13603156/lewis-hamilton-charles-leclerc-reasons-why-ferrari-went-from-us-gp-pole-favourites-to-behind-kimi-antonelli-red-bulls-on-grid",
+      "summary": "Ferrari's wait for a first Grand Prix pole position since August 2025 continued in the United States on Saturday as Charles Leclerc and Lewis Hamilton qualified outside the top three in a session they had been widely tipped as favourites for.",
+      "publishedAt": null
     },
     {
       "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "DE",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Antonelli takes surprise pole to boost chances of sealing title in USA",
+      "link": "https://www.skysports.com/f1/news/12040/13603149/united-states-gp-qualifying-kimi-antonelli-beats-max-verstappen-to-surprise-pole-to-boost-chances-of-sealing-maiden-f1-title-on-sunday",
+      "summary": "Kimi Antonelli beat Max Verstappen to pole position for the United States Grand Prix to boost his chances of sealing a maiden world championship in Sunday's race.",
+      "publishedAt": null
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "ES",
       "flag": "🌍",
-      "title": "Miljoenenflop van Club Brugge leeft terug op in de Bundesliga",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-10-24/miljoenenflop-van-club-brugge-leeft-terug-op-in-de-bundesliga",
-      "summary": "Ludovit Reis groeide vorig seizoen uit tot een van de miskopen van Club Brugge. Nadat zijn contract werd ontbonden, trok hij naar Werder Bremen. In de Bundesliga heeft de middenvelder zijn vorm intussen teruggevonden.",
-      "publishedAt": "2026-10-24T07:30:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "🎥 Flop belge à Chelsea : auto-but pour Mike Penders, Roméo Lavia ne joue pas une seule minute",
-      "link": "https://www.walfoot.be/news/2026-10-24/-flop-belge-a-chelsea-auto-but-pour-mike-penders-romeo-lavia-ne-joue-pas-une-seule-minute",
-      "summary": "Duel londonien ce samedi à Stamford Bridge entre Chelsea et Tottenham. Ce sont les &quot;Spurs&quot;, pourtant mal embarqués depuis le début de saison, qui ont remporté le derby 0-2. Une première titularisation décevante, avec une intervention ratée dans les airs, pour Mike Penders entre les perches des &quot;Blues&quot;, alors que Roméo Lavia est resté scotché sur le banc toute la rencontre.",
-      "publishedAt": "2026-10-24T07:15:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "OFFICIEEL: Nicky Hayen ontslagen bij Burnley, dit is de reden",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-10-24/officieel-nicky-hayen-ontslagen-bij-burnley-dit-is-de-reden",
-      "summary": "Het Engelse avontuur van Nicky Hayen is alweer voorbij. Burnley heeft zaterdagavond beslist om de Belgische trainer met onmiddellijke ingang te ontslaan. De voormalige coach van Club Brugge en KRC Genk betaalt daarmee de prijs voor de bijzonder teleurstellende competitiestart in de Championship.",
-      "publishedAt": "2026-10-24T07:06:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Knicks employees to get NBA championship rings after phishing email 'mistake'",
-      "link": "https://www.skysports.com/nba/news/12040/13603315/new-york-knicks-employees-to-get-nba-championship-rings-after-admitting-to-phishing-email-mistake",
-      "summary": "The New York Knicks have sought to clear up what they've labelled \"misinformation\" regarding the awarding of their NBA championship rings after employees received a phishing email posing as an opportunity to claim one.",
+      "title": "Papers: Sancho could land in Spain as Getafe offer winger shock deal",
+      "link": "https://www.skysports.com/football/news/12040/13603391/jadon-sancho-offered-shock-deal-by-la-liga-side-getafe-riccardo-calafiori-adds-to-arsenal-injury-woes-paper-talk",
+      "summary": "The top stories and transfer rumours from Sunday's newspapers...",
       "publishedAt": null
     },
     {
@@ -293,41 +326,8 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Arteta collating evidence of other managers stepping out of technical area",
-      "link": "https://www.skysports.com/football/news/12040/13603372/arsenal-boss-mikel-arteta-reveals-he-clips-up-premier-league-managers-stepping-out-of-technical-area",
-      "summary": "Arsenal boss Mikel Arteta says he is compiling footage of rival Premier League managers repeatedly leaving their technical areas after receiving his second yellow card of the season in his side’s 2-0 win over Everton.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Golden State beat Atlanta in Game 4 to level WNBA Finals",
-      "link": "https://www.skysports.com/nba/news/12040/13603375/wnba-finals-golden-state-valkyries-beat-atlanta-dream-67-62-in-game-4-to-level-best-of-seven-series",
-      "summary": "Gabby Williams scored 17 points and Golden State Valkyries played stellar defense to beat Atlanta Dream 67-62 in Game 4 of the WNBA Finals on Saturday, levelling the best-of-seven series at 2-2.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Rangers 4-0 St Johnstone",
-      "link": "https://www.skysports.com/watch/video/13603380/rangers-4-0-st-johnstone-scottish-premiership-highlights",
-      "summary": "Watch highlights from the Scottish Premiership match between Rangers and St Johnstone.",
-      "publishedAt": null
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "United States GP: Ferrari, Red Bull set for big qualifying battle at 10pm LIVE!",
-      "link": "https://www.skysports.com/f1/live-blog/12040/13603168/f1-united-states-gp-live-qualifying-and-final-practice-updates-results-stream-highlights-from-formula-1-race-weekend-in-austin",
+      "title": "Palmowski secures F1 Academy title as Larsen wins maiden race",
+      "link": "https://www.skysports.com/f1/live-blog/12040/13518208/f1-academy-2026-reports-calendar-news-results-standings-and-highlights-for-races-this-season",
       "summary": "",
       "publishedAt": null
     }
