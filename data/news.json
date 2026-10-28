@@ -1,6 +1,39 @@
 {
-  "generatedAt": "2026-10-27T23:38:42.682Z",
+  "generatedAt": "2026-10-28T04:47:58.725Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'Biggest night in the club's history' for fearless Fleetwood",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cqgkv2vxeengo?at_medium=RSS&at_campaign=rss",
+      "summary": "A whopping 83 league places separated Fleetwood from Arsenal, yet the hosts booked their place in the Carabao Cup quarter-final thanks to their penalty shootout win over the Gunners.",
+      "publishedAt": "2026-10-28T00:39:30.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Dowman sees red as Arsenal dumped out, but did Arteta go too far?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cmg47g7dngxlo?at_medium=RSS&at_campaign=rss",
+      "summary": "A shocking defeat, a red card card, a penalty-shootout and a drone tell the story of Arsenal's dramatic loss to League Two Fleetwood Town in the last-16 of the Carabao Cup.",
+      "publishedAt": "2026-10-28T00:34:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Fleetwood-Arsenal halted for eight minutes because of drone",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cmqlngxw6lv3o?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal's match with Fleetwood Town in the last-16 of the Carabao Cup is delayed for more than eight minutes after a drone is spotted above the stadium during the match.",
+      "publishedAt": "2026-10-27T23:54:14.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
@@ -11,6 +44,17 @@
       "link": "https://www.bbc.co.uk/sport/football/articles/cq62y7yzjdmzo?at_medium=RSS&at_campaign=rss",
       "summary": "BBC Sport looks at the history of the biggest FA Cup and League Cup upsets after Fleetwood Town's shock win against Arsenal.",
       "publishedAt": "2026-10-27T23:35:11.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Arteta explains reaction to Dowman red card amid criticism",
+      "link": "https://www.skysports.com/football/news/12040/13604637/max-dowman-red-card-mikel-arteta-explains-what-he-said-to-16-year-old-after-sending-off-in-carabao-cup-exit-to-fleetwood-town",
+      "summary": "Mikel Arteta has explained his reaction to Max Dowman as the 16-year-old went down the tunnel after being sent off in Arsenal's shock Carabao Cup exit to Fleetwood Town.",
+      "publishedAt": "2026-10-27T23:11:00.000Z"
     },
     {
       "type": "rss",
@@ -53,7 +97,7 @@
       "flag": "🇬🇧",
       "title": "Fantastic Fleetwood seal shootout success in Carabao Cup shock against Arsenal",
       "link": "https://www.theguardian.com/football/2026/oct/27/fleetwood-town-arsenal-carabao-cup-fourth-round-match-report",
-      "summary": "It’s more than 20 years since Arsenal played at Highbury but their trip to League Two Fleetwood – and a stadium of the same name – did not bring back fond memories as they were dumped out of the Carabao Cup on penalties. Aaron Loupalo-Bi and Viktor Gyökeres exchanged goals in normal time but Arsenal were unable to find a winner, despite being the dominant force, as Fleetwood battled to the end. Goalkeeper Jay Lynch held his nerve to save from Bruno Guimarães in the shootout before the teenager Conor Haughey scored the winner and created a delirious pitch invasion. Continue reading...",
+      "summary": "It is more than 20 years since Arsenal played at Highbury but their trip to League Two Fleetwood – and a stadium of the same name – did not bring back fond memories as they were dumped out of the Carabao Cup on penalties. It was the team with red shirts and white sleeves that triumphed, but on this occasion it caused one of the greatest upsets in English football history. Aaron Loupalo-Bi and Viktor Gyökeres exchanged goals in normal time but Arsenal were unable to find a winner, despite being the dominant force, as Fleetwood battled to the end. The home manager, Matt Lawlor, was almost in tears, unable to cope after the tension was released when Conor Haughey smashed the ball into the top corner to settle the shootout. Continue reading...",
       "publishedAt": "2026-10-27T22:26:05.000Z"
     },
     {
@@ -95,43 +139,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "'Really harsh call' - Dowman SENT OFF against Fleetwood",
-      "link": "https://www.skysports.com/watch/video/13604572/fleetwood-vs-arsenal-max-dowman-sent-off-as-gunners-go-down-to-10-men",
-      "summary": "Max Dowman SENT-OFF as Gunners go down to 10-men.",
-      "publishedAt": "2026-10-27T21:51:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
       "title": "Arsenal dumped out of Carabao Cup by League Two Fleetwood",
       "link": "https://www.skysports.com/football/fleetwood-town-vs-arsenal/report/578610",
       "summary": "Fleetwood Town produced one of the biggest shocks in Carabao Cup history as the League Two team dumped out Premier League champions Arsenal on penalties to reach the quarter-finals.",
       "publishedAt": "2026-10-27T21:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Barcelona fined £503 over approach for Alvarez",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cmpwg0lqxkd4o?at_medium=RSS&at_campaign=rss",
-      "summary": "Barcelona are fined 602 euros (£503) following a complaint by Atletico Madrid over contact the club made with striker Julian Alvarez.",
-      "publishedAt": "2026-10-27T21:38:20.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Fleetwood-Arsenal halted for eight minutes because of drone",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cmqlngxw6lv3o?at_medium=RSS&at_campaign=rss",
-      "summary": "Arsenal's match with Fleetwood Town in the last-16 of the Carabao Cup is delayed for more than eight minutes after a drone is spotted above the stadium during the match.",
-      "publishedAt": "2026-10-27T20:26:31.000Z"
     },
     {
       "type": "rss",
@@ -176,17 +187,6 @@
       "link": "https://www.theguardian.com/football/2026/oct/27/harry-kane-andy-burnham-knighthood-ballon-dor-win",
       "summary": "Andy Burnham sends congratulations to England captain Bayern player is first Englishman to win award since 2001 Downing Street has hinted that Harry Kane deserves a knighthood, ­praising the England captain’s “extraordinary achievement” as the first English winner of the Ballon d’Or in 25 years. The prime minister’s spokesperson said Andy Burnham sent praise and congratulations to the England captain, who was announced as the men’s winner of football’s most prestigious individual award at a ceremony on Monday night. Continue reading...",
       "publishedAt": "2026-10-27T14:25:29.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "How 'anti-superstar' Kane defied doubters to become world's best",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cqvg01jyy84xo?at_medium=RSS&at_campaign=rss",
-      "summary": "Harry Kane is the humble 'anti-superstar' who defied doubters to achieve Ballon d'Or greatness, says chief football writer Phil McNulty.",
-      "publishedAt": "2026-10-27T12:46:39.000Z"
     },
     {
       "type": "rss",
