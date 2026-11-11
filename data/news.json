@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-11-10T22:12:45.793Z",
+  "generatedAt": "2026-11-11T02:37:28.462Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "'Lamine Yamal is angstaanjagend, verder dan Messi en Ronaldo'",
+      "link": "https://www.vi.nl/nieuws/lamine-yamal-is-angstaanjagend-verder-dan-messi-en-ronaldo",
+      "summary": "Steven Gerrard ziet in Lamine Yamal iets wat hij nog niet eerder gezien heeft bij talenten van zijn leeftijd. Hij hoopt dat zijn entourage en Barcelona hem hongerig kunnen houden.",
+      "publishedAt": "2026-11-10T22:36:54.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
@@ -18,10 +29,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Inter 1-4 Manchester City: Women’s Champions League – live",
-      "link": "https://www.theguardian.com/football/live/2026/nov/10/inter-v-manchester-city-womens-champions-league-live",
-      "summary": "Women’s Champions League updates, 8pm GMT kick-off Live scores | Table | Kerstin Casparij interview | Mail Billy Final scores in the early kick-offs: Häcken 0-0 Chelsea Real Madrid 3-0 Paris FC (Caruso 55, Beerensteyn 65, Caicedo 81) Continue reading...",
-      "publishedAt": "2026-11-10T22:04:37.000Z"
+      "title": "Fujino’s double sparks WCL comeback win for Manchester City against Inter",
+      "link": "https://www.theguardian.com/football/2026/nov/10/inter-manchester-city-womens-champions-league-match-report",
+      "summary": "On a very satisfying night for Manchester City, perhaps the most pleasing element was that they did not even need to call on Khadija ‘Bunny’ Shaw. While giving their talismanic striker some precious rest, Manchester City’s European campaign finally came roaring into life as they put four goals past Inter to record their first Women’s Champions League victory of the season and greatly improve their prospects of reaching the knockout stages. Continue reading...",
+      "publishedAt": "2026-11-10T22:05:43.000Z"
     },
     {
       "type": "rss",
@@ -55,17 +66,6 @@
       "link": "https://www.vi.nl/nieuws/spooktrainer-heracles-almelo-maakt-fraaie-transfer-naar-lyon",
       "summary": "Carlos Vicens is de nieuwe trainer van Olympique Lyon. De 43-jarige Spanjaard heeft tot medio 2028 getekend in het Groupama Stadium en werd getipt door Pep Guardiola, die bij Manchester City met hem samenwerkte.",
       "publishedAt": "2026-11-10T21:08:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "IT",
-      "flag": "🌍",
-      "title": "Zaniolo verlaat trainingskamp Italië en vraagt om rust",
-      "link": "https://www.vi.nl/nieuws/cryptische-boodschap-van-zanioli-na-plots-verlaten-trainingskamp-italie",
-      "summary": "Nicolò Zaniolo mist de Nations League-wedstrijden van Italië tegen Frankrijk en België. De aanvaller van Udinese (27) heeft het trainingskamp wegens privéredenen verlaten en roept op zijn privacy te respecteren.",
-      "publishedAt": "2026-11-10T20:59:05.000Z"
     },
     {
       "type": "rss",
@@ -214,6 +214,28 @@
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Courtois bâtit un empire : il se lance désormais aussi dans la grande tendance du moment",
+      "link": "https://www.walfoot.be/news/2026-11-10/courtois-batit-un-empire-il-se-lance-desormais-aussi-dans-la-grande-tendance-du-moment",
+      "summary": "Thibaut Courtois continue de préparer son avenir en dehors du football. Via son véhicule d'investissement NXTPLAY, le gardien du Real Madrid et des Diables Rouges investit désormais aussi dans le padel. Avec son partenaire d'affaires Gonzalo Vila, il entre au capital de Gallop Global, l'organisation à l'origine notamment de l'Emaar Dubai Premier Padel P1, un tournoi prestigieux du calendrier international de padel.",
+      "publishedAt": "2026-11-10T10:26:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Senne Lammens had een antwoord op de kritiek die hij kreeg (en dat is niet onopgemerkt gebleven)",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-10/senne-lammens-had-een-antwoord-op-de-kritiek-die-hij-kreeg-en-dat-is-niet-onopgemerkt-gebleven",
+      "summary": "Senne Lammens beleeft een moeilijke periode bij Manchester United. De Belgische doelman werd afgelopen zomer nog gezien als een belangrijke oplossing voor een aanslepend probleem onder de lat, maar zijn eerste maanden van dit seizoen verlopen bijzonder moeizaam. Na de nederlaag tegen Aston Villa (2-1) kreeg hij opnieuw kritiek. Lammens laat zich daardoor echter niet ontmoedigen en probeert met extra werk zijn vorm terug te vinden.",
+      "publishedAt": "2026-11-10T10:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
       "title": "Encore un forfait en équipe de France, et pas des moindres",
@@ -297,28 +319,6 @@
       "link": "https://www.voetbalkrant.com/nieuws/2026-11-10/waarom-antwerp-ondanks-11-op-33-blijft-geloven-in-compper-deze-vijf-redenen-spelen-mee",
       "summary": "Met amper 11 op 33 staat Antwerp ver onder de verwachtingen. Toch hoeft trainer Marvin Compper voorlopig niet te vrezen voor zijn job. Het bestuur ziet verschillende redenen om hem meer tijd te geven.",
       "publishedAt": "2026-11-10T09:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Il y a près de 30 ans, Anderlecht était dans la situation inverse et n'avait pas porté plainte",
-      "link": "https://www.walfoot.be/news/2026-11-10/il-y-a-pres-de-30-ans-anderlecht-etait-dans-la-situation-inverse-et-navait-pas-porte-plainte",
-      "summary": "La bévue administrative d'Anderlecht face au Club de Bruges rappelle en fait de vieux souvenirs à Saint-Guidon. Les Mauves ont en effet eux-mêmes eu l'occasion, par le passé, de retirer des points à un adversaire sur tapis vert après une erreur réglementaire. En 1997, le club avait toutefois décidé de ne pas le faire.",
-      "publishedAt": "2026-11-10T08:41:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Karetsas, Mokio, Bounida, Talbi... Dit is het plan van Mignolet en KBVB het te vermijden",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-10/karetsas-mokio-bounida-talbi-dit-is-het-plan-van-mignolet-en-kbvb-het-te-vermijden",
-      "summary": "De Belgische voetbalbond wil vermijden dat het nog meer grote talenten ziet kiezen voor een ander land. Na dossiers zoals die van Konstantinos Karetsas, Jorthy Mokio, Bilal El Khannouss, Chemsdine Talbi en Rayane Bounida wordt de aanpak rond spelers met een dubbele nationaliteit bijgestuurd. Simon Mignolet krijgt daarin een belangrijke rol.",
-      "publishedAt": "2026-11-10T08:40:00.000Z"
     },
     {
       "type": "rss",
