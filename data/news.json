@@ -1,16 +1,170 @@
 {
-  "generatedAt": "2026-11-22T18:19:52.581Z",
+  "generatedAt": "2026-11-23T00:04:17.269Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "A 'wow' player - why Ngumoha is already a Liverpool game-changer",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cmn80y5w84qqo?at_medium=RSS&at_campaign=rss",
+      "summary": "Match of the Day pundit Danny Murphy explains how Rio Ngumoha showed everyone what he is capable of in Liverpool's 4-0 win over Manchester United.",
+      "publishedAt": "2026-11-22T23:20:16.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "'Koopmeiners is weer de oude Koopmeiners geworden'",
+      "link": "https://www.vi.nl/nieuws/koopmeiners-is-weer-de-oude-koopmeiners-geworden",
+      "summary": "Teun Koopmeiners heeft zondag indruk gemaakt op Juventus-trainer Luciano Spalletti. Tegen Venezia was de Nederlander voor het eerst sinds eind augustus weer eens trefzeker in de Serie A. Spalletti zag 'de oude Koopmeiners' bij de Oude Dame .",
+      "publishedAt": "2026-11-22T23:02:23.000Z"
+    },
     {
       "type": "rss",
       "source": "Voetbal International",
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "NEC-opponent Rennes houdt remise over aan Bretonse Derby en ziet captain uitvallen",
-      "link": "https://www.vi.nl/nieuws/nec-opponent-rennes-houdt-remise-over-aan-bretonse-derby-en-ziet-captain-uitvallen",
-      "summary": "Stade Rennes reist met gemengde gevoelens af naar Nijmegen, waar donderdagavond het Europa League-duel met NEC op het programma staat. De ploeg van Franck Haise kwam zondagavond niet verder dan een gelijkspel tegen streekrivaal FC Lorient in de Bretonse Derby.",
-      "publishedAt": "2026-11-22T18:10:00.000Z"
+      "title": "Samenvatting: Ajax is klaar voor Klassieker na eenvoudige middag tegen ADO",
+      "link": "https://www.vi.nl/video/samenvatting-ajax-is-klaar-voor-klassieker-na-eenvoudige-middag-tegen-ado",
+      "summary": "Ajax heeft een fijne zondagmiddag beleefd in de Eredivisie. Davy Klaassen was de grote man bij de Amsterdammers, die met 3-0 van ADO Den Haag wonnen. Volgende week zondag wacht Feyenoord in De Kuip.",
+      "publishedAt": "2026-11-22T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Samenvatting: Excelsior bezorgt Feyenoord heel dure nederlaag",
+      "link": "https://www.vi.nl/video/samenvatting-excelsior-bezorgt-feyenoord-heel-dure-nederlaag",
+      "summary": "Feyenoord leed zaterdagavond opnieuw een heel dure nederlaag in de Eredivisie. Excelsior won de Rotterdamse derby met 2-3, waardoor de ploeg van Giovanni van Bronckhorst verder is weggezakt op de ranglijst.",
+      "publishedAt": "2026-11-22T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Samenvatting: koploper PSV heeft geen moeite met NEC",
+      "link": "https://www.vi.nl/video/samenvatting-koploper-psv-heeft-geen-moeite-met-nec",
+      "summary": "PSV won zaterdagavond op overtuigende wijze van NEC. De ploeg van de jarige Peter Bosz ging al met een 0-3 voorsprong rusten en won uiteindelijk met 1-4 in het Goffertstadion.",
+      "publishedAt": "2026-11-22T22:59:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Atlético Madrid sluit aan bij Real Madrid en Barcelona in titelstrijd",
+      "link": "https://www.vi.nl/nieuws/atletico-madrid-sluit-aan-bij-real-madrid-en-barcelona-in-titelstrijd",
+      "summary": "De voetbalzondag startte met een duel tussen FC Twente en Willem II om 12.15 uur. Om 14.30 uur ging AZ op bezoek bij Sparta Rotterdam. In het buitenland stonden rivalen Liverpool en Manchester United om 17.30 uur tegenover elkaar. Barcelona speelde al vroeg op de dag (14.00 uur) tegen Villarreal. Dat en nog veel meer volgde je in deze VI Live.",
+      "publishedAt": "2026-11-22T22:23:27.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "European football: Barcelona roar back from two goals down to sink Villarreal",
+      "link": "https://www.theguardian.com/football/2026/nov/22/european-football-barcelona-villarreal-juventus-milan-inter",
+      "summary": "Barça prevail 3-2 despite Lamine Yamal’s missed penalty Atalanta snatch point in thrilling 4-4 draw with Inter Barcelona came back from two goals behind to beat Villarreal 3-2 at home on Sunday and restore their three-point lead at the top of La Liga. Two goals inside seven minutes from Tajon Buchanan and Tani Oluwaseyi gave Villarreal a commanding lead at Camp Nou and things got worse for Barça when winger Lamine Yamal missed a first-half penalty. Continue reading...",
+      "publishedAt": "2026-11-22T22:20:43.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "NFL round-up: Eagles stun Steelers and Cowboys score 51 in win",
+      "link": "https://www.skysports.com/nfl/live-blog/12040/13615440/nfl-2026-results-and-highlights-pittsburgh-steelers-suffer-shock-loss-to-philadelphia-eagles-as-dallas-cowboys-score-51-in-win",
+      "summary": "",
+      "publishedAt": "2026-11-22T22:17:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hojgaard shares PGA Tour lead as RSM Classic dragged into Monday finish",
+      "link": "https://www.skysports.com/golf/news/12040/13615327/pga-tour-rasmus-hojgaard-shares-lead-at-weather-affected-rsm-classic-as-fedexcup-fall-finale-heads-to-monday-finish",
+      "summary": "Rasmus Hojgaard holds a share of the lead heading into a weather-delayed final day of the RSM Classic, with England's Marco Penge in contention as he looks to secure his PGA Tour future.",
+      "publishedAt": "2026-11-22T22:10:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Thitikul wins CME Group Tour Championship for third year in a row",
+      "link": "https://www.skysports.com/watch/video/13615463/cme-group-tour-championship-day-four-highlights",
+      "summary": "Jeeno Thitikul has won the LPGA Tour's season-ending CME Group Tour Championship for a third consecutive year after storming to a two-shot victory in Florida.",
+      "publishedAt": "2026-11-22T22:05:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Price looking to continue trend of Grand Slam victors tasting Worlds glory",
+      "link": "https://www.skysports.com/darts/news/12040/13615450/gerwyn-price-looking-to-continue-trend-of-grand-slam-victors-tasting-world-darts-championship-glory",
+      "summary": "An interesting trend has occurred over the last four years: The winner of the Grand Slam has gone on to win the World Darts Championship.",
+      "publishedAt": "2026-11-22T21:43:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "'World's best could've lost 4-0' - but should Man Utd have done more at Anfield?",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cm782j80yypwo?at_medium=RSS&at_campaign=rss",
+      "summary": "Mauricio Pochettino believes even the best team in the world could have conceded four goals at Liverpool in Manchester United's circumstances - but should the Red Devils have done more in defeat?",
+      "publishedAt": "2026-11-22T21:36:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Jamaica level series with dominant win over England",
+      "link": "https://www.skysports.com/netball/news/12040/13615359/england-40-55-jamaica-vitality-roses-beaten-in-london-as-sunshine-girls-impress-and-level-four-test-horizon-series",
+      "summary": "England failed to extend their lead in the Vitality Netball Horizon Series with Jamaica, as the visitors claimed a dominant 55-40 win at the Copper Box Arena.",
+      "publishedAt": "2026-11-22T21:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Chaotic week, nightmare start and huge reality check for Pochettino",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cwd012903kvgo?at_medium=RSS&at_campaign=rss",
+      "summary": "Mauricio Pochettino's reign as Manchester United boss could barely have got off to a more chastening start, writes Simon Stone.",
+      "publishedAt": "2026-11-22T21:22:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Ngumoha stars as Liverpool thrash 10-man Man Utd",
+      "link": "https://www.bbc.co.uk/sport/football/videos/c933g77knz00o?at_medium=RSS&at_campaign=rss",
+      "summary": "Mauricio Pochettino's reign as Manchester United head coach begins in desperate fashion as his team are thrashed by rivals Liverpool to remain in the Premier League relegation zone.",
+      "publishedAt": "2026-11-22T19:59:35.000Z"
     },
     {
       "type": "rss",
@@ -18,10 +172,10 @@
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Liverpool v Manchester United: Premier League – live",
-      "link": "https://www.theguardian.com/football/live/2026/nov/22/liverpool-v-manchester-united-premier-league-live",
-      "summary": "Premier League updates from the 4.30pm GMT kick-off Live scores | Latest table | And follow us over on TikTok “Rob ‘Bob’ Smyth, as I live and breathe,” writes Ian Copestake. “Glad this game is in such .... hands. I will miss it, though. I am in the city as I need a break from looking after mother, and I don’t need this stress/catharsis. What I need is a curry, so damn the lot of youse.” For youse are all fu- well, never mind. Continue reading...",
-      "publishedAt": "2026-11-22T18:04:32.000Z"
+      "title": "Liverpool hand Pochettino nightmare Manchester United start after Yoro sees red",
+      "link": "https://www.theguardian.com/football/2026/nov/22/liverpool-manchester-united-premier-league-match-report",
+      "summary": "Green shoots of recovery have lasted longer in a blast furnace than in the Mauricio Pochettino era at Manchester United. On another abysmal Anfield day for the fallen giants of Manchester, Pochettino endured a baptism of fire from the eighth minute onwards when Leny Yoro was sent off for denying Alexander Isak a clear goalscoring opportunity. Liverpool would not be denied anything else while tormenting their old rivals yet again. Andoni Iraola indulged in his first fist-pumps towards the Kop after an utterly dominant, comfortable win illuminated by Rio Ngumoha and Florian Wirtz brilliance plus goals from Dominik Szoboszlai and Víctor Muñoz. Liverpool’s two creative forces were also on the scoresheet as Ngumoha became the youngster scorer in the fixture’s Premier League history. Continue reading...",
+      "publishedAt": "2026-11-22T18:35:14.000Z"
     },
     {
       "type": "rss",
@@ -36,113 +190,14 @@
     },
     {
       "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "ES",
-      "flag": "🌍",
-      "title": "Flick woest na opmerkelijke rode kaart Fermín: 'Altijd hetzelfde met deze scheids'",
-      "link": "https://www.vi.nl/nieuws/flick-woest-na-onzichtbare-rode-kaart-fermin-altijd-hetzelfde-met-deze-scheids",
-      "summary": "Fermín López heeft zondag ná zijn wissel tegen Villarreal nog een rode kaart gekregen. Barcelona-trainer Hansi Flick richtte na afloop zijn pijlen op scheidsrechter Alejandro Hernández.",
-      "publishedAt": "2026-11-22T17:51:58.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "VI Live: tiental Man Utd kansloos op Anfield, Zirkzee ingevallen",
-      "link": "https://www.vi.nl/nieuws/vi-live-kraker-tussen-liverpool-en-man-utd-barcelona-en-fc-twente-spelen-vroeg",
-      "summary": "De voetbalzondag start met een duel tussen FC Twente en Willem II om 12.15 uur. Om 14.30 uur gaat AZ op bezoek bij Sparta Rotterdam. In het buitenland staan rivalen Liverpool en Manchester United om 17.30 uur tegenover elkaar. Barcelona speelt al vroeg op de dag (14.00 uur) tegen Villarreal. Dat en nog veel meer volg je in deze VI Live.",
-      "publishedAt": "2026-11-22T17:49:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "FC Twente en Ajax profiteren van misstap PSV",
-      "link": "https://www.vi.nl/nieuws/alles-over-vrouwenvoetbal-van-de-eredivisie-tot-aan-de-oranje-leeuwinnen",
-      "summary": "In dit blog volgen we alle ontwikkelingen in het vrouwenvoetbal. We besteden onder meer aandacht aan de Eurojackpot Vrouwen Eredivisie, de Europese toernooien en het Nederlands elftal.",
-      "publishedAt": "2026-11-22T17:45:08.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Fortuna Sittard boekt ondanks roerige week uitzege bij Go Ahead Eagles",
-      "link": "https://www.vi.nl/nieuws/fortuna-sittard-boekt-ondanks-roerige-week-uitzege-bij-go-ahead-eagles",
-      "summary": "Fortuna Sittard heeft zijn zesde overwinning van het seizoen geboekt. In een week waarin Danny Buijs aankondigde dat hij de club zal verlaten, werd in De Adelaarshorst met 0-1 van Go Ahead Eagles gewonnen.",
-      "publishedAt": "2026-11-22T17:41:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Littler values 'titles and legacy' over money as he launches new initiative",
-      "link": "https://www.skysports.com/darts/news/12040/13615360/luke-littler-values-legacy-and-darts-titles-over-money-as-he-launches-initiative-to-help-reduce-youth-unemployment",
-      "summary": "Luke Littler says \"titles and legacy\" are more important to him than money after joining forces with a youth unemployment charity to help those in his native north west of England.",
-      "publishedAt": "2026-11-22T17:41:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Genge eager for England to build on victory in All Blacks rematch",
-      "link": "https://www.skysports.com/rugby-union/news/12040/13615330/ellis-genge-calls-on-england-to-follow-new-zealand-victory-with-another-win-over-all-blacks-in-nations-championship",
-      "summary": "Ellis Genge called on England to back up their record victory over New Zealand as they go in search of an unprecedented hat-trick against the All Blacks.",
-      "publishedAt": "2026-11-22T16:42:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Spurs 'a match for anyone' as win at Man City boosts European hopes",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c6n901w453nlo?at_medium=RSS&at_campaign=rss",
-      "summary": "With the Women's Super League big four firmly established, and London City Lionesses spending their way into European contention, Champions League dreams could have seemed more fanciful than ever for Tottenham Hotspur. But they are firmly in the mix.",
-      "publishedAt": "2026-11-22T16:25:35.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "McBurnie's late double stuns 10-man Brighton after Tzolakis heroics",
-      "link": "https://www.skysports.com/football/hull-city-vs-brighton-and-hove-albion/report/559549",
-      "summary": "A Konstantinos Tzolakis goalkeeping masterclass teed up Oli McBurnie to score two late goals as Hull stunned dominant Brighton in a smash-and-grab 2-0 win at the MKM Stadium.",
-      "publishedAt": "2026-11-22T16:15:00.000Z"
-    },
-    {
-      "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
       "country": "UK",
       "flag": "🇬🇧",
       "title": "McBurnie’s added-time double snatches win for Hull to shock 10-man Brighton",
       "link": "https://www.theguardian.com/football/2026/nov/22/hull-brighton-premier-league-match-report",
-      "summary": "Oli McBurnie’s injury-time double helped Hull to a dramatic victory over Brighton but the Tigers had the heroics of their goalkeeper Konstantinos Tzolakis to thank for a result which continued their unbeaten home start since returning to the Premier League. Fabian Hürzeler’s side were much the stronger of the teams on an afternoon they largely dominated. However, a string of chances in both halves passed them by without the goal their play deserved, thanks largely to Tzolakis, with the Greek international producing a string of sensational saves in both halves. Continue reading...",
+      "summary": "Amid the talk of Brighton being surprise title contenders this season, these are perhaps the afternoons which show the margin that still exists, and how the Premier League can provide the most punishing of wake-up calls at any moment. Make no mistake about it, Fabian Hürzeler’s side will play far worse than this over the next few months and win. They are still second in the table. How they left Hull without even a point almost defies belief given the dominance they enjoyed for large parts of the contest. But for all the statement victories and the headline-grabbing moments, these games are the ones which can trip you up the most. Continue reading...",
       "publishedAt": "2026-11-22T16:10:48.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "FR",
-      "flag": "🌍",
-      "title": "PSG's Doue to have surgery on ruptured ACL",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cw0k6x0764ero?at_medium=RSS&at_campaign=rss",
-      "summary": "Paris St-Germain forward Desire Doue will have surgery later this month after rupturing the anterior cruciate ligament in his right knee.",
-      "publishedAt": "2026-11-22T15:50:05.000Z"
     },
     {
       "type": "rss",
@@ -152,7 +207,7 @@
       "flag": "🇬🇧",
       "title": "Blackburn earn derby draw for Mowbray and extend Burnley’s wait for home win",
       "link": "https://www.theguardian.com/football/2026/nov/22/burnley-blackburn-championship-match-report",
-      "summary": "Todd Cantwell’s penalty earned Blackburn a 2-2 draw at Burnley in their first match since head coach Tony Mowbray stepped back because of health issues. In a gripping, physical East Lancashire derby, the home side led twice, through Largie Ramazani’s rising first-half drive and Jaydon Banel’s steered finish after the break. But Andri Gudjohnsen scored Blackburn’s first equaliser, then earned the penalty which Cantwell converted. Continue reading...",
+      "summary": "Todd Cantwell’s penalty earned Blackburn a 2-2 draw at Burnley in their first match since Tony Mowbray stepped back because of health issues. In a gripping, physical East Lancashire derby, the home side led twice, through Largie Ramazani’s rising first-half drive and Jaydon Banel’s steered finish after the break. But Andri Gudjohnsen scored Blackburn’s first equaliser, then earned the penalty which Cantwell converted. Continue reading...",
       "publishedAt": "2026-11-22T15:12:24.000Z"
     },
     {
@@ -168,102 +223,47 @@
     },
     {
       "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Watford seek sixth manager in 18 months after sacking Dionisi",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cyvz6r4g1jqo?at_medium=RSS&at_campaign=rss",
-      "summary": "Watford sack head coach Alessio Dionisi after 18 games in charge.",
-      "publishedAt": "2026-11-22T12:00:45.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "'Not the right time' - Fernandes pauses Man Utd contract talks",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c6x2e8devk1po?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United captain Bruno Fernandes says he has been offered a new contract by the club but feels it \"is not the right time\" for discussions about his future.",
-      "publishedAt": "2026-11-22T08:41:20.000Z"
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "\"Chaque minute, je donne ma vie pour ce club\" : Bertaccini a eu un impact immédiat contre OHL",
+      "link": "https://www.walfoot.be/news/2026-11-22/chaque-minute-je-donne-ma-vie-pour-ce-club-bertaccini-a-eu-un-impact-immediat-contre-ohl",
+      "summary": "Adriano Bertaccini a de nouveau été important pour Anderlecht samedi soir. Face à OHL, l'attaquant a été chargé de tirer le penalty et l'a parfaitement transformé. Son but a offert trois précieux points aux Mauves après un match difficile. Entre-temps, il marque toutes les 36 minutes de jeu, ce qui fait de lui l'attaquant le... plus efficace de D1A !",
+      "publishedAt": "2026-11-22T10:40:00.000Z"
     },
     {
       "type": "rss",
       "source": "Walfoot",
       "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE : C'est parti pour Lommel - Standard",
-      "link": "https://www.walfoot.be/news/2026-11-22/live-cest-parti-pour-lommel-standard",
-      "summary": "Le septième contre le huitième : c'est l'affiche qui refermera cette douzième journée de Jupiler Pro League. Le Standard pourrait débuter la rencontre avec huit points de retard sur Anderlecht et n'a d'autre choix que de s'imposer dans la course au top 5. Une course dans laquelle Lommel pourrait s'immiscer un peu plus encore en cas de succès.",
-      "publishedAt": "2026-11-22T06:16:22.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "LIVE: Anderlecht gaat uit een heel ander vaatje moeten tappen",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/live-anderlecht-gaat-uit-een-heel-ander-vaatje-moeten-tappen",
-      "summary": "Anderlecht ontvangt zondagavond OH Leuven in het Lotto Park. De Brusselaars willen hun sterke thuisreputatie bevestigen en opnieuw drie punten pakken in de strijd om aansluiting met de top vier. Na een geslaagde laatste periode voor de interlandbreak is het vertrouwen bij paars-wit opnieuw gegroeid.",
-      "publishedAt": "2026-11-22T06:13:53.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Le Beerschot frappe fort face au Jong Genk",
-      "link": "https://www.walfoot.be/news/2026-11-22/le-beerschot-frappe-fort-face-au-jong-genk",
-      "summary": "Face au Jong Genk, le Beerschot a une nouvelle fois confirmé ses ambitions de titre. Les Anversois se sont largement imposés à domicile contre les Limbourgeois et prennent encore davantage le large au classement de la Challenger Pro League.",
-      "publishedAt": "2026-11-22T06:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Het wordt nog razendspannend: zoveel kans maken Union en Club Brugge op de titel",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/het-wordt-nog-razendspannend-zoveel-kans-maken-union-en-club-brugge-op-de-titel",
-      "summary": "De strijd om de Belgische landstitel belooft bijzonder spannend te worden. Union staat momenteel bovenaan in de Jupiler Pro League, maar Club Brugge zit de Brusselaars stevig op de hielen. Ook volgens de nieuwste voorspellingen is het verschil tussen beide titelkandidaten bijzonder klein geworden.",
-      "publishedAt": "2026-11-22T05:50:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Terrain impraticable, caméra en panne : Emilio Ferrera a très peu goûté à son retour en région liégeoise",
-      "link": "https://www.walfoot.be/news/2026-11-22/terrain-impraticable-camera-en-panne-emilio-ferrera-a-tres-peu-goute-a-son-retour-en-region-liegeoise",
-      "summary": "Ce week-end, Emilio Ferrera est revenu à Seraing en tant qu'entraîneur du Patro Eisden. Les installations des Métallos ne semblent pas lui avoir manqué.",
-      "publishedAt": "2026-11-22T05:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Beerschot maakt stevig statement tegen Genk",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/beerschot-maakt-stevig-statement-tegen-genk",
-      "summary": "Beerschot heeft tegen Jong Genk nog eens zijn titelambities kracht weten bij te zetten. Het won in eigen huis met groot verschil van de Limburgers en grijpt zo nog meer de match in de stand van de Challenger Pro League.",
-      "publishedAt": "2026-11-22T05:22:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "FR",
+      "country": "IT",
       "flag": "🌍",
-      "title": "Le pire est confirmé pour l'un des \"concurrents\" de Mika Godts, qui pourrait donc en profiter",
-      "link": "https://www.walfoot.be/news/2026-11-22/le-pire-est-confirme-pour-lun-des-concurrents-de-mika-godts-qui-pourrait-donc-en-profiter",
-      "summary": "On s'attendait à un verdict très sévère pour Désiré Doué, blessé au genou lors du match du PSG à Nice. C'est confirmé : l'international français souffre d'une rupture des ligaments croisés et sa saison est d'ores et déjà terminée.",
-      "publishedAt": "2026-11-22T05:20:00.000Z"
+      "title": "🎥 Sa forme avec les Diables se traduit en club : Charles De Ketelaere en feu avec l'Atalanta",
+      "link": "https://www.walfoot.be/news/2026-11-22/-sa-forme-avec-les-diables-se-traduit-en-club-charles-de-ketelaere-en-feu-avec-latalanta",
+      "summary": "Excellent sous le maillot des Diables Rouges notamment face à l'Italie, Charles De Ketelaere n'empile pas encore les buts en club. Mais il a fêté son retour en Serie A par un doublé.",
+      "publishedAt": "2026-11-22T10:17:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "🎥 Charles De Ketelaere schittert met twee doelpunten in waanzinnig spektakel tegen Inter",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/-charles-de-ketelaere-schittert-met-twee-doelpunten-in-waanzinnig-spektakel-tegen-inter",
+      "summary": "Charles De Ketelaere heeft zondagavond een absolute hoofdrol opgeëist in de Serie A. De Rode Duivel scoorde twee keer tijdens een spectaculaire wedstrijd tussen Atalanta en Inter, die uiteindelijk op 4-4 eindigde. De voormalige speler van Club Brugge hielp zijn ploeg aan een indrukwekkende comeback en bewees opnieuw zijn enorme waarde. Vooral de manier waarop Atalanta zich in de slotfase terugvocht, maakte de wedstrijd bijzonder.",
+      "publishedAt": "2026-11-22T10:06:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "🎥 Quel moment : Ardon Jashari vit une soirée de rêve avec l'AC Milan",
+      "link": "https://www.walfoot.be/news/2026-11-22/-quel-moment-ardon-jashari-vit-une-soiree-de-reve-avec-lac-milan",
+      "summary": "Ardon Jashari a vécu un moment qu'il attendait depuis longtemps. L'ancien milieu de terrain du Club de Bruges a inscrit son premier but pour l'AC Milan. Le Suisse n'a eu besoin que de quelques minutes pour marquer la rencontre de son empreinte.",
+      "publishedAt": "2026-11-22T10:00:00.000Z"
     },
     {
       "type": "rss",
@@ -271,10 +271,10 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Il aura fallu le temps : longtemps bredouille, l'Union s'en remet à Louis Patris pour garder sa première place",
-      "link": "https://www.walfoot.be/news/2026-11-22/il-aura-fallu-le-temps-longtemps-bredouille-lunion-sen-remet-a-louis-patris-pour-garder-sa-premiere-place",
-      "summary": "L'Union Saint-Gilloise aura dû se montrer patiente, mais est tout de même venue à bout de Courtrai (victoire 0-1). Après une première mi-temps très en dessous de leur niveau, les Bruxellois s'en sont remis à un coup de tête de Louis Patris pour conserver leur première place.",
-      "publishedAt": "2026-11-22T04:58:00.000Z"
+      "title": "Vincent Euvrard sourit, mais n'épargne pas un joueur du Standard : \"On doit gagner 0-3 ou 0-4\"",
+      "link": "https://www.walfoot.be/news/2026-11-22/vincent-euvrard-sourit-mais-nepargne-pas-un-joueur-du-standard",
+      "summary": "Vincent Euvrard était logiquement satisfait après la victoire du Standard sur la pelouse de Lommel, dimanche. Le T1 des Rouches n'a toutefois pas caché sa frustration après la carte rouge très évitable reçue par Ibrahim Karamoko dans le temps additionnel.",
+      "publishedAt": "2026-11-22T09:45:00.000Z"
     },
     {
       "type": "rss",
@@ -282,10 +282,21 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "🎥 Union SG met bloed, zweet, tranen en ondanks rare beslissing(en) voorbij hekkensluiter Kortrijk",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/-union-sg-met-bloed-zweet-tranen-en-ondanks-rare-beslissingen-voorbij-hekkensluiter-kortrijk",
-      "summary": "KV Kortrijk en Union SG hebben er een pittige namiddag van gemaakt in het Guldensporenstadion. Union SG haalde het met het kleinste verschil, ook al werden er twee doelpunten afgekeurd. Er was een rode kaart én een niet-gegeven rode kaart. Veel beroering dus in West-Vlaanderen.",
-      "publishedAt": "2026-11-22T04:58:00.000Z"
+      "title": "Johan Boskamp haalt vernietigend uit naar Nederland: \"Niet om aan te zien\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/johan-boskamp-haalt-vernietigend-uit-naar-nederland-niet-om-aan-te-zien",
+      "summary": "Johan Boskamp heeft geen goed woord over voor de recente prestatie van het Nederlands elftal tegen Duitsland. Oranje ging met maar liefst 5-0 onderuit en de voormalige trainer spaart zijn landgenoten niet. Vooral het verdedigende optreden heeft hem bijzonder zwaar teleurgesteld.",
+      "publishedAt": "2026-11-22T09:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Le coach de Kevin De Bruyne lui envoie un message fort",
+      "link": "https://www.walfoot.be/news/2026-11-22/le-coach-de-kevin-de-bruyne-lui-envoie-un-message-fort",
+      "summary": "Quel avenir pour Kevin De Bruyne ? Le Diable Rouge est souvent cité sur le départ, ne parvenant pas à s'adapter à sa nouvelle vie à Naples et au style de jeu prôné par Massimiliano Allegri. Ce dernier a enfin tenu à réagir lui-même aux rumeurs, qui envoient notamment le Belge au PSV Eindhoven dès le mercato hivernal.",
+      "publishedAt": "2026-11-22T09:41:00.000Z"
     },
     {
       "type": "rss",
@@ -293,43 +304,32 @@
       "sourceSlug": "voetbalkrant",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Weetjes en leuke vragen: de voetbalquiz scheurkalender 2027 is uitgebracht",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/weetjes-en-leuke-vragen-de-voetbalquiz-scheurkalender-2027-is-uitgebracht",
-      "summary": "Ook voor het jaar 2027 is er opnieuw een Voetbalquiz Scheurkalender gemaakt. Elke dag een quizvraag en een bijhorend weetje met de hele uitleg: het is de ideale manier voor een volledig jaar voetbal- en quizplezier voor jong en oud.",
-      "publishedAt": "2026-11-22T04:30:00.000Z"
+      "title": "KV Kortrijk zakt steeds dieper weg: pijnlijke statistiek is bijna niet te geloven",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/kv-kortrijk-zakt-steeds-dieper-weg-pijnlijke-statistiek-is-bijna-niet-te-geloven",
+      "summary": "KV Kortrijk beleeft voorlopig een bijzonder moeilijk seizoen. De Kerels gingen afgelopen weekend opnieuw onderuit en staan troosteloos laatste in het klassement. Bovendien heeft de ploeg een bijzonder pijnlijke statistiek verzameld die de problemen nog eens extra in de verf zet.",
+      "publishedAt": "2026-11-22T09:30:00.000Z"
     },
     {
       "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "‘Obviously it’s not good’: Arteta sweating over David Raya’s fitness after injury",
-      "link": "https://www.theguardian.com/football/2026/nov/21/david-raya-shoulder-injury-arsenal-newcastle-mikel-arteta",
-      "summary": "Keeper close to tears at Newcastle after hurting shoulder Arsenal held 2-2, with Jaissle hailing ‘excellent’ display Arsenal were left sweating on the fitness of their goalkeeper David Raya after the Spaniard was forced off with a shoulder injury during the second half of the 2-2 draw at Newcastle on Saturday evening. It left Mikel Arteta’s side six points clear of Brighton and Manchester City at the top of the Premier League but Arsenal’s manager was more concerned about Raya following an accidental collision with Newcastle’s William Osula. The Spaniard was helped off in evident pain and looked close to tears. Continue reading...",
-      "publishedAt": "2026-11-21T21:48:21.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Twee rode kaarten zorgen voor discussie: Gumienny velt duidelijk oordeel",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/twee-rode-kaarten-zorgen-voor-discussie-gumienny-velt-duidelijk-oordeel",
+      "summary": "Matte Smets en Shion Shinkawa kwamen afgelopen weekend allebei negatief in de schijnwerpers te staan. De verdediger van KRC Genk kreeg rood tegen La Louvière, terwijl ook de STVV-speler vroegtijdig naar de kleedkamer moest tegen Charleroi. Voormalig scheidsrechter Serge Gumienny heeft beide fases onder de loep genomen.",
+      "publishedAt": "2026-11-22T09:10:00.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Hull City latest: Is goalkeeper Tzolakis destined for the top?",
-      "link": "https://www.skysports.com/football/live-blog/12040/13548674/hull-city-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-      "summary": "",
-      "publishedAt": "2026-11-20T15:25:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "NFL Week 11 live scores: Chiefs face Cardinals before Giants play Jags",
-      "link": "https://www.nbcsports.com/nfl/scores",
-      "summary": "Follow the latest scores from around the NFL in Week 11 of the 2026 season.",
-      "publishedAt": "2026-11-15T17:50:00.000Z"
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Vitor Bruno pareert kritiek op penalty met verwijzing naar Club Brugge: “Die fase ook herbekijken”",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-22/match-reactie-vitor-bruno-pareert-kritiek-op-penalty-met-verwijzing-naar-club-brugge-die-fase-ook-herbekijken",
+      "summary": "Vitor Bruno kon na de nipte 1-0-zege van Anderlecht tegen OH Leuven niet om de discussie over de strafschop heen. Bij de bezoekers was er heel wat onbegrip over de beslissing van de scheidsrechter, maar de Portugese coach verdedigde de penalty. Daarbij verwees hij ook naar een eerdere fase in de topper tussen Club Brugge en Anderlecht.",
+      "publishedAt": "2026-11-22T09:00:00.000Z"
     }
   ]
 }
