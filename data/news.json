@@ -1,38 +1,71 @@
 {
-  "generatedAt": "2026-11-24T17:12:49.665Z",
+  "generatedAt": "2026-11-25T02:01:36.197Z",
   "items": [
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "ES",
+      "flag": "🌍",
+      "title": "Bellingham plays down Zidane comparison after wonder goal",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c893r9kdwl91o?at_medium=RSS&at_campaign=rss",
+      "summary": "Jose Mourinho says Jude Bellingham is the best midfielder in the world, but the Real Madrid star played down comparisons to Zinedine Zidane.",
+      "publishedAt": "2026-11-24T23:54:10.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "DE",
+      "flag": "🌍",
+      "title": "Arteta says Arsenal need more luck to kill off games",
+      "link": "https://www.bbc.co.uk/sport/football/articles/c3ewv0kdjlp9o?at_medium=RSS&at_campaign=rss",
+      "summary": "Arsenal need more luck to kill off games says manager Mikel Arteta after they are held to a draw by Borussia Dortmund.",
+      "publishedAt": "2026-11-24T23:44:04.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Van Bronckhorst over opmerkelijk doellijnmoment: 'Horloge werkte niet door kou'",
+      "link": "https://www.vi.nl/video/van-bronckhorst-over-opmerkelijk-doellijnmoment-horloge-werkte-niet-door-kou",
+      "summary": "Giovanni van Bronckhorst beleefde dinsdagavond een déjà vu. Plots leek Feyenoord namelijk te scoren, na een opmerkelijk doellijntechnologiemoment. Het bleef echter 0-1 voor FC Porto na de interventie van de VAR.",
+      "publishedAt": "2026-11-24T23:36:34.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Kastenmeier grapt na debuut: 'Engels praten is spannender dan keepen'",
+      "link": "https://www.vi.nl/video/kastenmeier-grapt-na-debuut-engels-praten-is-spannender-dan-keepen",
+      "summary": "Florian Kastenmeier (29) kende een uitstekend debuut voor Feyenoord. De Rotterdammers verloren het Champions League-duel met FC Porto (0-1), maar de Duitse goalie greep zijn kans onder de lat . Na afloop bleef hij koeltjes onder de nieuwe situatie.",
+      "publishedAt": "2026-11-24T23:28:57.000Z"
+    },
     {
       "type": "rss",
       "source": "BBC Sport - Football",
       "sourceSlug": "bbc-sport-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Yoro red card overturned, but refs' chief Webb backs decision",
-      "link": "https://www.bbc.co.uk/sport/football/articles/ck868g93djl5o?at_medium=RSS&at_campaign=rss",
-      "summary": "Manchester United defender Leny Yoro is clear to face Brentford on Saturday as his red card at Anfield is overturned.",
-      "publishedAt": "2026-11-24T17:00:32.000Z"
+      "title": "'Pass, pass, slow, slow' - Man City's slick machine grinding to a halt",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cj3vgdp2edpxo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester City's slick footballing machine is starting to grind to a halt, as displayed in their laborious Champions League draw against Napoli.",
+      "publishedAt": "2026-11-24T23:17:42.000Z"
     },
     {
       "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Ref chief Webb backs process around Yoro sending off despite successful appeal",
-      "link": "https://www.skysports.com/football/news/12040/13616033/leny-yoro-red-card-ref-chief-howard-webb-backs-process-that-saw-man-utd-defender-sent-off-at-liverpool",
-      "summary": "Referees' chief Howard Webb has backed the process of the officials who sent off Manchester United defender Leny Yoro at Liverpool - despite the red card being overturned on appeal.",
-      "publishedAt": "2026-11-24T17:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Listen in! The VAR audio that supported Yoro's red card decision at Anfield",
-      "link": "https://www.skysports.com/watch/video/13616024/match-officials-micd-up-the-var-audio-that-supported-leny-yoros-red-card-decision-at-anfield",
-      "summary": "Speaking on Match Officials Mic'd Up, Howard Webb and Michael Owen take a look at the VAR process from Anfield after Leny Yoro was given a red card in the eighth minute.",
-      "publishedAt": "2026-11-24T17:00:00.000Z"
+      "source": "Voetbal International",
+      "sourceSlug": "voetbal-international",
+      "country": "NL",
+      "flag": "🇳🇱",
+      "title": "Portugese media: 'Monsterlijke doelman redt FC Porto in De Kuip'",
+      "link": "https://www.vi.nl/nieuws/portugese-media-monsterlijke-doelman-redt-fc-porto-in-de-kuip",
+      "summary": "Feyenoord heeft nagelaten om een resultaat te boeken in het Champions League-duel met FC Porto (0-1) . De Portugese kranten zagen dat er één hoofdschuldige was: doelman Diogo Costa.",
+      "publishedAt": "2026-11-24T23:08:38.000Z"
     },
     {
       "type": "rss",
@@ -40,21 +73,10 @@
       "sourceSlug": "voetbal-international",
       "country": "ES",
       "flag": "🌍",
-      "title": "VI Live: PSV Onder-19 geeft goede voorbeeld met gelijkspel in Madrid",
-      "link": "https://www.vi.nl/nieuws/vi-live-psv-tegen-real-madrid-in-champions-league",
-      "summary": "PSV staat dinsdagavond voor een ware Champions League-kraker tegen Real Madrid. De Eindhovenaren kunnen een stunt stiekem goed gebruiken, want zij staan virtueel op de rand van wel of geen Europees vervolg. In aanloop naar en vanaf de aftrap om 21.00 uur blijf je in deze VI Live volledig op de hoogte.",
-      "publishedAt": "2026-11-24T17:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "Analyse: dit kan AZ verwachten van Sparta Praag",
-      "link": "https://www.vi.nl/pro/analyse-dit-kan-az-verwachten-van-sparta-praag",
-      "summary": "AZ treft met Sparta Praag een ploeg in chaotische omstandigheden. Oude bekende Brian Priske is de laan uitgestuurd en de resultaten zijn niet goed. Tactische analyse van de aanstaande tegenstander van AZ in de Europa League.",
-      "publishedAt": "2026-11-24T17:00:00.000Z"
+      "title": "Real Madrid geheimzinnig na ommekeer tegen PSV: 'Kleedkamer net als Las Vegas'",
+      "link": "https://www.vi.nl/nieuws/real-madrid-geheimzinnig-na-ommekeer-tegen-psv-kleedkamer-net-als-las-vegas",
+      "summary": "De twee helften die Real Madrid tegen PSV op de mat legde in de Champions League, waren een wereld van verschil. José Mourinho wilde niet kwijt wat hij de selectie van De Koninklijke in de rust had verteld, al lichtte Jude Bellingham wel een tipje van de sluier.",
+      "publishedAt": "2026-11-24T23:02:09.000Z"
     },
     {
       "type": "rss",
@@ -62,43 +84,10 @@
       "sourceSlug": "voetbal-international",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "VI Live: start Ernst of Kastenmeier? Hadj Moussa terugverwacht in de basis",
-      "link": "https://www.vi.nl/nieuws/vi-live-feyenoord-tegen-fc-porto-in-champions-league",
-      "summary": "Feyenoord staat dinsdagavond om 21.00 uur tegenover FC Porto in de Champions League. De Rotterdammers hebben net als de Portugese ploeg van Francesco Farioli pas drie punten verzameld in het miljardenbal, virtueel niet genoeg voor een Europees vervolg. Mis in deze VI Live niets van Feyenoord tegen FC Porto.",
-      "publishedAt": "2026-11-24T16:57:03.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "VI Live: Maatsen en Mbuyamba trappen bomvolle Champions League-avond af",
-      "link": "https://www.vi.nl/nieuws/vi-live-veerman-met-dortmund-naar-timbers-arsenal-man-city-ontvangt-napoli",
-      "summary": "Joey Veerman gaat dinsdagavond met Borussia Dortmund op bezoek bij Premier League-kampioen Arsenal. Manchester City neemt het op tegen Napoli. De duels van Feyenoord en PSV volg je in een apart liveblog, in deze VI Live blijf je op de hoogte van alle andere Champions League-duels.",
-      "publishedAt": "2026-11-24T16:55:40.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbal International",
-      "sourceSlug": "voetbal-international",
-      "country": "NL",
-      "flag": "🇳🇱",
-      "title": "Tiental Feyenoord verliest foutloze Youth League-status tegen Porto",
-      "link": "https://www.vi.nl/nieuws/tiental-feyenoord-onder-19-verliest-foutloze-youth-league-status-tegen-porto",
-      "summary": "Feyenoord Onder-19 heeft voor het eerst punten laten liggen in de competitiefase van de UEFA Youth League. Op Varkenoord moesten de Rotterdammers, mede door een rode kaart, hun meerdere erkennen in FC Porto.",
-      "publishedAt": "2026-11-24T16:55:17.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "INT",
-      "flag": "🌍",
-      "title": "FA chief signs NDA to view Fifa sell-off plot documents",
-      "link": "https://www.bbc.co.uk/sport/football/articles/cqx2x4k74ryxo?at_medium=RSS&at_campaign=rss",
-      "summary": "Debbie Hewitt is among several football chiefs to view documents made available by Fifa, but cannot speak about them.",
-      "publishedAt": "2026-11-24T16:34:18.000Z"
+      "title": "Donderdag weer D-day na coëfficiëntenmalaise in Champions League",
+      "link": "https://www.vi.nl/nieuws/donderdag-weer-d-day-na-coefficientenmalaise-in-champions-league",
+      "summary": "De Champions League is dit seizoen nog niet het toernooi waarin de Nederlandse clubs punten pakken voor de UEFA-coëfficiëntenlijst. Feyenoord en PSV bereikten twee seizoenen geleden nog de achtste finale, maar gingen dinsdagavond allebei onderuit. Achtervolger Turkije sprokkelde wel punten met Galatasaray, dat van Aston Villa won.",
+      "publishedAt": "2026-11-24T22:59:31.000Z"
     },
     {
       "type": "rss",
@@ -106,10 +95,98 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Aston Villa go full strength at Galatasaray LIVE!",
-      "link": "https://www.skysports.com/football/galatasaray-vs-aston-villa/live/577673",
-      "summary": "",
-      "publishedAt": "2026-11-24T16:15:00.000Z"
+      "title": "Arsenal showing bluntless in attack - but Man City have problems too",
+      "link": "https://www.skysports.com/football/news/12040/13616234/arsenal-and-manchester-citys-problems-analysed-as-both-set-to-meet-in-bumper-premier-league-clash-this-weekend",
+      "summary": "Arsenal face Manchester City in a blockbuster Premier League contest this weekend, but in recent days and months, both teams have issues to overcome.",
+      "publishedAt": "2026-11-24T22:54:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "BBC Sport - Football",
+      "sourceSlug": "bbc-sport-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Pochettino leads Man Utd fury at Yoro red card ruling",
+      "link": "https://www.bbc.co.uk/sport/football/articles/cqzr5ylmeerlo?at_medium=RSS&at_campaign=rss",
+      "summary": "Manchester United and Mauricio Pochettino are furious at how Leny Yoro's red card has been handled by VAR John Brooks and referees' chief Howard Webb",
+      "publishedAt": "2026-11-24T22:05:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "IT",
+      "flag": "🌍",
+      "title": "Rayan Cherki magic denies Napoli but Manchester City’s struggles continue",
+      "link": "https://www.theguardian.com/football/2026/nov/24/manchester-city-napoli-champions-league-match-report",
+      "summary": "For reasons best known to those eyeing the pound signs, Manchester City gave a debut to a special rust-coloured kit in front of a nonplussed crowd. It was of a piece with their performance for most of a familiarly frustrating night that at least concluded with a shot of energy, the home side belatedly shaking off their torpor and ending the prospect of a triumphant return to the Etihad for Kevin De Bruyne. Despite the relief sparked by a fine equaliser by Rayan Cherki, who was rewarded for an insistent but hitherto fruitless evening’s endeavours when his angled shot flashed past Vanja Milinkovic-Savic, it was hard to see this as anything but a perfect snapshot of their autumn difficulties. Nobody could pretend City were up against crack opposition in a one-paced Napoli, who are eighth in Serie A and lack the brio of old, but they simply cannot keep the door shut and could not have quibbled about departing with a defeat. Continue reading...",
+      "publishedAt": "2026-11-24T22:01:51.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Dortmund’s Beier halts Arsenal charge after thunderbolt from Gyökeres",
+      "link": "https://www.theguardian.com/football/2026/nov/24/arsenal-borussia-dortmund-champions-league-match-report",
+      "summary": "Arsenal’s sky-high standards are slipping. For the second time in four days, Mikel Arteta’s side found themselves a goal up at half-time and apparently coasting toward victory, only for their opponents to rouse themselves and earn a deserved draw. After Newcastle on Saturday, this time it was an impressive Borussia Dortmund who became only the second side to take points off Arsenal in their past 15 group stage games in this competition. It could have been worse had an offside flag not ruled out Jobe ­Bellingham’s goal after Max Beier equalised a thunderbolt from Viktor Gyökeres. But the much-maligned Sweden striker was guilty of a glaring miss late on as Arsenal laid siege to Dortmund’s goal, racking up 30 shots by the final whistle. The German side had to hang on for a result that gave their travelling fans a night to remember, although Arteta admitted his players must be more clinical when Real Madrid and Jude Bellingham visit north London in a fortnight. Continue reading...",
+      "publishedAt": "2026-11-24T22:01:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Pochettino criticises Premier League officiating after Yoro red card overturned",
+      "link": "https://www.theguardian.com/football/2026/nov/23/manchester-united-appeal-leny-yoro-red-card-liverpool",
+      "summary": "Manchester United defender wrongly sent off in 4-0 loss ‘If we have VAR, what were they doing?’ asks head coach Mauricio Pochettino has criticised officiating in English football, saying: “We have an unbelievable car, but we need to be in the level to drive [it],” after Leny Yoro’s Anfield red card was overturned on Tuesday. Despite the Football Association ruling the Frenchman’s early sending-off in Sunday’s 4-0 defeat at Liverpool was “wrongful dismissal”, Manchester United remain furious at the decision, and at Pro Ref, the elite officials’ organisation. Continue reading...",
+      "publishedAt": "2026-11-24T21:51:31.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Poch fumes at Yoro red and thinks Szoboszlai goal shouldn't have stood",
+      "link": "https://www.skysports.com/football/news/12040/13616134/mauricio-pochettino-man-utd-boss-fumes-at-var-in-liverpool-loss-over-leny-yoro-and-dominik-szoboszlai-calls",
+      "summary": "Mauricio Pochettino has heavily criticised VAR in Manchester United's loss at Liverpool after Leny Yoro's red card was overturned, while the Argentine believes Dominik Szoboszlai’s opener should not have stood.",
+      "publishedAt": "2026-11-24T21:50:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Hibernian finally register home win after battling past Dundee",
+      "link": "https://www.skysports.com/football/hibernian-vs-dundee/report/558401",
+      "summary": "Hibernian ended their long wait for a Premiership home win after overcoming Dundee 2-1 at Easter Road.",
+      "publishedAt": "2026-11-24T21:35:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "The Guardian Football",
+      "sourceSlug": "the-guardian-football",
+      "country": "INT",
+      "flag": "🌍",
+      "title": "Gul takes pain for buoyant Galatasaray to condemn Aston Villa to Champions League loss",
+      "link": "https://www.theguardian.com/football/2026/nov/24/galatasaray-aston-villa-champions-league-match-report",
+      "summary": "This was Aston Villa’s third trip to Istanbul in the calendar year but, this time, they departed with different emotions. Unlike on the banks of the Bosphorus at Besiktas Park in May, the scene of their unforgettable Europa League triumph, or at Fenerbahce in January, they came away with a bloody nose. Galatasaray’s match-winner, Deniz Gul, finished with similar, the substitute requiring a bandage after bravely taking a boot to the face from Nicolas Jackson as the hosts rippled the net on 77 minutes. It was the game’s first effort on target, Galatasaray maintaining their commanding form on home soil to extend Villa’s winless run to six matches in all competitions. On the outside, this is a gladiatorial arena, a giant spaceship parked on Ali Sami Yen complex. But inside there is a poor pitch that began cutting up during the warm-up. John McGinn, one of four changes from Villa’s stalemate with Sunderland on Saturday, gestured towards the turf in frustration after a through ball went awry, but nobody of a Villa persuasion could blame defeat on the surface. As Unai Emery had stated, it was the same for both teams. Continue reading...",
+      "publishedAt": "2026-11-24T20:03:50.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Sky Sports - Football",
+      "sourceSlug": "sky-sports-football",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Sheehan to miss Ireland's Nations Championship finale after two-game ban",
+      "link": "https://www.skysports.com/rugby-union/news/12040/13616108/ireland-captain-dan-sheehan-to-miss-nations-championship-finale-after-two-game-ban-for-red-card-against-south-africa",
+      "summary": "Ireland captain Dan Sheehan will miss Friday's Nations Championship fifth-place play-off against Australia after being handed a two-game ban for his red card against South Africa.",
+      "publishedAt": "2026-11-24T19:55:00.000Z"
     },
     {
       "type": "rss",
@@ -120,50 +197,17 @@
       "title": "Senegal reinstated as Afcon 2025 winners by court ruling",
       "link": "https://www.bbc.co.uk/sport/football/articles/crn80y2l1404o?at_medium=RSS&at_campaign=rss",
       "summary": "Ten months after the 2025 Africa Cup of Nations final, Senegal are reinstated as champions following a ruling by the Court of Arbitration for Sport.",
-      "publishedAt": "2026-11-24T16:11:33.000Z"
+      "publishedAt": "2026-11-24T17:16:09.000Z"
     },
     {
       "type": "rss",
       "source": "The Guardian Football",
       "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Manchester United win appeal over Yoro’s one-match suspension after Anfield red card",
-      "link": "https://www.theguardian.com/football/2026/nov/23/manchester-united-appeal-leny-yoro-red-card-liverpool",
-      "summary": "Mauricio Pochettino said after game it was ‘never a foul’ Player now eligible to face Brentford on Saturday Manchester United have successfully appealed against the decision to send off Leny Yoro in their 4-0 defeat to Liverpool. The defender was dismissed for denying an obvious goal scoring opportunity after eight minutes but this was found to be incorrect. The Frenchman will no longer be required to serve a one-match suspicion. He fouled Liverpool’s Alexander Isak when through on goal in the early stages at Anfield but Mauricio Pochettino insisted the striker would not have reached the ball, and therefore is was not a sending off offence. The referee Sam Barrott made a different assessment, which the video assistant did not disagree with. Continue reading...",
-      "publishedAt": "2026-11-24T15:49:02.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Sky Sports - Football",
-      "sourceSlug": "sky-sports-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Players Championship Finals schedule: Price eyes back-to-back major titles",
-      "link": "https://www.skysports.com/darts/news/12040/13616018/players-championship-finals-2026-schedule-and-order-of-play-as-gerwyn-price-eyes-another-major-title-in-minehead",
-      "summary": "The 2026 Ladbrokes Players Championship Finals sees 64 players competing to win the PDC's last major event before the World Darts Championship gets under way in December.",
-      "publishedAt": "2026-11-24T15:16:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Millwall face partial stadium closure after discriminatory chants",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c6wy474lxd22o?at_medium=RSS&at_campaign=rss",
-      "summary": "Millwall must play a home game in front of a partially-closed stadium as punishment for fans' discriminatory chants.",
-      "publishedAt": "2026-11-24T14:23:49.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
+      "country": "INT",
+      "flag": "🌍",
       "title": "Senegal restored as Africa Cup of Nations champions after court ruling",
       "link": "https://www.theguardian.com/football/2026/nov/24/afcon-verdict-senegal-morocco-africa-cup-of-nations-champions-court-ruling-cas",
-      "summary": "Senegal won January’s final 1-0 after walking off Result was overturned in March as 3-0 win for Morocco Senegal have been restored as the Africa Cup of Nations champions after a ruling by the court of arbitration for sport (Cas). Senegal beat Morocco 1-0 in a chaotic Afcon final in January but the result was overturned two months later as a 3-0 default win for Morocco by an appeals panel appointed by the Confederation of African Football (Caf). Continue reading...",
+      "summary": "Senegal won January’s final 1-0 after walking off Result was overturned in March as 3-0 win for Morocco Senegal have been reinstated as the champions of Africa, and their controversial 1-0 victory against Morocco confirmed in the record books, after the scandal over January’s Africa Cup of Nations final was resolved in a Swiss courtroom. The court of arbitration for sport (Cas) ruled that a decision to award the 2025 Afcon title to Morocco on appeal should be set aside. Senegal celebrated with a social media post proclaiming the team to have won the title twice: first on the field and then at Cas. Morocco, who are due to co-host the World Cup in 2030, declared their intention to “pursue all legal avenues” to challenge the ruling. Continue reading...",
       "publishedAt": "2026-11-24T14:22:36.000Z"
     },
     {
@@ -172,87 +216,10 @@
       "sourceSlug": "sky-sports-football",
       "country": "UK",
       "flag": "🇬🇧",
-      "title": "Senegal confirmed AFCON 2025 champions after appeal",
-      "link": "https://www.skysports.com/football/news/12040/13615545/senegal-crowned-afcon-2025-champions-by-court-of-arbitration-for-sport-following-appeal",
-      "summary": "The Court of Arbitration for Sport (CAS) has announced Senegal as the winners of the 2025 Africa Cup of Nations (AFCON).",
-      "publishedAt": "2026-11-24T14:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "‘I’m loving it at Brugge’: Freddie Potts on going from West Ham’s bench to Champions League",
-      "link": "https://www.theguardian.com/football/2026/nov/24/freddie-potts-brugge-champions-league-liverpool-west-ham",
-      "summary": "Midfielder is preparing to face Liverpool after leaving the club he loves and overcoming a tough start in Belgium In April Freddie Potts was absorbing the disappointment of being substituted at half-time during West Ham’s FA Cup quarter-final defeat by Leeds. The midfielder was out of favour under Nuno Espírito Santo and could not have imagined that he would be preparing to face Liverpool in the Champions League seven months later. It is the 23-year-old’s reward for taking the difficult decision to leave his boyhood club last summer. Potts noticed his minutes were drying up in pre-season, even though West Ham were not exactly stocked with talent after relegation, and was ready for a new challenge when Club Brugge offered about £10m to sign him. Continue reading...",
-      "publishedAt": "2026-11-24T13:00:47.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "BBC Sport - Football",
-      "sourceSlug": "bbc-sport-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Palace docked points for using four sub windows in WSL win",
-      "link": "https://www.bbc.co.uk/sport/football/articles/c8wy5vy160kpo?at_medium=RSS&at_campaign=rss",
-      "summary": "Crystal Palace say they are \"disappointed\" by the ruling which they \"do not agree is reasonable or proportionate\".",
-      "publishedAt": "2026-11-24T12:14:19.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Crystal Palace docked three WSL points for extra substitution against Everton",
-      "link": "https://www.theguardian.com/football/2026/nov/24/crystal-palace-docked-three-points-wsl-extra-substitution-everton",
-      "summary": "Too many substitutes used during win in opening game They drop place to 13th but no extra points for Everton Crystal Palace have been deducted three points in the Women’s Super League after they made substitutions in four separate windows during their 1-0 victory over Everton in September. Palace admitted breaching the competition’s rules and an independent tribunal ordered the points deduction, but no points will be awarded to Everton. It means Palace drop from 12th to 13th, below Birmingham City on goal difference. The match will not be replayed. Continue reading...",
-      "publishedAt": "2026-11-24T11:40:14.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "The Guardian Football",
-      "sourceSlug": "the-guardian-football",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "David Squires on … Pochettino flying into a storm at Manchester United. Here we go again",
-      "link": "https://www.theguardian.com/football/picture/2026/nov/24/david-squires-on-mauricio-pochettino-manchester-united-here-we-go-again",
-      "summary": "Our cartoonist on a nightmare start for the Argentinian as he took charge of the Premier League’s biggest crisis club Buy this cartoon | Some of David’s favourite works And his latest book, Chaos in the Box: get it now Continue reading...",
-      "publishedAt": "2026-11-24T11:31:27.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Stevige opsteker voor Club Brugge en Leko in aanloop naar Liverpool",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/stevige-opsteker-voor-club-brugge-en-leko-in-aanloop-naar-liverpool",
-      "summary": "Het was een enorme domper op de feestvreugde in Eindhoven drie weken geleden: de blessure van Jan Virgili. Nu is er drie weken later eindelijk goed nieuws vanop het front van de winger. Of hij ook de match tegen Liverpool haalt? Dat is weer iets helemaal anders.",
-      "publishedAt": "2026-11-24T05:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "UK",
-      "flag": "🇬🇧",
-      "title": "Choix assumé : un Diable Rouge critiqué pour son inconscience en Premier League",
-      "link": "https://www.walfoot.be/news/2026-11-24/choix-assume-un-diable-rouge-critique-pour-son-inconscience-en-premier-league",
-      "summary": "Bon nombre de joueurs sont aujourd'hui fâchés avec les protège-tibias. Matias Fernandez Pardo l'a rappelé en poussant son cas à l'extrême.",
-      "publishedAt": "2026-11-24T05:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Oostende dient klacht in tegen Zulte Waregem",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/oostende-dient-klacht-in-tegen-zulte-waregem",
-      "summary": "In de tweede nationale van het Belgisch Amateurvoetbal stonden dit weekend opnieuw een paar pittige wedstrijden op het programma. Daarbij werd er ook onder meer gespeeld tussen KV Diksmuide Oostende en Zulte Waregem. Die match lijkt nu een staartje te kunnen krijgen.",
-      "publishedAt": "2026-11-24T04:40:00.000Z"
+      "title": "Cherki salvages draw with Napoli but Man City frustrate",
+      "link": "https://www.skysports.com/football/manchester-city-vs-napoli/report/577674",
+      "summary": "Rayan Cherki’s late strike salvaged a 2-2 draw for Manchester City at home to Napoli in the Champions League but Enzo Maresca’s side again struggled to find their fluency.",
+      "publishedAt": "2026-11-24T12:09:00.000Z"
     },
     {
       "type": "rss",
@@ -260,65 +227,43 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "🎥 Il n'a rien inventé : quand Lionel Messi s'inspire...de Christian Burgess",
-      "link": "https://www.walfoot.be/news/2026-11-24/-il-na-rien-invente-quand-lionel-messi-sinspirede-christian-burgess",
-      "summary": "Christian Burgess commence à trouver le temps long à l'infirmerie de La Gantoise. Le geste tant décrié de Lionel Messi était-il un hommage discret ?",
-      "publishedAt": "2026-11-24T04:30:00.000Z"
+      "title": "Champions League : le Real Madrid réagit contre le PSV, assist de Jeremy Doku face à De Bruyne",
+      "link": "https://www.walfoot.be/news/2026-11-24/champions-league-le-real-madrid-reagit-contre-le-psv-assist-de-jeremy-doku-face-a-de-bruyne",
+      "summary": "Plusieurs chocs étaient au programme en Ligue des Champions ce soir. Manchester City recevait le Napoli et est parvenu à éviter la défaite, tandis que le Real Madrid a été mené avant d'écraser le PSV Eindhoven.",
+      "publishedAt": "2026-11-24T10:09:00.000Z"
     },
     {
       "type": "rss",
       "source": "Voetbalkrant",
       "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Na de hetze: Boterberg - Bourdeaud'hui ... opnieuw een duo voor Super Sunday, ook deze refs in actie",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/na-de-hetze-boterberg-bourdeaudhui-opnieuw-een-duo-voor-super-sunday-ook-deze-refs-in-actie",
-      "summary": "De scheidsrechters voor de komende speeldag in de Jupiler Pro League zijn bekend. Alle ogen zijn zondag gericht op verschillende topaffiches. We mogen spreken van een Super Sunday en dan is het opvallend dat ook het duo Boterberg - Bourdeaud’hui opnieuw een rol krijgen.",
-      "publishedAt": "2026-11-24T04:20:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "\"Il y pense\" : les confidences d'un homme fort d'Anderlecht sur les plans de Romelu Lukaku",
-      "link": "https://www.walfoot.be/news/2026-11-24/il-y-pense-les-confidences-dun-homme-fort-danderlecht-sur-les-plans-de-romelu-lukaku",
-      "summary": "Depuis plusieurs mois déjà, le retour de Romelu Lukaku est sur toutes les lèvres. Comme joueur et puis comme guide de la jeunesse du Sporting ? Jean Kindermans a évoqué le sujet.",
-      "publishedAt": "2026-11-24T04:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Niet te geloven? Enorme plotwending over de Afrika Cup-finale tussen Marokko en Senegal",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/niet-te-geloven-enorme-plotwending-over-de-afrika-cup-finale-tussen-marokko-en-senegal",
-      "summary": "Tien maanden na de veelbesproken finale tussen Senegal en Marokko heeft het Internationaal Sporttribunaal een uitspraak gedaan. De Lions de la Teranga worden opnieuw als winnaar uitgeroepen. Marokko is zijn Afrika Cup opnieuw kwijt op die manier.",
-      "publishedAt": "2026-11-24T04:00:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Voetbalkrant",
-      "sourceSlug": "voetbalkrant",
-      "country": "BE",
-      "flag": "🇧🇪",
-      "title": "Ivan Leko laat er geen enkele twijfel over bestaan: ferme verwittiging voor Liverpool",
-      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/ivan-leko-laat-er-geen-enkele-twijfel-over-bestaan-ferme-verwittiging-voor-liverpool",
-      "summary": "Ivan Leko wil er alles aan doen om opnieuw geschiedenis te schrijven met Club Brugge. Dan moet dus ook Liverpool voor de bijl als dat even kan. Makkelijk wordt het niet tegen de Engelse topclub, maar helemaal uitgesloten is niets meer na de resultaten in Eindhoven en dergelijke meer.",
-      "publishedAt": "2026-11-24T03:40:00.000Z"
-    },
-    {
-      "type": "rss",
-      "source": "Walfoot",
-      "sourceSlug": "walfoot",
       "country": "NL",
       "flag": "🇳🇱",
-      "title": "Le pire se confirme : quatre mois d'indisponibilité pour un ancien Diable !",
-      "link": "https://www.walfoot.be/news/2026-11-24/le-pire-se-confirme-quatre-mois-dindisponibilite-pour-un-ancien-diable-",
-      "summary": "L'Ajax pourrait avoir payé cher sa large victoire contre l'ADO La Haye (3-0). Jorthy Mokio a été contraint de quitter la pelouse sur blessure en fin de rencontre. L'international congolais de 18 ans avait pourtant inscrit un but un peu plus tôt dans le match.",
-      "publishedAt": "2026-11-24T03:30:00.000Z"
+      "title": "Overzicht CL-matchen: City knokt zich naast Napoli, Real Madrid draait achterstand tegen PSV helemaal om",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/overzicht-cl-matchen-city-knokt-zich-naast-napoli-real-madrid-draait-achterstand-tegen-psv-helemaal-om",
+      "summary": "De Champions League-avond heeft voor heel wat spektakel gezorgd. Manchester City moest tegen Napoli twee keer een achterstand ophalen en redde dankzij een late gelijkmaker van Ryan Cherki alsnog een punt. Real Madrid beleefde dan weer een knotsgekke avond tegen PSV. Thibaut Courtois zag zijn ploeg na een achterstand bij de rust uiteindelijk nog uitlopen tot een overtuigende 5-1. Ook op de andere velden vielen er heel wat doelpunten te noteren.",
+      "publishedAt": "2026-11-24T09:52:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "📷 Ils ne l'ont pas oublié : le bel hommage des supporters de Manchester City à Kevin De Bruyne",
+      "link": "https://www.walfoot.be/news/2026-11-24/-ils-ne-lont-pas-oublie-le-bel-hommage-des-supporters-de-manchester-city-a-kevin-de-bruyne",
+      "summary": "Durant l'été 2025, Kevin De Bruyne a fait ses adieux à Manchester City, après 10 ans qui l'ont fait rentrer dans la légende absolue du club citizen. Si sa saison au Napoli se passe de façon mitigée entre performances en dents de scie et tension extrasportives, son retour à l'Etihad Stadium lui aura certainement redonné le sourire.",
+      "publishedAt": "2026-11-24T09:45:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Zulte Waregem heeft ook assistent (ex-Genk en -Club Brugge) van Nicky Hayen op de lijst staan",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/zulte-waregem-heeft-ook-assistent-ex-genk-en-club-brugge-van-nicky-hayen-op-de-lijst-staan",
+      "summary": "Zulte Waregem heeft nog een naam op de shortlist voor de opvolging van Michael Beale. Naast interimcoach Steve Colpaert is ook Johan Van Rumst in beeld om hoofdtrainer te worden bij Essevee, dat schrijft Het Nieuwsblad. De 48-jarige Waaslander is beschikbaar nadat hij eerder met Nicky Hayen naar het Engelse Burnley trok.",
+      "publishedAt": "2026-11-24T09:40:00.000Z"
     },
     {
       "type": "rss",
@@ -326,10 +271,65 @@
       "sourceSlug": "walfoot",
       "country": "BE",
       "flag": "🇧🇪",
-      "title": "Un \"acharnement contre Charleroi\" ? Mohamed Koné pourrait être suspendu à Anderlecht...et plus encore",
-      "link": "https://www.walfoot.be/news/2026-11-24/un-acharnement-contre-charleroi-mohamed-kone-pourrait-etre-suspendu-a-anderlechtet-plus-encore",
-      "summary": "Mohamed Koné a comparu ce mardi devant le Comité disciplinaire suite à son exclusion en fin de match contre Saint-Trond. Le gardien de Charleroi risque plusieurs matchs de suspension.",
-      "publishedAt": "2026-11-24T03:20:00.000Z"
+      "title": "Lamine Yamal absent... pour cause de GTA 6 ? La question folle d'un journaliste",
+      "link": "https://www.walfoot.be/news/2026-11-24/lamine-yamal-absent-pour-cause-de-gta-6-la-question-folle-dun-journaliste",
+      "summary": "Vous n'avez pas pu passer à côté : la semaine passée, le jeu vidéo le plus attendu de tous les temps, Grand Theft Auto 6, est sorti. La majorité des joueurs de football y passent une bonne partie de leur temps libre, comme Adriano Bertaccini l'a reconnu après Anderlecht-OHL.",
+      "publishedAt": "2026-11-24T09:30:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Van voetbalicoon tot schurk: Zlatan Ibrahimovic maakt opvallende carrièreswitch",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/van-voetbalicoon-tot-schurk-zlatan-ibrahimovic-maakt-opvallende-carriereswitch",
+      "summary": "Zlatan Ibrahimovic blijft ook na zijn voetbalcarrière voor verrassingen zorgen. De voormalige Zweedse topaanvaller zou binnenkort namelijk een opvallende rol krijgen in de populaire gangsterreeks MobLand op Paramount+. En hij zal daarin niet bepaald de held spelen.",
+      "publishedAt": "2026-11-24T09:20:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Pas de retrouvailles ce week-end entre Marc Coucke et Wouter Vandenhaute au Bosuil ?",
+      "link": "https://www.walfoot.be/news/2026-11-24/pas-de-retrouvailles-ce-week-end-entre-marc-coucke-et-wouter-vandenhaute-au-bosuil-",
+      "summary": "La relation entre Marc Coucke et Wouter Vandenhaute au RSC Anderlecht avait fini par tourner au vinaigre lors des derniers mois de mandat du président des Mauves au Lotto Park. Après son départ, d'abord de la présidence puis du conseil d'administration, Vandenhaute a fini par se relancer à l'Antwerp, et retrouvera donc son ancien club ce week-end.",
+      "publishedAt": "2026-11-24T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Club Brugge-speler is ambitieus voor clash met Liverpool: \"Winnen is hier het minimum\"",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/club-brugge-speler-is-ambitieus-voor-clash-met-liverpool-winnen-is-hier-het-minimum",
+      "summary": "Freddie Potts kijkt bijzonder uit naar de Champions League-clash tussen Club Brugge en Liverpool. De Engelse middenvelder schoof dinsdag samen met coach Ivan Leko aan voor de persconferentie en liet meteen verstaan dat hij niet alleen naar Jan Breydel komt om zijn landgenoten te bewonderen. Hij gelooft in de kansen van blauw-zwart.",
+      "publishedAt": "2026-11-24T09:00:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Walfoot",
+      "sourceSlug": "walfoot",
+      "country": "UK",
+      "flag": "🇬🇧",
+      "title": "Même Liverpool se méfie du Club de Bruges... et va pourtant faire tourner son effectif",
+      "link": "https://www.walfoot.be/news/2026-11-24/meme-liverpool-se-mefie-du-club-de-bruges-et-va-pourtant-faire-tourner-son-effectif",
+      "summary": "L'entraîneur de Liverpool, Andoni Iraola, se méfie du Club de Bruges. Lors de la conférence de presse organisée la veille du match de Ligue des champions au Jan Breydel, le technicien espagnol a laissé entendre qu'il suivait les Blauw & Zwart depuis quelque temps. Les récents succès européens des Brugeois ne le surprennent donc pas.",
+      "publishedAt": "2026-11-24T08:40:00.000Z"
+    },
+    {
+      "type": "rss",
+      "source": "Voetbalkrant",
+      "sourceSlug": "voetbalkrant",
+      "country": "BE",
+      "flag": "🇧🇪",
+      "title": "Straten van Brugge gaan rood kleuren: Brugse politie reageert",
+      "link": "https://www.voetbalkrant.com/nieuws/2026-11-24/straten-van-brugge-gaan-rood-kleuren-brugse-politie-reageert",
+      "summary": "Brugge maakt zich op voor de komst van ongeveer 1.700 Britse voetbalsupporters. Woensdagavond neemt Club Brugge het in de Champions League op tegen Liverpool, maar de politie verwacht geen grote veiligheidsproblemen in de stad.",
+      "publishedAt": "2026-11-24T08:40:00.000Z"
     }
   ]
 }
